@@ -1,12 +1,18 @@
 // @flow
 
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-type Props = {||};
-
-export default (props: Props) => (
-  <View>
+export default () => (
+  <View style={styles.container}>
     <Text>@todo</Text>
   </View>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
