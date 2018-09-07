@@ -1,22 +1,67 @@
 {
   "name": "Coorpacademy",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "npm run -s cocoapods:install",
+    "cocoapods:install": "which pod && pod install --repo-update || echo \"iOS Pods not installed due to missing 'pod' command (cocoapods) or an error\"",
+    "#<git hooks>": "handled by husky",
+    "precommit": "lint-staged && npm run -s storybook:autogenerate-list",
+    "#</git hooks>": "handled by husky",
+    "format": "prettier-eslint --write \"**/*.{js}\" && prettier --write \"**/*.{json,css,md}\"",
+    "cleanup": "watchman watch-del .",
+    "lint:flow": "flow",
+    "lint:eslint": "eslint .",
+    "lint": "npm run -s lint:eslint && npm run -s lint:flow",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start:clean": "npm run -s cleanup && npm start -- --reset-cache",
+    "start:ios": "react-native run-ios",
+    "start:android": "react-native run-android",
+    "android:accept-licenses": "yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses",
+    "build:ios:cmd": "cd ios && export RCT_NO_LAUNCH_PACKAGER=1 && xcodebuild -workspace Coorpacademy.xcworkspace -scheme Coorpacademy -derivedDataPath build",
+    "build:iphonesimulator:debug": "npm run -s build:ios:cmd -- -configuration Debug -sdk iphonesimulator | xcpretty",
+    "build:iphonesimulator:release": "npm run -s build:ios:cmd -- -configuration Release -sdk iphonesimulator | xcpretty",
+    "test:unit": "jest src --config .jestrc",
+    "test": "npm run -s lint && npm run -s test:unit",
+    "storybook": "npm run -s storybook:generate-stories && npm run -s storybook:start",
+    "storybook:generate-stories": "babel-node scripts/generate-stories.js",
+    "storybook:server": "storybook start -p 7007",
+    "storybook:start": "(sleep 2 && opn http://localhost:7007) & npm run -s storybook:server",
+    "pull:certificates": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly"
   },
   "dependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-i-am-meticulous": "^11.0.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "^0.80.0",
+    "git-exec-and-restage": "^1.1.1",
+    "husky": "^0.14.3",
     "react": "16.4.1",
-    "react-native": "0.56.0"
+    "react-native": "^0.56.0"
   },
   "devDependencies": {
-    "babel-jest": "23.4.2",
-    "babel-preset-react-native": "^5",
-    "jest": "23.5.0",
-    "react-test-renderer": "16.4.1"
-  },
-  "jest": {
-    "preset": "react-native"
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addon-storyshots": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "@storybook/cli": "^3.4.10",
+    "@storybook/react-native": "^3.4.10",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "babel-preset-react-native": "^5.0.0",
+    "globby": "^8.0.1",
+    "jest": "^23.5.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "react-test-renderer": "16.4.1",
+    "shelljs": "^0.8.2"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "preset": "react-native",
+  "moduleFileExtensions": [
+    "ios.js",
+    "android.js",
+    "js",
+    "json",
+  ],
+  "moduleNameMapper": {
+    "^[./a-zA-Z0-9$_-]+.png$": "RelativeImageStub",
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(.*-)?react-(.*-)?(native|universal|navigation|router)(-.*)?)",
+  ],
+  "testPathIgnorePatterns": [
+    "node_modules",
+    "/__fixtures__/",
+  ],
+  "setupFiles": [
+    "./jest-setup.js",
+  ],
+}
