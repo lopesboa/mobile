@@ -5,9 +5,7 @@
   "scripts": {
     "postinstall": "npm run -s cocoapods:install",
     "cocoapods:install": "which pod && pod install --repo-update || echo \"iOS Pods not installed due to missing 'pod' command (cocoapods) or an error\"",
-    "#<git hooks>": "handled by husky",
     "precommit": "lint-staged && npm run -s storybook:autogenerate-list",
-    "#</git hooks>": "handled by husky",
     "format": "prettier-eslint --write \"**/*.{js}\" && prettier --write \"**/*.{json,css,md}\"",
     "cleanup": "watchman watch-del .",
     "lint:flow": "flow",
