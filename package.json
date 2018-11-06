@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "npm run -s cocoapods:install",
-    "cocoapods:install": "which pod && pod install --repo-update || echo \"iOS Pods not installed due to missing 'pod' command (cocoapods) or an error\"",
+    "cocoapods:install": "which pod && cd ios && pod install --repo-update || echo \"iOS Pods not installed due to missing 'pod' command (cocoapods) or an error\"",
     "precommit": "lint-staged && npm run -s storybook:autogenerate-list",
     "format": "prettier-eslint --write \"**/*.{js}\" && prettier --write \"**/*.{json,css,md}\"",
     "cleanup": "watchman watch-del .",
@@ -19,7 +19,7 @@
     "build:ios:cmd": "cd ios && export RCT_NO_LAUNCH_PACKAGER=1 && xcodebuild -workspace Coorpacademy.xcworkspace -scheme Coorpacademy -derivedDataPath build",
     "build:iphonesimulator:debug": "npm run -s build:ios:cmd -- -configuration Debug -sdk iphonesimulator | xcpretty",
     "build:iphonesimulator:release": "npm run -s build:ios:cmd -- -configuration Release -sdk iphonesimulator | xcpretty",
-    "test:unit": "jest src --config .jestrc",
+    "test:unit": "jest src",
     "test": "npm run -s lint && npm run -s test:unit",
     "storybook": "npm run -s storybook:generate-stories && npm run -s storybook:start",
     "storybook:generate-stories": "babel-node scripts/generate-stories.js",
