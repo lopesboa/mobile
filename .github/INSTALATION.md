@@ -1,30 +1,30 @@
 
-## Recommended registration
- You will need create your :
-
- - [AppleID](https://appleid.apple.com/account#!&page=create)
- - [CircleID]
- - [Google dev]
-
 ## Required Tools
+
 
 - [Android Studio (SDK Included) ](https://developer.android.com/studio/)
 
 - [XCode](https://developer.apple.com/xcode/)
 
-- Fastlane
+- Xcode Command Line Tools
 
-    ````
-    gem install fastlane //or
-    brew fastlane
-    ````
-
-- Command Line Tools
-
-    ```
+    ```bash
     xcode-select --install
     ```
 
+- Fastlane
+    ```bash
+    # Using RubyGems
+    sudo gem install fastlane -NV
+
+    # Alternatively using Homebrew
+    brew cask install fastlane
+    ```
+
+
+
+
+# Configuration
 
 ## Android Studio SDK configuration
 
@@ -41,7 +41,7 @@ After the application installation you will have to configure it.
 
     2.4 Go grab a Martini :cocktail:, the installation could be a bit long ...
 
-##
+
 
 
 
