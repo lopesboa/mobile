@@ -1,5 +1,0 @@
-{
-  "*.js": [
-    "git-exec-and-restage prettier-eslint --write --"
-  ]
-}
