@@ -55,6 +55,8 @@
     "globby": "^8.0.1",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
+    "opn-cli": "^4.0.0",
+    "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
     "regenerator-runtime": "^0.12.1",
     "shelljs": "^0.8.2"

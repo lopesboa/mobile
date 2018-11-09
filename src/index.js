@@ -1,11 +1,13 @@
 // @flow
 
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Home from './components/Home';
 
 export default () => (
   <View style={styles.container}>
-    <Text>@todo</Text>
+    <Home />
   </View>
 );
 
