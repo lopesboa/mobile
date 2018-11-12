@@ -10,4 +10,4 @@ configure(() => {
 }, module);
 
 const StorybookUI = getStorybookUI({ port: 7007, host: 'localhost' });
-AppRegistry.registerComponent('ADM', () => StorybookUI);
+AppRegistry.registerComponent('Coorpacademy', () => StorybookUI);

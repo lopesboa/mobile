@@ -9,9 +9,8 @@ import Welcome from './components/Welcome';
 
 addDecorator(CenterView);
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome  showApp={linkTo('default')} />
-  ));
+storiesOf('Welcome', module).add('to Storybook', () => (
+  <Welcome showApp={linkTo('default')} />
+));
 
 require('../../src/stories.js');
