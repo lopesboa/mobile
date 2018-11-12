@@ -38,7 +38,7 @@ This will just run react-native development background task.
 
 Stop the packager if it is running, and launch the storybook packager:
 
-```
+```console
 yarn storybook
 ```
 
