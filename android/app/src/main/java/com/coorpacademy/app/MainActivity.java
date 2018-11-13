@@ -1,4 +1,4 @@
-package com.coorpacademy;
+package com.coorpacademy.app;
 
 import com.facebook.react.ReactActivity;
 
