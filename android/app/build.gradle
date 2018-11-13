@@ -2,76 +2,6 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 
-/**
- * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
- * and bundleReleaseJsAndAssets).
- * These basically call `react-native bundle` with the correct arguments during the Android build
- * cycle. By default, bundleDebugJsAndAssets is skipped, as in debug/dev mode we prefer to load the
- * bundle directly from the development server. Below you can see all the possible configurations
- * and their defaults. If you decide to add a configuration block, make sure to add it before the
- * `apply from: "../../node_modules/react-native/react.gradle"` line.
- *
- * project.ext.react = [
- *   // the name of the generated asset file containing your JS bundle
- *   bundleAssetName: "index.android.bundle",
- *
- *   // the entry file for bundle generation
- *   entryFile: "index.android.js",
- *
- *   // whether to bundle JS and assets in debug mode
- *   bundleInDebug: false,
- *
- *   // whether to bundle JS and assets in release mode
- *   bundleInRelease: true,
- *
- *   // whether to bundle JS and assets in another build variant (if configured).
- *   // See http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Build-Variants
- *   // The configuration property can be in the following formats
- *   //         'bundleIn${productFlavor}${buildType}'
- *   //         'bundleIn${buildType}'
- *   // bundleInFreeDebug: true,
- *   // bundleInPaidRelease: true,
- *   // bundleInBeta: true,
- *
- *   // whether to disable dev mode in custom build variants (by default only disabled in release)
- *   // for example: to disable dev mode in the staging build type (if configured)
- *   devDisabledInStaging: true,
- *   // The configuration property can be in the following formats
- *   //         'devDisabledIn${productFlavor}${buildType}'
- *   //         'devDisabledIn${buildType}'
- *
- *   // the root of your project, i.e. where "package.json" lives
- *   root: "../../",
- *
- *   // where to put the JS bundle asset in debug mode
- *   jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
- *
- *   // where to put the JS bundle asset in release mode
- *   jsBundleDirRelease: "$buildDir/intermediates/assets/release",
- *
- *   // where to put drawable resources / React Native assets, e.g. the ones you use via
- *   // require('./image.png')), in debug mode
- *   resourcesDirDebug: "$buildDir/intermediates/res/merged/debug",
- *
- *   // where to put drawable resources / React Native assets, e.g. the ones you use via
- *   // require('./image.png')), in release mode
- *   resourcesDirRelease: "$buildDir/intermediates/res/merged/release",
- *
- *   // by default the gradle tasks are skipped if none of the JS files or assets change; this means
- *   // that we don't look at files in android/ or ios/ to determine whether the tasks are up to
- *   // date; if you have any other folders that you want to ignore for performance reasons (gradle
- *   // indexes the entire tree), add them here. Alternatively, if you have JS files in android/
- *   // for example, you might want to remove it from here.
- *   inputExcludes: ["android/**", "ios/**"],
- *
- *   // override which node gets called and with what additional arguments
- *   nodeExecutableAndArgs: ["node"],
- *
- *   // supply additional arguments to the packager
- *   extraPackagerArgs: []
- * ]
- */
-
 project.ext.react = [
     entryFile: "index.js"
 ]
@@ -93,19 +23,39 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+/**
+ * Load configs from config folder for each build type
+ */
+task loadConfig {
+    List<String> buildTypes = new ArrayList<String>();
+    buildTypes.add("debug");
+    buildTypes.add("release");
+    for (String buildType : buildTypes) {
+        String configFilename = "config/${buildType}.properties"
+        File configFile = rootProject.file(configFilename)
+        Properties config = new Properties()
+        config.load(new FileInputStream(configFile))
+        project.ext.set("${buildType}Config", config)
+    }
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.coorpacademy"
+        applicationId releaseConfig['build.application_id']
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
-        versionName "1.0"
+        versionName releaseConfig['build.version_name']
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+    }
+    dexOptions {
+        javaMaxHeapSize "1g"
     }
     splits {
         abi {
@@ -115,10 +65,39 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file(System.getenv("KEYSTORE_FILE"))
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEYSTORE_ALIAS")
+            keyPassword System.getenv("KEYSTORE_ALIAS_PASSWORD")
+        }
+    }
     buildTypes {
+        debug {
+            setProperty("archivesBaseName", debugConfig['build.output_name'])
+            debugConfig.each { key, value ->
+                if (key ==~ /^string.*/) {
+                    resValue "string", key.replace('string.', ''), value
+                }
+                if (key ==~ /^color.*/) {
+                    resValue "color", key.replace('color.', ''), value
+                }
+            }
+        }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+            setProperty("archivesBaseName", releaseConfig['build.output_name'])
+            releaseConfig.each { key, value ->
+                if (key ==~ /^string.*/) {
+                    resValue "string", key.replace('string.', ''), value
+                }
+                if (key ==~ /^color.*/) {
+                    resValue "color", key.replace('color.', ''), value
+                }
+            }
         }
     }
     // applicationVariants are e.g. debug, release
