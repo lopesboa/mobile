@@ -18,6 +18,20 @@
     "build:ios:cmd": "cd ios && export RCT_NO_LAUNCH_PACKAGER=1 && xcodebuild -workspace Coorpacademy.xcworkspace -scheme Coorpacademy -derivedDataPath build",
     "build:iphonesimulator:debug": "npm run -s build:ios:cmd -- -configuration Debug -sdk iphonesimulator | xcpretty",
     "build:iphonesimulator:release": "npm run -s build:ios:cmd -- -configuration Release -sdk iphonesimulator | xcpretty",
+    "build:androidemulator:debug": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+    "build:androidemulator:release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
+    "test:end2end:ios:debug": "npm run -s test:end2end:ios:debug:build && npm run -s test:end2end:ios:debug:test",
+    "test:end2end:ios:debug:build": "detox build --configuration=ios.simulator.debug",
+    "test:end2end:ios:debug:test": "detox test --configuration=ios.simulator.debug",
+    "test:end2end:ios:release": "npm run -s test:end2end:ios:release:build && npm run -s test:end2end:ios:release:test",
+    "test:end2end:ios:release:build": "detox build --configuration=ios.simulator.release",
+    "test:end2end:ios:release:test": "detox test --configuration=ios.simulator.release",
+    "test:end2end:android:debug": "npm run -s test:end2end:android:debug:build && npm run -s test:end2end:android:debug:test",
+    "test:end2end:android:debug:build": "detox build --configuration=android.emulator.debug",
+    "test:end2end:android:debug:test": "detox test --configuration=android.emulator.debug",
+    "test:end2end:android:release": "npm run -s test:end2end:android:release:build && npm run -s test:end2end:android:release:test",
+    "test:end2end:android:release:build": "detox build --configuration=android.emulator.release",
+    "test:end2end:android:release:test": "detox test --configuration=android.emulator.release",
     "test:unit": "jest src",
     "test": "npm run -s lint && npm run -s test:unit",
     "storybook": "npm run -s storybook:generate-stories && npm run -s storybook:start",
@@ -43,6 +57,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
+    "detox": "^9.0.6",
     "eslint": "^5.5.0",
     "eslint-config-i-am-meticulous": "^11.0.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
@@ -55,10 +70,39 @@
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "metro-react-native-babel-preset": "^0.49.0",
+    "mocha": "^5.2.0",
     "opn-cli": "^4.0.0",
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
     "regenerator-runtime": "^0.12.1",
     "shelljs": "^0.8.2"
+  },
+  "detox": {
+    "configurations": {
+      "ios.simulator.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Coorpacademy.app",
+        "build": "npm run build:iphonesimulator:debug",
+        "type": "ios.simulator",
+        "name": "iPhone 6"
+      },
+      "ios.simulator.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/Coorpacademy.app",
+        "build": "npm run build:iphonesimulator:release",
+        "type": "ios.simulator",
+        "name": "iPhone 6"
+      },
+      "android.emulator.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/Coorpacademy-debug.apk",
+        "build": "npm run build:androidemulator:debug",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_26"
+      },
+      "android.emulator.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/Coorpacademy-release.apk",
+        "build": "npm run build:androidemulator:release",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_26"
+      }
+    }
   }
 }
