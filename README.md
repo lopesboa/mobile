@@ -42,6 +42,8 @@ Stop the packager if it is running, and launch the storybook packager:
 yarn storybook
 ```
 
+You will also need to laucn your android/ios simulator to view your stories
+
 **Note**: This command will automatically indexes all the stories in **stories.js** files.
 
 ## Troubleshooting
