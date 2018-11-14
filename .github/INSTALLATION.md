@@ -23,7 +23,11 @@
 - Cocoapod, the IOS package manager
 
   ```
+  # Using RubyGems
   sudo gem install cocoapods
+
+  # Alternatively using Homebrew
+  brew  install cocoapods
   ```
 
 # Configuration
