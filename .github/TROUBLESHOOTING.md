@@ -92,7 +92,7 @@ If you still have a warning near the provisioning profile, that's probably becau
 
 Manually: Sign in to the [Apple developer console](https://developer.apple.com) and download it manually.
 
-Automatically: Run `yarn pull:certificates`
+Automatically: Run `yarn pull:certificate:ios`
 
 Note: if the command above doesn't solved your issue, you will have to regenerate the provisioning profile using [Match](FASTLANE.md#match).
 

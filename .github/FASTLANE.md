@@ -23,7 +23,7 @@ To find the password to use, go to the enterprise password wallet and found it.
 
 This password is used to encrypt/decrypt certs and PPs.
 
-If you don't have anything on you mac, you can just run `yarn pull:certificates`.
+On iOS, if you don't have anything on your mac, you can just run `yarn pull:certificate:ios`.
 This command will run `fastlane match development and adhoc`.
 Certs and PP will be downloaded and installed on your computer.
 

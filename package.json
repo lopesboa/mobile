@@ -35,7 +35,9 @@
     "test:unit": "jest src",
     "test": "npm run -s lint && npm run -s test:unit",
     "storybook": "REACT_NATIVE_ENVIRONMENT_STORYBOOK=1 npm run -s start:clean",
-    "pull:certificates": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly"
+    "storybook:generate-stories": "babel-node scripts/generate-stories.js",
+    "pull:certificate:ios": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly",
+    "pull:certificate:android": "babel-node scripts/pull-certificate-android.js"
   },
   "dependencies": {
     "react": "16.4.1",
@@ -51,11 +53,12 @@
     "@storybook/addons": "^4.0.6",
     "@storybook/cli": "^4.0.6",
     "@storybook/react-native": "^4.0.6",
+    "aws-sdk": "^2.355.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
-    "detox": "^9.0.6",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "detox": "^9.0.6",
     "eslint": "^5.5.0",
     "eslint-config-i-am-meticulous": "^11.0.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
