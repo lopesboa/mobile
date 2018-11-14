@@ -1,11 +1,11 @@
 // @flow
 
+const utils = require('./utils.js');
+
 describe('Home', () => {
-  before(async () => {
-    await device.reloadReactNative();
-  });
+  before(utils.reloadApp);
 
   it('should see todo mention', async () => {
-    await expect(element(by.id('todo'))).toBeVisible();
+    await weExpect(element(by.id('todo'))).toBeVisible();
   });
 });

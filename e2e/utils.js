@@ -1,4 +1,8 @@
-/* eslint-disable */
+// @flow
+
+const reloadApp = async () => {
+  await device.reloadReactNative();
+};
 
 module.exports = {
   init() {
@@ -8,4 +12,5 @@ module.exports = {
     // (we force weExpect type to match what we want)
     global.weExpect = expect;
   },
+  reloadApp,
 };

@@ -1,22 +1,26 @@
 {
   "env": {
-    "jest": true
+    "jest": true,
+    "node": true,
+    "es6": true
   },
   "extends": [
-    "eslint-config-i-am-meticulous/react-native"
+    "plugin:@coorpacademy/coorpacademy/core",
+    "plugin:@coorpacademy/coorpacademy/flowtype",
+    "plugin:@coorpacademy/coorpacademy/react",
+    "plugin:@coorpacademy/coorpacademy/mocha",
+    "plugin:@coorpacademy/coorpacademy/prettier"
   ],
+  "plugins": ["@coorpacademy/coorpacademy"],
   "settings": {
     "import/resolver": {
       "babel-module": {
-        "extensions": [
-          ".ios.js",
-          ".js",
-          ".json"
-        ]
+        "extensions": [".ios.js", ".js", ".json"]
       }
     }
   },
   "rules": {
+    "mocha/no-mocha-arrows": "off",
     "import/no-extraneous-dependencies": "off",
     "flowtype/no-mutable-array": "off",
     "flowtype/require-exact-type": "off",
@@ -30,10 +34,7 @@
       }
     ],
     "react/prop-types": "off",
-    "react/jsx-curly-brace-presence": [
-      "error",
-      "never"
-    ],
+    "react/jsx-curly-brace-presence": ["error", "never"],
     "react/sort-comp": [
       "error",
       {
@@ -57,6 +58,11 @@
       }
     ],
     "react/no-access-state-in-setstate": "off",
-    "react/no-deprecated": "off"
+    "react/no-deprecated": "off",
+    "fp/no-class": "off",
+    "flowtype-errors/enforce-min-coverage": "off",
+    "flowtype/require-return-type": "off",
+    "promise/no-native": "off",
+    "class-methods-use-this": "off"
   }
 }

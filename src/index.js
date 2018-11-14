@@ -1,15 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import Home from './components/Home';
-
-export default () => (
-  <View style={styles.container}>
-    <Home />
-  </View>
-);
+import Home from './components/home';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +12,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const view = () => (
+  <View style={styles.container}>
+    <Home />
+  </View>
+);
+
+export default view;

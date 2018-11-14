@@ -1,6 +1,4 @@
-// @flow
-
-import { NativeModules, ScrollView } from 'react-native';
+import {NativeModules, ScrollView} from 'react-native';
 
 // global mocks
 global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
@@ -12,8 +10,10 @@ ScrollView.propTypes = {
 
 jest.mock('NativeEventEmitter', () => {
   return class MockNativeEventEmitter {
-    addListener = () => ({ remove: jest.fn() });
+    addListener = () => ({remove: jest.fn()});
+
     removeListener = () => jest.fn();
+
     removeAllListeners = () => jest.fn();
   };
 });

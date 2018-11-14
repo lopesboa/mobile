@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 
 const Home = () => <Text testID="todo">@todo</Text>;
 

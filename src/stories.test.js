@@ -1,10 +1,8 @@
 // @flow
 
-import initStoryshots, {
-  multiSnapshotWithOptions,
-} from '@storybook/addon-storyshots';
+import initStoryshots, {multiSnapshotWithOptions} from '@storybook/addon-storyshots';
 
 initStoryshots({
-  configPath: __dirname + '/stories.js',
+  configPath: `${__dirname}/stories.js`,
   test: multiSnapshotWithOptions({}),
 });

@@ -1,13 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-
-const CenterView = (story: () => void) => (
-  <View style={styles.main}>
-    {story()}
-  </View>
-);
+import {StyleSheet, View} from 'react-native';
 
 const styles = StyleSheet.create({
   main: {
@@ -17,5 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4fcff',
   },
 });
+
+const CenterView = (story: () => void) => <View style={styles.main}>{story()}</View>;
 
 export default CenterView;

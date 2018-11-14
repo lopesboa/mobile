@@ -1,6 +1,6 @@
 // @flow
 
-import { getStorybookUI, configure } from '@storybook/react-native';
+import {getStorybookUI, configure} from '@storybook/react-native';
 import './addons';
 
 // import stories

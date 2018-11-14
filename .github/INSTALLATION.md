@@ -47,20 +47,17 @@ After the application installation you will have to configure it.
 
    2.4 Go grab a Martini :cocktail:, the installation could be a bit long ...
 
-3. Update your profile file (`.bash_profile`, `.zshrc`)
+   2.5 Open Android Studio and click `Open Existing Project` and select the `android folder` located at your `repo root`
+
+3. Update your profile file (`.bash_profile`, `.zshrc`) with those lines :
 
    ```bash
-   export ANDROID_SDK_ROOT=/Users/<user>/Library/Android/sdk
-
+   export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+   export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
    ```
 
-   ... and add this lone your PATH
-
-   ```
-   $ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
-   ```
-
-4. Add an android emulator.
+4) Add an android emulator.
 
 On `Android studio`, on the main Toolbar click on `View` and check `Toolbar`.
 
@@ -69,7 +66,5 @@ On the toolbar menu click on this icon ![Add Emulator Icon](./icon.png) to add a
 # Install the dependencies
 
 ```bash
-npm install
+yarn install
 ```
-
-## That's all folks !

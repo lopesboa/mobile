@@ -1,8 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 
-import Home from './Home';
+import Home from './home';
 
 storiesOf('Home', module).add('Default', () => <Home />);
