@@ -67,10 +67,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(System.getenv("KEYSTORE_FILE"))
-            storePassword System.getenv("KEYSTORE_PASSWORD")
-            keyAlias System.getenv("KEYSTORE_ALIAS")
-            keyPassword System.getenv("KEYSTORE_ALIAS_PASSWORD")
+            storeFile file("${System.env.KEYSTORE_FILE}")
+            storePassword "${System.env.KEYSTORE_PASSWORD}"
+            keyAlias "${System.env.KEYSTORE_ALIAS}"
+            keyPassword "${System.env.KEYSTORE_ALIAS_PASSWORD}"
         }
     }
     buildTypes {
