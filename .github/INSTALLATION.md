@@ -2,7 +2,23 @@
 
 - [Android Studio (SDK Included) ](https://developer.android.com/studio/)
 
-- [XCode](https://developer.apple.com/xcode/)
+  Please refer to the specific [Android Section](#android-studio) to know more about.
+
+- [HomeBrew](https://brew.sh/), the macOS package manager
+
+  ```bash
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ```
+
+* XCode, the mac OS builder
+
+  First check your XCode version
+
+  ```
+  xcodebuild -version
+  ```
+
+  If your current version is `>= 10.1.0` your good to continue. Else, follow the instruction process [here](https://developer.apple.com/download/more/)
 
 - Xcode Command Line Tools
 
@@ -10,7 +26,7 @@
   xcode-select --install
   ```
 
-- Fastlane
+* Fastlane, the mobile toolbox
 
   ```bash
   # Using RubyGems
@@ -19,6 +35,14 @@
   # Alternatively using Homebrew
   brew cask install fastlane
   ```
+
+  If you've installed fastlane through `brew`, add this to your profile file (`bash_profile`, ...)
+
+  ```
+  export PATH="$HOME/.fastlane/bin:$PATH"
+  ```
+
+  To know more about Fastlane, please read [this article](./FASTLANE.md).
 
 - Cocoapod, the IOS package manager
 
@@ -30,9 +54,31 @@
   brew  install cocoapods
   ```
 
-# Configuration
+- [Detox](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md), the e2e test runner
 
-## Android Studio SDK configuration
+  ```sh
+  brew tap wix/brew
+  brew tap facebook/fb
+
+  brew install applesimutils
+  brew install fbsimctl --HEAD
+  ```
+
+# Install the dependencies
+
+```bash
+yarn install
+```
+
+# Configure your tools
+
+## Android Studio
+
+### Why Android Studio ?
+
+According to the offcial webpage `Android Studio provides the fastest tools for building apps on every type of Android device`. Those tools includes the emulator manager (avdmanager) and sdk manager (to install java sdk dependencies).
+
+### Configuration :
 
 After the application installation you will have to configure it.
 
@@ -62,9 +108,3 @@ After the application installation you will have to configure it.
 On `Android studio`, on the main Toolbar click on `View` and check `Toolbar`.
 
 On the toolbar menu click on this icon ![Add Emulator Icon](./icon.png) to add and launch an emulator
-
-# Install the dependencies
-
-```bash
-yarn install
-```
