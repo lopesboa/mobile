@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 
-import { S3 } from 'aws-sdk';
+import {S3} from 'aws-sdk';
 
 const {
   ACCESS_KEY_ID: accessKeyId,
@@ -33,6 +33,7 @@ const params = {
   Key: 'cert/mobile/coorpacademy.jks',
 };
 
+// eslint-disable-next-line no-console
 console.log('Pulling this file on Amazon S3:', params);
 
 s3.getObject(params, (e, data) => {

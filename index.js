@@ -1,7 +1,7 @@
 // @flow
 import {AppRegistry} from 'react-native';
 
-import StorybookUI from './storybook/index';
+import StorybookUI from './storybook';
 import App from './src';
 
 /* eslint-disable import/extensions*/
