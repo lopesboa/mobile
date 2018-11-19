@@ -1,0 +1,135 @@
+version: 2
+jobs:
+  dependencies:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+      - run:
+          name: Node dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - node_modules
+  linting:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Lint
+          command: yarn lint
+  unit_tests:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Jest
+          command: yarn test:unit
+          environment:
+            TZ: Europe/Paris
+  end2end_tests_ios:
+    macos:
+      xcode: "10.1.0"
+    working_directory: ~/app
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/app
+
+      - restore_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+
+      - run:
+          name: Pods dependencies
+          command: yarn cocoapods:install
+
+      - save_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          paths:
+            - ~/Library/Caches/CocoaPods
+            - ios/Pods
+
+      - restore_cache:
+          key: brew-v1-{{ arch }}
+
+      - run:
+          name: Brew dependencies
+          command: |
+            brew tap wix/brew facebook/fb
+            brew install applesimutils
+            brew install fbsimctl --HEAD
+
+      - save_cache:
+          key: brew-v1-{{ arch }}
+          paths:
+            - ~/Library/Caches/Homebrew
+
+      - restore_cache:
+          key: detox-v1-{{ arch }}
+
+      - run:
+          name: Detox framework
+          command: detox build-framework-cache
+
+      - save_cache:
+          key: detox-v1-{{ arch }}
+          paths:
+            - ~/Library/Detox/ios
+
+      - run:
+          name: Pull certificate
+          command: yarn pull:certificate:ios
+          # environment variables set into job configuration
+
+      - run:
+          name: Tests
+          command: |
+            yarn test:end2end:ios:release
+            fbsimctl shutdown
+          environment:
+            RCT_NO_LAUNCH_PACKAGER: 1
+workflows:
+  version: 2
+  tests-build-deploy:
+    jobs:
+      - dependencies:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - circle-ci-only
+                - /^pull\/.*$/
+      - linting:
+          requires:
+            - dependencies
+      - unit_tests:
+          requires:
+            - dependencies
+      - end2end_tests_ios:
+          requires:
+            - dependencies
