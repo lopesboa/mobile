@@ -79,9 +79,8 @@ jobs:
       - run:
           name: Brew dependencies
           command: |
-            brew tap wix/brew facebook/fb
+            brew tap wix/brew
             brew install applesimutils
-            brew install fbsimctl --HEAD
 
       - save_cache:
           key: brew-v1-{{ arch }}
@@ -93,7 +92,9 @@ jobs:
 
       - run:
           name: Detox framework
-          command: detox build-framework-cache
+          command: |
+            yarn global add detox-cli
+            detox build-framework-cache
 
       - save_cache:
           key: detox-v1-{{ arch }}
@@ -101,15 +102,8 @@ jobs:
             - ~/Library/Detox/ios
 
       - run:
-          name: Pull certificate
-          command: yarn pull:certificate:ios
-          # environment variables set into job configuration
-
-      - run:
           name: Tests
-          command: |
-            yarn test:end2end:ios:release
-            fbsimctl shutdown
+          command: yarn test:end2end:ios:release
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
 workflows:
@@ -122,7 +116,7 @@ workflows:
               only:
                 - master
                 - develop
-                - circle-ci-only
+                - fix-tests
                 - /^pull\/.*$/
       - linting:
           requires:
