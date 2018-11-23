@@ -172,3 +172,27 @@ It's probably an error with codesigning because `Embed Pods Framework` is the la
 ##### How to resolve
 
 Check certificates, provisioning profiles and/or keychain write.
+
+## android: adb server stuck
+
+```sh
+> adb devices
+* daemon not running. starting it now on port 5037 *
+cannot bind 'tcp:5037': Address already in use
+ADB server didn't ACK
+```
+
+##### Identified problem
+
+the adb server should be restarted
+
+##### How to resolve
+
+```sh
+> lsof -i :5037
+adb     95894  user    7u  IPv4 0xdeb96c8361f7281d      0t0  TCP localhost:5037->localhost:60397 (CLOSE_WAIT)
+> kill -9 95894
+> adb start-server
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+```
