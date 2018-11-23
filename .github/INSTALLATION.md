@@ -103,8 +103,25 @@ After the application installation you will have to configure it.
    export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
    ```
 
-4) Add an android emulator.
+4. Add an android emulator.
 
-On `Android studio`, on the main Toolbar click on `View` and check `Toolbar`.
+Define the API (Android version) you want to used for your emulator (refer to the `minSdkVersion` in `android/build.gradle` to know the min version you can use):
 
-On the toolbar menu click on this icon ![Add Emulator Icon](./icon.png) to add and launch an emulator
+```
+export API_VERSION=19
+```
+
+Install the dependencies used by your emulator:
+
+```
+sdkmanager "system-images;android-${API_VERSION};google_apis;x86"
+```
+
+And create the AVD (Android Virtual Device):
+
+```
+echo no | avdmanager create avd --force --name "Nexus_5X_API_${API_VERSION}" --abi google_apis/x86 --package "system-images;android-${API_VERSION};google_apis;x86" --device "Nexus 5X"
+```
+
+**Note**: Don't forget to add `<ANDROID_SDK_ROOT>/tools/bin` to your `PATH`.
+**Note**: You can use other emulator manager than AVD to manager your emulators, ie: `Genymotion`

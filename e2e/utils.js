@@ -1,7 +1,14 @@
 // @flow
 
+let alreadyLaunched = false;
+
 const reloadApp = async () => {
-  await device.reloadReactNative();
+  // @todo use reloadReactNative(); once it's working in Android
+  await device.launchApp({newInstance: !alreadyLaunched});
+
+  if (!alreadyLaunched) {
+    alreadyLaunched = true;
+  }
 };
 
 module.exports = {

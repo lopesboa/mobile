@@ -14,12 +14,11 @@
     "start:clean": "npm run -s cleanup && npm start -- --reset-cache",
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
-    "android:accept-licenses": "yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses",
     "build:ios:cmd": "cd ios && export RCT_NO_LAUNCH_PACKAGER=1 && xcodebuild -workspace Coorpacademy.xcworkspace -scheme Coorpacademy -derivedDataPath build",
     "build:iphonesimulator:debug": "npm run -s build:ios:cmd -- -configuration Debug -sdk iphonesimulator | xcpretty",
     "build:iphonesimulator:release": "npm run -s build:ios:cmd -- -configuration Release -sdk iphonesimulator | xcpretty",
-    "build:androidemulator:debug": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
-    "build:androidemulator:release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
+    "build:androidemulator:debug": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+    "build:androidemulator:release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
     "test:end2end:ios:debug": "npm run -s test:end2end:ios:debug:build && npm run -s test:end2end:ios:debug:test",
     "test:end2end:ios:debug:build": "detox build --configuration=ios.simulator.debug",
     "test:end2end:ios:debug:test": "detox test --configuration=ios.simulator.debug",
@@ -97,13 +96,13 @@
         "binaryPath": "android/app/build/outputs/apk/debug/Coorpacademy-debug.apk",
         "build": "npm run build:androidemulator:debug",
         "type": "android.emulator",
-        "name": "Nexus_5X_API_26"
+        "name": "Nexus_5X_API_19"
       },
       "android.emulator.release": {
         "binaryPath": "android/app/build/outputs/apk/release/Coorpacademy-release.apk",
         "build": "npm run build:androidemulator:release",
         "type": "android.emulator",
-        "name": "Nexus_5X_API_26"
+        "name": "Nexus_5X_API_19"
       }
     }
   }

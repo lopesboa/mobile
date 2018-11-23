@@ -74,7 +74,7 @@ jobs:
             - ios/Pods
 
       - restore_cache:
-          key: brew-v1-{{ arch }}
+          key: brew-v1-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -83,7 +83,7 @@ jobs:
             brew install applesimutils
 
       - save_cache:
-          key: brew-v1-{{ arch }}
+          key: brew-v1-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
 
@@ -110,20 +110,13 @@ workflows:
   version: 2
   tests-build-deploy:
     jobs:
-      - dependencies:
-          filters:
-            branches:
-              only:
-                - master
-                - develop
-                - fix-tests
-                - /^pull\/.*$/
+      - dependencies
       - linting:
-          requires:
-            - dependencies
+         requires:
+           - dependencies
       - unit_tests:
-          requires:
-            - dependencies
+         requires:
+           - dependencies
       - end2end_tests_ios:
-          requires:
-            - dependencies
+         requires:
+           - dependencies

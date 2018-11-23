@@ -8,7 +8,6 @@ const utils = require('./utils.js');
 
 before(async () => {
   await detox.init(config);
-  await device.launchApp();
 
   utils.init();
 });

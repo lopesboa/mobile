@@ -47,15 +47,15 @@ android {
         applicationId releaseConfig['build.application_id']
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        multiDexEnabled true
         versionCode 1
         versionName releaseConfig['build.version_name']
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-    }
-    dexOptions {
-        javaMaxHeapSize "1g"
+        // For Detox
+        testBuildType System.getProperty('testBuildType', 'debug')
+        missingDimensionStrategy "minReactNative", "minReactNative46"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     splits {
         abi {
@@ -67,7 +67,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("${System.env.KEYSTORE_FILE}")
+            storeFile file("../../${System.env.KEYSTORE_FILE}")
             storePassword "${System.env.KEYSTORE_PASSWORD}"
             keyAlias "${System.env.KEYSTORE_ALIAS}"
             keyPassword "${System.env.KEYSTORE_ALIAS_PASSWORD}"
@@ -116,9 +116,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    compile "com.facebook.react:react-native:+"  // From node_modules
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+    // For Detox
+    androidTestImplementation(project(path: ":detox"))
+    androidTestImplementation 'junit:junit:4.12+'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2+'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2+'
 }
 
 configurations {
