@@ -35,7 +35,7 @@ jobs:
           at: ~/app
       - run:
           name: Lint
-          command: yarn lint
+          command: yarn lint && yarn flow
   unit_tests:
     working_directory: ~/app
     docker:

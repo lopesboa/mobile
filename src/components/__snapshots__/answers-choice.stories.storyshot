@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AnswersChoice Default 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#fafafa",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+        },
+        false,
+      ]
+    }
+    testID="answerChoice"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#14171a",
+            "fontWeight": "bold",
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+          false,
+        ]
+      }
+    >
+      Option 1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots AnswersChoice Selected 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#fafafa",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+        },
+        Object {
+          "backgroundColor": "#00b0ff",
+        },
+      ]
+    }
+    testID="answerChoice"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#14171a",
+            "fontWeight": "bold",
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+          Object {
+            "color": "#ffffff",
+          },
+        ]
+      }
+    >
+      Option 1
+    </Text>
+  </View>
+</View>
+`;
