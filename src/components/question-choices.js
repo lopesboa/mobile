@@ -27,6 +27,8 @@ class QuestionChoices extends React.PureComponent<Props> {
 
   renderSpace = () => <Space />;
 
+  getKeyExtractor = (item: QuestionChoiceItem, index: number) => index.toString();
+
   render() {
     return (
       <TouchableOpacity>
@@ -35,6 +37,8 @@ class QuestionChoices extends React.PureComponent<Props> {
             renderItem={this.renderItem}
             data={this.props.items}
             ItemSeparatorComponent={this.renderSpace}
+            testID="question-choices"
+            keyExtractor={this.getKeyExtractor}
           />
         )}
       </TouchableOpacity>

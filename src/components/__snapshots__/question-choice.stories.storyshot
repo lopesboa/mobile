@@ -29,7 +29,6 @@ exports[`Storyshots QuestionChoice Default 1`] = `
         false,
       ]
     }
-    testID="answerChoice"
   >
     <Text
       style={
@@ -81,7 +80,6 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
         },
       ]
     }
-    testID="answerChoice"
   >
     <Text
       style={
@@ -98,111 +96,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
         ]
       }
     >
-      Option 1
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Storyshots QuestionsChoice Default 1`] = `
-<View
-  accessible={true}
-  isTVSelectable={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderColor": "#FAFAFA",
-          "borderRadius": 3,
-          "borderStyle": "solid",
-          "borderWidth": 1,
-        },
-        false,
-      ]
-    }
-    testID="answerChoice"
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontWeight": "bold",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          false,
-        ]
-      }
-    >
-      Option 1
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Storyshots QuestionsChoice Selected 1`] = `
-<View
-  accessible={true}
-  isTVSelectable={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "borderColor": "#FAFAFA",
-          "borderRadius": 3,
-          "borderStyle": "solid",
-          "borderWidth": 1,
-        },
-        Object {
-          "backgroundColor": "#00B0FF",
-        },
-      ]
-    }
-    testID="answerChoice"
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontWeight": "bold",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          Object {
-            "color": "#FFFFFF",
-          },
-        ]
-      }
-    >
-      Option 1
+      Option 2
     </Text>
   </View>
 </View>

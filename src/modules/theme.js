@@ -2,67 +2,44 @@
 
 import type {SpaceType} from '../types';
 
-type Theme = {|
-  colors: {
-    primary: {
-      default: string,
-      additional1: string,
-      additional2: string,
-      additional3: string,
-      additional4: string,
-    },
-    gray: {
-      extra: string,
-      light: string,
-      medium: string,
-      dark: string,
-    },
-    brand: {
-      yellow: string,
-      green: string,
-      gray: string,
-      orange: string,
-    },
-    negative: string,
-    positive: string,
-    white: string,
-    battle: string,
-    black: string,
+export type Colors = {
+  gray: {
+    extra: string,
+    light: string,
+    medium: string,
+    dark: string,
   },
+  negative: string,
+  positive: string,
+  white: string,
+  black: string,
+  battle: string,
+};
+
+export type Theme = {|
+  colors: Colors,
   spacing: {
     [SpaceType]: number,
   },
   radius: {
+    common: number,
     button: number,
   },
 |};
 
 const theme: Theme = {
   colors: {
-    primary: {
-      default: '#00B0FF',
-      additional1: '#B3E5FC',
-      additional2: '#0091EA',
-      additional3: '#0277BD',
-      additional4: '#01579B',
-    },
     gray: {
       extra: '#FAFAFA',
       light: '#ECEFF1',
       medium: '#90A4AE',
       dark: '#546E7A',
     },
-    brand: {
-      yellow: '#FFA000',
-      green: '#66BB6A',
-      gray: '#607D8B',
-      orange: '#FF7043',
-    },
     negative: '#F73F52',
     positive: '#3EC483',
     white: '#FFFFFF',
-    battle: '#FFE100',
     black: '#14171A',
+    battle: '#FFE100',
   },
   spacing: {
     tiny: 8,
@@ -71,6 +48,7 @@ const theme: Theme = {
     large: 48,
   },
   radius: {
+    common: 3,
     button: 24,
   },
 };

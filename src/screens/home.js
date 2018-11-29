@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
-import theme from '../modules/theme';
 
 type Props = ReactNavigation$ScreenProps;
 
@@ -15,7 +14,6 @@ class HomeScreen extends React.PureComponent<Props, void> {
     ...navigationOptions,
     headerStyle: {
       ...navigationOptions.headerStyle,
-      backgroundColor: theme.colors.negative,
       shadowColor: 'transparent',
       elevation: 0,
       borderBottomColor: 'transparent',

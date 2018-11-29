@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: 20,
     backgroundColor: '#f4fcff',
   },
 });

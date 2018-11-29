@@ -3,7 +3,6 @@
 import * as React from 'react';
 import {StyleSheet, ScrollView, View} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
-
 import theme from '../modules/theme';
 
 type Props = {|
