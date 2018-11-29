@@ -1,5 +1,7 @@
 // @flow strict
 
+import type {SpaceType} from '../types';
+
 type Theme = {|
   colors: {
     primary: {
@@ -28,10 +30,7 @@ type Theme = {|
     black: string,
   },
   spacing: {
-    tiny: number,
-    small: number,
-    base: number,
-    large: number,
+    [SpaceType]: number,
   },
   radius: {
     button: number,

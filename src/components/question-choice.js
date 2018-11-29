@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const AnswersChoice = ({children, selected = false, onPress}: Props) => (
+const QuestionChoice = ({children, selected = false, onPress}: Props) => (
   <TouchableOpacity onPress={onPress}>
     <View testID="answerChoice" style={[styles.container, selected && styles.selected]}>
       <Text style={[styles.text, selected && styles.selectedText]}>{children}</Text>
@@ -41,4 +41,4 @@ const AnswersChoice = ({children, selected = false, onPress}: Props) => (
   </TouchableOpacity>
 );
 
-export default AnswersChoice;
+export default QuestionChoice;

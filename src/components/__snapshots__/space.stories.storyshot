@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Space Base 1`] = `
+<View
+  style={
+    Object {
+      "height": 24,
+      "width": 24,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots Space Large 1`] = `
+<View
+  style={
+    Object {
+      "height": 48,
+      "width": 48,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots Space Small 1`] = `
+<View
+  style={
+    Object {
+      "height": 16,
+      "width": 16,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots Space Tiny 1`] = `
+<View
+  style={
+    Object {
+      "height": 8,
+      "width": 8,
+    }
+  }
+/>
+`;
