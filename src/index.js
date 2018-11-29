@@ -1,22 +1,20 @@
-// @flow
+// @flow strict
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import Home from './components/home';
+import Navigator from './navigator';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
-const view = () => (
+const App = () => (
   <View style={styles.container}>
-    <Home />
+    <Navigator />
   </View>
 );
 
-export default view;
+export default App;

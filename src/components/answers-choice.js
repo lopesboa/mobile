@@ -1,7 +1,8 @@
-// @flow
+// @flow strict
 
 import * as React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import theme from '../modules/theme';
 import Text from './text';
 
 type Props = {|
@@ -13,22 +14,22 @@ type Props = {|
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
-    color: '#14171a',
+    color: theme.colors.black,
     paddingVertical: 16,
     paddingHorizontal: 24,
   },
   selectedText: {
-    color: '#ffffff',
+    color: theme.colors.white,
   },
   container: {
     borderRadius: 3,
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.colors.white,
     borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: '#fafafa',
+    borderColor: theme.colors.gray.extra,
   },
   selected: {
-    backgroundColor: '#00b0ff',
+    backgroundColor: theme.colors.primary.default,
   },
 });
 

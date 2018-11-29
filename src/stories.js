@@ -3,4 +3,5 @@
 /* eslint-disable import/max-dependencies */
 require('./components/answers-choice.stories.js');
 require('./components/home.stories.js');
+require('./components/screen.stories.js');
 require('./components/text.stories.js');

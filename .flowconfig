@@ -71,5 +71,12 @@ module.file_ext=.js
 module.file_ext=.jsx
 module.file_ext=.json
 
+[strict]
+# nonstrict-import
+unclear-type
+unsafe-getters-setters
+untyped-import
+untyped-type-import
+
 [version]
 ^0.75.0

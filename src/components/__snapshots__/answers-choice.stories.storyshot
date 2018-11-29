@@ -20,8 +20,8 @@ exports[`Storyshots AnswersChoice Default 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#ffffff",
-          "borderColor": "#fafafa",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#FAFAFA",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
@@ -35,7 +35,7 @@ exports[`Storyshots AnswersChoice Default 1`] = `
       style={
         Array [
           Object {
-            "color": "#14171a",
+            "color": "#14171A",
             "fontWeight": "bold",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
@@ -70,14 +70,14 @@ exports[`Storyshots AnswersChoice Selected 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#ffffff",
-          "borderColor": "#fafafa",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#FAFAFA",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
         },
         Object {
-          "backgroundColor": "#00b0ff",
+          "backgroundColor": "#00B0FF",
         },
       ]
     }
@@ -87,13 +87,13 @@ exports[`Storyshots AnswersChoice Selected 1`] = `
       style={
         Array [
           Object {
-            "color": "#14171a",
+            "color": "#14171A",
             "fontWeight": "bold",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
           Object {
-            "color": "#ffffff",
+            "color": "#FFFFFF",
           },
         ]
       }
