@@ -8,24 +8,25 @@ Please follow this [step by step guide](.github/INSTALLATION.md).
 
 ## Development
 
-##### Prerequisite
-
-For Android, you may need to allow your emulator to connect to your packager:
-
-```
-adb reverse tcp:7007 tcp:7007
-```
-
 ##### Code signing
 
 For iOS debug builds, you need to use `yarn pull:certificate:ios`. If you need more informations, you can read the [Match guide](.github/FASTLANE.md#match).
 
 (facultative) For Android release builds (production mode), you need to use `yarn pull:certificate:android` command.
 
-##### First run
+##### First run using iOS
 
 ```console
-yarn start:[android|ios]
+yarn start:ios
+```
+
+##### First run using iOS
+
+For Android, you may need to allow your emulator to connect to your packager:
+
+```console
+adb reverse tcp:7007 tcp:7007
+yarn start:android
 ```
 
 ##### Daily usage

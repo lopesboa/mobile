@@ -1,5 +1,10 @@
 ## Required Tools
 
+* Install Watchman
+```
+brew install watchman
+```
+
 - [Android Studio (SDK Included) ](https://developer.android.com/studio/)
 
   Please refer to the specific [Android Section](#android-studio) to know more about.
@@ -20,7 +25,7 @@
 
   If your current version is `>= 10.1.0` your good to continue. Else, follow the instruction process [here](https://developer.apple.com/download/more/)
 
-- Xcode Command Line Tools
+* Xcode Command Line Tools
 
   ```bash
   xcode-select --install
@@ -31,28 +36,17 @@
   ```bash
   # Using RubyGems
   sudo gem install fastlane -NV
-
-  # Alternatively using Homebrew
-  brew cask install fastlane
   ```
-
-  If you've installed fastlane through `brew`, add this to your profile file (`bash_profile`, ...)
-
-  ```
-  export PATH="$HOME/.fastlane/bin:$PATH"
-  ```
-
+  If fastlane was successfully installed via gem, Go to the Cocoapod step. Otherwise follow [this](./ALTERNATIVE_FASTLANE_INSTALL.md).  
   To know more about Fastlane, please read [this article](./FASTLANE.md).
 
-- Cocoapod, the IOS package manager
+* Cocoapod, the IOS package manager
 
-  ```
+  ```bash
   # Using RubyGems
   sudo gem install cocoapods
-
-  # Alternatively using Homebrew
-  brew  install cocoapods
   ```
+  If cocoapod was successfully installed via gem, Go to the Detox step. Otherwise follow [this](ALTERNATIVE_COCOAPOD.md).
 
 - [Detox](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md), the e2e test runner
 
@@ -61,7 +55,6 @@
   brew tap facebook/fb
 
   brew install applesimutils
-  brew install fbsimctl --HEAD
   ```
 
 # Install the dependencies
@@ -101,11 +94,21 @@ After the application installation you will have to configure it.
    export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    export PATH=$PATH:$ANDROID_SDK_ROOT/tools
    export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+   
+   # To be used by Android emulator
+   export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
    ```
+   
+Before the next step, make reload your profile file to load the changes. 
 
-4. Add an android emulator.
+4. Close your Android studio, you will use it only to debug Android native code. 
+
+### Android Emulator
+
+1. Add an android emulator.
 
 Define the API (Android version) you want to used for your emulator (refer to the `minSdkVersion` in `android/build.gradle` to know the min version you can use):
+Add this to your profile file.
 
 ```
 export API_VERSION=19
@@ -123,5 +126,12 @@ And create the AVD (Android Virtual Device):
 echo no | avdmanager create avd --force --name "Nexus_5X_API_${API_VERSION}" --abi google_apis/x86 --package "system-images;android-${API_VERSION};google_apis;x86" --device "Nexus 5X"
 ```
 
-**Note**: Don't forget to add `<ANDROID_SDK_ROOT>/tools/bin` to your `PATH`.
+To test your emulator:
+```
+cd $ANDROID_SDK_ROOT/tools
+emulator -avd "Nexus_5X_API_19"
+```
+
 **Note**: You can use other emulator manager than AVD to manager your emulators, ie: `Genymotion`
+
+Go back to the main [README](../README.md)
