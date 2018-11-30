@@ -20,6 +20,9 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
+; Jest coverage folder
+./coverage
+
 [include]
 
 [libs]
