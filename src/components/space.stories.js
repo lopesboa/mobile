@@ -1,11 +1,30 @@
 // @flow
 
 import * as React from 'react';
+import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 import Space from './space';
 
+const wrapperStyle = {borderWidth: 1, alignSelf: 'center'};
+
 storiesOf('Space', module)
-  .add('Tiny', () => <Space type="tiny" />)
-  .add('Small', () => <Space type="small" />)
-  .add('Base', () => <Space type="base" />)
-  .add('Large', () => <Space type="large" />);
+  .add('Tiny', () => (
+    <View style={wrapperStyle}>
+      <Space type="tiny" />
+    </View>
+  ))
+  .add('Small', () => (
+    <View style={wrapperStyle}>
+      <Space type="small" />
+    </View>
+  ))
+  .add('Base', () => (
+    <View style={wrapperStyle}>
+      <Space type="base" />
+    </View>
+  ))
+  .add('Large', () => (
+    <View style={wrapperStyle}>
+      <Space type="large" />
+    </View>
+  ));

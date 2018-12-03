@@ -4,42 +4,78 @@ exports[`Storyshots Space Base 1`] = `
 <View
   style={
     Object {
-      "height": 24,
-      "width": 24,
+      "alignSelf": "center",
+      "borderWidth": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+</View>
 `;
 
 exports[`Storyshots Space Large 1`] = `
 <View
   style={
     Object {
-      "height": 48,
-      "width": 48,
+      "alignSelf": "center",
+      "borderWidth": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "height": 48,
+        "width": 48,
+      }
+    }
+  />
+</View>
 `;
 
 exports[`Storyshots Space Small 1`] = `
 <View
   style={
     Object {
-      "height": 16,
-      "width": 16,
+      "alignSelf": "center",
+      "borderWidth": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+</View>
 `;
 
 exports[`Storyshots Space Tiny 1`] = `
 <View
   style={
     Object {
-      "height": 8,
-      "width": 8,
+      "alignSelf": "center",
+      "borderWidth": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+</View>
 `;
