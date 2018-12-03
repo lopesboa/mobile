@@ -18,11 +18,13 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 0,
     borderRadius: theme.radius.button,
+    height: 54,
   },
   text: {
     color: theme.colors.white,
-    fontSize: 22,
+    fontSize: 18,
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   disabled: {
     backgroundColor: theme.colors.gray.light,

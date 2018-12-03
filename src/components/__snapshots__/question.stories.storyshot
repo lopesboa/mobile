@@ -1,0 +1,889 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Question QCM 1`] = `
+<View
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 48,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      What is the online Apple application store called?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#90A4AE",
+          "fontSize": 16,
+          "textAlign": "center",
+        }
+      }
+    >
+      Select the correct answers
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 48,
+        "width": 48,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <RCTScrollView
+        ItemSeparatorComponent={[Function]}
+        data={
+          Array [
+            Object {
+              "label": "M&S",
+              "value": "ref_1",
+            },
+            Object {
+              "label": "App Store",
+              "value": "ref_2",
+            },
+            Object {
+              "label": "iTunes",
+              "value": "ref_3",
+            },
+            Object {
+              "label": "PlayStore",
+              "value": "ref_4",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        testID="question-choices"
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  M&S
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  App Store
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  iTunes
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  PlayStore
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "borderRadius": 8,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "height": 44,
+            "justifyContent": "center",
+            "marginBottom": 10,
+          },
+          Array [
+            Object {
+              "borderRadius": 32,
+              "borderWidth": 0,
+              "height": 54,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+            },
+          ],
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "fontSize": 18,
+              "textAlign": "center",
+            },
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#90A4AE",
+              },
+            ],
+          ]
+        }
+      >
+        Validate
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Question QCM option selected 1`] = `
+<View
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 48,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      What is the online Apple application store called?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#90A4AE",
+          "fontSize": 16,
+          "textAlign": "center",
+        }
+      }
+    >
+      Select the correct answers
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 48,
+        "width": 48,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <RCTScrollView
+        ItemSeparatorComponent={[Function]}
+        data={
+          Array [
+            Object {
+              "label": "M&S",
+              "value": "ref_1",
+            },
+            Object {
+              "label": "App Store",
+              "value": "ref_2",
+            },
+            Object {
+              "label": "iTunes",
+              "selected": true,
+              "value": "ref_3",
+            },
+            Object {
+              "label": "PlayStore",
+              "value": "ref_4",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        testID="question-choices"
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  M&S
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  App Store
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    Object {
+                      "backgroundColor": "#00B0FF",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      Object {
+                        "color": "#FFFFFF",
+                      },
+                    ]
+                  }
+                >
+                  iTunes
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "paddingHorizontal": 24,
+                        "paddingVertical": 16,
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  PlayStore
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#00B0FF",
+          "borderRadius": 32,
+          "borderWidth": 0,
+          "flexDirection": "row",
+          "height": 54,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "fontSize": 18,
+              "textAlign": "center",
+            },
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              false,
+            ],
+          ]
+        }
+      >
+        Validate
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -6,6 +6,7 @@ require('./components/button.stories.js');
 require('./components/home.stories.js');
 require('./components/question-choice.stories.js');
 require('./components/question-choices.stories.js');
+require('./components/question.stories.js');
 require('./components/screen.stories.js');
 require('./components/space.stories.js');
 require('./components/text.stories.js');

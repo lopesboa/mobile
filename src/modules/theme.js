@@ -48,6 +48,7 @@ const theme: Theme = {
     small: 16,
     base: 24,
     large: 48,
+    xlarge: 64,
   },
   radius: {
     common: 3,

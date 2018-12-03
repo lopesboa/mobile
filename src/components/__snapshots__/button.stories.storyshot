@@ -18,7 +18,7 @@ exports[`Storyshots Button Default 1`] = `
       "borderRadius": 32,
       "borderWidth": 0,
       "flexDirection": "row",
-      "height": 44,
+      "height": 54,
       "justifyContent": "center",
       "marginBottom": 10,
       "opacity": 1,
@@ -37,7 +37,8 @@ exports[`Storyshots Button Default 1`] = `
         Array [
           Object {
             "color": "#FFFFFF",
-            "fontSize": 22,
+            "fontSize": 18,
+            "fontWeight": "bold",
             "textAlign": "center",
           },
           undefined,
@@ -68,6 +69,7 @@ exports[`Storyshots Button Disabled 1`] = `
         Object {
           "borderRadius": 32,
           "borderWidth": 0,
+          "height": 54,
         },
         Object {
           "backgroundColor": "#00B0FF",
@@ -91,7 +93,8 @@ exports[`Storyshots Button Disabled 1`] = `
         Array [
           Object {
             "color": "#FFFFFF",
-            "fontSize": 22,
+            "fontSize": 18,
+            "fontWeight": "bold",
             "textAlign": "center",
           },
           Object {
@@ -124,6 +127,7 @@ exports[`Storyshots Button Loading 1`] = `
         Object {
           "borderRadius": 32,
           "borderWidth": 0,
+          "height": 54,
         },
         Object {
           "backgroundColor": "#00B0FF",

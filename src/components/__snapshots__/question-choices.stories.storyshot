@@ -87,7 +87,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               Array [
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderColor": "#FAFAFA",
+                  "borderColor": "#CFD8DC",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
@@ -101,6 +101,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 Array [
                   Object {
                     "color": "#14171A",
+                    "fontSize": 18,
                     "fontWeight": "bold",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
@@ -146,7 +147,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               Array [
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderColor": "#FAFAFA",
+                  "borderColor": "#CFD8DC",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
@@ -160,6 +161,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 Array [
                   Object {
                     "color": "#14171A",
+                    "fontSize": 18,
                     "fontWeight": "bold",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
@@ -205,7 +207,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               Array [
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderColor": "#FAFAFA",
+                  "borderColor": "#CFD8DC",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
@@ -221,6 +223,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 Array [
                   Object {
                     "color": "#14171A",
+                    "fontSize": 18,
                     "fontWeight": "bold",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
@@ -268,7 +271,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               Array [
                 Object {
                   "backgroundColor": "#FFFFFF",
-                  "borderColor": "#FAFAFA",
+                  "borderColor": "#CFD8DC",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
@@ -282,6 +285,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 Array [
                   Object {
                     "color": "#14171A",
+                    "fontSize": 18,
                     "fontWeight": "bold",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,

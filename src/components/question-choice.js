@@ -15,6 +15,7 @@ type Props = {|
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
+    fontSize: 18,
     color: theme.colors.black,
     paddingVertical: theme.spacing.small,
     paddingHorizontal: theme.spacing.base,
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 1,
     backgroundColor: theme.colors.white,
-    borderColor: theme.colors.gray.extra,
+    borderColor: theme.colors.gray.lightMedium,
     borderRadius: theme.radius.common,
   },
   textSelected: {

@@ -8,4 +8,4 @@ export type QuestionChoiceItem = {|
 
 export type QuestionType = 'qcm';
 
-export type SpaceType = 'tiny' | 'small' | 'base' | 'large';
+export type SpaceType = 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
