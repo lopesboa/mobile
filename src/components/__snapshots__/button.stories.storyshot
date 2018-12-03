@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Default 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "backgroundColor": "#00B0FF",
+      "borderRadius": 32,
+      "borderWidth": 0,
+      "flexDirection": "row",
+      "height": 44,
+      "justifyContent": "center",
+      "marginBottom": 10,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+          "fontSize": 18,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 22,
+            "textAlign": "center",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Here we go!
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Button Disabled 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": 44,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      Array [
+        Object {
+          "borderRadius": 32,
+          "borderWidth": 0,
+        },
+        Object {
+          "backgroundColor": "#00B0FF",
+        },
+      ],
+      Object {
+        "backgroundColor": "#ECEFF1",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+          "fontSize": 18,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 22,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#90A4AE",
+          },
+        ],
+      ]
+    }
+  >
+    Here we go!
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Button Loading 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": 44,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      Array [
+        Object {
+          "borderRadius": 32,
+          "borderWidth": 0,
+        },
+        Object {
+          "backgroundColor": "#00B0FF",
+        },
+      ],
+      Object {
+        "backgroundColor": "#ECEFF1",
+      },
+    ]
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#90A4AE"
+    hidesWhenStopped={true}
+    size="small"
+    style={
+      Object {
+        "alignSelf": "center",
+      }
+    }
+  />
+</View>
+`;

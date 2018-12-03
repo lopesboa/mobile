@@ -6,6 +6,7 @@ export type Colors = {
   gray: {
     extra: string,
     light: string,
+    lightMedium: string,
     medium: string,
     dark: string,
   },
@@ -32,6 +33,7 @@ const theme: Theme = {
     gray: {
       extra: '#FAFAFA',
       light: '#ECEFF1',
+      lightMedium: '#CFD8DC',
       medium: '#90A4AE',
       dark: '#546E7A',
     },
@@ -49,7 +51,7 @@ const theme: Theme = {
   },
   radius: {
     common: 3,
-    button: 24,
+    button: 32,
   },
 };
 

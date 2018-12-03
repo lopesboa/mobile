@@ -99,7 +99,7 @@ exports[`Storyshots BrandThemeProvider Radius 1`] = `
 <View
   style={
     Object {
-      "borderRadius": 24,
+      "borderRadius": 32,
       "borderWidth": 1,
       "padding": 8,
     }
