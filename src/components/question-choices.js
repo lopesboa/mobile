@@ -19,8 +19,12 @@ class QuestionChoices extends React.PureComponent<Props> {
   handlePress = (item: QuestionChoiceItem) => () => this.props.onItemPress(item);
 
   // eslint-disable-next-line react/no-unused-prop-types
-  renderItem = ({item}: {item: QuestionChoiceItem}) => (
-    <QuestionChoice onPress={this.handlePress(item)} selected={item.selected}>
+  renderItem = ({item, index}: {item: QuestionChoiceItem, index: number}) => (
+    <QuestionChoice
+      onPress={this.handlePress(item)}
+      isSelected={item.selected}
+      testID={`question-choice-${index + 1}`}
+    >
       {item.label}
     </QuestionChoice>
   );
@@ -37,8 +41,8 @@ class QuestionChoices extends React.PureComponent<Props> {
             renderItem={this.renderItem}
             data={this.props.items}
             ItemSeparatorComponent={this.renderSpace}
-            testID="question-choices"
             keyExtractor={this.getKeyExtractor}
+            testID="question-choices"
           />
         )}
       </TouchableOpacity>

@@ -4,10 +4,10 @@ import {createBottomTabNavigator, createAppContainer, TabBarBottom} from 'react-
 import type {NavigationRouteConfigMap, NavigationScreenConfig} from 'react-navigation';
 
 import theme from './modules/theme';
-import HomeScreen from './screens/home';
+import SlideScreen from './screens/slide';
 
 const tabs: NavigationRouteConfigMap = {
-  HomeScreen,
+  SlideScreen,
 };
 
 const navigationOptions: NavigationScreenConfig<*> = {

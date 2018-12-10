@@ -9,6 +9,7 @@ type Props = {|
   style?: GenericStyleProp,
   noScroll?: boolean,
   children: React.Node,
+  testID?: string,
 |};
 
 const styles = StyleSheet.create({
@@ -21,12 +22,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const Screen = ({style, noScroll, children}: Props) => (
+const Screen = ({style, noScroll, children, testID}: Props) => (
   <SafeAreaView style={[styles.screen, style]}>
     {noScroll ? (
-      <View style={styles.screenScroll}>{children}</View>
+      <View style={styles.screenScroll} testID={testID}>
+        {children}
+      </View>
     ) : (
-      <ScrollView contentContainerStyle={styles.screenScroll}>{children}</ScrollView>
+      <ScrollView
+        contentContainerStyle={styles.screenScroll}
+        showsHorizontalScrollIndicator={false}
+        testID={testID}
+      >
+        {children}
+      </ScrollView>
     )}
   </SafeAreaView>
 );

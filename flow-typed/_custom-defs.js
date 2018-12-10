@@ -1,19 +1,15 @@
 // @flow strict
 
+import type {SyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 import type {NavigationScreenConfig} from 'react-navigation';
+import type {____Styles_Internal} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
-// This is a bastardization of the true GenericStyleProp type located in
-// react-native/Libraries/StyleSheet/StyleSheetTypes. We unfortunately can't
-// import that here, and it's too lengthy (and consequently too brittle) to
-// copy-paste here either.
-declare type GenericStyleProp =
-  | null
-  | void
-  | number
-  | false
-  | ''
-  | $ReadOnlyArray<GenericStyleProp>
-  | { [name: string]: any };
+declare type File = number;
+
+// React native types
+
+declare type GenericStyleProp = ____Styles_Internal;
+declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 
 // React navigation props, easier to use
 

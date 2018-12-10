@@ -5,4 +5,4 @@ import {storiesOf} from '@storybook/react-native';
 
 import Text from './text';
 
-storiesOf('Text', module).add('Default', () => <Text>foo</Text>);
+storiesOf('Text', module).add('Default', () => <Text testID="basic-text">foo</Text>);

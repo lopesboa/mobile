@@ -2,68 +2,103 @@
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
-import type {QuestionChoiceItem, QuestionType} from '../types';
+import type {QuestionChoiceItem, QuestionType, Media} from '../types';
 import theme from '../modules/theme';
+import Image from '../containers/image-scalable';
 import Text from './text';
 import QuestionChoices from './question-choices';
 import Space from './space';
 import Button from './button';
 
-type Props = {|
+export type Props = {|
   type: QuestionType,
-  question: string,
+  header: string,
   explanation: string,
   choices: Array<QuestionChoiceItem>,
+  media?: Media,
   onChoicePress: (item: QuestionChoiceItem) => void,
   onButtonPress: () => void,
 |};
 
+export type State = {|
+  imageWidth?: number,
+|};
+
 const styles = StyleSheet.create({
+  container: {
+    paddingVertical: theme.spacing.small,
+  },
   choicesContainer: {
     paddingHorizontal: theme.spacing.small,
   },
   explanation: {
     color: theme.colors.gray.medium,
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'center',
   },
   explanationContainer: {
-    paddingHorizontal: theme.spacing.xlarge,
+    paddingHorizontal: theme.spacing.large,
   },
-  question: {
+  header: {
     color: theme.colors.black,
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.large,
+    paddingHorizontal: theme.spacing.xlarge,
+  },
+  image: {
+    alignSelf: 'center',
   },
   validateButton: {
     paddingHorizontal: theme.spacing.xlarge,
   },
 });
 
-const Question = ({type, question, explanation, choices, onChoicePress, onButtonPress}: Props) => {
+const Question = ({
+  type,
+  header,
+  explanation,
+  choices,
+  media,
+  onChoicePress,
+  onButtonPress,
+}: Props) => {
   const oneChoiceSelected = choices.some(({selected = false}) => selected);
 
   return (
-    <View testID="question">
+    <View testID="question" style={styles.container}>
       <View style={styles.questionContainer}>
-        <Text style={styles.question}>{question}</Text>
+        <Text style={styles.header} testID="question-header">
+          {header}
+        </Text>
       </View>
       <Space type="small" />
       <View style={styles.explanationContainer}>
-        <Text style={styles.explanation}>{explanation}</Text>
+        <Text style={styles.explanation} testID="explanation">
+          {explanation}
+        </Text>
       </View>
-      <Space type="large" />
+      <Space type="base" />
+      {media && (
+        <View>
+          <Image
+            source={media.source}
+            maxHeight={200}
+            testID="question-image"
+            style={styles.image}
+          />
+          <Space type="base" />
+        </View>
+      )}
       <View style={styles.choicesContainer}>
         <QuestionChoices type={type} items={choices} onItemPress={onChoicePress} />
       </View>
       <Space type="base" />
       <Space type="tiny" />
       <View style={styles.validateButton}>
-        <Button onPress={onButtonPress} isDisabled={!oneChoiceSelected}>
+        <Button onPress={onButtonPress} isDisabled={!oneChoiceSelected} testID="button-validate">
           Validate
         </Button>
       </View>

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Image Default 1`] = `
+<Image
+  resizeMode="contain"
+  source={1}
+  style={
+    Array [
+      Object {
+        "height": 100,
+        "width": 100,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots Image Max height 1`] = `
+<Image
+  resizeMode="contain"
+  source={1}
+  style={
+    Array [
+      Object {
+        "height": 100,
+        "width": 100,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots Image Width 1`] = `
+<Image
+  resizeMode="contain"
+  source={1}
+  style={
+    Array [
+      Object {
+        "height": 200,
+        "width": 200,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

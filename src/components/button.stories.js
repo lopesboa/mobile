@@ -8,14 +8,18 @@ import Button from './button';
 const fakeOnPress = handleFakePress('Button pressed');
 
 storiesOf('Button', module)
-  .add('Default', () => <Button onPress={fakeOnPress}>Here we go!</Button>)
+  .add('Default', () => (
+    <Button onPress={fakeOnPress} testID="fake-button">
+      Here we go!
+    </Button>
+  ))
   .add('Disabled', () => (
-    <Button onPress={fakeOnPress} isDisabled>
+    <Button onPress={fakeOnPress} isDisabled testID="fake-button">
       Here we go!
     </Button>
   ))
   .add('Loading', () => (
-    <Button onPress={fakeOnPress} isLoading>
+    <Button onPress={fakeOnPress} isLoading testID="fake-button">
       Here we go!
     </Button>
   ));

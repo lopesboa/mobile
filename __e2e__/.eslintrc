@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "device": true,
+    "element": true,
+    "by": true,
+    "waitFor": true,
+    "weExpect": true,
+    "jasmine": true
+  },
+  "rules": {
+    "flowtype/require-return-type": "false",
+    "flowtype-errors/show-errors": "false"
+  }
+}

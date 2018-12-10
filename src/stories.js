@@ -3,10 +3,11 @@
 /* eslint-disable import/max-dependencies */
 require('./components/brand-theme-provider.stories.js');
 require('./components/button.stories.js');
-require('./components/home.stories.js');
+require('./components/image.stories.js');
 require('./components/question-choice.stories.js');
 require('./components/question-choices.stories.js');
 require('./components/question.stories.js');
 require('./components/screen.stories.js');
+require('./components/slide.stories.js');
 require('./components/space.stories.js');
 require('./components/text.stories.js');

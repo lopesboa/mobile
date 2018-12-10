@@ -8,7 +8,6 @@
     "plugin:@coorpacademy/coorpacademy/core",
     "plugin:@coorpacademy/coorpacademy/flowtype",
     "plugin:@coorpacademy/coorpacademy/react",
-    "plugin:@coorpacademy/coorpacademy/mocha",
     "plugin:@coorpacademy/coorpacademy/prettier"
   ],
   "plugins": ["@coorpacademy/coorpacademy"],
@@ -20,7 +19,6 @@
     }
   },
   "rules": {
-    "mocha/no-mocha-arrows": "off",
     "import/no-extraneous-dependencies": "off",
     "flowtype/no-mutable-array": "off",
     "flowtype/require-exact-type": "off",

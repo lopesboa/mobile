@@ -32,7 +32,7 @@
     "test:end2end:android:release": "npm run test:end2end:android:release:build && npm run test:end2end:android:release:test",
     "test:end2end:android:release:build": "detox build --configuration=android.emulator.release",
     "test:end2end:android:release:test": "detox test --configuration=android.emulator.release",
-    "test:unit": "jest src",
+    "test:unit": "jest src -c jest.config.unit.js",
     "test": "npm run lint && npm run flow && npm run test:unit && npm run test:end2end:ios:release",
     "storybook": "REACT_NATIVE_ENVIRONMENT_STORYBOOK=1 npm run start:clean",
     "storybook:generate-stories": "babel-node scripts/generate-stories.js",
@@ -75,7 +75,6 @@
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "metro-react-native-babel-preset": "^0.49.0",
-    "mocha": "^5.2.0",
     "opn-cli": "^4.0.0",
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
@@ -83,6 +82,8 @@
     "shelljs": "^0.8.2"
   },
   "detox": {
+    "test-runner": "jest",
+    "runner-config": "jest.config.e2e.js",
     "configurations": {
       "ios.simulator.debug": {
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Coorpacademy.app",

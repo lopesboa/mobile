@@ -21,6 +21,8 @@ exports[`Storyshots Screen Default 1`] = `
         "flexGrow": 1,
       }
     }
+    showsHorizontalScrollIndicator={false}
+    testID="fake-screen"
   >
     <View>
       <Text>
@@ -52,6 +54,7 @@ exports[`Storyshots Screen Not scrollable 1`] = `
         "flexGrow": 1,
       }
     }
+    testID="fake-screen"
   >
     <Text>
       Foo bar baz
@@ -81,6 +84,8 @@ exports[`Storyshots Screen With custom style 1`] = `
         "flexGrow": 1,
       }
     }
+    showsHorizontalScrollIndicator={false}
+    testID="fake-screen"
   >
     <View>
       <Text>

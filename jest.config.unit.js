@@ -12,7 +12,6 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper)(-.*)?)',
   ],
-  testPathIgnorePatterns: ['node_modules', '/__fixtures__/', '__mocks__'],
   setupFiles: ['./jest-setup.js'],
   collectCoverage: true,
   coverageReporters: ['lcov', 'text', 'html'],

@@ -3,6 +3,7 @@
 import type {SpaceType} from '../types';
 
 export type Colors = {
+  border: string,
   gray: {
     extra: string,
     light: string,
@@ -30,6 +31,7 @@ export type Theme = {|
 
 const theme: Theme = {
   colors: {
+    border: 'rgba(0, 0, 0, 0.1)',
     gray: {
       extra: '#FAFAFA',
       light: '#ECEFF1',

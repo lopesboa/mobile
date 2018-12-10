@@ -14,17 +14,17 @@ const fakeStyle = StyleSheet.create({
 
 storiesOf('Screen', module)
   .add('Default', () => (
-    <Screen>
+    <Screen testID="fake-screen">
       <Text>Foo bar baz</Text>
     </Screen>
   ))
   .add('Not scrollable', () => (
-    <Screen noScroll>
+    <Screen noScroll testID="fake-screen">
       <Text>Foo bar baz</Text>
     </Screen>
   ))
   .add('With custom style', () => (
-    <Screen style={fakeStyle.screen}>
+    <Screen style={fakeStyle.screen} testID="fake-screen">
       <Text>Foo bar baz</Text>
     </Screen>
   ));

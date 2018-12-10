@@ -2,33 +2,35 @@
 
 import * as React from 'react';
 
-import type {Theme, Colors} from '../modules/theme';
-import theme from '../modules/theme';
+type BrandTheme = {|
+  colors: {
+    primary: string,
+  },
+|};
 
 type Props = {|
   children: React.Node,
 |};
 
-type BrandTheme = $Exact<
-  Theme & {|
-    colors: Colors & {
-      primary: string,
-    },
-  |},
->;
+type State = BrandTheme;
 
-const brandTheme: BrandTheme = {
-  ...theme,
+const initialState: State = {
   colors: {
-    ...theme.colors,
     primary: '#00B0FF',
   },
 };
 
-export const BrandThemeContext = React.createContext(brandTheme);
+export const BrandThemeContext = React.createContext(initialState);
 
-const BrandThemeProvider = (props: Props) => (
-  <BrandThemeContext.Provider value={brandTheme}>{props.children}</BrandThemeContext.Provider>
-);
+class BrandThemeProvider extends React.PureComponent<Props, State> {
+  props: Props;
+
+  state: State = initialState;
+
+  render() {
+    const {children} = this.props;
+    return <BrandThemeContext.Provider value={this.state}>{children}</BrandThemeContext.Provider>;
+  }
+}
 
 export default BrandThemeProvider;

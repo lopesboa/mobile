@@ -3,53 +3,55 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import type {QuestionChoiceItem} from '../types';
+import {QUESTION_TYPE} from '../const';
 import {handleFakePress} from '../utils/tests';
+import choices from '../__fixtures__/question-choices';
+import media from '../__fixtures__/media';
 import Question from './question';
 
-const choices: Array<QuestionChoiceItem> = [
-  {
-    label: 'M&S',
-    value: 'ref_1',
-  },
-  {
-    label: 'App Store',
-    value: 'ref_2',
-  },
-  {
-    label: 'iTunes',
-    value: 'ref_3',
-  },
-  {
-    label: 'PlayStore',
-    value: 'ref_4',
-  },
-];
-
 // eslint-disable-next-line no-console
-const fakeOnChoicePress = (item: QuestionChoiceItem) => console.log('Clicked', item);
+const fakeOnChoicePress = (item: QuestionChoiceItem) => console.log('Pressed', item);
 const fakeOnButtonPress = handleFakePress('Button pressed');
 
 storiesOf('Question', module)
   .add('QCM', () => (
     <Question
-      type="qcm"
-      question="What is the online Apple application store called?"
+      type={QUESTION_TYPE.QCM}
+      header="What is the online Apple application store called?"
       explanation="Select the correct answers"
       choices={choices}
       onChoicePress={fakeOnChoicePress}
       onButtonPress={fakeOnButtonPress}
     />
   ))
-  .add('QCM option selected', () => {
-    choices[2].selected = true;
+  .add('Option selected', () => {
+    const choicesWithSelection = choices.map(
+      choice =>
+        (choice.value === 'ref_2' && {
+          ...choice,
+          selected: true,
+        }) ||
+        choice,
+    );
     return (
       <Question
-        type="qcm"
-        question="What is the online Apple application store called?"
+        type={QUESTION_TYPE.QCM}
+        header="What is the online Apple application store called?"
         explanation="Select the correct answers"
-        choices={choices}
+        choices={choicesWithSelection}
         onChoicePress={fakeOnChoicePress}
         onButtonPress={fakeOnButtonPress}
       />
     );
-  });
+  })
+  .add('With image', () => (
+    <Question
+      type={QUESTION_TYPE.QCM}
+      header="What is the online Apple application store called?"
+      explanation="Select the correct answers"
+      choices={choices}
+      media={media}
+      onChoicePress={fakeOnChoicePress}
+      onButtonPress={fakeOnButtonPress}
+    />
+  ));

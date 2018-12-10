@@ -95,7 +95,7 @@ type DetoxElementType = {
   clearText(): void,
   scroll(): void,
   scrollTo(): void,
-  swipe(): void,
+  swipe(directionTypes, speed: speedTypes, percentage?: number): void,
 };
 declare function element(DetoxElementQueryType): DetoxElementType;
 export type DetoxExpectFunctionType = {

@@ -7,15 +7,16 @@ import Text from './text';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
-  selected?: boolean,
+  isSelected?: boolean,
   onPress: () => void,
   children: string,
+  testID?: string,
 |};
 
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 17,
     color: theme.colors.black,
     paddingVertical: theme.spacing.small,
     paddingHorizontal: theme.spacing.base,
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 1,
     backgroundColor: theme.colors.white,
-    borderColor: theme.colors.gray.lightMedium,
+    borderColor: theme.colors.border,
     borderRadius: theme.radius.common,
   },
   textSelected: {
@@ -32,15 +33,22 @@ const styles = StyleSheet.create({
   },
 });
 
-const QuestionChoice = ({children, selected = false, onPress}: Props) => (
+const QuestionChoice = ({children, isSelected = false, onPress, testID: prefixTestID}: Props) => (
   <TouchableOpacity onPress={onPress}>
     <BrandThemeContext.Consumer>
       {brandTheme => {
-        const selectedStyle = {backgroundColor: brandTheme.colors.primary};
+        const selectedStyle = {
+          backgroundColor: brandTheme.colors.primary,
+          borderColor: brandTheme.colors.primary,
+        };
+        const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
 
         return (
-          <View style={[styles.container, selected && selectedStyle]}>
-            <Text style={[styles.text, selected && styles.textSelected]}>{children}</Text>
+          <View
+            style={[styles.container, isSelected && selectedStyle]}
+            testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
+          >
+            <Text style={[styles.text, isSelected && styles.textSelected]}>{children}</Text>
           </View>
         );
       }}
