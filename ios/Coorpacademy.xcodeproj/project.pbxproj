@@ -1323,6 +1323,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.coorpacademy.app";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1350,6 +1351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

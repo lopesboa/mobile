@@ -1,0 +1,3 @@
+<resources>
+    <bool name="portrait_only">true</bool>
+</resources>
