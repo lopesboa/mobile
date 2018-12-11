@@ -4,19 +4,19 @@
 
 export type Dimensions = {|
   width: number,
-  height: number,
+  height: number
 |};
 
 export const getImageDimensions = (
   originalWidth: number,
   originalHeight: number,
   width?: number,
-  maxHeight?: number,
+  maxHeight?: number
 ): Dimensions => {
   if (!width) {
     return {
       width: originalWidth,
-      height: originalHeight,
+      height: originalHeight
     };
   }
 
@@ -30,6 +30,6 @@ export const getImageDimensions = (
 
   return {
     width: calculatedWidth,
-    height: calculatedHeight,
+    height: calculatedHeight
   };
 };

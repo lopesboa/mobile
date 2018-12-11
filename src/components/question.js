@@ -17,43 +17,43 @@ export type Props = {|
   choices: Array<QuestionChoiceItem>,
   media?: Media,
   onChoicePress: (item: QuestionChoiceItem) => void,
-  onButtonPress: () => void,
+  onButtonPress: () => void
 |};
 
 export type State = {|
-  imageWidth?: number,
+  imageWidth?: number
 |};
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.small,
+    paddingVertical: theme.spacing.small
   },
   choicesContainer: {
-    paddingHorizontal: theme.spacing.small,
+    paddingHorizontal: theme.spacing.small
   },
   explanation: {
     color: theme.colors.gray.medium,
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   explanationContainer: {
-    paddingHorizontal: theme.spacing.large,
+    paddingHorizontal: theme.spacing.large
   },
   header: {
     color: theme.colors.black,
     textAlign: 'center',
     fontSize: 17,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.xlarge,
+    paddingHorizontal: theme.spacing.xlarge
   },
   image: {
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
   validateButton: {
-    paddingHorizontal: theme.spacing.xlarge,
-  },
+    paddingHorizontal: theme.spacing.xlarge
+  }
 });
 
 const Question = ({
@@ -63,7 +63,7 @@ const Question = ({
   choices,
   media,
   onChoicePress,
-  onButtonPress,
+  onButtonPress
 }: Props) => {
   const oneChoiceSelected = choices.some(({selected = false}) => selected);
 

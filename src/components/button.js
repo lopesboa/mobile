@@ -11,7 +11,7 @@ type PropsType = {|
   isDisabled?: boolean,
   isLoading?: boolean,
   children: string,
-  testID?: string,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -19,20 +19,20 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderRadius: theme.radius.button,
     marginBottom: 0,
-    height: 54,
+    height: 54
   },
   text: {
     color: theme.colors.white,
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   disabled: {
-    backgroundColor: theme.colors.gray.light,
+    backgroundColor: theme.colors.gray.light
   },
   textDisabled: {
-    color: theme.colors.gray.medium,
-  },
+    color: theme.colors.gray.medium
+  }
 });
 
 const Button = ({onPress, isLoading, isDisabled, testID: prefixTestID, children}: PropsType) => (

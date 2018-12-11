@@ -5,22 +5,22 @@ import type {QuestionType, SpaceType, MediaType} from './types';
 
 type QuestionTypeKey = 'QCM';
 export const QUESTION_TYPE: {
-  [QuestionTypeKey]: QuestionType,
+  [QuestionTypeKey]: QuestionType
 } = {
-  QCM: 'qcm',
+  QCM: 'qcm'
 };
 
 export const SPACE: {
-  [string]: SpaceType,
+  [string]: SpaceType
 } = {
   TINY: 'tiny',
   SMALL: 'small',
   BASE: 'base',
-  LARGE: 'large',
+  LARGE: 'large'
 };
 
 export const MEDIA_TYPE: {
-  [string]: MediaType,
+  [string]: MediaType
 } = {
-  IMAGE: 'image',
+  IMAGE: 'image'
 };

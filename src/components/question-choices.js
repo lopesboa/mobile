@@ -10,7 +10,7 @@ import Space from './space';
 type Props = {|
   type: QuestionType,
   items: Array<QuestionChoiceItem>,
-  onItemPress: (item: QuestionChoiceItem) => void,
+  onItemPress: (item: QuestionChoiceItem) => void
 |};
 
 class QuestionChoices extends React.PureComponent<Props> {

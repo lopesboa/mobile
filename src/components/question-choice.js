@@ -10,7 +10,7 @@ type Props = {|
   isSelected?: boolean,
   onPress: () => void,
   children: string,
-  testID?: string,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: theme.colors.black,
     paddingVertical: theme.spacing.small,
-    paddingHorizontal: theme.spacing.base,
+    paddingHorizontal: theme.spacing.base
   },
   container: {
     borderStyle: 'solid',
     borderWidth: 1,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.border,
-    borderRadius: theme.radius.common,
+    borderRadius: theme.radius.common
   },
   textSelected: {
-    color: theme.colors.white,
-  },
+    color: theme.colors.white
+  }
 });
 
 const QuestionChoice = ({children, isSelected = false, onPress, testID: prefixTestID}: Props) => (
@@ -39,7 +39,7 @@ const QuestionChoice = ({children, isSelected = false, onPress, testID: prefixTe
       {brandTheme => {
         const selectedStyle = {
           backgroundColor: brandTheme.colors.primary,
-          borderColor: brandTheme.colors.primary,
+          borderColor: brandTheme.colors.primary
         };
         const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
 

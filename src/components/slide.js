@@ -6,14 +6,14 @@ import Question from './question';
 import type {Props as QuestionProps} from './question';
 
 export type Props = {|
-  question: QuestionProps,
+  question: QuestionProps
 |};
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    flex: 1,
-  },
+    flex: 1
+  }
 });
 
 const Slide = (props: Props) => {

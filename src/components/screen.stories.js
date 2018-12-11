@@ -8,8 +8,8 @@ import Screen from './screen';
 
 const fakeStyle = StyleSheet.create({
   screen: {
-    backgroundColor: 'red',
-  },
+    backgroundColor: 'red'
+  }
 });
 
 storiesOf('Screen', module)

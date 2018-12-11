@@ -4,24 +4,24 @@ import * as React from 'react';
 import {View, Text} from 'react-native';
 
 type PropsType = {
-  showApp: () => void,
+  showApp: () => void
 };
 
 const styles = {
   wrapper: {
     flex: 1,
     padding: 24,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   header: {
     fontSize: 18,
-    marginBottom: 18,
+    marginBottom: 18
   },
   content: {
     fontSize: 12,
     marginBottom: 10,
-    lineHeight: 18,
-  },
+    lineHeight: 18
+  }
 };
 
 export default class Welcome extends React.Component<PropsType> {

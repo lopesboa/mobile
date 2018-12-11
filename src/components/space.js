@@ -7,26 +7,26 @@ import {SPACE} from '../const';
 import theme from '../modules/theme';
 
 type Props = {|
-  type?: SpaceType,
+  type?: SpaceType
 |};
 
 const styles = StyleSheet.create({
   tiny: {
     width: theme.spacing.tiny,
-    height: theme.spacing.tiny,
+    height: theme.spacing.tiny
   },
   small: {
     width: theme.spacing.small,
-    height: theme.spacing.small,
+    height: theme.spacing.small
   },
   base: {
     width: theme.spacing.base,
-    height: theme.spacing.base,
+    height: theme.spacing.base
   },
   large: {
     width: theme.spacing.large,
-    height: theme.spacing.large,
-  },
+    height: theme.spacing.large
+  }
 });
 
 const Space = ({type}: Props) => {

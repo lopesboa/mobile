@@ -7,22 +7,22 @@ import theme from './modules/theme';
 import SlideScreen from './screens/slide';
 
 const tabs: NavigationRouteConfigMap = {
-  SlideScreen,
+  SlideScreen
 };
 
 const navigationOptions: NavigationScreenConfig<*> = {
   headerBackTitle: null,
   headerTintColor: theme.colors.black,
   headerTitleStyle: {
-    width: 250,
+    width: 250
   },
   headerStyle: {
     backgroundColor: theme.colors.gray.extra,
     shadowColor: 'transparent',
     elevation: 0,
     borderBottomColor: 'transparent',
-    borderBottomWidth: 0,
-  },
+    borderBottomWidth: 0
+  }
 };
 
 const tabNavigator = createBottomTabNavigator(tabs, {
@@ -32,10 +32,10 @@ const tabNavigator = createBottomTabNavigator(tabs, {
       // @todo: will be removed when we'll need tabs to be displayed
       height: 0,
       borderTopColor: 'transparent',
-      backgroundColor: 'transparent',
-    },
+      backgroundColor: 'transparent'
+    }
   },
-  tabBarComponent: TabBarBottom,
+  tabBarComponent: TabBarBottom
 });
 
 export default createAppContainer(tabNavigator);

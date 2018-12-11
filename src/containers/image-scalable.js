@@ -9,7 +9,7 @@ import type {Props as ImageProps} from '../components/image';
 type Props = ImageProps;
 
 type State = {|
-  width?: number,
+  width?: number
 |};
 
 class ImageScalable extends React.PureComponent<Props, State> {
@@ -19,7 +19,7 @@ class ImageScalable extends React.PureComponent<Props, State> {
 
   handleLayout = ({nativeEvent}: LayoutEvent) => {
     this.setState({
-      width: nativeEvent.layout.width,
+      width: nativeEvent.layout.width
     });
   };
 

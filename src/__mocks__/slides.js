@@ -12,9 +12,9 @@ export type MockSlide = {|
     explanation: string,
     choices: Array<QuestionChoiceItem>,
     media?: Media,
-    answer: Array<string>,
+    answer: Array<string>
   },
-  isCorrect?: boolean,
+  isCorrect?: boolean
 |};
 
 const slide: MockSlide = {
@@ -27,16 +27,16 @@ const slide: MockSlide = {
       {label: 'Option 1', value: 'ref_1'},
       {label: 'Option 2', value: 'ref_2'},
       {label: 'Option 3', value: 'ref_3'},
-      {label: 'Option 4', value: 'ref_4'},
+      {label: 'Option 4', value: 'ref_4'}
     ],
-    answer: ['ref_2'],
-  },
+    answer: ['ref_2']
+  }
 };
 
 const slides: Array<MockSlide> = [
   {...slide, ref: 'slide_1'},
   {...slide, ref: 'slide_2', question: {...slide.question, media}},
-  {...slide, ref: 'slide_3'},
+  {...slide, ref: 'slide_3'}
 ];
 
 export default slides;

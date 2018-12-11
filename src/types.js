@@ -3,7 +3,7 @@
 export type QuestionChoiceItem = {|
   selected?: boolean,
   label: string,
-  value: string,
+  value: string
 |};
 
 export type QuestionType = 'qcm';
@@ -14,5 +14,5 @@ export type MediaType = 'image';
 
 export type Media = {|
   type: MediaType,
-  source: File,
+  source: File
 |};

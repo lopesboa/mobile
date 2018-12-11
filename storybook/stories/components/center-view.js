@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: theme.colors.white,
-  },
+    backgroundColor: theme.colors.white
+  }
 });
 
 const CenterView = (story: () => void) => <View style={styles.main}>{story()}</View>;

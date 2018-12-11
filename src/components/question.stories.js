@@ -29,9 +29,9 @@ storiesOf('Question', module)
       choice =>
         (choice.value === 'ref_2' && {
           ...choice,
-          selected: true,
+          selected: true
         }) ||
-        choice,
+        choice
     );
     return (
       <Question

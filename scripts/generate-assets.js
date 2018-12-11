@@ -27,22 +27,22 @@ const ANDROID_RES_PATH = './android/app/src/main/res';
 
 const generateAndroidDockIcon = (
   drawableName: AndroidDrawableType,
-  isRounded?: boolean = false,
+  isRounded?: boolean = false
 ) => {
   const sizes: {
-    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number},
+    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number}
   } = {
     mdpi: {width: 48, height: 48},
     hdpi: {width: 72, height: 72},
     xhdpi: {width: 96, height: 96},
     xxhdpi: {width: 144, height: 144},
-    xxxhdpi: {width: 192, height: 192},
+    xxxhdpi: {width: 192, height: 192}
   };
   const {width, height} = sizes[drawableName];
   const outputPath = path.join(
     ANDROID_RES_PATH,
     'mipmap-' + drawableName,
-    isRounded ? 'ic_launcher_round.png' : 'ic_launcher.png',
+    isRounded ? 'ic_launcher_round.png' : 'ic_launcher.png'
   );
   const options: Array<string> = [
     path.join(IMAGES_PATH, DOCK_ICON_FILENAME),
@@ -54,7 +54,7 @@ const generateAndroidDockIcon = (
     '128',
     '-resize',
     width + 'x' + height,
-    outputPath,
+    outputPath
   ];
   // eslint-disable-next-line no-console
   console.log('[DOCK ICON]', 'Generating', outputPath);
@@ -67,7 +67,7 @@ const generateAndroidDockIcon = (
 
 const generateIosDockIcon = (fileName: IosDockIconFileType) => {
   const sizes: {
-    [key: IosDockIconFileType]: {[key: 'width' | 'height']: number},
+    [key: IosDockIconFileType]: {[key: 'width' | 'height']: number}
   } = {
     '20@2x': {width: 40, height: 40},
     '20@3x': {width: 60, height: 60},
@@ -77,7 +77,7 @@ const generateIosDockIcon = (fileName: IosDockIconFileType) => {
     '40@3x': {width: 120, height: 120},
     '60@2x': {width: 120, height: 120},
     '60@3x': {width: 180, height: 180},
-    '1024': {width: 1024, height: 1024},
+    '1024': {width: 1024, height: 1024}
   };
   const {width, height} = sizes[fileName];
   mkdirp(path.join(IOS_DOCK_ICON_PATH));
@@ -92,7 +92,7 @@ const generateIosDockIcon = (fileName: IosDockIconFileType) => {
     '172',
     '-resize',
     width + 'x' + height,
-    outputPath,
+    outputPath
   ];
   // eslint-disable-next-line no-console
   console.log('[DOCK ICON]', 'Generating', outputPath);

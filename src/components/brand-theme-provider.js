@@ -4,20 +4,20 @@ import * as React from 'react';
 
 type BrandTheme = {|
   colors: {
-    primary: string,
-  },
+    primary: string
+  }
 |};
 
 type Props = {|
-  children: React.Node,
+  children: React.Node
 |};
 
 type State = BrandTheme;
 
 const initialState: State = {
   colors: {
-    primary: '#00B0FF',
-  },
+    primary: '#00B0FF'
+  }
 };
 
 export const BrandThemeContext = React.createContext(initialState);

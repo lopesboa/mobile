@@ -8,7 +8,7 @@ describe('Image', () => {
     const result = getImageDimensions(640, 480);
     const expected: Dimensions = {
       width: 640,
-      height: 480,
+      height: 480
     };
     expect(result).toEqual(expected);
   });
@@ -17,7 +17,7 @@ describe('Image', () => {
     const result = getImageDimensions(640, 480, 400);
     const expected: Dimensions = {
       width: 400,
-      height: 300,
+      height: 300
     };
     expect(result).toEqual(expected);
   });
@@ -26,7 +26,7 @@ describe('Image', () => {
     const result = getImageDimensions(640, 480, 400, 180);
     const expected: Dimensions = {
       width: 240,
-      height: 180,
+      height: 180
     };
     expect(result).toEqual(expected);
   });

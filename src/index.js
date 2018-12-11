@@ -8,8 +8,8 @@ import BrandThemeProvider from './components/brand-theme-provider';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
+    flex: 1
+  }
 });
 
 const App = () => (

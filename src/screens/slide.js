@@ -17,20 +17,20 @@ type State = {|
   slides: Array<MockSlide>,
   current?: string,
   isCorrect?: boolean,
-  isFinished?: boolean,
+  isFinished?: boolean
 |};
 
 const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
-    paddingBottom: theme.spacing.base,
+    paddingBottom: theme.spacing.base
   },
   success: {
-    color: theme.colors.positive,
+    color: theme.colors.positive
   },
   error: {
-    color: theme.colors.negative,
-  },
+    color: theme.colors.negative
+  }
 });
 
 class SlideScreen extends React.PureComponent<Props, State> {
@@ -38,7 +38,7 @@ class SlideScreen extends React.PureComponent<Props, State> {
 
   state: State = {
     slides,
-    current: 'slide_1',
+    current: 'slide_1'
   };
 
   static navigationOptions = ({navigationOptions}: ReactNavigation$ScreenProps) => ({
@@ -49,8 +49,8 @@ class SlideScreen extends React.PureComponent<Props, State> {
       elevation: 0,
       borderBottomColor: 'transparent',
       borderBottomWidth: 0,
-      height: 0,
-    },
+      height: 0
+    }
   });
 
   handleQuestionChoicePress = (item: QuestionChoiceItem) => {
@@ -65,18 +65,18 @@ class SlideScreen extends React.PureComponent<Props, State> {
                 if (choice.value === item.value) {
                   return {
                     ...item,
-                    selected: !item.selected,
+                    selected: !item.selected
                   };
                 }
 
                 return choice;
-              }),
-            },
+              })
+            }
           };
         }
 
         return slide;
-      }),
+      })
     }));
   };
 
@@ -102,11 +102,11 @@ class SlideScreen extends React.PureComponent<Props, State> {
 
     this.setState(
       {
-        isCorrect,
+        isCorrect
       },
       () => {
         isCorrect && this.handleNextSlideNavigation();
-      },
+      }
     );
   };
 
@@ -114,7 +114,7 @@ class SlideScreen extends React.PureComponent<Props, State> {
     const nextSlide = this.getNextSlide();
     this.setState({
       current: nextSlide && nextSlide.ref,
-      isFinished: !nextSlide,
+      isFinished: !nextSlide
     });
   };
 
@@ -123,7 +123,7 @@ class SlideScreen extends React.PureComponent<Props, State> {
     const question = {
       ...(currentSlide && currentSlide.question),
       onChoicePress: this.handleQuestionChoicePress,
-      onButtonPress: this.handleQuestionButtonPress,
+      onButtonPress: this.handleQuestionButtonPress
     };
     const {isCorrect, isFinished} = this.state;
     const hasCorrection = !isFinished && isCorrect !== undefined;

@@ -5,7 +5,7 @@ global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
 
 // react-native mocks
 ScrollView.propTypes = {
-  decelerationRate: () => {},
+  decelerationRate: () => {}
 };
 
 jest.mock('NativeEventEmitter', () => {
@@ -24,5 +24,5 @@ NativeModules.Linking = {
   removeEventListener: () => {},
   openURL: () => {},
   canOpenURL: () => {},
-  getInitialURL: () => {},
+  getInitialURL: () => {}
 };

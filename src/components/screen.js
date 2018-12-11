@@ -9,17 +9,17 @@ type Props = {|
   style?: GenericStyleProp,
   noScroll?: boolean,
   children: React.Node,
-  testID?: string,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
   screen: {
     backgroundColor: theme.colors.white,
-    flex: 1,
+    flex: 1
   },
   screenScroll: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 });
 
 const Screen = ({style, noScroll, children, testID}: Props) => (

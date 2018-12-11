@@ -7,7 +7,7 @@ type Props = {|
   // copied from node_modules/react-native/Libraries/Text/TextProps.js
   children: React.Node,
   style?: GenericStyleProp,
-  testID?: string,
+  testID?: string
 |};
 
 const Text = ({testID, children, style}: Props) => (

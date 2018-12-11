@@ -5,7 +5,7 @@ import type {Media} from '../types';
 
 const media: Media = {
   type: MEDIA_TYPE.IMAGE,
-  source: require('./image.png'),
+  source: require('./image.png')
 };
 
 export default media;

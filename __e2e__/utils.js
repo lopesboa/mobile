@@ -12,5 +12,5 @@ const reloadApp = async () => {
 };
 
 export default {
-  reloadApp,
+  reloadApp
 };

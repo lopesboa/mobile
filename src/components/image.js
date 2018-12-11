@@ -11,7 +11,7 @@ export type Props = {|
   width?: number,
   maxHeight?: number,
   style?: GenericStyleProp,
-  testID?: string,
+  testID?: string
 |};
 
 const Image = ({source, width, maxHeight, style, testID}: Props) => {
@@ -22,7 +22,7 @@ const Image = ({source, width, maxHeight, style, testID}: Props) => {
     Number(originalWidth),
     Number(originalHeight),
     width,
-    maxHeight,
+    maxHeight
   );
   return (
     <ImageBase source={source} style={[dimensions, style]} resizeMode="contain" testID={testID} />

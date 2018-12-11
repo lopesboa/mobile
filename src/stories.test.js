@@ -4,5 +4,5 @@ import initStoryshots, {multiSnapshotWithOptions} from '@storybook/addon-storysh
 
 initStoryshots({
   configPath: `${__dirname}/stories.js`,
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions({})
 });

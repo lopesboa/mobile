@@ -4,13 +4,13 @@ module.exports = {
   preset: 'react-native',
   moduleFileExtensions: ['ios.js', 'android.js', 'js', 'json'],
   moduleNameMapper: {
-    '^[./a-zA-Z0-9$_-]+.png$': 'RelativeImageStub',
+    '^[./a-zA-Z0-9$_-]+.png$': 'RelativeImageStub'
   },
   transform: {
-    '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
+    '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper)(-.*)?)',
+    'node_modules/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper)(-.*)?)'
   ],
   setupFiles: ['./jest-setup.js'],
   collectCoverage: true,
@@ -21,14 +21,14 @@ module.exports = {
       branches: 100,
       functions: 90,
       lines: 100,
-      statements: 90,
+      statements: 90
     },
     'src/modules': {
       branches: 100,
       functions: 100,
       lines: 100,
-      statements: 100,
-    },
-  },
+      statements: 100
+    }
+  }
   // verbose: true,
 };

@@ -20,7 +20,7 @@ storiesOf('Slide', module).add('Default', () => {
     explanation: 'Select the correct answers',
     choices,
     onChoicePress: handleChoicePress,
-    onButtonPress: handleButtonPress,
+    onButtonPress: handleButtonPress
   };
   return <Slide question={question} />;
 });
