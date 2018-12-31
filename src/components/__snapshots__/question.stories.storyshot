@@ -163,6 +163,8 @@ exports[`Storyshots Question Option selected 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -224,6 +226,8 @@ exports[`Storyshots Question Option selected 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     Object {
                       "backgroundColor": "#00B0FF",
@@ -290,6 +294,8 @@ exports[`Storyshots Question Option selected 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -351,6 +357,8 @@ exports[`Storyshots Question Option selected 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -621,6 +629,8 @@ exports[`Storyshots Question QCM 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -682,6 +692,8 @@ exports[`Storyshots Question QCM 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -743,6 +755,8 @@ exports[`Storyshots Question QCM 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -804,6 +818,8 @@ exports[`Storyshots Question QCM 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -1095,6 +1111,8 @@ exports[`Storyshots Question With image 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -1156,6 +1174,8 @@ exports[`Storyshots Question With image 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -1217,6 +1237,8 @@ exports[`Storyshots Question With image 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]
@@ -1278,6 +1300,8 @@ exports[`Storyshots Question With image 1`] = `
                       "borderRadius": 3,
                       "borderStyle": "solid",
                       "borderWidth": 1,
+                      "flexDirection": "row",
+                      "padding": 3,
                     },
                     false,
                   ]

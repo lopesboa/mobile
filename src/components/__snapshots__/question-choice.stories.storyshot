@@ -25,6 +25,8 @@ exports[`Storyshots QuestionChoice Default 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
+          "padding": 3,
         },
         false,
       ]
@@ -76,6 +78,8 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
+          "padding": 3,
         },
         Object {
           "backgroundColor": "#00B0FF",
@@ -102,6 +106,147 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
       }
     >
       Option 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "padding": 3,
+        },
+        Object {
+          "backgroundColor": "#00B0FF",
+          "borderColor": "#00B0FF",
+        },
+      ]
+    }
+    testID="question-choice-4-selected"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 60,
+            "justifyContent": "center",
+            "width": 60,
+          },
+        ]
+      }
+    >
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#14171A",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      Option 4
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionChoice WithFile 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "padding": 3,
+        },
+        false,
+      ]
+    }
+    testID="question-choice-3"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 60,
+            "justifyContent": "center",
+            "width": 60,
+          },
+        ]
+      }
+    >
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#14171A",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+          false,
+        ]
+      }
+    >
+      Option 3
     </Text>
   </View>
 </View>

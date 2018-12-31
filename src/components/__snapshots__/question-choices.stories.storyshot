@@ -90,6 +90,8 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
                 },
                 false,
               ]
@@ -151,6 +153,8 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
                 },
                 false,
               ]
@@ -212,6 +216,8 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
                 },
                 false,
               ]
@@ -273,12 +279,389 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
                 },
                 false,
               ]
             }
             testID="question-choice-4"
           >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Option 4
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`Storyshots QuestionChoices QCMGRAPHIC 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    data={
+      Array [
+        Object {
+          "image": 1,
+          "label": "Option 1",
+          "value": "ref_1",
+        },
+        Object {
+          "image": 1,
+          "label": "Option 2",
+          "value": "ref_2",
+        },
+        Object {
+          "image": 1,
+          "label": "Option 3",
+          "value": "ref_3",
+        },
+        Object {
+          "image": 1,
+          "label": "Option 4",
+          "value": "ref_4",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="question-choices"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
+                },
+                false,
+              ]
+            }
+            testID="question-choice-1"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                    "justifyContent": "center",
+                    "width": 60,
+                  },
+                ]
+              }
+            >
+              <View
+                onLayout={[Function]}
+              />
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Option 1
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
+                },
+                false,
+              ]
+            }
+            testID="question-choice-2"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                    "justifyContent": "center",
+                    "width": 60,
+                  },
+                ]
+              }
+            >
+              <View
+                onLayout={[Function]}
+              />
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Option 2
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
+                },
+                false,
+              ]
+            }
+            testID="question-choice-3"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                    "justifyContent": "center",
+                    "width": 60,
+                  },
+                ]
+              }
+            >
+              <View
+                onLayout={[Function]}
+              />
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Option 3
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "padding": 3,
+                },
+                false,
+              ]
+            }
+            testID="question-choice-4"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 60,
+                    "justifyContent": "center",
+                    "width": 60,
+                  },
+                ]
+              }
+            >
+              <View
+                onLayout={[Function]}
+              />
+            </View>
             <Text
               style={
                 Array [

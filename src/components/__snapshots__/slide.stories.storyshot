@@ -170,6 +170,8 @@ exports[`Storyshots Slide Default 1`] = `
                         "borderRadius": 3,
                         "borderStyle": "solid",
                         "borderWidth": 1,
+                        "flexDirection": "row",
+                        "padding": 3,
                       },
                       false,
                     ]
@@ -231,6 +233,8 @@ exports[`Storyshots Slide Default 1`] = `
                         "borderRadius": 3,
                         "borderStyle": "solid",
                         "borderWidth": 1,
+                        "flexDirection": "row",
+                        "padding": 3,
                       },
                       false,
                     ]
@@ -292,6 +296,8 @@ exports[`Storyshots Slide Default 1`] = `
                         "borderRadius": 3,
                         "borderStyle": "solid",
                         "borderWidth": 1,
+                        "flexDirection": "row",
+                        "padding": 3,
                       },
                       false,
                     ]
@@ -353,6 +359,8 @@ exports[`Storyshots Slide Default 1`] = `
                         "borderRadius": 3,
                         "borderStyle": "solid",
                         "borderWidth": 1,
+                        "flexDirection": "row",
+                        "padding": 3,
                       },
                       false,
                     ]

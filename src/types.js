@@ -3,10 +3,11 @@
 export type QuestionChoiceItem = {|
   selected?: boolean,
   label: string,
-  value: string
+  value: string,
+  image?: File
 |};
 
-export type QuestionType = 'qcm';
+export type QuestionType = 'qcm' | 'qcmGraphic';
 
 export type SpaceType = 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
 

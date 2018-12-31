@@ -22,6 +22,7 @@ class QuestionChoices extends React.PureComponent<Props> {
   renderItem = ({item, index}: {item: QuestionChoiceItem, index: number}) => (
     <QuestionChoice
       onPress={this.handlePress(item)}
+      image={item.image}
       isSelected={item.selected}
       testID={`question-choice-${index + 1}`}
     >
@@ -36,7 +37,8 @@ class QuestionChoices extends React.PureComponent<Props> {
   render() {
     return (
       <TouchableOpacity>
-        {this.props.type === QUESTION_TYPE.QCM && (
+        {(this.props.type === QUESTION_TYPE.QCM ||
+          this.props.type === QUESTION_TYPE.QCM_GRAPHIC) && (
           <FlatList
             renderItem={this.renderItem}
             data={this.props.items}
