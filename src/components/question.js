@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     color: theme.colors.black,
     textAlign: 'center',
     fontSize: 17,
-    fontWeight: 'bold'
+    fontWeight: theme.fontWeight.bold
   },
   questionContainer: {
     paddingHorizontal: theme.spacing.xlarge
@@ -85,7 +85,7 @@ const Question = ({
         <View>
           <Image
             source={media.source}
-            maxHeight={200}
+            maxHeight={150}
             testID="question-image"
             style={styles.image}
           />

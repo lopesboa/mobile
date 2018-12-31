@@ -17,3 +17,8 @@ export type Media = {|
   type: MediaType,
   source: File
 |};
+
+export type CardType = 'tip' | 'keyPoint' | 'correction';
+
+export type Answer = string;
+export type Question = string;

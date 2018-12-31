@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots LevelEnd Error 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "justifyContent": "space-between",
+      },
+      Object {
+        "backgroundColor": "#F73F52",
+      },
+    ]
+  }
+  testID="level-end-error"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+        "paddingTop": 24,
+        "position": "absolute",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 28,
+          "fontWeight": "700",
+        }
+      }
+      testID="level-end-title"
+    >
+      Game over...
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 17,
+        }
+      }
+      testID="level-end-subtitle"
+    >
+      You are out of lives
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingBottom": 24,
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-retry-level"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#546E7A",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Retry level
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots LevelEnd Success 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "justifyContent": "space-between",
+      },
+      Object {
+        "backgroundColor": "#3EC483",
+      },
+    ]
+  }
+  testID="level-end-success"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+        "paddingTop": 24,
+        "position": "absolute",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 28,
+          "fontWeight": "700",
+        }
+      }
+      testID="level-end-title"
+    >
+      Congratulations!
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 17,
+        }
+      }
+      testID="level-end-subtitle"
+    >
+      You have unlocked the next level
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingBottom": 24,
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-next-level"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#546E7A",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Next level
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

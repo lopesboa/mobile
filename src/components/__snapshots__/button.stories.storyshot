@@ -41,9 +41,10 @@ exports[`Storyshots Button Default 1`] = `
             Object {
               "color": "#FFFFFF",
               "fontSize": 18,
-              "fontWeight": "bold",
+              "fontWeight": "700",
               "textAlign": "center",
             },
+            undefined,
             undefined,
           ],
         ]
@@ -82,6 +83,7 @@ exports[`Storyshots Button Disabled 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
           },
+          undefined,
         ],
         Object {
           "backgroundColor": "#ECEFF1",
@@ -102,12 +104,71 @@ exports[`Storyshots Button Disabled 1`] = `
             Object {
               "color": "#FFFFFF",
               "fontSize": 18,
-              "fontWeight": "bold",
+              "fontWeight": "700",
               "textAlign": "center",
             },
+            undefined,
             Object {
               "color": "#90A4AE",
             },
+          ],
+        ]
+      }
+    >
+      Here we go!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Inverted 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 32,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "height": 54,
+        "justifyContent": "center",
+        "marginBottom": 0,
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "flex": 1,
+            "fontSize": 18,
+            "textAlign": "center",
+          },
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#546E7A",
+            },
+            undefined,
           ],
         ]
       }
@@ -145,6 +206,7 @@ exports[`Storyshots Button Loading 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
           },
+          undefined,
         ],
         Object {
           "backgroundColor": "#ECEFF1",

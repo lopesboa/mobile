@@ -19,7 +19,7 @@ const IMAGE_SIZE = 60;
 
 const styles = StyleSheet.create({
   text: {
-    fontWeight: 'bold',
+    fontWeight: theme.fontWeight.bold,
     fontSize: 17,
     color: theme.colors.black,
     paddingVertical: theme.spacing.small,

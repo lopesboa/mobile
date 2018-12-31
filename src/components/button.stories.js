@@ -22,4 +22,9 @@ storiesOf('Button', module)
     <Button onPress={fakeOnPress} isLoading testID="fake-button">
       Here we go!
     </Button>
+  ))
+  .add('Inverted', () => (
+    <Button onPress={fakeOnPress} isInverted testID="fake-button">
+      Here we go!
+    </Button>
   ));

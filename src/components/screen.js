@@ -1,20 +1,22 @@
 // @flow strict
 
 import * as React from 'react';
-import {StyleSheet, ScrollView, View} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
+import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
 import theme from '../modules/theme';
 
 type Props = {|
   style?: GenericStyleProp,
   noScroll?: boolean,
   children: React.Node,
-  testID?: string
+  testID?: string,
+  onRef?: (ref: ScrollView) => void
 |};
+
+export const BACKGROUND_COLOR = theme.colors.white;
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: theme.colors.white,
+    backgroundColor: BACKGROUND_COLOR,
     flex: 1
   },
   screenScroll: {
@@ -22,22 +24,41 @@ const styles = StyleSheet.create({
   }
 });
 
-const Screen = ({style, noScroll, children, testID}: Props) => (
-  <SafeAreaView style={[styles.screen, style]}>
-    {noScroll ? (
-      <View style={styles.screenScroll} testID={testID}>
-        {children}
-      </View>
-    ) : (
-      <ScrollView
-        contentContainerStyle={styles.screenScroll}
-        showsHorizontalScrollIndicator={false}
-        testID={testID}
-      >
-        {children}
-      </ScrollView>
-    )}
-  </SafeAreaView>
-);
+class Screen extends React.PureComponent<Props> {
+  props: Props;
+
+  scrollView: ScrollView | null;
+
+  handleRef = (element: ScrollView | null) => {
+    this.scrollView = element;
+
+    if (this.props.onRef && element) {
+      this.props.onRef(element);
+    }
+  };
+
+  render() {
+    const {style, noScroll, children, testID} = this.props;
+
+    return (
+      <SafeAreaView style={[styles.screen, style]}>
+        {noScroll ? (
+          <View style={styles.screenScroll} testID={testID}>
+            {children}
+          </View>
+        ) : (
+          <ScrollView
+            contentContainerStyle={styles.screenScroll}
+            showsHorizontalScrollIndicator={false}
+            testID={testID}
+            ref={this.handleRef}
+          >
+            {children}
+          </ScrollView>
+        )}
+      </SafeAreaView>
+    );
+  }
+}
 
 export default Screen;

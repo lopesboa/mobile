@@ -6,13 +6,15 @@ import {StyleSheet, View} from 'react-native';
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 
+type Props = {||};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1
   }
 });
 
-const App = () => (
+const App = (props: Props) => (
   <BrandThemeProvider>
     <View style={styles.container}>
       <Navigator />

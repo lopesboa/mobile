@@ -3,7 +3,11 @@
 import utils from './utils';
 
 describe('Slide', () => {
-  beforeAll(utils.reloadApp);
+  beforeAll(async () => {
+    await utils.reloadApp();
+    await waitFor(element(by.id('button-start-course'))).toBeVisible();
+    await element(by.id('button-start-course')).tap();
+  });
 
   it('should see question elements', async () => {
     await waitFor(element(by.id('question'))).toBeVisible();
@@ -13,7 +17,7 @@ describe('Slide', () => {
     await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
   });
 
-  it('should not see feedback elements', async () => {
+  it('should not see correction elements', async () => {
     await weExpect(element(by.id('correction-success'))).toBeNotVisible();
     await weExpect(element(by.id('correction-error'))).toBeNotVisible();
     await weExpect(element(by.id('chapter-end'))).toBeNotVisible();
@@ -31,30 +35,127 @@ describe('Slide', () => {
     await weExpect(element(by.id('question-choice-2-selected'))).toBeVisible();
   });
 
-  it('should have negative feedback when my answer is incorrect', async () => {
-    await element(by.id('button-validate')).tap();
-    await weExpect(element(by.id('correction-error'))).toBeVisible();
+  describe('Negative correction', () => {
+    beforeAll(async () => {
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+    });
+
+    it('should see elements', async () => {
+      await weExpect(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('correction-title'))).toBeVisible();
+      await weExpect(element(by.id('correction-subtitle'))).toBeVisible();
+      await weExpect(element(by.id('card-correction'))).toBeVisible();
+      await weExpect(element(by.id('card-keypoint'))).toExist();
+      await weExpect(element(by.id('card-tip'))).toExist();
+    });
+
+    it('should be able to swipe to key point card', async () => {
+      await element(by.id('card-correction')).swipe('up');
+      await weExpect(element(by.id('card-correction'))).toBeNotVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeVisible();
+      await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+    });
+
+    it('should be able to swipe to tip card', async () => {
+      await element(by.id('card-keypoint')).swipe('left');
+      await weExpect(element(by.id('card-correction'))).toBeNotVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
+      await weExpect(element(by.id('card-tip'))).toBeVisible();
+    });
+
+    it('should back to the first card', async () => {
+      await element(by.id('card-tip')).swipe('right');
+      await weExpect(element(by.id('card-correction'))).toBeVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
+      await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+    });
+
+    it('should back to the question', async () => {
+      await weExpect(element(by.id('button-next-question'))).toBeVisible();
+      await element(by.id('button-next-question')).tap();
+      await waitFor(element(by.id('question'))).toBeVisible();
+    });
   });
 
-  it('should have positive feedback when my answer is correct', async () => {
-    await element(by.id('question-choice-1-selected')).tap();
-    await weExpect(element(by.id('question-choice-1'))).toBeVisible();
-    await element(by.id('button-validate')).tap();
-    await weExpect(element(by.id('correction-success'))).toBeVisible();
+  describe('Positive correction', () => {
+    beforeAll(async () => {
+      await element(by.id('question-choice-1-selected')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-success'))).toBeVisible();
+    });
+
+    it('should see elements', async () => {
+      await weExpect(element(by.id('correction-success'))).toBeVisible();
+      await weExpect(element(by.id('correction-title'))).toBeVisible();
+      await weExpect(element(by.id('correction-subtitle'))).toBeVisible();
+      await weExpect(element(by.id('card-tip'))).toBeVisible();
+      await weExpect(element(by.id('card-keypoint'))).toExist();
+      await weExpect(element(by.id('card-correction'))).toExist();
+    });
+
+    it('should be able to swipe to correction card', async () => {
+      await element(by.id('card-tip')).swipe('up');
+      await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeVisible();
+      await weExpect(element(by.id('card-correction'))).toBeNotVisible();
+    });
+
+    it('should be able to swipe to tip card', async () => {
+      await element(by.id('card-keypoint')).swipe('left');
+      await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
+      await weExpect(element(by.id('card-correction'))).toBeVisible();
+    });
+
+    it('should back to the first card', async () => {
+      await element(by.id('card-correction')).swipe('right');
+      await weExpect(element(by.id('card-tip'))).toBeVisible();
+      await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
+      await weExpect(element(by.id('card-correction'))).toBeNotVisible();
+    });
+
+    it('should be able to close the modal', async () => {
+      await weExpect(element(by.id('button-next-question'))).toBeVisible();
+      await element(by.id('button-next-question')).tap();
+      await waitFor(element(by.id('question'))).toBeVisible();
+    });
   });
 
-  it('should see an image', async () => {
+  it('should see a question image', async () => {
     await weExpect(element(by.id('question-image'))).toBeVisible();
   });
 
-  it('should see a end message after the last question', async () => {
-    await element(by.id('question-choice-2')).tap();
-    await element(by.id('slide-screen')).swipe('up');
-    await element(by.id('button-validate')).tap();
-    await element(by.id('question-choice-2')).tap();
-    await element(by.id('button-validate')).tap();
-    // @todo: remove this action once we have a modal
-    await element(by.id('slide-screen')).swipe('down');
-    await weExpect(element(by.id('chapter-end'))).toBeVisible();
+  describe('Level end', () => {
+    beforeAll(async () => {
+      await element(by.id('question-choice-2')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+    });
+
+    it('should see a button to continue', async () => {
+      await waitFor(element(by.id('question'))).toBeVisible();
+      await weExpect(element(by.id('button-continue'))).toBeVisible();
+    });
+
+    it('should navigate to level end', async () => {
+      await element(by.id('button-continue')).tap();
+      await waitFor(element(by.id('level-end-success'))).toBeVisible();
+      await weExpect(element(by.id('level-end-success'))).toBeVisible();
+    });
+
+    it('should see elements', async () => {
+      await weExpect(element(by.id('level-end-title'))).toBeVisible();
+      await weExpect(element(by.id('level-end-subtitle'))).toBeVisible();
+      await weExpect(element(by.id('button-next-level'))).toBeVisible();
+    });
+
+    it('should back to home', async () => {
+      await element(by.id('button-next-level')).tap();
+      await waitFor(element(by.id('home'))).toBeVisible();
+      await weExpect(element(by.id('home'))).toBeVisible();
+    });
   });
 });

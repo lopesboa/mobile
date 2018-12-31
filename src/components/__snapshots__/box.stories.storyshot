@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Box Default 1`] = `
+<View
+  style={
+    Object {
+      "padding": 12,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "elevation": 2,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "padding": 12,
+        }
+      }
+    >
+      Foo bar baz
+    </Text>
+  </View>
+</View>
+`;

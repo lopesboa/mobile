@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, ScrollView} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
 import Screen from './screen';
@@ -12,19 +12,24 @@ const fakeStyle = StyleSheet.create({
   }
 });
 
+const handleRef = (element: ScrollView) => {
+  // eslint-disable-next-line no-console
+  console.log(element);
+};
+
 storiesOf('Screen', module)
   .add('Default', () => (
-    <Screen testID="fake-screen">
+    <Screen testID="fake-screen" onRef={handleRef}>
       <Text>Foo bar baz</Text>
     </Screen>
   ))
   .add('Not scrollable', () => (
-    <Screen noScroll testID="fake-screen">
+    <Screen noScroll testID="fake-screen" onRef={handleRef}>
       <Text>Foo bar baz</Text>
     </Screen>
   ))
   .add('With custom style', () => (
-    <Screen style={fakeStyle.screen} testID="fake-screen">
+    <Screen style={fakeStyle.screen} testID="fake-screen" onRef={handleRef}>
       <Text>Foo bar baz</Text>
     </Screen>
   ));

@@ -1,0 +1,562 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CardCorrection Correct answer 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Where is Waldo ?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+</View>
+`;
+
+exports[`Storyshots CardCorrection Default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Where is Waldo ?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+</View>
+`;
+
+exports[`Storyshots CardCorrection With one expected answer 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Where is Waldo ?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Your answer:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+</View>
+`;
+
+exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Where is Waldo ?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "#3EC483",
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#546E7A",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Lorem Elsass ipsum
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Chulia Roberstau
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 15,
+        "fontWeight": "400",
+      }
+    }
+  >
+    Miss Dahlias vulputate salu barapli schnaps blottkopf
+  </Text>
+</View>
+`;

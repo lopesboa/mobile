@@ -104,7 +104,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -167,7 +167,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -230,7 +230,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -293,7 +293,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -434,7 +434,7 @@ exports[`Storyshots QuestionChoices QCMGRAPHIC 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -512,7 +512,7 @@ exports[`Storyshots QuestionChoices QCMGRAPHIC 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -590,7 +590,7 @@ exports[`Storyshots QuestionChoices QCMGRAPHIC 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },
@@ -668,7 +668,7 @@ exports[`Storyshots QuestionChoices QCMGRAPHIC 1`] = `
                   Object {
                     "color": "#14171A",
                     "fontSize": 17,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "paddingHorizontal": 24,
                     "paddingVertical": 16,
                   },

@@ -29,7 +29,7 @@ exports[`Storyshots Slide Default 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 17,
-            "fontWeight": "bold",
+            "fontWeight": "700",
             "textAlign": "center",
           }
         }
@@ -184,7 +184,7 @@ exports[`Storyshots Slide Default 1`] = `
                         Object {
                           "color": "#14171A",
                           "fontSize": 17,
-                          "fontWeight": "bold",
+                          "fontWeight": "700",
                           "paddingHorizontal": 24,
                           "paddingVertical": 16,
                         },
@@ -247,7 +247,7 @@ exports[`Storyshots Slide Default 1`] = `
                         Object {
                           "color": "#14171A",
                           "fontSize": 17,
-                          "fontWeight": "bold",
+                          "fontWeight": "700",
                           "paddingHorizontal": 24,
                           "paddingVertical": 16,
                         },
@@ -310,7 +310,7 @@ exports[`Storyshots Slide Default 1`] = `
                         Object {
                           "color": "#14171A",
                           "fontSize": 17,
-                          "fontWeight": "bold",
+                          "fontWeight": "700",
                           "paddingHorizontal": 24,
                           "paddingVertical": 16,
                         },
@@ -373,7 +373,7 @@ exports[`Storyshots Slide Default 1`] = `
                         Object {
                           "color": "#14171A",
                           "fontSize": 17,
-                          "fontWeight": "bold",
+                          "fontWeight": "700",
                           "paddingHorizontal": 24,
                           "paddingVertical": 16,
                         },
@@ -439,6 +439,7 @@ exports[`Storyshots Slide Default 1`] = `
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
               ],
               Object {
                 "backgroundColor": "#ECEFF1",
@@ -459,9 +460,10 @@ exports[`Storyshots Slide Default 1`] = `
                   Object {
                     "color": "#FFFFFF",
                     "fontSize": 18,
-                    "fontWeight": "bold",
+                    "fontWeight": "700",
                     "textAlign": "center",
                   },
+                  undefined,
                   Object {
                     "color": "#90A4AE",
                   },

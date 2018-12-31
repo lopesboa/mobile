@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Card Correction 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "padding": 24,
+        },
+        false,
+        false,
+        Object {
+          "backgroundColor": "#d3f1e2",
+        },
+      ]
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Foo bar baz
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "flex": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 24,
+        "paddingTop": 24,
+      }
+    }
+  >
+    <Text>
+      A sponsored post is a small advertising insert appearing in users’ timelines.
+    </Text>
+    <BVLinearGradient
+      colors={
+        Array [
+          16777215,
+          4294967295,
+          4294967295,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Object {
+          "height": 48,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Key point 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "padding": 24,
+        },
+        false,
+        Object {
+          "backgroundColor": "#ffded4",
+        },
+        false,
+      ]
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Foo bar baz
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "flex": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 24,
+        "paddingTop": 24,
+      }
+    }
+  >
+    <Text>
+      A sponsored post is a small advertising insert appearing in users’ timelines.
+    </Text>
+    <BVLinearGradient
+      colors={
+        Array [
+          16777215,
+          4294967295,
+          4294967295,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Object {
+          "height": 48,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Tip 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "padding": 24,
+        },
+        Object {
+          "backgroundColor": "#fff8c5",
+        },
+        false,
+        false,
+      ]
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Foo bar baz
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomLeftRadius": 5,
+        "borderBottomRightRadius": 5,
+        "flex": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 24,
+        "paddingTop": 24,
+      }
+    }
+  >
+    <Text>
+      A sponsored post is a small advertising insert appearing in users’ timelines.
+    </Text>
+    <BVLinearGradient
+      colors={
+        Array [
+          16777215,
+          4294967295,
+          4294967295,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Object {
+          "height": 48,
+        }
+      }
+    />
+  </View>
+</View>
+`;

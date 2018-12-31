@@ -39,7 +39,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 17,
-            "fontWeight": "bold",
+            "fontWeight": "700",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -95,7 +95,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 17,
-            "fontWeight": "bold",
+            "fontWeight": "700",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -168,7 +168,7 @@ exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 17,
-            "fontWeight": "bold",
+            "fontWeight": "700",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -238,7 +238,7 @@ exports[`Storyshots QuestionChoice WithFile 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 17,
-            "fontWeight": "bold",
+            "fontWeight": "700",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },

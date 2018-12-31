@@ -1180,7 +1180,7 @@ declare module 'react-navigation' {
   };
   declare export var TabBarTop: React$ComponentType<_TabBarTopProps>;
 
-  declare type _TabBarBottomProps = {
+  declare export type _BottomTabBarProps = {
     activeTintColor: string,
     activeBackgroundColor: string,
     adaptive?: boolean,
@@ -1209,7 +1209,7 @@ declare module 'react-navigation' {
     tabStyle?: ViewStyleProp,
     showIcon?: boolean,
   };
-  declare export var TabBarBottom: React$ComponentType<_TabBarBottomProps>;
+  declare export var BottomTabBar: React$ComponentType<_BottomTabBarProps>;
 
   declare export function withNavigation<Props: {}>(
     Component: React$ComponentType<Props>

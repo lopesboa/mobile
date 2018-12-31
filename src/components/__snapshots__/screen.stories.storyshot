@@ -1,18 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Screen Default 1`] = `
-<View
-  onLayout={[Function]}
-  pointerEvents="box-none"
+<RCTSafeAreaView
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "flex": 1,
-      "paddingBottom": 0,
-      "paddingLeft": 0,
-      "paddingRight": 0,
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      undefined,
+    ]
   }
 >
   <RCTScrollView
@@ -30,22 +27,19 @@ exports[`Storyshots Screen Default 1`] = `
       </Text>
     </View>
   </RCTScrollView>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`Storyshots Screen Not scrollable 1`] = `
-<View
-  onLayout={[Function]}
-  pointerEvents="box-none"
+<RCTSafeAreaView
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "flex": 1,
-      "paddingBottom": 0,
-      "paddingLeft": 0,
-      "paddingRight": 0,
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      undefined,
+    ]
   }
 >
   <View
@@ -60,22 +54,21 @@ exports[`Storyshots Screen Not scrollable 1`] = `
       Foo bar baz
     </Text>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`Storyshots Screen With custom style 1`] = `
-<View
-  onLayout={[Function]}
-  pointerEvents="box-none"
+<RCTSafeAreaView
   style={
-    Object {
-      "backgroundColor": "red",
-      "flex": 1,
-      "paddingBottom": 0,
-      "paddingLeft": 0,
-      "paddingRight": 0,
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
   }
 >
   <RCTScrollView
@@ -93,5 +86,5 @@ exports[`Storyshots Screen With custom style 1`] = `
       </Text>
     </View>
   </RCTScrollView>
-</View>
+</RCTSafeAreaView>
 `;

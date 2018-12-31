@@ -18,6 +18,8 @@ export type Colors = {
   battle: string
 };
 
+export type FontWeightType = 'bold' | 'semiBold' | 'regular';
+
 export type Theme = {|
   colors: Colors,
   spacing: {
@@ -25,7 +27,11 @@ export type Theme = {|
   },
   radius: {
     common: number,
+    card: number,
     button: number
+  },
+  fontWeight: {
+    [FontWeightType]: FontWeight
   }
 |};
 
@@ -54,7 +60,13 @@ const theme: Theme = {
   },
   radius: {
     common: 3,
+    card: 5,
     button: 32
+  },
+  fontWeight: {
+    regular: '400',
+    semiBold: '500',
+    bold: '700'
   }
 };
 

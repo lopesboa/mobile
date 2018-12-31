@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Gradient Default 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      16777215,
+      4294967295,
+      4294967295,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Object {
+      "height": 42,
+    }
+  }
+/>
+`;

@@ -1,7 +1,7 @@
 // @flow strict
 
 import {QUESTION_TYPE} from '../const';
-import type {QuestionChoiceItem, QuestionType, Media} from '../types';
+import type {QuestionChoiceItem, QuestionType, Media, Answer} from '../types';
 import media from '../__fixtures__/media';
 
 export type MockSlide = {|
@@ -12,7 +12,7 @@ export type MockSlide = {|
     explanation: string,
     choices: Array<QuestionChoiceItem>,
     media?: Media,
-    answer: Array<string>
+    answers: Array<Answer>
   },
   isCorrect?: boolean
 |};
@@ -29,14 +29,13 @@ const slide: MockSlide = {
       {label: 'Option 3', value: 'ref_3'},
       {label: 'Option 4', value: 'ref_4'}
     ],
-    answer: ['ref_2']
+    answers: ['ref_2']
   }
 };
 
 const slides: Array<MockSlide> = [
   {...slide, ref: 'slide_1'},
-  {...slide, ref: 'slide_2', question: {...slide.question, media}},
-  {...slide, ref: 'slide_3'}
+  {...slide, ref: 'slide_2', question: {...slide.question, media}}
 ];
 
 export default slides;
