@@ -67,7 +67,11 @@ const QuestionChoice = ({
           >
             {image && (
               <View style={[styles.imageContainer]}>
-                <Image maxHeight={IMAGE_SIZE} source={image} />
+                <Image
+                  testID={prefixTestID && `${prefixTestID}-image`}
+                  maxHeight={IMAGE_SIZE}
+                  source={image}
+                />
               </View>
             )}
             <Text style={[styles.text, isSelected && styles.textSelected]}>{children}</Text>

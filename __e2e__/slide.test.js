@@ -124,6 +124,17 @@ describe('Slide', () => {
     });
   });
 
+  describe('QCM Graphic', () => {
+    it('should see the QCM graphic', async () => {
+      await weExpect(element(by.id('question-choice-2-image'))).toBeVisible();
+      await weExpect(element(by.id('question-choice-2'))).toBeVisible();
+      await element(by.id('question-choice-2')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await element(by.id('button-next-question')).tap();
+    });
+  });
+
   it('should see a question image', async () => {
     await weExpect(element(by.id('question-image'))).toBeVisible();
   });
