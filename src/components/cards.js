@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import DeckSwiper from 'react-native-deck-swiper';
+import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 
 import theme from '../modules/theme';
 import type {CardType} from '../types';
@@ -11,13 +11,14 @@ export type Card = {|
   type: CardType
 |};
 
-type Props = {|
+export type Props = {|
   items: Array<Card>,
   renderItem: Card => React.Node,
-  cardStyle?: GenericStyleProp
+  cardStyle?: GenericStyleProp,
+  onRef?: (element: DeckSwiper | null) => void
 |};
 
-const Cards = ({items, renderItem, cardStyle}: Props) => (
+const Cards = ({items, renderItem, cardStyle, onRef}: Props) => (
   <DeckSwiper
     cards={items}
     renderCard={renderItem}
@@ -30,6 +31,7 @@ const Cards = ({items, renderItem, cardStyle}: Props) => (
     backgroundColor="transparent"
     cardHorizontalMargin={theme.spacing.base}
     cardStyle={cardStyle}
+    ref={onRef}
   />
 );
 

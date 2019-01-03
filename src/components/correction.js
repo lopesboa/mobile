@@ -9,11 +9,11 @@ import {CARD_TYPE} from '../const';
 import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
+import Cards from '../containers/cards-scalable';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
 import Space from './space';
-import Cards from './cards';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
 

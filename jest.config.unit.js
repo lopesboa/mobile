@@ -10,7 +10,7 @@ module.exports = {
     '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper)(-.*)?)'
+    'node_modules/@coorpacademy/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper|native-deck-swiper)(-.*)?)'
   ],
   setupFiles: ['./jest-setup.js'],
   collectCoverage: true,
