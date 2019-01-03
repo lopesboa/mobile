@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import image from '../__fixtures__/image.png';
+import image from '../__fixtures__/image-landscape.png';
 import Image from './image';
 
 storiesOf('Image', module)

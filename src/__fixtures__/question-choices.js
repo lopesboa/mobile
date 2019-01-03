@@ -1,24 +1,38 @@
 // @flow strict
 
 import type {QuestionChoiceItem} from '../types';
+import media from './media';
+import imagePortrait from './image-portrait.png';
 
 const choices: Array<QuestionChoiceItem> = [
   {
-    label: 'Option 1',
-    value: 'ref_1'
+    label: 'Play Store',
+    value: 'play_store'
   },
   {
-    label: 'Option 2',
-    value: 'ref_2'
+    label: 'App Store',
+    value: 'app_store'
   },
   {
-    label: 'Option 3',
-    value: 'ref_3'
+    label: 'Apple Store',
+    value: 'apple_store'
   },
   {
-    label: 'Option 4',
-    value: 'ref_4'
+    label: 'Pineapple Store',
+    value: 'pineapple_store'
   }
 ];
+
+export const choicesWithImage: Array<QuestionChoiceItem> = choices.map((choice, index) => ({
+  ...choice,
+  label: index !== 1 ? choice.label : `${choice.label} with a portrait image`,
+  media:
+    index !== 1
+      ? media
+      : {
+          ...media,
+          source: imagePortrait
+        }
+}));
 
 export default choices;

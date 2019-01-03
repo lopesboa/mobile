@@ -5,21 +5,20 @@ import {storiesOf} from '@storybook/react-native';
 
 import type {QuestionChoiceItem} from '../types';
 import {QUESTION_TYPE} from '../const';
-import choices from '../__fixtures__/question-choices';
-import choicesWithImage from '../__fixtures__/question-choices-with-image';
+import choices, {choicesWithImage} from '../__fixtures__/question-choices';
 import QuestionChoices from './question-choices';
 
 // eslint-disable-next-line no-console
 const handleClick = (item: QuestionChoiceItem) => console.log('Clicked', item);
 
 storiesOf('QuestionChoices', module)
-  .add(QUESTION_TYPE.QCM.toUpperCase(), () => (
+  .add('QCM', () => (
     <QuestionChoices type={QUESTION_TYPE.QCM} items={choices} onItemPress={handleClick} />
   ))
-  .add(QUESTION_TYPE.QCM_GRAPHIC.toUpperCase(), () => (
+  .add('QCM Graphic', () => (
     <QuestionChoices
       type={QUESTION_TYPE.QCM_GRAPHIC}
-      items={choicesWithImage}
+      items={choicesWithImage.slice(0, 3)}
       onItemPress={handleClick}
     />
   ));

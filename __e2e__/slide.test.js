@@ -124,19 +124,24 @@ describe('Slide', () => {
     });
   });
 
+  it('should see a question image', async () => {
+    await weExpect(element(by.id('question-image'))).toBeVisible();
+  });
+
   describe('QCM Graphic', () => {
-    it('should see the QCM graphic', async () => {
-      await weExpect(element(by.id('question-choice-2-image'))).toBeVisible();
-      await weExpect(element(by.id('question-choice-2'))).toBeVisible();
+    beforeAll(async () => {
       await element(by.id('question-choice-2')).tap();
       await element(by.id('question-screen')).swipe('up');
       await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-success')));
       await element(by.id('button-next-question')).tap();
     });
-  });
 
-  it('should see a question image', async () => {
-    await weExpect(element(by.id('question-image'))).toBeVisible();
+    it('should see choices with images', async () => {
+      await weExpect(element(by.id('question-choice-1-image'))).toBeVisible();
+      await weExpect(element(by.id('question-choice-2-image'))).toBeVisible();
+      await weExpect(element(by.id('question-choice-3-image'))).toBeVisible();
+    });
   });
 
   describe('Level end', () => {

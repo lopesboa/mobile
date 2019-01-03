@@ -1,8 +1,10 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import Image from '../containers/image-scalable';
+import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+
+import type {Media} from '../types';
+import {MEDIA_TYPE} from '../const';
 import theme from '../modules/theme';
 import Text from './text';
 import {BrandThemeContext} from './brand-theme-provider';
@@ -12,35 +14,35 @@ type Props = {|
   onPress: () => void,
   children: string,
   testID?: string,
-  image?: File
+  media?: Media,
+  style?: GenericStyleProp
 |};
 
-const IMAGE_SIZE = 60;
-
 const styles = StyleSheet.create({
-  text: {
-    fontWeight: theme.fontWeight.bold,
-    fontSize: 17,
-    color: theme.colors.black,
-    paddingVertical: theme.spacing.small,
-    paddingHorizontal: theme.spacing.base
-  },
   container: {
     borderStyle: 'solid',
     borderWidth: 1,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.border,
     borderRadius: theme.radius.common,
-    flexDirection: 'row',
-    padding: 3
+    overflow: 'hidden'
+  },
+  text: {
+    paddingVertical: theme.spacing.small,
+    paddingHorizontal: theme.spacing.base,
+    fontWeight: theme.fontWeight.bold,
+    fontSize: 17,
+    color: theme.colors.black,
+    justifyContent: 'flex-start'
   },
   textSelected: {
     color: theme.colors.white
   },
-  imageContainer: {
-    width: IMAGE_SIZE,
-    height: IMAGE_SIZE,
-    justifyContent: 'center'
+  image: {
+    borderTopLeftRadius: theme.radius.common,
+    borderTopRightRadius: theme.radius.common,
+    width: '100%',
+    height: 120
   }
 });
 
@@ -48,38 +50,39 @@ const QuestionChoice = ({
   children,
   isSelected = false,
   onPress,
-  image,
-  testID: prefixTestID
+  media,
+  testID: prefixTestID,
+  style
 }: Props) => (
-  <TouchableOpacity onPress={onPress}>
-    <BrandThemeContext.Consumer>
-      {brandTheme => {
-        const selectedStyle = {
-          backgroundColor: brandTheme.colors.primary,
-          borderColor: brandTheme.colors.primary
-        };
-        const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
+  <BrandThemeContext.Consumer>
+    {brandTheme => {
+      const selectedStyle = {
+        backgroundColor: brandTheme.colors.primary,
+        borderColor: brandTheme.colors.primary
+      };
+      const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
+      const mediaSuffix = prefixTestID && media ? `-${media.type.toLowerCase()}` : '';
 
-        return (
+      return (
+        <TouchableOpacity onPress={onPress} style={style}>
           <View
-            style={[styles.container, isSelected && selectedStyle]}
+            style={[styles.container, isSelected && selectedStyle, {flexGrow: 1}]}
             testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
           >
-            {image && (
-              <View style={[styles.imageContainer]}>
-                <Image
-                  testID={prefixTestID && `${prefixTestID}-image`}
-                  maxHeight={IMAGE_SIZE}
-                  source={image}
+            {media &&
+              media.type === MEDIA_TYPE.IMAGE && (
+                <ImageBackground
+                  testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
+                  source={media.source}
+                  style={styles.image}
                 />
-              </View>
-            )}
+              )}
             <Text style={[styles.text, isSelected && styles.textSelected]}>{children}</Text>
           </View>
-        );
-      }}
-    </BrandThemeContext.Consumer>
-  </TouchableOpacity>
+        </TouchableOpacity>
+      );
+    }}
+  </BrandThemeContext.Consumer>
 );
 
 export default QuestionChoice;

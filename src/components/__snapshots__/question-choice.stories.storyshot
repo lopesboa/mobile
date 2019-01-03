@@ -25,10 +25,12 @@ exports[`Storyshots QuestionChoice Default 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
-          "flexDirection": "row",
-          "padding": 3,
+          "overflow": "hidden",
         },
         false,
+        Object {
+          "flexGrow": 1,
+        },
       ]
     }
     testID="question-choice-1"
@@ -40,6 +42,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
             "color": "#14171A",
             "fontSize": 17,
             "fontWeight": "700",
+            "justifyContent": "flex-start",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -78,12 +81,14 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
-          "flexDirection": "row",
-          "padding": 3,
+          "overflow": "hidden",
         },
         Object {
           "backgroundColor": "#00B0FF",
           "borderColor": "#00B0FF",
+        },
+        Object {
+          "flexGrow": 1,
         },
       ]
     }
@@ -96,6 +101,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
             "color": "#14171A",
             "fontSize": 17,
             "fontWeight": "700",
+            "justifyContent": "flex-start",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -111,7 +117,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
 </View>
 `;
 
-exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
+exports[`Storyshots QuestionChoice Selected with image 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -136,12 +142,14 @@ exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
-          "flexDirection": "row",
-          "padding": 3,
+          "overflow": "hidden",
         },
         Object {
           "backgroundColor": "#00B0FF",
           "borderColor": "#00B0FF",
+        },
+        Object {
+          "flexGrow": 1,
         },
       ]
     }
@@ -149,17 +157,33 @@ exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
   >
     <View
       style={
-        Array [
-          Object {
-            "height": 60,
-            "justifyContent": "center",
-            "width": 60,
-          },
-        ]
+        Object {
+          "borderTopLeftRadius": 3,
+          "borderTopRightRadius": 3,
+          "height": 120,
+          "width": "100%",
+        }
       }
     >
-      <View
-        onLayout={[Function]}
+      <Image
+        source={1}
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": 120,
+              "width": "100%",
+            },
+            undefined,
+          ]
+        }
+        testID="question-choice-4-image"
       />
     </View>
     <Text
@@ -169,6 +193,7 @@ exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
             "color": "#14171A",
             "fontSize": 17,
             "fontWeight": "700",
+            "justifyContent": "flex-start",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },
@@ -184,7 +209,7 @@ exports[`Storyshots QuestionChoice SelectedWithFile 1`] = `
 </View>
 `;
 
-exports[`Storyshots QuestionChoice WithFile 1`] = `
+exports[`Storyshots QuestionChoice With image 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -209,27 +234,45 @@ exports[`Storyshots QuestionChoice WithFile 1`] = `
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
-          "flexDirection": "row",
-          "padding": 3,
+          "overflow": "hidden",
         },
         false,
+        Object {
+          "flexGrow": 1,
+        },
       ]
     }
     testID="question-choice-3"
   >
     <View
       style={
-        Array [
-          Object {
-            "height": 60,
-            "justifyContent": "center",
-            "width": 60,
-          },
-        ]
+        Object {
+          "borderTopLeftRadius": 3,
+          "borderTopRightRadius": 3,
+          "height": 120,
+          "width": "100%",
+        }
       }
     >
-      <View
-        onLayout={[Function]}
+      <Image
+        source={1}
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": 120,
+              "width": "100%",
+            },
+            undefined,
+          ]
+        }
+        testID="question-choice-3-image"
       />
     </View>
     <Text
@@ -239,6 +282,7 @@ exports[`Storyshots QuestionChoice WithFile 1`] = `
             "color": "#14171A",
             "fontSize": 17,
             "fontWeight": "700",
+            "justifyContent": "flex-start",
             "paddingHorizontal": 24,
             "paddingVertical": 16,
           },

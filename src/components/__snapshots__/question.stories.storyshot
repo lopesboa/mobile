@@ -74,318 +74,257 @@ exports[`Storyshots Question Option selected 1`] = `
     }
   >
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
+      testID="question-choices"
     >
-      <RCTScrollView
-        ItemSeparatorComponent={[Function]}
-        data={
-          Array [
+      <View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "label": "Option 1",
-              "value": "ref_1",
-            },
-            Object {
-              "label": "Option 2",
-              "selected": true,
-              "value": "ref_2",
-            },
-            Object {
-              "label": "Option 3",
-              "value": "ref_3",
-            },
-            Object {
-              "label": "Option 4",
-              "value": "ref_4",
-            },
-          ]
-        }
-        disableVirtualization={false}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        horizontal={false}
-        initialNumToRender={10}
-        keyExtractor={[Function]}
-        maxToRenderPerBatch={10}
-        numColumns={1}
-        onContentSizeChange={[Function]}
-        onEndReachedThreshold={2}
-        onLayout={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        renderItem={[Function]}
-        scrollEventThrottle={50}
-        stickyHeaderIndices={Array []}
-        testID="question-choices"
-        updateCellsBatchingPeriod={50}
-        viewabilityConfigCallbackPairs={Array []}
-        windowSize={21}
-      >
-        <View>
+              "opacity": 1,
+            }
+          }
+        >
           <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
+            style={
+              Array [
                 Object {
-                  "opacity": 1,
-                }
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-1"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-1"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 1
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    Object {
-                      "backgroundColor": "#00B0FF",
-                      "borderColor": "#00B0FF",
-                    },
-                  ]
-                }
-                testID="question-choice-2-selected"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      Object {
-                        "color": "#FFFFFF",
-                      },
-                    ]
-                  }
-                >
-                  Option 2
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-3"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 3
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-4"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 4
-                </Text>
-              </View>
-            </View>
+              Play Store
+            </Text>
           </View>
         </View>
-      </RCTScrollView>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "backgroundColor": "#00B0FF",
+                  "borderColor": "#00B0FF",
+                },
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-2-selected"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                  },
+                ]
+              }
+            >
+              App Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-3"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Apple Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-4"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Pineapple Store
+            </Text>
+          </View>
+        </View>
+      </View>
     </View>
   </View>
   <View
@@ -542,312 +481,805 @@ exports[`Storyshots Question QCM 1`] = `
     }
   >
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
+      testID="question-choices"
     >
-      <RCTScrollView
-        ItemSeparatorComponent={[Function]}
-        data={
+      <View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-1"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Play Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-2"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              App Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-3"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Apple Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-4"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Pineapple Store
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <View
+      testID="button-validate-disabled"
+    >
+      <View
+        style={
           Array [
             Object {
-              "label": "Option 1",
-              "value": "ref_1",
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "borderRadius": 8,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginBottom": 10,
             },
+            Array [
+              Object {
+                "borderRadius": 32,
+                "borderWidth": 0,
+                "height": 54,
+                "marginBottom": 0,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+              },
+              undefined,
+            ],
             Object {
-              "label": "Option 2",
-              "value": "ref_2",
-            },
-            Object {
-              "label": "Option 3",
-              "value": "ref_3",
-            },
-            Object {
-              "label": "Option 4",
-              "value": "ref_4",
+              "backgroundColor": "#ECEFF1",
             },
           ]
         }
-        disableVirtualization={false}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        horizontal={false}
-        initialNumToRender={10}
-        keyExtractor={[Function]}
-        maxToRenderPerBatch={10}
-        numColumns={1}
-        onContentSizeChange={[Function]}
-        onEndReachedThreshold={2}
-        onLayout={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        renderItem={[Function]}
-        scrollEventThrottle={50}
-        stickyHeaderIndices={Array []}
-        testID="question-choices"
-        updateCellsBatchingPeriod={50}
-        viewabilityConfigCallbackPairs={Array []}
-        windowSize={21}
       >
-        <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+              ],
+            ]
+          }
+        >
+          Validate
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Question QCM Graphic 1`] = `
+<View
+  style={
+    Object {
+      "paddingVertical": 16,
+    }
+  }
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "textAlign": "center",
+        }
+      }
+      testID="question-header"
+    >
+      What is the online Apple application store called?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 48,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#90A4AE",
+          "fontSize": 15,
+          "textAlign": "center",
+        }
+      }
+      testID="explanation"
+    >
+      Select the correct answers
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      testID="question-choices"
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "flexDirection": "row",
+            }
+          }
+        >
           <View
-            onLayout={[Function]}
-            style={null}
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
           >
             <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Object {
-                  "opacity": 1,
-                }
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
               }
+              testID="question-choice-1"
             >
               <View
                 style={
+                  Object {
+                    "borderTopLeftRadius": 3,
+                    "borderTopRightRadius": 3,
+                    "height": 120,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={1}
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 120,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-1-image"
+                />
+              </View>
+              <Text
+                style={
                   Array [
                     Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "justifyContent": "flex-start",
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
                     },
                     false,
                   ]
                 }
-                testID="question-choice-1"
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 1
-                </Text>
-              </View>
+                Play Store
+              </Text>
             </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
           </View>
           <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
               }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-2"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 2
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
+            }
+          />
           <View
-            onLayout={[Function]}
-            style={null}
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
           >
             <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Object {
-                  "opacity": 1,
-                }
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
               }
+              testID="question-choice-2"
             >
               <View
                 style={
+                  Object {
+                    "borderTopLeftRadius": 3,
+                    "borderTopRightRadius": 3,
+                    "height": 120,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={1}
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 120,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-2-image"
+                />
+              </View>
+              <Text
+                style={
                   Array [
                     Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "justifyContent": "flex-start",
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
                     },
                     false,
                   ]
                 }
-                testID="question-choice-3"
               >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 3
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-4"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 4
-                </Text>
-              </View>
+                App Store with a portrait image
+              </Text>
             </View>
           </View>
         </View>
-      </RCTScrollView>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="question-choice-3"
+            >
+              <View
+                style={
+                  Object {
+                    "borderTopLeftRadius": 3,
+                    "borderTopRightRadius": 3,
+                    "height": 120,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={1}
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 120,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-3-image"
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "justifyContent": "flex-start",
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                    false,
+                  ]
+                }
+              >
+                Apple Store
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="question-choice-4"
+            >
+              <View
+                style={
+                  Object {
+                    "borderTopLeftRadius": 3,
+                    "borderTopRightRadius": 3,
+                    "height": 120,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={1}
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 120,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-4-image"
+                />
+              </View>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "justifyContent": "flex-start",
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                    false,
+                  ]
+                }
+              >
+                Pineapple Store
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   </View>
   <View
@@ -1026,312 +1458,252 @@ exports[`Storyshots Question With image 1`] = `
     }
   >
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
+      testID="question-choices"
     >
-      <RCTScrollView
-        ItemSeparatorComponent={[Function]}
-        data={
-          Array [
+      <View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "label": "Option 1",
-              "value": "ref_1",
-            },
-            Object {
-              "label": "Option 2",
-              "value": "ref_2",
-            },
-            Object {
-              "label": "Option 3",
-              "value": "ref_3",
-            },
-            Object {
-              "label": "Option 4",
-              "value": "ref_4",
-            },
-          ]
-        }
-        disableVirtualization={false}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        horizontal={false}
-        initialNumToRender={10}
-        keyExtractor={[Function]}
-        maxToRenderPerBatch={10}
-        numColumns={1}
-        onContentSizeChange={[Function]}
-        onEndReachedThreshold={2}
-        onLayout={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        renderItem={[Function]}
-        scrollEventThrottle={50}
-        stickyHeaderIndices={Array []}
-        testID="question-choices"
-        updateCellsBatchingPeriod={50}
-        viewabilityConfigCallbackPairs={Array []}
-        windowSize={21}
-      >
-        <View>
+              "opacity": 1,
+            }
+          }
+        >
           <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
+            style={
+              Array [
                 Object {
-                  "opacity": 1,
-                }
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-1"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-1"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 1
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-2"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 2
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-3"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 3
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-          </View>
-          <View
-            onLayout={[Function]}
-            style={null}
-          >
-            <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                      "borderColor": "rgba(0, 0, 0, 0.1)",
-                      "borderRadius": 3,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexDirection": "row",
-                      "padding": 3,
-                    },
-                    false,
-                  ]
-                }
-                testID="question-choice-4"
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#14171A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingHorizontal": 24,
-                        "paddingVertical": 16,
-                      },
-                      false,
-                    ]
-                  }
-                >
-                  Option 4
-                </Text>
-              </View>
-            </View>
+              Play Store
+            </Text>
           </View>
         </View>
-      </RCTScrollView>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-2"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              App Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-3"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Apple Store
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "rgba(0, 0, 0, 0.1)",
+                  "borderRadius": 3,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                },
+                false,
+                Object {
+                  "flexGrow": 1,
+                },
+              ]
+            }
+            testID="question-choice-4"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                  false,
+                ]
+              }
+            >
+              Pineapple Store
+            </Text>
+          </View>
+        </View>
+      </View>
     </View>
   </View>
   <View
