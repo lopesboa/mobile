@@ -12,10 +12,7 @@ const fakeStyle = StyleSheet.create({
   }
 });
 
-const handleRef = (element: ScrollView) => {
-  // eslint-disable-next-line no-console
-  console.log(element);
-};
+const handleRef = (element: ScrollView) => {};
 
 storiesOf('Screen', module)
   .add('Default', () => (
