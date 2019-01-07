@@ -1,7 +1,12 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {
+  NovaCompositionCoorpacademyLightbulb as TipIcon,
+  NovaSolidLoginKey1 as KeyPointIcon,
+  NovaLineStatusCheckCircle1 as CorrectionIcon
+} from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
 import type {CardType} from '../types';
@@ -23,11 +28,14 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
     padding: theme.spacing.base,
     borderTopLeftRadius: theme.radius.card,
     borderTopRightRadius: theme.radius.card
   },
   headerText: {
+    paddingLeft: theme.spacing.tiny,
     color: theme.colors.gray.dark,
     fontSize: 17,
     fontWeight: 'bold',
@@ -36,11 +44,23 @@ const styles = StyleSheet.create({
   headerTip: {
     backgroundColor: '#fff8c5'
   },
+  headerTipIcon: {
+    width: 21,
+    height: 21
+  },
   headerKeyPoint: {
     backgroundColor: '#ffded4'
   },
+  headerKeyPointIcon: {
+    width: 23,
+    height: 23
+  },
   headerCorrection: {
     backgroundColor: '#d3f1e2'
+  },
+  headerCorrectionIcon: {
+    height: 23,
+    width: 23
   },
   content: {
     flex: 1,
@@ -62,6 +82,13 @@ const Card = ({type, title, children, style, testID}: Props) => (
         type === CARD_TYPE.CORRECTION && styles.headerCorrection
       ]}
     >
+      {type === CARD_TYPE.TIP && <TipIcon color="#ffc035" style={styles.headerTipIcon} />}
+      {type === CARD_TYPE.KEY_POINT && (
+        <KeyPointIcon color="#ff7043" style={styles.headerKeyPointIcon} />
+      )}
+      {type === CARD_TYPE.CORRECTION && (
+        <CorrectionIcon color="#3ec483" style={styles.headerCorrectionIcon} />
+      )}
       <Text style={styles.headerText} numberOfLines={1}>
         {title}
       </Text>

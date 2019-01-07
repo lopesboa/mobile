@@ -42,6 +42,7 @@
     "pull:certificate:android": "babel-node scripts/pull-certificate-android.js"
   },
   "dependencies": {
+    "@coorpacademy/nova-icons": "^2.2.0",
     "@coorpacademy/react-native-deck-swiper": "^1.5.27",
     "apsl-react-native-button": "^3.1.1",
     "color": "^3.1.0",
@@ -50,6 +51,7 @@
     "react-native": "^0.56.0",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-linear-gradient": "^2.5.3",
+    "react-native-svg": "^6.0.0",
     "react-navigation": "^3.0.1"
   },
   "devDependencies": {
