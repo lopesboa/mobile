@@ -1,16 +1,23 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 
 const styles = StyleSheet.create({
-  main: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
     backgroundColor: '#f5f5f5'
+  },
+  content: {
+    flexGrow: 1,
+    justifyContent: 'center'
   }
 });
 
-const CenterView = (story: () => void) => <View style={styles.main}>{story()}</View>;
+const CenterView = (story: () => void) => (
+  <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    {story()}
+  </ScrollView>
+);
 
 export default CenterView;

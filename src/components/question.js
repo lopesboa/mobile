@@ -26,7 +26,9 @@ export type State = {|
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.small
+    paddingVertical: theme.spacing.base,
+    flexGrow: 1,
+    justifyContent: 'space-between'
   },
   choicesContainer: {
     paddingHorizontal: theme.spacing.small
@@ -35,9 +37,6 @@ const styles = StyleSheet.create({
     color: theme.colors.gray.medium,
     fontSize: 15,
     textAlign: 'center'
-  },
-  explanationContainer: {
-    paddingHorizontal: theme.spacing.large
   },
   header: {
     color: theme.colors.black,
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   validateButton: {
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   }
 });
 
@@ -73,9 +72,7 @@ const Question = ({
         <Text style={styles.header} testID="question-header">
           {header}
         </Text>
-      </View>
-      <Space type="small" />
-      <View style={styles.explanationContainer}>
+        <Space type="small" />
         <Text style={styles.explanation} testID="explanation">
           {explanation}
         </Text>

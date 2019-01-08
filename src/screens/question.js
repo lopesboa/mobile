@@ -24,7 +24,7 @@ export type ConnectedProps = {|
   choices: Array<QuestionChoiceItem>,
   media?: Media,
   onChoicePress: (item: QuestionChoiceItem) => void,
-  onCorrectAnswer: () => boolean,
+  onCorrectAnswer: () => void,
   getCorrection: () => Correction
 |};
 
@@ -36,10 +36,10 @@ type Props = {|
 class QuestionScreen extends React.PureComponent<Props> {
   props: Props;
 
-  screen: ScrollView;
+  scrollView: ScrollView;
 
   handleRef = (element: ScrollView) => {
-    this.screen = element;
+    this.scrollView = element;
   };
 
   handleButtonPress = () => {
@@ -52,7 +52,9 @@ class QuestionScreen extends React.PureComponent<Props> {
     const {isCorrect, userAnswers, answers, tip, keyPoint} = correction;
 
     // @todo call the handler everytime
-    const isFinished = isCorrect && onCorrectAnswer();
+    if (isCorrect) {
+      onCorrectAnswer();
+    }
     const correctionParams: CorrectionScreenParams = {
       isCorrect,
       title: (isCorrect && 'Good job!') || 'Ouch',
@@ -61,11 +63,10 @@ class QuestionScreen extends React.PureComponent<Props> {
       answers,
       question: header,
       userAnswers,
-      keyPoint,
-      isFinished
+      keyPoint
     };
     navigation.navigate('Correction', correctionParams);
-    this.screen.scrollTo({x: 0, y: 0, animated: true});
+    this.scrollView.scrollTo({x: 0, y: 0, animated: true});
   };
 
   render() {

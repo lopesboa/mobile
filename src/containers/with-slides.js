@@ -2,19 +2,26 @@
 
 import * as React from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
+import {connect} from 'react-redux';
 
+import {startProgression} from '../redux/actions/progression';
 import type {QuestionChoiceItem} from '../types';
-import type {ConnectedProps as QuestionProps, Correction} from '../screens/question';
+import type {ConnectedProps as QuestionConnectedProps, Correction} from '../screens/question';
 import slides from '../__mocks__/slides';
 import type {MockSlide} from '../__mocks__/slides';
 
-export type WithSlidesProps = QuestionProps;
+type ConnectedProps = {|
+  startProgression: typeof startProgression
+|};
+
+export type WithSlidesProps = QuestionConnectedProps;
 
 function withSlides<P>(
   WrappedComponent: React$ComponentType<P>
 ): React$ComponentType<React$ElementConfig<React$ComponentType<WithSlidesProps & P>>> {
   type Props = $Exact<{|
     ...P,
+    ...ConnectedProps,
     ...WithSlidesProps
   |}>;
   type State = {|
@@ -28,6 +35,8 @@ function withSlides<P>(
       slides,
       current: 'slide_1'
     };
+
+    componentDidMount = () => this.props.startProgression(1, this.state.slides.length);
 
     handleQuestionChoicePress = (item: QuestionChoiceItem) => {
       this.setState((state: State) => ({
@@ -93,15 +102,13 @@ function withSlides<P>(
       return result;
     };
 
-    handleCorrectAnswer = (): boolean => {
+    handleCorrectAnswer = () => {
       const nextSlide = this.getNextSlide();
       if (nextSlide) {
         this.setState({
           current: nextSlide.ref
         });
       }
-
-      return !nextSlide;
     };
 
     render() {
@@ -130,7 +137,12 @@ function withSlides<P>(
     }
   }
 
-  return hoistNonReactStatic(ComponentWithSlides, WrappedComponent);
+  return hoistNonReactStatic(
+    connect(null, {
+      startProgression
+    })(ComponentWithSlides),
+    WrappedComponent
+  );
 }
 
 export default withSlides;

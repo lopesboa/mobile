@@ -23,6 +23,28 @@ describe('Slide', () => {
     await weExpect(element(by.id('chapter-end'))).toBeNotVisible();
   });
 
+  describe('Progression', () => {
+    it('should see a progression', async () => {
+      await weExpect(element(by.id('progression-bar-1'))).toBeVisible();
+      await weExpect(element(by.id('progression-label'))).toBeVisible();
+    });
+
+    it('should see a progression in another tab', async () => {
+      await element(by.id('slide-tab'))
+        .atIndex(1)
+        .tap();
+      await weExpect(element(by.id('progression-bar-1'))).toBeVisible();
+      await weExpect(element(by.id('progression-label'))).toBeVisible();
+    });
+
+    afterAll(async () => {
+      // 2 is the first tab, dunno why
+      await element(by.id('slide-tab'))
+        .atIndex(2)
+        .tap();
+    });
+  });
+
   it('should be able to answer', async () => {
     await element(by.id('question-choice-1')).tap();
     await weExpect(element(by.id('question-choice-1-selected'))).toBeVisible();
@@ -77,6 +99,12 @@ describe('Slide', () => {
       await element(by.id('button-next-question')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
     });
+
+    // @todo once the store is hydrated, uncomment this:
+    /* it('should see the progression change', async () => {
+      await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
+      await weExpect(element(by.id('progression-bar-2'))).toBeVisible();
+    });*/
   });
 
   describe('Positive correction', () => {
@@ -121,6 +149,11 @@ describe('Slide', () => {
       await weExpect(element(by.id('button-next-question'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
+    });
+
+    it('should see the progression change', async () => {
+      await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
+      await weExpect(element(by.id('progression-bar-2'))).toBeVisible();
     });
   });
 

@@ -1,12 +1,15 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+import {connect} from 'react-redux';
 
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import type {Answer} from '../types';
+import {nextProgression} from '../redux/actions/progression';
+import type {StoreState} from '../redux';
 import type {Params as LevelEndScreenParams} from './level-end';
 
 export type Params = {|
@@ -17,11 +20,22 @@ export type Params = {|
   question: string,
   userAnswers: Array<Answer>,
   isCorrect: boolean,
-  keyPoint: string,
+  keyPoint: string
+|};
+
+type ConnectedStateProps = {|
   isFinished: boolean
 |};
 
-type Props = ReactNavigation$ScreenPropsWithParams<Params>;
+type ConnectedDispatchProps = {|
+  nextProgression: typeof nextProgression
+|};
+
+type Props = {|
+  ...ReactNavigation$ScreenPropsWithParams<Params>,
+  ...ConnectedStateProps,
+  ...ConnectedDispatchProps
+|};
 
 class CorrectionScreen extends React.PureComponent<Props> {
   props: Props;
@@ -35,8 +49,8 @@ class CorrectionScreen extends React.PureComponent<Props> {
   });
 
   handleButtonPress = () => {
-    const {navigation} = this.props;
-    const {isFinished, isCorrect} = navigation.state.params;
+    const {navigation, isFinished} = this.props;
+    const {isCorrect} = navigation.state.params;
 
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
@@ -45,10 +59,15 @@ class CorrectionScreen extends React.PureComponent<Props> {
       navigation.navigate('LevelEnd', levelEndParams);
     } else {
       navigation.dispatch(NavigationActions.back());
+      // @todo remove it once connected to redux
+      if (isCorrect) {
+        this.props.nextProgression();
+      }
     }
   };
 
   render() {
+    const {isFinished} = this.props;
     const {
       title,
       subtitle,
@@ -57,8 +76,7 @@ class CorrectionScreen extends React.PureComponent<Props> {
       question,
       userAnswers,
       isCorrect,
-      keyPoint,
-      isFinished
+      keyPoint
     } = this.props.navigation.state.params;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
@@ -82,4 +100,12 @@ class CorrectionScreen extends React.PureComponent<Props> {
   }
 }
 
-export default CorrectionScreen;
+const mapStateToProps = ({progression}: StoreState): ConnectedStateProps => ({
+  isFinished: progression.current === progression.count
+});
+
+const mapDispatchToProps: ConnectedDispatchProps = {
+  nextProgression
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CorrectionScreen);

@@ -16,7 +16,7 @@ export type QuestionChoiceItem = {|
 
 export type QuestionType = 'qcm' | 'qcmGraphic';
 
-export type SpaceType = 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
+export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
 
 export type CardType = 'tip' | 'keyPoint' | 'correction';
 

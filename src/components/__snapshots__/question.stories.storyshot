@@ -4,7 +4,9 @@ exports[`Storyshots Question Option selected 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 16,
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
     }
   }
   testID="question"
@@ -29,22 +31,14 @@ exports[`Storyshots Question Option selected 1`] = `
     >
       What is the online Apple application store called?
     </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "height": 16,
-        "width": 16,
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
       }
-    }
-  />
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 48,
-      }
-    }
-  >
+    />
     <Text
       style={
         Object {
@@ -346,7 +340,7 @@ exports[`Storyshots Question Option selected 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -411,7 +405,9 @@ exports[`Storyshots Question QCM 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 16,
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
     }
   }
   testID="question"
@@ -436,22 +432,14 @@ exports[`Storyshots Question QCM 1`] = `
     >
       What is the online Apple application store called?
     </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "height": 16,
-        "width": 16,
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
       }
-    }
-  />
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 48,
-      }
-    }
-  >
+    />
     <Text
       style={
         Object {
@@ -748,7 +736,7 @@ exports[`Storyshots Question QCM 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -822,7 +810,9 @@ exports[`Storyshots Question QCM Graphic 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 16,
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
     }
   }
   testID="question"
@@ -847,22 +837,14 @@ exports[`Storyshots Question QCM Graphic 1`] = `
     >
       What is the online Apple application store called?
     </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "height": 16,
-        "width": 16,
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
       }
-    }
-  />
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 48,
-      }
-    }
-  >
+    />
     <Text
       style={
         Object {
@@ -1301,7 +1283,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -1375,7 +1357,9 @@ exports[`Storyshots Question With image 1`] = `
 <View
   style={
     Object {
-      "paddingVertical": 16,
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
     }
   }
   testID="question"
@@ -1400,22 +1384,14 @@ exports[`Storyshots Question With image 1`] = `
     >
       What is the online Apple application store called?
     </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "height": 16,
-        "width": 16,
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
       }
-    }
-  />
-  <View
-    style={
-      Object {
-        "paddingHorizontal": 48,
-      }
-    }
-  >
+    />
     <Text
       style={
         Object {
@@ -1725,7 +1701,7 @@ exports[`Storyshots Question With image 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Progression Default 1`] = `
+<View
+  testID="progression"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ECEFF1",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#00B0FF",
+          "height": 3,
+          "width": "10%",
+        }
+      }
+      testID="progression-bar-1"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "borderBottomLeftRadius": 12,
+          "flexDirection": "row",
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        }
+      }
+      testID="progression-label"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 13,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#00B0FF",
+            },
+          ]
+        }
+      >
+        1
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#90A4AE",
+            "fontSize": 13,
+            "fontWeight": "700",
+          }
+        }
+      >
+        /
+        10
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Progression Empty 1`] = `null`;

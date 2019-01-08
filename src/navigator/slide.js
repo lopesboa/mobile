@@ -1,14 +1,16 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
+import type {NavigationStackRouterConfig} from 'react-navigation';
 import {
   NovaCompositionCoorpacademyFilterVideo2 as LessonIcon,
   NovaCompositionCoorpacademyClue as ClueIcon,
   NovaCompositionCoorpacademyListBullets3 as QuestionIcon
 } from '@coorpacademy/nova-icons';
 
+import Progression from '../components/progression';
 import TabBar from '../containers/tab-bar';
 import theme from '../modules/theme';
 import CorrectionScreen from '../screens/correction';
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export const slideTabsNavigator = createBottomTabNavigator(
+const slideTabsNavigator = createBottomTabNavigator(
   {
     Question: {
       screen: QuestionScreen,
@@ -70,7 +72,10 @@ export const slideTabsNavigator = createBottomTabNavigator(
     }
   },
   {
-    defaultNavigationOptions: navigationOptions,
+    defaultNavigationOptions: {
+      ...navigationOptions,
+      tabBarTestID: 'slide-tab'
+    },
     tabBarOptions: {
       inactiveTintColor: theme.colors.gray.dark,
       // this is dynamic and handled by our custom tab-bar component
@@ -95,6 +100,29 @@ export const slideTabsNavigator = createBottomTabNavigator(
     tabBarPosition: 'bottom',
     swipeEnabled: false,
     tabBarComponent: TabBar
+  }
+);
+
+const ProgressionHeader = ({defaultNavigationOptions}: NavigationStackRouterConfig) => (
+  <View style={defaultNavigationOptions && defaultNavigationOptions.headerStyle}>
+    <Progression />
+  </View>
+);
+
+export const slideNavigator = createStackNavigator(
+  {
+    Tabs: {screen: slideTabsNavigator}
+  },
+  {
+    defaultNavigationOptions: {
+      ...navigationOptions,
+      header: ProgressionHeader,
+      headerStyle: {
+        position: 'absolute',
+        width: '100%',
+        top: 0
+      }
+    }
   }
 );
 

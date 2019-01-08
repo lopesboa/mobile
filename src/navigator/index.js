@@ -4,17 +4,19 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 // import Header from '../components/header';
 import HomeScreen from '../screens/home';
-import {slideTabsNavigator, slideModalsNavigator} from './slide';
+import {slideNavigator, slideModalsNavigator} from './slide';
 import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
 
 const appNavigator = createStackNavigator(
   {
     Home: {screen: HomeScreen},
-    Slide: {screen: slideTabsNavigator}
+    Slide: {screen: slideNavigator}
   },
   {
-    defaultNavigationOptions: navigationOptions
-    // header: Header
+    defaultNavigationOptions: {
+      ...navigationOptions
+      // header: Header
+    }
   }
 );
 

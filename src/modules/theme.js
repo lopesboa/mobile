@@ -28,6 +28,7 @@ export type Theme = {|
   radius: {
     common: number,
     card: number,
+    medium: number,
     button: number
   },
   fontWeight: {
@@ -52,6 +53,7 @@ const theme: Theme = {
     battle: '#FFE100'
   },
   spacing: {
+    micro: 4,
     tiny: 8,
     small: 16,
     base: 24,
@@ -61,6 +63,7 @@ const theme: Theme = {
   radius: {
     common: 3,
     card: 5,
+    medium: 12,
     button: 32
   },
   fontWeight: {
