@@ -25,6 +25,7 @@ jobs:
           root: ~/app
           paths:
             - node_modules
+
   linting:
     working_directory: ~/app
     docker:
@@ -36,6 +37,7 @@ jobs:
       - run:
           name: Lint
           command: yarn lint && yarn flow
+
   unit_tests:
     working_directory: ~/app
     docker:
@@ -49,6 +51,7 @@ jobs:
           command: yarn test:unit
           environment:
             TZ: Europe/Paris
+
   end2end_tests_ios:
     macos:
       xcode: "10.1.0"
@@ -106,6 +109,169 @@ jobs:
           command: yarn test:end2end:ios:release
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
+
+  build_ios:
+    macos:
+      xcode: "10.1.0"
+    working_directory: ~/app
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/app
+
+      - restore_cache:
+          key: gems-v1-ios-{{ arch }}
+
+      - run:
+          name: Gems dependencies
+          command: cd ios && bundle install
+
+      - save_cache:
+          key: gems-v1-ios-{{ arch }}
+          paths:
+            - ios/gems
+
+      - restore_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+
+      - run:
+          name: Pods dependencies
+          command: yarn cocoapods:install
+
+      - save_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          paths:
+            - ~/Library/Caches/CocoaPods
+            - ios/Pods
+
+      - run:
+          name: Build
+          command: cd ios && bundle exec fastlane adhoc --verbose
+          environment:
+            RCT_NO_LAUNCH_PACKAGER: 1
+
+      - store_artifacts:
+          path: ios/release
+          destination: artifacts
+
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - ios/release
+
+  build_android:
+    working_directory: ~/app
+    docker:
+      - image: circleci/android:api-28-node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+
+      - restore_cache:
+          key: gems-v1-android-{{ arch }}
+
+      - run:
+          name: Gems dependencies
+          command: cd android && bundle install
+
+      - save_cache:
+          key: gems-v1-android-{{ arch }}
+          paths:
+            - android/gems
+
+      - restore_cache:
+          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/debugCompileClasspath.lockfile" }}-{{ arch }}
+
+      - run:
+          name: Gradle dependencies
+          command: cd android && ./gradlew androidDependencies
+          environment:
+            ANDROID_HOME: /opt/android/sdk
+
+      - save_cache:
+          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/debugCompileClasspath.lockfile" }}-{{ arch }}
+          paths:
+            - ~/.gradle/caches
+
+      - run:
+          name: Pull certificate
+          command: yarn pull:certificate:android
+
+      - run:
+          name: Build
+          command: cd android && bundle exec fastlane adhoc --verbose
+          environment:
+            RCT_NO_LAUNCH_PACKAGER: 1
+
+      - store_artifacts:
+          path: android/app/build/outputs/apk/release
+          destination: artifacts
+
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - android/app/build/outputs/apk/release
+
+  deploy_ios:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Cloning internal store
+          command: git clone https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git ${HEROKU_APP_NAME}
+      - run:
+          name: Deploy to internal store
+          command: |
+            [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
+            echo "Deploying on ${BRANCH_NAME}"
+            mkdir -p "${HEROKU_APP_NAME}/${BRANCH_NAME}"
+            cd "${HEROKU_APP_NAME}/${BRANCH_NAME}"
+            echo "{\"date\": \"$(date '+%d/%m/%Y %H:%M:%S')\"}" > build-ios.json
+            cp ../../ios/release/Coorpacademy.ipa Coorpacademy.ipa
+            cp ../../.circleci/adhoc-template.plist Coorpacademy.plist
+            sed -i -e "s@{DOMAIN}@${DOMAIN}@g" Coorpacademy.plist
+            sed -i -e "s@{PATH}@${BRANCH_NAME}@g" Coorpacademy.plist
+            git config --global user.email mobile@coorpacademy.com
+            git config --global user.name "Mobile app CI"
+            git add .
+            git commit -m "Automatic iOS build on ${BRANCH_NAME}"
+            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git master
+          environment:
+            DOMAIN: https://mobile-internal-store.herokuapp.com
+
+  deploy_android:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Cloning internal store
+          command: git clone https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git ${HEROKU_APP_NAME}
+      - run:
+          name: Deploy to internal store
+          command: |
+            [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
+            echo "Deploying on ${BRANCH_NAME}"
+            mkdir -p "${HEROKU_APP_NAME}/${BRANCH_NAME}"
+            cd "${HEROKU_APP_NAME}/${BRANCH_NAME}"
+            echo "{\"date\": \"$(date '+%d/%m/%Y %H:%M:%S')\"}" > build-android.json
+            cp ../../android/app/build/outputs/apk/release/Coorpacademy-release.apk Coorpacademy.apk
+            git config --global user.email mobile@coorpacademy.com
+            git config --global user.name "Mobile app CI"
+            git add .
+            git commit -m "Automatic Android build on ${BRANCH_NAME}"
+            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git master
+
 workflows:
   version: 2
   tests-build-deploy:
@@ -120,3 +286,15 @@ workflows:
       - end2end_tests_ios:
          requires:
            - dependencies
+      - build_ios:
+         requires:
+           - dependencies
+      - deploy_ios:
+         requires:
+           - build_ios
+      - build_android:
+         requires:
+           - dependencies
+      - deploy_android:
+          requires:
+            - build_android

@@ -1,0 +1,79 @@
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.67.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    ENV["XCODEPROJ"] = "Coorpacademy.xcodeproj"
+    ENV["PLIST_PATH"] = "Coorpacademy/Info.plist"
+    ENV["CURRENT_USER"] = `whoami`.chomp
+    skip_docs
+    cocoapods
+    setup_circle_ci
+    puts 'call npm run update:version'
+    `npm run update:version`
+    puts 'call npm run generate:bundle:ios'
+    `npm run generate:bundle:ios`
+  end
+
+  desc "build an adhoc release for internal store"
+  lane :adhoc do
+    match(type: "adhoc", readonly: true)
+    pem(
+      team_id: ENV["TEAM_ID"],
+      app_identifier: ENV["APP_IDENTIFIER"]
+    )
+    update_app_identifier(
+      app_identifier: ENV["APP_IDENTIFIER"],
+      xcodeproj: ENV["XCODEPROJ"],
+      plist_path: ENV["PLIST_PATH"]
+    )
+    update_project_provisioning(
+      xcodeproj: ENV["XCODEPROJ"],
+      build_configuration: "Release",
+      profile: ENV["sigh_com.coorpacademy.app_adhoc_profile-path"]
+    )
+    update_info_plist(
+      plist_path: ENV["PLIST_PATH"],
+      display_name: ENV["DISPLAY_NAME"]
+    )
+    update_project_team
+    gym(
+      export_method: 'ad-hoc'
+    )
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    increment_build_number
+    match(type: "appstore", readonly: true)
+    pem(
+      team_id: ENV["TEAM_ID"],
+      app_identifier: ENV["APP_IDENTIFIER"]
+    )
+    update_app_identifier(
+      app_identifier: ENV["APP_IDENTIFIER"],
+      xcodeproj: ENV["XCODEPROJ"],
+      plist_path: ENV["PLIST_PATH"]
+    )
+    update_project_provisioning(
+      xcodeproj: ENV["xcodeproj"],
+      build_configuration: "Release"
+    )
+    update_info_plist(
+      plist_path: ENV["PLIST_PATH"],
+      display_name: ENV["DISPLAY_NAME"]
+    )
+    update_project_team
+    gym()
+    puts 'call npm run build:incrementVersionCode ios'
+    `npm run build:incrementVersionCode ios`
+    testflight(
+      team_id: ENV["ITC_TEAM_ID"],
+      app_identifier: ENV["APP_IDENTIFIER"]
+    )
+  end
+end

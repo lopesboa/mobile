@@ -1,0 +1,82 @@
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.63.0"
+
+default_platform :android
+
+platform :android do
+  before_all do
+    puts 'call npm run update:version'
+    `npm run update:version`
+    puts 'call npm run generate:bundle:android'
+    `npm run generate:bundle:android`
+  end
+
+  desc "build an adhoc release for internal store"
+  lane :adhoc do
+    gradle(
+      task: "assemble",
+      build_type: "Release"
+    )
+  end
+
+  desc "Submit a new Internal Build to Google Play "
+  lane :beta do |options|
+    increment_version_code(
+      gradle_file_path: "app/build.gradle",
+      version_code: ENV['NEXT_VERSION_CODE']
+    )
+    gradle(
+      task: "assemble",
+      build_type: "Release"
+    )
+    puts 'call npm run build:incrementVersionCode android'
+    `npm run build:incrementVersionCode android`
+    supply(track: "internal")
+  end
+
+  desc "Promote a build to the target step"
+  lane :promoteTrack do |options|
+    # supply init download metadata that are mandatory to promote
+    `cd .. && fastlane supply init json_key:#{ENV['SUPPLY_JSON_KEY']}`
+    if options[:current] and options[:target]
+      supplyOptions = {}
+      supplyOptions[:track] = options[:current]
+      supplyOptions[:track_promote_to] = options[:target]
+      supplyOptions[:skip_upload_apk] = true
+      supplyOptions[:skip_upload_metadata] = true
+      supplyOptions[:skip_upload_images] = true
+      supplyOptions[:skip_upload_screenshots] = true
+      if options[:target] == "rollout"
+        if options[:rollout]
+          supplyOptions[:rollout] = options[:rollout]
+        else
+          UI.error "Please provide the rollout option to promote to rollout track!"
+        end
+      end
+
+      supply(supplyOptions)
+    else
+      UI.error "Please provide the current and the target track as options!"
+    end
+  end
+
+  desc "Return the highest version code between all play store tracks"
+  lane :getHighestVersionCodeOnStore do
+    highestVersionCode = []
+    alpha = google_play_track_version_codes(track: 'alpha')
+    unless alpha.nil? || alpha[0].nil?
+      highestVersionCode.push(alpha[0])
+    end
+    beta = google_play_track_version_codes(track: 'beta')
+    unless beta.nil? || beta[0].nil?
+      highestVersionCode.push(beta[0])
+    end
+    production = google_play_track_version_codes()
+    unless production.nil? || production[0].nil?
+      highestVersionCode.push(production[0])
+    end
+
+    puts 'The highest version code retrieve on store is ' + highestVersionCode.max.to_s
+  end
+end

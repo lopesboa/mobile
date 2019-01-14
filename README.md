@@ -14,13 +14,13 @@ For iOS debug builds, you need to use `yarn pull:certificate:ios`. If you need m
 
 (facultative) For Android release builds (production mode), you need to use `yarn pull:certificate:android` command.
 
-##### First run using iOS
+##### First run
 
 ```console
 yarn start:ios
 ```
 
-##### First run using iOS
+##### First run on Android
 
 For Android, you may need to allow your emulator to connect to your packager:
 

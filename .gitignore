@@ -55,9 +55,19 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+*.bundle
 
 # CocoaPods
 ios/Pods
+
+# Fastlane
+ios/gems
+ios/fastlane/README.md
+android/gems
+android/fastlane/README.md
+
+# Version
+src/modules/version.json
 
 # Jest
 coverage

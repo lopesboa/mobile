@@ -24,6 +24,22 @@ yarn start:[ios|android]:clean
 
 If you still have issue(s), take a look at Flow errors, it might help you
 
+## index.androix.bundle / main.jsbundle not found
+
+Bundle file is not found by React-Native at launch.
+
+##### Identified problem
+
+The file is not generated automatically by React-Native, even if it should.
+
+##### How to resolve
+
+Run:
+
+```console
+yarn generate:bundle:[ios|android]
+```
+
 ## Node-gyp dependency installation error
 
 ##### Identified problem
