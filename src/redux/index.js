@@ -5,13 +5,17 @@ import thunk from 'redux-thunk';
 
 import type {State as ProgressionState} from './reducers/progression';
 import progression from './reducers/progression';
+import type {State as NavigationState} from './reducers/navigation';
+import navigation from './reducers/navigation';
 
 export type StoreState = {|
-  progression: ProgressionState
+  progression: ProgressionState,
+  navigation: NavigationState
 |};
 
 const rootReducer = combineReducers({
-  progression
+  progression,
+  navigation
 });
 
 const middlewares = [thunk];
