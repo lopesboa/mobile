@@ -233,7 +233,7 @@ jobs:
             echo "Deploying on ${BRANCH_NAME}"
             mkdir -p "${HEROKU_APP_NAME}/${BRANCH_NAME}"
             cd "${HEROKU_APP_NAME}/${BRANCH_NAME}"
-            echo "{\"date\": \"$(date '+%d/%m/%Y %H:%M:%S')\"}" > build-ios.json
+            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\"}" > build-ios.json
             cp ../../ios/release/Coorpacademy.ipa Coorpacademy.ipa
             cp ../../.circleci/adhoc-template.plist Coorpacademy.plist
             sed -i -e "s@{DOMAIN}@${DOMAIN}@g" Coorpacademy.plist
@@ -264,7 +264,7 @@ jobs:
             echo "Deploying on ${BRANCH_NAME}"
             mkdir -p "${HEROKU_APP_NAME}/${BRANCH_NAME}"
             cd "${HEROKU_APP_NAME}/${BRANCH_NAME}"
-            echo "{\"date\": \"$(date '+%d/%m/%Y %H:%M:%S')\"}" > build-android.json
+            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\"}" > build-android.json
             cp ../../android/app/build/outputs/apk/release/Coorpacademy-release.apk Coorpacademy.apk
             git config --global user.email mobile@coorpacademy.com
             git config --global user.name "Mobile app CI"
