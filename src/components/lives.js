@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Animated, View, Text, StyleSheet} from 'react-native';
 import {
   NovaSolidVoteRewardsVoteHeart as HeartIcon,
   NovaCompositionCoorpacademyBrokenHeart as HeartBrokenIcon,
@@ -14,7 +14,12 @@ export type Props = {|
   count: number,
   height: number,
   isBroken?: boolean,
-  testID?: string
+  testID?: string,
+  translateX?: Animated.Interpolation,
+  scaleX?: Animated.Interpolation,
+  scaleY?: Animated.Interpolation,
+  heartOpacity?: Animated.Interpolation,
+  heartBrokenOpacity?: Animated.Interpolation
 |};
 
 const HEART_OFFSET_RIGHT = 0.4;
@@ -44,13 +49,38 @@ const styles = StyleSheet.create({
   }
 });
 
-const Lives = ({count, height, isBroken, testID = 'lives'}: Props) => {
+const Lives = ({
+  count,
+  height,
+  isBroken,
+  testID = 'lives',
+  translateX,
+  scaleX,
+  scaleY,
+  heartOpacity,
+  heartBrokenOpacity
+}: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT),
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT),
     height
+  };
+  const transform = [];
+  if (translateX) {
+    transform.push({translateX});
+  }
+  if (scaleX) {
+    transform.push({scaleX});
+  }
+  if (scaleY) {
+    transform.push({scaleY});
+  }
+  const heartStyle = {
+    height: heartHeight,
+    width: heartHeight,
+    transform
   };
   const livesStyle = {
     width: height,
@@ -67,22 +97,33 @@ const Lives = ({count, height, isBroken, testID = 'lives'}: Props) => {
       <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
         <Text style={[styles.text, textStyle]}>x{count}</Text>
       </View>
-      <View style={[styles.heart, {height: heartHeight, width: heartHeight}]}>
+      <Animated.View style={[styles.heart, heartStyle]}>
         <HeartOutlineIcon
           color={theme.colors.white}
           stroke={theme.colors.white}
           style={{height: heartHeight, width: heartHeight}}
         />
-        {!isBroken && (
-          <HeartIcon color={theme.colors.negative} style={[styles.heartIcon, heartIconStyle]} />
-        )}
-        {isBroken && (
-          <HeartBrokenIcon
-            color={theme.colors.negative}
-            style={[styles.heartIcon, heartIconStyle]}
-          />
-        )}
-      </View>
+        <Animated.View
+          style={[
+            styles.heartIcon,
+            {
+              opacity: heartOpacity || 1
+            }
+          ]}
+        >
+          <HeartIcon color={theme.colors.negative} style={heartIconStyle} />
+        </Animated.View>
+        <Animated.View
+          style={[
+            styles.heartIcon,
+            {
+              opacity: heartBrokenOpacity || 0
+            }
+          ]}
+        >
+          <HeartBrokenIcon color={theme.colors.negative} style={heartIconStyle} />
+        </Animated.View>
+      </Animated.View>
     </View>
   );
 };
