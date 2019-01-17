@@ -5,8 +5,8 @@ import utils from './utils';
 describe('Slide', () => {
   beforeAll(async () => {
     await utils.reloadApp();
-    await waitFor(element(by.id('button-start-course'))).toBeVisible();
-    await element(by.id('button-start-course')).tap();
+    await waitFor(element(by.id('button-start-course-with-lives'))).toBeVisible();
+    await element(by.id('button-start-course-with-lives')).tap();
   });
 
   it('should see question elements', async () => {
@@ -21,6 +21,10 @@ describe('Slide', () => {
     await weExpect(element(by.id('correction-success'))).toBeNotVisible();
     await weExpect(element(by.id('correction-error'))).toBeNotVisible();
     await weExpect(element(by.id('chapter-end'))).toBeNotVisible();
+  });
+
+  it('should see lives', async () => {
+    await weExpect(element(by.id('lives-3'))).toBeVisible();
   });
 
   describe('Progression', () => {
@@ -73,6 +77,10 @@ describe('Slide', () => {
       await weExpect(element(by.id('card-tip'))).toExist();
     });
 
+    it('should lose a life', async () => {
+      await weExpect(element(by.id('correction-lives-2-broken'))).toBeVisible();
+    });
+
     it('should be able to swipe to key point card', async () => {
       await element(by.id('card-correction')).swipe('up');
       await weExpect(element(by.id('card-correction'))).toBeNotVisible();
@@ -100,11 +108,15 @@ describe('Slide', () => {
       await waitFor(element(by.id('question'))).toBeVisible();
     });
 
+    it('should see lives updated', async () => {
+      await weExpect(element(by.id('lives-2'))).toBeVisible();
+    });
+
     // @todo once the store is hydrated, uncomment this:
-    /* it('should see the progression change', async () => {
-      await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
-      await weExpect(element(by.id('progression-bar-2'))).toBeVisible();
-    });*/
+    // it('should see the progression change', async () => {
+    //  await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
+    //  await weExpect(element(by.id('progression-bar-2'))).toBeVisible();
+    // });
   });
 
   describe('Positive correction', () => {
@@ -122,6 +134,10 @@ describe('Slide', () => {
       await weExpect(element(by.id('card-tip'))).toBeVisible();
       await weExpect(element(by.id('card-keypoint'))).toExist();
       await weExpect(element(by.id('card-correction'))).toExist();
+    });
+
+    it('should keep lives', async () => {
+      await weExpect(element(by.id('correction-lives-2'))).toBeVisible();
     });
 
     it('should be able to swipe to correction card', async () => {
@@ -149,6 +165,10 @@ describe('Slide', () => {
       await weExpect(element(by.id('button-next-question'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
+    });
+
+    it('should see lives', async () => {
+      await weExpect(element(by.id('lives-2'))).toBeVisible();
     });
 
     it('should see the progression change', async () => {
@@ -185,7 +205,7 @@ describe('Slide', () => {
     });
 
     it('should see a button to continue', async () => {
-      await waitFor(element(by.id('question'))).toBeVisible();
+      await waitFor(element(by.id('correction-success'))).toBeVisible();
       await weExpect(element(by.id('button-continue'))).toBeVisible();
     });
 
@@ -205,6 +225,70 @@ describe('Slide', () => {
       await element(by.id('button-next-level')).tap();
       await waitFor(element(by.id('home'))).toBeVisible();
       await weExpect(element(by.id('home'))).toBeVisible();
+    });
+  });
+
+  describe('Game over', () => {
+    beforeAll(async () => {
+      await element(by.id('button-start-course-with-lives')).tap();
+      await element(by.id('question-choice-1')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await element(by.id('button-next-question')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await element(by.id('button-next-question')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+    });
+
+    it('should see a button to continue', async () => {
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('button-continue'))).toBeVisible();
+    });
+
+    it('should navigate to level end', async () => {
+      await element(by.id('button-continue')).tap();
+      await waitFor(element(by.id('level-end-error'))).toBeVisible();
+      await weExpect(element(by.id('level-end-error'))).toBeVisible();
+    });
+
+    it('should see elements', async () => {
+      await weExpect(element(by.id('level-end-title'))).toBeVisible();
+      await weExpect(element(by.id('level-end-subtitle'))).toBeVisible();
+      await weExpect(element(by.id('button-retry-level'))).toBeVisible();
+    });
+
+    it('should back to home', async () => {
+      await element(by.id('button-retry-level')).tap();
+      await waitFor(element(by.id('home'))).toBeVisible();
+      await weExpect(element(by.id('home'))).toBeVisible();
+    });
+  });
+
+  describe('Infinite lives', () => {
+    beforeAll(async () => {
+      await element(by.id('button-start-course-without-lives')).tap();
+      await element(by.id('question-choice-1')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await element(by.id('button-next-question')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await element(by.id('button-next-question')).tap();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+    });
+
+    it('should see a button to continue', async () => {
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('button-next-question'))).toBeVisible();
+    });
+
+    it('should back to the question', async () => {
+      await element(by.id('button-next-question')).tap();
+      await waitFor(element(by.id('question'))).toBeVisible();
+      await weExpect(element(by.id('question'))).toBeVisible();
     });
   });
 });

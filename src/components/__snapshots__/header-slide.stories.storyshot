@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots HeaderSlide Advanced 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingRight": 16,
+        "paddingVertical": 16,
+      },
+      Object {
+        "height": 60,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 1000,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 28,
+            "width": 28,
+          },
+          Object {
+            "borderRadius": 1000,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ]
+      }
+    >
+      Advanced
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 12,
+          "fontWeight": "700",
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots HeaderSlide Basic 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingRight": 16,
+        "paddingVertical": 16,
+      },
+      Object {
+        "height": 60,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 1000,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 28,
+            "width": 28,
+          },
+          Object {
+            "borderRadius": 1000,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ]
+      }
+    >
+      Basic
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 12,
+          "fontWeight": "700",
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots HeaderSlide Coach 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingRight": 16,
+        "paddingVertical": 16,
+      },
+      Object {
+        "height": 60,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 1000,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 28,
+            "width": 28,
+          },
+          Object {
+            "borderRadius": 1000,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ]
+      }
+    >
+      Coach
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 12,
+          "fontWeight": "700",
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+    </Text>
+  </View>
+</View>
+`;

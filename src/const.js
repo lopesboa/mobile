@@ -1,7 +1,7 @@
 // @flow strict
 /* eslint-disable import/prefer-default-export */
 
-import type {QuestionType, SpaceType, MediaType, CardType} from './types';
+import type {QuestionType, SpaceType, MediaType, CardType, LevelType} from './types';
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC';
 export const QUESTION_TYPE: {
@@ -32,4 +32,12 @@ export const CARD_TYPE: {
   TIP: 'tip',
   KEY_POINT: 'keyPoint',
   CORRECTION: 'correction'
+};
+
+export const LEVEL_TYPE: {
+  [string]: LevelType
+} = {
+  BASE: 'base',
+  ADVANCED: 'advanced',
+  COACH: 'coach'
 };

@@ -22,7 +22,7 @@ const fakeLayout: Layout = {
 };
 
 storiesOf('Correction', module)
-  .add('Bad Answer', () => (
+  .add('Bad answer', () => (
     <View style={fakeLayout}>
       <Correction
         answers={answers}
@@ -38,10 +38,11 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        lives={3}
       />
     </View>
   ))
-  .add('Good Answer', () => (
+  .add('Good answer', () => (
     <View style={fakeLayout}>
       <Correction
         answers={answers}
@@ -57,6 +58,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        lives={2}
       />
     </View>
   ))
@@ -78,6 +80,7 @@ storiesOf('Correction', module)
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isFinished={false}
+          lives={2}
         />
       </View>
     );
@@ -98,10 +101,11 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        lives={3}
       />
     </View>
   ))
-  .add('Last bad Answer', () => (
+  .add('Last bad answer', () => (
     <View style={fakeLayout}>
       <Correction
         answers={answers}
@@ -117,10 +121,69 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished
+        lives={0}
       />
     </View>
   ))
-  .add('Last good Answer', () => (
+  .add('Last good answer', () => (
+    <View style={fakeLayout}>
+      <Correction
+        answers={answers}
+        userAnswers={answers}
+        tip={
+          "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+        }
+        title="Good job!"
+        isCorrect
+        onButtonPress={handleButtonPress}
+        question={question}
+        subtitle="Good Answer"
+        keyPoint="The KEY POINT"
+        layout={fakeLayout}
+        isFinished
+        lives={1}
+      />
+    </View>
+  ))
+  .add('Bad answer without lives', () => (
+    <View style={fakeLayout}>
+      <Correction
+        answers={answers}
+        userAnswers={answers.concat(['Anything else'])}
+        tip={
+          "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
+        }
+        isCorrect={false}
+        title="Oops..."
+        onButtonPress={handleButtonPress}
+        question={question}
+        subtitle="Bad Answer"
+        keyPoint="The KEY POINT"
+        layout={fakeLayout}
+        isFinished={false}
+      />
+    </View>
+  ))
+  .add('Good answer without lives', () => (
+    <View style={fakeLayout}>
+      <Correction
+        answers={answers}
+        userAnswers={answers}
+        tip={
+          "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+        }
+        title="Good job!"
+        isCorrect
+        onButtonPress={handleButtonPress}
+        question={question}
+        subtitle="Good Answer"
+        keyPoint="The KEY POINT"
+        layout={fakeLayout}
+        isFinished={false}
+      />
+    </View>
+  ))
+  .add('Last good answer without lives', () => (
     <View style={fakeLayout}>
       <Correction
         answers={answers}

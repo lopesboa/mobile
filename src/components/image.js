@@ -16,7 +16,7 @@ export type Props = {|
 
 const Image = ({source, width, maxHeight, style, testID}: Props) => {
   const imageProperties = AssetRegistry.getAssetByID(source);
-  const {width: originalWidth, height: originalHeight} = imageProperties;
+  const {width: originalWidth, height: originalHeight} = imageProperties || {};
 
   const dimensions = getImageDimensions(
     Number(originalWidth),

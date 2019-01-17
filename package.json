@@ -45,7 +45,7 @@
     "generate:bundle:ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ./ios/main.jsbundle"
   },
   "dependencies": {
-    "@coorpacademy/nova-icons": "^2.2.0",
+    "@coorpacademy/nova-icons": "^2.2.1",
     "@coorpacademy/react-native-deck-swiper": "^1.5.27",
     "apsl-react-native-button": "^3.1.1",
     "color": "^3.1.0",

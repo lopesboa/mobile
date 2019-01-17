@@ -5,7 +5,9 @@ import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import type {NavigationState} from 'react-navigation';
 
-// import Header from '../components/header';
+import theme from '../modules/theme';
+// import HeaderSlide from '../containers/header-slide';
+import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
@@ -14,13 +16,21 @@ import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-op
 const appNavigator = createStackNavigator(
   {
     Home: {screen: HomeScreen},
-    Slide: {screen: slideNavigator}
+    Slide: {
+      screen: slideNavigator,
+      navigationOptions: {
+        ...navigationOptions,
+        headerStyle: {
+          ...navigationOptions.headerStyle,
+          backgroundColor: theme.colors.gray.extra
+        },
+        // headerTitle: <HeaderSlide />,
+        headerRight: <HeaderSlideRight />
+      }
+    }
   },
   {
-    defaultNavigationOptions: {
-      ...navigationOptions
-      // header: Header
-    }
+    defaultNavigationOptions: navigationOptions
   }
 );
 

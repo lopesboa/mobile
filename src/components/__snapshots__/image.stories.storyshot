@@ -3,12 +3,16 @@
 exports[`Storyshots Image Default 1`] = `
 <Image
   resizeMode="contain"
-  source={1}
+  source={
+    Object {
+      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+    }
+  }
   style={
     Array [
       Object {
-        "height": 100,
-        "width": 100,
+        "height": NaN,
+        "width": NaN,
       },
       undefined,
     ]
@@ -19,12 +23,16 @@ exports[`Storyshots Image Default 1`] = `
 exports[`Storyshots Image Max height 1`] = `
 <Image
   resizeMode="contain"
-  source={1}
+  source={
+    Object {
+      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+    }
+  }
   style={
     Array [
       Object {
-        "height": 100,
-        "width": 100,
+        "height": NaN,
+        "width": 200,
       },
       undefined,
     ]
@@ -35,11 +43,15 @@ exports[`Storyshots Image Max height 1`] = `
 exports[`Storyshots Image Width 1`] = `
 <Image
   resizeMode="contain"
-  source={1}
+  source={
+    Object {
+      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+    }
+  }
   style={
     Array [
       Object {
-        "height": 200,
+        "height": NaN,
         "width": 200,
       },
       undefined,

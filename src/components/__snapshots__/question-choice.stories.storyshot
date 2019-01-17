@@ -166,7 +166,11 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
       }
     >
       <Image
-        source={1}
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+          }
+        }
         style={
           Array [
             Object {
@@ -255,7 +259,11 @@ exports[`Storyshots QuestionChoice With image 1`] = `
       }
     >
       <Image
-        source={1}
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+          }
+        }
         style={
           Array [
             Object {

@@ -1,11 +1,18 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {connect} from 'react-redux';
 
 import Button from '../components/button';
+import Space from '../components/space';
 import Screen from '../components/screen';
 import theme from '../modules/theme';
+import {setLivesProgression} from '../redux/actions/progression';
+
+type ConnectedDispatchProps = {|
+  setLivesProgression: typeof setLivesProgression
+|};
 
 type Props = ReactNavigation$ScreenProps;
 
@@ -29,17 +36,21 @@ class HomeScreen extends React.PureComponent<Props> {
     }
   });
 
-  handlePress = () => {
-    const {navigation} = this.props;
-    navigation.navigate('Slide');
+  handlePress = (lives?: number) => () => {
+    this.props.setLivesProgression(lives);
+    this.props.navigation.navigate('Slide');
   };
 
   render() {
     return (
       <Screen testID="home-screen" noScroll>
         <View style={styles.container} testID="home">
-          <Button onPress={this.handlePress} testID="button-start-course">
-            Start the course
+          <Button onPress={this.handlePress(3)} testID="button-start-course-with-lives">
+            Start a course
+          </Button>
+          <Space />
+          <Button onPress={this.handlePress()} testID="button-start-course-without-lives">
+            Start a course without lives
           </Button>
         </View>
       </Screen>
@@ -47,4 +58,8 @@ class HomeScreen extends React.PureComponent<Props> {
   }
 }
 
-export default HomeScreen;
+const mapDispatchToProps: ConnectedDispatchProps = {
+  setLivesProgression
+};
+
+export default connect(null, mapDispatchToProps)(HomeScreen);

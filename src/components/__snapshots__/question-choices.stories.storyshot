@@ -310,7 +310,11 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
-              source={1}
+              source={
+                Object {
+                  "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                }
+              }
               style={
                 Array [
                   Object {
@@ -403,7 +407,11 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
-              source={1}
+              source={
+                Object {
+                  "testUri": "../../../src/__fixtures__/image-portrait-1.jpg",
+                }
+              }
               style={
                 Array [
                   Object {
@@ -507,7 +515,11 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
-              source={1}
+              source={
+                Object {
+                  "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                }
+              }
               style={
                 Array [
                   Object {

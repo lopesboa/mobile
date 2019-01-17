@@ -2,7 +2,7 @@
 
 import type {QuestionChoiceItem} from '../types';
 import media from './media';
-import imagePortrait from './image-portrait.png';
+import imagePortrait from './image-portrait-1.jpg';
 
 const choices: Array<QuestionChoiceItem> = [
   {

@@ -22,3 +22,5 @@ export type CardType = 'tip' | 'keyPoint' | 'correction';
 
 export type Answer = string;
 export type Question = string;
+
+export type LevelType = 'base' | 'advanced' | 'coach';

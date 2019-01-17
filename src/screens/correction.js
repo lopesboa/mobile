@@ -2,13 +2,13 @@
 
 import * as React from 'react';
 import {StatusBar} from 'react-native';
-import {NavigationActions} from 'react-navigation';
+import {NavigationActions, NavigationEvents} from 'react-navigation';
 import {connect} from 'react-redux';
 
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import type {Answer} from '../types';
-import {nextProgression} from '../redux/actions/progression';
+import {nextProgression, loseLifeProgression} from '../redux/actions/progression';
 import type {StoreState} from '../redux';
 import type {Params as LevelEndScreenParams} from './level-end';
 
@@ -24,11 +24,13 @@ export type Params = {|
 |};
 
 type ConnectedStateProps = {|
-  isFinished: boolean
+  isLastStep: boolean,
+  lives?: number
 |};
 
 type ConnectedDispatchProps = {|
-  nextProgression: typeof nextProgression
+  nextProgression: typeof nextProgression,
+  loseLifeProgression: typeof loseLifeProgression
 |};
 
 type Props = {|
@@ -37,8 +39,16 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class CorrectionScreen extends React.PureComponent<Props> {
+type State = {|
+  isLastLife: boolean
+|};
+
+class CorrectionScreen extends React.PureComponent<Props, State> {
   props: Props;
+
+  state: State = {
+    isLastLife: this.props.lives === 1
+  };
 
   static navigationOptions = ({navigationOptions, navigation}: ReactNavigation$ScreenProps) => ({
     ...navigationOptions,
@@ -48,11 +58,15 @@ class CorrectionScreen extends React.PureComponent<Props> {
     }
   });
 
+  isFinished = (): boolean =>
+    (this.props.isLastStep && this.props.navigation.state.params.isCorrect) ||
+    this.state.isLastLife;
+
   handleButtonPress = () => {
-    const {navigation, isFinished} = this.props;
+    const {navigation} = this.props;
     const {isCorrect} = navigation.state.params;
 
-    if (isFinished) {
+    if (this.isFinished()) {
       const levelEndParams: LevelEndScreenParams = {
         isCorrect
       };
@@ -66,8 +80,16 @@ class CorrectionScreen extends React.PureComponent<Props> {
     }
   };
 
+  handleDidFocus = () => {
+    const {isCorrect} = this.props.navigation.state.params;
+    // @todo remove it once connected to redux
+    if (!isCorrect) {
+      this.props.loseLifeProgression();
+    }
+  };
+
   render() {
-    const {isFinished} = this.props;
+    const {lives} = this.props;
     const {
       title,
       subtitle,
@@ -82,6 +104,7 @@ class CorrectionScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="correction-screen" noScroll style={{backgroundColor}}>
+        <NavigationEvents onDidFocus={this.handleDidFocus} />
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <Correction
           title={title}
@@ -93,7 +116,8 @@ class CorrectionScreen extends React.PureComponent<Props> {
           isCorrect={isCorrect}
           keyPoint={keyPoint}
           onButtonPress={this.handleButtonPress}
-          isFinished={isFinished}
+          isFinished={this.isFinished()}
+          lives={lives}
         />
       </Screen>
     );
@@ -101,11 +125,13 @@ class CorrectionScreen extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = ({progression}: StoreState): ConnectedStateProps => ({
-  isFinished: progression.current === progression.count
+  isLastStep: progression.current === progression.count,
+  lives: progression.lives
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  nextProgression
+  nextProgression,
+  loseLifeProgression
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CorrectionScreen);

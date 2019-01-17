@@ -1,13 +1,16 @@
-// @flow strict
+// @flow
 
 import theme from '../modules/theme';
 import {BACKGROUND_COLOR as SCREEN_BACKGROUND_COLOR} from '../components/screen';
+import HeaderBackImage from '../components/header-back-image';
+
+export const HEADER_HEIGHT = 60;
 
 const navigationOptions: NavigationScreenConfig<*> = {
   headerBackTitle: null,
   headerTintColor: theme.colors.black,
   headerTitleStyle: {
-    width: 250
+    flex: 1
   },
   headerStyle: {
     backgroundColor: SCREEN_BACKGROUND_COLOR,
@@ -15,8 +18,10 @@ const navigationOptions: NavigationScreenConfig<*> = {
     elevation: 0,
     borderBottomColor: 'transparent',
     borderBottomWidth: 0,
-    paddingTop: 0
-  }
+    paddingTop: 0,
+    height: HEADER_HEIGHT
+  },
+  headerBackImage: HeaderBackImage
 };
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {

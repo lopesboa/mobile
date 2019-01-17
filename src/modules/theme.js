@@ -29,7 +29,8 @@ export type Theme = {|
     common: number,
     card: number,
     medium: number,
-    button: number
+    button: number,
+    thumbnail: number
   },
   fontWeight: {
     [FontWeightType]: FontWeight
@@ -64,7 +65,8 @@ const theme: Theme = {
     common: 3,
     card: 5,
     medium: 12,
-    button: 32
+    button: 32,
+    thumbnail: 1000
   },
   fontWeight: {
     regular: '400',

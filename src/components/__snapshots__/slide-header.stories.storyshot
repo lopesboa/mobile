@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SlideHeader Default 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FAFAFA",
+      "flexDirection": "row",
+      "height": 60,
+      "paddingRight": 16,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 1000,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 28,
+            "width": 28,
+          },
+          Object {
+            "borderRadius": 1000,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ]
+      }
+    >
+      Foo bar baz
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#546E7A",
+          "fontSize": 12,
+          "fontWeight": "700",
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+    </Text>
+  </View>
+</View>
+`;
