@@ -186,6 +186,11 @@ jobs:
           key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/debugCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
+          name: SDK licenses
+          # Keep "|| true" because yes command handles a 141 exit code
+          command: yes | sdkmanager "build-tools;28.0.3" "platforms;android-28" || true
+
+      - run:
           name: Gradle dependencies
           command: cd android && ./gradlew androidDependencies
           environment:
