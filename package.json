@@ -42,7 +42,8 @@
     "pull:certificate:ios": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly",
     "pull:certificate:android": "babel-node scripts/pull-certificate-android.js",
     "generate:bundle:android": "mkdir -p ./android/app/src/main/assets && react-native bundle --platform android --entry-file ./index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/assets",
-    "generate:bundle:ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ./ios/main.jsbundle"
+    "generate:bundle:ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ./ios/main.jsbundle",
+    "pull:translations": "babel-node scripts/pull-translations.js"
   },
   "dependencies": {
     "@coorpacademy/nova-icons": "^2.2.1",
@@ -54,6 +55,7 @@
     "react-native": "^0.56.0",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-linear-gradient": "^2.5.3",
+    "react-native-localization": "^2.0.3",
     "react-native-svg": "^6.0.0",
     "react-navigation": "^3.0.1",
     "react-redux": "^6.0.0",
@@ -91,6 +93,7 @@
     "jest": "^23.5.0",
     "metro-react-native-babel-preset": "^0.49.0",
     "mkdirp": "^0.5.1",
+    "node-fetch": "^2.3.0",
     "opn-cli": "^4.0.0",
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",

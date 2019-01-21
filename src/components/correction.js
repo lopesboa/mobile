@@ -11,6 +11,7 @@ import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import Cards from '../containers/cards-scalable';
 import LivesAnimated from '../containers/lives-animated';
+import translations from '../translations';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
@@ -125,9 +126,12 @@ class Correction extends React.PureComponent<Props> {
   render() {
     const {title, subtitle, isCorrect, onButtonPress, layout, isFinished, lives} = this.props;
 
-    const correctionCard: Card = {type: CARD_TYPE.CORRECTION, title: 'Correction'};
-    const tipCard = {type: CARD_TYPE.TIP, title: 'Did you know that?'};
-    const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: 'Key Point'};
+    const correctionCard: Card = {
+      type: CARD_TYPE.CORRECTION,
+      title: translations.correction
+    };
+    const tipCard = {type: CARD_TYPE.TIP, title: translations.didYouKnowThat};
+    const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: translations.keyPoint};
 
     const cards: Array<Card> = isCorrect
       ? [tipCard, keyPointCard, correctionCard]
@@ -169,9 +173,9 @@ class Correction extends React.PureComponent<Props> {
           <Button
             isInverted
             onPress={onButtonPress}
-            testID={`button-${isFinished ? 'continue' : 'next-question'}`}
+            testID={`button-${isFinished ? 'next' : 'next-question'}`}
           >
-            {(isFinished && 'Continue') || 'Next Question'}
+            {translations.next}
           </Button>
         </View>
       </View>

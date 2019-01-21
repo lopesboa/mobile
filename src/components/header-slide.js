@@ -7,6 +7,7 @@ import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
 import type {LevelType} from '../types';
 import {LEVEL_TYPE} from '../const';
+import translations from '../translations';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
@@ -55,9 +56,9 @@ const HeaderSlide = ({image, level, discipline}: Props) => (
         </View>
         <View style={styles.text}>
           <Text style={[styles.level, {color: brandTheme.colors.primary}]} numberOfLines={1}>
-            {level === LEVEL_TYPE.BASE && 'Basic'}
-            {level === LEVEL_TYPE.ADVANCED && 'Advanced'}
-            {level === LEVEL_TYPE.COACH && 'Coach'}
+            {level === LEVEL_TYPE.BASE && translations.base}
+            {level === LEVEL_TYPE.ADVANCED && translations.advanced}
+            {level === LEVEL_TYPE.COACH && translations.coach}
           </Text>
           <Text style={styles.discipline} numberOfLines={1}>
             {discipline}

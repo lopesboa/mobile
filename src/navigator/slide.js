@@ -13,6 +13,7 @@ import {
 import Progression from '../components/progression';
 import TabBar from '../containers/tab-bar';
 import theme from '../modules/theme';
+import translations from '../translations';
 import CorrectionScreen from '../screens/correction';
 import LevelEndScreen from '../screens/level-end';
 import QuestionScreen from '../screens/question';
@@ -43,7 +44,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Question: {
       screen: QuestionScreen,
       navigationOptions: {
-        tabBarLabel: 'Question',
+        tabBarLabel: translations.question,
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <QuestionIcon color={tintColor} style={styles.questionIcon} />
@@ -53,7 +54,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Lesson: {
       screen: LessonScreen,
       navigationOptions: {
-        tabBarLabel: 'Lesson',
+        tabBarLabel: translations.lesson,
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <LessonIcon color={tintColor} style={styles.lessonIcon} />
@@ -63,7 +64,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Clue: {
       screen: ClueScreen,
       navigationOptions: {
-        tabBarLabel: 'Clue',
+        tabBarLabel: translations.clue,
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <ClueIcon color={tintColor} style={styles.clueIcon} />

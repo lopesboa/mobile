@@ -4,6 +4,7 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
+import translations from '../translations';
 import Button from './button';
 import Text from './text';
 import Space from './space';
@@ -49,8 +50,7 @@ const styles = StyleSheet.create({
 });
 
 const LevelEnd = ({isCorrect, onButtonPress}: Props) => {
-  const title = (isCorrect && 'Congratulations!') || 'Game over...';
-  const subtitle = (isCorrect && 'You have unlocked the next level') || 'You are out of lives';
+  const title = (isCorrect && translations.congratulations) || translations.gameOver;
 
   return (
     <View
@@ -61,9 +61,11 @@ const LevelEnd = ({isCorrect, onButtonPress}: Props) => {
         <Text style={styles.mainTitle} testID="level-end-title">
           {title}
         </Text>
-        <Text style={styles.subTitle} testID="level-end-subtitle">
-          {subtitle}
-        </Text>
+        {!isCorrect && (
+          <Text style={styles.subTitle} testID="level-end-subtitle">
+            {translations.outOfLives}
+          </Text>
+        )}
       </View>
       <Space type="base" />
       <View style={styles.footer}>
@@ -72,7 +74,7 @@ const LevelEnd = ({isCorrect, onButtonPress}: Props) => {
           onPress={onButtonPress}
           testID={`button-${isCorrect ? 'next' : 'retry'}-level`}
         >
-          {(isCorrect && 'Next level') || 'Retry level'}
+          {(isCorrect && translations.nextLevel) || translations.retryLevel}
         </Button>
       </View>
     </View>

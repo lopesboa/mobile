@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {ScrollView} from 'react-native';
 
+import translations from '../translations';
 import type {QuestionType, QuestionChoiceItem, Media, Answer} from '../types';
 import Question from '../components/question';
 import Screen from '../components/screen';
@@ -57,8 +58,8 @@ class QuestionScreen extends React.PureComponent<Props> {
     }
     const correctionParams: CorrectionScreenParams = {
       isCorrect,
-      title: (isCorrect && 'Good job!') || 'Ouch',
-      subtitle: (isCorrect && 'Good answer') || 'Wrong answer',
+      title: (isCorrect && translations.goodJob) || translations.ouch,
+      subtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
       tip,
       answers,
       question: header,

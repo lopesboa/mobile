@@ -1204,7 +1204,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -1708,7 +1708,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>
@@ -2522,7 +2522,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -3026,7 +3026,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>
@@ -4147,7 +4147,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -4732,7 +4732,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>
@@ -5454,7 +5454,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -6039,7 +6039,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>
@@ -7252,7 +7252,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -7706,7 +7706,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
       }
     >
       <View
-        testID="button-continue"
+        testID="button-next"
       >
         <View
           accessible={true}
@@ -7756,7 +7756,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               ]
             }
           >
-            Continue
+            Next
           </Text>
         </View>
       </View>
@@ -8877,7 +8877,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -9412,7 +9412,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
       }
     >
       <View
-        testID="button-continue"
+        testID="button-next"
       >
         <View
           accessible={true}
@@ -9462,7 +9462,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               ]
             }
           >
-            Continue
+            Next
           </Text>
         </View>
       </View>
@@ -10184,7 +10184,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -10719,7 +10719,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
       }
     >
       <View
-        testID="button-continue"
+        testID="button-next"
       >
         <View
           accessible={true}
@@ -10769,7 +10769,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               ]
             }
           >
-            Continue
+            Next
           </Text>
         </View>
       </View>
@@ -11890,7 +11890,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -12419,7 +12419,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>
@@ -13654,7 +13654,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     }
                   }
                 >
-                  Key Point
+                  Key point
                 </Text>
               </View>
               <View
@@ -14158,7 +14158,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               ]
             }
           >
-            Next Question
+            Next
           </Text>
         </View>
       </View>

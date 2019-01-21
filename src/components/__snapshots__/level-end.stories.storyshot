@@ -34,7 +34,7 @@ exports[`Storyshots LevelEnd Error 1`] = `
       }
       testID="level-end-title"
     >
-      Game over...
+      Game over
     </Text>
     <Text
       style={
@@ -45,7 +45,7 @@ exports[`Storyshots LevelEnd Error 1`] = `
       }
       testID="level-end-subtitle"
     >
-      You are out of lives
+      You are out of lives!
     </Text>
   </View>
   <View
@@ -158,17 +158,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
       testID="level-end-title"
     >
       Congratulations!
-    </Text>
-    <Text
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 17,
-        }
-      }
-      testID="level-end-subtitle"
-    >
-      You have unlocked the next level
     </Text>
   </View>
   <View

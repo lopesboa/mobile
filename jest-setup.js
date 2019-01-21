@@ -26,3 +26,8 @@ NativeModules.Linking = {
   canOpenURL: () => {},
   getInitialURL: () => {}
 };
+
+// react-native-localization
+NativeModules.ReactLocalization = {
+  language: 'en'
+};

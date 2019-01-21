@@ -206,18 +206,17 @@ describe('Slide', () => {
 
     it('should see a button to continue', async () => {
       await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await weExpect(element(by.id('button-continue'))).toBeVisible();
+      await weExpect(element(by.id('button-next'))).toBeVisible();
     });
 
     it('should navigate to level end', async () => {
-      await element(by.id('button-continue')).tap();
+      await element(by.id('button-next')).tap();
       await waitFor(element(by.id('level-end-success'))).toBeVisible();
       await weExpect(element(by.id('level-end-success'))).toBeVisible();
     });
 
     it('should see elements', async () => {
       await weExpect(element(by.id('level-end-title'))).toBeVisible();
-      await weExpect(element(by.id('level-end-subtitle'))).toBeVisible();
       await weExpect(element(by.id('button-next-level'))).toBeVisible();
     });
 
@@ -244,11 +243,11 @@ describe('Slide', () => {
 
     it('should see a button to continue', async () => {
       await waitFor(element(by.id('correction-error'))).toBeVisible();
-      await weExpect(element(by.id('button-continue'))).toBeVisible();
+      await weExpect(element(by.id('button-next'))).toBeVisible();
     });
 
     it('should navigate to level end', async () => {
-      await element(by.id('button-continue')).tap();
+      await element(by.id('button-next')).tap();
       await waitFor(element(by.id('level-end-error'))).toBeVisible();
       await weExpect(element(by.id('level-end-error'))).toBeVisible();
     });

@@ -5,6 +5,7 @@ import * as React from 'react';
 
 import theme from '../modules/theme';
 import type {Answer} from '../types';
+import translations from '../translations';
 import Text from './text';
 import Space from './space';
 
@@ -33,28 +34,26 @@ const styles = StyleSheet.create({
   }
 });
 
-const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => {
-  const title = userAnswers.length > 1 ? 'Your answers:' : 'Your answer:';
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{question}</Text>
-      <Space type="tiny" />
-      {answers.map((answer, index) => (
-        <Text style={[styles.text, styles.correctAnswer]} key={`answer-${index}`}>
-          {answer}
-        </Text>
-      ))}
-      <Space type="base" />
-      <Text style={[styles.text, styles.userAnswer]}>{title}</Text>
-      <Space type="tiny" />
-      {userAnswers.map((userAnswer, index) => (
-        <Text style={styles.text} key={`user-answer-${index}`}>
-          {userAnswer}
-        </Text>
-      ))}
-    </View>
-  );
-};
+const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
+  <View style={styles.container}>
+    <Text style={styles.text}>{question}</Text>
+    <Space type="tiny" />
+    {answers.map((answer, index) => (
+      <Text style={[styles.text, styles.correctAnswer]} key={`answer-${index}`}>
+        {answer}
+      </Text>
+    ))}
+    <Space type="base" />
+    <Text style={[styles.text, styles.userAnswer]}>
+      {userAnswers.length > 1 ? translations.yourAnswers : translations.yourAnswer}
+    </Text>
+    <Space type="tiny" />
+    {userAnswers.map((userAnswer, index) => (
+      <Text style={styles.text} key={`user-answer-${index}`}>
+        {userAnswer}
+      </Text>
+    ))}
+  </View>
+);
 
 export default CardCorrection;
