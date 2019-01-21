@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: '귀하의 생명이 다했습니다!',
   question: '질문',
   retryLevel: '레벨 재시도',
+  validate: '인증하기',
   wrongAnswer: '오답',
   yourAnswer: '',
   yourAnswers: ''

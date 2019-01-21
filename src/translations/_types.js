@@ -19,6 +19,7 @@ export type Translations = {|
   outOfLives: string,
   question: string,
   retryLevel: string,
+  validate: string,
   wrongAnswer: string,
   yourAnswer: string,
   yourAnswers: string

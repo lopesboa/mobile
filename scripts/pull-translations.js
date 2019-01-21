@@ -72,6 +72,7 @@ const generate = async (locale: string) => {
     outOfLives: playerTranslations['You are out of lives!'],
     question: playerTranslations.Question,
     retryLevel: playerTranslations['Retry level'],
+    validate: playerTranslations.Validate,
     wrongAnswer: playerTranslations['Wrong answer'],
     // $FlowFixMe @todo until we have the wording translated by transiflex
     yourAnswer: undefined,

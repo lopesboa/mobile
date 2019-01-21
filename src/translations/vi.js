@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Bạn đã hết mạng!',
   question: 'Câu hỏi',
   retryLevel: 'Thử lại cấp độ',
+  validate: 'Xác nhận',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: '',
   yourAnswers: ''

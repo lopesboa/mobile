@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'ライフがなくなりました。',
   question: '質問',
   retryLevel: 'リトライする',
+  validate: '回答',
   wrongAnswer: '不正解',
   yourAnswer: '',
   yourAnswers: ''

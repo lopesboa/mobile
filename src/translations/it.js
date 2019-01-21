@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Non hai più vite!',
   question: 'Indizio',
   retryLevel: 'Ritenta il livello',
+  validate: 'Convalida',
   wrongAnswer: 'Risposta sbagliata',
   yourAnswer: '',
   yourAnswers: ''

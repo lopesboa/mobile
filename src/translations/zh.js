@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: '你已经没有生命了！',
   question: '问题',
   retryLevel: '重试级别',
+  validate: '确认',
   wrongAnswer: '错误的答案',
   yourAnswer: '',
   yourAnswers: ''

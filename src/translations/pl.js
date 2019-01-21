@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Nie masz już więcej żyć!',
   question: 'Pytanie',
   retryLevel: 'Ponów próbę',
+  validate: 'Zweryfikuj',
   wrongAnswer: 'Błędna odpowiedź',
   yourAnswer: '',
   yourAnswers: ''

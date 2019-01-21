@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Canınız bitti!',
   question: 'Soru',
   retryLevel: 'Seviyeyi  yeniden dene',
+  validate: 'Onayla',
   wrongAnswer: 'Yanlış cevap',
   yourAnswer: '',
   yourAnswers: ''

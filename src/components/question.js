@@ -2,9 +2,11 @@
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
+
 import type {QuestionChoiceItem, QuestionType, Media} from '../types';
 import theme from '../modules/theme';
 import Image from '../containers/image-scalable';
+import translations from '../translations';
 import Text from './text';
 import QuestionChoices from './question-choices';
 import Space from './space';
@@ -96,7 +98,7 @@ const Question = ({
       <Space type="tiny" />
       <View style={styles.validateButton}>
         <Button onPress={onButtonPress} isDisabled={!oneChoiceSelected} testID="button-validate">
-          Validate
+          {translations.validate}
         </Button>
       </View>
     </View>

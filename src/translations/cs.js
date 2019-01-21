@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Už nemáte životy',
   question: 'Otázka',
   retryLevel: 'Zkuste úroveň znovu',
+  validate: 'Potvrdit',
   wrongAnswer: 'Chybná odpověď',
   yourAnswer: '',
   yourAnswers: ''

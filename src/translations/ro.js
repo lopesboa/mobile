@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   question: 'Întrebare',
   retryLevel: 'Încercați din nou acest nivel',
+  validate: 'Validează',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: '',
   yourAnswers: ''

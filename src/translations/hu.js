@@ -21,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Önnek nincs több élete!',
   question: 'Kérdés',
   retryLevel: 'Szint  újrajátszása',
+  validate: 'Érvényesít',
   wrongAnswer: 'Rossz válasz',
   yourAnswer: '',
   yourAnswers: ''
