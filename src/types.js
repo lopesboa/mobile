@@ -13,6 +13,7 @@ export type QuestionChoiceItem = {|
   value: string,
   media?: Media
 |};
+export type MimeType = 'image/jpeg' | 'image/png' | 'application/pdf' | 'application/vimeo';
 
 export type QuestionType = 'qcm' | 'qcmGraphic';
 
