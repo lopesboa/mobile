@@ -17,6 +17,7 @@ const translations: Translations = {
   lesson: '课',
   next: '下一个',
   nextLevel: '下一级',
+  open: '打开',
   ouch: '哎呦……',
   outOfLives: '你已经没有生命了！',
   question: '问题',

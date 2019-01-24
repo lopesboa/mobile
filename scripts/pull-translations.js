@@ -52,6 +52,12 @@ const generate = async (locale: string) => {
     'packages/@coorpacademy-player-web/locales',
     'player.json'
   );
+  const componentsTranslations = await fetchTranslations(
+    locale,
+    'components',
+    'packages/@coorpacademy-components/locales',
+    'global.json'
+  );
   const translations: Translations = {
     advanced: globalTranslations.module_level.advanced,
     base: globalTranslations.module_level.base,
@@ -67,6 +73,7 @@ const generate = async (locale: string) => {
     lesson: playerTranslations.Media,
     next: playerTranslations.Next,
     nextLevel: playerTranslations['Next level'],
+    open: componentsTranslations.Open,
     ouch: playerTranslations.Ouch,
     outOfLives: playerTranslations['You are out of lives!'],
     question: playerTranslations.Question,

@@ -2,6 +2,8 @@ package com.coorpacademy.app;
 
 import android.app.Application;
 
+import org.wonday.orientation.OrientationPackage;
+import com.brentvatne.react.ReactVideoPackage;
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactApplication;
@@ -27,6 +29,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new OrientationPackage(),
+          new ReactVideoPackage(),
           new ReactNativeLocalizationPackage(),
           new SvgPackage(),
           new LinearGradientPackage(),

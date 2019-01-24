@@ -1,3 +1,5 @@
+// @flow
+
 import {NativeModules, ScrollView} from 'react-native';
 
 // global mocks
@@ -31,3 +33,6 @@ NativeModules.Linking = {
 NativeModules.ReactLocalization = {
   language: 'en'
 };
+
+// react-native-video-controls
+jest.mock('react-native-video', () => 'Mock$ReactNativeVideo');

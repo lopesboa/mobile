@@ -17,6 +17,7 @@ const translations: Translations = {
   lesson: 'Lekce',
   next: 'Další',
   nextLevel: 'Další úroveň',
+  open: 'Otevřít',
   ouch: 'Ach...',
   outOfLives: 'Už nemáte životy',
   question: 'Otázka',

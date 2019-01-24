@@ -17,6 +17,7 @@ const translations: Translations = {
   lesson: 'Lecție',
   next: 'Următoarea',
   nextLevel: 'Nivelul următor',
+  open: 'Deschide',
   ouch: 'Aoleu...',
   outOfLives: 'Nu mai aveți vieți!',
   question: 'Întrebare',

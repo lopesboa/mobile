@@ -41,6 +41,13 @@ com.facebook.fresco:imagepipeline-okhttp3:1.9.0
 com.facebook.fresco:imagepipeline:1.9.0
 com.facebook.react:react-native:0.56.1
 com.facebook.soloader:soloader:0.3.0
+com.google.android.exoplayer:exoplayer-core:2.7.3
+com.google.android.exoplayer:exoplayer-dash:2.7.3
+com.google.android.exoplayer:exoplayer-hls:2.7.3
+com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.3
+com.google.android.exoplayer:exoplayer-ui:2.7.3
+com.google.android.exoplayer:exoplayer:2.7.3
+com.google.android.exoplayer:extension-okhttp:2.7.3
 com.google.code.findbugs:jsr305:3.0.0
 com.parse.bolts:bolts-tasks:1.4.0
 com.squareup.okhttp3:okhttp-urlconnection:3.10.0

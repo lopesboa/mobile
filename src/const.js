@@ -1,7 +1,14 @@
 // @flow strict
 /* eslint-disable import/prefer-default-export */
 
-import type {QuestionType, SpaceType, MediaType, CardType, LevelType} from './types';
+import type {QuestionType, SpaceType, MediaType, CardType, LevelType, ResourceType} from './types';
+
+export const RESSOURCE_TYPE: {
+  [string]: ResourceType
+} = {
+  VIDEO: 'video',
+  PDF: 'pdf'
+};
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC';
 export const QUESTION_TYPE: {

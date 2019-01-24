@@ -1,0 +1,2169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Video Fullscreen 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      Object {},
+    ]
+  }
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#000",
+          "flex": 1,
+          "justifyContent": "space-between",
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <Mock$ReactNativeVideo
+      disableBack={true}
+      disableFullscreen={true}
+      disableVolume={true}
+      isFullscreen={true}
+      muted={false}
+      onEnd={[Function]}
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      onProgress={[Function]}
+      onReadyForDisplay={[Function]}
+      paused={false}
+      playInBackground={false}
+      playWhenInactive={false}
+      rate={1}
+      repeat={false}
+      resizeMode="contain"
+      showOnStart={true}
+      source={
+        Object {
+          "testUri": "../../../src/__fixtures__/video.mp4",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+      testID="video"
+      title=""
+      toggleResizeModeOnFullscreen={false}
+      volume={1}
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 1,
+          "justifyContent": "flex-start",
+          "marginTop": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "margin": 12,
+              "marginBottom": 18,
+              "width": null,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 2,
+          "justifyContent": "flex-end",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "height": 28,
+              "marginLeft": 20,
+              "marginRight": 20,
+            }
+          }
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#333",
+                "height": 1,
+                "position": "relative",
+                "top": 14,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "height": 1,
+                    "width": "100%",
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "width": 0,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Array [
+                Object {
+                  "height": 28,
+                  "marginLeft": -7,
+                  "position": "absolute",
+                  "width": 28,
+                },
+                Object {
+                  "left": 0,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 12,
+                    "height": 12,
+                    "left": 8,
+                    "position": "relative",
+                    "top": 8,
+                    "width": 12,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": null,
+                "justifyContent": "space-between",
+                "width": null,
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "justifyContent": "space-between",
+                "marginBottom": 0,
+                "marginLeft": 12,
+                "marginRight": 12,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "position": "relative",
+                  "width": 80,
+                  "zIndex": 0,
+                },
+              ]
+            }
+          >
+            <Image
+              source={1}
+              style={null}
+            />
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": 80,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#FFF",
+                  "fontSize": 11,
+                  "textAlign": "right",
+                }
+              }
+            >
+              -00:00
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Video Local preview 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="70"
+          bbWidth="70"
+          color="#FFFFFF"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              undefined,
+              false,
+              Object {
+                "flex": 0,
+                "height": 70,
+                "width": 70,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+        >
+          <RNSVGPath
+            d="M0 0h24v24H0z"
+            fill={null}
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth="1"
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+            fill={
+              Array [
+                0,
+                1,
+                1,
+                1,
+                1,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth="1"
+            x={0}
+            y={0}
+          />
+        </RNSVGSvgView>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Video Local video 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#000",
+          "flex": 1,
+          "justifyContent": "space-between",
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <Mock$ReactNativeVideo
+      disableBack={true}
+      disableFullscreen={true}
+      disableVolume={true}
+      muted={false}
+      onEnd={[Function]}
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      onProgress={[Function]}
+      onReadyForDisplay={[Function]}
+      paused={false}
+      playInBackground={false}
+      playWhenInactive={false}
+      rate={1}
+      repeat={false}
+      resizeMode="contain"
+      showOnStart={true}
+      source={
+        Object {
+          "testUri": "../../../src/__fixtures__/video.mp4",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+      testID="video"
+      title=""
+      toggleResizeModeOnFullscreen={false}
+      volume={1}
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 1,
+          "justifyContent": "flex-start",
+          "marginTop": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "margin": 12,
+              "marginBottom": 18,
+              "width": null,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 2,
+          "justifyContent": "flex-end",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "height": 28,
+              "marginLeft": 20,
+              "marginRight": 20,
+            }
+          }
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#333",
+                "height": 1,
+                "position": "relative",
+                "top": 14,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "height": 1,
+                    "width": "100%",
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "width": 0,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Array [
+                Object {
+                  "height": 28,
+                  "marginLeft": -7,
+                  "position": "absolute",
+                  "width": 28,
+                },
+                Object {
+                  "left": 0,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 12,
+                    "height": 12,
+                    "left": 8,
+                    "position": "relative",
+                    "top": 8,
+                    "width": 12,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": null,
+                "justifyContent": "space-between",
+                "width": null,
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "justifyContent": "space-between",
+                "marginBottom": 0,
+                "marginLeft": 12,
+                "marginRight": 12,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "position": "relative",
+                  "width": 80,
+                  "zIndex": 0,
+                },
+              ]
+            }
+          >
+            <Image
+              source={1}
+              style={null}
+            />
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": 80,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#FFF",
+                  "fontSize": 11,
+                  "textAlign": "right",
+                }
+              }
+            >
+              -00:00
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Video Remote preview 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://www.cerema.fr/sites/default/files/styles/uas_normal/public/media/images/2017/11/mountain-village-2657307_1920.jpg?h=d6fbcf4a&itok=JMWt0SsS",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight="70"
+          bbWidth="70"
+          color="#FFFFFF"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              undefined,
+              false,
+              Object {
+                "flex": 0,
+                "height": 70,
+                "width": 70,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+        >
+          <RNSVGPath
+            d="M0 0h24v24H0z"
+            fill={null}
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth="1"
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+            fill={
+              Array [
+                0,
+                1,
+                1,
+                1,
+                1,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth="1"
+            x={0}
+            y={0}
+          />
+        </RNSVGSvgView>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Video Remote video 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#000",
+          "flex": 1,
+          "justifyContent": "space-between",
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <Mock$ReactNativeVideo
+      disableBack={true}
+      disableFullscreen={true}
+      disableVolume={true}
+      muted={false}
+      onEnd={[Function]}
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      onProgress={[Function]}
+      onReadyForDisplay={[Function]}
+      paused={false}
+      playInBackground={false}
+      playWhenInactive={false}
+      rate={1}
+      repeat={false}
+      resizeMode="contain"
+      showOnStart={true}
+      source={
+        Object {
+          "uri": "https://content.jwplatform.com/videos/Piqz1Sdy.mp4",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+      testID="video"
+      title=""
+      toggleResizeModeOnFullscreen={false}
+      volume={1}
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 1,
+          "justifyContent": "flex-start",
+          "marginTop": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "margin": 12,
+              "marginBottom": 18,
+              "width": null,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 2,
+          "justifyContent": "flex-end",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "height": 28,
+              "marginLeft": 20,
+              "marginRight": 20,
+            }
+          }
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#333",
+                "height": 1,
+                "position": "relative",
+                "top": 14,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "height": 1,
+                    "width": "100%",
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "width": 0,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Array [
+                Object {
+                  "height": 28,
+                  "marginLeft": -7,
+                  "position": "absolute",
+                  "width": 28,
+                },
+                Object {
+                  "left": 0,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 12,
+                    "height": 12,
+                    "left": 8,
+                    "position": "relative",
+                    "top": 8,
+                    "width": 12,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": null,
+                "justifyContent": "space-between",
+                "width": null,
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "justifyContent": "space-between",
+                "marginBottom": 0,
+                "marginLeft": 12,
+                "marginRight": 12,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "position": "relative",
+                  "width": 80,
+                  "zIndex": 0,
+                },
+              ]
+            }
+          >
+            <Image
+              source={1}
+              style={null}
+            />
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": 80,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#FFF",
+                  "fontSize": 11,
+                  "textAlign": "right",
+                }
+              }
+            >
+              -00:00
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Video Replay 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#000",
+          "flex": 1,
+          "justifyContent": "space-between",
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <Mock$ReactNativeVideo
+      disableBack={true}
+      disableFullscreen={true}
+      disableVolume={true}
+      muted={false}
+      onEnd={[Function]}
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      onProgress={[Function]}
+      onReadyForDisplay={[Function]}
+      paused={false}
+      playInBackground={false}
+      playWhenInactive={false}
+      rate={1}
+      repeat={false}
+      resizeMode="contain"
+      showOnStart={true}
+      source={
+        Object {
+          "testUri": "../../../src/__fixtures__/video.mp4",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+      testID="video"
+      title=""
+      toggleResizeModeOnFullscreen={false}
+      volume={1}
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 1,
+          "justifyContent": "flex-start",
+          "marginTop": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "margin": 12,
+              "marginBottom": 18,
+              "width": null,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "padding": 16,
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "stretch",
+          "flex": 2,
+          "justifyContent": "flex-end",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+              "height": null,
+              "justifyContent": "space-between",
+              "width": null,
+            },
+          ]
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Array [
+                Object {
+                  "resizeMode": "stretch",
+                },
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "height": 28,
+              "marginLeft": 20,
+              "marginRight": 20,
+            }
+          }
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#333",
+                "height": 1,
+                "position": "relative",
+                "top": 14,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "height": 1,
+                    "width": "100%",
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                    "width": 0,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Array [
+                Object {
+                  "height": 28,
+                  "marginLeft": -7,
+                  "position": "absolute",
+                  "width": 28,
+                },
+                Object {
+                  "left": 0,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 12,
+                    "height": 12,
+                    "left": 8,
+                    "position": "relative",
+                    "top": 8,
+                    "width": 12,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": null,
+                "justifyContent": "space-between",
+                "width": null,
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "justifyContent": "space-between",
+                "marginBottom": 0,
+                "marginLeft": 12,
+                "marginRight": 12,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "position": "relative",
+                  "width": 80,
+                  "zIndex": 0,
+                },
+              ]
+            }
+          >
+            <Image
+              source={1}
+              style={null}
+            />
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "padding": 16,
+                },
+                Object {
+                  "width": 80,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#FFF",
+                  "fontSize": 11,
+                  "textAlign": "right",
+                }
+              }
+            >
+              -00:00
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "bottom": 0,
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="40"
+        bbWidth="40"
+        color="#FFFFFF"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+            false,
+            Object {
+              "flex": 0,
+              "height": 40,
+              "width": 40,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M0 0h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+        <RNSVGGroup
+          fill={
+            Array [
+              0,
+              1,
+              1,
+              1,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          font={Object {}}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        >
+          <RNSVGPath
+            d="M18.968 13a6.945 6.945 0 0 1-1.369 3.554l1.427 1.427a8.944 8.944 0 0 0 1.942-4.98h-2zM13 19.29v2.02a8.928 8.928 0 0 0 4.611-1.917l-1.426-1.424A6.964 6.964 0 0 1 13 19.29zM20.888 11a8.986 8.986 0 0 0-2.138-4.584l-1.5 1.324A6.981 6.981 0 0 1 18.86 11h2.028zM7.473 4.603C4.803 6.167 3 9.059 3 12.37c0 4.624 3.507 8.441 8 8.941v-2.02c-3.387-.488-6-3.401-6-6.92 0-2.745 1.592-5.12 3.898-6.266L12 9.37V2H5l2.473 2.603z"
+            fill={
+              Array [
+                0,
+                0,
+                0,
+                0,
+                1,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={Array []}
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth="1"
+            x={0}
+            y={0}
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
