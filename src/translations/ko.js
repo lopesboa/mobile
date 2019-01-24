@@ -8,7 +8,7 @@ const translations: Translations = {
   clue: '단서',
   coach: '코치',
   congratulations: '축하합니다!',
-  correction: '',
+  correction: '수정',
   didYouKnowThat: '귀하는 그것을 알았습니까?',
   gameOver: '게임 종료',
   goodAnswer: '훌륭한 답변',
@@ -23,8 +23,8 @@ const translations: Translations = {
   retryLevel: '레벨 재시도',
   validate: '인증하기',
   wrongAnswer: '오답',
-  yourAnswer: '',
-  yourAnswers: ''
+  yourAnswer: '귀하의 답:',
+  yourAnswers: '귀하의 답:'
 };
 
 export default translations;

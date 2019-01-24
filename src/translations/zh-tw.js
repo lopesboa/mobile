@@ -8,7 +8,7 @@ const translations: Translations = {
   clue: '線索',
   coach: '教練',
   congratulations: '恭喜！',
-  correction: '',
+  correction: '正確解答',
   didYouKnowThat: '您知道嗎？',
   gameOver: '遊戲結束',
   goodAnswer: '好答案',
@@ -23,8 +23,8 @@ const translations: Translations = {
   retryLevel: '重試級別',
   validate: '驗證',
   wrongAnswer: '錯誤答案',
-  yourAnswer: '',
-  yourAnswers: ''
+  yourAnswer: '您的答案：',
+  yourAnswers: '您的答案：'
 };
 
 export default translations;

@@ -8,7 +8,7 @@ const translations: Translations = {
   clue: 'ヒント',
   coach: 'コーチ',
   congratulations: 'おめでとうございます!',
-  correction: '',
+  correction: '解答',
   didYouKnowThat: 'ご存知でしたか。',
   gameOver: 'ゲームは終わりました',
   goodAnswer: '正解',
@@ -23,8 +23,8 @@ const translations: Translations = {
   retryLevel: 'リトライする',
   validate: '回答',
   wrongAnswer: '不正解',
-  yourAnswer: '',
-  yourAnswers: ''
+  yourAnswer: 'あなたの答え：',
+  yourAnswers: 'あなたの答え：'
 };
 
 export default translations;

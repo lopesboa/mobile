@@ -8,7 +8,7 @@ const translations: Translations = {
   clue: 'Hinweis',
   coach: 'Coach',
   congratulations: 'Herzlichen Glückwunsch!',
-  correction: '',
+  correction: 'Verbesserung',
   didYouKnowThat: 'Wussten Sie das?',
   gameOver: 'Spiel vorbei',
   goodAnswer: 'Richtige Antwort',
@@ -23,8 +23,8 @@ const translations: Translations = {
   retryLevel: 'Level nochmal versuchen',
   validate: 'Bestätigen',
   wrongAnswer: 'Falsche Antwort',
-  yourAnswer: '',
-  yourAnswers: ''
+  yourAnswer: 'Ihre Antwort:',
+  yourAnswers: 'Ihre Antworten:'
 };
 
 export default translations;

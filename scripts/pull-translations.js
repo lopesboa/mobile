@@ -58,8 +58,7 @@ const generate = async (locale: string) => {
     clue: playerTranslations.Clue,
     coach: globalTranslations.module_level.coach,
     congratulations: playerTranslations['Congratulations!'],
-    // $FlowFixMe @todo until we have the wording translated by transiflex
-    correction: undefined,
+    correction: playerTranslations.Correction,
     didYouKnowThat: playerTranslations['Did you know that?'],
     gameOver: playerTranslations['Game over'],
     goodAnswer: playerTranslations['Good answer'],
@@ -74,10 +73,8 @@ const generate = async (locale: string) => {
     retryLevel: playerTranslations['Retry level'],
     validate: playerTranslations.Validate,
     wrongAnswer: playerTranslations['Wrong answer'],
-    // $FlowFixMe @todo until we have the wording translated by transiflex
-    yourAnswer: undefined,
-    // $FlowFixMe @todo until we have the wording translated by transiflex
-    yourAnswers: undefined
+    yourAnswer: playerTranslations['Your answer_'],
+    yourAnswers: playerTranslations['Your answers_']
   };
 
   const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.js`);
