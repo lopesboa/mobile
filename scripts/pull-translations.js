@@ -10,9 +10,11 @@ import type {Translations} from '../src/translations/_types';
 
 const GITHUB_API = 'https://api.github.com';
 
-const headers = {
-  Authorization: 'token e931703ca528cc9b5573de89da924747109c641d'
-};
+const {GITHUB_ACCESS_TOKEN: githubAccessToken} = process.env || {};
+
+if (!githubAccessToken) {
+  throw new Error('GITHUB_ACCESS_TOKEN environment variable missing.');
+}
 
 const fetchTranslations = (
   locale: string,
@@ -27,7 +29,9 @@ const fetchTranslations = (
     fetch(
       `${GITHUB_API}/repos/coorpacademy/${repository}/contents/${contentPath}/${apiLocale}/${file}`,
       {
-        headers
+        headers: {
+          Authorization: `token ${githubAccessToken}`
+        }
       }
     )
       .then(response => response.text())

@@ -17,7 +17,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:clean": "npm run cleanup && npm start -- --reset-cache",
     "start:ios": "react-native run-ios",
+    "start:ios:release": "npm run -s start:ios -- --configuration Release",
     "start:android": "react-native run-android",
+    "start:android:release": "npm run start:android -- --variant=release",
     "build:ios:cmd": "cd ios && export RCT_NO_LAUNCH_PACKAGER=1 && xcodebuild -workspace Coorpacademy.xcworkspace -scheme Coorpacademy -derivedDataPath build",
     "build:iphonesimulator:debug": "npm run build:ios:cmd -- -configuration Debug -sdk iphonesimulator | xcpretty",
     "build:iphonesimulator:release": "npm run build:ios:cmd -- -configuration Release -sdk iphonesimulator | xcpretty",
@@ -41,8 +43,8 @@
     "storybook:generate-stories": "babel-node scripts/generate-stories.js",
     "pull:certificate:ios": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly",
     "pull:certificate:android": "babel-node scripts/pull-certificate-android.js",
-    "generate:bundle:android": "mkdir -p ./android/app/src/main/assets && react-native bundle --platform android --entry-file ./index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/assets",
-    "generate:bundle:ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ./ios/main.jsbundle",
+    "generate:bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "pull:translations": "babel-node scripts/pull-translations.js"
   },
   "dependencies": {
