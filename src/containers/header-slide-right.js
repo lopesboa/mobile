@@ -6,12 +6,12 @@ import {connect} from 'react-redux';
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux';
 
-type ConnectedProps = {|
+type ConnectedStateProps = {|
   count?: number
 |};
 
 type Props = {|
-  ...ConnectedProps
+  ...ConnectedStateProps
 |};
 
 // react-navigation needs this to be a class
@@ -30,7 +30,7 @@ class HeaderSlideRight extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({progression}: StoreState): ConnectedProps => ({
+const mapStateToProps = ({progression}: StoreState): ConnectedStateProps => ({
   count: progression.lives
 });
 

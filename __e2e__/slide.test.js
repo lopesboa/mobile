@@ -11,7 +11,7 @@ describe('Slide', () => {
 
   it('should see question elements', async () => {
     await waitFor(element(by.id('question'))).toBeVisible();
-    await weExpect(element(by.id('question-header'))).toBeVisible();
+    await weExpect(element(by.id('question-title'))).toBeVisible();
     await weExpect(element(by.id('explanation'))).toBeVisible();
     await weExpect(element(by.id('question-choices'))).toBeVisible();
     await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
@@ -34,18 +34,13 @@ describe('Slide', () => {
     });
 
     it('should see a progression in another tab', async () => {
-      await element(by.id('slide-tab'))
-        .atIndex(1)
-        .tap();
+      await utils.getLessonTab(element).tap();
       await weExpect(element(by.id('progression-bar-1'))).toBeVisible();
       await weExpect(element(by.id('progression-label'))).toBeVisible();
     });
 
     afterAll(async () => {
-      // 2 is the first tab, dunno why
-      await element(by.id('slide-tab'))
-        .atIndex(2)
-        .tap();
+      await utils.getQuestionTab(element).tap();
     });
   });
 

@@ -3,6 +3,8 @@
 /* eslint-disable import/prefer-default-export */
 
 export const NAVIGATION_SCREEN_CHANGE = 'NAVIGATION_SCREEN_CHANGE';
+export const NAVIGATION_SHOW = 'NAVIGATION_SHOW';
+export const NAVIGATION_HIDE = 'NAVIGATION_HIDE';
 
 type ChangeScreenNavigationPayload = {|
   currentNavigatorName: string,
@@ -12,8 +14,8 @@ type ChangeScreenNavigationPayload = {|
 |};
 
 export type Action = {|
-  type: 'NAVIGATION_SCREEN_CHANGE',
-  payload: ChangeScreenNavigationPayload
+  type: 'NAVIGATION_SCREEN_CHANGE' | 'NAVIGATION_SHOW' | 'NAVIGATION_HIDE',
+  payload?: ChangeScreenNavigationPayload
 |};
 
 export const changeScreen = (
@@ -33,3 +35,11 @@ export const changeScreen = (
     }
   };
 };
+
+export const showNavigation = (): Action => ({
+  type: NAVIGATION_SHOW
+});
+
+export const hideNavigation = (): Action => ({
+  type: NAVIGATION_HIDE
+});

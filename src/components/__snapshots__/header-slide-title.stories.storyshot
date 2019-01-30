@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots HeaderSlide Advanced 1`] = `
+exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
 <View
   style={
     Array [
@@ -104,7 +104,7 @@ exports[`Storyshots HeaderSlide Advanced 1`] = `
 </View>
 `;
 
-exports[`Storyshots HeaderSlide Basic 1`] = `
+exports[`Storyshots HeaderSlideTitle Basic 1`] = `
 <View
   style={
     Array [
@@ -208,7 +208,7 @@ exports[`Storyshots HeaderSlide Basic 1`] = `
 </View>
 `;
 
-exports[`Storyshots HeaderSlide Coach 1`] = `
+exports[`Storyshots HeaderSlideTitle Coach 1`] = `
 <View
   style={
     Array [

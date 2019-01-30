@@ -10,8 +10,7 @@ import media from '../__fixtures__/media';
 import Question from './question';
 
 // eslint-disable-next-line no-console
-const fakeOnChoicePress = (item: QuestionChoiceItem) => console.log('Pressed', item);
-const fakeOnButtonPress = handleFakePress('Button pressed');
+const handleFakeOnChoicePress = (item: QuestionChoiceItem) => handleFakePress();
 
 storiesOf('Question', module)
   .add('QCM', () => (
@@ -20,8 +19,8 @@ storiesOf('Question', module)
       header="What is the online Apple application store called?"
       explanation="Select the correct answers"
       choices={choices}
-      onChoicePress={fakeOnChoicePress}
-      onButtonPress={fakeOnButtonPress}
+      onChoicePress={handleFakeOnChoicePress}
+      onButtonPress={handleFakePress}
     />
   ))
   .add('QCM Graphic', () => (
@@ -30,8 +29,8 @@ storiesOf('Question', module)
       header="What is the online Apple application store called?"
       explanation="Select the correct answers"
       choices={choicesWithImage}
-      onChoicePress={fakeOnChoicePress}
-      onButtonPress={fakeOnButtonPress}
+      onChoicePress={handleFakeOnChoicePress}
+      onButtonPress={handleFakePress}
     />
   ))
   .add('Option selected', () => {
@@ -49,8 +48,8 @@ storiesOf('Question', module)
         header="What is the online Apple application store called?"
         explanation="Select the correct answers"
         choices={choicesWithSelection}
-        onChoicePress={fakeOnChoicePress}
-        onButtonPress={fakeOnButtonPress}
+        onChoicePress={handleFakeOnChoicePress}
+        onButtonPress={handleFakePress}
       />
     );
   })
@@ -61,7 +60,7 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       media={media}
-      onChoicePress={fakeOnChoicePress}
-      onButtonPress={fakeOnButtonPress}
+      onChoicePress={handleFakeOnChoicePress}
+      onButtonPress={handleFakePress}
     />
   ));

@@ -1,5 +1,7 @@
 // @flow
+
 import type {Slide} from '../services/content/types';
+import {lessonWithVideo, lessonWithPdf} from './lesson';
 
 export const slide_sli_415pDBG2r: Slide = {
   _id: 'sli_415pDBG2r',
@@ -23,35 +25,7 @@ export const slide_sli_415pDBG2r: Slide = {
     updatedAt: '2019-01-17T09:35:44.450Z',
     createdAt: '2019-01-17T09:35:44.450Z'
   },
-  lessons: [
-    {
-      _id: '5c3dfa39660b9b1278c0fb61',
-      poster:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-      description: 'Des données au service de tous',
-      videoId: '303449523',
-      mimeType: 'application/vimeo',
-      ref: 'les_E1TniqOCB',
-      type: 'video',
-      subtitles: [],
-      posters: [],
-      src: []
-    },
-    {
-      _id: '5c3dfa39660b9b1278c0fb60',
-      poster:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg',
-      description: 'Des données au service de tous - PDF',
-      mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
-      mimeType: 'application/pdf',
-      ref: 'les_E13dGsu0H',
-      type: 'pdf',
-      subtitles: [],
-      posters: [],
-      src: []
-    }
-  ],
+  lessons: [lessonWithVideo, lessonWithPdf],
   question: {
     type: 'qcm',
     header: "Que fournit l'initiative Open Compute Project ?",
@@ -126,35 +100,7 @@ export const slide_sli_666pDBG2r: Slide = {
     updatedAt: '2019-01-17T09:35:44.450Z',
     createdAt: '2019-01-17T09:35:44.450Z'
   },
-  lessons: [
-    {
-      _id: '5c3dfa39660b9b1278c0fb61',
-      poster:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-      description: 'Des données au service de tous',
-      videoId: '303449523',
-      mimeType: 'application/vimeo',
-      ref: 'les_E1TniqOCB',
-      type: 'video',
-      subtitles: [],
-      posters: [],
-      src: []
-    },
-    {
-      _id: '5c3dfa39660b9b1278c0fb60',
-      poster:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg',
-      description: 'Des données au service de tous - PDF',
-      mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
-      mimeType: 'application/pdf',
-      ref: 'les_E13dGsu0H',
-      type: 'pdf',
-      subtitles: [],
-      posters: [],
-      src: []
-    }
-  ],
+  lessons: [lessonWithVideo, lessonWithPdf],
   question: {
     type: 'qcm',
     header: "Que fournit l'initiative Open Compute Project ?",

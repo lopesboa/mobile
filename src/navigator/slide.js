@@ -10,7 +10,7 @@ import {
   NovaCompositionCoorpacademyListBullets3 as QuestionIcon
 } from '@coorpacademy/nova-icons';
 
-import Progression from '../components/progression';
+import Progression from '../containers/progression';
 import TabBar from '../containers/tab-bar';
 import theme from '../modules/theme';
 import translations from '../translations';

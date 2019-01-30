@@ -2,15 +2,24 @@
 
 import * as React from 'react';
 import {Platform} from 'react-native';
+import {connect} from 'react-redux';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
 
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
+import {showNavigation, hideNavigation} from '../redux/actions/navigation';
+
+type ConnectedDispatchToProps = {|
+  showNavigation: typeof showNavigation,
+  hideNavigation: typeof hideNavigation
+|};
 
 type Props = {|
+  ...ConnectedDispatchToProps,
   source: File | {uri: string},
-  preview: File | {uri: string}
+  preview: File | {uri: string},
+  height: number
 |};
 
 type State = {|
@@ -37,6 +46,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
       this.setState({
         isFullScreen: true
       });
+      if (Platform.OS === 'android') {
+        this.props.hideNavigation();
+      }
     }
   };
 
@@ -47,6 +59,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
       this.setState({
         isFullScreen: false
       });
+      if (Platform.OS === 'android') {
+        this.props.showNavigation();
+      }
     }
   };
 
@@ -84,6 +99,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
       <Video
         source={this.props.source}
         preview={this.props.preview}
+        height={this.props.height}
         step={this.state.step}
         isFullScreen={this.state.isFullScreen}
         onPlay={this.handlePlay}
@@ -97,4 +113,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
   }
 }
 
-export default VideoControlable;
+const mapDispatchToProps: ConnectedDispatchToProps = {
+  showNavigation,
+  hideNavigation
+};
+
+export default connect(null, mapDispatchToProps)(VideoControlable);

@@ -11,6 +11,13 @@ const reloadApp = async () => {
   }
 };
 
+const getQuestionTab = el => el(by.id('slide-tab')).atIndex(2);
+const getLessonTab = el => el(by.id('slide-tab')).atIndex(1);
+const getClueTab = el => el(by.id('slide-tab')).atIndex(0);
+
 export default {
-  reloadApp
+  reloadApp,
+  getQuestionTab,
+  getLessonTab,
+  getClueTab
 };

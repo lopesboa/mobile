@@ -51,6 +51,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
           "padding": 24,
         }
       }
+      testID="preview-pdf"
     >
       <RNSVGSvgView
         align="xMidYMid"
@@ -333,6 +334,7 @@ exports[`Storyshots Preview Video Remote 1`] = `
           "opacity": 1,
         }
       }
+      testID="preview-video"
     >
       <RNSVGSvgView
         align="xMidYMid"

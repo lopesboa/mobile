@@ -34,12 +34,12 @@ const Preview = ({type, source, onPress}: Props) => (
   <ImageBackground source={source} style={styles.image}>
     <ResourceOverlay>
       {type === RESSOURCE_TYPE.VIDEO && (
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={onPress} testID="preview-video">
           <PlayIcon color={theme.colors.white} height={70} width={70} />
         </TouchableOpacity>
       )}
       {type === RESSOURCE_TYPE.PDF && (
-        <View style={styles.pdf}>
+        <View style={styles.pdf} testID="preview-pdf">
           <PDFIcon color={theme.colors.white} height={70} width={70} />
           <Space type="base" />
           <Button isInverted onPress={onPress}>

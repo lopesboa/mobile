@@ -3,15 +3,19 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import type {NavigationState} from 'react-navigation';
+import type {NavigationState, NavigationStackRouterConfig} from 'react-navigation';
+import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
-// import HeaderSlide from '../containers/header-slide';
+import Header from '../containers/header';
+// import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
+
+const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
 
 const appNavigator = createStackNavigator(
   {
@@ -24,13 +28,19 @@ const appNavigator = createStackNavigator(
           ...navigationOptions.headerStyle,
           backgroundColor: theme.colors.gray.extra
         },
-        // headerTitle: <HeaderSlide />,
+        // headerTitle: HeaderSlideTitle,
         headerRight: <HeaderSlideRight />
       }
     }
   },
   {
-    defaultNavigationOptions: navigationOptions
+    defaultNavigationOptions: {
+      ...navigationOptions,
+      header: _Header,
+      headerBackImage: (
+        <NovaCompositionNavigationArrowLeft height={16} width={16} color={theme.colors.gray.dark} />
+      )
+    }
   }
 );
 

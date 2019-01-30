@@ -14,6 +14,7 @@ export type Step = 'preview' | 'play' | 'end';
 type Props = {|
   source: File | {uri: string},
   preview: File | {uri: string},
+  height: number,
   step: Step,
   isFullScreen?: boolean,
   onPlay: () => void,
@@ -33,7 +34,6 @@ export const STEP: {[key: string]: Step} = {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.black,
-    flex: 1,
     overflow: 'hidden'
   },
   video: {
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
 const Video = ({
   source,
   preview,
+  height,
   step,
   isFullScreen,
   onPlay,
@@ -79,36 +80,44 @@ const Video = ({
   onExpand,
   onShrink,
   onRef
-}: Props) => (
-  <View style={[styles.container, isFullScreen && styles.fullScreen]}>
-    {step === STEP.PREVIEW && <Preview type="video" source={preview} onPress={onPlay} />}
-    {[STEP.PLAY, STEP.END].includes(step) && (
-      <VideoPlayer
-        testID="video"
-        source={source}
-        ref={onRef}
-        style={styles.video}
-        resizeMode="contain"
-        disableVolume
-        disableBack
-        disableFullscreen={Boolean(!onExpand && !onShrink)}
-        toggleResizeModeOnFullscreen={false}
-        isFullscreen={isFullScreen}
-        onEnterFullscreen={onExpand}
-        onExitFullscreen={onShrink}
-        onFullscreenPlayerWillDismiss={onShrink}
-        onEnd={onEnd}
-        onReadyForDisplay={onReady}
-      />
-    )}
-    {step === STEP.END && (
-      <ResourceOverlay>
-        <TouchableOpacity onPress={onPlay} style={styles.replay}>
-          <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
-        </TouchableOpacity>
-      </ResourceOverlay>
-    )}
-  </View>
-);
+}: Props) => {
+  const testIDSuffix = isFullScreen ? '-fullscreen' : '';
+  const containerHeight = (!isFullScreen && height) || undefined;
+
+  return (
+    <View
+      style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
+      testID={`video-container${testIDSuffix}`}
+    >
+      {step === STEP.PREVIEW && <Preview type="video" source={preview} onPress={onPlay} />}
+      {[STEP.PLAY, STEP.END].includes(step) && (
+        <VideoPlayer
+          testID="video"
+          source={source}
+          ref={onRef}
+          style={styles.video}
+          resizeMode="contain"
+          disableVolume
+          disableBack
+          disableFullscreen={Boolean(!onExpand && !onShrink)}
+          toggleResizeModeOnFullscreen={false}
+          isFullscreen={isFullScreen}
+          onEnterFullscreen={onExpand}
+          onExitFullscreen={onShrink}
+          onFullscreenPlayerWillDismiss={onShrink}
+          onEnd={onEnd}
+          onReadyForDisplay={onReady}
+        />
+      )}
+      {step === STEP.END && (
+        <ResourceOverlay>
+          <TouchableOpacity onPress={onPlay} style={styles.replay} testID="video-replay">
+            <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
+          </TouchableOpacity>
+        </ResourceOverlay>
+      )}
+    </View>
+  );
+};
 
 export default Video;

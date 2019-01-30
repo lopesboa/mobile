@@ -182,10 +182,11 @@ type Question =
   | BasicQuestion
   | TemplateQuestion;
 
-type Lesson = {|
+export type Lesson = {|
   _id: string,
   videoId?: string,
-  mediaUrl?: string,
+  mediaUrl: string,
+  downloadUrl?: string,
   poster: string,
   description: string,
   mimeType: MimeType,

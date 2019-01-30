@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Lesson Default 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "paddingVertical": 24,
+    }
+  }
+  testID="lesson"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "textAlign": "center",
+        }
+      }
+      testID="question-title"
+    >
+      What was the nationality of Steve Jobs?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#14171A",
+          "overflow": "hidden",
+        },
+        false,
+        Object {
+          "height": 180,
+        },
+      ]
+    }
+    testID="video-container"
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="preview-video"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="70"
+            bbWidth="70"
+            color="#FFFFFF"
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                false,
+                Object {
+                  "flex": 0,
+                  "height": 70,
+                  "width": 70,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+          >
+            <RNSVGPath
+              d="M0 0h24v24H0z"
+              fill={null}
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            />
+            <RNSVGPath
+              d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+              fill={
+                Array [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            />
+          </RNSVGSvgView>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Lesson Without layout 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "paddingVertical": 24,
+    }
+  }
+  testID="lesson"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "textAlign": "center",
+        }
+      }
+      testID="question-title"
+    >
+      What was the nationality of Steve Jobs?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+</View>
+`;

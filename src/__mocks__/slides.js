@@ -18,7 +18,7 @@ export type MockSlide = {|
   isCorrect?: boolean
 |};
 
-const slide: MockSlide = {
+export const slide: MockSlide = {
   ref: 'foobarbaz',
   question: {
     type: QUESTION_TYPE.QCM,

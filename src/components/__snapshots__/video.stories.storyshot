@@ -6,12 +6,15 @@ exports[`Storyshots Video Fullscreen 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       Object {},
+      Object {
+        "height": undefined,
+      },
     ]
   }
+  testID="video-container-fullscreen"
 >
   <View
     accessible={true}
@@ -237,6 +240,7 @@ exports[`Storyshots Video Fullscreen 1`] = `
               "marginRight": 20,
             }
           }
+          testID="video-seekbar"
         >
           <View
             onLayout={[Function]}
@@ -292,6 +296,7 @@ exports[`Storyshots Video Fullscreen 1`] = `
                 },
               ]
             }
+            testID="video-seekbar-pin"
           >
             <View
               style={
@@ -358,6 +363,7 @@ exports[`Storyshots Video Fullscreen 1`] = `
             <Image
               source={1}
               style={null}
+              testID="video-pause"
             />
           </View>
           <View
@@ -389,6 +395,7 @@ exports[`Storyshots Video Fullscreen 1`] = `
                   "textAlign": "right",
                 }
               }
+              testID="video-timer"
             >
               -00:00
             </Text>
@@ -406,12 +413,15 @@ exports[`Storyshots Video Local preview 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       undefined,
+      Object {
+        "height": 180,
+      },
     ]
   }
+  testID="video-container"
 >
   <View
     style={
@@ -471,6 +481,7 @@ exports[`Storyshots Video Local preview 1`] = `
             "opacity": 1,
           }
         }
+        testID="preview-video"
       >
         <RNSVGSvgView
           align="xMidYMid"
@@ -596,12 +607,15 @@ exports[`Storyshots Video Local video 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       undefined,
+      Object {
+        "height": 180,
+      },
     ]
   }
+  testID="video-container"
 >
   <View
     accessible={true}
@@ -826,6 +840,7 @@ exports[`Storyshots Video Local video 1`] = `
               "marginRight": 20,
             }
           }
+          testID="video-seekbar"
         >
           <View
             onLayout={[Function]}
@@ -881,6 +896,7 @@ exports[`Storyshots Video Local video 1`] = `
                 },
               ]
             }
+            testID="video-seekbar-pin"
           >
             <View
               style={
@@ -947,6 +963,7 @@ exports[`Storyshots Video Local video 1`] = `
             <Image
               source={1}
               style={null}
+              testID="video-pause"
             />
           </View>
           <View
@@ -978,6 +995,7 @@ exports[`Storyshots Video Local video 1`] = `
                   "textAlign": "right",
                 }
               }
+              testID="video-timer"
             >
               -00:00
             </Text>
@@ -995,12 +1013,15 @@ exports[`Storyshots Video Remote preview 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       undefined,
+      Object {
+        "height": 180,
+      },
     ]
   }
+  testID="video-container"
 >
   <View
     style={
@@ -1060,6 +1081,7 @@ exports[`Storyshots Video Remote preview 1`] = `
             "opacity": 1,
           }
         }
+        testID="preview-video"
       >
         <RNSVGSvgView
           align="xMidYMid"
@@ -1185,12 +1207,15 @@ exports[`Storyshots Video Remote video 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       undefined,
+      Object {
+        "height": 180,
+      },
     ]
   }
+  testID="video-container"
 >
   <View
     accessible={true}
@@ -1415,6 +1440,7 @@ exports[`Storyshots Video Remote video 1`] = `
               "marginRight": 20,
             }
           }
+          testID="video-seekbar"
         >
           <View
             onLayout={[Function]}
@@ -1470,6 +1496,7 @@ exports[`Storyshots Video Remote video 1`] = `
                 },
               ]
             }
+            testID="video-seekbar-pin"
           >
             <View
               style={
@@ -1536,6 +1563,7 @@ exports[`Storyshots Video Remote video 1`] = `
             <Image
               source={1}
               style={null}
+              testID="video-pause"
             />
           </View>
           <View
@@ -1567,6 +1595,7 @@ exports[`Storyshots Video Remote video 1`] = `
                   "textAlign": "right",
                 }
               }
+              testID="video-timer"
             >
               -00:00
             </Text>
@@ -1584,12 +1613,15 @@ exports[`Storyshots Video Replay 1`] = `
     Array [
       Object {
         "backgroundColor": "#14171A",
-        "flex": 1,
         "overflow": "hidden",
       },
       undefined,
+      Object {
+        "height": 180,
+      },
     ]
   }
+  testID="video-container"
 >
   <View
     accessible={true}
@@ -1814,6 +1846,7 @@ exports[`Storyshots Video Replay 1`] = `
               "marginRight": 20,
             }
           }
+          testID="video-seekbar"
         >
           <View
             onLayout={[Function]}
@@ -1869,6 +1902,7 @@ exports[`Storyshots Video Replay 1`] = `
                 },
               ]
             }
+            testID="video-seekbar-pin"
           >
             <View
               style={
@@ -1935,6 +1969,7 @@ exports[`Storyshots Video Replay 1`] = `
             <Image
               source={1}
               style={null}
+              testID="video-pause"
             />
           </View>
           <View
@@ -1966,6 +2001,7 @@ exports[`Storyshots Video Replay 1`] = `
                   "textAlign": "right",
                 }
               }
+              testID="video-timer"
             >
               -00:00
             </Text>
@@ -2006,6 +2042,7 @@ exports[`Storyshots Video Replay 1`] = `
           "width": "100%",
         }
       }
+      testID="video-replay"
     >
       <RNSVGSvgView
         align="xMidYMid"

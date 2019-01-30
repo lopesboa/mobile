@@ -9,6 +9,7 @@ import Image from '../containers/image-scalable';
 import translations from '../translations';
 import Text from './text';
 import QuestionChoices from './question-choices';
+import QuestionTitle from './question-title';
 import Space from './space';
 import Button from './button';
 
@@ -40,12 +41,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center'
   },
-  header: {
-    color: theme.colors.black,
-    textAlign: 'center',
-    fontSize: 17,
-    fontWeight: theme.fontWeight.bold
-  },
   questionContainer: {
     paddingHorizontal: theme.spacing.xlarge
   },
@@ -71,9 +66,7 @@ const Question = ({
   return (
     <View testID="question" style={styles.container}>
       <View style={styles.questionContainer}>
-        <Text style={styles.header} testID="question-header">
-          {header}
-        </Text>
+        <QuestionTitle>{header}</QuestionTitle>
         <Space type="small" />
         <Text style={styles.explanation} testID="explanation">
           {explanation}

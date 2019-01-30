@@ -5,23 +5,23 @@ import {connect} from 'react-redux';
 
 // @todo remove
 import imageLandscape from '../__fixtures__/image-landscape-1.jpg';
-import HeaderSlideComponent from '../components/header-slide';
+import HeaderSlideTitleComponent from '../components/header-slide-title';
 import type {LevelType} from '../types';
 import {LEVEL_TYPE} from '../const';
 
-type ConnectedProps = {|
+type ConnectedStateProps = {|
   image?: File,
   level?: LevelType,
   discipline?: string
 |};
 
 type Props = {|
-  ...ConnectedProps
+  ...ConnectedStateProps
 |};
 
 // react-navigation needs this to be a class
 // eslint-disable-next-line react/prefer-stateless-function
-class HeaderSlide extends React.Component<Props> {
+class HeaderSlideTitle extends React.Component<Props> {
   props: Props;
 
   render() {
@@ -31,15 +31,15 @@ class HeaderSlide extends React.Component<Props> {
       return null;
     }
 
-    return <HeaderSlideComponent image={image} level={level} discipline={discipline} />;
+    return <HeaderSlideTitleComponent image={image} level={level} discipline={discipline} />;
   }
 }
 
-const mapStateToProps = (): ConnectedProps => ({
+const mapStateToProps = (): ConnectedStateProps => ({
   // @todo make it dynamic
   image: imageLandscape,
   level: LEVEL_TYPE.BASE,
   discipline: 'Big Data'
 });
 
-export default connect(mapStateToProps)(HeaderSlide);
+export default connect(mapStateToProps)(HeaderSlideTitle);

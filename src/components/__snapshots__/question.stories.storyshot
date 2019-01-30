@@ -27,7 +27,7 @@ exports[`Storyshots Question Option selected 1`] = `
           "textAlign": "center",
         }
       }
-      testID="question-header"
+      testID="question-title"
     >
       What is the online Apple application store called?
     </Text>
@@ -428,7 +428,7 @@ exports[`Storyshots Question QCM 1`] = `
           "textAlign": "center",
         }
       }
-      testID="question-header"
+      testID="question-title"
     >
       What is the online Apple application store called?
     </Text>
@@ -833,7 +833,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
           "textAlign": "center",
         }
       }
-      testID="question-header"
+      testID="question-title"
     >
       What is the online Apple application store called?
     </Text>
@@ -1396,7 +1396,7 @@ exports[`Storyshots Question With image 1`] = `
           "textAlign": "center",
         }
       }
-      testID="question-header"
+      testID="question-title"
     >
       What is the online Apple application store called?
     </Text>

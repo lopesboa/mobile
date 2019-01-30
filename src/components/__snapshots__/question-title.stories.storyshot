@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots QuestionTitle Default 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#14171A",
+      "fontSize": 17,
+      "fontWeight": "700",
+      "textAlign": "center",
+    }
+  }
+  testID="question-title"
+>
+  What was the nationality of Steve Jobs?
+</Text>
+`;

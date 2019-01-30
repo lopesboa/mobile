@@ -1304,10 +1304,10 @@
   dependencies:
     prop-types "15.5.10"
 
-"@coorpacademy/react-native-video-controls@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.npmjs.org/@coorpacademy/react-native-video-controls/-/react-native-video-controls-2.3.0.tgz#bd5f760e742f9aff852fa3bfd8361f347067c65f"
-  integrity sha512-5n7VmnctSp17+T+z62IgSvec5lgDK/X+XIcNQ6FbQVo3HYf8ZCEMmabX/DOaeUllSpPuuqwWI1w8IY4bBgu49g==
+"@coorpacademy/react-native-video-controls@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.npmjs.org/@coorpacademy/react-native-video-controls/-/react-native-video-controls-2.4.2.tgz#079b820bfd12ecc22dc2bc0f4c8221558e0d121b"
+  integrity sha512-IdEaxLgKfO6V7Qpu/v5KqtaadUyNS30F3d2tMN/neEakwEUaQMJ4YeHc8eaJJGZXgHPqxwwJr+i1OZup/tZBfw==
   dependencies:
     lodash "^4.16.4"
 
