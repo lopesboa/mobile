@@ -2,32 +2,34 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {getCurrentSlide} from '@coorpacademy/player-store';
 
 import Screen from '../components/screen';
 import Lesson from '../components/lesson';
-import type {StoreState} from '../redux';
-import type {Lesson as LessonType} from '../services/content/types';
-// @todo remove below once connected to redux
-import {lessonWithVideo, lessonWithPdf} from '../__fixtures__/lesson';
-import {slide as mockSlide} from '../__mocks__/slides';
+import type {StoreState} from '../redux/store';
+import type {Lesson as LessonType} from '../layer/data';
 
 export type ConnectedStateProps = {|
-  header: string,
-  resources: Array<LessonType>
+  header?: string,
+  resources?: Array<LessonType>
 |};
 
 type Props = ReactNavigation$ScreenProps;
-
 const LessonScreen = ({header, resources}: Props) => (
   <Screen testID="lesson-screen">
     <Lesson header={header} resources={resources} />
   </Screen>
 );
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  // @todo remove once connected to redux
-  header: mockSlide.question.header,
-  resources: [lessonWithVideo, lessonWithPdf]
-});
+const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const slide = getCurrentSlide(state);
+
+  return {
+    // $FlowFixMe union type
+    header: slide && slide.question && slide.question.header,
+    // $FlowFixMe union type
+    resources: slide && slide.lessons
+  };
+};
 
 export default connect(mapStateToProps)(LessonScreen);

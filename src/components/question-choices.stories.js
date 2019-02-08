@@ -3,22 +3,38 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import type {QuestionChoiceItem} from '../types';
 import {QUESTION_TYPE} from '../const';
 import choices, {choicesWithImage} from '../__fixtures__/question-choices';
+import answers from '../__fixtures__/answers';
+import {handleFakePress} from '../utils/tests';
 import QuestionChoices from './question-choices';
-
-// eslint-disable-next-line no-console
-const handleClick = (item: QuestionChoiceItem) => console.log('Clicked', item);
 
 storiesOf('QuestionChoices', module)
   .add('QCM', () => (
-    <QuestionChoices type={QUESTION_TYPE.QCM} items={choices} onItemPress={handleClick} />
+    <QuestionChoices
+      type={QUESTION_TYPE.QCM}
+      isDisabled={false}
+      items={choices}
+      userChoices={answers}
+      onItemPress={handleFakePress}
+    />
   ))
   .add('QCM Graphic', () => (
     <QuestionChoices
+      isDisabled={false}
+      userChoices={answers}
       type={QUESTION_TYPE.QCM_GRAPHIC}
       items={choicesWithImage.slice(0, 3)}
-      onItemPress={handleClick}
+      onItemPress={handleFakePress}
+    />
+  ))
+  .add('Unsupported question type', () => (
+    <QuestionChoices
+      // $FlowFixMe its only to test
+      type="SomethingElse"
+      isDisabled={false}
+      items={choices}
+      userChoices={answers}
+      onItemPress={handleFakePress}
     />
   ));

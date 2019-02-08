@@ -1,6 +1,8 @@
 [ignore]
 ; We fork some components by platform
 .*/*[.]android.js
+.*/node_modules/@coorpacademy/.*/node_modules
+.*/node_modules/@coorpacademy/.*/es
 
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/

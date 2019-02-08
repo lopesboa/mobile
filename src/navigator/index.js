@@ -68,6 +68,7 @@ type ExtractScreensResult = {|
   currentScreenName?: string,
   currentTabName?: string
 |};
+
 const extractScreens = (state: NavigationState): ExtractScreensResult => {
   const rootNavigator = state.routes[state.index];
   const stackNavigator = state.routes[0];

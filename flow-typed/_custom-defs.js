@@ -6,6 +6,9 @@ import type {
   ____Styles_Internal,
   ____TextStyle_Internal
 } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type {Dispatch as Redux$Dispatch} from 'redux';
+
+import type {StoreState} from '../src/redux/store';
 
 declare type File = number;
 
@@ -19,3 +22,8 @@ declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 
 declare type ReactNavigation$ScreenProps = $Exact<NavigationScreenConfig<*>>;
 declare type ReactNavigation$ScreenPropsWithParams<P> = $Exact<NavigationScreenConfig<P>>;
+
+// Redux
+
+declare type Dispatch = Redux$Dispatch<*>;
+declare type GetState = () => StoreState;

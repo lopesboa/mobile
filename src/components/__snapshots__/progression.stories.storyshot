@@ -73,5 +73,3 @@ exports[`Storyshots Progression Default 1`] = `
   </View>
 </View>
 `;
-
-exports[`Storyshots Progression Empty 1`] = `null`;

@@ -39,6 +39,19 @@ And open your previous app bundle in your Simulator.
 
 This will just run react-native development background task.
 
+##### Working with local player-services, player-store
+
+When you work on the deps, you need to transpile your sources:
+
+```sh
+> [player-services]: npm run build:commonjs
+> [player-store]: npm run build:commonjs
+```
+
+Then you need to somehow link the `store/lib` and `services/lib` in your `mobile/node_modules`.
+
+Since `yarn link` does not work properly with metro, this script may help you with this tooling: [scripts/sync-local-deps.sh](https://gist.github.com/chrisdugne/878b4e50e6caf3bebb1c373149df74cc)
+
 ## Storybook
 
 Stop the packager if it is running, and launch the storybook packager:

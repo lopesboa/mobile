@@ -1,5 +1,5 @@
 // @flow strict
-import type {Chapter} from '../services/content/types';
+import type {Chapter} from '../layer/data/types';
 
 export const chapter_4yiDgZ4cH: Chapter = {
   _id: 'cha_4yiDgZ4cH',

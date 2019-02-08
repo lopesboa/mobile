@@ -3,7 +3,9 @@
 import * as React from 'react';
 import {Provider} from 'react-redux';
 
-import store from '../redux';
+import createStore from '../redux';
+
+const store = createStore();
 
 /* eslint-disable import/prefer-default-export */
 // eslint-disable-next-line no-console
@@ -16,3 +18,5 @@ type TestContextProviderProps = {|
 export const TestContextProvider = (props: TestContextProviderProps) => (
   <Provider store={store}>{props.children}</Provider>
 );
+
+export const fakeError = new Error('Fake error');

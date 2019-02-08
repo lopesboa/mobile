@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import type {HeaderProps} from 'react-navigation';
 import {Header as HeaderBase} from 'react-navigation';
 
-import type {StoreState} from '../redux';
+import type {StoreState} from '../redux/store';
 
 type ConnectedStateToProps = {|
   isHidden: boolean

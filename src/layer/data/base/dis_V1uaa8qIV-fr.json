@@ -1,0 +1,372 @@
+{
+  "chapter": {
+    "cha_E10~C85UV": {
+      "_id": "cha_E10~C85UV",
+      "universalRef": "cha_E10~C85UV",
+      "name": "Comprendre le Microlearning en 5 minutes",
+      "stars": 20,
+      "isConditional": false,
+      "freeRun": true,
+      "isStandalone": false,
+      "poster": {
+        "type": "img",
+        "mimeType": "image/jpeg",
+        "mediaUrl": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/iphone__mockup_microlearning-1518513077551.jpg&h=400&w=400&q=90"
+      },
+      "groups": ["ALL"],
+      "partners": [],
+      "version": "1",
+      "taggedNewUntil": "2018-02-12T10:40:14.255Z"
+    }
+  },
+  "discipline": {
+    "dis_V1uaa8qIV": {
+      "ref": "dis_V1uaa8qIV",
+      "universalRef": "dis_V1uaa8qIV",
+      "name": "Le Microlearning de Coorpacademy",
+      "cover": {
+        "description": "Découvrir le microlearning de Coorpacademy"
+      },
+      "position": 0,
+      "groups": ["ALL"],
+      "partners": [],
+      "partnershipType": "coorp",
+      "hidden": false,
+      "conditions": [],
+      "modules": [
+        {
+          "ref": "mod_4krW0U9U4",
+          "universalRef": "mod_4krW0U9U4",
+          "level": "base",
+          "timeAlloted": 5,
+          "chapterIds": ["cha_E10~C85UV"],
+          "eligibleBattle": true,
+          "version": "1",
+          "taggedNewUntil": "2018-02-12T10:40:14.254Z",
+          "isConditional": false
+        }
+      ],
+      "version": "1",
+      "taggedNewUntil": "2018-02-12T10:40:14.253Z"
+    }
+  },
+  "slide": {
+    "sli_4JJLew9U4": {
+      "_id": "sli_4JJLew9U4",
+      "universalRef": "sli_4JJLew9U4",
+      "discipline": "dis_V1uaa8qIV",
+      "module": "mod_4krW0U9U4",
+      "question": {
+        "type": "qcmDrag",
+        "header": "Quelles sont les caractéristiques du Microlearning ? ",
+        "explanation": "Sélectionnez les bonnes réponses ci-dessous.",
+        "medias": [
+          {
+            "type": "img",
+            "src": [
+              {
+                "mimeType": "image/png",
+                "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/artboard-1521044001010.png&h=400&w=400&q=90"
+              }
+            ]
+          }
+        ],
+        "content": {
+          "choices": [
+            {
+              "id": "sli_4JJLew9U4.id",
+              "label": "Il permet d'apprendre une seule notion.",
+              "value": "sli_4JJLew9U4.choice_N1tuXDcU4"
+            },
+            {
+              "id": "sli_4JJLew9U4.id",
+              "label": "Il est rapide et facile d'accès.",
+              "value": "sli_4JJLew9U4.choice_NJvY8D5LN"
+            },
+            {
+              "id": "sli_4JJLew9U4.id",
+              "label": "Il utilise des micro-contenus de formation.",
+              "value": "sli_4JJLew9U4.choice_VkXcLw5UN"
+            },
+            {
+              "id": "sli_4JJLew9U4.id",
+              "label": "C'est une modalité pour se former en ligne.",
+              "value": "sli_4JJLew9U4.choice_V10iUw5IN"
+            }
+          ],
+          "answers": [
+            [
+              "Il permet d'apprendre une seule notion.",
+              "Il est rapide et facile d'accès.",
+              "Il utilise des micro-contenus de formation.",
+              "C'est une modalité pour se former en ligne."
+            ]
+          ],
+          "matchOrder": false
+        }
+      },
+      "clue": "Tout pour faciliter l'apprentissage rapide.",
+      "klf": "Le Microlearning est constituée d'une courte unité d'apprentissage en ligne agrémentée de visuels ou de vidéos. Il est rapide et facile d'accès car il utilise des micro-contenus de formation. Il permet ainsi d'apprendre une seule notion.",
+      "tips": "C'est en 2005 que l'expert autrichien Theo Hug a défini le microlearning selon sept dimensions de temps, de contenu, de format et d'apprentissage.",
+      "lessons": [
+        {
+          "type": "pdf",
+          "ref": "les_N1ExhnsL4",
+          "mimeType": "application/pdf",
+          "mediaUrl": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "_id": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "description": "Fiche pratique Microlearning"
+        },
+        {
+          "type": "video",
+          "ref": "les_VkkhonsL4",
+          "mimeType": "application/vimeo",
+          "videoId": "255538665",
+          "_id": "255538665",
+          "description": "Bande annonce Microlearning"
+        }
+      ],
+      "chapter_id": "cha_E10~C85UV"
+    },
+    "sli_4y-kItc84": {
+      "_id": "sli_4y-kItc84",
+      "universalRef": "sli_4y-kItc84",
+      "discipline": "dis_V1uaa8qIV",
+      "module": "mod_4krW0U9U4",
+      "question": {
+        "type": "template",
+        "header": "En quoi le Microlearning est-il adapté à  la formation en entreprise ?",
+        "explanation": "Saisissez votre réponse ou sélectionnez la bonne réponse dans le(s) menu(s) déroulant(s).",
+        "content": {
+          "template": "En moyenne, seulement {{sel93353}} du temps de travail est consacré à la formation. Par ailleurs, les nouvelles manières de consommer sur le web ont font baisser notre temps d'attention moyen à {{sel30878}}. Le Microlearning semble donc une nouvelle modalité d'apprentissage quasi-indispensable.",
+          "matchOrder": true,
+          "maxTypos": null,
+          "choices": [
+            {
+              "type": "select",
+              "name": "sel93353",
+              "items": [
+                {
+                  "text": "1%",
+                  "value": "sli_4y-kItc84.choice_NklbOx9c84"
+                },
+                {
+                  "text": "10%",
+                  "value": "sli_4y-kItc84.choice_N1b~Oxcc8V"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "sel30878",
+              "items": [
+                {
+                  "text": "8 secondes",
+                  "value": "sli_4y-kItc84.choice_4yef-Zq5IN"
+                },
+                {
+                  "text": "1 minutes",
+                  "value": "sli_4y-kItc84.choice_4yWfOW5qLN"
+                }
+              ]
+            }
+          ],
+          "answers": [["1%", "8 secondes"]]
+        }
+      },
+      "clue": "Un cruel manque de temps",
+      "klf": "Le Microlearning est une approche centrée sur l\"utilisateur qui permet de contourner le manque de temps disponible pour la formation et d'engager rapidement l'apprenant",
+      "tips": "10% des cours sont consommés en mode Microlearning chez Coorpacademy.",
+      "lessons": [
+        {
+          "type": "pdf",
+          "ref": "les_N1ExhnsL4",
+          "mimeType": "application/pdf",
+          "mediaUrl": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "_id": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "description": "Fiche pratique Microlearning"
+        },
+        {
+          "type": "video",
+          "ref": "les_VkkhonsL4",
+          "mimeType": "application/vimeo",
+          "videoId": "255538665",
+          "_id": "255538665",
+          "description": "Bande annonce Microlearning"
+        }
+      ],
+      "chapter_id": "cha_E10~C85UV"
+    },
+    "sli_EyS8t-qUE": {
+      "_id": "sli_EyS8t-qUE",
+      "universalRef": "sli_EyS8t-qUE",
+      "discipline": "dis_V1uaa8qIV",
+      "module": "mod_4krW0U9U4",
+      "question": {
+        "type": "slider",
+        "header": "Quelle est la durée d'un chapitre de Microlearning ?",
+        "explanation": "Déplacez le curseur.",
+        "content": {
+          "id": "sli_EyS8t-qUE.id",
+          "min": 1,
+          "max": 10,
+          "defaultValue": 5,
+          "unitLabel": "minute",
+          "answers": [
+            ["Un chapitre de Microlearning dure de 3 à 5 minutes."],
+            ["3"],
+            ["4"],
+            ["5"]
+          ]
+        }
+      },
+      "clue": "Le temps d'une pause café (raisonnable).",
+      "klf": "Un chapitre de microlearning dure de 3 à 5 minutes et contient un maximum de 9 points-clés à retenir.",
+      "tips": "Selon la loi établie par le psychologue cognitif George A. Miller en 1956, la mémoire court terme d'un individu ne peut contenir que 7 éléments plus ou moins 2.",
+      "lessons": [
+        {
+          "type": "pdf",
+          "ref": "les_N1ExhnsL4",
+          "mimeType": "application/pdf",
+          "mediaUrl": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "_id": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "description": "Fiche pratique Microlearning"
+        },
+        {
+          "type": "video",
+          "ref": "les_VkkhonsL4",
+          "mimeType": "application/vimeo",
+          "videoId": "255538665",
+          "_id": "255538665",
+          "description": "Bande annonce Microlearning"
+        }
+      ],
+      "chapter_id": "cha_E10~C85UV"
+    },
+    "sli_Nk6G9D9L4": {
+      "_id": "sli_Nk6G9D9L4",
+      "universalRef": "sli_Nk6G9D9L4",
+      "discipline": "dis_V1uaa8qIV",
+      "module": "mod_4krW0U9U4",
+      "question": {
+        "type": "qcmGraphic",
+        "header": "De quoi un chapitre Microlearning de Coorpacademy est-il constitué ?",
+        "explanation": "Sélectionnez les bonnes réponses.",
+        "content": {
+          "choices": [
+            {
+              "id": "sli_Nk6G9D9L4.id",
+              "label": "Des indices",
+              "value": "sli_Nk6G9D9L4.choice_41x-9qvqL4",
+              "media": {
+                "type": "img",
+                "src": [
+                  {
+                    "mimeType": "image/png",
+                    "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/indice-clue-1518438350107.png&h=400&w=400&q=90"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sli_Nk6G9D9L4.id",
+              "label": "Des questions",
+              "value": "sli_Nk6G9D9L4.choice_Vkx9WD-5LV",
+              "media": {
+                "type": "img",
+                "src": [
+                  {
+                    "mimeType": "image/png",
+                    "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/quiz-1518438534084.png&h=400&w=400&q=90"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sli_Nk6G9D9L4.id",
+              "label": "Une leçon (vidéo ou autre format)",
+              "value": "sli_Nk6G9D9L4.choice_NygWnwu9LV",
+              "media": {
+                "type": "img",
+                "src": [
+                  {
+                    "mimeType": "image/png",
+                    "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/video-or-pdf-1518438545615.png&h=400&w=400&q=90"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sli_Nk6G9D9L4.id",
+              "label": "Une vie",
+              "value": "sli_Nk6G9D9L4.choice_4yeMnwucU4",
+              "media": {
+                "type": "img",
+                "src": [
+                  {
+                    "mimeType": "image/png",
+                    "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/vie-life-1518438580456.png&h=400&w=400&q=90"
+                  }
+                ]
+              }
+            }
+          ],
+          "answers": [
+            [
+              "Des indices",
+              "Des questions",
+              "Une leçon (vidéo ou autre format)",
+              "Une vie"
+            ]
+          ]
+        }
+      },
+      "clue": "Le Microlearning utilise toutes les ressources habituelles de la pédagogie de Coorpacademy : vie, questions, leçons...",
+      "klf": "Le Microlearning permet d'apprendre ou approfondir une notion en 5 minutes chrono, sous forme de jeu avec 4 questions, une « vie » et une leçon (vidéo, ou PDF).",
+      "tips": "L'unité de microlearning est la plus petite unité d'apprentissage disponible chez Coorpacademy, on parle de chapitre. Un chapitre peut être utilisé dans des cours plus complets agrégeant de nombreuses unités de microlearning.",
+      "lessons": [
+        {
+          "type": "pdf",
+          "ref": "les_N1ExhnsL4",
+          "mimeType": "application/pdf",
+          "mediaUrl": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "_id": "//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/raw/microlearningfr-1518521585350.pdf",
+          "description": "Fiche pratique Microlearning"
+        },
+        {
+          "type": "video",
+          "ref": "les_VkkhonsL4",
+          "mimeType": "application/vimeo",
+          "videoId": "255538665",
+          "_id": "255538665",
+          "description": "Bande annonce Microlearning"
+        }
+      ],
+      "chapter_id": "cha_E10~C85UV"
+    }
+  },
+  "exitNode": {
+    "failExitNode": {
+      "ref": "failExitNode",
+      "type": "failure",
+      "media": {
+        "type": "img",
+        "src": [
+          {
+            "mimeType": "image/png",
+            "url": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content/cockpit-marketing/default/capture-decran-2017-12-20-a-191554-1515403606800.png&h=400&w=400&q=90"
+          }
+        ]
+      },
+      "title": "FAIL",
+      "description": "Hello you failed today !\n<a href=\"http://www.google.fr\"> GOOGLE </a>\nLorem Ipsum dolor sit amet"
+    },
+    "successExitNode": {
+      "ref": "successExitNode",
+      "type": "success",
+      "title": "SUCCESS MY FRIEND. I like you ",
+      "description": "Hello you failed today !",
+      "mediaDescription": "Video of a lizard"
+    }
+  }
+}

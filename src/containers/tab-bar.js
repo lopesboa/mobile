@@ -6,7 +6,7 @@ import {BottomTabBar} from 'react-navigation';
 import type {_BottomTabBarProps} from 'react-navigation';
 
 import {BrandThemeContext} from '../components/brand-theme-provider';
-import type {StoreState} from '../redux';
+import type {StoreState} from '../redux/store';
 
 type ConnectedStateToProps = {|
   isHidden: boolean

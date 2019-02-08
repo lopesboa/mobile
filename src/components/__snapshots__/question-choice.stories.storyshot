@@ -35,23 +35,158 @@ exports[`Storyshots QuestionChoice Default 1`] = `
     }
     testID="question-choice-1"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontSize": 17,
-            "fontWeight": "700",
-            "justifyContent": "flex-start",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          false,
-        ]
+        Object {
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+        }
       }
     >
-      Option 1
-    </Text>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Option 1
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionChoice Disabled 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#00B0FF",
+          "borderColor": "#00B0FF",
+        },
+        Object {
+          "flexGrow": 1,
+        },
+      ]
+    }
+    testID="question-choice-5-selected"
+  >
+    <View
+      style={
+        Object {
+          "borderTopLeftRadius": 3,
+          "borderTopRightRadius": 3,
+          "height": 120,
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": 120,
+              "width": "100%",
+            },
+            undefined,
+          ]
+        }
+        testID="question-choice-5-img"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+        }
+      }
+    >
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Option 5
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -94,25 +229,43 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
     }
     testID="question-choice-2-selected"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontSize": 17,
-            "fontWeight": "700",
-            "justifyContent": "flex-start",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          Object {
-            "color": "#FFFFFF",
-          },
-        ]
+        Object {
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+        }
       }
     >
-      Option 2
-    </Text>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Option 2
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -166,9 +319,10 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
       }
     >
       <Image
+        resizeMode="cover"
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
           }
         }
         style={
@@ -187,28 +341,46 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
             undefined,
           ]
         }
-        testID="question-choice-4-image"
+        testID="question-choice-4-img"
       />
     </View>
-    <Text
+    <View
       style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontSize": 17,
-            "fontWeight": "700",
-            "justifyContent": "flex-start",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          Object {
-            "color": "#FFFFFF",
-          },
-        ]
+        Object {
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+        }
       }
     >
-      Option 4
-    </Text>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Option 4
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -259,9 +431,10 @@ exports[`Storyshots QuestionChoice With image 1`] = `
       }
     >
       <Image
+        resizeMode="cover"
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
           }
         }
         style={
@@ -280,26 +453,46 @@ exports[`Storyshots QuestionChoice With image 1`] = `
             undefined,
           ]
         }
-        testID="question-choice-3-image"
+        testID="question-choice-3-img"
       />
     </View>
-    <Text
+    <View
       style={
-        Array [
-          Object {
-            "color": "#14171A",
-            "fontSize": 17,
-            "fontWeight": "700",
-            "justifyContent": "flex-start",
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
-          false,
-        ]
+        Object {
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+        }
       }
     >
-      Option 3
-    </Text>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Option 3
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;

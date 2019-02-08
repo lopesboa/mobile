@@ -2,17 +2,19 @@
 
 import * as React from 'react';
 import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import type {Media} from '@coorpacademy/progression-engine';
 
-import type {Media} from '../types';
 import {MEDIA_TYPE} from '../const';
 import theme from '../modules/theme';
-import Text from './text';
+import {getCleanUri} from '../modules/uri';
+import Html from './html';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
   isSelected?: boolean,
   onPress: () => void,
   children: string,
+  isDisabled?: boolean,
   testID?: string,
   media?: Media,
   style?: GenericStyleProp
@@ -27,13 +29,14 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.common,
     overflow: 'hidden'
   },
-  text: {
+  textContainer: {
     paddingVertical: theme.spacing.small,
     paddingHorizontal: theme.spacing.base,
-    fontWeight: theme.fontWeight.bold,
-    fontSize: 17,
-    color: theme.colors.black,
     justifyContent: 'flex-start'
+  },
+  text: {
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.black
   },
   textSelected: {
     color: theme.colors.white
@@ -49,6 +52,7 @@ const styles = StyleSheet.create({
 const QuestionChoice = ({
   children,
   isSelected = false,
+  isDisabled,
   onPress,
   media,
   testID: prefixTestID,
@@ -61,23 +65,36 @@ const QuestionChoice = ({
         borderColor: brandTheme.colors.primary
       };
       const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
-      const mediaSuffix = prefixTestID && media ? `-${media.type.toLowerCase()}` : '';
+      const mediaType =
+        media && media.type && media.type === MEDIA_TYPE.IMAGE && media.type.toLowerCase();
+      const mediaUri =
+        media &&
+        media.type === MEDIA_TYPE.IMAGE &&
+        media.src &&
+        media.src.length > 0 &&
+        getCleanUri(media.src[0].url);
+
+      const mediaSuffix = prefixTestID && mediaType ? `-${mediaType}` : '';
 
       return (
-        <TouchableOpacity onPress={onPress} style={style}>
+        <TouchableOpacity onPress={!isDisabled ? onPress : undefined} style={style}>
           <View
             style={[styles.container, isSelected && selectedStyle, {flexGrow: 1}]}
             testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
           >
-            {media &&
-              media.type === MEDIA_TYPE.IMAGE && (
-                <ImageBackground
-                  testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
-                  source={media.source}
-                  style={styles.image}
-                />
-              )}
-            <Text style={[styles.text, isSelected && styles.textSelected]}>{children}</Text>
+            {mediaUri && (
+              <ImageBackground
+                testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
+                source={{uri: mediaUri}}
+                style={styles.image}
+                resizeMode="cover"
+              />
+            )}
+            <View style={styles.textContainer}>
+              <Html fontSize={17} style={[styles.text, isSelected && styles.textSelected]}>
+                {children}
+              </Html>
+            </View>
           </View>
         </TouchableOpacity>
       );

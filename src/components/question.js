@@ -1,13 +1,13 @@
 // @flow strict
 
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ImageBackground} from 'react-native';
 
-import type {QuestionChoiceItem, QuestionType, Media} from '../types';
+import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 import theme from '../modules/theme';
-import Image from '../containers/image-scalable';
+import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
-import Text from './text';
+import Html from './html';
 import QuestionChoices from './question-choices';
 import QuestionTitle from './question-title';
 import Space from './space';
@@ -17,10 +17,13 @@ export type Props = {|
   type: QuestionType,
   header: string,
   explanation: string,
-  choices: Array<QuestionChoiceItem>,
+  choices: Array<Choice>,
+  userChoices: Array<string>,
   media?: Media,
-  onChoicePress: (item: QuestionChoiceItem) => void,
-  onButtonPress: () => void
+  isValidating: boolean,
+  onChoicePress: (item: Choice) => void,
+  onButtonPress: () => void,
+  isValidating?: boolean
 |};
 
 export type State = {|
@@ -38,14 +41,14 @@ const styles = StyleSheet.create({
   },
   explanation: {
     color: theme.colors.gray.medium,
-    fontSize: 15,
     textAlign: 'center'
   },
   questionContainer: {
     paddingHorizontal: theme.spacing.xlarge
   },
   image: {
-    alignSelf: 'center'
+    alignSelf: 'center',
+    height: 200
   },
   validateButton: {
     paddingHorizontal: theme.spacing.base
@@ -58,39 +61,52 @@ const Question = ({
   explanation,
   choices,
   media,
+  userChoices,
   onChoicePress,
-  onButtonPress
+  onButtonPress,
+  isValidating
 }: Props) => {
-  const oneChoiceSelected = choices.some(({selected = false}) => selected);
+  const oneChoiceSelected = userChoices.length > 0;
+  const mediaUri = media && media.src && media.src.length > 0 && getCleanUri(media.src[0].url);
 
   return (
     <View testID="question" style={styles.container}>
       <View style={styles.questionContainer}>
         <QuestionTitle>{header}</QuestionTitle>
         <Space type="small" />
-        <Text style={styles.explanation} testID="explanation">
+        <Html fontSize={15} style={styles.explanation} testID="explanation">
           {explanation}
-        </Text>
+        </Html>
       </View>
       <Space type="base" />
-      {media && (
+      {mediaUri && (
         <View>
-          <Image
-            source={media.source}
-            maxHeight={150}
-            testID="question-image"
+          <ImageBackground
+            source={{uri: mediaUri}}
             style={styles.image}
+            resizeMode="contain"
+            testID="question-image"
           />
           <Space type="base" />
         </View>
       )}
       <View style={styles.choicesContainer}>
-        <QuestionChoices type={type} items={choices} onItemPress={onChoicePress} />
+        <QuestionChoices
+          type={type}
+          items={choices}
+          userChoices={userChoices}
+          onItemPress={onChoicePress}
+          isDisabled={isValidating}
+        />
       </View>
       <Space type="base" />
-      <Space type="tiny" />
       <View style={styles.validateButton}>
-        <Button onPress={onButtonPress} isDisabled={!oneChoiceSelected} testID="button-validate">
+        <Button
+          onPress={onButtonPress}
+          isDisabled={!oneChoiceSelected || isValidating}
+          isLoading={isValidating}
+          testID="button-validate"
+        >
           {translations.validate}
         </Button>
       </View>

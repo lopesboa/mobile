@@ -802,17 +802,33 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -821,57 +837,87 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -904,50 +950,114 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Anything else
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Anything else
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -1219,16 +1329,32 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -1598,16 +1724,32 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -2120,17 +2262,33 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -2139,57 +2297,87 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -2222,50 +2410,114 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Anything else
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Anything else
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -2537,16 +2789,32 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -2916,16 +3184,32 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -3882,16 +4166,32 @@ exports[`Storyshots Correction Good answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -4162,16 +4462,32 @@ exports[`Storyshots Correction Good answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -4496,17 +4812,33 @@ exports[`Storyshots Correction Good answer 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -4515,57 +4847,87 @@ exports[`Storyshots Correction Good answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -4598,39 +4960,87 @@ exports[`Storyshots Correction Good answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -5189,16 +5599,32 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -5469,16 +5895,32 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -5803,17 +6245,33 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -5822,57 +6280,87 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -5905,39 +6393,87 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -6850,17 +7386,33 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -6869,57 +7421,87 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -6952,50 +7534,114 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Anything else
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Anything else
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -7267,16 +7913,32 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -7646,16 +8308,32 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -8612,16 +9290,32 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -8892,16 +9586,32 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -9226,17 +9936,33 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -9245,57 +9971,87 @@ exports[`Storyshots Correction Last good answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -9328,39 +10084,87 @@ exports[`Storyshots Correction Last good answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -9919,16 +10723,32 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -10199,16 +11019,32 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -10533,17 +11369,33 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -10552,57 +11404,87 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -10635,39 +11517,87 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -11625,16 +12555,32 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -11905,16 +12851,32 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -12239,17 +13201,33 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -12258,23 +13236,33 @@ exports[`Storyshots Correction With only one answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -12307,17 +13295,33 @@ exports[`Storyshots Correction With only one answer 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -13230,17 +14234,33 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Where is Waldo ?
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Where is Waldo ?
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -13249,57 +14269,87 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Array [
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "color": "#3EC483",
-                          "fontWeight": "700",
-                        },
-                      ]
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#3EC483",
+                              "fontSize": 15,
+                              "fontWeight": "700",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                   <View
                     style={
                       Object {
@@ -13332,72 +14382,168 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                       }
                     }
                   />
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Lorem Elsass ipsum
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Chulia Roberstau
-                  </Text>
-                  <Text
-                    style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 15,
-                        "fontWeight": "400",
-                      }
-                    }
-                  >
-                    Miss Dahlias vulputate salu barapli schnaps blottkopf
-                  </Text>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Lorem Elsass ipsum
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Chulia Roberstau
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            }
+                          }
+                        >
+                          Miss Dahlias vulputate salu barapli schnaps blottkopf
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
                 </View>
                 <BVLinearGradient
                   colors={
@@ -13669,16 +14815,32 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The KEY POINT
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [
@@ -14048,16 +15210,32 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 15,
-                    }
-                  }
-                >
-                  The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
-                </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
                 <BVLinearGradient
                   colors={
                     Array [

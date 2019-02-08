@@ -17,19 +17,36 @@ exports[`Storyshots Lesson Default 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What was the nationality of Steve Jobs?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What was the nationality of Steve Jobs?
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -250,19 +267,36 @@ exports[`Storyshots Lesson Without layout 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What was the nationality of Steve Jobs?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What was the nationality of Steve Jobs?
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={

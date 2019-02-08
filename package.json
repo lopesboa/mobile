@@ -48,7 +48,10 @@
     "pull:translations": "babel-node scripts/pull-translations.js"
   },
   "dependencies": {
-    "@coorpacademy/nova-icons": "^2.4.0",
+    "@coorpacademy/nova-icons": "^2.6.0",
+    "@coorpacademy/player-services": "^2.3.4",
+    "@coorpacademy/player-store": "^2.3.5",
+    "@coorpacademy/progression-engine": "^10.2.3",
     "@coorpacademy/react-native-deck-swiper": "^1.5.27",
     "@coorpacademy/react-native-video-controls": "^2.4.2",
     "apsl-react-native-button": "^3.1.1",
@@ -60,6 +63,7 @@
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localization": "^2.0.3",
     "react-native-orientation-locker": "^1.1.1",
+    "react-native-render-html": "3",
     "react-native-svg": "^6.0.0",
     "react-native-video": "3.2.1",
     "react-navigation": "^3.0.1",

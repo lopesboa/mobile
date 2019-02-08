@@ -3,12 +3,13 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import type {Lesson as LessonType} from '../services/content/types';
+import type {Lesson as LessonType} from '../layer/data';
 import {RESSOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import Video from '../containers/video-controlable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
+import {getCleanUri} from '../modules/uri';
 import QuestionTitle from './question-title';
 import Space from './space';
 
@@ -31,8 +32,8 @@ const styles = StyleSheet.create({
 const Lesson = ({layout, header, resources}: Props) => {
   // @todo other US, iterate over resources
   const resource: LessonType = resources.filter(item => item.type === RESSOURCE_TYPE.VIDEO)[0];
-  const video = resource && resource.mediaUrl.replace(/(http:|https:|)\/\//g, 'https://');
-  const poster = resource && resource.poster.replace(/(http:|https:|)\/\//g, 'https://');
+  const video = resource && resource.mediaUrl && getCleanUri(resource.mediaUrl);
+  const poster = resource && getCleanUri(resource.poster);
 
   return (
     <View testID="lesson" style={styles.container}>

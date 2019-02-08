@@ -1,6 +1,7 @@
 ## Required Tools
 
-* Install Watchman
+- Install Watchman
+
 ```
 brew install watchman
 ```
@@ -37,7 +38,8 @@ brew install watchman
   # Using RubyGems
   sudo gem install fastlane -NV
   ```
-  If fastlane was successfully installed via gem, Go to the Cocoapod step. Otherwise follow [this](./ALTERNATIVE_FASTLANE_INSTALL.md).  
+
+  If fastlane was successfully installed via gem, Go to the Cocoapod step. Otherwise follow [this](./ALTERNATIVE_FASTLANE_INSTALL.md).
   To know more about Fastlane, please read [this article](./FASTLANE.md).
 
 * Cocoapod, the IOS package manager
@@ -46,6 +48,7 @@ brew install watchman
   # Using RubyGems
   sudo gem install cocoapods
   ```
+
   If cocoapod was successfully installed via gem, Go to the Detox step. Otherwise follow [this](ALTERNATIVE_COCOAPOD.md).
 
 - [Detox](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md), the e2e test runner
@@ -55,6 +58,12 @@ brew install watchman
   brew tap facebook/fb
 
   brew install applesimutils
+  ```
+
+  and [xcpretty](https://github.com/xcpretty/xcpretty)
+
+  ```sh
+  gem install xcpretty
   ```
 
 # Install the dependencies
@@ -94,14 +103,14 @@ After the application installation you will have to configure it.
    export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    export PATH=$PATH:$ANDROID_SDK_ROOT/tools
    export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-   
+
    # To be used by Android emulator
    export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
    ```
-   
-Before the next step, make reload your profile file to load the changes. 
 
-4. Close your Android studio, you will use it only to debug Android native code. 
+Before the next step, make reload your profile file to load the changes.
+
+4. Close your Android studio, you will use it only to debug Android native code.
 
 ### Android Emulator
 
@@ -127,6 +136,7 @@ echo no | avdmanager create avd --force --name "Nexus_5X_API_${API_VERSION}" --a
 ```
 
 To test your emulator:
+
 ```
 cd $ANDROID_SDK_ROOT/tools
 emulator -avd "Nexus_5X_API_19"

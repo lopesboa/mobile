@@ -2,9 +2,10 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {getCurrentProgression, getLives} from '@coorpacademy/player-store';
 
 import HeaderSlideRightComponent from '../components/header-slide-right';
-import type {StoreState} from '../redux';
+import type {StoreState} from '../redux/store';
 
 type ConnectedStateProps = {|
   count?: number
@@ -30,8 +31,14 @@ class HeaderSlideRight extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({progression}: StoreState): ConnectedStateProps => ({
-  count: progression.lives
-});
+const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const progression = getCurrentProgression(state);
+  if (!progression) {
+    return {count: 0};
+  }
+  return {
+    count: getLives(state) || 0
+  };
+};
 
 export default connect(mapStateToProps)(HeaderSlideRight);

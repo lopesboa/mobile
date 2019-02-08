@@ -26,6 +26,9 @@ const navigationOptions: NavigationScreenConfig<*> = {
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {
   ...navigationOptions,
+  header: null,
+  headerBackImage: null,
+  headerRight: null,
   headerStyle: {
     ...navigationOptions.headerStyle,
     height: 0,

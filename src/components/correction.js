@@ -4,7 +4,6 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
-import type {Answer} from '../types';
 import {CARD_TYPE} from '../const';
 import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
@@ -15,6 +14,7 @@ import translations from '../translations';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
+import Html from './html';
 import Space from './space';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
@@ -24,9 +24,9 @@ type Props = {|
   title: string,
   subtitle: string,
   tip: string,
-  answers: Array<Answer>,
+  answers: Array<string>,
   question: string,
-  userAnswers: Array<Answer>,
+  userAnswers: Array<string>,
   isCorrect: boolean,
   keyPoint: string,
   onButtonPress: () => void,
@@ -70,8 +70,7 @@ const styles = StyleSheet.create({
     zIndex: 100
   },
   cardText: {
-    color: theme.colors.gray.dark,
-    fontSize: 15
+    color: theme.colors.gray.dark
   },
   header: {
     width: '100%',
@@ -109,7 +108,11 @@ class Correction extends React.PureComponent<Props> {
         style={styles.card}
         testID={`card-${type.toLowerCase()}`}
       >
-        {type === CARD_TYPE.TIP && <Text style={styles.cardText}>{tip}</Text>}
+        {type === CARD_TYPE.TIP && (
+          <Html fontSize={15} style={styles.cardText}>
+            {tip}
+          </Html>
+        )}
         {type === CARD_TYPE.CORRECTION && (
           <CardCorrection
             question={question}
@@ -118,7 +121,11 @@ class Correction extends React.PureComponent<Props> {
             isCorrect={isCorrect}
           />
         )}
-        {type === CARD_TYPE.KEY_POINT && <Text style={styles.cardText}>{keyPoint}</Text>}
+        {type === CARD_TYPE.KEY_POINT && (
+          <Html fontSize={15} style={styles.cardText}>
+            {keyPoint}
+          </Html>
+        )}
       </CardComponent>
     );
   };

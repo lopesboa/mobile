@@ -6,14 +6,12 @@ import {storiesOf} from '@storybook/react-native';
 
 import answers from '../__fixtures__/answers';
 import type {Layout} from '../containers/with-layout';
+import {handleFakePress} from '../utils/tests';
 import {Component as Correction} from './correction';
 
 // eslint-disable-next-line no-console
 
 const question = 'Where is Waldo ?';
-
-// eslint-disable-next-line no-console
-const handleButtonPress = () => console.log('Clicked');
 
 const window = Dimensions.get('window');
 const fakeLayout: Layout = {
@@ -32,7 +30,7 @@ storiesOf('Correction', module)
         }
         isCorrect={false}
         title="Oops..."
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Bad Answer"
         keyPoint="The KEY POINT"
@@ -52,7 +50,7 @@ storiesOf('Correction', module)
         }
         title="Good job!"
         isCorrect
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Good Answer"
         keyPoint="The KEY POINT"
@@ -74,7 +72,7 @@ storiesOf('Correction', module)
           }
           title="Oops..."
           isCorrect={false}
-          onButtonPress={handleButtonPress}
+          onButtonPress={handleFakePress}
           question={question}
           subtitle="Bad Answer"
           keyPoint="The KEY POINT"
@@ -95,7 +93,7 @@ storiesOf('Correction', module)
         }
         title="Good job!"
         isCorrect
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Good Answer"
         keyPoint="The KEY POINT"
@@ -115,7 +113,7 @@ storiesOf('Correction', module)
         }
         isCorrect={false}
         title="Oops..."
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Bad Answer"
         keyPoint="The KEY POINT"
@@ -135,7 +133,7 @@ storiesOf('Correction', module)
         }
         title="Good job!"
         isCorrect
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Good Answer"
         keyPoint="The KEY POINT"
@@ -155,7 +153,7 @@ storiesOf('Correction', module)
         }
         isCorrect={false}
         title="Oops..."
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Bad Answer"
         keyPoint="The KEY POINT"
@@ -174,7 +172,7 @@ storiesOf('Correction', module)
         }
         title="Good job!"
         isCorrect
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Good Answer"
         keyPoint="The KEY POINT"
@@ -193,7 +191,7 @@ storiesOf('Correction', module)
         }
         title="Good job!"
         isCorrect
-        onButtonPress={handleButtonPress}
+        onButtonPress={handleFakePress}
         question={question}
         subtitle="Good Answer"
         keyPoint="The KEY POINT"

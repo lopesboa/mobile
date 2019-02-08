@@ -18,19 +18,36 @@ exports[`Storyshots Question Option selected 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What is the online Apple application store called?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
     <View
       style={
         Object {
@@ -39,18 +56,35 @@ exports[`Storyshots Question Option selected 1`] = `
         }
       }
     />
-    <Text
-      style={
-        Object {
-          "color": "#90A4AE",
-          "fontSize": 15,
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="explanation"
     >
-      Select the correct answers
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -105,23 +139,43 @@ exports[`Storyshots Question Option selected 1`] = `
             }
             testID="question-choice-1"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Play Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Play Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -171,25 +225,43 @@ exports[`Storyshots Question Option selected 1`] = `
             }
             testID="question-choice-2-selected"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  Object {
-                    "color": "#FFFFFF",
-                  },
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              App Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#FFFFFF",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      App Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -236,23 +308,43 @@ exports[`Storyshots Question Option selected 1`] = `
             }
             testID="question-choice-3"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Apple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Apple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -299,23 +391,43 @@ exports[`Storyshots Question Option selected 1`] = `
             }
             testID="question-choice-4"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Pineapple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Pineapple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -326,14 +438,6 @@ exports[`Storyshots Question Option selected 1`] = `
       Object {
         "height": 24,
         "width": 24,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "height": 8,
-        "width": 8,
       }
     }
   />
@@ -419,19 +523,36 @@ exports[`Storyshots Question QCM 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What is the online Apple application store called?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
     <View
       style={
         Object {
@@ -440,18 +561,35 @@ exports[`Storyshots Question QCM 1`] = `
         }
       }
     />
-    <Text
-      style={
-        Object {
-          "color": "#90A4AE",
-          "fontSize": 15,
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="explanation"
     >
-      Select the correct answers
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -506,23 +644,43 @@ exports[`Storyshots Question QCM 1`] = `
             }
             testID="question-choice-1"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Play Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Play Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -569,23 +727,43 @@ exports[`Storyshots Question QCM 1`] = `
             }
             testID="question-choice-2"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              App Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      App Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -632,23 +810,43 @@ exports[`Storyshots Question QCM 1`] = `
             }
             testID="question-choice-3"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Apple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Apple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -695,23 +893,43 @@ exports[`Storyshots Question QCM 1`] = `
             }
             testID="question-choice-4"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Pineapple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Pineapple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -722,14 +940,6 @@ exports[`Storyshots Question QCM 1`] = `
       Object {
         "height": 24,
         "width": 24,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "height": 8,
-        "width": 8,
       }
     }
   />
@@ -824,19 +1034,36 @@ exports[`Storyshots Question QCM Graphic 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What is the online Apple application store called?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
     <View
       style={
         Object {
@@ -845,18 +1072,35 @@ exports[`Storyshots Question QCM Graphic 1`] = `
         }
       }
     />
-    <Text
-      style={
-        Object {
-          "color": "#90A4AE",
-          "fontSize": 15,
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="explanation"
     >
-      Select the correct answers
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -931,9 +1175,10 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 }
               >
                 <Image
+                  resizeMode="cover"
                   source={
                     Object {
-                      "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                      "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                     }
                   }
                   style={
@@ -952,26 +1197,46 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       undefined,
                     ]
                   }
-                  testID="question-choice-1-image"
+                  testID="question-choice-1-img"
                 />
               </View>
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 17,
-                      "fontWeight": "700",
-                      "justifyContent": "flex-start",
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
-                    false,
-                  ]
+                  Object {
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  }
                 }
               >
-                Play Store
-              </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Play Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
           <View
@@ -1028,9 +1293,10 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 }
               >
                 <Image
+                  resizeMode="cover"
                   source={
                     Object {
-                      "testUri": "../../../src/__fixtures__/image-portrait-1.jpg",
+                      "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                     }
                   }
                   style={
@@ -1049,26 +1315,46 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       undefined,
                     ]
                   }
-                  testID="question-choice-2-image"
+                  testID="question-choice-2-img"
                 />
               </View>
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 17,
-                      "fontWeight": "700",
-                      "justifyContent": "flex-start",
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
-                    false,
-                  ]
+                  Object {
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  }
                 }
               >
-                App Store with a portrait image
-              </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        App Store with a portrait image
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
         </View>
@@ -1136,9 +1422,10 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 }
               >
                 <Image
+                  resizeMode="cover"
                   source={
                     Object {
-                      "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                      "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                     }
                   }
                   style={
@@ -1157,26 +1444,46 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       undefined,
                     ]
                   }
-                  testID="question-choice-3-image"
+                  testID="question-choice-3-img"
                 />
               </View>
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 17,
-                      "fontWeight": "700",
-                      "justifyContent": "flex-start",
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
-                    false,
-                  ]
+                  Object {
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  }
                 }
               >
-                Apple Store
-              </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Apple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
           <View
@@ -1233,9 +1540,10 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 }
               >
                 <Image
+                  resizeMode="cover"
                   source={
                     Object {
-                      "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                      "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                     }
                   }
                   style={
@@ -1254,26 +1562,46 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       undefined,
                     ]
                   }
-                  testID="question-choice-4-image"
+                  testID="question-choice-4-img"
                 />
               </View>
-              <Text
+              <View
                 style={
-                  Array [
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 17,
-                      "fontWeight": "700",
-                      "justifyContent": "flex-start",
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
-                    false,
-                  ]
+                  Object {
+                    "justifyContent": "flex-start",
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  }
                 }
               >
-                Pineapple Store
-              </Text>
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 17,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Pineapple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
         </View>
@@ -1285,14 +1613,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
       Object {
         "height": 24,
         "width": 24,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "height": 8,
-        "width": 8,
       }
     }
   />
@@ -1387,19 +1707,36 @@ exports[`Storyshots Question With image 1`] = `
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#14171A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="question-title"
     >
-      What is the online Apple application store called?
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
     <View
       style={
         Object {
@@ -1408,18 +1745,35 @@ exports[`Storyshots Question With image 1`] = `
         }
       }
     />
-    <Text
-      style={
-        Object {
-          "color": "#90A4AE",
-          "fontSize": 15,
-          "textAlign": "center",
-        }
-      }
+    <View
       testID="explanation"
     >
-      Select the correct answers
-    </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -1431,8 +1785,39 @@ exports[`Storyshots Question With image 1`] = `
   />
   <View>
     <View
-      onLayout={[Function]}
-    />
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 200,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={
+          Object {
+            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": 200,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+        testID="question-image"
+      />
+    </View>
     <View
       style={
         Object {
@@ -1487,23 +1872,43 @@ exports[`Storyshots Question With image 1`] = `
             }
             testID="question-choice-1"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Play Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Play Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -1550,23 +1955,43 @@ exports[`Storyshots Question With image 1`] = `
             }
             testID="question-choice-2"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              App Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      App Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -1613,23 +2038,43 @@ exports[`Storyshots Question With image 1`] = `
             }
             testID="question-choice-3"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Apple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Apple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -1676,23 +2121,43 @@ exports[`Storyshots Question With image 1`] = `
             }
             testID="question-choice-4"
           >
-            <Text
+            <View
               style={
-                Array [
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
-                  false,
-                ]
+                Object {
+                  "justifyContent": "flex-start",
+                  "paddingHorizontal": 24,
+                  "paddingVertical": 16,
+                }
               }
             >
-              Pineapple Store
-            </Text>
+              <View>
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#14171A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Pineapple Store
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -1703,14 +2168,6 @@ exports[`Storyshots Question With image 1`] = `
       Object {
         "height": 24,
         "width": 24,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "height": 8,
-        "width": 8,
       }
     }
   />

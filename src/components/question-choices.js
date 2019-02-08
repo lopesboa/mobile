@@ -2,15 +2,17 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import type {QuestionChoiceItem, QuestionType} from '../types';
+import type {Choice, QuestionType} from '@coorpacademy/progression-engine';
 import {QUESTION_TYPE} from '../const';
 import QuestionChoice from './question-choice';
 import Space from './space';
 
 type Props = {|
   type: QuestionType,
-  items: Array<QuestionChoiceItem>,
-  onItemPress: (item: QuestionChoiceItem) => void
+  isDisabled?: boolean,
+  items: Array<Choice>,
+  userChoices: Array<string>,
+  onItemPress: (item: Choice) => void
 |};
 
 const styles = StyleSheet.create({
@@ -26,10 +28,13 @@ const styles = StyleSheet.create({
 class QuestionChoices extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = (item: QuestionChoiceItem) => () => this.props.onItemPress(item);
+  handlePress = (item: Choice) => () => this.props.onItemPress(item);
 
   render() {
-    const {type, items} = this.props;
+    const {type, isDisabled, items, userChoices} = this.props;
+
+    const isSelected = (choice: Choice): boolean =>
+      userChoices && userChoices.includes(choice.label);
 
     switch (type) {
       case QUESTION_TYPE.QCM:
@@ -40,7 +45,8 @@ class QuestionChoices extends React.PureComponent<Props> {
                 {index > 0 && <Space />}
                 <QuestionChoice
                   onPress={this.handlePress(item)}
-                  isSelected={item.selected}
+                  isDisabled={isDisabled}
+                  isSelected={isSelected(item)}
                   testID={`question-choice-${index + 1}`}
                 >
                   {item.label}
@@ -67,7 +73,8 @@ class QuestionChoices extends React.PureComponent<Props> {
                     <QuestionChoice
                       onPress={this.handlePress(item)}
                       media={item.media}
-                      isSelected={item.selected}
+                      isDisabled={isDisabled}
+                      isSelected={isSelected(item)}
                       testID={`question-choice-${index + 1}`}
                       style={styles.card}
                     >
@@ -78,7 +85,8 @@ class QuestionChoices extends React.PureComponent<Props> {
                       <QuestionChoice
                         onPress={this.handlePress(nextItem)}
                         media={nextItem.media}
-                        isSelected={nextItem.selected}
+                        isDisabled={isDisabled}
+                        isSelected={isSelected(nextItem)}
                         testID={`question-choice-${nextIndex + 1}`}
                         style={styles.card}
                       >
@@ -92,6 +100,8 @@ class QuestionChoices extends React.PureComponent<Props> {
             })}
           </View>
         );
+      default:
+        return null;
     }
   }
 }

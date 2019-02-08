@@ -3,11 +3,9 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
+import {handleFakePress} from '../utils/tests';
 import LevelEnd from './level-end';
 
-// eslint-disable-next-line no-console
-const handleButtonPress = () => console.log('Clicked');
-
 storiesOf('LevelEnd', module)
-  .add('Error', () => <LevelEnd isCorrect={false} onButtonPress={handleButtonPress} />)
-  .add('Success', () => <LevelEnd isCorrect onButtonPress={handleButtonPress} />);
+  .add('Error', () => <LevelEnd isCorrect={false} onButtonPress={handleFakePress} />)
+  .add('Success', () => <LevelEnd isCorrect onButtonPress={handleFakePress} />);

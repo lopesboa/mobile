@@ -15,13 +15,32 @@ module.exports = {
   setupFiles: ['./jest-setup.js'],
   collectCoverage: true,
   coverageReporters: ['lcov', 'text', 'html'],
-  coveragePathIgnorePatterns: ['node_modules', 'jest-setup.js', 'src/*.js'],
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'jest-setup.js',
+    'src/*.js',
+    '<rootDir>/src/layer/data/progressions.js',
+    '<rootDir>/src/layer/data/recommendations.js'
+  ],
   coverageThreshold: {
     'src/components': {
       branches: 100,
-      functions: 90,
+      functions: 98,
       lines: 100,
-      statements: 90
+      statements: 99
+    },
+    'src/redux': {
+      branches: 90,
+      function: 100,
+      lines: 100,
+      statements: 100
+    },
+    'src/layer': {
+      // @todo increase this value
+      branches: 78,
+      function: 100,
+      lines: 99,
+      statements: 98
     },
     'src/modules': {
       branches: 100,

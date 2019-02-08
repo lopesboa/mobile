@@ -12,6 +12,7 @@ require('./components/gradient.stories.js');
 require('./components/header-back-image.stories.js');
 require('./components/header-slide-right.stories.js');
 require('./components/header-slide-title.stories.js');
+require('./components/html.stories.js');
 require('./components/image.stories.js');
 require('./components/lesson.stories.js');
 require('./components/level-end.stories.js');

@@ -1,16 +1,19 @@
 // @flow strict
-import type {ExitNode} from '../services/content/types';
+import type {ExitNode} from '../layer/data/types';
 
 export const failureExitNode: ExitNode = {
-  _id: '592d8294f2a5831d215a3164',
   ref: 'failExitNode',
+  _id: 'string',
+  __v: 18,
   type: 'failure',
-  __v: 1,
+  description: 'description',
+  title: 'title',
   meta: {
     updatedAt: '2018-10-07T13:45:39.834Z',
     createdAt: '2018-10-02T14:03:14.872Z'
   },
   media: {
+    _id: 'id',
     subtitles: [],
     posters: [],
     src: []
@@ -18,10 +21,12 @@ export const failureExitNode: ExitNode = {
 };
 
 export const successExitNode: ExitNode = {
-  _id: '592d8295f2a5831d215a3165',
   ref: 'successExitNode',
+  _id: 'string',
+  __v: 18,
   type: 'success',
-  __v: 1,
+  title: 'title',
+  description: 'description',
   meta: {
     updatedAt: '2018-10-07T13:45:40.510Z',
     createdAt: '2018-10-02T14:03:14.900Z'

@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {BundledDiscipline} from '../services/content/types';
+import type {BundledDiscipline} from '../layer/data/types';
 import discipline from './discipline';
 import {chapter_4yiDgZ4cH, chapter_cha4yoJxV9r} from './chapters';
 import {slide_sli_415pDBG2r, slide_sli_666pDBG2r} from './slides';

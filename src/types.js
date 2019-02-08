@@ -1,30 +1,26 @@
 // @flow strict
 
-export type MediaType = 'image';
-
-export type Media = {|
-  type: MediaType,
-  source: File
-|};
+import type {Choice} from '@coorpacademy/progression-engine';
 
 export type QuestionChoiceItem = {|
-  selected?: boolean,
-  label: string,
-  value: string,
-  media?: Media
+  ...Choice,
+  selected?: boolean
 |};
 
 export type ResourceType = 'video' | 'pdf';
 
-export type MimeType = 'image/jpeg' | 'image/png' | 'application/pdf' | 'application/vimeo';
-
-export type QuestionType = 'qcm' | 'qcmGraphic';
+export type MimeType =
+  | 'video/mp4'
+  | 'application/vimeo'
+  | 'image/jpeg'
+  | 'image/png'
+  | 'application/pdf'
+  | 'application/vimeo';
 
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
 
 export type CardType = 'tip' | 'keyPoint' | 'correction';
 
-export type Answer = string;
 export type Question = string;
 
 export type LevelType = 'base' | 'advanced' | 'coach';

@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+# local scripts
+#
+scripts/*.sh
+
 # Xcode
 #
 build/

@@ -39,23 +39,43 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
         }
         testID="question-choice-1"
       >
-        <Text
+        <View
           style={
-            Array [
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "justifyContent": "flex-start",
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              },
-              false,
-            ]
+            Object {
+              "justifyContent": "flex-start",
+              "paddingHorizontal": 24,
+              "paddingVertical": 16,
+            }
           }
         >
-          Play Store
-        </Text>
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                    }
+                  }
+                >
+                  Play Store
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -102,23 +122,43 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
         }
         testID="question-choice-2"
       >
-        <Text
+        <View
           style={
-            Array [
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "justifyContent": "flex-start",
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              },
-              false,
-            ]
+            Object {
+              "justifyContent": "flex-start",
+              "paddingHorizontal": 24,
+              "paddingVertical": 16,
+            }
           }
         >
-          App Store
-        </Text>
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                    }
+                  }
+                >
+                  App Store
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -165,23 +205,43 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
         }
         testID="question-choice-3"
       >
-        <Text
+        <View
           style={
-            Array [
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "justifyContent": "flex-start",
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              },
-              false,
-            ]
+            Object {
+              "justifyContent": "flex-start",
+              "paddingHorizontal": 24,
+              "paddingVertical": 16,
+            }
           }
         >
-          Apple Store
-        </Text>
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                    }
+                  }
+                >
+                  Apple Store
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -228,23 +288,43 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
         }
         testID="question-choice-4"
       >
-        <Text
+        <View
           style={
-            Array [
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "justifyContent": "flex-start",
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              },
-              false,
-            ]
+            Object {
+              "justifyContent": "flex-start",
+              "paddingHorizontal": 24,
+              "paddingVertical": 16,
+            }
           }
         >
-          Pineapple Store
-        </Text>
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                    }
+                  }
+                >
+                  Pineapple Store
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -310,9 +390,10 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
+              resizeMode="cover"
               source={
                 Object {
-                  "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                  "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                 }
               }
               style={
@@ -331,26 +412,46 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   undefined,
                 ]
               }
-              testID="question-choice-1-image"
+              testID="question-choice-1-img"
             />
           </View>
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "color": "#14171A",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                },
-                false,
-              ]
+              Object {
+                "justifyContent": "flex-start",
+                "paddingHorizontal": 24,
+                "paddingVertical": 16,
+              }
             }
           >
-            Play Store
-          </Text>
+            <View>
+              <View
+                style={Object {}}
+              >
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                      }
+                    }
+                  >
+                    Play Store
+                  </Text>
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       </View>
       <View
@@ -407,9 +508,10 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
+              resizeMode="cover"
               source={
                 Object {
-                  "testUri": "../../../src/__fixtures__/image-portrait-1.jpg",
+                  "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                 }
               }
               style={
@@ -428,26 +530,46 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   undefined,
                 ]
               }
-              testID="question-choice-2-image"
+              testID="question-choice-2-img"
             />
           </View>
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "color": "#14171A",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                },
-                false,
-              ]
+              Object {
+                "justifyContent": "flex-start",
+                "paddingHorizontal": 24,
+                "paddingVertical": 16,
+              }
             }
           >
-            App Store with a portrait image
-          </Text>
+            <View>
+              <View
+                style={Object {}}
+              >
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                      }
+                    }
+                  >
+                    App Store with a portrait image
+                  </Text>
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -515,9 +637,10 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <Image
+              resizeMode="cover"
               source={
                 Object {
-                  "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+                  "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
                 }
               }
               style={
@@ -536,26 +659,46 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   undefined,
                 ]
               }
-              testID="question-choice-3-image"
+              testID="question-choice-3-img"
             />
           </View>
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "color": "#14171A",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                },
-                false,
-              ]
+              Object {
+                "justifyContent": "flex-start",
+                "paddingHorizontal": 24,
+                "paddingVertical": 16,
+              }
             }
           >
-            Apple Store
-          </Text>
+            <View>
+              <View
+                style={Object {}}
+              >
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#14171A",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                      }
+                    }
+                  >
+                    Apple Store
+                  </Text>
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       </View>
       <View
@@ -577,3 +720,5 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots QuestionChoices Unsupported question type 1`] = `null`;
