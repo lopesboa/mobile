@@ -17,7 +17,7 @@ export type ConnectedStateProps = {|
 type Props = ReactNavigation$ScreenProps;
 const LessonScreen = ({header, resources}: Props) => (
   <Screen testID="lesson-screen">
-    <Lesson header={header} resources={resources} />
+    {resources && <Lesson header={header} resources={resources} />}
   </Screen>
 );
 
