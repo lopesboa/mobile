@@ -5,7 +5,7 @@ const discipline4y8q7qLLN: Discipline = {
   _id: '5b290770bfc5b603828a2ba0',
   ref: 'dis_4y8q7qLLN',
   universalRef: 'dis_4y8q7qLLN',
-  name: 'Comment jouer sur la plateforme ?',
+  name: 'How to play on the platform?',
   partnershipType: 'coorp',
   hidden: false,
   __v: 1,
@@ -43,16 +43,16 @@ const discipline4y8q7qLLN: Discipline = {
       },
       chapterIds: ['cha_Vy-gSqL8E'],
       acquiredSkills: [
-        "Identifier lorsqu'une nouvelle leçon est disponible",
-        "Comprendre le rôle et l'importance des vies",
-        'Connaître les fondamentaux de la pédagogie inversée'
+        'Identify when a new lesson is available',
+        'Understand the role and the importance of lives',
+        'Understand flipped pedagogy'
       ],
       version: '1',
       external_refs: []
     }
   ],
   cover: {
-    description: 'Grâce à ce cours, découvrez comment fonctionne la plateforme et sa pédagogie.',
+    description: 'This course will help you to become more familiar with your learning interface.',
     media: {
       type: 'img',
       mimeType: 'image/jpeg',

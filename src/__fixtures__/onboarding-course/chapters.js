@@ -4,7 +4,7 @@ import type {Chapter} from '../../layer/data';
 const chapter_cha_VygSqL8E: Chapter = {
   _id: 'cha_Vy-gSqL8E',
   universalRef: 'cha_Vy-gSqL8E',
-  name: 'Tutoriel',
+  name: 'Tutorial',
   stars: 20,
   freeRun: false,
   __v: 1,
@@ -18,7 +18,7 @@ const chapter_cha_VygSqL8E: Chapter = {
     type: 'img',
     mimeType: 'image/jpeg',
     mediaUrl:
-      '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/joytisck-1519155703203.jpeg',
+      '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/1506521408352ugur-akdemir-238673-1520268270065.jpg',
     subtitles: [],
     posters: [],
     src: []
