@@ -58,13 +58,14 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
   handleButtonPress = () => {
     const {navigation} = this.props;
-    const {isCorrect, isFinished} = navigation.state.params;
+    const {isCorrect, isFinished, lives} = navigation.state.params;
 
     this.props.selectProgression();
 
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
-        isCorrect
+        isCorrect,
+        lives
       };
       navigation.navigate('LevelEnd', levelEndParams);
     } else {
