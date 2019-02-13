@@ -4,8 +4,8 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
 import {QUESTION_TYPE} from '../const';
-import choices, {choicesWithImage} from '../__fixtures__/question-choices';
-import answers from '../__fixtures__/answers';
+import {choices, choicesWithImage} from '../__fixtures__/question-choices';
+import {answers} from '../__fixtures__/answers';
 import {handleFakePress} from '../utils/tests';
 import QuestionChoices from './question-choices';
 

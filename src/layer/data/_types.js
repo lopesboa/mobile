@@ -22,8 +22,6 @@ export type MimeType =
   | 'application/pdf'
   | 'application/vimeo';
 
-export type Language = 'fr' | 'en';
-
 type Skill = string;
 type Group = string;
 type Condition = string;
@@ -99,10 +97,10 @@ export type ExitNode = $Exact<{
   _id: string
 }>;
 
-export type RestrictedResourceType = 'level' | 'chapter' | 'slide';
-export type ResourceType = 'chapterRule' | 'discipline' | 'exitNode' | RestrictedResourceType;
+export type RestrictedResourceType = 'level' | 'chapter' | 'slide' | 'discipline';
+export type ResourceType = 'chapterRule' | 'exitNode' | RestrictedResourceType;
 
-type ExtentedMedia = {|
+export type ExtentedMedia = {|
   type?: string,
   mimeType?: MimeType,
   mediaUrl?: Url,
@@ -138,6 +136,7 @@ export type Discipline = {|
 
 export type BundledDiscipline = {|
   disciplines: {[key: string]: Discipline},
+  // $FlowFixMe dont understand "looks promising" from Flow
   chapters: {[key: string]: Chapter},
   exitNodes: {[key: string]: ExitNode},
   slides: {[key: string]: Slide},

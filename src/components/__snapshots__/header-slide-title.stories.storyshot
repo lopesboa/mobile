@@ -42,7 +42,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
           }
         }
         style={
@@ -146,7 +146,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
           }
         }
         style={
@@ -250,7 +250,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/image-landscape-3.jpg",
+            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
           }
         }
         style={

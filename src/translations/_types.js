@@ -1,5 +1,27 @@
 // @flow strict
 
+export type SupportedLanguage =
+  | 'cs'
+  | 'de'
+  | 'en-US'
+  | 'en'
+  | 'es'
+  | 'fr'
+  | 'hu'
+  | 'it'
+  | 'ja'
+  | 'ko'
+  | 'nl'
+  | 'pl'
+  | 'pt'
+  | 'ro'
+  | 'ru'
+  | 'tr'
+  | 'uk'
+  | 'vi'
+  | 'zh-TW'
+  | 'zh';
+
 export type Translations = {|
   advanced: string,
   base: string,

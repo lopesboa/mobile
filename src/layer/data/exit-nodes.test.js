@@ -6,10 +6,11 @@ import {getExitNode} from './exit-nodes';
 import {mapToExitNodeAPIExpectedResult} from './mappers.test';
 
 jest.mock('./core', () => {
-  const fixtures = require('../../__fixtures__/exit-nodes');
+  const {failureExitNode: exitNode} = require('../../__fixtures__/exit-nodes');
+
   return {
-    getItem: () => Promise.resolve(fixtures.failureExitNode),
-    getItemsPerResourceType: () => Promise.resolve([fixtures.failureExitNode])
+    getItem: () => Promise.resolve(exitNode),
+    getItemsPerResourceType: () => Promise.resolve([exitNode])
   };
 });
 

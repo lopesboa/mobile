@@ -1,8 +1,10 @@
 // @flow strict
+
 /* eslint-disable import/prefer-default-export */
 
-import type {QuestionType, MediaType, ContentType} from '@coorpacademy/progression-engine';
-import type {SpaceType, CardType, LevelType, ResourceType} from './types';
+import type {QuestionType, MediaType} from '@coorpacademy/progression-engine';
+
+import type {SpaceType, CardType, LevelType, ResourceType, Engine, ContentType} from './types';
 
 export const RESSOURCE_TYPE: {
   [string]: ResourceType
@@ -53,12 +55,10 @@ export const LEVEL_TYPE: {
 export const CONTENT_TYPE: {
   [string]: ContentType
 } = {
+  DISCIPLINE: 'discipline',
   CHAPTER: 'chapter',
   LEVEL: 'level',
-  SLIDE: 'slide',
-  NODE: 'node',
-  FAILURE: 'failure',
-  SUCCESS: 'success'
+  SLIDE: 'slide'
 };
 
 type SpecificContentRef = 'extraLife' | 'failureExitNode' | 'successExitNode';
@@ -68,4 +68,11 @@ export const SPECIFIC_CONTENT_REF: {
   EXTRA_LIFE: 'extraLife',
   FAILURE_EXIT_NODE: 'failureExitNode',
   SUCCESS_EXIT_NODE: 'successExitNode'
+};
+
+export const ENGINE: {
+  [string]: Engine
+} = {
+  LEARNER: 'learner',
+  MICROLEARNING: 'microlearning'
 };

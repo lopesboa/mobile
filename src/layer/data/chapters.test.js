@@ -4,11 +4,12 @@ import {mapToChapterAPIExpectedResult} from './mappers.test';
 import {find, findById} from './chapters';
 
 jest.mock('./core', () => {
-  const fixtures = require('../../__fixtures__/chapters');
-  const chapters = [fixtures.chapter_4yiDgZ4cH];
+  const chapters = require('../../__fixtures__/chapters');
+  const chapter = chapters.createChapter({ref: 'cha_1', name: 'Fake chapter'});
+
   return {
-    getItemsPerResourceType: () => Promise.resolve(chapters),
-    getItem: () => Promise.resolve(fixtures.chapter_4yiDgZ4cH)
+    getItemsPerResourceType: () => Promise.resolve([chapter]),
+    getItem: () => Promise.resolve(chapter)
   };
 });
 

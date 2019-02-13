@@ -63,7 +63,7 @@ exports[`Storyshots Video Fullscreen 1`] = `
       showOnStart={true}
       source={
         Object {
-          "testUri": "../../../src/__fixtures__/video.mp4",
+          "testUri": "../../../src/__fixtures__/assets/video.mp4",
         }
       }
       style={
@@ -433,7 +433,7 @@ exports[`Storyshots Video Local preview 1`] = `
     <Image
       source={
         Object {
-          "testUri": "../../../src/__fixtures__/image-landscape-1.jpg",
+          "testUri": "../../../src/__fixtures__/assets/landscape-1.jpg",
         }
       }
       style={
@@ -663,7 +663,7 @@ exports[`Storyshots Video Local video 1`] = `
       showOnStart={true}
       source={
         Object {
-          "testUri": "../../../src/__fixtures__/video.mp4",
+          "testUri": "../../../src/__fixtures__/assets/video.mp4",
         }
       }
       style={
@@ -1669,7 +1669,7 @@ exports[`Storyshots Video Replay 1`] = `
       showOnStart={true}
       source={
         Object {
-          "testUri": "../../../src/__fixtures__/video.mp4",
+          "testUri": "../../../src/__fixtures__/assets/video.mp4",
         }
       }
       style={

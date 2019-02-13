@@ -1,5 +1,6 @@
-// @flow
-import type {ExitNode} from '../../layer/data';
+// @flow strict
+
+import type {ExitNode} from '../../layer/data/_types';
 
 export const failExitNode: ExitNode = {
   _id: '592d8294f2a5831d215a3164',

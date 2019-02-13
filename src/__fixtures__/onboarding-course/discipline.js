@@ -1,5 +1,6 @@
 // @flow strict
-import type {Discipline} from '../../layer/data/types';
+
+import type {Discipline} from '../../layer/data/_types';
 
 const discipline4y8q7qLLN: Discipline = {
   _id: '5b290770bfc5b603828a2ba0',

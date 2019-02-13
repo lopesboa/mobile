@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Catalog Default 1`] = `
+<View>
+  <View
+    testID="catalog-item-0"
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#00B0FF",
+          "borderRadius": 32,
+          "borderWidth": 0,
+          "flexDirection": "row",
+          "height": 54,
+          "justifyContent": "center",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "fontSize": 18,
+              "textAlign": "center",
+            },
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 18,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        Fake discipline
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View
+    testID="catalog-item-1"
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#00B0FF",
+          "borderRadius": 32,
+          "borderWidth": 0,
+          "flexDirection": "row",
+          "height": 54,
+          "justifyContent": "center",
+          "marginBottom": 0,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "fontSize": 18,
+              "textAlign": "center",
+            },
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 18,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        Fake chapter
+      </Text>
+    </View>
+  </View>
+</View>
+`;

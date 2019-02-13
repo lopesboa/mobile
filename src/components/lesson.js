@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import type {Lesson as LessonType} from '../layer/data';
+import type {Lesson as LessonType} from '../layer/data/_types';
 import {RESSOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import Video from '../containers/video-controlable';

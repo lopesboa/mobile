@@ -2,10 +2,16 @@
 
 import {AsyncStorage} from 'react-native';
 
-import disciplineBunlde from '../../__fixtures__/discipline-bundle';
-import {discipline4y8q7qLLN_withoutModules} from '../../__fixtures__/discipline';
+import basicCourse from '../../__fixtures__/discipline-bundle/basic';
+import onboardingCourse from '../../__fixtures__/onboarding-course';
+import {createDiscipline} from '../../__fixtures__/disciplines';
+import {createLevel} from '../../__fixtures__/levels';
+import {createChapter} from '../../__fixtures__/chapters';
+import {createSlide} from '../../__fixtures__/slides';
+import {qcm, qcmGraphic} from '../../__fixtures__/questions';
+import {failureExitNode, successExitNode} from '../../__fixtures__/exit-nodes';
 import {fakeError} from '../../utils/tests';
-import type {Chapter, Discipline} from './types';
+import type {Discipline, BundledDiscipline} from './_types';
 import {CONTENT_TYPE} from './_const';
 import {
   buildKeyValuePair,
@@ -21,50 +27,61 @@ import {
   mapToResourceType
 } from './core';
 
+const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
+const disciplineBundle: BundledDiscipline = {
+  disciplines: {
+    dis_1: createDiscipline({ref: 'dis_1', levels: [level], name: 'Basic course'})
+  },
+  chapters: {
+    cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
+    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
+  },
+  slides: {
+    sli_1: createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm}),
+    sli_2: createSlide({ref: 'sli_2', chapterId: 'cha_1', question: qcmGraphic}),
+    sli_3: createSlide({ref: 'sli_3', chapterId: 'cha_2', question: qcm}),
+    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic})
+  },
+  exitNodes: {
+    [failureExitNode.ref]: failureExitNode,
+    [successExitNode.ref]: successExitNode
+  },
+  chapterRules: {}
+};
+const {disciplines, chapters, slides, exitNodes} = disciplineBundle;
+
 describe('Data Layer Core', () => {
   it('should build the key/value pair', () => {
-    const chapter: {[key: string]: Chapter} = disciplineBunlde.chapters;
-    const userLanguage = 'en';
-
     const expectedResult = [
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapter.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapter['cha_4yoJx~V9r'])]
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)]
     ];
 
-    // $FlowFixMe
-    const result = buildKeyValuePair(CONTENT_TYPE.CHAPTER, userLanguage, chapter);
+    // $FlowFixMe union type
+    const result = buildKeyValuePair(CONTENT_TYPE.CHAPTER, 'en', chapters);
     expect(result).toEqual(expectedResult);
   });
 
   it('should a chunk of a storable chapters', () => {
-    const userLanguage = 'en';
-
-    const result = createReduceToNormalizedItemFunction(disciplineBunlde, userLanguage)(
-      [],
-      'chapters'
-    );
-
-    const {chapters} = disciplineBunlde;
+    const result = createReduceToNormalizedItemFunction(disciplineBundle, 'en')([], 'chapters');
     const expectedResult = [
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapters.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapters['cha_4yoJx~V9r'])]
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)]
     ];
 
     expect(result).toEqual(expectedResult);
   });
 
   it('should a chunk of a storable chapters', () => {
-    const userLanguage = 'en';
-
     const bundledResourceWithoutDiscipline = {
-      ...disciplineBunlde,
+      ...disciplineBundle,
       disciplines: {}
     };
 
-    const result = createReduceToNormalizedItemFunction(
-      bundledResourceWithoutDiscipline,
-      userLanguage
-    )([], 'disciplines');
+    const result = createReduceToNormalizedItemFunction(bundledResourceWithoutDiscipline, 'en')(
+      [],
+      'disciplines'
+    );
 
     const expectedResult = [];
 
@@ -72,73 +89,71 @@ describe('Data Layer Core', () => {
   });
 
   it('should build for all resources included in the bundle -- with modules', () => {
-    const userLanguage = 'en';
-
-    const {disciplines, chapters, slides, exitNodes} = disciplineBunlde;
-
     const expectedResult = [
-      ['discipline:en:dis_4kEB1WE5r', JSON.stringify(disciplines.dis_4kEB1WE5r)],
-      ['level:en:mod_NkOL1WE5r', JSON.stringify(disciplines.dis_4kEB1WE5r.modules[0])],
-      ['level:en:mod_EJZbe~NqS', JSON.stringify(disciplines.dis_4kEB1WE5r.modules[1])],
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapters.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapters['cha_4yoJx~V9r'])],
-      ['slide:en:sli_415pDBG2r', JSON.stringify(slides.sli_415pDBG2r)],
-      ['slide:en:sli_666pDBG2r', JSON.stringify(slides.sli_666pDBG2r)],
+      ['discipline:en:dis_1', JSON.stringify(disciplines.dis_1)],
+      ['level:en:mod_1', JSON.stringify(disciplines.dis_1.modules[0])],
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)],
+      ['slide:en:sli_1', JSON.stringify(slides.sli_1)],
+      ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
+      ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
+      ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBunlde, userLanguage);
+    const result = normalizeDisciplineBundle(disciplineBundle, 'en');
 
     expect(result).toEqual(expectedResult);
   });
 
   it('should build for all resources included in the bundle -- without modules', () => {
-    const userLanguage = 'en';
     const disciplineBundleWithoutModules = {
-      ...disciplineBunlde,
+      ...disciplineBundle,
       disciplines: {
-        dis_4kEB1WE5r: discipline4y8q7qLLN_withoutModules
+        dis_1: {
+          ...disciplines.dis_1,
+          modules: []
+        }
       }
     };
 
-    const {chapters, slides, exitNodes, disciplines} = disciplineBundleWithoutModules;
-
     const expectedResult = [
-      ['discipline:en:dis_4kEB1WE5r', JSON.stringify(disciplines.dis_4kEB1WE5r)],
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapters.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapters['cha_4yoJx~V9r'])],
-      ['slide:en:sli_415pDBG2r', JSON.stringify(slides.sli_415pDBG2r)],
-      ['slide:en:sli_666pDBG2r', JSON.stringify(slides.sli_666pDBG2r)],
+      ['discipline:en:dis_1', JSON.stringify(disciplineBundleWithoutModules.disciplines.dis_1)],
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)],
+      ['slide:en:sli_1', JSON.stringify(slides.sli_1)],
+      ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
+      ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
+      ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, userLanguage);
+    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, 'en');
 
     expect(result).toEqual(expectedResult);
   });
 
   it('should build for all resources included in the bundle -- without discipline', () => {
     // basically this case should never happend in a real business case situation
-    const userLanguage = 'en';
     const disciplineBundleWithoutModules = {
-      ...disciplineBunlde,
+      ...disciplineBundle,
       disciplines: {}
     };
 
-    const {chapters, slides, exitNodes} = disciplineBundleWithoutModules;
-
     const expectedResult = [
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapters.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapters['cha_4yoJx~V9r'])],
-      ['slide:en:sli_415pDBG2r', JSON.stringify(slides.sli_415pDBG2r)],
-      ['slide:en:sli_666pDBG2r', JSON.stringify(slides.sli_666pDBG2r)],
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)],
+      ['slide:en:sli_1', JSON.stringify(slides.sli_1)],
+      ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
+      ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
+      ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, userLanguage);
+    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, 'en');
 
     expect(result).toEqual(expectedResult);
   });
@@ -146,7 +161,7 @@ describe('Data Layer Core', () => {
   it('should build the key', () => {
     const resourceType = CONTENT_TYPE.DISCIPLINE;
     const userLanguage = 'en';
-    const resourceReference = 'cha_4yiDgZ4cH';
+    const resourceReference = 'cha_1';
 
     const expectedResult = `${resourceType}:${userLanguage}:${resourceReference}`;
     expect(buildKey(resourceType, userLanguage, resourceReference)).toBe(expectedResult);
@@ -155,69 +170,58 @@ describe('Data Layer Core', () => {
   describe('getItem', () => {
     const resourceType = CONTENT_TYPE.DISCIPLINE;
     const userLanguage = 'en';
-    const resourceReference = 'cha_4yiDgZ4cH';
+    const resourceReference = 'cha_1';
 
     it('should build the too', () => {
-      const {disciplines} = disciplineBunlde;
-
       AsyncStorage.getItem = jest
         .fn()
-        .mockImplementation(() => Promise.resolve(JSON.stringify(disciplines.dis_4kEB1WE5r)));
+        .mockImplementation(() => Promise.resolve(JSON.stringify(disciplines.dis_1)));
 
       const result = getItem(resourceType, resourceReference, userLanguage);
-      expect(result).resolves.toBe(disciplines.dis_4kEB1WE5r);
+      expect(result).resolves.toBe(disciplines.dis_1);
     });
 
     it('should not build the too', () => {
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.reject(fakeError));
 
       const result = getItem(resourceType, resourceReference, userLanguage);
-      expect(result).rejects.toThrow('resource not found with cha_4yiDgZ4cH');
+      expect(result).rejects.toThrow('resource not found with cha_1');
     });
   });
 
   it('should filtred the given array item according to a regex', () => {
-    const valueToRetrive = 'chapter:fr:cha_Vy-gSqL8E';
-    const keys = ['chapter:en:cha_4yiDgZ4cH', 'discipline:fr:cha_4yiDgZ4cH', valueToRetrive];
+    const valueToRetrive = 'chapter:fr:cha_1';
+    const keys = ['chapter:en:cha_1', 'discipline:fr:cha_1', valueToRetrive];
     const regex = new RegExp('^chapter:fr:(.+)+', 'gm');
     const result = filterKeys(regex, keys);
     expect(result).toEqual([valueToRetrive]);
   });
 
   it('should return all the stored resources according to the language and the resourceType', async () => {
-    const {chapters} = disciplineBunlde;
-    const userLanguage = 'en';
-
     const resources = [
-      ['chapter:en:cha_4yiDgZ4cH', JSON.stringify(chapters.cha_4yiDgZ4cH)],
-      ['chapter:en:cha_4yoJx~V9r', JSON.stringify(chapters['cha_4yoJx~V9r'])]
+      ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)]
     ];
 
     AsyncStorage.getAllKeys = jest
       .fn()
-      .mockImplementation(() =>
-        Promise.resolve(['chapter:en:cha_4yiDgZ4cH', 'chapter:en:cha_4yoJx~V9r'])
-      );
+      .mockImplementation(() => Promise.resolve(['chapter:en:cha_1', 'chapter:en:cha_2']));
 
     AsyncStorage.multiGet = jest.fn().mockImplementation(() => Promise.resolve(resources));
 
-    const result = await getItemsPerResourceType(CONTENT_TYPE.CHAPTER, userLanguage);
+    const result = await getItemsPerResourceType(CONTENT_TYPE.CHAPTER, 'en');
 
-    expect(result).toEqual([chapters.cha_4yiDgZ4cH, chapters['cha_4yoJx~V9r']]);
+    expect(result).toEqual([chapters.cha_1, chapters.cha_2]);
   });
 
   it('should build the levels', () => {
-    const {disciplines} = disciplineBunlde;
     // $FlowFixMe bundleResource.discipline is not mixed
     const arrayDisciplines: Array<Discipline> = Object.values(disciplines);
     const discipline: Discipline = arrayDisciplines[0];
 
     const result: Array<Array<string>> = buildLevels(discipline.modules, 'en');
 
-    const expectedResult = [
-      ['level:en:mod_NkOL1WE5r', JSON.stringify(disciplines.dis_4kEB1WE5r.modules[0])],
-      ['level:en:mod_EJZbe~NqS', JSON.stringify(disciplines.dis_4kEB1WE5r.modules[1])]
-    ];
+    const expectedResult = [['level:en:mod_1', JSON.stringify(disciplines.dis_1.modules[0])]];
     expect(result).toEqual(expectedResult);
   });
 
@@ -237,20 +241,35 @@ describe('Data Layer Core', () => {
   describe('storeDisciplineBundle', () => {
     it('should store the discipline bundle', async () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
-      const result = await storeDisciplineBundle(disciplineBunlde, 'fr');
+      const result = await storeDisciplineBundle(disciplineBundle, 'fr');
       expect(result).toBeUndefined();
     });
 
     it('should not store the discipline bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.reject(fakeError));
-      const result = storeDisciplineBundle(disciplineBunlde, 'fr');
+      const result = storeDisciplineBundle(disciplineBundle, 'fr');
       expect(result).rejects.toThrow(new Error('could not store the provided bundledResource'));
     });
   });
 
-  it('should fetch discipline', () => {
+  describe('fetchDisciplineBundle', () => {
     AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
-    const dummyFunction = () => fetchDisciplineBundle('fr')();
-    expect(dummyFunction).not.toThrow();
+
+    it('should fetch basic', () => {
+      const result = fetchDisciplineBundle('fixtures_basic', 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(basicCourse);
+    });
+
+    it('should fetch onboarding', () => {
+      const result = fetchDisciplineBundle('fixtures_onboarding', 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(onboardingCourse);
+    });
+
+    it('should trigger error', () => {
+      const result = fetchDisciplineBundle('foobarbaz', 'fr');
+      expect(result).rejects.toThrow(new Error('API fetching not supported yet.'));
+    });
   });
 });

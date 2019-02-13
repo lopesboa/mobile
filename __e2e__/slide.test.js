@@ -1,6 +1,6 @@
 // @flow strict
 
-import utils from './utils';
+/* import utils from './utils';
 
 describe('Slide', () => {
   beforeAll(async () => {
@@ -285,4 +285,4 @@ describe('Slide', () => {
       await weExpect(element(by.id('question'))).toBeVisible();
     });
   });
-});
+});*/

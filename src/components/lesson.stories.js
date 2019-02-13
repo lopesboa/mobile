@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import {lessonWithVideo, lessonWithPdf} from '../__fixtures__/lesson';
+import {lessonWithVideo, lessonWithPdf} from '../__fixtures__/lessons';
 import {TestContextProvider} from '../utils/tests';
 import {Component as Lesson} from './lesson';
 

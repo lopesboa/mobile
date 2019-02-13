@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Lesson} from '../layer/data';
+import type {Lesson} from '../layer/data/_types';
 
 export const lessonWithVideo: Lesson = {
   _id: '5c3dfa39660b9b1278c0fb61',
@@ -33,4 +33,9 @@ export const lessonWithPdf: Lesson = {
   subtitles: [],
   posters: [],
   src: []
+};
+
+export default {
+  lessonWithVideo,
+  lessonWithPdf
 };

@@ -4,7 +4,7 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
 import {handleFakePress} from '../utils/tests';
-import media from '../__fixtures__/media';
+import {image} from '../__fixtures__/medias';
 import QuestionChoice from './question-choice';
 
 storiesOf('QuestionChoice', module)
@@ -19,19 +19,19 @@ storiesOf('QuestionChoice', module)
     </QuestionChoice>
   ))
   .add('With image', () => (
-    <QuestionChoice media={media} onPress={handleFakePress} testID="question-choice-3">
+    <QuestionChoice media={image} onPress={handleFakePress} testID="question-choice-3">
       Option 3
     </QuestionChoice>
   ))
   .add('Selected with image', () => (
-    <QuestionChoice isSelected media={media} onPress={handleFakePress} testID="question-choice-4">
+    <QuestionChoice isSelected media={image} onPress={handleFakePress} testID="question-choice-4">
       Option 4
     </QuestionChoice>
   ))
   .add('Disabled', () => (
     <QuestionChoice
       isSelected
-      media={media}
+      media={image}
       isDisabled
       onPress={handleFakePress}
       testID="question-choice-5"

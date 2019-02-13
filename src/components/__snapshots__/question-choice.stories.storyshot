@@ -128,7 +128,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
           }
         }
         style={
@@ -322,7 +322,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
           }
         }
         style={
@@ -434,7 +434,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "uri": "https://www.coorpacademy.com/wp-content/uploads/2019/01/Difficult-Conversations-cours.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
           }
         }
         style={

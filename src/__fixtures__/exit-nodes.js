@@ -1,5 +1,6 @@
 // @flow strict
-import type {ExitNode} from '../layer/data/types';
+
+import type {ExitNode} from '../layer/data/_types';
 
 export const failureExitNode: ExitNode = {
   ref: 'failExitNode',
@@ -36,4 +37,9 @@ export const successExitNode: ExitNode = {
     posters: [],
     src: []
   }
+};
+
+export default {
+  failureExitNode,
+  successExitNode
 };

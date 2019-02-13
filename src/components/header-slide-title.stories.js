@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import image from '../__fixtures__/image-landscape-3.jpg';
+import image from '../__fixtures__/assets/landscape-3.jpg';
 import {LEVEL_TYPE} from '../const';
 import HeaderSlideTitle from './header-slide-title';
 

@@ -1,12 +1,13 @@
 // @flow strict
 import type {ExitNodeAPI} from '@coorpacademy/player-services';
-import {mapToExitNodeAPI} from './mappers';
 
+import type {SupportedLanguage} from '../../translations/_types';
+import {mapToExitNodeAPI} from './mappers';
 import {getItem} from './core';
 import {CONTENT_TYPE} from './_const';
-import type {ExitNode, Language} from './types';
+import type {ExitNode} from './_types';
 
-export const getExitNode = (userLanguage: Language) => async (
+export const getExitNode = (userLanguage: SupportedLanguage) => async (
   exitNodeRef: string
 ): Promise<ExitNodeAPI> => {
   // $FlowFixMe union type

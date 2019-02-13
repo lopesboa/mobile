@@ -3,11 +3,10 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import video from '../__fixtures__/video.mp4';
-import image from '../__fixtures__/image-landscape-1.jpg';
+import video from '../__fixtures__/assets/video.mp4';
+import image from '../__fixtures__/assets/landscape-1.jpg';
+import {handleFakePress} from '../utils/tests';
 import Video, {STEP} from './video';
-
-const handleFake = () => {};
 
 storiesOf('Video', module)
   .add('Local preview', () => (
@@ -15,9 +14,9 @@ storiesOf('Video', module)
       source={video}
       preview={image}
       step={STEP.PREVIEW}
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
       height={180}
     />
   ))
@@ -30,9 +29,9 @@ storiesOf('Video', module)
       }}
       height={180}
       step={STEP.PREVIEW}
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
     />
   ))
   .add('Local video', () => (
@@ -41,9 +40,9 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
     />
   ))
   .add('Remote video', () => (
@@ -52,9 +51,9 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
     />
   ))
   .add('Fullscreen', () => (
@@ -64,9 +63,9 @@ storiesOf('Video', module)
       height={180}
       step={STEP.PLAY}
       isFullScreen
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
     />
   ))
   .add('Replay', () => (
@@ -75,8 +74,8 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.END}
-      onPlay={handleFake}
-      onEnd={handleFake}
-      onReady={handleFake}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
     />
   ));

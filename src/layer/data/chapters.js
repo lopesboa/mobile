@@ -1,13 +1,14 @@
 // @flow strict
 
 import type {ChapterAPI} from '@coorpacademy/player-services';
-import {mapToChapterAPI} from './mappers';
 
+import type {SupportedLanguage} from '../../translations/_types';
+import {mapToChapterAPI} from './mappers';
 import {getItem, getItemsPerResourceType} from './core';
 import {CONTENT_TYPE} from './_const';
-import type {Chapter, Language} from './types';
+import type {Chapter} from './_types';
 
-export const findById = (userLanguage: Language) => async (
+export const findById = (userLanguage: SupportedLanguage) => async (
   universalRef: string
 ): Promise<ChapterAPI> => {
   // $FlowFixMe union type
@@ -15,7 +16,10 @@ export const findById = (userLanguage: Language) => async (
   return mapToChapterAPI(item);
 };
 
-export const find = (userLangue: Language) => async (): Promise<Array<ChapterAPI>> => {
-  const chapters: Array<Chapter> = await getItemsPerResourceType(CONTENT_TYPE.CHAPTER, userLangue);
+export const find = (userLanguage: SupportedLanguage) => async (): Promise<Array<ChapterAPI>> => {
+  const chapters: Array<Chapter> = await getItemsPerResourceType(
+    CONTENT_TYPE.CHAPTER,
+    userLanguage
+  );
   return chapters.map(mapToChapterAPI);
 };

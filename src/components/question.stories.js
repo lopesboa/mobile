@@ -5,8 +5,8 @@ import {storiesOf} from '@storybook/react-native';
 
 import {QUESTION_TYPE} from '../const';
 import {handleFakePress} from '../utils/tests';
-import choices, {choicesWithImage} from '../__fixtures__/question-choices';
-import media from '../__fixtures__/media';
+import {choices, choicesWithImage} from '../__fixtures__/question-choices';
+import {image} from '../__fixtures__/medias';
 import Question from './question';
 
 storiesOf('Question', module)
@@ -53,7 +53,7 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       userChoices={[]}
-      media={media}
+      media={image}
       onChoicePress={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}

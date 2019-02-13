@@ -5,10 +5,11 @@ import {mapToLevelAPIExpectedResult} from './mappers.test';
 import {findById} from './levels';
 
 jest.mock('./core', () => {
-  const {discipline4kEB1WE5r} = require('../../__fixtures__/discipline');
-  const levels = discipline4kEB1WE5r.modules;
+  const levels = require('../../__fixtures__/levels');
+  const level = levels.createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
+
   return {
-    getItem: () => Promise.resolve(levels[0])
+    getItem: () => Promise.resolve(level)
   };
 });
 

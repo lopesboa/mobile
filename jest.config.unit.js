@@ -39,7 +39,7 @@ module.exports = {
       // @todo increase this value
       branches: 78,
       function: 100,
-      lines: 99,
+      lines: 98,
       statements: 98
     },
     'src/modules': {

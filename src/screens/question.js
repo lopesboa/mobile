@@ -4,10 +4,7 @@ import * as React from 'react';
 import {ScrollView} from 'react-native';
 import {connect} from 'react-redux';
 import {
-  createAnswer,
   editAnswer,
-  fetchAnswer,
-  fetchSlideChapter,
   getAnswerValues,
   getChoices,
   getCurrentProgression,
@@ -20,7 +17,7 @@ import {
   getQuestionMedia,
   getQuestionType,
   getRoute,
-  selectRoute
+  validateAnswer
 } from '@coorpacademy/player-store';
 import type {Choice, Media, QuestionType} from '@coorpacademy/progression-engine';
 
@@ -50,7 +47,7 @@ type ConnectedStateProps = {|
 
 type ConnectedDispatchProps = {|
   editAnswer: (item: Choice) => (dispatch: Dispatch, getState: GetState) => void,
-  validateAnswer: () => (dispatch: Dispatch, getState: GetState) => Promise<void>
+  validateAnswer: () => (dispatch: Dispatch, getState: GetState) => void
 |};
 
 type Props = {|
@@ -184,7 +181,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const correction = getCurrentCorrection(state);
   const media = getQuestionMedia(state);
   const currentRoute = getRoute(state);
-  const isValidating = currentRoute === 'validating';
+  const isValidating = currentRoute === 'correction';
 
   const answers: Array<string> = correction && correction.correctAnswer[0];
   const userAnswers: Array<string> =
@@ -266,32 +263,20 @@ const _editAnswer = (item: Choice) => (dispatch: Dispatch, getState: GetState) =
   }
 };
 
-const validateAnswer = () => async (dispatch: Dispatch, getState: GetState) => {
+const _validateAnswer = () => (dispatch: Dispatch, getState: GetState) => {
   const state = getState();
   const slide = getCurrentSlide(state);
   const currentProgressionId = getCurrentProgressionId(state);
 
   if (slide && currentProgressionId) {
     const answer = getAnswerValues(slide, state);
-
-    dispatch(selectRoute('validating'));
-    const createAnswerResponse = await dispatch(createAnswer(currentProgressionId, answer));
-
-    const progressionState = createAnswerResponse.payload.state;
-    const slideId = progressionState.content.ref;
-    const nextContentRef = progressionState.nextContent.ref;
-
-    dispatch(fetchAnswer(currentProgressionId, slideId, answer));
-
-    if (progressionState.nextContent.type === CONTENT_TYPE.SLIDE) {
-      dispatch(fetchSlideChapter(nextContentRef));
-    }
+    dispatch(validateAnswer(currentProgressionId, {answer}));
   }
 };
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   editAnswer: _editAnswer,
-  validateAnswer
+  validateAnswer: _validateAnswer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionScreen);

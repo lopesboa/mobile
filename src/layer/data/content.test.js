@@ -13,14 +13,11 @@ jest.mock('./core', () => {
       return Promise.reject(utils.fakeError);
     },
     getItem: (type, ref) => {
-      switch (ref) {
-        case 'ref_exception':
-          return Promise.reject(utils.fakeError);
-        case 'ref_level':
-        case 'ref_chapter':
-        case 'ref_slide':
-          return Promise.resolve();
+      if (type === 'ref_exception') {
+        return Promise.reject(utils.fakeError);
       }
+
+      return Promise.resolve({foo: 'bar'});
     }
   };
 });
@@ -33,6 +30,12 @@ jest.mock('./mappers', () => ({
 
 describe('content', () => {
   describe('find', () => {
+    it('should find discipline', async () => {
+      // $FlowFixMe this is only to test
+      const result = await find('en')(CONTENT_TYPE.DISCIPLINE, 'ref_discipline');
+      expect(result).toEqual({foo: 'bar'});
+    });
+
     it('should find level', async () => {
       // $FlowFixMe this is only to test
       const result = await find('en')(CONTENT_TYPE.LEVEL, 'ref_level');

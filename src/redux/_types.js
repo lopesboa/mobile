@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Services} from './services';
+import type {Services} from '../services';
 
 export type Options = {services: Services};
 

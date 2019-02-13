@@ -1,6 +1,10 @@
 // @flow strict
 
-import type {Choice} from '@coorpacademy/progression-engine';
+import type {
+  Choice,
+  ContentType as ContentTypeBase,
+  GenericContent as GenericContentBase
+} from '@coorpacademy/progression-engine';
 
 export type QuestionChoiceItem = {|
   ...Choice,
@@ -24,3 +28,12 @@ export type CardType = 'tip' | 'keyPoint' | 'correction';
 export type Question = string;
 
 export type LevelType = 'base' | 'advanced' | 'coach';
+
+export type Engine = 'learner' | 'microlearning';
+
+export type ContentType = ContentTypeBase | 'discipline';
+
+export type GenericContent = $Exact<{|
+  ...GenericContentBase,
+  type: ContentType
+|}>;

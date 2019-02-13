@@ -1,12 +1,15 @@
 // @flow strict
 
-import {slide_sli_415pDBG2r} from '../../__fixtures__/slides';
+import {qcm} from '../../__fixtures__/questions';
+import {createSlide} from '../../__fixtures__/slides';
 import {fakeError} from '../../utils/tests';
 import {getClue} from './clues';
 
 jest.mock('./core', () => {
-  const fixtures = require('../../__fixtures__/slides');
   const utils = require('../../utils/tests');
+  const {qcm: question} = require('../../__fixtures__/questions');
+  const slides = require('../../__fixtures__/slides');
+  const slide = slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
 
   return {
     fetchDisciplineBundle: () => {
@@ -18,8 +21,8 @@ jest.mock('./core', () => {
         return Promise.reject(utils.fakeError);
       }
       return Promise.resolve({
-        ...fixtures.slide_sli_415pDBG2r,
-        clue: ref === 'ref_withclue' ? fixtures.slide_sli_415pDBG2r.clue : undefined
+        ...slide,
+        clue: ref === 'ref_withclue' ? slide.clue : undefined
       });
     }
   };
@@ -33,8 +36,9 @@ describe('clue', () => {
     });
 
     it('should find the clue for a given slide universalRef', async () => {
+      const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm});
       const result = await getClue('en')('ref_withclue');
-      expect(result).toEqual(slide_sli_415pDBG2r.clue);
+      expect(result).toEqual(slide.clue);
     });
 
     it('should handle exception', () => {

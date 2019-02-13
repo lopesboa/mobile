@@ -4,7 +4,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 // @todo remove
-import imageLandscape from '../__fixtures__/image-landscape-1.jpg';
+import imageLandscape from '../__fixtures__/assets/landscape-1.jpg';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
 import type {LevelType} from '../types';
 import {LEVEL_TYPE} from '../const';

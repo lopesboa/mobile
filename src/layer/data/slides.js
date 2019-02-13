@@ -1,12 +1,14 @@
 // @flow strict
 
 import type {SlideAPI} from '@coorpacademy/player-services';
+
+import type {SupportedLanguage} from '../../translations/_types';
 import {mapToSlideAPI} from './mappers';
 import {getItemsPerResourceType, getItem} from './core';
 import {CONTENT_TYPE} from './_const';
-import type {Slide, Language} from './types';
+import type {Slide} from './_types';
 
-export const findById = (userLanguage: Language) => async (
+export const findById = (userLanguage: SupportedLanguage) => async (
   universalRef: string
 ): Promise<SlideAPI> => {
   // $FlowFixMe union type
@@ -14,7 +16,7 @@ export const findById = (userLanguage: Language) => async (
   return mapToSlideAPI(item);
 };
 
-export const findByChapter = (userLanguage: Language) => async (
+export const findByChapter = (userLanguage: SupportedLanguage) => async (
   chapterId: string
 ): Promise<Array<SlideAPI>> => {
   const slides: Array<Slide> = await getItemsPerResourceType(CONTENT_TYPE.SLIDE, userLanguage);

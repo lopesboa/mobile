@@ -4,7 +4,7 @@
 
 import LocalizedStrings from 'react-native-localization';
 
-import type {Translations} from './_types';
+import type {Translations, SupportedLanguage} from './_types';
 import cs from './cs';
 import de from './de';
 import en_US from './en-us';
@@ -27,7 +27,7 @@ import vi from './vi';
 import zh_TW from './zh-tw';
 import zh from './zh';
 
-const translations: Translations = new LocalizedStrings({
+const localizedTranslations: {[key: SupportedLanguage]: Translations} = {
   cs,
   de,
   'en-US': en_US,
@@ -48,6 +48,8 @@ const translations: Translations = new LocalizedStrings({
   vi,
   'zh-TW': zh_TW,
   zh
-});
+};
+
+const translations: Translations = new LocalizedStrings(localizedTranslations);
 
 export default translations;

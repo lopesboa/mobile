@@ -5,7 +5,7 @@ exports[`Storyshots Image Default 1`] = `
   resizeMode="contain"
   source={
     Object {
-      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+      "testUri": "../../../src/__fixtures__/assets/landscape-2.jpg",
     }
   }
   style={
@@ -25,7 +25,7 @@ exports[`Storyshots Image Max height 1`] = `
   resizeMode="contain"
   source={
     Object {
-      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+      "testUri": "../../../src/__fixtures__/assets/landscape-2.jpg",
     }
   }
   style={
@@ -45,7 +45,7 @@ exports[`Storyshots Image Width 1`] = `
   resizeMode="contain"
   source={
     Object {
-      "testUri": "../../../src/__fixtures__/image-landscape-2.jpg",
+      "testUri": "../../../src/__fixtures__/assets/landscape-2.jpg",
     }
   }
   style={

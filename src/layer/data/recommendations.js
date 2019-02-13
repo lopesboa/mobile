@@ -1,6 +1,10 @@
 // @flow
+
+// @todo remove lodash
 import get from 'lodash/fp/get';
+// @todo remove lodash
 import map from 'lodash/fp/map';
+
 import {find as findChapters} from './chapters';
 
 const find = async (type: string, ref: string) => {

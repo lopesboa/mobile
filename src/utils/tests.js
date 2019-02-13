@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 
 import createStore from '../redux';
 
-const store = createStore();
+export const store = createStore();
 
 /* eslint-disable import/prefer-default-export */
 // eslint-disable-next-line no-console
@@ -20,3 +20,6 @@ export const TestContextProvider = (props: TestContextProviderProps) => (
 );
 
 export const fakeError = new Error('Fake error');
+
+export const sleep = (duration: number = 10) =>
+  new Promise(resolve => setTimeout(resolve, duration));

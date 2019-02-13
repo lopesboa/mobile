@@ -2,10 +2,10 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Provider} from 'react-redux';
-import createDataLayer from './layer/data';
 
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
+import NetworkInfoListener from './containers/network-info-listener';
 import createStore from './redux';
 import type {ReduxDevTools} from './redux/_types';
 
@@ -22,24 +22,15 @@ const styles = StyleSheet.create({
   }
 });
 
-class App extends React.Component<Props> {
-  componentDidMount() {
-    // @todo use dynamic language
-    const contentService = createDataLayer('fr');
-    contentService.fetchDisciplineBundle();
-  }
-
-  render() {
-    return (
-      <Provider store={store}>
-        <BrandThemeProvider>
-          <View style={styles.container}>
-            <Navigator />
-          </View>
-        </BrandThemeProvider>
-      </Provider>
-    );
-  }
-}
+const App = (props: Props) => (
+  <Provider store={store}>
+    <NetworkInfoListener />
+    <BrandThemeProvider>
+      <View style={styles.container}>
+        <Navigator />
+      </View>
+    </BrandThemeProvider>
+  </Provider>
+);
 
 export default App;

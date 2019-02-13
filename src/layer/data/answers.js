@@ -1,9 +1,11 @@
-// @flow
+// @flow strict
+
+import type {SupportedLanguage} from '../../translations/_types';
 import {getItem} from './core';
 import {CONTENT_TYPE} from './_const';
-import type {Slide, Language} from './types';
+import type {Slide} from './_types';
 
-export const getCorrectAnswer = (userLanguage: Language) => async (
+export const getCorrectAnswer = (userLanguage: SupportedLanguage) => async (
   slideId: string
 ): Promise<Array<Array<string>>> => {
   // $FlowFixMe union type

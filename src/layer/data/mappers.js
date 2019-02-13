@@ -8,7 +8,7 @@ import type {
   LevelAPI
 } from '@coorpacademy/player-services';
 
-import type {ExitNode, Chapter, Slide, Lesson, Level} from '.';
+import type {ExitNode, Chapter, Slide, Lesson, Level} from './_types';
 
 export const mapToExitNodeAPI = (rawExitNode: ExitNode): ExitNodeAPI => ({
   ref: rawExitNode.ref,
@@ -33,58 +33,53 @@ export const mapToChapterAPI = (rawChapter: Chapter): ChapterAPI => ({
   version: rawChapter.version
 });
 
-export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => {
-  return {
-    _id: rawLesson._id,
-    description: rawLesson.description,
-    mediaUrl: rawLesson.mediaUrl,
-    mimeType: rawLesson.mimeType,
-    poster: rawLesson.poster,
-    posters: rawLesson.posters,
-    ref: rawLesson.ref,
-    src: rawLesson.src,
-    subtitles: rawLesson.subtitles,
-    type: rawLesson.type,
-    videoId: rawLesson.videoId
-  };
-};
+export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
+  _id: rawLesson._id,
+  description: rawLesson.description,
+  mediaUrl: rawLesson.mediaUrl,
+  mimeType: rawLesson.mimeType,
+  poster: rawLesson.poster,
+  posters: rawLesson.posters,
+  ref: rawLesson.ref,
+  src: rawLesson.src,
+  subtitles: rawLesson.subtitles,
+  type: rawLesson.type,
+  videoId: rawLesson.videoId
+});
 
-export const mapToLevelAPI = (rawLevel: Level): LevelAPI => {
-  return {
-    _id: rawLevel._id,
-    universalRef: rawLevel.universalRef,
-    ref: rawLevel.ref,
-    name: rawLevel.name,
-    level: rawLevel.level,
-    meta: rawLevel.meta,
-    poster: rawLevel.poster,
-    chapterIds: rawLevel.chapterIds,
-    levelTranslation: rawLevel.levelTranslation,
-    mediaUrl: rawLevel.mediaUrl,
-    timeAlloted: rawLevel.timeAlloted,
-    eligibleBattle: rawLevel.eligibleBattle,
-    creditsToAccess: rawLevel.creditsToAccess,
-    infiniteLives: rawLevel.infiniteLives,
-    isConditional: rawLevel.isConditional,
-    acquiredSkills: rawLevel.acquiredSkills,
-    data: rawLevel.data,
-    stats: rawLevel.stats,
-    version: rawLevel.version,
-    external_refs: rawLevel.external_refs
-  };
-};
-export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => {
-  return {
-    _id: rawSlide._id,
-    chapter_id: rawSlide.chapter_id,
-    klf: rawSlide.klf,
-    authors: rawSlide.authors,
-    lessons: rawSlide.lessons.map(mapToLessonAPI),
-    meta: rawSlide.meta,
-    tips: rawSlide.tips,
-    question: rawSlide.question,
-    position: rawSlide.position
-  };
-};
+export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
+  _id: rawLevel._id,
+  universalRef: rawLevel.universalRef,
+  ref: rawLevel.ref,
+  name: rawLevel.name,
+  level: rawLevel.level,
+  meta: rawLevel.meta,
+  poster: rawLevel.poster,
+  chapterIds: rawLevel.chapterIds,
+  levelTranslation: rawLevel.levelTranslation,
+  mediaUrl: rawLevel.mediaUrl,
+  timeAlloted: rawLevel.timeAlloted,
+  eligibleBattle: rawLevel.eligibleBattle,
+  creditsToAccess: rawLevel.creditsToAccess,
+  infiniteLives: rawLevel.infiniteLives,
+  isConditional: rawLevel.isConditional,
+  acquiredSkills: rawLevel.acquiredSkills,
+  data: rawLevel.data,
+  stats: rawLevel.stats,
+  version: rawLevel.version,
+  external_refs: rawLevel.external_refs
+});
+
+export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
+  _id: rawSlide._id,
+  chapter_id: rawSlide.chapter_id,
+  klf: rawSlide.klf,
+  authors: rawSlide.authors,
+  lessons: rawSlide.lessons.map(mapToLessonAPI),
+  meta: rawSlide.meta,
+  tips: rawSlide.tips,
+  question: rawSlide.question,
+  position: rawSlide.position
+});
 
 export default mapToExitNodeAPI;

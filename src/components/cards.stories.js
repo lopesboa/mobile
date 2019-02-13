@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Text, View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
-import cards from '../__fixtures__/cards';
+import {cards} from '../__fixtures__/cards';
 import Cards from './cards';
 import type {Card} from './cards';
 

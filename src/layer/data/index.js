@@ -1,46 +1,29 @@
 // @flow
 
-import noop from 'lodash/fp/noop';
+import type {DataLayer as DataLayerBase} from '@coorpacademy/player-services';
 
-import type {DataLayer} from '@coorpacademy/player-services';
+import type {SupportedLanguage} from '../../translations/_types';
 import {
   findById as findProgressionById,
   getAll as getAllProgressions,
   save as saveProgression
 } from './progressions';
-
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
-import {fetchDisciplineBundle} from './core';
+import {fetchDisciplineBundle, storeDisciplineBundle} from './core';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
-
 import {find as findRecommendations, getNextLevel} from './recommendations';
-
 import {findById as findLevelById} from './levels';
-
 import {getCorrectAnswer} from './answers';
-
 import {getClue} from './clues';
 
-import type {
-  BundledDiscipline,
-  Language,
-  Resource,
-  Level,
-  ResourceType,
-  Slide,
-  Lesson,
-  Chapter,
-  ExitNode,
-  Discipline,
-  RestrictedResourceType
-} from './types';
+export type DataLayer = DataLayerBase & {
+  fetchDisciplineBundle: typeof fetchDisciplineBundle,
+  storeDisciplineBundle: typeof storeDisciplineBundle
+};
 
-const getChapterRulesByContent = noop;
-
-const createDataLayer = (userLanguage: Language): DataLayer => ({
-  fetchDisciplineBundle: fetchDisciplineBundle(userLanguage),
+const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   getExitNode: getExitNode(userLanguage),
   findSlideById: findSlideById(userLanguage),
   findSlideByChapter: findSlideByChapter(userLanguage),
@@ -54,20 +37,10 @@ const createDataLayer = (userLanguage: Language): DataLayer => ({
   findRecommendations,
   getNextLevel,
   findLevelById: findLevelById(userLanguage),
-  getChapterRulesByContent
+  // @todo implement it
+  getChapterRulesByContent: () => [],
+  fetchDisciplineBundle,
+  storeDisciplineBundle
 });
 
-export type {
-  BundledDiscipline,
-  DataLayer,
-  Slide,
-  Resource,
-  Level,
-  Discipline,
-  Chapter,
-  Lesson,
-  ResourceType,
-  RestrictedResourceType,
-  ExitNode
-};
 export default createDataLayer;

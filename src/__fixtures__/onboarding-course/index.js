@@ -1,6 +1,6 @@
-// @flow
+// @flow strict
 
-import type {BundledDiscipline} from '../../layer/data';
+import type {BundledDiscipline} from '../../layer/data/_types';
 import {
   slide_sli_EJ6TGiIIN,
   slide_sli_N1uxMsUIV,
@@ -9,7 +9,6 @@ import {
 } from './slides';
 import chapter_cha_VygSqL8E from './chapters';
 import {successExitNode, failExitNode} from './exit-nodes';
-
 import discipline from './discipline';
 
 const bundledDiscipline: BundledDiscipline = {

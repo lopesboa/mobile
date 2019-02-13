@@ -1,4 +1,7 @@
+// @todo add flow coverage
+// @todo remove lodash
 import reduce from 'lodash/fp/reduce';
+// @todo remove lodash
 import set from 'lodash/fp/set';
 import {createState} from '@coorpacademy/progression-engine';
 

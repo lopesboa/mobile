@@ -5,12 +5,16 @@ import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store
 
 import type {State as NavigationState} from './reducers/navigation';
 import navigation from './reducers/navigation';
+import type {State as DisciplineBundleState} from './reducers/discipline-bundle';
+import disciplineBundle from './reducers/discipline-bundle';
+import DisciplineBundle from './middlewares/discipline-bundle';
 import type {Options, ReduxDevTools} from './_types';
 
 export type StoreState = {|
   data: any, // eslint-disable-line flowtype/no-weak-types, @todo type reducers store-side
   ui: any, // eslint-disable-line flowtype/no-weak-types, @todo type reducers store-side
-  navigation: NavigationState
+  navigation: NavigationState,
+  disciplineBundle: DisciplineBundleState
 |};
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
@@ -19,12 +23,14 @@ const {data, ui} = storeReducers;
 const reducers = combineReducers({
   data,
   ui,
-  navigation
+  navigation,
+  disciplineBundle
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   return compose(
-    applyMiddleware(ReduxThunkMemoized(options), ErrorLogger(options)),
+    // $FlowFixMe error applying middlewares with multiple types
+    applyMiddleware(ReduxThunkMemoized(options), ErrorLogger(options), DisciplineBundle(options)),
     reduxDevTools || (f => f)
   );
 };

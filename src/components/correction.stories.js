@@ -4,7 +4,7 @@ import * as React from 'react';
 import {View, Dimensions} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
-import answers from '../__fixtures__/answers';
+import {answers} from '../__fixtures__/answers';
 import type {Layout} from '../containers/with-layout';
 import {handleFakePress} from '../utils/tests';
 import {Component as Correction} from './correction';

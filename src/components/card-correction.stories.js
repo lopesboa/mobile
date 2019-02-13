@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import answers from '../__fixtures__/answers';
+import {answers} from '../__fixtures__/answers';
 import CardCorrection from './card-correction';
 
 const question = 'Where is Waldo ?';
