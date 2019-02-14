@@ -73,6 +73,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={
@@ -3392,6 +3393,7 @@ exports[`Storyshots Correction Good answer 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={
@@ -6657,6 +6659,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={
@@ -8516,6 +8519,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={
@@ -11781,6 +11785,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={
@@ -13505,6 +13510,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
             },
           ]
         }
+        testID="correction-lives"
       >
         <View
           style={

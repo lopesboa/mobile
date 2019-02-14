@@ -58,7 +58,9 @@ export const CONTENT_TYPE: {
   DISCIPLINE: 'discipline',
   CHAPTER: 'chapter',
   LEVEL: 'level',
-  SLIDE: 'slide'
+  SLIDE: 'slide',
+  SUCCESS: 'success',
+  FAILURE: 'failure'
 };
 
 type SpecificContentRef = 'extraLife' | 'failureExitNode' | 'successExitNode';

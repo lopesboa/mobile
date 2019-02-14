@@ -42,7 +42,7 @@ class ProgressionBar extends React.PureComponent<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <View style={styles.barContainer}>
+          <View style={styles.barContainer} testID="progression-bar">
             <Animated.View
               style={[styles.bar, {backgroundColor: brandTheme.colors.primary, width}]}
               testID={`progression-bar-${current}`}

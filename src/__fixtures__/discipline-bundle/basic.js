@@ -6,28 +6,32 @@ import {createDiscipline} from '../disciplines';
 import {createLevel} from '../levels';
 import {createChapter} from '../chapters';
 import {createSlide} from '../slides';
-import {qcm, qcmGraphic} from '../questions';
+import {createQCM, createQCMGraphic} from '../questions';
 import {failureExitNode, successExitNode} from '../exit-nodes';
+import {image} from '../medias';
 
-const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
+const level = createLevel({ref: 'basic_mod_1', chapterIds: ['basic_cha_1', 'basic_cha_2']});
+const qcm = createQCM({media: image});
+const qcmGraphic = createQCMGraphic({});
 
 const bundledDiscipline: BundledDiscipline = {
   disciplines: {
-    dis_1: createDiscipline({ref: 'dis_1', levels: [level], name: 'Basic course'})
+    basic_dis_1: createDiscipline({ref: 'basic_dis_1', levels: [level], name: 'Basic: course'})
   },
   chapters: {
-    cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
-    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
+    basic_cha_1: createChapter({ref: 'basic_cha_1', name: 'Basic: QCM chapter'}),
+    basic_cha_2: createChapter({ref: 'basic_cha_2', name: 'Basic: QCM Graphic chapter'})
   },
   slides: {
-    sli_1: createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm}),
-    sli_2: createSlide({ref: 'sli_2', chapterId: 'cha_1', question: qcmGraphic}),
-    sli_3: createSlide({ref: 'sli_3', chapterId: 'cha_1', question: qcm}),
-    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_1', question: qcmGraphic}),
-    sli_5: createSlide({ref: 'sli_5', chapterId: 'cha_2', question: qcm}),
-    sli_6: createSlide({ref: 'sli_6', chapterId: 'cha_2', question: qcmGraphic}),
-    sli_7: createSlide({ref: 'sli_7', chapterId: 'cha_2', question: qcm}),
-    sli_8: createSlide({ref: 'sli_8', chapterId: 'cha_2', question: qcmGraphic})
+    // group question type in a same chapter, because progression engine choose randomly one of it
+    basic_sli_1: createSlide({ref: 'basic_sli_1', chapterId: 'basic_cha_1', question: qcm}),
+    basic_sli_2: createSlide({ref: 'basic_sli_2', chapterId: 'basic_cha_1', question: qcm}),
+    basic_sli_3: createSlide({ref: 'basic_sli_3', chapterId: 'basic_cha_1', question: qcm}),
+    basic_sli_4: createSlide({ref: 'basic_sli_4', chapterId: 'basic_cha_1', question: qcm}),
+    basic_sli_5: createSlide({ref: 'basic_sli_5', chapterId: 'basic_cha_2', question: qcmGraphic}),
+    basic_sli_6: createSlide({ref: 'basic_sli_6', chapterId: 'basic_cha_2', question: qcmGraphic}),
+    basic_sli_7: createSlide({ref: 'basic_sli_7', chapterId: 'basic_cha_2', question: qcmGraphic}),
+    basic_sli_8: createSlide({ref: 'basic_sli_8', chapterId: 'basic_cha_2', question: qcmGraphic})
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,

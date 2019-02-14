@@ -14,6 +14,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
       },
     ]
   }
+  testID="lives"
 >
   <View
     style={
@@ -406,6 +407,7 @@ exports[`Storyshots Lives Broken 1`] = `
       },
     ]
   }
+  testID="lives"
 >
   <View
     style={
@@ -798,6 +800,7 @@ exports[`Storyshots Lives Default 1`] = `
       },
     ]
   }
+  testID="lives"
 >
   <View
     style={

@@ -23,11 +23,14 @@ class Catalog extends React.PureComponent<Props> {
     const {items} = this.props;
 
     return (
-      <View>
+      <View testID="catalog">
         {items.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && <Space />}
-            <Button onPress={this.handlePress(item)} testID={`catalog-item-${index}`}>
+            <Button
+              onPress={this.handlePress(item)}
+              testID={`catalog-item-${item.universalRef.replace(/_/g, '-')}`}
+            >
               {item.name}
             </Button>
           </React.Fragment>

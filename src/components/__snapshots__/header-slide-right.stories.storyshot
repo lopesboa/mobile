@@ -23,6 +23,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
         },
       ]
     }
+    testID="lives"
   >
     <View
       style={

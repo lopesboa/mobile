@@ -64,8 +64,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
-        isCorrect,
-        lives
+        isCorrect: (lives !== undefined && lives > 0) || isCorrect
       };
       navigation.navigate('LevelEnd', levelEndParams);
     } else {

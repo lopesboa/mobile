@@ -1,13 +1,12 @@
 // @flow strict
 
-/* import utils from './utils';
+import utils from './utils';
 
 describe('Lesson', () => {
   beforeAll(async () => {
     await utils.reloadApp();
-    await waitFor(element(by.id('button-start-course-with-lives'))).toBeVisible();
-    await element(by.id('button-start-course-with-lives')).tap();
-    await waitFor(element(by.id('slide-tab'))).toBeVisible();
+    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
+    await element(by.id('catalog-item-basic-dis-1')).tap();
   });
 
   it('should see lesson tab', async () => {
@@ -78,4 +77,4 @@ describe('Lesson', () => {
   //   await weExpect(element(by.id('video-container-fullscreen'))).toBeNotVisible();
   //   await weExpect(element(by.id('video-fullscreen-expand'))).toBeVisible();
   // });
-});*/
+});

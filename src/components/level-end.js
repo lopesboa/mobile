@@ -10,7 +10,7 @@ import Text from './text';
 import Space from './space';
 
 type Props = {|
-  isSuccess: boolean,
+  isCorrect: boolean,
   onButtonPress: () => void
 |};
 
@@ -49,20 +49,20 @@ const styles = StyleSheet.create({
   }
 });
 
-const LevelEnd = ({isSuccess, onButtonPress}: Props) => {
-  const title = (isSuccess && translations.congratulations) || translations.gameOver;
-  const backgroundColor = (isSuccess && styles.positive) || styles.negative;
+const LevelEnd = ({isCorrect, onButtonPress}: Props) => {
+  const title = (isCorrect && translations.congratulations) || translations.gameOver;
+  const backgroundColor = (isCorrect && styles.positive) || styles.negative;
 
   return (
     <View
       style={[styles.container, backgroundColor]}
-      testID={`level-end-${isSuccess ? 'success' : 'error'}`}
+      testID={`level-end-${isCorrect ? 'success' : 'error'}`}
     >
       <View style={styles.header}>
         <Text style={styles.mainTitle} testID="level-end-title">
           {title}
         </Text>
-        {!isSuccess && (
+        {!isCorrect && (
           <Text style={styles.subTitle} testID="level-end-subtitle">
             {translations.outOfLives}
           </Text>
@@ -73,9 +73,9 @@ const LevelEnd = ({isSuccess, onButtonPress}: Props) => {
         <Button
           isInverted
           onPress={onButtonPress}
-          testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
+          testID={`button-${isCorrect ? 'next' : 'retry'}-level`}
         >
-          {(isSuccess && translations.nextLevel) || translations.retryLevel}
+          {(isCorrect && translations.nextLevel) || translations.retryLevel}
         </Button>
       </View>
     </View>

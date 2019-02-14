@@ -1,12 +1,12 @@
 // @flow strict
 
-import type {QCMQuestion, QCMGraphicQuestion} from '@coorpacademy/progression-engine';
+import type {QCMQuestion, QCMGraphicQuestion, Media} from '@coorpacademy/progression-engine';
 
 import {QUESTION_TYPE} from '../const';
 
 import {choices, choicesWithImage} from './question-choices';
 
-export const qcm: QCMQuestion = {
+export const createQCM = ({media}: {media?: Media}): QCMQuestion => ({
   header: 'Quel store est utilisé pour publier des applications iOS',
   explanation: 'Sélectionnez la bonne réponse.',
   // $FlowFixMe this is the right type
@@ -14,10 +14,11 @@ export const qcm: QCMQuestion = {
   content: {
     answers: [[choices[1].label]],
     choices
-  }
-};
+  },
+  medias: (media && [media]) || undefined
+});
 
-export const qcmGraphic: QCMGraphicQuestion = {
+export const createQCMGraphic = ({media}: {media?: Media}): QCMGraphicQuestion => ({
   header: 'Quel store est utilisé pour publier des applications iOS',
   explanation: 'Sélectionnez la bonne réponse.',
   // $FlowFixMe this is the right type
@@ -25,10 +26,11 @@ export const qcmGraphic: QCMGraphicQuestion = {
   content: {
     answers: [[choices[1].label]],
     choices: choicesWithImage
-  }
-};
+  },
+  medias: (media && [media]) || undefined
+});
 
 export default {
-  qcm,
-  qcmGraphic
+  createQCM,
+  createQCMGraphic
 };

@@ -2,7 +2,7 @@
 
 import type {ChapterAPI, SlideAPI, ExitNodeAPI, LevelAPI} from '@coorpacademy/player-services';
 
-import {qcm} from '../../__fixtures__/questions';
+import {createQCM} from '../../__fixtures__/questions';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
@@ -18,7 +18,8 @@ import {
 
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
 const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
-const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm});
+const question = createQCM({});
+const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
 
 // eslint-disable-next-line import/prefer-default-export
 export const mapToLevelAPIExpectedResult: LevelAPI = {

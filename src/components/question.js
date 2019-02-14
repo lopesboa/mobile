@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import {StyleSheet, View, ImageBackground} from 'react-native';
-
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
+
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: 'center',
-    height: 200
+    height: 200,
+    width: '100%'
   },
   validateButton: {
     paddingHorizontal: theme.spacing.base
@@ -67,7 +68,7 @@ const Question = ({
   isValidating
 }: Props) => {
   const oneChoiceSelected = userChoices.length > 0;
-  const mediaUri = media && media.src && media.src.length > 0 && getCleanUri(media.src[0].url);
+  const mediaUri = media && media.url && getCleanUri(media.url);
 
   return (
     <View testID="question" style={styles.container}>

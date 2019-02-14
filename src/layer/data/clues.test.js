@@ -1,13 +1,16 @@
 // @flow strict
 
-import {qcm} from '../../__fixtures__/questions';
+import {createQCM} from '../../__fixtures__/questions';
 import {createSlide} from '../../__fixtures__/slides';
 import {fakeError} from '../../utils/tests';
 import {getClue} from './clues';
 
+const qcm = createQCM({});
+
 jest.mock('./core', () => {
   const utils = require('../../utils/tests');
-  const {qcm: question} = require('../../__fixtures__/questions');
+  const questions = require('../../__fixtures__/questions');
+  const question = questions.createQCM({});
   const slides = require('../../__fixtures__/slides');
   const slide = slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
 

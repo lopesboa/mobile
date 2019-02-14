@@ -3,12 +3,13 @@
 import {AsyncStorage} from 'react-native';
 
 import basicCourse from '../../__fixtures__/discipline-bundle/basic';
+import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
 import onboardingCourse from '../../__fixtures__/onboarding-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
-import {qcm, qcmGraphic} from '../../__fixtures__/questions';
+import {createQCM, createQCMGraphic} from '../../__fixtures__/questions';
 import {failureExitNode, successExitNode} from '../../__fixtures__/exit-nodes';
 import {fakeError} from '../../utils/tests';
 import type {Discipline, BundledDiscipline} from './_types';
@@ -27,6 +28,8 @@ import {
   mapToResourceType
 } from './core';
 
+const qcm = createQCM({});
+const qcmGraphic = createQCMGraphic({});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
 const disciplineBundle: BundledDiscipline = {
   disciplines: {
@@ -259,6 +262,12 @@ describe('Data Layer Core', () => {
       const result = fetchDisciplineBundle('fixtures_basic', 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(basicCourse);
+    });
+
+    it('should fetch adaptive', () => {
+      const result = fetchDisciplineBundle('fixtures_adaptive', 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(adaptiveCourse);
     });
 
     it('should fetch onboarding', () => {

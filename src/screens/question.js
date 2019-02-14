@@ -177,7 +177,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     };
   }
   const progression = getCurrentProgression(state);
-  const lives = getLives(state) || undefined;
+  const lives = getLives(state);
   const correction = getCurrentCorrection(state);
   const media = getQuestionMedia(state);
   const currentRoute = getRoute(state);
@@ -220,7 +220,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       isValidating,
       tip: undefined,
       keyPoint: undefined,
-      lives,
+      lives: lives !== null ? lives : undefined,
       isFinished
     };
   }
@@ -247,7 +247,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,
-    lives
+    lives: lives !== null ? lives : undefined
   };
 };
 const _editAnswer = (item: Choice) => (dispatch: Dispatch, getState: GetState) => {

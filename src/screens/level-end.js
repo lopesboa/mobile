@@ -8,8 +8,7 @@ import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end'
 import Screen from '../components/screen';
 
 export type Params = {|
-  isCorrect: boolean,
-  lives: number
+  isCorrect: boolean
 |};
 
 type Props = ReactNavigation$ScreenPropsWithParams<Params>;
@@ -35,14 +34,13 @@ class LevelEndScreen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {isCorrect, lives} = this.props.navigation.state.params;
-    const isSuccess = isCorrect || lives >= 0;
-    const backgroundColor = (isSuccess && POSITIVE_COLOR) || NEGATIVE_COLOR;
+    const {isCorrect} = this.props.navigation.state.params;
+    const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
     return (
       <Screen testID="level-end-screen" noScroll style={{backgroundColor}}>
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
-        <LevelEnd isSuccess={isSuccess} onButtonPress={this.handleButtonPress} />
+        <LevelEnd isCorrect={isCorrect} onButtonPress={this.handleButtonPress} />
       </Screen>
     );
   }

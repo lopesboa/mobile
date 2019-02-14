@@ -2,7 +2,15 @@
 
 import type {Chapter} from '../layer/data/_types';
 
-export const createChapter = ({ref, name}: {ref: string, name: string}): Chapter => ({
+export const createChapter = ({
+  ref,
+  name,
+  isConditional = false
+}: {
+  ref: string,
+  name: string,
+  isConditional?: boolean
+}): Chapter => ({
   _id: ref,
   universalRef: ref,
   name,
@@ -28,7 +36,7 @@ export const createChapter = ({ref, name}: {ref: string, name: string}): Chapter
   groups: ['ALL', 'digital', 'them_4kZQpfpgQ', 'them_EJFqsxi7m'],
   partners: ['part_N1RwTvjqz'],
   isStandalone: false,
-  isConditional: false,
+  isConditional,
   time: 8,
   version: '9'
 });

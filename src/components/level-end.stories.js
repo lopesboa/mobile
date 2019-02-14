@@ -7,5 +7,5 @@ import {handleFakePress} from '../utils/tests';
 import LevelEnd from './level-end';
 
 storiesOf('LevelEnd', module)
-  .add('Error', () => <LevelEnd isSuccess={false} onButtonPress={handleFakePress} />)
-  .add('Success', () => <LevelEnd isSuccess onButtonPress={handleFakePress} />);
+  .add('Error', () => <LevelEnd isCorrect={false} onButtonPress={handleFakePress} />)
+  .add('Success', () => <LevelEnd isCorrect onButtonPress={handleFakePress} />);

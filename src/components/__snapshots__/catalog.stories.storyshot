@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Catalog Default 1`] = `
-<View>
+<View
+  testID="catalog"
+>
   <View
-    testID="catalog-item-0"
+    testID="catalog-item-dis-1"
   >
     <View
       accessible={true}
@@ -64,7 +66,7 @@ exports[`Storyshots Catalog Default 1`] = `
     }
   />
   <View
-    testID="catalog-item-1"
+    testID="catalog-item-cha-1"
   >
     <View
       accessible={true}

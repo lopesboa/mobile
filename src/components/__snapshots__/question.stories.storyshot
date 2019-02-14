@@ -1789,6 +1789,7 @@ exports[`Storyshots Question With image 1`] = `
         Object {
           "alignSelf": "center",
           "height": 200,
+          "width": "100%",
         }
       }
     >
@@ -1810,7 +1811,7 @@ exports[`Storyshots Question With image 1`] = `
             },
             Object {
               "height": 200,
-              "width": undefined,
+              "width": "100%",
             },
             undefined,
           ]

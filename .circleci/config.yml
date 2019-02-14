@@ -77,7 +77,7 @@ jobs:
             - ios/Pods
 
       - restore_cache:
-          key: brew-v1-ios-{{ arch }}
+          key: brew-v2-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -86,9 +86,10 @@ jobs:
             brew install applesimutils
 
       - save_cache:
-          key: brew-v1-ios-{{ arch }}
+          key: brew-v2-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
+            - /usr/local/Cellar
 
       - restore_cache:
           key: detox-v1-{{ arch }}
@@ -107,8 +108,6 @@ jobs:
       - run:
           name: Tests
           command: yarn test:end2end:ios:release
-          environment:
-            RCT_NO_LAUNCH_PACKAGER: 1
 
   build_ios:
     macos:

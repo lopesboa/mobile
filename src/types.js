@@ -31,7 +31,7 @@ export type LevelType = 'base' | 'advanced' | 'coach';
 
 export type Engine = 'learner' | 'microlearning';
 
-export type ContentType = ContentTypeBase | 'discipline';
+export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure';
 
 export type GenericContent = $Exact<{|
   ...GenericContentBase,

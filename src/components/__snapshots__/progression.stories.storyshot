@@ -10,6 +10,7 @@ exports[`Storyshots Progression Default 1`] = `
         "backgroundColor": "#ECEFF1",
       }
     }
+    testID="progression-bar"
   >
     <View
       style={

@@ -5,7 +5,8 @@ import {findByChapter, findById} from './slides';
 import {mapToSlideAPIExpectedResult} from './mappers.test';
 
 jest.mock('./core', () => {
-  const {qcm: question} = require('../../__fixtures__/questions');
+  const questions = require('../../__fixtures__/questions');
+  const question = questions.createQCM({});
   const slides = require('../../__fixtures__/slides');
   const slide = slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
 

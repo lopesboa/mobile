@@ -93,7 +93,7 @@ const Lives = ({
   const brokenSuffix = isBroken ? '-broken' : '';
 
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View style={[styles.container, containerStyle]} testID={testID}>
       <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
         <Text style={[styles.text, textStyle]}>x{count}</Text>
       </View>
