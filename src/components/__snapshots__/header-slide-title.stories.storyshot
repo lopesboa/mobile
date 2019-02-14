@@ -8,7 +8,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
         "alignItems": "center",
         "flex": 1,
         "flexDirection": "row",
-        "paddingRight": 16,
+        "paddingRight": 48,
         "paddingVertical": 16,
       },
       Object {
@@ -16,6 +16,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       },
     ]
   }
+  testID="header-slide-title"
 >
   <View
     style={
@@ -42,7 +43,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
+            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
           }
         }
         style={
@@ -61,6 +62,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
             undefined,
           ]
         }
+        testID="header-slide-title-image"
       />
     </View>
   </View>
@@ -97,6 +99,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
           "fontWeight": "700",
         }
       }
+      testID="header-slide-title-title"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
     </Text>
@@ -112,7 +115,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
         "alignItems": "center",
         "flex": 1,
         "flexDirection": "row",
-        "paddingRight": 16,
+        "paddingRight": 48,
         "paddingVertical": 16,
       },
       Object {
@@ -120,6 +123,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       },
     ]
   }
+  testID="header-slide-title"
 >
   <View
     style={
@@ -146,7 +150,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
+            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
           }
         }
         style={
@@ -165,6 +169,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
             undefined,
           ]
         }
+        testID="header-slide-title-image"
       />
     </View>
   </View>
@@ -201,6 +206,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
           "fontWeight": "700",
         }
       }
+      testID="header-slide-title-title"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
     </Text>
@@ -216,7 +222,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
         "alignItems": "center",
         "flex": 1,
         "flexDirection": "row",
-        "paddingRight": 16,
+        "paddingRight": 48,
         "paddingVertical": 16,
       },
       Object {
@@ -224,6 +230,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       },
     ]
   }
+  testID="header-slide-title"
 >
   <View
     style={
@@ -250,7 +257,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       <Image
         source={
           Object {
-            "testUri": "../../../src/__fixtures__/assets/landscape-3.jpg",
+            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
           }
         }
         style={
@@ -269,6 +276,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
             undefined,
           ]
         }
+        testID="header-slide-title-image"
       />
     </View>
   </View>
@@ -305,6 +313,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
           "fontWeight": "700",
         }
       }
+      testID="header-slide-title-title"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
     </Text>

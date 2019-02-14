@@ -2,17 +2,15 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {getProgressionContent, getLevel} from '@coorpacademy/player-store';
 
-// @todo remove
-import imageLandscape from '../__fixtures__/assets/landscape-1.jpg';
+import type {StoreState} from '../redux/store';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
-import type {LevelType} from '../types';
-import {LEVEL_TYPE} from '../const';
 
 type ConnectedStateProps = {|
-  image?: File,
-  level?: LevelType,
-  discipline?: string
+  image?: string,
+  subtitle?: string,
+  title?: string
 |};
 
 type Props = {|
@@ -25,21 +23,31 @@ class HeaderSlideTitle extends React.Component<Props> {
   props: Props;
 
   render() {
-    const {image, level, discipline} = this.props;
+    const {image, subtitle, title} = this.props;
 
-    if (!image || !level || !discipline) {
+    if (!image || !subtitle || !title) {
       return null;
     }
 
-    return <HeaderSlideTitleComponent image={image} level={level} discipline={discipline} />;
+    return <HeaderSlideTitleComponent image={{uri: image}} subtitle={subtitle} title={title} />;
   }
 }
 
-const mapStateToProps = (): ConnectedStateProps => ({
-  // @todo make it dynamic
-  image: imageLandscape,
-  level: LEVEL_TYPE.BASE,
-  discipline: 'Big Data'
-});
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const defaultProps = {
+    image: undefined,
+    subtitle: undefined,
+    title: undefined
+  };
+
+  const content = getProgressionContent(state);
+  if (!content) return defaultProps;
+  const levelContent = getLevel(content.ref)(state);
+  return {
+    image: levelContent && levelContent.mediaUrl,
+    subtitle: levelContent && levelContent.levelTranslation,
+    title: levelContent && levelContent.name
+  };
+};
 
 export default connect(mapStateToProps)(HeaderSlideTitle);

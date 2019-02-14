@@ -12,6 +12,10 @@ export const createLevel = ({
   _id: 'foobarbaz',
   taggedNewUntil: '2018-12-08T09:07:19.302Z',
   timeAlloted: 15,
+  name: 'How to play on the platform?',
+  levelTranslation: 'Basic',
+  mediaUrl:
+    'https://static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/iphone__mockup-1531230955049.jpg',
   level: 'base',
   universalRef: ref,
   deliverCoachStatus: true,

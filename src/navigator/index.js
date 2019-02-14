@@ -8,7 +8,7 @@ import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
 import Header from '../containers/header';
-// import HeaderSlideTitle from '../containers/header-slide-title';
+import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
 import {changeScreen} from '../redux/actions/navigation';
@@ -28,7 +28,7 @@ const appNavigator = createStackNavigator(
           ...navigationOptions.headerStyle,
           backgroundColor: theme.colors.gray.extra
         },
-        // headerTitle: HeaderSlideTitle,
+        headerTitle: HeaderSlideTitle,
         headerRight: <HeaderSlideRight />
       }
     }

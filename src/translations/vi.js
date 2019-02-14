@@ -3,10 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  advanced: 'Nâng cao',
-  base: 'Cơ bản',
   clue: 'Gợi ý',
-  coach: 'Huấn luyện viên',
   congratulations: 'Chúc mừng bạn!',
   correction: 'Chỉnh sửa',
   didYouKnowThat: 'Bạn đã biết điều đó?',

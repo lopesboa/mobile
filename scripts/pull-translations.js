@@ -44,12 +44,6 @@ const fetchTranslations = (
 };
 
 const generate = async (locale: string) => {
-  const globalTranslations = await fetchTranslations(
-    locale,
-    'coorpacademy',
-    'core/locales',
-    'global.json'
-  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -63,10 +57,7 @@ const generate = async (locale: string) => {
     'global.json'
   );
   const translations: Translations = {
-    advanced: globalTranslations.module_level.advanced,
-    base: globalTranslations.module_level.base,
     clue: playerTranslations.Clue,
-    coach: globalTranslations.module_level.coach,
     congratulations: playerTranslations['Congratulations!'],
     correction: playerTranslations.Correction,
     didYouKnowThat: playerTranslations['Did you know that?'],

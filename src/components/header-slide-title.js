@@ -5,15 +5,12 @@ import {Text, View, StyleSheet, ImageBackground} from 'react-native';
 
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
-import type {LevelType} from '../types';
-import {LEVEL_TYPE} from '../const';
-import translations from '../translations';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
-  image: File,
-  level: LevelType,
-  discipline: string
+  image: {uri: string} | File,
+  subtitle: string,
+  title: string
 |};
 
 const styles = StyleSheet.create({
@@ -21,7 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     paddingVertical: theme.spacing.small,
-    paddingRight: theme.spacing.small,
+    paddingRight: theme.spacing.large,
     alignItems: 'center'
   },
   thumbnail: {
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
     paddingLeft: theme.spacing.tiny,
     flex: 1
   },
-  level: {
+  subtitle: {
     fontWeight: theme.fontWeight.bold,
     fontSize: 12
   },
@@ -47,21 +44,23 @@ const styles = StyleSheet.create({
   }
 });
 
-const HeaderSlide = ({image, level, discipline}: Props) => (
+const HeaderSlide = ({image, subtitle, title}: Props) => (
   <BrandThemeContext.Consumer>
     {brandTheme => (
-      <View style={[styles.container, {height: HEADER_HEIGHT}]}>
+      <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
         <View style={styles.thumbnail}>
-          <ImageBackground source={image} style={[styles.image, styles.thumbnail]} />
+          <ImageBackground
+            testID="header-slide-title-image"
+            source={image}
+            style={[styles.image, styles.thumbnail]}
+          />
         </View>
         <View style={styles.text}>
-          <Text style={[styles.level, {color: brandTheme.colors.primary}]} numberOfLines={1}>
-            {level === LEVEL_TYPE.BASE && translations.base}
-            {level === LEVEL_TYPE.ADVANCED && translations.advanced}
-            {level === LEVEL_TYPE.COACH && translations.coach}
+          <Text style={[styles.subtitle, {color: brandTheme.colors.primary}]} numberOfLines={1}>
+            {subtitle}
           </Text>
-          <Text style={styles.discipline} numberOfLines={1}>
-            {discipline}
+          <Text testID="header-slide-title-title" style={styles.discipline} numberOfLines={1}>
+            {title}
           </Text>
         </View>
       </View>

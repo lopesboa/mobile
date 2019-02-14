@@ -4,7 +4,7 @@
 
 import type {QuestionType, MediaType} from '@coorpacademy/progression-engine';
 
-import type {SpaceType, CardType, LevelType, ResourceType, Engine, ContentType} from './types';
+import type {SpaceType, CardType, ResourceType, Engine, ContentType} from './types';
 
 export const RESSOURCE_TYPE: {
   [string]: ResourceType
@@ -42,14 +42,6 @@ export const CARD_TYPE: {
   TIP: 'tip',
   KEY_POINT: 'keyPoint',
   CORRECTION: 'correction'
-};
-
-export const LEVEL_TYPE: {
-  [string]: LevelType
-} = {
-  BASE: 'base',
-  ADVANCED: 'advanced',
-  COACH: 'coach'
 };
 
 export const CONTENT_TYPE: {

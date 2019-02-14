@@ -31,6 +31,10 @@ const discipline4y8q7qLLN: Discipline = {
       deliverCoachStatus: true,
       timeAlloted: 5,
       level: 'base',
+      name: 'How to play on the platform?',
+      levelTranslation: 'Basic',
+      mediaUrl:
+        'https://static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/iphone__mockup-1531230955049.jpg',
       universalRef: 'mod_Nk71ScLUN',
       ref: 'mod_Nk71ScLUN',
       eligibleBattle: false,

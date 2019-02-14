@@ -3,10 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  advanced: '高级',
-  base: '基本',
   clue: '线索',
-  coach: '教练',
   congratulations: '恭喜！',
   correction: '修改',
   didYouKnowThat: '你知道吗？',

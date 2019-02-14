@@ -58,7 +58,10 @@ export type Level = $Exact<{|
   ...LevelAPI,
   _id: string,
   deliverCoachStatus: boolean,
-  taggedNewUntil: string
+  taggedNewUntil: string,
+  name: string,
+  mediaUrl: string,
+  levelTranslation: string
 |}>;
 
 export type Chapter = $Exact<{|

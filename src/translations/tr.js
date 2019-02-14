@@ -3,10 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  advanced: 'Gelişmiş',
-  base: 'Temel',
   clue: 'İpucu',
-  coach: 'Koç',
   congratulations: 'Tebrikler!',
   correction: 'Düzeltme',
   didYouKnowThat: 'Biliyor muydunuz?',

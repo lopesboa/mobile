@@ -3,10 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  advanced: '고급',
-  base: '기본',
   clue: '단서',
-  coach: '코치',
   congratulations: '축하합니다!',
   correction: '수정',
   didYouKnowThat: '귀하는 그것을 알았습니까?',

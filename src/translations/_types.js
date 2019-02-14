@@ -23,10 +23,7 @@ export type SupportedLanguage =
   | 'zh';
 
 export type Translations = {|
-  advanced: string,
-  base: string,
   clue: string,
-  coach: string,
   congratulations: string,
   correction: string,
   didYouKnowThat: string,

@@ -3,10 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  advanced: 'Продвинутый',
-  base: 'Основной',
   clue: 'Подсказка',
-  coach: 'Эксперт',
   congratulations: 'Поздравляем!',
   correction: 'Исправление',
   didYouKnowThat: 'Вы знали это?',
