@@ -98,22 +98,37 @@ jobs:
             - /usr/local/Cellar
 
       - restore_cache:
-          key: detox-v1-{{ arch }}
+          key: detox-v2-{{ arch }}
 
       - run:
           name: Detox framework
           command: |
-            yarn global add detox-cli
+            if yarn global list | grep 'detox-cli' > /dev/null; then
+              echo "Detox-cli already installed."
+              ln -s /usr/local/bin/detox $(yarn global dir)/node_modules/.bin/detox
+            else
+              echo "Detox-cli not installed."
+              yarn global add detox-cli
+            fi
             detox build-framework-cache
 
       - save_cache:
-          key: detox-v1-{{ arch }}
+          key: detox-v2-{{ arch }}
           paths:
             - ~/Library/Detox/ios
+            - $(yarn global dir)
+
+      - restore_cache:
+          key: ios-build-v1-{{ checksum "ios/Coorpacademy.xcodeproj/project.pbxproj" }}-{{ arch }}
 
       - run:
           name: Tests
           command: yarn test:end2end:ios:release
+
+      - save_cache:
+          key: ios-build-v1-{{ checksum "ios/Coorpacademy.xcodeproj/project.pbxproj" }}-{{ arch }}
+          paths:
+            - ios/build
 
   build_ios:
     macos:

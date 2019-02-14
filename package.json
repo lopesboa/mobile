@@ -48,6 +48,9 @@
     "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "pull:translations": "babel-node scripts/pull-translations.js"
   },
+  "engines": {
+    "yarn": "^1.12.3"
+  },
   "dependencies": {
     "@coorpacademy/nova-icons": "^2.6.0",
     "@coorpacademy/player-services": "^2.3.9",
