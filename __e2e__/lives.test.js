@@ -111,25 +111,26 @@ describe('Lives', () => {
     });
   });
 
-  // describe('Adaptive', () => {
-  //   beforeAll(async () => {
-  //     await waitFor(element(by.id('catalog-item-adaptive-dis-1'))).toBeVisible();
-  //     await element(by.id('catalog-item-adaptive-dis-1')).tap();
-  //   });
-  //
-  //   it('should not see lives', async () => {
-  //     await weExpect(element(by.id('lives'))).toBeNotVisible();
-  //   });
-  //
-  //   it('should see a button to continue', async () => {
-  //     await waitFor(element(by.id('correction-error'))).toBeVisible();
-  //     await weExpect(element(by.id('button-next-question'))).toBeVisible();
-  //   });
-  //
-  //   it('should back to the question', async () => {
-  //     await element(by.id('button-next-question')).tap();
-  //     await waitFor(element(by.id('question'))).toBeVisible();
-  //     await weExpect(element(by.id('question'))).toBeVisible();
-  //   });
-  // });
+  describe('Adaptive', () => {
+    beforeAll(async () => {
+      await waitFor(element(by.id('catalog-item-adaptive-dis-1'))).toBeVisible();
+      await element(by.id('catalog-item-adaptive-dis-1')).tap();
+    });
+
+    it('should not see lives', async () => {
+      await weExpect(element(by.id('lives'))).toBeNotVisible();
+    });
+
+    it('should see a button to continue', async () => {
+      await wrongAnswer();
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('button-next-question'))).toBeVisible();
+    });
+
+    it('should back to the question', async () => {
+      await element(by.id('button-next-question')).tap();
+      await waitFor(element(by.id('question'))).toBeVisible();
+      await weExpect(element(by.id('question'))).toBeVisible();
+    });
+  });
 });

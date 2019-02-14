@@ -8,7 +8,6 @@ import {
   getAnswerValues,
   getChoices,
   getCurrentProgression,
-  getCurrentProgressionId,
   getCurrentSlide,
   getLives,
   getCurrentCorrection,
@@ -42,12 +41,13 @@ type ConnectedStateProps = {|
   keyPoint?: string,
   lives?: number,
   isFinished?: boolean,
+  hasLives: boolean,
   isValidating: boolean
 |};
 
 type ConnectedDispatchProps = {|
-  editAnswer: (item: Choice) => (dispatch: Dispatch, getState: GetState) => void,
-  validateAnswer: () => (dispatch: Dispatch, getState: GetState) => void
+  editAnswer: typeof editAnswer,
+  validateAnswer: typeof validateAnswer
 |};
 
 type Props = {|
@@ -97,7 +97,8 @@ class QuestionScreen extends React.PureComponent<Props> {
       lives,
       answers,
       userAnswers,
-      isFinished
+      isFinished,
+      hasLives
     } = this.props;
 
     const correctionParams: CorrectionScreenParams = {
@@ -110,7 +111,8 @@ class QuestionScreen extends React.PureComponent<Props> {
       tip,
       keyPoint,
       lives,
-      isFinished
+      isFinished,
+      hasLives
     };
 
     navigation.navigate('Correction', correctionParams);
@@ -172,12 +174,14 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       tip: undefined,
       keyPoint: undefined,
       lives: undefined,
+      hasLives: false,
       isFinished: undefined,
       isValidating: false
     };
   }
   const progression = getCurrentProgression(state);
-  const lives = getLives(state);
+  const {hide: hideLives, count: livesCount} = getLives(state);
+  const lives = hideLives ? undefined : livesCount;
   const correction = getCurrentCorrection(state);
   const media = getQuestionMedia(state);
   const currentRoute = getRoute(state);
@@ -203,7 +207,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const isExtraLife = nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
   const isFinished =
     isExtraLife || [CONTENT_TYPE.SUCCESS, CONTENT_TYPE.FAILURE].includes(nextContent.type);
-
+  const hasLives = !hideLives;
   const slide = isFinished || openingCorrection ? getPreviousSlide(state) : getCurrentSlide(state);
 
   if (!slide) {
@@ -220,7 +224,8 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       isValidating,
       tip: undefined,
       keyPoint: undefined,
-      lives: lives !== null ? lives : undefined,
+      lives,
+      hasLives,
       isFinished
     };
   }
@@ -244,39 +249,17 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     media,
     isCorrect,
     isFinished,
+    hasLives,
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,
-    lives: lives !== null ? lives : undefined
+    lives
   };
-};
-const _editAnswer = (item: Choice) => (dispatch: Dispatch, getState: GetState) => {
-  const state = getState();
-  const slide = getCurrentSlide(state);
-  const progressionId = getCurrentProgressionId(state);
-
-  if (slide && progressionId) {
-    const userAnswers = getAnswerValues(slide, state);
-    const questionType = getQuestionType(slide);
-
-    dispatch(editAnswer(userAnswers, questionType, progressionId, item));
-  }
-};
-
-const _validateAnswer = () => (dispatch: Dispatch, getState: GetState) => {
-  const state = getState();
-  const slide = getCurrentSlide(state);
-  const currentProgressionId = getCurrentProgressionId(state);
-
-  if (slide && currentProgressionId) {
-    const answer = getAnswerValues(slide, state);
-    dispatch(validateAnswer(currentProgressionId, {answer}));
-  }
 };
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  editAnswer: _editAnswer,
-  validateAnswer: _validateAnswer
+  editAnswer,
+  validateAnswer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionScreen);

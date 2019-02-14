@@ -20,6 +20,7 @@ export type Params = {|
   isCorrect: boolean,
   keyPoint: string,
   lives?: number,
+  hasLives: boolean,
   isFinished: boolean
 |};
 
@@ -58,13 +59,13 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
   handleButtonPress = () => {
     const {navigation} = this.props;
-    const {isCorrect, isFinished, lives} = navigation.state.params;
+    const {isCorrect, isFinished, lives, hasLives} = navigation.state.params;
 
     this.props.selectProgression();
 
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
-        isCorrect: (lives !== undefined && lives > 0) || isCorrect
+        isCorrect: isCorrect || (hasLives && lives > 0)
       };
       navigation.navigate('LevelEnd', levelEndParams);
     } else {

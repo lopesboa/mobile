@@ -8,7 +8,8 @@ import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
 
 type ConnectedStateProps = {|
-  count?: number
+  hide: boolean,
+  count: number
 |};
 
 type Props = {|
@@ -21,9 +22,9 @@ class HeaderSlideRight extends React.Component<Props> {
   props: Props;
 
   render() {
-    const {count} = this.props;
+    const {hide, count} = this.props;
 
-    if (count === undefined) {
+    if (hide) {
       return null;
     }
 
@@ -34,11 +35,10 @@ class HeaderSlideRight extends React.Component<Props> {
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
   if (!progression) {
-    return {count: 0};
+    return {hide: true, count: 0};
   }
-  return {
-    count: getLives(state) || 0
-  };
+
+  return getLives(state);
 };
 
 export default connect(mapStateToProps)(HeaderSlideRight);
