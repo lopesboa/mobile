@@ -82,8 +82,14 @@ jobs:
       - run:
           name: Brew dependencies
           command: |
-            brew tap wix/brew
-            brew install applesimutils
+            if brew ls --versions applesimutils > /dev/null; then
+              echo "Applesimutils already installed."
+              brew link applesimutils
+            else
+              echo "Applesimutils not installed."
+              brew tap wix/brew
+              brew install applesimutils
+            fi
 
       - save_cache:
           key: brew-v2-ios-{{ arch }}
