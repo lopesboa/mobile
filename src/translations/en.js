@@ -4,6 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'Clue',
+  clueStarsToLoose:
+    'Unlocking the clue reduces the stars you can gain on this question by {{count}} (if you get it right)',
   congratulations: 'Congratulations!',
   correction: 'Correction',
   didYouKnowThat: 'Did you know that?',
@@ -19,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'You are out of lives!',
   question: 'Question',
   retryLevel: 'Retry level',
+  seeClue: 'See clue',
   validate: 'Validate',
   wrongAnswer: 'Wrong answer',
   yourAnswer: 'Your answer:',

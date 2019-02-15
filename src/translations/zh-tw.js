@@ -4,6 +4,7 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: '線索',
+  clueStarsToLoose: '解開線索所減少的星星，您可以在此問題上贏回{{count}}顆星星（如果您答對的話）',
   congratulations: '恭喜！',
   correction: '正確解答',
   didYouKnowThat: '您知道嗎？',
@@ -19,6 +20,7 @@ const translations: Translations = {
   outOfLives: '你沒有生命了！',
   question: '問題',
   retryLevel: '重試級別',
+  seeClue: '看到線索',
   validate: '驗證',
   wrongAnswer: '錯誤答案',
   yourAnswer: '您的答案：',

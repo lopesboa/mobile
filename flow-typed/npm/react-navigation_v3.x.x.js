@@ -455,7 +455,7 @@ declare module 'react-navigation' {
     backBehavior?: 'none' | 'initialRoute', // defaults `initialRoute`
   |};
 
-  declare type TabScene = {
+  declare export type TabScene = {
     route: NavigationRoute,
     focused: boolean,
     index: number,

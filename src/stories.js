@@ -8,6 +8,8 @@ require('./components/card-correction.stories.js');
 require('./components/card.stories.js');
 require('./components/cards.stories.js');
 require('./components/catalog.stories.js');
+require('./components/clue-front-item.stories.js');
+require('./components/clue.stories.js');
 require('./components/correction.stories.js');
 require('./components/gradient.stories.js');
 require('./components/header-back-image.stories.js');

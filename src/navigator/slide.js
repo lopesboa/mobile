@@ -11,7 +11,7 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import Progression from '../containers/progression';
-import TabBar from '../containers/tab-bar';
+import TabBarSlide from '../containers/tab-bar-slide';
 import theme from '../modules/theme';
 import translations from '../translations';
 import CorrectionScreen from '../screens/correction';
@@ -100,7 +100,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     // force to bottom (Android)
     tabBarPosition: 'bottom',
     swipeEnabled: false,
-    tabBarComponent: TabBar
+    tabBarComponent: TabBarSlide
   }
 );
 

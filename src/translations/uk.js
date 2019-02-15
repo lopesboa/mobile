@@ -4,6 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'Підказка',
+  clueStarsToLoose:
+    'Відкриття підказки зменшує кількість зірок за це питання на {{count}} (за умови правильної відповіді)',
   congratulations: 'Вітаємо!',
   correction: 'Виправлення',
   didYouKnowThat: 'Ви знали це?',
@@ -19,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'У Вас закінчилися життя!',
   question: 'Питання',
   retryLevel: 'Пройти рівень ще раз',
+  seeClue: 'Переглянути підказку',
   validate: 'Підтвердити',
   wrongAnswer: 'Неправильна відповідь',
   yourAnswer: 'Ваша відповідь:',

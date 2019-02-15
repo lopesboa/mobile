@@ -58,6 +58,7 @@ const generate = async (locale: string) => {
   );
   const translations: Translations = {
     clue: playerTranslations.Clue,
+    clueStarsToLoose: componentsTranslations.clue_stars_to_loose,
     congratulations: playerTranslations['Congratulations!'],
     correction: playerTranslations.Correction,
     didYouKnowThat: playerTranslations['Did you know that?'],
@@ -73,6 +74,7 @@ const generate = async (locale: string) => {
     outOfLives: playerTranslations['You are out of lives!'],
     question: playerTranslations.Question,
     retryLevel: playerTranslations['Retry level'],
+    seeClue: componentsTranslations['See clue'],
     validate: playerTranslations.Validate,
     wrongAnswer: playerTranslations['Wrong answer'],
     yourAnswer: playerTranslations['Your answer_'],

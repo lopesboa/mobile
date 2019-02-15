@@ -4,6 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'Pista',
+  clueStarsToLoose:
+    'Desbloquear la pista reduce en {{count}} las estrellas que puedes ganar por esta pregunta (si la aciertas)',
   congratulations: '¡Felicidades!',
   correction: 'Corrección',
   didYouKnowThat: '¿Lo sabías?',
@@ -19,6 +21,7 @@ const translations: Translations = {
   outOfLives: '¡No te quedan vidas!',
   question: 'Pregunta',
   retryLevel: 'Reintentar nivel',
+  seeClue: 'Ver pista',
   validate: 'Validar',
   wrongAnswer: 'Respuesta incorrecta',
   yourAnswer: 'Su respuesta:',

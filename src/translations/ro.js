@@ -4,6 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'Indiciu',
+  clueStarsToLoose:
+    'Utilizarea indiciului va lua {{count}} din numărul maxim de stele pe care le puteți obține răspunzând la această întrebare (dacă răspunsul este corect)',
   congratulations: 'Felicitări!',
   correction: 'Corectură',
   didYouKnowThat: 'Știați asta?',
@@ -19,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   question: 'Întrebare',
   retryLevel: 'Încercați din nou acest nivel',
+  seeClue: 'Arată indiciul',
   validate: 'Validează',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: 'Răspunsul dumneavoastră:',

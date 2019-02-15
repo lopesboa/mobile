@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Clue Default 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "padding": 24,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <View
+      testID="question-title"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    testID="card-flippable"
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "height": 270,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 100,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "perspective": 800,
+              },
+              Object {
+                "rotateY": "0deg",
+              },
+            ],
+            "zIndex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+                "height": 270,
+                "padding": 16,
+                "width": "100%",
+              },
+              Object {
+                "backgroundColor": "#546E7A",
+                "flex": 1,
+              },
+            ]
+          }
+          testID="clue-front"
+        >
+          <View
+            style={
+              Object {
+                "flexGrow": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 22,
+                  "fontStyle": "italic",
+                  "textAlign": "center",
+                }
+              }
+              testID="clue-advice"
+            >
+              Unlocking the clue reduces the stars you can gain on this question by 2 (if you get it right)
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          />
+          <View
+            testID="clue-button"
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "stretch",
+                  "backgroundColor": "#FFFFFF",
+                  "borderRadius": 32,
+                  "borderWidth": 0,
+                  "flexDirection": "row",
+                  "height": 54,
+                  "justifyContent": "center",
+                  "marginBottom": 0,
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "textAlign": "center",
+                    },
+                    Array [
+                      Object {
+                        "color": "#FFFFFF",
+                        "fontSize": 18,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "color": "#546E7A",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                See clue
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "perspective": -800,
+              },
+              Object {
+                "rotateY": "180deg",
+              },
+            ],
+            "zIndex": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+                "height": 270,
+                "padding": 16,
+                "width": "100%",
+              },
+              Object {
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+              },
+            ]
+          }
+          testID="clue-back"
+        >
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 22,
+                      "fontStyle": "italic",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  This is a clue
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

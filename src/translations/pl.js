@@ -4,7 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'Wskazówka',
-
+  clueStarsToLoose:
+    'Odblokowanie wskazówki zmniejsza liczbę gwiazdek, jakie możesz zdobyć w tym pytaniu o {{count}} (jeżeli odpowiesz prawidłowo)',
   congratulations: 'Gratulacje!',
   correction: 'Korekta',
   didYouKnowThat: 'Czy wiedziałeś(-łaś) o tym?',
@@ -20,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Nie masz już więcej żyć!',
   question: 'Pytanie',
   retryLevel: 'Ponów próbę',
+  seeClue: 'Zobacz wskazówkę',
   validate: 'Zweryfikuj',
   wrongAnswer: 'Błędna odpowiedź',
   yourAnswer: 'Twoja odpowiedź:',

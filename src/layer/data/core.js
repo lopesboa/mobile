@@ -4,6 +4,7 @@ import {AsyncStorage} from 'react-native';
 
 import basic from '../../__fixtures__/discipline-bundle/basic';
 import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
+import noClue from '../../__fixtures__/discipline-bundle/no-clue';
 import onboarding from '../../__fixtures__/onboarding-course';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {BundledDiscipline, Resource, ResourceType, Level, Discipline} from './_types';
@@ -106,6 +107,10 @@ export const fetchDisciplineBundle = (
 
   if (ref === 'fixtures_adaptive') {
     return Promise.resolve(adaptive);
+  }
+
+  if (ref === 'fixtures_no_clue') {
+    return Promise.resolve(noClue);
   }
 
   if (ref === 'fixtures_onboarding') {

@@ -1468,10 +1468,10 @@
     "@coorpacademy/progression-engine" "10.2.7"
     lodash "^4.17.4"
 
-"@coorpacademy/player-store@^2.4.6":
-  version "2.4.6"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-2.4.6.tgz#3b4c01b9e2f1ba4218ce30bf11bb17d70658be5a"
-  integrity sha512-2mCQirOPSRQgyE88x7SeNGrj8PCOKxzgmdabczP+gQ8UjUAT3jacDqfNATeH51edTAhia9Po4mr5aUdyeSZAnw==
+"@coorpacademy/player-store@^2.4.7":
+  version "2.4.7"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-2.4.7.tgz#4140daf3c82207c1a9952432fe12cceaa94e3760"
+  integrity sha512-0MWdEV3goG1H9op6Hup2AxtFr8izuldHi0QwYpE5J6UOg8zr6hu1W8WiNK9ikYYfwF7hD4wj0MxSJFfmHdANZg==
   dependencies:
     "@coorpacademy/progression-engine" "10.2.7"
     "@coorpacademy/redux-task" "0.0.10"
@@ -10609,6 +10609,13 @@ react-modal@^3.6.1:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
+
+react-native-card-flip@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/react-native-card-flip/-/react-native-card-flip-1.0.4.tgz#cf01fccbb98697842de7134a4f7b51ee69da430a"
+  integrity sha512-CbCLrcGxEkHP87Aid7YBZXQiiXin/dH8ve4UI4Xin7/fpmoWaSv2bRsCgcCvRsfYXvkyx1pgdBOBlGqLJy52cA==
+  dependencies:
+    prop-types "15.5.10"
 
 react-native-gesture-handler@^1.0.0, react-native-gesture-handler@^1.0.10:
   version "1.0.15"

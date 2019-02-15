@@ -9,15 +9,17 @@ import {image} from './medias';
 export const createSlide = ({
   ref,
   chapterId,
-  question
+  question,
+  clue
 }: {
   ref: string,
   chapterId: string,
-  question: Question
+  question: Question,
+  clue?: string | null
 }): Slide => ({
   _id: ref,
   universalRef: ref,
-  clue: 'Une question de gestion.',
+  clue: clue === null ? undefined : clue || 'Une question de gestion.',
   klf:
     'Open Compute Project permet de diffuser les solutions les plus efficaces de gestion énergétique dans les data centers et ainsi de réduire la consommation des grandes entreprises.',
   tips:

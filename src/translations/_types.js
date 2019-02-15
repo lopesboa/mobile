@@ -24,6 +24,7 @@ export type SupportedLanguage =
 
 export type Translations = {|
   clue: string,
+  clueStarsToLoose: string,
   congratulations: string,
   correction: string,
   didYouKnowThat: string,
@@ -39,6 +40,7 @@ export type Translations = {|
   outOfLives: string,
   question: string,
   retryLevel: string,
+  seeClue: string,
   validate: string,
   wrongAnswer: string,
   yourAnswer: string,

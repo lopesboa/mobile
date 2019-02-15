@@ -54,7 +54,7 @@
   "dependencies": {
     "@coorpacademy/nova-icons": "^2.6.0",
     "@coorpacademy/player-services": "^2.3.9",
-    "@coorpacademy/player-store": "^2.4.6",
+    "@coorpacademy/player-store": "^2.4.7",
     "@coorpacademy/progression-engine": "^10.2.7",
     "@coorpacademy/react-native-deck-swiper": "^1.5.27",
     "@coorpacademy/react-native-video-controls": "^2.4.2",
@@ -63,6 +63,7 @@
     "hoist-non-react-statics": "^3.2.1",
     "react": "16.4.1",
     "react-native": "^0.56.0",
+    "react-native-card-flip": "^1.0.4",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localization": "^2.0.3",

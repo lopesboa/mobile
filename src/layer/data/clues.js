@@ -9,8 +9,8 @@ export const getClue = (userLanguage: SupportedLanguage) => async (
   id: string
 ): Promise<string | void> => {
   // $FlowFixMe union type
-  const result: Slide = await getItem(CONTENT_TYPE.SLIDE, id, userLanguage);
-  return result.clue;
+  const slide: Slide = await getItem(CONTENT_TYPE.SLIDE, id, userLanguage);
+  return slide && slide.clue;
 };
 
 export default getClue;

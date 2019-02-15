@@ -4,6 +4,8 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   clue: 'İpucu',
+  clueStarsToLoose:
+    'İpucunu açmanız halinde bu sorudan {{count}} daha az yıldız kazanırsınız (eğer doğru yanıtlarsanız)',
   congratulations: 'Tebrikler!',
   correction: 'Düzeltme',
   didYouKnowThat: 'Biliyor muydunuz?',
@@ -19,6 +21,7 @@ const translations: Translations = {
   outOfLives: 'Canınız bitti!',
   question: 'Soru',
   retryLevel: 'Seviyeyi  yeniden dene',
+  seeClue: 'İpucunu gör',
   validate: 'Onayla',
   wrongAnswer: 'Yanlış cevap',
   yourAnswer: 'Yanıtınız:',

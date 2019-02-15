@@ -88,7 +88,6 @@ export type Slide = $Exact<{|
   ...SlideAPI,
   lessons: Array<Lesson>,
   __v: number,
-  clue?: string,
   universalRef: string,
   authors: Array<Author>
 |}>;
