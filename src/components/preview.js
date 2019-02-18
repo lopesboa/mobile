@@ -26,7 +26,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   pdf: {
-    padding: theme.spacing.base
+    width: '45%'
+  },
+  pdfIcon: {
+    alignSelf: 'center'
   }
 });
 
@@ -40,9 +43,11 @@ const Preview = ({type, source, onPress}: Props) => (
       )}
       {type === RESSOURCE_TYPE.PDF && (
         <View style={styles.pdf} testID="preview-pdf">
-          <PDFIcon color={theme.colors.white} height={70} width={70} />
+          <View testID="preview-pdf-icon" style={styles.pdfIcon}>
+            <PDFIcon color={theme.colors.white} height={45} width={45} />
+          </View>
           <Space type="base" />
-          <Button isInverted onPress={onPress}>
+          <Button isInverted isInlined testID="button-open-pdf" onPress={onPress}>
             {translations.open}
           </Button>
         </View>

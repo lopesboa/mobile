@@ -116,6 +116,8 @@ android {
 }
 
 dependencies {
+    implementation project(':rn-fetch-blob')
+    implementation project(':react-native-pdf')
     implementation project(':react-native-orientation-locker')
     implementation project(':react-native-video')
     implementation project(':react-native-localization')

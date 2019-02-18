@@ -12,11 +12,13 @@ import type {WithLayoutProps} from '../containers/with-layout';
 import {getCleanUri} from '../modules/uri';
 import QuestionTitle from './question-title';
 import Space from './space';
+import Preview from './preview';
 
 type Props = {|
   ...WithLayoutProps,
   header: string,
-  resources: Array<LessonType>
+  resources: Array<LessonType>,
+  onPDFButtonPress: (url: string, description: string) => void
 |};
 
 const styles = StyleSheet.create({
@@ -29,26 +31,58 @@ const styles = StyleSheet.create({
   }
 });
 
-const Lesson = ({layout, header, resources}: Props) => {
-  // @todo other US, iterate over resources
-  const resource: LessonType = resources.filter(item => item.type === RESSOURCE_TYPE.VIDEO)[0];
-  const video = resource && resource.mediaUrl && getCleanUri(resource.mediaUrl);
-  const poster = resource && getCleanUri(resource.poster);
+class Lesson extends React.PureComponent<Props> {
+  props: Props;
 
-  return (
-    <View testID="lesson" style={styles.container}>
-      <View style={styles.questionContainer}>
-        <QuestionTitle>{header}</QuestionTitle>
+  handlePDFButtonPress = (url: string, description: string) => () => {
+    const {onPDFButtonPress} = this.props;
+
+    onPDFButtonPress(url, description);
+  };
+
+  render() {
+    const {layout, header, resources} = this.props;
+
+    // @todo other US, iterate over resources
+    const resourceVideo: LessonType = resources.filter(
+      item => item.type === RESSOURCE_TYPE.VIDEO
+    )[0];
+    const videoUrl = resourceVideo && resourceVideo.mediaUrl && getCleanUri(resourceVideo.mediaUrl);
+    const videoPoster = resourceVideo && getCleanUri(resourceVideo.poster);
+
+    const resourcePDF: LessonType = resources.filter(item => item.type === RESSOURCE_TYPE.PDF)[0];
+    const pdfUrl = resourcePDF && getCleanUri(resourcePDF.mediaUrl);
+    const pdfPoster = resourcePDF && getCleanUri(resourcePDF.poster);
+    const pdfDescription = resourcePDF && resourcePDF.description;
+
+    const height = layout && layout.width / (16 / 9);
+
+    return (
+      <View testID="lesson" style={styles.container}>
+        <View style={styles.questionContainer}>
+          <QuestionTitle>{header}</QuestionTitle>
+        </View>
+        <Space type="base" />
+        {videoUrl &&
+          videoPoster &&
+          height && <Video source={{uri: videoUrl}} preview={{uri: videoPoster}} height={height} />}
+        <Space type="base" />
+        {pdfPoster &&
+          pdfUrl &&
+          pdfDescription &&
+          height && (
+            <View style={{height}}>
+              <Preview
+                type={RESSOURCE_TYPE.PDF}
+                source={{uri: pdfPoster}}
+                onPress={this.handlePDFButtonPress(pdfUrl, pdfDescription)}
+              />
+            </View>
+          )}
       </View>
-      <Space type="base" />
-      {video &&
-        poster &&
-        layout && (
-          <Video source={{uri: video}} preview={{uri: poster}} height={layout.width / (16 / 9)} />
-        )}
-    </View>
-  );
-};
+    );
+  }
+}
 
 export {Lesson as Component};
 export default withLayout(Lesson);

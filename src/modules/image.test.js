@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import {getImageDimensions} from './image';
 import type {Dimensions} from './image';

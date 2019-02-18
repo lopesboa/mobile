@@ -36,3 +36,28 @@ NativeModules.ReactLocalization = {
 
 // react-native-video-controls
 jest.mock('react-native-video', () => 'Mock$ReactNativeVideo');
+
+// react-native-pdf
+jest.mock('rn-fetch-blob', () => ({
+  DocumentDir: () => {},
+  fetch: () => {},
+  base64: () => {},
+  android: () => {},
+  ios: () => {},
+  config: () => {},
+  session: () => {},
+  fs: {
+    dirs: {
+      MainBundleDir: () => {},
+      CacheDir: () => {},
+      DocumentDir: () => {}
+    }
+  },
+  wrap: () => {},
+  polyfill: () => {},
+  JSONStream: () => {}
+}));
+
+NativeModules.PdfViewManager = {
+  supportPDFKit: callback => callback(false)
+};

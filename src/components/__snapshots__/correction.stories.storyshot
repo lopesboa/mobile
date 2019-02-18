@@ -1839,13 +1839,14 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -3299,13 +3300,14 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -5132,13 +5134,14 @@ exports[`Storyshots Correction Good answer 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -6565,13 +6568,14 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -8425,13 +8429,14 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -10258,13 +10263,14 @@ exports[`Storyshots Correction Last good answer 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -11691,13 +11697,14 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -13416,13 +13423,14 @@ exports[`Storyshots Correction With only one answer 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]
@@ -15330,13 +15338,14 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
-                    "fontSize": 18,
+                    "fontSize": 17,
                     "fontWeight": "700",
                     "textAlign": "center",
                   },
                   Object {
                     "color": "#546E7A",
                   },
+                  undefined,
                   undefined,
                 ],
               ]

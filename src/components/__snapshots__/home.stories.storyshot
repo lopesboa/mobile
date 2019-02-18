@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Home Default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-end",
+      "padding": 24,
+    }
+  }
+  testID="home"
+>
+  <View
+    testID="catalog"
+  />
+</View>
+`;

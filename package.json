@@ -68,13 +68,15 @@
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localization": "^2.0.3",
     "react-native-orientation-locker": "^1.1.1",
+    "react-native-pdf": "5.0.8",
     "react-native-render-html": "3",
     "react-native-svg": "^6.0.0",
     "react-native-video": "3.2.1",
     "react-navigation": "^3.0.1",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "rn-fetch-blob": "0.10.13"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",

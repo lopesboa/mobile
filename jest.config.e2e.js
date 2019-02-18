@@ -7,5 +7,6 @@ module.exports = {
   },
   setupFiles: ['./jest-setup.js'],
   setupTestFrameworkScriptFile: './__e2e__/init.js',
-  bail: true
+  bail: true,
+  verbose: true
 };

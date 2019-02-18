@@ -43,10 +43,11 @@ exports[`Storyshots Catalog Default 1`] = `
             Array [
               Object {
                 "color": "#FFFFFF",
-                "fontSize": 18,
+                "fontSize": 17,
                 "fontWeight": "700",
                 "textAlign": "center",
               },
+              undefined,
               undefined,
               undefined,
             ],
@@ -104,10 +105,11 @@ exports[`Storyshots Catalog Default 1`] = `
             Array [
               Object {
                 "color": "#FFFFFF",
-                "fontSize": 18,
+                "fontSize": 17,
                 "fontWeight": "700",
                 "textAlign": "center",
               },
+              undefined,
               undefined,
               undefined,
             ],

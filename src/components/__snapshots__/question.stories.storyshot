@@ -487,12 +487,13 @@ exports[`Storyshots Question Option selected 1`] = `
               Array [
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 18,
+                  "fontSize": 17,
                   "fontWeight": "700",
                   "textAlign": "center",
                 },
                 undefined,
                 false,
+                undefined,
               ],
             ]
           }
@@ -977,6 +978,7 @@ exports[`Storyshots Question QCM 1`] = `
                 "backgroundColor": "#00B0FF",
               },
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -996,7 +998,7 @@ exports[`Storyshots Question QCM 1`] = `
               Array [
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 18,
+                  "fontSize": 17,
                   "fontWeight": "700",
                   "textAlign": "center",
                 },
@@ -1004,6 +1006,7 @@ exports[`Storyshots Question QCM 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
               ],
             ]
           }
@@ -1650,6 +1653,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 "backgroundColor": "#00B0FF",
               },
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -1669,7 +1673,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               Array [
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 18,
+                  "fontSize": 17,
                   "fontWeight": "700",
                   "textAlign": "center",
                 },
@@ -1677,6 +1681,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
               ],
             ]
           }
@@ -2206,6 +2211,7 @@ exports[`Storyshots Question With image 1`] = `
                 "backgroundColor": "#00B0FF",
               },
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -2225,7 +2231,7 @@ exports[`Storyshots Question With image 1`] = `
               Array [
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 18,
+                  "fontSize": 17,
                   "fontWeight": "700",
                   "textAlign": "center",
                 },
@@ -2233,6 +2239,7 @@ exports[`Storyshots Question With image 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
               ],
             ]
           }

@@ -13,6 +13,7 @@ import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
+import pdfNavigator from './pdf';
 import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
 
 const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
@@ -47,7 +48,8 @@ const appNavigator = createStackNavigator(
 const navigator = createStackNavigator(
   {
     App: {screen: appNavigator},
-    SlideModal: {screen: slideModalsNavigator}
+    SlideModal: {screen: slideModalsNavigator},
+    PdfModal: {screen: pdfNavigator}
   },
   {
     defaultNavigationOptions: navigationOptionsWithoutHeader,

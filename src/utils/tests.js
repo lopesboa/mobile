@@ -4,6 +4,7 @@ import * as React from 'react';
 import {Provider} from 'react-redux';
 
 import createStore from '../redux';
+import type {Layout} from '../containers/with-layout';
 
 export const store = createStore();
 
@@ -23,3 +24,5 @@ export const fakeError = new Error('Fake error');
 
 export const sleep = (duration: number = 10) =>
   new Promise(resolve => setTimeout(resolve, duration));
+
+export const fakeLayout: Layout = {width: 320, height: 768};
