@@ -26,6 +26,7 @@ class NetworkInfoListener extends React.PureComponent<Props> {
     } else {
       // @todo handle languages there dynamically
       this.props.fetchDisciplineBundle('fixtures_onboarding', ['fr', 'en']);
+      this.props.fetchDisciplineBundle('fixtures_bescherelle', ['fr', 'en']);
     }
   }
 

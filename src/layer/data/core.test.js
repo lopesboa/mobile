@@ -6,6 +6,7 @@ import basicCourse from '../../__fixtures__/discipline-bundle/basic';
 import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
 import noClueCourse from '../../__fixtures__/discipline-bundle/no-clue';
 import onboardingCourse from '../../__fixtures__/onboarding-course';
+import bescherelleCourse from '../../__fixtures__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
@@ -281,6 +282,11 @@ describe('Data Layer Core', () => {
       const result = fetchDisciplineBundle('fixtures_onboarding', 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(onboardingCourse);
+    });
+    it('should fetch bescherelle', () => {
+      const result = fetchDisciplineBundle('fixtures_bescherelle', 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(bescherelleCourse);
     });
 
     it('should trigger error', () => {

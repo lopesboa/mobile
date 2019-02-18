@@ -44,7 +44,7 @@ class HomeScreen extends React.PureComponent<Props> {
 
   render() {
     return (
-      <Screen testID="home-screen" noScroll>
+      <Screen testID="home-screen">
         <Home
           onDisciplinePress={this.handleDisciplinePress}
           onChapterPress={this.handleChapterPress}

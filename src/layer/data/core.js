@@ -6,6 +6,7 @@ import basic from '../../__fixtures__/discipline-bundle/basic';
 import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
 import noClue from '../../__fixtures__/discipline-bundle/no-clue';
 import onboarding from '../../__fixtures__/onboarding-course';
+import bescherelle from '../../__fixtures__/bescherelle-course';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {BundledDiscipline, Resource, ResourceType, Level, Discipline} from './_types';
 import {CONTENT_TYPE} from './_const';
@@ -115,6 +116,10 @@ export const fetchDisciplineBundle = (
 
   if (ref === 'fixtures_onboarding') {
     return Promise.resolve(onboarding);
+  }
+
+  if (ref === 'fixtures_bescherelle') {
+    return Promise.resolve(bescherelle);
   }
 
   // Implement fetching logic here
