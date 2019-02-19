@@ -1556,7 +1556,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "195d4b39-5a42-4048-a5dc-237bb6a34be7";
+				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy.app/Coorpacademy";
 			};
@@ -1615,7 +1615,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
-				PROVISIONING_PROFILE = "195d4b39-5a42-4048-a5dc-237bb6a34be7";
+				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1692,7 +1692,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "195d4b39-5a42-4048-a5dc-237bb6a34be7";
+				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1768,7 +1768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "195d4b39-5a42-4048-a5dc-237bb6a34be7";
+				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy-tvOS.app/Coorpacademy-tvOS";

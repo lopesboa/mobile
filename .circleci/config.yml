@@ -155,14 +155,14 @@ jobs:
             - ios/gems
 
       - restore_cache:
-          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v2-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v2-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
             - ~/Library/Caches/CocoaPods
             - ios/Pods
@@ -251,9 +251,7 @@ jobs:
           at: ~/app
       - run:
           name: Cloning internal store
-          command: |
-            git clone https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git store
-            git reset --hard origin/master
+          command: git clone https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git store
       - persist_to_workspace:
           root: ~/app
           paths:
@@ -269,7 +267,9 @@ jobs:
           at: ~/app
       - run:
           name: Fetching branch
-          command: git reset --hard origin/master
+          command: |
+            cd store
+            git pull origin master
       - run:
           name: Deploy to internal store
           command: |
@@ -302,7 +302,9 @@ jobs:
           command: cd store
       - run:
           name: Fetching branch
-          command: git reset --hard origin/master
+          command: |
+            cd store
+            git pull origin master
       - run:
           name: Deploy to internal store
           command: |
