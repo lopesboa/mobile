@@ -5,8 +5,7 @@ exports[`Storyshots Clue Default 1`] = `
   style={
     Object {
       "flexGrow": 1,
-      "justifyContent": "space-between",
-      "padding": 24,
+      "paddingVertical": 24,
     }
   }
 >
@@ -60,6 +59,7 @@ exports[`Storyshots Clue Default 1`] = `
     style={
       Object {
         "flex": 1,
+        "padding": 24,
       }
     }
     testID="card-flippable"
@@ -266,7 +266,6 @@ exports[`Storyshots Clue Default 1`] = `
                     Object {
                       "color": "#FFFFFF",
                       "fontSize": 22,
-                      "fontStyle": "italic",
                       "textAlign": "center",
                     }
                   }

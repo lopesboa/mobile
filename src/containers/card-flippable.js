@@ -9,7 +9,8 @@ import {BrandThemeContext} from '../components/brand-theme-provider';
 const HEIGHT = 270;
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    padding: theme.spacing.base
   },
   cardFlip: {
     width: '100%',

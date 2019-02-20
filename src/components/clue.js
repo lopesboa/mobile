@@ -20,15 +20,13 @@ export type Props = {|
 
 const styles: GenericStyleProp = StyleSheet.create({
   container: {
-    padding: theme.spacing.base,
-    flexGrow: 1,
-    justifyContent: 'space-between'
+    paddingVertical: theme.spacing.base,
+    flexGrow: 1
   },
   text: {
     color: theme.colors.white,
     fontSize: 22,
-    textAlign: 'center',
-    fontStyle: 'italic'
+    textAlign: 'center'
   },
   buttonText: {
     fontSize: 17
