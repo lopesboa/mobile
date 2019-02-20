@@ -7,6 +7,7 @@ import {
   cha_41oEKnwv4,
   cha_4JSwqRvvV,
   cha_EJxlY5RPvE,
+  cha_4ywrt3vvV,
   cha_N1Iv9RvwV,
   cha_N1JKqADDE,
   cha_NJvw5CPPN,
@@ -31,6 +32,7 @@ const bundledDiscipline: BundledDiscipline = {
   chapters: {
     [cha_41oEKnwv4.universalRef]: cha_41oEKnwv4,
     [cha_4JSwqRvvV.universalRef]: cha_4JSwqRvvV,
+    [cha_4ywrt3vvV.universalRef]: cha_4ywrt3vvV,
     [cha_EJxlY5RPvE.universalRef]: cha_EJxlY5RPvE,
     [cha_N1Iv9RvwV.universalRef]: cha_N1Iv9RvwV,
     [cha_N1JKqADDE.universalRef]: cha_N1JKqADDE,

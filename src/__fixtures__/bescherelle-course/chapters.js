@@ -217,3 +217,34 @@ export const cha_VkbEthvwE: Chapter = {
   time: 8,
   version: '1'
 };
+
+export const cha_4ywrt3vvV: Chapter = {
+  _id: 'cha_4ywrt3vvV',
+  universalRef: 'cha_4ywrt3vvV',
+  name: "Accorder un pronom avec le nom qu'il représente",
+  stars: 20,
+  freeRun: true,
+  __v: 1,
+  hidden: false,
+  meta: {
+    taggedNewUntil: '2018-04-22T12:49:05.837Z',
+    updatedAt: '2019-02-15T17:44:16.520Z',
+    createdAt: '2018-04-26T07:38:44.779Z'
+  },
+  poster: {
+    type: 'img',
+    mimeType: 'image/jpeg',
+    mediaUrl:
+      '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216210816.jpg',
+    subtitles: [],
+    posters: [],
+    src: []
+  },
+  skills: ['skill_EkRYdKYjB'],
+  groups: ['ALL', 'them_EJEGNqKn4'],
+  partners: ['part_VyFl5hZ3V'],
+  isStandalone: false,
+  isConditional: false,
+  time: 8,
+  version: '1'
+};
