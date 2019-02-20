@@ -34,7 +34,7 @@ const dis_NyQeFnDwV: Discipline = {
       name: 'Mastering the rules of agreement in French',
 
       mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
+        'https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
       universalRef: 'mod_NyEfthPvE',
       level: 'base',
       ref: 'mod_NyEfthPvE',
@@ -65,7 +65,7 @@ const dis_NyQeFnDwV: Discipline = {
       name: 'Mastering the rules of agreement in French',
 
       mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
+        'https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
       level: 'advanced',
       universalRef: 'mod_417v9RwvE',
       ref: 'mod_417v9RwvE',
@@ -95,7 +95,7 @@ const dis_NyQeFnDwV: Discipline = {
       levelTranslation: 'Coach',
       name: 'Mastering the rules of agreement in French',
       mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
+        'https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
       level: 'coach',
       universalRef: 'mod_EJpOcRwwN',
       ref: 'mod_EJpOcRwwN',
@@ -124,7 +124,7 @@ const dis_NyQeFnDwV: Discipline = {
       type: 'img',
       mimeType: 'image/jpeg',
       mediaUrl:
-        '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
+        'https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
       subtitles: [],
       posters: [],
       src: []
