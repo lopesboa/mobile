@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Thử lại cấp độ',
   seeClue: 'Xem gợi ý',
   validate: 'Xác nhận',
+  version: 'Version',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

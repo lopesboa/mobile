@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Повторить уровень',
   seeClue: 'Смотреть подсказку',
   validate: 'Подтвердить',
+  version: 'Version',
   wrongAnswer: 'Неверный ответ',
   yourAnswer: 'Ваш ответ:',
   yourAnswers: 'Ваши ответы:'

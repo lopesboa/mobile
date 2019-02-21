@@ -22,6 +22,7 @@ const translations: Translations = {
   retryLevel: 'リトライする',
   seeClue: 'ヒントをみる ',
   validate: '回答',
+  version: 'Version',
   wrongAnswer: '不正解',
   yourAnswer: 'あなたの答え：',
   yourAnswers: 'あなたの答え：'

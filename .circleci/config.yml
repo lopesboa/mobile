@@ -118,18 +118,9 @@ jobs:
             - ~/Library/Detox/ios
             - $(yarn global dir)
 
-      - restore_cache:
-          key: ios-build-v1-{{ checksum "ios/Coorpacademy.xcodeproj/project.pbxproj" }}-{{ arch }}
-
       - run:
           name: Tests
           command: yarn test:end2end:ios:release
-          no_output_timeout: 20m
-
-      - save_cache:
-          key: ios-build-v1-{{ checksum "ios/Coorpacademy.xcodeproj/project.pbxproj" }}-{{ arch }}
-          paths:
-            - ios/build
 
   build_ios:
     macos:

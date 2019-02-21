@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Réessayez ce niveau',
   seeClue: "Voir l'indice",
   validate: 'Valider',
+  version: 'Version',
   wrongAnswer: 'Mauvaise réponse',
   yourAnswer: 'Votre réponse :',
   yourAnswers: 'Vos réponses :'

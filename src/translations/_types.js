@@ -42,6 +42,7 @@ export type Translations = {|
   retryLevel: string,
   seeClue: string,
   validate: string,
+  version: string,
   wrongAnswer: string,
   yourAnswer: string,
   yourAnswers: string

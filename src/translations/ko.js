@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: '레벨 재시도',
   seeClue: '단서 보기',
   validate: '인증하기',
+  version: 'Version',
   wrongAnswer: '오답',
   yourAnswer: '귀하의 답:',
   yourAnswers: '귀하의 답:'

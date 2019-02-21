@@ -50,6 +50,11 @@ const localizedTranslations: {[key: SupportedLanguage]: Translations} = {
   zh
 };
 
-const translations: Translations = new LocalizedStrings(localizedTranslations);
+type CustomLocalizedStrings = $Exact<{|
+  ...Translations,
+  formatString: (...args: Array<string>) => string
+|}>;
+
+const translations: CustomLocalizedStrings = new LocalizedStrings(localizedTranslations);
 
 export default translations;

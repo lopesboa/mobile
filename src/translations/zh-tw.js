@@ -22,6 +22,7 @@ const translations: Translations = {
   retryLevel: '重試級別',
   seeClue: '看到線索',
   validate: '驗證',
+  version: 'Version',
   wrongAnswer: '錯誤答案',
   yourAnswer: '您的答案：',
   yourAnswers: '您的答案：'

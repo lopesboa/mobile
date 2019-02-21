@@ -14,5 +14,24 @@ exports[`Storyshots Home Default 1`] = `
   <View
     testID="catalog"
   />
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#90A4AE",
+        "fontSize": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Version: test
+  </Text>
 </View>
 `;

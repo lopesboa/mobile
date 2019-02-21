@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Zkuste úroveň znovu',
   seeClue: 'Zobrazit nápovědu',
   validate: 'Potvrdit',
+  version: 'Version',
   wrongAnswer: 'Chybná odpověď',
   yourAnswer: 'Vaše odpověď:',
   yourAnswers: 'Vaše odpovědi:'

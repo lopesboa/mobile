@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Seviyeyi  yeniden dene',
   seeClue: 'İpucunu gör',
   validate: 'Onayla',
+  version: 'Version',
   wrongAnswer: 'Yanlış cevap',
   yourAnswer: 'Yanıtınız:',
   yourAnswers: 'Yanıtlarınız:'

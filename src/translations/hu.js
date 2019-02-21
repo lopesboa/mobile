@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Szint  újrajátszása',
   seeClue: 'Tipp megtekintése',
   validate: 'Érvényesít',
+  version: 'Version',
   wrongAnswer: 'Rossz válasz',
   yourAnswer: 'Az ön válasza:',
   yourAnswers: 'Az ön válaszai:'

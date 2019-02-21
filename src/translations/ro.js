@@ -23,6 +23,7 @@ const translations: Translations = {
   retryLevel: 'Încercați din nou acest nivel',
   seeClue: 'Arată indiciul',
   validate: 'Validează',
+  version: 'Version',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: 'Răspunsul dumneavoastră:',
   yourAnswers: 'Răspunsurile dumneavoastră:'
