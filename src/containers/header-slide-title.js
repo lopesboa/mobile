@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {getProgressionContent, getLevel} from '@coorpacademy/player-store';
 
 import type {StoreState} from '../redux/store';
+import {getCleanUri} from '../modules/uri';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
 
 type ConnectedStateProps = {|
@@ -44,7 +45,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   if (!content) return defaultProps;
   const levelContent = getLevel(content.ref)(state);
   return {
-    image: levelContent && levelContent.mediaUrl,
+    image: levelContent && levelContent.mediaUrl && getCleanUri(levelContent.mediaUrl),
     subtitle: levelContent && levelContent.levelTranslation,
     title: levelContent && levelContent.name
   };
