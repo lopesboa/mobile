@@ -82,5 +82,3 @@ export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
   question: rawSlide.question,
   position: rawSlide.position
 });
-
-export default mapToExitNodeAPI;

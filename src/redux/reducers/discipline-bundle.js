@@ -16,7 +16,7 @@ export type State = {|
   chapters: OfflineContents
 |};
 
-const initialState: State = {
+export const initialState: State = {
   disciplines: {},
   chapters: {}
 };

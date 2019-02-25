@@ -9,6 +9,8 @@ import type {
   ChapterRule
 } from '@coorpacademy/player-services';
 
+import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
+
 export type Lesson = $Exact<{|
   ...LessonAPI,
   downloadUrl?: string,
@@ -25,21 +27,11 @@ export type MimeType =
 
 type Skill = string;
 type Group = string;
-type Condition = string;
-type Partner = string;
 
-type Stat = {|
-  userTriesCount: number,
-  userDoneCount: number
-|};
+type Partner = string;
 
 type Url = string;
 
-type Meta = {
-  taggedNewUntil?: string,
-  updatedAt: string,
-  createdAt: string
-};
 type Source = {|
   _id: string,
   mimeType: MimeType,
@@ -61,7 +53,6 @@ export type Level = $Exact<{|
   deliverCoachStatus: boolean,
   taggedNewUntil: string,
   name: string,
-  mediaUrl: string,
   levelTranslation: string
 |}>;
 
@@ -111,31 +102,11 @@ export type ExtentedMedia = {|
   posters: Array<string>,
   src: Array<string>
 |};
-type Cover = {|
-  description: string,
-  media: ExtentedMedia
-|};
 
-export type Discipline = {|
-  _id: string,
-  ref: string,
-  universalRef: string,
-  name: string,
-  partnershipType: string,
-  deliverCoachStatus?: boolean,
-  hidden: boolean,
-  __v: number,
-  position: number,
-  conditions: Array<Condition>,
-  skills: Array<Skill>,
-  groups: Array<Group>,
-  stats: Stat,
-  meta: Meta,
-  partners: Array<Partner>,
-  modules: Array<Level>,
-  cover?: Cover,
-  version: string
-|};
+export type Discipline = $Exact<{|
+  ...DisciplineStore,
+  modules: Array<Level>
+|}>;
 
 export type BundledDiscipline = {|
   disciplines: {[key: string]: Discipline},
