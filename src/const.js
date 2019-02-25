@@ -6,11 +6,12 @@ import type {QuestionType, MediaType} from '@coorpacademy/progression-engine';
 
 import type {SpaceType, CardType, ResourceType, Engine, ContentType} from './types';
 
-export const RESSOURCE_TYPE: {
+export const RESOURCE_TYPE: {
   [string]: ResourceType
 } = {
   VIDEO: 'video',
-  PDF: 'pdf'
+  PDF: 'pdf',
+  IMG: 'img'
 };
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC';

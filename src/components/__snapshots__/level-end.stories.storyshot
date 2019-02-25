@@ -112,6 +112,7 @@ exports[`Storyshots LevelEnd Error 1`] = `
                 },
                 undefined,
                 undefined,
+                undefined,
               ],
             ]
           }
@@ -223,6 +224,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                 Object {
                   "color": "#546E7A",
                 },
+                undefined,
                 undefined,
                 undefined,
               ],

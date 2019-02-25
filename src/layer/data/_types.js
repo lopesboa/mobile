@@ -9,6 +9,7 @@ import type {
   ChapterRule
 } from '@coorpacademy/player-services';
 
+import type {Context} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
 
 export type Lesson = $Exact<{|
@@ -81,7 +82,8 @@ export type Slide = $Exact<{|
   lessons: Array<Lesson>,
   __v: number,
   universalRef: string,
-  authors: Array<Author>
+  authors: Array<Author>,
+  context: Context
 |}>;
 
 export type ExitNode = $Exact<{

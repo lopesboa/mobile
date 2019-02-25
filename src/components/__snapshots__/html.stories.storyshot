@@ -733,3 +733,64 @@ exports[`Storyshots Html Default 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots Html WithImage 1`] = `
+<View>
+  <View
+    style={Object {}}
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {},
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://static.coorpacademy.com/content/enjoytesting/raw/Anim_Etoile_1.gif",
+          }
+        }
+        style={
+          Array [
+            Array [
+              Object {},
+            ],
+            Object {
+              "height": 100,
+              "resizeMode": "cover",
+              "width": 100,
+            },
+          ]
+        }
+      />
+    </View>
+    <Text
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+                  On this platform, you earn 4 stars per right answer.        If you successfully complete this level, the stars you’ve accumulated so far will be added to your score and you will rise in the ranks!        Let’s do it! Good luck on your last question, this is a tough one!      
+        </Text>
+      </Text>
+    </Text>
+  </View>
+</View>
+`;

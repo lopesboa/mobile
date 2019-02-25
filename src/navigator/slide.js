@@ -7,7 +7,8 @@ import type {NavigationStackRouterConfig} from 'react-navigation';
 import {
   NovaCompositionCoorpacademyFilterVideo2 as LessonIcon,
   NovaCompositionCoorpacademyClue as ClueIcon,
-  NovaCompositionCoorpacademyListBullets3 as QuestionIcon
+  NovaCompositionCoorpacademyListBullets3 as QuestionIcon,
+  NovaCompositionCoorpacademyMap as ContextIcon
 } from '@coorpacademy/nova-icons';
 
 import Progression from '../containers/progression';
@@ -19,6 +20,7 @@ import LevelEndScreen from '../screens/level-end';
 import QuestionScreen from '../screens/question';
 import LessonScreen from '../screens/lesson';
 import ClueScreen from '../screens/clue';
+import ContextScreen from '../screens/context';
 
 import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
 
@@ -41,6 +43,16 @@ const styles = StyleSheet.create({
 
 const slideTabsNavigator = createBottomTabNavigator(
   {
+    Context: {
+      screen: ContextScreen,
+      navigationOptions: {
+        tabBarLabel: translations.context,
+        // eslint-disable-next-line react/display-name
+        tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
+          <ContextIcon color={tintColor} style={styles.clueIcon} />
+        )
+      }
+    },
     Question: {
       screen: QuestionScreen,
       navigationOptions: {
@@ -97,6 +109,7 @@ const slideTabsNavigator = createBottomTabNavigator(
       },
       showIcon: true
     },
+    initialRouteName: 'Question',
     // force to bottom (Android)
     tabBarPosition: 'bottom',
     swipeEnabled: false,

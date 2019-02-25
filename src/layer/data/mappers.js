@@ -79,6 +79,7 @@ export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
   meta: rawSlide.meta,
   tips: rawSlide.tips,
   clue: rawSlide.clue,
+  context: rawSlide.context,
   question: rawSlide.question,
   position: rawSlide.position
 });

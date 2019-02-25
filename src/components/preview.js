@@ -8,7 +8,7 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import type {ResourceType} from '../types';
-import {RESSOURCE_TYPE} from '../const';
+import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
 import Button from './button';
@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
 const Preview = ({type, source, onPress}: Props) => (
   <ImageBackground source={source} style={styles.image}>
     <ResourceOverlay>
-      {type === RESSOURCE_TYPE.VIDEO && (
+      {type === RESOURCE_TYPE.VIDEO && (
         <TouchableOpacity onPress={onPress} testID="preview-video">
           <PlayIcon color={theme.colors.white} height={70} width={70} />
         </TouchableOpacity>
       )}
-      {type === RESSOURCE_TYPE.PDF && (
+      {type === RESOURCE_TYPE.PDF && (
         <View style={styles.pdf} testID="preview-pdf">
           <View testID="preview-pdf-icon" style={styles.pdfIcon}>
             <PDFIcon color={theme.colors.white} height={45} width={45} />

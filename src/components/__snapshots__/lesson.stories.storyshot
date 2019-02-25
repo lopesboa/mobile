@@ -538,6 +538,7 @@ exports[`Storyshots Lesson Default 1`] = `
                       Object {
                         "color": "#FFFFFF",
                       },
+                      undefined,
                     ],
                   ]
                 }

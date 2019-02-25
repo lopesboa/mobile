@@ -11,6 +11,7 @@ type PropsType = {|
   isDisabled?: boolean,
   isInverted?: boolean,
   isInlined?: boolean,
+  isSecondary?: boolean,
   isLoading?: boolean,
   children: string,
   testID?: string
@@ -58,6 +59,7 @@ const Button = ({
   isLoading,
   isInverted,
   isInlined,
+  isSecondary,
   isDisabled,
   testID: prefixTestID,
   children
@@ -65,6 +67,11 @@ const Button = ({
   <BrandThemeContext.Consumer>
     {brandTheme => {
       const buttonStyle = {backgroundColor: brandTheme.colors.primary};
+      const secondaryButtonStyle = {
+        ...styles.inlined,
+        borderColor: brandTheme.colors.primary
+      };
+      const secondaryTextStyle = {color: brandTheme.colors.primary};
       const disabledSuffix = prefixTestID && isDisabled ? '-disabled' : '';
       const loadingSuffix = prefixTestID && isLoading ? '-loading' : '';
       return (
@@ -77,13 +84,15 @@ const Button = ({
               styles.button,
               buttonStyle,
               isInverted && styles.inverted,
-              isInlined && styles.inlined
+              isInlined && styles.inlined,
+              isSecondary && secondaryButtonStyle
             ]}
             textStyle={[
               styles.text,
               isInverted && styles.textInverted,
               isDisabled && styles.textDisabled,
-              isInlined && styles.textInlined
+              isInlined && styles.textInlined,
+              isSecondary && secondaryTextStyle
             ]}
             disabledStyle={styles.disabled}
             activityIndicatorColor={theme.colors.gray.medium}

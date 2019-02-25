@@ -14,6 +14,7 @@ import HomeScreen from '../screens/home';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
+import browserNavigator from './browser';
 import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
 
 const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
@@ -49,7 +50,8 @@ const navigator = createStackNavigator(
   {
     App: {screen: appNavigator},
     SlideModal: {screen: slideModalsNavigator},
-    PdfModal: {screen: pdfNavigator}
+    PdfModal: {screen: pdfNavigator},
+    BrowserModal: {screen: browserNavigator}
   },
   {
     defaultNavigationOptions: navigationOptionsWithoutHeader,

@@ -11,8 +11,7 @@ export type QuestionChoiceItem = {|
   selected?: boolean
 |};
 
-export type ResourceType = 'video' | 'pdf';
-
+export type ResourceType = 'video' | 'pdf' | 'img';
 export type MimeType =
   | 'video/mp4'
   | 'application/vimeo'

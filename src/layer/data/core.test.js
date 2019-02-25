@@ -5,6 +5,7 @@ import {AsyncStorage} from 'react-native';
 import basicCourse from '../../__fixtures__/discipline-bundle/basic';
 import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
 import noClueCourse from '../../__fixtures__/discipline-bundle/no-clue';
+import withContextCourse from '../../__fixtures__/discipline-bundle/with-context';
 import onboardingCourse from '../../__fixtures__/onboarding-course';
 import bescherelleCourse from '../../__fixtures__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
@@ -276,6 +277,12 @@ describe('Data Layer Core', () => {
       const result = fetchDisciplineBundle('fixtures_no_clue', 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(noClueCourse);
+    });
+
+    it('should fetch context', () => {
+      const result = fetchDisciplineBundle('fixtures_with_context', 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(withContextCourse);
     });
 
     it('should fetch onboarding', () => {

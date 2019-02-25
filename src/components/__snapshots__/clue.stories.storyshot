@@ -196,6 +196,7 @@ exports[`Storyshots Clue Default 1`] = `
                       },
                       undefined,
                       undefined,
+                      undefined,
                     ],
                   ]
                 }

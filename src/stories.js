@@ -10,6 +10,7 @@ require('./components/cards.stories.js');
 require('./components/catalog.stories.js');
 require('./components/clue-front-item.stories.js');
 require('./components/clue.stories.js');
+require('./components/context.stories.js');
 require('./components/correction.stories.js');
 require('./components/gradient.stories.js');
 require('./components/header-back-image.stories.js');

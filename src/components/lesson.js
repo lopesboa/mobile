@@ -4,7 +4,7 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import type {Lesson as LessonType} from '../layer/data/_types';
-import {RESSOURCE_TYPE} from '../const';
+import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import Video from '../containers/video-controlable';
 import withLayout from '../containers/with-layout';
@@ -45,12 +45,12 @@ class Lesson extends React.PureComponent<Props> {
 
     // @todo other US, iterate over resources
     const resourceVideo: LessonType = resources.filter(
-      item => item.type === RESSOURCE_TYPE.VIDEO
+      item => item.type === RESOURCE_TYPE.VIDEO
     )[0];
     const videoUrl = resourceVideo && resourceVideo.mediaUrl && getCleanUri(resourceVideo.mediaUrl);
     const videoPoster = resourceVideo && getCleanUri(resourceVideo.poster);
 
-    const resourcePDF: LessonType = resources.filter(item => item.type === RESSOURCE_TYPE.PDF)[0];
+    const resourcePDF: LessonType = resources.filter(item => item.type === RESOURCE_TYPE.PDF)[0];
     const pdfUrl = resourcePDF && getCleanUri(resourcePDF.mediaUrl);
     const pdfPoster = resourcePDF && getCleanUri(resourcePDF.poster);
     const pdfDescription = resourcePDF && resourcePDF.description;
@@ -73,7 +73,7 @@ class Lesson extends React.PureComponent<Props> {
           height && (
             <View style={{height}}>
               <Preview
-                type={RESSOURCE_TYPE.PDF}
+                type={RESOURCE_TYPE.PDF}
                 source={{uri: pdfPoster}}
                 onPress={this.handlePDFButtonPress(pdfUrl, pdfDescription)}
               />

@@ -494,6 +494,7 @@ exports[`Storyshots Question Option selected 1`] = `
                 undefined,
                 false,
                 undefined,
+                undefined,
               ],
             ]
           }
@@ -979,6 +980,7 @@ exports[`Storyshots Question QCM 1`] = `
               },
               undefined,
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -1006,6 +1008,7 @@ exports[`Storyshots Question QCM 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
                 undefined,
               ],
             ]
@@ -1654,6 +1657,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               },
               undefined,
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -1681,6 +1685,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
                 undefined,
               ],
             ]
@@ -2212,6 +2217,7 @@ exports[`Storyshots Question With image 1`] = `
               },
               undefined,
               undefined,
+              undefined,
             ],
             Object {
               "backgroundColor": "#ECEFF1",
@@ -2239,6 +2245,7 @@ exports[`Storyshots Question With image 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
                 undefined,
               ],
             ]

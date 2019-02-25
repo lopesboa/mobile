@@ -55,7 +55,7 @@
     "@coorpacademy/nova-icons": "^2.6.0",
     "@coorpacademy/player-services": "2.4.3",
     "@coorpacademy/player-store": "2.5.5",
-    "@coorpacademy/progression-engine": "10.3.3",
+    "@coorpacademy/progression-engine": "10.3.6",
     "@coorpacademy/react-native-deck-swiper": "^1.5.27",
     "@coorpacademy/react-native-video-controls": "^2.4.2",
     "apsl-react-native-button": "^3.1.1",

@@ -50,6 +50,7 @@ exports[`Storyshots Catalog Default 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
             ],
           ]
         }
@@ -109,6 +110,7 @@ exports[`Storyshots Catalog Default 1`] = `
                 "fontWeight": "700",
                 "textAlign": "center",
               },
+              undefined,
               undefined,
               undefined,
               undefined,
