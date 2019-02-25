@@ -48,11 +48,11 @@ jobs:
           at: ~/app
       - run:
           name: Jest
-          command: yarn test:unit
+          command: yarn test:unit -i
           environment:
             TZ: Europe/Paris
 
-  end2end_tests_ios:
+  end2end_tests_ios_build:
     macos:
       xcode: "10.1.0"
     working_directory: ~/app
@@ -62,40 +62,6 @@ jobs:
 
       - attach_workspace:
           at: ~/app
-
-      - restore_cache:
-          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
-
-      - run:
-          name: Pods dependencies
-          command: yarn cocoapods:install
-
-      - save_cache:
-          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
-          paths:
-            - ~/Library/Caches/CocoaPods
-            - ios/Pods
-
-      - restore_cache:
-          key: brew-v2-ios-{{ arch }}
-
-      - run:
-          name: Brew dependencies
-          command: |
-            if brew ls --versions applesimutils > /dev/null; then
-              echo "Applesimutils already installed."
-              brew link applesimutils
-            else
-              echo "Applesimutils not installed."
-              brew tap wix/brew
-              brew install applesimutils
-            fi
-
-      - save_cache:
-          key: brew-v2-ios-{{ arch }}
-          paths:
-            - ~/Library/Caches/Homebrew
-            - /usr/local/Cellar
 
       - restore_cache:
           key: detox-v2-{{ arch }}
@@ -118,9 +84,84 @@ jobs:
             - ~/Library/Detox/ios
             - $(yarn global dir)
 
+      - restore_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+
+      - run:
+          name: Pods dependencies
+          command: yarn cocoapods:install
+
+      - save_cache:
+          key: pods-v1-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          paths:
+            - ~/Library/Caches/CocoaPods
+            - ios/Pods
+
+      - run:
+          name: Build
+          command: yarn test:end2end:ios:release:build
+
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - ios/build/Build/Products/Release-iphonesimulator/Coorpacademy.app
+
+  end2end_tests_ios_run:
+    macos:
+      xcode: "10.1.0"
+    working_directory: ~/app
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/app
+
+      - restore_cache:
+          key: detox-v2-{{ arch }}
+
+      - run:
+          name: Detox framework
+          command: |
+            if yarn global list | grep 'detox-cli' > /dev/null; then
+              echo "Detox-cli already installed."
+              ln -s /usr/local/bin/detox $(yarn global dir)/node_modules/.bin/detox
+            else
+              echo "Detox-cli not installed."
+              yarn global add detox-cli
+            fi
+            detox build-framework-cache
+
+      - save_cache:
+          key: detox-v2-{{ arch }}
+          paths:
+            - ~/Library/Detox/ios
+            - $(yarn global dir)
+
+      - restore_cache:
+          key: brew-v2-ios-{{ arch }}
+
+      - run:
+          name: Brew dependencies
+          command: |
+            if brew ls --versions applesimutils > /dev/null; then
+              echo "Applesimutils already installed."
+              brew link applesimutils
+            else
+              echo "Applesimutils not installed."
+              brew tap wix/brew
+              brew install applesimutils
+            fi
+
+      - save_cache:
+          key: brew-v2-ios-{{ arch }}
+          paths:
+            - ~/Library/Caches/Homebrew
+            - /usr/local/Cellar
+
       - run:
           name: Tests
-          command: yarn test:end2end:ios:release
+          command: yarn test:end2end:ios:release:test
 
   build_ios:
     macos:
@@ -331,9 +372,12 @@ workflows:
       - unit_tests:
          requires:
            - dependencies
-      - end2end_tests_ios:
+      - end2end_tests_ios_build:
          requires:
            - dependencies
+      - end2end_tests_ios_run:
+         requires:
+           - end2end_tests_ios_build
       - build_android:
          requires:
            - dependencies
