@@ -1,7 +1,6 @@
 // @flow strict
 
 import type {BundledDiscipline} from '../../layer/data/_types';
-
 import {createDiscipline} from '../disciplines';
 import {createLevel} from '../levels';
 import {createChapter} from '../chapters';

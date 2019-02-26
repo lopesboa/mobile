@@ -26,6 +26,7 @@ const translations: Translations = {
   seeClue: '查看线索',
   validate: '确认',
   version: 'Version',
+  winAdditionalStars: '在这一章，当你首次阅读一节课的时候可以赢得 {{count}}额外的星星！',
   wrongAnswer: '错误的答案',
   yourAnswer: '您的答案：',
   yourAnswers: '您的答案：'

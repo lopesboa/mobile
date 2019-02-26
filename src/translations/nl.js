@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Bekijk tip',
   validate: 'Valideren',
   version: 'Version',
+  winAdditionalStars:
+    'Win {{count}} extra sterren in dit hoofdstuk de eerste keer dat je een les bekijkt!',
   wrongAnswer: 'Verkeerd antwoord',
   yourAnswer: 'Jouw antwoord:',
   yourAnswers: 'Jouw antwoorden:'

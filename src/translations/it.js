@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Vedi indizio',
   validate: 'Convalida',
   version: 'Version',
+  winAdditionalStars:
+    'Guadagna {{count}} stelle aggiuntive in questo capitolo la prima volta che visualizzi una lezione!',
   wrongAnswer: 'Risposta sbagliata',
   yourAnswer: 'La tua risposta:',
   yourAnswers: 'Le tue risposte:'

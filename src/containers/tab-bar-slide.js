@@ -1,22 +1,34 @@
 // @flow
 
 import * as React from 'react';
+import {StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {getCurrentSlide} from '@coorpacademy/player-store';
+
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
+import Text from '../components/text';
 import TabBar from './tab-bar';
 
 type ConnectedStateToProps = {|
   hasNoClue: boolean,
-  hasNoContext: boolean
+  hasNoContext: boolean,
+  hasNoLesson: boolean
 |};
 
 type Props = {|
   ...ConnectedStateToProps,
   ...$Exact<_BottomTabBarProps>
 |};
+
+const INACTIVE_COLOR = theme.colors.gray.lightMedium;
+
+const styles = StyleSheet.create({
+  inactiveText: {
+    color: INACTIVE_COLOR
+  }
+});
 
 class TabBarSlide extends React.Component<Props> {
   props: Props;
@@ -37,13 +49,13 @@ class TabBarSlide extends React.Component<Props> {
   }
 
   handleTabPress = (scene: TabScene) => {
-    // $FlowFixMe the definition is incomplete for this
-    const {onTabPress, hasNoClue, hasNoContext} = this.props;
-    if (scene.route.routeName === 'Clue' && hasNoClue) {
-      return;
-    }
+    const {onTabPress, hasNoClue, hasNoContext, hasNoLesson} = this.props;
 
-    if (scene.route.routeName === 'Context' && hasNoContext) {
+    if (
+      (scene.route.routeName === 'Clue' && hasNoClue) ||
+      (scene.route.routeName === 'Context' && hasNoContext) ||
+      (scene.route.routeName === 'Lesson' && hasNoLesson)
+    ) {
       return;
     }
 
@@ -51,21 +63,34 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasNoClue, hasNoContext} = this.props;
-    switch (scene.route.key) {
-      case 'Context':
-        return renderIcon({
-          ...scene,
-          tintColor: hasNoContext ? theme.colors.gray.medium : scene.tintColor
-        });
-      case 'Clue':
-        return renderIcon({
-          ...scene,
-          tintColor: hasNoClue ? theme.colors.gray.medium : scene.tintColor
-        });
-      default:
-        return renderIcon(scene);
+    const {renderIcon, hasNoClue, hasNoContext, hasNoLesson} = this.props;
+
+    if (
+      (scene.route.key === 'Clue' && hasNoClue) ||
+      (scene.route.key === 'Context' && hasNoContext) ||
+      (scene.route.key === 'Lesson' && hasNoLesson)
+    ) {
+      return renderIcon({
+        ...scene,
+        tintColor: INACTIVE_COLOR
+      });
     }
+
+    return renderIcon(scene);
+  };
+
+  getLabelText = (scene: TabScene) => {
+    const {getLabelText, labelStyle, hasNoClue, hasNoContext, hasNoLesson} = this.props;
+
+    if (
+      (scene.route.key === 'Clue' && hasNoClue) ||
+      (scene.route.key === 'Context' && hasNoContext) ||
+      (scene.route.key === 'Lesson' && hasNoLesson)
+    ) {
+      return <Text style={[labelStyle, styles.inactiveText]}>{getLabelText(scene)}</Text>;
+    }
+
+    return getLabelText(scene);
   };
 
   render() {
@@ -77,6 +102,7 @@ class TabBarSlide extends React.Component<Props> {
         navigation={navigation}
         onTabPress={this.handleTabPress}
         renderIcon={this.renderIcon}
+        getLabelText={this.getLabelText}
       />
     );
   }
@@ -84,14 +110,13 @@ class TabBarSlide extends React.Component<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   const slide = getCurrentSlide(state);
-
-  const hasNoClue = !(slide && slide.clue);
-
-  const hasNoContext = !(slide && slide.context && slide.context.title);
+  // $FlowFixMe overrided type
+  const resources: Array<LessonType> = (slide && slide.lessons) || [];
 
   return {
-    hasNoClue,
-    hasNoContext
+    hasNoClue: !(slide && slide.clue),
+    hasNoLesson: !resources.length,
+    hasNoContext: !(slide && slide.context && slide.context.title)
   };
 };
 

@@ -80,6 +80,7 @@ const generate = async (locale: string) => {
     validate: playerTranslations.Validate,
     // @todo get it from github
     version: 'Version',
+    winAdditionalStars: componentsTranslations.media_stars_to_win_plural,
     wrongAnswer: playerTranslations['Wrong answer'],
     yourAnswer: playerTranslations['Your answer_'],
     yourAnswers: playerTranslations['Your answers_']

@@ -1123,7 +1123,7 @@ declare module 'react-navigation' {
     activeBackgroundColor?: string,
     inactiveTintColor?: string,
     inactiveBackgroundColor?: string,
-    getLabel: (scene: _DrawerScene) => ?(React$Node | string),
+    getLabelText: (scene: _DrawerScene) => ?(React$Node | string),
     renderIcon: (scene: _DrawerScene) => ?React$Node,
     onItemPress: (info: _DrawerItem) => void,
     itemsContainerForceInset?: Object,
@@ -1165,7 +1165,7 @@ declare module 'react-navigation' {
     tabBarPosition: string,
     navigation: NavigationScreenProp<NavigationState>,
     jumpToIndex: (index: number) => void,
-    getLabel: (scene: TabScene) => ?(React$Node | string),
+    getLabelText: (scene: TabScene) => ?(React$Node | string),
     getOnPress: (
       previousScene: NavigationRoute,
       scene: TabScene
@@ -1175,6 +1175,7 @@ declare module 'react-navigation' {
       jumpToIndex: (index: number) => void,
     }) => void,
     renderIcon: (scene: TabScene) => React$Element<*>,
+    onTabPress: (scene: TabScene) => React$Element<*>,
     labelStyle?: TextStyleProp,
     iconStyle?: ViewStyleProp,
   };
@@ -1192,7 +1193,7 @@ declare module 'react-navigation' {
     position: AnimatedValue,
     navigation: NavigationScreenProp<NavigationState>,
     jumpToIndex: (index: number) => void,
-    getLabel: (scene: TabScene) => ?(React$Node | string),
+    getLabelText: (scene: TabScene) => ?(React$Node | string),
     getOnPress: (
       previousScene: NavigationRoute,
       scene: TabScene
@@ -1203,6 +1204,7 @@ declare module 'react-navigation' {
     }) => void,
     getTestIDProps: (scene: TabScene) => (scene: TabScene) => any,
     renderIcon: (scene: TabScene) => React$Node,
+    onTabPress: (scene: TabScene) => React$Element<*>,
     style?: ViewStyleProp,
     animateStyle?: ViewStyleProp,
     labelStyle?: TextStyleProp,

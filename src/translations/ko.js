@@ -26,6 +26,7 @@ const translations: Translations = {
   seeClue: '단서 보기',
   validate: '인증하기',
   version: 'Version',
+  winAdditionalStars: '귀하가 레슨을 처음 볼 때, 이 장에서 {{count}}개의 추가 스타를 획득하세요!',
   wrongAnswer: '오답',
   yourAnswer: '귀하의 답:',
   yourAnswers: '귀하의 답:'

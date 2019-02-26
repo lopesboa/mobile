@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Hinweis öffnen',
   validate: 'Bestätigen',
   version: 'Version',
+  winAdditionalStars:
+    'Gewinnen Sie {{count}} zusätzliche Sterne in diesem Kapitel, wenn Sie die Lektion das erste Mal ansehen!',
   wrongAnswer: 'Falsche Antwort',
   yourAnswer: 'Ihre Antwort:',
   yourAnswers: 'Ihre Antworten:'

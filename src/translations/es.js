@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Ver pista',
   validate: 'Validar',
   version: 'Version',
+  winAdditionalStars:
+    'Gana {{count}} estrellas adicionales en este capítulo la primera vez que veas una lección.',
   wrongAnswer: 'Respuesta incorrecta',
   yourAnswer: 'Su respuesta:',
   yourAnswers: 'Sus respuestas:'

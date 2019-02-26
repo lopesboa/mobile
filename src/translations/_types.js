@@ -45,6 +45,7 @@ export type Translations = {|
   seeClue: string,
   validate: string,
   version: string,
+  winAdditionalStars: string,
   wrongAnswer: string,
   yourAnswer: string,
   yourAnswers: string

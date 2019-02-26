@@ -1,7 +1,7 @@
 // @flow strict
 
+import {createVideo} from '../lessons';
 import type {BundledDiscipline} from '../../layer/data/_types';
-
 import {createDiscipline} from '../disciplines';
 import {createLevel} from '../levels';
 import {createChapter} from '../chapters';
@@ -12,6 +12,7 @@ import {image} from '../medias';
 
 const level = createLevel({ref: 'adaptive_mod_1', chapterIds: ['adaptive_cha_1']});
 const qcm = createQCM({media: image});
+const lessons = [createVideo({ref: 'les_1', description: 'First video'})];
 
 const bundledDiscipline: BundledDiscipline = {
   disciplines: {
@@ -32,19 +33,27 @@ const bundledDiscipline: BundledDiscipline = {
     adaptive_sli_1: createSlide({
       ref: 'adaptive_sli_1',
       chapterId: 'adaptive_cha_1',
-      question: qcm
+      question: qcm,
+      lessons
     }),
     adaptive_sli_2: createSlide({
       ref: 'adaptive_sli_2',
       chapterId: 'adaptive_cha_1',
-      question: qcm
+      question: qcm,
+      lessons
     }),
     adaptive_sli_3: createSlide({
       ref: 'adaptive_sli_3',
       chapterId: 'adaptive_cha_1',
-      question: qcm
+      question: qcm,
+      lessons
     }),
-    adaptive_sli_4: createSlide({ref: 'adaptive_sli_4', chapterId: 'adaptive_cha_1', question: qcm})
+    adaptive_sli_4: createSlide({
+      ref: 'adaptive_sli_4',
+      chapterId: 'adaptive_cha_1',
+      question: qcm,
+      lessons
+    })
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,

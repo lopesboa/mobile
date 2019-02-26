@@ -15,9 +15,7 @@ storiesOf('Preview', module)
   .add('PDF Remote', () => (
     <Preview
       type={RESOURCE_TYPE.PDF}
-      source={{
-        uri: 'https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg'
-      }}
+      source={{uri: 'https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg'}}
       onPress={handleFakePress}
     />
   ));

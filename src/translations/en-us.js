@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'See clue',
   validate: 'Validate',
   version: 'Version',
+  winAdditionalStars:
+    'Win {{count}} additional stars in this chapter the first time you view a lesson!',
   wrongAnswer: 'Wrong answer',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

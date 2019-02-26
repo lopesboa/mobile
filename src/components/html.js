@@ -10,6 +10,7 @@ type Props = {|
   children: string,
   fontSize: number,
   onLinkPress?: () => void,
+  containerStyle?: GenericStyleProp,
   imageStyle?: GenericStyleProp,
   style?: GenericStyleProp,
   testID?: string
@@ -22,7 +23,15 @@ const styles = {
   }
 };
 
-const Html = ({children, fontSize, imageStyle, style, onLinkPress, testID}: Props) => {
+const Html = ({
+  children,
+  fontSize,
+  containerStyle,
+  imageStyle,
+  style,
+  onLinkPress,
+  testID
+}: Props) => {
   const tagsStyles = {
     ...styles,
     h1: {fontSize},
@@ -53,7 +62,7 @@ const Html = ({children, fontSize, imageStyle, style, onLinkPress, testID}: Prop
   }
 
   return (
-    <View testID={testID}>
+    <View testID={testID} style={containerStyle}>
       <HtmlBase
         html={`${children}`}
         tagsStyles={tagsStyles}

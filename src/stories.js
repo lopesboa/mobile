@@ -32,6 +32,8 @@ require('./components/question-choices.stories.js');
 require('./components/question-title.stories.js');
 require('./components/question.stories.js');
 require('./components/resource-overlay.stories.js');
+require('./components/resource.stories.js');
+require('./components/resources-browser.stories.js');
 require('./components/screen.stories.js');
 require('./components/space.stories.js');
 require('./components/text.stories.js');

@@ -25,6 +25,7 @@ const translations: Translations = {
   seeClue: '看到線索',
   validate: '驗證',
   version: 'Version',
+  winAdditionalStars: '第一次觀看課程時，在本章中贏得{{count}}個額外的星星！',
   wrongAnswer: '錯誤答案',
   yourAnswer: '您的答案：',
   yourAnswers: '您的答案：'

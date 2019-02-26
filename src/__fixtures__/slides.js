@@ -2,8 +2,7 @@
 
 import type {Question} from '@coorpacademy/progression-engine';
 
-import type {Slide} from '../layer/data/_types';
-import {lessonWithVideo, lessonWithPdf} from './lessons';
+import type {Lesson, Slide} from '../layer/data/_types';
 import {image} from './medias';
 
 export const createSlide = ({
@@ -11,12 +10,14 @@ export const createSlide = ({
   chapterId,
   question,
   clue,
+  lessons = [],
   context
 }: {
   ref: string,
   chapterId: string,
   question: Question,
   clue?: string | null,
+  lessons?: Array<Lesson>,
   context?: boolean | null
 }): Slide => ({
   _id: ref,
@@ -29,19 +30,18 @@ export const createSlide = ({
   chapter_id: chapterId,
   __v: 0,
   authors: [],
-  context:
-    context === null || context === undefined
-      ? {media: {src: [], posters: [], subtitles: []}}
-      : {
-          media: image,
-          description: 'This is a description',
-          title: 'This is a title'
-        },
+  context: !context
+    ? {media: {src: [], posters: [], subtitles: []}}
+    : {
+        media: image,
+        description: 'This is a description',
+        title: 'This is a title'
+      },
   meta: {
     updatedAt: '2019-01-17T09:35:44.450Z',
     createdAt: '2019-01-17T09:35:44.450Z'
   },
-  lessons: [lessonWithVideo, lessonWithPdf],
+  lessons,
   question
 });
 

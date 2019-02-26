@@ -26,6 +26,7 @@ const translations: Translations = {
   seeClue: 'İpucunu gör',
   validate: 'Onayla',
   version: 'Version',
+  winAdditionalStars: 'İlk dersinizi görüntülediğinizde bu ünitede {{count}} ek yıldız kazanın!',
   wrongAnswer: 'Yanlış cevap',
   yourAnswer: 'Yanıtınız:',
   yourAnswers: 'Yanıtlarınız:'

@@ -25,6 +25,8 @@ const translations: Translations = {
   seeClue: 'ヒントをみる ',
   validate: '回答',
   version: 'Version',
+  winAdditionalStars:
+    'もし、はじめてこのレッスンを受けた場合は{{count}}個のスターが追加で獲得できます。',
   wrongAnswer: '不正解',
   yourAnswer: 'あなたの答え：',
   yourAnswers: 'あなたの答え：'

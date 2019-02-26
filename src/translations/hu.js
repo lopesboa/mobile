@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Tipp megtekintése',
   validate: 'Érvényesít',
   version: 'Version',
+  winAdditionalStars:
+    'Nyerjen további {{count}} csillagot ebben a fejezetben egy lecke először történő megtekintésével!',
   wrongAnswer: 'Rossz válasz',
   yourAnswer: 'Az ön válasza:',
   yourAnswers: 'Az ön válaszai:'

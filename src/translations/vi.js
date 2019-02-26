@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Xem gợi ý',
   validate: 'Xác nhận',
   version: 'Version',
+  winAdditionalStars:
+    'Giành được thêm {{count}} sao trong chương này khi xem bài học lần đầu tiên!',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

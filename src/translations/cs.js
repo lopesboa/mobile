@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Zobrazit nápovědu',
   validate: 'Potvrdit',
   version: 'Version',
+  winAdditionalStars:
+    'Získejte další hvězdy ({{count}}) v této kapitole při prvním zobrazení lekce!',
   wrongAnswer: 'Chybná odpověď',
   yourAnswer: 'Vaše odpověď:',
   yourAnswers: 'Vaše odpovědi:'

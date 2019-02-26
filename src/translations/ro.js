@@ -26,6 +26,8 @@ const translations: Translations = {
   seeClue: 'Arată indiciul',
   validate: 'Validează',
   version: 'Version',
+  winAdditionalStars:
+    'Câștigați {{count}} stele în plus prima oară când urmăriți o lecție din acest capitol!',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: 'Răspunsul dumneavoastră:',
   yourAnswers: 'Răspunsurile dumneavoastră:'
