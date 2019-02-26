@@ -3,7 +3,9 @@
 import * as React from 'react';
 import {StyleSheet, View, TouchableOpacity, Platform} from 'react-native';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
+import {TextTrackType} from 'react-native-video';
 import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
+import RNFetchBlob from 'rn-fetch-blob';
 
 import theme from '../modules/theme';
 import Preview from './preview';
@@ -11,17 +13,27 @@ import ResourceOverlay from './resource-overlay';
 
 export type Step = 'preview' | 'play' | 'end';
 
+export type Subtitles = {|
+  title: string,
+  language: string,
+  type: $Values<TextTrackType>,
+  uri: string
+|};
+
 type Props = {|
   source: File | {uri: string},
   preview: File | {uri: string},
   height: number,
   step: Step,
+  subtitles?: string,
+  hasSubtitles?: boolean,
   isFullScreen?: boolean,
   onPlay: () => void,
   onEnd: () => void,
   onReady: () => void,
   onExpand?: () => void,
   onShrink?: () => void,
+  onSubtitlesToggle?: () => void,
   onRef?: (VideoPlayer | null) => void
 |};
 
@@ -30,6 +42,15 @@ export const STEP: {[key: string]: Step} = {
   PLAY: 'play',
   END: 'end'
 };
+
+const EMPTY_SUBTITLES: Subtitles = {
+  title: 'nocc',
+  language: 'nc',
+  type: TextTrackType.VTT,
+  uri: 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/assets/empty.vtt'
+};
+
+const DEFAULT_SUBTITLES_LANGUAGE = 'en';
 
 const styles = StyleSheet.create({
   container: {
@@ -73,16 +94,38 @@ const Video = ({
   preview,
   height,
   step,
+  subtitles: subtitlesUri,
+  hasSubtitles,
   isFullScreen,
   onPlay,
   onReady,
   onEnd,
   onExpand,
   onShrink,
+  onSubtitlesToggle,
   onRef
 }: Props) => {
   const testIDSuffix = isFullScreen ? '-fullscreen' : '';
   const containerHeight = (!isFullScreen && height) || undefined;
+  const subtitles: Array<Subtitles> = Platform.OS === 'ios' ? [EMPTY_SUBTITLES] : [];
+  if (subtitlesUri) {
+    subtitles.push({
+      title: 'Subtitles',
+      language: DEFAULT_SUBTITLES_LANGUAGE,
+      type: TextTrackType.VTT,
+      uri: subtitlesUri
+    });
+  }
+  const disabledSubtitles =
+    Platform.OS === 'ios'
+      ? {type: 'language', value: EMPTY_SUBTITLES.language}
+      : {type: 'disabled'};
+  const selectedSubtitles = hasSubtitles
+    ? {
+        type: 'language',
+        value: DEFAULT_SUBTITLES_LANGUAGE
+      }
+    : disabledSubtitles;
 
   return (
     <View
@@ -107,6 +150,11 @@ const Video = ({
           onFullscreenPlayerWillDismiss={onShrink}
           onEnd={onEnd}
           onReadyForDisplay={onReady}
+          onCC={onSubtitlesToggle}
+          disableCC={!subtitlesUri}
+          textTracks={(subtitlesUri && subtitles) || undefined}
+          selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
+          isCC={hasSubtitles}
         />
       )}
       {step === STEP.END && (

@@ -4,7 +4,9 @@ import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
 
 import type {Lesson as LessonType} from '../layer/data/_types';
+import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
+import {getSubtitlesUri} from '../modules/subtitles';
 import withLayout from '../containers/with-layout';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
@@ -13,6 +15,7 @@ import QuestionTitle from './question-title';
 import Resource from './resource';
 import ResourcesBrowser from './resources-browser';
 import Space from './space';
+import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
   ...WithLayoutProps,
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.base,
     flexGrow: 1
   },
-  scroller: {
+  browser: {
     flex: 1
   },
   questionContainer: {
@@ -63,28 +66,47 @@ const Lesson = (props: Props) => {
   );
 
   return (
-    <View testID="lesson" style={styles.container}>
-      <View style={styles.questionContainer}>
-        <QuestionTitle>{header}</QuestionTitle>
-      </View>
-      <Space type="base" />
-      <Resource
-        type={openedResource.type}
-        url={openedResource.mediaUrl}
-        description={openedResource.description}
-        thumbnail={openedResource.poster}
-        height={height}
-        onPDFButtonPress={props.onPDFButtonPress}
-      />
-      <ScrollView style={styles.scroller} showsHorizontalScrollIndicator={false} testID="resources">
-        <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
-      </ScrollView>
-      <View style={styles.bottomTextWrapper}>
-        <Html testID="additional-stars-note" fontSize={12} style={styles.bottomText}>
-          {winAdditionalStars}
-        </Html>
-      </View>
-    </View>
+    <BrandThemeContext.Consumer>
+      {brandTheme => {
+        const subtitles =
+          openedResource.subtitleRef &&
+          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
+        const url =
+          // $FlowFixMe img is not defined in progression-engine
+          (openedResource.type === RESOURCE_TYPE.VIDEO && openedResource.downloadUrl) ||
+          openedResource.mediaUrl;
+
+        return (
+          <View testID="lesson" style={styles.container}>
+            <View style={styles.questionContainer}>
+              <QuestionTitle>{header}</QuestionTitle>
+            </View>
+            <Space type="base" />
+            <Resource
+              type={openedResource.type}
+              url={url}
+              description={openedResource.description}
+              thumbnail={openedResource.poster}
+              subtitles={subtitles}
+              height={height}
+              onPDFButtonPress={props.onPDFButtonPress}
+            />
+            <ScrollView
+              style={styles.browser}
+              showsHorizontalScrollIndicator={false}
+              testID="resources"
+            >
+              <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
+            </ScrollView>
+            <View style={styles.bottomTextWrapper}>
+              <Html testID="additional-stars-note" fontSize={12} style={styles.bottomText}>
+                {winAdditionalStars}
+              </Html>
+            </View>
+          </View>
+        );
+      }}
+    </BrandThemeContext.Consumer>
   );
 };
 

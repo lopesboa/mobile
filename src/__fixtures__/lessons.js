@@ -22,6 +22,7 @@ export const createVideo = ({
   ref,
   // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.VIDEO,
+  subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb',
   subtitles: [],
   posters: [],
   src: []

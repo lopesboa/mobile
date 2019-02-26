@@ -59,6 +59,15 @@ describe('Lesson', () => {
         await weExpect(element(by.id('video-fullscreen-expand'))).toBeVisible();
       });
 
+      it('should display subtitles', async () => {
+        await weExpect(element(by.id('video-CC-on'))).toBeVisible();
+      });
+
+      it('should hide subtitles', async () => {
+        await element(by.id('video-CC-on')).tap();
+        await weExpect(element(by.id('video-CC-off'))).toBeVisible();
+      });
+
       it('should pause the video', async () => {
         await element(by.id('video-pause')).tap();
         await weExpect(element(by.id('video-play'))).toBeVisible();

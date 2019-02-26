@@ -35,7 +35,13 @@ NativeModules.ReactLocalization = {
 };
 
 // react-native-video-controls
-jest.mock('react-native-video', () => 'Mock$ReactNativeVideo');
+jest.mock('react-native-video', () => ({
+  __esModule: true,
+  default: 'Mock$ReactNativeVideo',
+  TextTrackType: {
+    VTT: 'text/vtt'
+  }
+}));
 
 // react-native-pdf
 jest.mock('rn-fetch-blob', () => ({

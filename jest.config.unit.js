@@ -18,6 +18,7 @@ module.exports = {
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.js',
+    '!<rootDir>/src/**/*.e2e.js',
     '!<rootDir>/src/*.js',
     '!<rootDir>/src/utils/tests.js',
     '!<rootDir>/src/**/*.stories.js',

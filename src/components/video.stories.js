@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react';
+import {Platform} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
 import video from '../__fixtures__/assets/video.mp4';
@@ -51,6 +52,62 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
+    />
+  ))
+  .add('Subtitles', () => (
+    <Video
+      source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
+      preview={image}
+      height={180}
+      step={STEP.PLAY}
+      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      hasSubtitles
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
+    />
+  ))
+  .add('Subtitles (Android)', () => {
+    Platform.OS = 'android';
+
+    return (
+      <Video
+        source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
+        preview={image}
+        height={180}
+        step={STEP.PLAY}
+        subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+        hasSubtitles
+        onPlay={handleFakePress}
+        onEnd={handleFakePress}
+        onReady={handleFakePress}
+      />
+    );
+  })
+  .add('Disabled subtitles', () => (
+    <Video
+      source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
+      preview={image}
+      height={180}
+      step={STEP.PLAY}
+      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      hasSubtitles={false}
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
+    />
+  ))
+  .add('Disabled subtitles (Android)', () => (
+    <Video
+      source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
+      preview={image}
+      height={180}
+      step={STEP.PLAY}
+      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      hasSubtitles={false}
       onPlay={handleFakePress}
       onEnd={handleFakePress}
       onReady={handleFakePress}

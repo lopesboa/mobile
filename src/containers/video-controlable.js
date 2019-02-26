@@ -19,12 +19,14 @@ type Props = {|
   ...ConnectedDispatchToProps,
   source: File | {uri: string},
   preview: File | {uri: string},
-  height: number
+  height: number,
+  subtitles?: string
 |};
 
 type State = {|
   step: Step,
-  isFullScreen: boolean
+  isFullScreen: boolean,
+  hasSubtitles: boolean
 |};
 
 class VideoControlable extends React.PureComponent<Props, State> {
@@ -32,7 +34,8 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   state: State = {
     step: STEP.PREVIEW,
-    isFullScreen: false
+    isFullScreen: false,
+    hasSubtitles: true
   };
 
   videoPlayer: VideoPlayer;
@@ -90,6 +93,11 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
   };
 
+  handleSubtitlesToggle = () =>
+    this.setState(({hasSubtitles}: State) => ({
+      hasSubtitles: !hasSubtitles
+    }));
+
   handleRef = (videoPlayer: VideoPlayer | null) => {
     this.videoPlayer = videoPlayer;
   };
@@ -101,12 +109,15 @@ class VideoControlable extends React.PureComponent<Props, State> {
         preview={this.props.preview}
         height={this.props.height}
         step={this.state.step}
+        subtitles={this.props.subtitles}
+        hasSubtitles={this.state.hasSubtitles}
         isFullScreen={this.state.isFullScreen}
         onPlay={this.handlePlay}
         onEnd={this.handleEnd}
         onReady={this.handleReady}
         onExpand={this.handleExpand}
         onShrink={this.handleShrink}
+        onSubtitlesToggle={this.handleSubtitlesToggle}
         onRef={this.handleRef}
       />
     );

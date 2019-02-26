@@ -3,6 +3,7 @@
 import * as React from 'react';
 
 type BrandTheme = {|
+  host: string,
   colors: {
     primary: string
   }
@@ -15,6 +16,8 @@ type Props = {|
 type State = BrandTheme;
 
 const initialState: State = {
+  // @todo deal with real data
+  host: 'https://demo-thibault.coorpacademy.com',
   colors: {
     primary: '#00B0FF'
   }

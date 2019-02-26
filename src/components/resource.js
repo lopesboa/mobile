@@ -14,6 +14,7 @@ type Props = {|
   thumbnail: string,
   url: string,
   description: string,
+  subtitles?: string,
   height: number,
   onPDFButtonPress: (url: string, description: string) => void
 |};
@@ -27,13 +28,14 @@ class Resource extends React.PureComponent<Props> {
   };
 
   render() {
-    const {type, thumbnail, url, height} = this.props;
+    const {type, thumbnail, url, subtitles, height} = this.props;
 
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
         return (
           <Video
             source={{uri: getCleanUri(url)}}
+            subtitles={subtitles}
             preview={{uri: getCleanUri(thumbnail)}}
             height={height}
           />
