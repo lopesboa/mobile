@@ -61,6 +61,7 @@ export const mapToSlideExpectedResult: SlideEngine = {
   meta: slide.meta,
   tips: slide.tips,
   clue: slide.clue,
+  context: slide.context,
   question: slide.question,
   position: slide.position
 };

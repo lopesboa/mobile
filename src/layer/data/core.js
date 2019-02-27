@@ -5,7 +5,8 @@ import {AsyncStorage} from 'react-native';
 import basic from '../../__fixtures__/discipline-bundle/basic';
 import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
 import noClue from '../../__fixtures__/discipline-bundle/no-clue';
-import withContext from '../../__fixtures__/discipline-bundle/with-context';
+import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
+import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
 import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import type {SupportedLanguage} from '../../translations/_types';
@@ -115,8 +116,12 @@ export const fetchDisciplineBundle = (
     return Promise.resolve(noClue);
   }
 
-  if (Object.keys(withContext.disciplines).includes(ref)) {
-    return Promise.resolve(withContext);
+  if (Object.keys(withContextVideo.disciplines).includes(ref)) {
+    return Promise.resolve(withContextVideo);
+  }
+
+  if (Object.keys(withContextImage.disciplines).includes(ref)) {
+    return Promise.resolve(withContextImage);
   }
 
   if (Object.keys(onboarding.disciplines).includes(ref)) {

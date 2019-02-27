@@ -264,6 +264,7 @@ exports[`Storyshots Context With Image 1`] = `
         ],
       ]
     }
+    testID="context-image"
   />
   <View
     style={

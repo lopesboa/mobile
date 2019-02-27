@@ -24,6 +24,12 @@ type Props = {|
 class ContextScreen extends React.PureComponent<Props> {
   props: Props;
 
+  UNSAFE_componentWillMount() {
+    if (this.props.hasNoContext) {
+      this.props.navigation.navigate('Question');
+    }
+  }
+
   handleButtonPress = () => {
     this.props.navigation.navigate('Question');
   };
@@ -60,14 +66,14 @@ class ContextScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state: StoreState): Props => {
+export const mapStateToProps = (state: StoreState): Props => {
   const slide = getCurrentSlide(state);
 
   const slideContext = slide && slide.context;
-
   return {
     description: slideContext && slideContext.description,
     header: slideContext && slideContext.title,
+    hasNoContext: !(slide && slide.context && slide.context.title),
     mediaSources: slideContext && slideContext.media
   };
 };

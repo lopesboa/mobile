@@ -1,14 +1,16 @@
 // @flow
-import type {Progression, GenericContent} from '@coorpacademy/progression-engine';
+import type {Progression, GenericContent, Content} from '@coorpacademy/progression-engine';
 
 import type {Engine} from '../types';
 
 export const createProgression = ({
   engine,
-  progressionContent
+  progressionContent,
+  nextContent
 }: {
   engine: Engine,
-  progressionContent: GenericContent
+  progressionContent: GenericContent,
+  nextContent?: Content | null
 }): Progression => {
   return {
     engine: {
@@ -45,10 +47,10 @@ export const createProgression = ({
       viewedResources: [],
       remainingLifeRequests: 1,
       hasViewedAResourceAtThisStep: false,
-      nextContent: {
-        type: 'slide',
-        ref: 'sli_N1uxMsUIV'
-      },
+      nextContent:
+        nextContent === undefined || nextContent === null
+          ? {type: 'slide', ref: 'sli_N1uxMsUIV'}
+          : nextContent,
       allAnswers: [],
       variables: {}
     }

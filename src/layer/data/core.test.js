@@ -5,7 +5,8 @@ import {AsyncStorage} from 'react-native';
 import basicCourse from '../../__fixtures__/discipline-bundle/basic';
 import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
 import noClueCourse from '../../__fixtures__/discipline-bundle/no-clue';
-import withContextCourse from '../../__fixtures__/discipline-bundle/with-context';
+import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
+import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
 import onboardingCourse from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelleCourse from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
@@ -282,11 +283,18 @@ describe('Data Layer Core', () => {
       expect(result).resolves.toBe(noClueCourse);
     });
 
-    it('should fetch with context', () => {
-      const keys = Object.keys(withContextCourse.disciplines);
+    it('should fetch with context-video', () => {
+      const keys = Object.keys(withContextVideo.disciplines);
       const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
-      expect(result).resolves.toBe(withContextCourse);
+      expect(result).resolves.toBe(withContextVideo);
+    });
+
+    it('should fetch with context-image', () => {
+      const keys = Object.keys(withContextImage.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
+      // @todo should be mocked
+      expect(result).resolves.toBe(withContextImage);
     });
 
     it('should fetch onboarding', () => {

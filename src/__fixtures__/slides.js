@@ -1,9 +1,9 @@
 // @flow
 
-import type {Question} from '@coorpacademy/progression-engine';
+import type {Question, Context} from '@coorpacademy/progression-engine';
 
 import type {Lesson, Slide} from '../layer/data/_types';
-import {image} from './medias';
+import {createEmptyContext} from './context';
 
 export const createSlide = ({
   ref,
@@ -18,7 +18,7 @@ export const createSlide = ({
   question: Question,
   clue?: string | null,
   lessons?: Array<Lesson>,
-  context?: boolean | null
+  context?: Context | null
 }): Slide => ({
   _id: ref,
   universalRef: ref,
@@ -30,13 +30,7 @@ export const createSlide = ({
   chapter_id: chapterId,
   __v: 0,
   authors: [],
-  context: !context
-    ? {media: {src: [], posters: [], subtitles: []}}
-    : {
-        media: image,
-        description: 'This is a description',
-        title: 'This is a title'
-      },
+  context: context || createEmptyContext(),
   meta: {
     updatedAt: '2019-01-17T09:35:44.450Z',
     createdAt: '2019-01-17T09:35:44.450Z'

@@ -54,6 +54,7 @@ export const mapToSlide = (rawSlide: Slide): SlideEngine => ({
   meta: rawSlide.meta,
   tips: rawSlide.tips,
   clue: rawSlide.clue,
+  context: rawSlide.context,
   question: rawSlide.question,
   position: rawSlide.position
 });

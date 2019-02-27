@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {getCurrentSlide} from '@coorpacademy/player-store';
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 class TabBarSlide extends React.Component<Props> {
   props: Props;
 
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.hasNoContext) {
       this.props.navigation.navigate('Context');
     }
@@ -49,11 +49,10 @@ class TabBarSlide extends React.Component<Props> {
   }
 
   handleTabPress = (scene: TabScene) => {
-    const {onTabPress, hasNoClue, hasNoContext, hasNoLesson} = this.props;
+    const {onTabPress, hasNoClue, hasNoLesson} = this.props;
 
     if (
       (scene.route.routeName === 'Clue' && hasNoClue) ||
-      (scene.route.routeName === 'Context' && hasNoContext) ||
       (scene.route.routeName === 'Lesson' && hasNoLesson)
     ) {
       return;
@@ -63,11 +62,10 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasNoClue, hasNoContext, hasNoLesson} = this.props;
+    const {renderIcon, hasNoClue, hasNoLesson} = this.props;
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||
-      (scene.route.key === 'Context' && hasNoContext) ||
       (scene.route.key === 'Lesson' && hasNoLesson)
     ) {
       return renderIcon({
@@ -79,12 +77,20 @@ class TabBarSlide extends React.Component<Props> {
     return renderIcon(scene);
   };
 
+  getButtonComponent = (scene: TabScene) => {
+    const {getButtonComponent, hasNoContext} = this.props;
+    const HiddenView = () => <View style={{display: 'none'}} />;
+    if (scene.route.key === 'Context' && hasNoContext) {
+      return HiddenView;
+    }
+    return getButtonComponent(scene);
+  };
+
   getLabelText = (scene: TabScene) => {
-    const {getLabelText, labelStyle, hasNoClue, hasNoContext, hasNoLesson} = this.props;
+    const {getLabelText, labelStyle, hasNoClue, hasNoLesson} = this.props;
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||
-      (scene.route.key === 'Context' && hasNoContext) ||
       (scene.route.key === 'Lesson' && hasNoLesson)
     ) {
       return <Text style={[labelStyle, styles.inactiveText]}>{getLabelText(scene)}</Text>;
@@ -95,13 +101,13 @@ class TabBarSlide extends React.Component<Props> {
 
   render() {
     const {navigation, ...props} = this.props;
-
     return (
       <TabBar
         {...props}
         navigation={navigation}
         onTabPress={this.handleTabPress}
         renderIcon={this.renderIcon}
+        getButtonComponent={this.getButtonComponent}
         getLabelText={this.getLabelText}
       />
     );

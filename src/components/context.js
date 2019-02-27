@@ -117,7 +117,12 @@ class Context extends React.PureComponent<Props> {
     const url = getCleanUri(resource.src[0].url);
     return (
       // $FlowFixMe
-      <Image source={{uri: url}} maxHeight={height} style={[styles.imageStyle, {height, width}]} />
+      <Image
+        source={{uri: url}}
+        maxHeight={height}
+        style={[styles.imageStyle, {height, width}]}
+        testID="context-image"
+      />
     );
   };
 

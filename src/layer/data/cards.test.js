@@ -3,7 +3,8 @@
 import basic from '../../__fixtures__/discipline-bundle/basic';
 import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
 import noClue from '../../__fixtures__/discipline-bundle/no-clue';
-import withContext from '../../__fixtures__/discipline-bundle/with-context';
+import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
+import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
 import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 
@@ -23,7 +24,8 @@ describe('cards', () => {
         ...basic.disciplines,
         ...adaptive.disciplines,
         ...noClue.disciplines,
-        ...withContext.disciplines
+        ...withContextVideo.disciplines,
+        ...withContextImage.disciplines
       };
       const expected = Object.keys(disciplines).map(key => disciplines[key]);
       expect(result).resolves.toBe(expected);

@@ -5,39 +5,8 @@ import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 
 import {handleFakePress, fakeLayout, TestContextProvider} from '../utils/tests';
+import {mediaContextImage, mediaContextVideo, mediaContextPDF} from '../__fixtures__/context';
 import {Component as Context} from './context';
-
-const mediaImage = {
-  type: 'img',
-  src: [
-    {
-      mimeType: 'image/jpeg',
-      _id: 'someImage_ID',
-      url:
-        '//api-staging.coorpacademy.com/api-service/medias?h=400&w=400&q=90&url=http://static.coorpacademy.com/content/CoorpAcademy/content/cockpitRecette-joan/default/corbeau-1501504511632.jpg'
-    }
-  ]
-};
-
-const mediaVideo = {
-  type: 'video',
-  src: [
-    {
-      mimeType: 'video/mp4',
-      url:
-        '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
-      _id: 'some_randoMId'
-    }
-  ]
-};
-
-const mediaPDF = {
-  type: 'pdf',
-  description: 'PDF description',
-  mimeType: 'application/pdf',
-  mediaUrl:
-    '//static.coorpacademy.com/content/CoorpAcademy/content/cockpit-mooc-technique/raw/hierachie-contenu-1494494029567.pdf'
-};
 
 storiesOf('Context', module)
   .add('Default', () => (
@@ -70,7 +39,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaImage}
+        mediaSources={mediaContextImage}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -83,7 +52,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaVideo}
+        mediaSources={mediaContextVideo}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -96,7 +65,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaPDF}
+        mediaSources={mediaContextPDF}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -109,7 +78,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaPDF}
+        mediaSources={mediaContextPDF}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -126,7 +95,7 @@ if (process.env.NODE_ENV === 'test') {
           <Context
             header="Better now"
             description="You probably think that you are better now <img src='gr\' />"
-            mediaSources={mediaPDF}
+            mediaSources={mediaContextPDF}
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
             onOpenBrowser={handleFakePress}

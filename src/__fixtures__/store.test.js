@@ -111,6 +111,7 @@ describe('storeFixture', () => {
         meta: slide1.meta,
         tips: slide1.tips,
         clue: slide1.clue,
+        context: slide1.context,
         question: slide1.question,
         position: slide1.position
       }
