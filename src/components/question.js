@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   },
   image: {
     alignSelf: 'center',

@@ -14,7 +14,7 @@ exports[`Storyshots Question Option selected 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -521,7 +521,7 @@ exports[`Storyshots Question QCM 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -1036,7 +1036,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -1713,7 +1713,7 @@ exports[`Storyshots Question With image 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >

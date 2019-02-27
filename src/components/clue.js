@@ -38,7 +38,7 @@ const styles: GenericStyleProp = StyleSheet.create({
     fontWeight: theme.fontWeight.bold
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   }
 });
 

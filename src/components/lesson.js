@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   },
   bottomTextWrapper: {
     backgroundColor: theme.colors.gray.light,

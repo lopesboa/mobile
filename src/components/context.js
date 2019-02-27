@@ -50,7 +50,7 @@ const styles: GenericStyleProp = StyleSheet.create({
     marginRight: 'auto'
   },
   titleContainer: {
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   },
   descriptionContainer: {
     paddingHorizontal: theme.spacing.base

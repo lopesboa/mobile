@@ -12,7 +12,7 @@ exports[`Storyshots Clue Default 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >

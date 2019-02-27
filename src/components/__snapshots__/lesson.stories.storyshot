@@ -15,7 +15,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -1106,7 +1106,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -2136,7 +2136,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 64,
+        "paddingHorizontal": 24,
       }
     }
   >
