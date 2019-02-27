@@ -34,26 +34,26 @@ const bundledDiscipline: BundledDiscipline = {
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
-    with_video_context_video_sli_1: createSlide({
+    with_video_context_sli_1: createSlide({
       ref: 'with_video_context_sli_1',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
       context: contextWithVideo
     }),
-    with_video_context_video_sli_2: createSlide({
-      ref: 'with_video_context_video_sli_2',
+    with_video_context_sli_2: createSlide({
+      ref: 'with_video_context_sli_2',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
       context: contextWithVideo
     }),
-    with_video_context_video_sli_3: createSlide({
-      ref: 'with_video_context_video_sli_3',
+    with_video_context_sli_3: createSlide({
+      ref: 'with_video_context_sli_3',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
       context: contextWithVideo
     }),
-    with_video_context_video_sli_4: createSlide({
-      ref: 'with_video_context_video_sli_4',
+    with_video_context_sli_4: createSlide({
+      ref: 'with_video_context_sli_4',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
       context: contextWithVideo
