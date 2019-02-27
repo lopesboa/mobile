@@ -36,7 +36,7 @@ describe('Lesson', () => {
       await weExpect(element(by.id('resource-les-1-selected'))).toBeVisible();
       await weExpect(element(by.id('resource-les-1-thumbnail'))).toBeVisible();
       await weExpect(element(by.id('resource-les-1-description'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-1-video-icon'))).toBeNotVisible();
+      await weExpect(element(by.id('resource-les-1-video-icon'))).toBeVisible();
     });
 
     describe('Video', () => {
@@ -125,7 +125,7 @@ describe('Lesson', () => {
         await weExpect(element(by.id('resource-les-4-selected'))).toBeVisible();
         await weExpect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
         await weExpect(element(by.id('resource-les-4-description'))).toBeVisible();
-        await weExpect(element(by.id('resource-les-4-video-icon'))).toBeNotVisible();
+        await weExpect(element(by.id('resource-les-4-pdf-icon'))).toBeVisible();
       });
     });
 

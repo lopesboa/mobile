@@ -2,6 +2,22 @@
 
 import type {Slide} from '../../../layer/data/_types';
 
+// @todo this has been added only for demo
+const fakePdf = {
+  _id: '123456789',
+  description: 'Rules of the game',
+  mediaUrl:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/raw/rules-of-the-game-1551288259532.pdf',
+  mimeType: 'application/pdf',
+  ref: 'les_foobarbaz',
+  type: 'pdf',
+  poster:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/joytisck-1519155703203.jpeg',
+  subtitles: [],
+  posters: [],
+  src: []
+};
+
 export const slide_sli_EJ6TGiIIN: Slide = {
   _id: 'sli_EJ6TGiIIN',
   universalRef: 'sli_EJ6TGiIIN',
@@ -41,7 +57,8 @@ export const slide_sli_EJ6TGiIIN: Slide = {
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       downloadUrl:
         '//player.vimeo.com/external/266296552.sd.mp4?s=30e5cb5e4e03a8337105e6a8aa0dd89bdab03c1c&profile_id=164&oauth2_token_id=411503075'
-    }
+    },
+    fakePdf
   ],
   question: {
     type: 'qcm',
@@ -196,7 +213,8 @@ export const slide_sli_NJjQLo8LV: Slide = {
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       downloadUrl:
         '//player.vimeo.com/external/266296552.sd.mp4?s=30e5cb5e4e03a8337105e6a8aa0dd89bdab03c1c&profile_id=164&oauth2_token_id=411503075'
-    }
+    },
+    fakePdf
   ],
   question: {
     type: 'qcmGraphic',
@@ -342,7 +360,8 @@ export const slide_sli_Nkg5D8BD4: Slide = {
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       downloadUrl:
         '//player.vimeo.com/external/266296552.sd.mp4?s=30e5cb5e4e03a8337105e6a8aa0dd89bdab03c1c&profile_id=164&oauth2_token_id=411503075'
-    }
+    },
+    fakePdf
   ],
   question: {
     type: 'qcm',

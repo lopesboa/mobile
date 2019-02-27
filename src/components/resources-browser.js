@@ -14,6 +14,7 @@ import {getCleanUri} from '../modules/uri';
 import {BrandThemeContext} from './brand-theme-provider';
 import Html from './html';
 import Space from './space';
+import ResourceOverlay from './resource-overlay';
 
 type Props = {|
   onChange: (id: string) => void,
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     height: 45,
     padding: 2,
     resizeMode: 'stretch',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center'
@@ -81,7 +82,8 @@ class ResourcesBrowser extends React.PureComponent<Props> {
         <BrandThemeContext.Consumer>
           {brandTheme => {
             const selectedStyle = {
-              borderColor: brandTheme.colors.primary
+              borderColor: brandTheme.colors.primary,
+              color: brandTheme.colors.primary
             };
 
             return (
@@ -90,33 +92,34 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                   style={[styles.thumbnail, isSelected && selectedStyle]}
                   testID={`${testID}-thumbnail`}
                 >
-                  <ImageBackground
-                    source={{uri: resource.poster && getCleanUri(resource.poster)}}
-                    style={styles.image}
-                    resizeMode="cover"
-                  />
+                  <View style={styles.image}>
+                    <ImageBackground
+                      source={{uri: resource.poster && getCleanUri(resource.poster)}}
+                      style={styles.image}
+                      resizeMode="cover"
+                    />
+                    {!isSelected && <ResourceOverlay />}
+                  </View>
                   {/* $FlowFixMe img is not defined in progression-engine */}
-                  {resource.type === RESOURCE_TYPE.VIDEO &&
-                    !isSelected && (
-                      <PlayIcon
-                        style={styles.icon}
-                        color={theme.colors.white}
-                        testID={`${testID}-video-icon`}
-                        height={20}
-                        width={20}
-                      />
-                    )}
+                  {resource.type === RESOURCE_TYPE.VIDEO && (
+                    <PlayIcon
+                      style={styles.icon}
+                      color={theme.colors.white}
+                      testID={`${testID}-video-icon`}
+                      height={20}
+                      width={20}
+                    />
+                  )}
                   {/* $FlowFixMe img is not defined in progression-engine */}
-                  {resource.type === RESOURCE_TYPE.PDF &&
-                    !isSelected && (
-                      <PDFIcon
-                        style={styles.icon}
-                        color={theme.colors.white}
-                        testID={`${testID}-pdf-icon`}
-                        height={20}
-                        width={20}
-                      />
-                    )}
+                  {resource.type === RESOURCE_TYPE.PDF && (
+                    <PDFIcon
+                      style={styles.icon}
+                      color={theme.colors.white}
+                      testID={`${testID}-pdf-icon`}
+                      height={20}
+                      width={20}
+                    />
+                  )}
                 </View>
                 <Space type="small" />
                 <Html
@@ -125,8 +128,8 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                   containerStyle={styles.descriptionContainer}
                   style={[
                     styles.description,
-                    isSelected && styles.descriptionSelected,
-                    isSelected && selectedStyle
+                    isSelected && selectedStyle,
+                    isSelected && styles.descriptionSelected
                   ]}
                 >
                   {resource.description}
