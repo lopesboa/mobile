@@ -18,17 +18,17 @@ const lessons = [
   createVideo({
     ref: 'les_1',
     description: 'First video',
-    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
+    subtitleRef: 'ref_subtitle_01'
   }),
   createVideo({
     ref: 'les_2',
     description: 'Second video',
-    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
+    subtitleRef: 'ref_subtitle_01'
   }),
   createVideo({
     ref: 'les_3',
     description: 'Third video',
-    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
+    subtitleRef: 'ref_subtitle_01'
   }),
   createPdf({ref: 'les_4', description: 'First PDF'})
 ];

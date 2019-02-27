@@ -70,7 +70,8 @@ const Lesson = (props: Props) => {
       {brandTheme => {
         const subtitles =
           openedResource.subtitleRef &&
-          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
+          // @todo use user language
+          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, 'en');
         const url =
           // $FlowFixMe img is not defined in progression-engine
           (openedResource.type === RESOURCE_TYPE.VIDEO && openedResource.downloadUrl) ||

@@ -92,7 +92,7 @@ exports[`Storyshots Video Disabled subtitles (Android) 1`] = `
             "language": "en",
             "title": "Subtitles",
             "type": "text/vtt",
-            "uri": "https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt",
+            "uri": "https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en",
           },
         ]
       }
@@ -560,7 +560,7 @@ exports[`Storyshots Video Disabled subtitles 1`] = `
             "language": "en",
             "title": "Subtitles",
             "type": "text/vtt",
-            "uri": "https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt",
+            "uri": "https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en",
           },
         ]
       }
@@ -3322,7 +3322,7 @@ exports[`Storyshots Video Subtitles (Android) 1`] = `
             "language": "en",
             "title": "Subtitles",
             "type": "text/vtt",
-            "uri": "https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt",
+            "uri": "https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en",
           },
         ]
       }
@@ -3797,7 +3797,7 @@ exports[`Storyshots Video Subtitles 1`] = `
             "language": "en",
             "title": "Subtitles",
             "type": "text/vtt",
-            "uri": "https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt",
+            "uri": "https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en",
           },
         ]
       }

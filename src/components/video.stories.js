@@ -63,7 +63,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
       hasSubtitles
       onPlay={handleFakePress}
       onEnd={handleFakePress}
@@ -79,7 +79,7 @@ storiesOf('Video', module)
         preview={image}
         height={180}
         step={STEP.PLAY}
-        subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+        subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
         hasSubtitles
         onPlay={handleFakePress}
         onEnd={handleFakePress}
@@ -93,7 +93,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
       hasSubtitles={false}
       onPlay={handleFakePress}
       onEnd={handleFakePress}
@@ -106,7 +106,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://demo-thibault.coorpacademy.com/api/v2/subtitles/sub_dacb7432-9ce1-4711-95fc-7963c599c9cb/vtt"
+      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
       hasSubtitles={false}
       onPlay={handleFakePress}
       onEnd={handleFakePress}

@@ -17,7 +17,7 @@ type State = BrandTheme;
 
 const initialState: State = {
   // @todo deal with real data
-  host: 'https://demo-thibault.coorpacademy.com',
+  host: 'https://onboarding.coorpacademy.com',
   colors: {
     primary: '#00B0FF'
   }
