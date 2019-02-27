@@ -4,7 +4,7 @@ import type {BundledDiscipline} from '../../layer/data/_types';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createChapter} from '../../__fixtures__/chapters';
 import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR} from '../actions/discipline-bundle';
-import type {Action} from '../actions/discipline-bundle';
+import type {Action, FetchRequestPayload, FetchErrorPayload} from '../actions/discipline-bundle';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
 import createMiddleware from './discipline-bundle';
@@ -52,27 +52,38 @@ describe('Discipline bundle', () => {
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('should handle empty payload', () => {
-    const action = {
-      type: FETCH_REQUEST
-    };
-    const middleware = createMiddleware(options);
-    const store = createStore();
-    const next = jest.fn();
-    // $FlowFixMe this si to test only
-    middleware(store)(next)(action);
-    expect(store.dispatch).not.toHaveBeenCalled();
-    expect(next).toHaveBeenCalledWith(action);
-  });
-
   describe(FETCH_REQUEST, () => {
+    const payload: FetchRequestPayload = {
+      ref: 'foobarbaz',
+      languages: ['fr', 'de']
+    };
     const action: Action = {
       type: FETCH_REQUEST,
-      payload: {
-        ref: 'foobarbaz',
-        languages: ['fr', 'de']
-      }
+      payload
     };
+
+    it('should handle empty payload', async () => {
+      const emptyAction = {
+        ...action,
+        payload: {}
+      };
+      const middleware = createMiddleware(options);
+      const store = createStore();
+      const next = jest.fn();
+      // $FlowFixMe this si to test only
+      middleware(store)(next)(emptyAction);
+      await sleep();
+      const expectedPayload: FetchErrorPayload = {
+        ref: undefined,
+        languages: undefined
+      };
+      const expectedAction: Action = {
+        type: FETCH_ERROR,
+        payload: expectedPayload
+      };
+      expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(next).toHaveBeenCalledWith(emptyAction);
+    });
 
     it('should handle findById rejection', async () => {
       const middleware = createMiddleware(options);
@@ -80,10 +91,11 @@ describe('Discipline bundle', () => {
       const next = jest.fn();
       middleware(store)(next)(action);
       await sleep();
-      expect(store.dispatch).toHaveBeenCalledWith({
+      const expectedAction: Action = {
         type: FETCH_ERROR,
         payload: action.payload
-      });
+      };
+      expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
       expect(next).toHaveBeenCalledWith(action);
     });
 
@@ -103,7 +115,7 @@ describe('Discipline bundle', () => {
       const next = jest.fn();
       middleware(store)(next)(action);
       await sleep();
-      expect(store.dispatch).toHaveBeenCalledWith({
+      const expectedAction: Action = {
         type: FETCH_SUCCESS,
         payload: {
           disciplines: {
@@ -113,7 +125,8 @@ describe('Discipline bundle', () => {
             foobarbazqux: ['fr', 'de']
           }
         }
-      });
+      };
+      expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
       expect(next).toHaveBeenCalledWith(action);
     });
   });

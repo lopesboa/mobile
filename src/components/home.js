@@ -6,14 +6,13 @@ import {View, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
 import translations from '../translations';
 import version from '../modules/version';
-import type {Discipline, Chapter} from '../layer/data/_types';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
 import Space from './space';
 import Text from './text';
 
 type Props = {|
-  onChapterPress: (chapter: Chapter) => void,
-  onDisciplinePress: (discipline: Discipline) => void
+  onCardPress: (item: DisciplineCard | ChapterCard) => void
 |};
 
 const styles = StyleSheet.create({
@@ -29,9 +28,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onChapterPress, onDisciplinePress}: Props) => (
+const Home = ({onCardPress}: Props) => (
   <View style={styles.container} testID="home">
-    <Catalog onChapterPress={onChapterPress} onDisciplinePress={onDisciplinePress} />
+    <Catalog onPress={onCardPress} />
     <Space type="small" />
     <Text style={styles.version}>
       {translations.formatString('{0}: {1}', 'Version', version.commit)}

@@ -57,6 +57,8 @@ export type Level = $Exact<{|
   levelTranslation: string
 |}>;
 
+export type LevelType = 'base' | 'advanced' | 'coach';
+
 export type Chapter = $Exact<{|
   ...ChapterAPI,
   universalRef: string,
@@ -119,3 +121,93 @@ export type BundledDiscipline = {|
   chapterRules: {[key: string]: ChapterRule}
 |};
 export type Resource = Slide | Discipline | Chapter | ExitNode;
+
+export type CardThematique = {|
+  ref: string,
+  label: string
+|};
+export type CardSkill = {|
+  ref: string,
+  name: string
+|};
+export type CardAuthor = {|
+  ref: string,
+  label: string,
+  authorType: string
+|};
+export type CardType = 'course' | 'chapter';
+export type CardStatus = 'isStarted' | 'isLocked' | 'isActive';
+export type CardLevel = {|
+  nbChapters: number,
+  ref: string,
+  universalRef: string,
+  version: string,
+  level: LevelType,
+  creditsToAccess: number,
+  isConditional: boolean,
+  taggedNewUntil: string,
+  stars: number,
+  inProgress: boolean,
+  isDone: boolean,
+  completion: number,
+  accessible: boolean,
+  status: CardStatus,
+  label: string
+|};
+// @todo add properties to use
+export type CardCondition = {||};
+
+export type Card<T> = {|
+  ...T,
+  type: CardType,
+  image: string,
+  time: number,
+  adaptiv: boolean,
+  certification: boolean,
+  lang: string,
+  thematiques: Array<CardThematique>,
+  skills: Array<CardSkill>,
+  groupsHidden: string,
+  // @todo to be enhanced
+  course: null,
+  authors: Array<CardAuthor>,
+  authorsListHidden: string,
+  title: string,
+  position: number,
+  createdAt: string,
+  taggedNewUntil: string,
+  ref: string,
+  universalRef: string,
+  version: string,
+  relatedContentHidden: string,
+  // @todo to be enhanced
+  _score: null,
+  stars: number,
+  completion: number,
+  isNew: boolean,
+  favorite: boolean
+|};
+
+export type DisciplineCard = Card<{|
+  type: 'course',
+  conditions: Array<CardCondition>,
+  defaultModuleLevel: LevelType,
+  descriptionHidden: string,
+  modules: Array<CardLevel>,
+  nbChapters: number,
+  skillsHidden: string
+|}>;
+
+export type ChapterCard = Card<{|
+  type: 'chapter',
+  isStandalone: boolean,
+  isFirst: boolean,
+  moduleRef: string,
+  creditsToAccess: number,
+  inProgress: boolean,
+  isDone: boolean,
+  status: CardStatus,
+  accessible: boolean
+|}>;
+
+export type Cards = Array<DisciplineCard | ChapterCard>;

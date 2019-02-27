@@ -3,21 +3,19 @@
 import * as React from 'react';
 import {View} from 'react-native';
 
-import type {Chapter, Discipline} from '../layer/data/_types';
+import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import Button from './button';
 import Space from './space';
 
-export type Item = Discipline | Chapter;
-
 type Props = {|
-  items: Array<Item>,
-  onPress: (item: Item) => void
+  items: Array<DisciplineCard | ChapterCard>,
+  onPress: (item: DisciplineCard | ChapterCard) => void
 |};
 
 class Catalog extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = (item: Item) => () => this.props.onPress(item);
+  handlePress = (item: DisciplineCard | ChapterCard) => () => this.props.onPress(item);
 
   render() {
     const {items} = this.props;
@@ -31,7 +29,7 @@ class Catalog extends React.PureComponent<Props> {
               onPress={this.handlePress(item)}
               testID={`catalog-item-${item.universalRef.replace(/_/g, '-')}`}
             >
-              {item.name}
+              {item.title}
             </Button>
           </React.Fragment>
         ))}

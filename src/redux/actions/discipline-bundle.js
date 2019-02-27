@@ -8,24 +8,27 @@ export const FETCH_REQUEST = `@@discipline-bundle/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@discipline-bundle/FETCH_SUCCESS`;
 export const FETCH_ERROR = `@@discipline-bundle/FETCH_ERROR`;
 
-type FetchPayload = {|
+export type FetchRequestPayload = {|
   ref: string,
   languages: Array<SupportedLanguage>
 |};
 
-type FetchSuccessPayload = {|
+export type FetchSuccessPayload = {|
   disciplines: {[key: string]: Array<SupportedLanguage>},
   chapters: {[key: string]: Array<SupportedLanguage>}
 |};
 
-type FetchErrorPayload = FetchPayload;
+export type FetchErrorPayload = {|
+  ref?: string,
+  languages?: Array<SupportedLanguage>
+|};
 
 export type Action = {|
   type:
     | '@@discipline-bundle/FETCH_REQUEST'
     | '@@discipline-bundle/FETCH_SUCCESS'
     | '@@discipline-bundle/FETCH_ERROR',
-  payload: FetchPayload | FetchSuccessPayload | FetchErrorPayload
+  payload: FetchRequestPayload | FetchSuccessPayload | FetchErrorPayload
 |};
 
 export const fetchRequest = (ref: string, languages: Array<SupportedLanguage>): Action => ({
@@ -47,7 +50,7 @@ export const fetchSuccess = (
   }
 });
 
-export const fetchError = (ref: string, languages: Array<SupportedLanguage>): Action => ({
+export const fetchError = (ref?: string, languages?: Array<SupportedLanguage>): Action => ({
   type: FETCH_ERROR,
   payload: {
     ref,

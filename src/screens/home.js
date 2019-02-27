@@ -5,12 +5,11 @@ import {connect} from 'react-redux';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
-import {createLevelProgression, createChapterProgression} from '../redux/actions/progression';
-import type {Level, Chapter, Discipline} from '../layer/data/_types';
+import {selectCard} from '../redux/actions/cards';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 
 type ConnectedDispatchProps = {|
-  createLevelProgression: typeof createLevelProgression,
-  createChapterProgression: typeof createChapterProgression
+  selectCard: typeof selectCard
 |};
 
 type Props = {|
@@ -30,33 +29,22 @@ class HomeScreen extends React.PureComponent<Props> {
     }
   });
 
-  handleDisciplinePress = (discipline: Discipline) => {
-    // @todo redirect to discipline page once developed
-    const level: Level = discipline.modules[0];
-    this.props.createLevelProgression(level);
-    this.props.navigation.navigate('Slide');
-  };
-
-  handleChapterPress = (chapter: Chapter) => {
-    this.props.createChapterProgression(chapter);
+  handleCardPress = (item: DisciplineCard | ChapterCard) => {
+    this.props.selectCard(item);
     this.props.navigation.navigate('Slide');
   };
 
   render() {
     return (
       <Screen testID="home-screen">
-        <Home
-          onDisciplinePress={this.handleDisciplinePress}
-          onChapterPress={this.handleChapterPress}
-        />
+        <Home onCardPress={this.handleCardPress} />
       </Screen>
     );
   }
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  createLevelProgression,
-  createChapterProgression
+  selectCard
 };
 
 export default connect(null, mapDispatchToProps)(HomeScreen);

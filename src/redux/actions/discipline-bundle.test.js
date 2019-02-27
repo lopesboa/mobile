@@ -8,19 +8,25 @@ import {
   fetchSuccess,
   fetchError
 } from './discipline-bundle';
-import type {Action} from './discipline-bundle';
+import type {
+  Action,
+  FetchRequestPayload,
+  FetchSuccessPayload,
+  FetchErrorPayload
+} from './discipline-bundle';
 
 describe('Discipline bundle', () => {
   it('fetchRequest', () => {
     const ref = 'foobarbaz';
     const languages = ['en', 'de', 'it', 'ja'];
     const result = fetchRequest(ref, languages);
+    const payload: FetchRequestPayload = {
+      ref,
+      languages
+    };
     const expected: Action = {
       type: FETCH_REQUEST,
-      payload: {
-        ref,
-        languages
-      }
+      payload
     };
     expect(result).toEqual(expected);
   });
@@ -31,18 +37,19 @@ describe('Discipline bundle', () => {
       {dis1: languages, dis2: languages},
       {cha1: languages, cha2: languages}
     );
+    const payload: FetchSuccessPayload = {
+      disciplines: {
+        dis1: languages,
+        dis2: languages
+      },
+      chapters: {
+        cha1: languages,
+        cha2: languages
+      }
+    };
     const expected: Action = {
       type: FETCH_SUCCESS,
-      payload: {
-        disciplines: {
-          dis1: languages,
-          dis2: languages
-        },
-        chapters: {
-          cha1: languages,
-          cha2: languages
-        }
-      }
+      payload
     };
     expect(result).toEqual(expected);
   });
@@ -51,12 +58,13 @@ describe('Discipline bundle', () => {
     const ref = 'foobarbaz';
     const languages = ['en', 'de', 'it', 'ja'];
     const result = fetchError(ref, languages);
+    const payload: FetchErrorPayload = {
+      ref,
+      languages
+    };
     const expected: Action = {
       type: FETCH_ERROR,
-      payload: {
-        ref,
-        languages
-      }
+      payload
     };
     expect(result).toEqual(expected);
   });

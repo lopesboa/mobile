@@ -378,7 +378,22 @@ exports[`Storyshots Lesson PDF selected 1`] = `
               "posters": Array [],
               "ref": "les_1",
               "src": Array [],
-              "subtitleRef": "sub_dacb7432-9ce1-4711-95fc-7963c599c9cb",
+              "subtitleRef": undefined,
+              "subtitles": Array [],
+              "type": "video",
+              "videoId": "303449523",
+            },
+            Object {
+              "_id": "les_3",
+              "description": "Foo bar baz - Video subtitles",
+              "downloadUrl": "//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075",
+              "mediaUrl": "//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307",
+              "mimeType": "application/vimeo",
+              "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+              "posters": Array [],
+              "ref": "les_3",
+              "src": Array [],
+              "subtitleRef": "foobarbaz",
               "subtitles": Array [],
               "type": "video",
               "videoId": "303449523",
@@ -654,6 +669,247 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                       }
                     >
                       Foo bar baz - Video
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingHorizontal": 16,
+                }
+              }
+              testID="resource-les-3"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderColor": "transparent",
+                      "borderWidth": 1,
+                      "height": 45,
+                      "justifyContent": "center",
+                      "padding": 2,
+                      "resizeMode": "stretch",
+                      "width": 70,
+                    },
+                    false,
+                  ]
+                }
+                testID="resource-les-3-thumbnail"
+              >
+                <View
+                  style={
+                    Object {
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        undefined,
+                      ]
+                    }
+                  />
+                </View>
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight="20"
+                  bbWidth="20"
+                  color="#FFFFFF"
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "position": "absolute",
+                      },
+                      false,
+                      Object {
+                        "flex": 0,
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                  testID="resource-les-3-video-icon"
+                  vbHeight={24}
+                  vbWidth={24}
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                  <RNSVGPath
+                    d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+                    fill={
+                      Array [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGSvgView>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+                testID="resource-les-3-description"
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Foo bar baz - Video subtitles
                     </Text>
                   </Text>
                 </View>
@@ -1108,7 +1364,22 @@ exports[`Storyshots Lesson Video selected 1`] = `
               "posters": Array [],
               "ref": "les_1",
               "src": Array [],
-              "subtitleRef": "sub_dacb7432-9ce1-4711-95fc-7963c599c9cb",
+              "subtitleRef": undefined,
+              "subtitles": Array [],
+              "type": "video",
+              "videoId": "303449523",
+            },
+            Object {
+              "_id": "les_3",
+              "description": "Foo bar baz - Video subtitles",
+              "downloadUrl": "//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075",
+              "mediaUrl": "//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307",
+              "mimeType": "application/vimeo",
+              "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+              "posters": Array [],
+              "ref": "les_3",
+              "src": Array [],
+              "subtitleRef": "foobarbaz",
               "subtitles": Array [],
               "type": "video",
               "videoId": "303449523",
@@ -1273,6 +1544,1277 @@ exports[`Storyshots Lesson Video selected 1`] = `
                       }
                     >
                       Foo bar baz - Video
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingHorizontal": 16,
+                }
+              }
+              testID="resource-les-3"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderColor": "transparent",
+                      "borderWidth": 1,
+                      "height": 45,
+                      "justifyContent": "center",
+                      "padding": 2,
+                      "resizeMode": "stretch",
+                      "width": 70,
+                    },
+                    false,
+                  ]
+                }
+                testID="resource-les-3-thumbnail"
+              >
+                <View
+                  style={
+                    Object {
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        undefined,
+                      ]
+                    }
+                  />
+                </View>
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight="20"
+                  bbWidth="20"
+                  color="#FFFFFF"
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "position": "absolute",
+                      },
+                      false,
+                      Object {
+                        "flex": 0,
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                  testID="resource-les-3-video-icon"
+                  vbHeight={24}
+                  vbWidth={24}
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                  <RNSVGPath
+                    d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+                    fill={
+                      Array [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGSvgView>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+                testID="resource-les-3-description"
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Foo bar baz - Video subtitles
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingHorizontal": 16,
+                }
+              }
+              testID="resource-les-2"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderColor": "transparent",
+                      "borderWidth": 1,
+                      "height": 45,
+                      "justifyContent": "center",
+                      "padding": 2,
+                      "resizeMode": "stretch",
+                      "width": 70,
+                    },
+                    false,
+                  ]
+                }
+                testID="resource-les-2-thumbnail"
+              >
+                <View
+                  style={
+                    Object {
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        undefined,
+                      ]
+                    }
+                  />
+                </View>
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight="20"
+                  bbWidth="20"
+                  color="#FFFFFF"
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "position": "absolute",
+                      },
+                      false,
+                      Object {
+                        "flex": 0,
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                  testID="resource-les-2-pdf-icon"
+                  vbHeight={24}
+                  vbWidth={24}
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                  <RNSVGGroup
+                    fill={
+                      Array [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    font={Object {}}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  >
+                    <RNSVGPath
+                      d="M5 3h10v4h4v1h2V5.586L16.414 1H5c-1.103 0-2 .898-2 2v5h2V3zM19 21H5v-1H3v1c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-1h-2v1zM9 10v8h2c2.206 0 4-1.794 4-4s-1.794-4-4-4H9zm4 4c0 1.103-.897 2-2 2v-4c1.103 0 2 .898 2 2zM22 12v-2h-4c-1.103 0-2 .898-2 2v6h2v-3h3v-2h-3v-1h4zM4 16h1c1.654 0 3-1.346 3-3s-1.346-3-3-3H2v8h2v-2zm0-4h1a1.001 1.001 0 0 1 0 2H4v-2z"
+                      fill={
+                        Array [
+                          0,
+                          0,
+                          0,
+                          0,
+                          1,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGGroup>
+                </RNSVGSvgView>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+                testID="resource-les-2-description"
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Foo bar baz - PDF
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "paddingHorizontal": 64,
+        "paddingVertical": 16,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      testID="additional-stars-note"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#546E7A",
+                "fontSize": 12,
+                "textAlign": "center",
+              }
+            }
+          >
+            Win 4 additional stars in this chapter the first time you view a lesson!
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Lesson Video subtitles 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "paddingTop": 24,
+    }
+  }
+  testID="lesson"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 64,
+      }
+    }
+  >
+    <View
+      testID="question-title"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What was the nationality of Steve Jobs?
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#14171A",
+          "overflow": "hidden",
+        },
+        false,
+        Object {
+          "height": 180,
+        },
+      ]
+    }
+    testID="video-container"
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="preview-video"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="70"
+            bbWidth="70"
+            color="#FFFFFF"
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                false,
+                Object {
+                  "flex": 0,
+                  "height": 70,
+                  "width": 70,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+          >
+            <RNSVGPath
+              d="M0 0h24v24H0z"
+              fill={null}
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            />
+            <RNSVGPath
+              d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+              fill={
+                Array [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            />
+          </RNSVGSvgView>
+        </View>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    showsHorizontalScrollIndicator={false}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    testID="resources"
+  >
+    <View>
+      <RCTScrollView
+        ItemSeparatorComponent={[Function]}
+        data={
+          Array [
+            Object {
+              "_id": "les_1",
+              "description": "Foo bar baz - Video",
+              "downloadUrl": "//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075",
+              "mediaUrl": "//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307",
+              "mimeType": "application/vimeo",
+              "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+              "posters": Array [],
+              "ref": "les_1",
+              "src": Array [],
+              "subtitleRef": undefined,
+              "subtitles": Array [],
+              "type": "video",
+              "videoId": "303449523",
+            },
+            Object {
+              "_id": "les_3",
+              "description": "Foo bar baz - Video subtitles",
+              "downloadUrl": "//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075",
+              "mediaUrl": "//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307",
+              "mimeType": "application/vimeo",
+              "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+              "posters": Array [],
+              "ref": "les_3",
+              "src": Array [],
+              "subtitleRef": "foobarbaz",
+              "subtitles": Array [],
+              "type": "video",
+              "videoId": "303449523",
+            },
+            Object {
+              "_id": "les_2",
+              "description": "Foo bar baz - PDF",
+              "mediaUrl": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf",
+              "mimeType": "application/pdf",
+              "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg",
+              "posters": Array [],
+              "ref": "les_2",
+              "src": Array [],
+              "subtitles": Array [],
+              "type": "pdf",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        extraData="les_3"
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        style={
+          Object {
+            "paddingVertical": 16,
+          }
+        }
+        testID="resources-browser"
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingHorizontal": 16,
+                }
+              }
+              testID="resource-les-1"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderColor": "transparent",
+                      "borderWidth": 1,
+                      "height": 45,
+                      "justifyContent": "center",
+                      "padding": 2,
+                      "resizeMode": "stretch",
+                      "width": 70,
+                    },
+                    false,
+                  ]
+                }
+                testID="resource-les-1-thumbnail"
+              >
+                <View
+                  style={
+                    Object {
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        undefined,
+                      ]
+                    }
+                  />
+                </View>
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight="20"
+                  bbWidth="20"
+                  color="#FFFFFF"
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "position": "absolute",
+                      },
+                      false,
+                      Object {
+                        "flex": 0,
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                  testID="resource-les-1-video-icon"
+                  vbHeight={24}
+                  vbWidth={24}
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                  <RNSVGPath
+                    d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+                    fill={
+                      Array [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGSvgView>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+                testID="resource-les-1-description"
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 15,
+                        }
+                      }
+                    >
+                      Foo bar baz - Video
+                    </Text>
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+          </View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingHorizontal": 16,
+                }
+              }
+              testID="resource-les-3-selected"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderColor": "transparent",
+                      "borderWidth": 1,
+                      "height": 45,
+                      "justifyContent": "center",
+                      "padding": 2,
+                      "resizeMode": "stretch",
+                      "width": 70,
+                    },
+                    Object {
+                      "borderColor": "#00B0FF",
+                    },
+                  ]
+                }
+                testID="resource-les-3-thumbnail"
+              >
+                <View
+                  style={
+                    Object {
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        undefined,
+                      ]
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+                testID="resource-les-3-description"
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "borderColor": "#00B0FF",
+                          "color": "#546E7A",
+                          "fontSize": 15,
+                          "fontWeight": "700",
+                        }
+                      }
+                    >
+                      Foo bar baz - Video subtitles
                     </Text>
                   </Text>
                 </View>

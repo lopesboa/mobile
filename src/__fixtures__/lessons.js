@@ -6,11 +6,13 @@ import {RESOURCE_TYPE} from '../const';
 export const createVideo = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
+  subtitleRef
 }: {
   ref: string,
   description?: string,
-  poster?: string
+  poster?: string,
+  subtitleRef?: string
 }): Lesson => ({
   _id: ref,
   poster,
@@ -22,7 +24,7 @@ export const createVideo = ({
   ref,
   // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.VIDEO,
-  subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb',
+  subtitleRef,
   subtitles: [],
   posters: [],
   src: []

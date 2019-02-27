@@ -4,22 +4,31 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 
-import {createLevel} from '../__fixtures__/levels';
-import {createDiscipline} from '../__fixtures__/disciplines';
-import {createChapter} from '../__fixtures__/chapters';
+import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
+import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress} from '../utils/tests';
 import Catalog from './catalog';
 
-const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
-const discipline = createDiscipline({ref: 'dis_1', levels: [level], name: 'Fake discipline'});
-const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
+const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
+const discipline = createDisciplineCard({
+  ref: 'dis_1',
+  completion: 0,
+  levels: [level],
+  title: 'Fake discipline'
+});
+const chapter = createChapterCard({
+  ref: 'cha_1',
+  completion: 0,
+  title: 'Fake chapter',
+  status: CARD_STATUS.ACTIVE
+});
 
 storiesOf('Catalog', module).add('Default', () => (
   <Catalog items={[discipline, chapter]} onPress={handleFakePress} />
 ));
 
 if (process.env.NODE_ENV === 'test') {
-  describe('QuestionChoices', () => {
+  describe('Catalog', () => {
     it('should handle onItemPress callback on discipline', () => {
       const handlePress = jest.fn();
       const component = renderer.create(

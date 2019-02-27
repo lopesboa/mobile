@@ -6,8 +6,8 @@ import basicCourse from '../../__fixtures__/discipline-bundle/basic';
 import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
 import noClueCourse from '../../__fixtures__/discipline-bundle/no-clue';
 import withContextCourse from '../../__fixtures__/discipline-bundle/with-context';
-import onboardingCourse from '../../__fixtures__/onboarding-course';
-import bescherelleCourse from '../../__fixtures__/bescherelle-course';
+import onboardingCourse from '../../__fixtures__/__temporary__/onboarding-course';
+import bescherelleCourse from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
@@ -261,37 +261,43 @@ describe('Data Layer Core', () => {
   describe('fetchDisciplineBundle', () => {
     AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
 
-    it('should fetch basic', () => {
-      const result = fetchDisciplineBundle('fixtures_basic', 'fr');
+    it('should fetch fixture', () => {
+      const keys = Object.keys(basicCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(basicCourse);
     });
 
     it('should fetch adaptive', () => {
-      const result = fetchDisciplineBundle('fixtures_adaptive', 'fr');
+      const keys = Object.keys(adaptiveCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(adaptiveCourse);
     });
 
     it('should fetch no clue', () => {
-      const result = fetchDisciplineBundle('fixtures_no_clue', 'fr');
+      const keys = Object.keys(noClueCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(noClueCourse);
     });
 
-    it('should fetch context', () => {
-      const result = fetchDisciplineBundle('fixtures_with_context', 'fr');
+    it('should fetch with context', () => {
+      const keys = Object.keys(withContextCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(withContextCourse);
     });
 
     it('should fetch onboarding', () => {
-      const result = fetchDisciplineBundle('fixtures_onboarding', 'fr');
+      const keys = Object.keys(onboardingCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(onboardingCourse);
     });
     it('should fetch bescherelle', () => {
-      const result = fetchDisciplineBundle('fixtures_bescherelle', 'fr');
+      const keys = Object.keys(bescherelleCourse.disciplines);
+      const result = fetchDisciplineBundle(keys[0], 'fr');
       // @todo should be mocked
       expect(result).resolves.toBe(bescherelleCourse);
     });

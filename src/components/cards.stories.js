@@ -4,9 +4,15 @@ import * as React from 'react';
 import {Text, View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
-import {cards} from '../__fixtures__/cards';
+import {CARD_TYPE} from '../const';
 import Cards from './cards';
 import type {Card} from './cards';
+
+const items: Array<Card> = [
+  {title: 'First card', type: CARD_TYPE.TIP},
+  {title: 'Second card', type: CARD_TYPE.KEY_POINT},
+  {title: 'Third card', type: CARD_TYPE.CORRECTION}
+];
 
 const renderCard = ({type, title}: Card) => (
   <View style={{backgroundColor: '#fff', borderWidth: 1, borderColor: '#000'}}>
@@ -15,4 +21,4 @@ const renderCard = ({type, title}: Card) => (
   </View>
 );
 
-storiesOf('Cards', module).add('Default', () => <Cards items={cards} renderItem={renderCard} />);
+storiesOf('Cards', module).add('Default', () => <Cards items={items} renderItem={renderCard} />);

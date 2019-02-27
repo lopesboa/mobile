@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Chapter} from '../../layer/data/_types';
+import type {Chapter} from '../../../layer/data/_types';
 
 const chapter_cha_VygSqL8E: Chapter = {
   _id: 'cha_Vy-gSqL8E',

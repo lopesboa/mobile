@@ -12,7 +12,13 @@ import {image} from '../medias';
 
 const level = createLevel({ref: 'adaptive_mod_1', chapterIds: ['adaptive_cha_1']});
 const qcm = createQCM({media: image});
-const lessons = [createVideo({ref: 'les_1', description: 'First video'})];
+const lessons = [
+  createVideo({
+    ref: 'les_1',
+    description: 'First video',
+    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
+  })
+];
 
 const bundledDiscipline: BundledDiscipline = {
   disciplines: {

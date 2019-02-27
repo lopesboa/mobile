@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {BundledDiscipline, Slide} from '../../layer/data/_types';
+import type {BundledDiscipline, Slide} from '../../../layer/data/_types';
 import {successExitNode, failExitNode} from './exit-nodes';
 import discipline from './discipline';
 import {

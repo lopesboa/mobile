@@ -1,6 +1,6 @@
 // @flow
 
-import type {Discipline} from '../../layer/data/_types';
+import type {Discipline} from '../../../layer/data/_types';
 
 const dis_NyQeFnDwV: Discipline = {
   _id: '5ae1821bbfc5b603823d51ad',

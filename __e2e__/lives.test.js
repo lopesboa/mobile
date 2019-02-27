@@ -72,44 +72,46 @@ describe('Lives', () => {
     });
   });
 
-  describe('Microlearning', () => {
-    beforeAll(async () => {
-      await waitFor(element(by.id('catalog-item-basic-cha-1'))).toBeVisible();
-      await element(by.id('catalog-item-basic-cha-1')).tap();
-    });
+  // Disabled because we are not fetching chapters at start (only courses)
 
-    it('should see 1 life', async () => {
-      await weExpect(element(by.id('lives-1'))).toBeVisible();
-    });
-
-    it('should lose life', async () => {
-      await wrongAnswer();
-      await weExpect(element(by.id('correction-lives-0-broken'))).toBeVisible();
-    });
-
-    it('should see a button to continue', async () => {
-      await waitFor(element(by.id('correction-error'))).toBeVisible();
-      await weExpect(element(by.id('button-next'))).toBeVisible();
-    });
-
-    it('should navigate to level end', async () => {
-      await element(by.id('button-next')).tap();
-      await waitFor(element(by.id('level-end-error'))).toBeVisible();
-      await weExpect(element(by.id('level-end-error'))).toBeVisible();
-    });
-
-    it('should see elements', async () => {
-      await weExpect(element(by.id('level-end-title'))).toBeVisible();
-      await weExpect(element(by.id('level-end-subtitle'))).toBeVisible();
-      await weExpect(element(by.id('button-retry-level'))).toBeVisible();
-    });
-
-    it('should back to home', async () => {
-      await element(by.id('button-retry-level')).tap();
-      await waitFor(element(by.id('home'))).toBeVisible();
-      await weExpect(element(by.id('home'))).toBeVisible();
-    });
-  });
+  // describe('Microlearning', () => {
+  //   beforeAll(async () => {
+  //     await waitFor(element(by.id('catalog-item-basic-cha-1'))).toBeVisible();
+  //     await element(by.id('catalog-item-basic-cha-1')).tap();
+  //   });
+  //
+  //   it('should see 1 life', async () => {
+  //     await weExpect(element(by.id('lives-1'))).toBeVisible();
+  //   });
+  //
+  //   it('should lose life', async () => {
+  //     await wrongAnswer();
+  //     await weExpect(element(by.id('correction-lives-0-broken'))).toBeVisible();
+  //   });
+  //
+  //   it('should see a button to continue', async () => {
+  //     await waitFor(element(by.id('correction-error'))).toBeVisible();
+  //     await weExpect(element(by.id('button-next'))).toBeVisible();
+  //   });
+  //
+  //   it('should navigate to level end', async () => {
+  //     await element(by.id('button-next')).tap();
+  //     await waitFor(element(by.id('level-end-error'))).toBeVisible();
+  //     await weExpect(element(by.id('level-end-error'))).toBeVisible();
+  //   });
+  //
+  //   it('should see elements', async () => {
+  //     await weExpect(element(by.id('level-end-title'))).toBeVisible();
+  //     await weExpect(element(by.id('level-end-subtitle'))).toBeVisible();
+  //     await weExpect(element(by.id('button-retry-level'))).toBeVisible();
+  //   });
+  //
+  //   it('should back to home', async () => {
+  //     await element(by.id('button-retry-level')).tap();
+  //     await waitFor(element(by.id('home'))).toBeVisible();
+  //     await weExpect(element(by.id('home'))).toBeVisible();
+  //   });
+  // });
 
   describe('Adaptive', () => {
     beforeAll(async () => {

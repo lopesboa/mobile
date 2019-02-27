@@ -1,7 +1,6 @@
 // @flow
 
 import type {DataLayer as DataLayerBase} from '@coorpacademy/player-services';
-
 import type {SupportedLanguage} from '../../translations/_types';
 import {
   findById as findProgressionById,
@@ -12,6 +11,7 @@ import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
 import {fetchDisciplineBundle, storeDisciplineBundle} from './core';
+import {fetchCards} from './cards';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
 import {find as findRecommendations, getNextLevel} from './recommendations';
 import {findById as findLevelById} from './levels';
@@ -20,7 +20,8 @@ import {getClue} from './clues';
 
 export type DataLayer = DataLayerBase & {
   fetchDisciplineBundle: typeof fetchDisciplineBundle,
-  storeDisciplineBundle: typeof storeDisciplineBundle
+  storeDisciplineBundle: typeof storeDisciplineBundle,
+  fetchCards: typeof fetchCards
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -40,7 +41,8 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   // @todo implement it
   getChapterRulesByContent: () => [],
   fetchDisciplineBundle,
-  storeDisciplineBundle
+  storeDisciplineBundle,
+  fetchCards
 });
 
 export default createDataLayer;

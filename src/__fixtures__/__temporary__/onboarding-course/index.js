@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {BundledDiscipline} from '../../layer/data/_types';
+import type {BundledDiscipline} from '../../../layer/data/_types';
 import {
   slide_sli_EJ6TGiIIN,
   slide_sli_N1uxMsUIV,

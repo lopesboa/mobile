@@ -1,7 +1,7 @@
 // @flow strict
 
 import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/discipline-bundle';
-import type {Action} from '../actions/discipline-bundle';
+import type {Action, FetchRequestPayload} from '../actions/discipline-bundle';
 import reducer, {
   reducePendingContentStatus,
   reducePendingContent,
@@ -115,12 +115,13 @@ describe('Discipline bundle', () => {
 
   describe(FETCH_REQUEST, () => {
     it('Default', () => {
+      const payload: FetchRequestPayload = {
+        ref: 'foobarbaz',
+        languages: ['de', 'en']
+      };
       const action: Action = {
         type: FETCH_REQUEST,
-        payload: {
-          ref: 'foobarbaz',
-          languages: ['de', 'en']
-        }
+        payload
       };
       const result = reducer(undefined, action);
       const expected: State = {

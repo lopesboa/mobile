@@ -3,11 +3,10 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {fetchRequest as fetchDisciplineBundle} from '../redux/actions/discipline-bundle';
-import {__E2E__} from '../modules/environment';
+import {fetchRequest as fetchCards} from '../redux/actions/cards';
 
 type ConnectedDispatchProps = {|
-  fetchDisciplineBundle: typeof fetchDisciplineBundle
+  fetchCards: typeof fetchCards
 |};
 
 type Props = {|
@@ -18,17 +17,8 @@ class NetworkInfoListener extends React.PureComponent<Props> {
   props: Props;
 
   componentDidMount() {
-    if (__E2E__) {
-      // @todo handle languages there dynamically
-      this.props.fetchDisciplineBundle('fixtures_basic', ['fr', 'en']);
-      this.props.fetchDisciplineBundle('fixtures_adaptive', ['fr', 'en']);
-      this.props.fetchDisciplineBundle('fixtures_no_clue', ['fr', 'en']);
-      this.props.fetchDisciplineBundle('fixtures_with_context', ['fr', 'en']);
-    } else {
-      // @todo handle languages there dynamically
-      this.props.fetchDisciplineBundle('fixtures_onboarding', ['fr', 'en']);
-      this.props.fetchDisciplineBundle('fixtures_bescherelle', ['fr', 'en']);
-    }
+    // @todo use dynamic language
+    this.props.fetchCards('fr');
   }
 
   // @todo manage connection change to fetch real content when the user is online
@@ -39,7 +29,7 @@ class NetworkInfoListener extends React.PureComponent<Props> {
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  fetchDisciplineBundle
+  fetchCards
 };
 
 export default connect(null, mapDispatchToProps)(NetworkInfoListener);

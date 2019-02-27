@@ -12,7 +12,7 @@ storiesOf('Home', module).add('Default', () => {
 
   return (
     <TestContextProvider>
-      <Home onChapterPress={handleFakePress} onDisciplinePress={handleFakePress} />
+      <Home onCardPress={handleFakePress} />
     </TestContextProvider>
   );
 });

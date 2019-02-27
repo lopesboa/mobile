@@ -25,16 +25,18 @@ describe('Progression', () => {
     });
   });
 
-  describe('Microlearning', () => {
-    beforeAll(async () => {
-      await element(by.id('header-back')).tap();
-      await waitFor(element(by.id('catalog-item-basic-cha-1'))).toBeVisible();
-      await element(by.id('catalog-item-basic-cha-1')).tap();
-    });
+  // Disabled because we are not fetching chapters at start (only courses)
 
-    it('should not see a progression', async () => {
-      await weExpect(element(by.id('progression-bar'))).toBeNotVisible();
-      await weExpect(element(by.id('progression-label'))).toBeNotVisible();
-    });
-  });
+  // describe('Microlearning', () => {
+  //   beforeAll(async () => {
+  //     await element(by.id('header-back')).tap();
+  //     await waitFor(element(by.id('catalog-item-basic-cha-1'))).toBeVisible();
+  //     await element(by.id('catalog-item-basic-cha-1')).tap();
+  //   });
+  //
+  //   it('should not see a progression', async () => {
+  //     await weExpect(element(by.id('progression-bar'))).toBeNotVisible();
+  //     await weExpect(element(by.id('progression-label'))).toBeNotVisible();
+  //   });
+  // });
 });

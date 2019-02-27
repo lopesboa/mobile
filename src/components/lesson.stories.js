@@ -9,7 +9,12 @@ import {Component as Lesson} from './lesson';
 
 const video = createVideo({ref: 'les_1', description: 'Foo bar baz - Video'});
 const pdf = createPdf({ref: 'les_2', description: 'Foo bar baz - PDF'});
-const resources = [video, pdf];
+const videoSubtitles = createVideo({
+  ref: 'les_3',
+  description: 'Foo bar baz - Video subtitles',
+  subtitleRef: 'foobarbaz'
+});
+const resources = [video, videoSubtitles, pdf];
 
 storiesOf('Lesson', module)
   .add('Default', () => (
@@ -30,6 +35,19 @@ storiesOf('Lesson', module)
         header="What was the nationality of Steve Jobs?"
         resources={resources}
         selected={video._id}
+        onChange={handleFakePress}
+        starsGranted={4}
+        layout={fakeLayout}
+        onPDFButtonPress={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Video subtitles', () => (
+    <TestContextProvider>
+      <Lesson
+        header="What was the nationality of Steve Jobs?"
+        resources={resources}
+        selected={videoSubtitles._id}
         onChange={handleFakePress}
         starsGranted={4}
         layout={fakeLayout}

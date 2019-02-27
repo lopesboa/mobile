@@ -15,14 +15,20 @@ const qcm = createQCM({media: image});
 const qcmGraphic = createQCMGraphic({});
 
 const lessons = [
-  createVideo({ref: 'les_1', description: 'First video'}),
+  createVideo({
+    ref: 'les_1',
+    description: 'First video',
+    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
+  }),
   createVideo({
     ref: 'les_2',
-    description: 'Second video'
+    description: 'Second video',
+    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
   }),
   createVideo({
     ref: 'les_3',
-    description: 'Third video'
+    description: 'Third video',
+    subtitleRef: 'sub_dacb7432-9ce1-4711-95fc-7963c599c9cb'
   }),
   createPdf({ref: 'les_4', description: 'First PDF'})
 ];

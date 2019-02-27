@@ -6,8 +6,8 @@ import basic from '../../__fixtures__/discipline-bundle/basic';
 import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
 import noClue from '../../__fixtures__/discipline-bundle/no-clue';
 import withContext from '../../__fixtures__/discipline-bundle/with-context';
-import onboarding from '../../__fixtures__/onboarding-course';
-import bescherelle from '../../__fixtures__/bescherelle-course';
+import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
+import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {BundledDiscipline, Resource, ResourceType, Level, Discipline} from './_types';
 import {CONTENT_TYPE} from './_const';
@@ -103,27 +103,27 @@ export const fetchDisciplineBundle = (
   ref: string,
   userLanguage: SupportedLanguage
 ): Promise<BundledDiscipline> => {
-  if (ref === 'fixtures_basic') {
+  if (Object.keys(basic.disciplines).includes(ref)) {
     return Promise.resolve(basic);
   }
 
-  if (ref === 'fixtures_adaptive') {
+  if (Object.keys(adaptive.disciplines).includes(ref)) {
     return Promise.resolve(adaptive);
   }
 
-  if (ref === 'fixtures_no_clue') {
+  if (Object.keys(noClue.disciplines).includes(ref)) {
     return Promise.resolve(noClue);
   }
 
-  if (ref === 'fixtures_with_context') {
+  if (Object.keys(withContext.disciplines).includes(ref)) {
     return Promise.resolve(withContext);
   }
 
-  if (ref === 'fixtures_onboarding') {
+  if (Object.keys(onboarding.disciplines).includes(ref)) {
     return Promise.resolve(onboarding);
   }
 
-  if (ref === 'fixtures_bescherelle') {
+  if (Object.keys(bescherelle.disciplines).includes(ref)) {
     return Promise.resolve(bescherelle);
   }
 

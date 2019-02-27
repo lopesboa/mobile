@@ -1,5 +1,5 @@
 // @flow
-import type {Slide} from '../../layer/data/_types';
+import type {Slide} from '../../../layer/data/_types';
 
 export const sli_E1XxCEX9E: Slide = {
   _id: 'sli_E1XxCEX9E',

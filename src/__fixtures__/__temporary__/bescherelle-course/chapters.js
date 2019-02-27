@@ -1,5 +1,6 @@
-// @flow
-import type {Chapter} from '../../layer/data/_types';
+// @flow strict
+
+import type {Chapter} from '../../../layer/data/_types';
 
 export const cha_41oEKnwv4: Chapter = {
   _id: 'cha_41oEKnwv4',

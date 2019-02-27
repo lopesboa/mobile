@@ -1,11 +1,18 @@
 // @flow strict
 
-import type {ChapterAPI, SlideAPI, ExitNodeAPI, LevelAPI} from '@coorpacademy/player-services';
+import type {
+  ChapterAPI,
+  SlideAPI,
+  ExitNodeAPI,
+  LevelAPI,
+  LessonAPI
+} from '@coorpacademy/player-services';
 
 import {createQCM} from '../../__fixtures__/questions';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
+import {createVideo} from '../../__fixtures__/lessons';
 import {failureExitNode} from '../../__fixtures__/exit-nodes';
 
 import {
@@ -17,9 +24,10 @@ import {
 } from './mappers';
 
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
+const lesson = createVideo({ref: 'les_1', subtitleRef: 'foobarbaz'});
 const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
 const question = createQCM({});
-const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
+const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question, lessons: [lesson]});
 
 // eslint-disable-next-line import/prefer-default-export
 export const mapToLevelAPIExpectedResult: LevelAPI = {
@@ -60,20 +68,6 @@ export const mapToChapterAPIExpectedResult: ChapterAPI = {
   version: chapter.version
 };
 
-export const mapToSlideAPIExpectedResult: SlideAPI = {
-  _id: slide._id,
-  chapter_id: slide.chapter_id,
-  klf: slide.klf,
-  authors: slide.authors,
-  lessons: slide.lessons.map(mapToLessonAPI),
-  meta: slide.meta,
-  tips: slide.tips,
-  clue: slide.clue,
-  context: slide.context,
-  question: slide.question,
-  position: slide.position
-};
-
 export const mapToExitNodeAPIExpectedResult: ExitNodeAPI = {
   ref: failureExitNode.ref,
   type: failureExitNode.type,
@@ -83,15 +77,45 @@ export const mapToExitNodeAPIExpectedResult: ExitNodeAPI = {
   media: failureExitNode.media
 };
 
+export const mapToLessonAPIExpectedResult: LessonAPI = {
+  _id: lesson._id,
+  description: lesson.description,
+  mediaUrl: lesson.mediaUrl,
+  downloadUrl: lesson.downloadUrl,
+  mimeType: lesson.mimeType,
+  poster: lesson.poster,
+  posters: lesson.posters,
+  ref: lesson.ref,
+  src: lesson.src,
+  subtitleRef: lesson.subtitleRef,
+  subtitles: lesson.subtitles,
+  type: lesson.type,
+  videoId: lesson.videoId
+};
+
+export const mapToSlideAPIExpectedResult: SlideAPI = {
+  _id: slide._id,
+  chapter_id: slide.chapter_id,
+  klf: slide.klf,
+  authors: slide.authors,
+  lessons: slide.lessons.map(item => mapToLessonAPIExpectedResult),
+  meta: slide.meta,
+  tips: slide.tips,
+  clue: slide.clue,
+  context: slide.context,
+  question: slide.question,
+  position: slide.position
+};
+
 describe('mappers', () => {
   it('should map to chapter API', () => {
     const result = mapToChapterAPI(chapter);
     expect(result).toEqual(mapToChapterAPIExpectedResult);
   });
 
-  it('should map to chapter API', () => {
-    const result = mapToChapterAPI(chapter);
-    expect(result).toEqual(mapToChapterAPIExpectedResult);
+  it('should map to lesson API', () => {
+    const result = mapToLessonAPI(lesson);
+    expect(result).toEqual(mapToLessonAPIExpectedResult);
   });
 
   it('should map to slide API', () => {
