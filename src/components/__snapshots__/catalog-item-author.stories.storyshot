@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Catalogue Item Author Default 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "margin": 20,
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        undefined,
+      ]
+    }
+    testID="author-catalog-author"
+  >
+    COORP 
+    <Text
+      style={
+        Object {
+          "fontWeight": "700",
+        }
+      }
+    >
+      ORIGINAL
+    </Text>
+  </Text>
+</View>
+`;

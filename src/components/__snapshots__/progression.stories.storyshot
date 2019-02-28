@@ -16,6 +16,8 @@ exports[`Storyshots Progression Default 1`] = `
       style={
         Object {
           "backgroundColor": "#00B0FF",
+          "borderBottomRightRadius": 0,
+          "borderTopRightRadius": 0,
           "height": 3,
           "width": "10%",
         }

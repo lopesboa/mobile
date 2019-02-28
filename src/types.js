@@ -24,6 +24,10 @@ export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge'
 
 export type CardType = 'tip' | 'keyPoint' | 'correction';
 
+export type CardDisplayMode = 'card' | 'cover';
+
+export type AuthorType = 'coorp';
+
 export type Question = string;
 
 export type Engine = 'learner' | 'microlearning';
@@ -34,3 +38,8 @@ export type GenericContent = $Exact<{|
   ...GenericContentBase,
   type: ContentType
 |}>;
+
+export type Progression = {|
+  current: number,
+  count: number
+|};

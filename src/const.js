@@ -4,7 +4,15 @@
 
 import type {QuestionType, MediaType} from '@coorpacademy/progression-engine';
 
-import type {SpaceType, CardType, ResourceType, Engine, ContentType} from './types';
+import type {
+  SpaceType,
+  CardType,
+  ResourceType,
+  Engine,
+  ContentType,
+  CardDisplayMode,
+  AuthorType
+} from './types';
 
 export const RESOURCE_TYPE: {
   [string]: ResourceType
@@ -12,6 +20,13 @@ export const RESOURCE_TYPE: {
   VIDEO: 'video',
   PDF: 'pdf',
   IMG: 'img'
+};
+
+export const CARD_DISPLAY_MODE: {
+  [string]: CardDisplayMode
+} = {
+  CARD: 'card',
+  COVER: 'cover'
 };
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC';
@@ -43,6 +58,12 @@ export const CARD_TYPE: {
   TIP: 'tip',
   KEY_POINT: 'keyPoint',
   CORRECTION: 'correction'
+};
+
+export const AUTHOR_TYPE: {
+  [string]: AuthorType
+} = {
+  COORP: 'coorp'
 };
 
 export const CONTENT_TYPE: {

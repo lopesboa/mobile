@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots ProgressionBar Custom topBarColor 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ECEFF1",
+    }
+  }
+  testID="progression-bar"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FF00FF",
+        "borderBottomRightRadius": 0,
+        "borderTopRightRadius": 0,
+        "height": 3,
+        "width": "10%",
+      }
+    }
+    testID="progression-bar-1"
+  />
+</View>
+`;
+
 exports[`Storyshots ProgressionBar Default 1`] = `
 <View
   style={
@@ -13,6 +37,8 @@ exports[`Storyshots ProgressionBar Default 1`] = `
     style={
       Object {
         "backgroundColor": "#00B0FF",
+        "borderBottomRightRadius": 0,
+        "borderTopRightRadius": 0,
         "height": 3,
         "width": "10%",
       }

@@ -1,13 +1,18 @@
 // @flow
 
 import * as React from 'react';
-import {Animated, TouchableOpacity, StyleSheet} from 'react-native';
+import {Animated, TouchableOpacity, StyleSheet, View} from 'react-native';
 
 import Card from '../components/card';
+import CardHeader from '../components/card-header';
 import type {Props as CardProps} from '../components/card';
+import type {Props as CardHeaderProps} from '../components/card-header';
+import theme from '../modules/theme';
+import Gradient from '../components/gradient';
 
 type Props = {|
   ...CardProps,
+  ...CardHeaderProps,
   height: number,
   fullScreenHeight: number,
   isFullScreen?: boolean,
@@ -23,6 +28,14 @@ type State = {|
 const styles = StyleSheet.create({
   expanded: {
     flex: 1
+  },
+  content: {
+    flex: 1,
+    paddingTop: theme.spacing.base,
+    paddingHorizontal: theme.spacing.base,
+    borderBottomLeftRadius: theme.radius.card,
+    borderBottomRightRadius: theme.radius.card,
+    backgroundColor: theme.colors.white
   }
 });
 
@@ -71,12 +84,15 @@ class CardScalable extends React.PureComponent<Props, State> {
 
   render() {
     const {type, title, children, style, testID} = this.props;
-
     return (
       <Animated.View style={{...style, height: this.height, top: this.top}}>
         <TouchableOpacity onPress={this.handlePress} activeOpacity={1} style={styles.expanded}>
-          <Card title={title} type={type} testID={testID}>
-            {children}
+          <Card testID={testID} isDeckCard>
+            <CardHeader type={type} title={title} />
+            <View style={styles.content}>
+              {children}
+              <Gradient height={theme.spacing.large} color={theme.colors.white} />
+            </View>
           </Card>
         </TouchableOpacity>
       </Animated.View>

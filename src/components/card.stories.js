@@ -1,25 +1,82 @@
 // @flow
 
 import * as React from 'react';
-import {Text} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
+import {CARD_TYPE, CARD_DISPLAY_MODE} from '../const';
+import image from '../__fixtures__/assets/landscape-1.jpg';
+import type {Progression} from '../types';
+import theme from '../modules/theme';
 
-import {CARD_TYPE} from '../const';
+import {handleFakePress} from '../utils/tests';
 import Card from './card';
+import CardHeader from './card-header';
+import CatalogItem from './catalog-item';
+import {STYLE as BOX_STYLE} from './box';
+
+const progression: Progression = {
+  current: 3,
+  count: 10
+};
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: theme.radius.card,
+    borderBottomWidth: 1,
+    borderColor: 'rgba(20, 23, 26, 0.15)'
+  }
+});
 
 storiesOf('Card', module)
   .add('Tip', () => (
-    <Card type={CARD_TYPE.TIP} title="Foo bar baz">
+    <Card>
+      <CardHeader type={CARD_TYPE.TIP} title="Foo bar baz" />
       <Text>A sponsored post is a small advertising insert appearing in users’ timelines.</Text>
     </Card>
   ))
   .add('Key point', () => (
-    <Card type={CARD_TYPE.KEY_POINT} title="Foo bar baz">
+    <Card>
+      <CardHeader type={CARD_TYPE.KEY_POINT} title="Foo bar baz" />
       <Text>A sponsored post is a small advertising insert appearing in users’ timelines.</Text>
     </Card>
   ))
   .add('Correction', () => (
-    <Card type={CARD_TYPE.CORRECTION} title="Foo bar baz">
+    <Card>
+      <CardHeader type={CARD_TYPE.CORRECTION} title="Foo bar baz" />
       <Text>A sponsored post is a small advertising insert appearing in users’ timelines.</Text>
+    </Card>
+  ))
+  .add('Catalog Item Cover', () => (
+    <Card style={styles.card} shadowStyle={BOX_STYLE}>
+      <CatalogItem
+        title="Predicting the future"
+        subtitle="Coorpacademy"
+        progression={progression}
+        image={image}
+        authorType="CUSTOM EDITOR"
+        badge="New"
+        isAdaptive
+        displayMode={CARD_DISPLAY_MODE.COVER}
+        isCertified
+        onPress={handleFakePress}
+        testID="catalog1"
+      />
+    </Card>
+  ))
+  .add('Catalog Item Card', () => (
+    <Card style={styles.card} shadowStyle={BOX_STYLE}>
+      <CatalogItem
+        title="Predicting the future"
+        subtitle="Coorpacademy"
+        progression={progression}
+        image={image}
+        authorType="CUSTOM EDITOR"
+        badge="New"
+        isAdaptive
+        displayMode={CARD_DISPLAY_MODE.CARD}
+        isCertified
+        onPress={handleFakePress}
+        testID="catalog2"
+      />
     </Card>
   ));

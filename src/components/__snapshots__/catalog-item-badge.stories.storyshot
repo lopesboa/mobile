@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Catalogue Item Badge Default 1`] = `
+<View
+  style={
+    Object {
+      "position": "absolute",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomEndRadius": 12,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "minHeight": 17,
+          "minWidth": 40,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          "New",
+          Object {
+            "fontSize": 8,
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ]
+      }
+      testID="badge"
+    >
+      New
+    </Text>
+  </View>
+</View>
+`;
