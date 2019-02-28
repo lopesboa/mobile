@@ -52,6 +52,8 @@ class Resource extends React.PureComponent<Props> {
           </View>
         );
       }
+      default:
+        return null;
     }
   }
 }

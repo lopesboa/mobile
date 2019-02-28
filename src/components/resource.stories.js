@@ -36,6 +36,24 @@ storiesOf('Resource', module)
         onPDFButtonPress={handleFakePress}
       />
     </TestContextProvider>
+  ))
+  .add('Default', () => (
+    <TestContextProvider>
+      <Resource
+        // In this case we return null whenever we dont match
+        // any of the supported types so react doesn't throw
+        // an exception for not returning any React Element
+        // in the render method
+
+        // $FlowFixMe
+        type="unhandledType"
+        url="not really a url"
+        description="some description"
+        thumbnail={video.poster}
+        height={200}
+        onPDFButtonPress={handleFakePress}
+      />
+    </TestContextProvider>
   ));
 
 if (process.env.NODE_ENV === 'test') {

@@ -69,13 +69,19 @@ const Lesson = (props: Props) => {
     <BrandThemeContext.Consumer>
       {brandTheme => {
         const subtitles =
+          openedResource &&
           openedResource.subtitleRef &&
           // @todo use user language
           getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, 'en');
+
+        const resourceType = openedResource && openedResource.type;
+        const resourcePoster = openedResource && openedResource.poster;
+        const resourceDescription = openedResource && openedResource.description;
+        const resourceMediaUrl = openedResource && openedResource.mediaUrl;
+        const resourceDownloadUrl = openedResource && openedResource.downloadUrl;
         const url =
           // $FlowFixMe img is not defined in progression-engine
-          (openedResource.type === RESOURCE_TYPE.VIDEO && openedResource.downloadUrl) ||
-          openedResource.mediaUrl;
+          (resourceType === RESOURCE_TYPE.VIDEO && resourceDownloadUrl) || resourceMediaUrl;
 
         return (
           <View testID="lesson" style={styles.container}>
@@ -84,10 +90,10 @@ const Lesson = (props: Props) => {
             </View>
             <Space type="base" />
             <Resource
-              type={openedResource.type}
+              type={resourceType}
               url={url}
-              description={openedResource.description}
-              thumbnail={openedResource.poster}
+              description={resourceDescription}
+              thumbnail={resourcePoster}
               subtitles={subtitles}
               height={height}
               onPDFButtonPress={props.onPDFButtonPress}
