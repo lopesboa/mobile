@@ -271,23 +271,7 @@ jobs:
       - persist_to_workspace:
           root: ~/app
           paths:
-            - android/app/build/outputs/apk/release
-
-  deploy_prepare:
-    working_directory: ~/app
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/app
-      - run:
-          name: Cloning internal store
-          command: git clone https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git store
-      - persist_to_workspace:
-          root: ~/app
-          paths:
-            - store
+          - android/app/build/outputs/apk/release
 
   deploy_android:
     working_directory: ~/app
@@ -297,29 +281,25 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/app
+      - add_ssh_keys:
+          fingerprints:
+            - "e0:3d:95:dd:ab:22:62:0c:6d:67:10:af:80:ca:ed:64"
       - run:
-          name: Fetching branch
+          name: Known hosts
+          command: ssh-keyscan -H ${AWS_DOMAIN} >> ~/.ssh/known_hosts
+      - run:
+          name: Prepare
           command: |
-            cd store
-            git pull origin master
+            mkdir dist && cd dist
+            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\", \"commit\": \"$(git log -n 1 --pretty=format:'%h')\"}" > build-android.json
+            cp ../android/app/build/outputs/apk/release/Coorpacademy-release.apk Coorpacademy.apk
       - run:
           name: Deploy to internal store
           command: |
             [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
             echo "Deploying on ${BRANCH_NAME}"
-            mkdir -p "store/${BRANCH_NAME}"
-            cd "store/${BRANCH_NAME}"
-            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\"}" > build-android.json
-            cp ../../android/app/build/outputs/apk/release/Coorpacademy-release.apk Coorpacademy.apk
-            git config --global user.email mobile@coorpacademy.com
-            git config --global user.name "Mobile app CI"
-            git add .
-            git commit -m "Automatic Android build on ${BRANCH_NAME}"
-            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git master
-      - persist_to_workspace:
-          root: ~/app
-          paths:
-            - store
+            ssh ${AWS_USER}@${AWS_DOMAIN} "mkdir -p /var/www/html/${BRANCH_NAME} -v"
+            scp dist/* ${AWS_USER}@${AWS_DOMAIN}:/var/www/html/${BRANCH_NAME}/
 
   deploy_ios:
     working_directory: ~/app
@@ -329,37 +309,29 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/app
+      - add_ssh_keys:
+          fingerprints:
+            - "e0:3d:95:dd:ab:22:62:0c:6d:67:10:af:80:ca:ed:64"
       - run:
-          name: Going to persisted folder
-          command: cd store
+          name: Known hosts
+          command: ssh-keyscan -H ${AWS_DOMAIN} >> ~/.ssh/known_hosts
       - run:
-          name: Fetching branch
+          name: Prepare
           command: |
-            cd store
-            git pull origin master
+            [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
+            mkdir dist && cd dist
+            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\", \"commit\": \"$(git log -n 1 --pretty=format:'%h')\"}" > build-ios.json
+            cp ../ios/release/Coorpacademy.ipa Coorpacademy.ipa
+            cp ../.circleci/adhoc-template.plist Coorpacademy.plist
+            sed -i -e "s@{DOMAIN}@${AWS_DOMAIN}@g" Coorpacademy.plist
+            sed -i -e "s@{PATH}@${BRANCH_NAME}@g" Coorpacademy.plist
       - run:
           name: Deploy to internal store
           command: |
             [ -z "${CIRCLE_PULL_REQUEST}" ] && BRANCH_NAME="${CIRCLE_BRANCH}" || BRANCH_NAME="PR-${CIRCLE_PULL_REQUEST##*/}"
             echo "Deploying on ${BRANCH_NAME}"
-            mkdir -p "store/${BRANCH_NAME}"
-            cd "store/${BRANCH_NAME}"
-            echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\"}" > build-ios.json
-            cp ../../ios/release/Coorpacademy.ipa Coorpacademy.ipa
-            cp ../../.circleci/adhoc-template.plist Coorpacademy.plist
-            sed -i -e "s@{DOMAIN}@${DOMAIN}@g" Coorpacademy.plist
-            sed -i -e "s@{PATH}@${BRANCH_NAME}@g" Coorpacademy.plist
-            git config --global user.email mobile@coorpacademy.com
-            git config --global user.name "Mobile app CI"
-            git add .
-            git commit -m "Automatic iOS build on ${BRANCH_NAME}"
-            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git master
-          environment:
-            DOMAIN: https://mobile-internal-store.herokuapp.com
-      - persist_to_workspace:
-          root: ~/app
-          paths:
-            - store
+            ssh ${AWS_USER}@${AWS_DOMAIN} "mkdir -p /var/www/html/${BRANCH_NAME} -v"
+            scp dist/* ${AWS_USER}@${AWS_DOMAIN}:/var/www/html/${BRANCH_NAME}/
 
 workflows:
   version: 2
@@ -384,16 +356,9 @@ workflows:
       - build_ios:
          requires:
            - dependencies
-      - deploy_prepare:
-         requires:
-           - dependencies
       - deploy_android:
          requires:
-           - deploy_prepare
            - build_android
       - deploy_ios:
          requires:
-           - deploy_prepare
            - build_ios
-           # to prevent push fails (and build android is faster)
-           - deploy_android
