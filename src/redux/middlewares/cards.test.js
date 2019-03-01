@@ -86,7 +86,7 @@ describe('Cards', () => {
 
   describe(FETCH_REQUEST, () => {
     const payload: FetchRequestPayload = {
-      language: 'fr'
+      language: 'en'
     };
     const action: Action = {
       type: FETCH_REQUEST,
@@ -148,7 +148,7 @@ describe('Cards', () => {
       await sleep();
       const expectedPayload: FetchSuccessPayload = {
         items,
-        language: 'fr'
+        language: 'en'
       };
       const expectedAction: Action = {
         type: FETCH_SUCCESS,
@@ -162,7 +162,7 @@ describe('Cards', () => {
   describe(FETCH_SUCCESS, () => {
     const payload: FetchSuccessPayload = {
       items,
-      language: 'fr'
+      language: 'en'
     };
     const action: Action = {
       type: FETCH_SUCCESS,
@@ -200,7 +200,7 @@ describe('Cards', () => {
         type: '@@mock/FETCH_DISCIPLINE_BUNDLE',
         payload: {
           ref: 'dis1',
-          language: ['fr']
+          language: ['en']
         }
       };
       expect(store.dispatch).toHaveBeenCalledTimes(1);

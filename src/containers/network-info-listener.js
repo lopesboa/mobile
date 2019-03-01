@@ -18,7 +18,7 @@ class NetworkInfoListener extends React.PureComponent<Props> {
 
   componentDidMount() {
     // @todo use dynamic language
-    this.props.fetchCards('fr');
+    this.props.fetchCards('en');
   }
 
   // @todo manage connection change to fetch real content when the user is online

@@ -55,7 +55,7 @@ describe('Discipline bundle', () => {
   describe(FETCH_REQUEST, () => {
     const payload: FetchRequestPayload = {
       ref: 'foobarbaz',
-      languages: ['fr', 'de']
+      languages: ['en', 'de']
     };
     const action: Action = {
       type: FETCH_REQUEST,
@@ -119,10 +119,10 @@ describe('Discipline bundle', () => {
         type: FETCH_SUCCESS,
         payload: {
           disciplines: {
-            foobarbaz: ['fr', 'de']
+            foobarbaz: ['en', 'de']
           },
           chapters: {
-            foobarbazqux: ['fr', 'de']
+            foobarbazqux: ['en', 'de']
           }
         }
       };

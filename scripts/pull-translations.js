@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import globby from 'globby';
 
 import type {Translations} from '../src/translations/_types';

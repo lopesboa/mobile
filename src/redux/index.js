@@ -7,7 +7,7 @@ import type {Options, ReduxDevTools} from './_types';
 
 const options: Options = {
   // @todo use OS locale
-  services: createServices(createDataLayer('fr'))
+  services: createServices(createDataLayer('en'))
 };
 
 const create = (reduxDevTools?: ReduxDevTools) => createStore(options, reduxDevTools);

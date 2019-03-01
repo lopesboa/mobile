@@ -28,23 +28,23 @@ describe('Discipline bundle', () => {
   describe('reducePendingContentStatus', () => {
     it('Without prevStatus', () => {
       const expected: OfflineStatus = {
-        pending: ['de', 'fr'],
+        pending: ['de', 'en'],
         ready: []
       };
-      const result = reducePendingContentStatus(undefined, ['de', 'fr']);
+      const result = reducePendingContentStatus(undefined, ['de', 'en']);
       expect(result).toEqual(expected);
     });
 
     it('With prevStatus', () => {
       const prevStatus: OfflineStatus = {
         pending: ['ja'],
-        ready: ['fr']
+        ready: ['en']
       };
       const expected: OfflineStatus = {
-        pending: ['ja', 'de', 'fr'],
+        pending: ['ja', 'de', 'en'],
         ready: []
       };
-      const result = reducePendingContentStatus(prevStatus, ['de', 'fr']);
+      const result = reducePendingContentStatus(prevStatus, ['de', 'en']);
       expect(result).toEqual(expected);
     });
   });
@@ -53,7 +53,7 @@ describe('Discipline bundle', () => {
     const prevState: OfflineContents = {
       dis1: {
         pending: [],
-        ready: ['fr']
+        ready: ['en']
       }
     };
     const content = {
@@ -62,7 +62,7 @@ describe('Discipline bundle', () => {
     const expected: OfflineContents = {
       dis1: {
         pending: ['de'],
-        ready: ['fr']
+        ready: ['en']
       }
     };
     const result = reducePendingContent(prevState, content);
@@ -73,22 +73,22 @@ describe('Discipline bundle', () => {
     it('Without prevStatus', () => {
       const expected: OfflineStatus = {
         pending: [],
-        ready: ['de', 'fr']
+        ready: ['de', 'en']
       };
-      const result = reduceReadyContentStatus(undefined, ['de', 'fr']);
+      const result = reduceReadyContentStatus(undefined, ['de', 'en']);
       expect(result).toEqual(expected);
     });
 
     it('With prevStatus', () => {
       const prevStatus: OfflineStatus = {
-        pending: ['de', 'fr', 'ja'],
+        pending: ['de', 'en', 'ja'],
         ready: ['pl']
       };
       const expected: OfflineStatus = {
         pending: ['ja'],
-        ready: ['pl', 'de', 'fr']
+        ready: ['pl', 'de', 'en']
       };
-      const result = reduceReadyContentStatus(prevStatus, ['de', 'fr']);
+      const result = reduceReadyContentStatus(prevStatus, ['de', 'en']);
       expect(result).toEqual(expected);
     });
   });
@@ -96,17 +96,17 @@ describe('Discipline bundle', () => {
   it('reduceReadyContent', () => {
     const prevState: OfflineContents = {
       dis1: {
-        pending: ['fr'],
+        pending: ['en'],
         ready: []
       }
     };
     const content = {
-      dis1: ['fr']
+      dis1: ['en']
     };
     const expected: OfflineContents = {
       dis1: {
         pending: [],
-        ready: ['fr']
+        ready: ['en']
       }
     };
     const result = reduceReadyContent(prevState, content);

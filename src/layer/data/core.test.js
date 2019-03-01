@@ -248,13 +248,13 @@ describe('Data Layer Core', () => {
   describe('storeDisciplineBundle', () => {
     it('should store the discipline bundle', async () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
-      const result = await storeDisciplineBundle(disciplineBundle, 'fr');
+      const result = await storeDisciplineBundle(disciplineBundle, 'en');
       expect(result).toBeUndefined();
     });
 
     it('should not store the discipline bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.reject(fakeError));
-      const result = storeDisciplineBundle(disciplineBundle, 'fr');
+      const result = storeDisciplineBundle(disciplineBundle, 'en');
       expect(result).rejects.toThrow(new Error('could not store the provided bundledResource'));
     });
   });
@@ -264,54 +264,54 @@ describe('Data Layer Core', () => {
 
     it('should fetch fixture', () => {
       const keys = Object.keys(basicCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(basicCourse);
     });
 
     it('should fetch adaptive', () => {
       const keys = Object.keys(adaptiveCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(adaptiveCourse);
     });
 
     it('should fetch no clue', () => {
       const keys = Object.keys(noClueCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(noClueCourse);
     });
 
     it('should fetch with context-video', () => {
       const keys = Object.keys(withContextVideo.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(withContextVideo);
     });
 
     it('should fetch with context-image', () => {
       const keys = Object.keys(withContextImage.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(withContextImage);
     });
 
     it('should fetch onboarding', () => {
       const keys = Object.keys(onboardingCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(onboardingCourse);
     });
     it('should fetch bescherelle', () => {
       const keys = Object.keys(bescherelleCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'fr');
+      const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
       expect(result).resolves.toBe(bescherelleCourse);
     });
 
     it('should trigger error', () => {
-      const result = fetchDisciplineBundle('foobarbaz', 'fr');
+      const result = fetchDisciplineBundle('foobarbaz', 'en');
       expect(result).rejects.toThrow(new Error('API fetching not supported yet.'));
     });
   });

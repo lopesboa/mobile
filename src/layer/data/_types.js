@@ -181,7 +181,7 @@ export type Card<T> = {|
   version: string,
   relatedContentHidden: string,
   // @todo to be enhanced
-  _score: null,
+  _score: number | null,
   stars: number,
   completion: number,
   isNew: boolean,

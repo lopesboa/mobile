@@ -35,15 +35,15 @@ describe('Cards', () => {
 
   const reduceItemsExpected = {
     dis1: {
-      fr: dis1
+      en: dis1
     },
     dis2: {
-      fr: dis2
+      en: dis2
     }
   };
 
   it('reduceItems', () => {
-    const result = reduceItems([dis1, dis2], 'fr');
+    const result = reduceItems([dis1, dis2], 'en');
     expect(result).toEqual(reduceItemsExpected);
   });
 
@@ -53,7 +53,7 @@ describe('Cards', () => {
         type: FETCH_SUCCESS,
         payload: {
           items: [dis1, dis2],
-          language: 'fr'
+          language: 'en'
         }
       };
       const result = reducer(undefined, action);
@@ -61,15 +61,6 @@ describe('Cards', () => {
         entities: reduceItemsExpected
       };
       expect(result).toEqual(expected);
-    });
-
-    it('Without payload', () => {
-      const action = {
-        type: FETCH_SUCCESS
-      };
-      // $FlowFixMe this is to emulate an empty payload
-      const result = reducer(undefined, action);
-      expect(result).toEqual(expectedInitialState);
     });
   });
 });

@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Action, FetchSuccessPayload} from '../actions/cards';
+import type {Action} from '../actions/cards';
 import {FETCH_SUCCESS} from '../actions/cards';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
@@ -37,16 +37,13 @@ export const reduceItems = (
 const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case FETCH_SUCCESS: {
-      const payload: FetchSuccessPayload = action.payload;
-      if (!payload || !payload.items || !payload.language) {
-        return state;
-      }
+      const {items, language} = action.payload;
 
       return {
         ...state,
         entities: {
           ...state.entities,
-          ...reduceItems(payload.items, payload.language)
+          ...reduceItems(items, language)
         }
       };
     }

@@ -22,13 +22,13 @@ When you run an update, please carefully review git diff.
 
 To execute end-to-end tests locally, you must do the following :
 
-- Run `yarn start:clean`, to start the react-native packager
-- In another tab, run `yarn test:end2end:[debug|release]`
+- Run `yarn start:e2e`, to start the react-native packager
+- In another tab, run `yarn test:end2end:[ios|android]:[debug|release]`
 
 **Note**: `test:end2end:[debug|release]` will launch 2 separated commands which are:
 
-- `test:end2end:[debug|release]:build`, that builds the app with [Detox](https://github.com/wix/Detox) test framework
-- `test:end2end:[debug|release]:test`, that will run tests
+- `test:end2end:[ios|android]:[debug|release]:build`, that builds the app with [Detox](https://github.com/wix/Detox) test framework
+- `test:end2end:[ios|android]:[debug|release]:test`, that will run tests
 
 If you need to relaunch tests only (without build native app), only run the `test` command.
 

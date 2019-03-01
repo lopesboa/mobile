@@ -5,7 +5,7 @@ import type {Cards} from '../layer/data/_types';
 import type {SupportedLanguage} from '../translations/_types';
 
 export type CardsService = {|
-  find: (language: SupportedLanguage) => Promise<Cards>
+  find: (language: SupportedLanguage, host: string, token: string) => Promise<Cards>
 |};
 
 const service = (dataLayer: DataLayer): CardsService => ({
