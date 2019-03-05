@@ -77,6 +77,8 @@ const generate = async (locale: string) => {
     question: playerTranslations.Question,
     retryLevel: playerTranslations['Retry level'],
     seeClue: componentsTranslations['See clue'],
+    selectAnAnswer: playerTranslations['Select an answer'],
+    typeHere: playerTranslations['Type here'],
     validate: playerTranslations.Validate,
     // @todo get it from github
     version: 'Version',

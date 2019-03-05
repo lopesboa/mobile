@@ -3,13 +3,9 @@
 import fetch from 'cross-fetch';
 import {__E2E__} from '../../modules/environment';
 import {createDisciplinesCards} from '../../__fixtures__/cards';
-import basic from '../../__fixtures__/discipline-bundle/basic';
-import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
-import noClue from '../../__fixtures__/discipline-bundle/no-clue';
-import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
-import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
-import type {Discipline, Cards} from './_types';
+import type {Cards} from './_types';
 
 const fetchFavoriteCards = async (
   language: SupportedLanguage,
@@ -49,15 +45,9 @@ export const fetchCards = async (
   token: string
 ): Promise<Cards> => {
   if (__E2E__) {
-    const disciplinesObject: {[key: string]: Discipline} = {
-      ...basic.disciplines,
-      ...adaptive.disciplines,
-      ...noClue.disciplines,
-      ...withContextVideo.disciplines,
-      ...withContextImage.disciplines
-    };
-
-    const disciplines = Object.keys(disciplinesObject).map(key => disciplinesObject[key]);
+    const disciplines = Object.keys(disciplinesBundle.disciplines).map(
+      key => disciplinesBundle.disciplines[key]
+    );
     const cards = createDisciplinesCards(disciplines);
 
     return cards;

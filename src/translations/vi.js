@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Câu hỏi',
   retryLevel: 'Thử lại cấp độ',
   seeClue: 'Xem gợi ý',
+  selectAnAnswer: 'Chọn câu trả lời',
+  typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
   version: 'Version',
   winAdditionalStars:

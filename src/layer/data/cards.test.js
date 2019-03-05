@@ -1,10 +1,6 @@
 // @flow strict
 
-import basic from '../../__fixtures__/discipline-bundle/basic';
-import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
-import noClue from '../../__fixtures__/discipline-bundle/no-clue';
-import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
-import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDisciplinesCards} from '../../__fixtures__/cards';
@@ -25,15 +21,8 @@ describe('cards', () => {
       }));
       const {fetchCards} = require('./cards');
       const result = fetchCards(LANGUAGE, HOST, TOKEN);
-      const disciplines = {
-        ...basic.disciplines,
-        ...adaptive.disciplines,
-        ...noClue.disciplines,
-        ...withContextVideo.disciplines,
-        ...withContextImage.disciplines
-      };
       const expected = createDisciplinesCards(
-        Object.keys(disciplines).map(key => disciplines[key])
+        Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
       );
       return expect(result).resolves.toEqual(expected);
     });

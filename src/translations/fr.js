@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Question',
   retryLevel: 'Réessayez ce niveau',
   seeClue: "Voir l'indice",
+  selectAnAnswer: 'Sélectionnez une réponse',
+  typeHere: 'Saisissez ici',
   validate: 'Valider',
   version: 'Version',
   winAdditionalStars:

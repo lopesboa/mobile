@@ -114,13 +114,16 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               "borderWidth": 1,
               "overflow": "hidden",
             },
-            false,
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
+            },
             Object {
               "flexGrow": 1,
             },
           ]
         }
-        testID="question-choice-2"
+        testID="question-choice-2-selected"
       >
         <View
           style={
@@ -147,7 +150,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 17,
                       "fontWeight": "700",
                     }
@@ -489,13 +492,16 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                 "borderWidth": 1,
                 "overflow": "hidden",
               },
-              false,
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
+              },
               Object {
                 "flexGrow": 1,
               },
             ]
           }
-          testID="question-choice-2"
+          testID="question-choice-2-selected"
         >
           <View
             style={
@@ -558,7 +564,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   <Text
                     style={
                       Object {
-                        "color": "#14171A",
+                        "color": "#FFFFFF",
                         "fontSize": 17,
                         "fontWeight": "700",
                       }
@@ -716,6 +722,1057 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
           }
         }
       />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionChoices Template (empty) 1`] = `
+<View
+  testID="question-choices"
+/>
+`;
+
+exports[`Storyshots QuestionChoices Template 1`] = `
+<View
+  testID="question-choices"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+    testID="question-template"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontWeight": "700",
+          "padding": 16,
+          "paddingBottom": 24,
+          "paddingHorizontal": 8,
+        }
+      }
+      testID="question-part-1"
+    >
+      My app 
+    </Text>
+    <View
+      style={
+        Object {
+          "paddingBottom": 8,
+        }
+      }
+      testID="question-part-2"
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onChangeText={[Function]}
+        placeholder="Type here"
+        placeholderTextColor="#90A4AE"
+        selectTextOnFocus={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#CFD8DC",
+              "borderRadius": 3,
+              "borderWidth": 1,
+              "color": "#90A4AE",
+              "fontSize": 13,
+              "fontWeight": "700",
+              "minWidth": 120,
+              "padding": 16,
+            },
+            "",
+          ]
+        }
+        testID="question-part-2-text"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontWeight": "700",
+          "padding": 16,
+          "paddingBottom": 24,
+          "paddingHorizontal": 8,
+        }
+      }
+      testID="question-part-3"
+    >
+       is on 
+    </Text>
+    <View
+      style={
+        Object {
+          "paddingBottom": 8,
+        }
+      }
+      testID="question-part-4"
+    >
+      <View
+        testID="question-part-4-select"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignSelf": "stretch",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            pointerEvents="box-only"
+            testID="ios_touchable_wrapper"
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#90A4AE",
+                    "paddingRight": 39,
+                  },
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderWidth": 1,
+                      "color": "#90A4AE",
+                      "fontSize": 13,
+                      "fontWeight": "700",
+                      "minWidth": 120,
+                      "padding": 16,
+                    },
+                    "",
+                  ],
+                  "",
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value="Select an answer"
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                  Object {
+                    "marginTop": -7.5,
+                    "right": 16,
+                    "top": "50%",
+                  },
+                ]
+              }
+              testID="icon_container"
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="15"
+                bbWidth="15"
+                color=""
+                id="prefix__Calque_1"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 15,
+                      "width": 15,
+                    },
+                  ]
+                }
+                vbHeight={20}
+                vbWidth={20}
+                x={0}
+                xmlSpace="preserve"
+                y={0}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      0,
+                      0,
+                      0,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  name="prefix__Page-1"
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                >
+                  <RNSVGPath
+                    d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                    fill={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    name="prefix__arrow_down"
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+          </View>
+          <Modal
+            hardwareAccelerated={false}
+            supportedOrientations={
+              Array [
+                "portrait",
+                "landscape",
+              ]
+            }
+            testID="ios_modal"
+            transparent={true}
+            visible={false}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#EFF1F2",
+                    "borderTopColor": "#919498",
+                    "borderTopWidth": 0.5,
+                    "flexDirection": "row",
+                    "height": 44,
+                    "justifyContent": "space-between",
+                    "paddingHorizontal": 10,
+                  },
+                  undefined,
+                ]
+              }
+              testID="done_bar"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flexDirection": "row",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderColor": "#D0D4DB",
+                          "borderRightWidth": 1.5,
+                          "borderTopWidth": 1.5,
+                          "height": 15,
+                          "width": 15,
+                        },
+                        undefined,
+                        Object {
+                          "marginLeft": 11,
+                          "transform": Array [
+                            Object {
+                              "translateY": 4,
+                            },
+                            Object {
+                              "rotate": "-45deg",
+                            },
+                          ],
+                        },
+                        undefined,
+                        Object {},
+                      ]
+                    }
+                  />
+                </View>
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderColor": "#D0D4DB",
+                          "borderRightWidth": 1.5,
+                          "borderTopWidth": 1.5,
+                          "height": 15,
+                          "width": 15,
+                        },
+                        undefined,
+                        Object {
+                          "marginLeft": 22,
+                          "transform": Array [
+                            Object {
+                              "translateY": -5,
+                            },
+                            Object {
+                              "rotate": "135deg",
+                            },
+                          ],
+                        },
+                        undefined,
+                        Object {},
+                      ]
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                accessible={true}
+                hitSlop={
+                  Object {
+                    "bottom": 4,
+                    "left": 4,
+                    "right": 4,
+                    "top": 4,
+                  }
+                }
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                testID="done_button"
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#007AFE",
+                        "fontSize": 15,
+                        "fontWeight": "bold",
+                        "paddingRight": 2,
+                        "paddingTop": 1,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Done
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#D0D4DB",
+                    "height": 215,
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View>
+                <RCTPicker
+                  items={
+                    Array [
+                      Object {
+                        "label": "Select an answer",
+                        "textColor": undefined,
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Play Store",
+                        "textColor": undefined,
+                        "value": "Play Store",
+                      },
+                      Object {
+                        "label": "App Store",
+                        "textColor": undefined,
+                        "value": "App Store",
+                      },
+                      Object {
+                        "label": "Apple Store",
+                        "textColor": undefined,
+                        "value": "Apple Store",
+                      },
+                      Object {
+                        "label": "Pineapple Store",
+                        "textColor": undefined,
+                        "value": "Pineapple Store",
+                      },
+                    ]
+                  }
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  selectedIndex={0}
+                  style={
+                    Array [
+                      Object {
+                        "height": 216,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </Modal>
+        </View>
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontWeight": "700",
+          "padding": 16,
+          "paddingBottom": 24,
+          "paddingHorizontal": 8,
+        }
+      }
+      testID="question-part-5"
+    >
+      , but 
+    </Text>
+    <View
+      style={
+        Object {
+          "paddingBottom": 8,
+        }
+      }
+      testID="question-part-6"
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onChangeText={[Function]}
+        placeholder="Type here"
+        placeholderTextColor="#90A4AE"
+        selectTextOnFocus={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#CFD8DC",
+              "borderRadius": 3,
+              "borderWidth": 1,
+              "color": "#90A4AE",
+              "fontSize": 13,
+              "fontWeight": "700",
+              "minWidth": 120,
+              "padding": 16,
+            },
+            Object {
+              "borderColor": "#00B0FF",
+              "color": "#00B0FF",
+            },
+          ]
+        }
+        testID="question-part-6-text-selected"
+        underlineColorAndroid="transparent"
+        value="Waze"
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#14171A",
+          "fontWeight": "700",
+          "padding": 16,
+          "paddingBottom": 24,
+          "paddingHorizontal": 8,
+        }
+      }
+      testID="question-part-7"
+    >
+       is on 
+    </Text>
+    <View
+      style={
+        Object {
+          "paddingBottom": 8,
+        }
+      }
+      testID="question-part-8"
+    >
+      <View
+        testID="question-part-8-select-selected"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignSelf": "stretch",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            pointerEvents="box-only"
+            testID="ios_touchable_wrapper"
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#90A4AE",
+                    "paddingRight": 39,
+                  },
+                  Array [
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#CFD8DC",
+                      "borderRadius": 3,
+                      "borderWidth": 1,
+                      "color": "#90A4AE",
+                      "fontSize": 13,
+                      "fontWeight": "700",
+                      "minWidth": 120,
+                      "padding": 16,
+                    },
+                    Object {
+                      "borderColor": "#00B0FF",
+                      "color": "#00B0FF",
+                    },
+                  ],
+                  Object {
+                    "color": "#00B0FF",
+                  },
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value="Select an answer"
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                  Object {
+                    "marginTop": -7.5,
+                    "right": 16,
+                    "top": "50%",
+                  },
+                ]
+              }
+              testID="icon_container"
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight="15"
+                bbWidth="15"
+                color="#00B0FF"
+                id="prefix__Calque_1"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "flex": 0,
+                      "height": 15,
+                      "width": 15,
+                    },
+                  ]
+                }
+                vbHeight={20}
+                vbWidth={20}
+                x={0}
+                xmlSpace="preserve"
+                y={0}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      0,
+                      0,
+                      0,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  name="prefix__Page-1"
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                >
+                  <RNSVGPath
+                    d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                    fill={
+                      Array [
+                        0,
+                        0,
+                        0.6901960784313725,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    name="prefix__arrow_down"
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+          </View>
+          <Modal
+            hardwareAccelerated={false}
+            supportedOrientations={
+              Array [
+                "portrait",
+                "landscape",
+              ]
+            }
+            testID="ios_modal"
+            transparent={true}
+            visible={false}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#EFF1F2",
+                    "borderTopColor": "#919498",
+                    "borderTopWidth": 0.5,
+                    "flexDirection": "row",
+                    "height": 44,
+                    "justifyContent": "space-between",
+                    "paddingHorizontal": 10,
+                  },
+                  undefined,
+                ]
+              }
+              testID="done_bar"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flexDirection": "row",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderColor": "#D0D4DB",
+                          "borderRightWidth": 1.5,
+                          "borderTopWidth": 1.5,
+                          "height": 15,
+                          "width": 15,
+                        },
+                        undefined,
+                        Object {
+                          "marginLeft": 11,
+                          "transform": Array [
+                            Object {
+                              "translateY": 4,
+                            },
+                            Object {
+                              "rotate": "-45deg",
+                            },
+                          ],
+                        },
+                        undefined,
+                        Object {},
+                      ]
+                    }
+                  />
+                </View>
+                <View
+                  accessible={true}
+                  isTVSelectable={true}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderColor": "#D0D4DB",
+                          "borderRightWidth": 1.5,
+                          "borderTopWidth": 1.5,
+                          "height": 15,
+                          "width": 15,
+                        },
+                        undefined,
+                        Object {
+                          "marginLeft": 22,
+                          "transform": Array [
+                            Object {
+                              "translateY": -5,
+                            },
+                            Object {
+                              "rotate": "135deg",
+                            },
+                          ],
+                        },
+                        undefined,
+                        Object {},
+                      ]
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                accessible={true}
+                hitSlop={
+                  Object {
+                    "bottom": 4,
+                    "left": 4,
+                    "right": 4,
+                    "top": 4,
+                  }
+                }
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                testID="done_button"
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#007AFE",
+                        "fontSize": 15,
+                        "fontWeight": "bold",
+                        "paddingRight": 2,
+                        "paddingTop": 1,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Done
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#D0D4DB",
+                    "height": 215,
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View>
+                <RCTPicker
+                  items={
+                    Array [
+                      Object {
+                        "label": "Select an answer",
+                        "textColor": undefined,
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Play Store",
+                        "textColor": undefined,
+                        "value": "Play Store",
+                      },
+                      Object {
+                        "label": "App Store",
+                        "textColor": undefined,
+                        "value": "App Store",
+                      },
+                      Object {
+                        "label": "Apple Store",
+                        "textColor": undefined,
+                        "value": "Apple Store",
+                      },
+                      Object {
+                        "label": "Pineapple Store",
+                        "textColor": undefined,
+                        "value": "Pineapple Store",
+                      },
+                    ]
+                  }
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  selectedIndex={0}
+                  style={
+                    Array [
+                      Object {
+                        "height": 216,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </Modal>
+        </View>
+      </View>
     </View>
   </View>
 </View>

@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Întrebare',
   retryLevel: 'Încercați din nou acest nivel',
   seeClue: 'Arată indiciul',
+  selectAnAnswer: 'Selectați răspunsul',
+  typeHere: 'Tastați aici',
   validate: 'Validează',
   version: 'Version',
   winAdditionalStars:

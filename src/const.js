@@ -11,7 +11,8 @@ import type {
   Engine,
   ContentType,
   CardDisplayMode,
-  AuthorType
+  AuthorType,
+  QuestionChoiceInputType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -29,12 +30,20 @@ export const CARD_DISPLAY_MODE: {
   COVER: 'cover'
 };
 
-type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC';
+type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE';
 export const QUESTION_TYPE: {
   [QuestionTypeKey]: QuestionType
 } = {
   QCM: 'qcm',
-  QCM_GRAPHIC: 'qcmGraphic'
+  QCM_GRAPHIC: 'qcmGraphic',
+  TEMPLATE: 'template'
+};
+
+export const QUESTION_CHOICE_INPUT_TYPE: {
+  [key: string]: QuestionChoiceInputType
+} = {
+  TEXT: 'text',
+  SELECT: 'select'
 };
 
 export const SPACE: {

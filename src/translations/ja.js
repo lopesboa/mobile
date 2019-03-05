@@ -23,6 +23,8 @@ const translations: Translations = {
   question: '質問',
   retryLevel: 'リトライする',
   seeClue: 'ヒントをみる ',
+  selectAnAnswer: '答えを選択します。',
+  typeHere: 'ここに入力します。',
   validate: '回答',
   version: 'Version',
   winAdditionalStars:

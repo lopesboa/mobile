@@ -7,6 +7,7 @@ import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
+import {QUESTION_TYPE} from '../const';
 import Html from './html';
 import QuestionChoices from './question-choices';
 import QuestionTitle from './question-title';
@@ -17,11 +18,14 @@ export type Props = {|
   type: QuestionType,
   header: string,
   explanation: string,
+  template?: string,
   choices: Array<Choice>,
   userChoices: Array<string>,
   media?: Media,
   isValidating: boolean,
+  // @todo mutualize the callback ?
   onChoicePress: (item: Choice) => void,
+  onChoiceInputChange: (item: Choice, value: string) => void,
   onButtonPress: () => void,
   isValidating?: boolean
 |};
@@ -60,14 +64,19 @@ const Question = ({
   type,
   header,
   explanation,
+  template,
   choices,
   media,
   userChoices,
   onChoicePress,
+  onChoiceInputChange,
   onButtonPress,
   isValidating
 }: Props) => {
-  const oneChoiceSelected = userChoices.length > 0;
+  const oneChoiceSelected =
+    type === QUESTION_TYPE.TEMPLATE
+      ? choices.length === userChoices.filter(choice => choice).length
+      : userChoices.length > 0;
   const mediaUri = media && media.url && getCleanUri(media.url);
 
   return (
@@ -94,9 +103,11 @@ const Question = ({
       <View style={styles.choicesContainer}>
         <QuestionChoices
           type={type}
+          template={template}
           items={choices}
           userChoices={userChoices}
           onItemPress={onChoicePress}
+          onItemInputChange={onChoiceInputChange}
           isDisabled={isValidating}
         />
       </View>

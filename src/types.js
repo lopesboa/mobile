@@ -1,15 +1,11 @@
 // @flow strict
 
 import type {
-  Choice,
   ContentType as ContentTypeBase,
   GenericContent as GenericContentBase
 } from '@coorpacademy/progression-engine';
 
-export type QuestionChoiceItem = {|
-  ...Choice,
-  selected?: boolean
-|};
+export type QuestionChoiceInputType = 'text' | 'select';
 
 export type ResourceType = 'video' | 'pdf' | 'img';
 export type MimeType =

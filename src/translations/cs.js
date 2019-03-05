@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Otázka',
   retryLevel: 'Zkuste úroveň znovu',
   seeClue: 'Zobrazit nápovědu',
+  selectAnAnswer: 'Vyberte odopvěď',
+  typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Version',
   winAdditionalStars:

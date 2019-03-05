@@ -10,7 +10,10 @@ import {createQCM, createQCMGraphic} from '../questions';
 import {failureExitNode, successExitNode} from '../exit-nodes';
 import {image} from '../medias';
 
-const level = createLevel({ref: 'basic_mod_1', chapterIds: ['basic_cha_1', 'basic_cha_2']});
+const level = createLevel({
+  ref: 'basic_mod_1',
+  chapterIds: ['basic_cha_1', 'basic_cha_2']
+});
 const qcm = createQCM({media: image});
 const qcmGraphic = createQCMGraphic({});
 

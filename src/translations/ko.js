@@ -24,6 +24,8 @@ const translations: Translations = {
   question: '질문',
   retryLevel: '레벨 재시도',
   seeClue: '단서 보기',
+  selectAnAnswer: '답을 선택하세요',
+  typeHere: '여기에 입력하세요',
   validate: '인증하기',
   version: 'Version',
   winAdditionalStars: '귀하가 레슨을 처음 볼 때, 이 장에서 {{count}}개의 추가 스타를 획득하세요!',

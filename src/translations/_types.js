@@ -43,6 +43,8 @@ export type Translations = {|
   question: string,
   retryLevel: string,
   seeClue: string,
+  selectAnAnswer: string,
+  typeHere: string,
   validate: string,
   version: string,
   winAdditionalStars: string,

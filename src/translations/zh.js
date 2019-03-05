@@ -24,6 +24,8 @@ const translations: Translations = {
   question: '问题',
   retryLevel: '重试级别',
   seeClue: '查看线索',
+  selectAnAnswer: '选择答案',
+  typeHere: '在这里输入',
   validate: '确认',
   version: 'Version',
   winAdditionalStars: '在这一章，当你首次阅读一节课的时候可以赢得 {{count}}额外的星星！',

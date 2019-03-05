@@ -70,6 +70,7 @@
     "react-native-localization": "^2.0.3",
     "react-native-orientation-locker": "^1.1.1",
     "react-native-pdf": "5.0.8",
+    "react-native-picker-select": "^6.0.0",
     "react-native-render-html": "3",
     "react-native-svg": "^6.0.0",
     "react-native-video": "3.2.1",

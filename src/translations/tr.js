@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Soru',
   retryLevel: 'Seviyeyi  yeniden dene',
   seeClue: 'İpucunu gör',
+  selectAnAnswer: 'Cevap seçin',
+  typeHere: 'Buraya yazın',
   validate: 'Onayla',
   version: 'Version',
   winAdditionalStars: 'İlk dersinizi görüntülediğinizde bu ünitede {{count}} ek yıldız kazanın!',

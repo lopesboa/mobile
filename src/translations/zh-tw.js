@@ -23,6 +23,8 @@ const translations: Translations = {
   question: '問題',
   retryLevel: '重試級別',
   seeClue: '看到線索',
+  selectAnAnswer: '選擇一個答案',
+  typeHere: '在此輸入',
   validate: '驗證',
   version: 'Version',
   winAdditionalStars: '第一次觀看課程時，在本章中贏得{{count}}個額外的星星！',

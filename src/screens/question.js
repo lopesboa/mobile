@@ -31,6 +31,7 @@ type ConnectedStateProps = {|
   type?: QuestionType,
   header?: string,
   explanation?: string,
+  template?: string,
   choices?: Array<Choice>,
   userChoices?: Array<string>,
   answers?: Array<string>,
@@ -127,12 +128,32 @@ class QuestionScreen extends React.PureComponent<Props> {
     this.props.editAnswer(item);
   };
 
+  handleChoiceInputChange = (item: Choice, value: string) => {
+    const {choices, userChoices = []} = this.props;
+    const values = choices.map((choice, index) => {
+      const currentValue = userChoices[index] !== undefined ? userChoices[index] : '';
+
+      return choice._id === item._id ? value : currentValue;
+    });
+
+    this.props.editAnswer(values);
+  };
+
   handleButtonPress = () => {
     this.props.validateAnswer();
   };
 
   render() {
-    const {choices, type, header, explanation, isValidating, media, userChoices = []} = this.props;
+    const {
+      choices,
+      type,
+      header,
+      explanation,
+      template,
+      isValidating,
+      media,
+      userChoices = []
+    } = this.props;
 
     return (
       <Screen testID="question-screen" onRef={this.handleRef}>
@@ -145,10 +166,12 @@ class QuestionScreen extends React.PureComponent<Props> {
               choices={choices}
               header={header}
               explanation={explanation}
+              template={template}
               media={media}
               userChoices={userChoices}
               onChoicePress={this.handleChoicePress}
               onButtonPress={this.handleButtonPress}
+              onChoiceInputChange={this.handleChoiceInputChange}
               isValidating={isValidating}
             />
           )}
@@ -165,6 +188,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       type: undefined,
       header: undefined,
       explanation: undefined,
+      template: undefined,
       choices: undefined,
       userChoices: undefined,
       answers: undefined,
@@ -215,6 +239,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       type: undefined,
       header: undefined,
       explanation: undefined,
+      template: undefined,
       choices: undefined,
       userChoices: undefined,
       answers,
@@ -237,11 +262,14 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const header = slide.question.header;
   // $FlowFixMe union type
   const explanation = slide.question.explanation;
+  // $FlowFixMe union type
+  const template = slide.question.content.template;
 
   return {
     type,
     header,
     explanation,
+    template,
     choices,
     userChoices,
     answers,

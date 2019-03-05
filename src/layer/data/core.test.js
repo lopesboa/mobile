@@ -2,11 +2,7 @@
 
 import {AsyncStorage} from 'react-native';
 
-import basicCourse from '../../__fixtures__/discipline-bundle/basic';
-import adaptiveCourse from '../../__fixtures__/discipline-bundle/adaptive';
-import noClueCourse from '../../__fixtures__/discipline-bundle/no-clue';
-import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
-import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import onboardingCourse from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelleCourse from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
@@ -262,39 +258,11 @@ describe('Data Layer Core', () => {
   describe('fetchDisciplineBundle', () => {
     AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
 
-    it('should fetch fixture', () => {
-      const keys = Object.keys(basicCourse.disciplines);
+    it('should fetch fixtures', () => {
+      const keys = Object.keys(disciplinesBundle.disciplines);
       const result = fetchDisciplineBundle(keys[0], 'en');
       // @todo should be mocked
-      expect(result).resolves.toBe(basicCourse);
-    });
-
-    it('should fetch adaptive', () => {
-      const keys = Object.keys(adaptiveCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(adaptiveCourse);
-    });
-
-    it('should fetch no clue', () => {
-      const keys = Object.keys(noClueCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(noClueCourse);
-    });
-
-    it('should fetch with context-video', () => {
-      const keys = Object.keys(withContextVideo.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(withContextVideo);
-    });
-
-    it('should fetch with context-image', () => {
-      const keys = Object.keys(withContextImage.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(withContextImage);
+      expect(result).resolves.toBe(disciplinesBundle);
     });
 
     it('should fetch onboarding', () => {

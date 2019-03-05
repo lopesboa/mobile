@@ -8,6 +8,8 @@ const rightAnswer = async () => {
   await element(by.id('button-validate')).tap();
 };
 
+// @todo split this file into few files (1 per question type)
+
 describe('Questions', () => {
   beforeAll(async () => {
     await utils.reloadApp();

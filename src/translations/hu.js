@@ -24,6 +24,8 @@ const translations: Translations = {
   question: 'Kérdés',
   retryLevel: 'Szint  újrajátszása',
   seeClue: 'Tipp megtekintése',
+  selectAnAnswer: 'Válasszon ki egy választ',
+  typeHere: 'Írjon ide',
   validate: 'Érvényesít',
   version: 'Version',
   winAdditionalStars:

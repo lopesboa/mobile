@@ -2,11 +2,7 @@
 
 import {AsyncStorage} from 'react-native';
 
-import basic from '../../__fixtures__/discipline-bundle/basic';
-import adaptive from '../../__fixtures__/discipline-bundle/adaptive';
-import noClue from '../../__fixtures__/discipline-bundle/no-clue';
-import withContextVideo from '../../__fixtures__/discipline-bundle/context-with-video';
-import withContextImage from '../../__fixtures__/discipline-bundle/context-with-image';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
 import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import type {SupportedLanguage} from '../../translations/_types';
@@ -60,8 +56,10 @@ export const createReduceToNormalizedItemFunction = (
   if (currentValue === 'disciplines') {
     // $FlowFixMe bundleResource.discipline is not mixed
     const disciplines: Array<Discipline> = Object.values(bundledResource.disciplines);
-    const discipline: Discipline | void = disciplines[0];
-    levels = buildLevels((discipline && discipline.modules) || [], userLanguage);
+    levels = buildLevels(
+      disciplines.reduce((result, discipline) => result.concat(discipline.modules), []),
+      userLanguage
+    );
   }
   return accumulator.concat(
     buildKeyValuePair(
@@ -104,24 +102,8 @@ export const fetchDisciplineBundle = (
   ref: string,
   userLanguage: SupportedLanguage
 ): Promise<BundledDiscipline> => {
-  if (Object.keys(basic.disciplines).includes(ref)) {
-    return Promise.resolve(basic);
-  }
-
-  if (Object.keys(adaptive.disciplines).includes(ref)) {
-    return Promise.resolve(adaptive);
-  }
-
-  if (Object.keys(noClue.disciplines).includes(ref)) {
-    return Promise.resolve(noClue);
-  }
-
-  if (Object.keys(withContextVideo.disciplines).includes(ref)) {
-    return Promise.resolve(withContextVideo);
-  }
-
-  if (Object.keys(withContextImage.disciplines).includes(ref)) {
-    return Promise.resolve(withContextImage);
+  if (Object.keys(disciplinesBundle.disciplines).includes(ref)) {
+    return Promise.resolve(disciplinesBundle);
   }
 
   if (Object.keys(onboarding.disciplines).includes(ref)) {
