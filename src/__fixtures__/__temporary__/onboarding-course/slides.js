@@ -6,6 +6,7 @@ import type {Slide} from '../../../layer/data/_types';
 const fakePdf = {
   _id: '123456789',
   description: 'Rules of the game',
+  mediaRef: 'med_Vy4JQKFhN',
   mediaUrl:
     '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/raw/rules-of-the-game-1551288259532.pdf',
   mimeType: 'application/pdf',
@@ -47,6 +48,7 @@ export const slide_sli_EJ6TGiIIN: Slide = {
         '//static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/capture-decran-2018-04-25-a-123739-1524652711605.png',
       description: 'Lesson',
       videoId: '262068086',
+      mediaRef: 'med_Vy4JQKFhN',
       mimeType: 'application/vimeo',
       ref: 'les_4yiyz6ULE',
       type: 'video',
@@ -209,6 +211,7 @@ export const slide_sli_NJjQLo8LV: Slide = {
       subtitles: [],
       posters: [],
       src: [],
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       downloadUrl:
@@ -356,6 +359,7 @@ export const slide_sli_Nkg5D8BD4: Slide = {
       subtitles: [],
       posters: [],
       src: [],
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       downloadUrl:

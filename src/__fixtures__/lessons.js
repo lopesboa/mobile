@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Lesson} from '../layer/data/_types';
+import type {Lesson} from '@coorpacademy/progression-engine';
 import {RESOURCE_TYPE} from '../const';
 
 export const createVideo = ({
@@ -18,6 +18,7 @@ export const createVideo = ({
   poster,
   description,
   videoId: '303449523',
+  mediaRef: 'med_Vy4JQKFhN',
   mediaUrl: `//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307`,
   downloadUrl: `//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075`,
   mimeType: 'application/vimeo',
@@ -42,6 +43,7 @@ export const createPdf = ({
   _id: ref,
   poster,
   description,
+  mediaRef: 'med_Vy4JQKFhN',
   mediaUrl:
     '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
   mimeType: 'application/pdf',

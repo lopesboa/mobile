@@ -8,7 +8,9 @@ import type {
   LevelAPI
 } from '@coorpacademy/player-services';
 
-import type {ExitNode, Chapter, Slide, Lesson, Level} from './_types';
+import type {Lesson} from '@coorpacademy/progression-engine';
+
+import type {ExitNode, Chapter, Slide, Level} from './_types';
 
 export const mapToExitNodeAPI = (rawExitNode: ExitNode): ExitNodeAPI => ({
   ref: rawExitNode.ref,
@@ -36,6 +38,7 @@ export const mapToChapterAPI = (rawChapter: Chapter): ChapterAPI => ({
 export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
   _id: rawLesson._id,
   description: rawLesson.description,
+  mediaRef: rawLesson.mediaRef,
   mediaUrl: rawLesson.mediaUrl,
   downloadUrl: rawLesson.downloadUrl,
   mimeType: rawLesson.mimeType,

@@ -27,6 +27,7 @@ export const sli_E1XxCEX9E: Slide = {
     {
       _id: '5c643140193636021182078d',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -147,6 +148,7 @@ export const sli_EJiBOBb3V: Slide = {
     {
       _id: '5c6431451936360211820bf7',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -288,6 +290,7 @@ export const sli_EkIbGLb3E: Slide = {
     {
       _id: '5c64314e19363602118214cc',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -379,6 +382,7 @@ export const sli_Eyatj4XqN: Slide = {
     {
       _id: '5c6431551936360211821ab7',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -504,6 +508,7 @@ export const sli_N1pcUVmqV: Slide = {
     {
       _id: '5c6431621936360211822765',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -647,6 +652,7 @@ export const sli_VJNRF4Q9V: Slide = {
     {
       _id: '5c6431911936360211825358',
       description: 'Accorder un déterminant',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_determinant_1b2-1524650571489.pdf',
       mimeType: 'application/pdf',
@@ -779,6 +785,7 @@ export const sli_4kaa0I7q4: Slide = {
     {
       _id: '5c643127193636021181f0ce',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -793,6 +800,7 @@ export const sli_4kaa0I7q4: Slide = {
     {
       _id: '5c643127193636021181f0cd',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -926,6 +934,7 @@ export const sli_4kxxwLQc4: Slide = {
     {
       _id: '5c64312e193636021181f6ed',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -940,6 +949,7 @@ export const sli_4kxxwLQc4: Slide = {
     {
       _id: '5c64312e193636021181f6ec',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -1064,6 +1074,7 @@ export const sli_E1PZh8XcE: Slide = {
     {
       _id: '5c64313e19363602118205c7',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -1078,6 +1089,7 @@ export const sli_E1PZh8XcE: Slide = {
     {
       _id: '5c64313e19363602118205c6',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -1200,6 +1212,7 @@ export const sli_Ek6mv7q4: Slide = {
     {
       _id: '5c64314b1936360211821136',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -1214,6 +1227,7 @@ export const sli_Ek6mv7q4: Slide = {
     {
       _id: '5c64314b1936360211821135',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -1339,6 +1353,7 @@ export const sli_NkXD9w75E: Slide = {
     {
       _id: '5c6431771936360211823ad9',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -1353,6 +1368,7 @@ export const sli_NkXD9w75E: Slide = {
     {
       _id: '5c6431771936360211823ad8',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -1489,6 +1505,7 @@ export const sli_Vkq4zLQqE: Slide = {
     {
       _id: '5c64319b1936360211825ca4',
       description: 'Accorder un verbe avec son sujet (2)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650806870.pdf',
       mimeType: 'application/pdf',
@@ -1503,6 +1520,7 @@ export const sli_Vkq4zLQqE: Slide = {
     {
       _id: '5c64319b1936360211825ca3',
       description: 'Accorder un verbe avec un sujet étendu',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_sujet_etendu_1a1-1524650913746.pdf',
       mimeType: 'application/pdf',
@@ -1642,6 +1660,7 @@ export const sli_41RGeRFN: Slide = {
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
+      mediaRef: 'med_Vy4JQKFhN',
       ref: 'les_N19KBFF2N',
       type: 'pdf',
       poster:
@@ -1733,6 +1752,7 @@ export const sli_41SVraTtN: Slide = {
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
+      mediaRef: 'med_Vy4JQKFhN',
       ref: 'les_N19KBFF2N',
       type: 'pdf',
       poster:
@@ -1820,6 +1840,7 @@ export const sli_4kbDJeCYV: Slide = {
     {
       _id: '5c643127193636021181f136',
       description: "Accorder un pronom avec le nom qu'il représente",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
@@ -1910,6 +1931,7 @@ export const sli_4kbTe06FE: Slide = {
     {
       _id: '5c643127193636021181f14a',
       description: "Accorder un pronom avec le nom qu'il représente",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
@@ -2001,6 +2023,7 @@ export const sli_VJKP6atV: Slide = {
     {
       _id: '5c6431901936360211825231',
       description: "Accorder un pronom avec le nom qu'il représente",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
@@ -2092,6 +2115,7 @@ export const sli_VJkfyATFE: Slide = {
     {
       _id: '5c643190193636021182525d',
       description: "Accorder un pronom avec le nom qu'il représente",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_pronom_1b3-1524668036268.pdf',
       mimeType: 'application/pdf',
@@ -2202,6 +2226,7 @@ export const sli_41LVTroV: Slide = {
     {
       _id: '5c643112193636021181dee3',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2355,6 +2380,7 @@ export const sli_4yg3OnHsE: Slide = {
     {
       _id: '5c643132193636021181faab',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2469,6 +2495,7 @@ export const sli_E1zW3hSi4: Slide = {
     {
       _id: '5c6431411936360211820808',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2571,6 +2598,7 @@ export const sli_Ekbl0nriN: Slide = {
     {
       _id: '5c64314d1936360211821310',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2673,6 +2701,7 @@ export const sli_N1boaHi4: Slide = {
     {
       _id: '5c64315e1936360211822346',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2761,6 +2790,7 @@ export const sli_V1TdI6HjN: Slide = {
     {
       _id: '5c64318a1936360211824b76',
       description: "Accorder le participe passé d'un verbe pronominal",
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/accord_participe_passe_verbe_pronominal-1524667000822.pdf',
       mimeType: 'application/pdf',
@@ -2847,6 +2877,7 @@ export const sli_4kKySIhV: Slide = {
     {
       _id: '5c643129193636021181f342',
       description: 'Accorder un adjectif quelle que soit sa fonction',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_adjectif_1a2-1524651188408.pdf',
       mimeType: 'application/pdf',
@@ -2937,6 +2968,7 @@ export const sli_Ek7KmFpqE: Slide = {
     {
       _id: '5c64314c1936360211821262',
       description: 'Accorder un adjectif quelle que soit sa fonction',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_adjectif_1a2-1524651188408.pdf',
       mimeType: 'application/pdf',
@@ -3067,6 +3099,7 @@ export const sli_EysSw834: Slide = {
     {
       _id: '5c64315a1936360211821f86',
       description: 'Accorder un adjectif quelle que soit sa fonction',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_adjectif_1a2-1524651188408.pdf',
       mimeType: 'application/pdf',
@@ -3234,6 +3267,7 @@ export const sli_VJthqt69E: Slide = {
     {
       _id: '5c64319219363602118254ae',
       description: 'Accorder un adjectif quelle que soit sa fonction',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_adjectif_1a2-1524651188408.pdf',
       mimeType: 'application/pdf',
@@ -3359,6 +3393,7 @@ export const sli_Vy0PLKpqV: Slide = {
     {
       _id: '5c64319e1936360211825fab',
       description: 'Accorder un adjectif quelle que soit sa fonction',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_adjectif_1a2-1524651188408.pdf',
       mimeType: 'application/pdf',
@@ -4670,6 +4705,7 @@ export const sli_E122NgD4: Slide = {
     {
       _id: '5c64313819363602118200a9',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -4753,6 +4789,7 @@ export const sli_EJEw2RPPN: Slide = {
     {
       _id: '5c6431441936360211820ae1',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -4838,6 +4875,7 @@ export const sli_Ekehw1Kw4: Slide = {
     {
       _id: '5c64314e19363602118213ee',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -4957,6 +4995,7 @@ export const sli_EkpDozFv4: Slide = {
     {
       _id: '5c6431501936360211821687',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -5078,6 +5117,7 @@ export const sli_N1FkTWKDV: Slide = {
     {
       _id: '5c6431601936360211822484',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -5207,6 +5247,7 @@ export const sli_Nkhu9JPN: Slide = {
     {
       _id: '5c64317319363602118236af',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -5313,6 +5354,7 @@ export const sli_Vk4Wc1tDV: Slide = {
     {
       _id: '5c6431951936360211825775',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',
@@ -5395,6 +5437,7 @@ export const sli_VyFaxguDV: Slide = {
     {
       _id: '5c6431a01936360211826257',
       description: 'Accorder un verbe avec son sujet (1)',
+      mediaRef: 'med_Vy4JQKFhN',
       mediaUrl:
         '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/bescherelle_accord_verbe_1b1-1524650036599.pdf',
       mimeType: 'application/pdf',

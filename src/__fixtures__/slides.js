@@ -1,8 +1,7 @@
 // @flow
 
-import type {Question, Context} from '@coorpacademy/progression-engine';
-
-import type {Lesson, Slide} from '../layer/data/_types';
+import type {Lesson, Question, Context} from '@coorpacademy/progression-engine';
+import type {Slide} from '../layer/data/_types';
 import {createEmptyContext} from './context';
 
 export const createSlide = ({

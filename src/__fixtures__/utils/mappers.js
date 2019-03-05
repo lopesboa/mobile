@@ -5,8 +5,12 @@ import type {
   Chapter as ChapterStore,
   Discipline as DisciplineStore
 } from '@coorpacademy/player-store';
-import type {Slide as SlideEngine, Lesson as LessonEngine} from '@coorpacademy/progression-engine';
-import type {Level, Slide, Lesson, Chapter, Discipline} from '../../layer/data/_types';
+import type {
+  Lesson,
+  Slide as SlideEngine,
+  Lesson as LessonEngine
+} from '@coorpacademy/progression-engine';
+import type {Level, Slide, Chapter, Discipline} from '../../layer/data/_types';
 
 export const mapToLevel = (rawLevel: Level): LevelStore => ({
   _id: rawLevel._id,
@@ -35,6 +39,7 @@ export const mapToLesson = (rawLesson: Lesson): LessonEngine => ({
   _id: rawLesson._id,
   description: rawLesson.description,
   mediaUrl: rawLesson.mediaUrl,
+  mediaRef: 'med_Vy4JQKFhN',
   mimeType: rawLesson.mimeType,
   poster: rawLesson.poster,
   posters: rawLesson.posters,

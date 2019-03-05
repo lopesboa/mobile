@@ -4,19 +4,12 @@ import type {
   SlideAPI,
   ChapterAPI,
   ExitNodeAPI,
-  LessonAPI,
   LevelAPI,
   ChapterRule
 } from '@coorpacademy/player-services';
 
-import type {Context} from '@coorpacademy/progression-engine';
+import type {Context, Lesson} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
-
-export type Lesson = $Exact<{|
-  ...LessonAPI,
-  downloadUrl?: string,
-  mediaRef?: string
-|}>;
 
 export type MimeType =
   | 'video/mp4'

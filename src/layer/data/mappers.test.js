@@ -80,6 +80,7 @@ export const mapToExitNodeAPIExpectedResult: ExitNodeAPI = {
 export const mapToLessonAPIExpectedResult: LessonAPI = {
   _id: lesson._id,
   description: lesson.description,
+  mediaRef: lesson.mediaRef,
   mediaUrl: lesson.mediaUrl,
   downloadUrl: lesson.downloadUrl,
   mimeType: lesson.mimeType,

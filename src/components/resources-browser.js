@@ -7,7 +7,7 @@ import {
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
 } from '@coorpacademy/nova-icons';
 
-import type {Lesson} from '../layer/data/_types';
+import type {Lesson} from '@coorpacademy/progression-engine';
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';

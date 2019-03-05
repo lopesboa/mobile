@@ -6,13 +6,17 @@ import {connect} from 'react-redux';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
 
+import {ended, play} from '@coorpacademy/player-store';
+
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
 import {showNavigation, hideNavigation} from '../redux/actions/navigation';
 
 type ConnectedDispatchToProps = {|
   showNavigation: typeof showNavigation,
-  hideNavigation: typeof hideNavigation
+  hideNavigation: typeof hideNavigation,
+  play: typeof play,
+  ended: typeof ended
 |};
 
 type Props = {|
@@ -76,6 +80,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
     this.setState({
       step: STEP.PLAY
     });
+    this.props.play();
   };
 
   handleEnd = () => {
@@ -126,7 +131,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
 const mapDispatchToProps: ConnectedDispatchToProps = {
   showNavigation,
-  hideNavigation
+  hideNavigation,
+  play,
+  ended
 };
 
 export default connect(null, mapDispatchToProps)(VideoControlable);

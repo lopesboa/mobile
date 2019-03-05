@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
+import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 
-import type {Lesson as LessonType} from '../layer/data/_types';
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
