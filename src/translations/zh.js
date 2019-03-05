@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: '你已经没有生命了！',
   question: '问题',
   retryLevel: '重试级别',
+  selectSomethingBelow: '从下面选择',
   seeClue: '查看线索',
   selectAnAnswer: '选择答案',
   typeHere: '在这里输入',

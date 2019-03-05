@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Esgotou as suas vidas!',
   question: 'Pergunta',
   retryLevel: 'Voltar a tentar nível',
+  selectSomethingBelow: 'Selecione algo abaixo',
   seeClue: 'Ver solução',
   selectAnAnswer: 'Seleciona uma resposta',
   typeHere: 'Escreva aqui',

@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Önnek nincs több élete!',
   question: 'Kérdés',
   retryLevel: 'Szint  újrajátszása',
+  selectSomethingBelow: 'Válasszon ki valamit alul',
   seeClue: 'Tipp megtekintése',
   selectAnAnswer: 'Válasszon ki egy választ',
   typeHere: 'Írjon ide',

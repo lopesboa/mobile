@@ -1,0 +1,697 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DropZone Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FAFAFA",
+        "borderColor": "#ECEFF1",
+        "borderRadius": 3,
+        "borderStyle": "dashed",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginBottom": 8,
+        "padding": 4,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-1"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Play Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-2"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                App Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-3"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Apple Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-4"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Pineapple Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DropZone With No SelectedChoics 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FAFAFA",
+        "borderColor": "#ECEFF1",
+        "borderRadius": 3,
+        "borderStyle": "dashed",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginBottom": 8,
+        "padding": 4,
+      },
+      Object {
+        "alignContent": "center",
+        "alignItems": "center",
+        "height": 60,
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#90A4AE",
+      }
+    }
+  >
+    Select something below
+  </Text>
+</View>
+`;
+
+exports[`Storyshots DropZone with choice without value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FAFAFA",
+        "borderColor": "#ECEFF1",
+        "borderRadius": 3,
+        "borderStyle": "dashed",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "marginBottom": 8,
+        "padding": 4,
+      },
+      false,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-1"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Play Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-2"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                App Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-3"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Apple Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 4,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRadius": 3,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+      testID="selected-choice-4"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "flex-start",
+            },
+            Object {
+              "padding": 16,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 13,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Pineapple Store
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

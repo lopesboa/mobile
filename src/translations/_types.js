@@ -42,6 +42,7 @@ export type Translations = {|
   outOfLives: string,
   question: string,
   retryLevel: string,
+  selectSomethingBelow: string,
   seeClue: string,
   selectAnAnswer: string,
   typeHere: string,

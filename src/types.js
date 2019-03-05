@@ -19,6 +19,7 @@ export type MimeType =
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
 
 export type CardType = 'tip' | 'keyPoint' | 'correction';
+export type FontSize = 13 | 15 | 17;
 
 export type CardDisplayMode = 'card' | 'cover';
 

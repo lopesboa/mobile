@@ -8,6 +8,19 @@ const rightAnswer = async () => {
   await element(by.id('button-validate')).tap();
 };
 
+const selectQCMRightDragItem = async () => {
+  await element(by.id(`unselected-choice-1`)).tap();
+  await element(by.id(`unselected-choice-2`)).tap();
+};
+
+const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
+  await selectQCMRightDragItem();
+  await element(by.id('question-screen')).swipe('up');
+  await element(by.id('button-validate')).tap();
+  await waitFor(element(by.id('correction-success'))).toBeVisible();
+  await element(by.id('button-next-question')).tap();
+};
+
 // @todo split this file into few files (1 per question type)
 
 describe('Questions', () => {
@@ -218,6 +231,63 @@ describe('Questions', () => {
       await element(by.id('button-next-level')).tap();
       await waitFor(element(by.id('home'))).toBeVisible();
       await weExpect(element(by.id('home'))).toBeVisible();
+    });
+  });
+
+  describe('QCM Drag', () => {
+    beforeAll(async () => {
+      await waitFor(element(by.id('catalog-item-qcm-drag-dis-1'))).toBeVisible();
+      await element(by.id('catalog-item-qcm-drag-dis-1')).tap();
+    });
+
+    it('should see only choice item', async () => {
+      await weExpect(element(by.id(`unselected-choice-3`))).toBeVisible();
+      await weExpect(element(by.id(`selected-choice-3`))).toBeNotVisible();
+    });
+
+    it('should be able to select some item and to see the items inside the dropZone', async () => {
+      await selectQCMRightDragItem();
+      await weExpect(element(by.id(`unselected-choice-1`))).toBeNotVisible();
+      await weExpect(element(by.id(`unselected-choice-2`))).toBeNotVisible();
+      await weExpect(element(by.id(`selected-choice-1`))).toBeVisible();
+      await weExpect(element(by.id(`selected-choice-2`))).toBeVisible();
+    });
+
+    it('should be able to unselect some item from dropZone', async () => {
+      await element(by.id(`selected-choice-1`)).tap();
+      await element(by.id(`selected-choice-2`)).tap();
+      await weExpect(element(by.id(`unselected-choice-1`))).toBeVisible();
+      await weExpect(element(by.id(`unselected-choice-2`))).toBeVisible();
+      await weExpect(element(by.id(`selected-choice-1`))).toBeNotVisible();
+      await weExpect(element(by.id(`selected-choice-2`))).toBeNotVisible();
+    });
+
+    it('should be able to select few items and to give the CORRECT answer', async () => {
+      await selectQCMRightDragItem();
+      await element(by.id('question-screen')).swipe('up');
+      await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-success'))).toBeVisible();
+      await weExpect(element(by.id('correction-success'))).toBeVisible();
+      await element(by.id('button-next-question')).tap();
+    });
+
+    it('should be able to select few items and to give the WRONG answer', async () => {
+      await element(by.id(`unselected-choice-4`)).tap();
+      await element(by.id(`unselected-choice-3`)).tap();
+      await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('correction-error'))).toBeVisible();
+      await element(by.id('button-next-question')).tap();
+    });
+
+    it('should be wrong if the given item are selected in wrong order when the match order matter', async () => {
+      await tapOnCorrectQCMDRagItemAndGoToSuccess();
+      await tapOnCorrectQCMDRagItemAndGoToSuccess();
+      await element(by.id(`unselected-choice-2`)).tap();
+      await element(by.id(`unselected-choice-1`)).tap();
+      await element(by.id('button-validate')).tap();
+      await waitFor(element(by.id('correction-error'))).toBeVisible();
+      await weExpect(element(by.id('correction-error'))).toBeVisible();
     });
   });
 });

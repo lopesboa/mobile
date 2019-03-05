@@ -54,9 +54,19 @@ storiesOf('QuestionChoices', module)
       onItemInputChange={handleFakePress}
     />
   ))
+  .add('QCM Drag', () => (
+    <QuestionChoices
+      isDisabled={false}
+      userChoices={answers}
+      type={QUESTION_TYPE.DRAG_DROP}
+      items={choices}
+      onItemPress={handleFakePress}
+      onItemInputChange={handleFakePress}
+    />
+  ))
   .add('Unsupported question type', () => (
     <QuestionChoices
-      // $FlowFixMe its only to test
+      // $FlowFixMe  only for testing purpose
       type="SomethingElse"
       items={choices}
       userChoices={answers}

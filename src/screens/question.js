@@ -18,7 +18,7 @@ import {
   getRoute,
   validateAnswer
 } from '@coorpacademy/player-store';
-import type {Choice, Media, QuestionType} from '@coorpacademy/progression-engine';
+import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import Question from '../components/question';
 import Screen from '../components/screen';
@@ -257,7 +257,8 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 
   const type = getQuestionType(slide);
   const choices = getChoices(slide);
-  const userChoices = getAnswerValues(slide, state);
+  const userChoices = getAnswerValues(slide, state) || [];
+
   // $FlowFixMe union type
   const header = slide.question.header;
   // $FlowFixMe union type

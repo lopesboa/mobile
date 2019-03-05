@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   question: 'Întrebare',
   retryLevel: 'Încercați din nou acest nivel',
+  selectSomethingBelow: 'Selectați din opțiunile de mai jos',
   seeClue: 'Arată indiciul',
   selectAnAnswer: 'Selectați răspunsul',
   typeHere: 'Tastați aici',

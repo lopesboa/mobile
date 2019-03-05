@@ -77,4 +77,30 @@ storiesOf('Question', module)
       onButtonPress={handleFakePress}
       isValidating={false}
     />
+  ))
+  .add('QCM Drag and Drop - with selected choices', () => (
+    <Question
+      type={QUESTION_TYPE.DRAG_DROP}
+      header="What is the online Apple application store called?"
+      explanation="Select the correct answers"
+      choices={choices}
+      userChoices={[choices[1].label]}
+      onChoicePress={handleFakePress}
+      onChoiceInputChange={handleFakePress}
+      onButtonPress={handleFakePress}
+      isValidating={false}
+    />
+  ))
+  .add('QCM Drag and Drop - with no selected choices', () => (
+    <Question
+      type={QUESTION_TYPE.DRAG_DROP}
+      header="What is the online Apple application store called?"
+      explanation="Select the correct answers"
+      choices={choices}
+      userChoices={[]}
+      onChoicePress={handleFakePress}
+      onChoiceInputChange={handleFakePress}
+      onButtonPress={handleFakePress}
+      isValidating={false}
+    />
   ));

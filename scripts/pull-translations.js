@@ -76,6 +76,7 @@ const generate = async (locale: string) => {
     outOfLives: playerTranslations['You are out of lives!'],
     question: playerTranslations.Question,
     retryLevel: playerTranslations['Retry level'],
+    selectSomethingBelow: playerTranslations['Select something below'],
     seeClue: componentsTranslations['See clue'],
     selectAnAnswer: playerTranslations['Select an answer'],
     typeHere: playerTranslations['Type here'],

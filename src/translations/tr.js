@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Canınız bitti!',
   question: 'Soru',
   retryLevel: 'Seviyeyi  yeniden dene',
+  selectSomethingBelow: 'Aşağıdan bir öğe seçin',
   seeClue: 'İpucunu gör',
   selectAnAnswer: 'Cevap seçin',
   typeHere: 'Buraya yazın',

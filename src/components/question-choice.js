@@ -4,7 +4,8 @@ import * as React from 'react';
 import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import type {Media} from '@coorpacademy/progression-engine';
 
-import {MEDIA_TYPE} from '../const';
+import {MEDIA_TYPE, FONT_SIZE} from '../const';
+import type {FontSize} from '../types';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
 import Html from './html';
@@ -17,7 +18,8 @@ type Props = {|
   isDisabled?: boolean,
   testID?: string,
   media?: Media,
-  style?: GenericStyleProp
+  style?: GenericStyleProp,
+  fontSize?: FontSize
 |};
 
 const styles = StyleSheet.create({
@@ -29,9 +31,15 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.common,
     overflow: 'hidden'
   },
-  textContainer: {
+  regularTextContainer: {
     paddingVertical: theme.spacing.small,
-    paddingHorizontal: theme.spacing.base,
+    paddingHorizontal: theme.spacing.base
+  },
+  smallTextContainer: {
+    padding: theme.spacing.small
+  },
+
+  textContainer: {
     justifyContent: 'flex-start'
   },
   text: {
@@ -56,6 +64,7 @@ const QuestionChoice = ({
   onPress,
   media,
   testID: prefixTestID,
+  fontSize = FONT_SIZE.LARGE,
   style
 }: Props) => (
   <BrandThemeContext.Consumer>
@@ -90,8 +99,15 @@ const QuestionChoice = ({
                 resizeMode="cover"
               />
             )}
-            <View style={styles.textContainer}>
-              <Html fontSize={17} style={[styles.text, isSelected && styles.textSelected]}>
+            <View
+              style={[
+                styles.textContainer,
+                fontSize === FONT_SIZE.SMALL
+                  ? styles.smallTextContainer
+                  : styles.regularTextContainer
+              ]}
+            >
+              <Html fontSize={fontSize} style={[styles.text, isSelected && styles.textSelected]}>
                 {children}
               </Html>
             </View>

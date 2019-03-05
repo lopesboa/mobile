@@ -22,6 +22,7 @@ const translations: Translations = {
   outOfLives: 'ライフがなくなりました。',
   question: '質問',
   retryLevel: 'リトライする',
+  selectSomethingBelow: '下に何かを選択します。',
   seeClue: 'ヒントをみる ',
   selectAnAnswer: '答えを選択します。',
   typeHere: 'ここに入力します。',

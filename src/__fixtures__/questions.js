@@ -3,8 +3,9 @@
 import type {
   QCMQuestion,
   QCMGraphicQuestion,
+  Media,
   TemplateQuestion,
-  Media
+  QCMDragQuestion
 } from '@coorpacademy/progression-engine';
 
 import {choices, choicesWithImage, createInputChoice, createSelectChoice} from './question-choices';
@@ -44,6 +45,20 @@ export const createTemplate = ({media}: {media?: Media}): TemplateQuestion => ({
   },
   medias: (media && [media]) || undefined
 });
+
+export const createQCMDrag = ({matchOrder}: {matchOrder: boolean}): QCMDragQuestion => {
+  return {
+    type: 'qcmDrag',
+    header: 'Quels sont les store les plus utilisés pour publier des application?',
+    explanation: 'Sélectionnez la bonne réponse.',
+    content: {
+      matchOrder,
+      maxTypos: null,
+      answers: [[choices[0].label, choices[1].label]],
+      choices
+    }
+  };
+};
 
 export default {
   createQCM,

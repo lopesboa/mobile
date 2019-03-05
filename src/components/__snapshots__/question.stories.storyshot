@@ -141,11 +141,15 @@ exports[`Storyshots Question Option selected 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -227,11 +231,15 @@ exports[`Storyshots Question Option selected 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -310,11 +318,15 @@ exports[`Storyshots Question Option selected 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -393,11 +405,15 @@ exports[`Storyshots Question Option selected 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -648,11 +664,15 @@ exports[`Storyshots Question QCM 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -731,11 +751,15 @@ exports[`Storyshots Question QCM 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -814,11 +838,15 @@ exports[`Storyshots Question QCM 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -897,11 +925,15 @@ exports[`Storyshots Question QCM 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -1008,6 +1040,1071 @@ exports[`Storyshots Question QCM 1`] = `
                 Object {
                   "color": "#90A4AE",
                 },
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Validate
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
+    }
+  }
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="question-title"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+    />
+    <View
+      testID="explanation"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      testID="question-draggable"
+    >
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#FAFAFA",
+                "borderColor": "#ECEFF1",
+                "borderRadius": 3,
+                "borderStyle": "dashed",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "marginBottom": 8,
+                "padding": 4,
+              },
+              Object {
+                "alignContent": "center",
+                "alignItems": "center",
+                "height": 60,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+              }
+            }
+          >
+            Select something below
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-1"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Play Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-2"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        App Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-3"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Apple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-4"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Pineapple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-validate-disabled"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "borderRadius": 8,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginBottom": 10,
+            },
+            Array [
+              Object {
+                "borderRadius": 32,
+                "borderWidth": 0,
+                "height": 54,
+                "marginBottom": 0,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+              },
+              undefined,
+              undefined,
+              undefined,
+            ],
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Validate
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
+    }
+  }
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="question-title"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+    />
+    <View
+      testID="explanation"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      testID="question-draggable"
+    >
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#FAFAFA",
+                "borderColor": "#ECEFF1",
+                "borderRadius": 3,
+                "borderStyle": "dashed",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "marginBottom": 8,
+                "padding": 4,
+              },
+              false,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="selected-choice-2"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        App Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-1"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Play Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-3"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Apple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "margin": 4,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "overflow": "hidden",
+                  },
+                  false,
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+              testID="unselected-choice-4"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "padding": 16,
+                    },
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 13,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        Pineapple Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-validate"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#00B0FF",
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                false,
                 undefined,
                 undefined,
               ],
@@ -1208,11 +2305,15 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  }
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                  ]
                 }
               >
                 <View>
@@ -1326,11 +2427,15 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  }
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                  ]
                 }
               >
                 <View>
@@ -1455,11 +2560,15 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  }
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                  ]
                 }
               >
                 <View>
@@ -1573,11 +2682,15 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "justifyContent": "flex-start",
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  }
+                  Array [
+                    Object {
+                      "justifyContent": "flex-start",
+                    },
+                    Object {
+                      "paddingHorizontal": 24,
+                      "paddingVertical": 16,
+                    },
+                  ]
                 }
               >
                 <View>
@@ -3114,11 +4227,15 @@ exports[`Storyshots Question With image 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -3197,11 +4314,15 @@ exports[`Storyshots Question With image 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -3280,11 +4401,15 @@ exports[`Storyshots Question With image 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>
@@ -3363,11 +4488,15 @@ exports[`Storyshots Question With image 1`] = `
           >
             <View
               style={
-                Object {
-                  "justifyContent": "flex-start",
-                  "paddingHorizontal": 24,
-                  "paddingVertical": 16,
-                }
+                Array [
+                  Object {
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "paddingHorizontal": 24,
+                    "paddingVertical": 16,
+                  },
+                ]
               }
             >
               <View>

@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: '귀하의 생명이 다했습니다!',
   question: '질문',
   retryLevel: '레벨 재시도',
+  selectSomethingBelow: '아래에서 선택하세요',
   seeClue: '단서 보기',
   selectAnAnswer: '답을 선택하세요',
   typeHere: '여기에 입력하세요',

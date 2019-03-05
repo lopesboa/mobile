@@ -9,6 +9,7 @@ import theme from '../modules/theme';
 import QuestionChoice from './question-choice';
 import QuestionTemplate from './question-template';
 import Space from './space';
+import QuestionDraggable from './question-draggable';
 
 type Props = {|
   type: QuestionType,
@@ -16,8 +17,8 @@ type Props = {|
   template?: string,
   items: Array<Choice>,
   userChoices: Array<string>,
-  onItemPress?: (item: Choice) => void,
-  onItemInputChange?: (item: Choice, value: string) => void
+  onItemPress: (item: Choice) => void,
+  onItemInputChange: (item: Choice, value: string) => void
 |};
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
@@ -59,10 +60,10 @@ const styles = StyleSheet.create({
 class QuestionChoices extends React.PureComponent<Props> {
   props: Props;
 
-  handleItemPress = (item: Choice) => () => this.props.onItemPress && this.props.onItemPress(item);
+  handleItemPress = (item: Choice) => () => this.props.onItemPress(item);
 
   handleItemInputChange = (item: Choice, value: string) =>
-    this.props.onItemInputChange && this.props.onItemInputChange(item, value);
+    this.props.onItemInputChange(item, value);
 
   render() {
     const {type, template, isDisabled, items, userChoices} = this.props;
@@ -75,13 +76,13 @@ class QuestionChoices extends React.PureComponent<Props> {
         return (
           <View testID="question-choices">
             {items.map((item, index) => (
-              <View key={`question-choice-${index + 1}`}>
+              <View key={`question-choice-${item._id}`}>
                 {index > 0 && <Space />}
                 <QuestionChoice
                   onPress={this.handleItemPress(item)}
                   isDisabled={isDisabled}
                   isSelected={isSelected(item)}
-                  testID={`question-choice-${index + 1}`}
+                  testID={`question-choice-${item._id}`}
                 >
                   {item.label}
                 </QuestionChoice>
@@ -101,7 +102,7 @@ class QuestionChoices extends React.PureComponent<Props> {
               }
 
               return (
-                <View key={`question-choice-row-${parseInt(index / 2) + 1}`}>
+                <View key={`question-choice-row-${parseInt(item._id) + 1}`}>
                   {index > 0 && <Space />}
                   <View style={styles.cards}>
                     <QuestionChoice
@@ -109,7 +110,7 @@ class QuestionChoices extends React.PureComponent<Props> {
                       media={item.media}
                       isDisabled={isDisabled}
                       isSelected={isSelected(item)}
-                      testID={`question-choice-${index + 1}`}
+                      testID={`question-choice-${item._id}`}
                       style={styles.card}
                     >
                       {item.label}
@@ -121,7 +122,7 @@ class QuestionChoices extends React.PureComponent<Props> {
                         media={nextItem.media}
                         isDisabled={isDisabled}
                         isSelected={isSelected(nextItem)}
-                        testID={`question-choice-${nextIndex + 1}`}
+                        testID={`question-choice-${nextItem._id}`}
                         style={styles.card}
                       >
                         {nextItem.label}
@@ -143,6 +144,16 @@ class QuestionChoices extends React.PureComponent<Props> {
               items={items}
               userChoices={userChoices}
               onInputChange={this.handleItemInputChange}
+            />
+          </View>
+        );
+      case QUESTION_TYPE.DRAG_DROP:
+        return (
+          <View testID="question-draggable">
+            <QuestionDraggable
+              choices={items}
+              userChoices={userChoices}
+              onPress={this.props.onItemPress}
             />
           </View>
         );

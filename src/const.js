@@ -12,6 +12,7 @@ import type {
   ContentType,
   CardDisplayMode,
   AuthorType,
+  FontSize,
   QuestionChoiceInputType
 } from './types';
 
@@ -30,13 +31,14 @@ export const CARD_DISPLAY_MODE: {
   COVER: 'cover'
 };
 
-type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE';
+type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE' | 'DRAG_DROP';
 export const QUESTION_TYPE: {
   [QuestionTypeKey]: QuestionType
 } = {
   QCM: 'qcm',
   QCM_GRAPHIC: 'qcmGraphic',
-  TEMPLATE: 'template'
+  TEMPLATE: 'template',
+  DRAG_DROP: 'qcmDrag'
 };
 
 export const QUESTION_CHOICE_INPUT_TYPE: {
@@ -100,4 +102,12 @@ export const ENGINE: {
 } = {
   LEARNER: 'learner',
   MICROLEARNING: 'microlearning'
+};
+
+export const FONT_SIZE: {
+  [string]: FontSize
+} = {
+  SMALL: 13,
+  REGULAR: 15,
+  LARGE: 17
 };

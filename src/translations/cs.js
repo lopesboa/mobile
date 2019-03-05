@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Už nemáte životy',
   question: 'Otázka',
   retryLevel: 'Zkuste úroveň znovu',
+  selectSomethingBelow: 'Vyberte něco níže',
   seeClue: 'Zobrazit nápovědu',
   selectAnAnswer: 'Vyberte odopvěď',
   typeHere: 'Zapište sem',

@@ -37,11 +37,15 @@ exports[`Storyshots QuestionChoice Default 1`] = `
   >
     <View
       style={
-        Object {
-          "justifyContent": "flex-start",
-          "paddingHorizontal": 24,
-          "paddingVertical": 16,
-        }
+        Array [
+          Object {
+            "justifyContent": "flex-start",
+          },
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+        ]
       }
     >
       <View>
@@ -152,11 +156,15 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
     </View>
     <View
       style={
-        Object {
-          "justifyContent": "flex-start",
-          "paddingHorizontal": 24,
-          "paddingVertical": 16,
-        }
+        Array [
+          Object {
+            "justifyContent": "flex-start",
+          },
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+        ]
       }
     >
       <View>
@@ -231,11 +239,15 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
   >
     <View
       style={
-        Object {
-          "justifyContent": "flex-start",
-          "paddingHorizontal": 24,
-          "paddingVertical": 16,
-        }
+        Array [
+          Object {
+            "justifyContent": "flex-start",
+          },
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+        ]
       }
     >
       <View>
@@ -346,11 +358,15 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
     </View>
     <View
       style={
-        Object {
-          "justifyContent": "flex-start",
-          "paddingHorizontal": 24,
-          "paddingVertical": 16,
-        }
+        Array [
+          Object {
+            "justifyContent": "flex-start",
+          },
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+        ]
       }
     >
       <View>
@@ -458,11 +474,15 @@ exports[`Storyshots QuestionChoice With image 1`] = `
     </View>
     <View
       style={
-        Object {
-          "justifyContent": "flex-start",
-          "paddingHorizontal": 24,
-          "paddingVertical": 16,
-        }
+        Array [
+          Object {
+            "justifyContent": "flex-start",
+          },
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          },
+        ]
       }
     >
       <View>

@@ -23,6 +23,7 @@ const translations: Translations = {
   outOfLives: 'Bạn đã hết mạng!',
   question: 'Câu hỏi',
   retryLevel: 'Thử lại cấp độ',
+  selectSomethingBelow: 'Chọn một điều nào đó dưới đây',
   seeClue: 'Xem gợi ý',
   selectAnAnswer: 'Chọn câu trả lời',
   typeHere: 'Nhập vào đây',

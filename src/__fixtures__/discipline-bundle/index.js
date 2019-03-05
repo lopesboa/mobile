@@ -7,8 +7,9 @@ import contextWithImage from './context-with-image';
 import contextWithVideo from './context-with-video';
 import noClue from './no-clue';
 import template from './template';
+import qcmDrag from './with-qcm-drag';
 
-const items = [adaptive, basic, contextWithImage, contextWithVideo, noClue, template];
+const items = [adaptive, basic, contextWithImage, contextWithVideo, noClue, template, qcmDrag];
 
 const initialDisciplinesBundle: BundledDiscipline = {
   disciplines: {},

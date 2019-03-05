@@ -1487,6 +1487,14 @@
     fuzzy-matching "^0.4.3"
     lodash "^4.17.4"
 
+"@coorpacademy/progression-engine@^10.3.6":
+  version "10.3.7"
+  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.7.tgz#eb1ef57f897bad0edfe23547b59ec55018d7552c"
+  integrity sha512-xsa8pqm7nyuV9o/C/slKCSo/PBN71WeIlNYTf8m/fysgBiTt85sgiJNmwdFIPanWntZVh+D/H8h00GxXXf05QQ==
+  dependencies:
+    fuzzy-matching "^0.4.3"
+    lodash "^4.17.4"
+
 "@coorpacademy/react-native-deck-swiper@^1.5.27":
   version "1.5.35"
   resolved "https://registry.npmjs.org/@coorpacademy/react-native-deck-swiper/-/react-native-deck-swiper-1.5.35.tgz#034e967ba10737742c4a7f34ee392967a1e27cbe"
