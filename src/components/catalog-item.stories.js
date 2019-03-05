@@ -5,8 +5,9 @@ import {storiesOf} from '@storybook/react-native';
 
 import image from '../__fixtures__/assets/landscape-1.jpg';
 import type {Progression} from '../types';
-import {CARD_DISPLAY_MODE} from '../const';
+import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import {handleFakePress} from '../utils/tests';
+import translations from '../translations';
 import CatalogItem from './catalog-item';
 
 const progression: Progression = {
@@ -14,14 +15,15 @@ const progression: Progression = {
   count: 10
 };
 
-storiesOf('Catalogue Item', module)
+storiesOf('Catalog Item', module)
   .add('Adaptive', () => (
     <CatalogItem
       title="Predicting the future"
       subtitle="Coorpacademy"
       progression={progression}
       image={image}
-      authorType="BREGUET CREATION"
+      authorType={AUTHOR_TYPE.CUSTOM}
+      authorName="BREGUET CREATION"
       isAdaptive
       onPress={handleFakePress}
       testID="catalog1"
@@ -33,8 +35,9 @@ storiesOf('Catalogue Item', module)
       subtitle="Coorpacademy"
       progression={progression}
       image={image}
-      authorType="BREGUET CREATION"
-      badge="New"
+      authorType={AUTHOR_TYPE.CUSTOM}
+      authorName="BREGUET CREATION"
+      badge={translations.new}
       isAdaptive={false}
       onPress={handleFakePress}
       testID="catalog2"
@@ -46,8 +49,8 @@ storiesOf('Catalogue Item', module)
       subtitle="Coorpacademy"
       progression={progression}
       image={image}
-      authorType="coorp"
-      badge="New"
+      authorType={AUTHOR_TYPE.COORP}
+      badge={translations.new}
       isAdaptive
       displayMode={CARD_DISPLAY_MODE.COVER}
       isCertified
@@ -61,8 +64,8 @@ storiesOf('Catalogue Item', module)
       subtitle="Coorpacademy"
       progression={progression}
       image={image}
-      authorType="CUSTOM EDITOR"
-      badge="New"
+      authorType={AUTHOR_TYPE.VERIFIED}
+      badge={translations.new}
       isAdaptive
       displayMode={CARD_DISPLAY_MODE.CARD}
       isCertified

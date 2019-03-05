@@ -44,6 +44,12 @@ const fetchTranslations = (
 };
 
 const generate = async (locale: string) => {
+  const moocTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'global.json'
+  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -63,12 +69,17 @@ const generate = async (locale: string) => {
     correction: playerTranslations.Correction,
     context: playerTranslations.Context,
     didYouKnowThat: playerTranslations['Did you know that?'],
+    // @todo get it from mooc
+    finishLearning: 'Finish learning',
+    // @todo get it from mooc
+    forYou: 'For you',
     gameOver: playerTranslations['Game over'],
     goodAnswer: playerTranslations['Good answer'],
     goodJob: playerTranslations['Good job'],
     goToQuestion: playerTranslations['Go to question'],
     keyPoint: playerTranslations['Key point'],
     lesson: playerTranslations.Media,
+    new: moocTranslations.content.new,
     next: playerTranslations.Next,
     nextLevel: playerTranslations['Next level'],
     open: componentsTranslations.Open,
@@ -78,6 +89,8 @@ const generate = async (locale: string) => {
     retryLevel: playerTranslations['Retry level'],
     selectSomethingBelow: playerTranslations['Select something below'],
     seeClue: componentsTranslations['See clue'],
+    // @todo get it from mooc
+    startLearning: 'Start learning',
     selectAnAnswer: playerTranslations['Select an answer'],
     typeHere: playerTranslations['Type here'],
     validate: playerTranslations.Validate,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalogue Item Author Default 1`] = `
+exports[`Storyshots Catalog Item Author Coorp 1`] = `
 <View
   style={
     Object {
@@ -36,5 +36,94 @@ exports[`Storyshots Catalogue Item Author Default 1`] = `
       ORIGINAL
     </Text>
   </Text>
+</View>
+`;
+
+exports[`Storyshots Catalog Item Author Custom 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "margin": 20,
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        undefined,
+      ]
+    }
+    testID="author-catalog-author-custom"
+  >
+    CUSTOM AUTHOR
+     CREATION
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Catalog Item Author Marketplace 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "margin": 20,
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        undefined,
+      ]
+    }
+    testID="author-catalog-author-marketplace"
+  >
+    MARKETPLACE
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Catalog Item Author Verified 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "margin": 20,
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        undefined,
+      ]
+    }
+    testID="author-catalog-author-empty"
+  />
 </View>
 `;

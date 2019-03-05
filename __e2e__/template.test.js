@@ -12,6 +12,7 @@ const selectAppStoreItem = async el => {
 describe('Template', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await element(by.id('home-screen')).swipe('up');
     await waitFor(element(by.id('catalog-item-template-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-template-dis-1')).tap();
   });

@@ -15,6 +15,8 @@ import type {DisciplineBundleService} from './discipline-bundle';
 import DisciplineBundle from './discipline-bundle';
 import type {CardsService} from './cards';
 import Cards from './cards';
+import type {BrandsService} from './brands';
+import Brands from './brands';
 import Analytics from './analytics';
 
 export type Services = {|
@@ -24,7 +26,8 @@ export type Services = {|
   Clues: CluesService,
   Content: ContentService,
   DisciplineBundle: DisciplineBundleService,
-  Progressions: ProgressionsService
+  Progressions: ProgressionsService,
+  Brands: BrandsService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -34,7 +37,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Clues: Clues(dataLayer),
   Content: Content(dataLayer),
   DisciplineBundle: DisciplineBundle(dataLayer),
-  Progressions: Progressions(dataLayer)
+  Progressions: Progressions(dataLayer),
+  Brands: Brands()
 });
 
 export default createServices;

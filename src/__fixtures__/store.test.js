@@ -126,6 +126,10 @@ describe('storeFixture', () => {
       entities: {}
     };
 
+    const brandState = {
+      entities: {}
+    };
+
     const progression = createProgression({
       engine: 'microlearning',
       progressionContent: {
@@ -205,7 +209,8 @@ describe('storeFixture', () => {
         currentTabName: 'dummyScreenName'
       },
       disciplineBundle: disciplineBundleState,
-      cards: cardsState
+      cards: cardsState,
+      brands: brandState
     };
 
     const result = createStoreState({

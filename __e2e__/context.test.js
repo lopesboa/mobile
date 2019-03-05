@@ -10,6 +10,7 @@ describe('Context', () => {
   describe('With image', () => {
     beforeAll(async () => {
       await waitFor(element(by.id('catalog-item-with-image-context-dis-1'))).toBeVisible();
+      await element(by.id('home-screen')).swipe('up');
       await element(by.id('catalog-item-with-image-context-dis-1')).tap();
     });
 

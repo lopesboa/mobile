@@ -5,15 +5,118 @@ exports[`Storyshots Home Default 1`] = `
   style={
     Object {
       "flex": 1,
-      "justifyContent": "flex-end",
-      "padding": 24,
     }
   }
   testID="home"
 >
   <View
-    testID="catalog"
-  />
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 60,
+          "justifyContent": "center",
+          "transform": Array [
+            Object {
+              "scaleX": 0.5,
+            },
+            Object {
+              "scaleY": 0.5,
+            },
+            Object {
+              "rotateZ": "0deg",
+            },
+          ],
+          "width": 60,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#F73F52",
+            "borderRadius": 5,
+            "height": 10,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "rotateZ": "45deg",
+              },
+              Object {
+                "translateX": -25,
+              },
+            ],
+            "width": 30,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#3EC483",
+            "borderRadius": 5,
+            "height": 10,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "rotateZ": "135deg",
+              },
+              Object {
+                "translateX": -25,
+              },
+            ],
+            "width": 30,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFE100",
+            "borderRadius": 5,
+            "height": 10,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "rotateZ": "225deg",
+              },
+              Object {
+                "translateX": -25,
+              },
+            ],
+            "width": 30,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderRadius": 5,
+            "height": 10,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "rotateZ": "315deg",
+              },
+              Object {
+                "translateX": -25,
+              },
+            ],
+            "width": 30,
+          }
+        }
+      />
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -25,8 +128,9 @@ exports[`Storyshots Home Default 1`] = `
   <Text
     style={
       Object {
-        "color": "#90A4AE",
+        "color": "#FFFFFF",
         "fontSize": 10,
+        "padding": 24,
         "textAlign": "center",
       }
     }

@@ -3,10 +3,14 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import theme from '../modules/theme';
+import {AUTHOR_TYPE} from '../const';
+import type {AuthorType} from '../types';
+
 import Text from './text';
 
 type Props = {|
-  authorType: string,
+  authorType: AuthorType,
+  authorName: string,
   testID: string,
   style?: GenericStyleProp
 |};
@@ -27,24 +31,22 @@ const styles = StyleSheet.create({
   bold: {fontWeight: theme.fontWeight.bold}
 });
 
-const CatalogItemAuthor = ({authorType, style, testID}: Props) => {
-  if (authorType === 'coorp') {
-    return (
-      <View style={styles.container}>
-        <Text testID={`author-${testID}`} style={[styles.author, style]}>
-          COORP <Text style={styles.bold}>ORIGINAL</Text>
-        </Text>
-      </View>
-    );
-  } else {
-    return (
-      <View style={styles.container}>
-        <Text testID={`author-${testID}`} style={[styles.author, style]}>
-          {authorType && authorType.toUpperCase()}
-        </Text>
-      </View>
-    );
-  }
+const CatalogItemAuthor = ({authorType, authorName, style, testID}: Props) => {
+  return (
+    <View style={styles.container}>
+      <Text testID={`author-${testID}`} style={[styles.author, style]}>
+        {authorType === AUTHOR_TYPE.COORP && (
+          <React.Fragment>
+            COORP <Text style={styles.bold}>ORIGINAL</Text>
+          </React.Fragment>
+        )}
+        {authorType === AUTHOR_TYPE.MARKETPLACE && authorName && authorName.toUpperCase()}
+        {authorType === AUTHOR_TYPE.CUSTOM && (
+          <React.Fragment>{authorName && authorName.toUpperCase()} CREATION</React.Fragment>
+        )}
+      </Text>
+    </View>
+  );
 };
 
 export default CatalogItemAuthor;

@@ -5,7 +5,11 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
   style={
     Array [
       Object {
-        "elevation": 2,
+        "borderRadius": 5,
+        "flex": 1,
+      },
+      Object {
+        "elevation": 4,
         "shadowColor": "#14171A",
         "shadowOffset": Object {
           "height": 0,
@@ -84,6 +88,8 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
             Array [
               0,
               0,
+              1711276032,
+              3003121664,
               3858759680,
             ]
           }
@@ -182,6 +188,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
               testID="author-catalog2"
             >
               CUSTOM EDITOR
+               CREATION
             </Text>
           </View>
           <View
@@ -302,7 +309,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                       "paddingTop": 8,
                     },
                     Object {
-                      "fontSize": 14,
+                      "fontSize": 12,
                     },
                   ]
                 }
@@ -477,7 +484,11 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
   style={
     Array [
       Object {
-        "elevation": 2,
+        "borderRadius": 5,
+        "flex": 1,
+      },
+      Object {
+        "elevation": 4,
         "shadowColor": "#14171A",
         "shadowOffset": Object {
           "height": 0,
@@ -556,6 +567,8 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
             Array [
               0,
               0,
+              1711276032,
+              3003121664,
               3858759680,
             ]
           }
@@ -578,7 +591,8 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                 "flex": 1,
               },
               Object {
-                "minHeight": 265,
+                "height": 400.2,
+                "minHeight": 215,
                 "padding": 24,
               },
             ]
@@ -653,7 +667,8 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
               }
               testID="author-catalog1"
             >
-              CUSTOM EDITOR
+              CUSTOM
+               CREATION
             </Text>
           </View>
           <View
@@ -774,7 +789,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                       "paddingTop": 8,
                     },
                     Object {
-                      "fontSize": 16,
+                      "fontSize": 14,
                     },
                   ]
                 }
@@ -948,6 +963,10 @@ exports[`Storyshots Card Correction 1`] = `
 <View
   style={
     Array [
+      Object {
+        "borderRadius": 5,
+        "flex": 1,
+      },
       undefined,
     ]
   }
@@ -1164,6 +1183,10 @@ exports[`Storyshots Card Key point 1`] = `
 <View
   style={
     Array [
+      Object {
+        "borderRadius": 5,
+        "flex": 1,
+      },
       undefined,
     ]
   }
@@ -1333,6 +1356,10 @@ exports[`Storyshots Card Tip 1`] = `
 <View
   style={
     Array [
+      Object {
+        "borderRadius": 5,
+        "flex": 1,
+      },
       undefined,
     ]
   }

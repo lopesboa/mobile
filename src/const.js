@@ -74,7 +74,10 @@ export const CARD_TYPE: {
 export const AUTHOR_TYPE: {
   [string]: AuthorType
 } = {
-  COORP: 'coorp'
+  COORP: 'coorp',
+  VERIFIED: 'verified',
+  MARKETPLACE: 'marketplace',
+  CUSTOM: 'custom'
 };
 
 export const CONTENT_TYPE: {

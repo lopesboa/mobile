@@ -3,12 +3,13 @@
 import * as React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
-import {CARD_TYPE, CARD_DISPLAY_MODE} from '../const';
+import {CARD_TYPE, CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import image from '../__fixtures__/assets/landscape-1.jpg';
 import type {Progression} from '../types';
 import theme from '../modules/theme';
 
 import {handleFakePress} from '../utils/tests';
+import translations from '../translations';
 import Card from './card';
 import CardHeader from './card-header';
 import CatalogItem from './catalog-item';
@@ -53,8 +54,9 @@ storiesOf('Card', module)
         subtitle="Coorpacademy"
         progression={progression}
         image={image}
-        authorType="CUSTOM EDITOR"
-        badge="New"
+        authorType={AUTHOR_TYPE.CUSTOM}
+        authorName="CUSTOM"
+        badge={translations.new}
         isAdaptive
         displayMode={CARD_DISPLAY_MODE.COVER}
         isCertified
@@ -70,8 +72,9 @@ storiesOf('Card', module)
         subtitle="Coorpacademy"
         progression={progression}
         image={image}
-        authorType="CUSTOM EDITOR"
-        badge="New"
+        authorType={AUTHOR_TYPE.CUSTOM}
+        authorName="CUSTOM EDITOR"
+        badge={translations.new}
         isAdaptive
         displayMode={CARD_DISPLAY_MODE.CARD}
         isCertified

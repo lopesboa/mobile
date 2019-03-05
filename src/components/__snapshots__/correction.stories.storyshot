@@ -551,7 +551,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -1145,7 +1145,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -1454,7 +1454,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -2052,7 +2052,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -2646,7 +2646,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -2955,7 +2955,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -3953,7 +3953,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -4361,7 +4361,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -4670,7 +4670,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -5427,7 +5427,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -5835,7 +5835,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -6144,7 +6144,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -7301,7 +7301,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -7895,7 +7895,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -8204,7 +8204,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -9202,7 +9202,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -9610,7 +9610,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -9919,7 +9919,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -10676,7 +10676,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -11084,7 +11084,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -11393,7 +11393,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -12550,7 +12550,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -12958,7 +12958,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -13267,7 +13267,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -14316,7 +14316,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -14964,7 +14964,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {
@@ -15273,7 +15273,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "rgba(20, 23, 26, 0.15)",
               "borderRadius": 5,
-              "elevation": 2,
+              "elevation": 4,
               "height": 279,
               "shadowColor": "#14171A",
               "shadowOffset": Object {

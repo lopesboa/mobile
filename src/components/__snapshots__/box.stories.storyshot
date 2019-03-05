@@ -12,7 +12,7 @@ exports[`Storyshots Box Default 1`] = `
     style={
       Array [
         Object {
-          "elevation": 2,
+          "elevation": 4,
           "shadowColor": "#14171A",
           "shadowOffset": Object {
             "height": 0,

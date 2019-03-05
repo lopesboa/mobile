@@ -6,7 +6,8 @@ type BrandTheme = {|
   host: string,
   colors: {
     primary: string
-  }
+  },
+  name: string
 |};
 
 type Props = {|
@@ -20,7 +21,8 @@ const initialState: State = {
   host: 'https://onboarding.coorpacademy.com',
   colors: {
     primary: '#00B0FF'
-  }
+  },
+  name: 'custombrand'
 };
 
 export const BrandThemeContext = React.createContext(initialState);

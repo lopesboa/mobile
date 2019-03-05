@@ -67,8 +67,8 @@ describe('Lives', () => {
 
     it('should back to home', async () => {
       await element(by.id('button-retry-level')).tap();
-      await waitFor(element(by.id('home'))).toBeVisible();
-      await weExpect(element(by.id('home'))).toBeVisible();
+      await waitFor(element(by.id('home-screen'))).toBeVisible();
+      await weExpect(element(by.id('home-screen'))).toBeVisible();
     });
   });
 

@@ -23,7 +23,7 @@ export type FontSize = 13 | 15 | 17;
 
 export type CardDisplayMode = 'card' | 'cover';
 
-export type AuthorType = 'coorp';
+export type AuthorType = 'coorp' | 'verified' | 'custom' | 'marketplace';
 
 export type Question = string;
 
@@ -39,4 +39,10 @@ export type GenericContent = $Exact<{|
 export type Progression = {|
   current: number,
   count: number
+|};
+
+export type Brand = {|
+  name: string,
+  baseUrl: string,
+  contentCategoryName: string
 |};

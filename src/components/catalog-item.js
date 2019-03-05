@@ -1,8 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, TouchableHighlight} from 'react-native';
-import type {Progression, CardDisplayMode} from '../types';
+import {StyleSheet, TouchableHighlight, Dimensions} from 'react-native';
+import type {Progression, CardDisplayMode, AuthorType} from '../types';
 import {CARD_DISPLAY_MODE} from '../const';
 import theme from '../modules/theme';
 import type {Chapter, Discipline} from '../layer/data/_types';
@@ -20,7 +20,8 @@ type Props = {|
   onPress: (item: Item) => void,
   image: File | {uri: string},
   badge?: string,
-  authorType?: string,
+  authorType?: AuthorType,
+  authorName?: string,
   isAdaptive: boolean,
   isCertified?: boolean,
   displayMode?: CardDisplayMode,
@@ -36,11 +37,13 @@ const CatalogItem = ({
   badge,
   isAdaptive,
   authorType,
+  authorName,
   isCertified,
   displayMode,
   testID
 }: Props) => {
   const mode: CardDisplayMode = displayMode ? displayMode : CARD_DISPLAY_MODE.COVER;
+  const screenHeight: number = Dimensions.get('window').height;
 
   const styles = StyleSheet.create({
     container: {
@@ -51,7 +54,7 @@ const CatalogItem = ({
       fontSize: 16
     },
     subtitle: {
-      fontSize: 14
+      fontSize: 12
     },
     author: {
       fontSize: 8
@@ -64,14 +67,15 @@ const CatalogItem = ({
       fontSize: 8
     },
     containerCover: {
-      minHeight: 265,
+      minHeight: 215,
+      height: screenHeight * 0.3,
       padding: theme.spacing.base
     },
     titleCover: {
       fontSize: 22
     },
     subtitleCover: {
-      fontSize: 16
+      fontSize: 14
     },
     authorCover: {
       fontSize: 12
@@ -109,6 +113,7 @@ const CatalogItem = ({
           <CatalogItemAuthor
             authorType={authorType}
             style={mode === CARD_DISPLAY_MODE.CARD ? styles.author : styles.authorCover}
+            authorName={authorName ? authorName : ''}
             testID={testID}
           />
         )}

@@ -126,7 +126,7 @@ export type CardSkill = {|
 export type CardAuthor = {|
   ref: string,
   label: string,
-  authorType: string
+  authorType: 'coorp' | 'verified' | 'custom' | 'marketplace'
 |};
 export type CardType = 'course' | 'chapter';
 export type CardStatus = 'isStarted' | 'isLocked' | 'isActive';
@@ -162,7 +162,10 @@ export type Card<T> = {|
   skills: Array<CardSkill>,
   groupsHidden: string,
   // @todo to be enhanced
-  course: null,
+  course: {
+    ref: string,
+    label: string
+  } | null,
   authors: Array<CardAuthor>,
   authorsListHidden: string,
   title: string,

@@ -17,14 +17,13 @@ type Props = {|
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: theme.spacing.base,
-    justifyContent: 'flex-end'
+    flex: 1
   },
   version: {
     fontSize: 10,
     textAlign: 'center',
-    color: theme.colors.gray.medium
+    padding: theme.spacing.base,
+    color: theme.colors.white
   }
 });
 

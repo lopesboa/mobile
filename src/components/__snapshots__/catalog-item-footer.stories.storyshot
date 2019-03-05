@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalogue Item Footer Default 1`] = `
+exports[`Storyshots Catalog Item Footer Default 1`] = `
 <View
   style={
     Object {

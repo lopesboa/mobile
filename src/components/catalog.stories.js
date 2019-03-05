@@ -7,6 +7,7 @@ import renderer from 'react-test-renderer';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress} from '../utils/tests';
+import {AUTHOR_TYPE} from '../const';
 import Catalog from './catalog';
 
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
@@ -22,17 +23,82 @@ const chapter = createChapterCard({
   title: 'Fake chapter',
   status: CARD_STATUS.ACTIVE
 });
+const chapterNew = createChapterCard({
+  ref: 'cha_2',
+  completion: 0,
+  title: 'Fake chapter',
+  status: CARD_STATUS.ACTIVE,
+  isNew: true,
+  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+});
+const disciplineNew = createDisciplineCard({
+  ref: 'dis_2',
+  completion: 0,
+  levels: [level],
+  title: 'Fake discipline',
+  isNew: true,
+  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+});
 
-storiesOf('Catalog', module).add('Default', () => (
-  <Catalog items={[discipline, chapter]} onPress={handleFakePress} />
-));
+storiesOf('Catalog', module)
+  .add('Items', () => (
+    <Catalog
+      titleCover="Title Cover"
+      titleCards="Title Cards"
+      logo={{
+        uri:
+          'https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png'
+      }}
+      items={[discipline, chapter, discipline, chapterNew, disciplineNew]}
+      onPress={handleFakePress}
+    />
+  ))
+  .add('Loading', () => (
+    <Catalog
+      titleCover="Title Cover"
+      titleCards="Title Cards"
+      logo={{
+        uri:
+          'https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png'
+      }}
+      items={[]}
+      onPress={handleFakePress}
+    />
+  ));
 
 if (process.env.NODE_ENV === 'test') {
   describe('Catalog', () => {
+    it('should see cover New badge', () => {
+      const handlePress = jest.fn();
+      const component = renderer.create(
+        <Catalog
+          titleCover="Title Cover"
+          titleCards="Title Cards"
+          logo={{
+            uri: 'https://www.totec.travel/wp-content/uploads/2018/07/cooropacademy.png'
+          }}
+          items={[chapterNew, discipline, chapter]}
+          onPress={handlePress}
+        />
+      );
+      const catalogItem = component.root.find(el => el.props.testID === 'catalog-item-dis-1');
+      catalogItem.props.onPress();
+      expect(handlePress.mock.calls.length).toBe(1);
+      expect(handlePress.mock.calls[0]).toEqual([discipline]);
+    });
+
     it('should handle onItemPress callback on discipline', () => {
       const handlePress = jest.fn();
       const component = renderer.create(
-        <Catalog items={[discipline, chapter]} onPress={handlePress} />
+        <Catalog
+          titleCover="Title Cover"
+          titleCards="Title Cards"
+          logo={{
+            uri: 'https://www.totec.travel/wp-content/uploads/2018/07/cooropacademy.png'
+          }}
+          items={[discipline, chapter]}
+          onPress={handlePress}
+        />
       );
       const catalogItem = component.root.find(el => el.props.testID === 'catalog-item-dis-1');
       catalogItem.props.onPress();
@@ -43,7 +109,15 @@ if (process.env.NODE_ENV === 'test') {
     it('should handle onItemPress callback on chapter', () => {
       const handlePress = jest.fn();
       const component = renderer.create(
-        <Catalog items={[discipline, chapter]} onPress={handlePress} />
+        <Catalog
+          titleCover="Title Cover"
+          titleCards="Title Cards"
+          logo={{
+            uri: 'https://www.totec.travel/wp-content/uploads/2018/07/cooropacademy.png'
+          }}
+          items={[discipline, chapter]}
+          onPress={handlePress}
+        />
       );
       const catalogItem = component.root.find(el => el.props.testID === 'catalog-item-cha-1');
       catalogItem.props.onPress();

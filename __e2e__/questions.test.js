@@ -229,14 +229,15 @@ describe('Questions', () => {
 
     it('should back to home', async () => {
       await element(by.id('button-next-level')).tap();
-      await waitFor(element(by.id('home'))).toBeVisible();
-      await weExpect(element(by.id('home'))).toBeVisible();
+      await waitFor(element(by.id('home-screen'))).toBeVisible();
+      await weExpect(element(by.id('home-screen'))).toBeVisible();
     });
   });
 
   describe('QCM Drag', () => {
     beforeAll(async () => {
       await waitFor(element(by.id('catalog-item-qcm-drag-dis-1'))).toBeVisible();
+      await element(by.id('home-screen')).swipe('up');
       await element(by.id('catalog-item-qcm-drag-dis-1')).tap();
     });
 

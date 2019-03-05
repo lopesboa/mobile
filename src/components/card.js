@@ -38,7 +38,7 @@ const Card = ({children, style, testID, isDeckCard, shadowStyle}: Props) => {
     );
   } else {
     return (
-      <View style={[shadowStyle]} testID={testID}>
+      <View style={[styles.container, shadowStyle]} testID={testID}>
         <View style={[style, styles.overflowHidden]}>{children}</View>
       </View>
     );

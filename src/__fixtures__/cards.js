@@ -8,7 +8,8 @@ import type {
   CardStatus,
   LevelType,
   Discipline,
-  Chapter
+  Chapter,
+  CardAuthor
 } from '../layer/data/_types';
 import {CARD_STATUS} from '../layer/data/_const';
 
@@ -51,7 +52,14 @@ export const createDisciplineCard = ({
   title,
   isAdaptive = false,
   isNew = false,
-  isFavorite = false
+  isFavorite = false,
+  authors = [
+    {
+      ref: 'part_VyFl5hZ3V',
+      label: 'A good guy',
+      authorType: 'verified'
+    }
+  ]
 }: {
   ref: string,
   completion: number,
@@ -59,7 +67,8 @@ export const createDisciplineCard = ({
   title: string,
   isAdaptive?: boolean,
   isNew?: boolean,
-  isFavorite?: boolean
+  isFavorite?: boolean,
+  authors?: Array<CardAuthor>
 }): DisciplineCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
@@ -85,13 +94,7 @@ export const createDisciplineCard = ({
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
-  authors: [
-    {
-      ref: 'part_VyFl5hZ3V',
-      label: 'A good guy',
-      authorType: 'verified'
-    }
-  ],
+  authors: authors,
   authorsListHidden: 'A good guy',
   type: 'course',
   title,
@@ -126,7 +129,14 @@ export const createChapterCard = ({
   isNew = false,
   isFavorite = false,
   isDone = false,
-  status
+  status,
+  authors = [
+    {
+      ref: 'part_VyFl5hZ3V',
+      label: 'A gooy guy',
+      authorType: 'verified'
+    }
+  ]
 }: {
   ref: string,
   completion: number,
@@ -135,7 +145,8 @@ export const createChapterCard = ({
   isNew?: boolean,
   isFavorite?: boolean,
   isDone?: boolean,
-  status: CardStatus
+  status: CardStatus,
+  authors?: Array<CardAuthor>
 }): ChapterCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg',
@@ -162,13 +173,7 @@ export const createChapterCard = ({
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
-  authors: [
-    {
-      ref: 'part_VyFl5hZ3V',
-      label: 'A gooy guy',
-      authorType: 'verified'
-    }
-  ],
+  authors: authors,
   authorsListHidden: 'A good guy',
   type: 'chapter',
   title,

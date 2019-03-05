@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalogue Item Adaptive 1`] = `
+exports[`Storyshots Catalog Item Adaptive 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -54,6 +54,8 @@ exports[`Storyshots Catalogue Item Adaptive 1`] = `
         Array [
           0,
           0,
+          1711276032,
+          3003121664,
           3858759680,
         ]
       }
@@ -76,7 +78,8 @@ exports[`Storyshots Catalogue Item Adaptive 1`] = `
             "flex": 1,
           },
           Object {
-            "minHeight": 265,
+            "height": 400.2,
+            "minHeight": 215,
             "padding": 24,
           },
         ]
@@ -110,6 +113,7 @@ exports[`Storyshots Catalogue Item Adaptive 1`] = `
           testID="author-catalog1"
         >
           BREGUET CREATION
+           CREATION
         </Text>
       </View>
       <View
@@ -230,7 +234,7 @@ exports[`Storyshots Catalogue Item Adaptive 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                 },
               ]
             }
@@ -276,7 +280,7 @@ exports[`Storyshots Catalogue Item Adaptive 1`] = `
 </View>
 `;
 
-exports[`Storyshots Catalogue Item Adaptive/New/Certified/Coorp 1`] = `
+exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -330,6 +334,8 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Coorp 1`] = `
         Array [
           0,
           0,
+          1711276032,
+          3003121664,
           3858759680,
         ]
       }
@@ -352,7 +358,8 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Coorp 1`] = `
             "flex": 1,
           },
           Object {
-            "minHeight": 265,
+            "height": 400.2,
+            "minHeight": 215,
             "padding": 24,
           },
         ]
@@ -557,7 +564,7 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Coorp 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                 },
               ]
             }
@@ -725,7 +732,7 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Coorp 1`] = `
 </View>
 `;
 
-exports[`Storyshots Catalogue Item Adaptive/New/Certified/Custom 1`] = `
+exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -779,6 +786,8 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Custom 1`] = `
         Array [
           0,
           0,
+          1711276032,
+          3003121664,
           3858759680,
         ]
       }
@@ -875,9 +884,7 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Custom 1`] = `
             ]
           }
           testID="author-catalog4"
-        >
-          CUSTOM EDITOR
-        </Text>
+        />
       </View>
       <View
         style={
@@ -997,7 +1004,7 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Custom 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 14,
+                  "fontSize": 12,
                 },
               ]
             }
@@ -1165,7 +1172,7 @@ exports[`Storyshots Catalogue Item Adaptive/New/Certified/Custom 1`] = `
 </View>
 `;
 
-exports[`Storyshots Catalogue Item New 1`] = `
+exports[`Storyshots Catalog Item New 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -1219,6 +1226,8 @@ exports[`Storyshots Catalogue Item New 1`] = `
         Array [
           0,
           0,
+          1711276032,
+          3003121664,
           3858759680,
         ]
       }
@@ -1241,7 +1250,8 @@ exports[`Storyshots Catalogue Item New 1`] = `
             "flex": 1,
           },
           Object {
-            "minHeight": 265,
+            "height": 400.2,
+            "minHeight": 215,
             "padding": 24,
           },
         ]
@@ -1317,6 +1327,7 @@ exports[`Storyshots Catalogue Item New 1`] = `
           testID="author-catalog2"
         >
           BREGUET CREATION
+           CREATION
         </Text>
       </View>
       <View
@@ -1362,7 +1373,7 @@ exports[`Storyshots Catalogue Item New 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                 },
               ]
             }

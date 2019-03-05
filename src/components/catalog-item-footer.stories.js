@@ -10,7 +10,7 @@ const progression: Progression = {
   count: 10
 };
 
-storiesOf('Catalogue Item Footer', module).add('Default', () => (
+storiesOf('Catalog Item Footer', module).add('Default', () => (
   <CatalogItemFooter
     title="Cours Test"
     subtitle="Coorpacademy"

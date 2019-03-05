@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalogue Item Badge Default 1`] = `
+exports[`Storyshots Catalog Item Badge Default 1`] = `
 <View
   style={
     Object {
@@ -28,7 +28,7 @@ exports[`Storyshots Catalogue Item Badge Default 1`] = `
     <Text
       style={
         Array [
-          "New",
+          "new",
           Object {
             "fontSize": 8,
           },
@@ -39,7 +39,7 @@ exports[`Storyshots Catalogue Item Badge Default 1`] = `
       }
       testID="badge"
     >
-      New
+      new
     </Text>
   </View>
 </View>
