@@ -102,7 +102,7 @@ class QuestionChoices extends React.PureComponent<Props> {
               }
 
               return (
-                <View key={`question-choice-row-${parseInt(item._id) + 1}`}>
+                <View key={`question-choice-row-${parseInt(index / 2) + 1}`}>
                   {index > 0 && <Space />}
                   <View style={styles.cards}>
                     <QuestionChoice
