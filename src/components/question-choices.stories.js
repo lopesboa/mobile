@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 
 import {QUESTION_TYPE} from '../const';
 import {choices, choicesWithImage} from '../__fixtures__/question-choices';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, fakeSliderProps} from '../utils/tests';
 import QuestionChoices from './question-choices';
 import {
   template,
@@ -24,6 +24,7 @@ storiesOf('QuestionChoices', module)
       onInputValueChange={handleFakePress}
       userChoices={answers}
       onItemPress={handleFakePress}
+      onSliderChange={handleFakePress}
       onItemInputChange={handleFakePress}
     />
   ))
@@ -45,7 +46,22 @@ storiesOf('QuestionChoices', module)
       items={templateItems}
       userChoices={templateUserChoices}
       onItemPress={handleFakePress}
+      onSliderChange={handleFakePress}
       onItemInputChange={handleFakePress}
+    />
+  ))
+  .add('Slider', () => (
+    <QuestionChoices
+      // $FlowFixMe its only to test
+      type="slider"
+      isDisabled={false}
+      items={choices}
+      userChoices={answers}
+      onItemPress={handleFakePress}
+      onSliderChange={handleFakePress}
+      slider={fakeSliderProps}
+      onItemInputChange={handleFakePress}
+      onInputValueChange={handleFakePress}
     />
   ))
   .add('Template (empty)', () => (
@@ -88,6 +104,7 @@ storiesOf('QuestionChoices', module)
       onInputValueChange={handleFakePress}
       userChoices={answers}
       onItemPress={handleFakePress}
+      onSliderChange={handleFakePress}
       onItemInputChange={handleFakePress}
     />
   ));
@@ -103,6 +120,7 @@ if (process.env.NODE_ENV === 'test') {
           items={choices}
           userChoices={answers}
           onItemPress={handleItemPress}
+          onSliderChange={handleFakePress}
           onItemInputChange={handleFakePress}
         />
       );

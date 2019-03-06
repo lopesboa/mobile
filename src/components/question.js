@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StyleSheet, View, ImageBackground} from 'react-native';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
+import type {SliderProps} from '../types';
 
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
@@ -25,10 +26,12 @@ export type Props = {|
   isValidating: boolean,
   // @todo mutualize the callback ?
   onChoicePress: (item: Choice) => void,
+  onSliderChange?: (newValue: number) => void,
   onChoiceInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void,
   onButtonPress: () => void,
-  isValidating?: boolean
+  isValidating?: boolean,
+  slider?: SliderProps
 |};
 
 export type State = {|
@@ -70,10 +73,12 @@ const Question = ({
   media,
   userChoices,
   onChoicePress,
+  onSliderChange,
   onChoiceInputChange,
   onInputValueChange,
   onButtonPress,
-  isValidating
+  isValidating,
+  slider
 }: Props) => {
   const oneChoiceSelected =
     type === QUESTION_TYPE.TEMPLATE
@@ -110,8 +115,10 @@ const Question = ({
           onInputValueChange={onInputValueChange}
           userChoices={userChoices}
           onItemPress={onChoicePress}
+          onSliderChange={onSliderChange}
           onItemInputChange={onChoiceInputChange}
           isDisabled={isValidating}
+          slider={slider}
         />
       </View>
       <Space type="base" />

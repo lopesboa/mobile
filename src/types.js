@@ -31,6 +31,15 @@ export type Engine = 'learner' | 'microlearning';
 
 export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure' | 'node';
 
+export type SliderProps = {|
+  minValue?: number,
+  minLabel?: string,
+  maxValue?: number,
+  maxLabel?: string,
+  step?: number,
+  value?: number
+|};
+
 export type GenericContent = $Exact<{|
   ...GenericContentBase,
   type: ContentType

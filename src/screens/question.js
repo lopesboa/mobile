@@ -19,6 +19,7 @@ import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine
 import Question from '../components/question';
 import Screen from '../components/screen';
 import translations from '../translations';
+import type {SliderProps} from '../types';
 import type {StoreState} from '../redux/store';
 import {
   checkIsCorrect,
@@ -44,7 +45,8 @@ type ConnectedStateProps = {|
   lives?: number,
   isFinished?: boolean,
   hasLives: boolean,
-  isValidating: boolean
+  isValidating: boolean,
+  slider: SliderProps
 |};
 
 type ConnectedDispatchProps = {|
@@ -129,6 +131,10 @@ class QuestionScreen extends React.PureComponent<Props> {
     this.props.editAnswer(item);
   };
 
+  handleOnSliderChange = (newValue: number) => {
+    this.props.editAnswer(String(newValue));
+  };
+
   handleInputValueChange = (value: string) => {
     this.props.editAnswer([value]);
   };
@@ -154,9 +160,10 @@ class QuestionScreen extends React.PureComponent<Props> {
       type,
       header,
       explanation,
-      template,
       isValidating,
       media,
+      slider,
+      template,
       userChoices = []
     } = this.props;
 
@@ -175,9 +182,11 @@ class QuestionScreen extends React.PureComponent<Props> {
               userChoices={userChoices}
               onChoicePress={this.handleChoicePress}
               onButtonPress={this.handleButtonPress}
+              onSliderChange={this.handleOnSliderChange}
               onChoiceInputChange={this.handleChoiceInputChange}
               onInputValueChange={this.handleInputValueChange}
               isValidating={isValidating}
+              slider={slider}
             />
           )}
       </Screen>
@@ -185,7 +194,7 @@ class QuestionScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStateProps => {
   const nextContent = getStepContent(state);
 
   if (!nextContent) {
@@ -205,7 +214,15 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       lives: undefined,
       hasLives: false,
       isFinished: undefined,
-      isValidating: false
+      isValidating: false,
+      slider: {
+        minLabel: undefined,
+        minValue: undefined,
+        maxLabel: undefined,
+        maxValue: undefined,
+        step: undefined,
+        value: undefined
+      }
     };
   }
   const {hide: hideLives, count: livesCount} = getLives(state);
@@ -246,13 +263,25 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       keyPoint: undefined,
       lives,
       hasLives,
-      isFinished
+      isFinished,
+      slider: {
+        minLabel: undefined,
+        minValue: undefined,
+        maxLabel: undefined,
+        maxValue: undefined,
+        step: undefined,
+        value: undefined
+      }
     };
   }
 
   const type = getQuestionType(slide);
 
   const choices = getChoices(slide);
+
+  // SLIDER QUESTIONS
+  const stateValue = getAnswerValues(slide, state);
+  const sliderDefaultValue = type === 'slider' ? parseInt(stateValue[0]) : 0;
   const userChoices = getAnswerValues(slide, state) || [];
 
   // $FlowFixMe union type
@@ -261,6 +290,15 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const explanation = slide.question.explanation;
   // $FlowFixMe union type
   const template = slide.question.content.template;
+
+  // $FlowFixMe union type
+  const sliderUnitLabel = slide.question.content.unitLabel;
+  // $FlowFixMe union type
+  const sliderMaxValue = slide.question.content.max;
+  // $FlowFixMe union type
+  const sliderMinValue = slide.question.content.min;
+  // $FlowFixMe union type
+  const sliderStepValue = slide.question.content.step;
 
   return {
     type,
@@ -278,7 +316,15 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,
-    lives
+    lives,
+    slider: {
+      minLabel: `${sliderMinValue} ${sliderUnitLabel}`,
+      maxLabel: `${sliderMaxValue} ${sliderUnitLabel}`,
+      minValue: sliderMinValue,
+      maxValue: sliderMaxValue,
+      step: sliderStepValue,
+      value: sliderDefaultValue
+    }
   };
 };
 

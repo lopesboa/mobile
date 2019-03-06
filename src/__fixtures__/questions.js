@@ -3,6 +3,7 @@
 import type {
   QCMQuestion,
   QCMGraphicQuestion,
+  SliderQuestion,
   Media,
   TemplateQuestion,
   QCMDragQuestion,
@@ -31,6 +32,38 @@ export const createQCMGraphic = ({media}: {media?: Media}): QCMGraphicQuestion =
     choices: choicesWithImage
   },
   medias: (media && [media]) || undefined
+});
+
+export const createSlider = ({
+  min,
+  max,
+  defaultValue,
+  answers
+}: {
+  min: number,
+  max: number,
+  defaultValue: number,
+  answers: Array<Array<string>>
+}): SliderQuestion => ({
+  type: 'slider',
+  header:
+    'The International Labour Organization recommends a minimum number of weeks for maternity leave, applied by 51% of countries in 2013. What is the duration?',
+  explanation: 'Drag the slider.',
+  content: {
+    id: 'sli_NyGCmQT5x.id',
+    min,
+    max,
+    defaultValue,
+    unitLabel: '',
+    maxTypos: null,
+    choices: [],
+    answers,
+    media: {
+      subtitles: [],
+      posters: [],
+      src: []
+    }
+  }
 });
 
 export const createTemplate = ({media}: {media?: Media}): TemplateQuestion => ({
@@ -76,5 +109,6 @@ export const createBasicQuestion = ({maxTypos}: {maxTypos?: ?number}): BasicQues
 export default {
   createQCM,
   createQCMGraphic,
-  createTemplate
+  createTemplate,
+  createSlider
 };

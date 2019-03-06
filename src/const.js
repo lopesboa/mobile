@@ -31,12 +31,13 @@ export const CARD_DISPLAY_MODE: {
   COVER: 'cover'
 };
 
-type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE' | 'DRAG_DROP' | 'BASIC';
+type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'SLIDER' | 'TEMPLATE' | 'DRAG_DROP' | 'BASIC';
 export const QUESTION_TYPE: {
   [QuestionTypeKey]: QuestionType
 } = {
   QCM: 'qcm',
   QCM_GRAPHIC: 'qcmGraphic',
+  SLIDER: 'slider',
   TEMPLATE: 'template',
   DRAG_DROP: 'qcmDrag',
   BASIC: 'basic'

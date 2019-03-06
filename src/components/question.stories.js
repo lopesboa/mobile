@@ -23,6 +23,7 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('QCM Graphic', () => (
@@ -52,6 +53,7 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('Option selected', () => (
@@ -66,6 +68,7 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('With image', () => (
@@ -123,5 +126,6 @@ storiesOf('Question', module)
       onButtonPress={handleFakePress}
       onInputValueChange={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ));

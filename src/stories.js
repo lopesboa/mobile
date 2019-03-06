@@ -38,6 +38,7 @@ require('./components/question-choice.stories.js');
 require('./components/question-choices.stories.js');
 require('./components/question-draggable.stories.js');
 require('./components/question-input.stories.js');
+require('./components/question-slider.stories.js');
 require('./components/question-template.stories.js');
 require('./components/question-title.stories.js');
 require('./components/question.stories.js');

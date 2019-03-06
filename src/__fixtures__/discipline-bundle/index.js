@@ -9,6 +9,7 @@ import withBasicQuestion from './with-question-basic';
 import noClue from './no-clue';
 import template from './template';
 import qcmDrag from './with-qcm-drag';
+import slider from './slider';
 
 const items = [
   adaptive,
@@ -18,6 +19,7 @@ const items = [
   noClue,
   template,
   qcmDrag,
+  slider,
   withBasicQuestion
 ];
 

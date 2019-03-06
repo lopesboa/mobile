@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {QuestionType, Choice} from '@coorpacademy/progression-engine';
+import type {SliderProps} from '../types';
 
 import {QUESTION_TYPE, QUESTION_CHOICE_INPUT_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -10,7 +11,9 @@ import theme from '../modules/theme';
 import QuestionInput from './question-input';
 import QuestionChoice from './question-choice';
 import QuestionTemplate from './question-template';
+
 import Space from './space';
+import QuestionSlider from './question-slider';
 import QuestionDraggable from './question-draggable';
 
 type Props = {|
@@ -20,6 +23,8 @@ type Props = {|
   items: Array<Choice>,
   userChoices: Array<string>,
   onItemPress: (item: Choice) => void,
+  onSliderChange?: (newValue: number) => void,
+  slider?: SliderProps,
   onItemInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void
 |};
@@ -69,11 +74,19 @@ class QuestionChoices extends React.PureComponent<Props> {
     this.props.onItemInputChange(item, value);
 
   render() {
-    const {type, template, isDisabled, items, userChoices, onInputValueChange} = this.props;
+    const {
+      type,
+      template,
+      isDisabled,
+      items,
+      userChoices,
+      slider,
+      onSliderChange,
+      onInputValueChange
+    } = this.props;
 
     const isSelected = (choice: Choice): boolean =>
       userChoices && userChoices.includes(choice.label);
-
     switch (type) {
       case QUESTION_TYPE.QCM:
         return (
@@ -138,6 +151,26 @@ class QuestionChoices extends React.PureComponent<Props> {
             })}
           </View>
         );
+      case QUESTION_TYPE.SLIDER: {
+        const minValue = slider && slider.minValue;
+        const maxValue = slider && slider.maxValue;
+        const maxLabel = slider && slider.maxLabel;
+        const minLabel = slider && slider.minLabel;
+        const step = slider && slider.step;
+        const value = slider && slider.value;
+        return (
+          <QuestionSlider
+            minValue={minValue}
+            maxValue={maxValue}
+            minLabel={minLabel}
+            maxLabel={maxLabel}
+            value={value}
+            step={step}
+            onChange={onSliderChange}
+            testID="question-slider"
+          />
+        );
+      }
       case QUESTION_TYPE.TEMPLATE:
         return (
           <View testID="question-choices">
