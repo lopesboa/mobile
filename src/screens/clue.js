@@ -2,12 +2,8 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {
-  getCurrentSlide,
-  getCurrentClue,
-  getClue,
-  getEngineConfig
-} from '@coorpacademy/player-store';
+import {getCurrentClue, getClue, getEngineConfig} from '@coorpacademy/player-store';
+import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Clue from '../components/clue';
 
@@ -55,7 +51,7 @@ class ClueScreen extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const clue = getCurrentClue(state);
-  const slide = getCurrentSlide(state);
+  const slide = getSlide(state);
   const engineConfig = getEngineConfig(state);
   const slideId = slide && slide._id;
   // $FlowFixMe union type

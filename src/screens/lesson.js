@@ -2,17 +2,13 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {
-  getCurrentSlide,
-  getEngineConfig,
-  getResourceToPlay,
-  selectResource
-} from '@coorpacademy/player-store';
+import {getEngineConfig, getResourceToPlay, selectResource} from '@coorpacademy/player-store';
 
 import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 import Screen from '../components/screen';
 import Lesson from '../components/lesson';
 import type {StoreState} from '../redux/store';
+import {getSlide} from '../redux/utils/state-extract';
 import type {Params as PdfScreenParams} from './pdf';
 
 export type ConnectedStateProps = {|
@@ -69,7 +65,7 @@ class LessonScreen extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getCurrentSlide(state);
+  const slide = getSlide(state);
   const header = (slide && slide.question && slide.question.header) || undefined;
   // $FlowFixMe overrided type
   const resources: Array<LessonType> = (slide && slide.lessons) || [];

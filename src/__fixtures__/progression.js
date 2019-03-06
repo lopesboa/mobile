@@ -6,11 +6,13 @@ import type {Engine} from '../types';
 export const createProgression = ({
   engine,
   progressionContent,
-  nextContent
+  nextContent,
+  content
 }: {
   engine: Engine,
   progressionContent: GenericContent,
-  nextContent?: Content | null
+  content?: Content,
+  nextContent?: Content
 }): Progression => {
   return {
     engine: {
@@ -47,10 +49,8 @@ export const createProgression = ({
       viewedResources: [],
       remainingLifeRequests: 1,
       hasViewedAResourceAtThisStep: false,
-      nextContent:
-        nextContent === undefined || nextContent === null
-          ? {type: 'slide', ref: 'sli_N1uxMsUIV'}
-          : nextContent,
+      content: content || {type: 'slide', ref: 'sli_N1uxMsUIV'},
+      nextContent: nextContent || {type: 'slide', ref: 'sli_N1uxMsUIV'},
       allAnswers: [],
       variables: {}
     }

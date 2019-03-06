@@ -4,8 +4,9 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
-import {getCurrentSlide} from '@coorpacademy/player-store';
+import {getRoute, selectRoute} from '@coorpacademy/player-store';
 
+import {getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
@@ -14,11 +15,17 @@ import TabBar from './tab-bar';
 type ConnectedStateToProps = {|
   hasNoClue: boolean,
   hasNoContext: boolean,
-  hasNoLesson: boolean
+  hasNoLesson: boolean,
+  showContext: boolean
+|};
+
+type ConnectedDispatchProps = {|
+  selectRoute: typeof selectRoute
 |};
 
 type Props = {|
   ...ConnectedStateToProps,
+  ...ConnectedDispatchProps,
   ...$Exact<_BottomTabBarProps>
 |};
 
@@ -33,17 +40,8 @@ const styles = StyleSheet.create({
 class TabBarSlide extends React.Component<Props> {
   props: Props;
 
-  componentDidMount() {
-    if (!this.props.hasNoContext) {
-      this.props.navigation.navigate('Context');
-    }
-  }
-
   componentDidUpdate(prevProps: Props) {
-    const contextHasChanged =
-      !this.props.hasNoContext && this.props.hasNoContext !== prevProps.hasNoContext;
-
-    if (contextHasChanged) {
+    if (this.props.showContext) {
       this.props.navigation.navigate('Context');
     }
   }
@@ -57,6 +55,25 @@ class TabBarSlide extends React.Component<Props> {
     ) {
       return;
     }
+
+    let route;
+    switch (scene.route.routeName) {
+      case 'Context':
+        route = 'context';
+        break;
+      case 'Clue':
+        route = 'clue';
+        break;
+      case 'Lesson':
+        route = 'media';
+        break;
+      case 'Question':
+      default:
+        route = 'answer';
+        break;
+    }
+
+    this.props.selectRoute(route);
 
     return onTabPress(scene);
   };
@@ -115,15 +132,23 @@ class TabBarSlide extends React.Component<Props> {
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
-  const slide = getCurrentSlide(state);
+  const slide = getSlide(state);
   // $FlowFixMe overrided type
   const resources: Array<LessonType> = (slide && slide.lessons) || [];
+
+  const currentRoute = getRoute(state);
+  const showContext = currentRoute === 'context';
 
   return {
     hasNoClue: !(slide && slide.clue),
     hasNoLesson: !resources.length,
-    hasNoContext: !(slide && slide.context && slide.context.title)
+    hasNoContext: !(slide && slide.context && slide.context.title),
+    showContext
   };
 };
 
-export default connect(mapStateToProps)(TabBarSlide);
+const mapDispatchToProps: ConnectedDispatchProps = {
+  selectRoute
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TabBarSlide);

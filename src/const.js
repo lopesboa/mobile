@@ -87,6 +87,7 @@ export const CONTENT_TYPE: {
   DISCIPLINE: 'discipline',
   CHAPTER: 'chapter',
   LEVEL: 'level',
+  NODE: 'node',
   SLIDE: 'slide',
   SUCCESS: 'success',
   FAILURE: 'failure'

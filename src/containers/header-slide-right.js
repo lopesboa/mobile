@@ -2,10 +2,11 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getCurrentProgression, getLives} from '@coorpacademy/player-store';
+import {getCurrentProgression} from '@coorpacademy/player-store';
 
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
+import {getLives} from '../redux/utils/state-extract';
 
 type ConnectedStateProps = {|
   hide: boolean,

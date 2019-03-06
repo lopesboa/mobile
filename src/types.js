@@ -29,7 +29,7 @@ export type Question = string;
 
 export type Engine = 'learner' | 'microlearning';
 
-export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure';
+export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure' | 'node';
 
 export type GenericContent = $Exact<{|
   ...GenericContentBase,

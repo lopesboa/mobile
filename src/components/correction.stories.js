@@ -36,6 +36,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        isLoading={false}
         lives={3}
       />
     </View>
@@ -56,6 +57,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        isLoading={false}
         lives={2}
       />
     </View>
@@ -78,6 +80,7 @@ storiesOf('Correction', module)
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isFinished={false}
+          isLoading={false}
           lives={2}
         />
       </View>
@@ -99,6 +102,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        isLoading={false}
         lives={3}
       />
     </View>
@@ -112,6 +116,7 @@ storiesOf('Correction', module)
           "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
         }
         isCorrect={false}
+        isLoading={false}
         title="Oops..."
         onButtonPress={handleFakePress}
         question={question}
@@ -139,6 +144,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished
+        isLoading={false}
         lives={1}
       />
     </View>
@@ -159,6 +165,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        isLoading={false}
       />
     </View>
   ))
@@ -178,6 +185,7 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished={false}
+        isLoading={false}
       />
     </View>
   ))
@@ -197,6 +205,27 @@ storiesOf('Correction', module)
         keyPoint="The KEY POINT"
         layout={fakeLayout}
         isFinished
+        isLoading={false}
+      />
+    </View>
+  ))
+  .add('Next button was pressed, should be set in loading state', () => (
+    <View style={fakeLayout}>
+      <Correction
+        answers={answers}
+        userAnswers={answers}
+        tip={
+          "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+        }
+        title="Good job!"
+        isCorrect
+        onButtonPress={handleFakePress}
+        question={question}
+        subtitle="Good Answer"
+        keyPoint="The KEY POINT"
+        layout={fakeLayout}
+        isFinished
+        isLoading
       />
     </View>
   ));

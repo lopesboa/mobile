@@ -2,9 +2,10 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getCurrentSlide} from '@coorpacademy/player-store';
 import type {Media} from '@coorpacademy/progression-engine';
+import {selectRoute} from '@coorpacademy/player-store';
 
+import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Context from '../components/context';
 import type {Params as PdfScreenParams} from './pdf';
@@ -16,9 +17,14 @@ type ConnectedStateProps = {|
   mediaSources?: Media
 |};
 
+type ConnectedDispatchProps = {|
+  selectRoute: typeof selectRoute
+|};
+
 type Props = {|
   ...ReactNavigation$ScreenProps,
-  ...ConnectedStateProps
+  ...ConnectedStateProps,
+  ...ConnectedDispatchProps
 |};
 
 class ContextScreen extends React.PureComponent<Props> {
@@ -26,11 +32,13 @@ class ContextScreen extends React.PureComponent<Props> {
 
   UNSAFE_componentWillMount() {
     if (this.props.hasNoContext) {
+      this.props.selectRoute('question');
       this.props.navigation.navigate('Question');
     }
   }
 
   handleButtonPress = () => {
+    this.props.selectRoute('question');
     this.props.navigation.navigate('Question');
   };
 
@@ -67,7 +75,7 @@ class ContextScreen extends React.PureComponent<Props> {
 }
 
 export const mapStateToProps = (state: StoreState): Props => {
-  const slide = getCurrentSlide(state);
+  const slide = getSlide(state);
 
   const slideContext = slide && slide.context;
   return {
@@ -78,4 +86,8 @@ export const mapStateToProps = (state: StoreState): Props => {
   };
 };
 
-export default connect(mapStateToProps)(ContextScreen);
+const mapDispatchToProps: ConnectedDispatchProps = {
+  selectRoute
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContextScreen);

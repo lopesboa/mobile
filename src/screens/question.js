@@ -7,15 +7,11 @@ import {
   editAnswer,
   getAnswerValues,
   getChoices,
-  getCurrentProgression,
-  getCurrentSlide,
   getLives,
   getCurrentCorrection,
-  getPreviousSlide,
   getStepContent,
   getQuestionMedia,
   getQuestionType,
-  getRoute,
   validateAnswer
 } from '@coorpacademy/player-store';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
@@ -23,8 +19,13 @@ import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine
 import Question from '../components/question';
 import Screen from '../components/screen';
 import translations from '../translations';
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../const';
 import type {StoreState} from '../redux/store';
+import {
+  checkIsCorrect,
+  checkIsFinished,
+  checkIsValidating,
+  getSlide
+} from '../redux/utils/state-extract';
 import type {Params as CorrectionScreenParams} from './correction';
 
 type ConnectedStateProps = {|
@@ -207,13 +208,10 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       isValidating: false
     };
   }
-  const progression = getCurrentProgression(state);
   const {hide: hideLives, count: livesCount} = getLives(state);
   const lives = hideLives ? undefined : livesCount;
   const correction = getCurrentCorrection(state);
   const media = getQuestionMedia(state);
-  const currentRoute = getRoute(state);
-  const isValidating = currentRoute === 'correction';
 
   const answers: Array<string> = correction && correction.correctAnswer[0];
   const userAnswers: Array<string> =
@@ -225,18 +223,11 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       return result;
     }, []);
 
-  const isCorrect =
-    progression && progression.state && progression.state.isCorrect !== null
-      ? progression.state.isCorrect
-      : undefined;
-
-  const openingCorrection = isValidating && isCorrect !== undefined;
-
-  const isExtraLife = nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const isFinished =
-    isExtraLife || [CONTENT_TYPE.SUCCESS, CONTENT_TYPE.FAILURE].includes(nextContent.type);
   const hasLives = !hideLives;
-  const slide = isFinished || openingCorrection ? getPreviousSlide(state) : getCurrentSlide(state);
+  const slide = getSlide(state);
+  const isCorrect = checkIsCorrect(state);
+  const isFinished = checkIsFinished(state);
+  const isValidating = checkIsValidating(state);
 
   if (!slide) {
     return {

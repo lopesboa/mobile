@@ -31,6 +31,7 @@ type Props = {|
   keyPoint: string,
   onButtonPress: () => void,
   isFinished: boolean,
+  isLoading: boolean,
   lives?: number
 |};
 
@@ -131,7 +132,16 @@ class Correction extends React.PureComponent<Props> {
   };
 
   render() {
-    const {title, subtitle, isCorrect, onButtonPress, layout, isFinished, lives} = this.props;
+    const {
+      title,
+      subtitle,
+      isCorrect,
+      onButtonPress,
+      layout,
+      isFinished,
+      isLoading,
+      lives
+    } = this.props;
 
     const correctionCard: Card = {
       type: CARD_TYPE.CORRECTION,
@@ -180,6 +190,7 @@ class Correction extends React.PureComponent<Props> {
           <Button
             isInverted
             onPress={onButtonPress}
+            isLoading={isLoading}
             testID={`button-${isFinished ? 'next' : 'next-question'}`}
           >
             {translations.next}

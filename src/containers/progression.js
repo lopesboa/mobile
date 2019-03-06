@@ -2,10 +2,11 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getCurrentProgression, getNbSlides} from '@coorpacademy/player-store';
+import {getNbSlides} from '@coorpacademy/player-store';
 
 import ProgressionComponent from '../components/progression';
 import type {StoreState} from '../redux/store';
+import {getCurrentStep} from '../redux/utils/state-extract';
 
 type ConnectedStateProps = {|
   isHidden: boolean,
@@ -25,14 +26,10 @@ const Progression = ({isHidden, current, count}: Props) => {
   return <ProgressionComponent current={current} count={count} />;
 };
 
-export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const progression = getCurrentProgression(state);
-
-  return {
-    isHidden: state.navigation.isHidden,
-    current: progression && progression.state && progression.state.step.current,
-    count: getNbSlides(state)
-  };
-};
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  isHidden: state.navigation.isHidden,
+  current: getCurrentStep(state),
+  count: getNbSlides(state)
+});
 
 export default connect(mapStateToProps)(Progression);
