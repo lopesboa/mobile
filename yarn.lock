@@ -1479,10 +1479,18 @@
     redux "^4.0.0"
     redux-thunk "^2.2.0"
 
-"@coorpacademy/progression-engine@10.3.9", "@coorpacademy/progression-engine@^10.3.9":
+"@coorpacademy/progression-engine@10.3.9":
   version "10.3.9"
   resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.9.tgz#5488709ff9ebdc6393782985700a2676da394d1a"
   integrity sha512-UjEcJvvWI5qrqk/vnIkypvqaC71A2v+78nzku6JCBOhMPkHyleLVVTaPx9RyO6jYMpEi2EWY/cieiUIfFtDPcQ==
+  dependencies:
+    fuzzy-matching "^0.4.3"
+    lodash "^4.17.4"
+
+"@coorpacademy/progression-engine@^10.3.10":
+  version "10.3.10"
+  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.10.tgz#c61a73a0184564b17c203e24806e73f80edb9d99"
+  integrity sha512-OaOKkb+8ZVlYgSNVR5IOrpPMcb90iJglgjImUX162MDe+NlUh9zGoOmiUSCAkmbo0HdY/jjZlGKNINP1TkXJzA==
   dependencies:
     fuzzy-matching "^0.4.3"
     lodash "^4.17.4"

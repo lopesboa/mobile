@@ -26,6 +26,7 @@ export type Props = {|
   // @todo mutualize the callback ?
   onChoicePress: (item: Choice) => void,
   onChoiceInputChange: (item: Choice, value: string) => void,
+  onInputValueChange: (value: string) => void,
   onButtonPress: () => void,
   isValidating?: boolean
 |};
@@ -70,6 +71,7 @@ const Question = ({
   userChoices,
   onChoicePress,
   onChoiceInputChange,
+  onInputValueChange,
   onButtonPress,
   isValidating
 }: Props) => {
@@ -105,6 +107,7 @@ const Question = ({
           type={type}
           template={template}
           items={choices}
+          onInputValueChange={onInputValueChange}
           userChoices={userChoices}
           onItemPress={onChoicePress}
           onItemInputChange={onChoiceInputChange}

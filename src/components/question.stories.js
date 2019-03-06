@@ -18,6 +18,7 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       userChoices={[]}
+      onInputValueChange={handleFakePress}
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
@@ -30,6 +31,7 @@ storiesOf('Question', module)
       header="What is the online Apple application store called?"
       explanation="Select the correct answers"
       choices={choicesWithImage}
+      onInputValueChange={handleFakePress}
       userChoices={[]}
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
@@ -46,6 +48,7 @@ storiesOf('Question', module)
       choices={items}
       userChoices={userChoices}
       onChoicePress={handleFakePress}
+      onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
@@ -59,6 +62,7 @@ storiesOf('Question', module)
       choices={choices}
       userChoices={[choices[1].label]}
       onChoicePress={handleFakePress}
+      onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
@@ -73,6 +77,7 @@ storiesOf('Question', module)
       userChoices={[]}
       media={image}
       onChoicePress={handleFakePress}
+      onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
@@ -87,6 +92,7 @@ storiesOf('Question', module)
       userChoices={[choices[1].label]}
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
+      onInputValueChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
     />
@@ -101,6 +107,21 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
+      onInputValueChange={handleFakePress}
+      isValidating={false}
+    />
+  ))
+  .add('BasicQuestion', () => (
+    <Question
+      type={QUESTION_TYPE.BASIC}
+      header="What is the online Apple application store called?"
+      explanation="Select the correct answers"
+      choices={choices}
+      userChoices={[]}
+      onChoicePress={handleFakePress}
+      onChoiceInputChange={handleFakePress}
+      onButtonPress={handleFakePress}
+      onInputValueChange={handleFakePress}
       isValidating={false}
     />
   ));

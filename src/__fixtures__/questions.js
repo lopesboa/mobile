@@ -5,7 +5,8 @@ import type {
   QCMGraphicQuestion,
   Media,
   TemplateQuestion,
-  QCMDragQuestion
+  QCMDragQuestion,
+  BasicQuestion
 } from '@coorpacademy/progression-engine';
 
 import {choices, choicesWithImage, createInputChoice, createSelectChoice} from './question-choices';
@@ -56,6 +57,18 @@ export const createQCMDrag = ({matchOrder}: {matchOrder: boolean}): QCMDragQuest
       maxTypos: null,
       answers: [[choices[0].label, choices[1].label]],
       choices
+    }
+  };
+};
+
+export const createBasicQuestion = ({maxTypos}: {maxTypos?: ?number}): BasicQuestion => {
+  return {
+    type: 'basic',
+    header: 'Quel store est utilisé pour publier des applications iOS ?',
+    explanation: 'Veuillez taper votre question',
+    content: {
+      maxTypos,
+      answers: [[choices[0].label]]
     }
   };
 };

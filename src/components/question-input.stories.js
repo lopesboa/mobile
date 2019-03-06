@@ -24,6 +24,14 @@ storiesOf('QuestionInput', module)
   .add('Text (disabled)', () => (
     <QuestionInput type={QUESTION_CHOICE_INPUT_TYPE.TEXT} onChange={handleFakePress} isDisabled />
   ))
+  .add('Input (full width)', () => (
+    <QuestionInput
+      type={QUESTION_CHOICE_INPUT_TYPE.TEXT}
+      items={select.items}
+      onChange={handleFakePress}
+      fullWitdh
+    />
+  ))
   .add('Select', () => (
     <QuestionInput
       type={QUESTION_CHOICE_INPUT_TYPE.SELECT}
@@ -45,6 +53,14 @@ storiesOf('QuestionInput', module)
       items={select.items}
       onChange={handleFakePress}
       isDisabled
+    />
+  ))
+  .add('Select (full width)', () => (
+    <QuestionInput
+      type={QUESTION_CHOICE_INPUT_TYPE.SELECT}
+      items={select.items}
+      onChange={handleFakePress}
+      fullWitdh
     />
   ))
   .add('Not supported', () => (

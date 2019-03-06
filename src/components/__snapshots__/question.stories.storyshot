@@ -1,5 +1,232 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Question BasicQuestion 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingVertical": 24,
+    }
+  }
+  testID="question"
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="question-title"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              }
+            }
+          >
+            What is the online Apple application store called?
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+    />
+    <View
+      testID="explanation"
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 15,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select the correct answers
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 8,
+          },
+          Object {
+            "width": "100%",
+          },
+        ]
+      }
+      testID="question-input"
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onChangeText={[Function]}
+        placeholder="Type here"
+        placeholderTextColor="#90A4AE"
+        selectTextOnFocus={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#CFD8DC",
+              "borderRadius": 3,
+              "borderWidth": 1,
+              "color": "#90A4AE",
+              "fontSize": 13,
+              "fontWeight": "700",
+              "minWidth": 120,
+              "padding": 16,
+            },
+            undefined,
+          ]
+        }
+        testID="question-input-text"
+        underlineColorAndroid="transparent"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-validate-disabled"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "borderRadius": 8,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginBottom": 10,
+            },
+            Array [
+              Object {
+                "borderRadius": 32,
+                "borderWidth": 0,
+                "height": 54,
+                "marginBottom": 0,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+              },
+              undefined,
+              undefined,
+              undefined,
+            ],
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Validate
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Question Option selected 1`] = `
 <View
   style={
@@ -2943,9 +3170,12 @@ exports[`Storyshots Question Template 1`] = `
         </Text>
         <View
           style={
-            Object {
-              "paddingBottom": 8,
-            }
+            Array [
+              Object {
+                "paddingBottom": 8,
+              },
+              false,
+            ]
           }
           testID="question-part-2"
         >
@@ -2993,9 +3223,12 @@ exports[`Storyshots Question Template 1`] = `
         </Text>
         <View
           style={
-            Object {
-              "paddingBottom": 8,
-            }
+            Array [
+              Object {
+                "paddingBottom": 8,
+              },
+              false,
+            ]
           }
           testID="question-part-4"
         >
@@ -3452,9 +3685,12 @@ exports[`Storyshots Question Template 1`] = `
         </Text>
         <View
           style={
-            Object {
-              "paddingBottom": 8,
-            }
+            Array [
+              Object {
+                "paddingBottom": 8,
+              },
+              false,
+            ]
           }
           testID="question-part-6"
         >
@@ -3505,9 +3741,12 @@ exports[`Storyshots Question Template 1`] = `
         </Text>
         <View
           style={
-            Object {
-              "paddingBottom": 8,
-            }
+            Array [
+              Object {
+                "paddingBottom": 8,
+              },
+              false,
+            ]
           }
           testID="question-part-8"
         >

@@ -21,6 +21,7 @@ storiesOf('QuestionChoices', module)
     <QuestionChoices
       type={QUESTION_TYPE.QCM}
       items={choices}
+      onInputValueChange={handleFakePress}
       userChoices={answers}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
@@ -30,6 +31,7 @@ storiesOf('QuestionChoices', module)
     <QuestionChoices
       type={QUESTION_TYPE.QCM_GRAPHIC}
       items={choicesWithImage.slice(0, 3)}
+      onInputValueChange={handleFakePress}
       userChoices={answers}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
@@ -39,6 +41,7 @@ storiesOf('QuestionChoices', module)
     <QuestionChoices
       type={QUESTION_TYPE.TEMPLATE}
       template={template}
+      onInputValueChange={handleFakePress}
       items={templateItems}
       userChoices={templateUserChoices}
       onItemPress={handleFakePress}
@@ -48,6 +51,7 @@ storiesOf('QuestionChoices', module)
   .add('Template (empty)', () => (
     <QuestionChoices
       type={QUESTION_TYPE.TEMPLATE}
+      onInputValueChange={handleFakePress}
       items={[]}
       userChoices={[]}
       onItemPress={handleFakePress}
@@ -57,8 +61,20 @@ storiesOf('QuestionChoices', module)
   .add('QCM Drag', () => (
     <QuestionChoices
       isDisabled={false}
+      onInputValueChange={handleFakePress}
       userChoices={answers}
       type={QUESTION_TYPE.DRAG_DROP}
+      items={choices}
+      onItemPress={handleFakePress}
+      onItemInputChange={handleFakePress}
+    />
+  ))
+  .add('QCM Basic', () => (
+    <QuestionChoices
+      isDisabled={false}
+      onInputValueChange={handleFakePress}
+      userChoices={answers}
+      type={QUESTION_TYPE.BASIC}
       items={choices}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
@@ -69,6 +85,7 @@ storiesOf('QuestionChoices', module)
       // $FlowFixMe  only for testing purpose
       type="SomethingElse"
       items={choices}
+      onInputValueChange={handleFakePress}
       userChoices={answers}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
@@ -82,6 +99,7 @@ if (process.env.NODE_ENV === 'test') {
       const component = renderer.create(
         <QuestionChoices
           type={QUESTION_TYPE.QCM}
+          onInputValueChange={handleFakePress}
           items={choices}
           userChoices={answers}
           onItemPress={handleItemPress}
@@ -99,6 +117,7 @@ if (process.env.NODE_ENV === 'test') {
       const component = renderer.create(
         <QuestionChoices
           type={QUESTION_TYPE.TEMPLATE}
+          onInputValueChange={handleFakePress}
           template={template}
           items={templateItems}
           userChoices={templateUserChoices}
@@ -110,6 +129,25 @@ if (process.env.NODE_ENV === 'test') {
       questionInput.props.onChange('Foobarbaz');
       expect(handleItemInputChange.mock.calls.length).toBe(1);
       expect(handleItemInputChange.mock.calls[0]).toEqual([templateItems[0], 'Foobarbaz']);
+    });
+
+    it('should handle onInputValueChange callback', () => {
+      const onInputValueChange = jest.fn();
+      const component = renderer.create(
+        <QuestionChoices
+          type={QUESTION_TYPE.BASIC}
+          onInputValueChange={onInputValueChange}
+          template={template}
+          items={templateItems}
+          userChoices={templateUserChoices}
+          onItemPress={handleFakePress}
+          onItemInputChange={handleFakePress}
+        />
+      );
+      const questionInput = component.root.find(el => el.props.testID === 'question-input-text');
+
+      questionInput.props.onChangeText();
+      expect(onInputValueChange.mock.calls.length).toBe(1);
     });
   });
 }

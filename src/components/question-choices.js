@@ -4,8 +4,10 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {QuestionType, Choice} from '@coorpacademy/progression-engine';
 
-import {QUESTION_TYPE} from '../const';
+import {QUESTION_TYPE, QUESTION_CHOICE_INPUT_TYPE} from '../const';
 import theme from '../modules/theme';
+
+import QuestionInput from './question-input';
 import QuestionChoice from './question-choice';
 import QuestionTemplate from './question-template';
 import Space from './space';
@@ -18,7 +20,8 @@ type Props = {|
   items: Array<Choice>,
   userChoices: Array<string>,
   onItemPress: (item: Choice) => void,
-  onItemInputChange: (item: Choice, value: string) => void
+  onItemInputChange: (item: Choice, value: string) => void,
+  onInputValueChange: (value: string) => void
 |};
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
@@ -66,7 +69,7 @@ class QuestionChoices extends React.PureComponent<Props> {
     this.props.onItemInputChange(item, value);
 
   render() {
-    const {type, template, isDisabled, items, userChoices} = this.props;
+    const {type, template, isDisabled, items, userChoices, onInputValueChange} = this.props;
 
     const isSelected = (choice: Choice): boolean =>
       userChoices && userChoices.includes(choice.label);
@@ -156,6 +159,14 @@ class QuestionChoices extends React.PureComponent<Props> {
               onPress={this.props.onItemPress}
             />
           </View>
+        );
+      case QUESTION_TYPE.BASIC:
+        return (
+          <QuestionInput
+            fullWitdh
+            type={QUESTION_CHOICE_INPUT_TYPE.TEXT}
+            onChange={onInputValueChange}
+          />
         );
       default:
         return null;

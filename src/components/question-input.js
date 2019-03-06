@@ -17,7 +17,8 @@ type Props = {|
   items?: $PropertyType<Choice, 'items'>,
   value?: string,
   onChange: (value: string) => void,
-  testID?: string
+  testID?: string,
+  fullWitdh?: boolean
 |};
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
@@ -37,6 +38,9 @@ const styles = StyleSheet.create({
   },
   spaced: {
     paddingBottom: ROW_SPACE
+  },
+  fullWitdh: {
+    width: '100%'
   }
 });
 
@@ -46,6 +50,7 @@ const QuestionInput = ({
   items = [],
   value,
   onChange,
+  fullWitdh = false,
   testID = 'question-input'
 }: Props) => {
   const disabledSuffix = isDisabled ? '-disabled' : '';
@@ -61,7 +66,7 @@ const QuestionInput = ({
 
         if (type === QUESTION_CHOICE_INPUT_TYPE.TEXT) {
           return (
-            <View style={styles.spaced} testID={testID}>
+            <View style={[styles.spaced, fullWitdh && styles.fullWitdh]} testID={testID}>
               <TextInput
                 style={[styles.input, value && selectedStyle]}
                 onChangeText={onChange}
@@ -78,7 +83,7 @@ const QuestionInput = ({
 
         if (type === QUESTION_CHOICE_INPUT_TYPE.SELECT) {
           return (
-            <View style={styles.spaced} testID={testID}>
+            <View style={[styles.spaced, fullWitdh && styles.fullWitdh]} testID={testID}>
               <Select
                 isDisabled={isDisabled}
                 values={items}

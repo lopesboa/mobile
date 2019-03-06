@@ -28,9 +28,12 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-2"
   >
@@ -78,9 +81,12 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-4"
   >
@@ -537,9 +543,12 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-6"
   >
@@ -590,9 +599,12 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-8"
   >
@@ -1069,9 +1081,12 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-2"
   >
@@ -1119,9 +1134,12 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-4"
   >
@@ -1578,9 +1596,12 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-6"
   >
@@ -1631,9 +1652,12 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "paddingBottom": 8,
-      }
+      Array [
+        Object {
+          "paddingBottom": 8,
+        },
+        false,
+      ]
     }
     testID="question-part-8"
   >

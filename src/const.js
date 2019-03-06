@@ -31,14 +31,15 @@ export const CARD_DISPLAY_MODE: {
   COVER: 'cover'
 };
 
-type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE' | 'DRAG_DROP';
+type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'TEMPLATE' | 'DRAG_DROP' | 'BASIC';
 export const QUESTION_TYPE: {
   [QuestionTypeKey]: QuestionType
 } = {
   QCM: 'qcm',
   QCM_GRAPHIC: 'qcmGraphic',
   TEMPLATE: 'template',
-  DRAG_DROP: 'qcmDrag'
+  DRAG_DROP: 'qcmDrag',
+  BASIC: 'basic'
 };
 
 export const QUESTION_CHOICE_INPUT_TYPE: {

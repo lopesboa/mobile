@@ -350,6 +350,49 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
 </View>
 `;
 
+exports[`Storyshots QuestionChoices QCM Basic 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingBottom": 8,
+      },
+      Object {
+        "width": "100%",
+      },
+    ]
+  }
+  testID="question-input"
+>
+  <TextInput
+    allowFontScaling={true}
+    editable={true}
+    onChangeText={[Function]}
+    placeholder="Type here"
+    placeholderTextColor="#90A4AE"
+    selectTextOnFocus={true}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CFD8DC",
+          "borderRadius": 3,
+          "borderWidth": 1,
+          "color": "#90A4AE",
+          "fontSize": 13,
+          "fontWeight": "700",
+          "minWidth": 120,
+          "padding": 16,
+        },
+        undefined,
+      ]
+    }
+    testID="question-input-text"
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
 exports[`Storyshots QuestionChoices QCM Drag 1`] = `
 <View
   testID="question-draggable"
@@ -1139,9 +1182,12 @@ exports[`Storyshots QuestionChoices Template 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "paddingBottom": 8,
-        }
+        Array [
+          Object {
+            "paddingBottom": 8,
+          },
+          false,
+        ]
       }
       testID="question-part-2"
     >
@@ -1189,9 +1235,12 @@ exports[`Storyshots QuestionChoices Template 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "paddingBottom": 8,
-        }
+        Array [
+          Object {
+            "paddingBottom": 8,
+          },
+          false,
+        ]
       }
       testID="question-part-4"
     >
@@ -1648,9 +1697,12 @@ exports[`Storyshots QuestionChoices Template 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "paddingBottom": 8,
-        }
+        Array [
+          Object {
+            "paddingBottom": 8,
+          },
+          false,
+        ]
       }
       testID="question-part-6"
     >
@@ -1701,9 +1753,12 @@ exports[`Storyshots QuestionChoices Template 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "paddingBottom": 8,
-        }
+        Array [
+          Object {
+            "paddingBottom": 8,
+          },
+          false,
+        ]
       }
       testID="question-part-8"
     >

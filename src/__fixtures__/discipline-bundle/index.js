@@ -5,11 +5,21 @@ import adaptive from './adaptive';
 import basic from './basic';
 import contextWithImage from './context-with-image';
 import contextWithVideo from './context-with-video';
+import withBasicQuestion from './with-question-basic';
 import noClue from './no-clue';
 import template from './template';
 import qcmDrag from './with-qcm-drag';
 
-const items = [adaptive, basic, contextWithImage, contextWithVideo, noClue, template, qcmDrag];
+const items = [
+  adaptive,
+  basic,
+  contextWithImage,
+  contextWithVideo,
+  noClue,
+  template,
+  qcmDrag,
+  withBasicQuestion
+];
 
 const initialDisciplinesBundle: BundledDiscipline = {
   disciplines: {},

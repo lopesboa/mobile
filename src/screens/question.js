@@ -128,6 +128,10 @@ class QuestionScreen extends React.PureComponent<Props> {
     this.props.editAnswer(item);
   };
 
+  handleInputValueChange = (value: string) => {
+    this.props.editAnswer([value]);
+  };
+
   handleChoiceInputChange = (item: Choice, value: string) => {
     const {choices, userChoices = []} = this.props;
     const values = choices.map((choice, index) => {
@@ -145,7 +149,7 @@ class QuestionScreen extends React.PureComponent<Props> {
 
   render() {
     const {
-      choices,
+      choices = [],
       type,
       header,
       explanation,
@@ -159,8 +163,7 @@ class QuestionScreen extends React.PureComponent<Props> {
       <Screen testID="question-screen" onRef={this.handleRef}>
         {type &&
           header &&
-          explanation &&
-          choices && (
+          explanation && (
             <Question
               type={type}
               choices={choices}
@@ -172,6 +175,7 @@ class QuestionScreen extends React.PureComponent<Props> {
               onChoicePress={this.handleChoicePress}
               onButtonPress={this.handleButtonPress}
               onChoiceInputChange={this.handleChoiceInputChange}
+              onInputValueChange={this.handleInputValueChange}
               isValidating={isValidating}
             />
           )}
@@ -256,6 +260,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   }
 
   const type = getQuestionType(slide);
+
   const choices = getChoices(slide);
   const userChoices = getAnswerValues(slide, state) || [];
 
