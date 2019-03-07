@@ -24,7 +24,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
           "textAlign": "center",
         },
         Object {
-          "color": "red",
+          "color": "#0077be",
         },
       ]
     }
@@ -32,26 +32,116 @@ exports[`Storyshots QuestionSlider Default 1`] = `
   >
     10
   </Text>
-  <RCTSlider
-    disabled={false}
-    enabled={true}
-    maximumValue={100}
-    minimumTrackTintColor="red"
-    minimumValue={0}
-    onChange={[Function]}
-    onResponderTerminationRequest={[Function]}
+  <View
+    onLayout={[Function]}
     onSlidingComplete={[Function]}
-    onStartShouldSetResponder={[Function]}
-    onValueChange={[Function]}
     step={10}
     style={
-      Object {
-        "height": 40,
-      }
+      Array [
+        Object {
+          "height": 40,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
     }
-    testID="slider"
     value={10}
-  />
+  >
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#b3b3b3",
+          },
+          Object {
+            "borderRadius": 2,
+            "height": 4,
+          },
+          Object {
+            "borderRadius": 32,
+            "height": 10,
+          },
+        ]
+      }
+      testID="slider-track"
+    />
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "#0077be",
+          "borderRadius": 32,
+          "height": 10,
+          "opacity": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#0077be",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "elevation": 4,
+          "height": 30,
+          "opacity": 0,
+          "position": "absolute",
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": 30,
+        }
+      }
+      testID="slider-thumb"
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+    />
+  </View>
   <View
     style={
       Object {
@@ -74,7 +164,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 15,
-            "fontWeight": "500",
+            "fontWeight": "700",
             "textAlign": "center",
           }
         }
@@ -96,7 +186,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 15,
-            "fontWeight": "500",
+            "fontWeight": "700",
             "textAlign": "center",
           }
         }
@@ -141,26 +231,116 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
   >
     10
   </Text>
-  <RCTSlider
-    disabled={false}
-    enabled={true}
-    maximumValue={100}
-    minimumTrackTintColor="red"
-    minimumValue={0}
-    onChange={[Function]}
-    onResponderTerminationRequest={[Function]}
+  <View
+    onLayout={[Function]}
     onSlidingComplete={[Function]}
-    onStartShouldSetResponder={[Function]}
-    onValueChange={[Function]}
     step={1}
     style={
-      Object {
-        "height": 40,
-      }
+      Array [
+        Object {
+          "height": 40,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
     }
-    testID="slider"
     value={10}
-  />
+  >
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#b3b3b3",
+          },
+          Object {
+            "borderRadius": 2,
+            "height": 4,
+          },
+          Object {
+            "borderRadius": 32,
+            "height": 10,
+          },
+        ]
+      }
+      testID="slider-track"
+    />
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "borderRadius": 32,
+          "height": 10,
+          "opacity": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "red",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "elevation": 4,
+          "height": 30,
+          "opacity": 0,
+          "position": "absolute",
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": 30,
+        }
+      }
+      testID="slider-thumb"
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+    />
+  </View>
   <View
     style={
       Object {
@@ -183,7 +363,7 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 15,
-            "fontWeight": "500",
+            "fontWeight": "700",
             "textAlign": "center",
           }
         }
@@ -205,7 +385,7 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
           Object {
             "color": "#14171A",
             "fontSize": 15,
-            "fontWeight": "500",
+            "fontWeight": "700",
             "textAlign": "center",
           }
         }

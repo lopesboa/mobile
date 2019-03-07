@@ -35,13 +35,18 @@ const withSlider = <P>(
     props: Props;
 
     state: State = {
-      value: this.props.value,
-      minValue: this.props.minValue,
-      maxValue: this.props.maxValue
+      value: 0,
+      minValue: 0,
+      maxValue: 10
     };
 
+    componentDidMount() {
+      const {value, minValue, maxValue} = this.props;
+      this.updateState(value, minValue, maxValue);
+    }
+
     componentWillUnmount() {
-      this.updateState(0, 0, 0);
+      this.updateState(0, 0, 10);
     }
 
     updateState = (value: number, minValue: number, maxValue: number): void => {
@@ -63,8 +68,8 @@ const withSlider = <P>(
             <View style={styles.container}>
               <SliderComponent
                 {...this.props}
-                minValue={minValue}
-                maxValue={maxValue}
+                minVal={minValue}
+                maxVal={maxValue}
                 value={value}
                 color={brandTheme.colors.primary}
                 onChange={this.handleValueChange}

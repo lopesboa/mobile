@@ -12,8 +12,8 @@ describe('QCM Slider', () => {
 
   it('should be able to see the slider question and the default', async () => {
     await weExpect(element(by.id('question-slider'))).toBeVisible();
-    await waitFor(element(by.id('slider'))).toBeVisible();
-    await weExpect(element(by.id('slider'))).toBeVisible();
+    await waitFor(element(by.id('slider-thumb'))).toBeVisible();
+    await weExpect(element(by.id('slider-thumb'))).toBeVisible();
     await waitFor(element(by.id('slider-value'))).toBeVisible();
     await weExpect(element(by.text('30'))).toHaveId('slider-value');
   });
@@ -28,7 +28,7 @@ describe('QCM Slider', () => {
   });
 
   it('should be able to move the slider question and validate the answer', async () => {
-    await element(by.id('slider')).swipe('right', 'slow', 0.1);
+    await element(by.id('slider-thumb')).swipe('right', 'slow', 0.1);
     await weExpect(element(by.text('200'))).toHaveId('slider-value');
     await weExpect(element(by.id('button-validate'))).toBeVisible();
     await element(by.id('button-validate')).tap();

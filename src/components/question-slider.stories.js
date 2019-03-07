@@ -9,22 +9,22 @@ import {Component as QuestionSlider} from './question-slider';
 storiesOf('QuestionSlider', module)
   .add('Default', () => (
     <QuestionSlider
-      minValue={0}
-      maxValue={100}
+      minVal={0}
+      maxVal={100}
       minLabel="0"
       maxLabel="100"
       value={10}
       step={10}
       onChange={fakeOnChange}
       onSlidingComplete={fakeOnChange}
-      color="red"
+      color="#0077be"
       testID="question-slider"
     />
   ))
   .add('With Default Step', () => (
     <QuestionSlider
-      minValue={0}
-      maxValue={100}
+      minVal={0}
+      maxVal={100}
       // $FlowFixMe
       step={undefined}
       minLabel="0"

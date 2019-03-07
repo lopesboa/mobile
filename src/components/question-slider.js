@@ -2,13 +2,15 @@
 // @flow
 
 import React from 'react';
-import {StyleSheet, Text, View, Slider} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import Slider from '@coorpacademy/react-native-slider';
 import theme from '../modules/theme';
 import withSlider from '../containers/with-slider';
+import {STYLE as BOX_STYLE} from './box';
 
 type Props = {|
-  minValue: number,
-  maxValue: number,
+  minVal: number,
+  maxVal: number,
   minLabel: string,
   maxLabel: string,
   value: number,
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
   textValue: {
     fontSize: 15,
     color: theme.colors.black,
-    fontWeight: theme.fontWeight.semiBold,
+    fontWeight: theme.fontWeight.bold,
     textAlign: 'center'
   },
   valuesContainer: {
@@ -49,6 +51,18 @@ const styles = StyleSheet.create({
   rightValue: {
     flex: 1,
     alignItems: 'flex-end'
+  },
+  track: {
+    height: 10,
+    borderRadius: theme.radius.button
+  },
+  thumb: {
+    ...BOX_STYLE,
+    width: 30,
+    height: 30,
+    borderRadius: 30 / 2,
+    backgroundColor: 'white',
+    borderWidth: 1
   }
 });
 const QuestionSlider = ({
@@ -57,8 +71,8 @@ const QuestionSlider = ({
   step,
   style,
   value,
-  minValue,
-  maxValue,
+  minVal,
+  maxVal,
   onChange,
   onSlidingComplete,
   color,
@@ -72,10 +86,12 @@ const QuestionSlider = ({
       step={step || 1}
       value={value}
       onValueChange={onChange}
-      maximumValue={maxValue}
-      minimumValue={minValue}
+      maximumValue={maxVal}
+      minimumValue={minVal}
       onSlidingComplete={onSlidingComplete}
       minimumTrackTintColor={color}
+      trackStyle={styles.track}
+      thumbStyle={[styles.thumb, {borderColor: color}]}
       testID="slider"
     />
     <View style={styles.valuesContainer} testID="slider-values-container">

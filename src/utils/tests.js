@@ -31,8 +31,8 @@ export const fakeLayout: Layout = {width: 320, height: 768};
 export const fakeSliderProps: SliderProps = {
   minValue: 30,
   maxValue: 300,
-  maxLabel: '30',
+  maxLabel: '300',
   minLabel: '30',
   step: 5,
-  value: 10
+  value: 35
 };
