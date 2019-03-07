@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 });
 
 const QuestionTitle = ({children}: Props) => (
-  <Html fontSize={17} style={styles.text} testID="question-title">
+  <Html fontSize={theme.fontSize.large} style={styles.text} testID="question-title">
     {children}
   </Html>
 );

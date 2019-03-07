@@ -4,8 +4,7 @@ import * as React from 'react';
 import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import type {Media} from '@coorpacademy/progression-engine';
 
-import {MEDIA_TYPE, FONT_SIZE} from '../const';
-import type {FontSize} from '../types';
+import {MEDIA_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
 import Html from './html';
@@ -64,7 +63,7 @@ const QuestionChoice = ({
   onPress,
   media,
   testID: prefixTestID,
-  fontSize = FONT_SIZE.LARGE,
+  fontSize = theme.fontSize.regular,
   style
 }: Props) => (
   <BrandThemeContext.Consumer>
@@ -102,7 +101,7 @@ const QuestionChoice = ({
             <View
               style={[
                 styles.textContainer,
-                fontSize === FONT_SIZE.SMALL
+                fontSize === theme.fontSize.medium
                   ? styles.smallTextContainer
                   : styles.regularTextContainer
               ]}

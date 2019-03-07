@@ -20,6 +20,15 @@ export type Colors = {
 
 export type FontWeightType = 'bold' | 'semiBold' | 'regular';
 
+export type FontSizeType =
+  | 'extraSmall'
+  | 'small'
+  | 'medium'
+  | 'regular'
+  | 'large'
+  | 'extraLarge'
+  | 'xxlarge';
+
 export type Theme = {|
   colors: Colors,
   spacing: {
@@ -34,6 +43,9 @@ export type Theme = {|
   },
   fontWeight: {
     [FontWeightType]: FontWeight
+  },
+  fontSize: {
+    [FontSizeType]: FontSize
   }
 |};
 
@@ -72,6 +84,15 @@ const theme: Theme = {
     regular: '400',
     semiBold: '500',
     bold: '700'
+  },
+  fontSize: {
+    extraSmall: 10,
+    small: 12,
+    medium: 13,
+    regular: 15,
+    large: 17,
+    extraLarge: 22,
+    xxlarge: 28
   }
 };
 

@@ -65,7 +65,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
               style={
                 Object {
                   "color": "#14171A",
-                  "fontSize": 17,
+                  "fontSize": 15,
                   "fontWeight": "700",
                 }
               }
@@ -184,7 +184,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
               style={
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 17,
+                  "fontSize": 15,
                   "fontWeight": "700",
                 }
               }
@@ -267,7 +267,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
               style={
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 17,
+                  "fontSize": 15,
                   "fontWeight": "700",
                 }
               }
@@ -386,7 +386,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
               style={
                 Object {
                   "color": "#FFFFFF",
-                  "fontSize": 17,
+                  "fontSize": 15,
                   "fontWeight": "700",
                 }
               }
@@ -502,7 +502,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
               style={
                 Object {
                   "color": "#14171A",
-                  "fontSize": 17,
+                  "fontSize": 15,
                   "fontWeight": "700",
                 }
               }

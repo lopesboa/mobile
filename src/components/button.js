@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.white,
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold,
     textAlign: 'center'
   },

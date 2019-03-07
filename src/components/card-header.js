@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   headerText: {
     paddingLeft: theme.spacing.tiny,
     color: theme.colors.gray.dark,
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     fontWeight: 'bold',
     textAlign: 'center'
   },

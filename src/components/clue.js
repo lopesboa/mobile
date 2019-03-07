@@ -25,16 +25,16 @@ const styles: GenericStyleProp = StyleSheet.create({
   },
   text: {
     color: theme.colors.white,
-    fontSize: 22,
+    fontSize: theme.fontSize.extraLarge,
     textAlign: 'center'
   },
   buttonText: {
-    fontSize: 17
+    fontSize: theme.fontSize.large
   },
   header: {
     color: theme.colors.black,
     textAlign: 'center',
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold
   },
   questionContainer: {
@@ -54,7 +54,7 @@ const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
       slideId={slideId}
       onPress={onPress}
     >
-      <Html fontSize={22} style={styles.text}>
+      <Html fontSize={theme.fontSize.extraLarge} style={styles.text}>
         {clue}
       </Html>
     </FlippableCard>

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   title: {
-    fontSize: 16,
+    fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold,
     paddingBottom: theme.spacing.small,
     paddingTop: theme.spacing.base

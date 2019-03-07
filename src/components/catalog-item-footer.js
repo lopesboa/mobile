@@ -62,10 +62,10 @@ const CatalogItemFooter = ({
   isCertified,
   testID,
   titleStyle = {
-    fontSize: 16
+    fontSize: theme.fontSize.regular
   },
   subtitleStyle = {
-    fontSize: 14
+    fontSize: theme.fontSize.small
   },
   iconAdaptiveSize = 16,
   iconCertifiedSize = 14

@@ -16,6 +16,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -52,10 +53,11 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
             "borderRadius": 3,
             "borderWidth": 1,
             "color": "#90A4AE",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "700",
-            "minWidth": 120,
-            "padding": 16,
+            "minWidth": 175,
+            "padding": 8,
+            "textAlign": "center",
           },
           "",
         ]
@@ -69,6 +71,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -130,10 +133,11 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     "borderRadius": 3,
                     "borderWidth": 1,
                     "color": "#90A4AE",
-                    "fontSize": 13,
+                    "fontSize": 15,
                     "fontWeight": "700",
-                    "minWidth": 120,
-                    "padding": 16,
+                    "minWidth": 175,
+                    "padding": 8,
+                    "textAlign": "center",
                   },
                   "",
                 ],
@@ -531,6 +535,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -567,10 +572,11 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
             "borderRadius": 3,
             "borderWidth": 1,
             "color": "#90A4AE",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "700",
-            "minWidth": 120,
-            "padding": 16,
+            "minWidth": 175,
+            "padding": 8,
+            "textAlign": "center",
           },
           Object {
             "borderColor": "#00B0FF",
@@ -587,6 +593,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -648,10 +655,11 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     "borderRadius": 3,
                     "borderWidth": 1,
                     "color": "#90A4AE",
-                    "fontSize": 13,
+                    "fontSize": 15,
                     "fontWeight": "700",
-                    "minWidth": 120,
-                    "padding": 16,
+                    "minWidth": 175,
+                    "padding": 8,
+                    "textAlign": "center",
                   },
                   Object {
                     "borderColor": "#00B0FF",
@@ -1069,6 +1077,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -1105,10 +1114,11 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
             "borderRadius": 3,
             "borderWidth": 1,
             "color": "#90A4AE",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "700",
-            "minWidth": 120,
-            "padding": 16,
+            "minWidth": 175,
+            "padding": 8,
+            "textAlign": "center",
           },
           "",
         ]
@@ -1122,6 +1132,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -1183,10 +1194,11 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     "borderRadius": 3,
                     "borderWidth": 1,
                     "color": "#90A4AE",
-                    "fontSize": 13,
+                    "fontSize": 15,
                     "fontWeight": "700",
-                    "minWidth": 120,
-                    "padding": 16,
+                    "minWidth": 175,
+                    "padding": 8,
+                    "textAlign": "center",
                   },
                   "",
                 ],
@@ -1584,6 +1596,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -1620,10 +1633,11 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
             "borderRadius": 3,
             "borderWidth": 1,
             "color": "#90A4AE",
-            "fontSize": 13,
+            "fontSize": 15,
             "fontWeight": "700",
-            "minWidth": 120,
-            "padding": 16,
+            "minWidth": 175,
+            "padding": 8,
+            "textAlign": "center",
           },
           Object {
             "borderColor": "#00B0FF",
@@ -1640,6 +1654,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -1701,10 +1716,11 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     "borderRadius": 3,
                     "borderWidth": 1,
                     "color": "#90A4AE",
-                    "fontSize": 13,
+                    "fontSize": 15,
                     "fontWeight": "700",
-                    "minWidth": 120,
-                    "padding": 16,
+                    "minWidth": 175,
+                    "padding": 8,
+                    "textAlign": "center",
                   },
                   Object {
                     "borderColor": "#00B0FF",
@@ -2122,6 +2138,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2136,6 +2153,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2150,6 +2168,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2164,6 +2183,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2178,6 +2198,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2192,6 +2213,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,
@@ -2206,6 +2228,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
     style={
       Object {
         "color": "#14171A",
+        "fontSize": 15,
         "fontWeight": "700",
         "padding": 16,
         "paddingBottom": 24,

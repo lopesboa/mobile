@@ -124,7 +124,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                 <Space type="small" />
                 <Html
                   testID={`${testID}-description`}
-                  fontSize={15}
+                  fontSize={theme.fontSize.regular}
                   containerStyle={styles.descriptionContainer}
                   style={[
                     styles.description,

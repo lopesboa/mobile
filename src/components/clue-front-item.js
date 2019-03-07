@@ -20,7 +20,7 @@ const styles: GenericStyleProp = StyleSheet.create({
   },
   text: {
     color: theme.colors.white,
-    fontSize: 22,
+    fontSize: theme.fontSize.extraLarge,
     textAlign: 'center',
     fontStyle: 'italic'
   }

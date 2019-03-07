@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     paddingBottom: theme.spacing.small + ROW_SPACE,
     paddingHorizontal: theme.spacing.tiny,
     color: theme.colors.black,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.regular
   }
 });
 

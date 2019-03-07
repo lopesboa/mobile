@@ -5,7 +5,6 @@ import {View, StyleSheet} from 'react-native';
 
 import type {Choice} from '@coorpacademy/progression-engine';
 import theme from '../modules/theme';
-import {FONT_SIZE} from '../const';
 import QuestionChoice from './question-choice';
 import DropZone from './drop-zone';
 
@@ -62,7 +61,7 @@ class QuestionDraggable extends React.PureComponent<Props> {
       <QuestionChoice
         style={styles.choice}
         key={item._id}
-        fontSize={FONT_SIZE.SMALL}
+        fontSize={theme.fontSize.medium}
         testID={`unselected-choice-${item._id}`}
         onPress={this.handlePress(item)}
       >

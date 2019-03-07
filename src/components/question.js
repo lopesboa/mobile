@@ -40,7 +40,8 @@ export type State = {|
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.base,
+    paddingTop: theme.spacing.base + theme.spacing.tiny,
+    paddingBottom: theme.spacing.base,
     flexGrow: 1,
     justifyContent: 'space-between'
   },
@@ -91,7 +92,7 @@ const Question = ({
       <View style={styles.questionContainer}>
         <QuestionTitle>{header}</QuestionTitle>
         <Space type="small" />
-        <Html fontSize={15} style={styles.explanation} testID="explanation">
+        <Html fontSize={theme.fontSize.regular} style={styles.explanation} testID="explanation">
           {explanation}
         </Html>
       </View>

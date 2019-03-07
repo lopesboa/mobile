@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: 12
+    fontSize: theme.fontSize.small
   },
   discipline: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: 12,
+    fontSize: theme.fontSize.small,
     color: theme.colors.gray.dark
   }
 });

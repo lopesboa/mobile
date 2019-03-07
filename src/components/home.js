@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   version: {
-    fontSize: 10,
+    fontSize: theme.fontSize.extraSmall,
     textAlign: 'center',
     padding: theme.spacing.base,
     color: theme.colors.white

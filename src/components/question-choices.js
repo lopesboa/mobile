@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeight.bold,
     borderRadius: theme.radius.common,
     backgroundColor: theme.colors.white,
-    fontSize: 13
+    fontSize: theme.fontSize.medium
   },
   text: {
     paddingHorizontal: theme.spacing.tiny,

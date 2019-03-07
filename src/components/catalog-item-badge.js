@@ -44,7 +44,7 @@ const Badge = ({
     minHeight: 17
   },
   labelStyle = {
-    fontSize: 8
+    fontSize: theme.fontSize.extraSmall
   }
 }: Props) => {
   return (

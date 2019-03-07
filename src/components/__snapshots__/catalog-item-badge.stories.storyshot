@@ -30,7 +30,7 @@ exports[`Storyshots Catalog Item Badge Default 1`] = `
         Array [
           "new",
           Object {
-            "fontSize": 8,
+            "fontSize": 10,
           },
           Object {
             "color": "#00B0FF",

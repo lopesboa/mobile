@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
   },
   current: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: 13
+    fontSize: theme.fontSize.medium
   },
   count: {
     color: theme.colors.gray.medium,
     fontWeight: theme.fontWeight.bold,
-    fontSize: 13
+    fontSize: theme.fontSize.medium
   }
 });
 

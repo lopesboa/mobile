@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.gray.dark,
-    fontSize: 15,
+    fontSize: theme.fontSize.regular,
     fontWeight: theme.fontWeight.regular
   },
   correctAnswer: {
@@ -36,12 +36,16 @@ const styles = StyleSheet.create({
 
 const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
   <View style={styles.container}>
-    <Html fontSize={15} style={styles.text}>
+    <Html fontSize={theme.fontSize.regular} style={styles.text}>
       {question}
     </Html>
     <Space type="tiny" />
     {answers.map((answer, index) => (
-      <Html fontSize={15} style={[styles.text, styles.correctAnswer]} key={`answer-${index}`}>
+      <Html
+        fontSize={theme.fontSize.regular}
+        style={[styles.text, styles.correctAnswer]}
+        key={`answer-${index}`}
+      >
         {answer}
       </Html>
     ))}
@@ -51,7 +55,7 @@ const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
     </Text>
     <Space type="tiny" />
     {userAnswers.map((userAnswer, index) => (
-      <Html fontSize={15} style={styles.text} key={`user-answer-${index}`}>
+      <Html fontSize={theme.fontSize.regular} style={styles.text} key={`user-answer-${index}`}>
         {userAnswer}
       </Html>
     ))}

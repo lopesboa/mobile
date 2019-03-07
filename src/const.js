@@ -12,7 +12,6 @@ import type {
   ContentType,
   CardDisplayMode,
   AuthorType,
-  FontSize,
   QuestionChoiceInputType,
   AnimationType
 } from './types';
@@ -116,12 +115,4 @@ export const ENGINE: {
 } = {
   LEARNER: 'learner',
   MICROLEARNING: 'microlearning'
-};
-
-export const FONT_SIZE: {
-  [string]: FontSize
-} = {
-  SMALL: 13,
-  REGULAR: 15,
-  LARGE: 17
 };

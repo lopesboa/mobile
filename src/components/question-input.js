@@ -26,15 +26,16 @@ export const ROW_SPACE = theme.spacing.tiny;
 
 const styles = StyleSheet.create({
   input: {
-    padding: theme.spacing.small,
+    padding: theme.spacing.tiny,
     borderWidth: 1,
     borderColor: theme.colors.gray.lightMedium,
     borderRadius: theme.radius.common,
     backgroundColor: theme.colors.white,
     color: PLACEHOLDER_COLOR,
     fontWeight: theme.fontWeight.bold,
-    fontSize: 13,
-    minWidth: 120
+    fontSize: theme.fontSize.regular,
+    minWidth: 175,
+    textAlign: 'center'
   },
   spaced: {
     paddingBottom: ROW_SPACE

@@ -15,7 +15,8 @@ declare type File = number;
 // React native types
 
 declare type GenericStyleProp = ____Styles_Internal;
-declare type FontWeight = ____TextStyle_Internal.fontWeight;
+declare type FontWeight = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontWeight'>>;
+declare type FontSize = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontSize'>>;
 declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 
 // React navigation props, easier to use

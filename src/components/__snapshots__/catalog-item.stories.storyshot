@@ -107,6 +107,7 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
               },
               Object {
                 "fontSize": 12,
+                "letterSpacing": 2.25,
               },
             ]
           }
@@ -234,7 +235,7 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 14,
+                  "fontSize": 15,
                 },
               ]
             }
@@ -395,7 +396,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
               Array [
                 "New",
                 Object {
-                  "fontSize": 11,
+                  "fontSize": 12,
                 },
                 Object {
                   "color": "#00B0FF",
@@ -429,6 +430,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
               },
               Object {
                 "fontSize": 12,
+                "letterSpacing": 2.25,
               },
             ]
           }
@@ -564,7 +566,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 14,
+                  "fontSize": 15,
                 },
               ]
             }
@@ -846,7 +848,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
               Array [
                 "New",
                 Object {
-                  "fontSize": 8,
+                  "fontSize": 10,
                 },
                 Object {
                   "color": "#00B0FF",
@@ -879,7 +881,8 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
                 "textShadowRadius": 2,
               },
               Object {
-                "fontSize": 8,
+                "fontSize": 10,
+                "letterSpacing": 1.88,
               },
             ]
           }
@@ -978,7 +981,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
                 "paddingTop": 8,
               },
               Object {
-                "fontSize": 16,
+                "fontSize": 15,
               },
             ]
           }
@@ -1287,7 +1290,7 @@ exports[`Storyshots Catalog Item New 1`] = `
               Array [
                 "New",
                 Object {
-                  "fontSize": 11,
+                  "fontSize": 12,
                 },
                 Object {
                   "color": "#00B0FF",
@@ -1321,6 +1324,7 @@ exports[`Storyshots Catalog Item New 1`] = `
               },
               Object {
                 "fontSize": 12,
+                "letterSpacing": 2.25,
               },
             ]
           }
@@ -1373,7 +1377,7 @@ exports[`Storyshots Catalog Item New 1`] = `
                   "paddingTop": 8,
                 },
                 Object {
-                  "fontSize": 14,
+                  "fontSize": 15,
                 },
               ]
             }

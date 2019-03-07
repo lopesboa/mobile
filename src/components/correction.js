@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
   },
   mainTitle: {
     color: theme.colors.white,
-    fontSize: 28,
+    fontSize: theme.fontSize.xxlarge,
     fontWeight: theme.fontWeight.bold
   },
   subTitle: {
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     color: theme.colors.white
   },
   card: {
@@ -110,7 +110,7 @@ class Correction extends React.PureComponent<Props> {
         testID={`card-${type.toLowerCase()}`}
       >
         {type === CARD_TYPE.TIP && (
-          <Html fontSize={15} style={styles.cardText}>
+          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {tip}
           </Html>
         )}
@@ -123,7 +123,7 @@ class Correction extends React.PureComponent<Props> {
           />
         )}
         {type === CARD_TYPE.KEY_POINT && (
-          <Html fontSize={15} style={styles.cardText}>
+          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {keyPoint}
           </Html>
         )}

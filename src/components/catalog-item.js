@@ -51,20 +51,21 @@ const CatalogItem = ({
       padding: theme.spacing.small
     },
     title: {
-      fontSize: 16
+      fontSize: theme.fontSize.regular
     },
     subtitle: {
-      fontSize: 12
+      fontSize: theme.fontSize.small
     },
     author: {
-      fontSize: 8
+      fontSize: theme.fontSize.extraSmall,
+      letterSpacing: 1.88
     },
     badge: {
       minWidth: 40,
       minHeight: 17
     },
     badgeLabel: {
-      fontSize: 8
+      fontSize: theme.fontSize.extraSmall
     },
     containerCover: {
       minHeight: 215,
@@ -72,20 +73,21 @@ const CatalogItem = ({
       padding: theme.spacing.base
     },
     titleCover: {
-      fontSize: 22
+      fontSize: theme.fontSize.extraLarge
     },
     subtitleCover: {
-      fontSize: 14
+      fontSize: theme.fontSize.regular
     },
     authorCover: {
-      fontSize: 12
+      fontSize: theme.fontSize.small,
+      letterSpacing: 2.25
     },
     badgeCover: {
       minWidth: 45,
       minHeight: 20
     },
     badgeLabelCover: {
-      fontSize: 11
+      fontSize: theme.fontSize.small
     }
   });
 

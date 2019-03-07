@@ -106,7 +106,11 @@ const Lesson = (props: Props) => {
               <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
             </ScrollView>
             <View style={styles.bottomTextWrapper}>
-              <Html testID="additional-stars-note" fontSize={12} style={styles.bottomText}>
+              <Html
+                testID="additional-stars-note"
+                fontSize={theme.fontSize.small}
+                style={styles.bottomText}
+              >
                 {winAdditionalStars}
               </Html>
             </View>

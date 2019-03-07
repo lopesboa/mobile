@@ -37,11 +37,11 @@ const styles: GenericStyleProp = StyleSheet.create({
   },
   text: {
     color: theme.colors.gray.dark,
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     textAlign: 'left'
   },
   buttonText: {
-    fontSize: 17
+    fontSize: theme.fontSize.large
   },
   imageStyle: {
     width: 200,
@@ -136,7 +136,7 @@ class Context extends React.PureComponent<Props> {
         {this.renderResource(mediaSources)}
         <View style={styles.descriptionContainer}>
           <Html
-            fontSize={12}
+            fontSize={theme.fontSize.small}
             style={styles.text}
             imageStyle={styles.imageStyle}
             onLinkPress={onOpenBrowser}

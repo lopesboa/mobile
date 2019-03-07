@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
   },
   mainTitle: {
     color: theme.colors.white,
-    fontSize: 28,
+    fontSize: theme.fontSize.xxlarge,
     fontWeight: theme.fontWeight.bold
   },
   subTitle: {
-    fontSize: 17,
+    fontSize: theme.fontSize.large,
     color: theme.colors.white
   },
   header: {

@@ -4,7 +4,6 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 
-import {FONT_SIZE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
 import QuestionChoice from './question-choice';
@@ -54,7 +53,7 @@ class DropZone extends React.PureComponent<Props> {
       <QuestionChoice
         style={styles.choice}
         key={item._id}
-        fontSize={FONT_SIZE.SMALL}
+        fontSize={theme.fontSize.medium}
         testID={`selected-choice-${item._id}`}
         onPress={this.handlePress(item)}
       >
