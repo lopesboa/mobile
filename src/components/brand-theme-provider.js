@@ -7,7 +7,10 @@ type BrandTheme = {|
   colors: {
     primary: string
   },
-  name: string
+  name: string,
+  images: {
+    logo: string
+  }
 |};
 
 type Props = {|
@@ -22,7 +25,11 @@ const initialState: State = {
   colors: {
     primary: '#00B0FF'
   },
-  name: 'custombrand'
+  name: 'custombrand',
+  images: {
+    logo:
+      'https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png'
+  }
 };
 
 export const BrandThemeContext = React.createContext(initialState);

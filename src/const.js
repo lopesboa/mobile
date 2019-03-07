@@ -13,7 +13,8 @@ import type {
   CardDisplayMode,
   AuthorType,
   FontSize,
-  QuestionChoiceInputType
+  QuestionChoiceInputType,
+  AnimationType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -92,6 +93,13 @@ export const CONTENT_TYPE: {
   SLIDE: 'slide',
   SUCCESS: 'success',
   FAILURE: 'failure'
+};
+
+export const ANIMATION_TYPE: {
+  [string]: AnimationType
+} = {
+  IN: 'in',
+  OUT: 'out'
 };
 
 type SpecificContentRef = 'extraLife' | 'failureExitNode' | 'successExitNode';

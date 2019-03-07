@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import CatalogComponent from '../components/catalog';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import translations from '../translations';
+import {BrandThemeContext} from '../components/brand-theme-provider';
 
 type ConnectedStateProps = {|
   items: Array<DisciplineCard | ChapterCard>
@@ -17,16 +18,17 @@ type Props = {|
 |};
 
 const Catalog = ({items, onPress}: Props) => (
-  <CatalogComponent
-    logo={{
-      uri:
-        'https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png'
-    }}
-    titleCover={translations.startLearning}
-    titleCards={translations.forYou}
-    items={items}
-    onPress={onPress}
-  />
+  <BrandThemeContext.Consumer>
+    {brandTheme => (
+      <CatalogComponent
+        logo={{uri: brandTheme.images.logo}}
+        titleCover={translations.startLearning}
+        titleCards={translations.forYou}
+        items={items}
+        onPress={onPress}
+      />
+    )}
+  </BrandThemeContext.Consumer>
 );
 
 const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {

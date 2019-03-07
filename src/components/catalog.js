@@ -52,16 +52,6 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     borderRadius: theme.radius.card
-  },
-  footer: {
-    position: 'absolute',
-    bottom: '-60%',
-    backgroundColor: '#222',
-    height: '100%',
-    width: '100%',
-    borderTopLeftRadius: 300,
-    borderTopRightRadius: 300,
-    transform: [{scaleX: 2}]
   }
 });
 
@@ -91,103 +81,99 @@ class Catalog extends React.PureComponent<Props> {
       return (
         <BrandThemeContext.Consumer>
           {brandTheme => (
-            <View>
-              <View style={[styles.footer, {backgroundColor: brandTheme.colors.primary}]} />
+            <View style={styles.container}>
+              <Image style={styles.logo} source={logo} />
+              <Text style={styles.title}>{titleCover}</Text>
 
-              <View style={styles.container}>
-                <Image style={styles.logo} source={logo} />
-                <Text style={styles.title}>{titleCover}</Text>
-
-                <Card style={styles.card} shadowStyle={[BOX_STYLE]}>
-                  <CatalogItem
-                    title={cover.title}
-                    subtitle={cover.authors.map(author => author.label).join(', ')}
-                    progression={{
-                      current: cover.completion,
-                      count: 1
-                    }}
-                    image={{uri: getCleanUri(cover.image)}}
-                    authorType={getAuthorType(cover)}
-                    authorName={
-                      getAuthorType(cover) !== AUTHOR_TYPE.CUSTOM
-                        ? getAuthorName(cover)
-                        : brandTheme.name
-                    }
-                    badge={cover.isNew ? translations.new : ''}
-                    isAdaptive={cover.adaptiv}
-                    displayMode={CARD_DISPLAY_MODE.COVER}
-                    onPress={this.handlePress(cover)}
-                    testID={`catalog-item-${cover.universalRef.replace(/_/g, '-')}`}
-                    isCertified={getAuthorType(cover) === AUTHOR_TYPE.VERIFIED}
-                  />
-                </Card>
-                <Text style={styles.title}>{titleCards}</Text>
-                {items.map((item, index) => {
-                  nextItem = items[index + 1];
-
-                  if (index % 2 === 1) {
-                    return null;
+              <Card style={styles.card} shadowStyle={BOX_STYLE}>
+                <CatalogItem
+                  title={cover.title}
+                  subtitle={cover.authors.map(author => author.label).join(', ')}
+                  progression={{
+                    current: cover.completion,
+                    count: 1
+                  }}
+                  image={{uri: getCleanUri(cover.image)}}
+                  authorType={getAuthorType(cover)}
+                  authorName={
+                    getAuthorType(cover) !== AUTHOR_TYPE.CUSTOM
+                      ? getAuthorName(cover)
+                      : brandTheme.name
                   }
-                  rowIndex++;
-                  return (
-                    <View key={`question-choice-row-${rowIndex}`}>
-                      {index > 0 && <Space />}
-                      <View style={styles.cards}>
+                  badge={cover.isNew ? translations.new : ''}
+                  isAdaptive={cover.adaptiv}
+                  displayMode={CARD_DISPLAY_MODE.COVER}
+                  onPress={this.handlePress(cover)}
+                  testID={`catalog-item-${cover.universalRef.replace(/_/g, '-')}`}
+                  isCertified={getAuthorType(cover) === AUTHOR_TYPE.VERIFIED}
+                />
+              </Card>
+              <Text style={styles.title}>{titleCards}</Text>
+              {items.map((item, index) => {
+                nextItem = items[index + 1];
+
+                if (index % 2 === 1) {
+                  return null;
+                }
+                rowIndex++;
+                return (
+                  <View key={`catalog-item-row-${rowIndex}`}>
+                    {index > 0 && <Space />}
+                    <View style={styles.cards}>
+                      <Card style={styles.card} shadowStyle={BOX_STYLE}>
+                        <CatalogItem
+                          title={item.title}
+                          subtitle={item.authors.map(author => author.label).join(', ')}
+                          progression={{
+                            current: item.completion,
+                            count: 1
+                          }}
+                          image={{uri: getCleanUri(item.image)}}
+                          authorType={getAuthorType(item)}
+                          authorName={
+                            getAuthorType(item) !== AUTHOR_TYPE.CUSTOM
+                              ? getAuthorName(cover)
+                              : brandTheme.name
+                          }
+                          badge={item.isNew ? translations.new : ''}
+                          isAdaptive={item.adaptiv}
+                          displayMode={CARD_DISPLAY_MODE.CARD}
+                          onPress={this.handlePress(item)}
+                          testID={`catalog-item-${item.universalRef.replace(/_/g, '-')}`}
+                          isCertified={getAuthorType(item) === AUTHOR_TYPE.VERIFIED}
+                        />
+                      </Card>
+                      <Space />
+                      {nextItem && (
                         <Card style={styles.card} shadowStyle={BOX_STYLE}>
                           <CatalogItem
-                            title={item.title}
-                            subtitle={item.authors.map(author => author.label).join(', ')}
+                            title={nextItem.title}
+                            subtitle={nextItem.authors.map(author => author.label).join(', ')}
                             progression={{
-                              current: item.completion,
+                              current: nextItem.completion,
                               count: 1
                             }}
-                            image={{uri: getCleanUri(item.image)}}
-                            authorType={getAuthorType(item)}
+                            image={{uri: getCleanUri(nextItem.image)}}
+                            authorType={getAuthorType(nextItem)}
                             authorName={
-                              getAuthorType(item) !== AUTHOR_TYPE.CUSTOM
+                              getAuthorType(nextItem) !== AUTHOR_TYPE.CUSTOM
                                 ? getAuthorName(cover)
                                 : brandTheme.name
                             }
-                            badge={item.isNew ? translations.new : ''}
-                            isAdaptive={item.adaptiv}
+                            badge={nextItem.isNew ? translations.new : ''}
+                            isAdaptive={nextItem.adaptiv}
                             displayMode={CARD_DISPLAY_MODE.CARD}
-                            onPress={this.handlePress(item)}
-                            testID={`catalog-item-${item.universalRef.replace(/_/g, '-')}`}
-                            isCertified={getAuthorType(item) === AUTHOR_TYPE.VERIFIED}
+                            onPress={this.handlePress(nextItem)}
+                            testID={`catalog-item-${nextItem.universalRef.replace(/_/g, '-')}`}
+                            isCertified={getAuthorType(nextItem) === AUTHOR_TYPE.VERIFIED}
                           />
                         </Card>
-                        <Space />
-                        {nextItem && (
-                          <Card style={styles.card} shadowStyle={BOX_STYLE}>
-                            <CatalogItem
-                              title={nextItem.title}
-                              subtitle={nextItem.authors.map(author => author.label).join(', ')}
-                              progression={{
-                                current: nextItem.completion,
-                                count: 1
-                              }}
-                              image={{uri: getCleanUri(nextItem.image)}}
-                              authorType={getAuthorType(nextItem)}
-                              authorName={
-                                getAuthorType(nextItem) !== AUTHOR_TYPE.CUSTOM
-                                  ? getAuthorName(cover)
-                                  : brandTheme.name
-                              }
-                              badge={nextItem.isNew ? translations.new : ''}
-                              isAdaptive={nextItem.adaptiv}
-                              displayMode={CARD_DISPLAY_MODE.CARD}
-                              onPress={this.handlePress(nextItem)}
-                              testID={`catalog-item-${nextItem.universalRef.replace(/_/g, '-')}`}
-                              isCertified={getAuthorType(nextItem) === AUTHOR_TYPE.VERIFIED}
-                            />
-                          </Card>
-                        )}
-                        {!nextItem && <View style={styles.card} />}
-                      </View>
+                      )}
+                      {!nextItem && <View style={styles.card} />}
                     </View>
-                  );
-                })}
-              </View>
+                  </View>
+                );
+              })}
             </View>
           )}
         </BrandThemeContext.Consumer>

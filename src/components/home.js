@@ -8,11 +8,15 @@ import translations from '../translations';
 import version from '../modules/version';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
+import RoundedFooterAnimated from '../containers/rounded-footer-animated';
+import {ANIMATION_TYPE} from '../const';
+import {BrandThemeContext} from './brand-theme-provider';
 import Space from './space';
 import Text from './text';
 
 type Props = {|
-  onCardPress: (item: DisciplineCard | ChapterCard) => void
+  onCardPress: (item: DisciplineCard | ChapterCard) => void,
+  isFetching?: boolean
 |};
 
 const styles = StyleSheet.create({
@@ -27,8 +31,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress}: Props) => (
+const Home = ({onCardPress, isFetching}: Props) => (
   <View style={styles.container} testID="home">
+    {!isFetching && (
+      <BrandThemeContext.Consumer>
+        {brandTheme => (
+          <RoundedFooterAnimated
+            color={brandTheme.colors.primary}
+            testID="home-footer"
+            animationType={ANIMATION_TYPE.IN}
+          />
+        )}
+      </BrandThemeContext.Consumer>
+    )}
     <Catalog onPress={onCardPress} />
     <Space type="small" />
     <Text style={styles.version}>

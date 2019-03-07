@@ -86,7 +86,6 @@ if (process.env.NODE_ENV === 'test') {
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([discipline]);
     });
-
     it('should handle onItemPress callback on discipline', () => {
       const handlePress = jest.fn();
       const component = renderer.create(

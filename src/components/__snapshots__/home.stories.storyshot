@@ -12,6 +12,25 @@ exports[`Storyshots Home Default 1`] = `
   <View
     style={
       Object {
+        "backgroundColor": "#00B0FF",
+        "borderTopLeftRadius": 300,
+        "borderTopRightRadius": 300,
+        "bottom": "-300%",
+        "height": "100%",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scaleX": 2,
+          },
+        ],
+        "width": "100%",
+      }
+    }
+    testID="home-footer"
+  />
+  <View
+    style={
+      Object {
         "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",

@@ -12,7 +12,12 @@ type ConnectedDispatchProps = {|
   selectCard: typeof selectCard
 |};
 
+type ConnectedStateProps = {|
+  items: Array<DisciplineCard | ChapterCard>
+|};
+
 type Props = {|
+  ...ConnectedStateProps,
   ...ReactNavigation$ScreenProps,
   ...ConnectedDispatchProps
 |};
@@ -35,16 +40,29 @@ class HomeScreen extends React.PureComponent<Props> {
   };
 
   render() {
+    const {items} = this.props;
+
     return (
       <Screen testID="home-screen" noSafeArea>
-        <Home onCardPress={this.handleCardPress} />
+        <Home onCardPress={this.handleCardPress} isFetching={items.length === 0} />
       </Screen>
     );
   }
 }
 
+const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {
+  // @todo use user language
+  const language = 'en';
+
+  return {
+    items: Object.keys(cards.entities)
+      .map(key => cards.entities[key][language])
+      .filter(item => item !== undefined)
+  };
+};
+
 const mapDispatchToProps: ConnectedDispatchProps = {
   selectCard
 };
 
-export default connect(null, mapDispatchToProps)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
