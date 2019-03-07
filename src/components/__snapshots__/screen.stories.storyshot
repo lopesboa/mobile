@@ -57,6 +57,33 @@ exports[`Storyshots Screen Not scrollable 1`] = `
 </RCTSafeAreaView>
 `;
 
+exports[`Storyshots Screen Not scrollable without safeArea 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    testID="fake-screen"
+  >
+    <Text>
+      Foo bar baz
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Screen With custom style 1`] = `
 <RCTSafeAreaView
   style={
@@ -87,4 +114,34 @@ exports[`Storyshots Screen With custom style 1`] = `
     </View>
   </RCTScrollView>
 </RCTSafeAreaView>
+`;
+
+exports[`Storyshots Screen Without safeArea 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    showsHorizontalScrollIndicator={false}
+    testID="fake-screen"
+  >
+    <View>
+      <Text>
+        Foo bar baz
+      </Text>
+    </View>
+  </RCTScrollView>
+</View>
 `;

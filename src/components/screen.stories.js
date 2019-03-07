@@ -20,8 +20,18 @@ storiesOf('Screen', module)
       <Text>Foo bar baz</Text>
     </Screen>
   ))
+  .add('Without safeArea', () => (
+    <Screen testID="fake-screen" onRef={handleRef} noSafeArea>
+      <Text>Foo bar baz</Text>
+    </Screen>
+  ))
   .add('Not scrollable', () => (
     <Screen noScroll testID="fake-screen" onRef={handleRef}>
+      <Text>Foo bar baz</Text>
+    </Screen>
+  ))
+  .add('Not scrollable without safeArea', () => (
+    <Screen noScroll testID="fake-screen" onRef={handleRef} noSafeArea>
       <Text>Foo bar baz</Text>
     </Screen>
   ))

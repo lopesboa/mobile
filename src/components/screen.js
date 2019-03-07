@@ -9,7 +9,8 @@ type Props = {|
   noScroll?: boolean,
   children: React.Node,
   testID?: string,
-  onRef?: (ref: ScrollView) => void
+  onRef?: (ref: ScrollView) => void,
+  noSafeArea?: boolean
 |};
 
 export const BACKGROUND_COLOR = theme.colors.white;
@@ -38,10 +39,12 @@ class Screen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {style, noScroll, children, testID} = this.props;
+    const {style, noScroll, children, testID, noSafeArea} = this.props;
+
+    const CustomView = noSafeArea ? View : SafeAreaView;
 
     return (
-      <SafeAreaView style={[styles.screen, style]}>
+      <CustomView style={[styles.screen, style]}>
         {noScroll ? (
           <View style={styles.screenScroll} testID={testID}>
             {children}
@@ -56,7 +59,7 @@ class Screen extends React.PureComponent<Props> {
             {children}
           </ScrollView>
         )}
-      </SafeAreaView>
+      </CustomView>
     );
   }
 }

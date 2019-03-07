@@ -36,7 +36,7 @@ class HomeScreen extends React.PureComponent<Props> {
 
   render() {
     return (
-      <Screen testID="home-screen">
+      <Screen testID="home-screen" noSafeArea>
         <Home onCardPress={this.handleCardPress} />
       </Screen>
     );
