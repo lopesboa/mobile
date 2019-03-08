@@ -1,28 +1,28 @@
 // @flow strict
 
 import {AsyncStorage} from 'react-native';
+import fetch from 'cross-fetch';
 
+import {__E2E__} from '../../modules/environment';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
-import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
-import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {BundledDiscipline, Resource, ResourceType, Level, Discipline} from './_types';
 import {CONTENT_TYPE} from './_const';
 
 export const buildKeyValuePair = (
   resourceType: ResourceType,
-  userLanguage: SupportedLanguage,
+  language: SupportedLanguage,
   resource: {[key: string]: Resource}
 ): Array<Array<string>> => {
   const keys: Array<string> = Object.keys(resource);
-  return keys.map(key => [`${resourceType}:${userLanguage}:${key}`, JSON.stringify(resource[key])]);
+  return keys.map(key => [`${resourceType}:${language}:${key}`, JSON.stringify(resource[key])]);
 };
 
 export const buildLevels = (
   levels: Array<Level>,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ): Array<Array<string>> =>
-  levels.map(item => [`${CONTENT_TYPE.LEVEL}:${userLanguage}:${item.ref}`, JSON.stringify(item)]);
+  levels.map(item => [`${CONTENT_TYPE.LEVEL}:${language}:${item.ref}`, JSON.stringify(item)]);
 
 export const mapToResourceType = (value: string): ResourceType => {
   switch (value) {
@@ -50,7 +50,7 @@ export const mapToResourceType = (value: string): ResourceType => {
 
 export const createReduceToNormalizedItemFunction = (
   bundledResource: BundledDiscipline,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ) => (accumulator: Array<Array<string>>, currentValue: string): Array<Array<string>> => {
   let levels = [];
   if (currentValue === 'disciplines') {
@@ -58,13 +58,13 @@ export const createReduceToNormalizedItemFunction = (
     const disciplines: Array<Discipline> = Object.values(bundledResource.disciplines);
     levels = buildLevels(
       disciplines.reduce((result, discipline) => result.concat(discipline.modules), []),
-      userLanguage
+      language
     );
   }
   return accumulator.concat(
     buildKeyValuePair(
       mapToResourceType(currentValue),
-      userLanguage,
+      language,
       // $FlowFixMe
       bundledResource[currentValue]
     ),
@@ -74,21 +74,18 @@ export const createReduceToNormalizedItemFunction = (
 
 export const normalizeDisciplineBundle = (
   bundledResource: BundledDiscipline,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ): Array<Array<string>> => {
   const keys: Array<string> = Object.keys(bundledResource);
-  const result = keys.reduce(
-    createReduceToNormalizedItemFunction(bundledResource, userLanguage),
-    []
-  );
+  const result = keys.reduce(createReduceToNormalizedItemFunction(bundledResource, language), []);
   return result;
 };
 
 export const storeDisciplineBundle = async (
   bundledDiscipline: BundledDiscipline,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ): Promise<void> => {
-  const normalizedBundle = normalizeDisciplineBundle(bundledDiscipline, userLanguage);
+  const normalizedBundle = normalizeDisciplineBundle(bundledDiscipline, language);
   try {
     // eslint-disable-next-line no-console
     console.log('Storing:', normalizedBundle.map(item => item[0]));
@@ -98,40 +95,42 @@ export const storeDisciplineBundle = async (
   }
 };
 
-export const fetchDisciplineBundle = (
+export const fetchDisciplineBundle = async (
   ref: string,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage,
+  token: string,
+  host: string
 ): Promise<BundledDiscipline> => {
-  if (Object.keys(disciplinesBundle.disciplines).includes(ref)) {
-    return Promise.resolve(disciplinesBundle);
+  if (__E2E__) {
+    if (Object.keys(disciplinesBundle.disciplines).includes(ref)) {
+      return Promise.resolve(disciplinesBundle);
+    }
   }
 
-  if (Object.keys(onboarding.disciplines).includes(ref)) {
-    return Promise.resolve(onboarding);
-  }
-
-  if (Object.keys(bescherelle.disciplines).includes(ref)) {
-    return Promise.resolve(bescherelle);
-  }
-
-  // Implement fetching logic here
-  return Promise.reject(new Error('API fetching not supported yet.'));
+  const response = await fetch(
+    `${host}/api/v2/disciplines/bundle?lang=${language}&conditions={"ref": ["${ref}"]}`,
+    {
+      headers: {authorization: token}
+    }
+  );
+  const body = await response.json();
+  return body;
 };
 
 export const buildKey = (
   resourceType: ResourceType,
-  userLanguage: SupportedLanguage,
+  language: SupportedLanguage,
   resourceReference: string
 ) => {
-  return `${resourceType}:${userLanguage}:${resourceReference}`;
+  return `${resourceType}:${language}:${resourceReference}`;
 };
 
 export const getItem = async (
   resourceType: ResourceType,
   resourceReference: string,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ): Promise<Resource> => {
-  const key = buildKey(resourceType, userLanguage, resourceReference);
+  const key = buildKey(resourceType, language, resourceReference);
   try {
     const item = await AsyncStorage.getItem(key);
     return JSON.parse(item);
@@ -145,10 +144,10 @@ export const filterKeys = (regex: RegExp, keys: Array<string>): Array<string> =>
 
 export const getItemsPerResourceType = async (
   resourceType: ResourceType,
-  userLanguage: SupportedLanguage
+  language: SupportedLanguage
 ) => {
   const allKeys = await AsyncStorage.getAllKeys();
-  const regex = new RegExp(`^(${resourceType}:${userLanguage}:(.+)+)`, 'gm');
+  const regex = new RegExp(`^(${resourceType}:${language}:(.+)+)`, 'gm');
   const filtredKeys = filterKeys(regex, allKeys);
   const retrivedValues = await AsyncStorage.multiGet(filtredKeys);
   return retrivedValues.map(item => JSON.parse(item[1]));

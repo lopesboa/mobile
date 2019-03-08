@@ -89,8 +89,9 @@ export const fetchCards = (language: SupportedLanguage): StoreAction<Action | Bu
   return async (dispatch, getState, options) => {
     await dispatch(fetchRequest(language));
 
-    const token = getToken(getState());
-    const brand = getBrand(getState());
+    const state = getState();
+    const token = getToken(state);
+    const brand = getBrand(state);
 
     if (token === null) return dispatch(fetchError('Token not defined'));
     if (brand === null) return dispatch(fetchError('Brand not defined'));

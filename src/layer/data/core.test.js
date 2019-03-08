@@ -3,8 +3,6 @@
 import {AsyncStorage} from 'react-native';
 
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
-import onboardingCourse from '../../__fixtures__/__temporary__/onboarding-course';
-import bescherelleCourse from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
@@ -23,11 +21,12 @@ import {
   getItemsPerResourceType,
   filterKeys,
   storeDisciplineBundle,
-  fetchDisciplineBundle,
   buildLevels,
   mapToResourceType
 } from './core';
 
+const token = '__TOKEN__';
+const host = '__HOST__';
 const qcm = createQCM({});
 const qcmGraphic = createQCMGraphic({});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
@@ -181,14 +180,14 @@ describe('Data Layer Core', () => {
         .mockImplementation(() => Promise.resolve(JSON.stringify(disciplines.dis_1)));
 
       const result = getItem(resourceType, resourceReference, userLanguage);
-      expect(result).resolves.toBe(disciplines.dis_1);
+      return expect(result).resolves.toEqual(disciplines.dis_1);
     });
 
     it('should not build the too', () => {
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.reject(fakeError));
 
       const result = getItem(resourceType, resourceReference, userLanguage);
-      expect(result).rejects.toThrow('resource not found with cha_1');
+      return expect(result).rejects.toThrow('resource not found with cha_1');
     });
   });
 
@@ -251,36 +250,73 @@ describe('Data Layer Core', () => {
     it('should not store the discipline bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.reject(fakeError));
       const result = storeDisciplineBundle(disciplineBundle, 'en');
-      expect(result).rejects.toThrow(new Error('could not store the provided bundledResource'));
+      return expect(result).rejects.toThrow(
+        new Error('could not store the provided bundledResource')
+      );
     });
   });
 
   describe('fetchDisciplineBundle', () => {
+    beforeEach(() => {
+      jest.resetModules();
+    });
+
     AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
 
     it('should fetch fixtures', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {fetchDisciplineBundle} = require('./core');
       const keys = Object.keys(disciplinesBundle.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
+      const result = fetchDisciplineBundle(keys[0], 'en', token, host);
       // @todo should be mocked
-      expect(result).resolves.toBe(disciplinesBundle);
+      return expect(result).resolves.toEqual(disciplinesBundle);
     });
 
-    it('should fetch onboarding', () => {
-      const keys = Object.keys(onboardingCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(onboardingCourse);
+    it('should try to fetch disciplineBundle', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+      const {fetchDisciplineBundle} = require('./core');
+      jest.mock('cross-fetch');
+
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toEqual(
+          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"ref": ["foobarbaz"]}`
+        );
+        return Promise.resolve({
+          json: () => Promise.resolve(disciplineBundle)
+        });
+      });
+
+      const result = fetchDisciplineBundle('foobarbaz', 'en', token, host);
+      return expect(result).resolves.toBe(disciplineBundle);
     });
-    it('should fetch bescherelle', () => {
-      const keys = Object.keys(bescherelleCourse.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en');
-      // @todo should be mocked
-      expect(result).resolves.toBe(bescherelleCourse);
+    it('should try to fetch disciplineBundle', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {fetchDisciplineBundle} = require('./core');
+      jest.mock('cross-fetch');
+
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toEqual(
+          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"ref": ["foobarbaz"]}`
+        );
+        return Promise.resolve({
+          json: () => Promise.resolve(disciplineBundle)
+        });
+      });
+
+      const result = fetchDisciplineBundle('foobarbaz', 'en', token, host);
+      return expect(result).resolves.toBe(disciplineBundle);
     });
 
-    it('should trigger error', () => {
-      const result = fetchDisciplineBundle('foobarbaz', 'en');
-      expect(result).rejects.toThrow(new Error('API fetching not supported yet.'));
+    afterAll(() => {
+      jest.resetAllMocks();
     });
   });
 });

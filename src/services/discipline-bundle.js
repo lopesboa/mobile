@@ -5,7 +5,12 @@ import type {DataLayer} from '../layer/data';
 import type {BundledDiscipline} from '../layer/data/_types';
 
 export type DisciplineBundleService = {|
-  findById: (ref: string, userLanguage: SupportedLanguage) => Promise<BundledDiscipline>,
+  findById: (
+    ref: string,
+    userLanguage: SupportedLanguage,
+    token: string,
+    host: string
+  ) => Promise<BundledDiscipline>,
   // @todo change for setXXX
   store: (disciplineBundle: BundledDiscipline, userLanguage: SupportedLanguage) => Promise<void>
 |};

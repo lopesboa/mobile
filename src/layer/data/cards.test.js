@@ -1,8 +1,6 @@
 // @flow strict
 
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
-import onboarding from '../../__fixtures__/__temporary__/onboarding-course';
-import bescherelle from '../../__fixtures__/__temporary__/bescherelle-course';
 import {createDisciplinesCards} from '../../__fixtures__/cards';
 
 const HOST = 'https://host.coorpacademy.com';
@@ -27,12 +25,9 @@ describe('cards', () => {
       return expect(result).resolves.toEqual(expected);
     });
 
-    const onboardingCard = createDisciplinesCards(
-      Object.keys(onboarding.disciplines).map(key => onboarding.disciplines[key])
-    ).pop();
-    const bescherelleCard = createDisciplinesCards(
-      Object.keys(bescherelle.disciplines).map(key => bescherelle.disciplines[key])
-    ).pop();
+    const cards = createDisciplinesCards(
+      Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
+    );
 
     it('should fetch favorites and recommendations to populate dashboard cards', async () => {
       jest.mock('../../modules/environment', () => ({
@@ -51,7 +46,7 @@ describe('cards', () => {
         return Promise.resolve({
           json: () =>
             Promise.resolve({
-              hits: [onboardingCard, onboardingCard]
+              hits: cards.slice(0, 2)
             })
         });
       });
@@ -61,7 +56,7 @@ describe('cards', () => {
         return Promise.resolve({
           json: () =>
             Promise.resolve({
-              hits: [bescherelleCard, bescherelleCard, bescherelleCard]
+              hits: cards.slice(2, 7)
             })
         });
       });
@@ -69,13 +64,7 @@ describe('cards', () => {
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
-      const expected = [
-        onboardingCard,
-        onboardingCard,
-        bescherelleCard,
-        bescherelleCard,
-        bescherelleCard
-      ];
+      const expected = cards.slice(0, 5);
       await expect(result).resolves.toEqual(expected);
     });
 
@@ -86,15 +75,8 @@ describe('cards', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
+      const favorites = cards.slice(0, 5);
       fetch.mockImplementationOnce((url, options) => {
-        const favorites = [
-          onboardingCard,
-          onboardingCard,
-          onboardingCard,
-          onboardingCard,
-          onboardingCard
-        ];
-
         return Promise.resolve({
           json: () =>
             Promise.resolve({
@@ -102,15 +84,8 @@ describe('cards', () => {
             })
         });
       });
+      const recommendations = cards.slice(5, 10);
       fetch.mockImplementationOnce((url, options) => {
-        const recommendations = [
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard
-        ];
-
         return Promise.resolve({
           json: () =>
             Promise.resolve({
@@ -122,13 +97,7 @@ describe('cards', () => {
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
-      const expected = [
-        onboardingCard,
-        onboardingCard,
-        onboardingCard,
-        onboardingCard,
-        onboardingCard
-      ];
+      const expected = favorites;
       await expect(result).resolves.toEqual(expected);
     });
 
@@ -139,9 +108,8 @@ describe('cards', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
+      const favorites = [];
       fetch.mockImplementationOnce((url, options) => {
-        const favorites = [];
-
         return Promise.resolve({
           json: () =>
             Promise.resolve({
@@ -149,15 +117,8 @@ describe('cards', () => {
             })
         });
       });
+      const recommendations = cards.slice(0, 5);
       fetch.mockImplementationOnce((url, options) => {
-        const recommendations = [
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard,
-          bescherelleCard
-        ];
-
         return Promise.resolve({
           json: () =>
             Promise.resolve({
@@ -169,13 +130,7 @@ describe('cards', () => {
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
-      const expected = [
-        bescherelleCard,
-        bescherelleCard,
-        bescherelleCard,
-        bescherelleCard,
-        bescherelleCard
-      ];
+      const expected = recommendations;
       await expect(result).resolves.toEqual(expected);
     });
     it('should reject error', async () => {

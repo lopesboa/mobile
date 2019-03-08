@@ -63,7 +63,9 @@ export const fetchError = (ref?: string, languages?: Array<SupportedLanguage>): 
 
 export const fetchBundles = (
   cards: Array<DisciplineCard | ChapterCard>,
-  languages: Array<SupportedLanguage>
+  languages: Array<SupportedLanguage>,
+  token: string,
+  host: string
 ): StoreAction<Action> => {
   return async dispatch => {
     await Promise.all(
