@@ -1,48 +1,42 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
+import {connect} from 'react-redux';
+import type {Brand} from '../types';
+import type {StoreState} from '../redux/store';
 
-type BrandTheme = {|
-  host: string,
-  colors: {
-    primary: string
-  },
-  name: string,
-  images: {
-    logo: string
-  }
+type ConnectedStateProps = {|
+  brand: Brand
 |};
 
 type Props = {|
+  ...ConnectedStateProps,
   children: React.Node
 |};
 
-type State = BrandTheme;
+type State = Brand;
 
 const initialState: State = {
-  // @todo deal with real data
   host: 'https://onboarding.coorpacademy.com',
   colors: {
     primary: '#00B0FF'
   },
-  name: 'custombrand',
+  contentCategoryName: 'Onboarding',
+  name: 'onboarding',
   images: {
-    logo:
-      'https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png'
+    'logo-mobile': 'https://static.coorpacademy.com/content/up/raw/logo_mobile-1491561428898.svg'
   }
 };
 
 export const BrandThemeContext = React.createContext(initialState);
 
-class BrandThemeProvider extends React.PureComponent<Props, State> {
-  props: Props;
+const BrandThemeProvider = (props: Props) => {
+  const {children, brand} = props;
+  return <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>;
+};
 
-  state: State = initialState;
+const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  brand: state.authentication.brand || initialState
+});
 
-  render() {
-    const {children} = this.props;
-    return <BrandThemeContext.Provider value={this.state}>{children}</BrandThemeContext.Provider>;
-  }
-}
-
-export default BrandThemeProvider;
+export default connect(mapStateToProps)(BrandThemeProvider);

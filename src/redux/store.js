@@ -8,13 +8,11 @@ import type {State as NavigationState} from './reducers/navigation';
 import navigation from './reducers/navigation';
 import type {State as DisciplineBundleState} from './reducers/discipline-bundle';
 import type {State as CardsState} from './reducers/cards';
-import type {State as BrandsState} from './reducers/brands';
+import type {State as AuthenticationState} from './reducers/authentication';
 import disciplineBundle from './reducers/discipline-bundle';
 import cards from './reducers/cards';
-import brands from './reducers/brands';
+import authentication from './reducers/authentication';
 import DisciplineBundle from './middlewares/discipline-bundle';
-import Cards from './middlewares/cards';
-import Brands from './middlewares/brands';
 import type {Options, ReduxDevTools} from './_types';
 
 export type StoreState = $Exact<{|
@@ -22,7 +20,7 @@ export type StoreState = $Exact<{|
   navigation: NavigationState,
   disciplineBundle: DisciplineBundleState,
   cards: CardsState,
-  brands: BrandsState
+  authentication: AuthenticationState
 |}>;
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
@@ -34,23 +32,16 @@ const reducers = combineReducers({
   navigation,
   disciplineBundle,
   cards,
-  brands
+  authentication
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   return compose(
     // $FlowFixMe error applying middlewares with multiple types
-    applyMiddleware(
-      ReduxThunkMemoized(options),
-      ErrorLogger(options),
-      DisciplineBundle(options),
-      Cards(options),
-      Brands(options)
-    ),
+    applyMiddleware(ReduxThunkMemoized(options), ErrorLogger(options), DisciplineBundle(options)),
     reduxDevTools || (f => f)
   );
 };
-
 const create = (options: Options, reduxDevTools?: ReduxDevTools) =>
   createStore(reducers, {}, createMiddlewares(options, reduxDevTools));
 

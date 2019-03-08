@@ -42,14 +42,6 @@ describe('Navigation', () => {
       };
       expect(result).toEqual(expected);
     });
-
-    it('Without payload', () => {
-      const action: Action = {
-        type: NAVIGATION_SCREEN_CHANGE
-      };
-      const result = reducer(undefined, action);
-      expect(result).toEqual(expectedInitialState);
-    });
   });
 
   it(NAVIGATION_SHOW, () => {

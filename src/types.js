@@ -53,6 +53,12 @@ export type Progression = {|
 
 export type Brand = {|
   name: string,
-  baseUrl: string,
-  contentCategoryName: string
+  host: string,
+  contentCategoryName: string,
+  colors: {
+    primary: string
+  },
+  images: {
+    'logo-mobile': string
+  }
 |};

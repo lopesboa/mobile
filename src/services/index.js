@@ -38,7 +38,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Content: Content(dataLayer),
   DisciplineBundle: DisciplineBundle(dataLayer),
   Progressions: Progressions(dataLayer),
-  Brands: Brands()
+  Brands: Brands(dataLayer)
 });
 
 export default createServices;

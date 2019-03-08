@@ -5,7 +5,7 @@ import type {Middleware, MiddlewareAPI, Dispatch} from 'redux';
 import type {Options} from '../_types';
 import type {StoreState} from '../store';
 import {FETCH_REQUEST, fetchSuccess, fetchError} from '../actions/discipline-bundle';
-import type {Action, FetchRequestPayload} from '../actions/discipline-bundle';
+import type {Action} from '../actions/discipline-bundle';
 import type {BundledDiscipline} from '../../layer/data/_types';
 
 type State = StoreState;
@@ -43,8 +43,8 @@ const createMiddleware = ({services}: Options): Middleware<State, Action, Dispat
 
           return dispatch(fetchSuccess(disciplines, chapters));
         })
-        .catch(() => {
-          dispatch(fetchError(ref, languages));
+        .catch(e => {
+          return Promise.resolve(dispatch(fetchError(ref, languages)));
         });
     }
   }

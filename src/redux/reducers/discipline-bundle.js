@@ -66,22 +66,17 @@ export const reduceReadyContent = (
     prevState
   );
 
-const reducer = (state: State = initialState, {type, payload}: Action): State => {
-  switch (type) {
+const reducer = (state: State = initialState, action: Action): State => {
+  switch (action.type) {
     case FETCH_REQUEST: {
-      if (!payload || !payload.ref || !payload.languages) {
-        return state;
-      }
-
+      const {payload} = action;
       return {
         ...state,
         disciplines: reducePendingContent(state.disciplines, {[payload.ref]: payload.languages})
       };
     }
     case FETCH_SUCCESS: {
-      if (!payload || !payload.disciplines || !payload.chapters) {
-        return state;
-      }
+      const {payload} = action;
 
       return {
         ...state,

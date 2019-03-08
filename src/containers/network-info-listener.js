@@ -3,8 +3,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {fetchRequest as fetchCards} from '../redux/actions/cards';
-import {fetchRequest as fetchBrand} from '../redux/actions/brands';
+import {fetchCards} from '../redux/actions/cards';
+import {fetchBrand} from '../redux/actions/brands';
 
 type ConnectedDispatchProps = {|
   fetchCards: typeof fetchCards,
@@ -18,10 +18,10 @@ type Props = {|
 class NetworkInfoListener extends React.PureComponent<Props> {
   props: Props;
 
-  componentDidMount() {
+  async componentDidMount() {
+    await this.props.fetchBrand();
     // @todo use dynamic language
-    this.props.fetchCards('en');
-    this.props.fetchBrand('token');
+    await this.props.fetchCards('en');
   }
 
   // @todo manage connection change to fetch real content when the user is online

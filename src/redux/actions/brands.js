@@ -1,50 +1,38 @@
 // @flow strict
 
 import type {Brand} from '../../types';
+import type {StoreAction} from '../_types';
+import {getToken} from '../utils/state-extract';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@brands/FETCH_SUCCESS`;
 export const FETCH_ERROR = `@@brands/FETCH_ERROR`;
-export const SELECT_CARD = '@@brands/SELECT_CARD';
-export const SELECT_CARD_FAILURE = '@@brands/SELECT_CARD_FAILURE';
-
-export type FetchRequestPayload = {|token: string|};
-
-export type FetchSuccessPayload = {|
-  item: Brand,
-  token: string
-|};
-
-export type FetchErrorPayload = {|
-  error: string
-|};
 
 export type Action =
   | {|
-      type: typeof FETCH_REQUEST,
-      payload: FetchRequestPayload
+      type: '@@brands/FETCH_REQUEST'
     |}
   | {|
-      type: typeof FETCH_SUCCESS,
-      payload: FetchSuccessPayload
+      type: '@@brands/FETCH_SUCCESS',
+      payload: {|
+        item: Brand
+      |}
     |}
   | {|
-      type: typeof FETCH_ERROR,
-      payload: FetchErrorPayload
+      type: '@@brands/FETCH_ERROR',
+      payload: {|
+        error: string
+      |}
     |};
 
-export const fetchRequest = (token: string): Action => ({
-  type: FETCH_REQUEST,
-  payload: {
-    token
-  }
+export const fetchRequest = (): Action => ({
+  type: FETCH_REQUEST
 });
 
-export const fetchSuccess = (item: Brand, token: string): Action => ({
+export const fetchSuccess = (item: Brand): Action => ({
   type: FETCH_SUCCESS,
   payload: {
-    item,
-    token
+    item
   }
 });
 
@@ -54,3 +42,20 @@ export const fetchError = (error: string): Action => ({
     error
   }
 });
+
+export const fetchBrand = (): StoreAction<Action> => {
+  return async (dispatch, getState, options) => {
+    await dispatch(fetchRequest());
+
+    const token = getToken(getState());
+    if (token === null) return dispatch(fetchError('Token not defined'));
+
+    const {services} = options;
+    try {
+      const brand = await services.Brands.find(token);
+      return dispatch(fetchSuccess(brand));
+    } catch (err) {
+      return dispatch(fetchError(err.toString()));
+    }
+  };
+};

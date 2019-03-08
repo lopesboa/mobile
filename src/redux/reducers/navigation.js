@@ -17,18 +17,15 @@ const initialState: State = {
   isHidden: false
 };
 
-const reducer = (state: State = initialState, {type, payload}: Action): State => {
-  switch (type) {
+const reducer = (state: State = initialState, action: Action): State => {
+  switch (action.type) {
     case NAVIGATION_SCREEN_CHANGE: {
-      if (!payload) {
-        return state;
-      }
       return {
         ...state,
-        currentNavigatorName: payload.currentNavigatorName,
-        currentAppScreenName: payload.currentAppScreenName,
-        currentScreenName: payload.currentScreenName,
-        currentTabName: payload.currentTabName
+        currentNavigatorName: action.payload.currentNavigatorName,
+        currentAppScreenName: action.payload.currentAppScreenName,
+        currentScreenName: action.payload.currentScreenName,
+        currentTabName: action.payload.currentTabName
       };
     }
     case NAVIGATION_SHOW: {

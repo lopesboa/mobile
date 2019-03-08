@@ -1,7 +1,7 @@
 // @flow strict
 
 import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/discipline-bundle';
-import type {Action, FetchRequestPayload} from '../actions/discipline-bundle';
+import type {Action} from '../actions/discipline-bundle';
 import reducer, {
   reducePendingContentStatus,
   reducePendingContent,
@@ -115,14 +115,14 @@ describe('Discipline bundle', () => {
 
   describe(FETCH_REQUEST, () => {
     it('Default', () => {
-      const payload: FetchRequestPayload = {
-        ref: 'foobarbaz',
-        languages: ['de', 'en']
-      };
       const action: Action = {
         type: FETCH_REQUEST,
-        payload
+        payload: {
+          ref: 'foobarbaz',
+          languages: ['de', 'en']
+        }
       };
+
       const result = reducer(undefined, action);
       const expected: State = {
         ...expectedInitialState,
@@ -134,15 +134,6 @@ describe('Discipline bundle', () => {
         }
       };
       expect(result).toEqual(expected);
-    });
-
-    it('Without payload', () => {
-      const action = {
-        type: FETCH_REQUEST
-      };
-      // $FlowFixMe this is to emulate an empty payload
-      const result = reducer(undefined, action);
-      expect(result).toEqual(expectedInitialState);
     });
   });
 
@@ -175,15 +166,6 @@ describe('Discipline bundle', () => {
         }
       };
       expect(result).toEqual(expected);
-    });
-
-    it('Without payload', () => {
-      const action = {
-        type: FETCH_SUCCESS
-      };
-      // $FlowFixMe this is to emulate an empty payload
-      const result = reducer(undefined, action);
-      expect(result).toEqual(expectedInitialState);
     });
   });
 });

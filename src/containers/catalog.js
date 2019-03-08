@@ -4,9 +4,9 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 import CatalogComponent from '../components/catalog';
+import {BrandThemeContext} from '../components/brand-theme-provider';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import translations from '../translations';
-import {BrandThemeContext} from '../components/brand-theme-provider';
 
 type ConnectedStateProps = {|
   items: Array<DisciplineCard | ChapterCard>
@@ -21,7 +21,9 @@ const Catalog = ({items, onPress}: Props) => (
   <BrandThemeContext.Consumer>
     {brandTheme => (
       <CatalogComponent
-        logo={{uri: brandTheme.images.logo}}
+        logo={{
+          uri: brandTheme.images['logo-mobile']
+        }}
         titleCover={translations.startLearning}
         titleCards={translations.forYou}
         items={items}

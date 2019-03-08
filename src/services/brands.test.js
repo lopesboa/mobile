@@ -1,16 +1,41 @@
 // @flow strict
 
+import {createBrand} from '../__fixtures__/brands';
+import type {DataLayer} from '../layer/data';
 import createService from './brands';
 
 describe('Brand service', () => {
   it('find', () => {
     const TOKEN = '__TOKEN__';
-    const service = createService();
+    const BRAND = createBrand();
 
-    return expect(service.find(TOKEN)).resolves.toEqual({
-      name: 'mobile',
-      baseUrl: 'https://mobile-staging.coorpacademy.com',
-      contentCategoryName: 'Mobile'
-    });
+    const fetchBrand = jest.fn();
+    fetchBrand.mockImplementationOnce(
+      (token => {
+        expect(token).toEqual(TOKEN);
+        return Promise.resolve(BRAND);
+      }: $PropertyType<DataLayer, 'fetchBrand'>)
+    );
+
+    // $FlowFixMe
+    const service = createService({fetchBrand});
+
+    return expect(service.find(TOKEN)).resolves.toEqual(BRAND);
+  });
+  it('find', () => {
+    const TOKEN = '__TOKEN__';
+
+    const fetchBrand = jest.fn();
+    fetchBrand.mockImplementationOnce(
+      (token => {
+        expect(token).toEqual(TOKEN);
+        return Promise.reject(new Error());
+      }: $PropertyType<DataLayer, 'fetchBrand'>)
+    );
+
+    // $FlowFixMe
+    const service = createService({fetchBrand});
+
+    return expect(service.find(TOKEN)).rejects.toThrow(new Error());
   });
 });

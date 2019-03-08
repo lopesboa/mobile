@@ -4,7 +4,7 @@ import type {BundledDiscipline} from '../../layer/data/_types';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createChapter} from '../../__fixtures__/chapters';
 import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR} from '../actions/discipline-bundle';
-import type {Action, FetchRequestPayload, FetchErrorPayload} from '../actions/discipline-bundle';
+import type {Action} from '../actions/discipline-bundle';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
 import createMiddleware from './discipline-bundle';
@@ -53,13 +53,12 @@ describe('Discipline bundle', () => {
   });
 
   describe(FETCH_REQUEST, () => {
-    const payload: FetchRequestPayload = {
-      ref: 'foobarbaz',
-      languages: ['en', 'de']
-    };
     const action: Action = {
       type: FETCH_REQUEST,
-      payload
+      payload: {
+        ref: 'foobarbaz',
+        languages: ['en', 'de']
+      }
     };
 
     it('should handle empty payload', async () => {
@@ -73,13 +72,12 @@ describe('Discipline bundle', () => {
       // $FlowFixMe this si to test only
       middleware(store)(next)(emptyAction);
       await sleep();
-      const expectedPayload: FetchErrorPayload = {
-        ref: undefined,
-        languages: undefined
-      };
       const expectedAction: Action = {
         type: FETCH_ERROR,
-        payload: expectedPayload
+        payload: {
+          ref: undefined,
+          languages: undefined
+        }
       };
       expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
       expect(next).toHaveBeenCalledWith(emptyAction);
@@ -93,7 +91,10 @@ describe('Discipline bundle', () => {
       await sleep();
       const expectedAction: Action = {
         type: FETCH_ERROR,
-        payload: action.payload
+        payload: {
+          ref: 'foobarbaz',
+          languages: ['en', 'de']
+        }
       };
       expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
       expect(next).toHaveBeenCalledWith(action);

@@ -12,6 +12,7 @@ import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
 import {fetchDisciplineBundle, storeDisciplineBundle} from './core';
 import {fetchCards} from './cards';
+import {fetchBrand} from './brand';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
 import {find as findRecommendations, getNextLevel} from './recommendations';
 import {findById as findLevelById} from './levels';
@@ -21,7 +22,8 @@ import {getClue} from './clues';
 export type DataLayer = DataLayerBase & {
   fetchDisciplineBundle: typeof fetchDisciplineBundle,
   storeDisciplineBundle: typeof storeDisciplineBundle,
-  fetchCards: typeof fetchCards
+  fetchCards: typeof fetchCards,
+  fetchBrand: typeof fetchBrand
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -38,11 +40,12 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   findRecommendations,
   getNextLevel,
   findLevelById: findLevelById(userLanguage),
+  fetchCards,
+  fetchBrand,
   // @todo implement it
   getChapterRulesByContent: () => [],
   fetchDisciplineBundle,
-  storeDisciplineBundle,
-  fetchCards
+  storeDisciplineBundle
 });
 
 export default createDataLayer;

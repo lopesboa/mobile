@@ -1339,7 +1339,7 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                     testID="author-catalog-item-cha-2"
                   >
-                    CUSTOMBRAND
+                    ONBOARDING
                      CREATION
                   </Text>
                 </View>
@@ -1626,7 +1626,7 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                     testID="author-catalog-item-dis-2"
                   >
-                    CUSTOMBRAND
+                    ONBOARDING
                      CREATION
                   </Text>
                 </View>

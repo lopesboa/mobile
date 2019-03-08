@@ -2,12 +2,18 @@
 
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
+import type {StoreAction} from '../_types';
+import {getToken, getBrand} from '../utils/state-extract';
+import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../layer/data/_const';
+import {createLevelProgression, createChapterProgression} from './progression';
+import type {Action as BundleAction} from './discipline-bundle';
+import {fetchBundles} from './discipline-bundle';
 
 /* eslint-disable import/prefer-default-export */
 
-export const FETCH_REQUEST = `@@cards/FETCH_REQUEST`;
-export const FETCH_SUCCESS = `@@cards/FETCH_SUCCESS`;
-export const FETCH_ERROR = `@@cards/FETCH_ERROR`;
+export const FETCH_REQUEST = '@@cards/FETCH_REQUEST';
+export const FETCH_SUCCESS = '@@cards/FETCH_SUCCESS';
+export const FETCH_ERROR = '@@cards/FETCH_ERROR';
 export const SELECT_CARD = '@@cards/SELECT_CARD';
 export const SELECT_CARD_FAILURE = '@@cards/SELECT_CARD_FAILURE';
 
@@ -35,23 +41,23 @@ export type SelectCardFailurePayload = {|
 
 export type Action =
   | {|
-      type: typeof FETCH_REQUEST,
+      type: '@@cards/FETCH_REQUEST',
       payload: FetchRequestPayload
     |}
   | {|
-      type: typeof FETCH_SUCCESS,
+      type: '@@cards/FETCH_SUCCESS',
       payload: FetchSuccessPayload
     |}
   | {|
-      type: typeof FETCH_ERROR,
+      type: '@@cards/FETCH_ERROR',
       payload: FetchErrorPayload
     |}
   | {|
-      type: typeof SELECT_CARD,
+      type: '@@cards/SELECT_CARD',
       payload: SelectCardPayload
     |}
   | {|
-      type: typeof SELECT_CARD_FAILURE,
+      type: '@@cards/SELECT_CARD_FAILURE',
       payload: SelectCardFailurePayload
     |};
 
@@ -79,13 +85,28 @@ export const fetchError = (error: string): Action => ({
     error
   }
 });
+export const fetchCards = (language: SupportedLanguage): StoreAction<Action | BundleAction> => {
+  return async (dispatch, getState, options) => {
+    await dispatch(fetchRequest(language));
 
-export const selectCard = (item: DisciplineCard | ChapterCard): Action => ({
-  type: SELECT_CARD,
-  payload: {
-    item
-  }
-});
+    const token = getToken(getState());
+    const brand = getBrand(getState());
+
+    if (token === null) return dispatch(fetchError('Token not defined'));
+    if (brand === null) return dispatch(fetchError('Brand not defined'));
+
+    const {services} = options;
+    try {
+      const cards = await services.Cards.find(token, brand.host, language);
+      // $FlowFixMe
+      await dispatch(fetchBundles(cards, [language]));
+
+      return dispatch(fetchSuccess(cards, language));
+    } catch (err) {
+      return dispatch(fetchError(err.toString()));
+    }
+  };
+};
 
 export const selectCardFailure = (item?: DisciplineCard | ChapterCard, error: string): Action => ({
   type: SELECT_CARD_FAILURE,
@@ -94,3 +115,38 @@ export const selectCardFailure = (item?: DisciplineCard | ChapterCard, error: st
     error
   }
 });
+
+export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Action> => {
+  return async (dispatch, getState, options) => {
+    const {services} = options;
+    switch (item.type) {
+      case CARD_TYPE.CHAPTER: {
+        try {
+          const chapter = await services.Content.find(
+            // $FlowFixMe union type
+            RESTRICTED_RESOURCE_TYPE.CHAPTER,
+            item.universalRef
+          );
+          // $FlowFixMe union type
+          return await dispatch(createChapterProgression(chapter));
+        } catch (e) {
+          return dispatch(selectCardFailure(item, 'Chapter progression not created'));
+        }
+      }
+      case CARD_TYPE.COURSE: {
+        const ref = item.modules && item.modules[0] && item.modules[0].universalRef;
+        if (!ref) {
+          return dispatch(selectCardFailure(item, 'Course has no level'));
+        }
+        try {
+          // $FlowFixMe union type
+          const level = await services.Content.find(RESTRICTED_RESOURCE_TYPE.LEVEL, ref);
+          // $FlowFixMe union type
+          return dispatch(createLevelProgression(level));
+        } catch (e) {
+          return dispatch(selectCardFailure(item, 'Level progression not created'));
+        }
+      }
+    }
+  };
+};

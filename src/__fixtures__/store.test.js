@@ -126,8 +126,9 @@ describe('storeFixture', () => {
       entities: {}
     };
 
-    const brandState = {
-      entities: {}
+    const authenticationState = {
+      token: '__TOKEN__',
+      brand: null
     };
 
     const progression = createProgression({
@@ -210,7 +211,7 @@ describe('storeFixture', () => {
       },
       disciplineBundle: disciplineBundleState,
       cards: cardsState,
-      brands: brandState
+      authentication: authenticationState
     };
 
     const result = createStoreState({

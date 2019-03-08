@@ -20,7 +20,7 @@ describe('cards', () => {
         __E2E__: true
       }));
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
       const expected = createDisciplinesCards(
         Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
       );
@@ -67,7 +67,7 @@ describe('cards', () => {
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
       const expected = [
         onboardingCard,
@@ -120,7 +120,7 @@ describe('cards', () => {
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
       const expected = [
         onboardingCard,
@@ -167,7 +167,7 @@ describe('cards', () => {
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
       const expected = [
         bescherelleCard,
@@ -189,7 +189,7 @@ describe('cards', () => {
       fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
       await expect(result).rejects.toThrow();
     });
@@ -213,7 +213,7 @@ describe('cards', () => {
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(LANGUAGE, HOST, TOKEN);
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
       const expected = [];
       await expect(result).resolves.toEqual(expected);
