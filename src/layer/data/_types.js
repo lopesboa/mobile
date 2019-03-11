@@ -8,16 +8,10 @@ import type {
   ChapterRule
 } from '@coorpacademy/player-services';
 
-import type {Context, Lesson} from '@coorpacademy/progression-engine';
+import type {Context, Lesson, ResourceMimeType} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
 
-export type MimeType =
-  | 'video/mp4'
-  | 'application/vimeo'
-  | 'image/jpeg'
-  | 'image/png'
-  | 'application/pdf'
-  | 'application/vimeo';
+export type MimeType = ResourceMimeType;
 
 type Skill = string;
 type Group = string;

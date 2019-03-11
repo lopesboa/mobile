@@ -2,9 +2,8 @@
 
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
-import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
+import type {Resource as ResourceType} from '../types';
 
-import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
 import withLayout from '../containers/with-layout';
@@ -22,7 +21,7 @@ type Props = {|
   header: string,
   starsGranted: number,
   selected?: string,
-  resources: Array<LessonType>,
+  resources: Array<ResourceType>,
   onChange: (id: string) => void,
   onPDFButtonPress: (url: string, description: string) => void
 |};
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
 const Lesson = (props: Props) => {
   const {layout, header, onChange, resources, selected, starsGranted} = props;
 
-  const openedResource: LessonType = resources.filter(resource => resource._id === selected)[0];
+  const openedResource: ResourceType = resources.filter(resource => resource._id === selected)[0];
   const height = layout && layout.width / (16 / 9);
 
   if (!height || !selected) {
@@ -77,11 +76,6 @@ const Lesson = (props: Props) => {
         const resourceType = openedResource && openedResource.type;
         const resourcePoster = openedResource && openedResource.poster;
         const resourceDescription = openedResource && openedResource.description;
-        const resourceMediaUrl = openedResource && openedResource.mediaUrl;
-        const resourceDownloadUrl = openedResource && openedResource.downloadUrl;
-        const url =
-          // $FlowFixMe img is not defined in progression-engine
-          (resourceType === RESOURCE_TYPE.VIDEO && resourceDownloadUrl) || resourceMediaUrl;
 
         return (
           <View testID="lesson" style={styles.container}>
@@ -91,7 +85,7 @@ const Lesson = (props: Props) => {
             <Space type="base" />
             <Resource
               type={resourceType}
-              url={url}
+              url={openedResource.url}
               description={resourceDescription}
               thumbnail={resourcePoster}
               subtitles={subtitles}

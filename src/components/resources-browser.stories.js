@@ -5,10 +5,11 @@ import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress} from '../utils/tests';
+import {reduceToResources} from '../layer/data/mappers';
 
 import ResourcesBrowser from './resources-browser';
 
-const resources = [
+const lessons = [
   createVideo({ref: 'les_1'}),
   createPdf({ref: 'les_2'}),
   createVideo({ref: 'les_3'}),
@@ -16,6 +17,8 @@ const resources = [
   createVideo({ref: 'les_5'}),
   createVideo({ref: 'les_6'})
 ];
+
+const resources = reduceToResources(lessons);
 
 storiesOf('ResourcesBrowser', module)
   .add('Default', () => <ResourcesBrowser resources={resources} onChange={handleFakePress} />)

@@ -7,7 +7,7 @@ import {
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
 } from '@coorpacademy/nova-icons';
 
-import type {Lesson} from '@coorpacademy/progression-engine';
+import type {Resource} from '../types';
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
@@ -19,7 +19,7 @@ import ResourceOverlay from './resource-overlay';
 type Props = {|
   onChange: (id: string) => void,
   selected?: string,
-  resources: Array<Lesson>
+  resources: Array<Resource>
 |};
 
 const styles = StyleSheet.create({
@@ -62,11 +62,11 @@ const styles = StyleSheet.create({
 class ResourcesBrowser extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = (resource: Lesson) => () => this.props.onChange(resource._id);
+  handlePress = (resource: Resource) => () => this.props.onChange(resource._id);
 
   renderSeparator = () => <Space />;
 
-  renderItem = ({item: resource}: {item: Lesson}) => {
+  renderItem = ({item: resource}: {item: Resource}) => {
     const {selected} = this.props;
     const isSelected = selected === resource._id;
     const selectedSuffix = (isSelected && '-selected') || '';

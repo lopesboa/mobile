@@ -7,17 +7,19 @@ import renderer from 'react-test-renderer';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress} from '../utils/tests';
 import {getCleanUri} from '../modules/uri';
+import {reduceToResources} from '../layer/data/mappers';
 import Resource from './resource';
 
-const video = createVideo({ref: 'les_1', description: 'Foo bar baz'});
-const pdf = createPdf({ref: 'les_2', description: 'Foo bar baz'});
+const _video = createVideo({ref: 'les_1', description: 'Foo bar baz'});
+const _pdf = createPdf({ref: 'les_2', description: 'Foo bar baz'});
+const [video, pdf] = reduceToResources([_video, _pdf]);
 
 storiesOf('Resource', module)
   .add('Video', () => (
     <TestContextProvider>
       <Resource
         type={video.type}
-        url={video.mediaUrl}
+        url={video.url}
         description={video.description}
         thumbnail={video.poster}
         height={200}
@@ -29,7 +31,7 @@ storiesOf('Resource', module)
     <TestContextProvider>
       <Resource
         type={pdf.type}
-        url={pdf.mediaUrl}
+        url={pdf.url}
         description={pdf.description}
         thumbnail={pdf.poster}
         height={200}
@@ -64,7 +66,7 @@ if (process.env.NODE_ENV === 'test') {
         <TestContextProvider>
           <Resource
             type={pdf.type}
-            url={pdf.mediaUrl}
+            url={pdf.url}
             description={pdf.description}
             thumbnail={pdf.poster}
             height={200}
@@ -76,7 +78,7 @@ if (process.env.NODE_ENV === 'test') {
       const button = component.root.find(el => el.props.testID === 'button-open-pdf');
       button.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
-      expect(handlePress.mock.calls[0]).toEqual([getCleanUri(pdf.mediaUrl), pdf.description]);
+      expect(handlePress.mock.calls[0]).toEqual([getCleanUri(pdf.url), pdf.description]);
     });
   });
 }

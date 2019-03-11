@@ -5,6 +5,8 @@ import {storiesOf} from '@storybook/react-native';
 
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
+import type {Resource} from '../types';
+import {reduceToResources} from '../layer/data/mappers';
 import {Component as Lesson} from './lesson';
 
 const video = createVideo({ref: 'les_1', description: 'Foo bar baz - Video'});
@@ -14,7 +16,8 @@ const videoSubtitles = createVideo({
   description: 'Foo bar baz - Video subtitles',
   subtitleRef: 'foobarbaz'
 });
-const resources = [video, videoSubtitles, pdf];
+const lessons = [video, videoSubtitles, pdf];
+const resources: Array<Resource> = reduceToResources(lessons);
 
 storiesOf('Lesson', module)
   .add('Default', () => (

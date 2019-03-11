@@ -17,10 +17,34 @@ export const createVideo = ({
   _id: ref,
   poster,
   description,
+  videoId: 'KovTu3zU',
+  mediaRef: 'med_jwp_Vy4JQKFhN',
+  mimeType: 'application/jwplayer',
+  ref,
+  // $FlowFixMe img is not defined in progression-engine
+  type: RESOURCE_TYPE.VIDEO,
+  subtitleRef,
+  subtitles: [],
+  posters: [],
+  src: []
+});
+
+export const createVimeoVideo = ({
+  ref,
+  description = 'Des données au service de tous',
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
+  subtitleRef
+}: {
+  ref: string,
+  description?: string,
+  poster?: string,
+  subtitleRef?: string
+}): Lesson => ({
+  _id: ref,
+  poster,
+  description,
   videoId: '303449523',
-  mediaRef: 'med_Vy4JQKFhN',
-  mediaUrl: `//player.vimeo.com/external/303449523.m3u8?s=998d51ae0dfdc40f80faf413bb78f31f7daacee5&oauth2_token_id=41150307`,
-  downloadUrl: `//player.vimeo.com/external/303449523.sd.mp4?s=ee82aad8a793d94b289638b4bd8823c30964ba36&profile_id=164&oauth2_token_id=411503075`,
+  mediaRef: 'med_vimeo_Vy4JQKFhN',
   mimeType: 'application/vimeo',
   ref,
   // $FlowFixMe img is not defined in progression-engine

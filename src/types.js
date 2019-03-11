@@ -2,7 +2,8 @@
 
 import type {
   ContentType as ContentTypeBase,
-  GenericContent as GenericContentBase
+  GenericContent as GenericContentBase,
+  Lesson
 } from '@coorpacademy/progression-engine';
 
 export type QuestionChoiceInputType = 'text' | 'select';
@@ -31,6 +32,11 @@ export type Question = string;
 export type Engine = 'learner' | 'microlearning';
 
 export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure' | 'node';
+
+export type Resource = {|
+  ...Lesson,
+  url: string
+|};
 
 export type SliderProps = {|
   minValue?: number,

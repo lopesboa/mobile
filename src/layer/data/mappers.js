@@ -10,6 +10,8 @@ import type {
 
 import type {Lesson} from '@coorpacademy/progression-engine';
 
+import {getResourceUrl} from '../../modules/uri';
+import type {Resource} from '../../types';
 import type {ExitNode, Chapter, Slide, Level} from './_types';
 
 export const mapToExitNodeAPI = (rawExitNode: ExitNode): ExitNodeAPI => ({
@@ -51,6 +53,18 @@ export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
   type: rawLesson.type,
   videoId: rawLesson.videoId
 });
+
+export const reduceToResources = (lessons: Array<Lesson>): Array<Resource> => {
+  const resources = lessons.reduce((result, resource) => {
+    const url = getResourceUrl(resource);
+    if (url !== undefined) {
+      result.push({...resource, url});
+    }
+    return result;
+  }, []);
+
+  return resources;
+};
 
 export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
   _id: rawLevel._id,
