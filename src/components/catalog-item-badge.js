@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     borderBottomEndRadius: theme.radius.medium,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingLeft: theme.spacing.tiny,
+    paddingRight: theme.spacing.tiny + theme.spacing.micro
   },
   label: {
-    paddingLeft: theme.spacing.tiny,
-    paddingRight: theme.spacing.tiny + theme.spacing.micro,
     fontWeight: theme.fontWeight.bold,
     textAlign: 'center'
   }
