@@ -7,21 +7,28 @@ import theme from '../modules/theme';
 import Html from './html';
 
 type Props = {|
-  children: string
+  children: string,
+  isTextCentered?: boolean
 |};
 
 const styles = StyleSheet.create({
   text: {
     color: theme.colors.black,
-    textAlign: 'center',
     fontWeight: theme.fontWeight.bold
   }
 });
 
-const QuestionTitle = ({children}: Props) => (
-  <Html fontSize={theme.fontSize.large} style={styles.text} testID="question-title">
-    {children}
-  </Html>
-);
+const QuestionTitle = ({children, isTextCentered}: Props) => {
+  return (
+    <Html
+      fontSize={theme.fontSize.large}
+      style={styles.text}
+      isTextCentered
+      testID="question-title"
+    >
+      {children}
+    </Html>
+  );
+};
 
 export default QuestionTitle;

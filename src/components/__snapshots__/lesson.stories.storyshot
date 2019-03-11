@@ -7,7 +7,8 @@ exports[`Storyshots Lesson PDF selected 1`] = `
   style={
     Object {
       "flexGrow": 1,
-      "paddingTop": 24,
+      "paddingBottom": 24,
+      "paddingTop": 32,
     }
   }
   testID="lesson"
@@ -29,22 +30,39 @@ exports[`Storyshots Lesson PDF selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What was the nationality of Steve Jobs?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What was the nationality of Steve Jobs?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1287,21 +1305,38 @@ exports[`Storyshots Lesson PDF selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#546E7A",
-                "fontSize": 12,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Win 4 additional stars in this chapter the first time you view a lesson!
+            <Text
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 12,
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Win 4 additional stars in this chapter the first time you view a lesson!
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1315,7 +1350,8 @@ exports[`Storyshots Lesson Video selected 1`] = `
   style={
     Object {
       "flexGrow": 1,
-      "paddingTop": 24,
+      "paddingBottom": 24,
+      "paddingTop": 32,
     }
   }
   testID="lesson"
@@ -1337,22 +1373,39 @@ exports[`Storyshots Lesson Video selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What was the nationality of Steve Jobs?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What was the nationality of Steve Jobs?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -2490,21 +2543,38 @@ exports[`Storyshots Lesson Video selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#546E7A",
-                "fontSize": 12,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Win 4 additional stars in this chapter the first time you view a lesson!
+            <Text
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 12,
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Win 4 additional stars in this chapter the first time you view a lesson!
+            </Text>
           </Text>
         </Text>
       </View>
@@ -2518,7 +2588,8 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
   style={
     Object {
       "flexGrow": 1,
-      "paddingTop": 24,
+      "paddingBottom": 24,
+      "paddingTop": 32,
     }
   }
   testID="lesson"
@@ -2540,22 +2611,39 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What was the nationality of Steve Jobs?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What was the nationality of Steve Jobs?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -3693,21 +3781,38 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#546E7A",
-                "fontSize": 12,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Win 4 additional stars in this chapter the first time you view a lesson!
+            <Text
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 12,
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Win 4 additional stars in this chapter the first time you view a lesson!
+            </Text>
           </Text>
         </Text>
       </View>

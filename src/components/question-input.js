@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   spaced: {
-    paddingBottom: ROW_SPACE
+    paddingVertical: ROW_SPACE
   },
   fullWitdh: {
     width: '100%'

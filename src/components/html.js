@@ -13,13 +13,15 @@ type Props = {|
   containerStyle?: GenericStyleProp,
   imageStyle?: GenericStyleProp,
   style?: GenericStyleProp,
-  testID?: string
+  testID?: string,
+  isTextCentered?: boolean
 |};
 
 // Don't use StyleSheet there, it's not a react style
 const styles = {
   p: {
-    marginVertical: 0
+    marginVertical: 0,
+    textAlign: 'center'
   }
 };
 
@@ -30,7 +32,8 @@ const Html = ({
   imageStyle,
   style,
   onLinkPress,
-  testID
+  testID,
+  isTextCentered
 }: Props) => {
   const tagsStyles = {
     ...styles,
@@ -64,7 +67,11 @@ const Html = ({
   return (
     <View testID={testID} style={containerStyle}>
       <HtmlBase
-        html={`${children}`}
+        // to text-align center on android
+        // we have to encapsulate between <p> tag
+        // and use custom style define on <p>
+        // definition in component style doesn't work
+        html={isTextCentered ? `<p>${children}</p>` : `${children}`}
         tagsStyles={tagsStyles}
         baseFontStyle={baseFontStyle}
         onLinkPress={onLinkPress}

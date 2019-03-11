@@ -25,12 +25,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    padding: theme.spacing.small,
-    paddingBottom: theme.spacing.small + ROW_SPACE,
-    paddingHorizontal: theme.spacing.tiny,
+    padding: ROW_SPACE,
     color: theme.colors.black,
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.regular
+    fontSize: theme.fontSize.regular,
+    lineHeight: 30
   }
 });
 

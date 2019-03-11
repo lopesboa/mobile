@@ -11,22 +11,39 @@ exports[`Storyshots QuestionTitle Default 1`] = `
       selectable={false}
       style={
         Array [
+          Object {
+            "marginVertical": 0,
+            "textAlign": "center",
+          },
           Object {},
           Object {},
         ]
       }
     >
       <Text
+        selectable={false}
         style={
-          Object {
-            "color": "#14171A",
-            "fontSize": 17,
-            "fontWeight": "700",
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {},
+          ]
         }
       >
-        What was the nationality of Steve Jobs?
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 17,
+              "fontWeight": "700",
+              "marginBottom": 17,
+              "marginTop": 17,
+              "marginVertical": 0,
+              "textAlign": "center",
+            }
+          }
+        >
+          What was the nationality of Steve Jobs?
+        </Text>
       </Text>
     </Text>
   </View>

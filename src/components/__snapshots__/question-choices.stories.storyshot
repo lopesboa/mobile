@@ -355,7 +355,7 @@ exports[`Storyshots QuestionChoices QCM Basic 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       Object {
         "width": "100%",
@@ -1380,9 +1380,8 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           "color": "#14171A",
           "fontSize": 15,
           "fontWeight": "700",
-          "padding": 16,
-          "paddingBottom": 24,
-          "paddingHorizontal": 8,
+          "lineHeight": 30,
+          "padding": 8,
         }
       }
       testID="question-part-1"
@@ -1393,7 +1392,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       style={
         Array [
           Object {
-            "paddingBottom": 8,
+            "paddingVertical": 8,
           },
           false,
         ]
@@ -1435,9 +1434,8 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           "color": "#14171A",
           "fontSize": 15,
           "fontWeight": "700",
-          "padding": 16,
-          "paddingBottom": 24,
-          "paddingHorizontal": 8,
+          "lineHeight": 30,
+          "padding": 8,
         }
       }
       testID="question-part-3"
@@ -1448,7 +1446,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       style={
         Array [
           Object {
-            "paddingBottom": 8,
+            "paddingVertical": 8,
           },
           false,
         ]
@@ -1899,9 +1897,8 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           "color": "#14171A",
           "fontSize": 15,
           "fontWeight": "700",
-          "padding": 16,
-          "paddingBottom": 24,
-          "paddingHorizontal": 8,
+          "lineHeight": 30,
+          "padding": 8,
         }
       }
       testID="question-part-5"
@@ -1912,7 +1909,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       style={
         Array [
           Object {
-            "paddingBottom": 8,
+            "paddingVertical": 8,
           },
           false,
         ]
@@ -1957,9 +1954,8 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           "color": "#14171A",
           "fontSize": 15,
           "fontWeight": "700",
-          "padding": 16,
-          "paddingBottom": 24,
-          "paddingHorizontal": 8,
+          "lineHeight": 30,
+          "padding": 8,
         }
       }
       testID="question-part-7"
@@ -1970,7 +1966,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       style={
         Array [
           Object {
-            "paddingBottom": 8,
+            "paddingVertical": 8,
           },
           false,
         ]

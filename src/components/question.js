@@ -49,8 +49,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.small
   },
   explanation: {
-    color: theme.colors.gray.medium,
-    textAlign: 'center'
+    color: theme.colors.gray.medium
   },
   questionContainer: {
     paddingHorizontal: theme.spacing.base
@@ -92,7 +91,12 @@ const Question = ({
       <View style={styles.questionContainer}>
         <QuestionTitle>{header}</QuestionTitle>
         <Space type="small" />
-        <Html fontSize={theme.fontSize.regular} style={styles.explanation} testID="explanation">
+        <Html
+          fontSize={theme.fontSize.regular}
+          style={styles.explanation}
+          isTextCentered
+          testID="explanation"
+        >
           {explanation}
         </Html>
       </View>

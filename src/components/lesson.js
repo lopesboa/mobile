@@ -28,7 +28,8 @@ type Props = {|
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: theme.spacing.base,
+    paddingTop: theme.spacing.base + theme.spacing.tiny,
+    paddingBottom: theme.spacing.base,
     flexGrow: 1
   },
   browser: {
@@ -44,8 +45,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.xlarge
   },
   bottomText: {
-    color: theme.colors.gray.dark,
-    textAlign: 'center'
+    color: theme.colors.gray.dark
   }
 });
 
@@ -80,7 +80,7 @@ const Lesson = (props: Props) => {
         return (
           <View testID="lesson" style={styles.container}>
             <View style={styles.questionContainer}>
-              <QuestionTitle>{header}</QuestionTitle>
+              <QuestionTitle isTextCentered>{header}</QuestionTitle>
             </View>
             <Space type="base" />
             <Resource
@@ -104,6 +104,7 @@ const Lesson = (props: Props) => {
                 testID="additional-stars-note"
                 fontSize={theme.fontSize.small}
                 style={styles.bottomText}
+                isTextCentered
               >
                 {winAdditionalStars}
               </Html>

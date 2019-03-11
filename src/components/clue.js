@@ -20,13 +20,13 @@ export type Props = {|
 
 const styles: GenericStyleProp = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.base,
+    paddingTop: theme.spacing.base + theme.spacing.tiny,
+    paddingBottom: theme.spacing.base,
     flexGrow: 1
   },
   text: {
     color: theme.colors.white,
-    fontSize: theme.fontSize.extraLarge,
-    textAlign: 'center'
+    fontSize: theme.fontSize.extraLarge
   },
   buttonText: {
     fontSize: theme.fontSize.large
@@ -45,7 +45,7 @@ const styles: GenericStyleProp = StyleSheet.create({
 const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
   <View style={styles.container} testID={testID}>
     <View style={styles.questionContainer}>
-      <QuestionTitle>{header}</QuestionTitle>
+      <QuestionTitle isTextCentered>{header}</QuestionTitle>
     </View>
     <Space type="base" />
     <FlippableCard
@@ -54,7 +54,7 @@ const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
       slideId={slideId}
       onPress={onPress}
     >
-      <Html fontSize={theme.fontSize.extraLarge} style={styles.text}>
+      <Html fontSize={theme.fontSize.extraLarge} style={styles.text} isTextCentered>
         {clue}
       </Html>
     </FlippableCard>

@@ -5,7 +5,7 @@ exports[`Storyshots QuestionInput Input (full width) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       Object {
         "width": "100%",
@@ -51,7 +51,7 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]
@@ -503,7 +503,7 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       Object {
         "width": "100%",
@@ -957,7 +957,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]
@@ -1414,7 +1414,7 @@ exports[`Storyshots QuestionInput Select 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]
@@ -1866,7 +1866,7 @@ exports[`Storyshots QuestionInput Text (disabled) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]
@@ -1908,7 +1908,7 @@ exports[`Storyshots QuestionInput Text (not empty) 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]
@@ -1954,7 +1954,7 @@ exports[`Storyshots QuestionInput Text 1`] = `
   style={
     Array [
       Object {
-        "paddingBottom": 8,
+        "paddingVertical": 8,
       },
       false,
     ]

@@ -29,22 +29,39 @@ exports[`Storyshots Question BasicQuestion 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -67,21 +84,38 @@ exports[`Storyshots Question BasicQuestion 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -106,7 +140,7 @@ exports[`Storyshots Question BasicQuestion 1`] = `
       style={
         Array [
           Object {
-            "paddingBottom": 8,
+            "paddingVertical": 8,
           },
           Object {
             "width": "100%",
@@ -258,22 +292,39 @@ exports[`Storyshots Question Option selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -296,21 +347,38 @@ exports[`Storyshots Question Option selected 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -782,22 +850,39 @@ exports[`Storyshots Question QCM 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -820,21 +905,38 @@ exports[`Storyshots Question QCM 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1314,22 +1416,39 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1352,21 +1471,38 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1860,22 +1996,39 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -1898,21 +2051,38 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -2381,22 +2551,39 @@ exports[`Storyshots Question QCM Graphic 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -2419,21 +2606,38 @@ exports[`Storyshots Question QCM Graphic 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -3075,22 +3279,39 @@ exports[`Storyshots Question Template 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -3113,21 +3334,38 @@ exports[`Storyshots Question Template 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>
@@ -3168,9 +3406,8 @@ exports[`Storyshots Question Template 1`] = `
               "color": "#14171A",
               "fontSize": 15,
               "fontWeight": "700",
-              "padding": 16,
-              "paddingBottom": 24,
-              "paddingHorizontal": 8,
+              "lineHeight": 30,
+              "padding": 8,
             }
           }
           testID="question-part-1"
@@ -3181,7 +3418,7 @@ exports[`Storyshots Question Template 1`] = `
           style={
             Array [
               Object {
-                "paddingBottom": 8,
+                "paddingVertical": 8,
               },
               false,
             ]
@@ -3223,9 +3460,8 @@ exports[`Storyshots Question Template 1`] = `
               "color": "#14171A",
               "fontSize": 15,
               "fontWeight": "700",
-              "padding": 16,
-              "paddingBottom": 24,
-              "paddingHorizontal": 8,
+              "lineHeight": 30,
+              "padding": 8,
             }
           }
           testID="question-part-3"
@@ -3236,7 +3472,7 @@ exports[`Storyshots Question Template 1`] = `
           style={
             Array [
               Object {
-                "paddingBottom": 8,
+                "paddingVertical": 8,
               },
               false,
             ]
@@ -3687,9 +3923,8 @@ exports[`Storyshots Question Template 1`] = `
               "color": "#14171A",
               "fontSize": 15,
               "fontWeight": "700",
-              "padding": 16,
-              "paddingBottom": 24,
-              "paddingHorizontal": 8,
+              "lineHeight": 30,
+              "padding": 8,
             }
           }
           testID="question-part-5"
@@ -3700,7 +3935,7 @@ exports[`Storyshots Question Template 1`] = `
           style={
             Array [
               Object {
-                "paddingBottom": 8,
+                "paddingVertical": 8,
               },
               false,
             ]
@@ -3745,9 +3980,8 @@ exports[`Storyshots Question Template 1`] = `
               "color": "#14171A",
               "fontSize": 15,
               "fontWeight": "700",
-              "padding": 16,
-              "paddingBottom": 24,
-              "paddingHorizontal": 8,
+              "lineHeight": 30,
+              "padding": 8,
             }
           }
           testID="question-part-7"
@@ -3758,7 +3992,7 @@ exports[`Storyshots Question Template 1`] = `
           style={
             Array [
               Object {
-                "paddingBottom": 8,
+                "paddingVertical": 8,
               },
               false,
             ]
@@ -4325,22 +4559,39 @@ exports[`Storyshots Question With image 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            What is the online Apple application store called?
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              What is the online Apple application store called?
+            </Text>
           </Text>
         </Text>
       </View>
@@ -4363,21 +4614,38 @@ exports[`Storyshots Question With image 1`] = `
           selectable={false}
           style={
             Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
               Object {},
               Object {},
             ]
           }
         >
           <Text
+            selectable={false}
             style={
-              Object {
-                "color": "#90A4AE",
-                "fontSize": 15,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {},
+              ]
             }
           >
-            Select the correct answers
+            <Text
+              style={
+                Object {
+                  "color": "#90A4AE",
+                  "fontSize": 15,
+                  "marginBottom": 15,
+                  "marginTop": 15,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Select the correct answers
+            </Text>
           </Text>
         </Text>
       </View>

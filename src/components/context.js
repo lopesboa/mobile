@@ -31,7 +31,8 @@ export type Props = {|
 
 const styles: GenericStyleProp = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.base,
+    paddingTop: theme.spacing.base + theme.spacing.tiny,
+    paddingBottom: theme.spacing.base,
     flexGrow: 1,
     justifyContent: 'space-between'
   },
@@ -131,7 +132,7 @@ class Context extends React.PureComponent<Props> {
     return (
       <View style={styles.container} testID={testID}>
         <View style={styles.titleContainer}>
-          <Title>{header}</Title>
+          <Title isTextCentered>{header}</Title>
         </View>
         {this.renderResource(mediaSources)}
         <View style={styles.descriptionContainer}>
@@ -140,6 +141,7 @@ class Context extends React.PureComponent<Props> {
             style={styles.text}
             imageStyle={styles.imageStyle}
             onLinkPress={onOpenBrowser}
+            isTextCentered
           >
             {description}
           </Html>
