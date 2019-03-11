@@ -101,6 +101,39 @@ describe('cards', () => {
       await expect(result).resolves.toEqual(expected);
     });
 
+    it('should return unique cards', async () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      const favorites = cards.slice(0, 3);
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              hits: favorites
+            })
+        });
+      });
+      const recommendations = cards.slice(1, 5);
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              hits: recommendations
+            })
+        });
+      });
+
+      const {fetchCards} = require('./cards');
+      const result = fetchCards(TOKEN, HOST, LANGUAGE);
+
+      const expected = cards.slice(0, 5);
+      await expect(result).resolves.toEqual(expected);
+    });
+
     it('should fetch recommendations to fill', async () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false

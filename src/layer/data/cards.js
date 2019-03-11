@@ -5,6 +5,7 @@ import {__E2E__} from '../../modules/environment';
 import {createDisciplinesCards} from '../../__fixtures__/cards';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
+import {uniqBy} from '../../utils';
 import type {Cards} from './_types';
 
 const fetchFavoriteCards = async (
@@ -51,12 +52,19 @@ export const fetchCards = async (
 
     return cards;
   }
-  const [favorites, recommendations] = await Promise.all([
-    fetchFavoriteCards(token, host, language),
-    fetchRecommendationCards(token, host, language)
-  ]);
 
-  return [...favorites, ...recommendations].slice(0, LIMIT_CARDS);
+  const favoritesP = fetchFavoriteCards(token, host, language);
+  const recommendationsP = fetchRecommendationCards(token, host, language);
+
+  const favorites = await favoritesP;
+
+  if (favorites.length >= 5) return favorites.slice(0, 5);
+  const recommendations = await recommendationsP;
+
+  return uniqBy(card => card.universalRef, [...favorites, ...recommendations]).slice(
+    0,
+    LIMIT_CARDS
+  );
 };
 
 export default {
