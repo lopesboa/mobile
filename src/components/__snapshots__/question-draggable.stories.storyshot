@@ -42,29 +42,38 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-1"
+        testID="choice-1-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -85,7 +94,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -119,29 +128,38 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-2"
+        testID="choice-2-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -162,7 +180,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -205,29 +223,35 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-3"
+        testID="choice-3-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -282,29 +306,35 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-4"
+        testID="choice-4-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -359,29 +389,35 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-6666"
+        testID="choice-6666-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -462,29 +498,38 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-1"
+        testID="choice-1-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -505,7 +550,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -539,29 +584,38 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-2"
+        testID="choice-2-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -582,7 +636,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -625,29 +679,35 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-3"
+        testID="choice-3-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -702,29 +762,35 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-4"
+        testID="choice-4-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -779,29 +845,35 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-6666"
+        testID="choice-6666-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -882,29 +954,38 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-1"
+        testID="choice-1-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -925,7 +1006,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -959,29 +1040,38 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
             Object {
-              "flexGrow": 1,
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
-        testID="selected-choice-2"
+        testID="choice-2-selected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -1002,7 +1092,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 <Text
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -1045,29 +1135,35 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-3"
+        testID="choice-3-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -1122,29 +1218,35 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-4"
+        testID="choice-4-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }
@@ -1199,29 +1301,35 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
         style={
           Array [
             Object {
+              "alignItems": "stretch",
               "backgroundColor": "#FFFFFF",
               "borderColor": "rgba(0, 0, 0, 0.1)",
               "borderRadius": 3,
               "borderStyle": "solid",
               "borderWidth": 1,
+              "flexDirection": "row",
               "overflow": "hidden",
             },
             false,
-            Object {
-              "flexGrow": 1,
-            },
           ]
         }
-        testID="unselected-choice-6666"
+        testID="choice-6666-unselected"
       >
         <View
           style={
             Array [
               Object {
-                "justifyContent": "flex-start",
+                "flex": 1,
+                "paddingLeft": 16,
+                "paddingRight": 8,
+                "paddingVertical": 24,
               },
               Object {
+                "flex": 0,
                 "padding": 16,
+                "paddingLeft": undefined,
+                "paddingRight": undefined,
+                "paddingVertical": undefined,
               },
             ]
           }

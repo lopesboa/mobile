@@ -48,13 +48,13 @@ class DropZone extends React.PureComponent<Props> {
 
   render() {
     const {choices} = this.props;
-
     const mappedSortedChoices = choices.map(item => (
       <QuestionChoice
         style={styles.choice}
         key={item._id}
-        fontSize={theme.fontSize.medium}
-        testID={`selected-choice-${item._id}`}
+        squeezed
+        isSelected
+        testID={`choice-${item._id}`}
         onPress={this.handlePress(item)}
       >
         {item.label}

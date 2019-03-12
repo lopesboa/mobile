@@ -26,10 +26,10 @@ if (process.env.NODE_ENV === 'test') {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();
       const component = renderer.create(<DropZone choices={choices} onPress={handleItemPress} />);
-      const questionItem = component.root.find(el => el.props.testID === `selected-choice-1`);
+      const questionItem = component.root.find(el => el.props.testID === 'choice-4');
       questionItem.props.onPress();
       expect(handleItemPress.mock.calls.length).toBe(1);
-      expect(handleItemPress.mock.calls[0]).toEqual([choices[0]]);
+      expect(handleItemPress.mock.calls[0]).toEqual([choices[3]]);
     });
   });
 }

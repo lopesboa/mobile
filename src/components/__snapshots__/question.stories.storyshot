@@ -422,17 +422,16 @@ exports[`Storyshots Question Option selected 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-1"
@@ -441,12 +440,12 @@ exports[`Storyshots Question Option selected 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -509,19 +508,18 @@ exports[`Storyshots Question Option selected 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                   "borderColor": "#00B0FF",
-                },
-                Object {
-                  "flexGrow": 1,
                 },
               ]
             }
@@ -531,12 +529,12 @@ exports[`Storyshots Question Option selected 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -599,17 +597,16 @@ exports[`Storyshots Question Option selected 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-3"
@@ -618,12 +615,12 @@ exports[`Storyshots Question Option selected 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -686,17 +683,16 @@ exports[`Storyshots Question Option selected 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-4"
@@ -705,12 +701,12 @@ exports[`Storyshots Question Option selected 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -980,17 +976,16 @@ exports[`Storyshots Question QCM 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-1"
@@ -999,12 +994,12 @@ exports[`Storyshots Question QCM 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -1067,17 +1062,16 @@ exports[`Storyshots Question QCM 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-2"
@@ -1086,12 +1080,12 @@ exports[`Storyshots Question QCM 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -1154,17 +1148,16 @@ exports[`Storyshots Question QCM 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-3"
@@ -1173,12 +1166,12 @@ exports[`Storyshots Question QCM 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -1241,17 +1234,16 @@ exports[`Storyshots Question QCM 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-4"
@@ -1260,12 +1252,12 @@ exports[`Storyshots Question QCM 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -1590,29 +1582,35 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-1"
+              testID="choice-1-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -1667,29 +1665,35 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-2"
+              testID="choice-2-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -1744,29 +1748,35 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-3"
+              testID="choice-3-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -1821,29 +1831,35 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-4"
+              testID="choice-4-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -2147,29 +2163,38 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                   Object {
-                    "flexGrow": 1,
+                    "backgroundColor": "#00B0FF",
+                    "borderColor": "#00B0FF",
                   },
                 ]
               }
-              testID="selected-choice-2"
+              testID="choice-2-selected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -2190,7 +2215,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                       <Text
                         style={
                           Object {
-                            "color": "#14171A",
+                            "color": "#FFFFFF",
                             "fontSize": 13,
                             "fontWeight": "700",
                           }
@@ -2233,29 +2258,35 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-1"
+              testID="choice-1-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -2310,29 +2341,35 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-3"
+              testID="choice-3-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -2387,29 +2424,35 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="unselected-choice-4"
+              testID="choice-4-unselected"
             >
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
                     Object {
+                      "flex": 0,
                       "padding": 16,
+                      "paddingLeft": undefined,
+                      "paddingRight": undefined,
+                      "paddingVertical": undefined,
                     },
                   ]
                 }
@@ -2690,67 +2733,52 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
               testID="question-choice-1"
             >
               <View
                 style={
-                  Object {
-                    "borderTopLeftRadius": 3,
-                    "borderTopRightRadius": 3,
-                    "height": 120,
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {
+                      "borderColor": "rgba(0, 0, 0, 0.1)",
+                      "borderRightWidth": 1,
+                      "height": "100%",
+                      "width": "25%",
+                    },
+                    false,
+                  ]
                 }
               >
-                <Image
-                  resizeMode="cover"
-                  source={
+                <View
+                  onLayout={[Function]}
+                  style={
                     Object {
-                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                      "flex": 1,
                     }
                   }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      Object {
-                        "height": 120,
-                        "width": "100%",
-                      },
-                      undefined,
-                    ]
-                  }
-                  testID="question-choice-1-img"
                 />
               </View>
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
-                    Object {
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
+                    false,
                   ]
                 }
               >
@@ -2792,120 +2820,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               }
             }
           />
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "rgba(0, 0, 0, 0.1)",
-                    "borderRadius": 3,
-                    "borderStyle": "solid",
-                    "borderWidth": 1,
-                    "overflow": "hidden",
-                  },
-                  false,
-                  Object {
-                    "flexGrow": 1,
-                  },
-                ]
-              }
-              testID="question-choice-2"
-            >
-              <View
-                style={
-                  Object {
-                    "borderTopLeftRadius": 3,
-                    "borderTopRightRadius": 3,
-                    "height": 120,
-                    "width": "100%",
-                  }
-                }
-              >
-                <Image
-                  resizeMode="cover"
-                  source={
-                    Object {
-                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      Object {
-                        "height": 120,
-                        "width": "100%",
-                      },
-                      undefined,
-                    ]
-                  }
-                  testID="question-choice-2-img"
-                />
-              </View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "justifyContent": "flex-start",
-                    },
-                    Object {
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
-                  ]
-                }
-              >
-                <View>
-                  <View
-                    style={Object {}}
-                  >
-                    <Text
-                      selectable={false}
-                      style={
-                        Array [
-                          Object {},
-                          Object {},
-                        ]
-                      }
-                    >
-                      <Text
-                        style={
-                          Object {
-                            "color": "#14171A",
-                            "fontSize": 15,
-                            "fontWeight": "700",
-                          }
-                        }
-                      >
-                        App Store
-                      </Text>
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
         </View>
       </View>
       <View>
@@ -2945,67 +2859,178 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
-              testID="question-choice-3"
+              testID="question-choice-2"
             >
               <View
                 style={
-                  Object {
-                    "borderTopLeftRadius": 3,
-                    "borderTopRightRadius": 3,
-                    "height": 120,
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {
+                      "borderColor": "rgba(0, 0, 0, 0.1)",
+                      "borderRightWidth": 1,
+                      "height": "100%",
+                      "width": "25%",
+                    },
+                    false,
+                  ]
                 }
               >
-                <Image
-                  resizeMode="cover"
-                  source={
+                <View
+                  onLayout={[Function]}
+                  style={
                     Object {
-                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                      "flex": 1,
                     }
                   }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      Object {
-                        "height": 120,
-                        "width": "100%",
-                      },
-                      undefined,
-                    ]
-                  }
-                  testID="question-choice-3-img"
                 />
               </View>
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
+                    false,
+                  ]
+                }
+              >
+                <View>
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#14171A",
+                            "fontSize": 15,
+                            "fontWeight": "700",
+                          }
+                        }
+                      >
+                        App Store
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "stretch",
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "rgba(0, 0, 0, 0.1)",
+                    "borderRadius": 3,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "flexDirection": "row",
+                    "overflow": "hidden",
+                  },
+                  false,
+                ]
+              }
+              testID="question-choice-3"
+            >
+              <View
+                style={
+                  Array [
                     Object {
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
+                      "borderColor": "rgba(0, 0, 0, 0.1)",
+                      "borderRightWidth": 1,
+                      "height": "100%",
+                      "width": "25%",
                     },
+                    false,
+                  ]
+                }
+              >
+                <View
+                  onLayout={[Function]}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
+                    },
+                    false,
                   ]
                 }
               >
@@ -3047,6 +3072,25 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               }
             }
           />
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "flexDirection": "row",
+            }
+          }
+        >
           <View
             accessible={true}
             isTVSelectable={true}
@@ -3067,67 +3111,52 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               style={
                 Array [
                   Object {
+                    "alignItems": "stretch",
                     "backgroundColor": "#FFFFFF",
                     "borderColor": "rgba(0, 0, 0, 0.1)",
                     "borderRadius": 3,
                     "borderStyle": "solid",
                     "borderWidth": 1,
+                    "flexDirection": "row",
                     "overflow": "hidden",
                   },
                   false,
-                  Object {
-                    "flexGrow": 1,
-                  },
                 ]
               }
               testID="question-choice-4"
             >
               <View
                 style={
-                  Object {
-                    "borderTopLeftRadius": 3,
-                    "borderTopRightRadius": 3,
-                    "height": 120,
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {
+                      "borderColor": "rgba(0, 0, 0, 0.1)",
+                      "borderRightWidth": 1,
+                      "height": "100%",
+                      "width": "25%",
+                    },
+                    false,
+                  ]
                 }
               >
-                <Image
-                  resizeMode="cover"
-                  source={
+                <View
+                  onLayout={[Function]}
+                  style={
                     Object {
-                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                      "flex": 1,
                     }
                   }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      },
-                      Object {
-                        "height": 120,
-                        "width": "100%",
-                      },
-                      undefined,
-                    ]
-                  }
-                  testID="question-choice-4-img"
                 />
               </View>
               <View
                 style={
                   Array [
                     Object {
-                      "justifyContent": "flex-start",
+                      "flex": 1,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "paddingVertical": 24,
                     },
-                    Object {
-                      "paddingHorizontal": 24,
-                      "paddingVertical": 16,
-                    },
+                    false,
                   ]
                 }
               >
@@ -3161,6 +3190,14 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               </View>
             </View>
           </View>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
         </View>
       </View>
     </View>
@@ -4734,17 +4771,16 @@ exports[`Storyshots Question With image 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-1"
@@ -4753,12 +4789,12 @@ exports[`Storyshots Question With image 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -4821,17 +4857,16 @@ exports[`Storyshots Question With image 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-2"
@@ -4840,12 +4875,12 @@ exports[`Storyshots Question With image 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -4908,17 +4943,16 @@ exports[`Storyshots Question With image 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-3"
@@ -4927,12 +4961,12 @@ exports[`Storyshots Question With image 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >
@@ -4995,17 +5029,16 @@ exports[`Storyshots Question With image 1`] = `
             style={
               Array [
                 Object {
+                  "alignItems": "stretch",
                   "backgroundColor": "#FFFFFF",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 3,
                   "borderStyle": "solid",
                   "borderWidth": 1,
+                  "flexDirection": "row",
                   "overflow": "hidden",
                 },
                 false,
-                Object {
-                  "flexGrow": 1,
-                },
               ]
             }
             testID="question-choice-4"
@@ -5014,12 +5047,12 @@ exports[`Storyshots Question With image 1`] = `
               style={
                 Array [
                   Object {
-                    "justifyContent": "flex-start",
+                    "flex": 1,
+                    "paddingLeft": 16,
+                    "paddingRight": 8,
+                    "paddingVertical": 24,
                   },
-                  Object {
-                    "paddingHorizontal": 24,
-                    "paddingVertical": 16,
-                  },
+                  false,
                 ]
               }
             >

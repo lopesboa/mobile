@@ -110,15 +110,8 @@ class QuestionChoices extends React.PureComponent<Props> {
         return (
           <View testID="question-choices">
             {items.map((item, index) => {
-              const nextIndex = index + 1;
-              const nextItem = items[nextIndex];
-
-              if (index % 2 === 1) {
-                return null;
-              }
-
               return (
-                <View key={`question-choice-row-${parseInt(index / 2) + 1}`}>
+                <View key={`question-choice-row-${item._id}`}>
                   {index > 0 && <Space />}
                   <View style={styles.cards}>
                     <QuestionChoice
@@ -132,19 +125,6 @@ class QuestionChoices extends React.PureComponent<Props> {
                       {item.label}
                     </QuestionChoice>
                     <Space />
-                    {nextItem && (
-                      <QuestionChoice
-                        onPress={this.handleItemPress(nextItem)}
-                        media={nextItem.media}
-                        isDisabled={isDisabled}
-                        isSelected={isSelected(nextItem)}
-                        testID={`question-choice-${nextItem._id}`}
-                        style={styles.card}
-                      >
-                        {nextItem.label}
-                      </QuestionChoice>
-                    )}
-                    {!nextItem && <View style={styles.card} />}
                   </View>
                 </View>
               );

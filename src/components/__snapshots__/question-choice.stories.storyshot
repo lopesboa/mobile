@@ -20,17 +20,16 @@ exports[`Storyshots QuestionChoice Default 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "stretch",
           "backgroundColor": "#FFFFFF",
           "borderColor": "rgba(0, 0, 0, 0.1)",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
           "overflow": "hidden",
         },
         false,
-        Object {
-          "flexGrow": 1,
-        },
       ]
     }
     testID="question-choice-1"
@@ -39,12 +38,12 @@ exports[`Storyshots QuestionChoice Default 1`] = `
       style={
         Array [
           Object {
-            "justifyContent": "flex-start",
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
           },
-          Object {
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
+          false,
         ]
       }
     >
@@ -100,19 +99,18 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "stretch",
           "backgroundColor": "#FFFFFF",
           "borderColor": "rgba(0, 0, 0, 0.1)",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
           "overflow": "hidden",
         },
         Object {
           "backgroundColor": "#00B0FF",
           "borderColor": "#00B0FF",
-        },
-        Object {
-          "flexGrow": 1,
         },
       ]
     }
@@ -120,50 +118,39 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
   >
     <View
       style={
-        Object {
-          "borderTopLeftRadius": 3,
-          "borderTopRightRadius": 3,
-          "height": 120,
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRightWidth": 1,
+            "height": "100%",
+            "width": "25%",
+          },
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderColor": "#00B0FF",
+          },
+        ]
       }
     >
-      <Image
-        resizeMode="cover"
-        source={
+      <View
+        onLayout={[Function]}
+        style={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+            "flex": 1,
           }
         }
-        style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "height": 120,
-              "width": "100%",
-            },
-            undefined,
-          ]
-        }
-        testID="question-choice-5-img"
       />
     </View>
     <View
       style={
         Array [
           Object {
-            "justifyContent": "flex-start",
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
           },
-          Object {
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
+          false,
         ]
       }
     >
@@ -219,19 +206,18 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "stretch",
           "backgroundColor": "#FFFFFF",
           "borderColor": "rgba(0, 0, 0, 0.1)",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
           "overflow": "hidden",
         },
         Object {
           "backgroundColor": "#00B0FF",
           "borderColor": "#00B0FF",
-        },
-        Object {
-          "flexGrow": 1,
         },
       ]
     }
@@ -241,12 +227,12 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
       style={
         Array [
           Object {
-            "justifyContent": "flex-start",
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
           },
-          Object {
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
+          false,
         ]
       }
     >
@@ -302,19 +288,18 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "stretch",
           "backgroundColor": "#FFFFFF",
           "borderColor": "rgba(0, 0, 0, 0.1)",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
           "overflow": "hidden",
         },
         Object {
           "backgroundColor": "#00B0FF",
           "borderColor": "#00B0FF",
-        },
-        Object {
-          "flexGrow": 1,
         },
       ]
     }
@@ -322,50 +307,39 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
   >
     <View
       style={
-        Object {
-          "borderTopLeftRadius": 3,
-          "borderTopRightRadius": 3,
-          "height": 120,
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRightWidth": 1,
+            "height": "100%",
+            "width": "25%",
+          },
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderColor": "#00B0FF",
+          },
+        ]
       }
     >
-      <Image
-        resizeMode="cover"
-        source={
+      <View
+        onLayout={[Function]}
+        style={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+            "flex": 1,
           }
         }
-        style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "height": 120,
-              "width": "100%",
-            },
-            undefined,
-          ]
-        }
-        testID="question-choice-4-img"
       />
     </View>
     <View
       style={
         Array [
           Object {
-            "justifyContent": "flex-start",
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
           },
-          Object {
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
+          false,
         ]
       }
     >
@@ -401,6 +375,91 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
 </View>
 `;
 
+exports[`Storyshots QuestionChoice Squeezed 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "stretch",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        false,
+      ]
+    }
+    testID="question-choice-3"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
+          },
+          Object {
+            "flex": 0,
+            "padding": 16,
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+            "paddingVertical": undefined,
+          },
+        ]
+      }
+    >
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 13,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              A Squeezed Question Choices
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots QuestionChoice With image 1`] = `
 <View
   accessible={true}
@@ -421,67 +480,52 @@ exports[`Storyshots QuestionChoice With image 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "stretch",
           "backgroundColor": "#FFFFFF",
           "borderColor": "rgba(0, 0, 0, 0.1)",
           "borderRadius": 3,
           "borderStyle": "solid",
           "borderWidth": 1,
+          "flexDirection": "row",
           "overflow": "hidden",
         },
         false,
-        Object {
-          "flexGrow": 1,
-        },
       ]
     }
     testID="question-choice-3"
   >
     <View
       style={
-        Object {
-          "borderTopLeftRadius": 3,
-          "borderTopRightRadius": 3,
-          "height": 120,
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.1)",
+            "borderRightWidth": 1,
+            "height": "100%",
+            "width": "25%",
+          },
+          false,
+        ]
       }
     >
-      <Image
-        resizeMode="cover"
-        source={
+      <View
+        onLayout={[Function]}
+        style={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+            "flex": 1,
           }
         }
-        style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "height": 120,
-              "width": "100%",
-            },
-            undefined,
-          ]
-        }
-        testID="question-choice-3-img"
       />
     </View>
     <View
       style={
         Array [
           Object {
-            "justifyContent": "flex-start",
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
           },
-          Object {
-            "paddingHorizontal": 24,
-            "paddingVertical": 16,
-          },
+          false,
         ]
       }
     >
@@ -507,7 +551,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
                 }
               }
             >
-              Option 3
+              A very very very long long long long long long long long long long long long long long long long text
             </Text>
           </Text>
         </View>

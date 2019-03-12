@@ -57,7 +57,7 @@ if (process.env.NODE_ENV === 'test') {
         <QuestionDraggable userChoices={userChoices} choices={choices} onPress={handleItemPress} />
       );
       const questionItem = component.root.find(el => {
-        return el.props.testID === `unselected-choice-4`;
+        return el.props.testID === `choice-4-unselected`;
       });
       questionItem.props.onPress();
       expect(handleItemPress.mock.calls.length).toBe(1);

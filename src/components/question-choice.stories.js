@@ -20,7 +20,13 @@ storiesOf('QuestionChoice', module)
   ))
   .add('With image', () => (
     <QuestionChoice media={image} onPress={handleFakePress} testID="question-choice-3">
-      Option 3
+      A very very very long long long long long long long long long long long long long long long
+      long text
+    </QuestionChoice>
+  ))
+  .add('Squeezed', () => (
+    <QuestionChoice squeezed onPress={handleFakePress} testID="question-choice-3">
+      A Squeezed Question Choices
     </QuestionChoice>
   ))
   .add('Selected with image', () => (

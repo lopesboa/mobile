@@ -61,8 +61,8 @@ class QuestionDraggable extends React.PureComponent<Props> {
       <QuestionChoice
         style={styles.choice}
         key={item._id}
-        fontSize={theme.fontSize.medium}
-        testID={`unselected-choice-${item._id}`}
+        squeezed
+        testID={`choice-${item._id}-unselected`}
         onPress={this.handlePress(item)}
       >
         {item.label}
