@@ -100,20 +100,26 @@ const QuestionChoice = ({
       return (
         <TouchableOpacity onPress={!isDisabled ? onPress : undefined} style={style}>
           <View
-            style={[styles.container, isSelected && selectedStyle]}
+            style={[styles.container]}
             testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
           >
             {mediaUri && (
-              <View style={[styles.imageContainer, isSelected && selectedStyle]}>
+              <View style={[styles.imageContainer]}>
                 <ImageBackgroundScalable
                   testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
                   source={{uri: mediaUri}}
                   style={styles.image}
-                  resizeMode="cover"
+                  resizeMode="contain"
                 />
               </View>
             )}
-            <View style={[styles.textContainer, squeezed && styles.squeezedTextContainer]}>
+            <View
+              style={[
+                styles.textContainer,
+                squeezed && styles.squeezedTextContainer,
+                isSelected && selectedStyle
+              ]}
+            >
               <Html
                 fontSize={squeezed ? theme.fontSize.medium : theme.fontSize.regular}
                 style={[styles.text, isSelected && styles.textSelected]}

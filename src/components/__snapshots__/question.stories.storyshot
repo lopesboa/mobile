@@ -431,7 +431,6 @@ exports[`Storyshots Question Option selected 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-1"
@@ -445,6 +444,7 @@ exports[`Storyshots Question Option selected 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -517,10 +517,6 @@ exports[`Storyshots Question Option selected 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                Object {
-                  "backgroundColor": "#00B0FF",
-                  "borderColor": "#00B0FF",
-                },
               ]
             }
             testID="question-choice-2-selected"
@@ -535,6 +531,10 @@ exports[`Storyshots Question Option selected 1`] = `
                     "paddingVertical": 24,
                   },
                   false,
+                  Object {
+                    "backgroundColor": "#00B0FF",
+                    "borderColor": "#00B0FF",
+                  },
                 ]
               }
             >
@@ -606,7 +606,6 @@ exports[`Storyshots Question Option selected 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-3"
@@ -620,6 +619,7 @@ exports[`Storyshots Question Option selected 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -692,7 +692,6 @@ exports[`Storyshots Question Option selected 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-4"
@@ -706,6 +705,7 @@ exports[`Storyshots Question Option selected 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -985,7 +985,6 @@ exports[`Storyshots Question QCM 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-1"
@@ -999,6 +998,7 @@ exports[`Storyshots Question QCM 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -1071,7 +1071,6 @@ exports[`Storyshots Question QCM 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-2"
@@ -1085,6 +1084,7 @@ exports[`Storyshots Question QCM 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -1157,7 +1157,6 @@ exports[`Storyshots Question QCM 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-3"
@@ -1171,6 +1170,7 @@ exports[`Storyshots Question QCM 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -1243,7 +1243,6 @@ exports[`Storyshots Question QCM 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-4"
@@ -1257,6 +1256,7 @@ exports[`Storyshots Question QCM 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -1591,7 +1591,6 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-1-unselected"
@@ -1612,6 +1611,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -1674,7 +1674,6 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-2-unselected"
@@ -1695,6 +1694,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -1757,7 +1757,6 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-3-unselected"
@@ -1778,6 +1777,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -1840,7 +1840,6 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-4-unselected"
@@ -1861,6 +1860,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -2172,10 +2172,6 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  Object {
-                    "backgroundColor": "#00B0FF",
-                    "borderColor": "#00B0FF",
-                  },
                 ]
               }
               testID="choice-2-selected"
@@ -2195,6 +2191,10 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                       "paddingLeft": undefined,
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
+                    },
+                    Object {
+                      "backgroundColor": "#00B0FF",
+                      "borderColor": "#00B0FF",
                     },
                   ]
                 }
@@ -2267,7 +2267,6 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-1-unselected"
@@ -2288,6 +2287,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -2350,7 +2350,6 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-3-unselected"
@@ -2371,6 +2370,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -2433,7 +2433,6 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="choice-4-unselected"
@@ -2454,6 +2453,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                       "paddingRight": undefined,
                       "paddingVertical": undefined,
                     },
+                    false,
                   ]
                 }
               >
@@ -2742,7 +2742,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="question-choice-1"
@@ -2756,7 +2755,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "height": "100%",
                       "width": "25%",
                     },
-                    false,
                   ]
                 }
               >
@@ -2778,6 +2776,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "paddingRight": 8,
                       "paddingVertical": 24,
                     },
+                    false,
                     false,
                   ]
                 }
@@ -2868,7 +2867,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="question-choice-2"
@@ -2882,7 +2880,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "height": "100%",
                       "width": "25%",
                     },
-                    false,
                   ]
                 }
               >
@@ -2904,6 +2901,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "paddingRight": 8,
                       "paddingVertical": 24,
                     },
+                    false,
                     false,
                   ]
                 }
@@ -2994,7 +2992,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="question-choice-3"
@@ -3008,7 +3005,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "height": "100%",
                       "width": "25%",
                     },
-                    false,
                   ]
                 }
               >
@@ -3030,6 +3026,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "paddingRight": 8,
                       "paddingVertical": 24,
                     },
+                    false,
                     false,
                   ]
                 }
@@ -3120,7 +3117,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                     "flexDirection": "row",
                     "overflow": "hidden",
                   },
-                  false,
                 ]
               }
               testID="question-choice-4"
@@ -3134,7 +3130,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "height": "100%",
                       "width": "25%",
                     },
-                    false,
                   ]
                 }
               >
@@ -3156,6 +3151,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                       "paddingRight": 8,
                       "paddingVertical": 24,
                     },
+                    false,
                     false,
                   ]
                 }
@@ -4780,7 +4776,6 @@ exports[`Storyshots Question With image 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-1"
@@ -4794,6 +4789,7 @@ exports[`Storyshots Question With image 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -4866,7 +4862,6 @@ exports[`Storyshots Question With image 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-2"
@@ -4880,6 +4875,7 @@ exports[`Storyshots Question With image 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -4952,7 +4948,6 @@ exports[`Storyshots Question With image 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-3"
@@ -4966,6 +4961,7 @@ exports[`Storyshots Question With image 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }
@@ -5038,7 +5034,6 @@ exports[`Storyshots Question With image 1`] = `
                   "flexDirection": "row",
                   "overflow": "hidden",
                 },
-                false,
               ]
             }
             testID="question-choice-4"
@@ -5052,6 +5047,7 @@ exports[`Storyshots Question With image 1`] = `
                     "paddingRight": 8,
                     "paddingVertical": 24,
                   },
+                  false,
                   false,
                 ]
               }

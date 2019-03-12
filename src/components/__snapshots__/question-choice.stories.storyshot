@@ -29,7 +29,6 @@ exports[`Storyshots QuestionChoice Default 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        false,
       ]
     }
     testID="question-choice-1"
@@ -43,6 +42,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
             "paddingRight": 8,
             "paddingVertical": 24,
           },
+          false,
           false,
         ]
       }
@@ -108,10 +108,6 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        Object {
-          "backgroundColor": "#00B0FF",
-          "borderColor": "#00B0FF",
-        },
       ]
     }
     testID="question-choice-5-selected"
@@ -124,10 +120,6 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
             "borderRightWidth": 1,
             "height": "100%",
             "width": "25%",
-          },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
           },
         ]
       }
@@ -151,6 +143,10 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
             "paddingVertical": 24,
           },
           false,
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderColor": "#00B0FF",
+          },
         ]
       }
     >
@@ -215,10 +211,6 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        Object {
-          "backgroundColor": "#00B0FF",
-          "borderColor": "#00B0FF",
-        },
       ]
     }
     testID="question-choice-2-selected"
@@ -233,6 +225,10 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
             "paddingVertical": 24,
           },
           false,
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderColor": "#00B0FF",
+          },
         ]
       }
     >
@@ -297,10 +293,6 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        Object {
-          "backgroundColor": "#00B0FF",
-          "borderColor": "#00B0FF",
-        },
       ]
     }
     testID="question-choice-4-selected"
@@ -313,10 +305,6 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
             "borderRightWidth": 1,
             "height": "100%",
             "width": "25%",
-          },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
           },
         ]
       }
@@ -340,6 +328,10 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
             "paddingVertical": 24,
           },
           false,
+          Object {
+            "backgroundColor": "#00B0FF",
+            "borderColor": "#00B0FF",
+          },
         ]
       }
     >
@@ -404,7 +396,6 @@ exports[`Storyshots QuestionChoice Squeezed 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        false,
       ]
     }
     testID="question-choice-3"
@@ -425,6 +416,7 @@ exports[`Storyshots QuestionChoice Squeezed 1`] = `
             "paddingRight": undefined,
             "paddingVertical": undefined,
           },
+          false,
         ]
       }
     >
@@ -489,7 +481,6 @@ exports[`Storyshots QuestionChoice With image 1`] = `
           "flexDirection": "row",
           "overflow": "hidden",
         },
-        false,
       ]
     }
     testID="question-choice-3"
@@ -503,7 +494,6 @@ exports[`Storyshots QuestionChoice With image 1`] = `
             "height": "100%",
             "width": "25%",
           },
-          false,
         ]
       }
     >
@@ -525,6 +515,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
             "paddingRight": 8,
             "paddingVertical": 24,
           },
+          false,
           false,
         ]
       }

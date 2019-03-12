@@ -51,10 +51,6 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-1-selected"
@@ -74,6 +70,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -137,10 +137,6 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-2-selected"
@@ -160,6 +156,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -232,7 +232,6 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-3-unselected"
@@ -253,6 +252,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -315,7 +315,6 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-4-unselected"
@@ -336,6 +335,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -398,7 +398,6 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-6666-unselected"
@@ -419,6 +418,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -507,10 +507,6 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-1-selected"
@@ -530,6 +526,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -593,10 +593,6 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-2-selected"
@@ -616,6 +612,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -688,7 +688,6 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-3-unselected"
@@ -709,6 +708,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -771,7 +771,6 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-4-unselected"
@@ -792,6 +791,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -854,7 +854,6 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-6666-unselected"
@@ -875,6 +874,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -963,10 +963,6 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-1-selected"
@@ -986,6 +982,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -1049,10 +1049,6 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#00B0FF",
-              "borderColor": "#00B0FF",
-            },
           ]
         }
         testID="choice-2-selected"
@@ -1072,6 +1068,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 "paddingLeft": undefined,
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
+              },
+              Object {
+                "backgroundColor": "#00B0FF",
+                "borderColor": "#00B0FF",
               },
             ]
           }
@@ -1144,7 +1144,6 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-3-unselected"
@@ -1165,6 +1164,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -1227,7 +1227,6 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-4-unselected"
@@ -1248,6 +1247,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >
@@ -1310,7 +1310,6 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
-            false,
           ]
         }
         testID="choice-6666-unselected"
@@ -1331,6 +1330,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 "paddingRight": undefined,
                 "paddingVertical": undefined,
               },
+              false,
             ]
           }
         >

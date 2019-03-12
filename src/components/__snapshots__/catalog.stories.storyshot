@@ -607,7 +607,7 @@ exports[`Storyshots Catalog Items 1`] = `
                       }
                       testID="subtitle-catalog-item-cha-1"
                     >
-                      A gooy guy
+                      A good guy
                     </Text>
                     <View
                       style={

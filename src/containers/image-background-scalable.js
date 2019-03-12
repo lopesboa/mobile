@@ -11,7 +11,7 @@ type Props = {|
   testID?: string,
   source: File,
   style?: GenericStyleProp,
-  resizeMode: 'cover' | 'contain'
+  resizeMode: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch'
 |};
 
 const ImageBackroundScalable = ({source, style, testID, layout, resizeMode}: Props) => {

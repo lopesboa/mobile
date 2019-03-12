@@ -48,10 +48,6 @@ exports[`Storyshots DropZone Default 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-1-selected"
@@ -71,6 +67,10 @@ exports[`Storyshots DropZone Default 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -134,10 +134,6 @@ exports[`Storyshots DropZone Default 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-2-selected"
@@ -157,6 +153,10 @@ exports[`Storyshots DropZone Default 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -220,10 +220,6 @@ exports[`Storyshots DropZone Default 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-3-selected"
@@ -243,6 +239,10 @@ exports[`Storyshots DropZone Default 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -306,10 +306,6 @@ exports[`Storyshots DropZone Default 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-4-selected"
@@ -329,6 +325,10 @@ exports[`Storyshots DropZone Default 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -450,10 +450,6 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-1-selected"
@@ -473,6 +469,10 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -536,10 +536,6 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-2-selected"
@@ -559,6 +555,10 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -622,10 +622,6 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-3-selected"
@@ -645,6 +641,10 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }
@@ -708,10 +708,6 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             "flexDirection": "row",
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#00B0FF",
-            "borderColor": "#00B0FF",
-          },
         ]
       }
       testID="choice-4-selected"
@@ -731,6 +727,10 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               "paddingLeft": undefined,
               "paddingRight": undefined,
               "paddingVertical": undefined,
+            },
+            Object {
+              "backgroundColor": "#00B0FF",
+              "borderColor": "#00B0FF",
             },
           ]
         }

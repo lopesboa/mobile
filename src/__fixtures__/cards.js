@@ -133,7 +133,7 @@ export const createChapterCard = ({
   authors = [
     {
       ref: 'part_VyFl5hZ3V',
-      label: 'A gooy guy',
+      label: 'A good guy',
       authorType: 'verified'
     }
   ]
