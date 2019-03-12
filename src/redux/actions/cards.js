@@ -4,6 +4,7 @@ import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {StoreAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';
+import {pickNextLevel} from '../../utils/content';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../layer/data/_const';
 import {createLevelProgression, createChapterProgression} from './progression';
 import type {Action as BundleAction} from './discipline-bundle';
@@ -135,13 +136,16 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
         }
       }
       case CARD_TYPE.COURSE: {
-        const ref = item.modules && item.modules[0] && item.modules[0].universalRef;
-        if (!ref) {
+        const nextModule = pickNextLevel(item);
+        if (!nextModule) {
           return dispatch(selectCardFailure(item, 'Course has no level'));
         }
         try {
           // $FlowFixMe union type
-          const level = await services.Content.find(RESTRICTED_RESOURCE_TYPE.LEVEL, ref);
+          const level = await services.Content.find(
+            RESTRICTED_RESOURCE_TYPE.LEVEL,
+            nextModule.universalRef
+          );
           // $FlowFixMe union type
           return dispatch(createLevelProgression(level));
         } catch (e) {

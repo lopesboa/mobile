@@ -7,6 +7,7 @@ import CatalogComponent from '../components/catalog';
 import {BrandThemeContext} from '../components/brand-theme-provider';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import translations from '../translations';
+import {compareCards} from '../utils/content';
 
 type ConnectedStateProps = {|
   items: Array<DisciplineCard | ChapterCard>
@@ -41,6 +42,7 @@ const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateP
     items: Object.keys(cards.entities)
       .map(key => cards.entities[key][language])
       .filter(item => item !== undefined)
+      .sort(compareCards)
   };
 };
 

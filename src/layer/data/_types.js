@@ -145,7 +145,6 @@ export type CardLevel = {|
 export type CardCondition = {||};
 
 export type Card<T> = {|
-  ...T,
   type: CardType,
   image: string,
   time: number,
@@ -175,7 +174,8 @@ export type Card<T> = {|
   stars: number,
   completion: number,
   isNew: boolean,
-  favorite: boolean
+  favorite: boolean,
+  ...T
 |};
 
 export type DisciplineCard = Card<{|
