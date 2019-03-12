@@ -36,3 +36,6 @@ export const fakeSliderProps: SliderProps = {
   step: 5,
   value: 35
 };
+
+export const toJWT = <S>(payload: S): string =>
+  ['', Buffer.from(JSON.stringify(payload) || '').toString('base64'), ''].join('.');

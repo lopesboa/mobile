@@ -1,5 +1,6 @@
 // @flow strict
 
+import {toJWT} from '../../utils/tests';
 import {createBrand} from '../../__fixtures__/brands';
 import type {JWT, Config} from './brand';
 
@@ -7,7 +8,7 @@ const brand = createBrand();
 const jwt: JWT = {
   host: brand.host
 };
-const token = ['', Buffer.from(JSON.stringify(jwt)).toString('base64')].join('.');
+const token = toJWT(jwt);
 
 describe('brand', () => {
   beforeEach(() => {
