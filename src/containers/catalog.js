@@ -18,21 +18,25 @@ type Props = {|
   onPress: (item: DisciplineCard | ChapterCard) => void
 |};
 
-const Catalog = ({items, onPress}: Props) => (
-  <BrandThemeContext.Consumer>
-    {brandTheme => (
-      <CatalogComponent
-        logo={{
-          uri: brandTheme.images['logo-mobile']
-        }}
-        titleCover={translations.startLearning}
-        titleCards={translations.forYou}
-        items={items}
-        onPress={onPress}
-      />
-    )}
-  </BrandThemeContext.Consumer>
-);
+const Catalog = ({items, onPress}: Props) => {
+  const firstIsStarted = !(items[0] && items[0].completion === 0);
+
+  return (
+    <BrandThemeContext.Consumer>
+      {brandTheme => (
+        <CatalogComponent
+          logo={{
+            uri: brandTheme.images['logo-mobile']
+          }}
+          titleCover={firstIsStarted ? translations.finishLearning : translations.startLearning}
+          titleCards={translations.forYou}
+          items={items}
+          onPress={onPress}
+        />
+      )}
+    </BrandThemeContext.Consumer>
+  );
+};
 
 const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {
   // @todo use user language

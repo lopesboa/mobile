@@ -65,6 +65,7 @@ const CatalogItem = ({
       minHeight: 17
     },
     badgeLabel: {
+      fontWeight: theme.fontWeight.bold,
       fontSize: theme.fontSize.extraSmall
     },
     containerCover: {
@@ -87,6 +88,7 @@ const CatalogItem = ({
       minHeight: 20
     },
     badgeLabelCover: {
+      fontWeight: theme.fontWeight.bold,
       fontSize: theme.fontSize.small
     }
   });

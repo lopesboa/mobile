@@ -15,6 +15,8 @@ export const compareCards = (
   cardA: DisciplineCard | ChapterCard,
   cardB: DisciplineCard | ChapterCard
 ): number => {
+  if (cardA.completion === 1 && cardB.completion === 1) return 0;
+
   if (cardB.completion === 1) return -1;
   if (cardA.completion === 1) return 1;
 

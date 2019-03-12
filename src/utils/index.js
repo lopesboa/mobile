@@ -1,8 +1,6 @@
 // @flow strict
 
-export const values = <O>(map: {[key: string]: O}): Array<O> =>
-  Object.keys(map).map(key => map[key]);
-
+// eslint-disable-next-line import/prefer-default-export
 export const uniqBy = <O>(mapper: (obj: O) => string, array: Array<O>): Array<O> => [
   ...array
     .reduce((acc, cur) => {

@@ -151,6 +151,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                     "New",
                     Object {
                       "fontSize": 10,
+                      "fontWeight": "700",
                     },
                     Object {
                       "color": "#00B0FF",
@@ -634,6 +635,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                     "New",
                     Object {
                       "fontSize": 12,
+                      "fontWeight": "700",
                     },
                     Object {
                       "color": "#00B0FF",
