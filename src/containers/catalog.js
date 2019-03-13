@@ -39,8 +39,7 @@ const Catalog = ({items, onPress}: Props) => {
 };
 
 const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {
-  // @todo use user language
-  const language = 'en';
+  const language = translations.getLanguage();
 
   return {
     items: Object.keys(cards.entities)

@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import translationUtil from '../translations';
 
 import {signIn} from '../redux/actions/authentication';
 import {fetchCards} from '../redux/actions/cards';
@@ -25,8 +26,7 @@ class NetworkInfoListener extends React.PureComponent<Props> {
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM3NTFhYTY4ZjI3MTMwMDFiMzBlMWIzIiwidXNhZ2UiOiJtb2JpbGUiLCJob3N0IjoiaHR0cHM6Ly9tb2JpbGUtc3RhZ2luZy5jb29ycGFjYWRlbXkuY29tIiwiZ3JhbnRzIjp7Im1vb2MiOnsiZ3JhbnRzIjp7Im1vYmlsZSI6eyJyb2xlcyI6WyJ1c2VyIl19fX19LCJpYXQiOjE1NTExNzg4MTAsImV4cCI6MjAwMDAwMDAwMCwiYXVkIjoibW9iaWxlIiwiaXNzIjoiY29vcnBhY2FkZW15LWp3dCJ9.vC0vxTO8eNk2crp5_nhPgUF7UVqg8K3yFdj6SzHVNIY'
     );
     await this.props.fetchBrand();
-    // @todo use dynamic language
-    await this.props.fetchCards('en');
+    await this.props.fetchCards(translationUtil.getLanguage());
   }
 
   // @todo manage connection change to fetch real content when the user is online
