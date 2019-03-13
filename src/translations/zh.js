@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: '访问课程',
   clue: '线索',
   clueStarsToLoose:
     '解锁提示意味着你从本问题获得的星星数量会被减少 {{count}} （如果你回答正确的话）',

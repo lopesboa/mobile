@@ -23,6 +23,7 @@ export type SupportedLanguage =
   | 'zh';
 
 export type Translations = {|
+  accessTheLesson: string,
   clue: string,
   clueStarsToLoose: string,
   congratulations: string,

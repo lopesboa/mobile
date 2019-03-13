@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: '강의에 접속하기',
   clue: '단서',
   clueStarsToLoose:
     '단서의 잠금 해제는 귀하가 이 질문에서 얻을 수 있는 스타를 {{count}}개까지 감소시킵니다(귀하가 그것을 올바로 얻는 경우)',

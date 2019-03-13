@@ -34,7 +34,8 @@ type Props = {|
   onExpand?: () => void,
   onShrink?: () => void,
   onSubtitlesToggle?: () => void,
-  onRef?: (VideoPlayer | null) => void
+  onRef?: (VideoPlayer | null) => void,
+  testID?: string
 |};
 
 export const STEP: {[key: string]: Step} = {
@@ -103,9 +104,14 @@ const Video = ({
   onExpand,
   onShrink,
   onSubtitlesToggle,
-  onRef
+  onRef,
+  testID
 }: Props) => {
-  const testIDSuffix = isFullScreen ? '-fullscreen' : '';
+  const testIDSuffix = testID ? '-' + testID : '';
+  const testIDFullscreenSuffix =
+    (testID && (isFullScreen ? '-fullscreen' + testIDSuffix : testIDSuffix)) ||
+    (isFullScreen ? '-fullscreen' : '');
+
   const containerHeight = (!isFullScreen && height) || undefined;
   const subtitles: Array<Subtitles> = Platform.OS === 'ios' ? [EMPTY_SUBTITLES] : [];
   if (subtitlesUri) {
@@ -130,12 +136,14 @@ const Video = ({
   return (
     <View
       style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
-      testID={`video-container${testIDSuffix}`}
+      testID={`video-container${testIDFullscreenSuffix}`}
     >
-      {step === STEP.PREVIEW && <Preview type="video" source={preview} onPress={onPlay} />}
+      {step === STEP.PREVIEW && (
+        <Preview type="video" source={preview} onPress={onPlay} testID={testID} />
+      )}
       {[STEP.PLAY, STEP.END].includes(step) && (
         <VideoPlayer
-          testID="video"
+          testID={'video' + testIDFullscreenSuffix}
           source={source}
           ref={onRef}
           style={styles.video}
@@ -159,7 +167,11 @@ const Video = ({
       )}
       {step === STEP.END && (
         <ResourceOverlay>
-          <TouchableOpacity onPress={onPlay} style={styles.replay} testID="video-replay">
+          <TouchableOpacity
+            onPress={onPlay}
+            style={styles.replay}
+            testID={'video-replay' + testIDSuffix}
+          >
             <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
           </TouchableOpacity>
         </ResourceOverlay>

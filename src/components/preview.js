@@ -7,7 +7,7 @@ import {
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
 } from '@coorpacademy/nova-icons';
 
-import type {ResourceType} from '../types';
+import type {LessonType} from '@coorpacademy/progression-engine';
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
@@ -16,9 +16,10 @@ import Space from './space';
 import ResourceOverlay from './resource-overlay';
 
 type Props = {|
-  type: ResourceType,
+  type: LessonType,
   source: File | {uri: string},
-  onPress: () => void
+  onPress: () => void,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -33,27 +34,29 @@ const styles = StyleSheet.create({
   }
 });
 
-const Preview = ({type, source, onPress}: Props) => (
-  <ImageBackground source={source} style={styles.image}>
-    <ResourceOverlay>
-      {type === RESOURCE_TYPE.VIDEO && (
-        <TouchableOpacity onPress={onPress} testID="preview-video">
-          <PlayIcon color={theme.colors.white} height={70} width={70} />
-        </TouchableOpacity>
-      )}
-      {type === RESOURCE_TYPE.PDF && (
-        <View style={styles.pdf} testID="preview-pdf">
-          <View testID="preview-pdf-icon" style={styles.pdfIcon}>
-            <PDFIcon color={theme.colors.white} height={45} width={45} />
+const Preview = ({type, source, onPress, testID}: Props) => {
+  const testIDSuffix = testID ? '-' + testID : '';
+  return (
+    <ImageBackground source={source} style={styles.image}>
+      <ResourceOverlay>
+        {type === RESOURCE_TYPE.VIDEO && (
+          <TouchableOpacity onPress={onPress} testID={'preview-video' + testIDSuffix}>
+            <PlayIcon color={theme.colors.white} height={70} width={70} />
+          </TouchableOpacity>
+        )}
+        {type === RESOURCE_TYPE.PDF && (
+          <View style={styles.pdf} testID={'preview-pdf' + testIDSuffix}>
+            <View testID="preview-pdf-icon" style={styles.pdfIcon}>
+              <PDFIcon color={theme.colors.white} height={45} width={45} />
+            </View>
+            <Space type="base" />
+            <Button isInverted isInlined testID="button-open-pdf" onPress={onPress}>
+              {translations.open}
+            </Button>
           </View>
-          <Space type="base" />
-          <Button isInverted isInlined testID="button-open-pdf" onPress={onPress}>
-            {translations.open}
-          </Button>
-        </View>
-      )}
-    </ResourceOverlay>
-  </ImageBackground>
-);
-
+        )}
+      </ResourceOverlay>
+    </ImageBackground>
+  );
+};
 export default Preview;

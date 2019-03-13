@@ -5,7 +5,8 @@ import {Text, View, StyleSheet} from 'react-native';
 import {
   NovaCompositionCoorpacademyLightbulb as TipIcon,
   NovaSolidLoginKey1 as KeyPointIcon,
-  NovaLineStatusCheckCircle1 as CorrectionIcon
+  NovaLineStatusCheckCircle1 as CorrectionIcon,
+  NovaCompositionCoorpacademyFilterVideo2 as ResourceIcon
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
@@ -49,6 +50,9 @@ const styles = StyleSheet.create({
   headerCorrection: {
     backgroundColor: '#d3f1e2'
   },
+  headerResource: {
+    backgroundColor: '#cdeffe'
+  },
   headerCorrectionIcon: {
     height: 23,
     width: 23
@@ -61,7 +65,8 @@ const CardHeader = ({type, title}: Props) => (
       styles.header,
       type === CARD_TYPE.TIP && styles.headerTip,
       type === CARD_TYPE.KEY_POINT && styles.headerKeyPoint,
-      type === CARD_TYPE.CORRECTION && styles.headerCorrection
+      type === CARD_TYPE.CORRECTION && styles.headerCorrection,
+      type === CARD_TYPE.RESOURCE && styles.headerResource
     ]}
   >
     {type === CARD_TYPE.TIP && <TipIcon color="#ffc035" style={styles.headerTipIcon} />}
@@ -70,6 +75,9 @@ const CardHeader = ({type, title}: Props) => (
     )}
     {type === CARD_TYPE.CORRECTION && (
       <CorrectionIcon color="#3ec483" style={styles.headerCorrectionIcon} />
+    )}
+    {type === CARD_TYPE.RESOURCE && (
+      <ResourceIcon color="#16affc" style={styles.headerCorrectionIcon} />
     )}
     <Text style={styles.headerText} numberOfLines={1}>
       {title}

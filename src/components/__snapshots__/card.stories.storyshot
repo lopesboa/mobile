@@ -1004,6 +1004,7 @@ exports[`Storyshots Card Correction 1`] = `
           Object {
             "backgroundColor": "#d3f1e2",
           },
+          false,
         ]
       }
     >
@@ -1224,6 +1225,7 @@ exports[`Storyshots Card Key point 1`] = `
             "backgroundColor": "#ffded4",
           },
           false,
+          false,
         ]
       }
     >
@@ -1395,6 +1397,7 @@ exports[`Storyshots Card Tip 1`] = `
           Object {
             "backgroundColor": "#fff8c5",
           },
+          false,
           false,
           false,
         ]

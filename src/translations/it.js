@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Accedi alla lezione',
   clue: 'Indizio',
   clueStarsToLoose:
     "Sbloccare l'indizio riduce di {{count}} le stelle che puoi guadagnare per questa domanda (se rispondi correttamente)",

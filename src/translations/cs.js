@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Vstup do lekce',
   clue: 'Záchytný bod',
   clueStarsToLoose:
     'Odemknutí nápovědy sníží počet hvězd, které můžete získat na této otázce o {{count}} (pokud ji zodpovíte správně)',

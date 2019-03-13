@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Accéder à la leçon',
   clue: 'Indice',
   clueStarsToLoose:
     "En regardant l'indice, cette question vous rapportera {{count}} étoile en moins (si vous y répondez correctement)",

@@ -4,11 +4,12 @@ import * as React from 'react';
 import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 
 import theme from '../modules/theme';
-import type {CardType} from '../types';
+import type {CardType, Resource} from '../types';
 
 export type Card = {|
   title: string,
-  type: CardType
+  type: CardType,
+  resource?: Resource
 |};
 
 export type Props = {|

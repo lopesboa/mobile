@@ -9,6 +9,7 @@ import type {Props as CardProps} from '../components/card';
 import type {Props as CardHeaderProps} from '../components/card-header';
 import theme from '../modules/theme';
 import Gradient from '../components/gradient';
+import {CARD_TYPE} from '../const';
 
 type Props = {|
   ...CardProps,
@@ -89,7 +90,12 @@ class CardScalable extends React.PureComponent<Props, State> {
         <TouchableOpacity onPress={this.handlePress} activeOpacity={1} style={styles.expanded}>
           <Card testID={testID} isDeckCard>
             <CardHeader type={type} title={title} />
-            <View style={styles.content}>
+            <View
+              style={[
+                styles.content,
+                type === CARD_TYPE.RESOURCE && {paddingTop: 0, paddingHorizontal: 0}
+              ]}
+            >
               {children}
               <Gradient height={theme.spacing.large} color={theme.colors.white} />
             </View>

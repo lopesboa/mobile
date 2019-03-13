@@ -16,6 +16,7 @@ exports[`Storyshots Card Header Correction 1`] = `
       Object {
         "backgroundColor": "#d3f1e2",
       },
+      false,
     ]
   }
 >
@@ -210,6 +211,7 @@ exports[`Storyshots Card Header Key point 1`] = `
         "backgroundColor": "#ffded4",
       },
       false,
+      false,
     ]
   }
 >
@@ -341,6 +343,201 @@ exports[`Storyshots Card Header Key point 1`] = `
 </View>
 `;
 
+exports[`Storyshots Card Header Resource 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "padding": 24,
+      },
+      false,
+      false,
+      false,
+      Object {
+        "backgroundColor": "#cdeffe",
+      },
+    ]
+  }
+>
+  <RNSVGSvgView
+    align="xMidYMid"
+    bbHeight="undefined"
+    bbWidth="undefined"
+    color="#16affc"
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Object {
+          "height": 23,
+          "width": 23,
+        },
+        false,
+        undefined,
+      ]
+    }
+    vbHeight={24}
+    vbWidth={24}
+  >
+    <RNSVGPath
+      d="M3.5 22c-.8 0-1.5-.7-1.5-1.5V4H.5c-.3 0-.5.2-.5.5v19c0 .3.2.5.5.5h19c.3 0 .5-.2.5-.5V22H3.5z"
+      fill={
+        Array [
+          0,
+          0.08627450980392157,
+          0.6862745098039216,
+          0.9882352941176471,
+          1,
+        ]
+      }
+      fillOpacity={1}
+      fillRule={1}
+      matrix={
+        Array [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+        ]
+      }
+      opacity={1}
+      originX={0}
+      originY={0}
+      propList={
+        Array [
+          "fill",
+        ]
+      }
+      rotation={0}
+      scaleX={1}
+      scaleY={1}
+      skewX={0}
+      skewY={0}
+      stroke={null}
+      strokeDasharray={null}
+      strokeDashoffset={null}
+      strokeLinecap={0}
+      strokeLinejoin={0}
+      strokeMiterlimit={4}
+      strokeOpacity={1}
+      strokeWidth="1"
+      x={0}
+      y={0}
+    />
+    <RNSVGPath
+      d="M23.5 0h-20c-.3 0-.5.2-.5.5v20c0 .3.2.5.5.5h20c.3 0 .5-.2.5-.5V.5c0-.3-.2-.5-.5-.5zm-5.7 10.6l-7 4.3c-.3.2-.8 0-.8-.4v-8c0-.4.4-.6.7-.4l7 3.7c.4.1.4.6.1.8z"
+      fill={
+        Array [
+          0,
+          0.08627450980392157,
+          0.6862745098039216,
+          0.9882352941176471,
+          1,
+        ]
+      }
+      fillOpacity={1}
+      fillRule={1}
+      matrix={
+        Array [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+        ]
+      }
+      opacity={1}
+      originX={0}
+      originY={0}
+      propList={
+        Array [
+          "fill",
+        ]
+      }
+      rotation={0}
+      scaleX={1}
+      scaleY={1}
+      skewX={0}
+      skewY={0}
+      stroke={null}
+      strokeDasharray={null}
+      strokeDashoffset={null}
+      strokeLinecap={0}
+      strokeLinejoin={0}
+      strokeMiterlimit={4}
+      strokeOpacity={1}
+      strokeWidth="1"
+      x={0}
+      y={0}
+    />
+    <RNSVGPath
+      d="M0 0h24v24H0z"
+      fill={null}
+      fillOpacity={1}
+      fillRule={1}
+      matrix={
+        Array [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+        ]
+      }
+      opacity={1}
+      originX={0}
+      originY={0}
+      propList={
+        Array [
+          "fill",
+        ]
+      }
+      rotation={0}
+      scaleX={1}
+      scaleY={1}
+      skewX={0}
+      skewY={0}
+      stroke={null}
+      strokeDasharray={null}
+      strokeDashoffset={null}
+      strokeLinecap={0}
+      strokeLinejoin={0}
+      strokeMiterlimit={4}
+      strokeOpacity={1}
+      strokeWidth="1"
+      x={0}
+      y={0}
+    />
+  </RNSVGSvgView>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#546E7A",
+        "fontSize": 17,
+        "fontWeight": "bold",
+        "paddingLeft": 8,
+        "textAlign": "center",
+      }
+    }
+  >
+    Foo bar baz
+  </Text>
+</View>
+`;
+
 exports[`Storyshots Card Header Tip 1`] = `
 <View
   style={
@@ -355,6 +552,7 @@ exports[`Storyshots Card Header Tip 1`] = `
       Object {
         "backgroundColor": "#fff8c5",
       },
+      false,
       false,
       false,
     ]

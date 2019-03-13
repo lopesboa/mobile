@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Доступ до уроку ',
   clue: 'Підказка',
   clueStarsToLoose:
     'Відкриття підказки зменшує кількість зірок за це питання на {{count}} (за умови правильної відповіді)',

@@ -8,12 +8,15 @@ import {
   getRoute,
   selectProgression,
   selectRoute,
-  getCurrentProgressionId
+  getCurrentProgressionId,
+  play
 } from '@coorpacademy/player-store';
 
+import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import type {Params as LevelEndScreenParams} from './level-end';
+import type {Params as PdfScreenParams} from './pdf';
 
 export type Params = {|
   title: string,
@@ -26,6 +29,8 @@ export type Params = {|
   keyPoint: string,
   lives?: number,
   hasLives: boolean,
+  hasViewedAResource: boolean,
+  resources: Array<Resource>,
   isFinished: boolean
 |};
 
@@ -34,6 +39,7 @@ type ConnectedStateProps = {|
 |};
 
 type ConnectedDispatchProps = {|
+  play: typeof play,
   selectProgression: () => (dispatch: Dispatch, getState: GetState) => void,
   selectRoute: typeof selectRoute
 |};
@@ -46,13 +52,15 @@ type Props = {|
 
 type State = {|
   lives?: number,
-  isLoading: boolean
+  isLoading: boolean,
+  hasLivesBeenAnimated: boolean
 |};
 
 class CorrectionScreen extends React.PureComponent<Props, State> {
   props: Props;
 
   state: State = {
+    hasLivesBeenAnimated: false,
     isLoading: false,
     lives:
       this.props.navigation.state.params.lives !== undefined &&
@@ -82,16 +90,27 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     }
   }
 
+  handlePDFButtonPress = (url: string, description: string) => {
+    const pdfParams: PdfScreenParams = {
+      title: description,
+      source: {uri: url}
+    };
+
+    this.props.play();
+    this.props.navigation.navigate('PdfModal', pdfParams);
+  };
+
   handleButtonPress = () => {
+    const {lives} = this.state;
     const {navigation} = this.props;
-    const {isCorrect, isFinished, lives, hasLives} = navigation.state.params;
+    const {isCorrect, isFinished, hasLives} = navigation.state.params;
 
     this.props.selectProgression();
     this.setState({isLoading: true});
 
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
-        isCorrect: isCorrect || (hasLives && lives > 0)
+        isCorrect: isCorrect || (hasLives && lives !== undefined && lives > 0)
       };
       navigation.navigate('LevelEnd', levelEndParams);
     }
@@ -99,7 +118,8 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
   handleDidFocus = () => {
     const {isCorrect} = this.props.navigation.state.params;
-    if (!isCorrect && this.state.lives) {
+
+    if (!this.state.hasLivesBeenAnimated && !isCorrect && this.state.lives) {
       this.loseLife();
     }
 
@@ -108,7 +128,8 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
   loseLife = () =>
     this.setState((state: State) => ({
-      lives: state.lives !== undefined ? state.lives - 1 : state.lives
+      lives: state.lives !== undefined ? state.lives - 1 : state.lives,
+      hasLivesBeenAnimated: true
     }));
 
   render() {
@@ -121,8 +142,11 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
       userAnswers,
       isCorrect,
       keyPoint,
-      isFinished
+      isFinished,
+      hasViewedAResource,
+      resources
     } = this.props.navigation.state.params;
+
     const {lives, isLoading} = this.state;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
@@ -142,7 +166,10 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
           onButtonPress={this.handleButtonPress}
           isFinished={isFinished}
           isLoading={isLoading}
+          hasViewedAResource={hasViewedAResource}
+          resources={resources}
           lives={lives}
+          onPDFButtonPress={this.handlePDFButtonPress}
         />
       </Screen>
     );
@@ -163,6 +190,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
+  play,
   selectProgression: _selectProgression,
   selectRoute
 };

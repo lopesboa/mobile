@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Urmăriți lecția',
   clue: 'Indiciu',
   clueStarsToLoose:
     'Utilizarea indiciului va lua {{count}} din numărul maxim de stele pe care le puteți obține răspunzând la această întrebare (dacă răspunsul este corect)',

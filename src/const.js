@@ -2,12 +2,11 @@
 
 /* eslint-disable import/prefer-default-export */
 
-import type {QuestionType, MediaType} from '@coorpacademy/progression-engine';
+import type {LessonType, QuestionType, MediaType} from '@coorpacademy/progression-engine';
 
 import type {
   SpaceType,
   CardType,
-  ResourceType,
   Engine,
   ContentType,
   CardDisplayMode,
@@ -17,7 +16,7 @@ import type {
 } from './types';
 
 export const RESOURCE_TYPE: {
-  [string]: ResourceType
+  [string]: LessonType
 } = {
   VIDEO: 'video',
   PDF: 'pdf',
@@ -68,6 +67,7 @@ export const MEDIA_TYPE: {
 export const CARD_TYPE: {
   [string]: CardType
 } = {
+  RESOURCE: 'resource',
   TIP: 'tip',
   KEY_POINT: 'keyPoint',
   CORRECTION: 'correction'

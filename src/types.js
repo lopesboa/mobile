@@ -8,7 +8,6 @@ import type {
 
 export type QuestionChoiceInputType = 'text' | 'select';
 
-export type ResourceType = 'video' | 'pdf' | 'img';
 export type MimeType =
   | 'video/mp4'
   | 'application/vimeo'
@@ -19,7 +18,7 @@ export type MimeType =
 
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
 
-export type CardType = 'tip' | 'keyPoint' | 'correction';
+export type CardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
 
 export type CardDisplayMode = 'card' | 'cover';
 

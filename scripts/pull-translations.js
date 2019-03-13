@@ -63,6 +63,7 @@ const generate = async (locale: string) => {
     'global.json'
   );
   const translations: Translations = {
+    accessTheLesson: playerTranslations['Access the lesson'],
     clue: playerTranslations.Clue,
     clueStarsToLoose: componentsTranslations.clue_stars_to_loose,
     congratulations: playerTranslations['Congratulations!'],

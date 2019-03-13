@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Truy cập vào bài học này',
   clue: 'Gợi ý',
   clueStarsToLoose:
     'Mở khóa gợi ý làm giảm số sao bạn có thể đạt được cho câu hỏi này đi {{count}} sao (nếu bạn đáp đúng)',

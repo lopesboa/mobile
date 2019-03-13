@@ -24,7 +24,8 @@ type Props = {|
   source: File | {uri: string},
   preview: File | {uri: string},
   height: number,
-  subtitles?: string
+  subtitles?: string,
+  testID?: string
 |};
 
 type State = {|
@@ -124,6 +125,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
         onShrink={this.handleShrink}
         onSubtitlesToggle={this.handleSubtitlesToggle}
         onRef={this.handleRef}
+        testID={this.props.testID}
       />
     );
   }

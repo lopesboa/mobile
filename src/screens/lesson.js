@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getEngineConfig, getResourceToPlay, selectResource} from '@coorpacademy/player-store';
+import {play, getEngineConfig, getResourceToPlay, selectResource} from '@coorpacademy/player-store';
 
 import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 import type {Resource} from '../types';
@@ -22,6 +22,7 @@ export type ConnectedStateProps = {|
 |};
 
 type ConnectedDispatchProps = {|
+  play: typeof play,
   selectResource: typeof selectResource
 |};
 
@@ -40,6 +41,7 @@ class LessonScreen extends React.PureComponent<Props> {
       source: {uri: url}
     };
 
+    this.props.play();
     this.props.navigation.navigate('PdfModal', pdfParams);
   };
 
@@ -90,6 +92,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 };
 
 const mapDispatchToProps: ConnectedDispatchProps = {
+  play,
   selectResource
 };
 

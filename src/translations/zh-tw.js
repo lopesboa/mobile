@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: '進入課程',
   clue: '線索',
   clueStarsToLoose: '解開線索所減少的星星，您可以在此問題上贏回{{count}}顆星星（如果您答對的話）',
   congratulations: '恭喜！',

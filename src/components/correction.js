@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
+import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
 import {CARD_TYPE} from '../const';
 import CardComponent from '../containers/card-scalable';
@@ -18,6 +19,7 @@ import Html from './html';
 import Space from './space';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
+import Resource from './resource';
 
 type Props = {|
   ...WithLayoutProps,
@@ -32,10 +34,13 @@ type Props = {|
   onButtonPress: () => void,
   isFinished: boolean,
   isLoading: boolean,
-  lives?: number
+  hasViewedAResource: boolean,
+  resources: Array<ResourceType>,
+  lives?: number,
+  onPDFButtonPress: (url: string, description: string) => void
 |};
 
-const CARDS_HEIGHT = 300;
+const CARDS_HEIGHT = 360;
 const CARDS_LENGTH = 3;
 const PADDING_WIDTH = theme.spacing.base;
 export const POSITIVE_COLOR = theme.colors.positive;
@@ -81,6 +86,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: PADDING_WIDTH,
     paddingTop: PADDING_WIDTH
   },
+  resourceTitle: {
+    textAlign: 'center',
+    fontSize: theme.fontSize.regular,
+    padding: theme.spacing.base,
+    color: '#556e79',
+    fontWeight: theme.fontWeight.bold
+  },
   footer: {
     paddingHorizontal: PADDING_WIDTH,
     paddingBottom: PADDING_WIDTH
@@ -90,13 +102,23 @@ const styles = StyleSheet.create({
 class Correction extends React.PureComponent<Props> {
   props: Props;
 
-  renderCard = ({type, title: cardTitle}: Card) => {
-    const {answers, userAnswers, question, tip, keyPoint, isCorrect, layout} = this.props;
+  renderCard = ({type, title: cardTitle, resource}: Card) => {
+    const {
+      answers,
+      userAnswers,
+      question,
+      tip,
+      keyPoint,
+      isCorrect,
+      layout,
+      onPDFButtonPress
+    } = this.props;
     // This is the offset added by the deck swiper
     const offsetBottom = CARDS_LENGTH * 7;
     const fullScreenOffsetBottom = BUTTON_HEIGHT + PADDING_WIDTH;
     // $FlowFixMe layout is defined as we check it before rendering Cards component
     const fullScreenHeight = layout.height - PADDING_WIDTH * 2 - fullScreenOffsetBottom;
+    const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
 
     return (
       <CardComponent
@@ -107,7 +129,11 @@ class Correction extends React.PureComponent<Props> {
         offsetBottom={offsetBottom}
         fullScreenOffsetBottom={fullScreenOffsetBottom}
         style={styles.card}
-        testID={`card-${type.toLowerCase()}`}
+        testID={
+          type !== CARD_TYPE.RESOURCE
+            ? `card-${type.toLowerCase()}`
+            : `card-${type.toLowerCase()}-` + testIDSuffix
+        }
       >
         {type === CARD_TYPE.TIP && (
           <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
@@ -127,6 +153,24 @@ class Correction extends React.PureComponent<Props> {
             {keyPoint}
           </Html>
         )}
+        {type === CARD_TYPE.RESOURCE &&
+          resource && (
+            <View>
+              <Resource
+                type={resource.type}
+                url={resource.url}
+                description={resource.description}
+                thumbnail={resource.poster}
+                subtitles=""
+                height={200}
+                onPDFButtonPress={onPDFButtonPress}
+                testID={testIDSuffix}
+              />
+              <Text testID={'resource-description-' + testIDSuffix} style={styles.resourceTitle}>
+                {resource.description}
+              </Text>
+            </View>
+          )}
       </CardComponent>
     );
   };
@@ -140,7 +184,9 @@ class Correction extends React.PureComponent<Props> {
       layout,
       isFinished,
       isLoading,
-      lives
+      lives,
+      hasViewedAResource,
+      resources
     } = this.props;
 
     const correctionCard: Card = {
@@ -149,10 +195,45 @@ class Correction extends React.PureComponent<Props> {
     };
     const tipCard = {type: CARD_TYPE.TIP, title: translations.didYouKnowThat};
     const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: translations.keyPoint};
+    const lessonCards = resources.map(resource => ({
+      type: CARD_TYPE.RESOURCE,
+      title: translations.accessTheLesson,
+      resource
+    }));
 
-    const cards: Array<Card> = isCorrect
-      ? [tipCard, keyPointCard, correctionCard]
-      : [correctionCard, keyPointCard, tipCard];
+    const isCorrectAndHasViewResource: Array<Card> = [
+      tipCard,
+      keyPointCard,
+      correctionCard,
+      ...lessonCards
+    ];
+    const isCorrectAndHasNotViewResource: Array<Card> = [
+      tipCard,
+      ...lessonCards,
+      keyPointCard,
+      correctionCard
+    ];
+    const isNotCorrectAndHasViewResource: Array<Card> = [
+      correctionCard,
+      keyPointCard,
+      ...lessonCards,
+      tipCard
+    ];
+    const isNotCorrectAndHasNotViewResource: Array<Card> = [
+      correctionCard,
+      ...lessonCards,
+      keyPointCard,
+      tipCard
+    ];
+
+    let cards: Array<Card> = [];
+    if (isCorrect) {
+      cards = hasViewedAResource ? isCorrectAndHasViewResource : isCorrectAndHasNotViewResource;
+    } else {
+      cards = hasViewedAResource
+        ? isNotCorrectAndHasViewResource
+        : isNotCorrectAndHasNotViewResource;
+    }
 
     return (
       <View

@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Hozzáférés a leckéhez',
   clue: 'Tipp',
   clueStarsToLoose:
     'A tipp feloldása {{count}} csillaggal csökkentheti a nyereményét ennél a kérdésnél (ha jól válaszol)',

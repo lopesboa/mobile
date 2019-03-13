@@ -113,7 +113,20 @@ storiesOf('Video', module)
       onReady={handleFakePress}
     />
   ))
-  .add('Fullscreen', () => (
+  .add('Fullscreen with testID', () => (
+    <Video
+      source={video}
+      preview={image}
+      height={180}
+      step={STEP.PLAY}
+      isFullScreen
+      testID="1234"
+      onPlay={handleFakePress}
+      onEnd={handleFakePress}
+      onReady={handleFakePress}
+    />
+  ))
+  .add('Fullscreen without testID', () => (
     <Video
       source={video}
       preview={image}

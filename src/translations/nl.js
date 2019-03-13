@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Naar de les',
   clue: 'Tip',
   clueStarsToLoose:
     'Het gebruiken van een tip vermindert het aantal sterren dat je met deze vraag kan winnen met {{count}} (als je goed antwoordt)',

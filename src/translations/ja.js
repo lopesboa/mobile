@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'レッスンを受ける',
   clue: 'ヒント',
   clueStarsToLoose: 'ヒントを参照すると通常より獲得ができるスターの数が{{count}}つ減ります。',
   congratulations: 'おめでとうございます!',

@@ -9,17 +9,19 @@ import {
   getChoices,
   getLives,
   getCurrentCorrection,
+  getPreviousSlide,
   getStepContent,
   getQuestionMedia,
   getQuestionType,
+  hasSeenLesson as checkHasSeenLesson,
   validateAnswer
 } from '@coorpacademy/player-store';
-import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
+import type {Lesson, Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import Question from '../components/question';
 import Screen from '../components/screen';
 import translations from '../translations';
-import type {SliderProps} from '../types';
+import type {Resource, SliderProps} from '../types';
 import type {StoreState} from '../redux/store';
 import {
   checkIsCorrect,
@@ -27,6 +29,7 @@ import {
   checkIsValidating,
   getSlide
 } from '../redux/utils/state-extract';
+import {reduceToResources} from '../layer/data/mappers';
 import type {Params as CorrectionScreenParams} from './correction';
 
 type ConnectedStateProps = {|
@@ -41,9 +44,12 @@ type ConnectedStateProps = {|
   media?: Media,
   isCorrect?: boolean,
   tip?: string,
+  isCurrentScreen?: boolean,
   keyPoint?: string,
   lives?: number,
   isFinished?: boolean,
+  hasViewedAResource?: boolean,
+  resourcesForCorrection?: Array<Resource>,
   hasLives: boolean,
   isValidating: boolean,
   slider: SliderProps
@@ -93,6 +99,7 @@ class QuestionScreen extends React.PureComponent<Props> {
 
   handleCorrectionNavigation = () => {
     const {
+      isCurrentScreen,
       navigation,
       header,
       isCorrect,
@@ -102,8 +109,15 @@ class QuestionScreen extends React.PureComponent<Props> {
       answers,
       userAnswers,
       isFinished,
-      hasLives
+      hasLives,
+      hasViewedAResource,
+      resourcesForCorrection: resources
     } = this.props;
+
+    // not to trigger navigate('Correction') on resourceViewed on a correction card
+    if (!isCurrentScreen) {
+      return;
+    }
 
     const correctionParams: CorrectionScreenParams = {
       title: (isCorrect && translations.goodJob) || translations.ouch,
@@ -116,7 +130,9 @@ class QuestionScreen extends React.PureComponent<Props> {
       keyPoint,
       lives,
       isFinished,
-      hasLives
+      hasLives,
+      hasViewedAResource,
+      resources
     };
 
     navigation.navigate('Correction', correctionParams);
@@ -196,9 +212,11 @@ class QuestionScreen extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStateProps => {
   const nextContent = getStepContent(state);
+  const isCurrentScreen = state.navigation.currentScreenName === 'Slide';
 
   if (!nextContent) {
     return {
+      isCurrentScreen,
       type: undefined,
       header: undefined,
       explanation: undefined,
@@ -213,6 +231,8 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       keyPoint: undefined,
       lives: undefined,
       hasLives: false,
+      hasViewedAResource: undefined,
+      resourcesForCorrection: undefined,
       isFinished: undefined,
       isValidating: false,
       slider: {
@@ -245,6 +265,7 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
   const isCorrect = checkIsCorrect(state);
   const isFinished = checkIsFinished(state);
   const isValidating = checkIsValidating(state);
+  const hasViewedAResource = checkHasSeenLesson(state, true);
 
   if (!slide) {
     return {
@@ -254,11 +275,13 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       template: undefined,
       choices: undefined,
       userChoices: undefined,
+      hasViewedAResource,
       answers,
       userAnswers,
       media,
       isCorrect,
       isValidating,
+      isCurrentScreen,
       tip: undefined,
       keyPoint: undefined,
       lives,
@@ -300,6 +323,11 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
   // $FlowFixMe union type
   const sliderStepValue = slide.question.content.step;
 
+  const slideForCorrection = getPreviousSlide(state);
+  const lessons: Array<Lesson> = (slideForCorrection && slideForCorrection.lessons) || [];
+
+  const resourcesForCorrection: Array<Resource> = reduceToResources(lessons);
+
   return {
     type,
     header,
@@ -312,7 +340,10 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
     media,
     isCorrect,
     isFinished,
+    isCurrentScreen,
     hasLives,
+    hasViewedAResource,
+    resourcesForCorrection,
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,

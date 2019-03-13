@@ -3,6 +3,7 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  accessTheLesson: 'Derse eriş',
   clue: 'İpucu',
   clueStarsToLoose:
     'İpucunu açmanız halinde bu sorudan {{count}} daha az yıldız kazanırsınız (eğer doğru yanıtlarsanız)',

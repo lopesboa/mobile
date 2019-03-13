@@ -2,21 +2,23 @@
 
 import * as React from 'react';
 import {View} from 'react-native';
+import type {LessonType} from '@coorpacademy/progression-engine';
 
 import {RESOURCE_TYPE} from '../const';
-import type {ResourceType} from '../types';
+
 import Video from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
 import Preview from './preview';
 
 type Props = {|
-  type: ResourceType,
+  type: LessonType,
   thumbnail: string,
   url: string,
   description: string,
   subtitles?: string,
   height: number,
-  onPDFButtonPress: (url: string, description: string) => void
+  onPDFButtonPress: (url: string, description: string) => void,
+  testID?: string
 |};
 
 class Resource extends React.PureComponent<Props> {
@@ -28,7 +30,7 @@ class Resource extends React.PureComponent<Props> {
   };
 
   render() {
-    const {type, thumbnail, url, subtitles, height} = this.props;
+    const {type, thumbnail, url, subtitles, height, testID} = this.props;
 
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
@@ -38,6 +40,7 @@ class Resource extends React.PureComponent<Props> {
             subtitles={subtitles}
             preview={{uri: getCleanUri(thumbnail)}}
             height={height}
+            testID={testID}
           />
         );
       }
@@ -48,6 +51,7 @@ class Resource extends React.PureComponent<Props> {
               type={RESOURCE_TYPE.PDF}
               source={{uri: getCleanUri(thumbnail)}}
               onPress={this.handlePress}
+              testID={testID}
             />
           </View>
         );

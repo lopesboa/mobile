@@ -58,11 +58,21 @@ describe('Questions', () => {
       it('should lose a life', async () => {
         await weExpect(element(by.id('correction-lives-2-broken'))).toBeVisible();
       });
-      it('should be able to swipe to key point card', async () => {
+      it('should be able to swipe resources cards', async () => {
         await element(by.id('card-correction')).swipe('up');
-        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
+        await element(by.id('card-resource-les_1')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
+        await element(by.id('card-resource-les_2')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
+        await element(by.id('card-resource-les_3')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
+        await element(by.id('card-resource-les_4')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
+      });
+      it('should see key-point card', async () => {
         await weExpect(element(by.id('card-keypoint'))).toBeVisible();
         await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
       });
       it('should be able to swipe to tip card', async () => {
         await element(by.id('card-keypoint')).swipe('left');
@@ -111,6 +121,14 @@ describe('Questions', () => {
       it('should be able to swipe to correction card', async () => {
         await element(by.id('card-tip')).swipe('up');
         await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+        await element(by.id('card-resource-les_1')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
+        await element(by.id('card-resource-les_2')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
+        await element(by.id('card-resource-les_3')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
+        await element(by.id('card-resource-les_4')).swipe('left');
+        await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
         await weExpect(element(by.id('card-keypoint'))).toBeVisible();
         await weExpect(element(by.id('card-correction'))).toBeNotVisible();
       });
