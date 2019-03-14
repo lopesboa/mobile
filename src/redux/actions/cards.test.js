@@ -13,8 +13,15 @@ import {
 } from './cards';
 
 jest.mock('./progression', () => ({
-  createLevelProgression: jest.fn(() => ({type: '@@mock/CREATE_LEVEL_PROGRESSION'})),
-  createChapterProgression: jest.fn(() => ({type: '@@mock/CREATE_CHAPTER_PROGRESSION'}))
+  createLevelProgression: jest.fn(() =>
+    Promise.resolve({type: '@@mock/CREATE_LEVEL_PROGRESSION', payload: {_id: '__ID__'}})
+  ),
+  createChapterProgression: jest.fn(() =>
+    Promise.resolve({type: '@@mock/CREATE_CHAPTER_PROGRESSION', payload: {_id: '__ID__'}})
+  ),
+  selectProgression: jest.fn(id =>
+    Promise.resolve({type: '@@mock/SELECT_PROGRESSION', payload: {id}})
+  )
 }));
 
 const brand = createBrand();
@@ -165,15 +172,27 @@ describe('Cards', () => {
 
         options.services.Content.find.mockReturnValueOnce(Promise.resolve(level));
 
-        dispatch.mockImplementationOnce(action => {
-          // expect(action).toEqual(fetchError('Error'));
-          expect(action).toEqual({type: '@@mock/CREATE_LEVEL_PROGRESSION'});
-          return Promise.resolve(action);
+        dispatch.mockImplementationOnce(async action => {
+          expect(await action).toEqual({
+            type: '@@mock/CREATE_LEVEL_PROGRESSION',
+            payload: {_id: '__ID__'}
+          });
+          return action;
+        });
+        dispatch.mockImplementationOnce(async action => {
+          expect(await action).toEqual({
+            type: '@@mock/SELECT_PROGRESSION',
+            payload: {id: '__ID__'}
+          });
+          return action;
         });
 
         // $FlowFixMe
         const actual = await selectCard(disciplineCard)(dispatch, getState, options);
-        return expect(actual).toEqual({type: '@@mock/CREATE_LEVEL_PROGRESSION'});
+        return expect(actual).toEqual({
+          type: '@@mock/SELECT_PROGRESSION',
+          payload: {id: '__ID__'}
+        });
       });
       it('should handle card without module and dispatch failure', async () => {
         const dispatch = jest.fn();
@@ -221,9 +240,9 @@ describe('Cards', () => {
 
         options.services.Content.find.mockReturnValueOnce(Promise.reject(new Error()));
 
-        dispatch.mockImplementationOnce(action => {
-          expect(action).toEqual(expected);
-          return Promise.resolve(action);
+        dispatch.mockImplementationOnce(async action => {
+          expect(await action).toEqual(expected);
+          return action;
         });
         // $FlowFixMe
         const actual = await selectCard(disciplineCard)(dispatch, getState, options);
@@ -245,15 +264,21 @@ describe('Cards', () => {
 
         options.services.Content.find.mockReturnValueOnce(Promise.resolve(level));
 
-        dispatch.mockImplementationOnce(action => {
+        dispatch.mockImplementationOnce(async action => {
           // expect(action).toEqual(fetchError('Error'));
-          expect(action).toEqual({type: '@@mock/CREATE_CHAPTER_PROGRESSION'});
-          return Promise.resolve(action);
+          expect(await action).toEqual({
+            type: '@@mock/CREATE_CHAPTER_PROGRESSION',
+            payload: {_id: '__ID__'}
+          });
+          return action;
         });
 
         // $FlowFixMe
         const actual = await selectCard(chapterCard)(dispatch, getState, options);
-        return expect(actual).toEqual({type: '@@mock/CREATE_CHAPTER_PROGRESSION'});
+        return expect(actual).toEqual({
+          type: '@@mock/CREATE_CHAPTER_PROGRESSION',
+          payload: {_id: '__ID__'}
+        });
       });
       it('should handle content find rejection', async () => {
         const dispatch = jest.fn();

@@ -1,8 +1,9 @@
 // @flow strict
 
-import {createProgression, CONTENT_TYPE} from '@coorpacademy/player-store';
+import {createProgression, CONTENT_TYPE, selectProgression} from '@coorpacademy/player-store';
 import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
+import {ObjectId} from 'bson';
 
 import {ENGINE} from '../../const';
 
@@ -10,6 +11,8 @@ import {ENGINE} from '../../const';
 
 const ENGINE_VERSION = '1';
 const ENGINE_CONFIG_VERSION = '1';
+
+export {selectProgression};
 
 export const createLevelProgression = (level: Level) => {
   const engine: Engine = {ref: ENGINE.LEARNER, version: ENGINE_VERSION};
@@ -20,7 +23,7 @@ export const createLevelProgression = (level: Level) => {
     livesDisabled: level.infiniteLives
   };
 
-  return createProgression(engine, content, engineConfig);
+  return createProgression(new ObjectId().toString(), engine, content, engineConfig);
 };
 
 export const createChapterProgression = (chapter: Chapter) => {
@@ -28,5 +31,5 @@ export const createChapterProgression = (chapter: Chapter) => {
   const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref: chapter.universalRef};
   const engineConfig: EngineConfig = {version: ENGINE_CONFIG_VERSION};
 
-  return createProgression(engine, content, engineConfig);
+  return createProgression(new ObjectId().toString(), engine, content, engineConfig);
 };

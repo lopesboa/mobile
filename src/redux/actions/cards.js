@@ -6,7 +6,7 @@ import type {StoreAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';
 import {pickNextLevel} from '../../utils/content';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../layer/data/_const';
-import {createLevelProgression, createChapterProgression} from './progression';
+import {createLevelProgression, createChapterProgression, selectProgression} from './progression';
 import type {Action as BundleAction} from './discipline-bundle';
 import {fetchBundles} from './discipline-bundle';
 
@@ -147,7 +147,9 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
             nextModule.universalRef
           );
           // $FlowFixMe union type
-          return dispatch(createLevelProgression(level));
+          const {payload: progression} = await dispatch(createLevelProgression(level));
+          // $FlowFixMe union type
+          return dispatch(selectProgression(progression._id));
         } catch (e) {
           return dispatch(selectCardFailure(item, 'Level progression not created'));
         }
