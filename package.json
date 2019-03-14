@@ -46,7 +46,8 @@
     "pull:certificate:android": "babel-node scripts/pull-certificate-android.js",
     "generate:bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
-    "pull:translations": "babel-node scripts/pull-translations.js"
+    "pull:translations": "babel-node scripts/pull-translations.js",
+    "postpull:translations": "eslint --fix src/translations"
   },
   "engines": {
     "yarn": "^1.12.3"

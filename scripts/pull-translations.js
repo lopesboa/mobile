@@ -70,10 +70,8 @@ const generate = async (locale: string) => {
     correction: playerTranslations.Correction,
     context: playerTranslations.Context,
     didYouKnowThat: playerTranslations['Did you know that?'],
-    // @todo get it from mooc
-    finishLearning: 'Finish learning',
-    // @todo get it from mooc
-    forYou: 'For you',
+    finishLearning: playerTranslations['Finish learning'],
+    forYou: playerTranslations['For you'],
     gameOver: playerTranslations['Game over'],
     goodAnswer: playerTranslations['Good answer'],
     goodJob: playerTranslations['Good job'],
@@ -90,8 +88,7 @@ const generate = async (locale: string) => {
     retryLevel: playerTranslations['Retry level'],
     selectSomethingBelow: playerTranslations['Select something below'],
     seeClue: componentsTranslations['See clue'],
-    // @todo get it from mooc
-    startLearning: 'Start learning',
+    startLearning: playerTranslations['Start learning'],
     selectAnAnswer: playerTranslations['Select an answer'],
     typeHere: playerTranslations['Type here'],
     validate: playerTranslations.Validate,
