@@ -55,7 +55,7 @@ describe('brand', () => {
                   },
                   images: {
                     'logo-mobile':
-                      'https://static.coorpacademy.com/content/7steps/raw/logo_loreal-1500561107159.svg'
+                      'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
                   }
                 }
               ]

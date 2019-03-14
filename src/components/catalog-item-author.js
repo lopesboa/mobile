@@ -18,7 +18,7 @@ type Props = {|
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    margin: theme.spacing.small + theme.spacing.micro,
+    marginVertical: theme.spacing.base,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%'
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
   author: {
     color: theme.colors.white,
     textShadowColor: 'rgba(0, 0, 0, 1)',
-    textShadowRadius: 2
+    textShadowRadius: 2,
+    textAlign: 'center'
   },
   bold: {fontWeight: theme.fontWeight.bold}
 });

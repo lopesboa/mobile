@@ -45,8 +45,7 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.tiny
   },
   certified: {
-    paddingLeft: theme.spacing.tiny,
-    marginTop: -5
+    paddingLeft: theme.spacing.tiny
   },
   progressionBar: {
     borderRadius: theme.radius.common,
@@ -70,6 +69,7 @@ const CatalogItemFooter = ({
   iconAdaptiveSize = 16,
   iconCertifiedSize = 14
 }: Props) => {
+  const iconCertifiedMargin: number = -iconCertifiedSize / 2;
   return (
     <View style={styles.container}>
       {isAdaptive && (
@@ -88,7 +88,7 @@ const CatalogItemFooter = ({
           {subtitle}
         </Text>
         {isCertified && (
-          <View style={styles.certified}>
+          <View style={[styles.certified, {marginTop: iconCertifiedMargin}]}>
             <NovaSolidStatusCheckCircle2
               testID={`certified-${testID}`}
               color={theme.colors.white}

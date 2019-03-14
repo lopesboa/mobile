@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, TouchableHighlight, Dimensions} from 'react-native';
+import {StyleSheet, TouchableHighlight, Dimensions, View} from 'react-native';
 import type {Progression, CardDisplayMode, AuthorType} from '../types';
 import {CARD_DISPLAY_MODE} from '../const';
 import theme from '../modules/theme';
@@ -98,21 +98,36 @@ const CatalogItem = ({
 
   return (
     <TouchableHighlight testID={testID} onPress={onPress}>
-      <ImageGradient
-        testID={testID}
-        image={image}
-        style={mode === CARD_DISPLAY_MODE.CARD ? styles.container : styles.containerCover}
-      >
-        {badgeLabel && (
-          <Badge
-            label={badgeLabel}
-            style={mode === CARD_DISPLAY_MODE.CARD ? styles.badge : styles.badgeCover}
-            labelStyle={
-              mode === CARD_DISPLAY_MODE.CARD ? styles.badgeLabel : styles.badgeLabelCover
-            }
-            testID={`badge-${testID}`}
+      <View>
+        <ImageGradient
+          testID={testID}
+          image={image}
+          style={mode === CARD_DISPLAY_MODE.CARD ? styles.container : styles.containerCover}
+        >
+          {badgeLabel && (
+            <Badge
+              label={badgeLabel}
+              style={mode === CARD_DISPLAY_MODE.CARD ? styles.badge : styles.badgeCover}
+              labelStyle={
+                mode === CARD_DISPLAY_MODE.CARD ? styles.badgeLabel : styles.badgeLabelCover
+              }
+              testID={`badge-${testID}`}
+            />
+          )}
+
+          <CatalogItemFooter
+            title={title}
+            subtitle={subtitle}
+            isCertified={isCertified}
+            isAdaptive={isAdaptive}
+            progression={progression}
+            titleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.title : styles.titleCover}
+            subtitleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.subtitle : styles.subtitleCover}
+            iconAdaptiveSize={mode === CARD_DISPLAY_MODE.CARD ? 16 : 22}
+            iconCertifiedSize={mode === CARD_DISPLAY_MODE.CARD ? 14 : 16}
+            testID={testID}
           />
-        )}
+        </ImageGradient>
         {authorType && (
           <CatalogItemAuthor
             authorType={authorType}
@@ -121,19 +136,7 @@ const CatalogItem = ({
             testID={testID}
           />
         )}
-        <CatalogItemFooter
-          title={title}
-          subtitle={subtitle}
-          isCertified={isCertified}
-          isAdaptive={isAdaptive}
-          progression={progression}
-          titleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.title : styles.titleCover}
-          subtitleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.subtitle : styles.subtitleCover}
-          iconAdaptiveSize={mode === CARD_DISPLAY_MODE.CARD ? 16 : 22}
-          iconCertifiedSize={mode === CARD_DISPLAY_MODE.CARD ? 14 : 16}
-          testID={testID}
-        />
-      </ImageGradient>
+      </View>
     </TouchableHighlight>
   );
 };

@@ -129,10 +129,14 @@ exports[`Storyshots Catalog Item Footer Default 1`] = `
     </Text>
     <View
       style={
-        Object {
-          "marginTop": -5,
-          "paddingLeft": 8,
-        }
+        Array [
+          Object {
+            "paddingLeft": 8,
+          },
+          Object {
+            "marginTop": -7,
+          },
+        ]
       }
     >
       <RNSVGSvgView

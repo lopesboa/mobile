@@ -82,7 +82,7 @@ class Catalog extends React.PureComponent<Props> {
         <BrandThemeContext.Consumer>
           {brandTheme => (
             <View style={styles.container}>
-              <Image style={styles.logo} source={logo} />
+              <Image style={styles.logo} testID="brand-logo" source={logo} />
               <Text style={styles.title}>{titleCover}</Text>
 
               <Card style={styles.card} shadowStyle={BOX_STYLE}>

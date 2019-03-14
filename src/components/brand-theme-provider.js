@@ -24,7 +24,8 @@ const initialState: State = {
   contentCategoryName: 'Onboarding',
   name: 'onboarding',
   images: {
-    'logo-mobile': 'https://static.coorpacademy.com/content/up/raw/logo_mobile-1491561428898.svg'
+    'logo-mobile':
+      'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
   }
 };
 

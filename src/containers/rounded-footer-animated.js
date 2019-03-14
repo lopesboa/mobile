@@ -23,7 +23,7 @@ class RoundedFooterAnimated extends React.PureComponent<Props> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    this.animateFooter();
+    // this.animateFooter();
   }
 
   animateFooter = () => {
@@ -45,7 +45,7 @@ class RoundedFooterAnimated extends React.PureComponent<Props> {
           })
         : this.footerAnim.interpolate({
             inputRange: [0, 1],
-            outputRange: ['-60%', '-300%']
+            outputRange: ['-50%', '-300%']
           });
 
     return <RoundedFooter color={color} translateY={translateY} testID={testID} />;

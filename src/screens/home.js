@@ -7,6 +7,7 @@ import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/cards';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import translationUtil from '../translations';
 
 type ConnectedDispatchProps = {|
   selectCard: typeof selectCard
@@ -41,7 +42,6 @@ class HomeScreen extends React.PureComponent<Props> {
 
   render() {
     const {items} = this.props;
-
     return (
       <Screen testID="home-screen" noSafeArea>
         <Home onCardPress={this.handleCardPress} isFetching={items.length === 0} />
@@ -52,7 +52,7 @@ class HomeScreen extends React.PureComponent<Props> {
 
 const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {
   // @todo use user language
-  const language = 'en';
+  const language = translationUtil.getLanguage();
 
   return {
     items: Object.keys(cards.entities)

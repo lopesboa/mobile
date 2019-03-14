@@ -6,7 +6,7 @@ exports[`Storyshots Catalog Item Author Coorp 1`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "margin": 20,
+      "marginVertical": 24,
       "position": "absolute",
       "width": "100%",
     }
@@ -17,6 +17,7 @@ exports[`Storyshots Catalog Item Author Coorp 1`] = `
       Array [
         Object {
           "color": "#FFFFFF",
+          "textAlign": "center",
           "textShadowColor": "rgba(0, 0, 0, 1)",
           "textShadowRadius": 2,
         },
@@ -45,7 +46,7 @@ exports[`Storyshots Catalog Item Author Custom 1`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "margin": 20,
+      "marginVertical": 24,
       "position": "absolute",
       "width": "100%",
     }
@@ -56,6 +57,7 @@ exports[`Storyshots Catalog Item Author Custom 1`] = `
       Array [
         Object {
           "color": "#FFFFFF",
+          "textAlign": "center",
           "textShadowColor": "rgba(0, 0, 0, 1)",
           "textShadowRadius": 2,
         },
@@ -76,7 +78,7 @@ exports[`Storyshots Catalog Item Author Marketplace 1`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "margin": 20,
+      "marginVertical": 24,
       "position": "absolute",
       "width": "100%",
     }
@@ -87,6 +89,7 @@ exports[`Storyshots Catalog Item Author Marketplace 1`] = `
       Array [
         Object {
           "color": "#FFFFFF",
+          "textAlign": "center",
           "textShadowColor": "rgba(0, 0, 0, 1)",
           "textShadowRadius": 2,
         },
@@ -106,7 +109,7 @@ exports[`Storyshots Catalog Item Author Verified 1`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
-      "margin": 20,
+      "marginVertical": 24,
       "position": "absolute",
       "width": "100%",
     }
@@ -117,6 +120,7 @@ exports[`Storyshots Catalog Item Author Verified 1`] = `
       Array [
         Object {
           "color": "#FFFFFF",
+          "textAlign": "center",
           "textShadowColor": "rgba(0, 0, 0, 1)",
           "textShadowRadius": 2,
         },
