@@ -55,5 +55,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <!-- for react-native-camera -->
+  <key>NSCameraUsageDescription</key>
+  <!-- @todo localize this translation -->
+  <string>Used to scan QR codes</string>
+  <!-- for react-native-permisions -->
+  <key>NSBluetoothPeripheralUsageDescription</key>
+  <string>Some description</string>
+  <key>NSCalendarsUsageDescription</key>
+  <string>Some description</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Some description</string>
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>Some description</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Some description</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>Some description</string>
+  <key>NSAppleMusicUsageDescription</key>
+  <string>Some description</string>
+  <key>NSMotionUsageDescription</key>
+  <string>Some description</string>
 </dict>
 </plist>

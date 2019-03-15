@@ -13,9 +13,14 @@ const rightAnswer = async () => {
 describe('Questions', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
+  });
+
+  it('should see the catalog and choose a discipline', async () => {
     await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-basic-dis-1')).tap();
   });
+
   it('should see QCM elements', async () => {
     await waitFor(element(by.id('question'))).toBeVisible();
     await weExpect(element(by.id('question-title'))).toBeVisible();
@@ -209,4 +214,6 @@ describe('Questions', () => {
       await weExpect(element(by.id('home-screen'))).toBeVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });

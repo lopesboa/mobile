@@ -18,6 +18,8 @@ import Cards from './cards';
 import type {BrandsService} from './brands';
 import Brands from './brands';
 import Analytics from './analytics';
+import Permissions from './permissions';
+import type {PermissionsService} from './permissions';
 
 export type Services = {|
   Analytics: AnalyticsService,
@@ -27,7 +29,8 @@ export type Services = {|
   Content: ContentService,
   DisciplineBundle: DisciplineBundleService,
   Progressions: ProgressionsService,
-  Brands: BrandsService
+  Brands: BrandsService,
+  Permissions: PermissionsService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -38,7 +41,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Content: Content(dataLayer),
   DisciplineBundle: DisciplineBundle(dataLayer),
   Progressions: Progressions(dataLayer),
-  Brands: Brands(dataLayer)
+  Brands: Brands(dataLayer),
+  Permissions
 });
 
 export default createServices;

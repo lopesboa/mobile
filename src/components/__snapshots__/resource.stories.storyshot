@@ -287,6 +287,7 @@ exports[`Storyshots Resource PDF 1`] = `
                       "color": "#FFFFFF",
                     },
                     undefined,
+                    undefined,
                   ],
                 ]
               }

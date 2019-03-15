@@ -5,10 +5,12 @@ import utils from './utils';
 describe('Context', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
   });
 
   describe('With image', () => {
     beforeAll(async () => {
+      await device.launchApp({newInstance: true});
       await waitFor(element(by.id('catalog-item-with-image-context-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-with-image-context-dis-1')).tap();
     });
@@ -21,6 +23,7 @@ describe('Context', () => {
     });
 
     it('should go to the question', async () => {
+      await weExpect(element(by.id('goToQuestion-button'))).toBeVisible();
       await element(by.id('goToQuestion-button')).tap();
       await weExpect(element(by.id('question-screen'))).toBeVisible();
     });
@@ -65,4 +68,6 @@ describe('Context', () => {
       await weExpect(element(by.id('context-screen'))).toBeNotVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });

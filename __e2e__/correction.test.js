@@ -5,7 +5,8 @@ import utils from './utils';
 describe('Correction', () => {
   describe('Resources', () => {
     beforeAll(async () => {
-      await utils.reloadApp();
+      await utils.reloadApp({microphone: 'YES'});
+      await utils.bypassAuthentication();
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
@@ -75,10 +76,12 @@ describe('Correction', () => {
       await weExpect(element(by.id('button-close'))).toBeNotVisible();
       await element(by.id('button-next-question')).tap();
     });
+    afterAll(async () => {
+      await element(by.id('header-back')).tap();
+    });
   });
   describe('Error', () => {
     beforeAll(async () => {
-      await device.launchApp({newInstance: true});
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
@@ -120,11 +123,13 @@ describe('Correction', () => {
       await weExpect(element(by.id('card-resource-les_1'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
     });
+    afterAll(async () => {
+      await element(by.id('header-back')).tap();
+    });
   });
 
   describe('Success', () => {
     beforeAll(async () => {
-      await device.launchApp({newInstance: true});
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();

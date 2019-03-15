@@ -12,7 +12,9 @@ import type {
   CardDisplayMode,
   AuthorType,
   QuestionChoiceInputType,
-  AnimationType
+  AnimationType,
+  PermissionStatus,
+  AppState
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -115,4 +117,21 @@ export const ENGINE: {
 } = {
   LEARNER: 'learner',
   MICROLEARNING: 'microlearning'
+};
+
+export const PERMISSION_STATUS: {
+  ['AUTHORIZED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED']: PermissionStatus
+} = {
+  AUTHORIZED: 'authorized',
+  DENIED: 'denied',
+  RESTRICTED: 'restricted',
+  UNDETERMINED: 'undetermined'
+};
+
+export const APP_STATE: {
+  ['ACTIVE' | 'BACKGROUND' | 'INACTIVE']: AppState
+} = {
+  ACTIVE: 'active',
+  BACKGROUND: 'background',
+  INACTIVE: 'inactive'
 };

@@ -41,7 +41,7 @@ class TabBarSlide extends React.Component<Props> {
   props: Props;
 
   componentDidUpdate(prevProps: Props) {
-    if (this.props.showContext) {
+    if (!prevProps.showContext && this.props.showContext) {
       this.props.navigation.navigate('Context');
     }
   }
@@ -123,6 +123,7 @@ class TabBarSlide extends React.Component<Props> {
         {...props}
         navigation={navigation}
         onTabPress={this.handleTabPress}
+        onTabLongPress={this.handleTabPress}
         renderIcon={this.renderIcon}
         getButtonComponent={this.getButtonComponent}
         getLabelText={this.getLabelText}

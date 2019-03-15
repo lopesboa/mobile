@@ -11,6 +11,7 @@ const wrongAnswer = async () => {
 describe('Lives', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
   });
 
   // describe('Learner', () => {
@@ -135,4 +136,6 @@ describe('Lives', () => {
       await weExpect(element(by.id('question-screen'))).toBeVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });

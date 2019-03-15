@@ -5,10 +5,11 @@ import utils from './utils';
 describe('Lesson', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
   });
 
   describe('More than 1 resource', () => {
-    beforeAll(async () => {
+    it('should see catalog and choose a discipline', async () => {
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
     });
@@ -193,4 +194,6 @@ describe('Lesson', () => {
       await weExpect(element(by.id('lesson-screen'))).toBeNotVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });

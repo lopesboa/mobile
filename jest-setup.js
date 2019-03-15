@@ -67,3 +67,23 @@ jest.mock('rn-fetch-blob', () => ({
 NativeModules.PdfViewManager = {
   supportPDFKit: callback => callback(false)
 };
+
+// react-native-camera
+
+jest.mock('react-native-camera', () => ({
+  __esModule: true,
+  default: 'Mock$ReactNativeCamera'
+}));
+
+// react-native-permissions
+
+jest.mock('react-native-permissions', () => {
+  const {PERMISSION_STATUS} = require('./src/const');
+
+  return {
+    canOpenSettings: jest.fn(() => Promise.resolve(true)),
+    openSettings: jest.fn(() => Promise.resolve(undefined)),
+    request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
+    check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
+  };
+});

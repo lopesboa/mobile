@@ -2,7 +2,7 @@
 
 import {createBrand} from '../../../__fixtures__/brands';
 import {FETCH_SUCCESS, fetchSuccess} from '../../actions/brands';
-import {SIGN_OUT, signOut} from '../../actions/authentication';
+import {SIGN_OUT} from '../../actions/authentication';
 import type {Action} from '../../actions/brands';
 import type {Action as AuthenticationAction} from '../../actions/authentication';
 import reducer from './brand';
@@ -31,7 +31,7 @@ describe('Cards', () => {
   });
   describe(SIGN_OUT, () => {
     it('Default', () => {
-      const action: AuthenticationAction = signOut();
+      const action: AuthenticationAction = {type: SIGN_OUT};
       const result = reducer(undefined, action);
       const expected: State = expectedInitialState;
       expect(result).toEqual(expected);

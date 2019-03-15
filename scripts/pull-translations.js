@@ -50,6 +50,18 @@ const generate = async (locale: string) => {
     'core/locales',
     'global.json'
   );
+  const moocMenuTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'menu.json'
+  );
+  const moocFormTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'form.json'
+  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -63,12 +75,13 @@ const generate = async (locale: string) => {
     'global.json'
   );
   const translations: Translations = {
+    cancel: moocFormTranslations.cancel,
     accessTheLesson: playerTranslations['Access the lesson'],
     clue: playerTranslations.Clue,
     clueStarsToLoose: componentsTranslations.clue_stars_to_loose,
     congratulations: playerTranslations['Congratulations!'],
-    correction: playerTranslations.Correction,
     context: playerTranslations.Context,
+    correction: playerTranslations.Correction,
     didYouKnowThat: playerTranslations['Did you know that?'],
     finishLearning: playerTranslations['Finish learning'],
     forYou: playerTranslations['For you'],
@@ -78,16 +91,40 @@ const generate = async (locale: string) => {
     goToQuestion: playerTranslations['Go to question'],
     keyPoint: playerTranslations['Key point'],
     lesson: playerTranslations.Media,
+    loginButton: playerTranslations['Scan your QR code'] || '',
+    loginFirstStepHeader: playerTranslations.Step1 || '',
+    loginFirstStepDescription:
+      playerTranslations['Connect to your learning plateform with another device'] || '',
+    loginSecondStepHeader: playerTranslations.Step2 || '',
+    loginSecondStepDescription:
+      playerTranslations['Go to settings account in the upper right hand corner'] || '',
+    loginThirdStepHeader: playerTranslations.Step3 || '',
+    loginThirdStepDescription: playerTranslations['Voila your qr code will be right there'] || '',
+    loginHeader:
+      playerTranslations[
+        'To open your companys learning app, you need to scan your personal QR code'
+      ] || '',
+    logOut: moocMenuTranslations.header.account_menu.logout,
     new: moocTranslations.content.new,
     next: playerTranslations.Next,
     nextLevel: playerTranslations['Next level'],
+    ok: moocFormTranslations.ok,
     open: componentsTranslations.Open,
+    // @todo get it from github
+    openSettings: 'Open settings',
     ouch: playerTranslations.Ouch,
     outOfLives: playerTranslations['You are out of lives!'],
+    // @todo get it from github
+    permission: 'Permission',
+    // @todo get it from github
+    permissionCamera:
+      'We need access to your camera in order to scan your QR code and authenticate you.',
     question: playerTranslations.Question,
+    quit: playerTranslations.Quit,
     retryLevel: playerTranslations['Retry level'],
-    selectSomethingBelow: playerTranslations['Select something below'],
     seeClue: componentsTranslations['See clue'],
+    selectSomethingBelow: playerTranslations['Select something below'],
+    // @todo get it from mooc
     startLearning: playerTranslations['Start learning'],
     selectAnAnswer: playerTranslations['Select an answer'],
     typeHere: playerTranslations['Type here'],

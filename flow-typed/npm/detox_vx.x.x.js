@@ -14,7 +14,7 @@ declare var detox: {
 type DetoxFakeNotification = {
   // @todo
 };
-type DetoxDevicePermissionsType = {|
+declare type DetoxDevicePermissionsType = {|
   // https://github.com/wix/AppleSimulatorUtils
   calendar?: 'YES' | 'NO',
   camera?: 'YES' | 'NO',
@@ -89,7 +89,7 @@ type DetoxElementType = {
   tap(): void,
   longPress(): void,
   multiTap(): void,
-  tapAtPoint(): void,
+  tapAtPoint({x: number, y: number}): void,
   typeText(): void,
   replaceText(string): void,
   clearText(): void,
@@ -98,6 +98,7 @@ type DetoxElementType = {
   swipe(directionTypes, speed: speedTypes, percentage?: number): void,
 };
 declare function element(DetoxElementQueryType): DetoxElementType;
+declare type DetoxElement = typeof element;
 export type DetoxExpectFunctionType = {
   /** The object that you want to make assertions against */
   (value: DetoxElementType | any): DetoxExpectType,

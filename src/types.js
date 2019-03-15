@@ -67,3 +67,7 @@ export type Brand = {|
     'logo-mobile': string
   }
 |};
+
+export type PermissionStatus = 'authorized' | 'denied' | 'restricted' | 'undetermined';
+
+export type AppState = 'active' | 'background' | 'inactive';

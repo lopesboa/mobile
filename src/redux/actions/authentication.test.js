@@ -1,7 +1,14 @@
 // @flow strict
 
 import {toJWT} from '../../utils/tests';
-import {signIn, signOut, SIGN_IN_SUCCESS, SIGN_IN_REQUEST, SIGN_IN_ERROR} from './authentication';
+import {
+  signIn,
+  signOut,
+  SIGN_IN_SUCCESS,
+  SIGN_IN_REQUEST,
+  SIGN_IN_ERROR,
+  SIGN_OUT
+} from './authentication';
 
 describe('Authentication', () => {
   describe('signIn', () => {
@@ -99,7 +106,46 @@ describe('Authentication', () => {
       });
     });
   });
-  it('signOut', () => {
-    expect(signOut()).toBeDefined();
+  describe('signOut', () => {
+    it('should dispatch logout if alert is accepted', async () => {
+      jest.mock('Alert', () => ({
+        alert: jest.fn()
+      }));
+      const Alert = require('Alert');
+      Alert.alert.mockImplementationOnce((title, message, buttons) => {
+        buttons[1].onPress();
+      });
+
+      const dispatch = jest.fn();
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: SIGN_OUT
+        });
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signOut()(dispatch);
+      const expected = {type: SIGN_OUT};
+      expect(actual).toEqual(expected);
+    });
+    it("shouldn't dispatch anything if alert is refused", async () => {
+      jest.mock('Alert', () => ({
+        alert: jest.fn()
+      }));
+      const Alert = require('Alert');
+      Alert.alert.mockImplementationOnce((title, message, buttons) => {
+        buttons[0].onPress();
+      });
+
+      const dispatch = jest.fn();
+
+      // $FlowFixMe
+      const actual = await signOut()(dispatch);
+
+      expect(dispatch).not.toHaveBeenCalled();
+      expect(actual).toBeUndefined();
+    });
   });
 });

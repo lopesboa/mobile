@@ -1,0 +1,1945 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Authentication Default 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282679787,
+      4278235391,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "space-around",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "padding": 24,
+        },
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+      ]
+    }
+    testID="logo-header"
+  >
+    <Image
+      resizeMode="contain"
+      source={1}
+      style={
+        Array [
+          Object {
+            "height": 100,
+            "width": 100,
+          },
+          Object {
+            "height": 35,
+            "width": 192,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 24,
+      }
+    }
+    testID="sign-in-header"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "paddingHorizontal": 8,
+          },
+        ]
+      }
+    >
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 17,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                To open your company's learning app, you need to scan 
+              </Text>
+            </Text>
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "fontWeight": "bold",
+                  },
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": 17,
+                      "fontWeight": "bold",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  your personal QR code.
+                </Text>
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+      ]
+    }
+    testID="carousel"
+  >
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Array [
+          Object {
+            "width": 750,
+          },
+          Object {
+            "width": 750,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          Array [
+            Object {
+              "paddingHorizontal": 50,
+            },
+            undefined,
+          ]
+        }
+        data={
+          Array [
+            Object {
+              "description": "Connect to your learning </br>platform <b>with another </br>device</b>",
+              "header": "Step <b>01</b>",
+              "iconName": "computer",
+            },
+            Object {
+              "description": "Go to <b>Settings > Account</b> </br>in the upper right-hand corner",
+              "header": "Step <b>02</b>",
+              "iconName": "settings",
+            },
+            Object {
+              "description": "<b>Voilà!</b> </br>Your QR code will be </br>right there",
+              "header": "Step <b>03</b>",
+              "iconName": "qr-code",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        getItemLayout={[Function]}
+        horizontal={true}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        renderItem={[Function]}
+        scrollEnabled={false}
+        scrollEventThrottle={1}
+        showsHorizontalScrollIndicator={false}
+        stickyHeaderIndices={Array []}
+        style={
+          Object {
+            "flexGrow": 1,
+          }
+        }
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              onLayout={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 650,
+                    "justifyContent": "center",
+                    "overflow": "visible",
+                    "width": 650,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 5,
+                      "elevation": 4,
+                      "flexGrow": 1,
+                      "height": 650,
+                      "justifyContent": "center",
+                      "overflow": "visible",
+                      "padding": 16,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
+                      "width": 628,
+                    }
+                  }
+                >
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight="21"
+                    bbWidth="21"
+                    color="#00B0FF"
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                        undefined,
+                        false,
+                        Object {
+                          "flex": 0,
+                          "height": 21,
+                          "width": 21,
+                        },
+                      ]
+                    }
+                    vbHeight={24}
+                    vbWidth={24}
+                  >
+                    <RNSVGPath
+                      d="M0 0h24v24H0z"
+                      fill={null}
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGPath
+                      d="M22 3H2C.897 3 0 3.896 0 5v13c0 1.103.897 2 2 2h9v2H7v2h10v-2h-4v-2h9c1.103 0 2-.897 2-2V5c0-1.104-.897-2-2-2zm0 2l-.002 10H2V5h20zM2 18v-1h19.997v1H2z"
+                      fill={
+                        Array [
+                          0,
+                          0,
+                          0.6901960784313725,
+                          1,
+                          1,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGSvgView>
+                  <View
+                    style={
+                      Object {
+                        "height": 16,
+                        "width": 16,
+                      }
+                    }
+                  />
+                  <View>
+                    <View>
+                      <View
+                        style={Object {}}
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 17,
+                                  "marginBottom": 17,
+                                  "marginTop": 17,
+                                  "marginVertical": 0,
+                                  "textAlign": "center",
+                                }
+                              }
+                            >
+                              STEP 
+                            </Text>
+                          </Text>
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {
+                                  "fontWeight": "bold",
+                                },
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {},
+                                  Object {},
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "color": "#00B0FF",
+                                    "fontSize": 17,
+                                    "fontWeight": "bold",
+                                    "marginBottom": 17,
+                                    "marginTop": 17,
+                                    "marginVertical": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                01
+                              </Text>
+                            </Text>
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                  />
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {
+                              "marginVertical": 0,
+                              "textAlign": "center",
+                            },
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            Connect to your learning 
+                          </Text>
+                        </Text>
+                        <Text
+                          style={
+                            Object {
+                              "flex": 1,
+                              "height": 16.8,
+                            }
+                          }
+                        >
+                          
+
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            platform 
+                          </Text>
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "fontWeight": "bold",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={Object {}}
+                          >
+                            <Text
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {},
+                                  Object {},
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "alignSelf": "center",
+                                    "color": "#546E7A",
+                                    "fontSize": 15,
+                                    "fontWeight": "bold",
+                                    "marginBottom": 15,
+                                    "marginTop": 15,
+                                    "marginVertical": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                with another 
+                              </Text>
+                            </Text>
+                            <Text
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "height": 16.8,
+                                }
+                              }
+                            >
+                              
+
+                            </Text>
+                            <Text
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {},
+                                  Object {},
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "alignSelf": "center",
+                                    "color": "#546E7A",
+                                    "fontSize": 15,
+                                    "fontWeight": "bold",
+                                    "marginBottom": 15,
+                                    "marginTop": 15,
+                                    "marginVertical": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                device
+                              </Text>
+                            </Text>
+                          </Text>
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              onLayout={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 650,
+                    "justifyContent": "center",
+                    "overflow": "visible",
+                    "width": 650,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 5,
+                      "elevation": 4,
+                      "flexGrow": 1,
+                      "height": 650,
+                      "justifyContent": "center",
+                      "overflow": "visible",
+                      "padding": 16,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
+                      "width": 628,
+                    }
+                  }
+                >
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight="21"
+                    bbWidth="21"
+                    color="#00B0FF"
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                        undefined,
+                        false,
+                        Object {
+                          "flex": 0,
+                          "height": 21,
+                          "width": 21,
+                        },
+                      ]
+                    }
+                    vbHeight={25}
+                    vbWidth={25}
+                  >
+                    <RNSVGPath
+                      d="M25 14.6v-4.2h-2.3c-.3-1.3-.8-2.6-1.5-3.7l1.6-1.6-2.9-2.9-1.6 1.6c-1.1-.7-2.3-1.3-3.6-1.5V0h-4.2v2.3c-1.3.3-2.6.8-3.7 1.5L5.2 2.2 2.3 5.1l1.6 1.6C3.2 7.8 2.6 9 2.4 10.4H0v4.2h2.3c.3 1.3.8 2.6 1.5 3.7l-1.6 1.6 2.9 2.9 1.6-1.6c1.1.7 2.3 1.3 3.7 1.5V25h4.2v-2.3c1.3-.3 2.6-.8 3.7-1.5l1.6 1.6 2.9-2.9-1.6-1.6c.7-1.1 1.3-2.3 1.5-3.6H25v-.1zm-12.5 2.1c-2.3 0-4.2-1.9-4.2-4.2s1.9-4.2 4.2-4.2c2.3 0 4.2 1.9 4.2 4.2s-1.9 4.2-4.2 4.2z"
+                      fill={
+                        Array [
+                          0,
+                          0,
+                          0.6901960784313725,
+                          1,
+                          1,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGSvgView>
+                  <View
+                    style={
+                      Object {
+                        "height": 16,
+                        "width": 16,
+                      }
+                    }
+                  />
+                  <View>
+                    <View>
+                      <View
+                        style={Object {}}
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 17,
+                                  "marginBottom": 17,
+                                  "marginTop": 17,
+                                  "marginVertical": 0,
+                                  "textAlign": "center",
+                                }
+                              }
+                            >
+                              STEP 
+                            </Text>
+                          </Text>
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {
+                                  "fontWeight": "bold",
+                                },
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {},
+                                  Object {},
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "color": "#00B0FF",
+                                    "fontSize": 17,
+                                    "fontWeight": "bold",
+                                    "marginBottom": 17,
+                                    "marginTop": 17,
+                                    "marginVertical": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                02
+                              </Text>
+                            </Text>
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                  />
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {
+                              "marginVertical": 0,
+                              "textAlign": "center",
+                            },
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            Go to 
+                          </Text>
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "fontWeight": "bold",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#546E7A",
+                                  "fontSize": 15,
+                                  "fontWeight": "bold",
+                                  "marginBottom": 15,
+                                  "marginTop": 15,
+                                  "marginVertical": 0,
+                                  "textAlign": "center",
+                                }
+                              }
+                            >
+                              Settings &gt; Account
+                            </Text>
+                          </Text>
+                        </Text>
+                        <Text
+                          style={
+                            Object {
+                              "flex": 1,
+                              "height": 16.8,
+                            }
+                          }
+                        >
+                          
+
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            in the upper right-hand corner
+                          </Text>
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                },
+                null,
+              ]
+            }
+          >
+            <View
+              onLayout={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 650,
+                    "justifyContent": "center",
+                    "overflow": "visible",
+                    "width": 650,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 5,
+                      "elevation": 4,
+                      "flexGrow": 1,
+                      "height": 650,
+                      "justifyContent": "center",
+                      "overflow": "visible",
+                      "padding": 16,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
+                      "width": 628,
+                    }
+                  }
+                >
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight="21"
+                    bbWidth="21"
+                    color="#00B0FF"
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                        undefined,
+                        false,
+                        Object {
+                          "flex": 0,
+                          "height": 21,
+                          "width": 21,
+                        },
+                      ]
+                    }
+                    vbHeight={24}
+                    vbWidth={24}
+                  >
+                    <RNSVGPath
+                      d="M0 0h24v24H0z"
+                      fill={null}
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGGroup
+                      fill={
+                        Array [
+                          0,
+                          0,
+                          0.6901960784313725,
+                          1,
+                          1,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      font={Object {}}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth="1"
+                      x={0}
+                      y={0}
+                    >
+                      <RNSVGPath
+                        d="M3 10h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4H4V4zM21 2h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 4h-2V4h2v2zM7 16H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1zm-1 4H4v-2h2v2zM11 2h4v2h-4zM12 9h3V7h-2V5h-2v3a1 1 0 0 0 1 1zM16 10v4a1 1 0 0 0 1 1h3v1h2v-2a1 1 0 0 0-1-1h-3v-2h4V9h-5a1 1 0 0 0-1 1zM10 15v-3a1 1 0 0 0-1-1H2v2h2v2h2v-2h2v2h2zM11 13h4v2h-4zM12 10h3v2h-3zM15 18v2h-4v-1H9v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2h5v-2h-6a1 1 0 0 0-1 1z"
+                        fill={
+                          Array [
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={Array []}
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth="1"
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M12 16h2v3h-2zM9 16h2v2H9zM18 20h4v2h-4z"
+                        fill={
+                          Array [
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={Array []}
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth="1"
+                        x={0}
+                        y={0}
+                      />
+                    </RNSVGGroup>
+                  </RNSVGSvgView>
+                  <View
+                    style={
+                      Object {
+                        "height": 16,
+                        "width": 16,
+                      }
+                    }
+                  />
+                  <View>
+                    <View>
+                      <View
+                        style={Object {}}
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 17,
+                                  "marginBottom": 17,
+                                  "marginTop": 17,
+                                  "marginVertical": 0,
+                                  "textAlign": "center",
+                                }
+                              }
+                            >
+                              STEP 
+                            </Text>
+                          </Text>
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {
+                                  "fontWeight": "bold",
+                                },
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {},
+                                  Object {},
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "color": "#00B0FF",
+                                    "fontSize": 17,
+                                    "fontWeight": "bold",
+                                    "marginBottom": 17,
+                                    "marginTop": 17,
+                                    "marginVertical": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                03
+                              </Text>
+                            </Text>
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                  />
+                  <View>
+                    <View
+                      style={Object {}}
+                    >
+                      <Text
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {
+                              "marginVertical": 0,
+                              "textAlign": "center",
+                            },
+                            Object {},
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "fontWeight": "bold",
+                              },
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            selectable={false}
+                            style={
+                              Array [
+                                Object {},
+                                Object {},
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                Object {
+                                  "alignSelf": "center",
+                                  "color": "#546E7A",
+                                  "fontSize": 15,
+                                  "fontWeight": "bold",
+                                  "marginBottom": 15,
+                                  "marginTop": 15,
+                                  "marginVertical": 0,
+                                  "textAlign": "center",
+                                }
+                              }
+                            >
+                              Voilà!
+                            </Text>
+                          </Text>
+                        </Text>
+                        <Text
+                          style={
+                            Object {
+                              "flex": 1,
+                              "height": 16.8,
+                            }
+                          }
+                        >
+                          
+
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            Your QR code will be 
+                          </Text>
+                        </Text>
+                        <Text
+                          style={
+                            Object {
+                              "flex": 1,
+                              "height": 16.8,
+                            }
+                          }
+                        >
+                          
+
+                        </Text>
+                        <Text
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            right there
+                          </Text>
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      pointerEvents="box-none"
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "paddingHorizontal": 20,
+            "paddingVertical": 30,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+          Object {
+            "paddingVertical": 8,
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": "#FFFFFF",
+            "borderRadius": 1000,
+            "borderWidth": 1,
+            "height": 14,
+            "justifyContent": "center",
+            "marginHorizontal": 8,
+            "opacity": 1,
+            "width": 14,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "height": 8,
+              "margin": 0,
+              "marginHorizontal": 2,
+              "opacity": 0,
+              "padding": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.6,
+                },
+              ],
+              "width": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": "#FFFFFF",
+            "borderRadius": 1000,
+            "borderWidth": 1,
+            "height": 14,
+            "justifyContent": "center",
+            "marginHorizontal": 8,
+            "opacity": 1,
+            "width": 14,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "height": 8,
+              "margin": 0,
+              "marginHorizontal": 2,
+              "opacity": 0,
+              "padding": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.6,
+                },
+              ],
+              "width": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": "#FFFFFF",
+            "borderRadius": 1000,
+            "borderWidth": 1,
+            "height": 14,
+            "justifyContent": "center",
+            "marginHorizontal": 8,
+            "opacity": 1,
+            "width": 14,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "height": 8,
+              "margin": 0,
+              "marginHorizontal": 2,
+              "opacity": 0,
+              "padding": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.6,
+                },
+              ],
+              "width": 8,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 24,
+      }
+    }
+  >
+    <View
+      testID="scan-qr-code"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="30"
+            bbWidth="30"
+            color="#00B0FF"
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                false,
+                Object {
+                  "flex": 0,
+                  "height": 30,
+                  "width": 30,
+                },
+              ]
+            }
+            vbHeight={30}
+            vbWidth={30}
+          >
+            <RNSVGPath
+              d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 27C8.4 27 3 21.6 3 15S8.4 3 15 3s12 5.4 12 12-5.4 12-12 12z"
+              fill={
+                Array [
+                  0,
+                  0,
+                  0.6901960784313725,
+                  1,
+                  1,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            />
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  0,
+                  0.6901960784313725,
+                  1,
+                  1,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth="1"
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M12 12h1.5v-1.5h-2.2c-.5 0-.8.3-.8.7v2.3H12V12zM18.7 10.5h-2.2V12H18v1.5h1.5v-2.3c0-.4-.3-.7-.8-.7zM12 16.5h-1.5v2.2c0 .5.3.8.8.8h2.2V18H12v-1.5zM18 18h-1.5v1.5h2.2c.5 0 .8-.3.8-.8v-2.2H18V18z"
+                fill={
+                  Array [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={Array []}
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth="1"
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+          <View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={Object {}}
+              >
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#00B0FF",
+                        "fontSize": 17,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    Scan your 
+                  </Text>
+                </Text>
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "fontWeight": "bold",
+                      },
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#00B0FF",
+                          "fontSize": 17,
+                          "fontWeight": "bold",
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      QR code
+                    </Text>
+                  </Text>
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;

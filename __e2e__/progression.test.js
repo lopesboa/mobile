@@ -5,10 +5,12 @@ import utils from './utils';
 describe('Progression', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
   });
 
   describe('Learner', () => {
     beforeAll(async () => {
+      await device.launchApp({newInstance: true});
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
     });
@@ -39,4 +41,6 @@ describe('Progression', () => {
   //     await weExpect(element(by.id('progression-label'))).toBeNotVisible();
   //   });
   // });
+
+  utils.checkResetAuthentication();
 });

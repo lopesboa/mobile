@@ -11,10 +11,12 @@ import {
 import type {Slide} from '@coorpacademy/progression-engine';
 import type {Lives} from '@coorpacademy/player-store';
 
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
+import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import type {StoreState} from '../store';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
+import type {State as PermissionsState} from '../reducers/permissions';
+import type {PermissionType} from '../actions/permissions';
 
 export const isContentReady = (language: SupportedLanguage, status: OfflineStatus): boolean =>
   status.ready.includes(language);
@@ -93,4 +95,8 @@ export const getCurrentStep = (state: StoreState): number | void => {
 };
 
 export const getToken = (state: StoreState) => state.authentication.token;
+
 export const getBrand = (state: StoreState) => state.authentication.brand;
+
+export const hasPermission = (state: PermissionsState, type: PermissionType): boolean =>
+  state[type] === PERMISSION_STATUS.AUTHORIZED;

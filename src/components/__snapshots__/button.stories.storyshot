@@ -48,6 +48,7 @@ exports[`Storyshots Button Default 1`] = `
             undefined,
             undefined,
             undefined,
+            undefined,
           ],
         ]
       }
@@ -88,6 +89,7 @@ exports[`Storyshots Button Disabled 1`] = `
           undefined,
           undefined,
           undefined,
+          undefined,
         ],
         Object {
           "backgroundColor": "#ECEFF1",
@@ -115,6 +117,7 @@ exports[`Storyshots Button Disabled 1`] = `
             Object {
               "color": "#90A4AE",
             },
+            undefined,
             undefined,
             undefined,
           ],
@@ -177,6 +180,7 @@ exports[`Storyshots Button Inverted 1`] = `
             undefined,
             undefined,
             undefined,
+            undefined,
           ],
         ]
       }
@@ -214,6 +218,7 @@ exports[`Storyshots Button Loading 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
           },
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -284,6 +289,132 @@ exports[`Storyshots Button Secondary 1`] = `
               "fontWeight": "700",
               "textAlign": "center",
             },
+            undefined,
+            undefined,
+            undefined,
+            Object {
+              "color": "#00B0FF",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Here we go!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Secondary Inverted 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "transparent",
+        "borderColor": "#00B0FF",
+        "borderRadius": 32,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 54,
+        "justifyContent": "center",
+        "marginBottom": 0,
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "flex": 1,
+            "fontSize": 18,
+            "textAlign": "center",
+          },
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 17,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#546E7A",
+            },
+            undefined,
+            undefined,
+            Object {
+              "color": "#00B0FF",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Here we go!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button TextSecondary 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#00B0FF",
+        "borderRadius": 32,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "height": 54,
+        "justifyContent": "center",
+        "marginBottom": 0,
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "flex": 1,
+            "fontSize": 18,
+            "textAlign": "center",
+          },
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 17,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+            undefined,
             undefined,
             undefined,
             undefined,

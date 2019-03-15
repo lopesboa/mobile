@@ -131,6 +131,8 @@ describe('storeFixture', () => {
       brand: null
     };
 
+    const permissionsState = {};
+
     const progression = createProgression({
       engine: 'microlearning',
       progressionContent: {
@@ -211,6 +213,7 @@ describe('storeFixture', () => {
       },
       disciplineBundle: disciplineBundleState,
       cards: cardsState,
+      permissions: permissionsState,
       authentication: authenticationState
     };
 

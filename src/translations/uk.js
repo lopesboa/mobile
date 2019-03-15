@@ -3,13 +3,14 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  cancel: 'Відмінити',
   accessTheLesson: 'Доступ до уроку ',
   clue: 'Підказка',
   clueStarsToLoose:
     'Відкриття підказки зменшує кількість зірок за це питання на {{count}} (за умови правильної відповіді)',
   congratulations: 'Вітаємо!',
-  correction: 'Виправлення',
   context: 'Контекст',
+  correction: 'Виправлення',
   didYouKnowThat: 'Ви знали це?',
   finishLearning: 'З цим ви майже закінчили',
   forYou: 'Найкращі пропозиції для вас',
@@ -19,16 +20,34 @@ const translations: Translations = {
   goToQuestion: 'Перейти до запитання',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
+  logOut: 'Вийти',
   new: 'нові',
   next: 'Далі',
   nextLevel: 'Наступний рівень',
+  ok: 'Гаразд',
   open: 'Відкрити',
+  openSettings: 'Open settings',
   ouch: 'Ой...',
   outOfLives: 'У Вас закінчилися життя!',
+  permission: 'Permission',
+  permissionCamera:
+    'We need access to your camera in order to scan your QR code and authenticate you.',
   question: 'Питання',
+  quit: 'Вийти',
   retryLevel: 'Пройти рівень ще раз',
-  selectSomethingBelow: 'Оберіть положення нижче',
+  loginButton: 'Відскануйте свій <b>QR-код</b>',
+  loginFirstStepHeader: 'Крок <b>01</b>',
+  loginFirstStepDescription:
+    "Під'єднайтеся до своєї навчальної </br>платформи <b>за допомогою іншого </br>пристрою</b>",
+  loginSecondStepHeader: 'Крок <b>02</b>',
+  loginSecondStepDescription:
+    "Зайдіть у <b>'Налаштування' > 'Обліковка'</b> </br>, що у верхньому правому куті",
+  loginThirdStepHeader: 'Крок <b>03</b>',
+  loginThirdStepDescription: '<b>Вуаля!</b> </br>Ваш QR-код опиниться </br>просто тут',
+  loginHeader:
+    'Вам слід буде відсканувати <b>свій особистий QR-код</b>, щоб відкрити навчальний застосунок своєї компанії.',
   seeClue: 'Переглянути підказку',
+  selectSomethingBelow: 'Оберіть положення нижче',
   startLearning: 'Вам слід почати з цього',
   selectAnAnswer: 'Обрати відповідь',
   typeHere: 'Ввести тут',

@@ -13,7 +13,8 @@ type PropsType = {|
   isInlined?: boolean,
   isSecondary?: boolean,
   isLoading?: boolean,
-  children: string,
+  isTextSecondary?: boolean,
+  children: string | React$Node,
   testID?: string
 |};
 
@@ -60,6 +61,7 @@ const Button = ({
   isInverted,
   isInlined,
   isSecondary,
+  isTextSecondary,
   isDisabled,
   testID: prefixTestID,
   children
@@ -85,14 +87,16 @@ const Button = ({
               buttonStyle,
               isInverted && styles.inverted,
               isInlined && styles.inlined,
-              isSecondary && secondaryButtonStyle
+              isSecondary && secondaryButtonStyle,
+              isInverted && isSecondary && secondaryButtonStyle
             ]}
             textStyle={[
               styles.text,
               isInverted && styles.textInverted,
               isDisabled && styles.textDisabled,
               isInlined && styles.textInlined,
-              isSecondary && secondaryTextStyle
+              isSecondary && secondaryTextStyle,
+              isTextSecondary && secondaryTextStyle
             ]}
             disabledStyle={styles.disabled}
             activityIndicatorColor={theme.colors.gray.medium}

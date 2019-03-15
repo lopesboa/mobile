@@ -278,6 +278,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
                     "color": "#FFFFFF",
                   },
                   undefined,
+                  undefined,
                 ],
               ]
             }

@@ -360,6 +360,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                         "color": "#FFFFFF",
                       },
                       undefined,
+                      undefined,
                     ],
                   ]
                 }

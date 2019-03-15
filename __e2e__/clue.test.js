@@ -6,10 +6,13 @@ import utils from './utils';
 describe('Clue', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
   });
 
   describe('With clue', () => {
     beforeAll(async () => {
+      // launch new instance to test the redirect to home screen directly if user is connected
+      await device.launchApp({newInstance: true});
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
     });
@@ -44,4 +47,6 @@ describe('Clue', () => {
       await weExpect(element(by.id('clue'))).toBeNotVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });

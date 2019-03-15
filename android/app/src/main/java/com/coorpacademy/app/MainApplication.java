@@ -2,6 +2,7 @@ package com.coorpacademy.app;
 
 import android.app.Application;
 
+import org.reactnative.camera.RNCameraPackage;
 import org.wonday.pdf.RCTPdfView;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import org.wonday.orientation.OrientationPackage;
@@ -31,6 +32,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new RNCameraPackage(),
           new RNFetchBlobPackage(),
           new RCTPdfView(),
           new OrientationPackage(),

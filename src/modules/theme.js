@@ -96,4 +96,14 @@ const theme: Theme = {
   }
 };
 
+export const BLUE_COORP_LIGHT: string = '#00B0FF';
+export const BLUE_COORP_DARK: string = '#4481EB';
+
+export const defaultHitSlop = {
+  left: theme.spacing.small,
+  top: theme.spacing.small,
+  right: theme.spacing.small,
+  bottom: theme.spacing.small
+};
+
 export default theme;

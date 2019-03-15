@@ -30,9 +30,6 @@
 ; Jest coverage folder
 ./coverage
 
-; e2e tests
-.*/__e2e__
-
 ; React-native-linear-gradient
 .*/node_modules/react-native-linear-gradient
 

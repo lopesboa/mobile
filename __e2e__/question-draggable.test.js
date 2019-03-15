@@ -1,4 +1,6 @@
-// @flow
+// @flow strict
+
+import utils from './utils';
 
 const selectQCMRightDragItem = async () => {
   await element(by.id(`choice-1-unselected`)).tap();
@@ -12,8 +14,14 @@ const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
   await waitFor(element(by.id('correction-success'))).toBeVisible();
   await element(by.id('button-next-question')).tap();
 };
+
 describe('QCM Drag', () => {
   beforeAll(async () => {
+    await utils.reloadApp();
+    await utils.bypassAuthentication();
+  });
+
+  it('should see catalog and choose a discipline', async () => {
     await waitFor(element(by.id('catalog-item-qcm-drag-dis-1'))).toBeVisible();
     await element(by.id('home-screen')).swipe('up');
     await element(by.id('catalog-item-qcm-drag-dis-1')).tap();
@@ -68,4 +76,6 @@ describe('QCM Drag', () => {
     await waitFor(element(by.id('correction-error'))).toBeVisible();
     await weExpect(element(by.id('correction-error'))).toBeVisible();
   });
+
+  utils.checkResetAuthentication();
 });

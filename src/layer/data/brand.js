@@ -42,7 +42,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
   const body: Config = await response.json();
   return {
     name: body.brand.name,
-    host: 'https://mobile-staging.coorpacademy.com' || body.brand.baseUrl,
+    host: body.brand.baseUrl || 'https://mobile-staging.coorpacademy.com',
     contentCategoryName: body.brand.contentCategoryName,
     colors: {
       primary: body.themes[0].common.primary

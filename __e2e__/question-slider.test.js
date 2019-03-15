@@ -3,6 +3,10 @@ import utils from './utils';
 describe('QCM Slider', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
+  });
+
+  it('shoould see catalog, choose a discipline and see a question slider', async () => {
     await waitFor(element(by.id('catalog-item-qcm-drag-dis-1'))).toExist();
     await element(by.id('home-screen')).swipe('up');
     await waitFor(element(by.id('catalog-item-with-slider-dis-1'))).toBeVisible();
@@ -38,4 +42,6 @@ describe('QCM Slider', () => {
     await element(by.id('button-next-question')).tap();
     await element(by.id('header-back')).tap();
   });
+
+  utils.checkResetAuthentication();
 });

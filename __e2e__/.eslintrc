@@ -8,7 +8,6 @@
     "jasmine": true
   },
   "rules": {
-    "flowtype/require-return-type": "false",
-    "flowtype-errors/show-errors": "false"
+    "flowtype/require-return-type": "false"
   }
 }

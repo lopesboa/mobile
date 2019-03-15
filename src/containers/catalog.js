@@ -15,10 +15,11 @@ type ConnectedStateProps = {|
 
 type Props = {|
   ...ConnectedStateProps,
-  onPress: (item: DisciplineCard | ChapterCard) => void
+  onPress: (item: DisciplineCard | ChapterCard) => void,
+  onLogoLongPress: () => void
 |};
 
-const Catalog = ({items, onPress}: Props) => {
+const Catalog = ({items, onPress, onLogoLongPress}: Props) => {
   const firstIsStarted = !(items[0] && items[0].completion === 0);
 
   return (
@@ -30,6 +31,7 @@ const Catalog = ({items, onPress}: Props) => {
           }}
           titleCover={firstIsStarted ? translations.finishLearning : translations.startLearning}
           titleCards={translations.forYou}
+          onLogoLongPress={onLogoLongPress}
           items={items}
           onPress={onPress}
         />

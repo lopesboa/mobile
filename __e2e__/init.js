@@ -6,6 +6,7 @@ import json from '../package';
 
 const config = json.detox;
 
+// $FlowFixMe jest flow type is incomplete
 jasmine.getEnv().addReporter(adapter);
 jest.setTimeout(120000);
 

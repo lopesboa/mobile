@@ -9,6 +9,7 @@ import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
 import {initialState as bundledDisciplineState} from '../redux/reducers/discipline-bundle';
 import {initialState as cardsState} from '../redux/reducers/cards';
+import {initialState as permissionsState} from '../redux/reducers/permissions';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 
 type MappableObject =
@@ -143,6 +144,7 @@ export const createStoreState = ({
     },
     disciplineBundle: bundledDisciplineState,
     cards: cardsState,
+    permissions: permissionsState,
     authentication: {
       token: '__TOKEN__',
       brand: null

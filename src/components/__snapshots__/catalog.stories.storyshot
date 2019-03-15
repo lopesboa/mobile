@@ -9,6 +9,13 @@ exports[`Storyshots Catalog Items 1`] = `
   }
 >
   <Image
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     source={
       Object {
         "uri": "https://mobile-staging.coorpacademy.com/assets/css/skin/logos/logo_coorpacademy-mobile-theme3.58ba909c8d6.png",
@@ -21,7 +28,7 @@ exports[`Storyshots Catalog Items 1`] = `
         "width": "100%",
       }
     }
-    testID="brand-logo"
+    testID="catalog-logo"
   />
   <Text
     style={
@@ -1764,6 +1771,28 @@ exports[`Storyshots Catalog Items 1`] = `
         </View>
       </View>
     </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "height": 16,
+          "width": 16,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 10,
+          "padding": 24,
+          "textAlign": "center",
+        }
+      }
+    >
+      Version: e
+    </Text>
   </View>
 </View>
 `;

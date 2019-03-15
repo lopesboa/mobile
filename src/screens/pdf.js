@@ -7,7 +7,7 @@ import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
 import Pdf from '../components/pdf';
 import Screen from '../components/screen';
-import theme from '../modules/theme';
+import theme, {defaultHitSlop} from '../modules/theme';
 
 export type Params = {|
   title: string,
@@ -39,6 +39,7 @@ class PdfScreen extends React.PureComponent<Props> {
           <TouchableOpacity
             testID="button-close"
             onPress={PdfScreen.handleButtonPress(screenProps)}
+            hitSlop={defaultHitSlop}
           >
             <BackIcon height={16} width={16} color={theme.colors.gray.dark} />
           </TouchableOpacity>

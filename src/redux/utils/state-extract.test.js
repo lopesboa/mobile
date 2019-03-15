@@ -4,7 +4,7 @@ import type {Content} from '@coorpacademy/progression-engine';
 import type {Slide} from '../../layer/data/_types';
 import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
 
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
+import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import {createStoreState} from '../../__fixtures__/store';
 import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
@@ -18,7 +18,8 @@ import {
   checkIsValidating,
   getCurrentStep,
   getLives,
-  getSlide
+  getSlide,
+  hasPermission
 } from './state-extract';
 
 const createState = ({
@@ -279,6 +280,18 @@ describe('State-extract', () => {
 
       const current = getCurrentStep(state);
       expect(current).toEqual(state.data.progressions.entities.progression1.state.step.current);
+    });
+  });
+
+  describe('hasPermission', () => {
+    it('should return true', () => {
+      const result = hasPermission({camera: PERMISSION_STATUS.AUTHORIZED}, 'camera');
+      expect(result).toBeTruthy();
+    });
+
+    it('should return false', () => {
+      const result = hasPermission({}, 'camera');
+      expect(result).toBeFalsy();
     });
   });
 });

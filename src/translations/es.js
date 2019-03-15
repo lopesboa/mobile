@@ -3,13 +3,14 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
+  cancel: 'Cancelar',
   accessTheLesson: 'Accede a la lección',
   clue: 'Pista',
   clueStarsToLoose:
     'Desbloquear la pista reduce en {{count}} las estrellas que puedes ganar por esta pregunta (si la aciertas)',
   congratulations: '¡Felicidades!',
-  correction: 'Corrección',
   context: 'Contexto',
+  correction: 'Corrección',
   didYouKnowThat: '¿Lo sabías?',
   finishLearning: 'Ya casi terminas con este',
   forYou: 'Nuestras mejores opciones para ti',
@@ -19,16 +20,34 @@ const translations: Translations = {
   goToQuestion: 'Ir a la pregunta',
   keyPoint: 'Dato clave',
   lesson: 'Lección',
+  logOut: 'Cerrar sesión',
   new: 'Nuevo',
   next: 'Siguiente',
   nextLevel: 'Siguiente nivel',
+  ok: 'OK',
   open: 'Abrir',
+  openSettings: 'Open settings',
   ouch: 'Auch...',
   outOfLives: '¡No te quedan vidas!',
+  permission: 'Permission',
+  permissionCamera:
+    'We need access to your camera in order to scan your QR code and authenticate you.',
   question: 'Pregunta',
+  quit: 'Salir',
   retryLevel: 'Reintentar nivel',
-  selectSomethingBelow: 'Selecciona algo de abajo',
+  loginButton: 'Escanea tu <b>código QR</b>',
+  loginFirstStepHeader: 'Paso <b>01</b>',
+  loginFirstStepDescription:
+    'Conéctate a tu </br>plataforma <b>de aprendizaje con otro </br>dispositivo</b>',
+  loginSecondStepHeader: 'Paso <b>02</b>',
+  loginSecondStepDescription:
+    'Dirígete a <b>Ajustes > Cuenta</b>, </br>ubicado en la esquina superior derecha',
+  loginThirdStepHeader: 'Paso <b>03</b>',
+  loginThirdStepDescription: '<b>¡Listo!</b> </br>Tu código QR estará </br>justo ahí',
+  loginHeader:
+    'Para abrir la aplicación de aprendizaje de tu empresa, escanea <b>tu código QR personal.</b>',
   seeClue: 'Ver pista',
+  selectSomethingBelow: 'Selecciona algo de abajo',
   startLearning: 'Debes comenzar con este',
   selectAnAnswer: 'Selecciona una respuesta',
   typeHere: 'Escribe aquí',

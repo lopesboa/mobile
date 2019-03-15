@@ -2,8 +2,12 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
-import type {NavigationState, NavigationStackRouterConfig} from 'react-navigation';
+import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
+import type {
+  NavigationAction,
+  NavigationState,
+  NavigationStackRouterConfig
+} from 'react-navigation';
 import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
@@ -11,6 +15,9 @@ import Header from '../containers/header';
 import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
+import AuthenticationScreen from '../screens/authentication';
+import SplashScreen from '../screens/splash';
+import QRCodeScreen from '../screens/qr-code';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
@@ -21,7 +28,25 @@ const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
 
 const appNavigator = createStackNavigator(
   {
-    Home: {screen: HomeScreen},
+    Splash: {
+      screen: SplashScreen,
+      navigationOptions: navigationOptionsWithoutHeader
+    },
+    Authentication: {
+      screen: AuthenticationScreen,
+      navigationOptions: {
+        ...navigationOptionsWithoutHeader,
+        gesturesEnabled: false
+      }
+    },
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        ...navigationOptionsWithoutHeader,
+        // To prevent back action
+        gesturesEnabled: false
+      }
+    },
     Slide: {
       screen: slideNavigator,
       navigationOptions: {
@@ -36,6 +61,7 @@ const appNavigator = createStackNavigator(
     }
   },
   {
+    initialRouteName: 'Splash',
     defaultNavigationOptions: {
       ...navigationOptions,
       header: _Header,
@@ -46,12 +72,31 @@ const appNavigator = createStackNavigator(
   }
 );
 
+const defaultGetStateForAction = appNavigator.router.getStateForAction;
+
+appNavigator.router.getStateForAction = (action: NavigationAction, state: ?NavigationState) => {
+  if (
+    (state &&
+      action.type === NavigationActions.BACK &&
+      state.routes[state.index].routeName === 'Home') ||
+    (state &&
+      action.type === NavigationActions.BACK &&
+      state.routes[state.index].routeName === 'Authentication')
+  ) {
+    // Block back action on Home and Authentication
+    return null;
+  }
+
+  return defaultGetStateForAction(action, state);
+};
+
 const navigator = createStackNavigator(
   {
     App: {screen: appNavigator},
     SlideModal: {screen: slideModalsNavigator},
     PdfModal: {screen: pdfNavigator},
-    BrowserModal: {screen: browserNavigator}
+    BrowserModal: {screen: browserNavigator},
+    QRCodeModal: {screen: QRCodeScreen}
   },
   {
     defaultNavigationOptions: navigationOptionsWithoutHeader,

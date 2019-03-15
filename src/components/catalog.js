@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableWithoutFeedback} from 'react-native';
 
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import theme from '../modules/theme';
@@ -9,11 +9,12 @@ import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
 import type {AuthorType} from '../types';
+import version from '../modules/version';
+import Loader from './loader';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
 import CatalogItem from './catalog-item';
 import Card from './card';
-import Loader from './loader';
 import {STYLE as BOX_STYLE} from './box';
 
 type Props = {|
@@ -21,7 +22,8 @@ type Props = {|
   titleCards: string,
   logo: File | {uri: string},
   items: Array<DisciplineCard | ChapterCard>,
-  onPress: (item: DisciplineCard | ChapterCard) => void
+  onPress: (item: DisciplineCard | ChapterCard) => void,
+  onLogoLongPress?: () => void
 |};
 
 const styles = StyleSheet.create({
@@ -52,6 +54,12 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     borderRadius: theme.radius.card
+  },
+  version: {
+    fontSize: theme.fontSize.extraSmall,
+    textAlign: 'center',
+    padding: theme.spacing.base,
+    color: theme.colors.white
   }
 });
 
@@ -70,8 +78,22 @@ class Catalog extends React.PureComponent<Props> {
 
   handlePress = (item: DisciplineCard | ChapterCard) => () => this.props.onPress(item);
 
+  handleLogoLongPress = () => this.props.onLogoLongPress && this.props.onLogoLongPress();
+
+  renderVersion(): React.Node {
+    return (
+      <View>
+        <Space type="small" />
+        <Text style={styles.version}>
+          {translations.formatString('{0}: {1}', 'Version', version.commit)}
+        </Text>
+      </View>
+    );
+  }
+
   render() {
     const {items, titleCover, titleCards, logo} = this.props;
+
     if (items.length > 0) {
       let nextItem: DisciplineCard | ChapterCard;
       let rowIndex: number = -1;
@@ -82,7 +104,12 @@ class Catalog extends React.PureComponent<Props> {
         <BrandThemeContext.Consumer>
           {brandTheme => (
             <View style={styles.container}>
-              <Image style={styles.logo} testID="brand-logo" source={logo} />
+              <TouchableWithoutFeedback
+                testID="catalog-logo"
+                onLongPress={this.handleLogoLongPress}
+              >
+                <Image style={styles.logo} testID="brand-logo" source={logo} />
+              </TouchableWithoutFeedback>
               <Text style={styles.title}>{titleCover}</Text>
 
               <Card style={styles.card} shadowStyle={BOX_STYLE}>
@@ -174,6 +201,7 @@ class Catalog extends React.PureComponent<Props> {
                   </View>
                 );
               })}
+              {this.renderVersion()}
             </View>
           )}
         </BrandThemeContext.Consumer>

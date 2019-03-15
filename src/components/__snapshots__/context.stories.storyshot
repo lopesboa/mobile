@@ -211,6 +211,7 @@ exports[`Storyshots Context Default 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }
@@ -463,6 +464,7 @@ exports[`Storyshots Context With Image 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }
@@ -825,6 +827,7 @@ exports[`Storyshots Context With PDF 1`] = `
                         "color": "#FFFFFF",
                       },
                       undefined,
+                      undefined,
                     ],
                   ]
                 }
@@ -982,6 +985,7 @@ exports[`Storyshots Context With PDF 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }
@@ -1396,6 +1400,7 @@ exports[`Storyshots Context With Video 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }
@@ -1619,6 +1624,7 @@ exports[`Storyshots Context With badly formatted video 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }
@@ -1842,6 +1848,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                 Object {
                   "color": "#00B0FF",
                 },
+                undefined,
               ],
             ]
           }

@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots StepsIcons Computer 1`] = `
+<RNSVGSvgView
+  align="xMidYMid"
+  bbHeight="30"
+  bbWidth="30"
+  color="red"
+  meetOrSlice={0}
+  minX={0}
+  minY={0}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      undefined,
+      false,
+      Object {
+        "flex": 0,
+        "height": 30,
+        "width": 30,
+      },
+    ]
+  }
+  vbHeight={24}
+  vbWidth={24}
+>
+  <RNSVGPath
+    d="M0 0h24v24H0z"
+    fill={null}
+    fillOpacity={1}
+    fillRule={1}
+    matrix={
+      Array [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+      ]
+    }
+    opacity={1}
+    originX={0}
+    originY={0}
+    propList={
+      Array [
+        "fill",
+      ]
+    }
+    rotation={0}
+    scaleX={1}
+    scaleY={1}
+    skewX={0}
+    skewY={0}
+    stroke={null}
+    strokeDasharray={null}
+    strokeDashoffset={null}
+    strokeLinecap={0}
+    strokeLinejoin={0}
+    strokeMiterlimit={4}
+    strokeOpacity={1}
+    strokeWidth="1"
+    x={0}
+    y={0}
+  />
+  <RNSVGPath
+    d="M22 3H2C.897 3 0 3.896 0 5v13c0 1.103.897 2 2 2h9v2H7v2h10v-2h-4v-2h9c1.103 0 2-.897 2-2V5c0-1.104-.897-2-2-2zm0 2l-.002 10H2V5h20zM2 18v-1h19.997v1H2z"
+    fill={
+      Array [
+        0,
+        1,
+        0,
+        0,
+        1,
+      ]
+    }
+    fillOpacity={1}
+    fillRule={1}
+    matrix={
+      Array [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+      ]
+    }
+    opacity={1}
+    originX={0}
+    originY={0}
+    propList={
+      Array [
+        "fill",
+      ]
+    }
+    rotation={0}
+    scaleX={1}
+    scaleY={1}
+    skewX={0}
+    skewY={0}
+    stroke={null}
+    strokeDasharray={null}
+    strokeDashoffset={null}
+    strokeLinecap={0}
+    strokeLinejoin={0}
+    strokeMiterlimit={4}
+    strokeOpacity={1}
+    strokeWidth="1"
+    x={0}
+    y={0}
+  />
+</RNSVGSvgView>
+`;

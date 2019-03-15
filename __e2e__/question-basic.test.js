@@ -5,6 +5,10 @@ import utils from './utils';
 describe('Basic Question', () => {
   beforeAll(async () => {
     await utils.reloadApp();
+    await utils.bypassAuthentication();
+  });
+
+  it('should see catalog and chosse a discipline', async () => {
     await element(by.id('home-screen')).swipe('up');
     await waitFor(element(by.id('catalog-item-question-basic-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-question-basic-dis-1')).tap();
@@ -43,4 +47,6 @@ describe('Basic Question', () => {
       await weExpect(element(by.id('correction-success'))).toBeVisible();
     });
   });
+
+  utils.checkResetAuthentication();
 });
