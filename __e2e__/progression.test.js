@@ -41,6 +41,4 @@ describe('Progression', () => {
   //     await weExpect(element(by.id('progression-label'))).toBeNotVisible();
   //   });
   // });
-
-  utils.checkResetAuthentication();
 });

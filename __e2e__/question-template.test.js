@@ -86,6 +86,4 @@ describe('Template', () => {
       await weExpect(element(by.id('correction-success'))).toBeVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

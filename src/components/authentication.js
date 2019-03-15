@@ -11,7 +11,7 @@ import Button from './button';
 import Image from './image';
 import Space from './space';
 import Html from './html';
-import StepsIcon from './steps-icon';
+import StepsIcon, {TARGET} from './steps-icon';
 
 type Props = {|
   onPress: () => void
@@ -72,7 +72,7 @@ const Authentication = ({onPress}: Props) => (
     <View style={styles.wrapper}>
       <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
         <View style={styles.buttonWithIcon}>
-          <StepsIcon iconName="target" color={BLUE_COORP_LIGHT} height={30} width={30} />
+          <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
           <Space type="tiny" />
           <Html fontSize={theme.fontSize.large} style={styles.button}>
             {translations.loginButton}

@@ -47,6 +47,4 @@ describe('Clue', () => {
       await weExpect(element(by.id('clue'))).toBeNotVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

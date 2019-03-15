@@ -76,6 +76,4 @@ describe('QCM Drag', () => {
     await waitFor(element(by.id('correction-error'))).toBeVisible();
     await weExpect(element(by.id('correction-error'))).toBeVisible();
   });
-
-  utils.checkResetAuthentication();
 });

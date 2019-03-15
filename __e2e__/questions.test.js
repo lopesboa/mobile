@@ -214,6 +214,4 @@ describe('Questions', () => {
       await weExpect(element(by.id('home-screen'))).toBeVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

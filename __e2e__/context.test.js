@@ -68,6 +68,4 @@ describe('Context', () => {
       await weExpect(element(by.id('context-screen'))).toBeNotVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

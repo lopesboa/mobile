@@ -42,6 +42,4 @@ describe('QCM Slider', () => {
     await element(by.id('button-next-question')).tap();
     await element(by.id('header-back')).tap();
   });
-
-  utils.checkResetAuthentication();
 });

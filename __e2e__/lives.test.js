@@ -136,6 +136,4 @@ describe('Lives', () => {
       await weExpect(element(by.id('question-screen'))).toBeVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

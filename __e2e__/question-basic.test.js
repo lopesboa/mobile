@@ -47,6 +47,4 @@ describe('Basic Question', () => {
       await weExpect(element(by.id('correction-success'))).toBeVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

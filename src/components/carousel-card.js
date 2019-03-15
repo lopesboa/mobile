@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import {View, Dimensions, StyleSheet, Animated} from 'react-native';
+import {View, Dimensions, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
 import withLayout from '../containers/with-layout';
 import {BrandThemeContext} from './brand-theme-provider';
@@ -10,10 +10,11 @@ import {STYLE as BOX_STYLE} from './box';
 import Html from './html';
 import Space from './space';
 import StepsIcon from './steps-icon';
+import type {IconName} from './steps-icon';
 
 export type Props = {|
   item: {|
-    iconName: string,
+    iconName: IconName,
     header: string,
     description: string
   |}
@@ -61,7 +62,7 @@ class CarouselCard extends React.Component<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <Animated.View style={styles.container}>
+          <View style={styles.container}>
             <View style={styles.cards}>
               <StepsIcon
                 iconName={item.iconName}
@@ -70,7 +71,7 @@ class CarouselCard extends React.Component<Props> {
                 width={21}
               />
               <Space type="small" />
-              <Animated.View>
+              <View>
                 <Html
                   fontSize={theme.fontSize.large}
                   style={[styles.text, {color: brandTheme.colors.primary}]}
@@ -78,13 +79,13 @@ class CarouselCard extends React.Component<Props> {
                 >
                   {item.header.toUpperCase()}
                 </Html>
-              </Animated.View>
+              </View>
               <Space type="base" />
               <Html fontSize={theme.fontSize.regular} style={styles.description} isTextCentered>
                 {item.description}
               </Html>
             </View>
-          </Animated.View>
+          </View>
         )}
       </BrandThemeContext.Consumer>
     );

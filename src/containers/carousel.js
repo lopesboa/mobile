@@ -7,9 +7,11 @@ import SideSwipe from 'react-native-sideswipe';
 import CarouselCard from '../components/carousel-card';
 import translations from '../translations';
 import theme from '../modules/theme';
+import {SETTINGS, COMPUTER, QR_CODE} from '../components/steps-icon';
+import type {IconName} from '../components/steps-icon';
 
 export type Item = {|
-  iconName: string,
+  iconName: IconName,
   header: string,
   description: string
 |};
@@ -53,17 +55,17 @@ class Carousel extends React.PureComponent {
       {
         header: translations.loginFirstStepHeader,
         description: translations.loginFirstStepDescription,
-        iconName: 'computer'
+        iconName: COMPUTER
       },
       {
         header: translations.loginSecondStepHeader,
         description: translations.loginSecondStepDescription,
-        iconName: 'settings'
+        iconName: SETTINGS
       },
       {
         header: translations.loginThirdStepHeader,
         description: translations.loginThirdStepDescription,
-        iconName: 'qr-code'
+        iconName: QR_CODE
       }
     ]
   };

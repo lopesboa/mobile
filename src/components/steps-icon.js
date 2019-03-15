@@ -8,17 +8,19 @@ import {
   NovaCompositionCoorpacademyTarget as TargetSvg
 } from '@coorpacademy/nova-icons';
 
+export type IconName = 'computer' | 'settings' | 'qr-code' | 'target';
+
 type Props = {|
-  iconName: string,
+  iconName: IconName,
   color: string,
   height: number,
   width: number
 |};
 
-export const COMPUTER: string = 'computer';
-export const SETTINGS: string = 'settings';
-export const QR_CODE: string = 'qr-code';
-export const TARGET: string = 'target';
+export const COMPUTER: IconName = 'computer';
+export const SETTINGS: IconName = 'settings';
+export const QR_CODE: IconName = 'qr-code';
+export const TARGET: IconName = 'target';
 
 const StepsIcon = ({iconName, color, width, height}: Props) => {
   switch (iconName) {

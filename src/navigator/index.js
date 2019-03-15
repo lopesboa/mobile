@@ -30,7 +30,10 @@ const appNavigator = createStackNavigator(
   {
     Splash: {
       screen: SplashScreen,
-      navigationOptions: navigationOptionsWithoutHeader
+      navigationOptions: {
+        ...navigationOptionsWithoutHeader,
+        gesturesEnabled: false
+      }
     },
     Authentication: {
       screen: AuthenticationScreen,

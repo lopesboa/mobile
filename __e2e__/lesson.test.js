@@ -194,6 +194,4 @@ describe('Lesson', () => {
       await weExpect(element(by.id('lesson-screen'))).toBeNotVisible();
     });
   });
-
-  utils.checkResetAuthentication();
 });

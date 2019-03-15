@@ -1559,7 +1559,7 @@ exports[`Storyshots Authentication Default 1`] = `
               "padding": 0,
               "transform": Array [
                 Object {
-                  "scale": 0.6,
+                  "scale": 0.6000530486917385,
                 },
               ],
               "width": 8,

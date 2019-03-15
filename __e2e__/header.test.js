@@ -24,6 +24,4 @@ describe('Header', () => {
     await waitFor(element(by.id('home-screen'))).toBeVisible();
     await weExpect(element(by.id('home-screen'))).toBeVisible();
   });
-
-  utils.checkResetAuthentication();
 });

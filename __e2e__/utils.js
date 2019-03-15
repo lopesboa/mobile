@@ -36,26 +36,11 @@ const bypassAuthentication = async () => {
   await weExpect(element(by.id('home-screen'))).toBeVisible();
 };
 
-const checkResetAuthentication = () => {
-  describe('Reset authentication', () => {
-    beforeAll(async () => {
-      // to empty async storage
-      await device.launchApp({delete: true});
-    });
-
-    it('should see authentication screen', async () => {
-      await waitFor(element(by.id('authentication-screen'))).toBeVisible();
-      await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
-    });
-  });
-};
-
 export default {
   reloadApp,
   getQuestionTab,
   getLessonTab,
   getClueTab,
   getContextTab,
-  bypassAuthentication,
-  checkResetAuthentication
+  bypassAuthentication
 };
