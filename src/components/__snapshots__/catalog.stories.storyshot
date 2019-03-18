@@ -1777,28 +1777,26 @@ exports[`Storyshots Catalog Items 1`] = `
       </View>
     </View>
   </View>
-  <View>
-    <View
-      style={
-        Object {
-          "height": 16,
-          "width": 16,
-        }
+  <View
+    style={
+      Object {
+        "height": 16,
+        "width": 16,
       }
-    />
-    <Text
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 10,
-          "padding": 24,
-          "textAlign": "center",
-        }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 10,
+        "padding": 24,
+        "textAlign": "center",
       }
-    >
-      Version: e
-    </Text>
-  </View>
+    }
+  >
+    Version: test
+  </Text>
 </View>
 `;
 

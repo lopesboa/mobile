@@ -10,6 +10,10 @@ import app from '../app';
 type AndroidDrawableType = 'mdpi' | 'hdpi' | 'xhdpi' | 'xxhdpi' | 'xxxhdpi';
 
 type IosDockIconFileType =
+  | '76'
+  | '167'
+  | '152'
+  | '1024'
   | '20@2x'
   | '20@3x'
   | '29@2x'
@@ -17,8 +21,7 @@ type IosDockIconFileType =
   | '40@2x'
   | '40@3x'
   | '60@2x'
-  | '60@3x'
-  | '1024';
+  | '60@3x';
 
 const IMAGES_PATH = './src/assets/images';
 const DOCK_ICON_FILENAME = 'dock-icon.png';
@@ -71,6 +74,9 @@ const generateIosDockIcon = (fileName: IosDockIconFileType) => {
   } = {
     '20@2x': {width: 40, height: 40},
     '20@3x': {width: 60, height: 60},
+    '76': {width: 76, height: 76},
+    '152': {width: 152, height: 152},
+    '167': {width: 167, height: 167},
     '29@2x': {width: 58, height: 58},
     '29@3x': {width: 87, height: 87},
     '40@2x': {width: 80, height: 80},
@@ -112,6 +118,9 @@ generateIosDockIcon('40@2x');
 generateIosDockIcon('40@3x');
 generateIosDockIcon('60@2x');
 generateIosDockIcon('60@3x');
+generateIosDockIcon('76');
+generateIosDockIcon('152');
+generateIosDockIcon('167');
 generateIosDockIcon('1024');
 
 // Android

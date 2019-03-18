@@ -3,3 +3,5 @@
 # Ensure this file is checked in to source control!
 
 gem 'fastlane-plugin-increment_version_code'
+gem 'fastlane-plugin-yarn'
+gem 'fastlane-plugin-fetch_version_code', git: 'https://github.com/CoorpAcademy/fastlane-plugin-fetch_version_code'

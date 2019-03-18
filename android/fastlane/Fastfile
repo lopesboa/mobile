@@ -6,10 +6,8 @@ default_platform :android
 
 platform :android do
   before_all do
-    puts 'call npm run update:version'
-    `npm run update:version`
-    puts 'call npm run generate:bundle:android'
-    `npm run generate:bundle:android`
+    yarn(command: 'update:version', package_path: '../package.json')
+    yarn(command: 'generate:bundle:android', package_path: '../package.json')
   end
 
   desc "build an adhoc release for internal store"
@@ -22,16 +20,15 @@ platform :android do
 
   desc "Submit a new Internal Build to Google Play "
   lane :beta do |options|
+    version_code = fetch_version_code platform: :android
     increment_version_code(
       gradle_file_path: "app/build.gradle",
-      version_code: ENV['NEXT_VERSION_CODE']
+      version_code: version_code
     )
     gradle(
       task: "assemble",
       build_type: "Release"
     )
-    puts 'call npm run build:incrementVersionCode android'
-    `npm run build:incrementVersionCode android`
     supply(track: "internal")
   end
 

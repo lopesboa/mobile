@@ -80,17 +80,6 @@ class Catalog extends React.PureComponent<Props> {
 
   handleLogoLongPress = () => this.props.onLogoLongPress && this.props.onLogoLongPress();
 
-  renderVersion(): React.Node {
-    return (
-      <View>
-        <Space type="small" />
-        <Text style={styles.version}>
-          {translations.formatString('{0}: {1}', 'Version', version.commit)}
-        </Text>
-      </View>
-    );
-  }
-
   render() {
     const {items, titleCover, titleCards, logo} = this.props;
 
@@ -201,7 +190,10 @@ class Catalog extends React.PureComponent<Props> {
                   </View>
                 );
               })}
-              {this.renderVersion()}
+              <Space type="small" />
+              <Text style={styles.version}>
+                {translations.formatString('{0}: {1}', 'Version', version.commit)}
+              </Text>
             </View>
           )}
         </BrandThemeContext.Consumer>

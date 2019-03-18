@@ -1,3 +1,6 @@
+# Custom for Repository
+private
+
 # OSX
 #
 .DS_Store
@@ -75,3 +78,7 @@ src/modules/version.json
 
 # Jest
 coverage
+
+# Builds
+ios/release
+src/modules/version.json

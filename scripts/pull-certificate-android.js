@@ -1,8 +1,6 @@
-// @flow
+const fs = require('fs');
 
-import fs from 'fs';
-
-import {S3} from 'aws-sdk';
+const {S3} = require('aws-sdk');
 
 const {
   ACCESS_KEY_ID: accessKeyId,

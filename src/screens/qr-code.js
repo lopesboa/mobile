@@ -14,7 +14,7 @@ import withPermissions from '../containers/with-permissions';
 import {hasPermission} from '../redux/utils/state-extract';
 import type {WithPermissionsProps} from '../containers/with-permissions';
 import translations from '../translations';
-import {__ENV__, __E2E__, DEV_TOKEN} from '../modules/environment';
+import {__DEV__, __E2E__, DEV_TOKEN} from '../modules/environment';
 
 export type Params = {|
   onScan: $PropertyType<QRCodeScannerProps, 'onScan'>
@@ -67,7 +67,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <QRCodeScanner onScan={onScan} hasPermission={this.props.hasPermission} />
-        {(__ENV__ === 'development' || __E2E__) && (
+        {(__DEV__ || __E2E__) && (
           <TouchableOpacity onLongPress={this.handleFakeScan} style={styles.fakeScanArea} />
         )}
         <View style={styles.close}>

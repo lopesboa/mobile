@@ -12,10 +12,14 @@ platform :ios do
     skip_docs
     cocoapods
     setup_circle_ci
-    puts 'call npm run update:version'
-    `npm run update:version`
-    puts 'call npm run generate:bundle:ios'
-    `npm run generate:bundle:ios`
+    yarn(command: 'update:version', package_path: '../package.json')
+    yarn(command: 'generate:bundle:ios', package_path: '../package.json')
+  end
+
+
+  lane :version do
+    fetch_version_code platform: :ios
+    puts ENV['VERSION_CODE']
   end
 
   desc "build an adhoc release for internal store"
@@ -48,7 +52,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    increment_build_number
+    version_code = fetch_version_code platform: :ios
+    increment_build_number(build_number: version_code)
     match(type: "appstore", readonly: true)
     pem(
       team_id: ENV["TEAM_ID"],
@@ -61,19 +66,19 @@ platform :ios do
     )
     update_project_provisioning(
       xcodeproj: ENV["xcodeproj"],
-      build_configuration: "Release"
+      build_configuration: "Release",
+      profile: ENV["sigh_com.coorpacademy.app_appstore_profile-path"]
     )
     update_info_plist(
       plist_path: ENV["PLIST_PATH"],
       display_name: ENV["DISPLAY_NAME"]
     )
     update_project_team
-    gym()
-    puts 'call npm run build:incrementVersionCode ios'
-    `npm run build:incrementVersionCode ios`
+    gym
     testflight(
       team_id: ENV["ITC_TEAM_ID"],
-      app_identifier: ENV["APP_IDENTIFIER"]
+      app_identifier: ENV["APP_IDENTIFIER"],
+      skip_waiting_for_build_processing: true
     )
   end
 end

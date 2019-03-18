@@ -43,10 +43,14 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -75,6 +79,8 @@
   <key>NSAppleMusicUsageDescription</key>
   <string>Some description</string>
   <key>NSMotionUsageDescription</key>
+  <string>Some description</string>
+  <key>NSMicrophoneUsageDescription</key>
   <string>Some description</string>
 </dict>
 </plist>

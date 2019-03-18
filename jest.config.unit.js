@@ -2,7 +2,7 @@
 
 module.exports = {
   preset: 'react-native',
-  moduleFileExtensions: ['ios.js', 'android.js', 'js', 'json'],
+  moduleFileExtensions: ['unit.js', 'unit.json', 'ios.js', 'android.js', 'js', 'json'],
   moduleNameMapper: {
     '^[./a-zA-Z0-9$_-]+.png$': 'RelativeImageStub'
   },

@@ -1,17 +1,10 @@
-// @flow
+const fs = require('fs');
 
-import fs from 'fs';
-
-import shell from 'shelljs';
+const shell = require('shelljs');
 
 const OUTPUT_FILE_PATH = './src/modules/version.json';
 
-type Content = {|
-  branch: string,
-  commit: string
-|};
-
-const content: Content = {
+const content = {
   branch: shell.exec('git rev-parse --abbrev-ref HEAD').replace('\n', ''),
   commit: shell.exec('git log -n 1 --pretty=format:"%h"')
 };

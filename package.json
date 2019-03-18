@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm run cocoapods:install",
+    "postinstall": "npm run cocoapods:install && npm run update:version",
     "cocoapods:install": "which pod && cd ios && pod install --repo-update || echo \"iOS Pods not installed due to missing 'pod' command (cocoapods) or an error\"",
     "precommit": "npm run storybook:generate-stories",
-    "update:version": "babel-node scripts/update-version.js",
+    "update:version": "node scripts/update-version.js",
     "cleanup": "watchman watch-del .",
     "lint:flow": "flow",
     "lint": "eslint .",
@@ -43,7 +43,7 @@
     "storybook": "REACT_NATIVE_ENVIRONMENT_STORYBOOK=1 npm run start:clean",
     "storybook:generate-stories": "babel-node scripts/generate-stories.js",
     "pull:certificate:ios": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly",
-    "pull:certificate:android": "babel-node scripts/pull-certificate-android.js",
+    "pull:certificate:android": "node scripts/pull-certificate-android.js",
     "generate:bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "pull:translations": "babel-node scripts/pull-translations.js",
@@ -106,7 +106,7 @@
     "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
-    "detox": "^9.0.6",
+    "detox": "^10.0.10",
     "eslint": "^5.5.0",
     "eslint-import-resolver-babel-module": "^5.0.0-beta.1",
     "eslint-plugin-flowtype": "^2.50.0",
@@ -124,7 +124,7 @@
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
     "regenerator-runtime": "^0.12.1",
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.3"
   },
   "detox": {
     "test-runner": "jest",
