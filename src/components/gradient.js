@@ -18,10 +18,9 @@ const Gradient = ({children, colors, height, style, testID}: Props) => {
     const {r, g, b} = Color(colors[0]).object();
     calculatedColors = [`rgba(${r}, ${g}, ${b}, 0)`, colors[0], colors[0]];
   }
-  const gradientStyle: GenericStyleProp = {...style, height};
 
   return (
-    <LinearGradient colors={calculatedColors} style={gradientStyle} testID={testID}>
+    <LinearGradient colors={calculatedColors} style={[style, height && {height}]} testID={testID}>
       {children}
     </LinearGradient>
   );

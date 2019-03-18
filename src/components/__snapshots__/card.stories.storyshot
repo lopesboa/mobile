@@ -110,16 +110,18 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
               }
             }
             style={
-              Object {
-                "0": Object {
-                  "flex": 1,
-                },
-                "1": Object {
-                  "minHeight": 205,
-                  "padding": 16,
-                },
-                "height": undefined,
-              }
+              Array [
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  Object {
+                    "minHeight": 205,
+                    "padding": 16,
+                  },
+                ],
+                undefined,
+              ]
             }
             testID="gradient-catalog2"
           >
@@ -603,17 +605,19 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
               }
             }
             style={
-              Object {
-                "0": Object {
-                  "flex": 1,
-                },
-                "1": Object {
-                  "height": 400.2,
-                  "minHeight": 215,
-                  "padding": 24,
-                },
-                "height": undefined,
-              }
+              Array [
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  Object {
+                    "height": 400.2,
+                    "minHeight": 215,
+                    "padding": 24,
+                  },
+                ],
+                undefined,
+              ]
             }
             testID="gradient-catalog1"
           >

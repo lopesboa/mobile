@@ -60,13 +60,15 @@ exports[`Storyshots Image Gradient Custom Gradient 1`] = `
       }
     }
     style={
-      Object {
-        "0": Object {
-          "flex": 1,
-        },
-        "1": undefined,
-        "height": undefined,
-      }
+      Array [
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
+        undefined,
+      ]
     }
     testID="gradient-image-gradient"
   >
@@ -136,13 +138,15 @@ exports[`Storyshots Image Gradient Default 1`] = `
       }
     }
     style={
-      Object {
-        "0": Object {
-          "flex": 1,
-        },
-        "1": undefined,
-        "height": undefined,
-      }
+      Array [
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
+        undefined,
+      ]
     }
     testID="gradient-image-gradient"
   >

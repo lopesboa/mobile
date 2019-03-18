@@ -22,12 +22,14 @@ exports[`Storyshots Authentication Default 1`] = `
     }
   }
   style={
-    Object {
-      "flex": 1,
-      "height": undefined,
-      "justifyContent": "space-around",
-      "paddingVertical": 16,
-    }
+    Array [
+      Object {
+        "flex": 1,
+        "justifyContent": "space-around",
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
   }
 >
   <View

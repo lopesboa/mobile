@@ -23,9 +23,12 @@ exports[`Storyshots Gradient Default 1`] = `
     }
   }
   style={
-    Object {
-      "height": 42,
-    }
+    Array [
+      undefined,
+      Object {
+        "height": 42,
+      },
+    ]
   }
   testID="gradient"
 />
