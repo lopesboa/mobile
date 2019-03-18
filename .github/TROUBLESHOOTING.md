@@ -24,6 +24,22 @@ yarn start:[ios|android]:clean
 
 If you still have issue(s), take a look at Flow errors, it might help you
 
+## config.h file not found
+
+##### Identified problem
+
+The React Native cache is corrupted.
+
+##### How to resolve
+
+Run:
+
+```console
+rm -rf ~/.rncache
+```
+
+And then, rebuild.
+
 ## index.androix.bundle / main.jsbundle not found
 
 Bundle file is not found by React-Native at launch.
