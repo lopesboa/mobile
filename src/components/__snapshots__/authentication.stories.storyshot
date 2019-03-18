@@ -168,155 +168,38 @@ exports[`Storyshots Authentication Default 1`] = `
       }
       testID="carousel"
     >
-      <View
-        pointerEvents="box-none"
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 20,
-              "paddingVertical": 30,
-            },
-            Object {
-              "flexDirection": "row",
-            },
-            Object {
-              "paddingVertical": 8,
-            },
-          ]
+      <Mock$ReactNativeSnapCarousel$Pagination
+        activeDotIndex={0}
+        containerStyle={
+          Object {
+            "paddingVertical": 8,
+          }
         }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderColor": "#FFFFFF",
-              "borderRadius": 1000,
-              "borderWidth": 1,
-              "height": 14,
-              "justifyContent": "center",
-              "marginHorizontal": 8,
-              "opacity": 1,
-              "width": 14,
-            }
+        dotContainerStyle={
+          Object {
+            "borderColor": "#FFFFFF",
+            "borderRadius": 1000,
+            "borderWidth": 1,
+            "height": 14,
+            "width": 14,
           }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#FFFFFF",
-                "borderRadius": 5,
-                "height": 8,
-                "margin": 0,
-                "marginHorizontal": 2,
-                "opacity": 0,
-                "padding": 0,
-                "transform": Array [
-                  Object {
-                    "scale": 0.6,
-                  },
-                ],
-                "width": 8,
-              }
-            }
-          />
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderColor": "#FFFFFF",
-              "borderRadius": 1000,
-              "borderWidth": 1,
-              "height": 14,
-              "justifyContent": "center",
-              "marginHorizontal": 8,
-              "opacity": 1,
-              "width": 14,
-            }
+        }
+        dotStyle={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 5,
+            "height": 8,
+            "margin": 0,
+            "marginHorizontal": 2,
+            "padding": 0,
+            "width": 8,
           }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#FFFFFF",
-                "borderRadius": 5,
-                "height": 8,
-                "margin": 0,
-                "marginHorizontal": 2,
-                "opacity": 0,
-                "padding": 0,
-                "transform": Array [
-                  Object {
-                    "scale": 0.6,
-                  },
-                ],
-                "width": 8,
-              }
-            }
-          />
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderColor": "#FFFFFF",
-              "borderRadius": 1000,
-              "borderWidth": 1,
-              "height": 14,
-              "justifyContent": "center",
-              "marginHorizontal": 8,
-              "opacity": 1,
-              "width": 14,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#FFFFFF",
-                "borderRadius": 5,
-                "height": 8,
-                "margin": 0,
-                "marginHorizontal": 2,
-                "opacity": 0,
-                "padding": 0,
-                "transform": Array [
-                  Object {
-                    "scale": 0.6,
-                  },
-                ],
-                "width": 8,
-              }
-            }
-          />
-        </View>
-      </View>
+        }
+        dotsLength={3}
+        inactiveDotOpacity={0}
+        inactiveDotScale={0.6}
+        inactiveDotStyle={Object {}}
+      />
     </View>
   </View>
   <View

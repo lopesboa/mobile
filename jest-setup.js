@@ -87,3 +87,9 @@ jest.mock('react-native-permissions', () => {
     check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
   };
 });
+
+// react-native-snap-carousel
+
+jest.mock('react-native-snap-carousel', () => ({
+  Pagination: 'Mock$ReactNativeSnapCarousel$Pagination'
+}));
