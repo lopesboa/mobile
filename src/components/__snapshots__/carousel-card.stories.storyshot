@@ -3,42 +3,51 @@
 exports[`Storyshots Carousel Custom Style 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "height": 650,
-      "justifyContent": "center",
-      "overflow": "visible",
-      "width": 650,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexGrow": 1,
+        "justifyContent": "center",
+        "overflow": "visible",
+      },
+      Object {
+        "width": 200,
+      },
+    ]
   }
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#FFFFFF",
-        "borderRadius": 5,
-        "elevation": 4,
-        "flexGrow": 1,
-        "height": 650,
-        "justifyContent": "center",
-        "overflow": "visible",
-        "padding": 16,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 5,
+          "elevation": 4,
+          "flexGrow": 1,
+          "justifyContent": "center",
+          "overflow": "visible",
+          "padding": 16,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-        "width": 628,
-      }
+        Object {
+          "height": 200,
+          "opacity": 0.65,
+          "width": 176,
+        },
+      ]
     }
   >
     <RNSVGSvgView
       align="xMidYMid"
-      bbHeight="21"
-      bbWidth="21"
+      bbHeight="24"
+      bbWidth="24"
       color="#00B0FF"
       meetOrSlice={0}
       minX={0}
@@ -52,8 +61,8 @@ exports[`Storyshots Carousel Custom Style 1`] = `
           false,
           Object {
             "flex": 0,
-            "height": 21,
-            "width": 21,
+            "height": 24,
+            "width": 24,
           },
         ]
       }
@@ -156,49 +165,47 @@ exports[`Storyshots Carousel Custom Style 1`] = `
       }
     />
     <View>
-      <View>
-        <View
-          style={Object {}}
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
+              Object {},
+              Object {},
+            ]
+          }
         >
           <Text
             selectable={false}
             style={
               Array [
-                Object {
-                  "marginVertical": 0,
-                  "textAlign": "center",
-                },
                 Object {},
                 Object {},
               ]
             }
           >
             <Text
-              selectable={false}
               style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
+                Object {
+                  "color": "#00B0FF",
+                  "fontSize": 17,
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
               }
             >
-              <Text
-                style={
-                  Object {
-                    "color": "#00B0FF",
-                    "fontSize": 17,
-                    "marginBottom": 17,
-                    "marginTop": 17,
-                    "marginVertical": 0,
-                    "textAlign": "center",
-                  }
-                }
-              >
-                STEP 01
-              </Text>
+              STEP 01
             </Text>
           </Text>
-        </View>
+        </Text>
       </View>
     </View>
     <View
@@ -261,42 +268,51 @@ exports[`Storyshots Carousel Custom Style 1`] = `
 exports[`Storyshots Carousel Default 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "height": 650,
-      "justifyContent": "center",
-      "overflow": "visible",
-      "width": 650,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexGrow": 1,
+        "justifyContent": "center",
+        "overflow": "visible",
+      },
+      Object {
+        "width": 200,
+      },
+    ]
   }
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#FFFFFF",
-        "borderRadius": 5,
-        "elevation": 4,
-        "flexGrow": 1,
-        "height": 650,
-        "justifyContent": "center",
-        "overflow": "visible",
-        "padding": 16,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 5,
+          "elevation": 4,
+          "flexGrow": 1,
+          "justifyContent": "center",
+          "overflow": "visible",
+          "padding": 16,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-        "width": 628,
-      }
+        Object {
+          "height": 200,
+          "opacity": 1,
+          "width": 176,
+        },
+      ]
     }
   >
     <RNSVGSvgView
       align="xMidYMid"
-      bbHeight="21"
-      bbWidth="21"
+      bbHeight="24"
+      bbWidth="24"
       color="#00B0FF"
       meetOrSlice={0}
       minX={0}
@@ -310,8 +326,8 @@ exports[`Storyshots Carousel Default 1`] = `
           false,
           Object {
             "flex": 0,
-            "height": 21,
-            "width": 21,
+            "height": 24,
+            "width": 24,
           },
         ]
       }
@@ -414,49 +430,47 @@ exports[`Storyshots Carousel Default 1`] = `
       }
     />
     <View>
-      <View>
-        <View
-          style={Object {}}
+      <View
+        style={Object {}}
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
+              Object {},
+              Object {},
+            ]
+          }
         >
           <Text
             selectable={false}
             style={
               Array [
-                Object {
-                  "marginVertical": 0,
-                  "textAlign": "center",
-                },
                 Object {},
                 Object {},
               ]
             }
           >
             <Text
-              selectable={false}
               style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
+                Object {
+                  "color": "#00B0FF",
+                  "fontSize": 17,
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
               }
             >
-              <Text
-                style={
-                  Object {
-                    "color": "#00B0FF",
-                    "fontSize": 17,
-                    "marginBottom": 17,
-                    "marginTop": 17,
-                    "marginVertical": 0,
-                    "textAlign": "center",
-                  }
-                }
-              >
-                STEP 01
-              </Text>
+              STEP 01
             </Text>
           </Text>
-        </View>
+        </Text>
       </View>
     </View>
     <View

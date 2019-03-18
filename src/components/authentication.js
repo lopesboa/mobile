@@ -21,7 +21,8 @@ type Props = {|
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    paddingVertical: theme.spacing.small
   },
   wrapper: {
     padding: theme.spacing.base

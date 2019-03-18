@@ -16,7 +16,7 @@ export type MimeType =
   | 'application/pdf'
   | 'application/vimeo';
 
-export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'large' | 'xlarge';
+export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xlarge';
 
 export type CardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
 

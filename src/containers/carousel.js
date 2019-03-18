@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Pagination} from 'react-native-snap-carousel';
 import SideSwipe from 'react-native-sideswipe';
 import CarouselCard from '../components/carousel-card';
@@ -9,6 +9,8 @@ import translations from '../translations';
 import theme from '../modules/theme';
 import {SETTINGS, COMPUTER, QR_CODE} from '../components/steps-icon';
 import type {IconName} from '../components/steps-icon';
+import type {Layout} from './with-layout';
+import withLayout from './with-layout';
 
 export type Item = {|
   iconName: IconName,
@@ -18,8 +20,11 @@ export type Item = {|
 
 const styles: GenericStyleProp = StyleSheet.create({
   container: {
+    flexGrow: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    alignContent: 'center',
+    justifyContent: 'center',
+    paddingBottom: theme.spacing.tiny
   },
   pagination: {
     width: 8,
@@ -42,13 +47,18 @@ const styles: GenericStyleProp = StyleSheet.create({
   }
 });
 
+type Props = {|
+  layout?: Layout
+|};
+
 type State = {|
   currentItemIndex: number,
   items: Array<Item>
 |};
 
-// $FlowFixMe
-class Carousel extends React.PureComponent {
+class Carousel extends React.PureComponent<Props, State> {
+  props: Props;
+
   state: State = {
     currentItemIndex: 0,
     items: [
@@ -87,41 +97,48 @@ class Carousel extends React.PureComponent {
   };
 
   handleItemChange = (index: number) => {
-    // $FlowFixMe
     this.setState({currentItemIndex: index});
   };
 
-  _renderItem = ({item}: {item: Item}) => {
-    return <CarouselCard item={item} />;
+  _renderItem = (width: number) => ({
+    item,
+    itemIndex,
+    currentIndex
+  }: {
+    item: Item,
+    itemIndex: number,
+    currentIndex: number
+  }) => {
+    return (
+      <CarouselCard width={width} item={item} itemIndex={itemIndex} currentIndex={currentIndex} />
+    );
   };
-
-  onShouldCapture = () => true;
 
   extractKey = (item: Item) => item.iconName;
 
   render() {
-    const {state: {items}} = this;
-    const {width} = Dimensions.get('window');
-    // $FlowFixMe
-    const contentOffset = (width - CarouselCard.WIDTH) / 2;
+    const {state: {items}, props: {layout}} = this;
+    const layoutWidth = layout && layout.width;
+    const contentOffset = theme.spacing.medium + theme.spacing.tiny;
+    const width = layoutWidth && layoutWidth - contentOffset * 2;
     return (
       <View style={[styles.container]} testID="carousel">
-        <SideSwipe
-          // $FlowFixMe
-          itemWidth={CarouselCard.WIDTH}
-          // $FlowFixMe
-          threshold={CarouselCard.WIDTH / 4}
-          shouldCapture={this.onShouldCapture}
-          extractKey={this.extractKey}
-          style={{width}}
-          data={items}
-          contentOffset={contentOffset}
-          onIndexChange={this.handleItemChange}
-          renderItem={this._renderItem}
-        />
+        {width && (
+          <SideSwipe
+            itemWidth={width}
+            threshold={width / 4}
+            extractKey={this.extractKey}
+            style={{width: layoutWidth}}
+            data={items}
+            contentOffset={contentOffset}
+            onIndexChange={this.handleItemChange}
+            renderItem={this._renderItem(width)}
+          />
+        )}
         {this.pagination()}
       </View>
     );
   }
 }
-export default Carousel;
+
+export default withLayout(Carousel);
