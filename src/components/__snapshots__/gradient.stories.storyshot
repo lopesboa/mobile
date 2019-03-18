@@ -27,5 +27,6 @@ exports[`Storyshots Gradient Default 1`] = `
       "height": 42,
     }
   }
+  testID="gradient"
 />
 `;

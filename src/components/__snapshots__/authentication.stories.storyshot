@@ -24,6 +24,7 @@ exports[`Storyshots Authentication Default 1`] = `
   style={
     Object {
       "flex": 1,
+      "height": undefined,
       "justifyContent": "space-around",
     }
   }
@@ -1559,7 +1560,7 @@ exports[`Storyshots Authentication Default 1`] = `
               "padding": 0,
               "transform": Array [
                 Object {
-                  "scale": 0.6000530486917385,
+                  "scale": 0.6,
                 },
               ],
               "width": 8,

@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import {StyleSheet, ImageBackground} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+
+import Gradient from './gradient';
 
 type Props = {|
   children: React.Node,
@@ -39,13 +40,9 @@ const ImageGradient = ({
       source={image}
       style={[styles.content, {minHeight: minHeight}]}
     >
-      <LinearGradient
-        testID={`gradient-${testID}`}
-        colors={gradient}
-        style={[styles.content, style]}
-      >
+      <Gradient testID={`gradient-${testID}`} colors={gradient} style={[styles.content, style]}>
         {children}
-      </LinearGradient>
+      </Gradient>
     </ImageBackground>
   );
 };

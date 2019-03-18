@@ -150,16 +150,17 @@ exports[`Storyshots Catalog Items 1`] = `
                 }
               }
               style={
-                Array [
-                  Object {
+                Object {
+                  "0": Object {
                     "flex": 1,
                   },
-                  Object {
+                  "1": Object {
                     "height": 400.2,
                     "minHeight": 215,
                     "padding": 24,
                   },
-                ]
+                  "height": undefined,
+                }
               }
               testID="gradient-catalog-item-dis-1"
             >
@@ -538,15 +539,16 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                   }
                   style={
-                    Array [
-                      Object {
+                    Object {
+                      "0": Object {
                         "flex": 1,
                       },
-                      Object {
+                      "1": Object {
                         "minHeight": 205,
                         "padding": 16,
                       },
-                    ]
+                      "height": undefined,
+                    }
                   }
                   testID="gradient-catalog-item-cha-1"
                 >
@@ -911,15 +913,16 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                   }
                   style={
-                    Array [
-                      Object {
+                    Object {
+                      "0": Object {
                         "flex": 1,
                       },
-                      Object {
+                      "1": Object {
                         "minHeight": 205,
                         "padding": 16,
                       },
-                    ]
+                      "height": undefined,
+                    }
                   }
                   testID="gradient-catalog-item-dis-1"
                 >
@@ -1296,15 +1299,16 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                   }
                   style={
-                    Array [
-                      Object {
+                    Object {
+                      "0": Object {
                         "flex": 1,
                       },
-                      Object {
+                      "1": Object {
                         "minHeight": 205,
                         "padding": 16,
                       },
-                    ]
+                      "height": undefined,
+                    }
                   }
                   testID="gradient-catalog-item-cha-2"
                 >
@@ -1591,15 +1595,16 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                   }
                   style={
-                    Array [
-                      Object {
+                    Object {
+                      "0": Object {
                         "flex": 1,
                       },
-                      Object {
+                      "1": Object {
                         "minHeight": 205,
                         "padding": 16,
                       },
-                    ]
+                      "height": undefined,
+                    }
                   }
                   testID="gradient-catalog-item-dis-2"
                 >

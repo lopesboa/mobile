@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
+import logo from '../assets/images/logo-coorp.png';
 import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
 import translations from '../translations';
 import Carousel from '../containers/carousel';
@@ -11,6 +11,7 @@ import Button from './button';
 import Image from './image';
 import Space from './space';
 import Html from './html';
+import Gradient from './gradient';
 import StepsIcon, {TARGET} from './steps-icon';
 
 type Props = {|
@@ -57,9 +58,9 @@ const styles = StyleSheet.create({
 });
 
 const Authentication = ({onPress}: Props) => (
-  <LinearGradient colors={[BLUE_COORP_DARK, BLUE_COORP_LIGHT]} style={styles.container}>
+  <Gradient colors={[BLUE_COORP_DARK, BLUE_COORP_LIGHT]} style={styles.container}>
     <View style={[styles.wrapper, styles.logo]} testID="logo-header">
-      <Image source={require('../assets/images/logo-coorp.png')} style={styles.logoImg} />
+      <Image source={logo} style={styles.logoImg} />
     </View>
     <View style={styles.wrapper} testID="sign-in-header">
       <View style={[styles.headerContainer]}>
@@ -80,7 +81,7 @@ const Authentication = ({onPress}: Props) => (
         </View>
       </Button>
     </View>
-  </LinearGradient>
+  </Gradient>
 );
 
 export default Authentication;

@@ -97,7 +97,7 @@ class CardScalable extends React.PureComponent<Props, State> {
               ]}
             >
               {children}
-              <Gradient height={theme.spacing.large} color={theme.colors.white} />
+              <Gradient height={theme.spacing.large} colors={[theme.colors.white]} />
             </View>
           </Card>
         </TouchableOpacity>

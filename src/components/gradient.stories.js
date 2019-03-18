@@ -5,4 +5,6 @@ import {storiesOf} from '@storybook/react-native';
 
 import Gradient from './gradient';
 
-storiesOf('Gradient', module).add('Default', () => <Gradient color="#fff" height={42} />);
+storiesOf('Gradient', module).add('Default', () => (
+  <Gradient colors={['#fff']} height={42} testID="gradient" />
+));

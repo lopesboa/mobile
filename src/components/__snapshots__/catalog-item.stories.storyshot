@@ -76,16 +76,17 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
           }
         }
         style={
-          Array [
-            Object {
+          Object {
+            "0": Object {
               "flex": 1,
             },
-            Object {
+            "1": Object {
               "height": 400.2,
               "minHeight": 215,
               "padding": 24,
             },
-          ]
+            "height": undefined,
+          }
         }
         testID="gradient-catalog1"
       >
@@ -362,16 +363,17 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
           }
         }
         style={
-          Array [
-            Object {
+          Object {
+            "0": Object {
               "flex": 1,
             },
-            Object {
+            "1": Object {
               "height": 400.2,
               "minHeight": 215,
               "padding": 24,
             },
-          ]
+            "height": undefined,
+          }
         }
         testID="gradient-catalog3"
       >
@@ -827,15 +829,16 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
           }
         }
         style={
-          Array [
-            Object {
+          Object {
+            "0": Object {
               "flex": 1,
             },
-            Object {
+            "1": Object {
               "minHeight": 205,
               "padding": 16,
             },
-          ]
+            "height": undefined,
+          }
         }
         testID="gradient-catalog4"
       >
@@ -1280,16 +1283,17 @@ exports[`Storyshots Catalog Item New 1`] = `
           }
         }
         style={
-          Array [
-            Object {
+          Object {
+            "0": Object {
               "flex": 1,
             },
-            Object {
+            "1": Object {
               "height": 400.2,
               "minHeight": 215,
               "padding": 24,
             },
-          ]
+            "height": undefined,
+          }
         }
         testID="gradient-catalog2"
       >
