@@ -6,316 +6,9 @@ exports[`Storyshots Html Default 1`] = `
     style={Object {}}
   >
     <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 26.8,
-              "marginTop": 26.8,
-            }
-          }
-        >
-          Header 1
-        </Text>
-      </Text>
-    </Text>
-    <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 24.9,
-              "marginTop": 24.9,
-            }
-          }
-        >
-          Header 2
-        </Text>
-      </Text>
-    </Text>
-    <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 23.4,
-              "marginTop": 23.4,
-            }
-          }
-        >
-          Header 3
-        </Text>
-      </Text>
-    </Text>
-    <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 26.6,
-              "marginTop": 26.6,
-            }
-          }
-        >
-          Header 4
-        </Text>
-      </Text>
-    </Text>
-    <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 27.721999999999994,
-              "marginTop": 27.721999999999994,
-            }
-          }
-        >
-          Header 5
-        </Text>
-      </Text>
-    </Text>
-    <Text
-      selectable={false}
-      style={
-        Array [
-          Object {
-            "fontSize": 20,
-          },
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#14171A",
-              "fontSize": 20,
-              "fontWeight": "bold",
-              "marginBottom": 31.222,
-              "marginTop": 31.222,
-            }
-          }
-        >
-          Header 6
-        </Text>
-      </Text>
-    </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "marginBottom": 14,
-            "paddingLeft": 20,
-          },
-          Object {},
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-            "marginBottom": 10,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "backgroundColor": "black",
-              "borderRadius": 7.142857142857143,
-              "height": 7.142857142857143,
-              "marginRight": 10,
-              "marginTop": 10,
-              "width": 7.142857142857143,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "flex": 1,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {},
-                Object {},
-              ]
-            }
-          >
-            <Text
-              selectable={false}
-              style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 20,
-                  }
-                }
-              >
-                List item
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <Text
       style={Object {}}
     >
       <Text
-        style={
-          Object {
-            "flex": 1,
-            "height": 16.8,
-          }
-        }
-      >
-        
-
-      </Text>
-    </Text>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
         selectable={false}
         style={
           Array [
@@ -325,216 +18,16 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
-          selectable={false}
           style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-              }
-            }
-          >
-            Span
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
             Object {
-              "marginVertical": 0,
-              "textAlign": "center",
-            },
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
+              "color": "#14171A",
+              "fontSize": 20,
+            }
           }
         >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-                "marginBottom": 20,
-                "marginTop": 20,
-                "marginVertical": 0,
-                "textAlign": "center",
-              }
-            }
-          >
-            Paragraph
-          </Text>
+              Les deux adverbes ont
         </Text>
       </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {
-              "textDecorationLine": "underline",
-            },
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-                "textDecorationLine": "underline",
-              }
-            }
-          >
-            underline
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {
-              "fontStyle": "italic",
-            },
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-                "fontStyle": "italic",
-              }
-            }
-          >
-            italic
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        selectable={false}
-        style={
-          Array [
-            Object {
-              "fontWeight": "500",
-            },
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-                "fontWeight": "500",
-              }
-            }
-          >
-            bold
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
       <Text
         selectable={false}
         style={
@@ -565,201 +58,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             }
           >
-            striped
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        style={Object {}}
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-              }
-            }
-          >
-            2
-          </Text>
-        </Text>
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {
-                "fontSize": 16,
-                "marginBottom": 10,
-                "textAlignVertical": "top",
-              },
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            selectable={false}
-            style={
-              Array [
-                Object {},
-                Object {},
-              ]
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#14171A",
-                  "fontSize": 16,
-                  "marginBottom": 10,
-                  "textAlignVertical": "top",
-                }
-              }
-            >
-              3
-            </Text>
-          </Text>
-        </Text>
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-              }
-            }
-          >
-            =8
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {},
-          Object {},
-          Object {},
-        ]
-      }
-    >
-      <Text
-        style={Object {}}
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-              }
-            }
-          >
-            CO
-          </Text>
-        </Text>
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {
-                "fontSize": 16,
-                "marginTop": 10,
-                "textAlignVertical": "top",
-              },
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            selectable={false}
-            style={
-              Array [
-                Object {},
-                Object {},
-              ]
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#14171A",
-                  "fontSize": 16,
-                  "marginTop": 10,
-                  "textAlignVertical": "top",
-                }
-              }
-            >
-              2
-            </Text>
-          </Text>
-        </Text>
-      </Text>
-    </View>
-    <Text
-      style={Object {}}
-    >
-      <Text
-        style={
-          Object {
-            "color": "red",
-          }
-        }
-      >
-        <Text
-          selectable={false}
-          style={
-            Array [
-              Object {},
-              Object {},
-            ]
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#14171A",
-                "fontSize": 20,
-              }
-            }
-          >
-            fontTag
+            une terminaison
           </Text>
         </Text>
       </Text>
@@ -780,7 +79,61 @@ exports[`Storyshots Html Default 1`] = `
             }
           }
         >
-              Hello beautiful 
+           qui se 
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "textDecorationLine": "underline",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 20,
+                "textDecorationLine": "underline",
+              }
+            }
+          >
+            prononce "ament"
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          , mais leur orthographe diffère. On écrit ainsi :    
         </Text>
       </Text>
       <Text
@@ -811,7 +164,656 @@ exports[`Storyshots Html Default 1`] = `
             }
           }
         >
-           break
+          – 
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              vaill
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                  }
+                }
+              >
+                a
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              mment
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          , parce que l'adverbe est formé à partir d’un 
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontWeight": "500",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontWeight": "500",
+                }
+              }
+            >
+              adjectif en 
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "fontStyle": "italic",
+                },
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                    "fontWeight": "500",
+                  }
+                }
+              >
+                -ant
+              </Text>
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+           (
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              vaill
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                  }
+                }
+              >
+                a
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              nt
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          ) ;    
+        </Text>
+      </Text>
+      <Text
+        style={
+          Object {
+            "flex": 1,
+            "height": 16.8,
+          }
+        }
+      >
+        
+
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          – 
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              incid
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                  }
+                }
+              >
+                e
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              mment
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          , parce que l'adverbe est formé à partir d’un 
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontWeight": "500",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontWeight": "500",
+                }
+              }
+            >
+              adjectif en 
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "fontStyle": "italic",
+                },
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                    "fontWeight": "500",
+                  }
+                }
+              >
+                -ent
+              </Text>
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+           (
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={Object {}}
+        >
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              incid
+            </Text>
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 20,
+                    "fontStyle": "italic",
+                  }
+                }
+              >
+                e
+              </Text>
+            </Text>
+          </Text>
+          <Text
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 20,
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              nt
+            </Text>
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+          ).
         </Text>
       </Text>
     </Text>

@@ -7,6 +7,10 @@ import {handleFakePress} from '../utils/tests';
 import {image} from '../__fixtures__/medias';
 import QuestionChoice from './question-choice';
 
+const htmlContent = `
+ <i> italic input </i> and <s> input </s>
+`;
+
 storiesOf('QuestionChoice', module)
   .add('Default', () => (
     <QuestionChoice onPress={handleFakePress} testID="question-choice-1">
@@ -32,6 +36,11 @@ storiesOf('QuestionChoice', module)
   .add('Selected with image', () => (
     <QuestionChoice isSelected media={image} onPress={handleFakePress} testID="question-choice-4">
       Option 4
+    </QuestionChoice>
+  ))
+  .add('with html content', () => (
+    <QuestionChoice onPress={handleFakePress} testID="question-choice-1">
+      {htmlContent}
     </QuestionChoice>
   ))
   .add('Disabled', () => (

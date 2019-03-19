@@ -551,3 +551,156 @@ exports[`Storyshots QuestionChoice With image 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots QuestionChoice with html content 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "stretch",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "rgba(0, 0, 0, 0.1)",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+      ]
+    }
+    testID="question-choice-1"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingLeft": 16,
+            "paddingRight": 8,
+            "paddingVertical": 24,
+          },
+          false,
+          false,
+        ]
+      }
+    >
+      <View>
+        <View
+          style={Object {}}
+        >
+          <Text
+            style={Object {}}
+          >
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "fontStyle": "italic",
+                  },
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 15,
+                      "fontStyle": "italic",
+                      "fontWeight": "700",
+                    }
+                  }
+                >
+                   italic input 
+                </Text>
+              </Text>
+            </Text>
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 15,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                 and 
+              </Text>
+            </Text>
+            <Text
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "textDecorationLine": "line-through",
+                  },
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#14171A",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "textDecorationLine": "line-through",
+                    }
+                  }
+                >
+                   input 
+                </Text>
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

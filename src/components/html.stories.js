@@ -9,26 +9,9 @@ storiesOf('Html', module)
   .add('Default', () => (
     <Html fontSize={20}>
       {`
-    <h1>Header 1</h1>
-    <h2>Header 2</h2>
-    <h3>Header 3</h3>
-    <h4>Header 4</h4>
-    <h5>Header 5</h5>
-    <h6>Header 6</h6>
-    <ul>
-      <li>List item</li>
-    </ul>
-    <br>
-    <div><span>Span</span></div>
-    <div><p>Paragraph</p></div>
-    <div><u>underline</u></div>
-    <div><i>italic</i></div>
-    <div><b>bold</b></div>
-    <div><s>striped</s></div>
-    <div>2<sup>3</sup>=8</div>
-    <div>CO<sub>2</sub></div>
-    <font color="red">fontTag</font>
-    Hello beautiful </br> break
+    Les deux adverbes ont<s>une terminaison</s> qui se <u>prononce "ament"</u>, mais leur orthographe diffère. On écrit ainsi :
+    <br/>– <i>vaill<font color="blue">a</font>mment</i>, parce que l'adverbe est formé à partir d’un <b>adjectif en <i>-ant</i></b> (<i>vaill<font color="blue">a</font>nt</i>) ;
+    <br/>– <i>incid<font color="blue">e</font>mment</i>, parce que l'adverbe est formé à partir d’un <b>adjectif en <i>-ent</i></b> (<i>incid<font color="blue">e</font>nt</i>).
 `}
     </Html>
   ))
