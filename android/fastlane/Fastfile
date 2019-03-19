@@ -20,7 +20,12 @@ platform :android do
 
   desc "Submit a new Internal Build to Google Play "
   lane :beta do |options|
-    version_code = fetch_version_code platform: :android
+    version_code = fetch_version_code(
+      endpoint: "api.coorpacademy.com/mobile/api/v1/build-number/#{:android}/increment",
+      method: :post,
+      secret_header: 'Api-Secret',
+      secret_value: ENV['VERSION_API_SECRET']
+    )
     increment_version_code(
       gradle_file_path: "app/build.gradle",
       version_code: version_code

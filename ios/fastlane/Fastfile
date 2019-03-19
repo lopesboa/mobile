@@ -52,7 +52,12 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    version_code = fetch_version_code platform: :ios
+    version_code = fetch_version_code(
+      endpoint: "api.coorpacademy.com/mobile/api/v1/build-number/#{:ios}/increment",
+      method: :post,
+      secret_header: 'Api-Secret',
+      secret_value: ENV['VERSION_API_SECRET']
+    )
     increment_build_number(build_number: version_code)
     match(type: "appstore", readonly: true)
     pem(
