@@ -1,6 +1,6 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 const wrongAnswer = async () => {
   await element(by.id('question-screen')).swipe('up');
@@ -10,8 +10,8 @@ const wrongAnswer = async () => {
 
 describe('Lives', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   // describe('Learner', () => {

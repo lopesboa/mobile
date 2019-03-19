@@ -1,12 +1,12 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, resetApp, bypassAuthentication, getLessonTab, getQuestionTab} from './utils';
 
 describe('Correction', () => {
   describe('Resources', () => {
     beforeAll(async () => {
-      await utils.reloadApp({microphone: 'YES'});
-      await utils.bypassAuthentication();
+      await reloadApp({microphone: 'YES'});
+      await bypassAuthentication();
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
@@ -74,14 +74,15 @@ describe('Correction', () => {
       await waitFor(element(by.id('pdf-screen'))).toBeNotVisible();
       await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
       await weExpect(element(by.id('button-close'))).toBeNotVisible();
-      await element(by.id('button-next-question')).tap();
     });
     afterAll(async () => {
+      await element(by.id('button-next-question')).tap();
       await element(by.id('header-back')).tap();
     });
   });
   describe('Error', () => {
     beforeAll(async () => {
+      await resetApp();
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
@@ -99,11 +100,10 @@ describe('Correction', () => {
     });
 
     it('wrong answer but lesson seen, lesson should start card 3', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await element(by.id('preview-video')).tap();
       await waitFor(element(by.id('video-container'))).toBeVisible();
       await waitFor(element(by.id('video-container-container'))).toBeNotVisible();
-      await waitFor(element(by.id('video-container'))).toBeVisible();
       await waitFor(element(by.id('video'))).toBeVisible();
       await waitFor(element(by.id('video-pause'))).toBeVisible();
       await waitFor(element(by.id('video-play'))).toBeNotVisible();
@@ -111,7 +111,7 @@ describe('Correction', () => {
       await waitFor(element(by.id('video-timer'))).toBeVisible();
       await waitFor(element(by.id('video-fullscreen-expand'))).toBeVisible();
       await element(by.id('video-pause')).tap();
-      await utils.getQuestionTab(element).tap();
+      await getQuestionTab(element).tap();
       await element(by.id('question-screen')).swipe('up');
       await element(by.id('question-choice-1')).tap();
       await element(by.id('button-validate')).tap();
@@ -121,15 +121,16 @@ describe('Correction', () => {
       await element(by.id('card-keypoint')).swipe('up');
       await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
       await weExpect(element(by.id('card-resource-les_1'))).toBeVisible();
-      await element(by.id('button-next-question')).tap();
     });
     afterAll(async () => {
+      await element(by.id('button-next-question')).tap();
       await element(by.id('header-back')).tap();
     });
   });
 
   describe('Success', () => {
     beforeAll(async () => {
+      await resetApp();
       await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-basic-dis-1')).tap();
       await waitFor(element(by.id('question'))).toBeVisible();
@@ -147,11 +148,10 @@ describe('Correction', () => {
     });
 
     it('right answer but lesson seen, lesson should start card 4', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await element(by.id('preview-video')).tap();
       await waitFor(element(by.id('video-container'))).toBeVisible();
       await waitFor(element(by.id('video-container-container'))).toBeNotVisible();
-      await waitFor(element(by.id('video-container'))).toBeVisible();
       await waitFor(element(by.id('video'))).toBeVisible();
       await waitFor(element(by.id('video-pause'))).toBeVisible();
       await waitFor(element(by.id('video-play'))).toBeNotVisible();
@@ -159,7 +159,7 @@ describe('Correction', () => {
       await waitFor(element(by.id('video-timer'))).toBeVisible();
       await waitFor(element(by.id('video-fullscreen-expand'))).toBeVisible();
       await element(by.id('video-pause')).tap();
-      await utils.getQuestionTab(element).tap();
+      await getQuestionTab(element).tap();
       await element(by.id('question-screen')).swipe('up');
       await element(by.id('question-choice-2')).tap();
       await element(by.id('button-validate')).tap();

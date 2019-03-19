@@ -1,11 +1,11 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 describe('Context', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   describe('With image', () => {

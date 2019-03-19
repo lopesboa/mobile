@@ -1,9 +1,9 @@
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 describe('QCM Slider', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   it('shoould see catalog, choose a discipline and see a question slider', async () => {

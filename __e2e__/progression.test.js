@@ -1,11 +1,11 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication, getLessonTab} from './utils';
 
 describe('Progression', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   describe('Learner', () => {
@@ -21,7 +21,7 @@ describe('Progression', () => {
     });
 
     it('should see a progression in another tab', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await weExpect(element(by.id('progression-bar-1'))).toBeVisible();
       await weExpect(element(by.id('progression-label'))).toBeVisible();
     });

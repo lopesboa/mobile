@@ -1,6 +1,6 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 const selectQCMRightDragItem = async () => {
   await element(by.id(`choice-1-unselected`)).tap();
@@ -17,8 +17,8 @@ const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
 
 describe('QCM Drag', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {

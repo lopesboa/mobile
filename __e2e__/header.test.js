@@ -1,11 +1,11 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 describe('Header', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {

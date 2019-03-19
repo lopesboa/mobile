@@ -1,11 +1,11 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp} from './utils';
 
 describe('Authentication', () => {
   describe('Permission undetermined', () => {
     beforeAll(async () => {
-      await utils.reloadApp({camera: 'NO'});
+      await reloadApp({camera: 'NO'});
     });
 
     it('should see the authentication screen', async () => {
@@ -48,7 +48,7 @@ describe('Authentication', () => {
 
   describe('Permission authorized', () => {
     beforeAll(async () => {
-      await utils.reloadApp();
+      await reloadApp();
       await waitFor(element(by.id('authentication-screen'))).toBeVisible();
       await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
     });
@@ -64,7 +64,7 @@ describe('Authentication', () => {
 
   describe('Authenticated', () => {
     beforeAll(async () => {
-      await utils.reloadApp();
+      await reloadApp();
       await waitFor(element(by.id('home-screen'))).toBeVisible();
     });
 

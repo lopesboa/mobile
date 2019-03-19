@@ -15,6 +15,10 @@ const progressionStore = reduce(
   {}
 );
 
+const lastProgressionIds = new Map();
+const buildLastProgressionKey = (engineRef, contentRef) =>
+  `last_progression_${engineRef}_${contentRef}`;
+
 // eslint-disable-next-line require-await
 const findById = async id => {
   if (!progressionStore.has(id)) throw new Error('Progression not found');
@@ -25,8 +29,37 @@ const getAll = () => {
   return [...progressionStore.values()];
 };
 
-const save = progression => {
-  progressionStore.set(progression._id, progression);
+const save = async progression => {
+  await Promise.all([
+    progressionStore.set(progression._id, progression),
+    lastProgressionIds.set(
+      buildLastProgressionKey(progression.engine.ref, progression.content.ref),
+      progression._id
+    )
+  ]);
+
+  return progression;
 };
 
-export {save, getAll, findById};
+const findLast = (engineRef, contentRef) => {
+  const key = buildLastProgressionKey(engineRef, contentRef);
+  const progressionId = lastProgressionIds.get(key);
+  if (!progressionId) return Promise.resolve(null);
+
+  const progression = progressionStore.get(progressionId);
+  if (!progression) return Promise.resolve(null);
+
+  // if Progression is on successNode, failureNode or extraLifeNode
+  // then skip resuming
+  const {nextContent} = progression.state;
+  if (
+    nextContent.type === 'success' ||
+    nextContent.type === 'failure' ||
+    (nextContent.type === 'node' && nextContent.ref === 'extraLife')
+  )
+    return Promise.resolve(null);
+
+  return Promise.resolve(progression);
+};
+
+export {save, getAll, findById, findLast};

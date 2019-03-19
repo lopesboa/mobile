@@ -1,12 +1,12 @@
 // @flow strict
 
 // import {sleep} from '../src/utils/tests';
-import utils from './utils';
+import {reloadApp, bypassAuthentication, getClueTab} from './utils';
 
 describe('Clue', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   describe('With clue', () => {
@@ -18,7 +18,7 @@ describe('Clue', () => {
     });
 
     it('should be able to open the clue tab', async () => {
-      await utils.getClueTab(element).tap();
+      await getClueTab(element).tap();
       await waitFor(element(by.id('clue'))).toBeVisible();
       await weExpect(element(by.id('clue'))).toBeVisible();
       await weExpect(element(by.id('clue-advice'))).toBeVisible();
@@ -43,7 +43,7 @@ describe('Clue', () => {
     });
 
     it('should not be able to open the clue tab', async () => {
-      await utils.getClueTab(element).tap();
+      await getClueTab(element).tap();
       await weExpect(element(by.id('clue'))).toBeNotVisible();
     });
   });

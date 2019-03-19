@@ -1,11 +1,11 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication, getLessonTab} from './utils';
 
 describe('Lesson', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   describe('More than 1 resource', () => {
@@ -15,12 +15,12 @@ describe('Lesson', () => {
     });
 
     it('should see lesson tab', async () => {
-      await waitFor(utils.getLessonTab(element)).toBeVisible();
-      await weExpect(utils.getLessonTab(element)).toBeVisible();
+      await waitFor(getLessonTab(element)).toBeVisible();
+      await weExpect(getLessonTab(element)).toBeVisible();
     });
 
     it('should be redirected to lesson tab', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await waitFor(element(by.id('lesson-screen'))).toBeVisible();
       await weExpect(element(by.id('lesson-screen'))).toBeVisible();
     });
@@ -158,16 +158,16 @@ describe('Lesson', () => {
       await element(by.id('header-back')).tap();
       await waitFor(element(by.id('catalog-item-adaptive-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-adaptive-dis-1')).tap();
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
     });
 
     it('should see lesson tab', async () => {
-      await waitFor(utils.getLessonTab(element)).toBeVisible();
-      await weExpect(utils.getLessonTab(element)).toBeVisible();
+      await waitFor(getLessonTab(element)).toBeVisible();
+      await weExpect(getLessonTab(element)).toBeVisible();
     });
 
     it('should be redirected to lesson tab', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await waitFor(element(by.id('lesson-screen'))).toBeVisible();
       await weExpect(element(by.id('lesson-screen'))).toBeVisible();
     });
@@ -185,12 +185,12 @@ describe('Lesson', () => {
     });
 
     it('should see lesson tab', async () => {
-      await waitFor(utils.getLessonTab(element)).toBeVisible();
-      await weExpect(utils.getLessonTab(element)).toBeVisible();
+      await waitFor(getLessonTab(element)).toBeVisible();
+      await weExpect(getLessonTab(element)).toBeVisible();
     });
 
     it('should not be redirected to lesson tab', async () => {
-      await utils.getLessonTab(element).tap();
+      await getLessonTab(element).tap();
       await weExpect(element(by.id('lesson-screen'))).toBeNotVisible();
     });
   });

@@ -1,11 +1,13 @@
 // @flow
 
 import type {DataLayer as DataLayerBase} from '@coorpacademy/player-services';
+import type {Progression} from '@coorpacademy/progression-engine';
 import type {SupportedLanguage} from '../../translations/_types';
 import {
   findById as findProgressionById,
   getAll as getAllProgressions,
-  save as saveProgression
+  save as saveProgression,
+  findLast as findLastProgression
 } from './progressions';
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
@@ -23,7 +25,8 @@ export type DataLayer = DataLayerBase & {
   fetchDisciplineBundle: typeof fetchDisciplineBundle,
   storeDisciplineBundle: typeof storeDisciplineBundle,
   fetchCards: typeof fetchCards,
-  fetchBrand: typeof fetchBrand
+  fetchBrand: typeof fetchBrand,
+  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -42,6 +45,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   findLevelById: findLevelById(userLanguage),
   fetchCards,
   fetchBrand,
+  findLast: findLastProgression,
   // @todo implement it
   getChapterRulesByContent: () => [],
   fetchDisciplineBundle,

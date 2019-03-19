@@ -1461,10 +1461,10 @@
     babel-cli "^6.24.1"
     react "^16.3.2"
 
-"@coorpacademy/player-services@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-3.0.0.tgz#91f214998ac39651b9476866b2a21d7feef22f8e"
-  integrity sha512-r9NwV3JN9LS3CJhTTVb1WkRo4T65Uj5v3PGt+guPVPSlxnsJvjQEq2yNGKZWajJJJgexuRRFj5enA/FZy4ZJOQ==
+"@coorpacademy/player-services@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-4.0.0.tgz#d92a0b7e165c6d77131cff97494aa1d5a9dcf120"
+  integrity sha512-9F0ZZu1itPAnY18JFvwGFk3/d0VxEF+eD/CpRcc25Wj8c6pG9srrbk1SZH1CKmL7KLgzahOVhuoNArhi053nuQ==
   dependencies:
     "@coorpacademy/progression-engine" "10.3.13"
     lodash "^4.17.4"

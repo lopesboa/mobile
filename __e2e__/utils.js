@@ -6,7 +6,7 @@ const defaultPermissions: DetoxDevicePermissionsType = {
   camera: 'YES'
 };
 
-const reloadApp = async (
+export const reloadApp = async (
   additionalPermissions?: DetoxDevicePermissionsType = defaultPermissions
 ) => {
   const permissions: DetoxDevicePermissionsType = {
@@ -21,12 +21,22 @@ const reloadApp = async (
   }
 };
 
-const getContextTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(3);
-const getQuestionTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(2);
-const getLessonTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(1);
-const getClueTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(0);
+export const resetApp = (
+  additionalPermissions?: DetoxDevicePermissionsType = defaultPermissions
+) => {
+  const permissions: DetoxDevicePermissionsType = {
+    ...defaultPermissions,
+    ...additionalPermissions
+  };
+  return device.launchApp({newInstance: true, permissions});
+};
 
-const bypassAuthentication = async () => {
+export const getContextTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(3);
+export const getQuestionTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(2);
+export const getLessonTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(1);
+export const getClueTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(0);
+
+export const bypassAuthentication = async () => {
   await waitFor(element(by.id('authentication-screen'))).toBeVisible();
   await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
   await element(by.id('scan-qr-code')).tap();
@@ -38,6 +48,7 @@ const bypassAuthentication = async () => {
 
 export default {
   reloadApp,
+  resetApp,
   getQuestionTab,
   getLessonTab,
   getClueTab,

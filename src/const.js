@@ -113,11 +113,14 @@ export const SPECIFIC_CONTENT_REF: {
 };
 
 export const ENGINE: {
-  [string]: Engine
+  LEARNER: 'learner',
+  MICROLEARNING: 'microlearning'
 } = {
   LEARNER: 'learner',
   MICROLEARNING: 'microlearning'
 };
+// FlowAssert
+(Object.keys(ENGINE).map(k => ENGINE[k]): Array<Engine>);
 
 export const PERMISSION_STATUS: {
   ['AUTHORIZED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED']: PermissionStatus

@@ -1,13 +1,12 @@
 // @flow
 
-import {Answers, Clues, Content, Progressions} from '@coorpacademy/player-services';
+import {Answers, Clues, Content} from '@coorpacademy/player-services';
 
 import type {
   AnalyticsService,
   AnswersService,
   CluesService,
-  ContentService,
-  ProgressionsService
+  ContentService
 } from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
@@ -20,6 +19,8 @@ import Brands from './brands';
 import Analytics from './analytics';
 import Permissions from './permissions';
 import type {PermissionsService} from './permissions';
+import Progressions from './progressions';
+import type {ProgressionService} from './progressions';
 
 export type Services = {|
   Analytics: AnalyticsService,
@@ -28,7 +29,7 @@ export type Services = {|
   Clues: CluesService,
   Content: ContentService,
   DisciplineBundle: DisciplineBundleService,
-  Progressions: ProgressionsService,
+  Progressions: ProgressionService,
   Brands: BrandsService,
   Permissions: PermissionsService
 |};

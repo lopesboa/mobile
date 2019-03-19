@@ -1,6 +1,6 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 const rightAnswer = async () => {
   await element(by.id('question-screen')).swipe('up');
@@ -12,8 +12,8 @@ const rightAnswer = async () => {
 
 describe('Questions', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   it('should see the catalog and choose a discipline', async () => {

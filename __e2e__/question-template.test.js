@@ -1,6 +1,6 @@
 // @flow strict
 
-import utils from './utils';
+import {reloadApp, bypassAuthentication} from './utils';
 
 const selectAppStoreItem = async el => {
   // to simulate tap on picker item
@@ -11,8 +11,8 @@ const selectAppStoreItem = async el => {
 
 describe('Template', () => {
   beforeAll(async () => {
-    await utils.reloadApp();
-    await utils.bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {

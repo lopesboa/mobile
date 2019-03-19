@@ -1,6 +1,7 @@
 // @flow strict
 
 import {createBrand} from '../../__fixtures__/brands';
+import {createChapter} from '../../__fixtures__/chapters';
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
 import {CARD_STATUS} from '../../layer/data/_const';
 import {
@@ -40,6 +41,7 @@ const chapterCard = createChapterCard({
   status: CARD_STATUS.ACTIVE,
   title: 'Chapter'
 });
+const chapter = createChapter({ref: 'cha1', name: 'chapter'});
 const items = [disciplineCard, chapterCard];
 
 describe('Cards', () => {
@@ -166,6 +168,9 @@ describe('Cards', () => {
           services: {
             Content: {
               find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn(() => Promise.resolve(null))
             }
           }
         };
@@ -201,6 +206,9 @@ describe('Cards', () => {
           services: {
             Content: {
               find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn(() => Promise.resolve(null))
             }
           }
         };
@@ -232,6 +240,9 @@ describe('Cards', () => {
           services: {
             Content: {
               find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn(() => Promise.resolve(null))
             }
           }
         };
@@ -249,6 +260,40 @@ describe('Cards', () => {
 
         return expect(actual).toEqual(expected);
       });
+      it('should resume discipline progression', async () => {
+        const dispatch = jest.fn();
+        const getState = jest.fn();
+        const options = {
+          services: {
+            Content: {
+              find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn((engineRef, contentRef) => {
+                expect(engineRef).toBe('learner');
+                expect(contentRef).toBe(level.universalRef);
+                return Promise.resolve({_id: '__ID__'});
+              })
+            }
+          }
+        };
+
+        dispatch.mockImplementationOnce(async action => {
+          // expect(action).toEqual(fetchError('Error'));
+          expect(await action).toEqual({
+            type: '@@mock/SELECT_PROGRESSION',
+            payload: {id: '__ID__'}
+          });
+          return action;
+        });
+
+        // $FlowFixMe
+        const actual = await selectCard(disciplineCard)(dispatch, getState, options);
+        return expect(actual).toEqual({
+          type: '@@mock/SELECT_PROGRESSION',
+          payload: {id: '__ID__'}
+        });
+      });
     });
     describe('chapter', () => {
       it('should fetch chapter and create progression', async () => {
@@ -258,11 +303,14 @@ describe('Cards', () => {
           services: {
             Content: {
               find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn(() => Promise.resolve(null))
             }
           }
         };
 
-        options.services.Content.find.mockReturnValueOnce(Promise.resolve(level));
+        options.services.Content.find.mockReturnValueOnce(Promise.resolve(chapter));
 
         dispatch.mockImplementationOnce(async action => {
           // expect(action).toEqual(fetchError('Error'));
@@ -287,6 +335,9 @@ describe('Cards', () => {
           services: {
             Content: {
               find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn(() => Promise.resolve(null))
             }
           }
         };
@@ -303,6 +354,40 @@ describe('Cards', () => {
         const actual = await selectCard(chapterCard)(dispatch, getState, options);
 
         return expect(actual).toEqual(expected);
+      });
+      it('should resume chapter progression', async () => {
+        const dispatch = jest.fn();
+        const getState = jest.fn();
+        const options = {
+          services: {
+            Content: {
+              find: jest.fn()
+            },
+            Progressions: {
+              findLast: jest.fn((engineRef, contentRef) => {
+                expect(engineRef).toBe('microlearning');
+                expect(contentRef).toBe(chapter.universalRef);
+                return Promise.resolve({_id: '__ID__'});
+              })
+            }
+          }
+        };
+
+        dispatch.mockImplementationOnce(async action => {
+          // expect(action).toEqual(fetchError('Error'));
+          expect(await action).toEqual({
+            type: '@@mock/SELECT_PROGRESSION',
+            payload: {id: '__ID__'}
+          });
+          return action;
+        });
+
+        // $FlowFixMe
+        const actual = await selectCard(chapterCard)(dispatch, getState, options);
+        return expect(actual).toEqual({
+          type: '@@mock/SELECT_PROGRESSION',
+          payload: {id: '__ID__'}
+        });
       });
     });
   });

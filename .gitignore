@@ -82,3 +82,6 @@ coverage
 # Builds
 ios/release
 src/modules/version.json
+
+# VSCODE
+.vscode

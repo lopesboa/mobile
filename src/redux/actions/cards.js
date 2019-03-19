@@ -3,6 +3,7 @@
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {StoreAction} from '../_types';
+import {ENGINE} from '../../const';
 import {getToken, getBrand} from '../utils/state-extract';
 import {pickNextLevel} from '../../utils/content';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../layer/data/_const';
@@ -124,11 +125,22 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
     switch (item.type) {
       case CARD_TYPE.CHAPTER: {
         try {
+          // Resume progression
+          const lastProgression = await services.Progressions.findLast(
+            ENGINE.MICROLEARNING,
+            item.universalRef
+          );
+          if (lastProgression) {
+            // $FlowFixMe union type
+            return dispatch(selectProgression(lastProgression._id));
+          }
+
           const chapter = await services.Content.find(
             // $FlowFixMe union type
             RESTRICTED_RESOURCE_TYPE.CHAPTER,
             item.universalRef
           );
+
           // $FlowFixMe union type
           return await dispatch(createChapterProgression(chapter));
         } catch (e) {
@@ -141,11 +153,22 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
           return dispatch(selectCardFailure(item, 'Course has no level'));
         }
         try {
+          // Resume progression
+          const lastProgression = await services.Progressions.findLast(
+            ENGINE.LEARNER,
+            nextModule.universalRef
+          );
+          if (lastProgression) {
+            // $FlowFixMe union type
+            return dispatch(selectProgression(lastProgression._id));
+          }
+
           // $FlowFixMe union type
           const level = await services.Content.find(
             RESTRICTED_RESOURCE_TYPE.LEVEL,
             nextModule.universalRef
           );
+
           // $FlowFixMe union type
           const {payload: progression} = await dispatch(createLevelProgression(level));
           // $FlowFixMe union type
