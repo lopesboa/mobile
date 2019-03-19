@@ -27,6 +27,8 @@ storiesOf('Html', module)
     <div><s>striped</s></div>
     <div>2<sup>3</sup>=8</div>
     <div>CO<sub>2</sub></div>
+    <font color="red">fontTag</font>
+    Hello beautiful </br> break
 `}
     </Html>
   ))

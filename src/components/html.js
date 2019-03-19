@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import HtmlBase from 'react-native-render-html';
 
 import theme from '../modules/theme';
@@ -22,6 +22,18 @@ const styles = {
   p: {
     marginVertical: 0,
     textAlign: 'center'
+  },
+  u: {
+    textDecorationLine: 'underline'
+  },
+  i: {
+    fontStyle: 'italic'
+  },
+  b: {
+    fontWeight: theme.fontWeight.semiBold
+  },
+  s: {
+    textDecorationLine: 'line-through'
   }
 };
 
@@ -45,6 +57,23 @@ const Html = ({
     h6: {fontSize},
     img: imageStyle
   };
+
+  const renderers = {
+    // eslint-disable-next-line react/display-name
+    font: (htmlAttribs, componentChildren) => {
+      return (
+        <Text
+          key={1}
+          style={{
+            color: htmlAttribs.color
+          }}
+        >
+          {componentChildren}
+        </Text>
+      );
+    }
+  };
+
   let baseFontStyle = {fontSize, color: theme.colors.black};
   if (style) {
     if (Array.isArray(style)) {
@@ -75,6 +104,7 @@ const Html = ({
         tagsStyles={tagsStyles}
         baseFontStyle={baseFontStyle}
         onLinkPress={onLinkPress}
+        renderers={renderers}
         // this is exceptionally for the onboarding course
         // is the only course that has a gif in the context but the img tag
         // comes with width & height attr and these makes this lib do not render the gif

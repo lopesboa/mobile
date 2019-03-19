@@ -496,7 +496,7 @@ exports[`Storyshots Html Default 1`] = `
         style={
           Array [
             Object {
-              "fontWeight": "bold",
+              "fontWeight": "500",
             },
             Object {},
             Object {},
@@ -517,7 +517,7 @@ exports[`Storyshots Html Default 1`] = `
               Object {
                 "color": "#14171A",
                 "fontSize": 20,
-                "fontWeight": "bold",
+                "fontWeight": "500",
               }
             }
           >
@@ -732,6 +732,89 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
     </View>
+    <Text
+      style={Object {}}
+    >
+      <Text
+        style={
+          Object {
+            "color": "red",
+          }
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 20,
+              }
+            }
+          >
+            fontTag
+          </Text>
+        </Text>
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+              Hello beautiful 
+        </Text>
+      </Text>
+      <Text
+        style={
+          Object {
+            "flex": 1,
+            "height": 16.8,
+          }
+        }
+      >
+        
+
+      </Text>
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 20,
+            }
+          }
+        >
+           break
+        </Text>
+      </Text>
+    </Text>
   </View>
 </View>
 `;

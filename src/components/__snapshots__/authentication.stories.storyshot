@@ -113,7 +113,7 @@ exports[`Storyshots Authentication Default 1`] = `
               style={
                 Array [
                   Object {
-                    "fontWeight": "bold",
+                    "fontWeight": "500",
                   },
                   Object {},
                   Object {},
@@ -134,7 +134,7 @@ exports[`Storyshots Authentication Default 1`] = `
                     Object {
                       "color": "white",
                       "fontSize": 17,
-                      "fontWeight": "bold",
+                      "fontWeight": "500",
                       "textAlign": "center",
                     }
                   }
@@ -453,7 +453,7 @@ exports[`Storyshots Authentication Default 1`] = `
                   style={
                     Array [
                       Object {
-                        "fontWeight": "bold",
+                        "fontWeight": "500",
                       },
                       Object {},
                       Object {},
@@ -474,7 +474,7 @@ exports[`Storyshots Authentication Default 1`] = `
                         Object {
                           "color": "#00B0FF",
                           "fontSize": 17,
-                          "fontWeight": "bold",
+                          "fontWeight": "500",
                           "textAlign": "center",
                         }
                       }
