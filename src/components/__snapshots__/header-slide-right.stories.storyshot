@@ -64,6 +64,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
       style={
         Object {
           "height": 26.4,
+          "left": 0,
           "position": "absolute",
           "transform": Array [],
           "width": 26.4,

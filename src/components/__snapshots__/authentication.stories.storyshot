@@ -25,100 +25,78 @@ exports[`Storyshots Authentication Default 1`] = `
     Array [
       Object {
         "flex": 1,
-        "justifyContent": "space-around",
-        "paddingVertical": 16,
       },
       undefined,
     ]
   }
 >
   <View
-    style={
-      Array [
-        Object {
-          "padding": 24,
-        },
-        Object {
-          "alignItems": "center",
-          "justifyContent": "center",
-        },
-      ]
-    }
-    testID="logo-header"
-  >
-    <Image
-      resizeMode="contain"
-      source={1}
-      style={
-        Array [
-          Object {
-            "height": 100,
-            "width": 100,
-          },
-          Object {
-            "height": 35,
-            "width": 192,
-          },
-        ]
-      }
-    />
-  </View>
-  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
     style={
       Object {
-        "padding": 24,
+        "flex": 1,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
       }
     }
-    testID="sign-in-header"
   >
     <View
       style={
         Array [
           Object {
-            "paddingHorizontal": 8,
+            "padding": 24,
+          },
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
           },
         ]
       }
+      testID="logo-header"
     >
-      <View>
-        <View
-          style={Object {}}
-        >
-          <Text
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Array [
+            Object {
+              "height": 100,
+              "width": 100,
+            },
+            Object {
+              "height": 35,
+              "width": 192,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "padding": 24,
+        }
+      }
+      testID="sign-in-header"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "paddingHorizontal": 8,
+            },
+          ]
+        }
+      >
+        <View>
+          <View
             style={Object {}}
           >
             <Text
-              selectable={false}
-              style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "white",
-                    "fontSize": 17,
-                    "textAlign": "center",
-                  }
-                }
-              >
-                To open your company's learning app, you need to scan 
-              </Text>
-            </Text>
-            <Text
-              selectable={false}
-              style={
-                Array [
-                  Object {
-                    "fontWeight": "500",
-                  },
-                  Object {},
-                  Object {},
-                ]
-              }
+              style={Object {}}
             >
               <Text
                 selectable={false}
@@ -134,246 +112,185 @@ exports[`Storyshots Authentication Default 1`] = `
                     Object {
                       "color": "white",
                       "fontSize": 17,
-                      "fontWeight": "500",
                       "textAlign": "center",
                     }
                   }
                 >
-                  your personal QR code.
+                  To open your company's learning app, you need to scan 
+                </Text>
+              </Text>
+              <Text
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "fontWeight": "500",
+                    },
+                    Object {},
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 17,
+                        "fontWeight": "500",
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    your personal QR code.
+                  </Text>
                 </Text>
               </Text>
             </Text>
-          </Text>
+          </View>
         </View>
       </View>
     </View>
-  </View>
-  <View
-    onLayout={[Function]}
-    style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
     <View
+      onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "alignContent": "center",
-            "alignItems": "center",
-            "flexGrow": 1,
-            "justifyContent": "center",
-            "paddingBottom": 8,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
-      testID="carousel"
-    >
-      <Mock$ReactNativeSnapCarousel$Pagination
-        activeDotIndex={0}
-        containerStyle={
-          Object {
-            "paddingVertical": 8,
-          }
-        }
-        dotContainerStyle={
-          Object {
-            "borderColor": "#FFFFFF",
-            "borderRadius": 1000,
-            "borderWidth": 1,
-            "height": 14,
-            "width": 14,
-          }
-        }
-        dotStyle={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "height": 8,
-            "margin": 0,
-            "marginHorizontal": 2,
-            "padding": 0,
-            "width": 8,
-          }
-        }
-        dotsLength={3}
-        inactiveDotOpacity={0}
-        inactiveDotScale={0.6}
-        inactiveDotStyle={Object {}}
-      />
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "padding": 24,
-      }
-    }
-  >
-    <View
-      testID="scan-qr-code"
     >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
-          Object {
-            "alignItems": "center",
-            "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 32,
-            "borderWidth": 0,
-            "flexDirection": "row",
-            "height": 54,
-            "justifyContent": "center",
-            "marginBottom": 0,
-            "opacity": 1,
-          }
+          Array [
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "flexGrow": 1,
+              "justifyContent": "center",
+              "paddingBottom": 8,
+            },
+          ]
         }
+        testID="carousel"
+      >
+        <Mock$ReactNativeSnapCarousel$Pagination
+          activeDotIndex={0}
+          containerStyle={
+            Object {
+              "paddingVertical": 8,
+            }
+          }
+          dotContainerStyle={
+            Object {
+              "borderColor": "#FFFFFF",
+              "borderRadius": 1000,
+              "borderWidth": 1,
+              "height": 14,
+              "width": 14,
+            }
+          }
+          dotStyle={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "height": 8,
+              "margin": 0,
+              "marginHorizontal": 2,
+              "padding": 0,
+              "width": 8,
+            }
+          }
+          dotsLength={3}
+          inactiveDotOpacity={0}
+          inactiveDotScale={0.6}
+          inactiveDotStyle={Object {}}
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "padding": 24,
+        }
+      }
+    >
+      <View
+        testID="scan-qr-code"
       >
         <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "alignItems": "center",
+              "alignSelf": "stretch",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 32,
+              "borderWidth": 0,
               "flexDirection": "row",
-              "justifyContent": "space-between",
+              "height": 54,
+              "justifyContent": "center",
+              "marginBottom": 0,
+              "opacity": 1,
             }
           }
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="30"
-            bbWidth="30"
-            color="#00B0FF"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
+          <View
             style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                undefined,
-                false,
-                Object {
-                  "flex": 0,
-                  "height": 30,
-                  "width": 30,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
             }
-            vbHeight={30}
-            vbWidth={30}
           >
-            <RNSVGPath
-              d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 27C8.4 27 3 21.6 3 15S8.4 3 15 3s12 5.4 12 12-5.4 12-12 12z"
-              fill={
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight="30"
+              bbWidth="30"
+              color="#00B0FF"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
                 Array [
-                  0,
-                  0,
-                  0.6901960784313725,
-                  1,
-                  1,
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  undefined,
+                  false,
+                  Object {
+                    "flex": 0,
+                    "height": 30,
+                    "width": 30,
+                  },
                 ]
               }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
-            />
-            <RNSVGGroup
-              fill={
-                Array [
-                  0,
-                  0,
-                  0.6901960784313725,
-                  1,
-                  1,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              font={Object {}}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
-              opacity={1}
-              originX={0}
-              originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth="1"
-              x={0}
-              y={0}
+              vbHeight={30}
+              vbWidth={30}
             >
               <RNSVGPath
-                d="M12 12h1.5v-1.5h-2.2c-.5 0-.8.3-.8.7v2.3H12V12zM18.7 10.5h-2.2V12H18v1.5h1.5v-2.3c0-.4-.3-.7-.8-.7zM12 16.5h-1.5v2.2c0 .5.3.8.8.8h2.2V18H12v-1.5zM18 18h-1.5v1.5h2.2c.5 0 .8-.3.8-.8v-2.2H18V18z"
+                d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 27C8.4 27 3 21.6 3 15S8.4 3 15 3s12 5.4 12 12-5.4 12-12 12z"
                 fill={
                   Array [
                     0,
                     0,
-                    0,
-                    0,
+                    0.6901960784313725,
+                    1,
                     1,
                   ]
                 }
@@ -392,7 +309,11 @@ exports[`Storyshots Authentication Default 1`] = `
                 opacity={1}
                 originX={0}
                 originY={0}
-                propList={Array []}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
                 rotation={0}
                 scaleX={1}
                 scaleY={1}
@@ -409,56 +330,112 @@ exports[`Storyshots Authentication Default 1`] = `
                 x={0}
                 y={0}
               />
-            </RNSVGGroup>
-          </RNSVGSvgView>
-          <View
-            style={
-              Object {
-                "height": 8,
-                "width": 8,
-              }
-            }
-          />
-          <View>
+              <RNSVGGroup
+                fill={
+                  Array [
+                    0,
+                    0,
+                    0.6901960784313725,
+                    1,
+                    1,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                font={Object {}}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth="1"
+                x={0}
+                y={0}
+              >
+                <RNSVGPath
+                  d="M12 12h1.5v-1.5h-2.2c-.5 0-.8.3-.8.7v2.3H12V12zM18.7 10.5h-2.2V12H18v1.5h1.5v-2.3c0-.4-.3-.7-.8-.7zM12 16.5h-1.5v2.2c0 .5.3.8.8.8h2.2V18H12v-1.5zM18 18h-1.5v1.5h2.2c.5 0 .8-.3.8-.8v-2.2H18V18z"
+                  fill={
+                    Array [
+                      0,
+                      0,
+                      0,
+                      0,
+                      1,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth="1"
+                  x={0}
+                  y={0}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
             <View
-              style={Object {}}
-            >
-              <Text
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+            <View>
+              <View
                 style={Object {}}
               >
                 <Text
-                  selectable={false}
-                  style={
-                    Array [
-                      Object {},
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#00B0FF",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "textAlign": "center",
-                      }
-                    }
-                  >
-                    Scan your 
-                  </Text>
-                </Text>
-                <Text
-                  selectable={false}
-                  style={
-                    Array [
-                      Object {
-                        "fontWeight": "500",
-                      },
-                      Object {},
-                      Object {},
-                    ]
-                  }
+                  style={Object {}}
                 >
                   <Text
                     selectable={false}
@@ -474,16 +451,51 @@ exports[`Storyshots Authentication Default 1`] = `
                         Object {
                           "color": "#00B0FF",
                           "fontSize": 17,
-                          "fontWeight": "500",
+                          "fontWeight": "bold",
                           "textAlign": "center",
                         }
                       }
                     >
-                      QR code
+                      Scan your 
+                    </Text>
+                  </Text>
+                  <Text
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {
+                          "fontWeight": "500",
+                        },
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#00B0FF",
+                            "fontSize": 17,
+                            "fontWeight": "500",
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        QR code
+                      </Text>
                     </Text>
                   </Text>
                 </Text>
-              </Text>
+              </View>
             </View>
           </View>
         </View>

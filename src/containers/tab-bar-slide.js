@@ -33,7 +33,8 @@ const INACTIVE_COLOR = theme.colors.gray.lightMedium;
 
 const styles = StyleSheet.create({
   inactiveText: {
-    color: INACTIVE_COLOR
+    color: INACTIVE_COLOR,
+    textAlign: 'center'
   }
 });
 

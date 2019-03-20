@@ -46,7 +46,6 @@ const appNavigator = createStackNavigator(
       screen: HomeScreen,
       navigationOptions: {
         ...navigationOptionsWithoutHeader,
-        // To prevent back action
         gesturesEnabled: false
       }
     },
@@ -59,7 +58,8 @@ const appNavigator = createStackNavigator(
           backgroundColor: theme.colors.gray.extra
         },
         headerTitle: HeaderSlideTitle,
-        headerRight: <HeaderSlideRight />
+        headerRight: <HeaderSlideRight />,
+        gesturesEnabled: true
       }
     }
   },
@@ -70,7 +70,8 @@ const appNavigator = createStackNavigator(
       header: _Header,
       headerBackImage: (
         <NovaCompositionNavigationArrowLeft height={16} width={16} color={theme.colors.gray.dark} />
-      )
+      ),
+      gesturesEnabled: true
     }
   }
 );
@@ -78,13 +79,12 @@ const appNavigator = createStackNavigator(
 const defaultGetStateForAction = appNavigator.router.getStateForAction;
 
 appNavigator.router.getStateForAction = (action: NavigationAction, state: ?NavigationState) => {
+  const disabledScreens = ['Splash', 'Authentication', 'Home'];
+
   if (
-    (state &&
-      action.type === NavigationActions.BACK &&
-      state.routes[state.index].routeName === 'Home') ||
-    (state &&
-      action.type === NavigationActions.BACK &&
-      state.routes[state.index].routeName === 'Authentication')
+    state &&
+    action.type === NavigationActions.BACK &&
+    disabledScreens.includes(state.routes[state.index].routeName)
   ) {
     // Block back action on Home and Authentication
     return null;

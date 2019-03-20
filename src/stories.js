@@ -55,4 +55,5 @@ require('./components/space.stories.js');
 require('./components/splash.stories.js');
 require('./components/steps-icon.stories.js');
 require('./components/text.stories.js');
+require('./components/version.stories.js');
 require('./components/video.stories.js');

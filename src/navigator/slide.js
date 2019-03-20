@@ -87,7 +87,8 @@ const slideTabsNavigator = createBottomTabNavigator(
   {
     defaultNavigationOptions: {
       ...navigationOptions,
-      tabBarTestID: 'slide-tab'
+      tabBarTestID: 'slide-tab',
+      gesturesEnabled: true
     },
     tabBarOptions: {
       inactiveTintColor: theme.colors.gray.dark,

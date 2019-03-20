@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-navigation';
 
 import logo from '../assets/images/logo-coorp.png';
 import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
@@ -19,10 +20,11 @@ type Props = {|
 |};
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1
+  },
   container: {
-    flex: 1,
-    justifyContent: 'space-around',
-    paddingVertical: theme.spacing.small
+    flex: 1
   },
   wrapper: {
     padding: theme.spacing.base
@@ -62,29 +64,31 @@ export const TOP_COLOR = BLUE_COORP_DARK;
 export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
 const Authentication = ({onPress}: Props) => (
-  <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.container}>
-    <View style={[styles.wrapper, styles.logo]} testID="logo-header">
-      <Image source={logo} style={styles.logoImg} />
-    </View>
-    <View style={styles.wrapper} testID="sign-in-header">
-      <View style={[styles.headerContainer]}>
-        <Html fontSize={theme.fontSize.large} style={styles.header}>
-          {translations.loginHeader}
-        </Html>
+  <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient}>
+    <SafeAreaView style={styles.container}>
+      <View style={[styles.wrapper, styles.logo]} testID="logo-header">
+        <Image source={logo} style={styles.logoImg} />
       </View>
-    </View>
-    <Carousel />
-    <View style={styles.wrapper}>
-      <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
-        <View style={styles.buttonWithIcon}>
-          <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
-          <Space type="tiny" />
-          <Html fontSize={theme.fontSize.large} style={styles.button}>
-            {translations.loginButton}
+      <View style={styles.wrapper} testID="sign-in-header">
+        <View style={[styles.headerContainer]}>
+          <Html fontSize={theme.fontSize.large} style={styles.header}>
+            {translations.loginHeader}
           </Html>
         </View>
-      </Button>
-    </View>
+      </View>
+      <Carousel />
+      <View style={styles.wrapper}>
+        <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
+          <View style={styles.buttonWithIcon}>
+            <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
+            <Space type="tiny" />
+            <Html fontSize={theme.fontSize.large} style={styles.button}>
+              {translations.loginButton}
+            </Html>
+          </View>
+        </Button>
+      </View>
+    </SafeAreaView>
   </Gradient>
 );
 

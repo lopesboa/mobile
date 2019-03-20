@@ -68,8 +68,8 @@ exports[`Storyshots Correction Bad answer 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -114,6 +114,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {
@@ -8604,8 +8605,8 @@ exports[`Storyshots Correction Good answer 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -8650,6 +8651,7 @@ exports[`Storyshots Correction Good answer 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {
@@ -17086,8 +17088,8 @@ exports[`Storyshots Correction Last bad answer 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -17132,6 +17134,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {
@@ -20209,8 +20212,8 @@ exports[`Storyshots Correction Last good answer 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -20255,6 +20258,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {
@@ -28691,8 +28695,8 @@ exports[`Storyshots Correction With only one answer 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -28737,6 +28741,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {
@@ -31679,8 +31684,8 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
             },
             Object {
               "height": 67,
-              "paddingLeft": 24.119999999999997,
-              "width": 91.12,
+              "paddingLeft": 56.279999999999994,
+              "width": 123.28,
             },
           ]
         }
@@ -31725,6 +31730,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
           style={
             Object {
               "height": 40.199999999999996,
+              "left": 32.16,
               "position": "absolute",
               "transform": Array [
                 Object {

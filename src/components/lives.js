@@ -19,7 +19,8 @@ export type Props = {|
   scaleX?: Animated.Interpolation,
   scaleY?: Animated.Interpolation,
   heartOpacity?: Animated.Interpolation,
-  heartBrokenOpacity?: Animated.Interpolation
+  heartBrokenOpacity?: Animated.Interpolation,
+  maxScaleX?: number
 |};
 
 const HEART_OFFSET_RIGHT = 0.4;
@@ -58,13 +59,15 @@ const Lives = ({
   scaleX,
   scaleY,
   heartOpacity,
-  heartBrokenOpacity
+  heartBrokenOpacity,
+  maxScaleX = 0
 }: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
+  const offsetLeft = heartHeight * maxScaleX / 2;
   const containerStyle = {
-    paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT),
-    width: height + heartHeight * (1 - HEART_OFFSET_RIGHT),
+    paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
+    width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     height
   };
   const transform = [];
@@ -80,7 +83,8 @@ const Lives = ({
   const heartStyle = {
     height: heartHeight,
     width: heartHeight,
-    transform
+    transform,
+    left: offsetLeft
   };
   const livesStyle = {
     width: height,

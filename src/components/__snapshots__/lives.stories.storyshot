@@ -55,6 +55,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
     style={
       Object {
         "height": 72,
+        "left": 0,
         "position": "absolute",
         "transform": Array [],
         "width": 72,
@@ -448,6 +449,7 @@ exports[`Storyshots Lives Broken 1`] = `
     style={
       Object {
         "height": 36,
+        "left": 0,
         "position": "absolute",
         "transform": Array [],
         "width": 36,
@@ -841,6 +843,7 @@ exports[`Storyshots Lives Default 1`] = `
     style={
       Object {
         "height": 36,
+        "left": 0,
         "position": "absolute",
         "transform": Array [],
         "width": 36,

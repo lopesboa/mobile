@@ -12,6 +12,9 @@ type Props = {|
   testID?: string
 |};
 
+const MAX_SCALE_X = 1.6;
+const MAX_SCALE_Y = 1.4;
+
 class LivesAnimated extends React.PureComponent<Props> {
   props: Props;
 
@@ -66,11 +69,11 @@ class LivesAnimated extends React.PureComponent<Props> {
     });
     const scaleX = this.scale.interpolate({
       inputRange: [0, 0.8, 0.95, 1],
-      outputRange: [1, 1.6, 0.9, 1]
+      outputRange: [1, MAX_SCALE_X, 0.9, 1]
     });
     const scaleY = this.scale.interpolate({
       inputRange: [0, 0.8, 0.95, 1],
-      outputRange: [1, 1.4, 0.9, 1]
+      outputRange: [1, MAX_SCALE_Y, 0.9, 1]
     });
     const heartOpacity = this.broken.interpolate({
       inputRange: [0, 1],
@@ -93,6 +96,7 @@ class LivesAnimated extends React.PureComponent<Props> {
         scaleY={scaleY}
         heartOpacity={heartOpacity}
         heartBrokenOpacity={heartBrokenOpacity}
+        maxScaleX={MAX_SCALE_X}
       />
     );
   }

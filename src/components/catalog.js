@@ -9,7 +9,6 @@ import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
 import type {AuthorType} from '../types';
-import version from '../modules/version';
 import Loader from './loader';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
@@ -54,12 +53,6 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     borderRadius: theme.radius.card
-  },
-  version: {
-    fontSize: theme.fontSize.extraSmall,
-    textAlign: 'center',
-    padding: theme.spacing.base,
-    color: theme.colors.white
   }
 });
 
@@ -190,10 +183,6 @@ class Catalog extends React.PureComponent<Props> {
                   </View>
                 );
               })}
-              <Space type="small" />
-              <Text style={styles.version}>
-                {translations.formatString('{0}: {1}', 'Version', version.commit)}
-              </Text>
             </View>
           )}
         </BrandThemeContext.Consumer>
