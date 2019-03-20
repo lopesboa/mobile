@@ -693,7 +693,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
                     }
                   }
                 >
-                   input 
+                   stripped input 
                 </Text>
               </Text>
             </Text>

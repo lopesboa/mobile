@@ -12,7 +12,8 @@ const field2 = createSelectChoice({name: 'sel1'});
 const field3 = createInputChoice({name: 'inp2'});
 const field4 = createSelectChoice({name: 'sel2'});
 
-export const template = 'My app {{inp1}} is on {{sel1}}, but {{inp2}} is on {{sel2}}';
+export const template =
+  'My app {{inp1}} <s> NOT on</s> {{sel1}}, but {{inp2}}   <i>is on</i> {{sel2}}';
 export const items = [field1, field2, field3, field4];
 export const userChoices = [
   '',

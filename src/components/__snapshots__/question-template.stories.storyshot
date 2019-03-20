@@ -12,20 +12,37 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
   }
   testID="question-template"
 >
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-1"
   >
-    My app 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          My app 
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -66,20 +83,51 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
       value=""
     />
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-3"
   >
-     is on 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "textDecorationLine": "line-through",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+                "textDecorationLine": "line-through",
+              }
+            }
+          >
+             NOT on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -529,20 +577,37 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
       </View>
     </View>
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-5"
   >
-    , but 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          , but 
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -586,20 +651,51 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
       value="Waze"
     />
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-7"
   >
-     is on 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontStyle": "italic",
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+              }
+            }
+          >
+            is on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -1069,20 +1165,37 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
   }
   testID="question-template"
 >
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-1"
   >
-    My app 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          My app 
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -1123,20 +1236,51 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
       value=""
     />
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-3"
   >
-     is on 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "textDecorationLine": "line-through",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+                "textDecorationLine": "line-through",
+              }
+            }
+          >
+             NOT on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -1586,20 +1730,37 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
       </View>
     </View>
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-5"
   >
-    , but 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          , but 
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -1643,20 +1804,51 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
       value="Waze"
     />
   </View>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-7"
   >
-     is on 
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontStyle": "italic",
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+              }
+            }
+          >
+            is on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Array [
@@ -2126,103 +2318,250 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
   }
   testID="question-template"
 >
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+  <View
     testID="question-part-1"
   >
-    My app 
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          My app 
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-2"
   >
-    inp1
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          inp1
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-3"
   >
-     is on 
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "textDecorationLine": "line-through",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+                "textDecorationLine": "line-through",
+              }
+            }
+          >
+             NOT on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-5"
   >
-    , but 
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          , but 
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-6"
   >
-    inp2
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          inp2
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-7"
   >
-     is on 
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#14171A",
-        "fontSize": 15,
-        "fontWeight": "700",
-        "lineHeight": 30,
-        "padding": 8,
-      }
-    }
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 15,
+                "fontStyle": "italic",
+                "fontWeight": "700",
+                "lineHeight": 30,
+                "padding": 8,
+              }
+            }
+          >
+            is on
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
     testID="question-part-8"
   >
-    sel2
-  </Text>
+    <View
+      style={Object {}}
+    >
+      <Text
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "lineHeight": 30,
+              "padding": 8,
+            }
+          }
+        >
+          sel2
+        </Text>
+      </Text>
+    </View>
+  </View>
 </View>
 `;

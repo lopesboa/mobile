@@ -8,7 +8,7 @@ import {image} from '../__fixtures__/medias';
 import QuestionChoice from './question-choice';
 
 const htmlContent = `
- <i> italic input </i> and <s> input </s>
+ <i> italic input </i> and <s> stripped input </s>
 `;
 
 storiesOf('QuestionChoice', module)

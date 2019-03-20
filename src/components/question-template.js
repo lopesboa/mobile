@@ -6,8 +6,8 @@ import type {Choice} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import {parseTemplate, TEMPLATE_PART_TYPE} from '../modules/template';
+import Html from './html';
 import QuestionInput, {ROW_SPACE} from './question-input';
-import Text from './text';
 
 type Props = {|
   isDisabled?: boolean,
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     padding: ROW_SPACE,
     color: theme.colors.black,
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.regular,
     lineHeight: 30
   }
 });
@@ -76,9 +75,14 @@ class QuestionTemplate extends React.PureComponent<Props> {
           }
 
           return (
-            <Text key={testID} testID={testID} style={styles.text}>
+            <Html
+              key={testID}
+              fontSize={theme.fontSize.regular}
+              testID={testID}
+              style={styles.text}
+            >
               {part.value}
-            </Text>
+            </Html>
           );
         })}
       </View>
