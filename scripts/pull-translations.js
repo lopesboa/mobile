@@ -43,6 +43,9 @@ const fetchTranslations = (
   );
 };
 
+const formatTranslation = (translation: string): string =>
+  translation.replace('\n', '').replace(/"/g, '\\"');
+
 const generate = async (locale: string) => {
   const moocTranslations = await fetchTranslations(
     locale,
@@ -75,66 +78,75 @@ const generate = async (locale: string) => {
     'global.json'
   );
   const translations: Translations = {
-    cancel: moocFormTranslations.cancel,
-    accessTheLesson: playerTranslations['Access the lesson'],
-    clue: playerTranslations.Clue,
-    clueStarsToLoose: componentsTranslations.clue_stars_to_loose,
-    congratulations: playerTranslations['Congratulations!'],
-    context: playerTranslations.Context,
-    correction: playerTranslations.Correction,
-    didYouKnowThat: playerTranslations['Did you know that?'],
-    finishLearning: playerTranslations['Finish learning'],
-    forYou: playerTranslations['For you'],
-    gameOver: playerTranslations['Game over'],
-    goodAnswer: playerTranslations['Good answer'],
-    goodJob: playerTranslations['Good job'],
-    goToQuestion: playerTranslations['Go to question'],
-    keyPoint: playerTranslations['Key point'],
-    lesson: playerTranslations.Media,
-    loginButton: playerTranslations['Scan your QR code'] || '',
-    loginFirstStepHeader: playerTranslations.Step1 || '',
-    loginFirstStepDescription:
-      playerTranslations['Connect to your learning plateform with another device'] || '',
-    loginSecondStepHeader: playerTranslations.Step2 || '',
-    loginSecondStepDescription:
-      playerTranslations['Go to settings account in the upper right hand corner'] || '',
-    loginThirdStepHeader: playerTranslations.Step3 || '',
-    loginThirdStepDescription: playerTranslations['Voila your qr code will be right there'] || '',
-    loginHeader:
+    cancel: formatTranslation(moocFormTranslations.cancel),
+    accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
+    clue: formatTranslation(playerTranslations.Clue),
+    clueStarsToLoose: formatTranslation(componentsTranslations.clue_stars_to_loose),
+    congratulations: formatTranslation(playerTranslations['Congratulations!']),
+    context: formatTranslation(playerTranslations.Context),
+    correction: formatTranslation(playerTranslations.Correction),
+    didYouKnowThat: formatTranslation(playerTranslations['Did you know that?']),
+    finishLearning: formatTranslation(playerTranslations['Finish learning']),
+    forYou: formatTranslation(playerTranslations['For you']),
+    gameOver: formatTranslation(playerTranslations['Game over']),
+    goodAnswer: formatTranslation(playerTranslations['Good answer']),
+    goodJob: formatTranslation(playerTranslations['Good job']),
+    goToQuestion: formatTranslation(playerTranslations['Go to question']),
+    keyPoint: formatTranslation(playerTranslations['Key point']),
+    lesson: formatTranslation(playerTranslations.Media),
+    loginButton: formatTranslation(playerTranslations['Scan your QR code']),
+    loginFirstStepHeader: formatTranslation(playerTranslations.Step1),
+    loginFirstStepDescription: formatTranslation(
+      playerTranslations['Connect to your learning plateform with another device']
+    ),
+    loginSecondStepHeader: formatTranslation(playerTranslations.Step2),
+    loginSecondStepDescription: formatTranslation(
+      playerTranslations['Go to settings account in the upper right hand corner']
+    ),
+    loginThirdStepHeader: formatTranslation(playerTranslations.Step3),
+    loginThirdStepDescription: formatTranslation(
+      playerTranslations['Voila your qr code will be right there']
+    ),
+    loginHeader: formatTranslation(
       playerTranslations[
         'To open your companys learning app, you need to scan your personal QR code'
-      ] || '',
-    logOut: moocMenuTranslations.header.account_menu.logout,
-    new: moocTranslations.content.new,
-    next: playerTranslations.Next,
-    nextLevel: playerTranslations['Next level'],
-    ok: moocFormTranslations.ok,
-    open: componentsTranslations.Open,
+      ]
+    ),
+    logOut: formatTranslation(moocMenuTranslations.header.account_menu.logout),
+    new: formatTranslation(moocTranslations.content.new),
+    next: formatTranslation(playerTranslations.Next),
+    nextLevel: formatTranslation(playerTranslations['Next level']),
+    ok: formatTranslation(moocFormTranslations.ok),
+    open: formatTranslation(componentsTranslations.Open),
     // @todo get it from github
     openSettings: 'Open settings',
-    ouch: playerTranslations.Ouch,
-    outOfLives: playerTranslations['You are out of lives!'],
+    ouch: formatTranslation(playerTranslations.Ouch),
+    outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
     // @todo get it from github
     permission: 'Permission',
     // @todo get it from github
     permissionCamera:
       'We need access to your camera in order to scan your QR code and authenticate you.',
-    question: playerTranslations.Question,
-    quit: playerTranslations.Quit,
-    retryLevel: playerTranslations['Retry level'],
-    seeClue: componentsTranslations['See clue'],
-    selectSomethingBelow: playerTranslations['Select something below'],
+    question: formatTranslation(playerTranslations.Question),
+    quit: formatTranslation(playerTranslations.Quit),
+    retryLevel: formatTranslation(playerTranslations['Retry level']),
+    seeClue: formatTranslation(componentsTranslations['See clue']),
+    selectSomethingBelow: formatTranslation(playerTranslations['Select something below']),
     // @todo get it from mooc
-    startLearning: playerTranslations['Start learning'],
-    selectAnAnswer: playerTranslations['Select an answer'],
-    typeHere: playerTranslations['Type here'],
-    validate: playerTranslations.Validate,
+    startLearning: formatTranslation(playerTranslations['Start learning']),
+    selectAnAnswer: formatTranslation(playerTranslations['Select an answer']),
+    typeHere: formatTranslation(playerTranslations['Type here']),
+    validate: formatTranslation(playerTranslations.Validate),
     // @todo get it from github
     version: 'Version',
-    winAdditionalStars: componentsTranslations.media_stars_to_win_plural,
-    wrongAnswer: playerTranslations['Wrong answer'],
-    yourAnswer: playerTranslations['Your answer_'],
-    yourAnswers: playerTranslations['Your answers_']
+    // @todo get it from github
+    upgrade: 'Upgrade',
+    // @todo get it from github
+    upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+    winAdditionalStars: formatTranslation(componentsTranslations.media_stars_to_win_plural),
+    wrongAnswer: formatTranslation(playerTranslations['Wrong answer']),
+    yourAnswer: formatTranslation(playerTranslations['Your answer_']),
+    yourAnswers: formatTranslation(playerTranslations['Your answers_'])
   };
 
   const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.js`);

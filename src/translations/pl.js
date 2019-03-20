@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Przejdź do pytania',
   keyPoint: 'Kluczowe zagadnienie',
   lesson: 'Lekcja',
+  loginButton: 'Zeskanuj swój <b>kod QR</b>',
+  loginFirstStepHeader: 'Krok <b>01</b>',
+  loginFirstStepDescription:
+    'Połącz się z platformą </br>edukacyjną <b>na innym </br>urządzeniu</b>',
+  loginSecondStepHeader: 'Krok <b>02</b>',
+  loginSecondStepDescription: 'Przejdź do <b>Ustawienia > Konto</b> </br>w prawym górnym rogu',
+  loginThirdStepHeader: 'Krok <b>03</b>',
+  loginThirdStepDescription: '<b>Gotowe!</b> </br>Tutaj znajdziesz swój </br>kod QR',
+  loginHeader:
+    'Aby otworzyć firmową aplikację edukacyjną, musisz zeskanować <b>swój osobisty kod QR.</b>',
   logOut: 'Wyloguj się',
   new: 'Nowy',
   next: 'Dalej',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Pytanie',
   quit: 'Zakończ',
   retryLevel: 'Ponów próbę',
-  loginButton: 'Zeskanuj swój <b>kod QR</b>',
-  loginFirstStepHeader: 'Krok <b>01</b>',
-  loginFirstStepDescription:
-    'Połącz się z platformą </br>edukacyjną <b>na innym </br>urządzeniu</b>',
-  loginSecondStepHeader: 'Krok <b>02</b>',
-  loginSecondStepDescription: 'Przejdź do <b>Ustawienia > Konto</b> </br>w prawym górnym rogu',
-  loginThirdStepHeader: 'Krok <b>03</b>',
-  loginThirdStepDescription: '<b>Gotowe!</b> </br>Tutaj znajdziesz swój </br>kod QR',
-  loginHeader:
-    'Aby otworzyć firmową aplikację edukacyjną, musisz zeskanować <b>swój osobisty kod QR.</b>',
   seeClue: 'Zobacz wskazówkę',
   selectSomethingBelow: 'Wybierz z poniższych możliwości',
   startLearning: 'Polecamy zacząć od tego',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Wpisz tutaj',
   validate: 'Zweryfikuj',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Zdobądź {{count}} dodatkowe gwiazdki w każdym rozdziale za obejrzenie filmiku z lekcją!',
   wrongAnswer: 'Błędna odpowiedź',

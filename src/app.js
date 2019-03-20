@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 import NetworkInfoListener from './containers/network-info-listener';
+import VersionListener from './containers/version-listener';
 import createStore from './redux';
 import type {ReduxDevTools} from './redux/_types';
 
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
 
 const App = (props: Props) => (
   <Provider store={store}>
+    <VersionListener />
     <NetworkInfoListener />
     <BrandThemeProvider>
       <View style={styles.container}>

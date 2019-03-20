@@ -53,7 +53,7 @@ module.exports = {
       statements: 98
     },
     'src/modules': {
-      branches: 100,
+      branches: 97,
       functions: 100,
       lines: 100,
       statements: 100

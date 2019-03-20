@@ -20,6 +20,17 @@ const translations: Translations = {
   goToQuestion: 'Accès à la question',
   keyPoint: 'Point-clé',
   lesson: 'Leçon',
+  loginButton: 'Scannez votre <b>QR code</b>',
+  loginFirstStepHeader: 'Étape <b>01</b>',
+  loginFirstStepDescription:
+    'Connectez-vous à votre plateforme </br>de formation <b>avec un autre </br>appareil</b>',
+  loginSecondStepHeader: 'Étape <b>02</b>',
+  loginSecondStepDescription:
+    'Cliquez sur <b>Paramètres > Compte</b> </br>dans le coin en haut à droite.',
+  loginThirdStepHeader: 'Étape <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà !</b> </br>Votre QR code doit être juste </br>ici',
+  loginHeader:
+    'Pour accéder à votre plateforme de formation, vous devez scanner <b>votre QR code personnel.</b>',
   logOut: 'Se déconnecter',
   new: 'Nouveau',
   next: 'Continuer',
@@ -35,17 +46,6 @@ const translations: Translations = {
   question: 'Question',
   quit: 'Quitter',
   retryLevel: 'Réessayez ce niveau',
-  loginButton: 'Scannez votre <b>QR code</b>',
-  loginFirstStepHeader: 'Étape <b>01</b>',
-  loginFirstStepDescription:
-    'Connectez-vous à votre plateforme </br>de formation <b>avec un autre </br>appareil</b>',
-  loginSecondStepHeader: 'Étape <b>02</b>',
-  loginSecondStepDescription:
-    'Cliquez sur <b>Paramètres > Compte</b> </br>dans le coin en haut à droite.',
-  loginThirdStepHeader: 'Étape <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà !</b> </br>Votre QR code doit être juste </br>ici',
-  loginHeader:
-    'Pour accéder à votre plateforme de formation, vous devez scanner <b>votre QR code personnel.</b>',
   seeClue: "Voir l'indice",
   selectSomethingBelow: 'Sélectionner la ou les option(s) correcte(s) ci-dessous',
   startLearning: 'Vous devriez commencer par celui-ci',
@@ -53,6 +53,8 @@ const translations: Translations = {
   typeHere: 'Saisissez ici',
   validate: 'Valider',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Gagnez {{count}} étoiles supplémentaires par chapitre en consultant la leçon !',
   wrongAnswer: 'Mauvaise réponse',

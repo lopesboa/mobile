@@ -20,6 +20,17 @@ const translations: Translations = {
   goToQuestion: 'Перейти до запитання',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
+  loginButton: 'Відскануйте свій <b>QR-код</b>',
+  loginFirstStepHeader: 'Крок <b>01</b>',
+  loginFirstStepDescription:
+    "Під'єднайтеся до своєї навчальної </br>платформи <b>за допомогою іншого </br>пристрою</b>",
+  loginSecondStepHeader: 'Крок <b>02</b>',
+  loginSecondStepDescription:
+    'Зайдіть у <b>"Налаштування" > "Обліковка"</b> </br>, що у верхньому правому куті',
+  loginThirdStepHeader: 'Крок <b>03</b>',
+  loginThirdStepDescription: '<b>Вуаля!</b> </br>Ваш QR-код опиниться </br>просто тут',
+  loginHeader:
+    'Вам слід буде відсканувати <b>свій особистий QR-код</b>, щоб відкрити навчальний застосунок своєї компанії.',
   logOut: 'Вийти',
   new: 'нові',
   next: 'Далі',
@@ -35,17 +46,6 @@ const translations: Translations = {
   question: 'Питання',
   quit: 'Вийти',
   retryLevel: 'Пройти рівень ще раз',
-  loginButton: 'Відскануйте свій <b>QR-код</b>',
-  loginFirstStepHeader: 'Крок <b>01</b>',
-  loginFirstStepDescription:
-    "Під'єднайтеся до своєї навчальної </br>платформи <b>за допомогою іншого </br>пристрою</b>",
-  loginSecondStepHeader: 'Крок <b>02</b>',
-  loginSecondStepDescription:
-    "Зайдіть у <b>'Налаштування' > 'Обліковка'</b> </br>, що у верхньому правому куті",
-  loginThirdStepHeader: 'Крок <b>03</b>',
-  loginThirdStepDescription: '<b>Вуаля!</b> </br>Ваш QR-код опиниться </br>просто тут',
-  loginHeader:
-    'Вам слід буде відсканувати <b>свій особистий QR-код</b>, щоб відкрити навчальний застосунок своєї компанії.',
   seeClue: 'Переглянути підказку',
   selectSomethingBelow: 'Оберіть положення нижче',
   startLearning: 'Вам слід почати з цього',
@@ -53,6 +53,8 @@ const translations: Translations = {
   typeHere: 'Ввести тут',
   validate: 'Підтвердити',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Вигравайте {{count}} додаткових зірок за перший перегляд уроку в цьому розділі!',
   wrongAnswer: 'Неправильна відповідь',

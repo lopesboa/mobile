@@ -1,9 +1,10 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
-import Authentication from '../components/authentication';
+import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import type {Params as QRCodeScreenParams} from './qr-code';
@@ -36,6 +37,7 @@ class AuthenticationScreen extends React.PureComponent<Props> {
   render() {
     return (
       <Screen testID="authentication-screen" noScroll noSafeArea>
+        <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
         <Authentication onPress={this.handlePress} />
       </Screen>
     );

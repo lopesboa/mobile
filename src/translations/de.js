@@ -20,6 +20,17 @@ const translations: Translations = {
   goToQuestion: 'Zur Frage',
   keyPoint: 'Hauptpunkt',
   lesson: 'Lektion',
+  loginButton: 'Scannen Sie Ihren <b>QR-Code</b>',
+  loginFirstStepHeader: 'Schritt <b>01</b>',
+  loginFirstStepDescription:
+    'Verbinden Sie sich mit einem anderen </br>Gerät</b> mit Ihrer </br>Lernplattform<b>',
+  loginSecondStepHeader: 'Schritt <b>02</b>',
+  loginSecondStepDescription:
+    'Gehen Sie in der rechten oberen Ecke zu <b>Einstellungen > Konto</b></br>',
+  loginThirdStepHeader: 'Schritt <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>Ihr QR-Code wird </br>gleich da sein',
+  loginHeader:
+    'Um die Lern-App Ihres Unternehmens zu öffnen, müssen Sie <b>Ihren persönlichen QR-Code</b> scannen.',
   logOut: 'Abmelden',
   new: 'neu',
   next: 'Weiter',
@@ -35,17 +46,6 @@ const translations: Translations = {
   question: 'Frage',
   quit: 'Beenden',
   retryLevel: 'Level nochmal versuchen',
-  loginButton: 'Scannen Sie Ihren <b>QR-Code</b>',
-  loginFirstStepHeader: 'Schritt <b>01</b>',
-  loginFirstStepDescription:
-    'Verbinden Sie sich mit einem anderen </br>Gerät</b> mit Ihrer </br>Lernplattform<b>',
-  loginSecondStepHeader: 'Schritt <b>02</b>',
-  loginSecondStepDescription:
-    'Gehen Sie in der rechten oberen Ecke zu <b>Einstellungen > Konto</b></br>',
-  loginThirdStepHeader: 'Schritt <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Ihr QR-Code wird </br>gleich da sein',
-  loginHeader:
-    'Um die Lern-App Ihres Unternehmens zu öffnen, müssen Sie <b>Ihren persönlichen QR-Code</b> scannen.',
   seeClue: 'Hinweis öffnen',
   selectSomethingBelow: 'Wählen Sie etwas unten aus',
   startLearning: 'Sie sollten hiermit anfangen',
@@ -53,6 +53,8 @@ const translations: Translations = {
   typeHere: 'Hier einfügen',
   validate: 'Bestätigen',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Gewinnen Sie {{count}} zusätzliche Sterne in diesem Kapitel, wenn Sie die Lektion das erste Mal ansehen!',
   wrongAnswer: 'Falsche Antwort',

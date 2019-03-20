@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Naar de vraag',
   keyPoint: 'Key point',
   lesson: 'Les',
+  loginButton: 'Scan je <b>QR-code</b>',
+  loginFirstStepHeader: 'Stap <b>01</b>',
+  loginFirstStepDescription:
+    'Maak <b>via een ander </br>apparaat</b> verbinding met jouw educatieve </br>platform',
+  loginSecondStepHeader: 'Stap <b>02</b>',
+  loginSecondStepDescription: 'Ga naar <b>Instellingen > Account</b> </br>in de rechterbovenhoek',
+  loginThirdStepHeader: 'Stap <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>Je QR-code zal  </br>hier te zien zijn',
+  loginHeader:
+    'Om de educatieve app van je bedrijf te openen, moet je <b>jouw persoonlijke QR-code scannen.</b>',
   logOut: 'Afmelden',
   new: 'Nieuw',
   next: 'Volgende',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Vraag',
   quit: 'Verlaten',
   retryLevel: 'Probeer dit niveau opnieuw',
-  loginButton: 'Scan je <b>QR-code</b>',
-  loginFirstStepHeader: 'Stap <b>01</b>',
-  loginFirstStepDescription:
-    'Maak <b>via een ander </br>apparaat</b> verbinding met jouw educatieve </br>platform',
-  loginSecondStepHeader: 'Stap <b>02</b>',
-  loginSecondStepDescription: 'Ga naar <b>Instellingen > Account</b> </br>in de rechterbovenhoek',
-  loginThirdStepHeader: 'Stap <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Je QR-code zal  </br>hier te zien zijn',
-  loginHeader:
-    'Om de educatieve app van je bedrijf te openen, moet je <b>jouw persoonlijke QR-code scannen.</b>',
   seeClue: 'Bekijk tip',
   selectSomethingBelow: 'Selecteer iets hieronder',
   startLearning: 'Begin met deze',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Win {{count}} extra sterren in dit hoofdstuk de eerste keer dat je een les bekijkt!',
   wrongAnswer: 'Verkeerd antwoord',

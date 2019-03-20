@@ -20,6 +20,17 @@ const translations: Translations = {
   goToQuestion: 'Vai alla domanda',
   keyPoint: 'Punto chiave',
   lesson: 'Lezione',
+  loginButton: 'Scansiona il tuo <b>codice QR</b>',
+  loginFirstStepHeader: 'Fase <b>01</b>',
+  loginFirstStepDescription:
+    'Connettiti alla tua </br>piattaforma<b> di apprendimento con un altro </br>dispositivo</b>',
+  loginSecondStepHeader: 'Fase <b>02</b>',
+  loginSecondStepDescription:
+    "Vai su <b>Impostazioni > Account</b></br> nell'angolo in alto a destra",
+  loginThirdStepHeader: 'Fase <b>03</b>',
+  loginThirdStepDescription: '<b>Ecco fatto!</b> </br>Il tuo codice QR code sarà </br>proprio qui',
+  loginHeader:
+    "Per aprire l'app di apprendimento della tua azienda, devi scansionare <b>il tuo codice QR personale</b>.",
   logOut: 'Esci',
   new: 'Nuovo',
   next: 'Successivo',
@@ -35,17 +46,6 @@ const translations: Translations = {
   question: 'Indizio',
   quit: 'Abbandona',
   retryLevel: 'Ritenta il livello',
-  loginButton: 'Scansiona il tuo <b>codice QR</b>',
-  loginFirstStepHeader: 'Fase <b>01</b>',
-  loginFirstStepDescription:
-    'Connettiti alla tua </br>piattaforma<b> di apprendimento con un altro </br>dispositivo</b>',
-  loginSecondStepHeader: 'Fase <b>02</b>',
-  loginSecondStepDescription:
-    "Vai su <b>Impostazioni > Account</b></br> nell'angolo in alto a destra",
-  loginThirdStepHeader: 'Fase <b>03</b>',
-  loginThirdStepDescription: '<b>Ecco fatto!</b> </br>Il tuo codice QR code sarà </br>proprio qui',
-  loginHeader:
-    "Per aprire l'app di apprendimento della tua azienda, devi scansionare <b>il tuo codice QR personale</b>.",
   seeClue: 'Vedi indizio',
   selectSomethingBelow: 'Seleziona qualcosa qui di seguito',
   startLearning: 'Dovresti iniziare con questo',
@@ -53,6 +53,8 @@ const translations: Translations = {
   typeHere: 'Digita qui',
   validate: 'Convalida',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Guadagna {{count}} stelle aggiuntive in questo capitolo la prima volta che visualizzi una lezione!',
   wrongAnswer: 'Risposta sbagliata',

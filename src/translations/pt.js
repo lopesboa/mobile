@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Vai para a pergunta',
   keyPoint: 'Ponto-chave',
   lesson: 'Lição',
+  loginButton: 'Leia o seu <b>código QR</b>',
+  loginFirstStepHeader: 'Passo <b>01</b>',
+  loginFirstStepDescription:
+    'Ligue-se à sua </br>plataforma de aprendizagem <b>com outro </br>dispositivo</b>',
+  loginSecondStepHeader: 'Passo <b>02</b>',
+  loginSecondStepDescription: 'Vá a <b>Definições > Conta</b> </br>no canto superior direito',
+  loginThirdStepHeader: 'Passo <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>O seu código QR estará </br>aqui',
+  loginHeader:
+    'Para abrir a aplicação de aprendizagem da sua empresa, tem de ler <b>o seu código QR pessoal.</b>',
   logOut: 'Desconectar-se',
   new: 'Novo',
   next: 'Seguinte',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Pergunta',
   quit: 'Desistir',
   retryLevel: 'Voltar a tentar nível',
-  loginButton: 'Leia o seu <b>código QR</b>',
-  loginFirstStepHeader: 'Passo <b>01</b>',
-  loginFirstStepDescription:
-    'Ligue-se à sua </br>plataforma de aprendizagem <b>com outro </br>dispositivo</b>',
-  loginSecondStepHeader: 'Passo <b>02</b>',
-  loginSecondStepDescription: 'Vá a <b>Definições > Conta</b> </br>no canto superior direito',
-  loginThirdStepHeader: 'Passo <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>O seu código QR estará </br>aqui',
-  loginHeader:
-    'Para abrir a aplicação de aprendizagem da sua empresa, tem de ler <b>o seu código QR pessoal.</b>',
   seeClue: 'Ver solução',
   selectSomethingBelow: 'Selecione algo abaixo',
   startLearning: 'Deve começar por este',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Escreva aqui',
   validate: 'Validar',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Ganhe {{count}}  estrelas adicionais neste capítulo na primeira vez que veja esta lição!',
   wrongAnswer: 'Resposta errada',

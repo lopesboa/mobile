@@ -58,8 +58,11 @@ const styles = StyleSheet.create({
   }
 });
 
+export const TOP_COLOR = BLUE_COORP_DARK;
+export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
+
 const Authentication = ({onPress}: Props) => (
-  <Gradient colors={[BLUE_COORP_DARK, BLUE_COORP_LIGHT]} style={styles.container}>
+  <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.container}>
     <View style={[styles.wrapper, styles.logo]} testID="logo-header">
       <Image source={logo} style={styles.logoImg} />
     </View>

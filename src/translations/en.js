@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Go to question',
   keyPoint: 'Key point',
   lesson: 'Lesson',
+  loginButton: 'Scan your <b>QR code</b>',
+  loginFirstStepHeader: 'Step <b>01</b>',
+  loginFirstStepDescription:
+    'Connect to your learning </br>platform <b>with another </br>device</b>',
+  loginSecondStepHeader: 'Step <b>02</b>',
+  loginSecondStepDescription: 'Go to <b>Settings > Account</b> </br>in the upper right-hand corner',
+  loginThirdStepHeader: 'Step <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>Your QR code will be </br>right there',
+  loginHeader:
+    "To open your company's learning app, you need to scan <b>your personal QR code.</b>",
   logOut: 'Log out',
   new: 'new',
   next: 'Next',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Question',
   quit: 'Quit',
   retryLevel: 'Retry level',
-  loginButton: 'Scan your <b>QR code</b>',
-  loginFirstStepHeader: 'Step <b>01</b>',
-  loginFirstStepDescription:
-    'Connect to your learning </br>platform <b>with another </br>device</b>',
-  loginSecondStepHeader: 'Step <b>02</b>',
-  loginSecondStepDescription: 'Go to <b>Settings > Account</b> </br>in the upper right-hand corner',
-  loginThirdStepHeader: 'Step <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Your QR code will be </br>right there',
-  loginHeader:
-    "To open your company's learning app, you need to scan <b>your personal QR code.</b>",
   seeClue: 'See clue',
   selectSomethingBelow: 'Select something below',
   startLearning: 'You should start with this one',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Type here',
   validate: 'Validate',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Win {{count}} additional stars in this chapter the first time you view a lesson!',
   wrongAnswer: 'Wrong answer',

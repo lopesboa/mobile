@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Splash Default 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282679787,
+      4278235391,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "padding": 24,
+        },
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+      ]
+    }
+    testID="logo-header"
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 105,
+          "width": 192,
+        }
+      }
+    />
+  </View>
+</BVLinearGradient>
+`;

@@ -20,6 +20,17 @@ const translations: Translations = {
   goToQuestion: 'Přejděte k otázce',
   keyPoint: 'Klíčový bod',
   lesson: 'Lekce',
+  loginButton: 'Naskenujte svůj <b>QR kód</b>',
+  loginFirstStepHeader: 'Krok <b>01</b>',
+  loginFirstStepDescription:
+    'Připojte se na svoji výukovou </br>platformu <b>pomocí jiného </br>zařízení</b>',
+  loginSecondStepHeader: 'Krok <b>02</b>',
+  loginSecondStepDescription:
+    'Přejděte na <b>Nastavení > Účet</b> </br>v pravém horním rohu obrazovky',
+  loginThirdStepHeader: 'Krok <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>Váš QR kód bude </br>přímo tady',
+  loginHeader:
+    'Pro otevření školící aplikace vaší společnosti musíte naskenovat <b>váš osobní QR kód.</b>',
   logOut: 'Odhlásit se',
   new: 'nové',
   next: 'Další',
@@ -35,17 +46,6 @@ const translations: Translations = {
   question: 'Otázka',
   quit: 'Opustit',
   retryLevel: 'Zkuste úroveň znovu',
-  loginButton: 'Naskenujte svůj <b>QR kód</b>',
-  loginFirstStepHeader: 'Krok <b>01</b>',
-  loginFirstStepDescription:
-    'Připojte se na svoji výukovou </br>platformu <b>pomocí jiného </br>zařízení</b>',
-  loginSecondStepHeader: 'Krok <b>02</b>',
-  loginSecondStepDescription:
-    'Přejděte na <b>Nastavení > Účet</b> </br>v pravém horním rohu obrazovky',
-  loginThirdStepHeader: 'Krok <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Váš QR kód bude </br>přímo tady',
-  loginHeader:
-    'Pro otevření školící aplikace vaší společnosti musíte naskenovat <b>váš osobní QR kód.</b>',
   seeClue: 'Zobrazit nápovědu',
   selectSomethingBelow: 'Vyberte něco níže',
   startLearning: 'Tímto byste měli začít',
@@ -53,6 +53,8 @@ const translations: Translations = {
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Získejte další hvězdy ({{count}}) v této kapitole při prvním zobrazení lekce!',
   wrongAnswer: 'Chybná odpověď',

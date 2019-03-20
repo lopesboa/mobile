@@ -66,6 +66,8 @@ export type Translations = {|
   selectSomethingBelow: string,
   startLearning: string,
   typeHere: string,
+  upgrade: string,
+  upgradeDescription: string,
   validate: string,
   version: string,
   winAdditionalStars: string,

@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Menjen a kérdéshez',
   keyPoint: 'Kulcspont',
   lesson: 'Lecke',
+  loginButton: 'Olvasd be <b>QR-kódodat</b>',
+  loginFirstStepHeader: '<b>01.</b> lépés',
+  loginFirstStepDescription:
+    'Csatlakozz tanulói </br>platformodhoz <b> egy másik </br>készülékkel</b>',
+  loginSecondStepHeader: '<b>02.</b> lépés',
+  loginSecondStepDescription: 'Menj a <b>Beállítások > Fiók</b> </br>menübe a jobb felső sarokban',
+  loginThirdStepHeader: '<b>03.</b> lépés',
+  loginThirdStepDescription: '<b>Voilà!</b> Ott találod </br>QR-kódodat </br>',
+  loginHeader:
+    'Vállalatod tanulói alkalmazásának megnyitásához be kell olvasnod <b>személyes QR-kódodat.</b>',
   logOut: 'Kijelentkezés',
   new: 'új',
   next: 'Következő',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Kérdés',
   quit: 'Kilépés',
   retryLevel: 'Szint  újrajátszása',
-  loginButton: 'Olvasd be <b>QR-kódodat</b>',
-  loginFirstStepHeader: '<b>01.</b> lépés',
-  loginFirstStepDescription:
-    'Csatlakozz tanulói </br>platformodhoz <b> egy másik </br>készülékkel</b>',
-  loginSecondStepHeader: '<b>02.</b> lépés',
-  loginSecondStepDescription: 'Menj a <b>Beállítások > Fiók</b> </br>menübe a jobb felső sarokban',
-  loginThirdStepHeader: '<b>03.</b> lépés',
-  loginThirdStepDescription: '<b>Voilà!</b> Ott találod </br>QR-kódodat </br>',
-  loginHeader:
-    'Vállalatod tanulói alkalmazásának megnyitásához be kell olvasnod <b>személyes QR-kódodat.</b>',
   seeClue: 'Tipp megtekintése',
   selectSomethingBelow: 'Válasszon ki valamit alul',
   startLearning: 'Javasoljuk, hogy ezzel kezdd',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Írjon ide',
   validate: 'Érvényesít',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Nyerjen további {{count}} csillagot ebben a fejezetben egy lecke először történő megtekintésével!',
   wrongAnswer: 'Rossz válasz',

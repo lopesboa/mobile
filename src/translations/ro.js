@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Salt la întrebare',
   keyPoint: 'Punct cheie',
   lesson: 'Lecție',
+  loginButton: 'Scanează <b>codul QR</b>',
+  loginFirstStepHeader: 'Pasul <b>01</b>',
+  loginFirstStepDescription:
+    'Conectează-te la </br>platforma de învățare <b>cu alt </br>dispozitiv</b>',
+  loginSecondStepHeader: 'Pasul <b>02</b>',
+  loginSecondStepDescription: 'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
+  loginThirdStepHeader: 'Pasul <b>03</b>',
+  loginThirdStepDescription: '<b>Voilà!</b> </br>Codul tău QR va fi </br>chiar acolo',
+  loginHeader:
+    'Pentru a deschide aplicația de învățare a companiei tale, trebuie să scanezi <b>codul QR personal.</b>',
   logOut: 'Deconectați-vă',
   new: 'noi',
   next: 'Următoarea',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Întrebare',
   quit: 'Renunță',
   retryLevel: 'Încercați din nou acest nivel',
-  loginButton: 'Scanează <b>codul QR</b>',
-  loginFirstStepHeader: 'Pasul <b>01</b>',
-  loginFirstStepDescription:
-    'Conectează-te la </br>platforma de învățare <b>cu alt </br>dispozitiv</b>',
-  loginSecondStepHeader: 'Pasul <b>02</b>',
-  loginSecondStepDescription: 'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
-  loginThirdStepHeader: 'Pasul <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Codul tău QR va fi </br>chiar acolo',
-  loginHeader:
-    'Pentru a deschide aplicația de învățare a companiei tale, trebuie să scanezi <b>codul QR personal.</b>',
   seeClue: 'Arată indiciul',
   selectSomethingBelow: 'Selectați din opțiunile de mai jos',
   startLearning: 'Ar trebui să începi cu asta',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Tastați aici',
   validate: 'Validează',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Câștigați {{count}} stele în plus prima oară când urmăriți o lecție din acest capitol!',
   wrongAnswer: 'Răspuns incorect',

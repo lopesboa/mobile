@@ -19,6 +19,17 @@ const translations: Translations = {
   goToQuestion: '質問に行く',
   keyPoint: '重要なポイント',
   lesson: 'レッスン',
+  loginButton: 'あなたの<b>QRコード</b>をスキャンしてください',
+  loginFirstStepHeader: 'ステップ<b>01</b>',
+  loginFirstStepDescription:
+    '別の</br>デバイス</b>を使って学習</br>プラットフォーム<b>に接続してください',
+  loginSecondStepHeader: 'Step <b>02</b>',
+  loginSecondStepDescription: '右上の隅にある<b>設定>アカウント</b> </br>に移動してください',
+  loginThirdStepHeader: 'ステップ<b>03</b>',
+  loginThirdStepDescription:
+    '<b>はいできました！</b> </br>あなたのQRコードがすぐ</br>ここに表示されます',
+  loginHeader:
+    '会社の学習アプリを開くには、<b>あなた個人のQRコード</b>をスキャンする必要があります。',
   logOut: 'ログアウト',
   new: 'new',
   next: 'Next',
@@ -34,17 +45,6 @@ const translations: Translations = {
   question: '質問',
   quit: '終了する',
   retryLevel: 'リトライする',
-  loginButton: 'あなたの<b>QRコード</b>をスキャンしてください',
-  loginFirstStepHeader: 'ステップ<b>01</b>',
-  loginFirstStepDescription:
-    '別の</br>デバイス</b>を使って学習</br>プラットフォーム<b>に接続してください',
-  loginSecondStepHeader: 'Step <b>02</b>',
-  loginSecondStepDescription: '右上の隅にある<b>設定>アカウント</b> </br>に移動してください',
-  loginThirdStepHeader: 'ステップ<b>03</b>',
-  loginThirdStepDescription:
-    '<b>はいできました！</b> </br>あなたのQRコードがすぐ</br>ここに表示されます',
-  loginHeader:
-    '会社の学習アプリを開くには、<b>あなた個人のQRコード</b>をスキャンする必要があります。',
   seeClue: 'ヒントをみる ',
   selectSomethingBelow: '下に何かを選択します。',
   startLearning: 'こちらで始めてください',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'ここに入力します。',
   validate: '回答',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'もし、はじめてこのレッスンを受けた場合は{{count}}個のスターが追加で獲得できます。',
   wrongAnswer: '不正解',

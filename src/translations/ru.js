@@ -20,6 +20,16 @@ const translations: Translations = {
   goToQuestion: 'Перейти к вопросу',
   keyPoint: 'Ключевой момент',
   lesson: 'Урок',
+  loginButton: 'Отсканируйте свой <b>QR-код</b>',
+  loginFirstStepHeader: 'Шаг <b>01</b>',
+  loginFirstStepDescription:
+    'Соедините свою обучающую </br>платформу <b>с другим </br>устройством</b>',
+  loginSecondStepHeader: 'Шаг <b>02</b>',
+  loginSecondStepDescription: 'Зайдите в <b>«Настройки» > «Аккаунт»</b> </br>в правом верхнем углу',
+  loginThirdStepHeader: 'Шаг <b>03</b>',
+  loginThirdStepDescription: '<b>Вуаля!</b> </br>Ваш QR-код будет </br>вот там',
+  loginHeader:
+    'Чтобы открыть обучающее приложение своей компании, вам нужно отсканировать <b>свой персональный QR-код.</b>',
   logOut: 'Выйти',
   new: 'Новые',
   next: 'Далее',
@@ -35,16 +45,6 @@ const translations: Translations = {
   question: 'Вопрос',
   quit: 'Выйти',
   retryLevel: 'Повторить уровень',
-  loginButton: 'Отсканируйте свой <b>QR-код</b>',
-  loginFirstStepHeader: 'Шаг <b>01</b>',
-  loginFirstStepDescription:
-    'Соедините свою обучающую </br>платформу <b>с другим </br>устройством</b>',
-  loginSecondStepHeader: 'Шаг <b>02</b>',
-  loginSecondStepDescription: 'Зайдите в <b>«Настройки» > «Аккаунт»</b> </br>в правом верхнем углу',
-  loginThirdStepHeader: 'Шаг <b>03</b>',
-  loginThirdStepDescription: '<b>Вуаля!</b> </br>Ваш QR-код будет </br>вот там',
-  loginHeader:
-    'Чтобы открыть обучающее приложение своей компании, вам нужно отсканировать <b>свой персональный QR-код.</b>',
   seeClue: 'Смотреть подсказку',
   selectSomethingBelow: 'Выберите что-либо ниже',
   startLearning: 'Вам нужно начать с этого',
@@ -52,6 +52,8 @@ const translations: Translations = {
   typeHere: 'Введите текст здесь',
   validate: 'Подтвердить',
   version: 'Version',
+  upgrade: 'Upgrade',
+  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:
     'Выиграйте {{count}} дополнительных звезд в этой главе при первом просмотре урока!',
   wrongAnswer: 'Неверный ответ',

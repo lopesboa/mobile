@@ -3,8 +3,9 @@
 import * as React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 
-import Gradient from '../components/gradient';
+import logo from '../assets/images/logo.png';
 import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
+import Gradient from './gradient';
 
 const styles: GenericStyleProp = StyleSheet.create({
   container: {
@@ -25,14 +26,15 @@ const styles: GenericStyleProp = StyleSheet.create({
   }
 });
 
-const SplashScreen = () => {
-  return (
-    <Gradient colors={[BLUE_COORP_DARK, BLUE_COORP_LIGHT]} style={styles.container}>
-      <View style={[styles.wrapper, styles.logo]} testID="logo-header">
-        <Image source={require('../assets/images/logo.png')} style={styles.logoImg} />
-      </View>
-    </Gradient>
-  );
-};
+export const TOP_COLOR = BLUE_COORP_DARK;
+export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
-export default SplashScreen;
+const Splash = () => (
+  <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.container}>
+    <View style={[styles.wrapper, styles.logo]} testID="logo-header">
+      <Image source={logo} style={styles.logoImg} />
+    </View>
+  </Gradient>
+);
+
+export default Splash;

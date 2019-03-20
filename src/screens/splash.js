@@ -1,9 +1,10 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
-import SplashScreen from '../containers/splash-screen';
+import Splash, {TOP_COLOR} from '../components/splash';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
@@ -17,31 +18,29 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class Splash extends React.PureComponent<Props> {
+class SplashScreen extends React.PureComponent<Props> {
   props: Props;
 
   async componentDidMount() {
-    const token = await localToken.get();
-    if (token) {
-      this.props.signIn(token);
-      return this.props.navigation.navigate('Home');
-    }
-    this.props.navigation.navigate('Authentication');
+    await this.signIn();
   }
 
-  async componentDidUpdate() {
+  signIn = async () => {
     const token = await localToken.get();
+
     if (token) {
       this.props.signIn(token);
       return this.props.navigation.navigate('Home');
     }
+
     this.props.navigation.navigate('Authentication');
-  }
+  };
 
   render() {
     return (
-      <Screen testID="check-authentication-screen" noScroll noSafeArea>
-        <SplashScreen />
+      <Screen testID="splash-screen" noScroll noSafeArea>
+        <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
+        <Splash />
       </Screen>
     );
   }
@@ -51,4 +50,4 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   signIn
 };
 
-export default connect(null, mapDispatchToProps)(Splash);
+export default connect(null, mapDispatchToProps)(SplashScreen);
