@@ -1461,12 +1461,12 @@
     babel-cli "^6.24.1"
     react "^16.3.2"
 
-"@coorpacademy/player-services@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-4.0.0.tgz#d92a0b7e165c6d77131cff97494aa1d5a9dcf120"
-  integrity sha512-9F0ZZu1itPAnY18JFvwGFk3/d0VxEF+eD/CpRcc25Wj8c6pG9srrbk1SZH1CKmL7KLgzahOVhuoNArhi053nuQ==
+"@coorpacademy/player-services@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-4.0.2.tgz#72c23050acb76b9421ada184aa3ef9f1608bd943"
+  integrity sha512-8/4URJSRz6IbtA9yYT6/w9094Gay2awOIwYrfXAevY7yIFoWcTL0M6wvwzW8vwcs2KqFC/ApertRubR+5jhdOA==
   dependencies:
-    "@coorpacademy/progression-engine" "10.3.13"
+    "@coorpacademy/progression-engine" "10.3.14"
     lodash "^4.17.4"
 
 "@coorpacademy/player-store@^3.0.0":
@@ -1480,10 +1480,18 @@
     redux "^4.0.0"
     redux-thunk "^2.2.0"
 
-"@coorpacademy/progression-engine@10.3.13", "@coorpacademy/progression-engine@^10.3.13":
+"@coorpacademy/progression-engine@10.3.13":
   version "10.3.13"
   resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.13.tgz#1de0acb7897e24b6fb1be289ed390151a15b58a9"
   integrity sha512-/LTx0GLRdFMFuEG1M0hJSHE2HhT7y5s8kEKxBQND6GNIHezoF8MjZG3/aKIXdiVuj4GTnj3r4h0X2TXeJacGtQ==
+  dependencies:
+    fuzzy-matching "^0.4.3"
+    lodash "^4.17.4"
+
+"@coorpacademy/progression-engine@10.3.14", "@coorpacademy/progression-engine@^10.3.14":
+  version "10.3.14"
+  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.14.tgz#fdd7009a7f7ac636287c12bdf933daf87ab090a8"
+  integrity sha512-zxp3FeV9DUdAOfziN2kCdG/Pce82T2L40xDfrDc2UR3LIEVhaH8mbauTQ7cP6brt2iRLaG0oqssfn/5SeC+TXQ==
   dependencies:
     fuzzy-matching "^0.4.3"
     lodash "^4.17.4"
