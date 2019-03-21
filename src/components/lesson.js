@@ -50,10 +50,17 @@ const styles = StyleSheet.create({
   }
 });
 
-const Lesson = (props: Props) => {
-  const {layout, header, onChange, resources, selected, starsGranted} = props;
-
-  const openedResource: ResourceType = resources.filter(resource => resource._id === selected)[0];
+const Lesson = ({
+  layout,
+  header,
+  onChange,
+  resources,
+  selected,
+  starsGranted,
+  onPDFButtonPress,
+  onVideoPlay
+}: Props) => {
+  const openedResource = resources.find(resource => resource._id === selected);
   const height = layout && layout.width / (16 / 9);
 
   if (!height || !selected) {
@@ -74,26 +81,24 @@ const Lesson = (props: Props) => {
           // @todo use user language
           getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, 'en');
 
-        const resourceType = openedResource && openedResource.type;
-        const resourcePoster = openedResource && openedResource.poster;
-        const resourceDescription = openedResource && openedResource.description;
-
         return (
           <View testID="lesson" style={styles.container}>
             <View style={styles.questionContainer}>
               <QuestionTitle isTextCentered>{header}</QuestionTitle>
             </View>
             <Space type="base" />
-            <Resource
-              type={resourceType}
-              url={openedResource.url}
-              description={resourceDescription}
-              thumbnail={resourcePoster}
-              subtitles={subtitles}
-              height={height}
-              onPDFButtonPress={props.onPDFButtonPress}
-              onVideoPlay={props.onVideoPlay}
-            />
+            {openedResource && (
+              <Resource
+                type={openedResource && openedResource.type}
+                url={openedResource && openedResource.url}
+                description={openedResource && openedResource.description}
+                thumbnail={openedResource && openedResource.poster}
+                subtitles={subtitles}
+                height={height}
+                onPDFButtonPress={onPDFButtonPress}
+                onVideoPlay={onVideoPlay}
+              />
+            )}
             <ScrollView
               style={styles.browser}
               showsHorizontalScrollIndicator={false}
