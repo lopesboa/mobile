@@ -9,19 +9,34 @@ import type {CardType, Resource} from '../types';
 export type Card = {|
   title: string,
   type: CardType,
-  resource?: Resource
+  resource?: Resource,
+  offeringExtraLife?: boolean
 |};
 
 export type Props = {|
   items: Array<Card>,
   renderItem: Card => React.Node,
   cardStyle?: GenericStyleProp,
-  onRef?: (element: DeckSwiper | null) => void
+  onRef: (element: DeckSwiper | null) => void,
+  onSwiped: (cardIndexSwiped: number) => void,
+  onSwipedAll: () => void,
+  cardIndexShown?: number
 |};
 
-const Cards = ({items, renderItem, cardStyle, onRef}: Props) => (
+const Cards = ({
+  items,
+  renderItem,
+  cardStyle,
+  onRef,
+  onSwiped,
+  onSwipedAll,
+  cardIndexShown = 0
+}: Props) => (
   <DeckSwiper
     cards={items}
+    onSwiped={onSwiped}
+    onSwipedAll={onSwipedAll}
+    cardIndex={cardIndexShown}
     renderCard={renderItem}
     stackSize={items.length}
     infinite

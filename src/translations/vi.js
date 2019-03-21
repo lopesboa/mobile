@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Hủy',
   accessTheLesson: 'Truy cập vào bài học này',
+  bonus: 'Thưởng!',
   clue: 'Gợi ý',
   clueStarsToLoose:
     'Mở khóa gợi ý làm giảm số sao bạn có thể đạt được cho câu hỏi này đi {{count}} sao (nếu bạn đáp đúng)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Bạn đã gần hoàn tất với bước này',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
   gameOver: 'Thua cuộc',
+  getAnExtralife: 'Nhận thêm mạng bằng cách xem bài học',
   goodAnswer: 'Câu trả lời đúng',
   goodJob: 'Bạn làm tốt lắm!',
   goToQuestion: 'Đi đến câu hỏi',

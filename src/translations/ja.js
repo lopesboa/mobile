@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'キャンセルする',
   accessTheLesson: 'レッスンを受ける',
+  bonus: 'ボーナスポイント',
   clue: 'ヒント',
   clueStarsToLoose: 'ヒントを参照すると通常より獲得ができるスターの数が{{count}}つ減ります。',
   congratulations: 'おめでとうございます!',
@@ -14,6 +15,7 @@ const translations: Translations = {
   finishLearning: 'これはほとんど終わりです',
   forYou: 'おすすめ厳選情報',
   gameOver: 'ゲームは終わりました',
+  getAnExtralife: 'レッスンを受けて、ライフを獲得する',
   goodAnswer: '正解',
   goodJob: 'よく出来ました！',
   goToQuestion: '質問に行く',

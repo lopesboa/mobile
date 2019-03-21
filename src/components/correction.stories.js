@@ -48,12 +48,11 @@ storiesOf('Correction', module)
           subtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished={false}
           isLoading={false}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           lives={3}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -74,12 +73,14 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished={false}
           isLoading={false}
-          hasViewedAResource={false}
+          isResourceViewed={false}
           resources={[resources[0], resources[1]]}
           lives={2}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          offeringExtraLife={false}
+          canGoNext={false}
         />
       </View>
     </TestContextProvider>
@@ -102,12 +103,11 @@ storiesOf('Correction', module)
             subtitle="Bad Answer"
             keyPoint="The KEY POINT"
             layout={fakeLayout}
-            isFinished={false}
             isLoading={false}
-            hasViewedAResource={false}
             resources={[resources[0], resources[1]]}
             lives={2}
             onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
           />
         </View>
       </TestContextProvider>
@@ -129,12 +129,11 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished={false}
           isLoading={false}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           lives={3}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -156,11 +155,10 @@ storiesOf('Correction', module)
           subtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           lives={0}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -181,12 +179,11 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
           isLoading={false}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           lives={1}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -201,17 +198,17 @@ storiesOf('Correction', module)
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
           }
           isCorrect={false}
+          isResourceViewed={false}
           title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
-          isFinished={false}
           isLoading={false}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -232,11 +229,10 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
-          isFinished={false}
           isLoading={false}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -257,11 +253,10 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
           isLoading={false}
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -282,11 +277,10 @@ storiesOf('Correction', module)
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
           isLoading
-          hasViewedAResource={false}
           resources={[resources[0], resources[1]]}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
@@ -302,16 +296,18 @@ storiesOf('Correction', module)
           }
           title="Good job!"
           isCorrect
+          isResourceViewed={false}
+          offeringExtraLife={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
           isLoading
-          hasViewedAResource
           resources={[resources[0], resources[1]]}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={2}
         />
       </View>
     </TestContextProvider>
@@ -325,18 +321,132 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
+          title="Oops..."
           isCorrect={false}
+          isResourceViewed={false}
+          offeringExtraLife={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={2}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was not viewed extralife is offered', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          isResourceViewed={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          canGoNext={false}
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          offeringExtraLife
+          lives={0}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was not viewed but extralife was already consumed', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          isResourceViewed={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          canGoNext={false}
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          offeringExtraLife={false}
+          lives={0}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was viewed: extralife is consumed', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          isResourceViewed
+          canGoNext
+          offeringExtraLife={false}
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={1}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Good answer and lesson was viewed', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Good job!"
+          isCorrect
+          isResourceViewed
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
-          isFinished
           isLoading
-          hasViewedAResource
+          canGoNext
+          offeringExtraLife={false}
           resources={[resources[0], resources[1]]}
           onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={1}
         />
       </View>
     </TestContextProvider>

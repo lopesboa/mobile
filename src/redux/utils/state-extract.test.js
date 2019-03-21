@@ -13,7 +13,7 @@ import bundledDiscipline from '../../__fixtures__/discipline-bundle';
 import {
   isContentReady,
   getContents,
-  checkIsFinished,
+  checkIsExitNode,
   checkIsCorrect,
   checkIsValidating,
   getCurrentStep,
@@ -39,8 +39,10 @@ const createState = ({
       type: 'level',
       ref: levelRef
     },
-    content,
-    nextContent
+    state: {
+      content,
+      nextContent
+    }
   });
 
   const state: StoreState = createStoreState({
@@ -96,23 +98,12 @@ describe('State-extract', () => {
     });
   });
 
-  describe('checkIsFinished', () => {
+  describe('checkIsExitNode', () => {
     it('should return false if nextContent is falsy', () => {
       const state: StoreState = createState({});
       delete state.data.progressions.entities.progression1.state.nextContent;
-      const result = checkIsFinished(state);
+      const result = checkIsExitNode(state);
       expect(result).toEqual(false);
-    });
-
-    it('should return true if nextContent is extraLife', () => {
-      const state: StoreState = createState({
-        nextContent: {
-          type: CONTENT_TYPE.NODE,
-          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-        }
-      });
-      const result = checkIsFinished(state);
-      expect(result).toEqual(true);
     });
 
     it('should return true if nextContent is success', () => {
@@ -122,7 +113,7 @@ describe('State-extract', () => {
           ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
         }
       });
-      const result = checkIsFinished(state);
+      const result = checkIsExitNode(state);
       expect(result).toEqual(true);
     });
 
@@ -133,7 +124,7 @@ describe('State-extract', () => {
           ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
         }
       });
-      const result = checkIsFinished(state);
+      const result = checkIsExitNode(state);
       expect(result).toEqual(true);
     });
 
@@ -142,7 +133,18 @@ describe('State-extract', () => {
         type: CONTENT_TYPE.SLIDE,
         ref: '1234567'
       });
-      const result = checkIsFinished(state);
+      const result = checkIsExitNode(state);
+      expect(result).toEqual(false);
+    });
+
+    it('should return false if nextContent is extraLife', () => {
+      const state: StoreState = createState({
+        nextContent: {
+          type: CONTENT_TYPE.NODE,
+          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+        }
+      });
+      const result = checkIsExitNode(state);
       expect(result).toEqual(false);
     });
   });
@@ -243,7 +245,10 @@ describe('State-extract', () => {
       state.data.progressions.entities.progression1.state.isCorrect = false;
 
       const lives = getLives(state);
-      expect(lives).toEqual({count: 2, hide: false});
+      expect(lives).toEqual({
+        count: state.data.progressions.entities.progression1.state.lives + 1,
+        hide: false
+      });
     });
 
     it('should return state.lives when not waiting for correction', () => {
@@ -252,7 +257,10 @@ describe('State-extract', () => {
       state.data.progressions.entities.progression1.state.isCorrect = false;
 
       const lives = getLives(state);
-      expect(lives).toEqual({count: 1, hide: false});
+      expect(lives).toEqual({
+        count: state.data.progressions.entities.progression1.state.lives,
+        hide: false
+      });
     });
 
     it('should return state.lives when waiting for correction and provided a good answer', () => {
@@ -261,7 +269,10 @@ describe('State-extract', () => {
       state.data.progressions.entities.progression1.state.isCorrect = true;
 
       const lives = getLives(state);
-      expect(lives).toEqual({count: 1, hide: false});
+      expect(lives).toEqual({
+        count: state.data.progressions.entities.progression1.state.lives,
+        hide: false
+      });
     });
   });
 

@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Отменить',
   accessTheLesson: 'Перейти к уроку',
+  bonus: 'Бонус!',
   clue: 'Подсказка',
   clueStarsToLoose:
     'Разблокировав подсказку, вы уменьшите количество звезд, которые вы можете выиграть в этом вопросе, на {{count}} (если ответите правильно)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Вы почти закончили это',
   forYou: 'Наша лучшая подборка для вас',
   gameOver: 'Конец игры',
+  getAnExtralife: 'Получите дополнительную жизнь за просмотр урока',
   goodAnswer: 'Правильный ответ',
   goodJob: 'Отличная работа!',
   goToQuestion: 'Перейти к вопросу',

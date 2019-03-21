@@ -24,6 +24,7 @@ storiesOf('Resource', module)
         thumbnail={video.poster}
         height={200}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -36,6 +37,7 @@ storiesOf('Resource', module)
         thumbnail={pdf.poster}
         height={200}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -54,6 +56,7 @@ storiesOf('Resource', module)
         thumbnail={video.poster}
         height={200}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ));
@@ -71,6 +74,7 @@ if (process.env.NODE_ENV === 'test') {
             thumbnail={pdf.poster}
             height={200}
             onPDFButtonPress={handlePress}
+            onVideoPlay={handlePress}
           />
         </TestContextProvider>
       );
@@ -79,6 +83,32 @@ if (process.env.NODE_ENV === 'test') {
       button.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([getCleanUri(pdf.url), pdf.description]);
+    });
+  });
+}
+
+if (process.env.NODE_ENV === 'test') {
+  describe('Resource', () => {
+    it('should handle onVideoPlay callback', () => {
+      const handlePress = jest.fn();
+      const component = renderer.create(
+        <TestContextProvider>
+          <Resource
+            type={video.type}
+            url={video.url}
+            description={video.description}
+            thumbnail={video.poster}
+            height={200}
+            testID="demo"
+            onPDFButtonPress={handlePress}
+            onVideoPlay={handlePress}
+          />
+        </TestContextProvider>
+      );
+
+      const preview = component.root.find(el => el.props.testID === 'preview-video-demo');
+      preview.props.onPress();
+      expect(handlePress.mock.calls.length).toBe(1);
     });
   });
 }

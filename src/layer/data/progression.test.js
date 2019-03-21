@@ -143,7 +143,9 @@ describe('progresssion', () => {
       _id: progressionId,
       engine,
       progressionContent,
-      nextContent
+      state: {
+        nextContent
+      }
     });
 
     AsyncStorage.getItem = jest.fn().mockImplementation(key => {
@@ -173,7 +175,9 @@ describe('progresssion', () => {
       _id: progressionId,
       engine,
       progressionContent,
-      nextContent
+      state: {
+        nextContent
+      }
     });
 
     AsyncStorage.getItem = jest.fn().mockImplementation(key => {
@@ -203,7 +207,9 @@ describe('progresssion', () => {
       _id: progressionId,
       engine,
       progressionContent,
-      nextContent
+      state: {
+        nextContent
+      }
     });
 
     AsyncStorage.getItem = jest.fn().mockImplementation(key => {

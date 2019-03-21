@@ -20,6 +20,7 @@ require('./components/clue.stories.js');
 require('./components/context.stories.js');
 require('./components/correction.stories.js');
 require('./components/drop-zone.stories.js');
+require('./components/extralife.stories.js');
 require('./components/gradient.stories.js');
 require('./components/header-back-image.stories.js');
 require('./components/header-slide-right.stories.js');

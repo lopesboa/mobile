@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: '취소',
   accessTheLesson: '강의에 접속하기',
+  bonus: '보너스!',
   clue: '단서',
   clueStarsToLoose:
     '단서의 잠금 해제는 귀하가 이 질문에서 얻을 수 있는 스타를 {{count}}개까지 감소시킵니다(귀하가 그것을 올바로 얻는 경우)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: '거의 다 되었습니다',
   forYou: '저희의 추천 선정 내용',
   gameOver: '게임 종료',
+  getAnExtralife: '강의를 봄으로써 추가 생명을 받으세요',
   goodAnswer: '훌륭한 답변',
   goodJob: '잘 했습니다!',
   goToQuestion: '질문으로 이동',

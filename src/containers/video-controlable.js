@@ -6,17 +6,13 @@ import {connect} from 'react-redux';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
 
-import {ended, play} from '@coorpacademy/player-store';
-
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
 import {showNavigation, hideNavigation} from '../redux/actions/navigation';
 
 type ConnectedDispatchToProps = {|
   showNavigation: typeof showNavigation,
-  hideNavigation: typeof hideNavigation,
-  play: typeof play,
-  ended: typeof ended
+  hideNavigation: typeof hideNavigation
 |};
 
 type Props = {|
@@ -25,7 +21,9 @@ type Props = {|
   preview: File | {uri: string},
   height: number,
   subtitles?: string,
-  testID?: string
+  testID?: string,
+  extralifeOverlay?: boolean,
+  onPlay: () => void
 |};
 
 type State = {|
@@ -81,7 +79,8 @@ class VideoControlable extends React.PureComponent<Props, State> {
     this.setState({
       step: STEP.PLAY
     });
-    this.props.play();
+
+    this.props.onPlay();
   };
 
   handleEnd = () => {
@@ -126,6 +125,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
         onSubtitlesToggle={this.handleSubtitlesToggle}
         onRef={this.handleRef}
         testID={this.props.testID}
+        extralifeOverlay={this.props.extralifeOverlay}
       />
     );
   }
@@ -133,9 +133,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
 const mapDispatchToProps: ConnectedDispatchToProps = {
   showNavigation,
-  hideNavigation,
-  play,
-  ended
+  hideNavigation
 };
 
 export default connect(null, mapDispatchToProps)(VideoControlable);

@@ -5,43 +5,55 @@ import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {NavigationEvents} from 'react-navigation';
 import {
+  acceptExtraLife,
+  refuseExtraLife,
+  hasViewedAResourceAtThisStep as checkHasViewedAResourceAtThisStep,
+  getLives,
   getRoute,
   selectProgression,
   selectRoute,
+  getCurrentProgression,
   getCurrentProgressionId,
+  hasSeenLesson as checkHasSeenLesson,
   play
 } from '@coorpacademy/player-store';
+import translations from '../translations';
 
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
+import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
 
 export type Params = {|
-  title: string,
-  subtitle: string,
   tip: string,
   answers: Array<string>,
   question: string,
   userAnswers: Array<string>,
-  isCorrect: boolean,
   keyPoint: string,
-  lives?: number,
-  hasLives: boolean,
-  hasViewedAResource: boolean,
-  resources: Array<Resource>,
-  isFinished: boolean
+  resources: Array<Resource>
 |};
 
 type ConnectedStateProps = {|
-  nextScreen: string
+  title: string,
+  subtitle: string,
+  nextScreen?: string,
+  isCorrect?: boolean,
+  isFinished?: boolean,
+  lives?: number,
+  consumedExtraLife?: boolean,
+  canGoNext?: boolean,
+  isResourceViewed: boolean,
+  offeringExtraLife?: boolean
 |};
 
 type ConnectedDispatchProps = {|
   play: typeof play,
   selectProgression: () => (dispatch: Dispatch, getState: GetState) => void,
-  selectRoute: typeof selectRoute
+  selectRoute: typeof selectRoute,
+  acceptExtraLife: typeof acceptExtraLife,
+  refuseExtraLife: typeof refuseExtraLife
 |};
 
 type Props = {|
@@ -56,6 +68,26 @@ type State = {|
   hasLivesBeenAnimated: boolean
 |};
 
+export const goNext = async (getProps: () => Props): Promise<void> => {
+  const props = getProps();
+  if (props.consumedExtraLife) {
+    await props.acceptExtraLife();
+  } else if (props.offeringExtraLife) {
+    await props.refuseExtraLife();
+  } else {
+    await props.selectProgression();
+  }
+
+  const {isFinished, lives} = getProps();
+
+  if (isFinished) {
+    const levelEndParams: LevelEndScreenParams = {
+      isCorrect: lives === undefined || lives > 0
+    };
+    props.navigation.navigate('LevelEnd', levelEndParams);
+  }
+};
+
 class CorrectionScreen extends React.PureComponent<Props, State> {
   props: Props;
 
@@ -63,10 +95,9 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     hasLivesBeenAnimated: false,
     isLoading: false,
     lives:
-      this.props.navigation.state.params.lives !== undefined &&
-      !this.props.navigation.state.params.isCorrect
-        ? this.props.navigation.state.params.lives + 1
-        : this.props.navigation.state.params.lives
+      this.props.lives !== undefined && !this.props.isCorrect
+        ? this.props.lives + 1
+        : this.props.lives
   };
 
   static navigationOptions = ({navigationOptions, navigation}: ReactNavigation$ScreenProps) => ({
@@ -77,7 +108,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     }
   });
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate = (prevProps: Props) => {
     const {nextScreen} = this.props;
 
     switch (nextScreen) {
@@ -88,7 +119,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
         this.props.navigation.navigate('Question');
         break;
     }
-  }
+  };
 
   handlePDFButtonPress = (url: string, description: string) => {
     const pdfParams: PdfScreenParams = {
@@ -100,25 +131,17 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     this.props.navigation.navigate('PdfModal', pdfParams);
   };
 
+  handleVideoPlay = async () => {
+    await this.props.play();
+  };
+
   handleButtonPress = () => {
-    const {lives} = this.state;
-    const {navigation} = this.props;
-    const {isCorrect, isFinished, hasLives} = navigation.state.params;
-
-    this.props.selectProgression();
     this.setState({isLoading: true});
-
-    if (isFinished) {
-      const levelEndParams: LevelEndScreenParams = {
-        isCorrect: isCorrect || (hasLives && lives !== undefined && lives > 0)
-      };
-      navigation.navigate('LevelEnd', levelEndParams);
-    }
+    goNext(() => this.props);
   };
 
   handleDidFocus = () => {
-    const {isCorrect} = this.props.navigation.state.params;
-
+    const {isCorrect} = this.props;
     if (!this.state.hasLivesBeenAnimated && !isCorrect && this.state.lives) {
       this.loseLife();
     }
@@ -134,20 +157,25 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
   render() {
     const {
-      title,
-      subtitle,
       tip,
       answers,
       question,
       userAnswers,
-      isCorrect,
       keyPoint,
-      isFinished,
-      hasViewedAResource,
       resources
     } = this.props.navigation.state.params;
 
-    const {lives, isLoading} = this.state;
+    const {
+      title,
+      subtitle,
+      isCorrect,
+      lives: realLives,
+      isResourceViewed,
+      canGoNext,
+      offeringExtraLife
+    } = this.props;
+
+    const {lives: livesToAnimate, isLoading} = this.state;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
     return (
@@ -164,12 +192,14 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
           isCorrect={isCorrect}
           keyPoint={keyPoint}
           onButtonPress={this.handleButtonPress}
-          isFinished={isFinished}
           isLoading={isLoading}
-          hasViewedAResource={hasViewedAResource}
+          offeringExtraLife={offeringExtraLife}
+          canGoNext={canGoNext}
+          isResourceViewed={isResourceViewed}
           resources={resources}
-          lives={lives}
+          lives={this.state.hasLivesBeenAnimated ? realLives : livesToAnimate}
           onPDFButtonPress={this.handlePDFButtonPress}
+          onVideoPlay={this.handleVideoPlay}
         />
       </Screen>
     );
@@ -185,13 +215,61 @@ const _selectProgression = () => (dispatch: Dispatch, getState: GetState) => {
   }
 };
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  nextScreen: getRoute(state)
-});
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const progression = getCurrentProgression(state);
+  if (progression === undefined || progression.state === undefined) {
+    return {
+      title: '',
+      subtitle: '',
+      nextScreen: undefined,
+      isFinished: false,
+      isCorrect: false,
+      offeringExtraLife: false,
+      canGoNext: false,
+      isResourceViewed: false
+    };
+  }
 
-const mapDispatchToProps: ConnectedDispatchProps = {
+  const {hide: hideLives, count: livesCount} = getLives(state);
+  const lives = hideLives ? undefined : livesCount;
+
+  const isCorrect = checkIsCorrect(state);
+  const hasViewedAResource = checkHasSeenLesson(state, true);
+  const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
+  const stateExtraLife = progression.state.nextContent.ref === 'extraLife';
+  const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
+  const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
+  const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
+
+  const isExitNode = checkIsExitNode(state);
+  const isOfferingExtraLife = lives === 0 && offeringExtraLife;
+
+  const isFinished = isExitNode || isOfferingExtraLife;
+
+  const hasLivesRemaining = lives === undefined || lives > 0;
+  const canGoNext = (hasLivesRemaining && !offeringExtraLife) || consumedExtraLife;
+
+  const props = {
+    title: (isCorrect && translations.goodJob) || translations.ouch,
+    subtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
+    nextScreen: getRoute(state),
+    isFinished,
+    isCorrect,
+    isResourceViewed,
+    consumedExtraLife,
+    offeringExtraLife,
+    lives: consumedExtraLife ? lives + 1 : lives,
+    canGoNext
+  };
+
+  return props;
+};
+
+export const mapDispatchToProps: ConnectedDispatchProps = {
   play,
   selectProgression: _selectProgression,
+  acceptExtraLife,
+  refuseExtraLife,
   selectRoute
 };
 

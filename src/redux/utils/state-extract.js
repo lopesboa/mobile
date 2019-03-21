@@ -11,7 +11,7 @@ import {
 import type {Slide} from '@coorpacademy/progression-engine';
 import type {Lives} from '@coorpacademy/player-store';
 
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
+import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {StoreState} from '../store';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
@@ -30,15 +30,13 @@ export const getContents = (
     return status.pending.concat(status.ready).includes(language);
   });
 
-export const checkIsFinished = (state: StoreState): boolean => {
+export const checkIsExitNode = (state: StoreState): boolean => {
   const nextContent = getStepContent(state);
   if (!nextContent) {
     return false;
   }
 
-  const isExtraLife = nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const isFinished =
-    isExtraLife || [CONTENT_TYPE.SUCCESS, CONTENT_TYPE.FAILURE].includes(nextContent.type);
+  const isFinished = [CONTENT_TYPE.SUCCESS, CONTENT_TYPE.FAILURE].includes(nextContent.type);
 
   return isFinished;
 };
@@ -66,7 +64,7 @@ export const getSlide = (state: StoreState): Slide | void => {
   }
 
   const isCorrect = checkIsCorrect(state);
-  const isFinished = checkIsFinished(state);
+  const isFinished = checkIsExitNode(state);
   const isValidating = checkIsValidating(state);
 
   const openingCorrection = isValidating && isCorrect !== undefined;

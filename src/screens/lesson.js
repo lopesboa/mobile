@@ -45,6 +45,10 @@ class LessonScreen extends React.PureComponent<Props> {
     this.props.navigation.navigate('PdfModal', pdfParams);
   };
 
+  handleVideoPlay = () => {
+    this.props.play();
+  };
+
   handleChange = (id: string) => {
     this.props.selectResource(id);
   };
@@ -62,6 +66,7 @@ class LessonScreen extends React.PureComponent<Props> {
             onChange={this.handleChange}
             selected={selected}
             onPDFButtonPress={this.handlePDFButtonPress}
+            onVideoPlay={this.handleVideoPlay}
           />
         )}
       </Screen>

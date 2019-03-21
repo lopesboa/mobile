@@ -6,7 +6,7 @@ import image from '../__fixtures__/assets/landscape-3.jpg';
 
 import {RESOURCE_TYPE} from '../const';
 import {handleFakePress} from '../utils/tests';
-import Preview from './preview';
+import Preview, {EXTRALIFE} from './preview';
 
 storiesOf('Preview', module)
   .add('Video Remote', () => (
@@ -15,6 +15,13 @@ storiesOf('Preview', module)
   .add('PDF Remote', () => (
     <Preview
       type={RESOURCE_TYPE.PDF}
+      source={{uri: 'https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg'}}
+      onPress={handleFakePress}
+    />
+  ))
+  .add('Extra Life', () => (
+    <Preview
+      type={EXTRALIFE}
       source={{uri: 'https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg'}}
       onPress={handleFakePress}
     />

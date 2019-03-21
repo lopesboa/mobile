@@ -32,12 +32,14 @@ type Props = {|
   isCorrect: boolean,
   keyPoint: string,
   onButtonPress: () => void,
-  isFinished: boolean,
   isLoading: boolean,
-  hasViewedAResource: boolean,
+  isResourceViewed?: boolean,
+  offeringExtraLife?: boolean,
+  canGoNext?: boolean,
   resources: Array<ResourceType>,
   lives?: number,
-  onPDFButtonPress: (url: string, description: string) => void
+  onPDFButtonPress: (url: string, description: string) => void,
+  onVideoPlay: () => void
 |};
 
 const CARDS_HEIGHT = 360;
@@ -102,7 +104,33 @@ const styles = StyleSheet.create({
 class Correction extends React.PureComponent<Props> {
   props: Props;
 
-  renderCard = ({type, title: cardTitle, resource}: Card) => {
+  createCards(): Array<Card> {
+    const {isCorrect, isResourceViewed, resources, offeringExtraLife} = this.props;
+    const correctionCard: Card = {
+      type: CARD_TYPE.CORRECTION,
+      title: translations.correction
+    };
+    const tipCard = {type: CARD_TYPE.TIP, title: translations.didYouKnowThat};
+    const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: translations.keyPoint};
+    const lessonCards = resources.map(resource => ({
+      type: CARD_TYPE.RESOURCE,
+      title: translations.accessTheLesson,
+      resource,
+      offeringExtraLife
+    }));
+
+    if (isCorrect && isResourceViewed) {
+      return [tipCard, keyPointCard, correctionCard, ...lessonCards];
+    } else if (isCorrect && !isResourceViewed) {
+      return [tipCard, ...lessonCards, keyPointCard, correctionCard];
+    } else if (!isCorrect && isResourceViewed) {
+      return [correctionCard, keyPointCard, ...lessonCards, tipCard];
+    } else {
+      return [correctionCard, ...lessonCards, keyPointCard, tipCard];
+    }
+  }
+
+  renderCard = ({type, title: cardTitle, resource, offeringExtraLife}: Card) => {
     const {
       answers,
       userAnswers,
@@ -111,7 +139,8 @@ class Correction extends React.PureComponent<Props> {
       keyPoint,
       isCorrect,
       layout,
-      onPDFButtonPress
+      onPDFButtonPress,
+      onVideoPlay
     } = this.props;
     // This is the offset added by the deck swiper
     const offsetBottom = CARDS_LENGTH * 7;
@@ -164,7 +193,9 @@ class Correction extends React.PureComponent<Props> {
                 subtitles=""
                 height={200}
                 onPDFButtonPress={onPDFButtonPress}
+                onVideoPlay={onVideoPlay}
                 testID={testIDSuffix}
+                extralifeOverlay={offeringExtraLife}
               />
               <Text testID={'resource-description-' + testIDSuffix} style={styles.resourceTitle}>
                 {resource.description}
@@ -182,58 +213,13 @@ class Correction extends React.PureComponent<Props> {
       isCorrect,
       onButtonPress,
       layout,
-      isFinished,
       isLoading,
       lives,
-      hasViewedAResource,
-      resources
+      canGoNext
     } = this.props;
 
-    const correctionCard: Card = {
-      type: CARD_TYPE.CORRECTION,
-      title: translations.correction
-    };
-    const tipCard = {type: CARD_TYPE.TIP, title: translations.didYouKnowThat};
-    const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: translations.keyPoint};
-    const lessonCards = resources.map(resource => ({
-      type: CARD_TYPE.RESOURCE,
-      title: translations.accessTheLesson,
-      resource
-    }));
-
-    const isCorrectAndHasViewResource: Array<Card> = [
-      tipCard,
-      keyPointCard,
-      correctionCard,
-      ...lessonCards
-    ];
-    const isCorrectAndHasNotViewResource: Array<Card> = [
-      tipCard,
-      ...lessonCards,
-      keyPointCard,
-      correctionCard
-    ];
-    const isNotCorrectAndHasViewResource: Array<Card> = [
-      correctionCard,
-      keyPointCard,
-      ...lessonCards,
-      tipCard
-    ];
-    const isNotCorrectAndHasNotViewResource: Array<Card> = [
-      correctionCard,
-      ...lessonCards,
-      keyPointCard,
-      tipCard
-    ];
-
-    let cards: Array<Card> = [];
-    if (isCorrect) {
-      cards = hasViewedAResource ? isCorrectAndHasViewResource : isCorrectAndHasNotViewResource;
-    } else {
-      cards = hasViewedAResource
-        ? isNotCorrectAndHasViewResource
-        : isNotCorrectAndHasNotViewResource;
-    }
+    const cards = this.createCards();
+    const buttonLabel = canGoNext ? translations.next : translations.quit;
 
     return (
       <View
@@ -269,12 +255,13 @@ class Correction extends React.PureComponent<Props> {
         <Space type="base" />
         <View style={styles.footer}>
           <Button
-            isInverted
+            isInverted={canGoNext}
+            isInlined={!canGoNext}
             onPress={onButtonPress}
             isLoading={isLoading}
-            testID={`button-${isFinished ? 'next' : 'next-question'}`}
+            testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
           >
-            {translations.next}
+            {buttonLabel}
           </Button>
         </View>
       </View>

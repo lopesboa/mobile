@@ -1469,24 +1469,16 @@
     "@coorpacademy/progression-engine" "10.3.14"
     lodash "^4.17.4"
 
-"@coorpacademy/player-store@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-3.0.0.tgz#4aaec7314c7becefa00c69878f39887067f5c949"
-  integrity sha512-3p/kn+VLTNeo6vIzazqZJ7flKaorvRQgCsC8wY+Dq57NusTtYRG4wrDn2Y2cUfwtFC3TF3+m/vNB2oPWE6iF3w==
+"@coorpacademy/player-store@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-3.0.2.tgz#e332462e4cb418d44bdd13c6b49d5494bb65dff4"
+  integrity sha512-+uj5eNHg3/8OFGzzOewvZjTWnOTeeZ84PVSwf1K3EM7JtODFK+3IvJ8/7I+EutszO2BGt0+E05MUJujQNV59aQ==
   dependencies:
-    "@coorpacademy/progression-engine" "10.3.13"
+    "@coorpacademy/progression-engine" "10.3.14"
     "@coorpacademy/redux-task" "0.0.11"
     lodash "^4.17.4"
     redux "^4.0.0"
     redux-thunk "^2.2.0"
-
-"@coorpacademy/progression-engine@10.3.13":
-  version "10.3.13"
-  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-10.3.13.tgz#1de0acb7897e24b6fb1be289ed390151a15b58a9"
-  integrity sha512-/LTx0GLRdFMFuEG1M0hJSHE2HhT7y5s8kEKxBQND6GNIHezoF8MjZG3/aKIXdiVuj4GTnj3r4h0X2TXeJacGtQ==
-  dependencies:
-    fuzzy-matching "^0.4.3"
-    lodash "^4.17.4"
 
 "@coorpacademy/progression-engine@10.3.14", "@coorpacademy/progression-engine@^10.3.14":
   version "10.3.14"

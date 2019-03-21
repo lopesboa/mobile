@@ -7,28 +7,21 @@ import {
   editAnswer,
   getAnswerValues,
   getChoices,
-  getLives,
   getCurrentCorrection,
+  getCurrentProgression,
   getPreviousSlide,
   getStepContent,
   getQuestionMedia,
   getQuestionType,
-  hasSeenLesson as checkHasSeenLesson,
   validateAnswer
 } from '@coorpacademy/player-store';
 import type {Lesson, Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import Question from '../components/question';
 import Screen from '../components/screen';
-import translations from '../translations';
 import type {Resource, SliderProps} from '../types';
 import type {StoreState} from '../redux/store';
-import {
-  checkIsCorrect,
-  checkIsFinished,
-  checkIsValidating,
-  getSlide
-} from '../redux/utils/state-extract';
+import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import {reduceToResources} from '../layer/data/mappers';
 import type {Params as CorrectionScreenParams} from './correction';
 
@@ -42,15 +35,12 @@ type ConnectedStateProps = {|
   answers?: Array<string>,
   userAnswers?: Array<string>,
   media?: Media,
-  isCorrect?: boolean,
   tip?: string,
-  isCurrentScreen?: boolean,
+  isFocused?: boolean,
   keyPoint?: string,
-  lives?: number,
-  isFinished?: boolean,
   hasViewedAResource?: boolean,
+  hasViewedAResourceAtThisStep?: boolean,
   resourcesForCorrection?: Array<Resource>,
-  hasLives: boolean,
   isValidating: boolean,
   slider: SliderProps
 |};
@@ -72,66 +62,36 @@ class QuestionScreen extends React.PureComponent<Props> {
   scrollView: ScrollView;
 
   componentDidUpdate(prevProps: Props) {
-    const {
-      answers,
-      header,
-      isCorrect,
-      isFinished,
-      isValidating,
-      keyPoint,
-      tip,
-      userAnswers
-    } = this.props;
+    const {answers, header, isValidating, keyPoint, tip, userAnswers} = this.props;
 
-    if (
-      isValidating &&
-      isCorrect !== undefined &&
-      header &&
-      tip &&
-      keyPoint &&
-      answers &&
-      userAnswers &&
-      isFinished !== undefined
-    ) {
+    if (isValidating && header && tip && keyPoint && answers && userAnswers) {
       this.handleCorrectionNavigation();
     }
   }
 
   handleCorrectionNavigation = () => {
     const {
-      isCurrentScreen,
+      isFocused,
       navigation,
       header,
-      isCorrect,
       tip,
       keyPoint,
-      lives,
       answers,
       userAnswers,
-      isFinished,
-      hasLives,
-      hasViewedAResource,
       resourcesForCorrection: resources
     } = this.props;
 
-    // not to trigger navigate('Correction') on resourceViewed on a correction card
-    if (!isCurrentScreen) {
+    // not to trigger navigate('Correction') on other screen than question
+    if (!isFocused) {
       return;
     }
 
     const correctionParams: CorrectionScreenParams = {
-      title: (isCorrect && translations.goodJob) || translations.ouch,
-      subtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
       question: header,
-      isCorrect,
       answers,
       userAnswers,
       tip,
       keyPoint,
-      lives,
-      isFinished,
-      hasLives,
-      hasViewedAResource,
       resources
     };
 
@@ -212,11 +172,12 @@ class QuestionScreen extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStateProps => {
   const nextContent = getStepContent(state);
-  const isCurrentScreen = state.navigation.currentScreenName === 'Slide';
+  const progression = getCurrentProgression(state);
+  const isFocused = state.navigation.currentScreenName === 'Slide';
 
-  if (!nextContent) {
+  if (!nextContent || progression === undefined || progression.state === undefined) {
     return {
-      isCurrentScreen,
+      isFocused,
       type: undefined,
       header: undefined,
       explanation: undefined,
@@ -226,14 +187,9 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       answers: undefined,
       userAnswers: undefined,
       media: undefined,
-      isCorrect: undefined,
       tip: undefined,
       keyPoint: undefined,
-      lives: undefined,
-      hasLives: false,
-      hasViewedAResource: undefined,
       resourcesForCorrection: undefined,
-      isFinished: undefined,
       isValidating: false,
       slider: {
         minLabel: undefined,
@@ -245,8 +201,7 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       }
     };
   }
-  const {hide: hideLives, count: livesCount} = getLives(state);
-  const lives = hideLives ? undefined : livesCount;
+
   const correction = getCurrentCorrection(state);
   const media = getQuestionMedia(state);
 
@@ -260,12 +215,8 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       return result;
     }, []);
 
-  const hasLives = !hideLives;
   const slide = getSlide(state);
-  const isCorrect = checkIsCorrect(state);
-  const isFinished = checkIsFinished(state);
   const isValidating = checkIsValidating(state);
-  const hasViewedAResource = checkHasSeenLesson(state, true);
 
   if (!slide) {
     return {
@@ -275,18 +226,13 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       template: undefined,
       choices: undefined,
       userChoices: undefined,
-      hasViewedAResource,
       answers,
       userAnswers,
       media,
-      isCorrect,
       isValidating,
-      isCurrentScreen,
+      isFocused,
       tip: undefined,
       keyPoint: undefined,
-      lives,
-      hasLives,
-      isFinished,
       slider: {
         minLabel: undefined,
         minValue: undefined,
@@ -338,16 +284,11 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
     answers,
     userAnswers,
     media,
-    isCorrect,
-    isFinished,
-    isCurrentScreen,
-    hasLives,
-    hasViewedAResource,
+    isFocused,
     resourcesForCorrection,
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,
-    lives,
     slider: {
       minLabel: `${sliderMinValue} ${sliderUnitLabel}`,
       maxLabel: `${sliderMaxValue} ${sliderUnitLabel}`,

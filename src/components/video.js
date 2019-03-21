@@ -8,7 +8,8 @@ import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
 import RNFetchBlob from 'rn-fetch-blob';
 
 import theme from '../modules/theme';
-import Preview from './preview';
+import {RESOURCE_TYPE} from '../const';
+import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
 
 export type Step = 'preview' | 'play' | 'end';
@@ -35,7 +36,8 @@ type Props = {|
   onShrink?: () => void,
   onSubtitlesToggle?: () => void,
   onRef?: (VideoPlayer | null) => void,
-  testID?: string
+  testID?: string,
+  extralifeOverlay?: boolean
 |};
 
 export const STEP: {[key: string]: Step} = {
@@ -105,7 +107,8 @@ const Video = ({
   onShrink,
   onSubtitlesToggle,
   onRef,
-  testID
+  testID,
+  extralifeOverlay = false
 }: Props) => {
   const testIDSuffix = testID ? '-' + testID : '';
   const testIDFullscreenSuffix =
@@ -139,7 +142,12 @@ const Video = ({
       testID={`video-container${testIDFullscreenSuffix}`}
     >
       {step === STEP.PREVIEW && (
-        <Preview type="video" source={preview} onPress={onPlay} testID={testID} />
+        <Preview
+          type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.VIDEO}
+          source={preview}
+          onPress={onPlay}
+          testID={testID}
+        />
       )}
       {[STEP.PLAY, STEP.END].includes(step) && (
         <VideoPlayer

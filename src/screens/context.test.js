@@ -29,9 +29,11 @@ describe('slide-context', () => {
         type: 'slide',
         ref: SlideRef
       },
-      nextContent: {
-        type: 'slide',
-        ref: 'dummySlideRef'
+      state: {
+        nextContent: {
+          type: 'slide',
+          ref: 'dummySlideRef'
+        }
       }
     });
 

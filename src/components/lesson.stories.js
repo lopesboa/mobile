@@ -29,6 +29,7 @@ storiesOf('Lesson', module)
         starsGranted={4}
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -42,6 +43,7 @@ storiesOf('Lesson', module)
         starsGranted={4}
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -55,6 +57,7 @@ storiesOf('Lesson', module)
         starsGranted={4}
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -68,6 +71,7 @@ storiesOf('Lesson', module)
         starsGranted={4}
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -79,6 +83,7 @@ storiesOf('Lesson', module)
         onChange={handleFakePress}
         starsGranted={4}
         onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
       />
     </TestContextProvider>
   ));

@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Zrušit',
   accessTheLesson: 'Vstup do lekce',
+  bonus: 'Bonus!',
   clue: 'Záchytný bod',
   clueStarsToLoose:
     'Odemknutí nápovědy sníží počet hvězd, které můžete získat na této otázce o {{count}} (pokud ji zodpovíte správně)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Tento už máte téměř za sebou ',
   forYou: 'Naše nejlepší tipy pro vás',
   gameOver: 'Hra skončila',
+  getAnExtralife: 'Získejte další život sledováním lekce',
   goodAnswer: 'Dobrá odpověď',
   goodJob: 'Dobře!',
   goToQuestion: 'Přejděte k otázce',

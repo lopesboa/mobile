@@ -180,38 +180,4 @@ describe('Questions', () => {
       await weExpect(element(by.id('question-choice-4-img'))).toBeVisible();
     });
   });
-  describe('Level end', () => {
-    beforeAll(async () => {
-      // fast forward to the end
-      await rightAnswer();
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await element(by.id('button-next-question')).tap();
-      await rightAnswer();
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await element(by.id('button-next-question')).tap();
-      await rightAnswer();
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await element(by.id('button-next-question')).tap();
-      await rightAnswer();
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-    });
-    it('should see a button to continue', async () => {
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await weExpect(element(by.id('button-next'))).toBeVisible();
-    });
-    it('should navigate to level end', async () => {
-      await element(by.id('button-next')).tap();
-      await waitFor(element(by.id('level-end-success'))).toBeVisible();
-      await weExpect(element(by.id('level-end-success'))).toBeVisible();
-    });
-    it('should see elements', async () => {
-      await weExpect(element(by.id('level-end-title'))).toBeVisible();
-      await weExpect(element(by.id('button-next-level'))).toBeVisible();
-    });
-    it('should back to home', async () => {
-      await element(by.id('button-next-level')).tap();
-      await waitFor(element(by.id('home-screen'))).toBeVisible();
-      await weExpect(element(by.id('home-screen'))).toBeVisible();
-    });
-  });
 });

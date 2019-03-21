@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Visszavonás',
   accessTheLesson: 'Hozzáférés a leckéhez',
+  bonus: 'Bónusz!',
   clue: 'Tipp',
   clueStarsToLoose:
     'A tipp feloldása {{count}} csillaggal csökkentheti a nyereményét ennél a kérdésnél (ha jól válaszol)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Mindjárt végeztél ezzel',
   forYou: 'Legjobb ajánlataink számodra',
   gameOver: 'A játéknak vége',
+  getAnExtralife: 'Szerezzen egy extra életet a lecke megtekintésével',
   goodAnswer: 'Jó válasz',
   goodJob: 'Remek munka!',
   goToQuestion: 'Menjen a kérdéshez',

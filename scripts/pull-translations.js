@@ -80,6 +80,7 @@ const generate = async (locale: string) => {
   const translations: Translations = {
     cancel: formatTranslation(moocFormTranslations.cancel),
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
+    bonus: formatTranslation(playerTranslations['Bonus!']),
     clue: formatTranslation(playerTranslations.Clue),
     clueStarsToLoose: formatTranslation(componentsTranslations.clue_stars_to_loose),
     congratulations: formatTranslation(playerTranslations['Congratulations!']),
@@ -89,6 +90,9 @@ const generate = async (locale: string) => {
     finishLearning: formatTranslation(playerTranslations['Finish learning']),
     forYou: formatTranslation(playerTranslations['For you']),
     gameOver: formatTranslation(playerTranslations['Game over']),
+    getAnExtralife: formatTranslation(
+      playerTranslations['Get an extra life by viewing the lesson']
+    ),
     goodAnswer: formatTranslation(playerTranslations['Good answer']),
     goodJob: formatTranslation(playerTranslations['Good job']),
     goToQuestion: formatTranslation(playerTranslations['Go to question']),

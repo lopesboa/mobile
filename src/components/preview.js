@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {ImageBackground, StyleSheet, View, TouchableOpacity} from 'react-native';
+import {ImageBackground, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {
   NovaSolidAudioAudioControlPlay as PlayIcon,
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
@@ -14,9 +14,12 @@ import translations from '../translations';
 import Button from './button';
 import Space from './space';
 import ResourceOverlay from './resource-overlay';
+import ExtraLife from './extralife';
+
+export const EXTRALIFE: string = 'extralife';
 
 type Props = {|
-  type: LessonType,
+  type: LessonType | typeof EXTRALIFE,
   source: File | {uri: string},
   onPress: () => void,
   testID?: string
@@ -31,6 +34,17 @@ const styles = StyleSheet.create({
   },
   pdfIcon: {
     alignSelf: 'center'
+  },
+  extralifeTxtContainer: {
+    paddingTop: theme.spacing.base
+  },
+  extralifeTxt: {
+    fontSize: theme.fontSize.regular,
+    color: theme.colors.white,
+    textAlign: 'center'
+  },
+  extralifeTxtBold: {
+    fontWeight: theme.fontWeight.bold
   }
 });
 
@@ -54,6 +68,19 @@ const Preview = ({type, source, onPress, testID}: Props) => {
               {translations.open}
             </Button>
           </View>
+        )}
+        {type === EXTRALIFE && (
+          <TouchableOpacity onPress={onPress} testID={'preview-extralife' + testIDSuffix}>
+            <View testID={'extra-life' + testIDSuffix}>
+              <ExtraLife count={1} />
+              <View style={styles.extralifeTxtContainer}>
+                <Text style={styles.extralifeTxt}>Bonus!</Text>
+                <Text style={[styles.extralifeTxt, styles.extralifeTxtBold]}>
+                  translations.getAnExtralife
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         )}
       </ResourceOverlay>
     </ImageBackground>

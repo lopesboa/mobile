@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'İptal et',
   accessTheLesson: 'Derse eriş',
+  bonus: 'Bonus!',
   clue: 'İpucu',
   clueStarsToLoose:
     'İpucunu açmanız halinde bu sorudan {{count}} daha az yıldız kazanırsınız (eğer doğru yanıtlarsanız)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Bununla işiniz neredeyse bitti',
   forYou: 'Sizin için seçtiklerimiz',
   gameOver: 'Oyun bitti',
+  getAnExtralife: 'Bu dersi izleyerek ekstra can kazan',
   goodAnswer: 'Doğru cevap',
   goodJob: 'Tebrikler!',
   goToQuestion: 'Soruya git',

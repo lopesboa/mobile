@@ -8,17 +8,19 @@ import {RESOURCE_TYPE} from '../const';
 
 import Video from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
-import Preview from './preview';
+import Preview, {EXTRALIFE} from './preview';
 
 type Props = {|
-  type: LessonType,
+  type: LessonType | typeof EXTRALIFE,
   thumbnail: string,
   url: string,
   description: string,
   subtitles?: string,
   height: number,
   onPDFButtonPress: (url: string, description: string) => void,
-  testID?: string
+  onVideoPlay: () => void,
+  testID?: string,
+  extralifeOverlay?: boolean
 |};
 
 class Resource extends React.PureComponent<Props> {
@@ -29,8 +31,12 @@ class Resource extends React.PureComponent<Props> {
     onPDFButtonPress(getCleanUri(url), description);
   };
 
+  handleVideoPlay = () => {
+    this.props.onVideoPlay();
+  };
+
   render() {
-    const {type, thumbnail, url, subtitles, height, testID} = this.props;
+    const {type, thumbnail, url, subtitles, height, testID, extralifeOverlay = false} = this.props;
 
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
@@ -41,6 +47,8 @@ class Resource extends React.PureComponent<Props> {
             preview={{uri: getCleanUri(thumbnail)}}
             height={height}
             testID={testID}
+            extralifeOverlay={extralifeOverlay}
+            onPlay={this.handleVideoPlay}
           />
         );
       }
@@ -48,7 +56,7 @@ class Resource extends React.PureComponent<Props> {
         return (
           <View style={{height}}>
             <Preview
-              type={RESOURCE_TYPE.PDF}
+              type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.PDF}
               source={{uri: getCleanUri(thumbnail)}}
               onPress={this.handlePress}
               testID={testID}

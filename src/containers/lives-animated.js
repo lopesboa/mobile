@@ -28,6 +28,9 @@ class LivesAnimated extends React.PureComponent<Props> {
     if (this.props.count < prevProps.count) {
       this.loseLife();
     }
+    if (this.props.count > prevProps.count) {
+      this.winLife();
+    }
   }
 
   loseLife = () => {
@@ -54,6 +57,25 @@ class LivesAnimated extends React.PureComponent<Props> {
           Animated.timing(this.broken, {
             toValue: 1,
             duration: 0.2 * 200
+          })
+        ])
+      ])
+    ]).start();
+  };
+
+  winLife = () => {
+    Animated.sequence([
+      Animated.timing(this.broken, {toValue: 1, duration: 0}),
+      Animated.parallel([
+        Animated.timing(this.scale, {toValue: 0, duration: 0}),
+        Animated.timing(this.scale, {
+          toValue: 1,
+          duration: 1200
+        }),
+        Animated.sequence([
+          Animated.timing(this.broken, {
+            toValue: 0,
+            duration: 1200
           })
         ])
       ])

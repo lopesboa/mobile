@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Anulează',
   accessTheLesson: 'Urmăriți lecția',
+  bonus: 'Bonus!',
   clue: 'Indiciu',
   clueStarsToLoose:
     'Utilizarea indiciului va lua {{count}} din numărul maxim de stele pe care le puteți obține răspunzând la această întrebare (dacă răspunsul este corect)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Aproape ai terminat cu asta',
   forYou: 'Topul alegerilor noastre',
   gameOver: 'Jocul s-a terminat',
+  getAnExtralife: 'Urmăriți lecția și primiți o viață în plus',
   goodAnswer: 'Răspuns corect',
   goodJob: 'V-ați descurcat bine!',
   goToQuestion: 'Salt la întrebare',

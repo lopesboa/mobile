@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Cancelar',
   accessTheLesson: 'Aceder à lição',
+  bonus: 'Bónus!',
   clue: 'Dica',
   clueStarsToLoose:
     'Desbloquear a solução reduz as estrelas que pode ganhar nesta pergunta em {{count}} (se responder corretamente)',
@@ -15,6 +16,7 @@ const translations: Translations = {
   finishLearning: 'Já tem este quase terminado',
   forYou: 'As nossas escolhas para si',
   gameOver: 'Fim do jogo',
+  getAnExtralife: 'Ganhe uma vida nova visualizando a lição',
   goodAnswer: 'Boa resposta',
   goodJob: 'Bom trabalho!',
   goToQuestion: 'Vai para a pergunta',

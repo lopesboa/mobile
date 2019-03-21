@@ -23,7 +23,8 @@ type Props = {|
   selected?: string,
   resources: Array<ResourceType>,
   onChange: (id: string) => void,
-  onPDFButtonPress: (url: string, description: string) => void
+  onPDFButtonPress: (url: string, description: string) => void,
+  onVideoPlay: () => void
 |};
 
 const styles = StyleSheet.create({
@@ -91,6 +92,7 @@ const Lesson = (props: Props) => {
               subtitles={subtitles}
               height={height}
               onPDFButtonPress={props.onPDFButtonPress}
+              onVideoPlay={props.onVideoPlay}
             />
             <ScrollView
               style={styles.browser}
