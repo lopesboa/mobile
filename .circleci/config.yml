@@ -419,3 +419,13 @@ workflows:
       - deploy_ios:
          requires:
            - build_ios
+  publish-to-store:
+    jobs:
+      - publish_ios:
+          filters:
+            branches:
+              only: master
+      - publish_android:
+          filters:
+            branches:
+              only: master
