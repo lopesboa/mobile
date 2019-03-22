@@ -16,6 +16,7 @@ import cards from './reducers/cards';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
 import DisciplineBundle from './middlewares/discipline-bundle';
+import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import type {Options, ReduxDevTools} from './_types';
 
 export type StoreState = $Exact<{|
@@ -43,7 +44,12 @@ const reducers = combineReducers({
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   return compose(
     // $FlowFixMe error applying middlewares with multiple types
-    applyMiddleware(ReduxThunkMemoized(options), ErrorLogger(options), DisciplineBundle(options)),
+    applyMiddleware(
+      ReduxThunkMemoized(options),
+      ErrorLogger(options),
+      DisciplineBundle(options),
+      ResetDisplayedProgression(options)
+    ),
     // $FlowFixMe
     reduxDevTools || (f => f)
   );
