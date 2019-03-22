@@ -390,6 +390,43 @@ exports[`Storyshots Starbust Loose 1`] = `
         />
       </RNSVGGroup>
     </RNSVGSvgView>
+    <BVLinearGradient
+      colors={
+        Array [
+          14761811,
+          4292951891,
+          4292951891,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "bottom": 0,
+              "height": 75,
+              "position": "absolute",
+            },
+            Object {
+              "width": 1334,
+            },
+          ],
+          undefined,
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -407,6 +444,7 @@ exports[`Storyshots Starbust Win 1`] = `
       undefined,
     ]
   }
+  testID="spiral"
 >
   <View>
     <RNSVGSvgView
@@ -784,6 +822,44 @@ exports[`Storyshots Starbust Win 1`] = `
         />
       </RNSVGGroup>
     </RNSVGSvgView>
+    <BVLinearGradient
+      colors={
+        Array [
+          4043641,
+          4282233721,
+          4282233721,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "bottom": 0,
+              "height": 75,
+              "position": "absolute",
+            },
+            Object {
+              "width": 1334,
+            },
+          ],
+          undefined,
+        ]
+      }
+      testID="spiral-gradient"
+    />
   </View>
 </View>
 `;

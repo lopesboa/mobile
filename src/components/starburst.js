@@ -1,14 +1,16 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 import {NovaCompositionCoorpacademySpiral as Spiral} from '@coorpacademy/nova-icons';
+import Gradient from './gradient';
 
 export type Props = {|
-  color: string,
+  spiralColor: string,
   style?: GenericStyleProp,
   spiralStyle?: GenericStyleProp,
-  testID?: string
+  testID?: string,
+  backgroundColor: string
 |};
 
 const styles = StyleSheet.create({
@@ -17,15 +19,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     overflow: 'hidden'
+  },
+  gradient: {
+    position: 'absolute',
+    height: 75,
+    bottom: 0
   }
 });
 
-const Starburst = ({color, testID, style, spiralStyle}: Props) => {
+const Starburst = ({spiralColor, testID, style, spiralStyle, backgroundColor}: Props) => {
   const screenSize: number = Dimensions.get('window').height;
+
   return (
     <View style={[styles.container, style]} testID={testID}>
       <View style={spiralStyle}>
-        <Spiral color={color} width={screenSize} height={screenSize} />
+        <Spiral color={spiralColor} width={screenSize} height={screenSize} />
+        <Gradient
+          style={[styles.gradient, {width: screenSize}]}
+          colors={[backgroundColor]}
+          testID={testID && testID + '-gradient'}
+        />
       </View>
     </View>
   );

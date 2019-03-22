@@ -154,7 +154,8 @@ class LevelEnd extends React.PureComponent<Props> {
             <Starburst
               style={styles.starburst}
               spiralStyle={styles.starburstSpiral}
-              color="rgba(0,0,0,0.06)"
+              spiralColor="rgba(0,0,0,0.06)"
+              backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
             />
             <View style={styles.close}>
               <TouchableOpacity testID="button-close" onPress={onClose} hitSlop={defaultHitSlop}>

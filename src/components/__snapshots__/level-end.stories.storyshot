@@ -412,6 +412,43 @@ exports[`Storyshots LevelEnd Failure 1`] = `
           />
         </RNSVGGroup>
       </RNSVGSvgView>
+      <BVLinearGradient
+        colors={
+          Array [
+            16203602,
+            4294393682,
+            4294393682,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          Array [
+            Array [
+              Object {
+                "bottom": 0,
+                "height": 75,
+                "position": "absolute",
+              },
+              Object {
+                "width": 1334,
+              },
+            ],
+            undefined,
+          ]
+        }
+      />
     </View>
   </View>
   <View
@@ -1611,6 +1648,43 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
           />
         </RNSVGGroup>
       </RNSVGSvgView>
+      <BVLinearGradient
+        colors={
+          Array [
+            16203602,
+            4294393682,
+            4294393682,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          Array [
+            Array [
+              Object {
+                "bottom": 0,
+                "height": 75,
+                "position": "absolute",
+              },
+              Object {
+                "width": 1334,
+              },
+            ],
+            undefined,
+          ]
+        }
+      />
     </View>
   </View>
   <View
@@ -2818,6 +2892,43 @@ exports[`Storyshots LevelEnd Success 1`] = `
           />
         </RNSVGGroup>
       </RNSVGSvgView>
+      <BVLinearGradient
+        colors={
+          Array [
+            4113539,
+            4282303619,
+            4282303619,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          Array [
+            Array [
+              Object {
+                "bottom": 0,
+                "height": 75,
+                "position": "absolute",
+              },
+              Object {
+                "width": 1334,
+              },
+            ],
+            undefined,
+          ]
+        }
+      />
     </View>
   </View>
   <View
@@ -4309,6 +4420,43 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
           />
         </RNSVGGroup>
       </RNSVGSvgView>
+      <BVLinearGradient
+        colors={
+          Array [
+            16203602,
+            4294393682,
+            4294393682,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          Array [
+            Array [
+              Object {
+                "bottom": 0,
+                "height": 75,
+                "position": "absolute",
+              },
+              Object {
+                "width": 1334,
+              },
+            ],
+            undefined,
+          ]
+        }
+      />
     </View>
   </View>
   <View
