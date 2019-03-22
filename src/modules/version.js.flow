@@ -1,0 +1,7 @@
+// @flow
+
+declare module.exports: {|
+  branch: string,
+  commit: string,
+  tag: string
+|};

@@ -1,7 +1,5 @@
 // @flow strict
 
-/* eslint-disable import/prefer-default-export */
-
 import type {SupportedLanguage} from '../../translations/_types';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import {CARD_TYPE} from '../../layer/data/_const';

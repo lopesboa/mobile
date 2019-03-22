@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
@@ -8,6 +8,7 @@ import type {State as NavigationState} from './reducers/navigation';
 import navigation from './reducers/navigation';
 import type {State as DisciplineBundleState} from './reducers/discipline-bundle';
 import type {State as CardsState} from './reducers/cards';
+import resetOnLogout from './utils/reset-on-logout';
 
 import type {State as PermissionsState} from './reducers/permissions';
 import type {State as AuthenticationState} from './reducers/authentication';
@@ -32,12 +33,12 @@ const {ErrorLogger, ReduxThunkMemoized} = middlewares;
 const {data, ui} = storeReducers;
 
 const reducers = combineReducers({
-  data,
-  ui,
+  data: resetOnLogout(data),
+  ui: resetOnLogout(ui),
   navigation,
-  disciplineBundle,
-  cards,
-  authentication,
+  disciplineBundle: resetOnLogout(disciplineBundle),
+  cards: resetOnLogout(cards),
+  authentication: resetOnLogout(authentication),
   permissions
 });
 
@@ -55,6 +56,7 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   );
 };
 const create = (options: Options, reduxDevTools?: ReduxDevTools) =>
+  // $FlowFixMe
   createStore(reducers, {}, createMiddlewares(options, reduxDevTools));
 
 export default create;

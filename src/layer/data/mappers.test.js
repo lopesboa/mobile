@@ -29,7 +29,6 @@ const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
 const question = createQCM({});
 const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question, lessons: [lesson]});
 
-// eslint-disable-next-line import/prefer-default-export
 export const mapToLevelAPIExpectedResult: LevelAPI = {
   _id: level._id,
   universalRef: level.universalRef,

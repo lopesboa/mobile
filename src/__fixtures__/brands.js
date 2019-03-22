@@ -2,7 +2,6 @@
 
 import type {Brand} from '../types';
 
-// eslint-disable-next-line import/prefer-default-export
 export const createBrand = (): Brand => ({
   name: 'mobile',
   host: 'https://mobile-staging.coorpacademy.com',

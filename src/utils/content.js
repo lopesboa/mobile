@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 // @flow strict
 
 import type {DisciplineCard, CardLevel, ChapterCard} from '../layer/data/_types';

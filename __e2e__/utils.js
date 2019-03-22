@@ -21,16 +21,6 @@ export const reloadApp = async (
   }
 };
 
-export const resetApp = (
-  additionalPermissions?: DetoxDevicePermissionsType = defaultPermissions
-) => {
-  const permissions: DetoxDevicePermissionsType = {
-    ...defaultPermissions,
-    ...additionalPermissions
-  };
-  return device.launchApp({newInstance: true, permissions});
-};
-
 export const getContextTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(3);
 export const getQuestionTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(2);
 export const getLessonTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(1);
@@ -48,7 +38,6 @@ export const bypassAuthentication = async () => {
 
 export default {
   reloadApp,
-  resetApp,
   getQuestionTab,
   getLessonTab,
   getClueTab,

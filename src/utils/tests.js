@@ -9,7 +9,6 @@ import type {SliderProps} from '../types';
 
 export const store = createStore();
 
-/* eslint-disable import/prefer-default-export */
 // eslint-disable-next-line no-console
 export const handleFakePress = () => console.log('Fake press');
 

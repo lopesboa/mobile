@@ -7,8 +7,6 @@ import {ObjectId} from 'bson';
 
 import {ENGINE} from '../../const';
 
-/* eslint-disable import/prefer-default-export */
-
 const ENGINE_VERSION = '1';
 const ENGINE_CONFIG_VERSION = '1';
 

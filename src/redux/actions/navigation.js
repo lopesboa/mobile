@@ -1,7 +1,5 @@
 // @flow strict
 
-/* eslint-disable import/prefer-default-export */
-
 export const NAVIGATION_SCREEN_CHANGE = 'NAVIGATION_SCREEN_CHANGE';
 export const NAVIGATION_SHOW = 'NAVIGATION_SHOW';
 export const NAVIGATION_HIDE = 'NAVIGATION_HIDE';

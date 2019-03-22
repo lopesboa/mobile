@@ -1,7 +1,5 @@
 // @flow strict
 
-/* eslint-disable import/prefer-default-export */
-
 export type Dimensions = {|
   width: number,
   height: number

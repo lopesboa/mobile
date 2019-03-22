@@ -1,7 +1,7 @@
 // @flow strict
 
 import decode from 'jwt-decode';
-import {Alert} from 'react-native';
+import {Alert, AsyncStorage} from 'react-native';
 import translations from '../../translations';
 import type {StoreAction} from '../_types';
 import localToken from '../../utils/local-token';
@@ -55,25 +55,22 @@ export const signIn = (token: string): StoreAction<Action> => async dispatch => 
   }
 };
 
-export const signOut = (): StoreAction<Action> => dispatch =>
-  new Promise(resolve =>
+export const signOut = (): StoreAction<Action> => async dispatch => {
+  const isAccepted = await new Promise(resolve =>
     Alert.alert(translations.logOut, null, [
       {
         text: translations.cancel,
-        onPress: () => {
-          resolve();
-        }
+        onPress: () => resolve(false)
       },
       {
         text: translations.ok,
-        onPress: () => {
-          localToken.remove();
-          resolve(
-            dispatch({
-              type: SIGN_OUT
-            })
-          );
-        }
+        onPress: () => resolve(true)
       }
     ])
   );
+  if (!isAccepted) return;
+  await AsyncStorage.clear();
+  return dispatch({
+    type: SIGN_OUT
+  });
+};

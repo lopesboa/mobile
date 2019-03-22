@@ -1,7 +1,5 @@
 // @flow strict
 
-/* eslint-disable import/prefer-default-export */
-
 import type {LessonType, QuestionType, MediaType} from '@coorpacademy/progression-engine';
 
 import type {

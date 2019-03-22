@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import {Platform} from 'react-native';
 import fetch from 'cross-fetch';

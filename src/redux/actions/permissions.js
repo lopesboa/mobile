@@ -5,8 +5,6 @@ import type {PermissionStatus} from '../../types';
 import translations from '../../translations';
 import type {Options} from '../_types';
 
-/* eslint-disable import/prefer-default-export */
-
 export const REQUEST = '@@permissions/REQUEST';
 export const CHECK = '@@permissions/CHECK';
 export const CHANGE = '@@permissions/CHANGE';

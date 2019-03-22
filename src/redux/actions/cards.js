@@ -11,8 +11,6 @@ import {createLevelProgression, createChapterProgression, selectProgression} fro
 import type {Action as BundleAction} from './discipline-bundle';
 import {fetchBundles} from './discipline-bundle';
 
-/* eslint-disable import/prefer-default-export */
-
 export const FETCH_REQUEST = '@@cards/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@cards/FETCH_SUCCESS';
 export const FETCH_ERROR = '@@cards/FETCH_ERROR';

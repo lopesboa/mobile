@@ -4,7 +4,6 @@ import type {CardStatus, CardType, RestrictedResourceType} from './_types';
 
 export type ContentType = 'chapter' | 'slide' | 'level' | 'exitNode' | 'discipline' | 'chapterRule';
 
-// eslint-disable-next-line import/prefer-default-export
 export const CONTENT_TYPE: {|
   CHAPTER: 'chapter',
   SLIDE: 'slide',
