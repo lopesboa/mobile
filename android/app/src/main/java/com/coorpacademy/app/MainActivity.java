@@ -10,7 +10,10 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import android.content.Intent;
 import android.content.res.Configuration;
 
+import org.devio.rn.splashscreen.SplashScreen;
+
 public class MainActivity extends ReactActivity {
+
 
     @Override
    public void onConfigurationChanged(Configuration newConfig) {
@@ -26,6 +29,7 @@ public class MainActivity extends ReactActivity {
         if(getResources().getBoolean(R.bool.portrait_only)) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
+        SplashScreen.show(this);
     }
 
     /**

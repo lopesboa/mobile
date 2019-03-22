@@ -54,7 +54,6 @@ require('./components/rounded-footer.stories.js');
 require('./components/screen.stories.js');
 require('./components/select.stories.js');
 require('./components/space.stories.js');
-require('./components/splash.stories.js');
 require('./components/starburst.stories.js');
 require('./components/steps-icon.stories.js');
 require('./components/text.stories.js');

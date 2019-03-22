@@ -1,11 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import SplashScreenLib from 'react-native-splash-screen';
 
-import Splash, {TOP_COLOR} from '../components/splash';
-import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
 
@@ -30,19 +28,15 @@ class SplashScreen extends React.PureComponent<Props> {
 
     if (token) {
       this.props.signIn(token);
+      SplashScreenLib.hide();
       return this.props.navigation.navigate('Home');
     }
-
-    this.props.navigation.navigate('Authentication');
+    SplashScreenLib.hide();
+    return this.props.navigation.navigate('Authentication');
   };
 
   render() {
-    return (
-      <Screen testID="splash-screen" noScroll noSafeArea>
-        <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
-        <Splash />
-      </Screen>
-    );
+    return null;
   }
 }
 
