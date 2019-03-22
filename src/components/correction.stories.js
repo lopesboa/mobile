@@ -224,6 +224,7 @@ storiesOf('Correction', module)
           }
           title="Good job!"
           isCorrect
+          showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
@@ -248,6 +249,7 @@ storiesOf('Correction', module)
           }
           title="Good job!"
           isCorrect
+          showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
@@ -272,6 +274,7 @@ storiesOf('Correction', module)
           }
           title="Good job!"
           isCorrect
+          showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
@@ -285,7 +288,36 @@ storiesOf('Correction', module)
       </View>
     </TestContextProvider>
   ))
-  .add('Good answer and lesson was not viewed', () => (
+  .add('Good answer and lesson was viewed (cards order 1)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Good job!"
+          isCorrect
+          isResourceViewed
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Good Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          canGoNext
+          offeringExtraLife={false}
+          showResourcesFirst={false}
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={1}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Good answer and lesson was not viewed (cards order 2)', () => (
     <TestContextProvider>
       <View style={fakeLayout}>
         <Correction
@@ -298,6 +330,7 @@ storiesOf('Correction', module)
           isCorrect
           isResourceViewed={false}
           offeringExtraLife={false}
+          showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Good Answer"
@@ -312,7 +345,7 @@ storiesOf('Correction', module)
       </View>
     </TestContextProvider>
   ))
-  .add('Bad answer and lesson was not viewed', () => (
+  .add('Bad answer and lesson was not viewed, extralife is offered (cards order 3)', () => (
     <TestContextProvider>
       <View style={fakeLayout}>
         <Correction
@@ -324,33 +357,7 @@ storiesOf('Correction', module)
           title="Oops..."
           isCorrect={false}
           isResourceViewed={false}
-          offeringExtraLife={false}
-          onButtonPress={handleFakePress}
-          question={question}
-          subtitle="Bad Answer"
-          keyPoint="The KEY POINT"
-          layout={fakeLayout}
-          isLoading
-          resources={[resources[0], resources[1]]}
-          onPDFButtonPress={handleFakePress}
-          onVideoPlay={handleFakePress}
-          lives={2}
-        />
-      </View>
-    </TestContextProvider>
-  ))
-  .add('Bad answer and lesson was not viewed extralife is offered', () => (
-    <TestContextProvider>
-      <View style={fakeLayout}>
-        <Correction
-          answers={answers}
-          userAnswers={answers}
-          tip={
-            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
-          }
-          title="Oops..."
-          isCorrect={false}
-          isResourceViewed={false}
+          showResourcesFirst
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Bad Answer"
@@ -367,6 +374,91 @@ storiesOf('Correction', module)
       </View>
     </TestContextProvider>
   ))
+  .add('Bad answer and lesson was viewed: extralife is consumed (cards order 3)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          isResourceViewed
+          showResourcesFirst
+          canGoNext
+          offeringExtraLife={false}
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={1}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was viewed (cards order 4)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          isResourceViewed
+          offeringExtraLife={false}
+          showResourcesFirst={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={2}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was not viewed (cards order 5)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          isResourceViewed={false}
+          offeringExtraLife={false}
+          showResourcesFirst={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          subtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={2}
+        />
+      </View>
+    </TestContextProvider>
+  ))
   .add('Bad answer and lesson was not viewed but extralife was already consumed', () => (
     <TestContextProvider>
       <View style={fakeLayout}>
@@ -379,6 +471,7 @@ storiesOf('Correction', module)
           title="Oops..."
           isCorrect={false}
           isResourceViewed={false}
+          showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
           subtitle="Bad Answer"
@@ -391,62 +484,6 @@ storiesOf('Correction', module)
           onVideoPlay={handleFakePress}
           offeringExtraLife={false}
           lives={0}
-        />
-      </View>
-    </TestContextProvider>
-  ))
-  .add('Bad answer and lesson was viewed: extralife is consumed', () => (
-    <TestContextProvider>
-      <View style={fakeLayout}>
-        <Correction
-          answers={answers}
-          userAnswers={answers}
-          tip={
-            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
-          }
-          title="Oops..."
-          isCorrect={false}
-          onButtonPress={handleFakePress}
-          question={question}
-          subtitle="Bad Answer"
-          keyPoint="The KEY POINT"
-          layout={fakeLayout}
-          isLoading
-          isResourceViewed
-          canGoNext
-          offeringExtraLife={false}
-          resources={[resources[0], resources[1]]}
-          onPDFButtonPress={handleFakePress}
-          onVideoPlay={handleFakePress}
-          lives={1}
-        />
-      </View>
-    </TestContextProvider>
-  ))
-  .add('Good answer and lesson was viewed', () => (
-    <TestContextProvider>
-      <View style={fakeLayout}>
-        <Correction
-          answers={answers}
-          userAnswers={answers}
-          tip={
-            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
-          }
-          title="Good job!"
-          isCorrect
-          isResourceViewed
-          onButtonPress={handleFakePress}
-          question={question}
-          subtitle="Good Answer"
-          keyPoint="The KEY POINT"
-          layout={fakeLayout}
-          isLoading
-          canGoNext
-          offeringExtraLife={false}
-          resources={[resources[0], resources[1]]}
-          onPDFButtonPress={handleFakePress}
-          onVideoPlay={handleFakePress}
-          lives={1}
         />
       </View>
     </TestContextProvider>

@@ -50,7 +50,7 @@ describe('correction', () => {
       }
     });
 
-    const expectedResult = {
+    const expectedProps = {
       title: 'Good job!',
       subtitle: 'Good answer',
       nextScreen: undefined,
@@ -58,13 +58,14 @@ describe('correction', () => {
       canGoNext: true,
       isCorrect: true,
       isResourceViewed: false,
+      showResourcesFirst: false,
       lives: 3,
       offeringExtraLife: false,
       consumedExtraLife: false
     };
 
     const props = mapStateToProps(mockedStore);
-    expect(expectedResult).toEqual(props);
+    expect(props).toEqual(expectedProps);
   });
 
   it('should display failure correction with remaining lives', () => {
@@ -77,7 +78,7 @@ describe('correction', () => {
       lives: 2
     });
 
-    const expectedResult = {
+    const expectedProps = {
       title: 'Ouch...',
       subtitle: 'Wrong answer',
       canGoNext: true,
@@ -85,13 +86,14 @@ describe('correction', () => {
       isFinished: false,
       isCorrect: false,
       isResourceViewed: false,
+      showResourcesFirst: false,
       lives: 2,
       offeringExtraLife: false,
       consumedExtraLife: false
     };
 
     const props = mapStateToProps(mockedStore);
-    expect(expectedResult).toEqual(props);
+    expect(props).toEqual(expectedProps);
   });
 
   it('should offer extra life', () => {
@@ -104,7 +106,7 @@ describe('correction', () => {
       lives: 0
     });
 
-    const expectedResult = {
+    const expectedProps = {
       title: 'Ouch...',
       subtitle: 'Wrong answer',
       canGoNext: false,
@@ -112,13 +114,14 @@ describe('correction', () => {
       isFinished: true,
       isCorrect: false,
       isResourceViewed: false,
+      showResourcesFirst: true,
       lives: 0,
       offeringExtraLife: true,
       consumedExtraLife: false
     };
 
     const props = mapStateToProps(mockedStore);
-    expect(expectedResult).toEqual(props);
+    expect(props).toEqual(expectedProps);
   });
 
   it('should consume extra life', () => {
@@ -132,7 +135,7 @@ describe('correction', () => {
       hasViewedAResourceAtThisStep: true
     });
 
-    const expectedResult = {
+    const expectedProps = {
       title: 'Ouch...',
       subtitle: 'Wrong answer',
       nextScreen: undefined,
@@ -140,13 +143,14 @@ describe('correction', () => {
       isFinished: false,
       isCorrect: false,
       isResourceViewed: false,
+      showResourcesFirst: true,
       lives: 1,
       offeringExtraLife: false,
       consumedExtraLife: true
     };
 
     const props = mapStateToProps(mockedStore);
-    expect(expectedResult).toEqual(props);
+    expect(props).toEqual(expectedProps);
   });
 
   it('should accept extra life', async () => {
@@ -305,12 +309,23 @@ describe('correction', () => {
           ...mapStateToProps(newStore)
         };
 
+        expect(props.lives).toEqual(1);
+        expect(props.canGoNext).toEqual(true);
+        expect(props.offeringExtraLife).toEqual(false);
+        expect(props.consumedExtraLife).toEqual(false);
+        expect(props.showResourcesFirst).toEqual(true);
         return Promise.resolve(true);
       },
       navigation: {
         navigate: jest.fn() // navigate to level-end
       }
     };
+
+    expect(props.lives).toEqual(1);
+    expect(props.canGoNext).toEqual(true);
+    expect(props.offeringExtraLife).toEqual(false);
+    expect(props.consumedExtraLife).toEqual(true);
+    expect(props.showResourcesFirst).toEqual(true);
 
     await goNext(() => props);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);

@@ -76,7 +76,7 @@ const Preview = ({type, source, onPress, testID}: Props) => {
               <View style={styles.extralifeTxtContainer}>
                 <Text style={styles.extralifeTxt}>Bonus!</Text>
                 <Text style={[styles.extralifeTxt, styles.extralifeTxtBold]}>
-                  translations.getAnExtralife
+                  {translations.getAnExtralife}
                 </Text>
               </View>
             </View>

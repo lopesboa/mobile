@@ -43,6 +43,7 @@ type ConnectedStateProps = {|
   isFinished?: boolean,
   lives?: number,
   consumedExtraLife?: boolean,
+  showResourcesFirst?: boolean,
   canGoNext?: boolean,
   isResourceViewed: boolean,
   offeringExtraLife?: boolean
@@ -172,6 +173,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
       lives: realLives,
       isResourceViewed,
       canGoNext,
+      showResourcesFirst,
       offeringExtraLife
     } = this.props;
 
@@ -194,6 +196,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
           onButtonPress={this.handleButtonPress}
           isLoading={isLoading}
           offeringExtraLife={offeringExtraLife}
+          showResourcesFirst={showResourcesFirst}
           canGoNext={canGoNext}
           isResourceViewed={isResourceViewed}
           resources={resources}
@@ -222,6 +225,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       title: '',
       subtitle: '',
       nextScreen: undefined,
+      showResourcesFirst: false,
       isFinished: false,
       isCorrect: false,
       offeringExtraLife: false,
@@ -237,6 +241,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const hasViewedAResource = checkHasSeenLesson(state, true);
   const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
   const stateExtraLife = progression.state.nextContent.ref === 'extraLife';
+  const justAcceptedExtraLife = progression.state.content.ref === 'extraLife';
   const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
   const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
   const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
@@ -249,6 +254,9 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const hasLivesRemaining = lives === undefined || lives > 0;
   const canGoNext = (hasLivesRemaining && !offeringExtraLife) || consumedExtraLife;
 
+  const showResourcesFirst =
+    !isCorrect && (offeringExtraLife || consumedExtraLife || justAcceptedExtraLife);
+
   const props = {
     title: (isCorrect && translations.goodJob) || translations.ouch,
     subtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
@@ -259,7 +267,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     consumedExtraLife,
     offeringExtraLife,
     lives: consumedExtraLife ? lives + 1 : lives,
-    canGoNext
+    canGoNext,
+    showResourcesFirst
   };
 
   return props;

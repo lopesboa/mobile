@@ -35,6 +35,7 @@ type Props = {|
   isLoading: boolean,
   isResourceViewed?: boolean,
   offeringExtraLife?: boolean,
+  showResourcesFirst?: boolean,
   canGoNext?: boolean,
   resources: Array<ResourceType>,
   lives?: number,
@@ -105,7 +106,13 @@ class Correction extends React.PureComponent<Props> {
   props: Props;
 
   createCards(): Array<Card> {
-    const {isCorrect, isResourceViewed, resources, offeringExtraLife} = this.props;
+    const {
+      isCorrect,
+      isResourceViewed,
+      resources,
+      offeringExtraLife,
+      showResourcesFirst
+    } = this.props;
     const correctionCard: Card = {
       type: CARD_TYPE.CORRECTION,
       title: translations.correction
@@ -123,6 +130,8 @@ class Correction extends React.PureComponent<Props> {
       return [tipCard, keyPointCard, correctionCard, ...lessonCards];
     } else if (isCorrect && !isResourceViewed) {
       return [tipCard, ...lessonCards, keyPointCard, correctionCard];
+    } else if (showResourcesFirst) {
+      return [...lessonCards, correctionCard, keyPointCard, tipCard];
     } else if (!isCorrect && isResourceViewed) {
       return [correctionCard, keyPointCard, ...lessonCards, tipCard];
     } else {
@@ -215,11 +224,11 @@ class Correction extends React.PureComponent<Props> {
       layout,
       isLoading,
       lives,
+      offeringExtraLife,
       canGoNext
     } = this.props;
 
     const cards = this.createCards();
-    const buttonLabel = canGoNext ? translations.next : translations.quit;
 
     return (
       <View
@@ -261,7 +270,7 @@ class Correction extends React.PureComponent<Props> {
             isLoading={isLoading}
             testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
           >
-            {buttonLabel}
+            {offeringExtraLife ? translations.quit : translations.next}
           </Button>
         </View>
       </View>

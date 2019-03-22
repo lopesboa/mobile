@@ -504,7 +504,7 @@ exports[`Storyshots Preview Extra Life 1`] = `
               ]
             }
           >
-            translations.getAnExtralife
+            Get an extra life by viewing the lesson
           </Text>
         </View>
       </View>
