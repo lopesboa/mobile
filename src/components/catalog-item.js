@@ -13,17 +13,20 @@ import CatalogItemAuthor from './catalog-item-author';
 
 export type Item = Discipline | Chapter;
 
-type Props = {|
+export type CourseInfo = {|
   title: string,
   subtitle: string,
   progression?: Progression,
-  onPress: (item: Item) => void,
   image: File | {uri: string},
   badge?: string,
   authorType?: AuthorType,
   authorName?: string,
   isAdaptive: boolean,
-  isCertified?: boolean,
+  isCertified?: boolean
+|};
+type Props = {|
+  ...CourseInfo,
+  onPress: (item: Item) => void,
   displayMode?: CardDisplayMode,
   testID: string
 |};

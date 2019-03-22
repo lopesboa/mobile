@@ -9,6 +9,7 @@ import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
 import {initialState as bundledDisciplineState} from '../redux/reducers/discipline-bundle';
 import {initialState as cardsState} from '../redux/reducers/cards';
+import type {State as CardsState} from '../redux/reducers/cards';
 import {initialState as permissionsState} from '../redux/reducers/permissions';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 
@@ -57,13 +58,15 @@ export const createStoreState = ({
   slides,
   chapters,
   disciplines,
-  progression
+  progression,
+  cards
 }: {
   levels: Array<Level>,
   slides: Array<Slide>,
   chapters: Array<Chapter>,
   disciplines: Array<Discipline>,
-  progression: Progression
+  progression: Progression,
+  cards?: CardsState
 }): StoreState => {
   const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
   const mappedSlide: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
@@ -143,7 +146,7 @@ export const createStoreState = ({
       currentTabName: 'dummyScreenName'
     },
     disciplineBundle: bundledDisciplineState,
-    cards: cardsState,
+    cards: cards || cardsState,
     permissions: permissionsState,
     authentication: {
       token: '__TOKEN__',

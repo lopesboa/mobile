@@ -21,8 +21,7 @@ const navigationOptions: NavigationScreenConfig<*> = {
     paddingTop: 0,
     height: HEADER_HEIGHT
   },
-  headerBackImage: HeaderBackImage,
-  gesturesEnabled: false
+  headerBackImage: HeaderBackImage
 };
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {
@@ -30,6 +29,7 @@ export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {
   header: null,
   headerBackImage: null,
   headerRight: null,
+  gesturesEnabled: false,
   headerStyle: {
     ...navigationOptions.headerStyle,
     height: 0,

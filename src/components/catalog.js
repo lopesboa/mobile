@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const getAuthorType = (card: DisciplineCard | ChapterCard): AuthorType | void => {
+export const getAuthorType = (card: DisciplineCard | ChapterCard): AuthorType | void => {
   const author = card.authors[0];
   return author && author.authorType;
 };
 
-const getAuthorName = (card: DisciplineCard | ChapterCard): string | void => {
+export const getAuthorName = (card: DisciplineCard | ChapterCard): string | void => {
   const author = card.authors[0];
   return author && author.label;
 };

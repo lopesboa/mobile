@@ -1,6 +1,6 @@
 // @flow
 
-import {Answers, Clues, Content} from '@coorpacademy/player-services';
+import {Answers, Clues, Content, LeaderBoard} from '@coorpacademy/player-services';
 
 import type {
   AnalyticsService,
@@ -31,7 +31,8 @@ export type Services = {|
   DisciplineBundle: DisciplineBundleService,
   Progressions: ProgressionService,
   Brands: BrandsService,
-  Permissions: PermissionsService
+  Permissions: PermissionsService,
+  LeaderBoard: typeof LeaderBoard
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -43,7 +44,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   DisciplineBundle: DisciplineBundle(dataLayer),
   Progressions: Progressions(dataLayer),
   Brands: Brands(dataLayer),
-  Permissions
+  Permissions,
+  LeaderBoard
 });
 
 export default createServices;

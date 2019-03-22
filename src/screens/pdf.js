@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import * as React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';

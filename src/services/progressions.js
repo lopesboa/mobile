@@ -9,9 +9,12 @@ export type ProgressionService = {
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>
 };
 
+const findBestOf = (engineRef, contentType, contentRef, progressionId) => ({stars: 0});
+
 const service = (dataLayer: DataLayer): ProgressionService => ({
   ...Progressions(dataLayer),
-  findLast: dataLayer.findLast
+  findLast: dataLayer.findLast,
+  findBestOf
 });
 
 export default service;

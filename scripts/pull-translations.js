@@ -121,6 +121,7 @@ const generate = async (locale: string) => {
     next: formatTranslation(playerTranslations.Next),
     nextLevel: formatTranslation(playerTranslations['Next level']),
     ok: formatTranslation(moocFormTranslations.ok),
+    ooops: formatTranslation(playerTranslations.Ooops),
     open: formatTranslation(componentsTranslations.Open),
     // @todo get it from github
     openSettings: 'Open settings',
@@ -133,6 +134,7 @@ const generate = async (locale: string) => {
       'We need access to your camera in order to scan your QR code and authenticate you.',
     question: formatTranslation(playerTranslations.Question),
     quit: formatTranslation(playerTranslations.Quit),
+    relatedSubjects: formatTranslation(playerTranslations['Related subjects']),
     retryLevel: formatTranslation(playerTranslations['Retry level']),
     seeClue: formatTranslation(componentsTranslations['See clue']),
     selectSomethingBelow: formatTranslation(playerTranslations['Select something below']),

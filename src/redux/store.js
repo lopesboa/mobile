@@ -44,6 +44,7 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
   return compose(
     // $FlowFixMe error applying middlewares with multiple types
     applyMiddleware(ReduxThunkMemoized(options), ErrorLogger(options), DisciplineBundle(options)),
+    // $FlowFixMe
     reduxDevTools || (f => f)
   );
 };

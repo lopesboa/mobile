@@ -1,6 +1,7 @@
 // @flow strict
 
-import {uniqBy} from '.';
+import {createDisciplineCard, createCardLevel, createChapterCard} from '../__fixtures__/cards';
+import {uniqBy, getCurrentContent} from '.';
 
 describe('Utils', () => {
   it('uniqBy', () => {
@@ -16,5 +17,64 @@ describe('Utils', () => {
       {title: 'B'},
       {title: 'A'}
     ]);
+  });
+  it('getCurrentContent', () => {
+    const levelCard1 = createCardLevel({
+      ref: 'mod_1',
+      status: 'isActive',
+      label: 'Fake level'
+    });
+    const levelCard2 = createCardLevel({
+      ref: 'mod_2',
+      status: 'isActive',
+      label: 'Fake level'
+    });
+    const dis1 = createDisciplineCard({
+      ref: 'dis1',
+      completion: 0,
+      levels: [levelCard1, levelCard2],
+      title: 'First discipline'
+    });
+    const dis2 = createDisciplineCard({
+      ref: 'dis2',
+      completion: 0,
+      levels: [levelCard2],
+      title: 'First discipline'
+    });
+    const chapter1 = createChapterCard({
+      ref: 'cha1',
+      completion: 0,
+      status: 'isActive',
+      title: 'Chapter'
+    });
+    const chapter2 = createChapterCard({
+      ref: 'cha2',
+      completion: 0,
+      status: 'isActive',
+      title: 'Chapter'
+    });
+    const cards = {
+      entities: {
+        dis1: {
+          en: dis1
+        },
+        dis2: {
+          fr: dis2
+        },
+        cha1: {
+          es: chapter1
+        },
+        cha2: {
+          pt: chapter2
+        }
+      }
+    };
+
+    const currentDiscipline = getCurrentContent(cards, {type: 'level', ref: 'mod_2'}, 'en');
+    const currentChapter = getCurrentContent(cards, {type: 'chapter', ref: 'cha2'}, 'pt');
+    // $FlowFixMe
+    expect('dis1').toEqual(currentDiscipline.universalRef);
+    // $FlowFixMe
+    expect('cha2').toEqual(currentChapter.universalRef);
   });
 });
