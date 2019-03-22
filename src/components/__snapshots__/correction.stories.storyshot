@@ -619,7 +619,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -629,7 +629,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -689,13 +689,13 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -736,13 +736,13 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -3743,7 +3743,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -3753,7 +3753,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -3813,13 +3813,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -3860,13 +3860,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -6834,7 +6834,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -6844,7 +6844,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -6904,13 +6904,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -6951,13 +6951,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -11681,7 +11681,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -11691,7 +11691,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -11751,13 +11751,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -11798,13 +11798,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -13574,7 +13574,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -13584,7 +13584,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -13644,13 +13644,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -13691,13 +13691,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -17865,7 +17865,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -17875,7 +17875,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -17935,13 +17935,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -17982,13 +17982,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -19756,7 +19756,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -19766,7 +19766,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -19826,13 +19826,13 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -19873,13 +19873,13 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -22479,7 +22479,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -22489,7 +22489,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -22549,13 +22549,13 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -22596,13 +22596,13 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -27534,7 +27534,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -27544,7 +27544,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -27604,13 +27604,13 @@ exports[`Storyshots Correction Good answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -27651,13 +27651,13 @@ exports[`Storyshots Correction Good answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -30631,7 +30631,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -30641,7 +30641,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -30701,13 +30701,13 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -30748,13 +30748,13 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -32522,7 +32522,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -32532,7 +32532,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -32592,13 +32592,13 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -32639,13 +32639,13 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -36412,7 +36412,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -36422,7 +36422,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -36482,13 +36482,13 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -36529,13 +36529,13 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -37578,7 +37578,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -37588,7 +37588,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -37648,13 +37648,13 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -37695,13 +37695,13 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -42633,7 +42633,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -42643,7 +42643,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -42703,13 +42703,13 @@ exports[`Storyshots Correction Last good answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -42750,13 +42750,13 @@ exports[`Storyshots Correction Last good answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -45329,7 +45329,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -45339,7 +45339,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -45399,13 +45399,13 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -45446,13 +45446,13 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -48025,7 +48025,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -48035,7 +48035,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -48095,13 +48095,13 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -48142,13 +48142,13 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -51116,7 +51116,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -51126,7 +51126,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -51186,13 +51186,13 @@ exports[`Storyshots Correction With only one answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -51233,13 +51233,13 @@ exports[`Storyshots Correction With only one answer 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -52174,7 +52174,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                       false,
                       false,
                       Object {
-                        "backgroundColor": "#d3f1e2",
+                        "backgroundColor": "#FDD9DC",
                       },
                       false,
                     ]
@@ -52184,7 +52184,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     align="xMidYMid"
                     bbHeight="undefined"
                     bbWidth="undefined"
-                    color="#3ec483"
+                    color="#F73F52"
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -52244,13 +52244,13 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M11.042 22c-4.962 0-9-4.037-9-9s4.038-9 9-9v2c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.963-4.038 9-9 9z"
+                      d="M12.042 22c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }
@@ -52291,13 +52291,13 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                       y={0}
                     />
                     <RNSVGPath
-                      d="M12.134 16.86l-4.976-4.976 1.767-1.768 3.024 3.024 8.125-9.932 1.935 1.584z"
+                      d="M16.749 8.707l-1.415-1.414-3.292 3.293-3.293-3.293-1.415 1.414L10.627 12l-3.293 3.293 1.415 1.414 3.293-3.292 3.292 3.292 1.415-1.414L13.456 12z"
                       fill={
                         Array [
                           0,
-                          0.24313725490196078,
-                          0.7686274509803922,
-                          0.5137254901960784,
+                          0.9686274509803922,
+                          0.24705882352941178,
+                          0.3215686274509804,
                           1,
                         ]
                       }

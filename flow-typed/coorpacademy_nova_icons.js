@@ -48,6 +48,7 @@ declare module "@coorpacademy/nova-icons" {
     declare var NovaLineVideosVideoClip3: typeof NovaIcons;
     declare var NovaLineFilesOfficeFileOfficePdf: typeof NovaIcons;
     declare var NovaLineComputersComputerScreen1: typeof NovaIcons;
+    declare var NovaLineStatusCloseCircle: typeof NovaIcons;
     declare var NovaSolidDataTransferDataUpload1: typeof NovaIcons;
     declare var NovaSolidSchoolScienceGraduationHat: typeof NovaIcons;
     declare var NovaSolidVoteRewardsVoteStar: typeof NovaIcons;
