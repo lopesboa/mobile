@@ -12,6 +12,7 @@ import type {WithLayoutProps} from '../containers/with-layout';
 import Cards from '../containers/cards-scalable';
 import LivesAnimated from '../containers/lives-animated';
 import translations from '../translations';
+import {getSubtitlesUri} from '../modules/subtitles';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
@@ -20,11 +21,12 @@ import Space from './space';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
 import Resource from './resource';
+import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
   ...WithLayoutProps,
   title: string,
-  subtitle: string,
+  correctionSubtitle: string,
   tip: string,
   answers: Array<string>,
   question: string,
@@ -159,66 +161,79 @@ class Correction extends React.PureComponent<Props> {
     const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
 
     return (
-      <CardComponent
-        title={cardTitle}
-        type={type}
-        height={CARDS_HEIGHT}
-        fullScreenHeight={fullScreenHeight}
-        offsetBottom={offsetBottom}
-        fullScreenOffsetBottom={fullScreenOffsetBottom}
-        style={styles.card}
-        testID={
-          type !== CARD_TYPE.RESOURCE
-            ? `card-${type.toLowerCase()}`
-            : `card-${type.toLowerCase()}-` + testIDSuffix
-        }
-      >
-        {type === CARD_TYPE.TIP && (
-          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
-            {tip}
-          </Html>
-        )}
-        {type === CARD_TYPE.CORRECTION && (
-          <CardCorrection
-            question={question}
-            answers={answers}
-            userAnswers={userAnswers}
-            isCorrect={isCorrect}
-          />
-        )}
-        {type === CARD_TYPE.KEY_POINT && (
-          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
-            {keyPoint}
-          </Html>
-        )}
-        {type === CARD_TYPE.RESOURCE &&
-          resource && (
-            <View>
-              <Resource
-                type={resource.type}
-                url={resource.url}
-                description={resource.description}
-                thumbnail={resource.poster}
-                subtitles=""
-                height={200}
-                onPDFButtonPress={onPDFButtonPress}
-                onVideoPlay={onVideoPlay}
-                testID={testIDSuffix}
-                extralifeOverlay={offeringExtraLife}
-              />
-              <Text testID={'resource-description-' + testIDSuffix} style={styles.resourceTitle}>
-                {resource.description}
-              </Text>
-            </View>
-          )}
-      </CardComponent>
+      <BrandThemeContext.Consumer>
+        {brandTheme => {
+          const {host} = brandTheme;
+          const subtitleRef = resource && resource.subtitleRef;
+          const subtitleUri = host && subtitleRef && getSubtitlesUri(host, subtitleRef, 'en');
+
+          return (
+            <CardComponent
+              title={cardTitle}
+              type={type}
+              height={CARDS_HEIGHT}
+              fullScreenHeight={fullScreenHeight}
+              offsetBottom={offsetBottom}
+              fullScreenOffsetBottom={fullScreenOffsetBottom}
+              style={styles.card}
+              testID={
+                type !== CARD_TYPE.RESOURCE
+                  ? `card-${type.toLowerCase()}`
+                  : `card-${type.toLowerCase()}-` + testIDSuffix
+              }
+            >
+              {type === CARD_TYPE.TIP && (
+                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+                  {tip}
+                </Html>
+              )}
+              {type === CARD_TYPE.CORRECTION && (
+                <CardCorrection
+                  question={question}
+                  answers={answers}
+                  userAnswers={userAnswers}
+                  isCorrect={isCorrect}
+                />
+              )}
+              {type === CARD_TYPE.KEY_POINT && (
+                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+                  {keyPoint}
+                </Html>
+              )}
+              {type === CARD_TYPE.RESOURCE &&
+                resource && (
+                  <View>
+                    <Resource
+                      type={resource.type}
+                      url={resource.url}
+                      description={resource.description}
+                      thumbnail={resource.poster}
+                      subtitles={subtitleUri}
+                      height={200}
+                      onPDFButtonPress={onPDFButtonPress}
+                      onVideoPlay={onVideoPlay}
+                      testID={testIDSuffix}
+                      extralifeOverlay={offeringExtraLife}
+                    />
+                    <Text
+                      testID={'resource-description-' + testIDSuffix}
+                      style={styles.resourceTitle}
+                    >
+                      {resource.description}
+                    </Text>
+                  </View>
+                )}
+            </CardComponent>
+          );
+        }}
+      </BrandThemeContext.Consumer>
     );
   };
 
   render() {
     const {
       title,
-      subtitle,
+      correctionSubtitle,
       isCorrect,
       onButtonPress,
       layout,
@@ -241,7 +256,7 @@ class Correction extends React.PureComponent<Props> {
               {title}
             </Text>
             <Text style={styles.subTitle} testID="correction-subtitle">
-              {subtitle}
+              {correctionSubtitle}
             </Text>
           </View>
           {lives !== undefined && (

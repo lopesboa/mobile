@@ -37,7 +37,7 @@ export type Params = {|
 
 type ConnectedStateProps = {|
   title: string,
-  subtitle: string,
+  correctionSubtitle: string,
   nextScreen?: string,
   isCorrect?: boolean,
   isFinished?: boolean,
@@ -168,7 +168,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
 
     const {
       title,
-      subtitle,
+      resultLabel,
       isCorrect,
       lives: realLives,
       isResourceViewed,
@@ -186,7 +186,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <Correction
           title={title}
-          subtitle={subtitle}
+          resultLabel={resultLabel}
           tip={tip}
           answers={answers}
           question={question}
@@ -223,7 +223,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   if (progression === undefined || progression.state === undefined) {
     return {
       title: '',
-      subtitle: '',
+      correctionSubtitle: '',
       nextScreen: undefined,
       showResourcesFirst: false,
       isFinished: false,
@@ -259,7 +259,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 
   const props = {
     title: (isCorrect && translations.goodJob) || translations.ouch,
-    subtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
+    correctionSubtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
     nextScreen: getRoute(state),
     isFinished,
     isCorrect,

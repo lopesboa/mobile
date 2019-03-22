@@ -52,7 +52,7 @@ describe('correction', () => {
 
     const expectedProps = {
       title: 'Good job!',
-      subtitle: 'Good answer',
+      correctionSubtitle: 'Good answer',
       nextScreen: undefined,
       isFinished: false,
       canGoNext: true,
@@ -80,7 +80,7 @@ describe('correction', () => {
 
     const expectedProps = {
       title: 'Ouch...',
-      subtitle: 'Wrong answer',
+      correctionSubtitle: 'Wrong answer',
       canGoNext: true,
       nextScreen: undefined,
       isFinished: false,
@@ -108,7 +108,7 @@ describe('correction', () => {
 
     const expectedProps = {
       title: 'Ouch...',
-      subtitle: 'Wrong answer',
+      correctionSubtitle: 'Wrong answer',
       canGoNext: false,
       nextScreen: undefined,
       isFinished: true,
@@ -137,7 +137,7 @@ describe('correction', () => {
 
     const expectedProps = {
       title: 'Ouch...',
-      subtitle: 'Wrong answer',
+      correctionSubtitle: 'Wrong answer',
       nextScreen: undefined,
       canGoNext: true,
       isFinished: false,

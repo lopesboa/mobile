@@ -9,6 +9,8 @@ import image from '../__fixtures__/assets/landscape-1.jpg';
 import {handleFakePress} from '../utils/tests';
 import Video, {STEP} from './video';
 
+const subtitlesUri = 'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.en.vtt';
+
 storiesOf('Video', module)
   .add('Local preview', () => (
     <Video
@@ -63,7 +65,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
+      subtitles={subtitlesUri}
       hasSubtitles
       onPlay={handleFakePress}
       onEnd={handleFakePress}
@@ -79,7 +81,7 @@ storiesOf('Video', module)
         preview={image}
         height={180}
         step={STEP.PLAY}
-        subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
+        subtitles={subtitlesUri}
         hasSubtitles
         onPlay={handleFakePress}
         onEnd={handleFakePress}
@@ -93,7 +95,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
+      subtitles={subtitlesUri}
       hasSubtitles={false}
       onPlay={handleFakePress}
       onEnd={handleFakePress}
@@ -106,7 +108,7 @@ storiesOf('Video', module)
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles="https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en"
+      subtitles={subtitlesUri}
       hasSubtitles={false}
       onPlay={handleFakePress}
       onEnd={handleFakePress}

@@ -19,7 +19,8 @@ const lessons = [
   createVideo({ref: 'les_3'}),
   createVideo({ref: 'les_4'}),
   createVideo({ref: 'les_5'}),
-  createVideo({ref: 'les_6'})
+  createVideo({ref: 'les_6'}),
+  createVideo({ref: 'les_7', subtitleRef: 'foobarbaz'})
 ];
 const resources = reduceToResources(lessons);
 
@@ -45,7 +46,7 @@ storiesOf('Correction', module)
           title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -70,7 +71,7 @@ storiesOf('Correction', module)
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -100,7 +101,7 @@ storiesOf('Correction', module)
             isCorrect={false}
             onButtonPress={handleFakePress}
             question={question}
-            subtitle="Bad Answer"
+            correctionSubtitle="Bad Answer"
             keyPoint="The KEY POINT"
             layout={fakeLayout}
             isLoading={false}
@@ -126,7 +127,7 @@ storiesOf('Correction', module)
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -152,7 +153,7 @@ storiesOf('Correction', module)
           title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -176,7 +177,7 @@ storiesOf('Correction', module)
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -202,7 +203,7 @@ storiesOf('Correction', module)
           title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -227,7 +228,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -252,7 +253,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -277,7 +278,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -302,7 +303,7 @@ storiesOf('Correction', module)
           isResourceViewed
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -333,7 +334,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Good Answer"
+          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -360,7 +361,7 @@ storiesOf('Correction', module)
           showResourcesFirst
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -387,7 +388,7 @@ storiesOf('Correction', module)
           isCorrect={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -419,7 +420,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -447,7 +448,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -474,7 +475,7 @@ storiesOf('Correction', module)
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          subtitle="Bad Answer"
+          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -484,6 +485,60 @@ storiesOf('Correction', module)
           onVideoPlay={handleFakePress}
           offeringExtraLife={false}
           lives={0}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and lesson was viewed (cards order 4)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+          }
+          title="Oops..."
+          isCorrect={false}
+          isResourceViewed
+          offeringExtraLife={false}
+          showResourcesFirst={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          correctionSubtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading
+          resources={[resources[0], resources[1]]}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+          lives={2}
+        />
+      </View>
+    </TestContextProvider>
+  ))
+  .add('Bad answer and subtitles from resource with subtitleRef (android)', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers.concat(['Anything else'])}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
+          }
+          isCorrect={false}
+          title="Oops..."
+          onButtonPress={handleFakePress}
+          question={question}
+          correctionSubtitle="Bad Answer"
+          keyPoint="The KEY POINT"
+          layout={fakeLayout}
+          isLoading={false}
+          isResourceViewed={false}
+          resources={[resources[6], resources[1]]}
+          lives={3}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
         />
       </View>
     </TestContextProvider>
