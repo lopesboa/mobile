@@ -220,7 +220,11 @@ const _selectProgression = () => (dispatch: Dispatch, getState: GetState) => {
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
-  if (progression === undefined || progression.state === undefined) {
+  if (
+    progression === undefined ||
+    progression.state === undefined ||
+    progression.state.content === undefined
+  ) {
     return {
       title: '',
       correctionSubtitle: '',
