@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
@@ -30,7 +30,6 @@ type Props = {|
 const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
-    paddingBottom: theme.spacing.base,
     flexGrow: 1
   },
   browser: {
