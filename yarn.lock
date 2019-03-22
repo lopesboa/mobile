@@ -10852,10 +10852,10 @@ react-native-safe-area-view@^0.11.0:
   resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
 
-react-native-sideswipe@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/react-native-sideswipe/-/react-native-sideswipe-1.3.0.tgz#d2ae3e73083a14600b1b2fc0c837f672c472610b"
-  integrity sha512-VJYvxb+ze3szwJptFPy9Dkl5TKLzdq8KGCYSNELwrSdAPwA0VUuCO+akNi8hc4yp5eFOY5T37FCMiuRZWvrsxA==
+react-native-sideswipe@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.npmjs.org/react-native-sideswipe/-/react-native-sideswipe-1.4.2.tgz#9e3e23077884838c5592533bf09ffd7977283b74"
+  integrity sha512-WhxmXVWijMx1smPlWQwSrzklq9284xsZEnArzQLvksA/23Tsic4AbsMOkqHZB1kjiLEBBbdspLyie5mOnf9zUw==
 
 react-native-snap-carousel@^3.7.5:
   version "3.7.5"

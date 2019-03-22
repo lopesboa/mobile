@@ -71,7 +71,7 @@ const Authentication = ({onPress}: Props) => (
       </View>
       <View style={styles.wrapper} testID="sign-in-header">
         <View style={[styles.headerContainer]}>
-          <Html fontSize={theme.fontSize.large} style={styles.header}>
+          <Html fontSize={theme.fontSize.large} style={styles.header} isTextCentered>
             {translations.loginHeader}
           </Html>
         </View>

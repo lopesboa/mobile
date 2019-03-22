@@ -96,7 +96,17 @@ exports[`Storyshots Authentication Default 1`] = `
             style={Object {}}
           >
             <Text
-              style={Object {}}
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "marginVertical": 0,
+                    "textAlign": "center",
+                  },
+                  Object {},
+                  Object {},
+                ]
+              }
             >
               <Text
                 selectable={false}
@@ -112,6 +122,9 @@ exports[`Storyshots Authentication Default 1`] = `
                     Object {
                       "color": "white",
                       "fontSize": 17,
+                      "marginBottom": 17,
+                      "marginTop": 17,
+                      "marginVertical": 0,
                       "textAlign": "center",
                     }
                   }
@@ -146,6 +159,9 @@ exports[`Storyshots Authentication Default 1`] = `
                         "color": "white",
                         "fontSize": 17,
                         "fontWeight": "500",
+                        "marginBottom": 17,
+                        "marginTop": 17,
+                        "marginVertical": 0,
                         "textAlign": "center",
                       }
                     }

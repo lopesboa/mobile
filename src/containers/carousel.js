@@ -133,6 +133,7 @@ class Carousel extends React.PureComponent<Props, State> {
             contentOffset={contentOffset}
             onIndexChange={this.handleItemChange}
             renderItem={this._renderItem(width)}
+            useVelocityForIndex={false}
           />
         )}
         {this.pagination()}
