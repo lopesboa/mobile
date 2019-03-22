@@ -14,7 +14,7 @@ const fetchFavoriteCards = async (
   language: SupportedLanguage
 ): Promise<Cards> => {
   const response = await fetch(
-    `${host}/api/v2/contents?contentType=course&limit=5&playlist=favorites&lang=${language}`,
+    `${host}/api/v2/contents?contentType=course&limit=5&playlist=favorites&withoutAdaptive=true&lang=${language}`,
     {
       headers: {authorization: token}
     }
@@ -28,7 +28,7 @@ const fetchRecommendationCards = async (
   language: SupportedLanguage
 ): Promise<Cards> => {
   const response = await fetch(
-    `${host}/api/v2/recommendations?contentType=course&limit=5&lang=${language}`,
+    `${host}/api/v2/recommendations?contentType=course&limit=5&withoutAdaptive=true&lang=${language}`,
     {
       headers: {authorization: token}
     }

@@ -38,7 +38,7 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          `${HOST}/api/v2/contents?contentType=course&limit=5&playlist=favorites&lang=en`
+          `${HOST}/api/v2/contents?contentType=course&limit=5&playlist=favorites&withoutAdaptive=true&lang=en`
         );
 
         expect(options).toHaveProperty('headers.authorization', TOKEN);
@@ -51,7 +51,9 @@ describe('cards', () => {
         });
       });
       fetch.mockImplementationOnce((url, options) => {
-        expect(url).toBe(`${HOST}/api/v2/recommendations?contentType=course&limit=5&lang=en`);
+        expect(url).toBe(
+          `${HOST}/api/v2/recommendations?contentType=course&limit=5&withoutAdaptive=true&lang=en`
+        );
 
         return Promise.resolve({
           json: () =>
