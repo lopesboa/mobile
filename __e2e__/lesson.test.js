@@ -19,6 +19,10 @@ describe('Lesson', () => {
       await weExpect(getLessonTab(element)).toBeVisible();
     });
 
+    it('should see lesson tab icon with notification', async () => {
+      await weExpect(element(by.id('lesson-notification'))).toBeVisible();
+    });
+
     it('should be redirected to lesson tab', async () => {
       await getLessonTab(element).tap();
       await waitFor(element(by.id('lesson-screen'))).toBeVisible();
@@ -150,6 +154,10 @@ describe('Lesson', () => {
         await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
         await weExpect(element(by.id('button-close'))).toBeNotVisible();
       });
+    });
+
+    it('should see lesson tab icon without notification', async () => {
+      await weExpect(element(by.id('lesson-notification'))).toBeNotVisible();
     });
   });
 

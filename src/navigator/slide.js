@@ -27,6 +27,10 @@ import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-op
 type NavigationTabBarIconArgs = {|tintColor: string|};
 
 const styles = StyleSheet.create({
+  contextIcon: {
+    width: 24,
+    height: 24
+  },
   questionIcon: {
     width: 23,
     height: 23
@@ -49,7 +53,7 @@ const slideTabsNavigator = createBottomTabNavigator(
         tabBarLabel: translations.context,
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
-          <ContextIcon color={tintColor} style={styles.clueIcon} />
+          <ContextIcon color={tintColor} style={styles.contextIcon} />
         )
       }
     },
@@ -98,6 +102,10 @@ const slideTabsNavigator = createBottomTabNavigator(
         fontWeight: theme.fontWeight.semiBold,
         fontSize: 12
       },
+      tabStyle: {
+        alignItems: 'center',
+        paddingTop: theme.spacing.tiny
+      },
       style: {
         borderTopWidth: StyleSheet.hairlineWidth,
         borderTopColor: '#B2B3B4',
@@ -106,7 +114,8 @@ const slideTabsNavigator = createBottomTabNavigator(
         shadowOpacity: 0.08,
         elevation: 2,
         height: 60,
-        padding: theme.spacing.tiny
+        paddingHorizontal: theme.spacing.tiny,
+        paddingBottom: theme.spacing.tiny
       },
       showIcon: true
     },

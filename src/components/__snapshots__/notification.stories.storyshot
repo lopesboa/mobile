@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Notification Custom height 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FF7043",
+      },
+      Object {
+        "borderRadius": 16,
+        "height": 16,
+        "width": 16,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots Notification Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FF7043",
+      },
+      Object {
+        "borderRadius": 10,
+        "height": 10,
+        "width": 10,
+      },
+    ]
+  }
+/>
+`;

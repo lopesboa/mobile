@@ -15,7 +15,8 @@ export type Colors = {
   positive: string,
   white: string,
   black: string,
-  battle: string
+  battle: string,
+  notification: string
 };
 
 export type FontWeightType = 'bold' | 'semiBold' | 'regular';
@@ -63,7 +64,8 @@ const theme: Theme = {
     positive: '#3EC483',
     white: '#FFFFFF',
     black: '#14171A',
-    battle: '#FFE100'
+    battle: '#FFE100',
+    notification: '#FF7043'
   },
   spacing: {
     micro: 4,

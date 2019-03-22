@@ -4,18 +4,20 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
-import {getRoute, selectRoute} from '@coorpacademy/player-store';
+import {getRoute, selectRoute, hasSeenLesson} from '@coorpacademy/player-store';
 
 import {getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
 import TabBar from './tab-bar';
+import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
   hasNoClue: boolean,
   hasNoContext: boolean,
   hasNoLesson: boolean,
+  hasNewLesson: boolean,
   showContext: boolean
 |};
 
@@ -35,6 +37,15 @@ const styles = StyleSheet.create({
   inactiveText: {
     color: INACTIVE_COLOR,
     textAlign: 'center'
+  },
+  notification: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: '50%',
+    bottom: 0,
+    paddingVertical: theme.spacing.tiny,
+    paddingHorizontal: DEFAULT_HEIGHT / 2
   }
 });
 
@@ -104,17 +115,28 @@ class TabBarSlide extends React.Component<Props> {
     return getButtonComponent(scene);
   };
 
-  getLabelText = (scene: TabScene) => {
-    const {getLabelText, labelStyle, hasNoClue, hasNoLesson} = this.props;
+  getLabelText = (scene: TabScene) => ({tintColor}) => {
+    const {getLabelText, labelStyle, hasNoClue, hasNoLesson, hasNewLesson} = this.props;
+    const labelText = getLabelText(scene);
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||
       (scene.route.key === 'Lesson' && hasNoLesson)
     ) {
-      return <Text style={[labelStyle, styles.inactiveText]}>{getLabelText(scene)}</Text>;
+      return <Text style={[labelStyle, styles.inactiveText]}>{labelText}</Text>;
     }
 
-    return getLabelText(scene);
+    // hack: we have to render it next to label to handle Android overflow
+    if (scene.route.key === 'Lesson' && hasNewLesson) {
+      return (
+        <React.Fragment>
+          <Text style={[labelStyle, {color: tintColor}]}>{labelText}</Text>
+          <Notification testID="lesson-notification" style={styles.notification} />
+        </React.Fragment>
+      );
+    }
+
+    return <Text style={[labelStyle, {color: tintColor}]}>{labelText}</Text>;
   };
 
   render() {
@@ -145,6 +167,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
     hasNoClue: !(slide && slide.clue),
     hasNoLesson: !resources.length,
     hasNoContext: !(slide && slide.context && slide.context.title),
+    hasNewLesson: !hasSeenLesson(state),
     showContext
   };
 };
