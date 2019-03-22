@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {getRoute, selectRoute, hasSeenLesson} from '@coorpacademy/player-store';
 
-import {getSlide} from '../redux/utils/state-extract';
+import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
@@ -14,6 +14,7 @@ import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
+  isValidating: boolean,
   hasNoClue: boolean,
   hasNoContext: boolean,
   hasNoLesson: boolean,
@@ -59,7 +60,10 @@ class TabBarSlide extends React.Component<Props> {
   }
 
   handleTabPress = (scene: TabScene) => {
-    const {onTabPress, hasNoClue, hasNoLesson} = this.props;
+    const {isValidating, onTabPress, hasNoClue, hasNoLesson} = this.props;
+    if (isValidating) {
+      return;
+    }
 
     if (
       (scene.route.routeName === 'Clue' && hasNoClue) ||
@@ -163,7 +167,10 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   const currentRoute = getRoute(state);
   const showContext = currentRoute === 'context';
 
+  const isValidating = checkIsValidating(state);
+
   return {
+    isValidating,
     hasNoClue: !(slide && slide.clue),
     hasNoLesson: !resources.length,
     hasNoContext: !(slide && slide.context && slide.context.title),
