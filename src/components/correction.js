@@ -279,8 +279,8 @@ class Correction extends React.PureComponent<Props> {
         <Space type="base" />
         <View style={styles.footer}>
           <Button
-            isInverted={canGoNext}
-            isInlined={!canGoNext}
+            isInverted={!offeringExtraLife}
+            isInlined={offeringExtraLife}
             onPress={onButtonPress}
             isLoading={isLoading}
             testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
