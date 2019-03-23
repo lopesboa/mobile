@@ -170,6 +170,7 @@ class Correction extends React.PureComponent<Props> {
           return (
             <CardComponent
               title={cardTitle}
+              isCorrect={isCorrect}
               type={type}
               height={CARDS_HEIGHT}
               fullScreenHeight={fullScreenHeight}

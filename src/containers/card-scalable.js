@@ -84,12 +84,12 @@ class CardScalable extends React.PureComponent<Props, State> {
     }));
 
   render() {
-    const {type, title, children, style, testID} = this.props;
+    const {type, title, isCorrect, children, style, testID} = this.props;
     return (
       <Animated.View style={{...style, height: this.height, top: this.top}}>
         <TouchableOpacity onPress={this.handlePress} activeOpacity={1} style={styles.expanded}>
           <Card testID={testID} type={CARD.DECK_SWIPE}>
-            <CardHeader type={type} title={title} />
+            <CardHeader type={type} title={title} isCorrect={isCorrect} />
             <View
               style={[
                 styles.content,
