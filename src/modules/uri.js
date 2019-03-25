@@ -4,7 +4,7 @@ import type {Lesson} from '@coorpacademy/progression-engine';
 import {RESOURCE_TYPE} from '../const';
 
 export const getCleanUri = (originalUri: string): string =>
-  originalUri.replace(/(http:|https:|)\/\//g, 'https://');
+  originalUri && originalUri.replace(/(http:|https:|)\/\//g, 'https://');
 
 export const getResourceUrl = (resource: Lesson): string | void => {
   const videoId = resource && resource.videoId;
