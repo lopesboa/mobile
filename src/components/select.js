@@ -53,7 +53,7 @@ class Select extends React.PureComponent<Props> {
       isDisabled = false,
       testID
     } = this.props;
-    const selectedItem = values.find(item => item.value === value);
+    const selectedItem = values.find(item => item.text === value);
     const items = values.map(item => ({value: item.text, label: item.text}));
 
     return (
@@ -63,7 +63,7 @@ class Select extends React.PureComponent<Props> {
           placeholder={{label: placeholder, value: ''}}
           items={items}
           onValueChange={onChange}
-          value={selectedItem && selectedItem.value}
+          value={selectedItem ? selectedItem.text : null}
           style={{
             iconContainer: styles.icon
           }}

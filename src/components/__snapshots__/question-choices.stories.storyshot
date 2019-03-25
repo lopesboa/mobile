@@ -2121,7 +2121,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                 ]
               }
               underlineColorAndroid="transparent"
-              value="Select an answer"
+              value="App Store"
             />
             <View
               style={
@@ -2491,7 +2491,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  selectedIndex={0}
+                  selectedIndex={2}
                   style={
                     Array [
                       Object {

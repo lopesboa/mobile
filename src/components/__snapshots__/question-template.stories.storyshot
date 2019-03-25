@@ -764,7 +764,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
               ]
             }
             underlineColorAndroid="transparent"
-            value="Select an answer"
+            value="App Store"
           />
           <View
             style={
@@ -1134,7 +1134,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                 onChange={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
-                selectedIndex={0}
+                selectedIndex={2}
                 style={
                   Array [
                     Object {
@@ -1917,7 +1917,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
               ]
             }
             underlineColorAndroid="transparent"
-            value="Select an answer"
+            value="App Store"
           />
           <View
             style={
@@ -2287,7 +2287,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                 onChange={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
-                selectedIndex={0}
+                selectedIndex={2}
                 style={
                   Array [
                     Object {

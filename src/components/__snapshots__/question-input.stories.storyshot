@@ -1021,7 +1021,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
             ]
           }
           underlineColorAndroid="transparent"
-          value="Select an answer"
+          value="App Store"
         />
         <View
           style={
@@ -1391,7 +1391,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              selectedIndex={0}
+              selectedIndex={2}
               style={
                 Array [
                   Object {
