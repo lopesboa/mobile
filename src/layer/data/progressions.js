@@ -3,6 +3,8 @@
 import {AsyncStorage} from 'react-native';
 
 import type {Progression} from '@coorpacademy/progression-engine';
+import {isDone} from '../../utils/progressions';
+import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 
 export const buildLastProgressionKey = (engineRef: string, contentRef: string) =>
   `last_progression_${engineRef}_${contentRef}`;
@@ -16,17 +18,42 @@ const findById = async (id: string) => {
 };
 
 const getAll = async () => {
-  const progressionRegex = new RegExp(`^(progression_(.+)+)`, 'gm');
   const keys = await AsyncStorage.getAllKeys();
-  const filtredKeys = keys.filter(key => key.match(progressionRegex));
-  const items = await AsyncStorage.multiGet(filtredKeys);
-  return items;
+  const filteredKeys = keys.filter(key => key.startsWith('progression'));
+  const items = await AsyncStorage.multiGet(filteredKeys);
+
+  return items.map(([key, value]) => {
+    return JSON.parse(value);
+  });
+};
+
+const fetchMock = (url: string, init?: RequestOptions): Promise<Response> =>
+  Promise.resolve({status: 200});
+
+const synchronize = async (progression: Progression): Promise<void> => {
+  const {_id} = progression;
+  if (_id === undefined) throw new TypeError('progression has no property _id');
+
+  await fetchMock('some_stupid_url', {
+    method: 'post',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      authorize: 'token here' // place the token here
+    },
+    body: JSON.stringify(progression)
+  });
+
+  await AsyncStorage.removeItem(buildProgressionKey(_id));
+
+  return;
 };
 
 const save = async (progression: Progression) => {
-  if (!progression._id) throw new Error('progression has not id');
+  const {_id} = progression;
+  if (_id === undefined) throw new TypeError('progression has no property _id');
 
-  await AsyncStorage.setItem(buildProgressionKey(progression._id), JSON.stringify(progression));
+  await AsyncStorage.setItem(buildProgressionKey(_id), JSON.stringify(progression));
   await AsyncStorage.setItem(
     buildLastProgressionKey(progression.engine.ref, progression.content.ref),
     buildProgressionKey(progression._id || '')
@@ -38,7 +65,6 @@ const save = async (progression: Progression) => {
 const findLast = async (engineRef: string, contentRef: string) => {
   const key = buildLastProgressionKey(engineRef, contentRef);
   const progressionId = await AsyncStorage.getItem(key);
-
   if (!progressionId) return null;
 
   const stringifiedProgression = await AsyncStorage.getItem(buildProgressionKey(progressionId));
@@ -51,9 +77,8 @@ const findLast = async (engineRef: string, contentRef: string) => {
   const progression = JSON.parse(stringifiedProgression);
   const {nextContent} = progression.state;
   if (
-    nextContent.type === 'success' ||
-    nextContent.type === 'failure' ||
-    (nextContent.type === 'node' && nextContent.ref === 'extraLife')
+    isDone(progression) ||
+    (nextContent.type === CONTENT_TYPE.NODE && nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE)
   ) {
     return null;
   }
@@ -61,4 +86,4 @@ const findLast = async (engineRef: string, contentRef: string) => {
   return progression;
 };
 
-export {save, getAll, findById, findLast};
+export {save, getAll, findById, findLast, synchronize};

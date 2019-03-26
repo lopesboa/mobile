@@ -18,6 +18,7 @@ import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
 import DisciplineBundle from './middlewares/discipline-bundle';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
+import ProgressionsSynchronization from './middlewares/progressions-synchronization';
 import type {Options, ReduxDevTools} from './_types';
 
 export type StoreState = $Exact<{|
@@ -49,7 +50,8 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       ReduxThunkMemoized(options),
       ErrorLogger(options),
       DisciplineBundle(options),
-      ResetDisplayedProgression(options)
+      ResetDisplayedProgression(options),
+      ProgressionsSynchronization(options)
     ),
     // $FlowFixMe
     reduxDevTools || (f => f)

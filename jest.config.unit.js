@@ -26,9 +26,6 @@ module.exports = {
     '!<rootDir>/src/containers/*',
     '!<rootDir>/src/navigator/*',
     '!**/__fixtures__/**',
-    '!<rootDir>/src/layer/data/progressions.js',
-    '!<rootDir>/src/layer/data/recommendations.js',
-    '!<rootDir>/src/redux/actions/progression.js',
     // @todo remove this once the layer/data/base folder has been removed
     '!<rootDir>/src/layer/data/base/*.js'
   ],

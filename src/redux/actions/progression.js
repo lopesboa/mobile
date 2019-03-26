@@ -4,6 +4,8 @@ import {createProgression, CONTENT_TYPE, selectProgression} from '@coorpacademy/
 import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
+import type {StoreAction} from '../_types';
+import {isDone} from '../../utils/progressions';
 
 import {ENGINE} from '../../const';
 
@@ -30,4 +32,65 @@ export const createChapterProgression = (chapter: Chapter) => {
   const engineConfig: EngineConfig = {version: ENGINE_CONFIG_VERSION};
 
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);
+};
+
+export type Action =
+  | {|
+      type: '@@progression/SYNCHRONIZE_REQUEST',
+      meta: {|id: string|}
+    |}
+  | {|
+      type: '@@progression/SYNCHRONIZE_SUCCESS',
+      meta: {|id: string|}
+    |}
+  | {|
+      type: '@@progression/SYNCHRONIZE_FAILURE',
+      error: true,
+      payload: Error,
+      meta: {|id: string|}
+    |};
+
+export const synchronizeProgression = (progressionId: string): StoreAction<Action> => {
+  return async (dispatch, getState, options) => {
+    await dispatch({
+      type: '@@progression/SYNCHRONIZE_REQUEST',
+      meta: {id: progressionId}
+    });
+
+    const {services} = options;
+    try {
+      const progression = await services.Progressions.findById(progressionId);
+      if (progression) await services.Progressions.synchronize(progression);
+
+      return dispatch({
+        type: '@@progression/SYNCHRONIZE_SUCCESS',
+        meta: {id: progressionId}
+      });
+    } catch (err) {
+      return dispatch({
+        type: '@@progression/SYNCHRONIZE_FAILURE',
+        error: true,
+        payload: err,
+        meta: {id: progressionId}
+      });
+    }
+  };
+};
+
+export const synchronizeProgressions: StoreAction<Action> = async (dispatch, getState, options) => {
+  const {services} = options;
+
+  const progressions = await services.Progressions.getAll();
+
+  await Promise.all(
+    progressions.filter(isDone).map((progression): Promise<Action | void> => {
+      const {_id} = progression;
+      if (_id) {
+        return dispatch(synchronizeProgression(_id));
+      }
+      return Promise.resolve();
+    })
+  );
+
+  return;
 };

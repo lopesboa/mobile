@@ -7,7 +7,8 @@ import {
   findById as findProgressionById,
   getAll as getAllProgressions,
   save as saveProgression,
-  findLast as findLastProgression
+  findLast as findLastProgression,
+  synchronize as synchronizeProgression
 } from './progressions';
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
@@ -26,7 +27,9 @@ export type DataLayer = DataLayerBase & {
   storeDisciplineBundle: typeof storeDisciplineBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
-  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>
+  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
+  synchronizeProgression: typeof synchronizeProgression,
+  getAllProgressions: typeof getAllProgressions
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -40,6 +43,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   findProgressionById,
   getAllProgressions,
   saveProgression,
+  synchronizeProgression,
   findRecommendations,
   getNextLevel,
   findLevelById: findLevelById(userLanguage),
