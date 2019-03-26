@@ -35,6 +35,13 @@ platform :android do
       build_type: "Release"
     )
     supply(track: "internal")
+
+    yarn(
+      command: "notify:publication ':iphone: Build number *#{version_code}* should be available in the store soon :rocket:'"+
+               " good 'Publication of Android App Successful'",
+      package_path: '../package.json'
+      )
+
   end
 
   desc "Promote a build to the target step"

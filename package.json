@@ -47,7 +47,8 @@
     "generate:bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "pull:translations": "babel-node scripts/pull-translations.js",
-    "postpull:translations": "eslint --fix src/translations"
+    "postpull:translations": "eslint --fix src/translations",
+    "notify:publication": "node scripts/notify-publication.js"
   },
   "engines": {
     "yarn": "^1.12.3"
@@ -96,6 +97,7 @@
     "@babel/core": "^7.1.5",
     "@babel/node": "^7.0.0",
     "@coorpacademy/eslint-plugin-coorpacademy": "^8.1.1",
+    "@slack/client": "^4.12.0",
     "@storybook/addon-actions": "^4.0.6",
     "@storybook/addon-links": "^4.0.6",
     "@storybook/addon-storyshots": "^4.0.6",

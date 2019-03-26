@@ -85,5 +85,10 @@ platform :ios do
       app_identifier: ENV["APP_IDENTIFIER"],
       skip_waiting_for_build_processing: true
     )
+    yarn(
+      command: "notify:publication ':iphone: Build number *#{version_code}* should be available in the store soon :rocket:'"+
+               " good 'Publication of Ios App Successful'",
+      package_path: '../package.json'
+      )
   end
 end
