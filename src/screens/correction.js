@@ -66,9 +66,11 @@ type Props = {|
 type State = {|
   lives?: number,
   isLoading: boolean,
-  hasLivesBeenAnimated: boolean
+  hasLivesBeenAnimated: boolean,
+  isResourceViewed: boolean
 |};
 
+// @todo move it in class
 export const goNext = async (getProps: () => Props): Promise<void> => {
   const props = getProps();
   if (props.consumedExtraLife) {
@@ -98,7 +100,8 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     lives:
       this.props.lives !== undefined && !this.props.isCorrect
         ? this.props.lives + 1
-        : this.props.lives
+        : this.props.lives,
+    isResourceViewed: this.props.isResourceViewed
   };
 
   static navigationOptions = ({navigationOptions, navigation}: ReactNavigation$ScreenProps) => ({
@@ -171,11 +174,11 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
       resultLabel,
       isCorrect,
       lives: realLives,
-      isResourceViewed,
       canGoNext,
       showResourcesFirst,
       offeringExtraLife
     } = this.props;
+    const {isResourceViewed} = this.state;
 
     const {lives: livesToAnimate, isLoading} = this.state;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
