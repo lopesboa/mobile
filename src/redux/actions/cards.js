@@ -93,11 +93,12 @@ export const fetchCards = (language: SupportedLanguage): StoreAction<Action | Bu
     const token = getToken(state);
     const brand = getBrand(state);
 
-    if (token === null) return dispatch(fetchError('Token not defined'));
-    if (brand === null) return dispatch(fetchError('Brand not defined'));
-
     const {services} = options;
+
     try {
+      if (token === null) throw new TypeError('Token not defined');
+      if (brand === null) throw new TypeError('Brand not defined');
+
       const cards = await services.Cards.find(token, brand.host, language);
       // $FlowFixMe
       await dispatch(fetchBundles(cards, [language]));

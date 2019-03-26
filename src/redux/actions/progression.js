@@ -5,6 +5,7 @@ import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
 import type {StoreAction} from '../_types';
+import {getToken, getBrand} from '../utils/state-extract';
 import {isDone} from '../../utils/progressions';
 
 import {ENGINE} from '../../const';
@@ -57,10 +58,18 @@ export const synchronizeProgression = (progressionId: string): StoreAction<Actio
       meta: {id: progressionId}
     });
 
+    const state = getState();
+    const token = getToken(state);
+    const brand = getBrand(state);
+
     const {services} = options;
+
     try {
+      if (token === null) throw new TypeError('Token not defined');
+      if (brand === null) throw new TypeError('Brand not defined');
+
       const progression = await services.Progressions.findById(progressionId);
-      if (progression) await services.Progressions.synchronize(progression);
+      if (progression) await services.Progressions.synchronize(token, brand.host, progression);
 
       return dispatch({
         type: '@@progression/SYNCHRONIZE_SUCCESS',

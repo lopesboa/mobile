@@ -2,6 +2,7 @@
 
 import {ObjectId} from 'bson';
 import {ENGINE, CONTENT_TYPE} from '../../const';
+import {createBrand} from '../../__fixtures__/brands';
 import {createProgression} from '../../__fixtures__/progression';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createLevel} from '../../__fixtures__/levels';
@@ -12,6 +13,8 @@ import {
   createLevelProgression,
   selectProgression
 } from './progression';
+
+const brand = createBrand();
 
 jest.mock('@coorpacademy/player-store', () => ({
   createProgression: jest.fn(),
@@ -91,7 +94,6 @@ describe('Progressions actions', () => {
           getAll: jest.fn()
         }
       };
-
       store.dispatch.mockImplementation(action => {
         expect(action).toBeInstanceOf(Function);
         return Promise.resolve(action);
@@ -235,6 +237,8 @@ describe('Progressions actions', () => {
         }
       };
 
+      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: '@@progression/SYNCHRONIZE_REQUEST',
@@ -255,7 +259,7 @@ describe('Progressions actions', () => {
         return Promise.resolve(successProgression);
       });
 
-      services.Progressions.synchronize.mockImplementationOnce(progression => {
+      services.Progressions.synchronize.mockImplementationOnce((token, host, progression) => {
         expect(progression).toBe(successProgression);
         return Promise.resolve(progression);
       });
@@ -289,6 +293,8 @@ describe('Progressions actions', () => {
         }
       };
 
+      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: '@@progression/SYNCHRONIZE_REQUEST',
@@ -309,7 +315,7 @@ describe('Progressions actions', () => {
         return Promise.resolve();
       });
 
-      services.Progressions.synchronize.mockImplementationOnce(progression => {
+      services.Progressions.synchronize.mockImplementationOnce((toke, host, progression) => {
         expect(progression).toBe(successProgression);
         return Promise.resolve(progression);
       });
@@ -342,6 +348,8 @@ describe('Progressions actions', () => {
         }
       };
 
+      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: '@@progression/SYNCHRONIZE_REQUEST',
@@ -364,7 +372,7 @@ describe('Progressions actions', () => {
         return Promise.resolve(successProgression);
       });
 
-      services.Progressions.synchronize.mockImplementationOnce(progression => {
+      services.Progressions.synchronize.mockImplementationOnce((token, host, progression) => {
         expect(progression).toBe(successProgression);
         return Promise.reject(new Error('Synchronization failed'));
       });
@@ -383,6 +391,98 @@ describe('Progressions actions', () => {
         type: '@@progression/SYNCHRONIZE_FAILURE',
         error: true,
         payload: new Error('Synchronization failed'),
+        meta: {id: successProgression._id}
+      });
+    });
+    it('token is missing', async () => {
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            find: jest.fn()
+          }
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: '@@progression/SYNCHRONIZE_REQUEST',
+          meta: {id: successProgression._id}
+        });
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: '@@progression/SYNCHRONIZE_FAILURE',
+          error: true,
+          payload: new Error('Token not defined'),
+          meta: {id: successProgression._id}
+        });
+        return action;
+      });
+      getState.mockReturnValue({authentication: {token: null, brand: null}});
+
+      // $FlowFixMe
+      const actual = await synchronizeProgression(successProgression._id)(
+        // $FlowFixMe
+        dispatch,
+        getState,
+        // $FlowFixMe
+        options
+      );
+
+      expect(options.services.Cards.find).not.toHaveBeenCalled();
+      return expect(actual).toEqual({
+        type: '@@progression/SYNCHRONIZE_FAILURE',
+        error: true,
+        payload: new Error('Token not defined'),
+        meta: {id: successProgression._id}
+      });
+    });
+    it('brand is missing', async () => {
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            find: jest.fn()
+          }
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: '@@progression/SYNCHRONIZE_REQUEST',
+          meta: {id: successProgression._id}
+        });
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: '@@progression/SYNCHRONIZE_FAILURE',
+          error: true,
+          payload: new TypeError('Brand not defined'),
+          meta: {id: successProgression._id}
+        });
+        return action;
+      });
+      getState.mockReturnValue({authentication: {token: '__TOKEN__', brand: null}});
+
+      // $FlowFixMe
+      const actual = await synchronizeProgression(successProgression._id)(
+        // $FlowFixMe
+        dispatch,
+        getState,
+        // $FlowFixMe
+        options
+      );
+
+      expect(options.services.Cards.find).not.toHaveBeenCalled();
+      return expect(actual).toEqual({
+        type: '@@progression/SYNCHRONIZE_FAILURE',
+        error: true,
+        payload: new Error('Brand not defined'),
         meta: {id: successProgression._id}
       });
     });

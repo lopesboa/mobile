@@ -2,14 +2,7 @@
 import {AsyncStorage} from 'react-native';
 
 import {createProgression} from '../../__fixtures__/progression';
-import {
-  findById,
-  getAll,
-  save,
-  findLast,
-  buildLastProgressionKey,
-  synchronize
-} from './progressions';
+import {findById, getAll, save, findLast, buildLastProgressionKey} from './progressions';
 
 describe('progresssion', () => {
   describe('buildLastProgressionKey', () => {
@@ -261,7 +254,16 @@ describe('progresssion', () => {
     });
   });
   describe('synchronize', () => {
+    beforeEach(() => {
+      jest.resetModules();
+      jest.resetAllMocks();
+    });
+    const TOKEN = '__TOKEN__';
+    const HOST = 'https://coorp.mobile.com';
     it('should synchronize progression', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
       const progressionId = 'fakeProgressionId';
       const engine = 'learner';
       const progressionContent = {
@@ -280,7 +282,68 @@ describe('progresssion', () => {
         nextContent
       });
 
-      await expect(synchronize(fakeProgression)).resolves.toBeUndefined();
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(`${HOST}/api/v2/progressions`);
+        expect(options.method).toBe('post');
+        expect(options.headers).toEqual({
+          authorization: TOKEN
+        });
+        expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
+          ...fakeProgression,
+          meta: {source: 'mobile'}
+        });
+        return Promise.resolve({
+          status: 200,
+          statusText: 'OK',
+          json: () => Promise.resolve({})
+        });
+      });
+
+      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+        expect(keys).toEqual(`progression_${progressionId}`);
+        return Promise.resolve();
+      });
+
+      const {synchronize} = require('./progressions');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).resolves.toBeUndefined();
+    });
+    it('should throw error if post fail', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = 'learner';
+      const progressionContent = {
+        ref: 'foo',
+        type: 'chapter'
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          status: 403,
+          statusText: 'Forbidden',
+          json: () => Promise.resolve({})
+        });
+      });
+
+      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+        expect(keys).toEqual(`progression_${progressionId}`);
+        return Promise.resolve();
+      });
+
+      const {synchronize} = require('./progressions');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow('Forbidden');
     });
     it('should support only progression with _id', async () => {
       const engine = 'learner';
@@ -299,7 +362,8 @@ describe('progresssion', () => {
         nextContent
       });
 
-      await expect(synchronize(fakeProgression)).rejects.toBeInstanceOf(TypeError);
+      const {synchronize} = require('./progressions');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toBeInstanceOf(TypeError);
     });
   });
 });

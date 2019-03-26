@@ -92,7 +92,7 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('Token not defined'));
+        expect(action).toEqual(fetchError('TypeError: Token not defined'));
         return action;
       });
       getState.mockReturnValue({authentication: {token: null, brand: null}});
@@ -101,7 +101,7 @@ describe('Cards', () => {
       const actual = await fetchCards(language)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('Token not defined'));
+      return expect(actual).toEqual(fetchError('TypeError: Token not defined'));
     });
     it('brand is missing', async () => {
       const dispatch = jest.fn();
@@ -119,7 +119,7 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('Brand not defined'));
+        expect(action).toEqual(fetchError('TypeError: Brand not defined'));
         return action;
       });
       getState.mockReturnValue({authentication: {token: '__TOKEN__', brand: null}});
@@ -128,7 +128,7 @@ describe('Cards', () => {
       const actual = await fetchCards(language)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('Brand not defined'));
+      return expect(actual).toEqual(fetchError('TypeError: Brand not defined'));
     });
     it('error on fetch failure', async () => {
       const dispatch = jest.fn();

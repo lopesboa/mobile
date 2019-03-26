@@ -2,6 +2,7 @@
 
 import {AsyncStorage} from 'react-native';
 
+import fetch from 'cross-fetch';
 import type {Progression} from '@coorpacademy/progression-engine';
 import {isDone} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
@@ -27,22 +28,32 @@ const getAll = async () => {
   });
 };
 
-const fetchMock = (url: string, init?: RequestOptions): Promise<Response> =>
-  Promise.resolve({status: 200});
+const PROGRESSION_META = {source: 'mobile'};
+const synchronize = async (
+  token: string,
+  host: string,
+  progression: Progression
+): Promise<void> => {
+  const {_id, content, actions, engine, engineOptions} = progression;
 
-const synchronize = async (progression: Progression): Promise<void> => {
-  const {_id} = progression;
   if (_id === undefined) throw new TypeError('progression has no property _id');
 
-  await fetchMock('some_stupid_url', {
+  const response = await fetch(`${host}/api/v2/progressions`, {
     method: 'post',
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      authorize: 'token here' // place the token here
+      authorization: token
     },
-    body: JSON.stringify(progression)
+    body: JSON.stringify({
+      _id,
+      content,
+      actions,
+      engine,
+      engineOptions,
+      meta: PROGRESSION_META
+    })
   });
+
+  if (response.status >= 400) throw new Error(response.statusText);
 
   await AsyncStorage.removeItem(buildProgressionKey(_id));
 
