@@ -67,7 +67,7 @@ const save = async (progression: Progression) => {
   await AsyncStorage.setItem(buildProgressionKey(_id), JSON.stringify(progression));
   await AsyncStorage.setItem(
     buildLastProgressionKey(progression.engine.ref, progression.content.ref),
-    buildProgressionKey(progression._id || '')
+    progression._id || ''
   );
 
   return progression;

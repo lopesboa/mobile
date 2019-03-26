@@ -78,7 +78,16 @@ describe('progresssion', () => {
         }
       });
 
-      AsyncStorage.setItem = jest.fn().mockImplementation(() => {});
+      AsyncStorage.setItem = jest
+        .fn()
+        .mockImplementationOnce((key, value) => {
+          expect(key).toBe('progression_fakeProgressionId');
+          expect(value).toBe(JSON.stringify(fakeProgression));
+        })
+        .mockImplementationOnce((key, value) => {
+          expect(key).toBe('last_progression_learner_foo');
+          expect(value).toBe(fakeProgression._id);
+        });
 
       const result = await save(fakeProgression);
 
