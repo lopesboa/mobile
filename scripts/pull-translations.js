@@ -65,6 +65,12 @@ const generate = async (locale: string) => {
     'core/locales',
     'form.json'
   );
+  const moocSlidesTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'slides.json'
+  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -117,6 +123,7 @@ const generate = async (locale: string) => {
       ]
     ),
     logOut: formatTranslation(moocMenuTranslations.header.account_menu.logout),
+    needHelp: formatTranslation(moocSlidesTranslations.indice.title),
     new: formatTranslation(moocTranslations.content.new),
     next: formatTranslation(playerTranslations.Next),
     nextLevel: formatTranslation(playerTranslations['Next level']),

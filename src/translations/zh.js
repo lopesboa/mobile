@@ -31,6 +31,7 @@ const translations: Translations = {
   loginThirdStepDescription: '<b>瞧！</b> </br>您的二维码</br>就在那儿',
   loginHeader: '要打开贵公司的学习应用，您需要扫描<b>您的个人二维码。</b>',
   logOut: '退出',
+  needHelp: '需要帮助？',
   new: '新',
   next: '下一个',
   nextLevel: '下一级',

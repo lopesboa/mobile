@@ -34,6 +34,7 @@ const translations: Translations = {
   loginHeader:
     "Per aprire l'app di apprendimento della tua azienda, devi scansionare <b>il tuo codice QR personale</b>.",
   logOut: 'Esci',
+  needHelp: 'Serve aiuto?',
   new: 'Nuovo',
   next: 'Successivo',
   nextLevel: 'Livello successivo',

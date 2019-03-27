@@ -50,6 +50,7 @@ export type Translations = {|
   loginThirdStepDescription: string,
   loginThirdStepHeader: string,
   logOut: string,
+  needHelp: string,
   new: string,
   next: string,
   nextLevel: string,

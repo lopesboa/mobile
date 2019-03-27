@@ -33,6 +33,7 @@ const translations: Translations = {
   loginHeader:
     'Pentru a deschide aplicația de învățare a companiei tale, trebuie să scanezi <b>codul QR personal.</b>',
   logOut: 'Deconectați-vă',
+  needHelp: 'Ai nevoie de ajutor?',
   new: 'noi',
   next: 'Următoarea',
   nextLevel: 'Nivelul următor',

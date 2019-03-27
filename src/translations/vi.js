@@ -32,6 +32,7 @@ const translations: Translations = {
   loginThirdStepDescription: '<b>Xem này!</b> </br>Mã QR của bạn sẽ xuất hiện ở </br>ngay đây',
   loginHeader: 'Bạn cần quét <b>mã QR cá nhân</b> để mở được ứng dụng học tập của công ty mình.',
   logOut: 'Đăng xuất',
+  needHelp: 'Cần giúp đỡ?',
   new: 'new',
   next: 'Tiếp',
   nextLevel: 'Cấp tiếp theo ',

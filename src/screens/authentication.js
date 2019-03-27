@@ -1,9 +1,10 @@
 // @flow
 
 import * as React from 'react';
-import {StatusBar} from 'react-native';
+import {Linking, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
+import {assistanceEmail} from '../../app';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
@@ -34,11 +35,15 @@ class AuthenticationScreen extends React.PureComponent<Props> {
     navigation.navigate('QRCodeModal', params);
   };
 
+  handleAssistancePress = () => {
+    Linking.openURL(`mailto:${assistanceEmail}`);
+  };
+
   render() {
     return (
       <Screen testID="authentication-screen" noScroll noSafeArea>
         <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
-        <Authentication onPress={this.handlePress} />
+        <Authentication onPress={this.handlePress} onAssistancePress={this.handleAssistancePress} />
       </Screen>
     );
   }

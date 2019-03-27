@@ -32,6 +32,7 @@ const translations: Translations = {
   loginHeader:
     'Şirketinizin öğrenme uygulamasını açmak için, <b> kişisel QR kodunuzu</b> taratmanız lazım.',
   logOut: 'Bağlantıyı kes',
+  needHelp: 'Yardıma mı ihtiyacınız var?',
   new: 'Yeni',
   next: 'Sonraki',
   nextLevel: 'Sonraki seviye',

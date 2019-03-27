@@ -33,6 +33,7 @@ const translations: Translations = {
   loginHeader:
     'Vállalatod tanulói alkalmazásának megnyitásához be kell olvasnod <b>személyes QR-kódodat.</b>',
   logOut: 'Kijelentkezés',
+  needHelp: 'Segítsünk?',
   new: 'új',
   next: 'Következő',
   nextLevel: 'Következő szint',

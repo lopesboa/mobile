@@ -30,6 +30,7 @@ const translations: Translations = {
   loginThirdStepDescription: '<b>看！</b></br>您的 QR 碼會在</br>那裡',
   loginHeader: '要開啟您公司的學習應用程式，需要掃描<b>您的個人 QR 碼。</b>',
   logOut: '登出',
+  needHelp: '需要幫忙嗎？',
   new: '新增功能',
   next: '下一個',
   nextLevel: '下一級',

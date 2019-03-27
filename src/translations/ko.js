@@ -31,6 +31,7 @@ const translations: Translations = {
   loginThirdStepDescription: '<b>됐습니다!</b> </br>QR 코드가 </br>거기 있을 겁니다',
   loginHeader: '본인 회사의 학습 앱을 열려면, <b>개인 QR 코드</b>를 스캔하셔야 합니다.  ',
   logOut: '로그 아웃',
+  needHelp: '도움이 필요하십니까?',
   new: '새로운',
   next: '다음',
   nextLevel: '다음 레벨',

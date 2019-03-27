@@ -1,11 +1,14 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
+import {NovaSolidLocationsLocationPinQuestionMark1 as QuestionIcon} from '@coorpacademy/nova-icons';
+
+import {SPACE} from '../const';
 
 import logo from '../assets/images/logo-coorp.png';
-import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
+import theme, {defaultHitSlop, BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
 import translations from '../translations';
 import Carousel from '../containers/carousel';
 import Button from './button';
@@ -16,7 +19,8 @@ import Gradient from './gradient';
 import StepsIcon, {TARGET} from './steps-icon';
 
 type Props = {|
-  onPress: () => void
+  onPress: () => void,
+  onAssistancePress: () => void
 |};
 
 const styles = StyleSheet.create({
@@ -57,13 +61,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
+  },
+  needHelpWrapper: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  needHelp: {
+    textDecorationLine: 'underline',
+    fontSize: theme.fontSize.medium,
+    color: theme.colors.white
+  },
+  questionIcon: {
+    width: 21,
+    height: 21
   }
 });
 
 export const TOP_COLOR = BLUE_COORP_DARK;
 export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
-const Authentication = ({onPress}: Props) => (
+const Authentication = ({onPress, onAssistancePress}: Props) => (
   <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient}>
     <SafeAreaView style={styles.container}>
       <View style={[styles.wrapper, styles.logo]} testID="logo-header">
@@ -77,16 +95,28 @@ const Authentication = ({onPress}: Props) => (
         </View>
       </View>
       <Carousel />
+      <Space type={SPACE.LARGE} />
       <View style={styles.wrapper}>
         <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
           <View style={styles.buttonWithIcon}>
             <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
-            <Space type="tiny" />
+            <Space />
             <Html fontSize={theme.fontSize.large} style={styles.button}>
               {translations.loginButton}
             </Html>
           </View>
         </Button>
+      </View>
+      <View style={styles.wrapper}>
+        <TouchableOpacity
+          hitSlop={defaultHitSlop}
+          onPress={onAssistancePress}
+          style={styles.needHelpWrapper}
+        >
+          <QuestionIcon color={theme.colors.white} style={styles.questionIcon} />
+          <Space type={SPACE.TINY} />
+          <Text style={styles.needHelp}>{translations.needHelp}</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   </Gradient>

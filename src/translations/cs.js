@@ -34,6 +34,7 @@ const translations: Translations = {
   loginHeader:
     'Pro otevření školící aplikace vaší společnosti musíte naskenovat <b>váš osobní QR kód.</b>',
   logOut: 'Odhlásit se',
+  needHelp: 'Potřebujete pomoc?',
   new: 'nové',
   next: 'Další',
   nextLevel: 'Další úroveň',

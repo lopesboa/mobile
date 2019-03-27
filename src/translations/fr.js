@@ -34,6 +34,7 @@ const translations: Translations = {
   loginHeader:
     'Pour accéder à votre plateforme de formation, vous devez scanner <b>votre QR code personnel.</b>',
   logOut: 'Se déconnecter',
+  needHelp: "Besoin d'aide ?",
   new: 'Nouveau',
   next: 'Continuer',
   nextLevel: 'Niveau suivant',

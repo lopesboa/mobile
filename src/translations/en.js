@@ -33,6 +33,7 @@ const translations: Translations = {
   loginHeader:
     "To open your company's learning app, you need to scan <b>your personal QR code.</b>",
   logOut: 'Log out',
+  needHelp: 'Need help?',
   new: 'new',
   next: 'Next',
   nextLevel: 'Next level',
