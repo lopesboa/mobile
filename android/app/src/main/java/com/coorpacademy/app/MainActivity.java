@@ -29,7 +29,7 @@ public class MainActivity extends ReactActivity {
         if(getResources().getBoolean(R.bool.portrait_only)) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
-        SplashScreen.show(this);
+        SplashScreen.show(this, R.style.SplashTheme);
     }
 
     /**

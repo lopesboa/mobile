@@ -31,10 +31,9 @@ const initialState: State = {
 
 export const BrandThemeContext = React.createContext(initialState);
 
-const BrandThemeProvider = (props: Props) => {
-  const {children, brand} = props;
-  return <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>;
-};
+const BrandThemeProvider = ({children, brand}: Props) => (
+  <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>
+);
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   brand: state.authentication.brand || initialState

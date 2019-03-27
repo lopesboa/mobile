@@ -11,7 +11,7 @@ type Props = {|
   count: number,
   isInnerRounded?: boolean,
   height?: number,
-  bgBarColor?: string,
+  backgroundColor?: string,
   topBarColor?: string
 |};
 
@@ -23,7 +23,7 @@ class ProgressionBar extends React.PureComponent<Props> {
   percentage: Animated.Value = new Animated.Value(this.props.current / this.props.count);
 
   render() {
-    const {current, count, height, isInnerRounded, bgBarColor, topBarColor} = this.props;
+    const {current, count, height, isInnerRounded, backgroundColor, topBarColor} = this.props;
     const barHeight = height ? height : BAR_HEIGHT;
     const barRadius = isInnerRounded ? barHeight / 2 : 0;
     const barStyle = {
@@ -33,7 +33,7 @@ class ProgressionBar extends React.PureComponent<Props> {
     };
 
     const barContainer = {
-      backgroundColor: bgBarColor ? bgBarColor : theme.colors.gray.light
+      backgroundColor: backgroundColor || theme.colors.gray.light
     };
 
     Animated.timing(this.percentage, {

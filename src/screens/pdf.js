@@ -1,13 +1,14 @@
 // @flow strict
 
 import * as React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
 import Pdf from '../components/pdf';
 import Screen from '../components/screen';
 import theme, {defaultHitSlop} from '../modules/theme';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
 export type Params = {|
   title: string,
@@ -32,7 +33,12 @@ class PdfScreen extends React.PureComponent<Props> {
 
     return {
       ...navigationOptions,
-      headerStyle: {},
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        backgroundColor: HEADER_BACKGROUND_COLOR,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.gray.light
+      },
       title: navigation.getParam('title'),
       headerLeft: (
         <View style={styles.close}>
@@ -53,8 +59,10 @@ class PdfScreen extends React.PureComponent<Props> {
 
   render() {
     const {source} = this.props.navigation.state.params;
+
     return (
-      <Screen testID="pdf-screen" noScroll>
+      <Screen testID="pdf-screen" noScroll noSafeArea>
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         <Pdf source={source} />
       </Screen>
     );

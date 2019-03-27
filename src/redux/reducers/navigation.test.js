@@ -8,7 +8,8 @@ import type {State} from './navigation';
 describe('Navigation', () => {
   const expectedInitialState: State = {
     currentNavigatorName: 'App',
-    currentAppScreenName: 'Home',
+    currentAppScreenName: 'Splash',
+    currentScreenName: 'Splash',
     isHidden: false
   };
 

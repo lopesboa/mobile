@@ -88,7 +88,7 @@ export const storeDisciplineBundle = async (
   const normalizedBundle = normalizeDisciplineBundle(bundledDiscipline, language);
   try {
     // eslint-disable-next-line no-console
-    console.log('Storing:', normalizedBundle.map(item => item[0]));
+    console.debug('Storing:', normalizedBundle.map(item => item[0]));
     await AsyncStorage.multiSet(normalizedBundle);
   } catch (e) {
     throw new Error('could not store the provided bundledResource');

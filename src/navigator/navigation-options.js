@@ -4,13 +4,17 @@ import theme from '../modules/theme';
 import {BACKGROUND_COLOR as SCREEN_BACKGROUND_COLOR} from '../components/screen';
 import HeaderBackImage from '../components/header-back-image';
 
+export const HEADER_BACKGROUND_COLOR = theme.colors.gray.extra;
 export const HEADER_HEIGHT = 60;
 
 const navigationOptions: NavigationScreenConfig<*> = {
   headerBackTitle: null,
   headerTintColor: theme.colors.black,
   headerTitleStyle: {
-    flex: 1
+    flex: 1,
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.regular,
+    color: theme.colors.gray.dark
   },
   headerStyle: {
     backgroundColor: SCREEN_BACKGROUND_COLOR,
@@ -32,8 +36,7 @@ export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {
   gesturesEnabled: false,
   headerStyle: {
     ...navigationOptions.headerStyle,
-    height: 0,
-    borderBottomWidth: 0
+    height: 0
   }
 };
 

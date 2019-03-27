@@ -1,11 +1,14 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {getCurrentClue, getClue, getEngineConfig} from '@coorpacademy/player-store';
+
 import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Clue from '../components/clue';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
 export type ConnectedStateProps = {|
   header?: string,
@@ -36,6 +39,7 @@ class ClueScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="clue-screen">
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         <Clue
           header={header}
           clue={clue}

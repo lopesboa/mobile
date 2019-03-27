@@ -1,12 +1,14 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {play, getEngineConfig, getResourceToPlay, selectResource} from '@coorpacademy/player-store';
 
 import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
 import Screen from '../components/screen';
 import Lesson from '../components/lesson';
@@ -58,6 +60,7 @@ class LessonScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="lesson-screen" noScroll>
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         {resources && (
           <Lesson
             header={header}

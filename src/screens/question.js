@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {
   editAnswer,
@@ -23,6 +23,7 @@ import type {Resource, SliderProps} from '../types';
 import type {StoreState} from '../redux/store';
 import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import {reduceToResources} from '../layer/data/mappers';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import type {Params as CorrectionScreenParams} from './correction';
 
 type ConnectedStateProps = {|
@@ -145,6 +146,7 @@ class QuestionScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="question-screen" onRef={this.handleRef}>
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         {type &&
           header &&
           explanation && (

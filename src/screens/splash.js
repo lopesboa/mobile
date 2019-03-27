@@ -1,11 +1,20 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import SplashScreenLib from 'react-native-splash-screen';
+import splashScreen from 'react-native-splash-screen';
 
+import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
+import {BLUE_COORP_DARK} from '../modules/theme';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: BLUE_COORP_DARK
+  }
+});
 
 type ConnectedDispatchProps = {|
   signIn: typeof signIn
@@ -20,23 +29,24 @@ class SplashScreen extends React.PureComponent<Props> {
   props: Props;
 
   async componentDidMount() {
-    await this.signIn();
-  }
-
-  signIn = async () => {
     const token = await localToken.get();
 
     if (token) {
-      this.props.signIn(token);
-      SplashScreenLib.hide();
-      return this.props.navigation.navigate('Home');
+      await this.props.signIn(token);
+      await this.props.navigation.navigate('Home');
+      return splashScreen.hide();
     }
-    SplashScreenLib.hide();
-    return this.props.navigation.navigate('Authentication');
-  };
+
+    await this.props.navigation.navigate('Authentication');
+    return splashScreen.hide();
+  }
 
   render() {
-    return null;
+    return (
+      <Screen noSafeArea noScroll style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor={BLUE_COORP_DARK} />
+      </Screen>
+    );
   }
 }
 

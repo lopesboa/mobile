@@ -1,20 +1,23 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, WebView, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, WebView, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
+import Screen from '../components/screen';
 import theme from '../modules/theme';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
+
+type Params = {|
+  url: string
+|};
 
 type Props = {|
-  ...ReactNavigation$ScreenProps
+  ...ReactNavigation$ScreenPropsWithParams<Params>
 |};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   browser: {
     flex: 1
   },
@@ -31,7 +34,12 @@ class Browser extends React.PureComponent<Props> {
 
     return {
       ...navigationOptions,
-      headerStyle: {},
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        backgroundColor: HEADER_BACKGROUND_COLOR,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.gray.light
+      },
       title: navigation.getParam('title'),
       headerLeft: (
         <View style={styles.close}>
@@ -47,11 +55,13 @@ class Browser extends React.PureComponent<Props> {
     navigation.dispatch(NavigationActions.back());
 
   render() {
-    const url = this.props.navigation.state.params.url;
+    const {url} = this.props.navigation.state.params;
+
     return (
-      <View style={styles.container}>
+      <Screen noSafeArea noScroll testID="browser-screen">
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         <WebView source={{uri: url}} originWhitelist={['*']} style={styles.browser} />
-      </View>
+      </Screen>
     );
   }
 }

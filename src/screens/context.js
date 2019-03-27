@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import type {Media} from '@coorpacademy/progression-engine';
 import {selectRoute} from '@coorpacademy/player-store';
@@ -8,6 +9,7 @@ import {selectRoute} from '@coorpacademy/player-store';
 import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Context from '../components/context';
+import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import type {Params as PdfScreenParams} from './pdf';
 
 type ConnectedStateProps = {|
@@ -60,6 +62,7 @@ class ContextScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="context-screen">
+        <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         <Context
           header={header}
           description={description}

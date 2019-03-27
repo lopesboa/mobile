@@ -13,7 +13,8 @@ export type State = {|
 
 const initialState: State = {
   currentNavigatorName: 'App',
-  currentAppScreenName: 'Home',
+  currentAppScreenName: 'Splash',
+  currentScreenName: 'Splash',
   isHidden: false
 };
 

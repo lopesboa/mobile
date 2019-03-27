@@ -46,7 +46,8 @@ describe('slide-context', () => {
     });
 
     const expectedResult = {
-      description: 'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. ',
+      description:
+        'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
       header: 'A beautifull rainy day',
       hasNoContext: false,
       mediaSources: {

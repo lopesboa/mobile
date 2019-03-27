@@ -42,17 +42,20 @@ export const mediaContextPDF: Media = {
 
 export const createContextWithVideo = ({title}: Params): Context => ({
   title,
-  description: 'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. ',
+  description:
+    'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
   media: {...mediaContextVideo}
 });
 export const createContextWithPDF = ({title}: Params): Context => ({
   title,
-  description: 'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. ',
+  description:
+    'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
   media: {...mediaContextPDF}
 });
 export const createContextWithImage = ({title}: Params): Context => ({
   title,
-  description: 'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. ',
+  description:
+    'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
   media: {...mediaContextImage}
 });
 

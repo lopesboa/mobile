@@ -104,7 +104,7 @@ const CatalogItemFooter = ({
             current={progression.current}
             count={progression.count}
             height={2}
-            bgBarColor={theme.colors.white}
+            backgroundColor={theme.colors.white}
             isInnerRounded
           />
         </View>

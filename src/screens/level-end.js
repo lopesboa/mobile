@@ -1,9 +1,11 @@
 // @flow
 
 import * as React from 'react';
+import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {NavigationActions} from 'react-navigation';
 import {getCurrentProgression} from '@coorpacademy/player-store';
+
 import {selectCard} from '../redux/actions/cards';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
@@ -61,6 +63,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
+        <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <LevelEnd
           recommendedContent={recommendedContent}
           isSuccess={isCorrect}

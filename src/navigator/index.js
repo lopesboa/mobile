@@ -22,7 +22,10 @@ import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
 import browserNavigator from './browser';
-import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
+import navigationOptions, {
+  navigationOptionsWithoutHeader,
+  HEADER_BACKGROUND_COLOR
+} from './navigation-options';
 
 const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
 
@@ -55,7 +58,7 @@ const appNavigator = createStackNavigator(
         ...navigationOptions,
         headerStyle: {
           ...navigationOptions.headerStyle,
-          backgroundColor: theme.colors.gray.extra
+          backgroundColor: HEADER_BACKGROUND_COLOR
         },
         headerTitle: HeaderSlideTitle,
         headerRight: <HeaderSlideRight />,
@@ -110,8 +113,12 @@ const navigator = createStackNavigator(
 
 const Navigator = createAppContainer(navigator);
 
-type Props = {|
+type ConnectedDispatchProps = {|
   onScreenChange: typeof changeScreen
+|};
+
+type Props = {|
+  ...ConnectedDispatchProps
 |};
 
 type ExtractScreensResult = {|
@@ -170,6 +177,8 @@ class NavigatorWithState extends React.PureComponent<Props> {
   }
 }
 
-export default connect(null, {
+const mapDispatchToProps: ConnectedDispatchProps = {
   onScreenChange: changeScreen
-})(NavigatorWithState);
+};
+
+export default connect(null, mapDispatchToProps)(NavigatorWithState);
