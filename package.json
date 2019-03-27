@@ -48,7 +48,8 @@
     "generate:bundle:ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "pull:translations": "babel-node scripts/pull-translations.js",
     "postpull:translations": "eslint --fix src/translations",
-    "notify:publication": "node scripts/notify-publication.js"
+    "notify:publication": "node scripts/notify-publication.js",
+    "postversion": "react-native-version --never-increment-build"
   },
   "engines": {
     "yarn": "^1.12.3"
@@ -126,6 +127,7 @@
     "mkdirp": "^0.5.1",
     "opn-cli": "^4.0.0",
     "react-dom": "16.4.1",
+    "react-native-version": "^2.7.0",
     "react-test-renderer": "16.4.1",
     "regenerator-runtime": "^0.12.1",
     "shelljs": "^0.8.3"
