@@ -2,7 +2,7 @@
 
 import {Platform} from 'react-native';
 import fetch from 'cross-fetch';
-import compare from 'semver-compare';
+import {gt as isGreeterVersion} from 'semver';
 
 import version from './version';
 
@@ -26,7 +26,7 @@ export const needUpgrade = async (): Promise<boolean> => {
   const minimalVersion = await getMinimalVersion();
 
   if (minimalVersion) {
-    return compare(minimalVersion, version.tag) > 0;
+    return isGreeterVersion(minimalVersion, version.tag);
   }
 
   return false;
