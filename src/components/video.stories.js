@@ -9,7 +9,8 @@ import image from '../__fixtures__/assets/landscape-1.jpg';
 import {handleFakePress} from '../utils/tests';
 import Video, {STEP} from './video';
 
-const subtitlesUri = 'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.en.vtt';
+const subtitlesUri =
+  'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en';
 
 storiesOf('Video', module)
   .add('Local preview', () => (
