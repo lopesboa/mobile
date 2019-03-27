@@ -82,7 +82,7 @@ describe('progresssion', () => {
         .fn()
         .mockImplementationOnce((key, value) => {
           expect(key).toBe('progression_fakeProgressionId');
-          expect(value).toBe(JSON.stringify(fakeProgression));
+          expect(JSON.parse(value)).toMatchObject(fakeProgression);
         })
         .mockImplementationOnce((key, value) => {
           expect(key).toBe('last_progression_learner_foo');
@@ -92,6 +92,28 @@ describe('progresssion', () => {
       const result = await save(fakeProgression);
 
       expect(result).toEqual(fakeProgression);
+    });
+    it('shoud add createAt in each action', async () => {
+      const progressionId = 'fakeProgressionId';
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        }
+      });
+      fakeProgression.actions && fakeProgression.actions.forEach(action => delete action.createdAt);
+
+      AsyncStorage.setItem = jest.fn();
+
+      const result = await save(fakeProgression);
+
+      expect(result.actions).toHaveLength(1);
+      result.actions &&
+        result.actions.forEach(action => {
+          expect(action).toHaveProperty('createdAt');
+        });
     });
     it('shoud throw on progression without _id', async () => {
       const fakeProgression = createProgression({
@@ -293,9 +315,11 @@ describe('progresssion', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(`${HOST}/api/v2/progressions`);
-        expect(options.method).toBe('post');
+        expect(options.method).toBe('POST');
         expect(options.headers).toEqual({
-          authorization: TOKEN
+          Authorization: TOKEN,
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
         });
         expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
           ...fakeProgression,

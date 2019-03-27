@@ -3,7 +3,7 @@
 import {AsyncStorage} from 'react-native';
 
 import fetch from 'cross-fetch';
-import type {Progression} from '@coorpacademy/progression-engine';
+import type {Progression, Action} from '@coorpacademy/progression-engine';
 import {isDone} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 
@@ -28,7 +28,7 @@ const getAll = async () => {
   });
 };
 
-const PROGRESSION_META = {source: 'mobile'};
+const META = {source: 'mobile'};
 const synchronize = async (
   token: string,
   host: string,
@@ -39,9 +39,11 @@ const synchronize = async (
   if (_id === undefined) throw new TypeError('progression has no property _id');
 
   const response = await fetch(`${host}/api/v2/progressions`, {
-    method: 'post',
+    method: 'POST',
     headers: {
-      authorization: token
+      'X-Requested-With': 'XMLHttpRequest',
+      'Content-Type': 'application/json',
+      Authorization: token
     },
     body: JSON.stringify({
       _id,
@@ -49,7 +51,7 @@ const synchronize = async (
       actions,
       engine,
       engineOptions,
-      meta: PROGRESSION_META
+      meta: META
     })
   });
 
@@ -60,7 +62,23 @@ const synchronize = async (
   return;
 };
 
-const save = async (progression: Progression) => {
+const addCreatedAtToAction = (progression: Progression): Progression => {
+  const now = new Date().toISOString();
+  return {
+    ...progression,
+    actions:
+      progression.actions &&
+      progression.actions.map((action: Action): Action => {
+        // $FlowFixMe spread operator
+        return {
+          ...action,
+          createdAt: action.createdAt || now
+        };
+      })
+  };
+};
+
+const persist = async (progression: Progression): Promise<Progression> => {
   const {_id} = progression;
   if (_id === undefined) throw new TypeError('progression has no property _id');
 
@@ -72,6 +90,9 @@ const save = async (progression: Progression) => {
 
   return progression;
 };
+
+const save = (progression: Progression): Promise<Progression> =>
+  persist(addCreatedAtToAction(progression));
 
 const findLast = async (engineRef: string, contentRef: string) => {
   const key = buildLastProgressionKey(engineRef, contentRef);

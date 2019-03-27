@@ -68,6 +68,7 @@ export const createProgression = ({
     actions: [
       {
         type: 'move',
+        createdAt: new Date().toISOString(),
         payload: {
           instructions: null,
           nextContent: {
