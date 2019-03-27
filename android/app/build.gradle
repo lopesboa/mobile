@@ -116,6 +116,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-device-info')
     implementation project(':react-native-orientation-locker')
     implementation project(':react-native-splash-screen')
     implementation project(':react-native-camera');

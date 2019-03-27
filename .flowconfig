@@ -33,6 +33,9 @@
 ; React-native-linear-gradient
 .*/node_modules/react-native-linear-gradient
 
+; React-native-keyboard-aware-scroll-view
+.*/node_modules/react-native-keyboard-aware-scroll-view
+
 [include]
 
 [libs]

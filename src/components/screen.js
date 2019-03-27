@@ -55,6 +55,7 @@ class Screen extends React.PureComponent<Props> {
             showsHorizontalScrollIndicator={false}
             testID={testID}
             ref={this.handleRef}
+            nestedScrollEnabled
           >
             {children}
           </ScrollView>

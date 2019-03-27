@@ -1,10 +1,11 @@
 // @flow
 
 import * as React from 'react';
-import {Platform} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
+import DeviceInfo from 'react-native-device-info';
 
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
@@ -48,7 +49,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
   handleExpand = () => {
     if (this.videoPlayer) {
       this.videoPlayer.player.ref.presentFullscreenPlayer();
-      orientation.lockToLandscape();
+      if (!DeviceInfo.isTablet()) {
+        orientation.lockToLandscape();
+      }
       this.setState({
         isFullScreen: true
       });
@@ -61,7 +64,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
   handleShrink = () => {
     if (this.videoPlayer) {
       this.videoPlayer.player.ref.dismissFullscreenPlayer();
-      orientation.unlockAllOrientations();
+      if (!DeviceInfo.isTablet()) {
+        orientation.lockToPortrait();
+      }
       this.setState({
         isFullScreen: false
       });
@@ -109,24 +114,27 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   render() {
     return (
-      <Video
-        source={this.props.source}
-        preview={this.props.preview}
-        height={this.props.height}
-        step={this.state.step}
-        subtitles={this.props.subtitles}
-        hasSubtitles={this.state.hasSubtitles}
-        isFullScreen={this.state.isFullScreen}
-        onPlay={this.handlePlay}
-        onEnd={this.handleEnd}
-        onReady={this.handleReady}
-        onExpand={this.handleExpand}
-        onShrink={this.handleShrink}
-        onSubtitlesToggle={this.handleSubtitlesToggle}
-        onRef={this.handleRef}
-        testID={this.props.testID}
-        extralifeOverlay={this.props.extralifeOverlay}
-      />
+      <React.Fragment>
+        <StatusBar hidden={this.state.isFullScreen} />
+        <Video
+          source={this.props.source}
+          preview={this.props.preview}
+          height={this.props.height}
+          step={this.state.step}
+          subtitles={this.props.subtitles}
+          hasSubtitles={this.state.hasSubtitles}
+          isFullScreen={this.state.isFullScreen}
+          onPlay={this.handlePlay}
+          onEnd={this.handleEnd}
+          onReady={this.handleReady}
+          onExpand={this.handleExpand}
+          onShrink={this.handleShrink}
+          onSubtitlesToggle={this.handleSubtitlesToggle}
+          onRef={this.handleRef}
+          testID={this.props.testID}
+          extralifeOverlay={this.props.extralifeOverlay}
+        />
+      </React.Fragment>
     );
   }
 }

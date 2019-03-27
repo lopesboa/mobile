@@ -10979,6 +10979,11 @@ react-native-card-flip@^1.0.4:
   dependencies:
     prop-types "15.5.10"
 
+react-native-device-info@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-1.1.0.tgz#bcf5b0d4522413eb9970e4299d5bed29ba28b602"
+  integrity sha512-RfWBWTHTyFDDC/Xg4FG0VXE/hv98JkkCGCy5yUzSPT4lIQVHRo5/vN73T4dYR8P9wA8MSlATtqm2Wx+TOnk/Kg==
+
 react-native-gesture-handler@^1.0.0, react-native-gesture-handler@^1.0.10:
   version "1.0.15"
   resolved "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.0.15.tgz#7e0d0a457820a3c9325a3d492daaed14400508a6"
@@ -10987,6 +10992,19 @@ react-native-gesture-handler@^1.0.0, react-native-gesture-handler@^1.0.10:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
+
+react-native-iphone-x-helper@^1.0.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.0.tgz#9f8a376eb00bc712115abff4420318a0063fa796"
+  integrity sha512-xIeTo4s77wwKgBZLVRIZC9tM9/PkXS46Ul76NXmvmixEb3ZwqGdQesR3zRiLMOoIdfOURB6N9bba9po7+x9Bag==
+
+react-native-keyboard-aware-scroll-view@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.8.0.tgz#00bcaa38c91323913bb7a733059ad2bc4875f88c"
+  integrity sha512-gPfhgHQI/z7Cc5aeNOEmK0b250QkAeU6V+4oH8EC7mmFneEKn6MAIDjpoiwqt6bV+lFJPABXfx9MtrRmtCeJ/Q==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-iphone-x-helper "^1.0.3"
 
 react-native-linear-gradient@^2.5.3:
   version "2.5.3"
@@ -11001,10 +11019,10 @@ react-native-localization@^2.0.3:
     react "^16.0.0"
     react-localization "^1.0.13"
 
-react-native-orientation-locker@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/react-native-orientation-locker/-/react-native-orientation-locker-1.1.1.tgz#1192fc9b0571c9bdf749633d553104f7bbc72c16"
-  integrity sha512-JFypx9gJulWT0H3izHMMZgQikeELtYTZDQbrip1RI3bnY7V1vY5uZ0XsmKCR2BSWXWXfx8wLBa69QpI9+CA8rw==
+react-native-orientation-locker@1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/react-native-orientation-locker/-/react-native-orientation-locker-1.1.5.tgz#695babee0e0b97a9620a12bb677792d0b9b88ef8"
+  integrity sha512-RY2kwXK1SNq8+nQN0xVCTdi0A08FnUtzR4dOOEm2dGUUIcxSqnseE7adx5cr+oqwd0WUqb043MS+NKDPMUCmMA==
 
 react-native-pdf@5.0.8:
   version "5.0.8"
