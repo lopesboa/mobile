@@ -17,15 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>0.42.2-v4312</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string />
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<true />
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -33,7 +33,7 @@
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
+				<true />
 			</dict>
 		</dict>
 	</dict>
@@ -64,13 +64,11 @@
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIRequiresFullScreen</key>
-	<true/>
+	<true />
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UIRequiresFullScreen</key>
-	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -78,29 +76,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-  <!-- for react-native-camera -->
-  <key>NSCameraUsageDescription</key>
-  <!-- @todo localize this translation -->
-  <string>Used to scan QR codes</string>
-  <!-- for react-native-permisions -->
-  <key>NSBluetoothPeripheralUsageDescription</key>
-  <string>Some description</string>
-  <key>NSCalendarsUsageDescription</key>
-  <string>Some description</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Some description</string>
-  <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>Some description</string>
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>Some description</string>
-  <key>NSSpeechRecognitionUsageDescription</key>
-  <string>Some description</string>
-  <key>NSAppleMusicUsageDescription</key>
-  <string>Some description</string>
-  <key>NSMotionUsageDescription</key>
-  <string>Some description</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>Some description</string>
+	<false />
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Some description</string>
 </dict>
 </plist>
