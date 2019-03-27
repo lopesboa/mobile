@@ -4,13 +4,13 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
+import {BottomTabBar as TabBar} from 'react-navigation';
 import {getRoute, selectRoute, hasSeenLesson} from '@coorpacademy/player-store';
 
 import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
-import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingVertical: theme.spacing.tiny,
     paddingHorizontal: DEFAULT_HEIGHT / 2
+  },
+  hidden: {
+    display: 'none'
   }
 });
 
@@ -110,12 +113,15 @@ class TabBarSlide extends React.Component<Props> {
     return renderIcon(scene);
   };
 
-  getButtonComponent = (scene: TabScene) => {
+  getButtonComponent = (scene: TabScene): React$Element<*> => {
     const {getButtonComponent, hasNoContext} = this.props;
-    const HiddenView = () => <View style={{display: 'none'}} />;
+    const HiddenView = () => <View style={styles.hidden} />;
+
     if (scene.route.key === 'Context' && hasNoContext) {
+      // $FlowFixMe dont understand why it cries
       return HiddenView;
     }
+
     return getButtonComponent(scene);
   };
 

@@ -10,7 +10,8 @@ export type Layout = {|
 |};
 
 export type WithLayoutProps = {|
-  layout?: Layout
+  layout?: Layout,
+  containerStyle?: GenericStyleProp
 |};
 
 const styles: GenericStyleProp = StyleSheet.create({
@@ -42,8 +43,10 @@ function withLayout<P>(
       });
 
     render() {
+      const {containerStyle} = this.props;
+
       return (
-        <View onLayout={this.handleLayout} style={styles.container}>
+        <View onLayout={this.handleLayout} style={[styles.container, containerStyle]}>
           <WrappedComponent {...this.props} layout={this.state.layout} />
         </View>
       );

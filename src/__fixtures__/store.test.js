@@ -133,6 +133,10 @@ describe('storeFixture', () => {
 
     const permissionsState = {};
 
+    const videoState = {
+      isFullScreen: false
+    };
+
     const progression = createProgression({
       engine: 'microlearning',
       progressionContent: {
@@ -207,14 +211,14 @@ describe('storeFixture', () => {
       navigation: {
         currentNavigatorName: 'dummyNavigatorName',
         currentAppScreenName: 'dummycurrentAppScreenName',
-        isHidden: false,
         currentScreenName: 'dummyScreenName',
         currentTabName: 'dummyScreenName'
       },
       disciplineBundle: disciplineBundleState,
       cards: cardsState,
       permissions: permissionsState,
-      authentication: authenticationState
+      authentication: authenticationState,
+      video: videoState
     };
 
     const result = createStoreState({

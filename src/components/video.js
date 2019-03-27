@@ -6,6 +6,7 @@ import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {TextTrackType} from 'react-native-video';
 import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
 import RNFetchBlob from 'rn-fetch-blob';
+import {BlackPortal, WhitePortal} from 'react-native-portal';
 
 import theme from '../modules/theme';
 import {RESOURCE_TYPE} from '../const';
@@ -32,9 +33,10 @@ type Props = {|
   onPlay: () => void,
   onEnd: () => void,
   onReady: () => void,
-  onExpand?: () => void,
-  onShrink?: () => void,
+  onExpand?: () => Promise<void> | void,
+  onShrink?: () => Promise<void> | void,
   onSubtitlesToggle?: () => void,
+  onProgress?: () => void,
   onRef?: (VideoPlayer | null) => void,
   testID?: string,
   extralifeOverlay?: boolean
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
   fullScreen: {
     ...Platform.select({
       android: {
-        zIndex: 1000,
+        zIndex: 10000,
         position: 'absolute',
         top: 0,
         left: 0,
@@ -107,6 +109,7 @@ const Video = ({
   onShrink,
   onSubtitlesToggle,
   onRef,
+  onProgress,
   testID,
   extralifeOverlay = false
 }: Props) => {
@@ -150,28 +153,34 @@ const Video = ({
         />
       )}
       {[STEP.PLAY, STEP.END].includes(step) && (
-        <VideoPlayer
-          testID={'video' + testIDFullscreenSuffix}
-          source={source}
-          ref={onRef}
-          style={styles.video}
-          resizeMode="contain"
-          disableVolume
-          disableBack
-          disableFullscreen={Boolean(!onExpand && !onShrink)}
-          toggleResizeModeOnFullscreen={false}
-          isFullscreen={isFullScreen}
-          onEnterFullscreen={onExpand}
-          onExitFullscreen={onShrink}
-          onFullscreenPlayerWillDismiss={onShrink}
-          onEnd={onEnd}
-          onReadyForDisplay={onReady}
-          onCC={onSubtitlesToggle}
-          disableCC={!subtitlesUri}
-          textTracks={(subtitlesUri && subtitles) || undefined}
-          selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
-          isCC={hasSubtitles}
-        />
+        <React.Fragment>
+          <BlackPortal name="video">
+            <VideoPlayer
+              testID={'video' + testIDFullscreenSuffix}
+              source={source}
+              ref={onRef}
+              style={styles.video}
+              resizeMode="contain"
+              disableVolume
+              disableBack
+              disableFullscreen={Boolean(!onExpand && !onShrink)}
+              toggleResizeModeOnFullscreen={false}
+              isFullscreen={isFullScreen}
+              onEnterFullscreen={onExpand}
+              onExitFullscreen={onShrink}
+              onFullscreenPlayerWillDismiss={onShrink}
+              onEnd={onEnd}
+              onReadyForDisplay={onReady}
+              onProgress={onProgress}
+              onCC={onSubtitlesToggle}
+              disableCC={!subtitlesUri}
+              textTracks={(subtitlesUri && subtitles) || undefined}
+              selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
+              isCC={hasSubtitles}
+            />
+          </BlackPortal>
+          {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
+        </React.Fragment>
       )}
       {step === STEP.END && (
         <ResourceOverlay>

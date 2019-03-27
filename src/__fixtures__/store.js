@@ -141,7 +141,6 @@ export const createStoreState = ({
     navigation: {
       currentNavigatorName: 'dummyNavigatorName',
       currentAppScreenName: 'dummycurrentAppScreenName',
-      isHidden: false,
       currentScreenName: 'dummyScreenName',
       currentTabName: 'dummyScreenName'
     },
@@ -151,6 +150,9 @@ export const createStoreState = ({
     authentication: {
       token: '__TOKEN__',
       brand: null
+    },
+    video: {
+      isFullScreen: false
     }
   };
 };

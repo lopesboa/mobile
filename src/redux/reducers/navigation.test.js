@@ -1,6 +1,6 @@
 // @flow strict
 
-import {NAVIGATION_SCREEN_CHANGE, NAVIGATION_SHOW, NAVIGATION_HIDE} from '../actions/navigation';
+import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action} from '../actions/navigation';
 import reducer from './navigation';
 import type {State} from './navigation';
@@ -9,8 +9,7 @@ describe('Navigation', () => {
   const expectedInitialState: State = {
     currentNavigatorName: 'App',
     currentAppScreenName: 'Splash',
-    currentScreenName: 'Splash',
-    isHidden: false
+    currentScreenName: 'Splash'
   };
 
   it('Default', () => {
@@ -43,29 +42,5 @@ describe('Navigation', () => {
       };
       expect(result).toEqual(expected);
     });
-  });
-
-  it(NAVIGATION_SHOW, () => {
-    const action: Action = {
-      type: NAVIGATION_SHOW
-    };
-    const result = reducer({...expectedInitialState, isHidden: true}, action);
-    const expected: State = {
-      ...expectedInitialState,
-      isHidden: false
-    };
-    expect(result).toEqual(expected);
-  });
-
-  it(NAVIGATION_HIDE, () => {
-    const action: Action = {
-      type: NAVIGATION_HIDE
-    };
-    const result = reducer({...expectedInitialState, isHidden: false}, action);
-    const expected: State = {
-      ...expectedInitialState,
-      isHidden: true
-    };
-    expect(result).toEqual(expected);
   });
 });

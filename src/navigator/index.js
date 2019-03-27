@@ -3,17 +3,12 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
-import type {
-  NavigationAction,
-  NavigationState,
-  NavigationStackRouterConfig
-} from 'react-navigation';
+import type {NavigationAction, NavigationState} from 'react-navigation';
 import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 import orientation from 'react-native-orientation-locker';
 import DeviceInfo from 'react-native-device-info';
 
 import theme from '../modules/theme';
-import Header from '../containers/header';
 import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
@@ -28,8 +23,6 @@ import navigationOptions, {
   navigationOptionsWithoutHeader,
   HEADER_BACKGROUND_COLOR
 } from './navigation-options';
-
-const _Header = (props: NavigationStackRouterConfig) => <Header {...props} />;
 
 const appNavigator = createStackNavigator(
   {
@@ -72,7 +65,6 @@ const appNavigator = createStackNavigator(
     initialRouteName: 'Splash',
     defaultNavigationOptions: {
       ...navigationOptions,
-      header: _Header,
       headerBackImage: (
         <NovaCompositionNavigationArrowLeft height={16} width={16} color={theme.colors.gray.dark} />
       ),

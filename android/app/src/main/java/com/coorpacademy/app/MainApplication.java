@@ -2,6 +2,7 @@ package com.coorpacademy.app;
 
 import android.app.Application;
 
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import org.reactnative.camera.RNCameraPackage;
 import org.wonday.pdf.RCTPdfView;
 import com.RNFetchBlob.RNFetchBlobPackage;
@@ -17,7 +18,6 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          new RNDeviceInfo(),
           new SplashScreenReactPackage(),
           new RNCameraPackage(),
           new RNFetchBlobPackage(),
@@ -43,8 +44,7 @@ public class MainApplication extends Application implements ReactApplication {
           new ReactNativeLocalizationPackage(),
           new SvgPackage(),
           new LinearGradientPackage(),
-          new RNGestureHandlerPackage(),
-          new RNDeviceInfo()
+          new RNGestureHandlerPackage()
       );
     }
 

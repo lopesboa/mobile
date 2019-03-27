@@ -15,15 +15,15 @@ type Props = {|
   ...CardProps,
   ...CardHeaderProps,
   height: number,
-  fullScreenHeight: number,
-  isFullScreen?: boolean,
+  expandedHeight: number,
+  isExpanded?: boolean,
   offsetBottom: number,
-  fullScreenOffsetBottom: number,
+  expandedOffsetBottom: number,
   testID?: string
 |};
 
 type State = {|
-  isFullScreen: boolean
+  isExpanded: boolean
 |};
 
 const styles = StyleSheet.create({
@@ -37,6 +37,13 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: theme.radius.card,
     borderBottomRightRadius: theme.radius.card,
     backgroundColor: theme.colors.white
+  },
+  noPadding: {paddingTop: 0, paddingHorizontal: 0},
+  gradient: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    right: 0
   }
 });
 
@@ -46,7 +53,7 @@ class CardScalable extends React.PureComponent<Props, State> {
   props: Props;
 
   state: State = {
-    isFullScreen: Boolean(this.props.isFullScreen)
+    isExpanded: Boolean(this.props.isExpanded)
   };
 
   top: Animated.Value = new Animated.Value(0);
@@ -55,23 +62,23 @@ class CardScalable extends React.PureComponent<Props, State> {
 
   componentWillReceiveProps = (props: Props) =>
     this.setState({
-      isFullScreen: Boolean(props.isFullScreen)
+      isExpanded: Boolean(props.isExpanded)
     });
 
   componentWillUpdate = (nextProps: Props, nextState: State) => {
-    const {offsetBottom, fullScreenOffsetBottom} = this.props;
-    const {isFullScreen} = nextState;
+    const {offsetBottom, expandedOffsetBottom} = this.props;
+    const {isExpanded} = nextState;
 
-    if (this.state.isFullScreen !== isFullScreen) {
-      const {height, fullScreenHeight} = this.props;
+    if (this.state.isExpanded !== isExpanded) {
+      const {height, expandedHeight} = this.props;
 
       Animated.parallel([
         Animated.timing(this.top, {
-          toValue: isFullScreen ? -((fullScreenHeight - height + fullScreenOffsetBottom) / 2) : 0,
+          toValue: isExpanded ? -((expandedHeight - height + expandedOffsetBottom) / 2) : 0,
           duration: ANIMATION_DURATION
         }),
         Animated.timing(this.height, {
-          toValue: isFullScreen ? fullScreenHeight : height - offsetBottom,
+          toValue: isExpanded ? expandedHeight : height - offsetBottom,
           duration: ANIMATION_DURATION
         })
       ]).start();
@@ -80,24 +87,24 @@ class CardScalable extends React.PureComponent<Props, State> {
 
   handlePress = () =>
     this.setState((state: State) => ({
-      isFullScreen: !state.isFullScreen
+      isExpanded: !state.isExpanded
     }));
 
   render() {
     const {type, title, isCorrect, children, style, testID} = this.props;
+
     return (
       <Animated.View style={{...style, height: this.height, top: this.top}}>
         <TouchableOpacity onPress={this.handlePress} activeOpacity={1} style={styles.expanded}>
           <Card testID={testID} type={CARD.DECK_SWIPE}>
             <CardHeader type={type} title={title} isCorrect={isCorrect} />
-            <View
-              style={[
-                styles.content,
-                type === CARD_TYPE.RESOURCE && {paddingTop: 0, paddingHorizontal: 0}
-              ]}
-            >
+            <View style={[styles.content, type === CARD_TYPE.RESOURCE && styles.noPadding]}>
               {children}
-              <Gradient height={theme.spacing.large} colors={[theme.colors.white]} />
+              <Gradient
+                height={theme.spacing.large}
+                colors={[theme.colors.white]}
+                style={styles.gradient}
+              />
             </View>
           </Card>
         </TouchableOpacity>

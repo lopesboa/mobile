@@ -27,7 +27,7 @@ const Progression = ({isHidden, current, count}: Props) => {
 };
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  isHidden: state.navigation.isHidden,
+  isHidden: state.video.isFullScreen,
   current: getCurrentStep(state),
   count: getNbSlides(state)
 });

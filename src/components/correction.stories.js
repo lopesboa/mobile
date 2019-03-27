@@ -33,6 +33,28 @@ const fakeLayout: Layout = {
 };
 
 storiesOf('Correction', module)
+  .add('Default', () => (
+    <TestContextProvider>
+      <View style={fakeLayout}>
+        <Correction
+          answers={answers}
+          userAnswers={answers.concat(['Anything else'])}
+          tip={
+            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
+          }
+          isCorrect={false}
+          onButtonPress={handleFakePress}
+          question={question}
+          keyPoint="The KEY POINT"
+          isLoading={false}
+          resources={[resources[0], resources[1]]}
+          lives={3}
+          onPDFButtonPress={handleFakePress}
+          onVideoPlay={handleFakePress}
+        />
+      </View>
+    </TestContextProvider>
+  ))
   .add('Bad answer', () => (
     <TestContextProvider>
       <View style={fakeLayout}>
@@ -43,10 +65,8 @@ storiesOf('Correction', module)
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
           }
           isCorrect={false}
-          title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -67,11 +87,9 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -97,11 +115,9 @@ storiesOf('Correction', module)
             tip={
               "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
             }
-            title="Oops..."
             isCorrect={false}
             onButtonPress={handleFakePress}
             question={question}
-            correctionSubtitle="Bad Answer"
             keyPoint="The KEY POINT"
             layout={fakeLayout}
             isLoading={false}
@@ -123,11 +139,9 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -150,10 +164,8 @@ storiesOf('Correction', module)
           }
           isCorrect={false}
           isLoading={false}
-          title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -173,11 +185,9 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -200,10 +210,8 @@ storiesOf('Correction', module)
           }
           isCorrect={false}
           isResourceViewed={false}
-          title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -223,12 +231,10 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           resources={[resources[0], resources[1]]}
@@ -248,12 +254,10 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}
@@ -273,12 +277,10 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -298,12 +300,10 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           isResourceViewed
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -327,14 +327,12 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Good job!"
           isCorrect
           isResourceViewed={false}
           offeringExtraLife={false}
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Good Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -355,13 +353,11 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           isResourceViewed={false}
           showResourcesFirst
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -384,11 +380,9 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -413,14 +407,12 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           isResourceViewed
           offeringExtraLife={false}
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -441,14 +433,12 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           isResourceViewed={false}
           offeringExtraLife={false}
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -469,13 +459,11 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           isResourceViewed={false}
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -498,14 +486,12 @@ storiesOf('Correction', module)
           tip={
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
           }
-          title="Oops..."
           isCorrect={false}
           isResourceViewed
           offeringExtraLife={false}
           showResourcesFirst={false}
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading
@@ -527,10 +513,8 @@ storiesOf('Correction', module)
             "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you"
           }
           isCorrect={false}
-          title="Oops..."
           onButtonPress={handleFakePress}
           question={question}
-          correctionSubtitle="Bad Answer"
           keyPoint="The KEY POINT"
           layout={fakeLayout}
           isLoading={false}

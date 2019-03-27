@@ -2942,9 +2942,12 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Object {
-                        "flex": 1,
-                      }
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ]
                     }
                   />
                 </View>
@@ -3067,9 +3070,12 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Object {
-                        "flex": 1,
-                      }
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ]
                     }
                   />
                 </View>
@@ -3192,9 +3198,12 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Object {
-                        "flex": 1,
-                      }
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ]
                     }
                   />
                 </View>
@@ -3317,9 +3326,12 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Object {
-                        "flex": 1,
-                      }
+                      Array [
+                        Object {
+                          "flex": 1,
+                        },
+                        undefined,
+                      ]
                     }
                   />
                 </View>

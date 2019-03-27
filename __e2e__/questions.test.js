@@ -55,7 +55,7 @@ describe('Questions', () => {
       it('should see elements', async () => {
         await weExpect(element(by.id('correction-error'))).toBeVisible();
         await weExpect(element(by.id('correction-title'))).toBeVisible();
-        await weExpect(element(by.id('correction-subtitle'))).toBeVisible();
+        await weExpect(element(by.id('correction-explanation'))).toBeVisible();
         await weExpect(element(by.id('card-correction'))).toBeVisible();
         await weExpect(element(by.id('card-keypoint'))).toExist();
         await weExpect(element(by.id('card-tip'))).toExist();
@@ -115,7 +115,7 @@ describe('Questions', () => {
       it('should see elements', async () => {
         await weExpect(element(by.id('correction-success'))).toBeVisible();
         await weExpect(element(by.id('correction-title'))).toBeVisible();
-        await weExpect(element(by.id('correction-subtitle'))).toBeVisible();
+        await weExpect(element(by.id('correction-explanation'))).toBeVisible();
         await weExpect(element(by.id('card-tip'))).toBeVisible();
         await weExpect(element(by.id('card-keypoint'))).toExist();
         await weExpect(element(by.id('card-correction'))).toExist();

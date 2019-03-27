@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.gray.light,
     width: '100%',
     paddingVertical: theme.spacing.small,
-    paddingHorizontal: theme.spacing.xlarge
+    paddingHorizontal: theme.spacing.base
   },
   bottomText: {
     color: theme.colors.gray.dark

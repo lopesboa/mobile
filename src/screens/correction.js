@@ -17,8 +17,8 @@ import {
   hasSeenLesson as checkHasSeenLesson,
   play
 } from '@coorpacademy/player-store';
-import translations from '../translations';
 
+import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
@@ -36,8 +36,6 @@ export type Params = {|
 |};
 
 type ConnectedStateProps = {|
-  title: string,
-  correctionSubtitle: string,
   nextScreen?: string,
   isCorrect?: boolean,
   isFinished?: boolean,
@@ -170,7 +168,6 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     } = this.props.navigation.state.params;
 
     const {
-      title,
       resultLabel,
       isCorrect,
       lives: realLives,
@@ -188,7 +185,6 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <Correction
-          title={title}
           resultLabel={resultLabel}
           tip={tip}
           answers={answers}
@@ -229,8 +225,6 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     progression.state.content === undefined
   ) {
     return {
-      title: '',
-      correctionSubtitle: '',
       nextScreen: undefined,
       showResourcesFirst: false,
       isFinished: false,
@@ -247,8 +241,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const isCorrect = checkIsCorrect(state);
   const hasViewedAResource = checkHasSeenLesson(state, true);
   const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
-  const stateExtraLife = progression.state.nextContent.ref === 'extraLife';
-  const justAcceptedExtraLife = progression.state.content.ref === 'extraLife';
+  const stateExtraLife = progression.state.nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const justAcceptedExtraLife = progression.state.content.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
   const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
   const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
   const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
@@ -264,9 +258,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const showResourcesFirst =
     !isCorrect && (offeringExtraLife || consumedExtraLife || justAcceptedExtraLife);
 
-  const props = {
-    title: (isCorrect && translations.goodJob) || translations.ouch,
-    correctionSubtitle: (isCorrect && translations.goodAnswer) || translations.wrongAnswer,
+  return {
     nextScreen: getRoute(state),
     isFinished,
     isCorrect,
@@ -277,8 +269,6 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     canGoNext,
     showResourcesFirst
   };
-
-  return props;
 };
 
 export const mapDispatchToProps: ConnectedDispatchProps = {

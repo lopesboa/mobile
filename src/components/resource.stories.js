@@ -28,6 +28,20 @@ storiesOf('Resource', module)
       />
     </TestContextProvider>
   ))
+  .add('Video (with extra life)', () => (
+    <TestContextProvider>
+      <Resource
+        type={video.type}
+        url={video.url}
+        description={video.description}
+        thumbnail={video.poster}
+        height={200}
+        extralifeOverlay
+        onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
   .add('PDF', () => (
     <TestContextProvider>
       <Resource
@@ -36,6 +50,20 @@ storiesOf('Resource', module)
         description={pdf.description}
         thumbnail={pdf.poster}
         height={200}
+        onPDFButtonPress={handleFakePress}
+        onVideoPlay={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('PDF (with extra life)', () => (
+    <TestContextProvider>
+      <Resource
+        type={pdf.type}
+        url={pdf.url}
+        description={pdf.description}
+        thumbnail={pdf.poster}
+        height={200}
+        extralifeOverlay
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
       />
@@ -84,11 +112,7 @@ if (process.env.NODE_ENV === 'test') {
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([getCleanUri(pdf.url), pdf.description]);
     });
-  });
-}
 
-if (process.env.NODE_ENV === 'test') {
-  describe('Resource', () => {
     it('should handle onVideoPlay callback', () => {
       const handlePress = jest.fn();
       const component = renderer.create(

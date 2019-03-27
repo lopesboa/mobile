@@ -36,6 +36,9 @@
 ; React-native-keyboard-aware-scroll-view
 .*/node_modules/react-native-keyboard-aware-scroll-view
 
+; React-native-portal
+.*/node_modules/react-native-portal
+
 [include]
 
 [libs]

@@ -1123,7 +1123,7 @@ declare module 'react-navigation' {
     activeBackgroundColor?: string,
     inactiveTintColor?: string,
     inactiveBackgroundColor?: string,
-    getLabelText: (scene: _DrawerScene) => ?(React$Node | string),
+    getLabelText: (scene: _DrawerScene) => ?(React$Node | ((options: { tintColor: ?string, focused: boolean }) => ?React$Node) | string),
     renderIcon: (scene: _DrawerScene) => ?React$Node,
     onItemPress: (info: _DrawerItem) => void,
     itemsContainerForceInset?: Object,
@@ -1165,7 +1165,7 @@ declare module 'react-navigation' {
     tabBarPosition: string,
     navigation: NavigationScreenProp<NavigationState>,
     jumpToIndex: (index: number) => void,
-    getLabelText: (scene: TabScene) => ?(React$Node | string),
+    getLabelText: (scene: TabScene) => ?(React$Node | ((options: { tintColor: ?string, focused: boolean }) => ?React$Node) | string),
     getOnPress: (
       previousScene: NavigationRoute,
       scene: TabScene
@@ -1176,7 +1176,7 @@ declare module 'react-navigation' {
     }) => void,
     renderIcon: (scene: TabScene) => React$Element<*>,
     getButtonComponent: (scene: TabScene) => React$Element<*>,
-    onTabPress: (scene: TabScene) => React$Element<*>,
+    onTabPress: (scene: TabScene) => React$Element<*> | void,
     labelStyle?: TextStyleProp,
     iconStyle?: ViewStyleProp,
   };
@@ -1194,7 +1194,7 @@ declare module 'react-navigation' {
     position: AnimatedValue,
     navigation: NavigationScreenProp<NavigationState>,
     jumpToIndex: (index: number) => void,
-    getLabelText: (scene: TabScene) => ?(React$Node | string),
+    getLabelText: (scene: TabScene) => ?(React$Node | ((options: { tintColor: ?string, focused: boolean }) => ?React$Node) | string),
     getOnPress: (
       previousScene: NavigationRoute,
       scene: TabScene
@@ -1206,7 +1206,7 @@ declare module 'react-navigation' {
     getTestIDProps: (scene: TabScene) => (scene: TabScene) => any,
     renderIcon: (scene: TabScene) => React$Node,
     getButtonComponent: (scene: TabScene) => React$Element<*>,
-    onTabPress: (scene: TabScene) => React$Element<*>,
+    onTabPress: (scene: TabScene) => React$Element<*> | void,
     style?: ViewStyleProp,
     animateStyle?: ViewStyleProp,
     labelStyle?: TextStyleProp,

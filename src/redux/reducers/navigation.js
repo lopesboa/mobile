@@ -1,21 +1,19 @@
 // @flow strict
 
-import {NAVIGATION_SCREEN_CHANGE, NAVIGATION_SHOW, NAVIGATION_HIDE} from '../actions/navigation';
+import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action} from '../actions/navigation';
 
 export type State = {|
   currentNavigatorName: string,
   currentAppScreenName?: string,
   currentScreenName?: string,
-  currentTabName?: string,
-  isHidden: boolean
+  currentTabName?: string
 |};
 
 const initialState: State = {
   currentNavigatorName: 'App',
   currentAppScreenName: 'Splash',
-  currentScreenName: 'Splash',
-  isHidden: false
+  currentScreenName: 'Splash'
 };
 
 const reducer = (state: State = initialState, action: Action): State => {
@@ -27,18 +25,6 @@ const reducer = (state: State = initialState, action: Action): State => {
         currentAppScreenName: action.payload.currentAppScreenName,
         currentScreenName: action.payload.currentScreenName,
         currentTabName: action.payload.currentTabName
-      };
-    }
-    case NAVIGATION_SHOW: {
-      return {
-        ...state,
-        isHidden: false
-      };
-    }
-    case NAVIGATION_HIDE: {
-      return {
-        ...state,
-        isHidden: true
       };
     }
     default:

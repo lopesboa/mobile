@@ -13,6 +13,7 @@ import Cards from '../containers/cards-scalable';
 import LivesAnimated from '../containers/lives-animated';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
+import Resource from '../containers/resource-scalable';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
@@ -20,13 +21,10 @@ import Html from './html';
 import Space from './space';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
-import Resource from './resource';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
   ...WithLayoutProps,
-  title: string,
-  correctionSubtitle: string,
   tip: string,
   answers: Array<string>,
   question: string,
@@ -62,12 +60,12 @@ const styles = StyleSheet.create({
   negative: {
     backgroundColor: theme.colors.negative
   },
-  mainTitle: {
+  title: {
     color: theme.colors.white,
     fontSize: theme.fontSize.xxlarge,
     fontWeight: theme.fontWeight.bold
   },
-  subTitle: {
+  explanation: {
     fontSize: theme.fontSize.large,
     color: theme.colors.white
   },
@@ -87,16 +85,24 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     position: 'absolute',
     paddingHorizontal: PADDING_WIDTH,
     paddingTop: PADDING_WIDTH
   },
+  resourceTitleContainer: {
+    padding: theme.spacing.base,
+    justifyContent: 'center'
+  },
   resourceTitle: {
+    flex: 1,
     textAlign: 'center',
     fontSize: theme.fontSize.regular,
-    padding: theme.spacing.base,
     color: '#556e79',
     fontWeight: theme.fontWeight.bold
+  },
+  resource: {
+    flex: 0
   },
   footer: {
     paddingHorizontal: PADDING_WIDTH,
@@ -141,6 +147,17 @@ class Correction extends React.PureComponent<Props> {
     }
   }
 
+  getOffsetBottom = (): number => CARDS_LENGTH * 7;
+
+  getExpandedOffsetBottom = (): number => BUTTON_HEIGHT + PADDING_WIDTH;
+
+  getCardsExpandedHeight = (): number =>
+    // $FlowFixMe layout is defined as we check it before rendering Cards component
+    this.props.layout.height - PADDING_WIDTH * 2 - this.getExpandedOffsetBottom();
+
+  // @todo to be enhanced
+  getCardsHeight = (): number => CARDS_HEIGHT;
+
   renderCard = ({type, title: cardTitle, resource, offeringExtraLife}: Card) => {
     const {
       answers,
@@ -149,15 +166,10 @@ class Correction extends React.PureComponent<Props> {
       tip,
       keyPoint,
       isCorrect,
-      layout,
       onPDFButtonPress,
       onVideoPlay
     } = this.props;
     // This is the offset added by the deck swiper
-    const offsetBottom = CARDS_LENGTH * 7;
-    const fullScreenOffsetBottom = BUTTON_HEIGHT + PADDING_WIDTH;
-    // $FlowFixMe layout is defined as we check it before rendering Cards component
-    const fullScreenHeight = layout.height - PADDING_WIDTH * 2 - fullScreenOffsetBottom;
     const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
 
     return (
@@ -172,10 +184,10 @@ class Correction extends React.PureComponent<Props> {
               title={cardTitle}
               isCorrect={isCorrect}
               type={type}
-              height={CARDS_HEIGHT}
-              fullScreenHeight={fullScreenHeight}
-              offsetBottom={offsetBottom}
-              fullScreenOffsetBottom={fullScreenOffsetBottom}
+              height={this.getCardsHeight()}
+              expandedHeight={this.getCardsExpandedHeight()}
+              offsetBottom={this.getOffsetBottom()}
+              expandedOffsetBottom={this.getExpandedOffsetBottom()}
               style={styles.card}
               testID={
                 type !== CARD_TYPE.RESOURCE
@@ -203,26 +215,30 @@ class Correction extends React.PureComponent<Props> {
               )}
               {type === CARD_TYPE.RESOURCE &&
                 resource && (
-                  <View>
+                  <React.Fragment>
                     <Resource
                       type={resource.type}
                       url={resource.url}
                       description={resource.description}
                       thumbnail={resource.poster}
                       subtitles={subtitleUri}
-                      height={200}
                       onPDFButtonPress={onPDFButtonPress}
                       onVideoPlay={onVideoPlay}
                       testID={testIDSuffix}
                       extralifeOverlay={offeringExtraLife}
+                      containerStyle={styles.resource}
                     />
-                    <Text
-                      testID={'resource-description-' + testIDSuffix}
-                      style={styles.resourceTitle}
-                    >
-                      {resource.description}
-                    </Text>
-                  </View>
+                    <View style={styles.resourceTitleContainer}>
+                      <Html
+                        fontSize={theme.fontSize.regular}
+                        testID={'resource-description-' + testIDSuffix}
+                        style={styles.resourceTitle}
+                        isTextCentered
+                      >
+                        {resource.description}
+                      </Html>
+                    </View>
+                  </React.Fragment>
                 )}
             </CardComponent>
           );
@@ -233,8 +249,6 @@ class Correction extends React.PureComponent<Props> {
 
   render() {
     const {
-      title,
-      correctionSubtitle,
       isCorrect,
       onButtonPress,
       layout,
@@ -253,11 +267,11 @@ class Correction extends React.PureComponent<Props> {
       >
         <View style={styles.header}>
           <View>
-            <Text style={styles.mainTitle} testID="correction-title">
-              {title}
+            <Text style={styles.title} testID="correction-title">
+              {(isCorrect && translations.goodJob) || translations.ouch}
             </Text>
-            <Text style={styles.subTitle} testID="correction-subtitle">
-              {correctionSubtitle}
+            <Text style={styles.explanation} testID="correction-explanation">
+              {(isCorrect && translations.goodAnswer) || translations.wrongAnswer}
             </Text>
           </View>
           {lives !== undefined && (
@@ -274,7 +288,7 @@ class Correction extends React.PureComponent<Props> {
           <Cards
             items={cards}
             renderItem={this.renderCard}
-            cardStyle={{paddingTop: (layout.height - CARDS_HEIGHT) / 2}}
+            cardStyle={{paddingTop: (layout.height - this.getCardsHeight()) / 2}}
           />
         )}
         <Space type="base" />
