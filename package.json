@@ -49,7 +49,10 @@
     "pull:translations": "babel-node scripts/pull-translations.js",
     "postpull:translations": "eslint --fix src/translations",
     "notify:publication": "node scripts/notify-publication.js",
-    "postversion": "react-native-version --never-increment-build"
+    "postversion": "react-native-version --never-increment-build",
+    "version:should-release": "node scripts/should-release.js \"$(git log -1 --pretty=%B)\"",
+    "version:release-type": "node scripts/get-version-increment-for-commit.js \"$(git log -1 --pretty=%B)\"",
+    "version:auto-bump": "npm -s run version:should-release && npm version $(npm -s run version:release-type)"
   },
   "engines": {
     "yarn": "^1.12.3"

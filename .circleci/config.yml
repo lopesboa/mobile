@@ -388,6 +388,18 @@ jobs:
           name: Build and Publish
           command: cd ios && bundle exec fastlane beta
 
+  increment_version:
+    working_directory: ~/app
+    docker:
+      - image: circleci/android:api-28-node
+    steps:
+      - checkout
+      - run:
+          name: Increment Version
+          command: npm run version:auto-bump
+      - run:
+          name: Push version to repository
+          command: git push && git push --tags
 workflows:
   version: 2
   tests-build-deploy:
@@ -419,13 +431,19 @@ workflows:
       - deploy_ios:
          requires:
            - build_ios
+  auto-increment-package-version:
+    jobs:
+      - increment_version:
+          filters:
+            branches:
+              only: master
   publish-to-store:
     jobs:
       - publish_ios:
           filters:
-            branches:
-              only: master
+            tags:
+              only: /v.*/
       - publish_android:
           filters:
-            branches:
-              only: master
+            tags:
+              only: /v.*/
