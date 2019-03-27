@@ -1,7 +1,8 @@
 // @flow strict
+/* eslint import/max-dependencies: 0 */
 
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Dimensions, ScrollView} from 'react-native';
 import {NovaSolidStatusClose as CloseIcon} from '@coorpacademy/nova-icons';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import translations from '../translations';
@@ -9,6 +10,7 @@ import {getCleanUri} from '../modules/uri';
 import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import theme, {defaultHitSlop} from '../modules/theme';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
+import ButtonSticky from '../containers/button-sticky';
 import {STYLE as BOX_STYLE} from './box';
 import Card, {CARD_TYPE} from './card';
 import {getAuthorType, getAuthorName} from './catalog';
@@ -17,7 +19,7 @@ import CatalogItem from './catalog-item';
 import Starburst from './starburst';
 import HeartBroken from './heart-broken';
 import Trophy from './trophy';
-import Button from './button';
+import {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
@@ -37,7 +39,8 @@ export const NEGATIVE_COLOR = theme.colors.negative;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingBottom: BUTTON_HEIGHT + theme.spacing.base * 2
   },
   content: {
     paddingHorizontal: PADDING_WIDTH,
@@ -147,74 +150,83 @@ class LevelEnd extends React.PureComponent<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <View
-            style={[styles.container, backgroundColor]}
-            testID={`level-end-${isSuccess ? 'success' : 'error'}`}
-          >
-            <Starburst
-              style={styles.starburst}
-              spiralStyle={styles.starburstSpiral}
-              spiralColor="rgba(0,0,0,0.06)"
-              backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
-            />
-            <View style={styles.close}>
-              <TouchableOpacity testID="button-close" onPress={onClose} hitSlop={defaultHitSlop}>
-                <CloseIcon height={16} width={16} color={theme.colors.white} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.header}>
-              <Text style={styles.mainHeader} testID="level-end-header">
-                {header}
-              </Text>
-              {!isSuccess && (
-                <Text style={styles.subHeader} testID="level-end-subtitle">
-                  {translations.outOfLives}
-                </Text>
-              )}
-            </View>
-            {isSuccess ? (
-              <Trophy style={[styles.icon, {height: screenWidth}]} />
-            ) : (
-              <HeartBroken style={[styles.icon, {height: screenWidth}]} />
-            )}
+          <View>
+            <ScrollView>
+              <View
+                style={[styles.container, backgroundColor]}
+                testID={`level-end-${isSuccess ? 'success' : 'error'}`}
+              >
+                <Starburst
+                  style={styles.starburst}
+                  spiralStyle={styles.starburstSpiral}
+                  spiralColor="rgba(0,0,0,0.06)"
+                  backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
+                />
+                <View style={styles.close}>
+                  <TouchableOpacity
+                    testID="button-close"
+                    onPress={onClose}
+                    hitSlop={defaultHitSlop}
+                  >
+                    <CloseIcon height={16} width={16} color={theme.colors.white} />
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                  <Text style={styles.mainHeader} testID="level-end-header">
+                    {header}
+                  </Text>
+                  {!isSuccess && (
+                    <Text style={styles.subHeader} testID="level-end-subtitle">
+                      {translations.outOfLives}
+                    </Text>
+                  )}
+                </View>
+                {isSuccess ? (
+                  <Trophy style={[styles.icon, {height: screenWidth}]} />
+                ) : (
+                  <HeartBroken style={[styles.icon, {height: screenWidth}]} />
+                )}
 
-            <Space type="base" />
-            <View style={styles.content}>
-              <View style={styles.recommendedContent}>
-                <Text style={styles.title}>{translations.relatedSubjects}</Text>
-                <Card type={CARD_TYPE.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
-                  <CatalogItem
-                    title={recommendedContent.title}
-                    subtitle={recommendedContent.authors.map(author => author.label).join(', ')}
-                    progression={{
-                      current: recommendedContent.completion,
-                      count: 1
-                    }}
-                    image={{uri: getCleanUri(recommendedContent.image)}}
-                    authorType={getAuthorType(recommendedContent)}
-                    authorName={
-                      getAuthorType(recommendedContent) !== AUTHOR_TYPE.CUSTOM
-                        ? getAuthorName(recommendedContent)
-                        : brandTheme.name
-                    }
-                    badge={recommendedContent.isNew ? translations.new : ''}
-                    isAdaptive={recommendedContent.adaptiv}
-                    displayMode={CARD_DISPLAY_MODE.CARD}
-                    onPress={this.handleCardPress(recommendedContent)}
-                    testID={`recommend-item-${recommendedContent.universalRef.replace(/_/g, '-')}`}
-                    isCertified={getAuthorType(recommendedContent) === AUTHOR_TYPE.VERIFIED}
-                  />
-                </Card>
                 <Space type="base" />
-                <Button
-                  isInverted
-                  onPress={this.handleButtonPress}
-                  testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
-                >
-                  {(isSuccess && translations.nextLevel) || translations.retryLevel}
-                </Button>
+                <View style={styles.content}>
+                  <View style={styles.recommendedContent}>
+                    <Text style={styles.title}>{translations.relatedSubjects}</Text>
+                    <Card type={CARD_TYPE.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
+                      <CatalogItem
+                        title={recommendedContent.title}
+                        subtitle={recommendedContent.authors.map(author => author.label).join(', ')}
+                        progression={{
+                          current: recommendedContent.completion,
+                          count: 1
+                        }}
+                        image={{uri: getCleanUri(recommendedContent.image)}}
+                        authorType={getAuthorType(recommendedContent)}
+                        authorName={
+                          getAuthorType(recommendedContent) !== AUTHOR_TYPE.CUSTOM
+                            ? getAuthorName(recommendedContent)
+                            : brandTheme.name
+                        }
+                        badge={recommendedContent.isNew ? translations.new : ''}
+                        isAdaptive={recommendedContent.adaptiv}
+                        displayMode={CARD_DISPLAY_MODE.CARD}
+                        onPress={this.handleCardPress(recommendedContent)}
+                        testID={`recommend-item-${recommendedContent.universalRef.replace(
+                          /_/g,
+                          '-'
+                        )}`}
+                        isCertified={getAuthorType(recommendedContent) === AUTHOR_TYPE.VERIFIED}
+                      />
+                    </Card>
+                  </View>
+                </View>
               </View>
-            </View>
+            </ScrollView>
+            <ButtonSticky
+              onPress={this.handleButtonPress}
+              testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
+            >
+              {(isSuccess && translations.nextLevel) || translations.retryLevel}
+            </ButtonSticky>
           </View>
         )}
       </BrandThemeContext.Consumer>

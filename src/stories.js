@@ -4,6 +4,7 @@
 require('./components/authentication.stories.js');
 require('./components/box.stories.js');
 require('./components/brand-theme-provider.stories.js');
+require('./components/button-sticky.stories.js');
 require('./components/button.stories.js');
 require('./components/card-correction.stories.js');
 require('./components/card-header.stories.js');

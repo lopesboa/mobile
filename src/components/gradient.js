@@ -9,10 +9,11 @@ type Props = {|
   colors: Array<string>,
   height?: number,
   style?: GenericStyleProp,
-  testID?: string
+  testID?: string,
+  pointerEvents?: string
 |};
 
-const Gradient = ({children, colors, height, style, testID}: Props) => {
+const Gradient = ({children, colors, height, style, testID, pointerEvents}: Props) => {
   let calculatedColors = colors;
   if (colors.length === 1) {
     const {r, g, b} = Color(colors[0]).object();
@@ -20,7 +21,12 @@ const Gradient = ({children, colors, height, style, testID}: Props) => {
   }
 
   return (
-    <LinearGradient colors={calculatedColors} style={[style, height && {height}]} testID={testID}>
+    <LinearGradient
+      colors={calculatedColors}
+      style={[style, height && {height}]}
+      pointerEvents={pointerEvents}
+      testID={testID}
+    >
       {children}
     </LinearGradient>
   );

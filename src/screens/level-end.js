@@ -60,7 +60,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
 
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
     return (
-      <Screen testID="level-end-screen" noSafeArea style={{backgroundColor}}>
+      <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
         <LevelEnd
           recommendedContent={recommendedContent}
           isSuccess={isCorrect}
