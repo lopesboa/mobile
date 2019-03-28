@@ -32,10 +32,9 @@ type Props = {|
   onClose: () => void,
   isLevelUnlocked: boolean,
   bestScore: string,
-  hasNextContent: boolean,
   isLevelUnlocked: boolean,
   levelUnlockedName: string,
-  hasNextContent: boolean,
+  hasFinishedCourse: boolean,
   recommendedContent: DisciplineCard | ChapterCard
 |};
 
@@ -157,8 +156,8 @@ class LevelEnd extends React.PureComponent<Props> {
       bestScore,
       onClose,
       isLevelUnlocked,
-      hasNextContent,
       levelUnlockedName,
+      hasFinishedCourse,
       recommendedContent
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
@@ -169,6 +168,11 @@ class LevelEnd extends React.PureComponent<Props> {
       /{{levelName}}/g,
       levelUnlockedName
     );
+
+    const buttonTranslation =
+      (isSuccess && hasFinishedCourse && translations.backToHome) ||
+      (isSuccess && translations.nextLevel) ||
+      translations.retryLevel;
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
@@ -224,28 +228,35 @@ class LevelEnd extends React.PureComponent<Props> {
                     <Text style={styles.title}>{translations.relatedSubjects}</Text>
                     <Card type={CARD_TYPE.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
                       <CatalogItem
-                        title={recommendedContent.title}
-                        subtitle={recommendedContent.authors.map(author => author.label).join(', ')}
+                        title={recommendedContent && recommendedContent.title}
+                        subtitle={
+                          recommendedContent &&
+                          recommendedContent.authors.map(author => author.label).join(', ')
+                        }
                         progression={{
-                          current: recommendedContent.completion,
+                          current: recommendedContent && recommendedContent.completion,
                           count: 1
                         }}
-                        image={{uri: getCleanUri(recommendedContent.image)}}
-                        authorType={getAuthorType(recommendedContent)}
+                        image={{uri: getCleanUri(recommendedContent && recommendedContent.image)}}
+                        authorType={getAuthorType(recommendedContent && recommendedContent)}
                         authorName={
-                          getAuthorType(recommendedContent) !== AUTHOR_TYPE.CUSTOM
-                            ? getAuthorName(recommendedContent)
+                          getAuthorType(recommendedContent && recommendedContent) !==
+                          AUTHOR_TYPE.CUSTOM
+                            ? getAuthorName(recommendedContent && recommendedContent)
                             : brandTheme.name
                         }
-                        badge={recommendedContent.isNew ? translations.new : ''}
-                        isAdaptive={recommendedContent.adaptiv}
+                        badge={
+                          recommendedContent && recommendedContent.isNew ? translations.new : ''
+                        }
+                        isAdaptive={recommendedContent && recommendedContent.adaptiv}
                         displayMode={CARD_DISPLAY_MODE.CARD}
-                        onPress={this.handleCardPress(recommendedContent)}
-                        testID={`recommend-item-${recommendedContent.universalRef.replace(
-                          /_/g,
-                          '-'
-                        )}`}
-                        isCertified={getAuthorType(recommendedContent) === AUTHOR_TYPE.VERIFIED}
+                        onPress={this.handleCardPress(recommendedContent && recommendedContent)}
+                        testID={`recommend-item-${recommendedContent &&
+                          recommendedContent.universalRef.replace(/_/g, '-')}`}
+                        isCertified={
+                          getAuthorType(recommendedContent && recommendedContent) ===
+                          AUTHOR_TYPE.VERIFIED
+                        }
                       />
                     </Card>
                   </View>
@@ -256,9 +267,7 @@ class LevelEnd extends React.PureComponent<Props> {
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
             >
-              {(isSuccess && !hasNextContent && translations.backToHome) ||
-                (isSuccess && hasNextContent && translations.nextLevel) ||
-                translations.retryLevel}
+              {buttonTranslation}
             </ButtonSticky>
           </View>
         )}

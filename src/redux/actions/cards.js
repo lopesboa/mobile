@@ -16,6 +16,7 @@ export const FETCH_SUCCESS = '@@cards/FETCH_SUCCESS';
 export const FETCH_ERROR = '@@cards/FETCH_ERROR';
 export const SELECT_CARD = '@@cards/SELECT_CARD';
 export const SELECT_CARD_FAILURE = '@@cards/SELECT_CARD_FAILURE';
+export const REFRESH_CARD = '@@cards/REFRESH_CARD';
 
 export type FetchRequestPayload = {|
   language: SupportedLanguage
@@ -32,6 +33,11 @@ export type FetchErrorPayload = {|
 
 export type SelectCardPayload = {|
   item: DisciplineCard | ChapterCard
+|};
+
+export type RefreshCard = {|
+  item: DisciplineCard | ChapterCard,
+  language: SupportedLanguage
 |};
 
 export type SelectCardFailurePayload = {|
@@ -59,6 +65,10 @@ export type Action =
   | {|
       type: '@@cards/SELECT_CARD_FAILURE',
       payload: SelectCardFailurePayload
+    |}
+  | {|
+      type: '@@cards/REFRESH_CARD',
+      payload: RefreshCard
     |};
 
 export const fetchRequest = (language: SupportedLanguage): Action => ({
@@ -85,6 +95,18 @@ export const fetchError = (error: string): Action => ({
     error
   }
 });
+
+export const refreshCard = (
+  language: SupportedLanguage,
+  card: DisciplineCard | ChapterCard
+): Action => ({
+  type: REFRESH_CARD,
+  payload: {
+    language,
+    item: card
+  }
+});
+
 export const fetchCards = (language: SupportedLanguage): StoreAction<Action | BundleAction> => {
   return async (dispatch, getState, options) => {
     await dispatch(fetchRequest(language));
@@ -178,4 +200,33 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
       }
     }
   };
+};
+
+export const updateCard = (
+  language: SupportedLanguage,
+  card: DisciplineCard | ChapterCard
+): StoreAction<Action> => {
+  return async (dispatch, getState, options) => {
+    const {services} = options;
+    const refreshedCard = await services.Cards.refreshCard(card);
+    return dispatch(refreshCard(language, refreshedCard));
+  };
+};
+
+export const getAndRefreshCard = (
+  progressionId: string,
+  language: SupportedLanguage
+): StoreAction<Action> => async (dispatch, getState, options) => {
+  const {services} = options;
+
+  const progression = await services.Progressions.findById(progressionId);
+  if (
+    progression &&
+    (progression.content.type === 'chapter' || progression.content.type === 'level')
+  ) {
+    const card = await services.Cards.getCardFromLocalStorage(progression.content.ref, language);
+    if (card) {
+      return dispatch(updateCard(language, card));
+    }
+  }
 };

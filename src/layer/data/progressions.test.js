@@ -1,15 +1,19 @@
 // @flow
 import {AsyncStorage} from 'react-native';
-
-import {createProgression} from '../../__fixtures__/progression';
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
+import {createProgression, createState} from '../../__fixtures__/progression';
+import createCompletion from '../../__fixtures__/completion';
 import {
   findById,
   getAll,
   save,
   findLast,
   buildLastProgressionKey,
-  findBestOf
+  findBestOf,
+  buildCompletionKey,
+  mapProgressionToCompletion,
+  mergeCompletion,
+  storeOrReplaceCompletion
 } from './progressions';
 
 describe('progresssion', () => {
@@ -90,7 +94,7 @@ describe('progresssion', () => {
         .fn()
         .mockImplementationOnce((key, value) => {
           expect(key).toBe('progression_fakeProgressionId');
-          expect(JSON.parse(value)).toMatchObject(fakeProgression);
+          expect(JSON.parse(value)).toEqual(fakeProgression);
         })
         .mockImplementationOnce((key, value) => {
           expect(key).toBe('last_progression_learner_foo');
@@ -152,11 +156,13 @@ describe('progresssion', () => {
         ref: 'bar',
         type: 'discipline'
       };
+
+      const state = createState({nextContent});
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        state
       });
 
       AsyncStorage.getItem = jest.fn().mockImplementation(key => {
@@ -405,6 +411,174 @@ describe('progresssion', () => {
 
       const {synchronize} = require('./progressions');
       await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toBeInstanceOf(TypeError);
+    });
+
+    it('should return the completion key', () => {
+      expect(buildCompletionKey('hey', 'ho')).toBeDefined();
+    });
+
+    it('should map a progression to a completion -- with provided total', () => {
+      const progressionId = 'fakeProgressionId';
+      const fakeState = createState({
+        stars: 22,
+        step: {
+          current: 20
+        }
+      });
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        },
+        state: fakeState
+      });
+
+      const result = mapProgressionToCompletion(fakeProgression);
+
+      const expectedResult = {
+        current: 19,
+        stars: 22
+      };
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should map a progression to a completion -- without provided total', () => {
+      const progressionId = 'fakeProgressionId';
+      const fakeState = createState({
+        stars: 22,
+        step: {
+          current: 20
+        }
+      });
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        },
+        state: fakeState
+      });
+
+      const result = mapProgressionToCompletion(fakeProgression);
+
+      const expectedResult = {
+        current: 19,
+        stars: 22
+      };
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should map a progression to a completion -- without state', () => {
+      const progressionId = 'fakeProgressionId';
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        }
+      });
+
+      expect(() => mapProgressionToCompletion(fakeProgression)).toThrow();
+    });
+
+    it('should merge two completion into a single one', () => {
+      const completion1 = createCompletion({stars: 899, current: 33});
+      const completion2 = createCompletion({stars: 898, current: 22});
+      const result = mergeCompletion(completion1, completion2);
+      const expectedResult = {stars: 899, current: 22};
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should store the completion', async () => {
+      const progressionId = 'fakeProgressionId';
+
+      const fakeState = createState({
+        stars: 22,
+        step: {
+          current: 20,
+          total: 10
+        }
+      });
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        },
+        state: fakeState
+      });
+
+      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+        return Promise.resolve(undefined);
+      });
+
+      AsyncStorage.mergeItem = jest.fn().mockImplementation(key => {
+        return Promise.resolve(undefined);
+      });
+
+      AsyncStorage.setItem = jest.fn().mockImplementation(key => {
+        return Promise.resolve(undefined);
+      });
+
+      const expectedResult = {
+        stars: fakeState.stars,
+        current: 19
+      };
+      const result = await storeOrReplaceCompletion(fakeProgression);
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should update the completion', async () => {
+      const progressionId = 'fakeProgressionId';
+
+      const fakeState = createState({
+        stars: 22,
+        step: {
+          current: 20,
+          total: 10
+        }
+      });
+
+      const expectedMaxStarCount = 666;
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        },
+        state: fakeState
+      });
+
+      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+        return Promise.resolve(
+          JSON.stringify(createCompletion({stars: expectedMaxStarCount, current: 9}))
+        );
+      });
+
+      AsyncStorage.mergeItem = jest.fn().mockImplementation(key => {
+        return Promise.resolve(undefined);
+      });
+
+      const expectedResult = {
+        stars: expectedMaxStarCount,
+        current: 19
+      };
+      const result = await storeOrReplaceCompletion(fakeProgression);
+
+      expect(result).toEqual(expectedResult);
     });
   });
 

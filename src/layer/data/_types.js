@@ -83,7 +83,7 @@ export type ExitNode = $Exact<{
 }>;
 
 export type RestrictedResourceType = 'level' | 'chapter' | 'slide' | 'discipline';
-export type ResourceType = 'chapterRule' | 'exitNode' | RestrictedResourceType | 'card';
+export type ResourceType = 'chapterRule' | 'exitNode' | 'card' | RestrictedResourceType;
 
 export type ExtentedMedia = {|
   type?: string,
@@ -143,8 +143,7 @@ export type CardLevel = {|
 // @todo add properties to use
 export type CardCondition = {||};
 
-export type Card<T> = {|
-  type: CardType,
+export type ICard = {|
   image: string,
   time: number,
   adaptiv: boolean,
@@ -173,11 +172,11 @@ export type Card<T> = {|
   stars: number,
   completion: number,
   isNew: boolean,
-  favorite: boolean,
-  ...T
+  favorite: boolean
 |};
 
-export type DisciplineCard = Card<{|
+export type DisciplineCard = {|
+  ...ICard,
   type: 'course',
   conditions: Array<CardCondition>,
   defaultModuleLevel: LevelType,
@@ -185,9 +184,10 @@ export type DisciplineCard = Card<{|
   modules: Array<CardLevel>,
   nbChapters: number,
   skillsHidden: string
-|}>;
+|};
 
-export type ChapterCard = Card<{|
+export type ChapterCard = {|
+  ...ICard,
   type: 'chapter',
   isStandalone: boolean,
   isFirst: boolean,
@@ -197,8 +197,15 @@ export type ChapterCard = Card<{|
   isDone: boolean,
   status: CardStatus,
   accessible: boolean
-|}>;
+|};
 
 export type Resource = Slide | Discipline | Chapter | ExitNode | ChapterCard | DisciplineCard;
 
-export type Cards = Array<DisciplineCard | ChapterCard>;
+export type Card = DisciplineCard | ChapterCard;
+
+export type Cards = Array<Card>;
+
+export type Completion = {|
+  current: number,
+  stars: number
+|};

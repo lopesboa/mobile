@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {Action} from '../actions/cards';
-import {FETCH_SUCCESS} from '../actions/cards';
+import {FETCH_SUCCESS, REFRESH_CARD} from '../actions/cards';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
 
@@ -44,6 +44,20 @@ const reducer = (state: State = initialState, action: Action): State => {
         entities: {
           ...state.entities,
           ...reduceItems(items, language)
+        }
+      };
+    }
+
+    case REFRESH_CARD: {
+      const {language, item} = action.payload;
+      return {
+        ...state,
+        entities: {
+          ...state.entities,
+          [item.universalRef]: {
+            ...(state.entities[item.universalRef] || {}),
+            [language]: item
+          }
         }
       };
     }

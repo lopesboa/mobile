@@ -15,7 +15,7 @@ import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
 import {fetchDisciplineBundle, storeDisciplineBundle} from './core';
-import {fetchCards} from './cards';
+import {fetchCards, refreshCard, getCardFromLocalStorage} from './cards';
 import {fetchBrand} from './brand';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
 import {find as findRecommendations, getNextLevel} from './recommendations';
@@ -30,11 +30,13 @@ export type DataLayer = {
   storeDisciplineBundle: typeof storeDisciplineBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
+  refreshCard: typeof refreshCard,
+  getCardFromLocalStorage: typeof getCardFromLocalStorage,
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
   synchronizeProgression: typeof synchronizeProgression,
   getAllProgressions: typeof getAllProgressions,
   findBestOf: (language: SupportedLanguage) => Promise<number>,
-  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | null>
+  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | void>
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -57,6 +59,8 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   // $FlowFixMe
   findBestOf: findBestOf(userLanguage),
   findLast: findLastProgression,
+  refreshCard,
+  getCardFromLocalStorage,
   // @todo implement it
   getChapterRulesByContent: () => [],
   fetchDisciplineBundle,

@@ -78,7 +78,7 @@ export const createProgression = ({
         }
       }
     ],
-    state: createState(state)
+    state: state ? createState(state) : undefined
   };
 };
 

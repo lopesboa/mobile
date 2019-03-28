@@ -60,9 +60,9 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendedContent={disciplineNew}
       bestScore=""
-      hasNextContent={false}
       isLevelUnlocked={false}
       levelUnlockedName=""
+      hasFinishedCourse={false}
     />
   ))
   .add('Success', () => (
@@ -73,22 +73,22 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendedContent={chapterNew}
       bestScore="+20"
-      hasNextContent
+      hasFinishedCourse={false}
       isLevelUnlocked
       levelUnlockedName=""
     />
   ))
   .add('Failure Author Coorp', () => (
     <LevelEnd
-      isSuccess
+      isSuccess={false}
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={disciplineNewCoorp}
       bestScore=""
-      hasNextContent={false}
       isLevelUnlocked={false}
       levelUnlockedName=""
+      hasFinishedCourse={false}
     />
   ))
   .add('Success Author Coorp', () => (
@@ -99,12 +99,12 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendedContent={chapterNewCoorp}
       bestScore=""
-      hasNextContent
       isLevelUnlocked
       levelUnlockedName=""
+      hasFinishedCourse={false}
     />
   ))
-  .add('Success  Author Coorp (w/o hasNextContent)', () => (
+  .add('Finished', () => (
     <LevelEnd
       isSuccess
       onButtonPress={handleFakePress}
@@ -112,9 +112,9 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendedContent={chapterNewCoorp}
       bestScore=""
-      hasNextContent={false}
       isLevelUnlocked
       levelUnlockedName=""
+      hasFinishedCourse
     />
   ));
 
@@ -130,9 +130,9 @@ if (process.env.NODE_ENV === 'test') {
           onClose={handleFakePress}
           recommendedContent={disciplineNewCoorp}
           bestScore=""
-          hasNextContent={false}
           isLevelUnlocked={false}
           levelUnlockedName=""
+          hasFinishedCourse={false}
         />
       );
       const item = component.root.find(el => el.props.testID === 'recommend-item-dis-2');
@@ -150,9 +150,9 @@ if (process.env.NODE_ENV === 'test') {
           onClose={handleFakePress}
           recommendedContent={disciplineNew}
           bestScore=""
-          hasNextContent={false}
           isLevelUnlocked={false}
           levelUnlockedName=""
+          hasFinishedCourse={false}
         />
       );
       const item = component.root.find(el => el.props.testID === 'button-retry-level');

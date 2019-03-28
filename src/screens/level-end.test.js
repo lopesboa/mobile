@@ -209,7 +209,6 @@ describe('level-end', () => {
       navigation: {state: {params: {progressionId: 'progression1'}}}
     });
 
-    const hasNextContent = props.hasNextContent;
     const unlockedLevelInfo = props.unlockedLevelInfo;
     const currentContentUniversalRef =
       props && props.currentContent && props.currentContent.universalRef;
@@ -217,12 +216,10 @@ describe('level-end', () => {
     expect({
       currentContentUniversalRef: 'dis1',
       nextContentUniversalRef: 'dis1',
-      hasNextContent: true,
-      unlockedLevelInfo: {isUnlocked: true, levelName: 'advanced'}
+      unlockedLevelInfo: {isUnlocked: false, levelName: ''}
     }).toEqual({
       currentContentUniversalRef,
       nextContentUniversalRef,
-      hasNextContent,
       unlockedLevelInfo
     });
   });

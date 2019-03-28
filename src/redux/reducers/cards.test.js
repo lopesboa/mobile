@@ -1,9 +1,10 @@
 // @flow strict
 
 import {createDisciplineCard} from '../../__fixtures__/cards';
-import {FETCH_SUCCESS} from '../actions/cards';
+import {FETCH_SUCCESS, REFRESH_CARD} from '../actions/cards';
 import type {Action} from '../actions/cards';
 import reducer, {reduceItems} from './cards';
+
 import type {State} from './cards';
 
 const dis1 = createDisciplineCard({
@@ -59,6 +60,78 @@ describe('Cards', () => {
       const result = reducer(undefined, action);
       const expected: State = {
         entities: reduceItemsExpected
+      };
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe(REFRESH_CARD, () => {
+    it('Default', () => {
+      const language = 'en';
+      const intialState = {
+        entities: {
+          [dis1.universalRef]: {
+            [language]: dis1,
+            fr: dis1
+          },
+          [dis2.universalRef]: {
+            [language]: dis2,
+            fr: dis2
+          }
+        }
+      };
+
+      const dis3 = {
+        ...dis2,
+        universalRef: dis1.universalRef
+      };
+
+      const action: Action = {
+        type: REFRESH_CARD,
+        payload: {
+          item: dis3,
+          language: language
+        }
+      };
+      const result = reducer(intialState, action);
+      const expected: State = {
+        entities: {
+          ...intialState.entities,
+          [dis1.universalRef]: {
+            ...intialState.entities[dis1.universalRef],
+            [language]: dis3
+          }
+        }
+      };
+      expect(result).toEqual(expected);
+    });
+    it('if state is empty', () => {
+      const language = 'en';
+      const intialState = {
+        entities: {}
+      };
+
+      const dis3 = {
+        ...dis2,
+        universalRef: dis1.universalRef
+      };
+
+      const action: Action = {
+        type: REFRESH_CARD,
+        payload: {
+          item: dis3,
+          language: language
+        }
+      };
+      const result = reducer(intialState, action);
+      const expected: State = {
+        entities: {
+          ...intialState.entities,
+          [dis1.universalRef]: {
+            ...intialState.entities[dis1.universalRef],
+            [language]: dis3
+          }
+        }
       };
       expect(result).toEqual(expected);
     });

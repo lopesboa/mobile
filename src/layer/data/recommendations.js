@@ -7,6 +7,7 @@ import map from 'lodash/fp/map';
 
 import translations from '../../translations';
 import type {SupportedLanguage} from '../../translations/_types';
+import {pickNextLevel} from '../../utils/content';
 import type {DisciplineCard} from './_types';
 import {getCardFromLocalStorage} from './cards';
 import {find as findChapters} from './chapters';
@@ -27,10 +28,16 @@ const find = async (type: string, ref: string) => {
 
 const getNextLevel = (language: SupportedLanguage) => async (
   ref: string
-): Promise<DisciplineCard> => {
+): Promise<DisciplineCard | void> => {
   // $FlowFixMe
-  const disciplineCard = await getCardFromLocalStorage(ref, language);
-  // $FlowFixMe
+  const disciplineCard: DisciplineCard | void = await getCardFromLocalStorage(ref, language);
+
+  if (!disciplineCard) return;
+
+  const nextLevel = pickNextLevel(disciplineCard);
+
+  if (!nextLevel || nextLevel.ref === ref || nextLevel.universalRef === ref) return;
+
   return disciplineCard;
 };
 

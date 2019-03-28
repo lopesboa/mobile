@@ -23,9 +23,9 @@ type ConnectedStateProps = {|
   recommendedContent: DisciplineCard | ChapterCard,
   currentContent: DisciplineCard | ChapterCard | void,
   bestScore?: string,
-  hasNextContent: boolean,
   nextContent: DisciplineCard | ChapterCard | void,
-  unlockedLevelInfo?: UnlockedLevelInfo
+  unlockedLevelInfo?: UnlockedLevelInfo,
+  hasFinishedCourse?: boolean
 |};
 export type Params = {|
   isCorrect: boolean,
@@ -62,7 +62,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
   handleButtonPress = () => {
     const {isCorrect} = this.props.navigation.state.params;
     if (this.props.currentContent) {
-      if (!this.props.nextContent && isCorrect) {
+      if (this.props.hasFinishedCourse) {
         return this.props.navigation.navigate('Home');
       }
       if (this.props.nextContent && isCorrect) {
@@ -80,7 +80,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
       recommendedContent,
       unlockedLevelInfo,
       bestScore = '',
-      hasNextContent
+      hasFinishedCourse = false
     } = this.props;
     const {isCorrect} = navigation.state.params;
 
@@ -99,8 +99,8 @@ class LevelEndScreen extends React.PureComponent<Props> {
           levelUnlockedName={levelUnlockedName}
           onClose={this.handleClosePress}
           onCardPress={this.handleCardPress}
-          hasNextContent={hasNextContent}
           onButtonPress={this.handleButtonPress}
+          hasFinishedCourse={hasFinishedCourse}
         />
       </Screen>
     );
@@ -122,19 +122,15 @@ export const mapStateToProps = (state: StoreState, {navigation}: Props): Connect
     currentContentInfo && getCurrentContent(state.cards, currentContentInfo, language);
 
   const unlockedLevelInfo =
-    currentContentInfo &&
-    currentContent &&
-    nextContent &&
-    didUnlockLevel(currentContentInfo, currentContent, nextContent);
+    currentContentInfo && currentContent && didUnlockLevel(currentContentInfo, currentContent);
 
-  const hasNextContent = !!nextContent;
-
+  const hasFinishedCourse = currentContent && currentContent.completion === 1;
   return {
     currentContent,
     nextContent,
     bestScore,
     unlockedLevelInfo,
-    hasNextContent,
+    hasFinishedCourse,
     recommendedContent: Object.keys(state.cards.entities)
       .map(key => state.cards.entities[key][language])
       .filter(item => item !== undefined)

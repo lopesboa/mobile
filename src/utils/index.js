@@ -1,9 +1,10 @@
 // @flow strict
 import type {State as CardsState} from '../redux/reducers/cards';
 import type {SupportedLanguage} from '../translations/_types';
-import type {DisciplineCard, ChapterCard, CardLevel} from '../layer/data/_types';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../layer/data/_const';
 import type {UnlockedLevelInfo} from '../types';
+import {pickNextLevel} from './content';
 
 type ContentInfo = {|
   type: string,
@@ -46,38 +47,19 @@ export const getCurrentContent = (
   }
 };
 
-const getModule = (modules, moduleRef): CardLevel => {
-  // $FlowFixMe
-  return modules.find(mod => mod.ref === moduleRef || mod.universalRef === moduleRef);
-};
-
 export const didUnlockLevel = (
   {ref, type}: ContentInfo,
-  currentContent: Card,
-  nextContent: Card
+  currentContent: Card
 ): UnlockedLevelInfo | void => {
-  if (nextContent) {
-    if (type === RESTRICTED_RESOURCE_TYPE.LEVEL) {
-      // $FlowFixMe
-      const currentContentModules = currentContent && currentContent.modules;
-
-      const currentModule = getModule(currentContent && currentContentModules, ref);
-      const index = currentContentModules.indexOf(currentModule) + 1;
-      if (index >= currentContentModules.length) {
-        throw new Error('No next level');
-      }
-      // $FlowFixMe
-      const nextModule = nextContent && nextContent.modules[index];
-      const currentModuleLevel = currentModule && currentModule.level;
-      const nextModuleLevel = nextModule && nextModule.level;
-      if (currentModuleLevel === nextModuleLevel) {
-        return {isUnlocked: false, levelName: nextModuleLevel};
-      }
-      return {isUnlocked: true, levelName: nextModuleLevel};
+  if (type === RESTRICTED_RESOURCE_TYPE.LEVEL) {
+    // $FlowFixMe
+    const nextModule = pickNextLevel(currentContent);
+    if (nextModule && nextModule.ref !== ref) {
+      return {isUnlocked: true, levelName: nextModule && nextModule.level};
     }
-    return;
+    return {isUnlocked: false, levelName: ''};
   }
-  return {isUnlocked: false, levelName: ''};
+  return;
 };
 
 export const uniqBy = <O>(mapper: (obj: O) => string, array: Array<O>): Array<O> => [

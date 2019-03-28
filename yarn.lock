@@ -1469,10 +1469,10 @@
     "@coorpacademy/progression-engine" "10.3.14"
     lodash "^4.17.4"
 
-"@coorpacademy/player-store@^3.0.3":
-  version "3.0.4"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-3.0.4.tgz#5705bc39b3f898a78f18d46fecaf3551716da2a9"
-  integrity sha512-3vSjZZUZgmvUtRHGcyIxPQ+Llz5KoGi80D0kv6clZD5fceoIh3TUWFDHsmZx/WaKzingUlELZBSTOoMrqzIyIw==
+"@coorpacademy/player-store@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-3.0.5.tgz#2f9c4812ac63730da4ee9018b42fe3206c8eb875"
+  integrity sha512-uShD56sxBkLMHrTMt/4D9tXjCYEc52ZEvNy9QziiUOyotxUH5VqtXApsuYlgN3PxJ3O/kJ63ATVAjRcU82t1Sw==
   dependencies:
     "@coorpacademy/progression-engine" "10.3.15"
     "@coorpacademy/redux-task" "0.0.11"

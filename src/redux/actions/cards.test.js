@@ -3,6 +3,7 @@
 import {createBrand} from '../../__fixtures__/brands';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
+import {createProgression} from '../../__fixtures__/progression';
 import {CARD_STATUS} from '../../layer/data/_const';
 import {
   fetchRequest,
@@ -10,7 +11,8 @@ import {
   fetchError,
   fetchCards,
   selectCard,
-  selectCardFailure
+  selectCardFailure,
+  getAndRefreshCard
 } from './cards';
 
 jest.mock('./progression', () => ({
@@ -389,6 +391,120 @@ describe('Cards', () => {
           payload: {id: '__ID__'}
         });
       });
+    });
+  });
+
+  describe('getAndRefreshCard', () => {
+    it('should dispatch the update card action', async () => {
+      const progressionId = 'fakeProgressionId';
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        }
+      });
+
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            getCardFromLocalStorage: jest.fn(() => Promise.resolve(disciplineCard)),
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+          },
+          Progressions: {
+            findById: jest.fn(() => Promise.resolve(fakeProgression))
+          }
+        }
+      };
+      const dispatch = jest.fn(action => {
+        if (action instanceof Function) return action(dispatch, getState, options);
+        return action;
+      });
+      // $FlowFixMe
+      const actual = await getAndRefreshCard('fakeProgressionId', 'en')(
+        // $FlowFixMe
+        dispatch,
+        getState,
+        // $FlowFixMe
+        options
+      );
+
+      expect(actual).toEqual({
+        type: '@@cards/REFRESH_CARD',
+        payload: {
+          language: 'en',
+          item: disciplineCard
+        }
+      });
+    });
+
+    it('should return void if no Progression found', async () => {
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            getCardFromLocalStorage: jest.fn(() => Promise.resolve(disciplineCard)),
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+          },
+          Progressions: {
+            findById: jest.fn(() => Promise.resolve(undefined))
+          }
+        }
+      };
+      const dispatch = jest.fn(action => {
+        if (action instanceof Function) return action(dispatch, getState, options);
+        return action;
+      });
+      // $FlowFixMe
+      const actual = await getAndRefreshCard('fakeProgressionId', 'en')(
+        // $FlowFixMe
+        dispatch,
+        getState,
+        // $FlowFixMe
+        options
+      );
+
+      expect(actual).toEqual(undefined);
+    });
+
+    it('should return void if no Card found', async () => {
+      const progressionId = 'fakeProgressionId';
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine: 'learner',
+        progressionContent: {
+          ref: 'foo',
+          type: 'chapter'
+        }
+      });
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            getCardFromLocalStorage: jest.fn(() => Promise.resolve(undefined)),
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+          },
+          Progressions: {
+            findById: jest.fn(() => Promise.resolve(fakeProgression))
+          }
+        }
+      };
+      const dispatch = jest.fn(action => {
+        if (action instanceof Function) return action(dispatch, getState, options);
+        return action;
+      });
+      // $FlowFixMe
+      const actual = await getAndRefreshCard('fakeProgressionId', 'en')(
+        // $FlowFixMe
+        dispatch,
+        getState,
+        // $FlowFixMe
+        options
+      );
+
+      expect(actual).toEqual(undefined);
     });
   });
 });

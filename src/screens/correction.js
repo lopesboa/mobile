@@ -247,8 +247,10 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progressionId = getCurrentProgressionId(state);
   const hasViewedAResource = checkHasSeenLesson(state, true);
   const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
-  const stateExtraLife = progression.state.nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const justAcceptedExtraLife = progression.state.content.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const stateExtraLife =
+    progression && progression.state.nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const justAcceptedExtraLife =
+    progression && progression.state.content.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
   const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
   const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
   const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;

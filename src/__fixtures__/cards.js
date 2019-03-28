@@ -19,16 +19,20 @@ export const createCardLevel = ({
   isDone = false,
   level = 'base',
   status,
-  label
+  label,
+  stars = 0,
+  nbChapters = 3
 }: {
   ref: string,
   completion?: number,
   isDone?: boolean,
   level?: LevelType,
   status: CardStatus,
-  label: string
+  label: string,
+  stars?: number,
+  nbChapters?: number
 }): CardLevel => ({
-  nbChapters: 3,
+  nbChapters,
   ref,
   universalRef: ref,
   version: '1',
@@ -36,7 +40,7 @@ export const createCardLevel = ({
   creditsToAccess: 0,
   isConditional: false,
   taggedNewUntil: '2018-02-22T13:49:05.835Z',
-  stars: 0,
+  stars,
   inProgress: completion !== 0,
   isDone,
   completion,
@@ -53,6 +57,8 @@ export const createDisciplineCard = ({
   isAdaptive = false,
   isNew = false,
   isFavorite = false,
+  stars = 0,
+  nbChapters = 8,
   authors = [
     {
       ref: 'part_VyFl5hZ3V',
@@ -68,6 +74,8 @@ export const createDisciplineCard = ({
   isAdaptive?: boolean,
   isNew?: boolean,
   isFavorite?: boolean,
+  nbChapters?: number,
+  stars?: number,
   authors?: Array<CardAuthor>
 }): DisciplineCard => ({
   image:
@@ -99,7 +107,7 @@ export const createDisciplineCard = ({
   type: 'course',
   title,
   position: 0,
-  nbChapters: 8,
+  nbChapters,
   modules: levels,
   createdAt: '2018-04-26T07:38:44.780Z',
   taggedNewUntil: '2018-04-22T12:49:05.833Z',
@@ -114,7 +122,7 @@ export const createDisciplineCard = ({
   relatedContentHidden:
     "Accorder un verbe avec son sujet (1), Accorder un déterminant, Accorder un pronom avec le nom qu'il représente, Accorder un verbe avec son sujet (2), Accorder un adjectif quelle que soit sa fonction, Accorder un participe passé avec le sujet, quand il convient, Accorder une forme verbale en -ant quand il convient, Accorder le participe passé d'un verbe pronominal",
   _score: null,
-  stars: 0,
+  stars,
   completion,
   defaultModuleLevel: 'base',
   isNew,
@@ -130,6 +138,7 @@ export const createChapterCard = ({
   isFavorite = false,
   isDone = false,
   status,
+  stars = 0,
   authors = [
     {
       ref: 'part_VyFl5hZ3V',
@@ -146,6 +155,7 @@ export const createChapterCard = ({
   isFavorite?: boolean,
   isDone?: boolean,
   status: CardStatus,
+  stars?: number,
   authors?: Array<CardAuthor>
 }): ChapterCard => ({
   image:
@@ -188,7 +198,7 @@ export const createChapterCard = ({
   creditsToAccess: 0,
   relatedContentHidden: 'Mastering the rules of agreement in French',
   _score: null,
-  stars: 0,
+  stars,
   inProgress: completion !== 0,
   isDone,
   completion,
@@ -208,6 +218,7 @@ export const createDisciplinesCards = (disciplines: Array<Discipline>): Cards =>
         createCardLevel({
           ref: level.ref,
           completion: 0,
+          stars: 0,
           status: CARD_STATUS.ACTIVE,
           label: level.name
         })

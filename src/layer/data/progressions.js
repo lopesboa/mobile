@@ -4,11 +4,55 @@ import {AsyncStorage} from 'react-native';
 
 import fetch from 'cross-fetch';
 import type {Progression, Action} from '@coorpacademy/progression-engine';
-import {isDone} from '../../utils/progressions';
+import {isDone, isFailure} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
-
 import type {SupportedLanguage} from '../../translations/_types';
+import type {Completion} from './_types';
 import {getItem} from './core';
+
+export const buildCompletionKey = (engineRef: string, contentRef: string) =>
+  `completion_${engineRef}_${contentRef}`;
+
+export const mapProgressionToCompletion = (progression: Progression): Completion => {
+  const {state} = progression;
+  if (!state) {
+    throw new Error('the progression got no state');
+  }
+
+  const {current} = state.step;
+  return {
+    current: isFailure(progression) || current === 0 ? 0 : current - 1,
+    stars: state.stars
+  };
+};
+
+export const mergeCompletion = (
+  asyncStorageCompletion: Completion,
+  progressionCompletion: Completion
+): Completion => {
+  return {
+    current: progressionCompletion.current,
+    stars: Math.max(asyncStorageCompletion.stars, progressionCompletion.stars)
+  };
+};
+
+export const storeOrReplaceCompletion = async (progression: Progression): Promise<Completion> => {
+  const completionKey = buildCompletionKey(progression.engine.ref, progression.content.ref);
+  const stringifiedCompletion = await AsyncStorage.getItem(completionKey);
+
+  if (stringifiedCompletion) {
+    const mergedCompletion = mergeCompletion(
+      JSON.parse(stringifiedCompletion),
+      mapProgressionToCompletion(progression)
+    );
+    await AsyncStorage.mergeItem(completionKey, JSON.stringify(mergedCompletion));
+    return mergedCompletion;
+  }
+
+  const completion = mapProgressionToCompletion(progression);
+  await AsyncStorage.setItem(completionKey, JSON.stringify(completion));
+  return completion;
+};
 
 export const buildLastProgressionKey = (engineRef: string, contentRef: string) =>
   `last_progression_${engineRef}_${contentRef}`;
@@ -91,6 +135,8 @@ const persist = async (progression: Progression): Promise<Progression> => {
     progression._id || ''
   );
 
+  storeOrReplaceCompletion(progression);
+
   return progression;
 };
 
@@ -110,6 +156,8 @@ const findLast = async (engineRef: string, contentRef: string) => {
   // then skip resuming
 
   const progression = JSON.parse(stringifiedProgression);
+
+  if (!progression.state) return null;
   const {nextContent} = progression.state;
   if (
     isDone(progression) ||
