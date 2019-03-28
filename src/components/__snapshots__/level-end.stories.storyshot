@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots LevelEnd Failure 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
       <View
@@ -1224,7 +1230,13 @@ exports[`Storyshots LevelEnd Failure 1`] = `
 `;
 
 exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
       <View
@@ -2455,7 +2467,13 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
 `;
 
 exports[`Storyshots LevelEnd Success 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
       <View
@@ -3970,7 +3988,13 @@ exports[`Storyshots LevelEnd Success 1`] = `
 `;
 
 exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
       <View

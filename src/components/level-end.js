@@ -37,6 +37,9 @@ export const POSITIVE_COLOR = theme.colors.positive;
 export const NEGATIVE_COLOR = theme.colors.negative;
 
 const styles = StyleSheet.create({
+  globalContainer: {
+    flex: 1
+  },
   container: {
     flex: 1,
     justifyContent: 'space-between',
@@ -150,7 +153,7 @@ class LevelEnd extends React.PureComponent<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <View>
+          <View style={styles.globalContainer}>
             <ScrollView>
               <View
                 style={[styles.container, backgroundColor]}
