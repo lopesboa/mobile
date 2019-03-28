@@ -1,6 +1,6 @@
 {
   "name": "coorpacademy-mobile",
-  "version": "0.43.8",
+  "version": "0.43.9",
   "private": true,
   "scripts": {
     "postinstall": "npm run cocoapods:install && npm run update:version",
