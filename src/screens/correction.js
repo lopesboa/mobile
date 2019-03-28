@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import get from 'lodash/fp/get';
 import {NavigationEvents} from 'react-navigation';
 import {
   acceptExtraLife,
@@ -222,12 +223,8 @@ const _selectProgression = () => (dispatch: Dispatch, getState: GetState) => {
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
-  if (
-    progression === undefined ||
-    progression.state === undefined ||
-    progression.state.content === undefined ||
-    progression.state.nextContent === undefined
-  ) {
+  const progressionState = get('state', progression);
+  if (progression === undefined || progressionState === undefined) {
     return {
       nextScreen: undefined,
       showResourcesFirst: false,
@@ -247,10 +244,10 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progressionId = getCurrentProgressionId(state);
   const hasViewedAResource = checkHasSeenLesson(state, true);
   const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
-  const stateExtraLife =
-    progression && progression.state.nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const justAcceptedExtraLife =
-    progression && progression.state.content.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const nextContentRef = get('state.nextContent.ref', progression);
+  const contentRef = get('state.content.ref', progression);
+  const stateExtraLife = nextContentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const justAcceptedExtraLife = contentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
   const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
   const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
   const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
