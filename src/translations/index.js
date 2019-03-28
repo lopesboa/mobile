@@ -7,7 +7,7 @@ import LocalizedStrings from 'react-native-localization';
 import type {Translations, SupportedLanguage} from './_types';
 import cs from './cs';
 import de from './de';
-import en_US from './en-us';
+// import en_US from './en-us';
 import en from './en';
 import es from './es';
 import fr from './fr';
@@ -28,10 +28,12 @@ import zh_TW from './zh-tw';
 import zh from './zh';
 
 const localizedTranslations: {[key: SupportedLanguage]: Translations} = {
+  // keep this locale in first position to be the default language if none matches
+  en,
   cs,
   de,
-  'en-US': en_US,
-  en,
+  // @todo uncomment this once mooc API supports en-US
+  // 'en-US': en_US,
   es,
   fr,
   hu,

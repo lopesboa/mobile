@@ -10,6 +10,7 @@ import {BlackPortal, WhitePortal} from 'react-native-portal';
 
 import theme from '../modules/theme';
 import {RESOURCE_TYPE} from '../const';
+import translations from '../translations';
 import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
 
@@ -54,8 +55,6 @@ const EMPTY_SUBTITLES: Subtitles = {
   type: TextTrackType.VTT,
   uri: 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/assets/empty.vtt'
 };
-
-const DEFAULT_SUBTITLES_LANGUAGE = 'en';
 
 const styles = StyleSheet.create({
   container: {
@@ -123,7 +122,7 @@ const Video = ({
   if (subtitlesUri) {
     subtitles.push({
       title: 'Subtitles',
-      language: DEFAULT_SUBTITLES_LANGUAGE,
+      language: translations.getLanguage(),
       type: TextTrackType.VTT,
       uri: subtitlesUri
     });
@@ -135,7 +134,7 @@ const Video = ({
   const selectedSubtitles = hasSubtitles
     ? {
         type: 'language',
-        value: DEFAULT_SUBTITLES_LANGUAGE
+        value: translations.getLanguage()
       }
     : disabledSubtitles;
 

@@ -177,7 +177,8 @@ class Correction extends React.PureComponent<Props> {
         {brandTheme => {
           const {host} = brandTheme;
           const subtitleRef = resource && resource.subtitleRef;
-          const subtitleUri = host && subtitleRef && getSubtitlesUri(host, subtitleRef, 'en');
+          const subtitleUri =
+            host && subtitleRef && getSubtitlesUri(host, subtitleRef, translations.getLanguage());
 
           return (
             <CardComponent

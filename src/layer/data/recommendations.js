@@ -5,6 +5,7 @@ import get from 'lodash/fp/get';
 // @todo remove lodash
 import map from 'lodash/fp/map';
 
+import translations from '../../translations';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {DisciplineCard} from './_types';
 import {getCardFromLocalStorage} from './cards';
@@ -19,7 +20,7 @@ const find = async (type: string, ref: string) => {
     progress: 1,
     title: chapter.name,
     ref: chapter._id
-  }))(await findChapters('en')());
+  }))(await findChapters(translations.getLanguage())());
 
   return Promise.resolve(recommendations);
 };

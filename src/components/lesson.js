@@ -78,7 +78,7 @@ const Lesson = ({
           openedResource &&
           openedResource.subtitleRef &&
           // @todo use user language
-          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, 'en');
+          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, translations.getLanguage());
 
         return (
           <View testID="lesson" style={styles.container}>
