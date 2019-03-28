@@ -237,14 +237,6 @@ exports[`Storyshots Authentication Default 1`] = `
     <View
       style={
         Object {
-          "height": 48,
-          "width": 48,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
           "padding": 24,
         }
       }
@@ -527,14 +519,14 @@ exports[`Storyshots Authentication Default 1`] = `
           </View>
         </View>
       </View>
-    </View>
-    <View
-      style={
-        Object {
-          "padding": 24,
+      <View
+        style={
+          Object {
+            "height": 16,
+            "width": 16,
+          }
         }
-      }
-    >
+      />
       <View
         accessible={true}
         hitSlop={

@@ -2935,6 +2935,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
+                                    "flex": 1,
                                     "fontWeight": "400",
                                     "paddingBottom": 16,
                                     "paddingTop": 8,

@@ -95,7 +95,6 @@ const Authentication = ({onPress, onAssistancePress}: Props) => (
         </View>
       </View>
       <Carousel />
-      <Space type={SPACE.LARGE} />
       <View style={styles.wrapper}>
         <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
           <View style={styles.buttonWithIcon}>
@@ -106,8 +105,7 @@ const Authentication = ({onPress, onAssistancePress}: Props) => (
             </Html>
           </View>
         </Button>
-      </View>
-      <View style={styles.wrapper}>
+        <Space type={SPACE.SMALL} />
         <TouchableOpacity
           hitSlop={defaultHitSlop}
           onPress={onAssistancePress}
