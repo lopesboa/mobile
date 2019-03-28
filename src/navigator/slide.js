@@ -111,11 +111,8 @@ const slideTabsNavigator = createBottomTabNavigator(
       },
       style: {
         borderTopWidth: StyleSheet.hairlineWidth,
-        borderTopColor: '#B2B3B4',
+        borderTopColor: theme.colors.border,
         backgroundColor: '#FBFBFB',
-        shadowColor: '#000',
-        shadowOpacity: 0.08,
-        elevation: 2,
         height: 60,
         paddingHorizontal: theme.spacing.tiny,
         paddingBottom: theme.spacing.tiny

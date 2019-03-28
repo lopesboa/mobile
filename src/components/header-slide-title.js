@@ -8,7 +8,7 @@ import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
-  image: {uri: string} | File,
+  image?: {uri: string} | File,
   subtitle: string,
   title: string
 |};
@@ -48,13 +48,15 @@ const HeaderSlide = ({image, subtitle, title}: Props) => (
   <BrandThemeContext.Consumer>
     {brandTheme => (
       <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
-        <View style={styles.thumbnail}>
-          <ImageBackground
-            testID="header-slide-title-image"
-            source={image}
-            style={[styles.image, styles.thumbnail]}
-          />
-        </View>
+        {image && (
+          <View style={styles.thumbnail}>
+            <ImageBackground
+              testID="header-slide-title-image"
+              source={image}
+              style={[styles.image, styles.thumbnail]}
+            />
+          </View>
+        )}
         <View style={styles.text}>
           <Text style={[styles.subtitle, {color: brandTheme.colors.primary}]} numberOfLines={1}>
             {subtitle}

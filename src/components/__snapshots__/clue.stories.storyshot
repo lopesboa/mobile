@@ -68,14 +68,6 @@ exports[`Storyshots Clue Default 1`] = `
   <View
     style={
       Object {
-        "height": 24,
-        "width": 24,
-      }
-    }
-  />
-  <View
-    style={
-      Object {
         "flex": 1,
         "padding": 24,
       }
@@ -298,9 +290,9 @@ exports[`Storyshots Clue Default 1`] = `
                     style={
                       Object {
                         "color": "#FFFFFF",
-                        "fontSize": 22,
-                        "marginBottom": 22,
-                        "marginTop": 22,
+                        "fontSize": 17,
+                        "marginBottom": 17,
+                        "marginTop": 17,
                         "marginVertical": 0,
                         "textAlign": "center",
                       }

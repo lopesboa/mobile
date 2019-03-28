@@ -23,9 +23,9 @@ class HeaderSlideTitle extends React.Component<Props> {
   props: Props;
 
   render() {
-    const {image, subtitle, title} = this.props;
+    const {image = '', subtitle, title} = this.props;
 
-    if (!image || !subtitle || !title) {
+    if (!subtitle || !title) {
       return null;
     }
 

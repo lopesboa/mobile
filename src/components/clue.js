@@ -6,7 +6,6 @@ import theme from '../modules/theme';
 import FlippableCard from '../containers/card-flippable';
 import ClueFrontItem from './clue-front-item';
 import Html from './html';
-import Space from './space';
 import QuestionTitle from './question-title';
 
 export type Props = {|
@@ -26,7 +25,7 @@ const styles: GenericStyleProp = StyleSheet.create({
   },
   text: {
     color: theme.colors.white,
-    fontSize: theme.fontSize.extraLarge
+    fontSize: theme.fontSize.large
   },
   buttonText: {
     fontSize: theme.fontSize.large
@@ -47,7 +46,6 @@ const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
     <View style={styles.questionContainer}>
       <QuestionTitle isTextCentered>{header}</QuestionTitle>
     </View>
-    <Space type="base" />
     <FlippableCard
       frontItem={ClueFrontItem}
       starsDiff={starsDiff}
