@@ -1091,6 +1091,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
+                                    "flex": 1,
                                     "fontWeight": "400",
                                     "paddingBottom": 16,
                                     "paddingTop": 8,
@@ -5328,6 +5329,7 @@ exports[`Storyshots LevelEnd Success  Author Coorp (w/o hasNextContent) 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
+                                    "flex": 1,
                                     "fontWeight": "400",
                                     "paddingBottom": 16,
                                     "paddingTop": 8,
@@ -7728,6 +7730,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
+                                    "flex": 1,
                                     "fontWeight": "400",
                                     "paddingBottom": 16,
                                     "paddingTop": 8,
@@ -10120,6 +10123,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
+                                    "flex": 1,
                                     "fontWeight": "400",
                                     "paddingBottom": 16,
                                     "paddingTop": 8,

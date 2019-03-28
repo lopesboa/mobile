@@ -283,6 +283,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                     Array [
                       Object {
                         "color": "#FFFFFF",
+                        "flex": 1,
                         "fontWeight": "400",
                         "paddingBottom": 16,
                         "paddingTop": 8,
@@ -779,6 +780,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                     Array [
                       Object {
                         "color": "#FFFFFF",
+                        "flex": 1,
                         "fontWeight": "400",
                         "paddingBottom": 16,
                         "paddingTop": 8,

@@ -56,7 +56,7 @@ export const createDisciplineCard = ({
   authors = [
     {
       ref: 'part_VyFl5hZ3V',
-      label: 'A good guy',
+      label: 'A good guy with blue eyes',
       authorType: 'verified'
     }
   ]

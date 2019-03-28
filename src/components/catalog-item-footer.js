@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   subtitle: {
+    flex: 1,
     color: theme.colors.white,
     fontWeight: theme.fontWeight.regular,
     paddingBottom: theme.spacing.small,
@@ -83,6 +84,7 @@ const CatalogItemFooter = ({
       <Text testID={`title-${testID}`} style={[styles.title, titleStyle]}>
         {title}
       </Text>
+
       <View style={styles.subtitleContainer}>
         <Text testID={`subtitle-${testID}`} style={[styles.subtitle, subtitleStyle]}>
           {subtitle}

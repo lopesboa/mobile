@@ -204,6 +204,7 @@ exports[`Storyshots Catalog Items 1`] = `
                       Array [
                         Object {
                           "color": "#FFFFFF",
+                          "flex": 1,
                           "fontWeight": "400",
                           "paddingBottom": 16,
                           "paddingTop": 8,
@@ -215,7 +216,7 @@ exports[`Storyshots Catalog Items 1`] = `
                     }
                     testID="subtitle-catalog-item-dis-1"
                   >
-                    A good guy
+                    A good guy with blue eyes
                   </Text>
                   <View
                     style={
@@ -594,6 +595,7 @@ exports[`Storyshots Catalog Items 1`] = `
                           Array [
                             Object {
                               "color": "#FFFFFF",
+                              "flex": 1,
                               "fontWeight": "400",
                               "paddingBottom": 16,
                               "paddingTop": 8,
@@ -970,6 +972,7 @@ exports[`Storyshots Catalog Items 1`] = `
                           Array [
                             Object {
                               "color": "#FFFFFF",
+                              "flex": 1,
                               "fontWeight": "400",
                               "paddingBottom": 16,
                               "paddingTop": 8,
@@ -981,7 +984,7 @@ exports[`Storyshots Catalog Items 1`] = `
                         }
                         testID="subtitle-catalog-item-dis-1"
                       >
-                        A good guy
+                        A good guy with blue eyes
                       </Text>
                       <View
                         style={
@@ -1403,6 +1406,7 @@ exports[`Storyshots Catalog Items 1`] = `
                           Array [
                             Object {
                               "color": "#FFFFFF",
+                              "flex": 1,
                               "fontWeight": "400",
                               "paddingBottom": 16,
                               "paddingTop": 8,
@@ -1701,6 +1705,7 @@ exports[`Storyshots Catalog Items 1`] = `
                           Array [
                             Object {
                               "color": "#FFFFFF",
+                              "flex": 1,
                               "fontWeight": "400",
                               "paddingBottom": 16,
                               "paddingTop": 8,

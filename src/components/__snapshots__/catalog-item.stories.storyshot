@@ -205,6 +205,7 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
+                    "flex": 1,
                     "fontWeight": "400",
                     "paddingBottom": 16,
                     "paddingTop": 8,
@@ -539,6 +540,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
+                    "flex": 1,
                     "fontWeight": "400",
                     "paddingBottom": 16,
                     "paddingTop": 8,
@@ -1006,6 +1008,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
+                    "flex": 1,
                     "fontWeight": "400",
                     "paddingBottom": 16,
                     "paddingTop": 8,
@@ -1388,6 +1391,7 @@ exports[`Storyshots Catalog Item New 1`] = `
                 Array [
                   Object {
                     "color": "#FFFFFF",
+                    "flex": 1,
                     "fontWeight": "400",
                     "paddingBottom": 16,
                     "paddingTop": 8,
