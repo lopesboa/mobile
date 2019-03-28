@@ -86,7 +86,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
 
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
     const isLevelUnlocked = unlockedLevelInfo && unlockedLevelInfo.isUnlocked;
-    const isLevelUnlockedName = unlockedLevelInfo && unlockedLevelInfo.levelName;
+    const levelUnlockedName = unlockedLevelInfo && unlockedLevelInfo.levelName;
 
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
@@ -96,7 +96,7 @@ class LevelEndScreen extends React.PureComponent<Props> {
           isSuccess={isCorrect}
           bestScore={bestScore}
           isLevelUnlocked={isLevelUnlocked}
-          isLevelUnlockedName={isLevelUnlockedName}
+          levelUnlockedName={levelUnlockedName}
           onClose={this.handleClosePress}
           onCardPress={this.handleCardPress}
           hasNextContent={hasNextContent}

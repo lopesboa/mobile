@@ -34,7 +34,7 @@ type Props = {|
   bestScore: string,
   hasNextContent: boolean,
   isLevelUnlocked: boolean,
-  isLevelUnlockedName: string,
+  levelUnlockedName: string,
   hasNextContent: boolean,
   recommendedContent: DisciplineCard | ChapterCard
 |};
@@ -158,7 +158,7 @@ class LevelEnd extends React.PureComponent<Props> {
       onClose,
       isLevelUnlocked,
       hasNextContent,
-      isLevelUnlockedName,
+      levelUnlockedName,
       recommendedContent
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
@@ -167,7 +167,7 @@ class LevelEnd extends React.PureComponent<Props> {
     const bestScoreTranslation = translations.highscore.replace(/{{score}}/g, bestScore);
     const unlockNextLevelTranslation = translations.unlockNextLevel.replace(
       /{{levelName}}/g,
-      isLevelUnlockedName
+      levelUnlockedName
     );
     return (
       <BrandThemeContext.Consumer>

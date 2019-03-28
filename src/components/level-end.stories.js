@@ -62,7 +62,7 @@ storiesOf('LevelEnd', module)
       bestScore=""
       hasNextContent={false}
       isLevelUnlocked={false}
-      isLevelUnlockedName=""
+      levelUnlockedName=""
     />
   ))
   .add('Success', () => (
@@ -75,7 +75,7 @@ storiesOf('LevelEnd', module)
       bestScore="+20"
       hasNextContent
       isLevelUnlocked
-      isLevelUnlockedName=""
+      levelUnlockedName=""
     />
   ))
   .add('Failure Author Coorp', () => (
@@ -88,7 +88,7 @@ storiesOf('LevelEnd', module)
       bestScore=""
       hasNextContent={false}
       isLevelUnlocked={false}
-      isLevelUnlockedName=""
+      levelUnlockedName=""
     />
   ))
   .add('Success Author Coorp', () => (
@@ -101,7 +101,7 @@ storiesOf('LevelEnd', module)
       bestScore=""
       hasNextContent
       isLevelUnlocked
-      isLevelUnlockedName=""
+      levelUnlockedName=""
     />
   ))
   .add('Success  Author Coorp (w/o hasNextContent)', () => (
@@ -114,7 +114,7 @@ storiesOf('LevelEnd', module)
       bestScore=""
       hasNextContent={false}
       isLevelUnlocked
-      isLevelUnlockedName=""
+      levelUnlockedName=""
     />
   ));
 
@@ -132,7 +132,7 @@ if (process.env.NODE_ENV === 'test') {
           bestScore=""
           hasNextContent={false}
           isLevelUnlocked={false}
-          isLevelUnlockedName=""
+          levelUnlockedName=""
         />
       );
       const item = component.root.find(el => el.props.testID === 'recommend-item-dis-2');
@@ -152,7 +152,7 @@ if (process.env.NODE_ENV === 'test') {
           bestScore=""
           hasNextContent={false}
           isLevelUnlocked={false}
-          isLevelUnlockedName=""
+          levelUnlockedName=""
         />
       );
       const item = component.root.find(el => el.props.testID === 'button-retry-level');

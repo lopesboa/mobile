@@ -3082,7 +3082,13 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
 `;
 
 exports[`Storyshots LevelEnd Success  Author Coorp (w/o hasNextContent) 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView>
     <View>
       <View
