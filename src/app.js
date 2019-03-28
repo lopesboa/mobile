@@ -4,6 +4,9 @@ import * as React from 'react';
 import {StyleSheet, View, Platform} from 'react-native';
 import {Provider} from 'react-redux';
 import {PortalProvider} from 'react-native-portal';
+// @@todo wait for support tablet landscape orientation
+// import DeviceInfo from 'react-native-device-info';
+import orientation from 'react-native-orientation-locker';
 
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
@@ -26,19 +29,33 @@ const styles = StyleSheet.create({
   }
 });
 
-const App = (props: Props) => (
-  <Provider store={store}>
-    <PortalProvider>
-      <VersionListener />
-      <NetworkInfoListener />
-      <BrandThemeProvider>
-        <View style={styles.container}>
-          <Navigator />
-        </View>
-      </BrandThemeProvider>
-      {Platform.OS === 'android' && <VideoFullscreenListener />}
-    </PortalProvider>
-  </Provider>
-);
+class App extends React.PureComponent<Props> {
+  props: Props;
+
+  componentDidMount() {
+    orientation.lockToPortrait();
+    // @@todo wait for support tablet landscape orientation
+    // if (DeviceInfo.isTablet()) {
+    //   orientation.unlockAllOrientations();
+    // }
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <PortalProvider>
+          <VersionListener />
+          <NetworkInfoListener />
+          <BrandThemeProvider>
+            <View style={styles.container}>
+              <Navigator />
+            </View>
+          </BrandThemeProvider>
+          {Platform.OS === 'android' && <VideoFullscreenListener />}
+        </PortalProvider>
+      </Provider>
+    );
+  }
+}
 
 export default App;

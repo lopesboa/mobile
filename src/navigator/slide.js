@@ -10,6 +10,7 @@ import {
   NovaCompositionCoorpacademyListBullets3 as QuestionIcon,
   NovaCompositionCoorpacademyMap as ContextIcon
 } from '@coorpacademy/nova-icons';
+import DeviceInfo from 'react-native-device-info';
 
 import Progression from '../containers/progression';
 import TabBarSlide from '../containers/tab-bar-slide';
@@ -100,7 +101,9 @@ const slideTabsNavigator = createBottomTabNavigator(
       // activeTintColor: theme.color.primary,
       labelStyle: {
         fontWeight: theme.fontWeight.semiBold,
-        fontSize: 12
+        fontSize: 12,
+        // specific style on tablet to not break style on small devices (ex: iphone 5s)
+        paddingHorizontal: DeviceInfo.isTablet() ? theme.spacing.small : 0
       },
       tabStyle: {
         alignItems: 'center',

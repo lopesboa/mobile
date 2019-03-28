@@ -5,8 +5,6 @@ import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
 import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
-import orientation from 'react-native-orientation-locker';
-import DeviceInfo from 'react-native-device-info';
 
 import theme from '../modules/theme';
 import HeaderSlideTitle from '../containers/header-slide-title';
@@ -140,13 +138,6 @@ const extractScreens = (state: NavigationState): ExtractScreensResult => {
 
 class NavigatorWithState extends React.PureComponent<Props> {
   props: Props;
-
-  componentDidMount() {
-    orientation.lockToPortrait();
-    if (DeviceInfo.isTablet()) {
-      orientation.unlockAllOrientations();
-    }
-  }
 
   handleNavigationStateChange = (prevState: NavigationState, currentState: NavigationState) => {
     const {onScreenChange} = this.props;

@@ -5,7 +5,8 @@ import {Platform} from 'react-native';
 import {connect} from 'react-redux';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
-import DeviceInfo from 'react-native-device-info';
+// @@todo wait for support tablet landscape orientation
+// import DeviceInfo from 'react-native-device-info';
 
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
@@ -74,9 +75,10 @@ class VideoControlable extends React.PureComponent<Props, State> {
         this.videoPlayer.seekTo(currentTime);
       }
 
-      if (!DeviceInfo.isTablet()) {
-        orientation.lockToPortrait();
-      }
+      // @@todo wait for support tablet landscape orientation
+      // if (!DeviceInfo.isTablet()) {
+      orientation.lockToPortrait();
+      // }
     }
   };
 
