@@ -1177,6 +1177,7 @@ declare module 'react-navigation' {
     renderIcon: (scene: TabScene) => React$Element<*>,
     getButtonComponent: (scene: TabScene) => React$Element<*>,
     onTabPress: (scene: TabScene) => React$Element<*> | void,
+    onTabLongPress: (scene: TabScene) => React$Element<*> | void,
     labelStyle?: TextStyleProp,
     iconStyle?: ViewStyleProp,
   };
@@ -1207,6 +1208,7 @@ declare module 'react-navigation' {
     renderIcon: (scene: TabScene) => React$Node,
     getButtonComponent: (scene: TabScene) => React$Element<*>,
     onTabPress: (scene: TabScene) => React$Element<*> | void,
+    onTabLongPress: (scene: TabScene) => React$Element<*> | void,
     style?: ViewStyleProp,
     animateStyle?: ViewStyleProp,
     labelStyle?: TextStyleProp,

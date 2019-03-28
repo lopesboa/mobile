@@ -4,13 +4,13 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
-import {BottomTabBar as TabBar} from 'react-navigation';
 import {getRoute, selectRoute, hasSeenLesson} from '@coorpacademy/player-store';
 
 import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
+import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
@@ -150,7 +150,19 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   render() {
-    const {navigation, ...props} = this.props;
+    const {
+      navigation,
+      /* eslint-disable no-unused-vars */
+      hasNewLesson,
+      hasNoClue,
+      hasNoContext,
+      hasNoLesson,
+      isValidating,
+      selectRoute: _selectRoute,
+      showContext,
+      /* eslint-enable no-unused-vars */
+      ...props
+    } = this.props;
     return (
       <TabBar
         {...props}
