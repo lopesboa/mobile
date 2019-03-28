@@ -2,12 +2,13 @@ const MINOR = 'minor';
 const PATCH = 'patch';
 
 const getVersionIncrementType = message => {
-  const containsPatchKeyWords = /bug|fix|tweak|plugging/i.test(message);
-  const tooShortMessage = message.split(' ').length < 5; // 4 word + PR tag
-  const hashtagMinor = /#minor\b/i.test(message);
-  const hashtagBug = /#bug\b/i.test(message);
-  const containsMinorKeyWords = /release|feature/i.test(message);
-  const isSquashOrMerge = /Merge pull request #\d+|\(#\D+\)/.test(message);
+  const firstLine = message.split('\n')[0];
+  const containsPatchKeyWords = /bug|fix|tweak|plugging/i.test(firstLine);
+  const tooShortMessage = firstLine.split(' ').length < 5; // 4 word + PR tag
+  const hashtagMinor = /#minor\b/i.test(firstLine);
+  const hashtagBug = /#bug\b/i.test(firstLine);
+  const containsMinorKeyWords = /release|feature/i.test(firstLine);
+  const isSquashOrMerge = /Merge pull request #\d+|\(#\D+\)/.test(firstLine);
 
   if (hashtagBug || containsPatchKeyWords) return PATCH;
   if (hashtagMinor || containsMinorKeyWords) return MINOR;

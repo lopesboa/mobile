@@ -52,7 +52,8 @@
     "postversion": "react-native-version --never-increment-build",
     "version:should-release": "node scripts/should-release.js \"$(git log -1 --pretty=%B)\"",
     "version:release-type": "node scripts/get-version-increment-for-commit.js \"$(git log -1 --pretty=%B)\"",
-    "version:auto-bump": "npm -s run version:should-release && npm version $(npm -s run version:release-type)"
+    "version:auto-bump": "npm -s run version:should-release && npm version $(npm -s run version:release-type) -m 'v%s' || echo 'No bump is needed'",
+    "version:increment": "npm version -m '%s'"
   },
   "engines": {
     "yarn": "^1.12.3"

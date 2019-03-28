@@ -388,18 +388,31 @@ jobs:
           name: Build and Publish
           command: cd ios && bundle exec fastlane beta
 
-  increment_version:
+  auto_bump_version:
     working_directory: ~/app
     docker:
       - image: circleci/android:api-28-node
     steps:
       - checkout
       - run:
+          name: Configure git
+          command: |
+            git config --global user.email "mobile@coorpacademy.com"
+            git config --global user.name "Coorpacademy Tech Team"
+      - run:
+          name: Install dependencies
+          command: |
+            npm install react-native react-native-version
+            git reset --hard # clean the repository
+            rm -f package-lock.json
+      - run:
           name: Increment Version
           command: npm run version:auto-bump
       - run:
           name: Push version to repository
-          command: git push && git push --tags
+          command: |
+            git remote set-url origin https://${PUSH_GITHUB_TOKEN}@github.com/Coorpacademy/mobile.git
+            git push -q origin ${CIRCLE_BRANCH} && git push -q --tags
 workflows:
   version: 2
   tests-build-deploy:
@@ -431,9 +444,9 @@ workflows:
       - deploy_ios:
          requires:
            - build_ios
-  auto-increment-package-version:
+  auto-increment-app-version:
     jobs:
-      - increment_version:
+      - auto_bump_version:
           filters:
             branches:
               only: master

@@ -1,11 +1,11 @@
-const semverRegex = /^v\d+\.\d+\.\d+(-.*)$/;
+const semverRegex = /^v?\d+\.\d+\.\d+(-.*)?$/;
 
-const shouldRealease = msg => !semverRegex.test(msg);
+const shouldRealease = msg => msg && !semverRegex.test(msg);
 
 if (!module.parent) {
   /* eslint-disable unicorn/no-process-exit, no-console */
   const commitMessage = process.argv[2];
-  console.log(`current commit: ${commitMessage}`);
+  console.log(`current commit: '${commitMessage}'`);
   if (shouldRealease(commitMessage)) {
     console.log('Release needed!');
     process.exit(0);
