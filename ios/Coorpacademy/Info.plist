@@ -45,6 +45,10 @@
 	<string>Some description</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan QR codes</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Not used in this app</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Not used in this app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Some description</string>
 	<key>NSMotionUsageDescription</key>
