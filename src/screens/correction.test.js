@@ -58,6 +58,7 @@ describe('correction', () => {
       isResourceViewed: false,
       showResourcesFirst: false,
       lives: 3,
+      progressionId: 'progression1',
       offeringExtraLife: false,
       consumedExtraLife: false
     };
@@ -84,6 +85,7 @@ describe('correction', () => {
       isResourceViewed: false,
       showResourcesFirst: false,
       lives: 2,
+      progressionId: 'progression1',
       offeringExtraLife: false,
       consumedExtraLife: false
     };
@@ -110,6 +112,7 @@ describe('correction', () => {
       isResourceViewed: false,
       showResourcesFirst: true,
       lives: 0,
+      progressionId: 'progression1',
       offeringExtraLife: true,
       consumedExtraLife: false
     };
@@ -137,6 +140,7 @@ describe('correction', () => {
       isResourceViewed: false,
       showResourcesFirst: true,
       lives: 1,
+      progressionId: 'progression1',
       offeringExtraLife: false,
       consumedExtraLife: true
     };
@@ -191,7 +195,10 @@ describe('correction', () => {
     expect(props.refuseExtraLife.mock.calls.length).toBe(1);
     expect(props.acceptExtraLife.mock.calls.length).toBe(0);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual(['LevelEnd', {isCorrect: false}]);
+    expect(props.navigation.navigate.mock.calls[0]).toEqual([
+      'LevelEnd',
+      {isCorrect: false, progressionId: 'progression1'}
+    ]);
   });
 
   it('should close correction and proceed to question', async () => {
@@ -240,7 +247,10 @@ describe('correction', () => {
     await goNext(() => props);
     expect(props.selectProgression.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual(['LevelEnd', {isCorrect: true}]);
+    expect(props.navigation.navigate.mock.calls[0]).toEqual([
+      'LevelEnd',
+      {isCorrect: true, progressionId: 'progression1'}
+    ]);
   });
 
   it('should close correction and quit to fail end screen', async () => {
@@ -265,7 +275,10 @@ describe('correction', () => {
     await goNext(() => props);
     expect(props.selectProgression.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual(['LevelEnd', {isCorrect: false}]);
+    expect(props.navigation.navigate.mock.calls[0]).toEqual([
+      'LevelEnd',
+      {isCorrect: false, progressionId: 'progression1'}
+    ]);
   });
 
   it('should close correction and quit to success end screen thanks to extra life', async () => {
@@ -321,6 +334,9 @@ describe('correction', () => {
 
     await goNext(() => props);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual(['LevelEnd', {isCorrect: true}]);
+    expect(props.navigation.navigate.mock.calls[0]).toEqual([
+      'LevelEnd',
+      {isCorrect: true, progressionId: 'progression1'}
+    ]);
   });
 });

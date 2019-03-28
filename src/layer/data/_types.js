@@ -83,7 +83,7 @@ export type ExitNode = $Exact<{
 }>;
 
 export type RestrictedResourceType = 'level' | 'chapter' | 'slide' | 'discipline';
-export type ResourceType = 'chapterRule' | 'exitNode' | RestrictedResourceType;
+export type ResourceType = 'chapterRule' | 'exitNode' | RestrictedResourceType | 'card';
 
 export type ExtentedMedia = {|
   type?: string,
@@ -107,7 +107,6 @@ export type BundledDiscipline = {|
   slides: {[key: string]: Slide},
   chapterRules: {[key: string]: ChapterRule}
 |};
-export type Resource = Slide | Discipline | Chapter | ExitNode;
 
 export type CardThematique = {|
   ref: string,
@@ -199,5 +198,7 @@ export type ChapterCard = Card<{|
   status: CardStatus,
   accessible: boolean
 |}>;
+
+export type Resource = Slide | Discipline | Chapter | ExitNode | ChapterCard | DisciplineCard;
 
 export type Cards = Array<DisciplineCard | ChapterCard>;

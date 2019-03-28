@@ -1,7 +1,8 @@
 // @flow strict
 
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
-import {createDisciplinesCards} from '../../__fixtures__/cards';
+import {createDisciplinesCards, createChapterCard} from '../../__fixtures__/cards';
+import {cardsToKeys} from './cards';
 
 const HOST = 'https://host.coorpacademy.com';
 const TOKEN = '__TOKEN__';
@@ -11,6 +12,19 @@ describe('cards', () => {
   describe('fetchCards', () => {
     beforeEach(() => {
       jest.resetModules();
+    });
+
+    it('should create card to keys', () => {
+      const chapterCard = createChapterCard({
+        ref: 'test',
+        title: 'title',
+        completion: 0,
+        status: 'isActive'
+      });
+
+      const keyedChapterCard = cardsToKeys([chapterCard], 'en');
+
+      expect(Object.keys(keyedChapterCard)).toEqual(['card:en:test']);
     });
 
     it('should fetch e2e fixtures', () => {

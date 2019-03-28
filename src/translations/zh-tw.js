@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: '取消',
   accessTheLesson: '進入課程',
+  backToHome: '返回首頁',
   bonus: '獎勵！',
   clue: '線索',
   clueStarsToLoose: '解開線索所減少的星星，您可以在此問題上贏回{{count}}顆星星（如果您答對的話）',
@@ -19,6 +20,7 @@ const translations: Translations = {
   goodAnswer: '好答案',
   goodJob: '做得好！',
   goToQuestion: '回答問題',
+  highscore: '',
   keyPoint: '關鍵點',
   lesson: '課程',
   loginButton: '掃描您的 <b>QR 碼</b>',
@@ -54,6 +56,7 @@ const translations: Translations = {
   typeHere: '在此輸入',
   validate: '驗證',
   version: 'Version',
+  unlockNextLevel: '',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars: '第一次觀看課程時，在本章中贏得{{count}}個額外的星星！',

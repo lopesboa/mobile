@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Zrušit',
   accessTheLesson: 'Vstup do lekce',
+  backToHome: 'Zpět domů',
   bonus: 'Bonus!',
   clue: 'Záchytný bod',
   clueStarsToLoose:
@@ -20,6 +21,7 @@ const translations: Translations = {
   goodAnswer: 'Dobrá odpověď',
   goodJob: 'Dobře!',
   goToQuestion: 'Přejděte k otázce',
+  highscore: '',
   keyPoint: 'Klíčový bod',
   lesson: 'Lekce',
   loginButton: 'Naskenujte svůj <b>QR kód</b>',
@@ -58,6 +60,7 @@ const translations: Translations = {
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Version',
+  unlockNextLevel: '',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:

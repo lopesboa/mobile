@@ -3,6 +3,7 @@
 import type {Content} from '@coorpacademy/progression-engine';
 import type {Slide} from '../../layer/data/_types';
 import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
+import type {Engine} from '../../types';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import {createStoreState} from '../../__fixtures__/store';
@@ -10,6 +11,7 @@ import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
 import bundledDiscipline from '../../__fixtures__/discipline-bundle';
 
+import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {
   isContentReady,
   getContents,
@@ -19,22 +21,21 @@ import {
   getCurrentStep,
   getLives,
   getSlide,
-  hasPermission
+  hasPermission,
+  getBestRank,
+  getBestScore
 } from './state-extract';
 
-const createState = ({
-  content,
-  nextContent,
-  slides = []
-}: {
-  content?: Content | void,
-  nextContent?: Content | void,
-  slides?: Array<Slide>
-}): StoreState => {
-  const levelRef = 'dummyRef';
-  const level = createLevel({ref: levelRef, chapterIds: ['666']});
-  const progression = createProgression({
-    engine: 'microlearning',
+const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
+
+const createDefaultProgression = (
+  engine: Engine,
+  levelRef: string,
+  content: Content | void,
+  nextContent: Content | void
+) =>
+  createProgression({
+    engine,
     progressionContent: {
       type: 'level',
       ref: levelRef
@@ -45,14 +46,27 @@ const createState = ({
     }
   });
 
+const createState = ({
+  engine = 'microlearning',
+  levelRef = 'dummyRef',
+  content,
+  nextContent,
+  slides = []
+}: {
+  engine?: Engine,
+  levelRef?: string,
+  content?: Content | void,
+  nextContent?: Content | void,
+  slides?: Array<Slide>
+}): StoreState => {
+  const level = createDefaultLevel(levelRef);
   const state: StoreState = createStoreState({
     levels: [level],
     disciplines: [],
     chapters: [],
     slides,
-    progression
+    progression: createDefaultProgression(engine, levelRef, content, nextContent)
   });
-
   return state;
 };
 
@@ -303,6 +317,99 @@ describe('State-extract', () => {
     it('should return false', () => {
       const result = hasPermission({}, 'camera');
       expect(result).toBeFalsy();
+    });
+  });
+
+  describe('getBestScore', () => {
+    it('should get the best score', () => {
+      const level = createLevel({ref: 'mod_10B', chapterIds: ['666']});
+      const levelCard = createCardLevel({
+        ref: 'mod_10B',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis1',
+        completion: 0,
+        levels: [levelCard],
+        title: 'First discipline'
+      });
+
+      const progression = createProgression({
+        engine: 'learner',
+        progressionContent: {
+          type: 'level',
+          ref: 'mod_10B'
+        }
+      });
+
+      const partialState = {
+        cards: {
+          entities: {
+            dis1: {
+              en: disciplineCard
+            }
+          }
+        },
+        data: {
+          contents: {
+            level: {
+              entities: {
+                mod_10B: {...level, bestScore: 30}
+              }
+            }
+          },
+          progressions: {
+            entities: {
+              progression1: {...progression, state: {...progression.state, stars: 40}}
+            }
+          },
+          nextContent: {}
+        },
+        ui: {
+          current: {
+            progressionId: 'progression1'
+          }
+        }
+      };
+      const state: StoreState = createState({
+        engine: 'learner',
+        levelRef: 'mod_10B'
+      });
+
+      const bestScore = getBestScore({...state, ...partialState});
+      expect(bestScore).toEqual('+10');
+    });
+  });
+  describe('getBestRank', () => {
+    it('should get the best rank if start and end are different', () => {
+      const state = {
+        data: {
+          rank: {
+            start: 20,
+            end: 30
+          }
+        }
+      };
+
+      // $FlowFixMe
+      const bestScore = getBestRank(state);
+      expect(bestScore).toEqual('-10');
+    });
+    it('should return null if start and end are equal', () => {
+      const state = {
+        data: {
+          rank: {
+            start: 20,
+            end: 20
+          }
+        }
+      };
+
+      // $FlowFixMe
+      const bestScore = getBestRank(state);
+      expect(bestScore).toEqual(null);
     });
   });
 });

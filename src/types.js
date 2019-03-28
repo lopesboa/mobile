@@ -18,6 +18,8 @@ export type MimeType =
 
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xlarge';
 
+export type TooltipType = 'highscore' | 'unlock';
+
 export type CardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
 
 export type CardDisplayMode = 'card' | 'cover';
@@ -69,5 +71,10 @@ export type Brand = {|
 |};
 
 export type PermissionStatus = 'authorized' | 'denied' | 'restricted' | 'undetermined';
+
+export type UnlockedLevelInfo = {|
+  isUnlocked: boolean,
+  levelName: string
+|};
 
 export type AppState = 'active' | 'background' | 'inactive';

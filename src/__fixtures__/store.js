@@ -59,13 +59,20 @@ export const createStoreState = ({
   chapters,
   disciplines,
   progression,
-  cards
+  cards,
+  data: baseData,
+  ui: baseUi
 }: {
   levels: Array<Level>,
   slides: Array<Slide>,
   chapters: Array<Chapter>,
   disciplines: Array<Discipline>,
   progression: Progression,
+  // @todo type this later, im so sorry
+  // eslint-disable-next-line flowtype/no-weak-types
+  data?: any,
+  // eslint-disable-next-line flowtype/no-weak-types
+  ui?: any,
   cards?: CardsState
 }): StoreState => {
   const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
@@ -119,25 +126,26 @@ export const createStoreState = ({
     }
   };
 
-  return {
-    data,
-    ui: {
-      answers: {},
-      coaches: {
-        availableCoaches: 0
-      },
-      comments: {
-        text: null
-      },
-      corrections: {
-        accordion: [false, false, false],
-        playResource: ''
-      },
-      current: {
-        progressionId: 'progression1'
-      },
-      route: {}
+  const ui = {
+    answers: {},
+    coaches: {
+      availableCoaches: 0
     },
+    comments: {
+      text: null
+    },
+    corrections: {
+      accordion: [false, false, false],
+      playResource: ''
+    },
+    current: {
+      progressionId: 'progression1'
+    },
+    route: {}
+  };
+  return {
+    data: (baseData && {...data, ...baseData}) || data,
+    ui: (baseUi && {...ui, ...baseUi}) || ui,
     navigation: {
       currentNavigatorName: 'dummyNavigatorName',
       currentAppScreenName: 'dummycurrentAppScreenName',

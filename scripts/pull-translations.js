@@ -86,6 +86,7 @@ const generate = async (locale: string) => {
   const translations: Translations = {
     cancel: formatTranslation(moocFormTranslations.cancel),
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
+    backToHome: formatTranslation(playerTranslations['Back to home']),
     bonus: formatTranslation(playerTranslations['Bonus!']),
     clue: formatTranslation(playerTranslations.Clue),
     clueStarsToLoose: formatTranslation(componentsTranslations.clue_stars_to_loose),
@@ -102,6 +103,7 @@ const generate = async (locale: string) => {
     goodAnswer: formatTranslation(playerTranslations['Good answer']),
     goodJob: formatTranslation(playerTranslations['Good job']),
     goToQuestion: formatTranslation(playerTranslations['Go to question']),
+    highscore: formatTranslation(playerTranslations.Highscore || ''),
     keyPoint: formatTranslation(playerTranslations['Key point']),
     lesson: formatTranslation(playerTranslations.Media),
     loginButton: formatTranslation(playerTranslations['Scan your QR code']),
@@ -153,6 +155,7 @@ const generate = async (locale: string) => {
     // @todo get it from github
     version: 'Version',
     // @todo get it from github
+    unlockNextLevel: formatTranslation(playerTranslations['Unlock next level'] || ''),
     upgrade: 'Upgrade',
     // @todo get it from github
     upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',

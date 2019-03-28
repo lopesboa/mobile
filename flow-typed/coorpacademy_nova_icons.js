@@ -37,6 +37,8 @@ declare module '@coorpacademy/nova-icons' {
   declare var NovaCompositionNavigationArrowTop: typeof NovaIcons;
   declare var NovaCompositionNavigationLess: typeof NovaIcons;
   declare var NovaCompositionNavigationMore: typeof NovaIcons;
+  declare var NovaCompositionCoorpacademyLock: typeof NovaIcons;
+  declare var NovaCompositionCoorpacademyTooltipCorner: typeof NovaIcons;
   declare var NovaLineAudioAudioControlPlay: typeof NovaIcons;
   declare var NovaLineBookmarksTagsBookmark5: typeof NovaIcons;
   declare var NovaLineBusinessCircleView: typeof NovaIcons;
@@ -63,6 +65,7 @@ declare module '@coorpacademy/nova-icons' {
   declare var NovaSolidLocksLock11: typeof NovaIcons;
   declare var NovaSolidLocksLockUnlock1: typeof NovaIcons;
   declare var NovaSolidLoginKey1: typeof NovaIcons;
+  declare var NovaSolidPlacesPlacesHome2: typeof NovaIcons;
   declare var NovaSolidMessagesChatChatBubblesCircle: typeof NovaIcons;
   declare var NovaSolidProgrammingProgrammingJigsaw: typeof NovaIcons;
   declare var NovaSolidRemoveAddAdd1: typeof NovaIcons;

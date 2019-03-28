@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Visszavonás',
   accessTheLesson: 'Hozzáférés a leckéhez',
+  backToHome: 'Vissza a főoldalra',
   bonus: 'Bónusz!',
   clue: 'Tipp',
   clueStarsToLoose:
@@ -13,13 +14,14 @@ const translations: Translations = {
   context: 'Kontextus',
   correction: 'Javítás',
   didYouKnowThat: 'Tudta?',
-  finishLearning: 'Mindjárt végeztél ezzel',
+  finishLearning: 'Folytasd ezt előtte',
   forYou: 'Legjobb ajánlataink számodra',
   gameOver: 'A játéknak vége',
   getAnExtralife: 'Szerezzen egy extra életet a lecke megtekintésével',
   goodAnswer: 'Jó válasz',
   goodJob: 'Remek munka!',
   goToQuestion: 'Menjen a kérdéshez',
+  highscore: 'Új rekordot értél el<br> <b>{{score}} csillagot nyertél</b>',
   keyPoint: 'Kulcspont',
   lesson: 'Lecke',
   loginButton: 'Olvasd be <b>QR-kódodat</b>',
@@ -57,6 +59,7 @@ const translations: Translations = {
   typeHere: 'Írjon ide',
   validate: 'Érvényesít',
   version: 'Version',
+  unlockNextLevel: 'Elérted a(z) <br><b>{{levelName}} szintet</b>',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:

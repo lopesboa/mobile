@@ -59,6 +59,7 @@ require('./components/space.stories.js');
 require('./components/starburst.stories.js');
 require('./components/steps-icon.stories.js');
 require('./components/text.stories.js');
+require('./components/tooltip.stories.js');
 require('./components/trophy.stories.js');
 require('./components/version.stories.js');
 require('./components/video.stories.js');

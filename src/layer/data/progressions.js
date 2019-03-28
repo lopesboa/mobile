@@ -7,6 +7,9 @@ import type {Progression, Action} from '@coorpacademy/progression-engine';
 import {isDone} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 
+import type {SupportedLanguage} from '../../translations/_types';
+import {getItem} from './core';
+
 export const buildLastProgressionKey = (engineRef: string, contentRef: string) =>
   `last_progression_${engineRef}_${contentRef}`;
 
@@ -118,4 +121,14 @@ const findLast = async (engineRef: string, contentRef: string) => {
   return progression;
 };
 
-export {save, getAll, findById, findLast, synchronize};
+const findBestOf = (language: SupportedLanguage) => async (
+  engineRef: string,
+  contentType: {ref: string, type: string},
+  contentRef: string,
+  progressionId: string
+): Promise<number> => {
+  // $FlowFixMe
+  const card = await getItem('card', contentRef, language);
+  return card && card.stars;
+};
+export {save, getAll, findById, findLast, findBestOf, synchronize};

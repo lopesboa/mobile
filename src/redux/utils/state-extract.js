@@ -6,7 +6,10 @@ import {
   getLives as _getLives,
   getPreviousSlide,
   getRoute,
-  getStepContent
+  getStepContent,
+  getStartRank,
+  getEndRank,
+  getBestScore as _getBestScore
 } from '@coorpacademy/player-store';
 import type {Slide} from '@coorpacademy/progression-engine';
 import type {Lives} from '@coorpacademy/player-store';
@@ -98,3 +101,25 @@ export const getBrand = (state: StoreState) => state.authentication.brand;
 
 export const hasPermission = (state: PermissionsState, type: PermissionType): boolean =>
   state[type] === PERMISSION_STATUS.AUTHORIZED;
+
+export const getBestRank = (state: StoreState): string | null => {
+  const start = getStartRank(state);
+  const end = getEndRank(state);
+
+  if (start === end) {
+    return null;
+  } else {
+    const sign = end - start > 0 ? '-' : '+';
+    const diff = Math.abs(end - start);
+    return `${sign}${diff}`;
+  }
+};
+
+export const getBestScore = (state: StoreState): string | void => {
+  const progression = getCurrentProgression(state);
+  const stars = progression && progression.state && progression.state.stars;
+  const bestScore = _getBestScore(state);
+
+  // $FlowFixMe
+  if (stars) return stars > bestScore ? `+${stars - bestScore}` : '+0';
+};

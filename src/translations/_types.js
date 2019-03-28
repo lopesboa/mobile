@@ -25,6 +25,7 @@ export type SupportedLanguage =
 export type Translations = {|
   cancel: string,
   accessTheLesson: string,
+  backToHome: string,
   bonus: string,
   clue: string,
   clueStarsToLoose: string,
@@ -39,6 +40,7 @@ export type Translations = {|
   goodAnswer: string,
   goodJob: string,
   goToQuestion: string,
+  highscore: string,
   keyPoint: string,
   lesson: string,
   loginButton: string,
@@ -72,6 +74,7 @@ export type Translations = {|
   selectSomethingBelow: string,
   startLearning: string,
   typeHere: string,
+  unlockNextLevel: string,
   upgrade: string,
   upgradeDescription: string,
   validate: string,

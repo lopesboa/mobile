@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Annuleren',
   accessTheLesson: 'Naar de les',
+  backToHome: 'Terug naar startpagina',
   bonus: 'Bonus!',
   clue: 'Tip',
   clueStarsToLoose:
@@ -13,13 +14,14 @@ const translations: Translations = {
   context: 'Context',
   correction: 'Correctie',
   didYouKnowThat: 'Wist je dat?',
-  finishLearning: 'Je bent bijna klaar met deze stap',
+  finishLearning: 'Ga eerst met deze door',
   forYou: 'Onze topkeuzes voor jou',
   gameOver: 'Game over',
   getAnExtralife: 'Verdien een extra leven door de les te bekijken',
   goodAnswer: 'Goed antwoord',
   goodJob: 'Super!',
   goToQuestion: 'Naar de vraag',
+  highscore: 'Je hebt een nieuwe topscore <br><b> je won zojuist {{score}} sterren </b>',
   keyPoint: 'Key point',
   lesson: 'Les',
   loginButton: 'Scan je <b>QR-code</b>',
@@ -57,6 +59,7 @@ const translations: Translations = {
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
   version: 'Version',
+  unlockNextLevel: 'Je hebt zojuist {{levelName}} niveau <br><b> ontgrendeld </b>',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:

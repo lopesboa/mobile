@@ -43,6 +43,7 @@ type ConnectedStateProps = {|
   consumedExtraLife?: boolean,
   showResourcesFirst?: boolean,
   canGoNext?: boolean,
+  progressionId: string,
   isResourceViewed: boolean,
   offeringExtraLife?: boolean
 |};
@@ -79,12 +80,14 @@ export const goNext = async (getProps: () => Props): Promise<void> => {
     await props.selectProgression();
   }
 
-  const {isFinished, lives} = getProps();
+  const {isFinished, lives, progressionId} = getProps();
 
   if (isFinished) {
     const levelEndParams: LevelEndScreenParams = {
-      isCorrect: lives === undefined || lives > 0
+      isCorrect: lives === undefined || lives > 0,
+      progressionId
     };
+
     props.navigation.navigate('LevelEnd', levelEndParams);
   }
 };
@@ -222,7 +225,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   if (
     progression === undefined ||
     progression.state === undefined ||
-    progression.state.content === undefined
+    progression.state.content === undefined ||
+    progression.state.nextContent === undefined
   ) {
     return {
       nextScreen: undefined,
@@ -231,6 +235,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       isCorrect: false,
       offeringExtraLife: false,
       canGoNext: false,
+      progressionId: '',
       isResourceViewed: false
     };
   }
@@ -239,6 +244,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const lives = hideLives ? undefined : livesCount;
 
   const isCorrect = checkIsCorrect(state);
+  const progressionId = getCurrentProgressionId(state);
   const hasViewedAResource = checkHasSeenLesson(state, true);
   const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
   const stateExtraLife = progression.state.nextContent.ref === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
@@ -265,6 +271,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     isResourceViewed,
     consumedExtraLife,
     offeringExtraLife,
+    progressionId,
     lives: consumedExtraLife ? lives + 1 : lives,
     canGoNext,
     showResourcesFirst

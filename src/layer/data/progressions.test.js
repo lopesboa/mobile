@@ -2,7 +2,15 @@
 import {AsyncStorage} from 'react-native';
 
 import {createProgression} from '../../__fixtures__/progression';
-import {findById, getAll, save, findLast, buildLastProgressionKey} from './progressions';
+import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
+import {
+  findById,
+  getAll,
+  save,
+  findLast,
+  buildLastProgressionKey,
+  findBestOf
+} from './progressions';
 
 describe('progresssion', () => {
   describe('buildLastProgressionKey', () => {
@@ -397,6 +405,39 @@ describe('progresssion', () => {
 
       const {synchronize} = require('./progressions');
       await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toBeInstanceOf(TypeError);
+    });
+  });
+
+  describe('findBestOf', () => {
+    it('shoud return a number of stars from an item', async () => {
+      const language = 'en',
+        progressionId = 'fakeProgressionId',
+        engineRef = 'learner',
+        content = {ref: 'foo', type: 'chapter'},
+        contentRef = 'foo';
+
+      const levelCard = createCardLevel({
+        ref: 'mod_yeAh',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis_something',
+        completion: 0,
+        levels: [levelCard],
+        title: 'Second discipline'
+      });
+
+      const fakeCardWithStars = {...disciplineCard, stars: 100};
+
+      AsyncStorage.getItem = jest
+        .fn()
+        .mockImplementation(() => Promise.resolve(JSON.stringify(fakeCardWithStars)));
+
+      const result = await findBestOf(language)(engineRef, content, contentRef, progressionId);
+
+      expect(result).toEqual(100);
     });
   });
 });

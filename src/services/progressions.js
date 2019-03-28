@@ -5,22 +5,41 @@ import {Progressions} from '@coorpacademy/player-services';
 import type {ProgressionsService as Service} from '@coorpacademy/player-services';
 import type {DataLayer} from '../layer/data';
 
+type BestOf = {|stars: number|};
+
 export type ProgressionService = {
   ...Service,
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
   synchronize: $PropertyType<DataLayer, 'synchronizeProgression'>,
-  getAll: $PropertyType<DataLayer, 'getAllProgressions'>
+  getAll: $PropertyType<DataLayer, 'getAllProgressions'>,
+  findBestOf: (
+    engineRef: string,
+    contentType: string,
+    contentRef: string,
+    progressionId: string
+  ) => Promise<BestOf>
 };
 
-const findBestOf = (engineRef, contentType, contentRef, progressionId) => ({stars: 0});
-
-const service = (dataLayer: DataLayer): ProgressionService => ({
-  ...Progressions(dataLayer),
+const findBestOf = (dataLayer: DataLayer) => async (
+  engineRef,
+  contentType,
+  contentRef,
+  progressionId
+): Promise<{|stars: number|}> => {
+  const {findBestOf: getBestOf} = dataLayer;
   // $FlowFixMe
-  findBestOf,
+  const stars = await getBestOf(engineRef, contentType, contentRef, progressionId);
+  return {stars};
+};
+
+// $FlowFixMe
+const service = (dataLayer: DataLayer): ProgressionService => ({
+  // $FlowFixMe
+  ...Progressions(dataLayer),
   findLast: dataLayer.findLast,
   synchronize: dataLayer.synchronizeProgression,
-  getAll: dataLayer.getAllProgressions
+  getAll: dataLayer.getAllProgressions,
+  findBestOf: findBestOf(dataLayer)
 });
 
 export default service;

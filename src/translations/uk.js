@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Відмінити',
   accessTheLesson: 'Доступ до уроку ',
+  backToHome: 'Назад на домашню сторінку',
   bonus: 'Бонус!',
   clue: 'Підказка',
   clueStarsToLoose:
@@ -20,6 +21,7 @@ const translations: Translations = {
   goodAnswer: 'Правильна відповідь',
   goodJob: 'Гарна робота!',
   goToQuestion: 'Перейти до запитання',
+  highscore: 'У вас новий рекорд<br><b>ви щойно виграли +17 зірок</b>',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
   loginButton: 'Відскануйте свій <b>QR-код</b>',
@@ -58,6 +60,7 @@ const translations: Translations = {
   typeHere: 'Ввести тут',
   validate: 'Підтвердити',
   version: 'Version',
+  unlockNextLevel: '',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:

@@ -2,8 +2,8 @@
 /* eslint import/max-dependencies: 0 */
 
 import * as React from 'react';
+import {NovaSolidPlacesPlacesHome2 as HomeIcon} from '@coorpacademy/nova-icons';
 import {View, StyleSheet, TouchableOpacity, Dimensions, ScrollView} from 'react-native';
-import {NovaSolidStatusClose as CloseIcon} from '@coorpacademy/nova-icons';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import translations from '../translations';
 import {getCleanUri} from '../modules/uri';
@@ -23,12 +23,19 @@ import {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
+import Tooltip from './tooltip';
 
 type Props = {|
   isSuccess: boolean,
   onButtonPress: () => void,
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onClose: () => void,
+  isLevelUnlocked: boolean,
+  bestScore: string,
+  hasNextContent: boolean,
+  isLevelUnlocked: boolean,
+  isLevelUnlockedName: string,
+  hasNextContent: boolean,
   recommendedContent: DisciplineCard | ChapterCard
 |};
 
@@ -145,11 +152,23 @@ class LevelEnd extends React.PureComponent<Props> {
   handleButtonPress = () => this.props.onButtonPress();
 
   render() {
-    const {isSuccess, onClose, recommendedContent} = this.props;
+    const {
+      isSuccess,
+      bestScore,
+      onClose,
+      isLevelUnlocked,
+      hasNextContent,
+      isLevelUnlockedName,
+      recommendedContent
+    } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
     const backgroundColor = (isSuccess && styles.positive) || styles.negative;
     const screenWidth: number = Dimensions.get('window').width;
-
+    const bestScoreTranslation = translations.highscore.replace(/{{score}}/g, bestScore);
+    const unlockNextLevelTranslation = translations.unlockNextLevel.replace(
+      /{{levelName}}/g,
+      isLevelUnlockedName
+    );
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
@@ -171,7 +190,7 @@ class LevelEnd extends React.PureComponent<Props> {
                     onPress={onClose}
                     hitSlop={defaultHitSlop}
                   >
-                    <CloseIcon height={16} width={16} color={theme.colors.white} />
+                    <HomeIcon height={16} width={16} color={theme.colors.white} />
                   </TouchableOpacity>
                 </View>
                 <View style={styles.header}>
@@ -192,6 +211,15 @@ class LevelEnd extends React.PureComponent<Props> {
 
                 <Space type="base" />
                 <View style={styles.content}>
+                  {isSuccess && (
+                    <View>
+                      <Tooltip type="highscore" text={bestScoreTranslation} />
+                      <Space type="tiny" />
+                      {isLevelUnlocked && (
+                        <Tooltip type="unlock" text={unlockNextLevelTranslation} />
+                      )}
+                    </View>
+                  )}
                   <View style={styles.recommendedContent}>
                     <Text style={styles.title}>{translations.relatedSubjects}</Text>
                     <Card type={CARD_TYPE.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
@@ -228,7 +256,9 @@ class LevelEnd extends React.PureComponent<Props> {
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
             >
-              {(isSuccess && translations.nextLevel) || translations.retryLevel}
+              {(isSuccess && !hasNextContent && translations.backToHome) ||
+                (isSuccess && hasNextContent && translations.nextLevel) ||
+                translations.retryLevel}
             </ButtonSticky>
           </View>
         )}

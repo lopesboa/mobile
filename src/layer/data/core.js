@@ -131,6 +131,7 @@ export const getItem = async (
   language: SupportedLanguage
 ): Promise<Resource> => {
   const key = buildKey(resourceType, language, resourceReference);
+
   try {
     const item = await AsyncStorage.getItem(key);
     return JSON.parse(item);

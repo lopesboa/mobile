@@ -5,6 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   cancel: 'Hủy',
   accessTheLesson: 'Truy cập vào bài học này',
+  backToHome: 'Quay về trang chủ',
   bonus: 'Thưởng!',
   clue: 'Gợi ý',
   clueStarsToLoose:
@@ -13,13 +14,14 @@ const translations: Translations = {
   context: 'Bối cảnh',
   correction: 'Chỉnh sửa',
   didYouKnowThat: 'Bạn đã biết điều đó?',
-  finishLearning: 'Bạn đã gần hoàn tất với bước này',
+  finishLearning: 'Tiếp tục phần này trước',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
   gameOver: 'Thua cuộc',
   getAnExtralife: 'Nhận thêm mạng bằng cách xem bài học',
   goodAnswer: 'Câu trả lời đúng',
   goodJob: 'Bạn làm tốt lắm!',
   goToQuestion: 'Đi đến câu hỏi',
+  highscore: 'Bạn có mức điểm cao mới <br><b>bạn vừa giành được {{score}} sao</b>',
   keyPoint: 'Điểm quan trọng',
   lesson: 'Bài học',
   loginButton: 'Quét <b>mã QR</b> của bạn',
@@ -56,6 +58,7 @@ const translations: Translations = {
   typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
   version: 'Version',
+  unlockNextLevel: 'Bạn vừa mở khóa cấp độ <br><b>{{levelName}}</b>',
   upgrade: 'Upgrade',
   upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
   winAdditionalStars:

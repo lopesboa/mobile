@@ -1,7 +1,6 @@
 // @flow
 
 import {createStoreState} from '../__fixtures__/store';
-import {createLevel} from '../__fixtures__/levels';
 import {createQCMGraphic} from '../__fixtures__/questions';
 import {createSlide} from '../__fixtures__/slides';
 import {createProgression} from '../__fixtures__/progression';
@@ -11,10 +10,8 @@ import {createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
 import {mapStateToProps} from './level-end';
 
 describe('level-end', () => {
-  it('should return the accurate props', () => {
-    const levelRef = 'dummyLevelRef';
+  it('should have currentContent & recommendedContent', () => {
     const SlideRef = 'dummySlideRef';
-    const level = createLevel({ref: levelRef, chapterIds: ['666']});
     const question = createQCMGraphic({});
     const context = createContextWithImage({title: 'A beautifull rainy day'});
     const slide = createSlide({
@@ -32,7 +29,7 @@ describe('level-end', () => {
         ref: 'mod_1'
       },
       nextContent: {
-        type: 'slide',
+        type: 'level',
         ref: 'dummySlideRef'
       }
     });
@@ -60,6 +57,113 @@ describe('level-end', () => {
       title: 'Second discipline'
     });
 
+    const dis3 = createDisciplineCard({
+      ref: 'dis3',
+      completion: 0,
+      levels: [levelCard2],
+      title: 'Second discipline'
+    });
+
+    const cards = {
+      entities: {
+        dis1: {
+          en: dis1
+        },
+        dis2: {
+          en: dis2
+        },
+        dis3: {
+          en: dis3
+        }
+      }
+    };
+    const mockedStore = createStoreState({
+      levels: [],
+      disciplines: [],
+      chapters: [],
+      slides: [slide, slide],
+      progression,
+      cards,
+      data: {
+        progressions: {
+          entities: {
+            progression1: {
+              content: {
+                type: 'level',
+                ref: 'mod_1'
+              }
+            }
+          }
+        }
+      }
+    });
+
+    const props = mapStateToProps(mockedStore, {
+      navigation: {state: {params: {progressionId: 'progression1'}}}
+    });
+
+    const currentContentUniversalRef =
+      props && props.currentContent && props.currentContent.universalRef;
+    const recommendedContentUniversalRef =
+      props && props.recommendedContent && props.recommendedContent.universalRef;
+    expect({currentContentUniversalRef: 'dis1', recommendedContentUniversalRef: 'dis2'}).toEqual({
+      currentContentUniversalRef,
+      recommendedContentUniversalRef
+    });
+  });
+  it('should have currentContent & nextContent', () => {
+    const SlideRef = 'dummySlideRef';
+    const question = createQCMGraphic({});
+    const context = createContextWithImage({title: 'A beautifull rainy day'});
+    const slide = createSlide({
+      ref: SlideRef,
+      chapterId: '666',
+      chapterIds: ['666'],
+      question,
+      context
+    });
+
+    const progression = createProgression({
+      engine: 'learner',
+      progressionContent: {
+        type: 'level',
+        ref: 'mod_1'
+      },
+      nextContent: {
+        type: 'level',
+        ref: 'dummySlideRef'
+      }
+    });
+
+    const levelCard1 = createCardLevel({
+      ref: 'mod_1',
+      status: 'isActive',
+      label: 'Fake level'
+    });
+    const levelCard2 = createCardLevel({
+      ref: 'mod_2',
+      status: 'isActive',
+      label: 'Fake level'
+    });
+    const levelCard3 = createCardLevel({
+      ref: 'mod_2',
+      status: 'isActive',
+      label: 'Fake level',
+      level: 'advanced'
+    });
+    const dis1 = createDisciplineCard({
+      ref: 'dis1',
+      completion: 0,
+      levels: [levelCard1, levelCard3],
+      title: 'First discipline'
+    });
+    const dis2 = createDisciplineCard({
+      ref: 'dis2',
+      completion: 0,
+      levels: [levelCard2],
+      title: 'Second discipline'
+    });
+
     const cards = {
       entities: {
         dis1: {
@@ -71,24 +175,55 @@ describe('level-end', () => {
       }
     };
     const mockedStore = createStoreState({
-      levels: [level],
+      levels: [],
       disciplines: [],
       chapters: [],
       slides: [slide, slide],
       progression,
-      cards
+      cards,
+      data: {
+        progressions: {
+          entities: {
+            progression1: {
+              content: {
+                type: 'level',
+                ref: 'mod_1'
+              }
+            }
+          }
+        },
+        nextContent: {
+          entities: {
+            progression1: dis1
+          }
+        }
+      },
+      ui: {
+        current: {
+          progressionId: 'progression1'
+        }
+      }
     });
 
-    const {
-      // $FlowFixMe
-      currentContent: {universalRef: currentContentUniversalRef},
-      // $FlowFixMe
-      recommendedContent: {universalRef: recommendedContentUniversalRef}
-    } = mapStateToProps(mockedStore);
+    const props = mapStateToProps(mockedStore, {
+      navigation: {state: {params: {progressionId: 'progression1'}}}
+    });
 
-    expect({currentContentUniversalRef: 'dis1', recommendedContentUniversalRef: 'dis2'}).toEqual({
+    const hasNextContent = props.hasNextContent;
+    const unlockedLevelInfo = props.unlockedLevelInfo;
+    const currentContentUniversalRef =
+      props && props.currentContent && props.currentContent.universalRef;
+    const nextContentUniversalRef = props && props.nextContent && props.nextContent.universalRef;
+    expect({
+      currentContentUniversalRef: 'dis1',
+      nextContentUniversalRef: 'dis1',
+      hasNextContent: true,
+      unlockedLevelInfo: {isUnlocked: true, levelName: 'advanced'}
+    }).toEqual({
       currentContentUniversalRef,
-      recommendedContentUniversalRef
+      nextContentUniversalRef,
+      hasNextContent,
+      unlockedLevelInfo
     });
   });
 });

@@ -8,7 +8,8 @@ import {
   getAll as getAllProgressions,
   save as saveProgression,
   findLast as findLastProgression,
-  synchronize as synchronizeProgression
+  synchronize as synchronizeProgression,
+  findBestOf
 } from './progressions';
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
@@ -21,15 +22,19 @@ import {find as findRecommendations, getNextLevel} from './recommendations';
 import {findById as findLevelById} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
+import type {DisciplineCard} from './_types';
 
-export type DataLayer = DataLayerBase & {
+export type DataLayer = {
+  ...DataLayerBase,
   fetchDisciplineBundle: typeof fetchDisciplineBundle,
   storeDisciplineBundle: typeof storeDisciplineBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
   synchronizeProgression: typeof synchronizeProgression,
-  getAllProgressions: typeof getAllProgressions
+  getAllProgressions: typeof getAllProgressions,
+  findBestOf: (language: SupportedLanguage) => Promise<number>,
+  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | null>
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -45,10 +50,12 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   saveProgression,
   synchronizeProgression,
   findRecommendations,
-  getNextLevel,
+  getNextLevel: getNextLevel(userLanguage),
   findLevelById: findLevelById(userLanguage),
   fetchCards,
   fetchBrand,
+  // $FlowFixMe
+  findBestOf: findBestOf(userLanguage),
   findLast: findLastProgression,
   // @todo implement it
   getChapterRulesByContent: () => [],

@@ -8,6 +8,7 @@ import type {
   Engine,
   ContentType,
   CardDisplayMode,
+  TooltipType,
   AuthorType,
   QuestionChoiceInputType,
   AnimationType,
@@ -71,6 +72,13 @@ export const CARD_TYPE: {
   TIP: 'tip',
   KEY_POINT: 'keyPoint',
   CORRECTION: 'correction'
+};
+
+export const TOOLTIP_TYPE: {
+  [string]: TooltipType
+} = {
+  HIGHSCORE: 'highscore',
+  UNLOCK: 'unlock'
 };
 
 export const AUTHOR_TYPE: {
