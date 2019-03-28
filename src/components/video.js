@@ -163,6 +163,7 @@ const Video = ({
               resizeMode="contain"
               disableVolume
               disableBack
+              ignoreSilentSwitch="ignore"
               disableFullscreen={Boolean(!onExpand && !onShrink)}
               toggleResizeModeOnFullscreen={false}
               isFullscreen={isFullScreen}

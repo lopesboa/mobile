@@ -293,6 +293,13 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
+		4017314D224CCF7A003EB148 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7C7FD9A21F60FA00020A9C4 /* RCTOrientation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B59029A92237E1A400A9DA7D;
+			remoteInfo = "RCTOrientation-tvOS";
+		};
 		40487AB121D11BCB0029B528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 40487AAC21D11BCA0029B528 /* BVLinearGradient.xcodeproj */;
@@ -873,6 +880,7 @@
 			isa = PBXGroup;
 			children = (
 				C7C7FD9F21F60FA00020A9C4 /* libRCTOrientation.a */,
+				4017314E224CCF7A003EB148 /* libRCTOrientation-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1344,6 +1352,13 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		4017314E224CCF7A003EB148 /* libRCTOrientation-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTOrientation-tvOS.a";
+			remoteRef = 4017314D224CCF7A003EB148 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		40487AB221D11BCB0029B528 /* libBVLinearGradient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1728,7 +1743,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.coorpacademy.app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1767,7 +1782,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.coorpacademy.app";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
