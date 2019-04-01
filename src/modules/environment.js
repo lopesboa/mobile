@@ -3,6 +3,7 @@
 const {REACT_NATIVE_FLAVOR} = process.env;
 
 export const __E2E__ = REACT_NATIVE_FLAVOR === 'E2E';
+export const __STORYBOOK__ = REACT_NATIVE_FLAVOR === 'STORYBOOK';
 
 const env = process.env;
 export const __ENV__ = env.NODE_ENV;
@@ -14,6 +15,7 @@ export const DEV_TOKEN =
 
 export default {
   __E2E__,
+  __STORYBOOK__,
   __ENV__,
   __TEST__,
   __DEV__,

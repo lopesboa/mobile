@@ -1,7 +1,11 @@
 // @flow
 
 import {getStorybookUI, configure} from '@storybook/react-native';
+import splashScreen from 'react-native-splash-screen';
+
 import './addons';
+
+splashScreen.hide();
 
 // import stories
 configure(() => {

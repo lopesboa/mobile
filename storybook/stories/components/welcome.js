@@ -3,9 +3,9 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
 
-type PropsType = {
+type Props = {|
   showApp: () => void
-};
+|};
 
 const styles = {
   wrapper: {
@@ -24,7 +24,9 @@ const styles = {
   }
 };
 
-export default class Welcome extends React.Component<PropsType> {
+export default class Welcome extends React.Component<Props> {
+  props: Props;
+
   // @todo check if this function is really usefull
   // and move to stateless component if possible
   showApp(e: Event) {

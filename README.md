@@ -57,10 +57,12 @@ Since `yarn link` does not work properly with metro, this script may help you wi
 Stop the packager if it is running, and launch the storybook packager:
 
 ```console
-yarn storybook
+yarn start:storybook
 ```
 
-You will also need to laucn your android/ios simulator to view your stories
+You will also need to launch your Android emulator/iOS simulator to view your stories.
+
+You can control the selected story in your browser running: `yarn storybook && opn https://localhost:7007`
 
 **Note**: This command will automatically indexes all the stories in **stories.js** files.
 
