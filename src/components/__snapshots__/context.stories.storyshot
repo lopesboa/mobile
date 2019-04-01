@@ -1064,6 +1064,9 @@ exports[`Storyshots Context With Video 1`] = `
       </View>
     </View>
   </View>
+  <Mock$ReactNavigation$NavigationEvents
+    onWillBlur={[Function]}
+  />
   <View
     style={
       Array [

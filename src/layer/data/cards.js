@@ -208,6 +208,7 @@ export const fetchCards = async (
       key => disciplinesBundle.disciplines[key]
     );
     const cards = createDisciplinesCards(disciplines);
+    await saveDashboardCardsInAsyncStorage(cards, language);
 
     return Promise.all(cards.map(refreshCard));
   }

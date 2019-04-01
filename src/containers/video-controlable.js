@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {Platform} from 'react-native';
 import {connect} from 'react-redux';
+import {NavigationEvents} from 'react-navigation';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import orientation from 'react-native-orientation-locker';
 // @@todo wait for support tablet landscape orientation
@@ -30,7 +31,7 @@ type Props = {|
   subtitles?: string,
   testID?: string,
   extralifeOverlay?: boolean,
-  onPlay: () => void
+  onPlay?: () => void
 |};
 
 type State = {|
@@ -96,7 +97,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
       step: STEP.PLAY
     });
 
-    this.props.onPlay();
+    this.props.onPlay && this.props.onPlay();
   };
 
   handleEnd = () => {
@@ -123,27 +124,32 @@ class VideoControlable extends React.PureComponent<Props, State> {
     this.videoPlayer = videoPlayer;
   };
 
+  handleBlur = () => this.videoPlayer && this.videoPlayer.methods.pause();
+
   render() {
     return (
-      <Video
-        source={this.props.source}
-        preview={this.props.preview}
-        height={this.props.height}
-        step={this.state.step}
-        subtitles={this.props.subtitles}
-        hasSubtitles={this.state.hasSubtitles}
-        isFullScreen={this.props.isFullScreen}
-        onPlay={this.handlePlay}
-        onEnd={this.handleEnd}
-        onReady={this.handleReady}
-        onExpand={this.handleExpand}
-        onShrink={this.handleShrink}
-        onProgress={this.handleProgress}
-        onSubtitlesToggle={this.handleSubtitlesToggle}
-        onRef={this.handleRef}
-        testID={this.props.testID}
-        extralifeOverlay={this.props.extralifeOverlay}
-      />
+      <React.Fragment>
+        <NavigationEvents onWillBlur={this.handleBlur} />
+        <Video
+          source={this.props.source}
+          preview={this.props.preview}
+          height={this.props.height}
+          step={this.state.step}
+          subtitles={this.props.subtitles}
+          hasSubtitles={this.state.hasSubtitles}
+          isFullScreen={this.props.isFullScreen}
+          onPlay={this.handlePlay}
+          onEnd={this.handleEnd}
+          onReady={this.handleReady}
+          onExpand={this.handleExpand}
+          onShrink={this.handleShrink}
+          onProgress={this.handleProgress}
+          onSubtitlesToggle={this.handleSubtitlesToggle}
+          onRef={this.handleRef}
+          testID={this.props.testID}
+          extralifeOverlay={this.props.extralifeOverlay}
+        />
+      </React.Fragment>
     );
   }
 }

@@ -1418,6 +1418,9 @@ exports[`Storyshots Lesson Video selected 1`] = `
       }
     }
   />
+  <Mock$ReactNavigation$NavigationEvents
+    onWillBlur={[Function]}
+  />
   <View
     style={
       Array [
@@ -2654,6 +2657,9 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
         "width": 24,
       }
     }
+  />
+  <Mock$ReactNavigation$NavigationEvents
+    onWillBlur={[Function]}
   />
   <View
     style={

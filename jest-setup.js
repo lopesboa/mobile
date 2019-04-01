@@ -93,3 +93,10 @@ jest.mock('react-native-permissions', () => {
 jest.mock('react-native-snap-carousel', () => ({
   Pagination: 'Mock$ReactNativeSnapCarousel$Pagination'
 }));
+
+// react-navigation
+
+jest.mock('react-navigation', () => ({
+  SafeAreaView: 'Mock$ReactNavigation$SafeAreaView',
+  NavigationEvents: 'Mock$ReactNavigation$NavigationEvents'
+}));

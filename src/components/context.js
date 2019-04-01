@@ -3,9 +3,9 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Media} from '@coorpacademy/progression-engine';
+
 import theme from '../modules/theme';
 import translations from '../translations';
-// import type {Lesson as LessonType} from '../layer/data/_types';
 import {RESOURCE_TYPE} from '../const';
 import Video from '../containers/video-controlable';
 import withLayout from '../containers/with-layout';

@@ -30,16 +30,10 @@ exports[`Storyshots Authentication Default 1`] = `
     ]
   }
 >
-  <View
-    onLayout={[Function]}
-    pointerEvents="box-none"
+  <Mock$ReactNavigation$SafeAreaView
     style={
       Object {
         "flex": 1,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
       }
     }
   >
@@ -685,6 +679,6 @@ exports[`Storyshots Authentication Default 1`] = `
         </Text>
       </View>
     </View>
-  </View>
+  </Mock$ReactNavigation$SafeAreaView>
 </BVLinearGradient>
 `;

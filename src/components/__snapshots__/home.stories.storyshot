@@ -28,16 +28,10 @@ exports[`Storyshots Home Default 1`] = `
     }
     testID="home-footer"
   />
-  <View
-    onLayout={[Function]}
-    pointerEvents="box-none"
+  <Mock$ReactNavigation$SafeAreaView
     style={
       Object {
         "flex": 1,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
       }
     }
   >
@@ -172,6 +166,6 @@ exports[`Storyshots Home Default 1`] = `
     >
       Version: test
     </Text>
-  </View>
+  </Mock$ReactNavigation$SafeAreaView>
 </View>
 `;
