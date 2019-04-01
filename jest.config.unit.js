@@ -25,9 +25,7 @@ module.exports = {
     '!<rootDir>/src/screens/*',
     '!<rootDir>/src/containers/*',
     '!<rootDir>/src/navigator/*',
-    '!**/__fixtures__/**',
-    // @todo remove this once the layer/data/base folder has been removed
-    '!<rootDir>/src/layer/data/base/*.js'
+    '!**/__fixtures__/**'
   ],
   coverageThreshold: {
     'src/components': {
