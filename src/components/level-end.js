@@ -217,7 +217,9 @@ class LevelEnd extends React.PureComponent<Props> {
                 <View style={styles.content}>
                   {isSuccess && (
                     <View>
-                      <Tooltip type="highscore" text={bestScoreTranslation} />
+                      {bestScore !== '+0' && (
+                        <Tooltip type="highscore" text={bestScoreTranslation} />
+                      )}
                       <Space type="tiny" />
                       {isLevelUnlocked && (
                         <Tooltip type="unlock" text={unlockNextLevelTranslation} />

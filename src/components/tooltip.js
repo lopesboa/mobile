@@ -4,8 +4,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {
   NovaCompositionCoorpacademyStar as Star,
-  NovaCompositionCoorpacademyLock as Lock,
-  NovaCompositionCoorpacademyTooltipCorner as TooltipCorner
+  NovaCompositionCoorpacademyLock as Lock
 } from '@coorpacademy/nova-icons';
 import theme from '../modules/theme';
 import {TOOLTIP_TYPE} from '../const';
@@ -22,9 +21,13 @@ const styles = StyleSheet.create({
   container: {
     ...BOX_STYLE,
     backgroundColor: theme.colors.white,
-    borderRadius: theme.radius.card,
+    borderTopLeftRadius: theme.radius.card,
+    borderTopRightRadius: theme.radius.card,
+    borderBottomRightRadius: theme.radius.card,
     flexDirection: 'row',
     padding: theme.spacing.small,
+    paddingRight: theme.spacing.medium,
+    alignItems: 'center',
     marginLeft: 5,
     marginRight: 1
   },
@@ -36,21 +39,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  icon: {width: 21, height: 21},
-  text: {paddingHorizontal: theme.spacing.base},
+  icon: {
+    width: 21,
+    height: 21
+  },
+  text: {
+    paddingHorizontal: theme.spacing.base
+  },
   corner: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     width: 16,
-    height: 14
+    height: 14,
+    borderWidth: 10,
+    borderColor: 'transparent',
+    borderStyle: 'solid',
+    borderRightColor: theme.colors.white,
+    borderBottomColor: theme.colors.white
   }
 });
 
 const Tooltip = ({type, text}: Props) => {
   return (
     <View>
-      <TooltipCorner style={styles.corner} color={theme.colors.white} />
+      <View style={styles.corner} />
       <View style={styles.container}>
         <View style={styles.iconContainer}>
           {type === TOOLTIP_TYPE.HIGHSCORE && <Star color="#fca833" style={styles.icon} />}

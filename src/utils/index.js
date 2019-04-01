@@ -55,7 +55,10 @@ export const didUnlockLevel = (
     // $FlowFixMe
     const nextModule = pickNextLevel(currentContent);
     if (nextModule && nextModule.ref !== ref) {
-      return {isUnlocked: true, levelName: nextModule && nextModule.level};
+      return {
+        isUnlocked: true,
+        levelName: nextModule && nextModule.label
+      };
     }
     return {isUnlocked: false, levelName: ''};
   }

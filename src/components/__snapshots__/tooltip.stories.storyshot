@@ -2,91 +2,36 @@
 
 exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
 <View>
-  <RNSVGSvgView
-    align="xMidYMid"
-    bbHeight="undefined"
-    bbWidth="undefined"
-    color="#FFFFFF"
-    meetOrSlice={0}
-    minX={0}
-    minY={0}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        Object {
-          "bottom": 0,
-          "height": 14,
-          "left": 0,
-          "position": "absolute",
-          "width": 16,
-        },
-        false,
-        undefined,
-      ]
-    }
-    vbHeight={14}
-    vbWidth={17}
-  >
-    <RNSVGPath
-      d="M16.6 14H.6C3.7 11.4 5.2 6.9 5 .6L16.3.5"
-      fill={
-        Array [
-          0,
-          1,
-          1,
-          1,
-          1,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={
-        Array [
-          "fill",
-        ]
-      }
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth="1"
-      x={0}
-      y={0}
-    />
-  </RNSVGSvgView>
   <View
     style={
       Object {
+        "borderBottomColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderRightColor": "#FFFFFF",
+        "borderStyle": "solid",
+        "borderWidth": 10,
+        "bottom": 0,
+        "height": 14,
+        "left": 0,
+        "position": "absolute",
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
         "backgroundColor": "#FFFFFF",
-        "borderRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
         "elevation": 4,
         "flexDirection": "row",
         "marginLeft": 5,
         "marginRight": 1,
         "padding": 16,
+        "paddingRight": 32,
         "shadowColor": "#14171A",
         "shadowOffset": Object {
           "height": 0,
@@ -272,91 +217,36 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
 
 exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
 <View>
-  <RNSVGSvgView
-    align="xMidYMid"
-    bbHeight="undefined"
-    bbWidth="undefined"
-    color="#FFFFFF"
-    meetOrSlice={0}
-    minX={0}
-    minY={0}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        Object {
-          "bottom": 0,
-          "height": 14,
-          "left": 0,
-          "position": "absolute",
-          "width": 16,
-        },
-        false,
-        undefined,
-      ]
-    }
-    vbHeight={14}
-    vbWidth={17}
-  >
-    <RNSVGPath
-      d="M16.6 14H.6C3.7 11.4 5.2 6.9 5 .6L16.3.5"
-      fill={
-        Array [
-          0,
-          1,
-          1,
-          1,
-          1,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={
-        Array [
-          "fill",
-        ]
-      }
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth="1"
-      x={0}
-      y={0}
-    />
-  </RNSVGSvgView>
   <View
     style={
       Object {
+        "borderBottomColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderRightColor": "#FFFFFF",
+        "borderStyle": "solid",
+        "borderWidth": 10,
+        "bottom": 0,
+        "height": 14,
+        "left": 0,
+        "position": "absolute",
+        "width": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
         "backgroundColor": "#FFFFFF",
-        "borderRadius": 5,
+        "borderBottomRightRadius": 5,
+        "borderTopLeftRadius": 5,
+        "borderTopRightRadius": 5,
         "elevation": 4,
         "flexDirection": "row",
         "marginLeft": 5,
         "marginRight": 1,
         "padding": 16,
+        "paddingRight": 32,
         "shadowColor": "#14171A",
         "shadowOffset": Object {
           "height": 0,
