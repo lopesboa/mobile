@@ -59,7 +59,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={disciplineNew}
-      bestScore=""
+      bestScore="0"
       isLevelUnlocked={false}
       levelUnlockedName=""
       hasFinishedCourse={false}
@@ -72,10 +72,10 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={chapterNew}
-      bestScore="+20"
+      bestScore="20"
       hasFinishedCourse={false}
       isLevelUnlocked
-      levelUnlockedName=""
+      levelUnlockedName="avancé"
     />
   ))
   .add('Failure Author Coorp', () => (
@@ -85,7 +85,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={disciplineNewCoorp}
-      bestScore=""
+      bestScore="0"
       isLevelUnlocked={false}
       levelUnlockedName=""
       hasFinishedCourse={false}
@@ -98,7 +98,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={chapterNewCoorp}
-      bestScore=""
+      bestScore="0"
       isLevelUnlocked
       levelUnlockedName=""
       hasFinishedCourse={false}
@@ -111,7 +111,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendedContent={chapterNewCoorp}
-      bestScore=""
+      bestScore="0"
       isLevelUnlocked
       levelUnlockedName=""
       hasFinishedCourse
@@ -129,7 +129,7 @@ if (process.env.NODE_ENV === 'test') {
           onCardPress={handlePress}
           onClose={handleFakePress}
           recommendedContent={disciplineNewCoorp}
-          bestScore=""
+          bestScore="0"
           isLevelUnlocked={false}
           levelUnlockedName=""
           hasFinishedCourse={false}
@@ -149,7 +149,7 @@ if (process.env.NODE_ENV === 'test') {
           onCardPress={handlePress}
           onClose={handleFakePress}
           recommendedContent={disciplineNew}
-          bestScore=""
+          bestScore="0"
           isLevelUnlocked={false}
           levelUnlockedName=""
           hasFinishedCourse={false}

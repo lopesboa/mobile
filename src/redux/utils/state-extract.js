@@ -121,5 +121,5 @@ export const getBestScore = (state: StoreState): string | void => {
   const bestScore = _getBestScore(state);
 
   // $FlowFixMe
-  if (stars) return stars > bestScore ? `+${stars - bestScore}` : '+0';
+  if (stars) return stars > bestScore ? `${stars - bestScore}` : '0';
 };

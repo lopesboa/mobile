@@ -379,7 +379,7 @@ describe('State-extract', () => {
       });
 
       const bestScore = getBestScore({...state, ...partialState});
-      expect(bestScore).toEqual('+10');
+      expect(bestScore).toEqual('10');
     });
   });
   describe('getBestRank', () => {

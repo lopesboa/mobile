@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
 const Tooltip = ({type, text}: Props) => {
   return (
     <View>
-      <View style={styles.corner} />
       <View style={styles.container}>
         <View style={styles.iconContainer}>
           {type === TOOLTIP_TYPE.HIGHSCORE && <Star color="#fca833" style={styles.icon} />}
@@ -73,6 +72,7 @@ const Tooltip = ({type, text}: Props) => {
           <Html fontSize={theme.fontSize.regular}>{text}</Html>
         </View>
       </View>
+      <View style={styles.corner} />
     </View>
   );
 };

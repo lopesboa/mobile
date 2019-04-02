@@ -464,8 +464,11 @@ exports[`Storyshots LevelEnd Failure 1`] = `
         <View
           style={
             Object {
+              "height": 20,
+              "marginBottom": 24,
               "paddingLeft": 24,
               "paddingTop": 20,
+              "width": 20,
             }
           }
         >
@@ -1694,8 +1697,11 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
         <View
           style={
             Object {
+              "height": 20,
+              "marginBottom": 24,
               "paddingLeft": 24,
               "paddingTop": 20,
+              "width": 20,
             }
           }
         >
@@ -2932,8 +2938,11 @@ exports[`Storyshots LevelEnd Finished 1`] = `
         <View
           style={
             Object {
+              "height": 20,
+              "marginBottom": 24,
               "paddingLeft": 24,
               "paddingTop": 20,
+              "width": 20,
             }
           }
         >
@@ -3680,218 +3689,6 @@ exports[`Storyshots LevelEnd Finished 1`] = `
           }
         >
           <View>
-            <View>
-              <View
-                style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
-                }
-              />
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderBottomRightRadius": 5,
-                    "borderTopLeftRadius": 5,
-                    "borderTopRightRadius": 5,
-                    "elevation": 4,
-                    "flexDirection": "row",
-                    "marginLeft": 5,
-                    "marginRight": 1,
-                    "padding": 16,
-                    "paddingRight": 32,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ECEFF1",
-                      "borderRadius": 19,
-                      "height": 38,
-                      "justifyContent": "center",
-                      "width": 38,
-                    }
-                  }
-                >
-                  <RNSVGSvgView
-                    align="xMidYMid"
-                    bbHeight="undefined"
-                    bbWidth="undefined"
-                    color="#fca833"
-                    meetOrSlice={0}
-                    minX={0}
-                    minY={0}
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                        },
-                        Object {
-                          "height": 21,
-                          "width": 21,
-                        },
-                        false,
-                        undefined,
-                      ]
-                    }
-                    vbHeight={16}
-                    vbWidth={16}
-                  >
-                    <RNSVGPath
-                      d="M8 0l1.888 6.111H16L11.056 9.89 12.944 16 8 12.223 3.056 16l1.888-6.111L0 6.11h6.112z"
-                      fill={
-                        Array [
-                          0,
-                          0.9882352941176471,
-                          0.6588235294117647,
-                          0.2,
-                          1,
-                        ]
-                      }
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                          "fillRule",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
-                  </RNSVGSvgView>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "paddingHorizontal": 24,
-                    }
-                  }
-                >
-                  <View>
-                    <View
-                      style={Object {}}
-                    >
-                      <Text
-                        style={Object {}}
-                      >
-                        <Text
-                          selectable={false}
-                          style={
-                            Array [
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            style={
-                              Object {
-                                "color": "#14171A",
-                                "fontSize": 15,
-                              }
-                            }
-                          >
-                            You have a new highscore
-                          </Text>
-                        </Text>
-                        <Text
-                          style={
-                            Object {
-                              "flex": 1,
-                              "height": 16.8,
-                            }
-                          }
-                        >
-                          
-
-                        </Text>
-                        <Text
-                          selectable={false}
-                          style={
-                            Array [
-                              Object {
-                                "fontWeight": "500",
-                              },
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {},
-                                Object {},
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#14171A",
-                                  "fontSize": 15,
-                                  "fontWeight": "500",
-                                }
-                              }
-                            >
-                              you just won  stars
-                            </Text>
-                          </Text>
-                        </Text>
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
             <View
               style={
                 Object {
@@ -3901,22 +3698,6 @@ exports[`Storyshots LevelEnd Finished 1`] = `
               }
             />
             <View>
-              <View
-                style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
-                }
-              />
               <View
                 style={
                   Object {
@@ -4438,6 +4219,22 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "borderBottomColor": "#FFFFFF",
+                    "borderColor": "transparent",
+                    "borderRightColor": "#FFFFFF",
+                    "borderStyle": "solid",
+                    "borderWidth": 10,
+                    "bottom": 0,
+                    "height": 14,
+                    "left": 0,
+                    "position": "absolute",
+                    "width": 16,
+                  }
+                }
+              />
             </View>
           </View>
           <View
@@ -5223,8 +5020,11 @@ exports[`Storyshots LevelEnd Success 1`] = `
         <View
           style={
             Object {
+              "height": 20,
+              "marginBottom": 24,
               "paddingLeft": 24,
               "paddingTop": 20,
+              "width": 20,
             }
           }
         >
@@ -5975,22 +5775,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
               <View
                 style={
                   Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
-                }
-              />
-              <View
-                style={
-                  Object {
                     "alignItems": "center",
                     "backgroundColor": "#FFFFFF",
                     "borderBottomRightRadius": 5,
@@ -6173,7 +5957,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 }
                               }
                             >
-                              you just won +20 stars
+                              you just won 20 stars
                             </Text>
                           </Text>
                         </Text>
@@ -6182,16 +5966,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   </View>
                 </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "height": 8,
-                  "width": 8,
-                }
-              }
-            />
-            <View>
               <View
                 style={
                   Object {
@@ -6208,6 +5982,16 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   }
                 }
               />
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+            <View>
               <View
                 style={
                   Object {
@@ -6720,7 +6504,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 }
                               }
                             >
-                               level
+                              avancé level
                             </Text>
                           </Text>
                         </Text>
@@ -6729,6 +6513,22 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "borderBottomColor": "#FFFFFF",
+                    "borderColor": "transparent",
+                    "borderRightColor": "#FFFFFF",
+                    "borderStyle": "solid",
+                    "borderWidth": 10,
+                    "bottom": 0,
+                    "height": 14,
+                    "left": 0,
+                    "position": "absolute",
+                    "width": 16,
+                  }
+                }
+              />
             </View>
           </View>
           <View
@@ -7506,8 +7306,11 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
         <View
           style={
             Object {
+              "height": 20,
+              "marginBottom": 24,
               "paddingLeft": 24,
               "paddingTop": 20,
+              "width": 20,
             }
           }
         >
@@ -8254,218 +8057,6 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
           }
         >
           <View>
-            <View>
-              <View
-                style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
-                }
-              />
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderBottomRightRadius": 5,
-                    "borderTopLeftRadius": 5,
-                    "borderTopRightRadius": 5,
-                    "elevation": 4,
-                    "flexDirection": "row",
-                    "marginLeft": 5,
-                    "marginRight": 1,
-                    "padding": 16,
-                    "paddingRight": 32,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ECEFF1",
-                      "borderRadius": 19,
-                      "height": 38,
-                      "justifyContent": "center",
-                      "width": 38,
-                    }
-                  }
-                >
-                  <RNSVGSvgView
-                    align="xMidYMid"
-                    bbHeight="undefined"
-                    bbWidth="undefined"
-                    color="#fca833"
-                    meetOrSlice={0}
-                    minX={0}
-                    minY={0}
-                    style={
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                        },
-                        Object {
-                          "height": 21,
-                          "width": 21,
-                        },
-                        false,
-                        undefined,
-                      ]
-                    }
-                    vbHeight={16}
-                    vbWidth={16}
-                  >
-                    <RNSVGPath
-                      d="M8 0l1.888 6.111H16L11.056 9.89 12.944 16 8 12.223 3.056 16l1.888-6.111L0 6.11h6.112z"
-                      fill={
-                        Array [
-                          0,
-                          0.9882352941176471,
-                          0.6588235294117647,
-                          0.2,
-                          1,
-                        ]
-                      }
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                          "fillRule",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
-                  </RNSVGSvgView>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "paddingHorizontal": 24,
-                    }
-                  }
-                >
-                  <View>
-                    <View
-                      style={Object {}}
-                    >
-                      <Text
-                        style={Object {}}
-                      >
-                        <Text
-                          selectable={false}
-                          style={
-                            Array [
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            style={
-                              Object {
-                                "color": "#14171A",
-                                "fontSize": 15,
-                              }
-                            }
-                          >
-                            You have a new highscore
-                          </Text>
-                        </Text>
-                        <Text
-                          style={
-                            Object {
-                              "flex": 1,
-                              "height": 16.8,
-                            }
-                          }
-                        >
-                          
-
-                        </Text>
-                        <Text
-                          selectable={false}
-                          style={
-                            Array [
-                              Object {
-                                "fontWeight": "500",
-                              },
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {},
-                                Object {},
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#14171A",
-                                  "fontSize": 15,
-                                  "fontWeight": "500",
-                                }
-                              }
-                            >
-                              you just won  stars
-                            </Text>
-                          </Text>
-                        </Text>
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
             <View
               style={
                 Object {
@@ -8475,22 +8066,6 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
               }
             />
             <View>
-              <View
-                style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
-                }
-              />
               <View
                 style={
                   Object {
@@ -9012,6 +8587,22 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   </View>
                 </View>
               </View>
+              <View
+                style={
+                  Object {
+                    "borderBottomColor": "#FFFFFF",
+                    "borderColor": "transparent",
+                    "borderRightColor": "#FFFFFF",
+                    "borderStyle": "solid",
+                    "borderWidth": 10,
+                    "bottom": 0,
+                    "height": 14,
+                    "left": 0,
+                    "position": "absolute",
+                    "width": 16,
+                  }
+                }
+              />
             </View>
           </View>
           <View

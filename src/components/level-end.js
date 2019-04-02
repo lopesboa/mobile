@@ -68,6 +68,9 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.negative
   },
   close: {
+    height: 20,
+    width: 20,
+    marginBottom: theme.spacing.base,
     paddingTop: getStatusBarHeight(),
     paddingLeft: theme.spacing.base
   },
@@ -217,7 +220,7 @@ class LevelEnd extends React.PureComponent<Props> {
                 <View style={styles.content}>
                   {isSuccess && (
                     <View>
-                      {bestScore !== '+0' && (
+                      {bestScore !== '0' && (
                         <Tooltip type="highscore" text={bestScoreTranslation} />
                       )}
                       <Space type="tiny" />
