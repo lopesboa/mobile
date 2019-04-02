@@ -71,7 +71,7 @@ exports[`Storyshots Authentication Default 1`] = `
     <View
       style={
         Object {
-          "padding": 24,
+          "paddingBottom": 24,
         }
       }
       testID="sign-in-header"

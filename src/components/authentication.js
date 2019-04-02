@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
   wrapper: {
     padding: theme.spacing.base
   },
+  titlewrapper: {
+    paddingBottom: theme.spacing.base
+  },
   headerContainer: {
     paddingHorizontal: theme.spacing.tiny
   },
@@ -87,7 +90,7 @@ const Authentication = ({onPress, onAssistancePress}: Props) => (
       <View style={[styles.wrapper, styles.logo]} testID="logo-header">
         <Image source={logo} style={styles.logoImg} />
       </View>
-      <View style={styles.wrapper} testID="sign-in-header">
+      <View style={styles.titlewrapper} testID="sign-in-header">
         <View style={[styles.headerContainer]}>
           <Html fontSize={theme.fontSize.large} style={styles.header} isTextCentered>
             {translations.loginHeader}
