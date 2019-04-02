@@ -73,13 +73,7 @@ jobs:
       - run:
           name: Detox framework
           command: |
-            if yarn global list | grep 'detox-cli' > /dev/null; then
-              echo "Detox-cli already installed."
-              ln -s /usr/local/bin/detox ~/.config/yarn/global/node_modules/.bin/detox
-            else
-              echo "Detox-cli not installed."
-              yarn global add detox-cli
-            fi
+            yarn global add detox-cli
             detox build-framework-cache
 
       - save_cache:
@@ -396,6 +390,12 @@ jobs:
           at: ~/app
 
       - run:
+          name: Configure git
+          command: |
+            git config --global user.email "mobile@coorpacademy.com"
+            git config --global user.name "Coorpacademy Tech Team"
+
+      - run:
           name: Clean the repository
           command: git reset --hard
 
@@ -406,8 +406,6 @@ jobs:
       - run:
           name: Push version to repository
           command: |
-            git config --global user.email "mobile@coorpacademy.com"
-            git config --global user.name "Coorpacademy Tech Team"
             git remote set-url origin https://${PUSH_GITHUB_TOKEN}@github.com/Coorpacademy/mobile.git
             git push -q origin ${CIRCLE_BRANCH} && git push -q --tags
 
