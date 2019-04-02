@@ -85,19 +85,6 @@ jobs:
             - ~/Library/Detox/ios
             - $(yarn global dir)
 
-      - restore_cache:
-          key: pods-v3-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
-
-      - run:
-          name: Pods dependencies
-          command: yarn cocoapods:install
-
-      - save_cache:
-          key: pods-v3-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
-          paths:
-            - ~/Library/Caches/CocoaPods
-            - ios/Pods
-
       - run:
           name: Build
           command: yarn test:end2end:ios:release:build
@@ -164,7 +151,7 @@ jobs:
           name: Tests
           command: yarn test:end2end:ios:release:test --cleanup
 
-  build_ios:
+  prepare_ios:
     macos:
       xcode: "10.1.0"
     working_directory: ~/app
@@ -188,21 +175,37 @@ jobs:
             - ios/gems
 
       - restore_cache:
-          key: pods-v3-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v4-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v3-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v4-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
-            - ~/Library/Caches/CocoaPods
             - ios/Pods
+
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - ios/gems
+            - ios/Pods
+
+  build_ios:
+    macos:
+      xcode: "10.1.0"
+    working_directory: ~/app
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/app
 
       - run:
           name: Build
-          command: cd ios && bundle exec fastlane adhoc --verbose
+          command: cd ios && bundle exec fastlane adhoc
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
 
@@ -215,7 +218,7 @@ jobs:
           paths:
             - ios/release
 
-  build_android:
+  prepare_android:
     working_directory: ~/app
     docker:
       - image: circleci/android:api-28-node
@@ -237,7 +240,7 @@ jobs:
             - android/gems
 
       - restore_cache:
-          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/debugCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
           name: SDK licenses
@@ -251,19 +254,41 @@ jobs:
             ANDROID_HOME: /opt/android/sdk
 
       - save_cache:
-          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/debugCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v1-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ arch }}
           paths:
             - ~/.gradle/caches
 
       - run:
-          name: Pull certificate
-          command: yarn pull:certificate:android
+          name: Pull certificate and service account
+          command: |
+              yarn pull:certificate:android
+              echo "${ANDROID_SERVICE_ACCOUNT}" > android/service-account.json
+
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - android/**/*.jks
+            - android/**/*.keystore
+            - android/service-account.json
+            - android/gems
+            - android/.gradle
+
+  build_android:
+    working_directory: ~/app
+    docker:
+      - image: circleci/android:api-28-node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
 
       - run:
           name: Build
-          command: cd android && bundle exec fastlane adhoc --verbose
+          command: cd android && bundle exec fastlane adhoc
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
+            GRADLE_OPTS: '-Xmx1024m -Dorg.gradle.daemon=false'
+            _JAVA_OPTIONS: '-Xmx1024m'
 
       - store_artifacts:
           path: android/app/build/outputs/apk/release
@@ -340,34 +365,17 @@ jobs:
       - image: circleci/android:api-28-node
     steps:
       - checkout
-      - run:
-          name: Gems dependencies
-          command: cd android && bundle install
+
+      - attach_workspace:
+          at: ~/app
 
       - run:
-          name: Npm dependencies
-          command: yarn
-
-      - run:
-          name: SDK licenses
-          # Keep "|| true" because yes command handles a 141 exit code
-          command: yes | sdkmanager "build-tools;28.0.3" "platforms;android-28" || true
-
-      - run:
-          name: Gradle dependencies
-          command: cd android && ./gradlew androidDependencies
-          environment:
-            ANDROID_HOME: /opt/android/sdk
-
-      - run:
-          name: Pull certificate and Service Account
-          command: |
-              yarn pull:certificate:android
-              echo "${ANDROID_SERVICE_ACCOUNT}" > android/service-account.json
-
-      - run:
-          name: Build and Publish
+          name: Build and publish
           command: cd android && bundle exec fastlane beta
+          environment:
+            RCT_NO_LAUNCH_PACKAGER: 1
+            GRADLE_OPTS: '-Xmx1536m -Dorg.gradle.daemon=false'
+            _JAVA_OPTIONS: '-Xmx1536m'
 
   publish_ios:
     macos:
@@ -375,18 +383,15 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+
+      - attach_workspace:
+          at: ~/app
+
       - run:
-          name: Gems dependencies
-          command: (cd ios && bundle install)
-      - run:
-          name: Setup dependencies
-          command: |
-            npm install -g yarn
-            yarn remove detox
-            yarn
-      - run:
-          name: Build and Publish
+          name: Build and publish
           command: cd ios && bundle exec fastlane beta
+          environment:
+            RCT_NO_LAUNCH_PACKAGER: 1
 
   auto_bump_version:
     working_directory: ~/app
@@ -394,30 +399,34 @@ jobs:
       - image: circleci/android:api-28-node
     steps:
       - checkout
+
+      - attach_workspace:
+          at: ~/app
+
       - run:
-          name: Configure git
-          command: |
-            git config --global user.email "mobile@coorpacademy.com"
-            git config --global user.name "Coorpacademy Tech Team"
+          name: Clean the repository
+          command: git reset --hard
+
       - run:
-          name: Install dependencies
-          command: |
-            npm install react-native react-native-version
-            git reset --hard # clean the repository
-            rm -f package-lock.json
-      - run:
-          name: Increment Version
+          name: Increment version
           command: npm run version:auto-bump
+
       - run:
           name: Push version to repository
           command: |
+            git config --global user.email "mobile@coorpacademy.com"
+            git config --global user.name "Coorpacademy Tech Team"
             git remote set-url origin https://${PUSH_GITHUB_TOKEN}@github.com/Coorpacademy/mobile.git
             git push -q origin ${CIRCLE_BRANCH} && git push -q --tags
+
 workflows:
   version: 2
   tests-build-deploy:
     jobs:
-      - dependencies
+      - dependencies:
+         filters:
+           branches:
+             ignore: master
       - linting:
          requires:
            - dependencies
@@ -426,37 +435,57 @@ workflows:
            - dependencies
       - end2end_tests_ios_build:
          requires:
-           - linting
-           - unit_tests
-           - dependencies
+           - prepare_ios
+           - linting # to prevent quota exceed
+           - unit_tests # to prevent quota exceed
       - end2end_tests_ios_run:
          requires:
            - end2end_tests_ios_build
+      - prepare_android:
+         requires:
+           - dependencies
       - build_android:
+         requires:
+           - prepare_android
+      - deploy_android:
+         requires:
+           - build_android
+      - prepare_ios:
          requires:
            - dependencies
       - build_ios:
          requires:
-           - dependencies
-      - deploy_android:
-         requires:
-           - build_android
+           - prepare_ios
       - deploy_ios:
          requires:
            - build_ios
+      - publish_android:
+         requires:
+           - prepare_android
+         filters:
+           branches:
+             ignore: /.*/
+           tags:
+             only: /v.*/
+      - publish_ios:
+         requires:
+           - prepare_ios
+         filters:
+           branches:
+             ignore: /.*/
+           tags:
+             only: /v.*/
   auto-increment-app-version:
     jobs:
+      - dependencies:
+         filters:
+           branches:
+             only: master
+           tags:
+             ignore: /v.*/
       - auto_bump_version:
-          filters:
-            branches:
-              only: master
-  publish-to-store:
-    jobs:
-      - publish_ios:
-          filters:
-            tags:
-              only: /v.*/
-      - publish_android:
-          filters:
-            tags:
-              only: /v.*/
+         requires:
+           - dependencies
+         filters:
+           branches:
+             only: master

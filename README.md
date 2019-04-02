@@ -14,9 +14,10 @@ For iOS debug builds, you need to use `yarn pull:certificate:ios`. If you need m
 
 (facultative) For Android release builds (production mode), you need to use `yarn pull:certificate:android` command.
 
-##### First run
+##### First run on iOS
 
 ```console
+yarn generate:bundle:ios
 yarn start:ios
 ```
 
@@ -26,6 +27,7 @@ For Android, you may need to allow your emulator to connect to your packager:
 
 ```console
 adb reverse tcp:7007 tcp:7007
+yarn generate:bundle:android
 yarn start:android
 ```
 

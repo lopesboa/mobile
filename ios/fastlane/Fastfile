@@ -1,6 +1,6 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.67.0"
+fastlane_version "2.119.0"
 
 default_platform :ios
 
@@ -10,7 +10,6 @@ platform :ios do
     ENV["PLIST_PATH"] = "Coorpacademy/Info.plist"
     ENV["CURRENT_USER"] = `whoami`.chomp
     skip_docs
-    cocoapods
     setup_circle_ci
     yarn(command: 'update:version', package_path: '../package.json')
     yarn(command: 'generate:bundle:ios', package_path: '../package.json')

@@ -11037,10 +11037,10 @@ react-native-orientation-locker@1.1.5:
   resolved "https://registry.npmjs.org/react-native-orientation-locker/-/react-native-orientation-locker-1.1.5.tgz#695babee0e0b97a9620a12bb677792d0b9b88ef8"
   integrity sha512-RY2kwXK1SNq8+nQN0xVCTdi0A08FnUtzR4dOOEm2dGUUIcxSqnseE7adx5cr+oqwd0WUqb043MS+NKDPMUCmMA==
 
-react-native-pdf@5.0.8:
-  version "5.0.8"
-  resolved "https://registry.npmjs.org/react-native-pdf/-/react-native-pdf-5.0.8.tgz#bb6f2893fadeaac3c9cff3147ca5d2bf310e1148"
-  integrity sha512-lLfD5C3zptYlvTaqyV5qSRCAM7l/zthLK5qh9JRjSPqhZBwHoZ68ZyVtDJR8JRDR4jQ8nSa3N4rAWp2WmQ/emQ==
+react-native-pdf@5.0.9:
+  version "5.0.9"
+  resolved "https://registry.npmjs.org/react-native-pdf/-/react-native-pdf-5.0.9.tgz#86113f316f37a661c43404430cf75d35edb5248b"
+  integrity sha512-k7JdNc4sdxcJVhvrefaDC8O4seHOZLcPnu2nZ861zdqhMbVPuekQXEgGm1nafDG20wRJ9ct9TU8y0YAT8VeeUw==
   dependencies:
     crypto-js "^3.1.9-1"
     prop-types "^15.5.10"
