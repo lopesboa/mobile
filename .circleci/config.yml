@@ -48,10 +48,13 @@ jobs:
       - attach_workspace:
           at: ~/app
       - run:
-          name: Jest
+          name: Unit tests
           command: yarn test:unit -i
           environment:
             TZ: Europe/Paris
+            JEST_JUNIT_OUTPUT: ./coverage/results/jest/results.xml
+      - store_test_results:
+          path: ./coverage/results
 
   end2end_tests_ios_build:
     macos:
@@ -65,14 +68,14 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v2-{{ arch }}
+          key: detox-v3-{{ arch }}
 
       - run:
           name: Detox framework
           command: |
             if yarn global list | grep 'detox-cli' > /dev/null; then
               echo "Detox-cli already installed."
-              ln -s /usr/local/bin/detox $(yarn global dir)/node_modules/.bin/detox
+              ln -s /usr/local/bin/detox ~/.config/yarn/global/node_modules/.bin/detox
             else
               echo "Detox-cli not installed."
               yarn global add detox-cli
@@ -80,10 +83,10 @@ jobs:
             detox build-framework-cache
 
       - save_cache:
-          key: detox-v2-{{ arch }}
+          key: detox-v3-{{ arch }}
           paths:
             - ~/Library/Detox/ios
-            - $(yarn global dir)
+            - ~/.config/yarn/global
 
       - run:
           name: Build
@@ -98,6 +101,7 @@ jobs:
     macos:
       xcode: "10.1.0"
     working_directory: ~/app
+    parallelism: 8
 
     steps:
       - checkout
@@ -106,25 +110,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v2-{{ arch }}
-
-      - run:
-          name: Detox framework
-          command: |
-            if yarn global list | grep 'detox-cli' > /dev/null; then
-              echo "Detox-cli already installed."
-              ln -s /usr/local/bin/detox $(yarn global dir)/node_modules/.bin/detox
-            else
-              echo "Detox-cli not installed."
-              yarn global add detox-cli
-            fi
-            detox build-framework-cache
-
-      - save_cache:
-          key: detox-v2-{{ arch }}
-          paths:
-            - ~/Library/Detox/ios
-            - $(yarn global dir)
+          key: detox-v3-{{ arch }}
 
       - restore_cache:
           key: brew-v2-ios-{{ arch }}
@@ -149,7 +135,13 @@ jobs:
 
       - run:
           name: Tests
-          command: yarn test:end2end:ios:release:test --cleanup
+          command: |
+            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f
+          environment:
+            JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml
+
+      - store_test_results:
+          path: ./__e2e__/results
 
   prepare_ios:
     macos:

@@ -78,6 +78,8 @@ src/modules/version.json
 
 # Jest
 coverage
+__e2e__/results
+junit.xml
 
 # Builds
 ios/release

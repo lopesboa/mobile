@@ -14,6 +14,7 @@ module.exports = {
     'node_modules/core-js'
   ],
   setupFiles: ['./jest-setup.js'],
+  reporters: ['default', 'jest-junit'],
   collectCoverage: true,
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverageFrom: [
