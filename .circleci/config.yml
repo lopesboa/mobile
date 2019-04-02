@@ -417,6 +417,8 @@ workflows:
          filters:
            branches:
              ignore: master
+           tags:
+             only: /v.*/
       - linting:
          requires:
            - dependencies
@@ -471,8 +473,6 @@ workflows:
          filters:
            branches:
              only: master
-           tags:
-             ignore: /v.*/
       - auto_bump_version:
          requires:
            - dependencies
