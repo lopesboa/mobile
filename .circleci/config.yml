@@ -413,12 +413,7 @@ workflows:
   version: 2
   tests-build-deploy:
     jobs:
-      - dependencies:
-         filters:
-           branches:
-             ignore: master
-           tags:
-             only: /v.*/
+      - dependencies
       - linting:
          requires:
            - dependencies
@@ -479,3 +474,23 @@ workflows:
          filters:
            branches:
              only: master
+  publish-to-store:
+    jobs:
+      - dependencies:
+         filters:
+           branches:
+             only: master
+           tags:
+             only: /v.*/
+      - prepare_android:
+         requires:
+           - dependencies
+      - publish_android:
+         requires:
+           - prepare_android
+      - prepare_ios:
+         requires:
+           - dependencies
+      - publish_ios:
+         requires:
+           - prepare_ios
