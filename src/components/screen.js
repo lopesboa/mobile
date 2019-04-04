@@ -10,6 +10,7 @@ type Props = {|
   children: React.Node,
   testID?: string,
   onRef?: (ref: ScrollView) => void,
+  refreshControl?: React$Element<*>,
   noSafeArea?: boolean
 |};
 
@@ -39,7 +40,7 @@ class Screen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {style, noScroll, children, testID, noSafeArea} = this.props;
+    const {style, noScroll, children, testID, noSafeArea, refreshControl} = this.props;
 
     const CustomView = noSafeArea ? View : SafeAreaView;
 
@@ -53,6 +54,7 @@ class Screen extends React.PureComponent<Props> {
           <ScrollView
             contentContainerStyle={styles.screenScroll}
             showsHorizontalScrollIndicator={false}
+            refreshControl={refreshControl}
             testID={testID}
             ref={this.handleRef}
             nestedScrollEnabled

@@ -118,6 +118,46 @@ exports[`Storyshots Screen With custom style 1`] = `
 </RCTSafeAreaView>
 `;
 
+exports[`Storyshots Screen With refresh control 1`] = `
+<RCTSafeAreaView
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    nestedScrollEnabled={true}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+    showsHorizontalScrollIndicator={false}
+    testID="fake-screen"
+  >
+    <RCTRefreshControl />
+    <View>
+      <Text>
+        Foo bar baz
+      </Text>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
+
 exports[`Storyshots Screen Without safeArea 1`] = `
 <View
   style={

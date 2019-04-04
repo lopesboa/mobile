@@ -1,9 +1,10 @@
 // @flow
 
 import * as React from 'react';
-import {Text, StyleSheet, ScrollView} from 'react-native';
+import {Text, StyleSheet, ScrollView, RefreshControl} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
+import {handleFakePress} from '../utils/tests';
 import Screen from './screen';
 
 const fakeStyle = StyleSheet.create({
@@ -37,6 +38,16 @@ storiesOf('Screen', module)
   ))
   .add('With custom style', () => (
     <Screen style={fakeStyle.screen} testID="fake-screen" onRef={handleRef}>
+      <Text>Foo bar baz</Text>
+    </Screen>
+  ))
+  .add('With refresh control', () => (
+    <Screen
+      style={fakeStyle.screen}
+      testID="fake-screen"
+      onRef={handleRef}
+      refreshControl={<RefreshControl refreshing onRefresh={handleFakePress} />}
+    >
       <Text>Foo bar baz</Text>
     </Screen>
   ));
