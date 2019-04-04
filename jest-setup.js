@@ -100,3 +100,6 @@ jest.mock('react-navigation', () => ({
   SafeAreaView: 'Mock$ReactNavigation$SafeAreaView',
   NavigationEvents: 'Mock$ReactNavigation$NavigationEvents'
 }));
+
+// confetti cannon
+jest.mock('react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');

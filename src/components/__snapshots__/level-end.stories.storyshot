@@ -4508,6 +4508,27 @@ exports[`Storyshots LevelEnd Finished 1`] = `
     </View>
   </RCTScrollView>
   <View
+    pointerEvents="none"
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Mock$ReactNativeConfettiCannon
+      count={200}
+      fadeOut={true}
+      origin={
+        Object {
+          "x": 375,
+          "y": 0,
+        }
+      }
+    />
+  </View>
+  <View
     onLayout={[Function]}
     pointerEvents="none"
     style={
@@ -6794,6 +6815,27 @@ exports[`Storyshots LevelEnd Success 1`] = `
     </View>
   </RCTScrollView>
   <View
+    pointerEvents="none"
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Mock$ReactNativeConfettiCannon
+      count={200}
+      fadeOut={true}
+      origin={
+        Object {
+          "x": 375,
+          "y": 0,
+        }
+      }
+    />
+  </View>
+  <View
     onLayout={[Function]}
     pointerEvents="none"
     style={
@@ -8875,6 +8917,27 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
       </View>
     </View>
   </RCTScrollView>
+  <View
+    pointerEvents="none"
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Mock$ReactNativeConfettiCannon
+      count={200}
+      fadeOut={true}
+      origin={
+        Object {
+          "x": 375,
+          "y": 0,
+        }
+      }
+    />
+  </View>
   <View
     onLayout={[Function]}
     pointerEvents="none"

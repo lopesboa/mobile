@@ -10,11 +10,6 @@ import {handleFakePress} from '../utils/tests';
 import {AUTHOR_TYPE} from '../const';
 import LevelEnd from './level-end';
 
-// This is for the loader
-if (process.env.NODE_ENV === 'test') {
-  jest.useFakeTimers();
-}
-
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
 
 const chapterNew = createChapterCard({

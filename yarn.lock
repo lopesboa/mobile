@@ -11052,6 +11052,11 @@ react-native-card-flip@^1.0.4:
   dependencies:
     prop-types "15.5.10"
 
+react-native-confetti-cannon@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-confetti-cannon/-/react-native-confetti-cannon-1.1.0.tgz#3875053f8b8324a8188ba58940d800c085a9e99b"
+  integrity sha512-5Oi69iLnodju4M5J65p2gcd6quR1DwUnIvRChOUc0pq/nIrjT+fkllS5eqrGg4K+OeKjlyk9dvPZ7/FLL2GJeQ==
+
 react-native-device-info@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-1.1.0.tgz#bcf5b0d4522413eb9970e4299d5bed29ba28b602"

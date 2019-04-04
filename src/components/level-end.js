@@ -5,6 +5,7 @@ import * as React from 'react';
 import {NovaSolidPlacesPlacesHome2 as HomeIcon} from '@coorpacademy/nova-icons';
 import {View, StyleSheet, TouchableOpacity, Dimensions, ScrollView} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import ConfettiCannon from 'react-native-confetti-cannon';
 import translations from '../translations';
 import {getCleanUri} from '../modules/uri';
 import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
@@ -145,6 +146,11 @@ const styles = StyleSheet.create({
     marginHorizontal: theme.spacing.medium,
     height: '100%',
     borderWidth: 1
+  },
+  confettisContainer: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%'
   }
 });
 
@@ -268,6 +274,11 @@ class LevelEnd extends React.PureComponent<Props> {
                 </View>
               </View>
             </ScrollView>
+            {isSuccess && (
+              <View pointerEvents="none" style={styles.confettisContainer}>
+                <ConfettiCannon count={200} origin={{x: screenWidth / 2, y: 0}} fadeOut />
+              </View>
+            )}
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
