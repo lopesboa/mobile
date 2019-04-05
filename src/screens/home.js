@@ -75,8 +75,11 @@ class HomeScreen extends React.PureComponent<Props, State> {
     this.setState({isRefreshing: true});
     this.fetchContent()
       .then(() => this.setState({isRefreshing: false}))
-      // eslint-disable-next-line no-console
-      .catch(err => console.error(err));
+      .catch(err => {
+        this.setState({isRefreshing: false});
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
   };
 
   render() {
