@@ -1,0 +1,50 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2019-04-03 16:33:59",
+    "containerVersion": {
+        "path": "accounts/91533996/containers/11498413/versions/0",
+        "accountId": "91533996",
+        "containerId": "11498413",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/91533996/containers/11498413",
+            "accountId": "91533996",
+            "containerId": "11498413",
+            "name": "Mobile Android",
+            "publicId": "GTM-TFRSV62",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1554216986548",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/91533996/containers/11498413/workspaces?apiLink=container"
+        },
+        "builtInVariable": [
+            {
+                "accountId": "91533996",
+                "containerId": "11498413",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            },
+            {
+                "accountId": "91533996",
+                "containerId": "11498413",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "91533996",
+                "containerId": "11498413",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "91533996",
+                "containerId": "11498413",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            }
+        ],
+        "fingerprint": "0",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/91533996/containers/11498413/versions/0?apiLink=version"
+    }
+}

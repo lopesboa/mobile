@@ -3,10 +3,11 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import ButtonBase from 'apsl-react-native-button';
+
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 
-type PropsType = {|
+type Props = {|
   onPress: () => void,
   isDisabled?: boolean,
   isInverted?: boolean,
@@ -65,7 +66,7 @@ const Button = ({
   isDisabled,
   testID: prefixTestID,
   children
-}: PropsType) => (
+}: Props) => (
   <BrandThemeContext.Consumer>
     {brandTheme => {
       const buttonStyle = {backgroundColor: brandTheme.colors.primary};

@@ -3,11 +3,13 @@
 import * as React from 'react';
 import {Provider} from 'react-redux';
 
+import createDataLayer from '../layer/data';
+import createServices from '../services';
 import createStore from '../redux';
 import type {Layout} from '../containers/with-layout';
 import type {SliderProps} from '../types';
 
-export const store = createStore();
+export const store = createStore(createServices(createDataLayer('en')));
 
 // eslint-disable-next-line no-console
 export const handleFakePress = () => console.log('Fake press');

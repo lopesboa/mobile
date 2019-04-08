@@ -22,6 +22,7 @@ import {find as findRecommendations, getNextLevel} from './recommendations';
 import {findById as findLevelById} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
+import {logEvent, setCurrentScreen, setUserProperty, setUserProperties} from './analytics';
 import type {DisciplineCard} from './_types';
 
 export type DataLayer = {
@@ -36,7 +37,11 @@ export type DataLayer = {
   synchronizeProgression: typeof synchronizeProgression,
   getAllProgressions: typeof getAllProgressions,
   findBestOf: (language: SupportedLanguage) => Promise<number>,
-  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | void>
+  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | void>,
+  logEvent: typeof logEvent,
+  setCurrentScreen: typeof setCurrentScreen,
+  setUserProperty: typeof setUserProperty,
+  setUserProperties: typeof setUserProperties
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -64,7 +69,11 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   // @todo implement it
   getChapterRulesByContent: () => [],
   fetchDisciplineBundle,
-  storeDisciplineBundle
+  storeDisciplineBundle,
+  logEvent,
+  setCurrentScreen,
+  setUserProperty,
+  setUserProperties
 });
 
 export default createDataLayer;

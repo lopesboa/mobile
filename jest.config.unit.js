@@ -36,16 +36,16 @@ module.exports = {
       statements: 100
     },
     'src/redux': {
-      branches: 86,
+      branches: 89,
       function: 100,
       lines: 100,
       statements: 100
     },
     'src/layer': {
       // @todo increase this value
-      branches: 83,
-      function: 98,
-      lines: 98,
+      branches: 84,
+      function: 100,
+      lines: 99,
       statements: 98
     },
     'src/modules': {
@@ -53,6 +53,16 @@ module.exports = {
       functions: 100,
       lines: 100,
       statements: 100
+    },
+    'src/services': {
+      // @todo increase this value
+      branches: 87,
+      // @todo increase this value
+      function: 75,
+      // @todo increase this value
+      lines: 55,
+      // @todo increase this value
+      statements: 55
     }
   },
   verbose: true

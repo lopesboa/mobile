@@ -1,3 +1,5 @@
+install! 'cocoapods', :deterministic_uuids => false
+
 platform :ios, '9.0'
 
 target 'Coorpacademy' do
@@ -27,6 +29,13 @@ target 'Coorpacademy' do
   pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs"
   pod 'glog', :podspec => "#{rn_path}/third-party-podspecs"
   pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs"
+
+  # Firebase
+  pod 'Firebase/Core'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+
+  # Tracking
+  pod 'GoogleTagManager'
 
   # Pods for the app
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'

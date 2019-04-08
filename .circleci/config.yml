@@ -26,6 +26,8 @@ jobs:
           paths:
             - node_modules
             - src/modules/version.json
+            - android/app/google-services.json
+            - ios/GoogleService-Info.plist
 
   linting:
     working_directory: ~/app
@@ -360,8 +362,8 @@ jobs:
           command: cd android && bundle exec fastlane beta
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
-            GRADLE_OPTS: '-Xmx1536m -Dorg.gradle.daemon=false'
-            _JAVA_OPTIONS: '-Xmx1536m'
+            GRADLE_OPTS: '-Xmx1024m -Dorg.gradle.daemon=false'
+            _JAVA_OPTIONS: '-Xmx1024m'
 
   publish_ios:
     macos:

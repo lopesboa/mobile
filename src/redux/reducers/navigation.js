@@ -2,6 +2,7 @@
 
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action} from '../actions/navigation';
+import {INITIAL_ROUTE_NAME} from '../../navigator/navigation-options';
 
 export type State = {|
   currentNavigatorName: string,
@@ -12,8 +13,8 @@ export type State = {|
 
 const initialState: State = {
   currentNavigatorName: 'App',
-  currentAppScreenName: 'Splash',
-  currentScreenName: 'Splash'
+  currentAppScreenName: INITIAL_ROUTE_NAME,
+  currentScreenName: INITIAL_ROUTE_NAME
 };
 
 const reducer = (state: State = initialState, action: Action): State => {

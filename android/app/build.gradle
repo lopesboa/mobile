@@ -47,6 +47,7 @@ android {
         applicationId releaseConfig['build.application_id']
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
         versionName "1.1.20"
         ndk {
@@ -128,6 +129,14 @@ dependencies {
     implementation project(':react-native-svg')
     implementation project(':react-native-linear-gradient')
     implementation project(':react-native-gesture-handler')
+    // Firebase dependencies
+    implementation project(':react-native-firebase')
+    implementation 'com.google.android.gms:play-services-base:16.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.android.support:multidex:1.0.2'
+    // Google Tag Manager
+    implementation 'com.google.android.gms:play-services-tagmanager:16.0.8'
+    // React native
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
@@ -154,3 +163,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply plugin: 'com.google.gms.google-services'

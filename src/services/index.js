@@ -2,12 +2,7 @@
 
 import {Answers, Clues, Content, LeaderBoard} from '@coorpacademy/player-services';
 
-import type {
-  AnalyticsService,
-  AnswersService,
-  CluesService,
-  ContentService
-} from '@coorpacademy/player-services';
+import type {AnswersService, CluesService, ContentService} from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
 import type {DisciplineBundleService} from './discipline-bundle';
@@ -17,6 +12,7 @@ import Cards from './cards';
 import type {BrandsService} from './brands';
 import Brands from './brands';
 import Analytics from './analytics';
+import type {AnalyticsService} from './analytics';
 import Permissions from './permissions';
 import type {PermissionsService} from './permissions';
 import Progressions from './progressions';
@@ -38,7 +34,7 @@ export type Services = {|
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
-  Analytics,
+  Analytics: Analytics(dataLayer),
   // $FlowFixMe
   Answers: Answers(dataLayer),
   Cards: Cards(dataLayer),

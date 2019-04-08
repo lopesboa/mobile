@@ -3,7 +3,7 @@
 import {parseTemplate, TEMPLATE_PART_TYPE} from './template';
 import type {TemplatePart} from './template';
 
-describe('Questions', () => {
+describe('Template', () => {
   describe('parseTemplate', () => {
     it('should handle empty template', () => {
       const result = parseTemplate('');
