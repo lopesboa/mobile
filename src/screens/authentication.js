@@ -7,11 +7,12 @@ import {connect} from 'react-redux';
 import {assistanceEmail} from '../../app';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
-import {signIn} from '../redux/actions/authentication';
+import {signIn, signInAnonymous} from '../redux/actions/authentication';
 import type {Params as QRCodeScreenParams} from './qr-code';
 
 type ConnectedDispatchProps = {|
-  signIn: typeof signIn
+  signIn: typeof signIn,
+  signInAnonymous: typeof signInAnonymous
 |};
 
 type Props = {|
@@ -35,6 +36,15 @@ class AuthenticationScreen extends React.PureComponent<Props> {
     navigation.navigate('QRCodeModal', params);
   };
 
+  handleStartDemoPress = () => {
+    this.signInAnonymous();
+  };
+
+  signInAnonymous = async () => {
+    await this.props.signInAnonymous();
+    this.props.navigation.navigate('Home');
+  };
+
   handleAssistancePress = () => {
     Linking.openURL(`mailto:${assistanceEmail}`);
   };
@@ -43,14 +53,19 @@ class AuthenticationScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="authentication-screen" noScroll noSafeArea>
         <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
-        <Authentication onPress={this.handlePress} onAssistancePress={this.handleAssistancePress} />
+        <Authentication
+          onStartDemoPress={this.handleStartDemoPress}
+          onPress={this.handlePress}
+          onAssistancePress={this.handleAssistancePress}
+        />
       </Screen>
     );
   }
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signIn
+  signIn,
+  signInAnonymous
 };
 
 export default connect(null, mapDispatchToProps)(AuthenticationScreen);

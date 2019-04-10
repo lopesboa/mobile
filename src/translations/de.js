@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: 'Herzlichen Glückwunsch!',
   context: 'Kontext',
   correction: 'Verbesserung',
+  demoMode: 'Keine Lernplattform? <a href="/"><b><u>Demo starten</u></b></a>',
   didYouKnowThat: 'Wussten Sie das?',
   finishLearning: 'Setze diese zuerst fort',
   forYou: 'Unsere besten Vorschläge für Sie',

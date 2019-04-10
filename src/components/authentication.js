@@ -20,7 +20,8 @@ import StepsIcon, {TARGET} from './steps-icon';
 
 type Props = {|
   onPress: () => void,
-  onAssistancePress: () => void
+  onAssistancePress: () => void,
+  onStartDemoPress: () => void
 |};
 
 const styles = StyleSheet.create({
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  needHelpWrapper: {
+  centeredContent: {
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center'
@@ -73,6 +74,10 @@ const styles = StyleSheet.create({
   needHelp: {
     textDecorationLine: 'underline',
     fontSize: theme.fontSize.medium,
+    color: theme.colors.white
+  },
+  startDemo: {
+    fontSize: theme.fontSize.large,
     color: theme.colors.white
   },
   questionIcon: {
@@ -84,7 +89,7 @@ const styles = StyleSheet.create({
 export const TOP_COLOR = BLUE_COORP_DARK;
 export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
-const Authentication = ({onPress, onAssistancePress}: Props) => (
+const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) => (
   <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient}>
     <SafeAreaView style={styles.container}>
       <View style={[styles.wrapper, styles.logo]} testID="logo-header">
@@ -108,11 +113,22 @@ const Authentication = ({onPress, onAssistancePress}: Props) => (
             </Html>
           </View>
         </Button>
-        <Space type={SPACE.SMALL} />
+        <Space type={SPACE.BASE} />
+        <View style={styles.centeredContent}>
+          <Html
+            fontSize={theme.fontSize.large}
+            style={styles.startDemo}
+            onLinkPress={onStartDemoPress}
+            anchorTextColor={theme.colors.white}
+          >
+            {translations.demoMode}
+          </Html>
+        </View>
+        <Space type={SPACE.BASE} />
         <TouchableOpacity
           hitSlop={defaultHitSlop}
           onPress={onAssistancePress}
-          style={styles.needHelpWrapper}
+          style={styles.centeredContent}
         >
           <QuestionIcon color={theme.colors.white} style={styles.questionIcon} />
           <Space type={SPACE.TINY} />

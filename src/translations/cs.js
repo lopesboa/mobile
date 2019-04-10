@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: 'Blahopřejeme!',
   context: 'Kontext',
   correction: 'Oprava',
+  demoMode: 'Nemáte vzdělávací platformu? <a href="/"><b><u>Spustit ukázku</u></b></a>',
   didYouKnowThat: 'Věděli jste to?',
   finishLearning: 'Nejdřív pokračujte tady',
   forYou: 'Naše nejlepší tipy pro vás',

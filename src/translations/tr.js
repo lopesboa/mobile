@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: 'Tebrikler!',
   context: 'İçerik',
   correction: 'Düzeltme',
+  demoMode: 'Öğrenme platformunuz yok mu? <a href="/"><b><u>Demoyu Başlat</u></b></a>',
   didYouKnowThat: 'Biliyor muydunuz?',
   finishLearning: 'Önce buna devam et',
   forYou: 'Sizin için seçtiklerimiz',

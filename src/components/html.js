@@ -11,6 +11,7 @@ type Props = {|
   fontSize: number,
   onLinkPress?: () => void,
   containerStyle?: GenericStyleProp,
+  anchorTextColor?: string,
   imageStyle?: GenericStyleProp,
   style?: GenericStyleProp,
   testID?: string,
@@ -45,6 +46,7 @@ const Html = ({
   style,
   onLinkPress,
   testID,
+  anchorTextColor,
   isTextCentered
 }: Props) => {
   const tagsStyles = {
@@ -55,6 +57,7 @@ const Html = ({
     h4: {fontSize},
     h5: {fontSize},
     h6: {fontSize},
+    a: {color: anchorTextColor},
     img: imageStyle
   };
 

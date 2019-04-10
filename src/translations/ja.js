@@ -12,6 +12,7 @@ const translations: Translations = {
   congratulations: 'おめでとうございます!',
   context: 'コンテキスト',
   correction: '解答',
+  demoMode: '学習プラットフォームがない？ <a href="/"><b><u>デモを開始</u></b></a>',
   didYouKnowThat: 'ご存知でしたか。',
   finishLearning: 'まずはこれを続ける',
   forYou: 'おすすめ厳選情報',

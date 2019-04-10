@@ -32,6 +32,7 @@ export type Translations = {|
   congratulations: string,
   context: string,
   correction: string,
+  demoMode: string,
   didYouKnowThat: string,
   finishLearning: string,
   forYou: string,

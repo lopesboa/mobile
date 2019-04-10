@@ -63,7 +63,8 @@ class HomeScreen extends React.PureComponent<Props, State> {
     const action = this.props.onLogoLongPress && (await this.props.onLogoLongPress());
     // When we log out, we reset the entirely stack
     // To avoid router directions and other stuffs
-    if (action) this.props.navigation.reset([NavigationActions.navigate({routeName: 'Splash'})], 0);
+    if (action)
+      this.props.navigation.reset([NavigationActions.navigate({routeName: 'Authentication'})], 0);
   };
 
   fetchContent = async () => {

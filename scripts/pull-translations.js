@@ -93,6 +93,7 @@ const generate = async (locale: string) => {
     congratulations: formatTranslation(playerTranslations['Congratulations!']),
     context: formatTranslation(playerTranslations.Context),
     correction: formatTranslation(playerTranslations.Correction),
+    demoMode: formatTranslation(playerTranslations['Demo mode mobile'].replace(/\\/g, '')),
     didYouKnowThat: formatTranslation(playerTranslations['Did you know that?']),
     finishLearning: formatTranslation(playerTranslations['Finish learning']),
     forYou: formatTranslation(playerTranslations['For you']),

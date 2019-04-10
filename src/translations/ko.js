@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: '축하합니다!',
   context: '문맥',
   correction: '수정',
+  demoMode: '학습 플랫폼이 없으세요? <a href="/"><b><u>데모 시작하기</u></b></a>',
   didYouKnowThat: '귀하는 그것을 알았습니까?',
   finishLearning: '먼저 이것을 계속하기',
   forYou: '저희의 추천 선정 내용',

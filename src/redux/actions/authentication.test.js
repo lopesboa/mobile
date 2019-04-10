@@ -4,6 +4,7 @@ import {toJWT} from '../../utils/tests';
 import {
   signIn,
   signOut,
+  signInAnonymous,
   SIGN_IN_SUCCESS,
   SIGN_IN_REQUEST,
   SIGN_IN_ERROR,
@@ -104,6 +105,37 @@ describe('Authentication', () => {
         payload: new Error("JWT isn't from Coorpacademy"),
         error: true
       });
+    });
+  });
+  describe('signInAnonymous', () => {
+    it('success', async () => {
+      const dispatch = jest.fn();
+      const token = toJWT({
+        iss: 'coorpacademy-jwt',
+        host: 'https://up.coorpacademy.com'
+      });
+
+      jest.mock('cross-fetch');
+
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, options) => {
+        expect(options.method).toBe('POST');
+        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
+        return Promise.resolve({text: () => Promise.resolve(token)});
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action.type).toEqual(SIGN_IN_REQUEST);
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action.type).toEqual(SIGN_IN_SUCCESS);
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signInAnonymous()(dispatch);
+      return expect(actual.type).toEqual(SIGN_IN_SUCCESS);
     });
   });
   describe('signOut', () => {

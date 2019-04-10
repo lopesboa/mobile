@@ -12,6 +12,7 @@ const translations: Translations = {
   congratulations: '恭喜！',
   context: '背景',
   correction: '正確解答',
+  demoMode: '沒有學習平台？<a href="/"><b><u>開始示範</u></b></a>',
   didYouKnowThat: '您知道嗎？',
   finishLearning: '先繼續這一個',
   forYou: '我們推薦的首選課程',

@@ -2,6 +2,7 @@
 
 import decode from 'jwt-decode';
 import {Alert, AsyncStorage} from 'react-native';
+import fetch from 'cross-fetch';
 import translations from '../../translations';
 import type {StoreAction} from '../_types';
 import localToken from '../../utils/local-token';
@@ -53,6 +54,15 @@ export const signIn = (token: string): StoreAction<Action> => async dispatch => 
       error: true
     });
   }
+};
+
+export const signInAnonymous = (): StoreAction<Action> => async dispatch => {
+  const response = await fetch('https://up.coorpacademy.com/api/v1/anonymous/mobile', {
+    method: 'POST'
+  });
+  const token = await response.text();
+  // $FlowFixMe
+  return signIn(token)(dispatch);
 };
 
 export const signOut = (): StoreAction<Action> => async dispatch => {

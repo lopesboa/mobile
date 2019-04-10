@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: 'Gratulálunk!',
   context: 'Kontextus',
   correction: 'Javítás',
+  demoMode: 'Nincs tanulói platform? <a href="/"><b><u>Indíts egy demót</u></b></a>',
   didYouKnowThat: 'Tudta?',
   finishLearning: 'Folytasd ezt előtte',
   forYou: 'Legjobb ajánlataink számodra',

@@ -13,6 +13,7 @@ const translations: Translations = {
   congratulations: '恭喜！',
   context: '背景知识',
   correction: '修改',
+  demoMode: '没有学习平台？<a href="/"><b><u>开始演示</u></b></a>',
   didYouKnowThat: '你知道吗？',
   finishLearning: '先继续这个',
   forYou: '专为您准备的首选内容',
