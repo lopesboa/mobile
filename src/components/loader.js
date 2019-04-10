@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {Animated, StyleSheet, Easing} from 'react-native';
 
+import type {CompositeAnimation} from 'react-native/Libraries/Animated/src/AnimatedImplementation';
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 
@@ -34,12 +35,14 @@ const CYCLE_DURATION = 3000;
 class Loader extends React.PureComponent<Props> {
   props: Props;
 
+  animation: CompositeAnimation;
+
   scale: Animated.Value = new Animated.Value(0);
 
   rotation: Animated.Value = new Animated.Value(0);
 
   componentDidMount() {
-    Animated.parallel([
+    this.animation = Animated.parallel([
       Animated.loop(
         Animated.sequence([
           Animated.timing(this.scale, {toValue: 0, duration: 0}),
@@ -70,7 +73,13 @@ class Loader extends React.PureComponent<Props> {
           })
         ])
       )
-    ]).start();
+    ]);
+
+    this.animation.start();
+  }
+
+  componentWillUnmount() {
+    this.animation.stop();
   }
 
   render() {

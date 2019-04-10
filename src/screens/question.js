@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {ScrollView, StatusBar} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import {
   editAnswer,
@@ -13,6 +13,7 @@ import {
   getStepContent,
   getQuestionMedia,
   getQuestionType,
+  getRoute,
   validateAnswer
 } from '@coorpacademy/player-store';
 import type {Lesson, Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
@@ -56,6 +57,14 @@ type Props = {|
   ...ConnectedStateProps,
   ...ConnectedDispatchProps
 |};
+
+const styles = StyleSheet.create({
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
 
 class QuestionScreen extends React.PureComponent<Props> {
   props: Props;
@@ -147,6 +156,7 @@ class QuestionScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="question-screen" onRef={this.handleRef}>
         <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
+        {!header && <View style={styles.loaderContainer}>{/* <Loader height={60} /> */}</View>}
         {type &&
           header &&
           explanation && (
@@ -173,35 +183,43 @@ class QuestionScreen extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStateProps => {
+  const isFocused = state.navigation.currentScreenName === 'Slide';
+  const emptySlide = {
+    isFocused,
+    type: undefined,
+    header: undefined,
+    explanation: undefined,
+    template: undefined,
+    choices: undefined,
+    userChoices: undefined,
+    answers: undefined,
+    userAnswers: undefined,
+    media: undefined,
+    tip: undefined,
+    keyPoint: undefined,
+    resourcesForCorrection: undefined,
+    isValidating: false,
+    slider: {
+      minLabel: undefined,
+      minValue: undefined,
+      maxLabel: undefined,
+      maxValue: undefined,
+      step: undefined,
+      value: undefined
+    }
+  };
+
   const nextContent = getStepContent(state);
   const progression = getCurrentProgression(state);
-  const isFocused = state.navigation.currentScreenName === 'Slide';
 
   if (!nextContent || progression === undefined || progression.state === undefined) {
-    return {
-      isFocused,
-      type: undefined,
-      header: undefined,
-      explanation: undefined,
-      template: undefined,
-      choices: undefined,
-      userChoices: undefined,
-      answers: undefined,
-      userAnswers: undefined,
-      media: undefined,
-      tip: undefined,
-      keyPoint: undefined,
-      resourcesForCorrection: undefined,
-      isValidating: false,
-      slider: {
-        minLabel: undefined,
-        minValue: undefined,
-        maxLabel: undefined,
-        maxValue: undefined,
-        step: undefined,
-        value: undefined
-      }
-    };
+    return emptySlide;
+  }
+
+  const currentRoute = getRoute(state);
+  const showQuestionOrCorrection = currentRoute === 'answer' || currentRoute === 'correction';
+  if (!showQuestionOrCorrection) {
+    return emptySlide;
   }
 
   const correction = getCurrentCorrection(state);

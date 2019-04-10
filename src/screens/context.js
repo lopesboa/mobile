@@ -34,13 +34,13 @@ class ContextScreen extends React.PureComponent<Props> {
 
   UNSAFE_componentWillMount() {
     if (this.props.hasNoContext) {
-      this.props.selectRoute('question');
+      this.props.selectRoute('answer');
       this.props.navigation.navigate('Question');
     }
   }
 
   handleButtonPress = () => {
-    this.props.selectRoute('question');
+    this.props.selectRoute('answer');
     this.props.navigation.navigate('Question');
   };
 
