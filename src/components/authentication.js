@@ -1,12 +1,11 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
 import {NovaSolidLocationsLocationPinQuestionMark1 as QuestionIcon} from '@coorpacademy/nova-icons';
 
 import {SPACE} from '../const';
-
 import logo from '../assets/images/logo-coorp.png';
 import theme, {defaultHitSlop, BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
 import translations from '../translations';
@@ -17,6 +16,8 @@ import Space from './space';
 import Html from './html';
 import Gradient from './gradient';
 import StepsIcon, {TARGET} from './steps-icon';
+import Text from './text';
+import Touchable from './touchable';
 
 type Props = {|
   onPress: () => void,
@@ -107,7 +108,13 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
       <Carousel />
       <Space type="tiny" />
       <View style={styles.wrapper}>
-        <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
+        <Button
+          isInverted
+          isTextSecondary
+          onPress={onPress}
+          testID="button-scan-qr-code"
+          analyticsID="button-scan-qr-code"
+        >
           <View style={styles.buttonWithIcon}>
             <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
             <Space />
@@ -128,15 +135,16 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
           </Html>
         </View>
         <Space type={SPACE.BASE} />
-        <TouchableOpacity
+        <Touchable
           hitSlop={defaultHitSlop}
           onPress={onAssistancePress}
           style={styles.centeredContent}
+          analyticsID="need-help"
         >
           <QuestionIcon color={theme.colors.white} style={styles.questionIcon} />
           <Space type={SPACE.TINY} />
           <Text style={styles.needHelp}>{translations.needHelp}</Text>
-        </TouchableOpacity>
+        </Touchable>
       </View>
     </SafeAreaView>
   </Gradient>

@@ -24,7 +24,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
           "textAlign": "center",
         },
         Object {
-          "color": "#0077be",
+          "color": "#00B0FF",
         },
       ]
     }
@@ -71,7 +71,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
       renderToHardwareTextureAndroid={true}
       style={
         Object {
-          "backgroundColor": "#0077be",
+          "backgroundColor": "#00B0FF",
           "borderRadius": 32,
           "height": 10,
           "opacity": 0,
@@ -86,7 +86,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
       style={
         Object {
           "backgroundColor": "white",
-          "borderColor": "#0077be",
+          "borderColor": "#00B0FF",
           "borderRadius": 15,
           "borderWidth": 1,
           "elevation": 4,
@@ -199,7 +199,7 @@ exports[`Storyshots QuestionSlider Default 1`] = `
 </View>
 `;
 
-exports[`Storyshots QuestionSlider With Default Step 1`] = `
+exports[`Storyshots QuestionSlider With default step 1`] = `
 <View
   style={
     Array [
@@ -223,7 +223,7 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
           "textAlign": "center",
         },
         Object {
-          "color": "red",
+          "color": "#00B0FF",
         },
       ]
     }
@@ -270,7 +270,7 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
       renderToHardwareTextureAndroid={true}
       style={
         Object {
-          "backgroundColor": "red",
+          "backgroundColor": "#00B0FF",
           "borderRadius": 32,
           "height": 10,
           "opacity": 0,
@@ -285,7 +285,7 @@ exports[`Storyshots QuestionSlider With Default Step 1`] = `
       style={
         Object {
           "backgroundColor": "white",
-          "borderColor": "red",
+          "borderColor": "#00B0FF",
           "borderRadius": 15,
           "borderWidth": 1,
           "elevation": 4,

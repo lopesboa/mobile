@@ -22,7 +22,7 @@ import {find as findRecommendations, getNextLevel} from './recommendations';
 import {findById as findLevelById} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
-import {logEvent, setCurrentScreen, setUserProperty, setUserProperties} from './analytics';
+import {logEvent, setCurrentScreen, setUserProperty} from './analytics';
 import type {DisciplineCard} from './_types';
 
 export type DataLayer = {
@@ -40,8 +40,7 @@ export type DataLayer = {
   getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | void>,
   logEvent: typeof logEvent,
   setCurrentScreen: typeof setCurrentScreen,
-  setUserProperty: typeof setUserProperty,
-  setUserProperties: typeof setUserProperties
+  setUserProperty: typeof setUserProperty
 };
 
 const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
@@ -72,8 +71,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   storeDisciplineBundle,
   logEvent,
   setCurrentScreen,
-  setUserProperty,
-  setUserProperties
+  setUserProperty
 });
 
 export default createDataLayer;

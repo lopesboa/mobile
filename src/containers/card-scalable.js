@@ -1,17 +1,18 @@
 // @flow
 
 import * as React from 'react';
-import {Animated, TouchableOpacity, StyleSheet, View} from 'react-native';
+import {Animated, StyleSheet, View} from 'react-native';
 
-import Card, {CARD_TYPE as CARD} from '../components/card';
+import Card, {LAYOUT as CARD_LAYOUT} from '../components/card';
 import CardHeader from '../components/card-header';
 import type {Props as CardProps} from '../components/card';
 import type {Props as CardHeaderProps} from '../components/card-header';
 import theme from '../modules/theme';
 import Gradient from '../components/gradient';
+import Touchable from '../components/touchable';
 import {CARD_TYPE} from '../const';
 
-type Props = {|
+type Props = $Exact<{|
   ...CardProps,
   ...CardHeaderProps,
   height: number,
@@ -20,7 +21,7 @@ type Props = {|
   offsetBottom: number,
   expandedOffsetBottom: number,
   testID?: string
-|};
+|}>;
 
 type State = {|
   isExpanded: boolean
@@ -95,8 +96,14 @@ class CardScalable extends React.PureComponent<Props, State> {
 
     return (
       <Animated.View style={{...style, height: this.height, top: this.top}}>
-        <TouchableOpacity onPress={this.handlePress} activeOpacity={1} style={styles.expanded}>
-          <Card testID={testID} type={CARD.DECK_SWIPE}>
+        <Touchable
+          onPress={this.handlePress}
+          activeOpacity={1}
+          style={styles.expanded}
+          analyticsID="deck-card"
+          analyticsParams={{type}}
+        >
+          <Card testID={testID} type={CARD_LAYOUT.DECK_SWIPE}>
             <CardHeader type={type} title={title} isCorrect={isCorrect} />
             <View style={[styles.content, type === CARD_TYPE.RESOURCE && styles.noPadding]}>
               {children}
@@ -107,7 +114,7 @@ class CardScalable extends React.PureComponent<Props, State> {
               />
             </View>
           </Card>
-        </TouchableOpacity>
+        </Touchable>
       </Animated.View>
     );
   }

@@ -63,6 +63,7 @@ describe('Analytics', () => {
     const logEvent = jest.fn();
     // $FlowFixMe
     const service = createService({logEvent});
+    // $FlowFixMe this is a fake event
     service.logEvent('foo', {bar: 'baz'});
     expect(logEvent).toHaveBeenCalledWith('foo', {bar: 'baz'});
   });

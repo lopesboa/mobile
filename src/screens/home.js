@@ -72,7 +72,7 @@ class HomeScreen extends React.PureComponent<Props, State> {
     await this.props.fetchCards(translationUtil.getLanguage());
   };
 
-  handleOnRefresh = () => {
+  handleRefresh = () => {
     this.setState({isRefreshing: true});
     this.fetchContent()
       .then(() => this.setState({isRefreshing: false}))
@@ -92,9 +92,7 @@ class HomeScreen extends React.PureComponent<Props, State> {
         testID="home-screen"
         noSafeArea
         style={refreshingStyle}
-        refreshControl={
-          <RefreshControl refreshing={isRefreshing} onRefresh={this.handleOnRefresh} />
-        }
+        refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={this.handleRefresh} />}
       >
         <StatusBar barStyle="dark-content" backgroundColor={theme.colors.white} />
         <Home

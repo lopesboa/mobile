@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer';
 
 import {handleFakePress, fakeLayout, TestContextProvider} from '../utils/tests';
 import {mediaContextImage, mediaContextVideo, mediaContextPDF} from '../__fixtures__/context';
+import {__TEST__} from '../modules/environment';
 import {Component as Context} from './context';
 
 storiesOf('Context', module)
@@ -86,7 +87,7 @@ storiesOf('Context', module)
     </TestContextProvider>
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('Context', () => {
     it('should handle onPress callback', () => {
       const handlePress = jest.fn();

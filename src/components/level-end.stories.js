@@ -2,8 +2,9 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-
 import renderer from 'react-test-renderer';
+
+import {__TEST__} from '../modules/environment';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress} from '../utils/tests';
@@ -53,7 +54,7 @@ storiesOf('LevelEnd', module)
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
-      recommendedContent={disciplineNew}
+      recommendation={disciplineNew}
       bestScore="0"
       isLevelUnlocked={false}
       levelUnlockedName=""
@@ -66,7 +67,7 @@ storiesOf('LevelEnd', module)
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
-      recommendedContent={chapterNew}
+      recommendation={chapterNew}
       bestScore="20"
       hasFinishedCourse={false}
       isLevelUnlocked
@@ -79,7 +80,7 @@ storiesOf('LevelEnd', module)
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
-      recommendedContent={disciplineNewCoorp}
+      recommendation={disciplineNewCoorp}
       bestScore="0"
       isLevelUnlocked={false}
       levelUnlockedName=""
@@ -92,7 +93,7 @@ storiesOf('LevelEnd', module)
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
-      recommendedContent={chapterNewCoorp}
+      recommendation={chapterNewCoorp}
       bestScore="0"
       isLevelUnlocked
       levelUnlockedName=""
@@ -105,7 +106,7 @@ storiesOf('LevelEnd', module)
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
-      recommendedContent={chapterNewCoorp}
+      recommendation={chapterNewCoorp}
       bestScore="0"
       isLevelUnlocked
       levelUnlockedName=""
@@ -113,7 +114,7 @@ storiesOf('LevelEnd', module)
     />
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('LevelEnd', () => {
     it('should handle onCardPress callback', () => {
       const handlePress = jest.fn();
@@ -123,7 +124,7 @@ if (process.env.NODE_ENV === 'test') {
           onButtonPress={handleFakePress}
           onCardPress={handlePress}
           onClose={handleFakePress}
-          recommendedContent={disciplineNewCoorp}
+          recommendation={disciplineNewCoorp}
           bestScore="0"
           isLevelUnlocked={false}
           levelUnlockedName=""
@@ -143,7 +144,7 @@ if (process.env.NODE_ENV === 'test') {
           onButtonPress={handlePress}
           onCardPress={handlePress}
           onClose={handleFakePress}
-          recommendedContent={disciplineNew}
+          recommendation={disciplineNew}
           bestScore="0"
           isLevelUnlocked={false}
           levelUnlockedName=""

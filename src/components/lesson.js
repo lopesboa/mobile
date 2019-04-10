@@ -16,7 +16,7 @@ import ResourcesBrowser from './resources-browser';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
 
-type Props = {|
+type Props = $Exact<{|
   ...WithLayoutProps,
   header: string,
   starsGranted: number,
@@ -25,7 +25,7 @@ type Props = {|
   onChange: (id: string) => void,
   onPDFButtonPress: (url: string, description: string) => void,
   onVideoPlay: () => void
-|};
+|}>;
 
 const styles = StyleSheet.create({
   container: {

@@ -88,7 +88,11 @@ exports[`Storyshots Catalog Items 1`] = `
         testID="catalog-item-dis-1"
       >
         <View
-          style={null}
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+            }
+          }
         >
           <View
             style={
@@ -480,7 +484,11 @@ exports[`Storyshots Catalog Items 1`] = `
             testID="catalog-item-cha-1"
           >
             <View
-              style={null}
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
               <View
                 style={
@@ -857,7 +865,11 @@ exports[`Storyshots Catalog Items 1`] = `
             testID="catalog-item-dis-1"
           >
             <View
-              style={null}
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
               <View
                 style={
@@ -1246,7 +1258,11 @@ exports[`Storyshots Catalog Items 1`] = `
             testID="catalog-item-cha-2"
           >
             <View
-              style={null}
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
               <View
                 style={
@@ -1545,7 +1561,11 @@ exports[`Storyshots Catalog Items 1`] = `
             testID="catalog-item-dis-2"
           >
             <View
-              style={null}
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
               <View
                 style={

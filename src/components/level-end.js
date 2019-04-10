@@ -3,19 +3,20 @@
 
 import * as React from 'react';
 import {NovaSolidPlacesPlacesHome2 as HomeIcon} from '@coorpacademy/nova-icons';
-import {View, StyleSheet, TouchableOpacity, Dimensions, ScrollView} from 'react-native';
+import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import ConfettiCannon from 'react-native-confetti-cannon';
+
 import translations from '../translations';
 import {getCleanUri} from '../modules/uri';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
+import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
 import theme, {defaultHitSlop} from '../modules/theme';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
-import ButtonSticky from '../containers/button-sticky';
+import {CARD_TYPE} from '../layer/data/_const';
+import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
-import Card, {CARD_TYPE} from './card';
+import Card, {LAYOUT as CARD_LAYOUT} from './card';
 import {getAuthorType, getAuthorName} from './catalog';
-
 import CatalogItem from './catalog-item';
 import Starburst from './starburst';
 import HeartBroken from './heart-broken';
@@ -25,6 +26,7 @@ import Text from './text';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
 import Tooltip from './tooltip';
+import Touchable from './touchable';
 
 type Props = {|
   isSuccess: boolean,
@@ -36,7 +38,7 @@ type Props = {|
   isLevelUnlocked: boolean,
   levelUnlockedName: string,
   hasFinishedCourse: boolean,
-  recommendedContent: DisciplineCard | ChapterCard
+  recommendation: DisciplineCard | ChapterCard
 |};
 
 const PADDING_WIDTH = theme.spacing.base;
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
     paddingBottom: theme.spacing.small,
     paddingTop: theme.spacing.base
   },
-  recommendedContent: {
+  recommendation: {
     flex: 1,
     borderRadius: theme.radius.card
   },
@@ -154,6 +156,8 @@ const styles = StyleSheet.create({
   }
 });
 
+const {width: screenWidth} = Dimensions.get('window');
+
 class LevelEnd extends React.PureComponent<Props> {
   handleCardPress = (item: DisciplineCard | ChapterCard) => () => this.props.onCardPress(item);
 
@@ -167,21 +171,21 @@ class LevelEnd extends React.PureComponent<Props> {
       isLevelUnlocked,
       levelUnlockedName,
       hasFinishedCourse,
-      recommendedContent
+      recommendation
     } = this.props;
+
     const header = (isSuccess && translations.congratulations) || translations.ooops;
     const backgroundColor = (isSuccess && styles.positive) || styles.negative;
-    const screenWidth: number = Dimensions.get('window').width;
     const bestScoreTranslation = translations.highscore.replace(/{{score}}/g, bestScore);
     const unlockNextLevelTranslation = translations.unlockNextLevel.replace(
       /{{levelName}}/g,
       levelUnlockedName
     );
-
     const buttonTranslation =
       (isSuccess && hasFinishedCourse && translations.backToHome) ||
       (isSuccess && translations.nextLevel) ||
       translations.retryLevel;
+
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
@@ -198,13 +202,14 @@ class LevelEnd extends React.PureComponent<Props> {
                   backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
                 />
                 <View style={styles.close}>
-                  <TouchableOpacity
+                  <Touchable
                     testID="button-close"
                     onPress={onClose}
                     hitSlop={defaultHitSlop}
+                    analyticsID="button-close"
                   >
                     <HomeIcon height={16} width={16} color={theme.colors.white} />
-                  </TouchableOpacity>
+                  </Touchable>
                 </View>
                 <View style={styles.header}>
                   <Text style={styles.mainHeader} testID="level-end-header">
@@ -221,7 +226,6 @@ class LevelEnd extends React.PureComponent<Props> {
                 ) : (
                   <HeartBroken style={[styles.icon, {height: screenWidth}]} />
                 )}
-
                 <Space type="base" />
                 <View style={styles.content}>
                   {isSuccess && (
@@ -235,42 +239,44 @@ class LevelEnd extends React.PureComponent<Props> {
                       )}
                     </View>
                   )}
-                  <View style={styles.recommendedContent}>
-                    <Text style={styles.title}>{translations.relatedSubjects}</Text>
-                    <Card type={CARD_TYPE.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
-                      <CatalogItem
-                        title={recommendedContent && recommendedContent.title}
-                        subtitle={
-                          recommendedContent &&
-                          recommendedContent.authors.map(author => author.label).join(', ')
-                        }
-                        progression={{
-                          current: recommendedContent && recommendedContent.completion,
-                          count: 1
-                        }}
-                        image={{uri: getCleanUri(recommendedContent && recommendedContent.image)}}
-                        authorType={getAuthorType(recommendedContent && recommendedContent)}
-                        authorName={
-                          getAuthorType(recommendedContent && recommendedContent) !==
-                          AUTHOR_TYPE.CUSTOM
-                            ? getAuthorName(recommendedContent && recommendedContent)
-                            : brandTheme.name
-                        }
-                        badge={
-                          recommendedContent && recommendedContent.isNew ? translations.new : ''
-                        }
-                        isAdaptive={recommendedContent && recommendedContent.adaptiv}
-                        displayMode={CARD_DISPLAY_MODE.CARD}
-                        onPress={this.handleCardPress(recommendedContent && recommendedContent)}
-                        testID={`recommend-item-${recommendedContent &&
-                          recommendedContent.universalRef.replace(/_/g, '-')}`}
-                        isCertified={
-                          getAuthorType(recommendedContent && recommendedContent) ===
-                          AUTHOR_TYPE.VERIFIED
-                        }
-                      />
-                    </Card>
-                  </View>
+                  {recommendation && (
+                    <View style={styles.recommendation}>
+                      <Text style={styles.title}>{translations.relatedSubjects}</Text>
+                      <Card type={CARD_LAYOUT.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
+                        <CatalogItem
+                          title={recommendation.title}
+                          subtitle={recommendation.authors.map(author => author.label).join(', ')}
+                          progression={{
+                            current: recommendation.completion,
+                            count: 1
+                          }}
+                          image={{uri: getCleanUri(recommendation.image)}}
+                          authorType={getAuthorType(recommendation)}
+                          authorName={
+                            getAuthorType(recommendation) !== AUTHOR_TYPE.CUSTOM
+                              ? getAuthorName(recommendation)
+                              : brandTheme.name
+                          }
+                          badge={recommendation.isNew ? translations.new : ''}
+                          isAdaptive={recommendation.adaptiv}
+                          displayMode={CARD_DISPLAY_MODE.CARD}
+                          onPress={this.handleCardPress(recommendation)}
+                          testID={`recommend-item-${recommendation.universalRef.replace(
+                            /_/g,
+                            '-'
+                          )}`}
+                          isCertified={getAuthorType(recommendation) === AUTHOR_TYPE.VERIFIED}
+                          universalRef={recommendation.universalRef}
+                          type={
+                            recommendation.type === CARD_TYPE.CHAPTER
+                              ? ENGINE.MICROLEARNING
+                              : ENGINE.LEARNER
+                          }
+                          section="recommendation"
+                        />
+                      </Card>
+                    </View>
+                  )}
                 </View>
               </View>
             </ScrollView>

@@ -28,8 +28,8 @@ export const getClueTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(0
 
 export const bypassAuthentication = async () => {
   await waitFor(element(by.id('authentication-screen'))).toBeVisible();
-  await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
-  await element(by.id('scan-qr-code')).tap();
+  await waitFor(element(by.id('button-scan-qr-code'))).toBeVisible();
+  await element(by.id('button-scan-qr-code')).tap();
   await waitFor(element(by.id('qr-code-screen'))).toBeVisible();
   await weExpect(element(by.id('qr-code-screen'))).toBeVisible();
   await element(by.id('qr-code-screen')).longPress();

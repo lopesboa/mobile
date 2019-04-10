@@ -260,7 +260,7 @@ exports[`Storyshots Authentication Default 1`] = `
       }
     >
       <View
-        testID="scan-qr-code"
+        testID="button-scan-qr-code"
       >
         <View
           accessible={true}
@@ -285,6 +285,7 @@ exports[`Storyshots Authentication Default 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-scan-qr-code-native"
         >
           <View
             style={

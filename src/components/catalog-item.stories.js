@@ -27,6 +27,9 @@ storiesOf('Catalog Item', module)
       isAdaptive
       onPress={handleFakePress}
       testID="catalog1"
+      universalRef="foobar"
+      type="learner"
+      section="finishLearning"
     />
   ))
   .add('New', () => (
@@ -41,6 +44,9 @@ storiesOf('Catalog Item', module)
       isAdaptive={false}
       onPress={handleFakePress}
       testID="catalog2"
+      universalRef="foobar"
+      type="learner"
+      section="finishLearning"
     />
   ))
   .add('Adaptive/New/Certified/Coorp', () => (
@@ -56,6 +62,9 @@ storiesOf('Catalog Item', module)
       isCertified
       onPress={handleFakePress}
       testID="catalog3"
+      universalRef="foobar"
+      type="learner"
+      section="finishLearning"
     />
   ))
   .add('Adaptive/New/Certified/Custom', () => (
@@ -71,5 +80,8 @@ storiesOf('Catalog Item', module)
       isCertified
       onPress={handleFakePress}
       testID="catalog4"
+      universalRef="foobar"
+      type="learner"
+      section="finishLearning"
     />
   ));

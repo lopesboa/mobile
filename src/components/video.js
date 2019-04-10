@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View, TouchableOpacity, Platform} from 'react-native';
+import {StyleSheet, View, Platform} from 'react-native';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {TextTrackType} from 'react-native-video';
 import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
@@ -13,6 +13,7 @@ import {RESOURCE_TYPE} from '../const';
 import translations from '../translations';
 import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
+import Touchable from './touchable';
 
 export type Step = 'preview' | 'play' | 'end';
 
@@ -184,13 +185,14 @@ const Video = ({
       )}
       {step === STEP.END && (
         <ResourceOverlay>
-          <TouchableOpacity
+          <Touchable
             onPress={onPlay}
             style={styles.replay}
             testID={'video-replay' + testIDSuffix}
+            analyticsID="video-replay"
           >
             <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
-          </TouchableOpacity>
+          </Touchable>
         </ResourceOverlay>
       )}
     </View>

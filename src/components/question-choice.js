@@ -1,8 +1,8 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import type {Media} from '@coorpacademy/progression-engine';
+import {View, StyleSheet} from 'react-native';
+import type {Media, QuestionType} from '@coorpacademy/progression-engine';
 
 import {MEDIA_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -10,6 +10,7 @@ import {getCleanUri} from '../modules/uri';
 import ImageBackgroundScalable from '../containers/image-background-scalable';
 import Html from './html';
 import {BrandThemeContext} from './brand-theme-provider';
+import Touchable from './touchable';
 
 type Props = {|
   isSelected?: boolean,
@@ -19,7 +20,8 @@ type Props = {|
   testID?: string,
   media?: Media,
   squeezed?: boolean,
-  style?: GenericStyleProp
+  style?: GenericStyleProp,
+  questionType: QuestionType
 |};
 
 const styles = StyleSheet.create({
@@ -76,7 +78,8 @@ const QuestionChoice = ({
   onPress,
   media,
   testID: prefixTestID,
-  style
+  style,
+  questionType
 }: Props) => (
   <BrandThemeContext.Consumer>
     {brandTheme => {
@@ -98,7 +101,12 @@ const QuestionChoice = ({
       const mediaSuffix = prefixTestID && mediaType ? `-${mediaType}` : '';
 
       return (
-        <TouchableOpacity onPress={!isDisabled ? onPress : undefined} style={style}>
+        <Touchable
+          onPress={!isDisabled ? onPress : undefined}
+          style={style}
+          analyticsID="question-choice"
+          analyticsParams={{questionType}}
+        >
           <View
             style={[styles.container]}
             testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
@@ -128,7 +136,7 @@ const QuestionChoice = ({
               </Html>
             </View>
           </View>
-        </TouchableOpacity>
+        </Touchable>
       );
     }}
   </BrandThemeContext.Consumer>

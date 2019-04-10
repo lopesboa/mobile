@@ -13,7 +13,8 @@ import type {
   QuestionChoiceInputType,
   AnimationType,
   PermissionStatus,
-  AppState
+  AppState,
+  AnalyticsEventType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -143,4 +144,21 @@ export const APP_STATE: {
   ACTIVE: 'active',
   BACKGROUND: 'background',
   INACTIVE: 'inactive'
+};
+
+export const ANALYTICS_EVENT_TYPE: {
+  [
+    | 'PRESS'
+    | 'LONG_PRESS'
+    | 'SLIDE'
+    | 'MEDIA_VIEWED'
+    | 'START_PROGRESSION'
+    | 'FINISH_PROGRESSION']: AnalyticsEventType
+} = {
+  PRESS: 'press',
+  LONG_PRESS: 'longPress',
+  SLIDE: 'slide',
+  MEDIA_VIEWED: 'mediaViewed',
+  START_PROGRESSION: 'startProgression',
+  FINISH_PROGRESSION: 'finishProgression'
 };

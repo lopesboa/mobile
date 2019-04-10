@@ -18,7 +18,7 @@ import Button from './button';
 import Preview from './preview';
 import Image from './image';
 
-export type Props = {|
+export type Props = $Exact<{|
   ...WithLayoutProps,
   header: string,
   description: string,
@@ -27,9 +27,9 @@ export type Props = {|
   onPDFButtonPress: (url: string, description: string) => void,
   testID?: string,
   mediaSources: Media
-|};
+|}>;
 
-const styles: GenericStyleProp = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,
@@ -41,10 +41,7 @@ const styles: GenericStyleProp = StyleSheet.create({
     fontSize: theme.fontSize.large,
     textAlign: 'left'
   },
-  buttonText: {
-    fontSize: theme.fontSize.large
-  },
-  imageStyle: {
+  image: {
     width: 200,
     height: 200,
     marginLeft: 'auto',
@@ -56,12 +53,14 @@ const styles: GenericStyleProp = StyleSheet.create({
   descriptionContainer: {
     paddingHorizontal: theme.spacing.base
   },
-  goToQuestionButton: {
+  button: {
     paddingHorizontal: theme.spacing.base
   }
 });
 
 class Context extends React.PureComponent<Props> {
+  props: Props;
+
   renderResource = (resource: Media) => {
     const {layout} = this.props;
     const height = layout && layout.width / (16 / 9);
@@ -121,7 +120,7 @@ class Context extends React.PureComponent<Props> {
       <Image
         source={{uri: url}}
         maxHeight={height}
-        style={[styles.imageStyle, {height, width}]}
+        style={[styles.image, {height, width}]}
         testID="context-image"
       />
     );
@@ -139,7 +138,7 @@ class Context extends React.PureComponent<Props> {
           <Html
             fontSize={theme.fontSize.small}
             style={styles.text}
-            imageStyle={styles.imageStyle}
+            imageStyle={styles.image}
             onLinkPress={onOpenBrowser}
             isTextCentered
           >
@@ -148,8 +147,13 @@ class Context extends React.PureComponent<Props> {
         </View>
 
         <Space type="base" />
-        <View style={styles.goToQuestionButton}>
-          <Button onPress={onPress} testID="goToQuestion-button" isSecondary>
+        <View style={styles.button}>
+          <Button
+            onPress={onPress}
+            testID="button-redirect-question"
+            isSecondary
+            analyticsID="button-redirect-question"
+          >
             {translations.goToQuestion}
           </Button>
         </View>

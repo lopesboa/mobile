@@ -3,10 +3,11 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
+
+import {__TEST__} from '../modules/environment';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress} from '../utils/tests';
 import {reduceToResources} from '../layer/data/mappers';
-
 import ResourcesBrowser from './resources-browser';
 
 const lessons = [
@@ -36,7 +37,7 @@ storiesOf('ResourcesBrowser', module)
     />
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('ResourcesBrowser', () => {
     it('should handle onPress callback', () => {
       const handlePress = jest.fn();

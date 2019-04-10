@@ -22,15 +22,15 @@ describe('Clue', () => {
       await waitFor(element(by.id('clue'))).toBeVisible();
       await weExpect(element(by.id('clue'))).toBeVisible();
       await weExpect(element(by.id('clue-advice'))).toBeVisible();
-      await weExpect(element(by.id('clue-button'))).toBeVisible();
+      await weExpect(element(by.id('button-clue'))).toBeVisible();
     });
 
     // Buggy, should see later
     // it('should be able to reveal the clue', async () => {
-    //   await element(by.id('clue-button')).tap();
+    //   await element(by.id('button-clue')).tap();
     //   await sleep(1000);
     //   await weExpect(element(by.id('clue-advice'))).toBeNotVisible();
-    //   await weExpect(element(by.id('clue-button'))).toBeNotVisible();
+    //   await weExpect(element(by.id('button-clue'))).toBeNotVisible();
     //   await weExpect(element(by.id('clue-back'))).toBeVisible();
     // });
   });

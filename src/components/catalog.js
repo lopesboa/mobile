@@ -1,11 +1,12 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, Text, Image, TouchableWithoutFeedback} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
+import {CARD_TYPE} from '../layer/data/_const';
 import theme from '../modules/theme';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
+import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
 import {getCleanUri} from '../modules/uri';
 import translations from '../translations';
 import type {AuthorType} from '../types';
@@ -15,6 +16,8 @@ import {BrandThemeContext} from './brand-theme-provider';
 import CatalogItem from './catalog-item';
 import Card from './card';
 import {STYLE as BOX_STYLE} from './box';
+import Text from './text';
+import Touchable from './touchable';
 
 type Props = {|
   titleCover: string,
@@ -86,12 +89,14 @@ class Catalog extends React.PureComponent<Props> {
         <BrandThemeContext.Consumer>
           {brandTheme => (
             <View style={styles.container}>
-              <TouchableWithoutFeedback
+              <Touchable
                 testID="catalog-logo"
                 onLongPress={this.handleLogoLongPress}
+                analyticsID="sign-out"
+                isWithoutFeedback
               >
                 <Image style={styles.logo} testID="brand-logo" source={logo} />
-              </TouchableWithoutFeedback>
+              </Touchable>
               <Text style={styles.title}>{titleCover}</Text>
 
               <Card style={styles.card} shadowStyle={BOX_STYLE}>
@@ -115,6 +120,9 @@ class Catalog extends React.PureComponent<Props> {
                   onPress={this.handlePress(cover)}
                   testID={`catalog-item-${cover.universalRef.replace(/_/g, '-')}`}
                   isCertified={getAuthorType(cover) === AUTHOR_TYPE.VERIFIED}
+                  universalRef={cover.universalRef}
+                  type={cover.type === CARD_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER}
+                  section="finishLearning"
                 />
               </Card>
               <Text style={styles.title}>{titleCards}</Text>
@@ -150,6 +158,11 @@ class Catalog extends React.PureComponent<Props> {
                           onPress={this.handlePress(item)}
                           testID={`catalog-item-${item.universalRef.replace(/_/g, '-')}`}
                           isCertified={getAuthorType(item) === AUTHOR_TYPE.VERIFIED}
+                          universalRef={cover.universalRef}
+                          type={
+                            item.type === CARD_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER
+                          }
+                          section="forYou"
                         />
                       </Card>
                       <Space />
@@ -175,6 +188,13 @@ class Catalog extends React.PureComponent<Props> {
                             onPress={this.handlePress(nextItem)}
                             testID={`catalog-item-${nextItem.universalRef.replace(/_/g, '-')}`}
                             isCertified={getAuthorType(nextItem) === AUTHOR_TYPE.VERIFIED}
+                            universalRef={cover.universalRef}
+                            type={
+                              item.type === CARD_TYPE.CHAPTER
+                                ? ENGINE.MICROLEARNING
+                                : ENGINE.LEARNER
+                            }
+                            section="forYou"
                           />
                         </Card>
                       )}

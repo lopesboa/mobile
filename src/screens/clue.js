@@ -21,11 +21,11 @@ export type ConnectedDispatchProps = {|
   getClue: () => typeof getClue
 |};
 
-type Props = {|
+type Props = $Exact<{|
   ...ReactNavigation$ScreenProps,
   ...ConnectedStateProps,
   ...ConnectedDispatchProps
-|};
+|}>;
 
 class ClueScreen extends React.PureComponent<Props> {
   props: Props;
@@ -61,6 +61,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   // $FlowFixMe union type
   const header = slide && slide.question.header;
   const starsDiff = engineConfig && engineConfig.starsPerAskingClue;
+
   return {
     clue,
     slideId,

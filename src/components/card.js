@@ -14,7 +14,7 @@ export type Props = {|
   type?: CardType
 |};
 
-export const CARD_TYPE: {[key: string]: CardType} = {
+export const LAYOUT: {[key: string]: CardType} = {
   DECK_SWIPE: 'deckSwipe',
   CONTAIN: 'contain',
   DEFAULT: 'default'
@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
   overflowHidden: {overflow: 'hidden'}
 });
 
-const Card = ({children, style, testID, type = CARD_TYPE.DEFAULT, shadowStyle}: Props) => {
+const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Props) => {
   switch (type) {
-    case CARD_TYPE.DECK_SWIPE:
+    case LAYOUT.DECK_SWIPE:
       return (
         <View style={[style, styles.container, styles.overflowHiddeniOS]}>
           <View style={[styles.container]} testID={testID}>
@@ -45,13 +45,13 @@ const Card = ({children, style, testID, type = CARD_TYPE.DEFAULT, shadowStyle}: 
           </View>
         </View>
       );
-    case CARD_TYPE.CONTAIN:
+    case LAYOUT.CONTAIN:
       return (
         <View style={shadowStyle} testID={testID}>
           <View style={style}>{children}</View>
         </View>
       );
-    case CARD_TYPE.DEFAULT:
+    case LAYOUT.DEFAULT:
       return (
         <View style={[styles.container, shadowStyle]} testID={testID}>
           <View style={[style, styles.overflowHidden]}>{children}</View>

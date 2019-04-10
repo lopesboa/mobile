@@ -5,6 +5,7 @@ import {storiesOf} from '@storybook/react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 import renderer from 'react-test-renderer';
 
+import {__TEST__} from '../modules/environment';
 import {choices} from '../__fixtures__/question-choices';
 import {handleFakePress} from '../utils/tests';
 import QuestionDraggable, {extractSelectedChoices} from './question-draggable';
@@ -49,7 +50,7 @@ storiesOf('QuestionDraggable', module)
     />
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('QuestionDraggable', () => {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();

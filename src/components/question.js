@@ -4,7 +4,6 @@ import * as React from 'react';
 import {StyleSheet, View, ImageBackground} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
-import type {SliderProps} from '../types';
 
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
@@ -12,6 +11,7 @@ import translations from '../translations';
 import {QUESTION_TYPE} from '../const';
 import Html from './html';
 import QuestionChoices from './question-choices';
+import type {Props as QuestionChoicesProps} from './question-choices';
 import QuestionTitle from './question-title';
 import Space from './space';
 import Button from './button';
@@ -27,12 +27,15 @@ export type Props = {|
   isValidating: boolean,
   // @todo mutualize the callback ?
   onChoicePress: (item: Choice) => void,
-  onSliderChange?: (newValue: number) => void,
+  onSliderChange: $PropertyType<QuestionChoicesProps, 'onSliderChange'>,
   onChoiceInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void,
   onButtonPress: () => void,
   isValidating?: boolean,
-  slider?: SliderProps
+  min?: $PropertyType<QuestionChoicesProps, 'min'>,
+  max?: $PropertyType<QuestionChoicesProps, 'max'>,
+  value?: $PropertyType<QuestionChoicesProps, 'value'>,
+  step?: $PropertyType<QuestionChoicesProps, 'step'>
 |};
 
 export type State = {|
@@ -79,7 +82,10 @@ const Question = ({
   onInputValueChange,
   onButtonPress,
   isValidating,
-  slider
+  min,
+  max,
+  step,
+  value
 }: Props) => {
   const oneChoiceSelected =
     type === QUESTION_TYPE.TEMPLATE
@@ -127,7 +133,10 @@ const Question = ({
           onSliderChange={onSliderChange}
           onItemInputChange={onChoiceInputChange}
           isDisabled={isValidating}
-          slider={slider}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
         />
       </View>
       <Space type="base" />
@@ -137,6 +146,8 @@ const Question = ({
           isDisabled={!oneChoiceSelected || isValidating}
           isLoading={isValidating}
           testID="button-validate"
+          analyticsID="button-validate"
+          analyticsParams={{questionType: type}}
         >
           {translations.validate}
         </Button>

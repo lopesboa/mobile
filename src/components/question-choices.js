@@ -3,31 +3,32 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {QuestionType, Choice} from '@coorpacademy/progression-engine';
-import type {SliderProps} from '../types';
 
 import {QUESTION_TYPE, QUESTION_CHOICE_INPUT_TYPE} from '../const';
 import theme from '../modules/theme';
-
+import QuestionSlider from '../containers/question-slider';
+import type {Props as QuestionSliderProps} from '../containers/question-slider';
 import QuestionInput from './question-input';
 import QuestionChoice from './question-choice';
 import QuestionTemplate from './question-template';
-
 import Space from './space';
-import QuestionSlider from './question-slider';
 import QuestionDraggable from './question-draggable';
 
-type Props = {|
+export type Props = $Exact<{|
   type: QuestionType,
   isDisabled?: boolean,
   template?: string,
   items: Array<Choice>,
   userChoices: Array<string>,
   onItemPress: (item: Choice) => void,
-  onSliderChange?: (newValue: number) => void,
-  slider?: SliderProps,
+  onSliderChange: (value: number) => void,
+  min?: $PropertyType<QuestionSliderProps, 'min'>,
+  max?: $PropertyType<QuestionSliderProps, 'max'>,
+  step?: $PropertyType<QuestionSliderProps, 'step'>,
+  value?: $PropertyType<QuestionSliderProps, 'value'>,
   onItemInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void
-|};
+|}>;
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 
@@ -80,7 +81,10 @@ class QuestionChoices extends React.PureComponent<Props> {
       isDisabled,
       items,
       userChoices,
-      slider,
+      min,
+      max,
+      value,
+      step,
       onSliderChange,
       onInputValueChange
     } = this.props;
@@ -99,6 +103,7 @@ class QuestionChoices extends React.PureComponent<Props> {
                   isDisabled={isDisabled}
                   isSelected={isSelected(item)}
                   testID={`question-choice-${item._id}`}
+                  questionType={type}
                 >
                   {item.label}
                 </QuestionChoice>
@@ -121,6 +126,7 @@ class QuestionChoices extends React.PureComponent<Props> {
                       isSelected={isSelected(item)}
                       testID={`question-choice-${item._id}`}
                       style={styles.card}
+                      questionType={type}
                     >
                       {item.label}
                     </QuestionChoice>
@@ -132,18 +138,13 @@ class QuestionChoices extends React.PureComponent<Props> {
           </View>
         );
       case QUESTION_TYPE.SLIDER: {
-        const minValue = slider && slider.minValue;
-        const maxValue = slider && slider.maxValue;
-        const maxLabel = slider && slider.maxLabel;
-        const minLabel = slider && slider.minLabel;
-        const step = slider && slider.step;
-        const value = slider && slider.value;
+        if (!min || !max) {
+          return null;
+        }
         return (
           <QuestionSlider
-            minValue={minValue}
-            maxValue={maxValue}
-            minLabel={minLabel}
-            maxLabel={maxLabel}
+            min={min}
+            max={max}
             value={value}
             step={step}
             onChange={onSliderChange}

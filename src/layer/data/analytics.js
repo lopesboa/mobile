@@ -2,29 +2,20 @@
 
 import firebase from 'react-native-firebase';
 
+import type {AnalyticsEventType, AnalyticsEventParams, AnalyticsUserProperty} from '../../types';
+
 firebase.utils().errorOnMissingPlayServices = false;
 firebase.utils().promptOnMissingPlayServices = false;
 
 firebase.analytics().setAnalyticsCollectionEnabled(true);
 
-type EventParams = {
-  [key: string]: string | number
-};
-
-type UserProperties = {
-  [key: string]: string
-};
-
-export const logEvent = (event: string, params?: EventParams): void =>
+export const logEvent = (event: AnalyticsEventType, params?: AnalyticsEventParams): void =>
   firebase.analytics().logEvent(event, params);
 
 export const setCurrentScreen = (screenName: string): void =>
   firebase.analytics().setCurrentScreen(screenName);
 
-export const setUserProperties = (properties: UserProperties) =>
-  firebase.analytics().setUserProperties(properties);
-
-export const setUserProperty = (name: string, value: string) =>
+export const setUserProperty = (name: AnalyticsUserProperty, value: string | null) =>
   firebase.analytics().setUserProperty(name, value);
 
-export default {logEvent, setCurrentScreen, setUserProperty, setUserProperties};
+export default {logEvent, setCurrentScreen, setUserProperty};

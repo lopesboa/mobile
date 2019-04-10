@@ -6,6 +6,16 @@ import type {
   Lesson
 } from '@coorpacademy/progression-engine';
 
+export type JWT = {|
+  exp: number,
+  iat: number,
+  grants: mixed,
+  iss: string,
+  user: string,
+  usage: string,
+  host: string
+|};
+
 export type QuestionChoiceInputType = 'text' | 'select';
 
 export type MimeType =
@@ -39,15 +49,6 @@ export type Resource = {|
   url: string
 |};
 
-export type SliderProps = {|
-  minValue?: number,
-  minLabel?: string,
-  maxValue?: number,
-  maxLabel?: string,
-  step?: number,
-  value?: number
-|};
-
 export type GenericContent = $Exact<{|
   ...GenericContentBase,
   type: ContentType
@@ -78,3 +79,16 @@ export type UnlockedLevelInfo = {|
 |};
 
 export type AppState = 'active' | 'background' | 'inactive';
+
+export type AnalyticsEventType =
+  | 'press'
+  | 'longPress'
+  | 'slide'
+  | 'mediaViewed'
+  | 'startProgression'
+  | 'finishProgression';
+
+export type AnalyticsUserProperty = 'id' | 'brand';
+export type AnalyticsEventParams = {
+  [key: string]: string | number
+};

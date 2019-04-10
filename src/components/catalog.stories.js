@@ -8,10 +8,11 @@ import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fix
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress} from '../utils/tests';
 import {AUTHOR_TYPE} from '../const';
+import {__TEST__} from '../modules/environment';
 import Catalog from './catalog';
 
 // This is for the loader
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   jest.useFakeTimers();
 }
 
@@ -71,7 +72,7 @@ storiesOf('Catalog', module)
     />
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('Catalog', () => {
     it('should see cover New badge', () => {
       const handlePress = jest.fn();

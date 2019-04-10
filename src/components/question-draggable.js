@@ -2,8 +2,9 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-
 import type {Choice} from '@coorpacademy/progression-engine';
+
+import {QUESTION_TYPE} from '../const';
 import theme from '../modules/theme';
 import QuestionChoice from './question-choice';
 import DropZone from './drop-zone';
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     margin: theme.spacing.micro
   }
 });
+
 // this algo could be improve using a  single reduce fuction
 export const extractSelectedChoices = (
   availableChoices: Array<Choice>,
@@ -64,6 +66,7 @@ class QuestionDraggable extends React.PureComponent<Props> {
         squeezed
         testID={`choice-${item._id}-unselected`}
         onPress={this.handlePress(item)}
+        questionType={QUESTION_TYPE.DRAG_DROP}
       >
         {item.label}
       </QuestionChoice>

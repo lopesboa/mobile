@@ -13,21 +13,21 @@ import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import type {Params as PdfScreenParams} from './pdf';
 
 type ConnectedStateProps = {|
-  ...ReactNavigation$ScreenProps,
   header?: string,
   description?: string,
-  mediaSources?: Media
+  mediaSources?: Media,
+  hasNoContext?: boolean
 |};
 
 type ConnectedDispatchProps = {|
   selectRoute: typeof selectRoute
 |};
 
-type Props = {|
+type Props = $Exact<{|
   ...ReactNavigation$ScreenProps,
   ...ConnectedStateProps,
   ...ConnectedDispatchProps
-|};
+|}>;
 
 class ContextScreen extends React.PureComponent<Props> {
   props: Props;
@@ -77,14 +77,14 @@ class ContextScreen extends React.PureComponent<Props> {
   }
 }
 
-export const mapStateToProps = (state: StoreState): Props => {
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const slide = getSlide(state);
-
   const slideContext = slide && slide.context;
+
   return {
     description: slideContext && slideContext.description,
     header: slideContext && slideContext.title,
-    hasNoContext: !(slide && slide.context && slide.context.title),
+    hasNoContext: !(slideContext && slideContext.title),
     mediaSources: slideContext && slideContext.media
   };
 };

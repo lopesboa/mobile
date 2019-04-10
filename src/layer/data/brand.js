@@ -3,12 +3,9 @@
 import decode from 'jwt-decode';
 import fetch from 'cross-fetch';
 import {__E2E__} from '../../modules/environment';
-import type {Brand} from '../../types';
+import type {Brand, JWT} from '../../types';
 import {createBrand} from '../../__fixtures__/brands';
 
-export type JWT = {
-  host: string
-};
 export type Config = {
   brand: {
     name: string,
@@ -33,6 +30,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
   }
 
   const jwt: JWT = decode(token);
+
   const response = await fetch(`${jwt.host}/config`, {
     headers: {
       authorization: token

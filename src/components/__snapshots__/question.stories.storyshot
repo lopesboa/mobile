@@ -843,6 +843,7 @@ exports[`Storyshots Question Option selected 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-validate-native"
         >
           <Text
             style={
@@ -2683,6 +2684,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-validate-native"
         >
           <Text
             style={

@@ -2,12 +2,20 @@
 
 import {toJWT} from '../../utils/tests';
 import {createBrand} from '../../__fixtures__/brands';
-import type {JWT, Config} from './brand';
+import type {JWT} from '../../types';
+import type {Config} from './brand';
 
 const brand = createBrand();
 const jwt: JWT = {
-  host: brand.host
+  host: brand.host,
+  user: 'plop',
+  iss: 'plip',
+  grants: {mooc: 'foo'},
+  exp: 1,
+  iat: 1,
+  usage: 'ploup'
 };
+
 const token = toJWT(jwt);
 
 describe('brand', () => {

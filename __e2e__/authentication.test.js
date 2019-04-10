@@ -10,8 +10,8 @@ describe('Authentication', () => {
 
     it('should see the authentication screen', async () => {
       await waitFor(element(by.id('authentication-screen'))).toExist();
-      // await waitFor(element(by.id('scan-qr-code'))).toExist();
-      // await weExpect(element(by.id('scan-qr-code'))).toExist();
+      // await waitFor(element(by.id('button-scan-qr-code'))).toExist();
+      // await weExpect(element(by.id('button-scan-qr-code'))).toExist();
       // await waitFor(element(by.id('logo-header'))).toExist();
       // await weExpect(element(by.id('logo-header'))).toExist();
       // await waitFor(element(by.id('sign-in-header'))).toExist();
@@ -29,7 +29,7 @@ describe('Authentication', () => {
     });
 
     // it('should try to scan a qr code and unsuccessfully quit', async () => {
-    //   await element(by.id('scan-qr-code')).tap();
+    //   await element(by.id('button-scan-qr-code')).tap();
     //   await waitFor(element(by.id('qr-code-screen'))).toBeVisible();
     //   await weExpect(element(by.id('qr-code-screen'))).toBeVisible();
     // await weExpect(
@@ -50,11 +50,11 @@ describe('Authentication', () => {
     beforeAll(async () => {
       await reloadApp();
       await waitFor(element(by.id('authentication-screen'))).toBeVisible();
-      await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
+      await waitFor(element(by.id('button-scan-qr-code'))).toBeVisible();
     });
 
     it('should scan a qr code', async () => {
-      await element(by.id('scan-qr-code')).tap();
+      await element(by.id('button-scan-qr-code')).tap();
       await waitFor(element(by.id('qr-code-screen'))).toBeVisible();
       await weExpect(element(by.id('qr-code-screen'))).toBeVisible();
       await element(by.id('qr-code-screen')).longPress();
@@ -82,7 +82,7 @@ describe('Authentication', () => {
 
     it('should see authentication screen', async () => {
       await waitFor(element(by.id('authentication-screen'))).toBeVisible();
-      await waitFor(element(by.id('scan-qr-code'))).toBeVisible();
+      await waitFor(element(by.id('button-scan-qr-code'))).toBeVisible();
     });
   });
 });

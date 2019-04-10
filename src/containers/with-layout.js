@@ -10,6 +10,7 @@ export type Layout = {|
 |};
 
 export type WithLayoutProps = {|
+  onLayout?: LayoutEvent => void,
   layout?: Layout,
   containerStyle?: GenericStyleProp
 |};
@@ -21,8 +22,11 @@ const styles: GenericStyleProp = StyleSheet.create({
 });
 
 function withLayout<P>(
-  WrappedComponent: React$ComponentType<P>
-): React$ComponentType<React$ElementConfig<React$ComponentType<WithLayoutProps & P>>> {
+  WrappedComponent: React$ComponentType<P>,
+  options?: {
+    withoutContainer?: boolean
+  }
+): React$ComponentType<$Exact<{|...WithLayoutProps, ...P|}>> {
   type Props = $Exact<{|
     ...P,
     ...WithLayoutProps
@@ -44,6 +48,16 @@ function withLayout<P>(
 
     render() {
       const {containerStyle} = this.props;
+
+      if (options && options.withoutContainer) {
+        return (
+          <WrappedComponent
+            {...this.props}
+            layout={this.state.layout}
+            onLayout={this.handleLayout}
+          />
+        );
+      }
 
       return (
         <View onLayout={this.handleLayout} style={[styles.container, containerStyle]}>

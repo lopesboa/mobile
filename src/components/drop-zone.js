@@ -4,6 +4,7 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 
+import {QUESTION_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
 import QuestionChoice from './question-choice';
@@ -15,7 +16,6 @@ export type Props = {|
 |};
 
 const styles = StyleSheet.create({
-  container: {},
   choice: {
     margin: theme.spacing.micro
   },
@@ -56,6 +56,7 @@ class DropZone extends React.PureComponent<Props> {
         isSelected
         testID={`choice-${item._id}`}
         onPress={this.handlePress(item)}
+        questionType={QUESTION_TYPE.DRAG_DROP}
       >
         {item.label}
       </QuestionChoice>

@@ -3,11 +3,11 @@
 import * as React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
+
 import {CARD_TYPE, CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
 import image from '../__fixtures__/assets/landscape-1.jpg';
 import type {Progression} from '../types';
 import theme from '../modules/theme';
-
 import {handleFakePress} from '../utils/tests';
 import translations from '../translations';
 import Card from './card';
@@ -62,6 +62,9 @@ storiesOf('Card', module)
         isCertified
         onPress={handleFakePress}
         testID="catalog1"
+        universalRef="foobar"
+        type="learner"
+        section="finishLearning"
       />
     </Card>
   ))
@@ -80,6 +83,9 @@ storiesOf('Card', module)
         isCertified
         onPress={handleFakePress}
         testID="catalog2"
+        universalRef="foobar"
+        type="learner"
+        section="finishLearning"
       />
     </Card>
   ));

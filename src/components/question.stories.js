@@ -38,6 +38,7 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('Template', () => (
@@ -84,6 +85,7 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('QCM Drag and Drop - with selected choices', () => (
@@ -98,6 +100,7 @@ storiesOf('Question', module)
       onInputValueChange={handleFakePress}
       onButtonPress={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('QCM Drag and Drop - with no selected choices', () => (
@@ -112,6 +115,7 @@ storiesOf('Question', module)
       onButtonPress={handleFakePress}
       onInputValueChange={handleFakePress}
       isValidating={false}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('BasicQuestion', () => (

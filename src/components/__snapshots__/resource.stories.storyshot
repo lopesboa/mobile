@@ -783,6 +783,7 @@ exports[`Storyshots Resource PDF 1`] = `
                 "opacity": 1,
               }
             }
+            testID="button-open-pdf-native"
           >
             <Text
               style={

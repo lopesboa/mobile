@@ -4,21 +4,24 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Slider from '@coorpacademy/react-native-slider';
+
 import theme from '../modules/theme';
-import withSlider from '../containers/with-slider';
+import {BrandThemeContext} from './brand-theme-provider';
 import {STYLE as BOX_STYLE} from './box';
 
-type Props = {|
-  minVal: number,
-  maxVal: number,
-  minLabel: string,
-  maxLabel: string,
+export type Edge = {|
+  value: number,
+  label: string
+|};
+
+export type Props = {|
+  min: Edge,
+  max: Edge,
   value: number,
   onChange: (value: number) => void,
   onSlidingComplete: () => void,
   style?: GenericStyleProp,
-  step: number,
-  color: string,
+  step?: number,
   testID?: string
 |};
 
@@ -65,49 +68,52 @@ const styles = StyleSheet.create({
     borderWidth: 1
   }
 });
+
 const QuestionSlider = ({
-  minLabel,
-  maxLabel,
   step,
   style,
+  min,
+  max,
   value,
-  minVal,
-  maxVal,
-  onChange,
   onSlidingComplete,
-  color,
-  testID
+  testID,
+  onChange
 }: Props) => (
   <View style={[styles.container, style]} testID={testID}>
-    <Text style={[styles.header, {color}]} testID="slider-value">
-      {value}
-    </Text>
-    <Slider
-      step={step || 1}
-      value={value}
-      onValueChange={onChange}
-      maximumValue={maxVal}
-      minimumValue={minVal}
-      onSlidingComplete={onSlidingComplete}
-      minimumTrackTintColor={color}
-      trackStyle={styles.track}
-      thumbStyle={[styles.thumb, {borderColor: color}]}
-      testID="slider"
-    />
+    <BrandThemeContext.Consumer>
+      {brandTheme => (
+        <React.Fragment>
+          <Text style={[styles.header, {color: brandTheme.colors.primary}]} testID="slider-value">
+            {value}
+          </Text>
+          <Slider
+            step={step || 1}
+            value={value}
+            onValueChange={onChange}
+            maximumValue={max.value}
+            minimumValue={min.value}
+            onSlidingComplete={onSlidingComplete}
+            minimumTrackTintColor={brandTheme.colors.primary}
+            trackStyle={styles.track}
+            thumbStyle={[styles.thumb, {borderColor: brandTheme.colors.primary}]}
+            testID="slider"
+          />
+        </React.Fragment>
+      )}
+    </BrandThemeContext.Consumer>
     <View style={styles.valuesContainer} testID="slider-values-container">
       <View style={styles.leftValue}>
         <Text style={styles.textValue} testID="slider-min-value">
-          {minLabel}
+          {min.label}
         </Text>
       </View>
       <View style={styles.rightValue}>
         <Text style={styles.textValue} testID="slider-max-value">
-          {maxLabel}
+          {max.label}
         </Text>
       </View>
     </View>
   </View>
 );
 
-export {QuestionSlider as Component};
-export default withSlider(QuestionSlider);
+export default QuestionSlider;

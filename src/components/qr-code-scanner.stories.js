@@ -4,6 +4,7 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
+import {__TEST__} from '../modules/environment';
 import {handleFakePress} from '../utils/tests';
 import QRCodeScanner from './qr-code-scanner';
 
@@ -11,7 +12,7 @@ storiesOf('QRCodeScanner', module)
   .add('Default', () => <QRCodeScanner hasPermission={false} onScan={handleFakePress} />)
   .add('With permission', () => <QRCodeScanner hasPermission onScan={handleFakePress} />);
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('QRCodeScanner', () => {
     describe('onScan', () => {
       it('with data', () => {

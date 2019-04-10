@@ -23,7 +23,7 @@ import type {Card} from './cards';
 import CardCorrection from './card-correction';
 import {BrandThemeContext} from './brand-theme-provider';
 
-type Props = {|
+type Props = $Exact<{|
   ...WithLayoutProps,
   tip: string,
   answers: Array<string>,
@@ -41,7 +41,7 @@ type Props = {|
   lives?: number,
   onPDFButtonPress: (url: string, description: string) => void,
   onVideoPlay: () => void
-|};
+|}>;
 
 const CARDS_HEIGHT = 360;
 const CARDS_LENGTH = 3;
@@ -300,6 +300,7 @@ class Correction extends React.PureComponent<Props> {
             onPress={onButtonPress}
             isLoading={isLoading}
             testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
+            analyticsID={`button-${canGoNext ? 'next-question' : 'quit'}`}
           >
             {offeringExtraLife ? translations.quit : translations.next}
           </Button>

@@ -53,6 +53,8 @@ export const fetchBrand = (): StoreAction<Action> => {
     const {services} = options;
     try {
       const brand = await services.Brands.find(token);
+      services.Analytics.setUserProperty('brand', brand.name);
+
       return dispatch(fetchSuccess(brand));
     } catch (err) {
       return dispatch(fetchError(err.toString()));

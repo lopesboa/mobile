@@ -110,7 +110,7 @@ Array [
     }
   >
     <View
-      testID="fake-button"
+      testID="button-fake"
     >
       <View
         accessible={true}
@@ -135,6 +135,7 @@ Array [
             "opacity": 1,
           }
         }
+        testID="button-fake-native"
       >
         <Text
           style={

@@ -14,7 +14,11 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
   testID="catalog1"
 >
   <View
-    style={null}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
   >
     <View
       style={
@@ -304,7 +308,11 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
   testID="catalog3"
 >
   <View
-    style={null}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
   >
     <View
       style={
@@ -773,7 +781,11 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
   testID="catalog4"
 >
   <View
-    style={null}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
   >
     <View
       style={
@@ -1230,7 +1242,11 @@ exports[`Storyshots Catalog Item New 1`] = `
   testID="catalog2"
 >
   <View
-    style={null}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
   >
     <View
       style={

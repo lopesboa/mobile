@@ -2733,6 +2733,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -19190,6 +19191,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -21559,6 +21561,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -22109,6 +22112,7 @@ exports[`Storyshots Correction Default 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -24852,6 +24856,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -32668,6 +32673,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -35438,6 +35444,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -38181,6 +38188,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -40523,6 +40531,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -45494,6 +45503,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={
@@ -48318,6 +48328,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "opacity": 1,
             }
           }
+          testID="button-quit-native"
         >
           <Text
             style={

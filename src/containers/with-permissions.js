@@ -14,15 +14,21 @@ export type WithPermissionsProps = {|
   requestPermission: (type: PermissionType, description: string, onDeny?: () => void) => void
 |};
 
+type ConnectedDispatchProps = {|
+  checkPermission: typeof checkPermission,
+  requestPermission: typeof requestPermission
+|};
+
 function withPermissions<P>(
   WrappedComponent: React$ComponentType<P>,
   types: Array<PermissionType>
-): React$ComponentType<React$ElementConfig<React$ComponentType<WithPermissionsProps & P>>> {
-  type ConnectedDispatchProps = {|
-    checkPermission: typeof checkPermission,
-    requestPermission: typeof requestPermission
-  |};
-
+): React$ComponentType<
+  $Exact<{|
+    ...WithPermissionsProps,
+    ...P,
+    requestPermission: $PropertyType<ConnectedDispatchProps, 'requestPermission'>
+  |}>
+> {
   type Props = $Exact<{|
     ...P,
     ...WithPermissionsProps,

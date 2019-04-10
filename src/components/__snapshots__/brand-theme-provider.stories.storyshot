@@ -1,13 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots BrandThemeProvider Colors 1`] = `
-<Text
-  style={
-    Object {
-      "color": "#00B0FF",
+exports[`Storyshots BrandThemeProvider Default 1`] = `
+Array [
+  <Text>
+    Host: 
+    https://onboarding.coorpacademy.com
+  </Text>,
+  <Text
+    style={
+      Object {
+        "color": "#00B0FF",
+      }
     }
-  }
->
-  Primary color
-</Text>
+  >
+    Primary color
+  </Text>,
+  <Text>
+    Content category name: 
+    Onboarding
+  </Text>,
+  <Text>
+    Name: 
+    onboarding
+  </Text>,
+  <Image
+    source={
+      Object {
+        "uri": "https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png",
+      }
+    }
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />,
+]
 `;

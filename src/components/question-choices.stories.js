@@ -4,9 +4,10 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 
+import {__TEST__} from '../modules/environment';
 import {QUESTION_TYPE} from '../const';
 import {choices, choicesWithImage} from '../__fixtures__/question-choices';
-import {handleFakePress, fakeSliderProps} from '../utils/tests';
+import {handleFakePress} from '../utils/tests';
 import QuestionChoices from './question-choices';
 import {
   template,
@@ -36,6 +37,7 @@ storiesOf('QuestionChoices', module)
       userChoices={answers}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('Template', () => (
@@ -50,6 +52,17 @@ storiesOf('QuestionChoices', module)
       onItemInputChange={handleFakePress}
     />
   ))
+  .add('Template (empty)', () => (
+    <QuestionChoices
+      type={QUESTION_TYPE.TEMPLATE}
+      onInputValueChange={handleFakePress}
+      items={[]}
+      userChoices={[]}
+      onItemPress={handleFakePress}
+      onItemInputChange={handleFakePress}
+      onSliderChange={handleFakePress}
+    />
+  ))
   .add('Slider', () => (
     <QuestionChoices
       // $FlowFixMe its only to test
@@ -59,19 +72,33 @@ storiesOf('QuestionChoices', module)
       userChoices={answers}
       onItemPress={handleFakePress}
       onSliderChange={handleFakePress}
-      slider={fakeSliderProps}
+      min={{
+        value: 0,
+        label: 'Min label'
+      }}
+      max={{
+        value: 20,
+        label: 'Max label'
+      }}
+      value={8}
+      step={2}
       onItemInputChange={handleFakePress}
       onInputValueChange={handleFakePress}
     />
   ))
-  .add('Template (empty)', () => (
+  .add('Slider (empty)', () => (
     <QuestionChoices
-      type={QUESTION_TYPE.TEMPLATE}
-      onInputValueChange={handleFakePress}
-      items={[]}
-      userChoices={[]}
+      // $FlowFixMe its only to test
+      type="slider"
+      isDisabled={false}
+      items={choices}
+      userChoices={answers}
       onItemPress={handleFakePress}
+      onSliderChange={handleFakePress}
+      value={8}
+      step={2}
       onItemInputChange={handleFakePress}
+      onInputValueChange={handleFakePress}
     />
   ))
   .add('QCM Drag', () => (
@@ -83,6 +110,7 @@ storiesOf('QuestionChoices', module)
       items={choices}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('QCM Basic', () => (
@@ -94,6 +122,7 @@ storiesOf('QuestionChoices', module)
       items={choices}
       onItemPress={handleFakePress}
       onItemInputChange={handleFakePress}
+      onSliderChange={handleFakePress}
     />
   ))
   .add('Unsupported question type', () => (
@@ -109,7 +138,7 @@ storiesOf('QuestionChoices', module)
     />
   ));
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('QuestionChoices', () => {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();
@@ -141,6 +170,7 @@ if (process.env.NODE_ENV === 'test') {
           userChoices={templateUserChoices}
           onItemPress={handleFakePress}
           onItemInputChange={handleItemInputChange}
+          onSliderChange={handleFakePress}
         />
       );
       const questionInput = component.root.find(el => el.props.testID === 'question-part-2');
@@ -160,6 +190,7 @@ if (process.env.NODE_ENV === 'test') {
           userChoices={templateUserChoices}
           onItemPress={handleFakePress}
           onItemInputChange={handleFakePress}
+          onSliderChange={handleFakePress}
         />
       );
       const questionInput = component.root.find(el => el.props.testID === 'question-input-text');

@@ -2,11 +2,11 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-
 import renderer from 'react-test-renderer';
+
+import {__TEST__} from '../modules/environment';
 import {choices} from '../__fixtures__/question-choices';
 import {handleFakePress} from '../utils/tests';
-
 import DropZone from './drop-zone';
 
 const upgradedChoices = choices.map(choice => ({
@@ -21,7 +21,7 @@ storiesOf('DropZone', module)
   ))
   .add('With No SelectedChoics', () => <DropZone choices={[]} onPress={handleFakePress} />);
 
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   describe('DropZone', () => {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();

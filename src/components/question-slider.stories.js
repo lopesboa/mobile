@@ -3,36 +3,40 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import {handleFakePress as fakeOnChange} from '../utils/tests';
-import {Component as QuestionSlider} from './question-slider';
+import {handleFakePress} from '../utils/tests';
+import QuestionSlider from './question-slider';
 
 storiesOf('QuestionSlider', module)
   .add('Default', () => (
     <QuestionSlider
-      minVal={0}
-      maxVal={100}
-      minLabel="0"
-      maxLabel="100"
+      min={{
+        label: '0',
+        value: 0
+      }}
+      max={{
+        label: '100',
+        value: 100
+      }}
       value={10}
       step={10}
-      onChange={fakeOnChange}
-      onSlidingComplete={fakeOnChange}
-      color="#0077be"
+      onChange={handleFakePress}
+      onSlidingComplete={handleFakePress}
       testID="question-slider"
     />
   ))
-  .add('With Default Step', () => (
+  .add('With default step', () => (
     <QuestionSlider
-      minVal={0}
-      maxVal={100}
-      // $FlowFixMe
-      step={undefined}
-      minLabel="0"
-      maxLabel="100"
+      min={{
+        label: '0',
+        value: 0
+      }}
+      max={{
+        label: '100',
+        value: 100
+      }}
       value={10}
-      onChange={fakeOnChange}
-      onSlidingComplete={fakeOnChange}
-      color="red"
+      onChange={handleFakePress}
+      onSlidingComplete={handleFakePress}
       testID="question-slider"
     />
   ));

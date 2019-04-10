@@ -1,11 +1,12 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, WebView, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
+import {View, WebView, StyleSheet, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
 import Screen from '../components/screen';
+import Touchable from '../components/touchable';
 import theme from '../modules/theme';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
@@ -43,9 +44,13 @@ class Browser extends React.PureComponent<Props> {
       title: navigation.getParam('title'),
       headerLeft: (
         <View style={styles.close}>
-          <TouchableOpacity testID="button-close" onPress={Browser.handleButtonPress(screenProps)}>
+          <Touchable
+            testID="button-close"
+            onPress={Browser.handleButtonPress(screenProps)}
+            analyticsID="button-close"
+          >
             <BackIcon height={16} width={16} color={theme.colors.gray.dark} />
-          </TouchableOpacity>
+          </Touchable>
         </View>
       )
     };

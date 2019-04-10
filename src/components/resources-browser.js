@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {FlatList, ImageBackground, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {FlatList, ImageBackground, View, StyleSheet} from 'react-native';
 import {
   NovaSolidAudioAudioControlPlay as PlayIcon,
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
@@ -15,6 +15,7 @@ import {BrandThemeContext} from './brand-theme-provider';
 import Html from './html';
 import Space from './space';
 import ResourceOverlay from './resource-overlay';
+import Touchable from './touchable';
 
 type Props = {|
   onChange: (id: string) => void,
@@ -73,11 +74,13 @@ class ResourcesBrowser extends React.PureComponent<Props> {
     const testID = `resource-${resource.ref.replace(/_/g, '-')}`;
 
     return (
-      <TouchableOpacity
+      <Touchable
         onPress={this.handlePress(resource)}
         key={testID}
         style={styles.item}
         testID={`${testID}${selectedSuffix}`}
+        analyticsID="resource"
+        analyticsParams={{type: resource.type}}
       >
         <BrandThemeContext.Consumer>
           {brandTheme => {
@@ -138,7 +141,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
             );
           }}
         </BrandThemeContext.Consumer>
-      </TouchableOpacity>
+      </Touchable>
     );
   };
 

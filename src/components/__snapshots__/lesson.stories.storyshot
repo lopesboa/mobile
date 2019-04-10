@@ -334,6 +334,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                   "opacity": 1,
                 }
               }
+              testID="button-open-pdf-native"
             >
               <Text
                 style={

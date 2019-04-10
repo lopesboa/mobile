@@ -48,7 +48,11 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
       testID="catalog2"
     >
       <View
-        style={null}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+          }
+        }
       >
         <View
           style={
@@ -544,7 +548,11 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
       testID="catalog1"
     >
       <View
-        style={null}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+          }
+        }
       >
         <View
           style={

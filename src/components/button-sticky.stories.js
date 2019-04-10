@@ -2,24 +2,26 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
+
 import {handleFakePress} from '../utils/tests';
-import ButtonFooter from './button-sticky';
+import {Component as ButtonSticky} from './button-sticky';
 
 storiesOf('Button Footer', module)
   .add('Default', () => (
-    <ButtonFooter onPress={handleFakePress} testID="fake-button">
+    <ButtonSticky onPress={handleFakePress} testID="button-fake" analyticsID="button-fake">
       Here we go!
-    </ButtonFooter>
+    </ButtonSticky>
   ))
   .add('With Layout', () => (
-    <ButtonFooter
+    <ButtonSticky
       onPress={handleFakePress}
-      testID="fake-button"
+      testID="button-fake"
       layout={{
         width: 300,
         height: 400
       }}
+      analyticsID="button-fake"
     >
       Here we go!
-    </ButtonFooter>
+    </ButtonSticky>
   ));

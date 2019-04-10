@@ -19,12 +19,12 @@ describe('Context', () => {
       await waitFor(element(by.id('context-screen'))).toBeVisible();
       await weExpect(element(by.id('context'))).toBeVisible();
       await weExpect(element(by.id('context-image'))).toBeVisible();
-      await weExpect(element(by.id('goToQuestion-button'))).toBeVisible();
+      await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
     });
 
     it('should go to the question', async () => {
-      await weExpect(element(by.id('goToQuestion-button'))).toBeVisible();
-      await element(by.id('goToQuestion-button')).tap();
+      await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
+      await element(by.id('button-redirect-question')).tap();
       await weExpect(element(by.id('question-screen'))).toBeVisible();
     });
 
@@ -48,7 +48,7 @@ describe('Context', () => {
     });
 
     it('should go to the question', async () => {
-      await element(by.id('goToQuestion-button')).tap();
+      await element(by.id('button-redirect-question')).tap();
       await weExpect(element(by.id('question-screen'))).toBeVisible();
     });
 

@@ -19,8 +19,9 @@ import {
 import type {Lesson, Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import Question from '../components/question';
+import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
-import type {Resource, SliderProps} from '../types';
+import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
 import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import {reduceToResources} from '../layer/data/mappers';
@@ -44,7 +45,10 @@ type ConnectedStateProps = {|
   hasViewedAResourceAtThisStep?: boolean,
   resourcesForCorrection?: Array<Resource>,
   isValidating: boolean,
-  slider: SliderProps
+  min?: $PropertyType<QuestionProps, 'min'>,
+  max?: $PropertyType<QuestionProps, 'max'>,
+  step?: $PropertyType<QuestionProps, 'step'>,
+  value?: $PropertyType<QuestionProps, 'value'>
 |};
 
 type ConnectedDispatchProps = {|
@@ -148,7 +152,10 @@ class QuestionScreen extends React.PureComponent<Props> {
       explanation,
       isValidating,
       media,
-      slider,
+      min,
+      max,
+      step,
+      value,
       template,
       userChoices = []
     } = this.props;
@@ -174,7 +181,10 @@ class QuestionScreen extends React.PureComponent<Props> {
               onChoiceInputChange={this.handleChoiceInputChange}
               onInputValueChange={this.handleInputValueChange}
               isValidating={isValidating}
-              slider={slider}
+              min={min}
+              max={max}
+              step={step}
+              value={value}
             />
           )}
       </Screen>
@@ -199,14 +209,10 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
     keyPoint: undefined,
     resourcesForCorrection: undefined,
     isValidating: false,
-    slider: {
-      minLabel: undefined,
-      minValue: undefined,
-      maxLabel: undefined,
-      maxValue: undefined,
-      step: undefined,
-      value: undefined
-    }
+    min: undefined,
+    max: undefined,
+    step: undefined,
+    value: undefined
   };
 
   const nextContent = getStepContent(state);
@@ -253,14 +259,10 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
       isFocused,
       tip: undefined,
       keyPoint: undefined,
-      slider: {
-        minLabel: undefined,
-        minValue: undefined,
-        maxLabel: undefined,
-        maxValue: undefined,
-        step: undefined,
-        value: undefined
-      }
+      min: undefined,
+      max: undefined,
+      step: undefined,
+      value: undefined
     };
   }
 
@@ -309,14 +311,16 @@ const mapStateToProps = (state: StoreState, {dispatch}: Props): ConnectedStatePr
     isValidating,
     tip: slide && slide.tips,
     keyPoint: slide && slide.klf,
-    slider: {
-      minLabel: `${sliderMinValue} ${sliderUnitLabel}`,
-      maxLabel: `${sliderMaxValue} ${sliderUnitLabel}`,
-      minValue: sliderMinValue,
-      maxValue: sliderMaxValue,
-      step: sliderStepValue,
-      value: sliderDefaultValue
-    }
+    min: {
+      label: `${sliderMinValue} ${sliderUnitLabel}`,
+      value: sliderMinValue
+    },
+    max: {
+      label: `${sliderMaxValue} ${sliderUnitLabel}`,
+      value: sliderMaxValue
+    },
+    step: sliderStepValue,
+    value: sliderDefaultValue
   };
 };
 

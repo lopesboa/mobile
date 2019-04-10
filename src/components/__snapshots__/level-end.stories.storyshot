@@ -934,7 +934,11 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   testID="recommend-item-dis-2"
                 >
                   <View
-                    style={null}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFFFFF",
+                      }
+                    }
                   >
                     <View
                       style={
@@ -2167,7 +2171,11 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   testID="recommend-item-dis-2"
                 >
                   <View
-                    style={null}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFFFFF",
+                      }
+                    }
                   >
                     <View
                       style={
@@ -4294,7 +4302,11 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
-                    style={null}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFFFFF",
+                      }
+                    }
                   >
                     <View
                       style={
@@ -6609,7 +6621,11 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
-                    style={null}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFFFFF",
+                      }
+                    }
                   >
                     <View
                       style={
@@ -8704,7 +8720,11 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
-                    style={null}
+                    style={
+                      Object {
+                        "backgroundColor": "#FFFFFF",
+                      }
+                    }
                   >
                     <View
                       style={

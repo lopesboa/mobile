@@ -137,9 +137,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     this.props.navigation.navigate('PdfModal', pdfParams);
   };
 
-  handleVideoPlay = async () => {
-    await this.props.play();
-  };
+  handleVideoPlay = () => this.props.play();
 
   handleButtonPress = () => {
     this.setState({isLoading: true});
@@ -172,7 +170,6 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
     } = this.props.navigation.state.params;
 
     const {
-      resultLabel,
       isCorrect,
       lives: realLives,
       canGoNext,
@@ -189,7 +186,6 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <Correction
-          resultLabel={resultLabel}
           tip={tip}
           answers={answers}
           question={question}

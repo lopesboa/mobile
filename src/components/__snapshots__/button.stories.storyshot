@@ -27,6 +27,7 @@ exports[`Storyshots Button Default 1`] = `
         "opacity": 1,
       }
     }
+    testID="fake-button-native"
   >
     <Text
       style={
@@ -157,6 +158,7 @@ exports[`Storyshots Button Inverted 1`] = `
         "opacity": 1,
       }
     }
+    testID="fake-button-native"
   >
     <Text
       style={
@@ -272,6 +274,7 @@ exports[`Storyshots Button Secondary 1`] = `
         "opacity": 1,
       }
     }
+    testID="fake-button-native"
   >
     <Text
       style={
@@ -334,6 +337,7 @@ exports[`Storyshots Button Secondary Inverted 1`] = `
         "opacity": 1,
       }
     }
+    testID="fake-button-native"
   >
     <Text
       style={
@@ -397,6 +401,7 @@ exports[`Storyshots Button TextSecondary 1`] = `
         "opacity": 1,
       }
     }
+    testID="fake-button-native"
   >
     <Text
       style={

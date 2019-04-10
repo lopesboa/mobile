@@ -10,7 +10,7 @@ import {createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
 import {mapStateToProps} from './level-end';
 
 describe('level-end', () => {
-  it('should have currentContent & recommendedContent', () => {
+  it('should have currentContent & recommendation', () => {
     const SlideRef = 'dummySlideRef';
     const question = createQCMGraphic({});
     const context = createContextWithImage({title: 'A beautifull rainy day'});
@@ -98,17 +98,18 @@ describe('level-end', () => {
       }
     });
 
+    // $FlowFixMe we don't want to mock the entire props
     const props = mapStateToProps(mockedStore, {
       navigation: {state: {params: {progressionId: 'progression1'}}}
     });
 
     const currentContentUniversalRef =
       props && props.currentContent && props.currentContent.universalRef;
-    const recommendedContentUniversalRef =
-      props && props.recommendedContent && props.recommendedContent.universalRef;
-    expect({currentContentUniversalRef: 'dis1', recommendedContentUniversalRef: 'dis2'}).toEqual({
+    const recommendationUniversalRef =
+      props && props.recommendation && props.recommendation.universalRef;
+    expect({currentContentUniversalRef: 'dis1', recommendationUniversalRef: 'dis2'}).toEqual({
       currentContentUniversalRef,
-      recommendedContentUniversalRef
+      recommendationUniversalRef
     });
   });
   it('should have currentContent & nextContent', () => {
@@ -205,6 +206,7 @@ describe('level-end', () => {
       }
     });
 
+    // $FlowFixMe we don't want to mock the entire props
     const props = mapStateToProps(mockedStore, {
       navigation: {state: {params: {progressionId: 'progression1'}}}
     });

@@ -31,8 +31,7 @@ describe('Data layer', () => {
       storeDisciplineBundle: expect.any(Function),
       logEvent: expect.any(Function),
       setCurrentScreen: expect.any(Function),
-      setUserProperty: expect.any(Function),
-      setUserProperties: expect.any(Function)
+      setUserProperty: expect.any(Function)
     };
     expect(expected).toEqual(result);
   });

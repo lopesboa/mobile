@@ -1,8 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, TouchableHighlight, Dimensions, View} from 'react-native';
-import type {Progression, CardDisplayMode, AuthorType} from '../types';
+import {StyleSheet, Dimensions, View} from 'react-native';
+
+import type {Progression, CardDisplayMode, AuthorType, Engine} from '../types';
 import {CARD_DISPLAY_MODE} from '../const';
 import theme from '../modules/theme';
 import type {Chapter, Discipline} from '../layer/data/_types';
@@ -10,10 +11,11 @@ import CatalogItemFooter from './catalog-item-footer';
 import Badge from './catalog-item-badge';
 import ImageGradient from './image-gradient';
 import CatalogItemAuthor from './catalog-item-author';
+import Touchable from './touchable';
 
 export type Item = Discipline | Chapter;
 
-export type CourseInfo = {|
+type CourseInfo = {|
   title: string,
   subtitle: string,
   progression?: Progression,
@@ -24,12 +26,73 @@ export type CourseInfo = {|
   isAdaptive: boolean,
   isCertified?: boolean
 |};
-type Props = {|
+
+type AnalyticsParams = {|
+  universalRef: string,
+  type: Engine,
+  section: 'finishLearning' | 'forYou' | 'recommendation'
+|};
+
+type Props = $Exact<{|
   ...CourseInfo,
+  ...AnalyticsParams,
   onPress: (item: Item) => void,
   displayMode?: CardDisplayMode,
   testID: string
-|};
+|}>;
+
+const {height: screenHeight} = Dimensions.get('window');
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: theme.colors.white
+  },
+  image: {
+    minHeight: 205,
+    padding: theme.spacing.small
+  },
+  title: {
+    fontSize: theme.fontSize.regular
+  },
+  subtitle: {
+    fontSize: theme.fontSize.small
+  },
+  author: {
+    fontSize: theme.fontSize.extraSmall,
+    letterSpacing: 1.88
+  },
+  badge: {
+    minWidth: 40,
+    minHeight: 17
+  },
+  badgeLabel: {
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.extraSmall
+  },
+  imageCover: {
+    minHeight: 215,
+    height: screenHeight * 0.3,
+    padding: theme.spacing.base
+  },
+  titleCover: {
+    fontSize: theme.fontSize.extraLarge
+  },
+  subtitleCover: {
+    fontSize: theme.fontSize.regular
+  },
+  authorCover: {
+    fontSize: theme.fontSize.small,
+    letterSpacing: 2.25
+  },
+  badgeCover: {
+    minWidth: 45,
+    minHeight: 20
+  },
+  badgeLabelCover: {
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.small
+  }
+});
 
 const CatalogItem = ({
   onPress,
@@ -43,69 +106,29 @@ const CatalogItem = ({
   authorName,
   isCertified,
   displayMode,
-  testID
+  testID,
+  universalRef,
+  type,
+  section
 }: Props) => {
   const mode: CardDisplayMode = displayMode ? displayMode : CARD_DISPLAY_MODE.COVER;
-  const screenHeight: number = Dimensions.get('window').height;
-
-  const styles = StyleSheet.create({
-    container: {
-      minHeight: 205,
-      padding: theme.spacing.small
-    },
-    title: {
-      fontSize: theme.fontSize.regular
-    },
-    subtitle: {
-      fontSize: theme.fontSize.small
-    },
-    author: {
-      fontSize: theme.fontSize.extraSmall,
-      letterSpacing: 1.88
-    },
-    badge: {
-      minWidth: 40,
-      minHeight: 17
-    },
-    badgeLabel: {
-      fontWeight: theme.fontWeight.bold,
-      fontSize: theme.fontSize.extraSmall
-    },
-    containerCover: {
-      minHeight: 215,
-      height: screenHeight * 0.3,
-      padding: theme.spacing.base
-    },
-    titleCover: {
-      fontSize: theme.fontSize.extraLarge
-    },
-    subtitleCover: {
-      fontSize: theme.fontSize.regular
-    },
-    authorCover: {
-      fontSize: theme.fontSize.small,
-      letterSpacing: 2.25
-    },
-    badgeCover: {
-      minWidth: 45,
-      minHeight: 20
-    },
-    badgeLabelCover: {
-      fontWeight: theme.fontWeight.bold,
-      fontSize: theme.fontSize.small
-    }
-  });
 
   const badgeLabel =
     badge && badge !== '' ? badge.charAt(0).toUpperCase() + badge.slice(1) : undefined;
 
   return (
-    <TouchableHighlight testID={testID} onPress={onPress}>
-      <View>
+    <Touchable
+      testID={testID}
+      onPress={onPress}
+      isHighlight
+      analyticsID="card"
+      analyticsParams={{ref: universalRef, type, section}}
+    >
+      <View style={styles.container}>
         <ImageGradient
           testID={testID}
           image={image}
-          style={mode === CARD_DISPLAY_MODE.CARD ? styles.container : styles.containerCover}
+          style={mode === CARD_DISPLAY_MODE.CARD ? styles.image : styles.imageCover}
         >
           {badgeLabel && (
             <Badge
@@ -140,7 +163,7 @@ const CatalogItem = ({
           />
         )}
       </View>
-    </TouchableHighlight>
+    </Touchable>
   );
 };
 

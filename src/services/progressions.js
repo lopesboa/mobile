@@ -5,6 +5,7 @@ import {Progressions} from '@coorpacademy/player-services';
 import type {ProgressionsService as Service} from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
+import {ANALYTICS_EVENT_TYPE} from '../const';
 
 type BestOf = {|stars: number|};
 
@@ -39,7 +40,7 @@ const create = (dataLayer: DataLayer): $PropertyType<ProgressionService, 'create
   content,
   config
 ) => {
-  dataLayer.logEvent('startProgression', {
+  dataLayer.logEvent(ANALYTICS_EVENT_TYPE.START_PROGRESSION, {
     type: engine.ref.charAt(0).toUpperCase() + engine.ref.slice(1)
   });
   // $FlowFixMe

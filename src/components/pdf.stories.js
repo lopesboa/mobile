@@ -3,10 +3,11 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
+import {__TEST__} from '../modules/environment';
 import Pdf from './pdf';
 
 // This is for the loader
-if (process.env.NODE_ENV === 'test') {
+if (__TEST__) {
   jest.useFakeTimers();
 }
 

@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
+
 import theme from '../modules/theme';
 import FlippableCard from '../containers/card-flippable';
 import ClueFrontItem from './clue-front-item';

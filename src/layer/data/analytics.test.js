@@ -11,8 +11,7 @@ const createAnalytics = () => ({
   setAnalyticsCollectionEnabled: jest.fn(),
   logEvent: jest.fn(),
   setCurrentScreen: jest.fn(),
-  setUserProperty: jest.fn(),
-  setUserProperties: jest.fn()
+  setUserProperty: jest.fn()
 });
 
 describe('Analytics', () => {
@@ -29,6 +28,7 @@ describe('Analytics', () => {
     // $FlowFixMe package is mocked
     firebase.analytics.mockReturnValueOnce(analytics);
     const {logEvent} = require('./analytics');
+    // $FlowFixMe this is a fake event
     logEvent('foo', {bar: 'baz'});
     expect(analytics.logEvent).toHaveBeenCalledWith('foo', {bar: 'baz'});
   });
@@ -47,19 +47,7 @@ describe('Analytics', () => {
     // $FlowFixMe package is mocked
     firebase.analytics.mockReturnValueOnce(analytics);
     const {setUserProperty} = require('./analytics');
-    setUserProperty('foo', 'bar');
-    expect(analytics.setUserProperty).toHaveBeenCalledWith('foo', 'bar');
+    setUserProperty('id', 'bar');
+    expect(analytics.setUserProperty).toHaveBeenCalledWith('id', 'bar');
   });
-
-  it('setUserProperties', () => {
-    const analytics = createAnalytics();
-    // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValueOnce(analytics);
-    const {setUserProperties} = require('./analytics');
-    const properties = {foo: 'bar', baz: 'qux'};
-    setUserProperties(properties);
-    expect(analytics.setUserProperties).toHaveBeenCalledWith(properties);
-  });
-
-  it('setUserProperties', () => {});
 });

@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import {NavigationActions, NavigationEvents} from 'react-navigation';
 import {connect} from 'react-redux';
 import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
@@ -9,6 +9,7 @@ import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 import QRCodeScanner from '../components/qr-code-scanner';
 import type {Props as QRCodeScannerProps} from '../components/qr-code-scanner';
+import Touchable from '../components/touchable';
 import theme, {defaultHitSlop} from '../modules/theme';
 import withPermissions from '../containers/with-permissions';
 import {hasPermission} from '../redux/utils/state-extract';
@@ -68,16 +69,21 @@ class QRCodeScreen extends React.PureComponent<Props> {
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <QRCodeScanner onScan={onScan} hasPermission={this.props.hasPermission} />
         {(__DEV__ || __E2E__) && (
-          <TouchableOpacity onLongPress={this.handleFakeScan} style={styles.fakeScanArea} />
+          <Touchable
+            onLongPress={this.handleFakeScan}
+            style={styles.fakeScanArea}
+            analyticsID="qr-code-area"
+          />
         )}
         <View style={styles.close}>
-          <TouchableOpacity
+          <Touchable
             testID="button-close"
             onPress={this.handleClose}
             hitSlop={defaultHitSlop}
+            analyticsID="button-close"
           >
             <BackIcon height={16} width={16} color={theme.colors.white} />
-          </TouchableOpacity>
+          </Touchable>
         </View>
       </View>
     );

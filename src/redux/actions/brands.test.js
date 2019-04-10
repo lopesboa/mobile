@@ -1,5 +1,6 @@
 // @flow strict
 
+import {createFakeAnalytics} from '../../utils/tests';
 import {createBrand} from '../../__fixtures__/brands';
 import {fetchRequest, fetchSuccess, fetchError, fetchBrand} from './brands';
 
@@ -14,7 +15,8 @@ describe('Brands', () => {
         services: {
           Brands: {
             find: jest.fn()
-          }
+          },
+          Analytics: createFakeAnalytics()
         }
       };
 
@@ -31,8 +33,10 @@ describe('Brands', () => {
 
       // $FlowFixMe
       const actual = await fetchBrand()(dispatch, getState, options);
+      expect(options.services.Analytics.setUserProperty).toHaveBeenCalledWith('brand', brand.name);
       return expect(actual).toEqual(fetchSuccess(brand));
     });
+
     it('token is missing', async () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
@@ -40,7 +44,8 @@ describe('Brands', () => {
         services: {
           Brands: {
             find: jest.fn()
-          }
+          },
+          Analytics: createFakeAnalytics()
         }
       };
 
@@ -58,8 +63,10 @@ describe('Brands', () => {
       const actual = await fetchBrand()(dispatch, getState, options);
 
       expect(options.services.Brands.find).not.toHaveBeenCalled();
+      expect(options.services.Analytics.setUserProperty).not.toHaveBeenCalled();
       return expect(actual).toEqual(fetchError('Token not defined'));
     });
+
     it('error on fetch failure', async () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
@@ -67,7 +74,8 @@ describe('Brands', () => {
         services: {
           Brands: {
             find: jest.fn()
-          }
+          },
+          Analytics: createFakeAnalytics()
         }
       };
 
@@ -84,7 +92,7 @@ describe('Brands', () => {
 
       // $FlowFixMe
       const actual = await fetchBrand()(dispatch, getState, options);
-
+      expect(options.services.Analytics.setUserProperty).not.toHaveBeenCalled();
       return expect(actual).toEqual(fetchError('Error'));
     });
   });
