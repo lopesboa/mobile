@@ -9,6 +9,7 @@ import translations from '../translations';
 import theme from '../modules/theme';
 import {SETTINGS, COMPUTER, QR_CODE} from '../components/steps-icon';
 import type {IconName} from '../components/steps-icon';
+import Space from '../components/space';
 import type {Layout} from './with-layout';
 import withLayout from './with-layout';
 
@@ -136,6 +137,7 @@ class Carousel extends React.PureComponent<Props, State> {
             useVelocityForIndex={false}
           />
         )}
+        <Space type="tiny" />
         {this.pagination()}
       </View>
     );

@@ -80,7 +80,7 @@ exports[`Storyshots Authentication Default 1`] = `
         style={
           Array [
             Object {
-              "paddingHorizontal": 8,
+              "paddingHorizontal": 32,
             },
           ]
         }
@@ -170,6 +170,14 @@ exports[`Storyshots Authentication Default 1`] = `
       </View>
     </View>
     <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
       onLayout={[Function]}
       style={
         Array [
@@ -194,6 +202,14 @@ exports[`Storyshots Authentication Default 1`] = `
         }
         testID="carousel"
       >
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
         <Mock$ReactNativeSnapCarousel$Pagination
           activeDotIndex={0}
           containerStyle={
@@ -228,6 +244,14 @@ exports[`Storyshots Authentication Default 1`] = `
         />
       </View>
     </View>
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
     <View
       style={
         Object {
@@ -551,6 +575,7 @@ exports[`Storyshots Authentication Default 1`] = `
                     Object {
                       "color": "#FFFFFF",
                       "fontSize": 17,
+                      "textAlign": "center",
                     }
                   }
                 >
@@ -562,6 +587,7 @@ exports[`Storyshots Authentication Default 1`] = `
                   Object {
                     "color": "#FFFFFF",
                     "fontSize": 17,
+                    "textAlign": "center",
                   }
                 }
                 classesStyles={Object {}}
@@ -893,6 +919,7 @@ exports[`Storyshots Authentication Default 1`] = `
                             "color": "#FFFFFF",
                             "fontSize": 17,
                             "fontWeight": "500",
+                            "textAlign": "center",
                             "textDecorationLine": "underline",
                           }
                         }

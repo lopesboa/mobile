@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingBottom: theme.spacing.base
   },
   headerContainer: {
-    paddingHorizontal: theme.spacing.tiny
+    paddingHorizontal: theme.spacing.medium
   },
   header: {
     color: 'white',
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     color: theme.colors.white
   },
   startDemo: {
+    textAlign: 'center',
     fontSize: theme.fontSize.large,
     color: theme.colors.white
   },
@@ -102,7 +103,9 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
           </Html>
         </View>
       </View>
+      <Space type="tiny" />
       <Carousel />
+      <Space type="tiny" />
       <View style={styles.wrapper}>
         <Button isInverted isTextSecondary onPress={onPress} testID="scan-qr-code">
           <View style={styles.buttonWithIcon}>
