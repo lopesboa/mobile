@@ -214,6 +214,7 @@ exports[`Storyshots Authentication Default 1`] = `
           activeDotIndex={0}
           containerStyle={
             Object {
+              "flex": 1,
               "paddingVertical": 8,
             }
           }
@@ -232,7 +233,7 @@ exports[`Storyshots Authentication Default 1`] = `
               "borderRadius": 5,
               "height": 8,
               "margin": 0,
-              "marginHorizontal": 2,
+              "marginHorizontal": 8,
               "padding": 0,
               "width": 8,
             }
@@ -541,8 +542,8 @@ exports[`Storyshots Authentication Default 1`] = `
       <View
         style={
           Object {
-            "height": 24,
-            "width": 24,
+            "height": 8,
+            "width": 8,
           }
         }
       />
@@ -938,8 +939,8 @@ exports[`Storyshots Authentication Default 1`] = `
       <View
         style={
           Object {
-            "height": 24,
-            "width": 24,
+            "height": 8,
+            "width": 8,
           }
         }
       />

@@ -34,12 +34,13 @@ const styles: GenericStyleProp = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 5,
-    marginHorizontal: 2,
     padding: 0,
+    marginHorizontal: theme.spacing.tiny,
     margin: 0,
     backgroundColor: theme.colors.white
   },
   paginationContainer: {
+    flex: 1,
     paddingVertical: 8
   },
   paginationDots: {

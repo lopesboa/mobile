@@ -123,7 +123,7 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
             </Html>
           </View>
         </Button>
-        <Space type={SPACE.BASE} />
+        <Space type={SPACE.TINY} />
         <View style={styles.centeredContent}>
           <Html
             fontSize={theme.fontSize.large}
@@ -134,7 +134,7 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
             {translations.demoMode}
           </Html>
         </View>
-        <Space type={SPACE.BASE} />
+        <Space type={SPACE.TINY} />
         <Touchable
           hitSlop={defaultHitSlop}
           onPress={onAssistancePress}
