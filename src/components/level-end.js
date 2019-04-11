@@ -34,6 +34,7 @@ type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onClose: () => void,
   isLevelUnlocked: boolean,
+  isFocused: boolean,
   bestScore: string,
   isLevelUnlocked: boolean,
   levelUnlockedName: string,
@@ -171,7 +172,8 @@ class LevelEnd extends React.PureComponent<Props> {
       isLevelUnlocked,
       levelUnlockedName,
       hasFinishedCourse,
-      recommendation
+      recommendation,
+      isFocused
     } = this.props;
 
     const header = (isSuccess && translations.congratulations) || translations.ooops;
@@ -280,11 +282,18 @@ class LevelEnd extends React.PureComponent<Props> {
                 </View>
               </View>
             </ScrollView>
-            {isSuccess && (
-              <View pointerEvents="none" style={styles.confettisContainer}>
-                <ConfettiCannon count={200} origin={{x: screenWidth / 2, y: 0}} fadeOut />
-              </View>
-            )}
+            {isFocused &&
+              isSuccess &&
+              bestScore !== '0' && (
+                <View pointerEvents="none" style={styles.confettisContainer}>
+                  <ConfettiCannon
+                    count={100}
+                    origin={{x: screenWidth / 2, y: 0}}
+                    fadeOut
+                    explosionSpeed={900}
+                  />
+                </View>
+              )}
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}

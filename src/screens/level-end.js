@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationActions} from 'react-navigation';
+import {NavigationActions, NavigationEvents} from 'react-navigation';
 import {getNextContent} from '@coorpacademy/player-store';
 import get from 'lodash/fp/get';
 import {selectCard} from '../redux/actions/cards';
@@ -39,8 +39,18 @@ type Props = $Exact<{|
   ...ConnectedStateProps
 |}>;
 
-class LevelEndScreen extends React.PureComponent<Props> {
+type State = {|
+  isFocused: boolean
+|};
+
+class LevelEndScreen extends React.PureComponent<Props, State> {
   props: Props;
+
+  state: State;
+
+  state = {
+    isFocused: false
+  };
 
   static navigationOptions = ({navigationOptions, navigation}: ReactNavigation$ScreenProps) => ({
     ...navigationOptions,
@@ -76,6 +86,8 @@ class LevelEndScreen extends React.PureComponent<Props> {
     }
   };
 
+  handleDidFocus = () => this.setState({isFocused: true});
+
   render() {
     const {
       navigation,
@@ -93,8 +105,10 @@ class LevelEndScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
+        <NavigationEvents onDidFocus={this.handleDidFocus} />
         <LevelEnd
           recommendation={recommendation}
+          isFocused={this.state.isFocused}
           isSuccess={isCorrect}
           bestScore={bestScore}
           isLevelUnlocked={isLevelUnlocked}

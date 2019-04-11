@@ -51,6 +51,7 @@ storiesOf('LevelEnd', module)
   .add('Failure', () => (
     <LevelEnd
       isSuccess={false}
+      isFocused={false}
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
@@ -64,6 +65,7 @@ storiesOf('LevelEnd', module)
   .add('Success', () => (
     <LevelEnd
       isSuccess
+      isFocused
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
@@ -77,6 +79,7 @@ storiesOf('LevelEnd', module)
   .add('Failure Author Coorp', () => (
     <LevelEnd
       isSuccess={false}
+      isFocused
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
@@ -90,6 +93,7 @@ storiesOf('LevelEnd', module)
   .add('Success Author Coorp', () => (
     <LevelEnd
       isSuccess
+      isFocused
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
@@ -103,6 +107,7 @@ storiesOf('LevelEnd', module)
   .add('Finished', () => (
     <LevelEnd
       isSuccess
+      isFocused
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
@@ -121,6 +126,7 @@ if (__TEST__) {
       const component = renderer.create(
         <LevelEnd
           isSuccess={false}
+          isFocused
           onButtonPress={handleFakePress}
           onCardPress={handlePress}
           onClose={handleFakePress}
@@ -141,6 +147,7 @@ if (__TEST__) {
       const component = renderer.create(
         <LevelEnd
           isSuccess={false}
+          isFocused
           onButtonPress={handlePress}
           onCardPress={handlePress}
           onClose={handleFakePress}
