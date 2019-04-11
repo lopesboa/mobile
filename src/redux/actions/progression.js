@@ -4,6 +4,7 @@ import {createProgression, CONTENT_TYPE, selectProgression} from '@coorpacademy/
 import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
+import pMap from 'p-map';
 import type {StoreAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';
 import {isDone} from '../../utils/progressions';
@@ -91,14 +92,16 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
 
   const progressions = await services.Progressions.getAll();
 
-  await Promise.all(
-    progressions.filter(isDone).map((progression): Promise<Action | void> => {
+  await pMap(
+    progressions.filter(isDone),
+    (progression): Promise<Action | void> => {
       const {_id} = progression;
       if (_id) {
         return dispatch(synchronizeProgression(_id));
       }
       return Promise.resolve();
-    })
+    },
+    {concurrency: 1}
   );
 
   return;

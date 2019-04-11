@@ -74,6 +74,7 @@
     "cross-fetch": "^3.0.1",
     "hoist-non-react-statics": "^3.2.1",
     "jwt-decode": "^2.2.0",
+    "p-map": "^2.1.0",
     "react": "16.4.1",
     "react-native": "^0.56.0",
     "react-native-camera": "^1.12.0",
