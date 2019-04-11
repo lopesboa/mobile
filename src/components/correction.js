@@ -214,33 +214,32 @@ class Correction extends React.PureComponent<Props> {
                   {keyPoint}
                 </Html>
               )}
-              {type === CARD_TYPE.RESOURCE &&
-                resource && (
-                  <React.Fragment>
-                    <Resource
-                      type={resource.type}
-                      url={resource.url}
-                      description={resource.description}
-                      thumbnail={resource.poster}
-                      subtitles={subtitleUri}
-                      onPDFButtonPress={onPDFButtonPress}
-                      onVideoPlay={onVideoPlay}
-                      testID={testIDSuffix}
-                      extralifeOverlay={offeringExtraLife}
-                      containerStyle={styles.resource}
-                    />
-                    <View style={styles.resourceTitleContainer}>
-                      <Html
-                        fontSize={theme.fontSize.regular}
-                        testID={'resource-description-' + testIDSuffix}
-                        style={styles.resourceTitle}
-                        isTextCentered
-                      >
-                        {resource.description}
-                      </Html>
-                    </View>
-                  </React.Fragment>
-                )}
+              {type === CARD_TYPE.RESOURCE && resource && (
+                <React.Fragment>
+                  <Resource
+                    type={resource.type}
+                    url={resource.url}
+                    description={resource.description}
+                    thumbnail={resource.poster}
+                    subtitles={subtitleUri}
+                    onPDFButtonPress={onPDFButtonPress}
+                    onVideoPlay={onVideoPlay}
+                    testID={testIDSuffix}
+                    extralifeOverlay={offeringExtraLife}
+                    containerStyle={styles.resource}
+                  />
+                  <View style={styles.resourceTitleContainer}>
+                    <Html
+                      fontSize={theme.fontSize.regular}
+                      testID={'resource-description-' + testIDSuffix}
+                      style={styles.resourceTitle}
+                      isTextCentered
+                    >
+                      {resource.description}
+                    </Html>
+                  </View>
+                </React.Fragment>
+              )}
             </CardComponent>
           );
         }}

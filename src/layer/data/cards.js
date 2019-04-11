@@ -67,12 +67,14 @@ export const updateChapterCardAccordingToCompletion = (
 
 const refreshDisciplineCard = async (disciplineCard: DisciplineCard): Promise<DisciplineCard> => {
   const levelCompletions = await Promise.all(
-    disciplineCard.modules.map(async (level): Promise<Completion | null> => {
-      const completionKey = buildCompletionKey('learner', level.universalRef || level.ref);
-      const completionString = await AsyncStorage.getItem(completionKey);
-      if (!completionString) return null;
-      return JSON.parse(completionString);
-    })
+    disciplineCard.modules.map(
+      async (level): Promise<Completion | null> => {
+        const completionKey = buildCompletionKey('learner', level.universalRef || level.ref);
+        const completionString = await AsyncStorage.getItem(completionKey);
+        if (!completionString) return null;
+        return JSON.parse(completionString);
+      }
+    )
   );
 
   return updateDisciplineCardDependingOnCompletion(levelCompletions, disciplineCard);

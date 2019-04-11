@@ -64,7 +64,7 @@ const Lives = ({
 }: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
-  const offsetLeft = heartHeight * maxScaleX / 2;
+  const offsetLeft = (heartHeight * maxScaleX) / 2;
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,

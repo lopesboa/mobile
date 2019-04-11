@@ -74,4 +74,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   getClue: () => getClue
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClueScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ClueScreen);

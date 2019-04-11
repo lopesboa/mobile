@@ -103,4 +103,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectResource
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LessonScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LessonScreen);

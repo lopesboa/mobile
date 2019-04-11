@@ -54,4 +54,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   signIn
 };
 
-export default connect(null, mapDispatchToProps)(SplashScreen);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SplashScreen);

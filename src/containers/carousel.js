@@ -118,7 +118,10 @@ class Carousel extends React.PureComponent<Props, State> {
   extractKey = (item: Item) => item.iconName;
 
   render() {
-    const {state: {items}, props: {layout}} = this;
+    const {
+      state: {items},
+      props: {layout}
+    } = this;
     const layoutWidth = layout && layout.width;
     const contentOffset = theme.spacing.medium + theme.spacing.tiny;
     const width = layoutWidth && layoutWidth - contentOffset * 2;

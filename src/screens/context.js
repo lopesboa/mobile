@@ -93,4 +93,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectRoute
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContextScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContextScreen);

@@ -26,4 +26,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   fetchBrand
 };
 
-export default connect(null, mapDispatchToProps)(NetworkInfoListener);
+export default connect(
+  null,
+  mapDispatchToProps
+)(NetworkInfoListener);

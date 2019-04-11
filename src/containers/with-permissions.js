@@ -90,7 +90,10 @@ function withPermissions<P>(
   };
 
   return hoistNonReactStatic(
-    connect(null, mapDispatchToProps)(ComponentWithPermissions),
+    connect(
+      null,
+      mapDispatchToProps
+    )(ComponentWithPermissions),
     WrappedComponent
   );
 }

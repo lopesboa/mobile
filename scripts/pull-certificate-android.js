@@ -6,8 +6,7 @@ const {
   ACCESS_KEY_ID: accessKeyId,
   SECRET_ACCESS_KEY: secretAccessKey,
   KEYSTORE_FILE: keystoreFile
-} =
-  process.env || {};
+} = process.env || {};
 
 if (!accessKeyId) {
   throw new Error('ACCESS_KEY_ID environment variable missing.');

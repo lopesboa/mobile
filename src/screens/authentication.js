@@ -68,4 +68,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   signInAnonymous
 };
 
-export default connect(null, mapDispatchToProps)(AuthenticationScreen);
+export default connect(
+  null,
+  mapDispatchToProps
+)(AuthenticationScreen);

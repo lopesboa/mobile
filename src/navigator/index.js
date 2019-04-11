@@ -178,4 +178,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   onScreenChange: changeScreen
 };
 
-export default connect(null, mapDispatchToProps)(NavigatorWithState);
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavigatorWithState);

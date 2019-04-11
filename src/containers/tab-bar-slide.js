@@ -201,4 +201,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectRoute
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TabBarSlide);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TabBarSlide);

@@ -162,4 +162,7 @@ const mapDispatchToProps: ConnectedDispatchToProps = {
   toggleFullscreen
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoControlable);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VideoControlable);

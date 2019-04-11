@@ -22,8 +22,7 @@ export const createState = (state: StateExtension | void): State => {
     nextContent = {type: 'slide', ref: 'sli_N1uxMsUIV'},
     allAnswers = [],
     variables = {}
-  } =
-    state || {};
+  } = state || {};
 
   const mergedState = {
     livesDisabled,

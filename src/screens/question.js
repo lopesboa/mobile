@@ -164,29 +164,27 @@ class QuestionScreen extends React.PureComponent<Props> {
       <Screen testID="question-screen" onRef={this.handleRef}>
         <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
         {!header && <View style={styles.loaderContainer}>{/* <Loader height={60} /> */}</View>}
-        {type &&
-          header &&
-          explanation && (
-            <Question
-              type={type}
-              choices={choices}
-              header={header}
-              explanation={explanation}
-              template={template}
-              media={media}
-              userChoices={userChoices}
-              onChoicePress={this.handleChoicePress}
-              onButtonPress={this.handleButtonPress}
-              onSliderChange={this.handleOnSliderChange}
-              onChoiceInputChange={this.handleChoiceInputChange}
-              onInputValueChange={this.handleInputValueChange}
-              isValidating={isValidating}
-              min={min}
-              max={max}
-              step={step}
-              value={value}
-            />
-          )}
+        {type && header && explanation && (
+          <Question
+            type={type}
+            choices={choices}
+            header={header}
+            explanation={explanation}
+            template={template}
+            media={media}
+            userChoices={userChoices}
+            onChoicePress={this.handleChoicePress}
+            onButtonPress={this.handleButtonPress}
+            onSliderChange={this.handleOnSliderChange}
+            onChoiceInputChange={this.handleChoiceInputChange}
+            onInputValueChange={this.handleInputValueChange}
+            isValidating={isValidating}
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+          />
+        )}
       </Screen>
     );
   }
@@ -329,4 +327,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   validateAnswer
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionScreen);

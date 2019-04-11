@@ -281,4 +281,7 @@ export const mapDispatchToProps: ConnectedDispatchProps = {
   selectRoute
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CorrectionScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CorrectionScreen);

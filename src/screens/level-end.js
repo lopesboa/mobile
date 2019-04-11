@@ -159,4 +159,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectCard
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LevelEndScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LevelEndScreen);

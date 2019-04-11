@@ -56,6 +56,6 @@ export const RESTRICTED_RESOURCE_TYPE: {|
   DISCIPLINE: 'discipline'
 };
 // FlowAssert
-(Object.keys(RESTRICTED_RESOURCE_TYPE).map(k => RESTRICTED_RESOURCE_TYPE[k]): Array<
-  RestrictedResourceType
->);
+(Object.keys(RESTRICTED_RESOURCE_TYPE).map(
+  k => RESTRICTED_RESOURCE_TYPE[k]
+): Array<RestrictedResourceType>);

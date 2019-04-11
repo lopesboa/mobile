@@ -41,35 +41,40 @@ describe('brand', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options): Promise<{
-        json: () => Promise<Config>
-      }> => {
-        expect(url).toBe(`${brand.host}/config`);
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<Config>
+        }> => {
+          expect(url).toBe(`${brand.host}/config`);
 
-        expect(options).toHaveProperty('headers.authorization', token);
+          expect(options).toHaveProperty('headers.authorization', token);
 
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              brand: {
-                name: 'mobile',
-                baseUrl: 'https://mobile-staging.coorpacademy.com',
-                contentCategoryName: 'Mobile'
-              },
-              themes: [
-                {
-                  common: {
-                    primary: '#00B0FF'
-                  },
-                  images: {
-                    'logo-mobile':
-                      'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+          return Promise.resolve({
+            json: () =>
+              Promise.resolve({
+                brand: {
+                  name: 'mobile',
+                  baseUrl: 'https://mobile-staging.coorpacademy.com',
+                  contentCategoryName: 'Mobile'
+                },
+                themes: [
+                  {
+                    common: {
+                      primary: '#00B0FF'
+                    },
+                    images: {
+                      'logo-mobile':
+                        'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+                    }
                   }
-                }
-              ]
-            })
-        });
-      });
+                ]
+              })
+          });
+        }
+      );
 
       const {fetchBrand} = require('./brand');
       const actual = fetchBrand(token);

@@ -115,13 +115,15 @@ const addCreatedAtToAction = (progression: Progression): Progression => {
     ...progression,
     actions:
       progression.actions &&
-      progression.actions.map((action: Action): Action => {
-        // $FlowFixMe spread operator
-        return {
-          ...action,
-          createdAt: action.createdAt || now
-        };
-      })
+      progression.actions.map(
+        (action: Action): Action => {
+          // $FlowFixMe spread operator
+          return {
+            ...action,
+            createdAt: action.createdAt || now
+          };
+        }
+      )
   };
 };
 

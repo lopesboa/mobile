@@ -91,7 +91,6 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
   const {services} = options;
 
   const progressions = await services.Progressions.getAll();
-
   await pMap(
     progressions.filter(isDone),
     (progression): Promise<Action | void> => {
