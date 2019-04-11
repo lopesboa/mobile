@@ -178,6 +178,7 @@ class QuestionChoices extends React.PureComponent<Props> {
         return (
           <QuestionInput
             fullWitdh
+            questionType={QUESTION_TYPE.BASIC}
             type={QUESTION_CHOICE_INPUT_TYPE.TEXT}
             onChange={onInputValueChange}
           />

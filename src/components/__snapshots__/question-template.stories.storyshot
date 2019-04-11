@@ -57,7 +57,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     <TextInput
       allowFontScaling={true}
       editable={true}
+      onBlur={[Function]}
       onChangeText={[Function]}
+      onFocus={[Function]}
       placeholder="Type here"
       placeholderTextColor="#90A4AE"
       selectTextOnFocus={true}
@@ -622,7 +624,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
     <TextInput
       allowFontScaling={true}
       editable={true}
+      onBlur={[Function]}
       onChangeText={[Function]}
+      onFocus={[Function]}
       placeholder="Type here"
       placeholderTextColor="#90A4AE"
       selectTextOnFocus={true}
@@ -1210,7 +1214,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     <TextInput
       allowFontScaling={true}
       editable={false}
+      onBlur={[Function]}
       onChangeText={[Function]}
+      onFocus={[Function]}
       placeholder="Type here"
       placeholderTextColor="#90A4AE"
       selectTextOnFocus={false}
@@ -1775,7 +1781,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
     <TextInput
       allowFontScaling={true}
       editable={false}
+      onBlur={[Function]}
       onChangeText={[Function]}
+      onFocus={[Function]}
       placeholder="Type here"
       placeholderTextColor="#90A4AE"
       selectTextOnFocus={false}

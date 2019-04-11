@@ -87,6 +87,10 @@ export type AnalyticsEventType =
   | 'slide'
   | 'mediaViewed'
   | 'startProgression'
+  | 'openSelect'
+  | 'closeSelect'
+  | 'inputBlur'
+  | 'inputFocus'
   | 'finishProgression';
 
 export type AnalyticsUserProperty = 'id' | 'brand';

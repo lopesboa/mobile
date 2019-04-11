@@ -154,6 +154,10 @@ export const ANALYTICS_EVENT_TYPE: {
     | 'SLIDE'
     | 'MEDIA_VIEWED'
     | 'START_PROGRESSION'
+    | 'OPEN_SELECT'
+    | 'CLOSE_SELECT'
+    | 'INPUT_BLUR'
+    | 'INPUT_FOCUS'
     | 'FINISH_PROGRESSION']: AnalyticsEventType
 } = {
   PRESS: 'press',
@@ -162,5 +166,9 @@ export const ANALYTICS_EVENT_TYPE: {
   SLIDE: 'slide',
   MEDIA_VIEWED: 'mediaViewed',
   START_PROGRESSION: 'startProgression',
+  OPEN_SELECT: 'openSelect',
+  CLOSE_SELECT: 'closeSelect',
+  INPUT_BLUR: 'inputBlur',
+  INPUT_FOCUS: 'inputFocus',
   FINISH_PROGRESSION: 'finishProgression'
 };

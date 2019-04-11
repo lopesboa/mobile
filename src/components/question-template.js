@@ -5,6 +5,7 @@ import {View, StyleSheet} from 'react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
+import {QUESTION_TYPE} from '../const';
 import {parseTemplate, TEMPLATE_PART_TYPE} from '../modules/template';
 import Html from './html';
 import QuestionInput, {ROW_SPACE} from './question-input';
@@ -63,6 +64,7 @@ class QuestionTemplate extends React.PureComponent<Props> {
 
             return (
               <QuestionInput
+                questionType={QUESTION_TYPE.TEMPLATE}
                 isDisabled={isDisabled}
                 type={item.type}
                 onChange={this.handleInputChange(item)}

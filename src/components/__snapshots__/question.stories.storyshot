@@ -180,7 +180,9 @@ exports[`Storyshots Question BasicQuestion 1`] = `
         <TextInput
           allowFontScaling={true}
           editable={true}
+          onBlur={[Function]}
           onChangeText={[Function]}
+          onFocus={[Function]}
           placeholder="Type here"
           placeholderTextColor="#90A4AE"
           selectTextOnFocus={true}
@@ -3704,7 +3706,9 @@ exports[`Storyshots Question Template 1`] = `
             <TextInput
               allowFontScaling={true}
               editable={true}
+              onBlur={[Function]}
               onChangeText={[Function]}
+              onFocus={[Function]}
               placeholder="Type here"
               placeholderTextColor="#90A4AE"
               selectTextOnFocus={true}
@@ -4269,7 +4273,9 @@ exports[`Storyshots Question Template 1`] = `
             <TextInput
               allowFontScaling={true}
               editable={true}
+              onBlur={[Function]}
               onChangeText={[Function]}
+              onFocus={[Function]}
               placeholder="Type here"
               placeholderTextColor="#90A4AE"
               selectTextOnFocus={true}

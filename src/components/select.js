@@ -3,12 +3,18 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {NovaCompositionNavigationArrowDown as ArrowDown} from '@coorpacademy/nova-icons';
-import type {Choice} from '@coorpacademy/progression-engine';
+import type {Choice, QuestionType} from '@coorpacademy/progression-engine';
 import SelectBase from 'react-native-picker-select';
-
+import {ANALYTICS_EVENT_TYPE} from '../const';
+import type {AnalyticsEventType} from '../types';
 import theme from '../modules/theme';
+import withAnalytics from '../containers/with-analytics';
+import type {WithAnalyticsProps} from '../containers/with-analytics';
 
 type Props = {|
+  ...WithAnalyticsProps,
+  analyticsID: string,
+  questionType: QuestionType,
   isDisabled?: boolean,
   values: $NonMaybeType<$PropertyType<Choice, 'items'>>,
   value?: string,
@@ -42,6 +48,23 @@ class Select extends React.PureComponent<Props> {
     return <ArrowDown color={color} height={ICON_WIDTH} width={ICON_WIDTH} />;
   };
 
+  logEvent = (event: AnalyticsEventType) => {
+    const {analytics, analyticsID, questionType} = this.props;
+    analytics &&
+      analytics.logEvent(event, {
+        id: analyticsID,
+        questionType
+      });
+  };
+
+  handleOpen = () => {
+    this.logEvent(ANALYTICS_EVENT_TYPE.OPEN_SELECT);
+  };
+
+  handleClose = () => {
+    this.logEvent(ANALYTICS_EVENT_TYPE.CLOSE_SELECT);
+  };
+
   render() {
     const {
       values,
@@ -59,6 +82,7 @@ class Select extends React.PureComponent<Props> {
     return (
       <View testID={testID}>
         <SelectBase
+          testID={testID && `${testID}-select-base`}
           disabled={isDisabled}
           placeholder={{label: placeholder, value: ''}}
           items={items}
@@ -69,13 +93,20 @@ class Select extends React.PureComponent<Props> {
           }}
           // This prop let us add border & more styling to Android Input
           useNativeAndroidPickerStyle={false}
+          onOpen={this.handleOpen}
+          onClose={this.handleClose}
           Icon={this.renderIcon}
-          pickerProps={{testID: testID && `${testID}-picker`}}
-          textInputProps={{style: [styles.text, style, color && {color}]}}
+          pickerProps={{
+            testID: testID && `${testID}-picker`
+          }}
+          textInputProps={{
+            style: [styles.text, style, color && {color}]
+          }}
         />
       </View>
     );
   }
 }
 
-export default Select;
+export {Select as Component};
+export default withAnalytics(Select);

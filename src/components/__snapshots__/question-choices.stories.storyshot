@@ -363,7 +363,9 @@ exports[`Storyshots QuestionChoices QCM Basic 1`] = `
   <TextInput
     allowFontScaling={true}
     editable={true}
+    onBlur={[Function]}
     onChangeText={[Function]}
+    onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
     selectTextOnFocus={true}
@@ -1417,7 +1419,9 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={true}
+        onBlur={[Function]}
         onChangeText={[Function]}
+        onFocus={[Function]}
         placeholder="Type here"
         placeholderTextColor="#90A4AE"
         selectTextOnFocus={true}
@@ -1982,7 +1986,9 @@ exports[`Storyshots QuestionChoices Template 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={true}
+        onBlur={[Function]}
         onChangeText={[Function]}
+        onFocus={[Function]}
         placeholder="Type here"
         placeholderTextColor="#90A4AE"
         selectTextOnFocus={true}

@@ -17,7 +17,9 @@ exports[`Storyshots QuestionInput Input (full width) 1`] = `
   <TextInput
     allowFontScaling={true}
     editable={true}
+    onBlur={[Function]}
     onChangeText={[Function]}
+    onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
     selectTextOnFocus={true}
@@ -1876,7 +1878,9 @@ exports[`Storyshots QuestionInput Text (disabled) 1`] = `
   <TextInput
     allowFontScaling={true}
     editable={false}
+    onBlur={[Function]}
     onChangeText={[Function]}
+    onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
     selectTextOnFocus={false}
@@ -1918,7 +1922,9 @@ exports[`Storyshots QuestionInput Text (not empty) 1`] = `
   <TextInput
     allowFontScaling={true}
     editable={true}
+    onBlur={[Function]}
     onChangeText={[Function]}
+    onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
     selectTextOnFocus={true}
@@ -1964,7 +1970,9 @@ exports[`Storyshots QuestionInput Text 1`] = `
   <TextInput
     allowFontScaling={true}
     editable={true}
+    onBlur={[Function]}
     onChangeText={[Function]}
+    onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
     selectTextOnFocus={true}
