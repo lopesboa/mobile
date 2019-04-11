@@ -123,14 +123,25 @@ class Correction extends React.PureComponent<Props> {
     } = this.props;
     const correctionCard: Card = {
       type: CARD_TYPE.CORRECTION,
-      title: translations.correction
+      title: translations.correction,
+      isCorrect
     };
-    const tipCard = {type: CARD_TYPE.TIP, title: translations.didYouKnowThat};
-    const keyPointCard = {type: CARD_TYPE.KEY_POINT, title: translations.keyPoint};
+    const tipCard = {
+      type: CARD_TYPE.TIP,
+      title: translations.didYouKnowThat,
+      isCorrect
+    };
+
+    const keyPointCard = {
+      type: CARD_TYPE.KEY_POINT,
+      title: translations.keyPoint,
+      isCorrect
+    };
     const lessonCards = resources.map(resource => ({
       type: CARD_TYPE.RESOURCE,
       title: translations.accessTheLesson,
       resource,
+      isCorrect,
       offeringExtraLife
     }));
 

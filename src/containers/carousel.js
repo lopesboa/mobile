@@ -10,8 +10,11 @@ import theme from '../modules/theme';
 import {SETTINGS, COMPUTER, QR_CODE} from '../components/steps-icon';
 import type {IconName} from '../components/steps-icon';
 import Space from '../components/space';
+import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {Layout} from './with-layout';
 import withLayout from './with-layout';
+import withAnalytics from './with-analytics';
+import type {WithAnalyticsProps} from './with-analytics';
 
 export type Item = {|
   iconName: IconName,
@@ -48,9 +51,10 @@ const styles: GenericStyleProp = StyleSheet.create({
   }
 });
 
-type Props = {|
+type Props = $Exact<{|
+  ...WithAnalyticsProps,
   layout?: Layout
-|};
+|}>;
 
 type State = {|
   currentItemIndex: number,
@@ -98,6 +102,15 @@ class Carousel extends React.PureComponent<Props, State> {
   };
 
   handleItemChange = (index: number) => {
+    const {analytics} = this.props;
+
+    analytics &&
+      analytics.logEvent(ANALYTICS_EVENT_TYPE.SWIPE, {
+        id: 'authentication-card',
+        from: `${this.state.items[this.state.currentItemIndex].iconName}`,
+        to: `${this.state.items[index].iconName}`
+      });
+
     this.setState({currentItemIndex: index});
   };
 
@@ -147,4 +160,4 @@ class Carousel extends React.PureComponent<Props, State> {
   }
 }
 
-export default withLayout(Carousel);
+export default withAnalytics(withLayout(Carousel));

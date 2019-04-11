@@ -149,6 +149,7 @@ export const APP_STATE: {
 export const ANALYTICS_EVENT_TYPE: {
   [
     | 'PRESS'
+    | 'SWIPE'
     | 'LONG_PRESS'
     | 'SLIDE'
     | 'MEDIA_VIEWED'
@@ -156,6 +157,7 @@ export const ANALYTICS_EVENT_TYPE: {
     | 'FINISH_PROGRESSION']: AnalyticsEventType
 } = {
   PRESS: 'press',
+  SWIPE: 'swipe',
   LONG_PRESS: 'longPress',
   SLIDE: 'slide',
   MEDIA_VIEWED: 'mediaViewed',

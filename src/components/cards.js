@@ -10,10 +10,12 @@ export type Card = {|
   title: string,
   type: CardType,
   resource?: Resource,
-  offeringExtraLife?: boolean
+  offeringExtraLife?: boolean,
+  isCorrect: boolean
 |};
 
 export type Props = {|
+  testID: string,
   items: Array<Card>,
   renderItem: Card => React.Node,
   cardStyle?: GenericStyleProp,
@@ -30,7 +32,8 @@ const Cards = ({
   onRef,
   onSwiped,
   onSwipedAll,
-  cardIndexShown = 0
+  cardIndexShown = 0,
+  testID
 }: Props) => (
   <DeckSwiper
     cards={items}

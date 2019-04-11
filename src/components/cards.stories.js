@@ -13,9 +13,9 @@ import Cards from './cards';
 import type {Card} from './cards';
 
 const items: Array<Card> = [
-  {title: 'First card', type: CARD_TYPE.TIP},
-  {title: 'Second card', type: CARD_TYPE.KEY_POINT},
-  {title: 'Third card', type: CARD_TYPE.CORRECTION}
+  {title: 'First card', type: CARD_TYPE.TIP, isCorrect: true},
+  {title: 'Second card', type: CARD_TYPE.KEY_POINT, isCorrect: true},
+  {title: 'Third card', type: CARD_TYPE.CORRECTION, isCorrect: true}
 ];
 
 const renderCard = ({type, title}: Card) => (
@@ -27,6 +27,7 @@ const renderCard = ({type, title}: Card) => (
 
 storiesOf('Cards', module).add('Default', () => (
   <Cards
+    testID="cards-story"
     onSwiped={handleFakePress}
     onSwipedAll={handleFakePress}
     onRef={handleFakePress}
@@ -44,6 +45,7 @@ if (__TEST__) {
 
       const component = renderer.create(
         <Cards
+          testID="cards-story"
           onSwiped={mockOnSwiped}
           onSwipedAll={mockOnSwipedAll}
           onRef={mockOnRef}

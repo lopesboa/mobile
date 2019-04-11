@@ -81,6 +81,7 @@ export type UnlockedLevelInfo = {|
 export type AppState = 'active' | 'background' | 'inactive';
 
 export type AnalyticsEventType =
+  | 'swipe'
   | 'press'
   | 'longPress'
   | 'slide'

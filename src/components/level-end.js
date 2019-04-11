@@ -282,18 +282,16 @@ class LevelEnd extends React.PureComponent<Props> {
                 </View>
               </View>
             </ScrollView>
-            {isFocused &&
-              isSuccess &&
-              bestScore !== '0' && (
-                <View pointerEvents="none" style={styles.confettisContainer}>
-                  <ConfettiCannon
-                    count={100}
-                    origin={{x: screenWidth / 2, y: 0}}
-                    fadeOut
-                    explosionSpeed={900}
-                  />
-                </View>
-              )}
+            {isFocused && isSuccess && bestScore !== '0' && (
+              <View pointerEvents="none" style={styles.confettisContainer}>
+                <ConfettiCannon
+                  count={100}
+                  origin={{x: screenWidth / 2, y: 0}}
+                  fadeOut
+                  explosionSpeed={900}
+                />
+              </View>
+            )}
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}

@@ -21,7 +21,6 @@ export const createVideo = ({
   mediaRef: 'med_jwp_Vy4JQKFhN',
   mimeType: 'application/jwplayer',
   ref,
-  // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.VIDEO,
   subtitleRef,
   subtitles: [],
