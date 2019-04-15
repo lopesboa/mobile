@@ -130,6 +130,7 @@ const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) =
             style={styles.startDemo}
             onLinkPress={onStartDemoPress}
             anchorTextColor={theme.colors.white}
+            isTextCentered
           >
             {translations.demoMode}
           </Html>
