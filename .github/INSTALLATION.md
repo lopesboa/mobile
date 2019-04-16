@@ -32,24 +32,14 @@ brew install watchman
   xcode-select --install
   ```
 
-* Fastlane, the mobile toolbox
+* [Bundler](https://bundler.io/)
+
+  It provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.
 
   ```bash
   # Using RubyGems
-  sudo gem install fastlane -NV
+  sudo gem install bundler
   ```
-
-  If fastlane was successfully installed via gem, Go to the Cocoapod step. Otherwise follow [this](./ALTERNATIVE_FASTLANE_INSTALL.md).
-  To know more about Fastlane, please read [this article](./FASTLANE.md).
-
-* Cocoapod, the IOS package manager
-
-  ```bash
-  # Using RubyGems
-  sudo gem install cocoapods
-  ```
-
-  If cocoapod was successfully installed via gem, Go to the Detox step. Otherwise follow [this](ALTERNATIVE_COCOAPOD.md).
 
 - [Detox](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md), the e2e test runner
 
