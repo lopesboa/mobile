@@ -4,11 +4,11 @@
 
 On your device, you have a red screen
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 There is something broken between your device and the packager
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 First thing to do is just to start dev task with a light cleanup:
 
@@ -26,11 +26,11 @@ If you still have issue(s), take a look at Flow errors, it might help you
 
 ## config.h file not found
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 The React Native cache is corrupted.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Run:
 
@@ -44,11 +44,11 @@ And then, rebuild.
 
 Bundle file is not found by React-Native at launch.
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 The file is not generated automatically by React-Native, even if it should.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Run:
 
@@ -58,11 +58,11 @@ yarn generate:bundle:[ios|android]
 
 ## Node-gyp dependency installation error
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 Node binary is broken
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Reinstall Node
 
@@ -74,11 +74,11 @@ When running app on iOS, if you get this:
     // or
     boost/iterator/iterator_adaptor.hpp’ file not found
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 The React Native cache is not up to date (commonly when you have many RN projects with different versions)
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Just delete react-native shared cache
 
@@ -94,11 +94,11 @@ Then (re)start your iOS/Android command.
 
 `clang: error: linker command failed with exit code 1 (use -v to see invocation)`
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 You didn't open the workspace with Xcode.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 If you don't see the workspace on Xcode home screen
 
@@ -108,7 +108,7 @@ If you don't see the workspace on Xcode home screen
 
 ## iOS: "**\*\***" profile is missing.
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 If you are seeing this error, you need to be sure that your Xcode is connected to the right developer account (you can connect many).
 In order to do this, just go to Xcode preferences > `Account` then add the proper Apple ID.
@@ -120,7 +120,7 @@ If you still have a warning near the provisioning profile, that's probably becau
 - Your developer machine is not configured and certified for the associated Apple ID
 - Your iOS device UDID (use iTunes, iOS device detail > click on "Serial Number", it should change to UDID).
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Manually: Sign in to the [Apple developer console](https://developer.apple.com) and download it manually.
 
@@ -132,11 +132,11 @@ Note: if the command above doesn't solved your issue, you will have to regenerat
 
 ## iOS: iPhone has denied the launch request
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 The needed provisioning profile is missing on your iOS device.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 In order to fix the problem, you will have to download from your device the proper provisioning profile using [Match](FASTLANE.md#match)
 Alternatively, you can upload the one you have from your computer directly on your iOS device.
@@ -152,21 +152,21 @@ If you still have this issue, you may have problems with the provisioning profil
 
 > The entitlements specified in your application’s Code Signing Entitlements file are invalid, not permitted, or do not match those specified in your provisioning profile. (0xE8008016).
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 Your app target (commonly: `****Tests`) doesn't have the correct Signing Certificate scope.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Update the certificate entitlements in your Xcode project or [Apple developer console](https://developer.apple.com) to add the missing one.
 
 ## iOS: A valid provisioning profile for this executable was not found
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 You have probably bad (out of date) provisioning profile.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 The easiest way to fix this is
 
@@ -179,11 +179,11 @@ The easiest way to fix this is
 
 First, just try to build again. Sometimes it happens.
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 You haven't enough free space on your device
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Delete apps
 
@@ -197,11 +197,11 @@ This error can be encoutered during build phase and have been detected on build 
 
 > /usr/bin/codesign --force --sign 143F73CE32254811A1B4AF7D929AC232C7BD9229 --preserve-metadata=identifier,entitlements '/Users/par-mac001/Library/Developer/Xcode/DerivedData/ADM-ggzbiudrndpgrogmvidccedtiiyi/Build/Intermediates.noindex/ArchiveIntermediates/ADM/InstallationBuildProductsLocation/Applications//ADM.app/Frameworks/ATAnalytics.framework'
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 It's probably an error with codesigning because `Embed Pods Framework` is the last things that is signed.
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 Check certificates, provisioning profiles and/or keychain write.
 
@@ -214,11 +214,11 @@ cannot bind 'tcp:5037': Address already in use
 ADB server didn't ACK
 ```
 
-##### Identified problem
+##### IDENTIFIED PROBLEM
 
 the adb server should be restarted
 
-##### How to resolve
+##### HOW TO RESOLVE
 
 ```sh
 > lsof -i :5037
@@ -227,4 +227,20 @@ adb     95894  user    7u  IPv4 0xdeb96c8361f7281d      0t0  TCP localhost:5037-
 > adb start-server
 * daemon not running. starting it now on port 5037 *
 * daemon started successfully *
+```
+
+## Can't find a simulator to match with "iPhone 6"
+
+After a Xcode update, you can encounter this error, because the Detox cache is out of sync with
+your Xcode version.
+
+##### IDENTIFIED PROBLEM
+
+Your Detox cache is out of date (or missing).
+
+##### HOW TO RESOLVE
+
+```
+detox clean-framework-cache
+detox build-framework-cache
 ```

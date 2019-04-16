@@ -55,8 +55,7 @@ android {
         }
         // For Detox
         testBuildType System.getProperty('testBuildType', 'debug')
-        missingDimensionStrategy "minReactNative", "minReactNative46"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     splits {
         abi {
@@ -144,8 +143,6 @@ dependencies {
     // For Detox
     androidTestImplementation(project(path: ":detox"))
     androidTestImplementation 'junit:junit:4.12+'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2+'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2+'
 }
 
 configurations {
