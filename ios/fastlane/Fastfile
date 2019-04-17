@@ -35,7 +35,7 @@ platform :ios do
     )
     update_project_provisioning(
       xcodeproj: ENV["XCODEPROJ"],
-      build_configuration: "Release",
+      build_configuration: "Adhoc",
       profile: ENV["sigh_com.coorpacademy.app_adhoc_profile-path"]
     )
     update_info_plist(
@@ -44,7 +44,8 @@ platform :ios do
     )
     update_project_team
     gym(
-      export_method: 'ad-hoc'
+      export_method: 'ad-hoc',
+      configuration: 'Adhoc'
     )
   end
 

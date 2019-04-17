@@ -43,6 +43,9 @@
 		40367BAE2255173B00B9DF4E /* container in Resources */ = {isa = PBXBuildFile; fileRef = 40367BAC2255173B00B9DF4E /* container */; };
 		40367BAF2255173B00B9DF4E /* container in Resources */ = {isa = PBXBuildFile; fileRef = 40367BAC2255173B00B9DF4E /* container */; };
 		40367BB02255173B00B9DF4E /* container in Resources */ = {isa = PBXBuildFile; fileRef = 40367BAC2255173B00B9DF4E /* container */; };
+		403AFA352266131500ED75FA /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA342266131500ED75FA /* release.xcconfig */; };
+		403AFA372266132B00ED75FA /* adhoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA362266132B00ED75FA /* adhoc.xcconfig */; };
+		403AFA392266133C00ED75FA /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA382266133C00ED75FA /* debug.xcconfig */; };
 		405551A8221D8AD70047247E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 40555177221D8AD60047247E /* assets */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -352,9 +355,13 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		40367B662253CE6200B9DF4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40367BAC2255173B00B9DF4E /* container */ = {isa = PBXFileReference; lastKnownFileType = folder; path = container; sourceTree = "<group>"; };
+		403AFA342266131500ED75FA /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = config/release.xcconfig; sourceTree = "<group>"; };
+		403AFA362266132B00ED75FA /* adhoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = adhoc.xcconfig; path = config/adhoc.xcconfig; sourceTree = "<group>"; };
+		403AFA382266133C00ED75FA /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = config/debug.xcconfig; sourceTree = "<group>"; };
 		40555177221D8AD60047247E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		4272B3F696A7D44A1109E685 /* Pods-Coorpacademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coorpacademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.release.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		6EB13493230A14A1E3D27457 /* Pods-Coorpacademy.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coorpacademy.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.adhoc.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -500,6 +507,7 @@
 		13B07FAE1A68108700A75B9A /* Coorpacademy */ = {
 			isa = PBXGroup;
 			children = (
+				403AFA3A2266134A00ED75FA /* config */,
 				40367BAC2255173B00B9DF4E /* container */,
 				40555177221D8AD60047247E /* assets */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -544,6 +552,16 @@
 				F7CC0B1D86D05560168BD65B /* libPods-Coorpacademy.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		403AFA3A2266134A00ED75FA /* config */ = {
+			isa = PBXGroup;
+			children = (
+				403AFA342266131500ED75FA /* release.xcconfig */,
+				403AFA362266132B00ED75FA /* adhoc.xcconfig */,
+				403AFA382266133C00ED75FA /* debug.xcconfig */,
+			);
+			name = config;
 			sourceTree = "<group>";
 		};
 		40EBC58421AD7C3C0090875F /* Recovered References */ = {
@@ -632,6 +650,7 @@
 			children = (
 				09D0DF3EB96ADFD2DBD809AA /* Pods-Coorpacademy.debug.xcconfig */,
 				4272B3F696A7D44A1109E685 /* Pods-Coorpacademy.release.xcconfig */,
+				6EB13493230A14A1E3D27457 /* Pods-Coorpacademy.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -758,6 +777,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1100,8 +1120,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403AFA352266131500ED75FA /* release.xcconfig in Resources */,
 				405551A8221D8AD70047247E /* assets in Resources */,
 				40367B672253CE6200B9DF4E /* GoogleService-Info.plist in Resources */,
+				403AFA372266132B00ED75FA /* adhoc.xcconfig in Resources */,
+				403AFA392266133C00ED75FA /* debug.xcconfig in Resources */,
 				40367BAD2255173B00B9DF4E /* container in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -1302,6 +1325,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 46NRKZL52N;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1318,7 +1342,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy.app/Coorpacademy";
 			};
@@ -1326,7 +1350,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D0DF3EB96ADFD2DBD809AA /* Pods-Coorpacademy.debug.xcconfig */;
+			baseConfigurationReference = 403AFA382266133C00ED75FA /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1353,7 +1377,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4272B3F696A7D44A1109E685 /* Pods-Coorpacademy.release.xcconfig */;
+			baseConfigurationReference = 403AFA342266131500ED75FA /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1371,7 +1395,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1448,7 +1472,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1524,13 +1548,210 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f64dd777-6fdd-4943-91d2-5be7d0c003fe";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy-tvOS.app/Coorpacademy-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
+		};
+		403AFAC622672C1E00ED75FA /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		403AFAC722672C1E00ED75FA /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 403AFA362266132B00ED75FA /* adhoc.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46NRKZL52N;
+				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/gems";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILD_DIR)/Release-$(PLATFORM_NAME)/include",
+				);
+				INFOPLIST_FILE = Coorpacademy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BVLinearGradient\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNDeviceInfo\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFirebase\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNSVG\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeLocalization\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativePermissions\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-camera\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-orientation-locker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-pdf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-splash-screen\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-video\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/rn-fetch-blob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga\"",
+					"\"${PODS_ROOT}/GoogleAnalytics/Libraries\"",
+					"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
+				PRODUCT_NAME = Coorpacademy;
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Adhoc;
+		};
+		403AFAC822672C1E00ED75FA /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 46NRKZL52N;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+				);
+				INFOPLIST_FILE = CoorpacademyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy.app/Coorpacademy";
+			};
+			name = Adhoc;
+		};
+		403AFAC922672C1E00ED75FA /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 46NRKZL52N;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+				);
+				INFOPLIST_FILE = "Coorpacademy-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Adhoc;
+		};
+		403AFACA22672C1E00ED75FA /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 46NRKZL52N;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+				);
+				INFOPLIST_FILE = "Coorpacademy-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Coorpacademy-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coorpacademy-tvOS.app/Coorpacademy-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Adhoc;
 		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1616,6 +1837,7 @@
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
 				00E356F71AD99517003FC87E /* Release */,
+				403AFAC822672C1E00ED75FA /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1625,6 +1847,7 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+				403AFAC722672C1E00ED75FA /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1634,6 +1857,7 @@
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
 				2D02E4981E0B4A5E006451C7 /* Release */,
+				403AFAC922672C1E00ED75FA /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1643,6 +1867,7 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+				403AFACA22672C1E00ED75FA /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1652,6 +1877,7 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+				403AFAC622672C1E00ED75FA /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

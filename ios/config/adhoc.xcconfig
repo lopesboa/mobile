@@ -1,0 +1,2 @@
+#include "../Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.adhoc.xcconfig"
+FIREBASE_DEBUG_ENABLED = YES

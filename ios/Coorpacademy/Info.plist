@@ -22,10 +22,12 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FirebaseDebugEnabled</key>
+	<string>$(FIREBASE_DEBUG_ENABLED)</string>
 	<key>LSApplicationCategoryType</key>
-	<string />
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
-	<true />
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -33,7 +35,7 @@
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true />
+				<true/>
 			</dict>
 		</dict>
 	</dict>
@@ -51,6 +53,8 @@
 	<string>Not used in this app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Some description</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Some description</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Some description</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -65,10 +69,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-	<key>UIRequiresFullScreen</key>
-	<true />
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -80,8 +84,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false />
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Some description</string>
+	<false/>
 </dict>
 </plist>

@@ -18,7 +18,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+  NSDictionary *plistConfig = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+
+  // Firebase
+  BOOL isFirebaseDebugEnabled = [[plistConfig valueForKey:@"FirebaseDebugEnabled"] boolValue];
+  NSLog(@"Firebase debug %s.", isFirebaseDebugEnabled ? "enabled" : "disabled");
+
+  NSMutableArray *newArguments = [NSMutableArray arrayWithArray:[[NSProcessInfo processInfo] arguments]];
+  if (isFirebaseDebugEnabled) {
+    [newArguments addObject:@"-FIRAnalyticsDebugEnabled"];
+    [newArguments addObject:@"-FIRDebugEnabled"];
+  } else {
+    [newArguments addObject:@"-FIRAnalyticsDebugDisabled"];
+    [newArguments addObject:@"-FIRDebugDisabled"];
+  }
+  [[NSProcessInfo processInfo] setValue:[newArguments copy] forKey:@"arguments"];
+
   [FIRApp configure];
+
+  // Default
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
@@ -35,7 +54,9 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
 
+  // Splashscreen
   [RNSplashScreen show];
+
   return YES;
 }
 

@@ -1,0 +1,2 @@
+#include "../Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.debug.xcconfig"
+FIREBASE_DEBUG_ENABLED = YES
