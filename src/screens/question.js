@@ -13,8 +13,7 @@ import {
   getStepContent,
   getQuestionMedia,
   getQuestionType,
-  getRoute,
-  validateAnswer
+  getRoute
 } from '@coorpacademy/player-store';
 import type {Lesson, Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
@@ -23,6 +22,7 @@ import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
 import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
+import {validateAnswer} from '../redux/actions/ui/answers';
 import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import {reduceToResources} from '../layer/data/mappers';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';

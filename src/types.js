@@ -91,7 +91,8 @@ export type AnalyticsEventType =
   | 'closeSelect'
   | 'inputBlur'
   | 'inputFocus'
-  | 'finishProgression';
+  | 'finishProgression'
+  | 'validateAnswer';
 
 export type AnalyticsUserProperty = 'id' | 'brand';
 export type AnalyticsEventParams = {

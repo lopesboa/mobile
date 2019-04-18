@@ -68,6 +68,10 @@ You can control the selected story in your browser running: `yarn storybook && o
 
 **Note**: This command will automatically indexes all the stories in **stories.js** files.
 
+## Firebase
+
+[In this section](.github/FIREBASE.md) you can find all informations about Firebase parts (Analytics, Dynamic Links, etc) used by the app.
+
 ## Troubleshooting
 
 [In this section](.github/TROUBLESHOOTING.md) you can find all common issues and how we can resolve those.

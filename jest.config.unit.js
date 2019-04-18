@@ -36,7 +36,7 @@ module.exports = {
       statements: 100
     },
     'src/redux': {
-      branches: 89,
+      branches: 88,
       function: 100,
       lines: 100,
       statements: 100

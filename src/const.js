@@ -158,7 +158,8 @@ export const ANALYTICS_EVENT_TYPE: {
     | 'CLOSE_SELECT'
     | 'INPUT_BLUR'
     | 'INPUT_FOCUS'
-    | 'FINISH_PROGRESSION']: AnalyticsEventType
+    | 'FINISH_PROGRESSION'
+    | 'VALIDATE_ANSWER']: AnalyticsEventType
 } = {
   PRESS: 'press',
   SWIPE: 'swipe',
@@ -170,5 +171,6 @@ export const ANALYTICS_EVENT_TYPE: {
   CLOSE_SELECT: 'closeSelect',
   INPUT_BLUR: 'inputBlur',
   INPUT_FOCUS: 'inputFocus',
-  FINISH_PROGRESSION: 'finishProgression'
+  FINISH_PROGRESSION: 'finishProgression',
+  VALIDATE_ANSWER: 'validateAnswer'
 };
