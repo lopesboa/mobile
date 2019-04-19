@@ -2,7 +2,7 @@
 
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action} from '../actions/navigation';
-import {INITIAL_ROUTE_NAME} from '../../navigator/navigation-options';
+import {INITIAL_APP_ROUTE_NAME, INITIAL_ROUTE_NAME} from '../../navigator/navigation-options';
 
 export type State = {|
   currentNavigatorName: string,
@@ -12,7 +12,7 @@ export type State = {|
 |};
 
 const initialState: State = {
-  currentNavigatorName: 'App',
+  currentNavigatorName: INITIAL_APP_ROUTE_NAME,
   currentAppScreenName: INITIAL_ROUTE_NAME,
   currentScreenName: INITIAL_ROUTE_NAME
 };

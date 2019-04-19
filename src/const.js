@@ -147,19 +147,21 @@ export const APP_STATE: {
 };
 
 export const ANALYTICS_EVENT_TYPE: {
-  [
-    | 'PRESS'
-    | 'SWIPE'
-    | 'LONG_PRESS'
-    | 'SLIDE'
-    | 'MEDIA_VIEWED'
-    | 'START_PROGRESSION'
-    | 'OPEN_SELECT'
-    | 'CLOSE_SELECT'
-    | 'INPUT_BLUR'
-    | 'INPUT_FOCUS'
-    | 'FINISH_PROGRESSION'
-    | 'VALIDATE_ANSWER']: AnalyticsEventType
+  PRESS: 'press',
+  SWIPE: 'swipe',
+  LONG_PRESS: 'longPress',
+  SLIDE: 'slide',
+  MEDIA_VIEWED: 'mediaViewed',
+  START_PROGRESSION: 'startProgression',
+  OPEN_SELECT: 'openSelect',
+  CLOSE_SELECT: 'closeSelect',
+  INPUT_BLUR: 'inputBlur',
+  INPUT_FOCUS: 'inputFocus',
+  FINISH_PROGRESSION: 'finishProgression',
+  SIGN_IN: 'signIn',
+  SIGN_OUT: 'signOut',
+  NAVIGATE: 'navigate',
+  VALIDATE_ANSWER: 'validateAnswer'
 } = {
   PRESS: 'press',
   SWIPE: 'swipe',
@@ -172,5 +174,10 @@ export const ANALYTICS_EVENT_TYPE: {
   INPUT_BLUR: 'inputBlur',
   INPUT_FOCUS: 'inputFocus',
   FINISH_PROGRESSION: 'finishProgression',
+  SIGN_IN: 'signIn',
+  SIGN_OUT: 'signOut',
+  NAVIGATE: 'navigate',
   VALIDATE_ANSWER: 'validateAnswer'
 };
+// FlowAssert
+(Object.keys(ANALYTICS_EVENT_TYPE).map(k => ANALYTICS_EVENT_TYPE[k]): Array<AnalyticsEventType>);

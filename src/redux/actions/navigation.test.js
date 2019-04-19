@@ -1,5 +1,7 @@
 // @flow strict
 
+import {ANALYTICS_EVENT_TYPE} from '../../const';
+import {createFakeAnalytics} from '../../utils/tests';
 import {NAVIGATION_SCREEN_CHANGE, changeScreen} from './navigation';
 import type {Action} from './navigation';
 
@@ -21,9 +23,7 @@ describe('Navigation', () => {
       // $FlowFixMe we don't want to mock the entire object
       const options: Options = {
         services: {
-          Analytics: {
-            setCurrentScreen: jest.fn()
-          }
+          Analytics: createFakeAnalytics()
         }
       };
       // $FlowFixMe missing callable signature
@@ -33,7 +33,12 @@ describe('Navigation', () => {
         options
       );
       expect(dispatch).toHaveBeenCalledWith(expected);
-      expect(options.services.Analytics.setCurrentScreen).toHaveBeenCalledWith(currentScreenName);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.NAVIGATE,
+        {
+          screenName: currentScreenName
+        }
+      );
     });
 
     it('with tab', async () => {
@@ -42,9 +47,7 @@ describe('Navigation', () => {
       // $FlowFixMe we don't want to mock the entire object
       const options: Options = {
         services: {
-          Analytics: {
-            setCurrentScreen: jest.fn()
-          }
+          Analytics: createFakeAnalytics()
         }
       };
       const currentTabName = 'Qux';
@@ -59,7 +62,12 @@ describe('Navigation', () => {
         ...expected,
         payload: {...expected.payload, currentTabName}
       });
-      expect(options.services.Analytics.setCurrentScreen).toHaveBeenCalledWith(currentTabName);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.NAVIGATE,
+        {
+          screenName: currentTabName
+        }
+      );
     });
   });
 });

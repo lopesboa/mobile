@@ -9,19 +9,15 @@ import {getStatusBarHeight} from 'react-native-status-bar-height';
 import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard, fetchCards} from '../redux/actions/cards';
-import {fetchBrand} from '../redux/actions/brands';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import localToken from '../utils/local-token';
-import {signIn, signOut} from '../redux/actions/authentication';
-import translationUtil from '../translations';
+import {signOut} from '../redux/actions/authentication';
+import translations from '../translations';
 import theme from '../modules/theme';
 
 type ConnectedDispatchProps = {|
   selectCard: typeof selectCard,
   fetchCards: typeof fetchCards,
-  fetchBrand: typeof fetchBrand,
-  signIn: typeof signIn,
-  onLogoLongPress: typeof signOut
+  signOut: typeof signOut
 |};
 
 type ConnectedStateProps = {|
@@ -47,11 +43,8 @@ class HomeScreen extends React.PureComponent<Props, State> {
     isRefreshing: false
   };
 
-  async componentDidMount() {
-    const token = await localToken.get();
-    await this.props.signIn(token);
-
-    await this.fetchContent();
+  componentDidMount() {
+    this.fetchContent();
   }
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
@@ -60,26 +53,24 @@ class HomeScreen extends React.PureComponent<Props, State> {
   };
 
   handleLogoLongPress = async () => {
-    const action = this.props.onLogoLongPress && (await this.props.onLogoLongPress());
-    // When we log out, we reset the entirely stack
-    // To avoid router directions and other stuffs
-    if (action)
+    const result = await this.props.signOut();
+    if (result) {
       this.props.navigation.reset([NavigationActions.navigate({routeName: 'Authentication'})], 0);
+    }
   };
 
   fetchContent = async () => {
-    await this.props.fetchBrand();
-    await this.props.fetchCards(translationUtil.getLanguage());
+    await this.props.fetchCards(translations.getLanguage());
   };
 
   handleRefresh = () => {
     this.setState({isRefreshing: true});
     this.fetchContent()
       .then(() => this.setState({isRefreshing: false}))
-      .catch(err => {
+      .catch(e => {
         this.setState({isRefreshing: false});
         // eslint-disable-next-line no-console
-        console.error(err);
+        console.error(e);
       });
   };
 
@@ -106,22 +97,16 @@ class HomeScreen extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => {
-  const language = translationUtil.getLanguage();
-
-  return {
-    items: Object.keys(cards.entities)
-      .map(key => cards.entities[key][language])
-      .filter(item => item !== undefined)
-  };
-};
+const mapStateToProps = ({cards, brands, ...state}: StoreState): ConnectedStateProps => ({
+  items: Object.keys(cards.entities)
+    .map(key => cards.entities[key][translations.getLanguage()])
+    .filter(item => item !== undefined)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   selectCard,
   fetchCards,
-  fetchBrand,
-  signIn,
-  onLogoLongPress: signOut
+  signOut
 };
 
 export default connect(

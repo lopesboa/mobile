@@ -44,17 +44,13 @@ const sendProgressionAnalytics = (
 
 export type AnalyticsService = $Exact<{
   ...PlayerAnalyticsService,
-  setCurrentScreen: $PropertyType<DataLayer, 'setCurrentScreen'>,
-  logEvent: $PropertyType<DataLayer, 'logEvent'>,
-  setUserProperty: $PropertyType<DataLayer, 'setUserProperty'>
+  logEvent: $PropertyType<DataLayer, 'logEvent'>
 }>;
 
 const service = (dataLayer: DataLayer): AnalyticsService => ({
   sendViewedMediaAnalytics: sendViewedMediaAnalytics(dataLayer),
   sendProgressionAnalytics: sendProgressionAnalytics(dataLayer),
-  setCurrentScreen: dataLayer.setCurrentScreen,
-  logEvent: dataLayer.logEvent,
-  setUserProperty: dataLayer.setUserProperty
+  logEvent: dataLayer.logEvent
 });
 
 export default service;

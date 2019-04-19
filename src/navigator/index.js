@@ -20,6 +20,7 @@ import browserNavigator from './browser';
 import navigationOptions, {
   navigationOptionsWithoutHeader,
   HEADER_BACKGROUND_COLOR,
+  INITIAL_APP_ROUTE_NAME,
   INITIAL_ROUTE_NAME
 } from './navigation-options';
 
@@ -98,6 +99,7 @@ const navigator = createStackNavigator(
     QRCodeModal: {screen: QRCodeScreen}
   },
   {
+    initialRouteName: INITIAL_APP_ROUTE_NAME,
     defaultNavigationOptions: navigationOptionsWithoutHeader,
     headerMode: 'none',
     mode: 'modal'
@@ -139,6 +141,10 @@ const extractScreens = (state: NavigationState): ExtractScreensResult => {
 
 class NavigatorWithState extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    this.props.onScreenChange(INITIAL_APP_ROUTE_NAME, INITIAL_ROUTE_NAME, INITIAL_ROUTE_NAME);
+  }
 
   handleNavigationStateChange = (prevState: NavigationState, currentState: NavigationState) => {
     const {onScreenChange} = this.props;

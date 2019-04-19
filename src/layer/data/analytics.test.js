@@ -1,53 +1,118 @@
 // @flow strict
 
-jest.mock('react-native-firebase', () => ({
-  analytics: jest.fn(),
-  utils: jest.fn(() => ({}))
-}));
-
-const firebase = require('react-native-firebase');
+import {ANALYTICS_EVENT_TYPE} from '../../const';
 
 const createAnalytics = () => ({
   setAnalyticsCollectionEnabled: jest.fn(),
   logEvent: jest.fn(),
   setCurrentScreen: jest.fn(),
-  setUserProperty: jest.fn()
+  setUserProperties: jest.fn()
 });
 
 describe('Analytics', () => {
   it('setAnalyticsCollectionEnabled', () => {
     const analytics = createAnalytics();
+    jest.mock('react-native-firebase', () => ({
+      analytics: jest.fn(),
+      utils: jest.fn(() => ({}))
+    }));
+
+    const firebase = require('react-native-firebase');
     // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValueOnce(analytics);
+    firebase.analytics.mockReturnValue(analytics);
     require('./analytics');
     expect(analytics.setAnalyticsCollectionEnabled).toHaveBeenCalledWith(true);
   });
 
-  it('logEvent', () => {
-    const analytics = createAnalytics();
-    // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValueOnce(analytics);
-    const {logEvent} = require('./analytics');
-    // $FlowFixMe this is a fake event
-    logEvent('foo', {bar: 'baz'});
-    expect(analytics.logEvent).toHaveBeenCalledWith('foo', {bar: 'baz'});
-  });
+  describe('logEvent', () => {
+    describe(ANALYTICS_EVENT_TYPE.NAVIGATE, () => {
+      it('should set current screen', () => {
+        const analytics = createAnalytics();
+        jest.mock('react-native-firebase', () => ({
+          analytics: jest.fn(),
+          utils: jest.fn(() => ({}))
+        }));
 
-  it('setCurrentScreen', () => {
-    const analytics = createAnalytics();
-    // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValueOnce(analytics);
-    const {setCurrentScreen} = require('./analytics');
-    setCurrentScreen('qux');
-    expect(analytics.setCurrentScreen).toHaveBeenCalledWith('qux');
-  });
+        const firebase = require('react-native-firebase');
+        // $FlowFixMe package is mocked
+        firebase.analytics.mockReturnValue(analytics);
+        const {logEvent} = require('./analytics');
+        // $FlowFixMe this is a fake event
+        logEvent(ANALYTICS_EVENT_TYPE.NAVIGATE, {screenName: 'qux'});
+        expect(analytics.setUserProperties).not.toHaveBeenCalled();
+        expect(analytics.setCurrentScreen).toHaveBeenCalledWith('qux');
+        expect(analytics.logEvent).not.toHaveBeenCalled();
+      });
+    });
 
-  it('setUserProperty', () => {
-    const analytics = createAnalytics();
-    // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValueOnce(analytics);
-    const {setUserProperty} = require('./analytics');
-    setUserProperty('id', 'bar');
-    expect(analytics.setUserProperty).toHaveBeenCalledWith('id', 'bar');
+    describe(ANALYTICS_EVENT_TYPE.SIGN_IN, () => {
+      it('should set user properties', () => {
+        const analytics = createAnalytics();
+        jest.mock('react-native-firebase', () => ({
+          analytics: jest.fn(),
+          utils: jest.fn(() => ({}))
+        }));
+
+        const firebase = require('react-native-firebase');
+        // $FlowFixMe package is mocked
+        firebase.analytics.mockReturnValue(analytics);
+        const {logEvent} = require('./analytics');
+        // $FlowFixMe this is a fake event
+        logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {userId: 'foo', brand: 'bar'});
+        expect(analytics.setUserProperties).toHaveBeenCalledWith({
+          userId: 'foo',
+          brand: 'bar'
+        });
+        expect(analytics.setCurrentScreen).not.toHaveBeenCalled();
+        expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SIGN_IN, {
+          userId: 'foo',
+          brand: 'bar'
+        });
+      });
+    });
+
+    describe(ANALYTICS_EVENT_TYPE.SIGN_OUT, () => {
+      it('should unset user properties', () => {
+        const analytics = createAnalytics();
+        jest.mock('react-native-firebase', () => ({
+          analytics: jest.fn(),
+          utils: jest.fn(() => ({}))
+        }));
+
+        const firebase = require('react-native-firebase');
+        // $FlowFixMe package is mocked
+        firebase.analytics.mockReturnValue(analytics);
+        const {logEvent} = require('./analytics');
+        // $FlowFixMe this is a fake event
+        logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {userId: 'foo', brand: 'bar'});
+        expect(analytics.setUserProperties).toHaveBeenCalledWith({
+          userId: null,
+          brand: null
+        });
+        expect(analytics.setCurrentScreen).not.toHaveBeenCalled();
+        expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
+          userId: 'foo',
+          brand: 'bar'
+        });
+      });
+    });
+
+    it('should handle common event', () => {
+      const analytics = createAnalytics();
+      jest.mock('react-native-firebase', () => ({
+        analytics: jest.fn(),
+        utils: jest.fn(() => ({}))
+      }));
+
+      const firebase = require('react-native-firebase');
+      // $FlowFixMe package is mocked
+      firebase.analytics.mockReturnValue(analytics);
+      const {logEvent} = require('./analytics');
+      // $FlowFixMe this is a fake event
+      logEvent('foo', {bar: 'baz'});
+      expect(analytics.setUserProperties).not.toHaveBeenCalled();
+      expect(analytics.setCurrentScreen).not.toHaveBeenCalled();
+      expect(analytics.logEvent).toHaveBeenCalledWith('foo', {bar: 'baz'});
+    });
   });
 });

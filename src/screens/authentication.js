@@ -7,12 +7,11 @@ import {connect} from 'react-redux';
 import {assistanceEmail} from '../../app';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
-import {signIn, signInAnonymous} from '../redux/actions/authentication';
+import {signIn} from '../redux/actions/authentication';
 import type {Params as QRCodeScreenParams} from './qr-code';
 
 type ConnectedDispatchProps = {|
-  signIn: typeof signIn,
-  signInAnonymous: typeof signInAnonymous
+  signIn: typeof signIn
 |};
 
 type Props = {|
@@ -24,8 +23,7 @@ class AuthenticationScreen extends React.PureComponent<Props> {
   props: Props;
 
   handleScan = (token?: string) => {
-    this.props.signIn(token);
-    this.props.navigation.navigate('Home');
+    this.handleSignIn(token);
   };
 
   handlePress = () => {
@@ -37,11 +35,11 @@ class AuthenticationScreen extends React.PureComponent<Props> {
   };
 
   handleStartDemoPress = () => {
-    this.signInAnonymous();
+    this.handleSignIn();
   };
 
-  signInAnonymous = async () => {
-    await this.props.signInAnonymous();
+  handleSignIn = async (token?: string) => {
+    await this.props.signIn(token);
     this.props.navigation.navigate('Home');
   };
 
@@ -64,8 +62,7 @@ class AuthenticationScreen extends React.PureComponent<Props> {
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signIn,
-  signInAnonymous
+  signIn
 };
 
 export default connect(

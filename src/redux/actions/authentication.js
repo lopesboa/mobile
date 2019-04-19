@@ -3,10 +3,15 @@
 import decode from 'jwt-decode';
 import {Alert, AsyncStorage} from 'react-native';
 import fetch from 'cross-fetch';
+
 import translations from '../../translations';
 import type {StoreAction} from '../_types';
+import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT} from '../../types';
 import localToken from '../../utils/local-token';
+import {getBrand, getToken} from '../utils/state-extract';
+import {fetchBrand} from './brands';
+import type {Action as BrandsAction} from './brands';
 
 export const SIGN_IN_REQUEST = `@@authentication/SIGN_IN_REQUEST`;
 export const SIGN_IN_SUCCESS = `@@authentication/SIGN_IN_SUCCESS`;
@@ -16,7 +21,7 @@ export const SIGN_OUT = `@@authentication/SIGN_OUT`;
 export type Action =
   | {|
       type: '@@authentication/SIGN_IN_REQUEST',
-      payload: string
+      payload?: string
     |}
   | {|
       type: '@@authentication/SIGN_IN_SUCCESS',
@@ -31,46 +36,72 @@ export type Action =
       type: '@@authentication/SIGN_OUT'
     |};
 
-export const signIn = (token: string): StoreAction<Action> => async (
-  dispatch,
-  getState,
-  options
-) => {
-  await dispatch({
-    type: SIGN_IN_REQUEST,
-    payload: token
-  });
-  try {
-    const jwt: JWT = decode(token);
+export const signInRequest = (token?: string): Action => ({
+  type: SIGN_IN_REQUEST,
+  payload: token
+});
 
-    if (jwt && (jwt.iss !== 'coorpacademy-jwt' || !jwt.host))
-      throw new Error("JWT isn't from Coorpacademy");
+export const signInSuccess = (token: string): Action => ({
+  type: SIGN_IN_SUCCESS,
+  payload: token
+});
 
-    const {services} = options;
-    services.Analytics.setUserProperty('id', jwt.user);
+export const signInError = (e: Error): Action => ({
+  type: SIGN_IN_ERROR,
+  payload: e,
+  error: true
+});
 
-    localToken.set(token);
-    return dispatch({
-      type: SIGN_IN_SUCCESS,
-      payload: token
-    });
-  } catch (err) {
-    localToken.set(null);
-    return dispatch({
-      type: SIGN_IN_ERROR,
-      payload: err,
-      error: true
-    });
-  }
-};
-
-export const signInAnonymous = (): StoreAction<Action> => async (dispatch, getState, options) => {
+export const getAnonymousToken = async (): Promise<string> => {
   const response = await fetch('https://up.coorpacademy.com/api/v1/anonymous/mobile', {
     method: 'POST'
   });
   const token = await response.text();
-  // $FlowFixMe
-  return signIn(token)(dispatch, getState, options);
+
+  return token;
+};
+
+export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => async (
+  dispatch,
+  getState,
+  options
+) => {
+  await dispatch(signInRequest(_token));
+  try {
+    const token = _token || (await getAnonymousToken());
+
+    const jwt: JWT = decode(token);
+
+    if (jwt && (jwt.iss !== 'coorpacademy-jwt' || !jwt.host)) {
+      throw new Error("JWT isn't from Coorpacademy");
+    }
+
+    // $FlowFixMe wrong StoreAction type
+    const action = await fetchBrand(token)(dispatch, getState, options);
+    if (action.payload.error) {
+      throw new Error(action.payload.error);
+    }
+
+    const brand = getBrand(getState());
+
+    if (!brand) {
+      throw new Error('Incorrect brand');
+    }
+
+    const {services} = options;
+    services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
+      userId: jwt.user,
+      brand: brand.name
+    });
+
+    await localToken.set(token);
+
+    return dispatch(signInSuccess(token));
+  } catch (e) {
+    localToken.set(null);
+
+    return dispatch(signInError(e));
+  }
 };
 
 export const signOut = (): StoreAction<Action> => async (dispatch, getState, options) => {
@@ -89,9 +120,15 @@ export const signOut = (): StoreAction<Action> => async (dispatch, getState, opt
   if (!isAccepted) return;
   await AsyncStorage.clear();
 
+  const brand = getBrand(getState());
+  const token = getToken(getState());
+  const jwt: JWT = decode(token || '');
+
   const {services} = options;
-  services.Analytics.setUserProperty('id', null);
-  services.Analytics.setUserProperty('brand', null);
+  services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
+    ...(brand ? {brand: brand.name} : {}),
+    userId: jwt.user
+  });
 
   return dispatch({
     type: SIGN_OUT

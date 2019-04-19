@@ -19,9 +19,7 @@ if (__TEST__) {
         </TestContextProvider>
       );
       const expected = {
-        logEvent: expect.any(Function),
-        setCurrentScreen: expect.any(Function),
-        setUserProperty: expect.any(Function)
+        logEvent: expect.any(Function)
       };
       expect(component.mock.calls[0][0]).toMatchObject(expected);
     });

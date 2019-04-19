@@ -2,20 +2,39 @@
 
 import firebase from 'react-native-firebase';
 
-import type {AnalyticsEventType, AnalyticsEventParams, AnalyticsUserProperty} from '../../types';
+import type {AnalyticsEventType, AnalyticsEventParams} from '../../types';
+import {ANALYTICS_EVENT_TYPE} from '../../const';
 
 firebase.utils().errorOnMissingPlayServices = false;
 firebase.utils().promptOnMissingPlayServices = false;
 
 firebase.analytics().setAnalyticsCollectionEnabled(true);
 
-export const logEvent = (event: AnalyticsEventType, params?: AnalyticsEventParams): void =>
-  firebase.analytics().logEvent(event, params);
+export const logEvent = (event: AnalyticsEventType, params?: AnalyticsEventParams = {}) => {
+  if (event === ANALYTICS_EVENT_TYPE.NAVIGATE && params.screenName) {
+    const {screenName} = params;
+    if (typeof screenName === 'string') {
+      return firebase.analytics().setCurrentScreen(screenName);
+    }
+  }
 
-export const setCurrentScreen = (screenName: string): void =>
-  firebase.analytics().setCurrentScreen(screenName);
+  if (event === ANALYTICS_EVENT_TYPE.SIGN_IN) {
+    const {userId, brand} = params;
+    firebase.analytics().setUserProperties({
+      userId,
+      brand
+    });
+  }
 
-export const setUserProperty = (name: AnalyticsUserProperty, value: string | null) =>
-  firebase.analytics().setUserProperty(name, value);
+  if (event === ANALYTICS_EVENT_TYPE.SIGN_OUT) {
+    // To clean the session (unset user properties)
+    firebase.analytics().setUserProperties({
+      userId: null,
+      brand: null
+    });
+  }
 
-export default {logEvent, setCurrentScreen, setUserProperty};
+  return firebase.analytics().logEvent(event, params);
+};
+
+export default {logEvent};

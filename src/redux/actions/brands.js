@@ -3,6 +3,7 @@
 import type {Brand} from '../../types';
 import type {StoreAction} from '../_types';
 import {getToken} from '../utils/state-extract';
+import type {State as TokenState} from '../reducers/authentication/token';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@brands/FETCH_SUCCESS`;
@@ -43,21 +44,28 @@ export const fetchError = (error: string): Action => ({
   }
 });
 
-export const fetchBrand = (): StoreAction<Action> => {
-  return async (dispatch, getState, options) => {
-    await dispatch(fetchRequest());
+export const fetchBrand = (token: TokenState): StoreAction<Action> => async (
+  dispatch,
+  getState,
+  {services}
+) => {
+  await dispatch(fetchRequest());
 
-    const token = getToken(getState());
-    if (token === null) return dispatch(fetchError('Token not defined'));
+  if (!token) {
+    return dispatch(fetchError('Token not defined'));
+  }
 
-    const {services} = options;
-    try {
-      const brand = await services.Brands.find(token);
-      services.Analytics.setUserProperty('brand', brand.name);
+  try {
+    const brand = await services.Brands.find(token);
 
-      return dispatch(fetchSuccess(brand));
-    } catch (err) {
-      return dispatch(fetchError(err.toString()));
-    }
-  };
+    return dispatch(fetchSuccess(brand));
+  } catch (e) {
+    return dispatch(fetchError(e.message));
+  }
+};
+
+export const fetchCurrentBrand = (): StoreAction<Action> => (dispatch, getState, options) => {
+  const token = getToken(getState());
+  // $FlowFixMe wrong StoreAction type
+  return fetchBrand(token)(dispatch, getState, options);
 };

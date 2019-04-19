@@ -60,7 +60,7 @@ jobs:
 
   end2end_tests_ios_build:
     macos:
-      xcode: '10.2.0'
+      xcode: '10.1.0'
     working_directory: ~/app
 
     steps:
@@ -70,7 +70,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v5-{{ arch }}
+          key: detox-v6-{{ arch }}
 
       - run:
           name: Detox framework
@@ -79,7 +79,7 @@ jobs:
             detox build-framework-cache
 
       - save_cache:
-          key: detox-v5-{{ arch }}
+          key: detox-v6-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
@@ -95,7 +95,7 @@ jobs:
 
   end2end_tests_ios_run:
     macos:
-      xcode: '10.2.0'
+      xcode: '10.1.0'
     working_directory: ~/app
     parallelism: 8
 
@@ -106,7 +106,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v5-{{ arch }}
+          key: detox-v6-{{ arch }}
 
       - restore_cache:
           key: brew-v2-ios-{{ arch }}
@@ -141,7 +141,7 @@ jobs:
 
   prepare_ios:
     macos:
-      xcode: '10.2.0'
+      xcode: '10.1.0'
     working_directory: ~/app
 
     steps:
@@ -182,7 +182,7 @@ jobs:
 
   build_ios:
     macos:
-      xcode: '10.2.0'
+      xcode: '10.1.0'
     working_directory: ~/app
 
     steps:
@@ -367,7 +367,7 @@ jobs:
 
   publish_ios:
     macos:
-      xcode: '10.2.0'
+      xcode: '10.1.0'
     working_directory: ~/app
     steps:
       - checkout

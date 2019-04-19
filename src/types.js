@@ -92,9 +92,11 @@ export type AnalyticsEventType =
   | 'inputBlur'
   | 'inputFocus'
   | 'finishProgression'
+  | 'signIn'
+  | 'signOut'
+  | 'navigate'
   | 'validateAnswer';
 
-export type AnalyticsUserProperty = 'id' | 'brand';
 export type AnalyticsEventParams = {
   [key: string]: string | number
 };

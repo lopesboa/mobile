@@ -1,26 +1,73 @@
-// @flow strict
+// @flow
 
-import {toJWT, createFakeAnalytics} from '../../utils/tests';
-import {
-  signIn,
-  signOut,
-  signInAnonymous,
-  SIGN_IN_SUCCESS,
-  SIGN_IN_REQUEST,
-  SIGN_IN_ERROR,
-  SIGN_OUT
-} from './authentication';
+import {createBrand} from '../../__fixtures__/brands';
+import {toJWT, createFakeAnalytics, fakeError} from '../../utils/tests';
+import {ANALYTICS_EVENT_TYPE} from '../../const';
 
+jest.mock('../../utils/local-token');
 jest.mock('cross-fetch');
 
 describe('Authentication', () => {
+  describe('getAnonymousToken', () => {
+    it('should return token', async () => {
+      const fetch = require('cross-fetch');
+      const token = toJWT({
+        user: '42',
+        iss: 'coorpacademy-jwt',
+        host: 'https://onboarding.coorpacademy.com'
+      });
+      fetch.mockImplementationOnce((url, fetchOptions) => {
+        expect(fetchOptions.method).toBe('POST');
+        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
+
+        return Promise.resolve({text: () => Promise.resolve(token)});
+      });
+
+      const {getAnonymousToken} = require('./authentication');
+
+      // $FlowFixMe
+      const result = await getAnonymousToken();
+
+      return expect(result).toEqual(token);
+    });
+
+    it('should handle error', () => {
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, fetchOptions) => {
+        expect(fetchOptions.method).toBe('POST');
+        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
+
+        throw new Error('Oops i did it again');
+      });
+
+      const {getAnonymousToken} = require('./authentication');
+
+      const result = getAnonymousToken();
+
+      return expect(result).rejects.toThrow();
+    });
+  });
+
   describe('signIn', () => {
-    it('success', async () => {
+    it('should sign in the user', async () => {
+      const {signIn, signInRequest, signInSuccess} = require('./authentication');
+      const {fetchRequest, fetchSuccess} = require('./brands');
+
+      const brand = createBrand();
+
       const dispatch = jest.fn();
       const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          brand
+        }
+      });
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Brands: {
+            find: jest.fn(() => Promise.resolve(brand))
+          }
         }
       };
 
@@ -31,29 +78,139 @@ describe('Authentication', () => {
       });
 
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_REQUEST,
-          payload: token
-        });
+        expect(action).toEqual(signInRequest(token));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_SUCCESS,
-          payload: token
-        });
+        expect(action).toEqual(fetchRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchSuccess(brand));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInSuccess(token));
         return action;
       });
 
       // $FlowFixMe
       const actual = await signIn(token)(dispatch, getState, options);
-      expect(options.services.Analytics.setUserProperty).toHaveBeenCalledWith('id', '42');
-      return expect(actual).toEqual({
-        type: SIGN_IN_SUCCESS,
-        payload: token
-      });
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.SIGN_IN,
+        {
+          userId: '42',
+          brand: brand.name
+        }
+      );
+
+      return expect(actual).toEqual(signInSuccess(token));
     });
+
+    it('should sign in as anonymous', async () => {
+      const token = toJWT({
+        user: '4242',
+        iss: 'coorpacademy-jwt',
+        host: 'https://onboarding.coorpacademy.com'
+      });
+
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, fetchOptions) => {
+        expect(fetchOptions.method).toBe('POST');
+        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
+
+        return Promise.resolve({text: () => Promise.resolve(token)});
+      });
+
+      const {signIn, signInRequest, signInSuccess} = require('./authentication');
+      const {fetchRequest, fetchSuccess} = require('./brands');
+
+      const brand = createBrand();
+
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          brand
+        }
+      });
+      const options = {
+        services: {
+          Analytics: createFakeAnalytics(),
+          Brands: {
+            find: jest.fn(() => Promise.resolve(brand))
+          }
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchSuccess(brand));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInSuccess(token));
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signIn()(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.SIGN_IN,
+        {
+          userId: '4242',
+          brand: brand.name
+        }
+      );
+
+      return expect(actual).toEqual(signInSuccess(token));
+    });
+
+    it('should handle error on anonymous sign in', async () => {
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, fetchOptions) => {
+        expect(fetchOptions.method).toBe('POST');
+        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
+
+        throw new Error('Oops i did it again');
+      });
+
+      const {signIn, signInRequest, signInError} = require('./authentication');
+
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Analytics: createFakeAnalytics()
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInError(new Error('Oops i did it again')));
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signIn()(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+
+      return expect(actual).toEqual(signInError(new Error('Oops i did it again')));
+    });
+
     it('should reject non-coorpacademy token', async () => {
+      const {signIn, signInRequest, signInError} = require('./authentication');
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
@@ -68,31 +225,24 @@ describe('Authentication', () => {
       });
 
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_REQUEST,
-          payload: token
-        });
+        expect(action).toEqual(signInRequest(token));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_ERROR,
-          payload: new Error("JWT isn't from Coorpacademy"),
-          error: true
-        });
+        expect(action).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
         return action;
       });
 
       // $FlowFixMe
       const actual = await signIn(token)(dispatch, getState, options);
-      expect(options.services.Analytics.setUserProperty).not.toHaveBeenCalled();
-      return expect(actual).toEqual({
-        type: SIGN_IN_ERROR,
-        payload: new Error("JWT isn't from Coorpacademy"),
-        error: true
-      });
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+
+      return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
     });
+
     it('should reject if host is missing', async () => {
+      const {signIn, signInRequest, signInError} = require('./authentication');
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
@@ -106,70 +256,127 @@ describe('Authentication', () => {
       });
 
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_REQUEST,
-          payload: token
-        });
+        expect(action).toEqual(signInRequest(token));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: SIGN_IN_ERROR,
-          payload: new Error("JWT isn't from Coorpacademy"),
-          error: true
-        });
+        expect(action).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
         return action;
       });
 
       // $FlowFixMe
       const actual = await signIn(token)(dispatch, getState, options);
-      expect(options.services.Analytics.setUserProperty).not.toHaveBeenCalled();
-      return expect(actual).toEqual({
-        type: SIGN_IN_ERROR,
-        payload: new Error("JWT isn't from Coorpacademy"),
-        error: true
-      });
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+
+      return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
     });
-  });
-  describe('signInAnonymous', () => {
-    it('success', async () => {
+
+    it('should reject if fetching brand failed', async () => {
+      const {signIn, signInRequest, signInError} = require('./authentication');
+      const {fetchRequest, fetchError} = require('./brands');
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Brands: {
+            find: jest.fn(() => Promise.reject(fakeError))
+          }
         }
       };
+
       const token = toJWT({
         user: '42',
         iss: 'coorpacademy-jwt',
-        host: 'https://up.coorpacademy.com'
-      });
-
-      const fetch = require('cross-fetch');
-      fetch.mockImplementationOnce((url, fetchOptions) => {
-        expect(fetchOptions.method).toBe('POST');
-        expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
-        return Promise.resolve({text: () => Promise.resolve(token)});
+        host: 'https://onboarding.coorpacademy.com'
       });
 
       dispatch.mockImplementationOnce(action => {
-        expect(action.type).toEqual(SIGN_IN_REQUEST);
+        expect(action).toEqual(signInRequest(token));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action.type).toEqual(SIGN_IN_SUCCESS);
+        expect(action).toEqual(fetchRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchError(fakeError.message));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInError(fakeError));
         return action;
       });
 
       // $FlowFixMe
-      const actual = await signInAnonymous()(dispatch, getState, options);
-      expect(options.services.Analytics.setUserProperty).toHaveBeenCalledWith('id', '42');
-      return expect(actual.type).toEqual(SIGN_IN_SUCCESS);
+      const actual = await signIn(token)(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+
+      return expect(actual).toEqual(signInError(fakeError));
+    });
+
+    it('should reject if brand is missing', async () => {
+      const {signIn, signInRequest, signInError} = require('./authentication');
+      const {fetchRequest, fetchSuccess} = require('./brands');
+
+      const brand = createBrand();
+
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          brand: null
+        }
+      });
+      const options = {
+        services: {
+          Analytics: createFakeAnalytics(),
+          Brands: {
+            find: jest.fn(() => Promise.resolve(brand))
+          }
+        }
+      };
+
+      const token = toJWT({
+        user: '42',
+        iss: 'coorpacademy-jwt',
+        host: 'https://onboarding.coorpacademy.com'
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInRequest(token));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchSuccess(brand));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInError(new Error('Incorrect brand')));
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signIn(token)(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+
+      return expect(actual).toEqual(signInError(new Error('Incorrect brand')));
     });
   });
+
   describe('signOut', () => {
-    it('should dispatch logout if alert is accepted', async () => {
+    it('should dispatch sign out if alert is accepted', async () => {
+      const token = toJWT({
+        user: '42',
+        iss: 'coorpacademy-jwt',
+        host: 'https://onboarding.coorpacademy.com'
+      });
+
       jest.mock('Alert', () => ({
         alert: jest.fn()
       }));
@@ -178,8 +385,18 @@ describe('Authentication', () => {
         buttons[1].onPress();
       });
 
+      const {SIGN_OUT, signOut} = require('./authentication');
+
+      const brand = createBrand();
+
       const dispatch = jest.fn();
       const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          token,
+          brand
+        }
+      });
       const options = {
         services: {
           Analytics: createFakeAnalytics()
@@ -196,13 +413,16 @@ describe('Authentication', () => {
       // $FlowFixMe
       const actual = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
-      expect(options.services.Analytics.setUserProperty).toHaveBeenCalledTimes(2);
-      // $FlowFixMe this is a mocked version
-      expect(options.services.Analytics.setUserProperty.mock.calls[0]).toEqual(['id', null]);
-      // $FlowFixMe this is a mocked version
-      expect(options.services.Analytics.setUserProperty.mock.calls[1]).toEqual(['brand', null]);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.SIGN_OUT,
+        {
+          userId: '42',
+          brand: brand.name
+        }
+      );
       expect(actual).toEqual(expected);
     });
+
     it("shouldn't dispatch anything if alert is refused", async () => {
       jest.mock('Alert', () => ({
         alert: jest.fn()
@@ -211,6 +431,8 @@ describe('Authentication', () => {
       Alert.alert.mockImplementationOnce((title, message, buttons) => {
         buttons[0].onPress();
       });
+
+      const {signOut} = require('./authentication');
 
       const dispatch = jest.fn();
       const getState = jest.fn();
@@ -224,7 +446,7 @@ describe('Authentication', () => {
       const actual = await signOut()(dispatch, getState, options);
 
       expect(dispatch).not.toHaveBeenCalled();
-      expect(options.services.Analytics.setUserProperty).not.toHaveBeenCalled();
+      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
       expect(actual).toBeUndefined();
     });
   });

@@ -29,9 +29,7 @@ describe('Data layer', () => {
       getChapterRulesByContent: expect.any(Function),
       fetchDisciplineBundle: expect.any(Function),
       storeDisciplineBundle: expect.any(Function),
-      logEvent: expect.any(Function),
-      setCurrentScreen: expect.any(Function),
-      setUserProperty: expect.any(Function)
+      logEvent: expect.any(Function)
     };
     expect(expected).toEqual(result);
   });

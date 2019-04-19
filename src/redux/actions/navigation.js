@@ -1,6 +1,7 @@
 // @flow strict
 
 import type {StoreAction} from '../_types';
+import {ANALYTICS_EVENT_TYPE} from '../../const';
 
 export const NAVIGATION_SCREEN_CHANGE = '@@navigation/SCREEN_CHANGE';
 
@@ -20,7 +21,9 @@ export const changeScreen = (
   currentScreenName: string,
   currentTabName?: string
 ): StoreAction<Action> => (dispatch, getState, {services}) => {
-  services.Analytics.setCurrentScreen(currentTabName || currentScreenName);
+  services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NAVIGATE, {
+    screenName: currentTabName || currentScreenName
+  });
 
   return dispatch({
     type: NAVIGATION_SCREEN_CHANGE,

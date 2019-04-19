@@ -67,12 +67,4 @@ describe('Analytics', () => {
     service.logEvent('foo', {bar: 'baz'});
     expect(logEvent).toHaveBeenCalledWith('foo', {bar: 'baz'});
   });
-
-  it('setCurrentScreen', () => {
-    const setCurrentScreen = jest.fn();
-    // $FlowFixMe
-    const service = createService({setCurrentScreen});
-    service.setCurrentScreen('qux');
-    expect(setCurrentScreen).toHaveBeenCalledWith('qux');
-  });
 });

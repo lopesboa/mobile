@@ -30,9 +30,7 @@ export const sleep = (duration: number = 10) =>
 export const fakeLayout: Layout = {width: 320, height: 768};
 
 export const createFakeAnalytics = (): AnalyticsState => ({
-  logEvent: jest.fn(),
-  setCurrentScreen: jest.fn(),
-  setUserProperty: jest.fn()
+  logEvent: jest.fn()
 });
 
 export const toJWT = <S>(payload: S): string =>
