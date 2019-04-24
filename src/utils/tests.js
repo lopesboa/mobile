@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import createDataLayer from '../layer/data';
 import createServices from '../services';
 import createStore from '../redux';
+import {__TEST__} from '../modules/environment';
 import type {Layout} from '../containers/with-layout';
 import type {State as AnalyticsState} from '../components/analytics-provider';
 
@@ -29,9 +30,11 @@ export const sleep = (duration: number = 10) =>
 
 export const fakeLayout: Layout = {width: 320, height: 768};
 
-export const createFakeAnalytics = (): AnalyticsState => ({
-  logEvent: jest.fn()
-});
+export const createFakeAnalytics = (): AnalyticsState => {
+  return {
+    logEvent: __TEST__ ? jest.fn() : () => {}
+  };
+};
 
 export const toJWT = <S>(payload: S): string =>
   ['', Buffer.from(JSON.stringify(payload) || '').toString('base64'), ''].join('.');
