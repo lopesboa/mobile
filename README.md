@@ -68,6 +68,18 @@ You can control the selected story in your browser running: `yarn storybook && o
 
 **Note**: This command will automatically indexes all the stories in **stories.js** files.
 
+## Deeplinks
+
+To emulate deeplinks, you can run the following commands:
+
+##### iOS
+
+`xcrun simctl openurl booted coorpacademyapp://<YOUR_ROUTE>`
+
+##### Android
+
+`adb shell am start -W -a android.intent.action.VIEW -d coorpacademyapp://<YOUR_ROUTE> com.coorpacademy.app`
+
 ## Firebase
 
 [In this section](.github/FIREBASE.md) you can find all informations about Firebase parts (Analytics, Dynamic Links, etc) used by the app.

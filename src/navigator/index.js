@@ -11,7 +11,6 @@ import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
-import SplashScreen from '../screens/splash';
 import QRCodeScreen from '../screens/qr-code';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
@@ -26,13 +25,6 @@ import navigationOptions, {
 
 const appNavigator = createStackNavigator(
   {
-    Splash: {
-      screen: SplashScreen,
-      navigationOptions: {
-        ...navigationOptionsWithoutHeader,
-        gesturesEnabled: false
-      }
-    },
     Authentication: {
       screen: AuthenticationScreen,
       navigationOptions: {
@@ -76,7 +68,7 @@ const appNavigator = createStackNavigator(
 const defaultGetStateForAction = appNavigator.router.getStateForAction;
 
 appNavigator.router.getStateForAction = (action: NavigationAction, state: ?NavigationState) => {
-  const disabledScreens = ['Splash', 'Authentication', 'Home'];
+  const disabledScreens = ['Authentication', 'Home'];
 
   if (
     state &&

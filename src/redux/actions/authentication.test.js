@@ -370,19 +370,11 @@ describe('Authentication', () => {
   });
 
   describe('signOut', () => {
-    it('should dispatch sign out if alert is accepted', async () => {
+    it('should dispatch sign out', async () => {
       const token = toJWT({
         user: '42',
         iss: 'coorpacademy-jwt',
         host: 'https://onboarding.coorpacademy.com'
-      });
-
-      jest.mock('Alert', () => ({
-        alert: jest.fn()
-      }));
-      const Alert = require('Alert');
-      Alert.alert.mockImplementationOnce((title, message, buttons) => {
-        buttons[1].onPress();
       });
 
       const {SIGN_OUT, signOut} = require('./authentication');
@@ -421,33 +413,6 @@ describe('Authentication', () => {
         }
       );
       expect(actual).toEqual(expected);
-    });
-
-    it("shouldn't dispatch anything if alert is refused", async () => {
-      jest.mock('Alert', () => ({
-        alert: jest.fn()
-      }));
-      const Alert = require('Alert');
-      Alert.alert.mockImplementationOnce((title, message, buttons) => {
-        buttons[0].onPress();
-      });
-
-      const {signOut} = require('./authentication');
-
-      const dispatch = jest.fn();
-      const getState = jest.fn();
-      const options = {
-        services: {
-          Analytics: createFakeAnalytics()
-        }
-      };
-
-      // $FlowFixMe
-      const actual = await signOut()(dispatch, getState, options);
-
-      expect(dispatch).not.toHaveBeenCalled();
-      expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
-      expect(actual).toBeUndefined();
     });
   });
 });

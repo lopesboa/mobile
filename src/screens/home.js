@@ -1,9 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import {StatusBar, RefreshControl} from 'react-native';
+import {Alert, StatusBar, RefreshControl} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationActions} from 'react-navigation';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 import Home from '../components/home';
@@ -52,12 +51,16 @@ class HomeScreen extends React.PureComponent<Props, State> {
     this.props.navigation.navigate('Slide');
   };
 
-  handleLogoLongPress = async () => {
-    const result = await this.props.signOut();
-    if (result) {
-      this.props.navigation.reset([NavigationActions.navigate({routeName: 'Authentication'})], 0);
-    }
-  };
+  handleLogoLongPress = () =>
+    Alert.alert(translations.logOut, null, [
+      {
+        text: translations.cancel
+      },
+      {
+        text: translations.ok,
+        onPress: () => this.props.signOut()
+      }
+    ]);
 
   fetchContent = async () => {
     await this.props.fetchCards(translations.getLanguage());

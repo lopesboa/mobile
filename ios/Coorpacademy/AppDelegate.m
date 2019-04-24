@@ -11,10 +11,28 @@
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"
 #import "Orientation.h"
+#import <React/RCTLinkingManager.h>
 
 @import Firebase;
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  return [RCTLinkingManager application:application openURL:url options:options];
+}
+
+// To support universal links
+// Source: https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+  return [RCTLinkingManager application:application
+                   continueUserActivity:userActivity
+                     restorationHandler:restorationHandler];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

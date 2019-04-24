@@ -100,3 +100,7 @@ export type AnalyticsEventType =
 export type AnalyticsEventParams = {
   [key: string]: string | number
 };
+
+export type URLEventType = {|
+  url: string
+|};

@@ -7,7 +7,7 @@ import HeaderBackImage from '../components/header-back-image';
 export const HEADER_BACKGROUND_COLOR = theme.colors.gray.extra;
 export const HEADER_HEIGHT = 60;
 export const INITIAL_APP_ROUTE_NAME = 'App';
-export const INITIAL_ROUTE_NAME = 'Splash';
+export const INITIAL_ROUTE_NAME = 'Authentication';
 
 const navigationOptions: NavigationScreenConfig<*> = {
   headerBackTitle: null,

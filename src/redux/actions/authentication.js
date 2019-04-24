@@ -1,10 +1,9 @@
 // @flow strict
 
 import decode from 'jwt-decode';
-import {Alert, AsyncStorage} from 'react-native';
+import {AsyncStorage} from 'react-native';
 import fetch from 'cross-fetch';
 
-import translations from '../../translations';
 import type {StoreAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT} from '../../types';
@@ -105,19 +104,6 @@ export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => a
 };
 
 export const signOut = (): StoreAction<Action> => async (dispatch, getState, options) => {
-  const isAccepted = await new Promise(resolve =>
-    Alert.alert(translations.logOut, null, [
-      {
-        text: translations.cancel,
-        onPress: () => resolve(false)
-      },
-      {
-        text: translations.ok,
-        onPress: () => resolve(true)
-      }
-    ])
-  );
-  if (!isAccepted) return;
   await AsyncStorage.clear();
 
   const brand = getBrand(getState());
