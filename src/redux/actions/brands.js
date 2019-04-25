@@ -3,7 +3,6 @@
 import type {Brand} from '../../types';
 import type {StoreAction} from '../_types';
 import {getToken} from '../utils/state-extract';
-import type {State as TokenState} from '../reducers/authentication/token';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@brands/FETCH_SUCCESS`;
@@ -44,7 +43,7 @@ export const fetchError = (error: string): Action => ({
   }
 });
 
-export const fetchBrand = (token: TokenState): StoreAction<Action> => async (
+export const fetchBrand = (token: string): StoreAction<Action> => async (
   dispatch,
   getState,
   {services}

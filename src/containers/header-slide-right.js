@@ -7,14 +7,23 @@ import {getCurrentProgression} from '@coorpacademy/player-store';
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
 import {getLives} from '../redux/utils/state-extract';
+import {toggleGodMode} from '../redux/actions/godmode';
 
 type ConnectedStateProps = {|
   hide: boolean,
-  count: number
+  count: number,
+  isGodMode: boolean
+|};
+
+type ToggleGodMode = () => void;
+
+type DispatchProps = {|
+  toggleGodMode: () => null | ToggleGodMode
 |};
 
 type Props = {|
-  ...ConnectedStateProps
+  ...ConnectedStateProps,
+  ...DispatchProps
 |};
 
 // react-navigation needs this to be a class
@@ -22,24 +31,48 @@ type Props = {|
 class HeaderSlideRight extends React.Component<Props> {
   props: Props;
 
+  handleGodModeToggle = () => {
+    const toggleFn = this.props.toggleGodMode();
+    if (typeof toggleFn !== 'object') {
+      return () => {
+        return toggleFn && toggleFn();
+      };
+    }
+    return null;
+  };
+
   render() {
-    const {hide, count} = this.props;
+    const {hide, count, isGodMode} = this.props;
 
     if (hide) {
       return null;
     }
 
-    return <HeaderSlideRightComponent count={count} />;
+    return (
+      <HeaderSlideRightComponent
+        isGodMode={isGodMode}
+        count={count}
+        onGodModeToggle={this.handleGodModeToggle()}
+      />
+    );
   }
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
+  const isGodMode = state.godmode;
   if (!progression) {
-    return {hide: true, count: 0};
+    return {hide: true, count: 0, isGodMode};
   }
-
-  return getLives(state);
+  const {hide, count} = getLives(state);
+  return {
+    isGodMode,
+    hide,
+    count
+  };
 };
 
-export default connect(mapStateToProps)(HeaderSlideRight);
+export default connect(
+  mapStateToProps,
+  {toggleGodMode}
+)(HeaderSlideRight);

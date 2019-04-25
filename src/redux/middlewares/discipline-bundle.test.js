@@ -71,7 +71,7 @@ describe('Discipline bundle', () => {
       const middleware = createMiddleware(options);
       const store = createStore();
       store.getState.mockImplementation(() => ({
-        authentication: {token: '__TOKEN__', brand: brand}
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
       // $FlowFixMe this si to test only
@@ -92,7 +92,7 @@ describe('Discipline bundle', () => {
       const middleware = createMiddleware(options);
       const store = createStore();
       store.getState.mockImplementation(() => ({
-        authentication: {token: '__TOKEN__', brand: brand}
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
       middleware(store)(next)(action);
@@ -112,7 +112,7 @@ describe('Discipline bundle', () => {
       const middleware = createMiddleware(options);
       const store = createStore();
       store.getState.mockImplementation(() => ({
-        authentication: {token: '__TOKEN__', brand: brand}
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
       middleware(store)(next)(action);
@@ -142,7 +142,7 @@ describe('Discipline bundle', () => {
       const middleware = createMiddleware(extendedOptions);
       const store = createStore();
       store.getState.mockImplementation(() => ({
-        authentication: {token: '__TOKEN__', brand: brand}
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
       middleware(store)(next)(action);

@@ -20,6 +20,9 @@ describe('Answers', () => {
 
       const dispatch = jest.fn();
       const getState = jest.fn();
+      getState.mockReturnValue({
+        godmode: {isGodMode: false}
+      });
       const options = {
         services: {
           Analytics: createFakeAnalytics()
@@ -27,7 +30,7 @@ describe('Answers', () => {
       };
 
       // $FlowFixMe
-      await validateAnswer()(dispatch, getState, options);
+      await validateAnswer({godMode: false})(dispatch, getState, options);
 
       expect(_validateAnswer).toHaveBeenCalled();
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(

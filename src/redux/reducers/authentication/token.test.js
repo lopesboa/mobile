@@ -21,9 +21,10 @@ describe('Authentification', () => {
 
   describe(SIGN_IN_SUCCESS, () => {
     it('Default', () => {
-      const action: Action = {type: SIGN_IN_SUCCESS, payload: TOKEN};
+      const payload = {token: TOKEN, isGodModeUser: false};
+      const action: Action = {type: SIGN_IN_SUCCESS, payload};
       const result = reducer(undefined, action);
-      const expected: State = TOKEN;
+      const expected: State = payload;
       expect(result).toEqual(expected);
     });
   });

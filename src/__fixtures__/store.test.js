@@ -127,12 +127,16 @@ describe('storeFixture', () => {
     };
 
     const authenticationState = {
-      token: '__TOKEN__',
+      user: {
+        token: '__TOKEN__',
+        isGodModeUser: false
+      },
       brand: null
     };
 
     const permissionsState = {};
 
+    const godModeState = false;
     const videoState = {
       isFullScreen: false
     };
@@ -218,6 +222,7 @@ describe('storeFixture', () => {
       cards: cardsState,
       permissions: permissionsState,
       authentication: authenticationState,
+      godmode: godModeState,
       video: videoState
     };
 

@@ -7,8 +7,8 @@ import brandReducer from './brand';
 import type {State as BrandState} from './brand';
 
 export type State = {|
-  token: TokenState,
+  user: TokenState,
   brand: BrandState
 |};
 
-export default combineReducers({brand: brandReducer, token: tokenReducer});
+export default combineReducers({brand: brandReducer, user: tokenReducer});

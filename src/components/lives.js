@@ -20,7 +20,8 @@ export type Props = {|
   scaleY?: Animated.Interpolation,
   heartOpacity?: Animated.Interpolation,
   heartBrokenOpacity?: Animated.Interpolation,
-  maxScaleX?: number
+  maxScaleX?: number,
+  isGodMode: boolean
 |};
 
 const HEART_OFFSET_RIGHT = 0.4;
@@ -60,11 +61,14 @@ const Lives = ({
   scaleY,
   heartOpacity,
   heartBrokenOpacity,
-  maxScaleX = 0
+  maxScaleX = 0,
+  isGodMode
 }: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
   const offsetLeft = (heartHeight * maxScaleX) / 2;
+  const heartColor = (isGodMode && theme.colors.positive) || theme.colors.negative;
+  const livesCount = (isGodMode && '∞') || `x${count}`;
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
@@ -99,7 +103,7 @@ const Lives = ({
   return (
     <View style={[styles.container, containerStyle]} testID={testID}>
       <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
-        <Text style={[styles.text, textStyle]}>x{count}</Text>
+        <Text style={[styles.text, textStyle]}>{livesCount}</Text>
       </View>
       <Animated.View style={[styles.heart, heartStyle]}>
         <HeartOutlineIcon
@@ -115,7 +119,7 @@ const Lives = ({
             }
           ]}
         >
-          <HeartIcon color={theme.colors.negative} style={heartIconStyle} />
+          <HeartIcon color={heartColor} style={heartIconStyle} />
         </Animated.View>
         <Animated.View
           style={[

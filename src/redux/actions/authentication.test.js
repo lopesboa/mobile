@@ -90,7 +90,7 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess(token));
+        expect(action).toEqual(signInSuccess({token, isGodModeUser: false}));
         return action;
       });
 
@@ -104,7 +104,7 @@ describe('Authentication', () => {
         }
       );
 
-      return expect(actual).toEqual(signInSuccess(token));
+      return expect(actual).toEqual(signInSuccess({token, isGodModeUser: false}));
     });
 
     it('should sign in as anonymous', async () => {
@@ -156,7 +156,7 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess(token));
+        expect(action).toEqual(signInSuccess({token, isGodModeUser: false}));
         return action;
       });
 
@@ -170,7 +170,7 @@ describe('Authentication', () => {
         }
       );
 
-      return expect(actual).toEqual(signInSuccess(token));
+      return expect(actual).toEqual(signInSuccess({token, isGodModeUser: false}));
     });
 
     it('should handle error on anonymous sign in', async () => {
@@ -385,7 +385,10 @@ describe('Authentication', () => {
       const getState = jest.fn();
       getState.mockReturnValue({
         authentication: {
-          token,
+          user: {
+            token,
+            isGodModeUser: false
+          },
           brand
         }
       });

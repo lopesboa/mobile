@@ -156,9 +156,13 @@ export const createStoreState = ({
     cards: cards || cardsState,
     permissions: permissionsState,
     authentication: {
-      token: '__TOKEN__',
+      user: {
+        token: '__TOKEN__',
+        isGodModeUser: false
+      },
       brand: null
     },
+    godmode: false,
     video: {
       isFullScreen: false
     }

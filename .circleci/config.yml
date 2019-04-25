@@ -12,7 +12,11 @@ jobs:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
       - run:
           name: Node dependencies
-          command: yarn install --frozen-lockfile
+          command: |
+            npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+            npm config set @coorpacademy:registry http://registry.npmjs.org/
+            yarn config set registry https://registry.npmjs.org/
+            yarn install --frozen-lockfile
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:

@@ -71,7 +71,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchSuccess(items, language));
         return Promise.resolve(action);
       });
-      getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+      getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+      });
       options.services.Cards.find.mockReturnValueOnce(Promise.resolve(items));
 
       // $FlowFixMe
@@ -97,7 +99,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchError('TypeError: Token not defined'));
         return action;
       });
-      getState.mockReturnValue({authentication: {token: null, brand: null}});
+      getState.mockReturnValue({
+        authentication: {user: {token: null, isGodModeUser: false}, brand: null}
+      });
 
       // $FlowFixMe
       const actual = await fetchCards(language)(dispatch, getState, options);
@@ -124,7 +128,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchError('TypeError: Brand not defined'));
         return action;
       });
-      getState.mockReturnValue({authentication: {token: '__TOKEN__', brand: null}});
+      getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: null}
+      });
 
       // $FlowFixMe
       const actual = await fetchCards(language)(dispatch, getState, options);
@@ -151,7 +157,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchError('Error'));
         return action;
       });
-      getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+      getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+      });
       options.services.Cards.find.mockRejectedValueOnce(new Error());
 
       // $FlowFixMe

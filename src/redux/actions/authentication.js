@@ -9,6 +9,7 @@ import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT} from '../../types';
 import localToken from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
+import {hasGodMode} from '../utils/has-role';
 import {fetchBrand} from './brands';
 import type {Action as BrandsAction} from './brands';
 
@@ -17,6 +18,8 @@ export const SIGN_IN_SUCCESS = `@@authentication/SIGN_IN_SUCCESS`;
 export const SIGN_IN_ERROR = `@@authentication/SIGN_IN_ERROR`;
 export const SIGN_OUT = `@@authentication/SIGN_OUT`;
 
+type SignInSuccess = {|token: string, isGodModeUser: boolean|};
+
 export type Action =
   | {|
       type: '@@authentication/SIGN_IN_REQUEST',
@@ -24,7 +27,7 @@ export type Action =
     |}
   | {|
       type: '@@authentication/SIGN_IN_SUCCESS',
-      payload: string
+      payload: SignInSuccess
     |}
   | {|
       type: '@@authentication/SIGN_IN_ERROR',
@@ -40,9 +43,12 @@ export const signInRequest = (token?: string): Action => ({
   payload: token
 });
 
-export const signInSuccess = (token: string): Action => ({
+export const signInSuccess = ({token, isGodModeUser}: SignInSuccess): Action => ({
   type: SIGN_IN_SUCCESS,
-  payload: token
+  payload: {
+    token,
+    isGodModeUser
+  }
 });
 
 export const signInError = (e: Error): Action => ({
@@ -87,6 +93,7 @@ export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => a
       throw new Error('Incorrect brand');
     }
 
+    const isGodModeUser = hasGodMode(jwt, brand.name);
     const {services} = options;
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
       userId: jwt.user,
@@ -95,7 +102,7 @@ export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => a
 
     await localToken.set(token);
 
-    return dispatch(signInSuccess(token));
+    return dispatch(signInSuccess({token, isGodModeUser}));
   } catch (e) {
     localToken.set(null);
 

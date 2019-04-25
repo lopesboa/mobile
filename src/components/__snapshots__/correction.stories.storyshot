@@ -107,8 +107,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               ]
             }
           >
-            x
-            3
+            x3
           </Text>
         </View>
         <View
@@ -2893,8 +2892,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               ]
             }
           >
-            x
-            2
+            x2
           </Text>
         </View>
         <View
@@ -5645,8 +5643,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               ]
             }
           >
-            x
-            0
+            x0
           </Text>
         </View>
         <View
@@ -8397,8 +8394,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               ]
             }
           >
-            x
-            0
+            x0
           </Text>
         </View>
         <View
@@ -11141,8 +11137,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               ]
             }
           >
-            x
-            2
+            x2
           </Text>
         </View>
         <View
@@ -13893,8 +13888,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               ]
             }
           >
-            x
-            1
+            x1
           </Text>
         </View>
         <View
@@ -16635,8 +16629,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               ]
             }
           >
-            x
-            3
+            x3
           </Text>
         </View>
         <View
@@ -21806,8 +21799,7 @@ exports[`Storyshots Correction Default 1`] = `
               ]
             }
           >
-            x
-            3
+            x3
           </Text>
         </View>
         <View
@@ -22357,8 +22349,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               ]
             }
           >
-            x
-            2
+            x2
           </Text>
         </View>
         <View
@@ -25116,8 +25107,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               ]
             }
           >
-            x
-            2
+            x2
           </Text>
         </View>
         <View
@@ -27868,8 +27858,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               ]
             }
           >
-            x
-            1
+            x1
           </Text>
         </View>
         <View
@@ -32978,8 +32967,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               ]
             }
           >
-            x
-            0
+            x0
           </Text>
         </View>
         <View
@@ -35764,8 +35752,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               ]
             }
           >
-            x
-            1
+            x1
           </Text>
         </View>
         <View
@@ -43232,8 +43219,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               ]
             }
           >
-            x
-            3
+            x3
           </Text>
         </View>
         <View
@@ -45883,8 +45869,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               ]
             }
           >
-            x
-            2
+            x2
           </Text>
         </View>
         <View

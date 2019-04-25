@@ -1,11 +1,16 @@
 // @flow
 
 import * as React from 'react';
+import {connect} from 'react-redux';
 import {Animated} from 'react-native';
 
 import Lives from '../components/lives';
 
+type ConnectedStateProps = {|
+  isGodMode: boolean
+|};
 type Props = {|
+  ...ConnectedStateProps,
   count: number,
   height: number,
   isBroken?: boolean,
@@ -83,7 +88,7 @@ class LivesAnimated extends React.PureComponent<Props> {
   };
 
   render() {
-    const {count, height, isBroken, testID} = this.props;
+    const {count, height, isBroken, isGodMode, testID} = this.props;
 
     const translateX = this.shake.interpolate({
       inputRange: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
@@ -112,6 +117,7 @@ class LivesAnimated extends React.PureComponent<Props> {
         count={count}
         height={height}
         isBroken={isBroken}
+        isGodMode={isGodMode}
         testID={testID}
         translateX={translateX}
         scaleX={scaleX}
@@ -124,4 +130,8 @@ class LivesAnimated extends React.PureComponent<Props> {
   }
 }
 
-export default LivesAnimated;
+const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  isGodMode: state.godmode
+});
+
+export default connect(mapStateToProps)(LivesAnimated);

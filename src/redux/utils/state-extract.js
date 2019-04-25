@@ -95,7 +95,8 @@ export const getCurrentStep = (state: StoreState): number | void => {
   return current !== undefined && isValidating ? current - 1 : current;
 };
 
-export const getToken = (state: StoreState) => state.authentication.token;
+export const getToken = (state: StoreState) =>
+  state.authentication && state.authentication.user && state.authentication.user.token;
 
 export const getBrand = (state: StoreState) => state.authentication.brand;
 

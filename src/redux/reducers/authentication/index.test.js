@@ -6,7 +6,7 @@ import reducer from '.';
 
 describe('Authentification', () => {
   const expectedInitialState: State = {
-    token: tokenInitialState,
+    user: tokenInitialState,
     brand: null
   };
 

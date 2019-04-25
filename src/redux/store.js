@@ -13,11 +13,13 @@ import resetOnLogout from './utils/reset-on-logout';
 import type {State as PermissionsState} from './reducers/permissions';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
+import type {State as GodModeState} from './reducers/godmode';
 import disciplineBundle from './reducers/discipline-bundle';
 import cards from './reducers/cards';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
 import video from './reducers/video';
+import godmode from './reducers/godmode';
 import DisciplineBundle from './middlewares/discipline-bundle';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
@@ -31,7 +33,8 @@ export type StoreState = $Exact<{|
   cards: CardsState,
   authentication: AuthenticationState,
   permissions: PermissionsState,
-  video: VideoState
+  video: VideoState,
+  godmode: GodModeState
 |}>;
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
@@ -45,7 +48,8 @@ const reducers = combineReducers({
   cards: resetOnLogout(cards),
   authentication: resetOnLogout(authentication),
   permissions,
-  video
+  video,
+  godmode
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {

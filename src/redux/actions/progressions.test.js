@@ -237,7 +237,9 @@ describe('Progressions actions', () => {
         }
       };
 
-      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+      store.getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+      });
 
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
@@ -293,7 +295,10 @@ describe('Progressions actions', () => {
         }
       };
 
-      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+      store.getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}},
+        brand
+      });
 
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
@@ -348,7 +353,9 @@ describe('Progressions actions', () => {
         }
       };
 
-      store.getState.mockReturnValue({authentication: {token: '__TOKEN__', brand}});
+      store.getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+      });
 
       store.dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
@@ -421,7 +428,9 @@ describe('Progressions actions', () => {
         });
         return action;
       });
-      getState.mockReturnValue({authentication: {token: null, brand: null}});
+      getState.mockReturnValue({
+        authentication: {user: {token: null, isGodModeUser: false}, brand: null}
+      });
 
       // $FlowFixMe
       const actual = await synchronizeProgression(successProgression._id)(
@@ -467,7 +476,9 @@ describe('Progressions actions', () => {
         });
         return action;
       });
-      getState.mockReturnValue({authentication: {token: '__TOKEN__', brand: null}});
+      getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: null}
+      });
 
       // $FlowFixMe
       const actual = await synchronizeProgression(successProgression._id)(
