@@ -145,17 +145,25 @@ class Correction extends React.PureComponent<Props> {
       offeringExtraLife
     }));
 
+    let cards: Array<Card>;
+
     if (isCorrect && isResourceViewed) {
-      return [tipCard, keyPointCard, correctionCard, ...lessonCards];
+      cards = [tipCard, keyPointCard, correctionCard, ...lessonCards];
     } else if (isCorrect && !isResourceViewed) {
-      return [tipCard, ...lessonCards, keyPointCard, correctionCard];
+      cards = [tipCard, ...lessonCards, keyPointCard, correctionCard];
     } else if (showResourcesFirst) {
-      return [...lessonCards, correctionCard, keyPointCard, tipCard];
+      cards = [...lessonCards, correctionCard, keyPointCard, tipCard];
     } else if (!isCorrect && isResourceViewed) {
-      return [correctionCard, keyPointCard, ...lessonCards, tipCard];
+      cards = [correctionCard, keyPointCard, ...lessonCards, tipCard];
     } else {
-      return [correctionCard, ...lessonCards, keyPointCard, tipCard];
+      cards = [correctionCard, ...lessonCards, keyPointCard, tipCard];
     }
+
+    if (!showResourcesFirst) {
+      cards[0].isTopCard = true;
+    }
+
+    return cards;
   }
 
   getOffsetBottom = (): number => CARDS_LENGTH * 7;
@@ -169,7 +177,7 @@ class Correction extends React.PureComponent<Props> {
   // @todo to be enhanced
   getCardsHeight = (): number => CARDS_HEIGHT;
 
-  renderCard = ({type, title: cardTitle, resource, offeringExtraLife}: Card) => {
+  renderCard = ({type, title: cardTitle, resource, offeringExtraLife, isTopCard = false}: Card) => {
     const {
       answers,
       userAnswers,
@@ -195,6 +203,7 @@ class Correction extends React.PureComponent<Props> {
             <CardComponent
               title={cardTitle}
               isCorrect={isCorrect}
+              hintSwipe={isTopCard}
               type={type}
               height={this.getCardsHeight()}
               expandedHeight={this.getCardsExpandedHeight()}

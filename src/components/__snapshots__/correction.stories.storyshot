@@ -563,6 +563,17 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -1169,6 +1180,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -1584,6 +1596,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -1999,6 +2012,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -2320,6 +2334,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -3334,6 +3349,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -3913,6 +3939,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -4328,6 +4355,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -4743,6 +4771,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -5064,6 +5093,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -6071,6 +6101,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -6650,6 +6691,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -7065,6 +7107,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -7480,6 +7523,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -7801,6 +7845,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -8808,6 +8853,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -9223,6 +9269,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -9638,6 +9685,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -10217,6 +10265,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -10538,6 +10587,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -11547,6 +11597,17 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -12126,6 +12187,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -12447,6 +12509,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -12862,6 +12925,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -13277,6 +13341,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -14284,6 +14349,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -14699,6 +14765,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -15114,6 +15181,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -15693,6 +15761,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -16014,6 +16083,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -17021,6 +17091,17 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -17627,6 +17708,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -18042,6 +18124,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -18457,6 +18540,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -18778,6 +18862,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -19391,6 +19476,17 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -19997,6 +20093,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -20412,6 +20509,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -20827,6 +20925,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -21148,6 +21247,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -22713,6 +22813,17 @@ exports[`Storyshots Correction Good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -23133,6 +23244,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -23548,6 +23660,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -23963,6 +24076,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -24284,6 +24398,7 @@ exports[`Storyshots Correction Good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -25457,6 +25572,17 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -25877,6 +26003,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -26292,6 +26419,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -26707,6 +26835,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -27028,6 +27157,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -28194,6 +28324,17 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -28614,6 +28755,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -28935,6 +29077,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -29514,6 +29657,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -29929,6 +30073,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -30530,6 +30675,17 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -30950,6 +31106,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -31365,6 +31522,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -31780,6 +31938,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -32101,6 +32260,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -33274,6 +33434,17 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -33880,6 +34051,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -34295,6 +34467,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -34710,6 +34883,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -35031,6 +35205,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -36045,6 +36220,17 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -36465,6 +36651,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -36880,6 +37067,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -37295,6 +37483,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -37616,6 +37805,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -38388,6 +38578,17 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -38808,6 +39009,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -39223,6 +39425,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -39638,6 +39841,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -39959,6 +40163,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -40731,6 +40936,17 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -41151,6 +41367,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -41566,6 +41783,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -41981,6 +42199,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -42302,6 +42521,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -43468,6 +43688,17 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -43888,6 +44119,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -44303,6 +44535,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -44718,6 +44951,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -45039,6 +45273,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -46104,6 +46339,17 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": Array [
+                Object {
+                  "rotate": "0deg",
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
             }
           }
         >
@@ -46764,6 +47010,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -47179,6 +47426,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -47594,6 +47842,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >
@@ -47915,6 +48164,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
+              "transform": undefined,
             }
           }
         >

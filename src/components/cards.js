@@ -11,6 +11,7 @@ export type Card = {|
   type: CardType,
   resource?: Resource,
   offeringExtraLife?: boolean,
+  isTopCard?: boolean,
   isCorrect: boolean
 |};
 
