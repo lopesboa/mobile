@@ -11,6 +11,7 @@ platform :ios do
     ENV["CURRENT_USER"] = `whoami`.chomp
     skip_docs
     setup_circle_ci
+    yarn(command: 'xcode:check', package_path: '../package.json')
     yarn(command: 'update:version', package_path: '../package.json')
     yarn(command: 'generate:bundle:ios', package_path: '../package.json')
   end
