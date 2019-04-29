@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {SyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
-import type {NavigationScreenConfig} from 'react-navigation';
+import type {NavigationScreenConfig, NavigationScreenProp, NavigationStateRoute} from 'react-navigation';
 import type {
   ____Styles_Internal,
   ____TextStyle_Internal
@@ -23,6 +23,7 @@ declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 
 declare type ReactNavigation$ScreenProps = $Exact<NavigationScreenConfig<*>>;
 declare type ReactNavigation$ScreenPropsWithParams<P> = $Exact<NavigationScreenConfig<P>>;
+declare type ReactNavigation$WithNavigationProps = $Exact<NavigationScreenProp<NavigationStateRoute>>;
 
 // Redux
 

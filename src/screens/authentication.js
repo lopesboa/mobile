@@ -9,9 +9,8 @@ import {assistanceEmail} from '../../app';
 import {BLUE_COORP_DARK} from '../modules/theme';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
-import {signIn, signOut} from '../redux/actions/authentication';
+import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
-import type {URLEventType} from '../types';
 import type {Params as QRCodeScreenParams} from './qr-code';
 
 type ConnectedStateToProps = {|
@@ -19,8 +18,7 @@ type ConnectedStateToProps = {|
 |};
 
 type ConnectedDispatchProps = {|
-  signIn: typeof signIn,
-  signOut: typeof signOut
+  signIn: typeof signIn
 |};
 
 type Props = {|
@@ -39,8 +37,6 @@ const styles = StyleSheet.create({
   }
 });
 
-const DEEPLINK_PATTERN = /(.+):\/\/authentication\//;
-
 class AuthenticationScreen extends React.PureComponent<Props, State> {
   props: Props;
 
@@ -49,17 +45,10 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   };
 
   async componentDidMount() {
-    Linking.addEventListener('url', this.handleOpenURL);
-
     const token = await localToken.get();
+
     if (token) {
       await this.handleSignIn(token);
-    }
-
-    const url = await Linking.getInitialURL();
-
-    if (url) {
-      await this.handleOpenURL({url});
     }
 
     return this.hideSplashScreen();
@@ -71,10 +60,6 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     }
   }
 
-  componentWillUnmount() {
-    Linking.removeEventListener('url', this.handleOpenURL);
-  }
-
   hideSplashScreen = () => {
     // Because iOS automatically hides the splash screen
     InteractionManager.runAfterInteractions(() => {
@@ -84,18 +69,6 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     });
 
     splashScreen.hide();
-  };
-
-  handleOpenURL = async ({url}: URLEventType) => {
-    if (url.match(DEEPLINK_PATTERN)) {
-      const token = url.replace(DEEPLINK_PATTERN, '');
-      if (token) {
-        if (this.props.isAuthenticated) {
-          await this.props.signOut();
-        }
-        await this.handleSignIn(token);
-      }
-    }
   };
 
   handleSignIn = async (token?: string) => {
@@ -148,8 +121,7 @@ const mapStateToProps = ({authentication}: StoreState): ConnectedStateToProps =>
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signIn,
-  signOut
+  signIn
 };
 
 export default connect(

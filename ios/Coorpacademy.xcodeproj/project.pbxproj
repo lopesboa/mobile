@@ -46,6 +46,7 @@
 		403AFA352266131500ED75FA /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA342266131500ED75FA /* release.xcconfig */; };
 		403AFA372266132B00ED75FA /* adhoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA362266132B00ED75FA /* adhoc.xcconfig */; };
 		403AFA392266133C00ED75FA /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA382266133C00ED75FA /* debug.xcconfig */; };
+		404EBA452270A41600440ADE /* Coorpacademy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 404EBA432270994300440ADE /* Coorpacademy.entitlements */; };
 		405551A8221D8AD70047247E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 40555177221D8AD60047247E /* assets */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -358,6 +359,7 @@
 		403AFA342266131500ED75FA /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = config/release.xcconfig; sourceTree = "<group>"; };
 		403AFA362266132B00ED75FA /* adhoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = adhoc.xcconfig; path = config/adhoc.xcconfig; sourceTree = "<group>"; };
 		403AFA382266133C00ED75FA /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = config/debug.xcconfig; sourceTree = "<group>"; };
+		404EBA432270994300440ADE /* Coorpacademy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Coorpacademy.entitlements; path = Coorpacademy/Coorpacademy.entitlements; sourceTree = "<group>"; };
 		40555177221D8AD60047247E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		4272B3F696A7D44A1109E685 /* Pods-Coorpacademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coorpacademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.release.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				40367B662253CE6200B9DF4E /* GoogleService-Info.plist */,
+				404EBA432270994300440ADE /* Coorpacademy.entitlements */,
 			);
 			name = Coorpacademy;
 			sourceTree = "<group>";
@@ -758,11 +761,21 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 46NRKZL52N;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 46NRKZL52N;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1120,6 +1133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404EBA452270A41600440ADE /* Coorpacademy.entitlements in Resources */,
 				403AFA352266131500ED75FA /* release.xcconfig in Resources */,
 				405551A8221D8AD70047247E /* assets in Resources */,
 				40367B672253CE6200B9DF4E /* GoogleService-Info.plist in Resources */,
@@ -1353,6 +1367,7 @@
 			baseConfigurationReference = 403AFA382266133C00ED75FA /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1380,6 +1395,7 @@
 			baseConfigurationReference = 403AFA342266131500ED75FA /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1596,6 +1612,7 @@
 			baseConfigurationReference = 403AFA362266132B00ED75FA /* adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;

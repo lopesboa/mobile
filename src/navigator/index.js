@@ -9,6 +9,7 @@ import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 import theme from '../modules/theme';
 import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
+import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
 import QRCodeScreen from '../screens/qr-code';
@@ -26,7 +27,8 @@ import navigationOptions, {
 const appNavigator = createStackNavigator(
   {
     Authentication: {
-      screen: AuthenticationScreen,
+      // Keep this HOC in initial screen
+      screen: withUniversalLinks(AuthenticationScreen),
       navigationOptions: {
         ...navigationOptionsWithoutHeader,
         gesturesEnabled: false

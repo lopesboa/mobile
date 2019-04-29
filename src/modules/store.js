@@ -3,6 +3,7 @@
 import {Platform} from 'react-native';
 import fetch from 'cross-fetch';
 import {gt as isGreeterVersion} from 'semver';
+import storeLink from 'app-store-link';
 
 import version from './version';
 
@@ -33,11 +34,11 @@ export const needUpgrade = async (): Promise<boolean> => {
 };
 
 export const getStoreUri = (): string => {
-  if (Platform.OS === 'ios') {
-    return `https://itunes.apple.com/app/apple-store/id${APP_STORE_ID}`;
-  } else {
-    return `https://play.google.com/store/apps/details?id=${PLAY_STORE_ID}`;
+  if (Platform.OS === 'android') {
+    return storeLink.android(PLAY_STORE_ID);
   }
+
+  return storeLink.ios(APP_STORE_ID);
 };
 
 export default {

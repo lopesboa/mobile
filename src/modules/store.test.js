@@ -78,7 +78,7 @@ describe('store', () => {
       const {getStoreUri, APP_STORE_ID} = require('./store');
 
       const result = getStoreUri();
-      const expected = `https://itunes.apple.com/app/apple-store/id${APP_STORE_ID}`;
+      const expected = `https://itunes.apple.com/us/app/id${APP_STORE_ID}?mt=8`;
 
       expect(result).toEqual(expected);
     });
@@ -88,7 +88,7 @@ describe('store', () => {
       const {getStoreUri, PLAY_STORE_ID} = require('./store');
 
       const result = getStoreUri();
-      const expected = `https://play.google.com/store/apps/details?id=${PLAY_STORE_ID}`;
+      const expected = `http://play.google.com/store/apps/details?id=${PLAY_STORE_ID}`;
 
       expect(result).toEqual(expected);
     });
