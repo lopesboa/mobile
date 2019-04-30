@@ -13809,10 +13809,10 @@ xcode@^0.9.1:
     simple-plist "^0.2.1"
     uuid "3.0.1"
 
-xcoderc@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/xcoderc/-/xcoderc-1.0.2.tgz#7b78efd6487727a63b2681224ef7c10a9f5479ef"
-  integrity sha512-OyfMRxNshoZ20pfYAFUIDUawqBMRW5oDR7gtigNrxcxUzsTbRY3JQ7/4Yfu0fGY7uIxKoSWLNzQMLsZ+xPzbPw==
+xcoderc@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/xcoderc/-/xcoderc-1.0.5.tgz#36cf26bdd36d6bf2c8abae7b7a0ce7fb742930ae"
+  integrity sha512-5IsTuumcTydzQTexWDM/SaGZnV8oQ9no/rkmgUbMRSLF+lQb2y180NYTh2cxzqMMDfOWuFi5wcwHh/r9Kbf5ZQ==
   dependencies:
     args "^5.0.1"
     chalk "^2.4.2"

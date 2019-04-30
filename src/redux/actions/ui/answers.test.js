@@ -14,14 +14,20 @@ describe('Answers', () => {
         getQuestionType: jest.fn(() => 'template'),
         getPreviousSlide: jest.fn(() => ({}))
       }));
-      const {validateAnswer: _validateAnswer} = require('@coorpacademy/player-store');
+      const {
+        validateAnswer: _validateAnswer,
+        getPreviousSlide
+      } = require('@coorpacademy/player-store');
 
       const {validateAnswer} = require('./answers');
 
       const dispatch = jest.fn();
       const getState = jest.fn();
-      getState.mockReturnValue({
+      getState.mockReturnValueOnce({
         godmode: {isGodMode: false}
+      });
+      getState.mockReturnValueOnce({
+        godLove: {isGodLove: false}
       });
       const options = {
         services: {
@@ -32,6 +38,7 @@ describe('Answers', () => {
       // $FlowFixMe
       await validateAnswer({godMode: false})(dispatch, getState, options);
 
+      expect(getPreviousSlide).toHaveBeenCalledWith({godLove: {isGodLove: false}});
       expect(_validateAnswer).toHaveBeenCalled();
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.VALIDATE_ANSWER,

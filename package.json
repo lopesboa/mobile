@@ -148,7 +148,7 @@
     "react-test-renderer": "16.4.1",
     "regenerator-runtime": "^0.12.1",
     "shelljs": "^0.8.3",
-    "xcoderc": "^1.0.2"
+    "xcoderc": "^1.0.5"
   },
   "detox": {
     "test-runner": "jest",
