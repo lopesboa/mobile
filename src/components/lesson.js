@@ -2,13 +2,13 @@
 
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
+import type {LessonType} from '@coorpacademy/progression-engine';
 import type {Resource as ResourceType} from '../types';
-
 import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
-import withLayout from '../containers/with-layout';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
+import {RESOURCE_TYPE} from '../const';
 import Html from './html';
 import QuestionTitle from './question-title';
 import Resource from './resource';
@@ -20,6 +20,7 @@ type Props = $Exact<{|
   ...WithLayoutProps,
   header: string,
   starsGranted: number,
+  testID?: string,
   selected?: string,
   resources: Array<ResourceType>,
   onChange: (id: string) => void,
@@ -49,78 +50,84 @@ const styles = StyleSheet.create({
   }
 });
 
-const Lesson = ({
-  layout,
-  header,
-  onChange,
-  resources,
-  selected,
-  starsGranted,
-  onPDFButtonPress,
-  onVideoPlay
-}: Props) => {
-  const openedResource = resources.find(resource => resource._id === selected);
-  const height = layout && layout.width / (16 / 9);
+class Lesson extends React.Component<Props> {
+  props: Props;
 
-  if (!height || !selected) {
-    return null;
-  }
+  handlePress = (lessonType: LessonType) => (url?: string, description?: string) => {
+    const {onPDFButtonPress, onVideoPlay} = this.props;
 
-  const winAdditionalStars = translations.winAdditionalStars.replace(
-    /{{count}}/g,
-    String(starsGranted)
-  );
+    if (lessonType === RESOURCE_TYPE.PDF && url && description) {
+      return onPDFButtonPress(url, description);
+    }
 
-  return (
-    <BrandThemeContext.Consumer>
-      {brandTheme => {
-        const subtitles =
-          openedResource &&
-          openedResource.subtitleRef &&
-          // @todo use user language
-          getSubtitlesUri(brandTheme.host, openedResource.subtitleRef, translations.getLanguage());
+    return onVideoPlay();
+  };
 
-        return (
-          <View testID="lesson" style={styles.container}>
-            <View style={styles.questionContainer}>
-              <QuestionTitle isTextCentered>{header}</QuestionTitle>
-            </View>
-            <Space type="base" />
-            {openedResource && (
-              <Resource
-                type={openedResource && openedResource.type}
-                url={openedResource && openedResource.url}
-                description={openedResource && openedResource.description}
-                thumbnail={openedResource && openedResource.poster}
-                subtitles={subtitles}
-                height={height}
-                onPDFButtonPress={onPDFButtonPress}
-                onVideoPlay={onVideoPlay}
-              />
-            )}
-            <ScrollView
-              style={styles.browser}
-              showsHorizontalScrollIndicator={false}
-              testID="resources"
-            >
-              <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
-            </ScrollView>
-            <View style={styles.bottomTextWrapper}>
-              <Html
-                testID="additional-stars-note"
-                fontSize={theme.fontSize.small}
-                style={styles.bottomText}
-                isTextCentered
+  render() {
+    const {header, onChange, resources, selected, starsGranted} = this.props;
+    const openedResource = resources.find(resource => resource._id === selected);
+
+    if (!selected || !openedResource) {
+      return null;
+    }
+    const winAdditionalStars = translations.winAdditionalStars.replace(
+      /{{count}}/g,
+      String(starsGranted)
+    );
+
+    return (
+      <BrandThemeContext.Consumer>
+        {brandTheme => {
+          const subtitles =
+            openedResource &&
+            openedResource.subtitleRef &&
+            // @todo use user language
+            getSubtitlesUri(
+              brandTheme.host,
+              openedResource.subtitleRef,
+              translations.getLanguage()
+            );
+
+          return (
+            <View testID="lesson" style={styles.container}>
+              <View style={styles.questionContainer}>
+                <QuestionTitle isTextCentered>{header}</QuestionTitle>
+              </View>
+              <Space type="base" />
+              {openedResource && (
+                <Resource
+                  testID="lesson-resource"
+                  type={openedResource.type}
+                  url={openedResource.url}
+                  description={openedResource.description}
+                  thumbnail={openedResource.poster}
+                  subtitles={subtitles}
+                  onPress={this.handlePress(openedResource.type)}
+                />
+              )}
+              <ScrollView
+                style={styles.browser}
+                showsHorizontalScrollIndicator={false}
+                testID="resources"
               >
-                {winAdditionalStars}
-              </Html>
+                <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
+              </ScrollView>
+              <View style={styles.bottomTextWrapper}>
+                <Html
+                  testID="additional-stars-note"
+                  fontSize={theme.fontSize.small}
+                  style={styles.bottomText}
+                  isTextCentered
+                >
+                  {winAdditionalStars}
+                </Html>
+              </View>
             </View>
-          </View>
-        );
-      }}
-    </BrandThemeContext.Consumer>
-  );
-};
+          );
+        }}
+      </BrandThemeContext.Consumer>
+    );
+  }
+}
 
-export {Lesson as Component};
-export default withLayout(Lesson);
+export default Lesson;

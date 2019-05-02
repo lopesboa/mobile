@@ -3,7 +3,9 @@
 import * as React from 'react';
 import {View, Dimensions} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
+import renderer from 'react-test-renderer';
 
+import {__TEST__} from '../modules/environment';
 import {answers} from '../__fixtures__/answers';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import type {Layout} from '../containers/with-layout';
@@ -527,3 +529,81 @@ storiesOf('Correction', module)
       </View>
     </TestContextProvider>
   ));
+
+if (__TEST__) {
+  describe('Correction', () => {
+    it('should handle onPDFButtonPress callback', () => {
+      const handlePress = jest.fn();
+      const handleVideoPress = jest.fn();
+      const testId = `resource-${resources[1].ref.toLowerCase()}`;
+      const component = renderer.create(
+        <TestContextProvider>
+          <View style={fakeLayout}>
+            <Correction
+              answers={answers}
+              userAnswers={answers}
+              tip={
+                "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+              }
+              isCorrect={false}
+              isResourceViewed
+              offeringExtraLife={false}
+              showResourcesFirst={false}
+              onButtonPress={handleFakePress}
+              question={question}
+              keyPoint="The KEY POINT"
+              layout={fakeLayout}
+              isLoading
+              resources={[resources[1]]}
+              onPDFButtonPress={handlePress}
+              onVideoPlay={handleVideoPress}
+              lives={2}
+            />
+          </View>
+        </TestContextProvider>
+      );
+
+      const resource = component.root.find(el => el.props.testID === testId);
+      resource.props.onPress('fakeUrl', 'fakeDescription');
+      expect(handlePress.mock.calls.length).toBe(1);
+      expect(handleVideoPress.mock.calls.length).toBe(0);
+    });
+
+    it('should handle onVideoPlay callback', () => {
+      const handlePress = jest.fn();
+      const handleVideoPress = jest.fn();
+      const testId = `resource-${resources[1].ref.toLowerCase()}`;
+      const component = renderer.create(
+        <TestContextProvider>
+          <View style={fakeLayout}>
+            <Correction
+              answers={answers}
+              userAnswers={answers}
+              tip={
+                "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
+              }
+              isCorrect={false}
+              isResourceViewed
+              offeringExtraLife={false}
+              showResourcesFirst={false}
+              onButtonPress={handleFakePress}
+              question={question}
+              keyPoint="The KEY POINT"
+              layout={fakeLayout}
+              isLoading
+              resources={[resources[1]]}
+              onPDFButtonPress={handlePress}
+              onVideoPlay={handleVideoPress}
+              lives={2}
+            />
+          </View>
+        </TestContextProvider>
+      );
+
+      const resource = component.root.find(el => el.props.testID === testId);
+      resource.props.onPress();
+      expect(handlePress.mock.calls.length).toBe(0);
+      expect(handleVideoPress.mock.calls.length).toBe(1);
+    });
+  });
+}

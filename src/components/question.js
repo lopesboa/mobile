@@ -1,14 +1,17 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View, ImageBackground} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
+import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
+
 import theme from '../modules/theme';
-import {getCleanUri} from '../modules/uri';
+
 import translations from '../translations';
-import {QUESTION_TYPE} from '../const';
+import {QUESTION_TYPE, RESOURCE_TYPE} from '../const';
+import Resource from './resource';
 import Html from './html';
 import QuestionChoices from './question-choices';
 import type {Props as QuestionChoicesProps} from './question-choices';
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     height: 200,
     width: '100%'
   },
-  validateButton: {
+  footer: {
     paddingHorizontal: theme.spacing.base
   }
 });
@@ -91,37 +94,53 @@ const Question = ({
     type === QUESTION_TYPE.TEMPLATE
       ? choices.length === userChoices.filter(choice => choice).length
       : userChoices.length > 0;
-  const mediaUri = media && media.url && getCleanUri(media.url);
+
+  let mediaUrl;
+  let mediaType = media && getMediaType(media);
+  let mediaPoster;
+
+  if (media && [RESOURCE_TYPE.IMG, RESOURCE_TYPE.VIDEO].includes(mediaType)) {
+    mediaUrl = getMediaUrl(media);
+    mediaPoster = getMediaPoster(media);
+  }
+
   return (
     <KeyboardAwareScrollView
       testID="question"
       contentContainerStyle={styles.container}
       enableOnAndroid
     >
-      <View style={styles.questionContainer}>
-        <QuestionTitle>{header}</QuestionTitle>
-        <Space type="small" />
-        <Html
-          fontSize={theme.fontSize.regular}
-          style={styles.explanation}
-          isTextCentered
-          testID="explanation"
-        >
-          {explanation}
-        </Html>
-      </View>
-      <Space type="base" />
-      {mediaUri && (
-        <View>
-          <ImageBackground
-            source={{uri: mediaUri}}
-            style={styles.image}
-            resizeMode="contain"
-            testID="question-image"
-          />
-          <Space type="base" />
+      <View>
+        <View style={styles.questionContainer}>
+          <QuestionTitle>{header}</QuestionTitle>
+          <Space type="small" />
+
+          <Html
+            fontSize={theme.fontSize.regular}
+            style={styles.explanation}
+            isTextCentered
+            testID="explanation"
+          >
+            {explanation}
+          </Html>
         </View>
-      )}
+        <Space type="base" />
+        {mediaUrl && mediaType && (
+          <View>
+            <Resource
+              type={mediaType}
+              url={mediaUrl}
+              thumbnail={mediaPoster}
+              resizeMode={mediaType === RESOURCE_TYPE.VIDEO ? 'cover' : 'contain'}
+              testID="question-resource"
+            />
+            <Space type="base" />
+          </View>
+        )}
+      </View>
+
+      <Space type="base" />
+
       <View style={styles.choicesContainer}>
         <QuestionChoices
           type={type}
@@ -140,7 +159,7 @@ const Question = ({
         />
       </View>
       <Space type="base" />
-      <View style={styles.validateButton}>
+      <View style={styles.footer}>
         <Button
           onPress={onButtonPress}
           isDisabled={!oneChoiceSelected || isValidating}

@@ -1437,14 +1437,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -1853,14 +1848,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -4195,14 +4185,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -4611,14 +4596,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -6946,14 +6926,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -7362,14 +7337,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -9107,14 +9077,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -9523,14 +9488,9 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -12762,14 +12722,9 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -13178,14 +13133,9 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -14601,14 +14551,9 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -15017,14 +14962,9 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -17959,14 +17899,9 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -18375,14 +18310,9 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -20344,14 +20274,9 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -20760,14 +20685,9 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -23493,14 +23413,9 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -23909,14 +23824,9 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -26251,14 +26161,9 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -26667,14 +26572,9 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -29904,14 +29804,9 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -30320,14 +30215,9 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -31353,14 +31243,9 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -31769,14 +31654,9 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -34297,14 +34177,9 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -34713,14 +34588,9 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -36896,14 +36766,9 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -37312,14 +37177,9 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -39254,14 +39114,9 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -39670,14 +39525,9 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -41612,14 +41462,9 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -42028,14 +41873,9 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -44363,14 +44203,9 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -44779,14 +44614,9 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -47253,14 +47083,9 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View
@@ -47669,14 +47494,9 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <View
                     onLayout={[Function]}
                     style={
-                      Array [
-                        Object {
-                          "flex": 1,
-                        },
-                        Object {
-                          "flex": 0,
-                        },
-                      ]
+                      Object {
+                        "flex": 0,
+                      }
                     }
                   />
                   <View

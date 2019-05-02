@@ -827,12 +827,9 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             <View
               onLayout={[Function]}
               style={
-                Array [
-                  Object {
-                    "flex": 1,
-                  },
-                  undefined,
-                ]
+                Object {
+                  "flex": 1,
+                }
               }
             />
           </View>
@@ -955,12 +952,9 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             <View
               onLayout={[Function]}
               style={
-                Array [
-                  Object {
-                    "flex": 1,
-                  },
-                  undefined,
-                ]
+                Object {
+                  "flex": 1,
+                }
               }
             />
           </View>
@@ -1086,12 +1080,9 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             <View
               onLayout={[Function]}
               style={
-                Array [
-                  Object {
-                    "flex": 1,
-                  },
-                  undefined,
-                ]
+                Object {
+                  "flex": 1,
+                }
               }
             />
           </View>

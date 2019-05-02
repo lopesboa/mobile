@@ -25,7 +25,7 @@ describe('Questions', () => {
     await waitFor(element(by.id('question'))).toBeVisible();
     await weExpect(element(by.id('question-title'))).toBeVisible();
     await weExpect(element(by.id('explanation'))).toBeVisible();
-    await weExpect(element(by.id('question-image'))).toBeVisible();
+    await weExpect(element(by.id('question-resource'))).toBeVisible();
     await element(by.id('question-screen')).swipe('up');
     await weExpect(element(by.id('question-choices'))).toBeVisible();
     await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();

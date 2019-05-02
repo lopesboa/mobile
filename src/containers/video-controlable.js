@@ -12,6 +12,7 @@ import orientation from 'react-native-orientation-locker';
 import Video, {STEP} from '../components/video';
 import type {Step} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video';
+import {__STORYBOOK__} from '../modules/environment';
 
 type ConnectedStateProps = {|
   isFullScreen: boolean
@@ -129,7 +130,10 @@ class VideoControlable extends React.PureComponent<Props, State> {
   render() {
     return (
       <React.Fragment>
-        <NavigationEvents onWillBlur={this.handleBlur} />
+        {/*
+        Should disable NavigationEvents when running  Storybook because of rn navigation incompatibility
+         */}
+        {!__STORYBOOK__ ? <NavigationEvents onWillBlur={this.handleBlur} /> : null}
         <Video
           source={this.props.source}
           preview={this.props.preview}

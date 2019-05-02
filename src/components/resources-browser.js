@@ -65,6 +65,8 @@ class ResourcesBrowser extends React.PureComponent<Props> {
 
   handlePress = (resource: Resource) => () => this.props.onChange(resource._id);
 
+  keyExtractor = (item: Resource) => item._id;
+
   renderSeparator = () => <Space />;
 
   renderItem = ({item: resource}: {item: Resource}) => {
@@ -157,6 +159,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
         style={styles.container}
         data={resources}
         extraData={selected}
+        keyExtractor={this.keyExtractor}
         ItemSeparatorComponent={this.renderSeparator}
         renderItem={this.renderItem}
         testID="resources-browser"

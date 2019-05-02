@@ -46,17 +46,19 @@ describe('Lesson', () => {
 
     describe('Video', () => {
       it('should see a video preview', async () => {
-        await weExpect(element(by.id('preview-video'))).toBeVisible();
+        await weExpect(element(by.id('preview-video-lesson-resource'))).toBeVisible();
         await weExpect(element(by.id('video'))).toBeNotVisible();
-        await weExpect(element(by.id('video-replay'))).toBeNotVisible();
+        await weExpect(element(by.id('video-replay-lesson-resource'))).toBeNotVisible();
       });
 
       it('should start the video', async () => {
-        await element(by.id('preview-video')).tap();
-        await waitFor(element(by.id('video-container'))).toBeVisible();
-        await weExpect(element(by.id('video-container-container'))).toBeNotVisible();
-        await weExpect(element(by.id('video-container'))).toBeVisible();
-        await weExpect(element(by.id('video'))).toBeVisible();
+        await element(by.id('preview-video-lesson-resource')).tap();
+        await waitFor(element(by.id('video-container-lesson-resource'))).toBeVisible();
+        await weExpect(
+          element(by.id('video-container-container-lesson-resource'))
+        ).toBeNotVisible();
+        await weExpect(element(by.id('video-container-lesson-resource'))).toBeVisible();
+        await weExpect(element(by.id('video-lesson-resource'))).toBeVisible();
         await weExpect(element(by.id('video-pause'))).toBeVisible();
         await weExpect(element(by.id('video-play'))).toBeNotVisible();
         await weExpect(element(by.id('video-seekbar'))).toBeVisible();
@@ -87,14 +89,14 @@ describe('Lesson', () => {
 
       it('should fast forward the video', async () => {
         await element(by.id('video-seekbar-pin')).swipe('right');
-        await waitFor(element(by.id('video-replay'))).toBeVisible();
-        await weExpect(element(by.id('video-replay'))).toBeVisible();
+        await waitFor(element(by.id('video-replay-lesson-resource'))).toBeVisible();
+        await weExpect(element(by.id('video-replay-lesson-resource'))).toBeVisible();
       });
 
       it('should replay the video', async () => {
-        await element(by.id('video-replay')).tap();
-        await weExpect(element(by.id('video-replay'))).toBeNotVisible();
-        await weExpect(element(by.id('video'))).toBeVisible();
+        await element(by.id('video-replay-lesson-resource')).tap();
+        await weExpect(element(by.id('video-replay-lesson-resource'))).toBeNotVisible();
+        await weExpect(element(by.id('video-lesson-resource'))).toBeVisible();
       });
 
       // This is not possible to test it with iOS native fullscreen
@@ -106,7 +108,7 @@ describe('Lesson', () => {
       //   await weExpect(element(by.id('video-container-fullscreen'))).toBeVisible();
       //   await weExpect(element(by.id('video-fullscreen-shrink'))).toBeVisible();
       // });
-      //
+
       // it('should shrink the video', async () => {
       //   await element(by.id('video-fullscreen-shrink')).tap();
       //   await waitFor(element(by.id('video-container'))).toBeVisible();
@@ -136,7 +138,7 @@ describe('Lesson', () => {
 
     describe('Pdf', () => {
       it('should see elements', async () => {
-        await weExpect(element(by.id('preview-pdf'))).toBeVisible();
+        await weExpect(element(by.id('preview-pdf-lesson-resource'))).toBeVisible();
         await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
         await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
       });

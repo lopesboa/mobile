@@ -1,11 +1,10 @@
 // @flow strict
-
+/* eslint-disable import/max-dependencies*/
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-
+import type {LessonType} from '@coorpacademy/progression-engine';
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
-import {CARD_TYPE} from '../const';
 import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
@@ -13,7 +12,8 @@ import Cards from '../containers/cards-scalable';
 import LivesAnimated from '../containers/lives-animated';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
-import Resource from '../containers/resource-scalable';
+import {RESOURCE_TYPE, CARD_TYPE} from '../const';
+import Resource from './resource';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
 import Text from './text';
@@ -113,6 +113,20 @@ const styles = StyleSheet.create({
 class Correction extends React.PureComponent<Props> {
   props: Props;
 
+  handlePress = (lessonType: LessonType) => (url?: string, description?: string) => {
+    const {onPDFButtonPress, onVideoPlay} = this.props;
+
+    // here the condition url && description in not enough te determine (the url and description are send everytime)
+    // if we should use onPDFButtonPress or videoPlay
+    // so we need to check also the lessonType
+
+    if (lessonType === RESOURCE_TYPE.PDF && url && description) {
+      return onPDFButtonPress(url, description);
+    }
+
+    return onVideoPlay();
+  };
+
   createCards(): Array<Card> {
     const {
       isCorrect,
@@ -177,17 +191,8 @@ class Correction extends React.PureComponent<Props> {
   // @todo to be enhanced
   getCardsHeight = (): number => CARDS_HEIGHT;
 
-  renderCard = ({type, title: cardTitle, resource, offeringExtraLife, isTopCard = false}: Card) => {
-    const {
-      answers,
-      userAnswers,
-      question,
-      tip,
-      keyPoint,
-      isCorrect,
-      onPDFButtonPress,
-      onVideoPlay
-    } = this.props;
+  renderCard = ({type, title: cardTitle, resource, offeringExtraLife, isTopCard}: Card) => {
+    const {answers, userAnswers, question, tip, keyPoint, isCorrect} = this.props;
     // This is the offset added by the deck swiper
     const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
 
@@ -242,16 +247,15 @@ class Correction extends React.PureComponent<Props> {
                     description={resource.description}
                     thumbnail={resource.poster}
                     subtitles={subtitleUri}
-                    onPDFButtonPress={onPDFButtonPress}
-                    onVideoPlay={onVideoPlay}
-                    testID={testIDSuffix}
+                    onPress={this.handlePress(resource.type)}
+                    testID={`resource-${testIDSuffix}`}
                     extralifeOverlay={offeringExtraLife}
                     containerStyle={styles.resource}
                   />
                   <View style={styles.resourceTitleContainer}>
                     <Html
                       fontSize={theme.fontSize.regular}
-                      testID={'resource-description-' + testIDSuffix}
+                      testID={`resource-description-${testIDSuffix}`}
                       style={styles.resourceTitle}
                       isTextCentered
                     >

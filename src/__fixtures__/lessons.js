@@ -78,7 +78,32 @@ export const createPdf = ({
   src: []
 });
 
+export const createImage = ({
+  ref,
+  description = 'Des données au service de tous - PDF',
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg'
+}: {
+  ref: string,
+  description?: string,
+  poster?: string
+}): Lesson => ({
+  _id: ref,
+  poster,
+  description,
+  mediaRef: 'med_Vy4JQKFhN',
+  mediaUrl:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
+  mimeType: 'application/pdf',
+  ref,
+  // $FlowFixMe img is not defined in progression-engine
+  type: RESOURCE_TYPE.IMG,
+  subtitles: [],
+  posters: [],
+  src: []
+});
+
 export default {
   createVideo,
-  createPdf
+  createPdf,
+  createImage
 };

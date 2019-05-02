@@ -4,9 +4,9 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
 import {QUESTION_TYPE} from '../const';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, TestContextProvider} from '../utils/tests';
 import {choices, choicesWithImage} from '../__fixtures__/question-choices';
-import {image} from '../__fixtures__/medias';
+import {image, video} from '../__fixtures__/medias';
 import Question from './question';
 import {template, items, userChoices} from './question-template.stories';
 
@@ -87,6 +87,24 @@ storiesOf('Question', module)
       isValidating={false}
       onSliderChange={handleFakePress}
     />
+  ))
+  .add('With Video', () => (
+    <TestContextProvider>
+      <Question
+        type={QUESTION_TYPE.QCM}
+        header="What is the online Apple application store called?"
+        explanation="Select the correct answers"
+        choices={choices}
+        userChoices={[]}
+        media={video}
+        onChoicePress={handleFakePress}
+        onInputValueChange={handleFakePress}
+        onChoiceInputChange={handleFakePress}
+        onButtonPress={handleFakePress}
+        isValidating={false}
+        onSliderChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('QCM Drag and Drop - with selected choices', () => (
     <Question

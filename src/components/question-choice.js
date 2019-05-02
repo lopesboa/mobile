@@ -4,13 +4,13 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Media, QuestionType} from '@coorpacademy/progression-engine';
 
-import {MEDIA_TYPE} from '../const';
+import {MEDIA_TYPE, RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
-import ImageBackgroundScalable from '../containers/image-background-scalable';
 import Html from './html';
 import {BrandThemeContext} from './brand-theme-provider';
 import Touchable from './touchable';
+import Resource from './resource';
 
 type Props = {|
   isSelected?: boolean,
@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     flexDirection: 'row',
     alignItems: 'stretch'
+  },
+  layoutContainer: {
+    flex: 1
   },
   textContainer: {
     paddingLeft: theme.spacing.small,
@@ -113,11 +116,13 @@ const QuestionChoice = ({
           >
             {mediaUri && (
               <View style={[styles.imageContainer]}>
-                <ImageBackgroundScalable
+                <Resource
                   testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
-                  source={{uri: mediaUri}}
+                  type={RESOURCE_TYPE.IMG}
+                  url={mediaUri}
                   style={styles.image}
                   resizeMode="contain"
+                  containerStyle={styles.layoutContainer}
                 />
               </View>
             )}

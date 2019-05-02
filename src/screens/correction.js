@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import get from 'lodash/fp/get';
 import {NavigationEvents} from 'react-navigation';
@@ -27,6 +27,11 @@ import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
 
+const styles = StyleSheet.create({
+  layoutContainer: {
+    flex: 1
+  }
+});
 export type Params = {|
   tip: string,
   answers: Array<string>,
@@ -186,6 +191,7 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <Correction
+          containerStyle={styles.layoutContainer}
           tip={tip}
           answers={answers}
           question={question}

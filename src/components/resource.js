@@ -1,25 +1,28 @@
 // @flow
 
 import * as React from 'react';
-import {View} from 'react-native';
+import {View, ImageBackground} from 'react-native';
 import type {LessonType} from '@coorpacademy/progression-engine';
-
+import withLayout from '../containers/with-layout';
+import type {WithLayoutProps} from '../containers/with-layout';
 import {RESOURCE_TYPE} from '../const';
 
 import Video from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
+
 import Preview, {EXTRALIFE} from './preview';
 
 type Props = {|
-  type: LessonType | typeof EXTRALIFE,
-  thumbnail: string,
+  ...WithLayoutProps,
+  type: LessonType,
   url: string,
-  description: string,
-  subtitles?: string,
-  height: number,
-  onPDFButtonPress: (url: string, description: string) => void,
-  onVideoPlay: () => void,
   testID?: string,
+  thumbnail?: string,
+  description?: string,
+  onPress?: (url?: string, description?: string) => void,
+  subtitles?: string,
+  style?: GenericStyleProp,
+  resizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch',
   extralifeOverlay?: boolean
 |};
 
@@ -27,16 +30,27 @@ class Resource extends React.PureComponent<Props> {
   props: Props;
 
   handlePress = () => {
-    const {url, description, onPDFButtonPress} = this.props;
-    onPDFButtonPress(getCleanUri(url), description);
-  };
-
-  handleVideoPlay = () => {
-    this.props.onVideoPlay();
+    const {url, description, onPress} = this.props;
+    if (!onPress) return;
+    onPress(getCleanUri(url), description);
   };
 
   render() {
-    const {type, thumbnail, url, subtitles, height, testID, extralifeOverlay = false} = this.props;
+    const {
+      type,
+      url,
+      subtitles,
+      layout,
+      testID,
+      thumbnail = '',
+      resizeMode = 'contain',
+      extralifeOverlay = false,
+      style
+    } = this.props;
+
+    const height = layout && layout.width / (16 / 9);
+
+    if (!layout) return null;
 
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
@@ -44,22 +58,40 @@ class Resource extends React.PureComponent<Props> {
           <Video
             source={{uri: getCleanUri(url)}}
             subtitles={subtitles}
-            preview={{uri: getCleanUri(thumbnail)}}
-            height={height}
             testID={testID}
+            preview={{uri: thumbnail && getCleanUri(thumbnail)}}
+            height={height}
             extralifeOverlay={extralifeOverlay}
-            onPlay={this.handleVideoPlay}
+            style={style}
+            onPlay={this.handlePress}
           />
         );
       }
       case RESOURCE_TYPE.PDF: {
         return (
-          <View style={{height}}>
+          <View style={{...style, height}}>
             <Preview
-              type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.PDF}
-              source={{uri: getCleanUri(thumbnail)}}
-              onPress={this.handlePress}
               testID={testID}
+              type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.PDF}
+              source={{uri: thumbnail && getCleanUri(thumbnail)}}
+              onPress={this.handlePress}
+            />
+          </View>
+        );
+      }
+
+      case RESOURCE_TYPE.IMG: {
+        return (
+          <View style={{width: layout && layout.width}}>
+            <ImageBackground
+              testID={testID}
+              source={{uri: getCleanUri(url)}}
+              resizeMode={resizeMode}
+              style={{
+                ...style,
+                height: (style && style.height) || height, // it was too risky to refactor this so here we cover every possible case
+                width: layout && layout.width
+              }}
             />
           </View>
         );
@@ -69,5 +101,5 @@ class Resource extends React.PureComponent<Props> {
     }
   }
 }
-
-export default Resource;
+export {Resource as Component};
+export default withLayout(Resource);

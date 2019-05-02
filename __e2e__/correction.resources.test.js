@@ -28,15 +28,15 @@ describe('Correction: resources', () => {
   });
 
   it('should see lesson preview, lesson description when video', async () => {
-    await waitFor(element(by.id('preview-video-les_1'))).toBeVisible();
-    await weExpect(element(by.id('preview-video-les_1'))).toBeVisible();
+    await waitFor(element(by.id('preview-video-resource-les_1'))).toBeVisible();
+    await weExpect(element(by.id('preview-video-resource-les_1'))).toBeVisible();
     await weExpect(element(by.id('resource-description-les_1'))).toBeVisible();
   });
 
   it('should start the video', async () => {
-    await element(by.id('preview-video-les_1')).tap();
-    await waitFor(element(by.id('video-container-les_1'))).toBeVisible();
-    await weExpect(element(by.id('video-container-les_1'))).toBeVisible();
+    await element(by.id('preview-video-resource-les_1')).tap();
+    await waitFor(element(by.id('video-container-resource-les_1'))).toBeVisible();
+    await weExpect(element(by.id('video-container-resource-les_1'))).toBeVisible();
   });
 
   it('should pause the video', async () => {
@@ -59,7 +59,7 @@ describe('Correction: resources', () => {
     await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
     await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
     await weExpect(element(by.id('card-resource-les_4'))).toBeVisible();
-    await weExpect(element(by.id('preview-pdf-les_4'))).toBeVisible();
+    await weExpect(element(by.id('preview-pdf-resource-les_4'))).toBeVisible();
     await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
     await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
     await element(by.id('button-open-pdf')).tap();

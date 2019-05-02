@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 export type Layout = {|
@@ -14,12 +14,6 @@ export type WithLayoutProps = {|
   layout?: Layout,
   containerStyle?: GenericStyleProp
 |};
-
-const styles: GenericStyleProp = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
 
 function withLayout<P>(
   WrappedComponent: React$ComponentType<P>,
@@ -60,7 +54,7 @@ function withLayout<P>(
       }
 
       return (
-        <View onLayout={this.handleLayout} style={[styles.container, containerStyle]}>
+        <View onLayout={this.handleLayout} style={containerStyle}>
           <WrappedComponent {...this.props} layout={this.state.layout} />
         </View>
       );

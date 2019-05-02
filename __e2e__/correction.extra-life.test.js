@@ -30,9 +30,9 @@ describe('Correction: extra-life', () => {
   });
 
   it('should offer extralife', async () => {
-    await weExpect(element(by.id('extra-life-les_1'))).toBeVisible();
+    await weExpect(element(by.id('extra-life-resource-les_1'))).toBeVisible();
     await weExpect(element(by.id('button-quit'))).toBeVisible();
-    await element(by.id('extra-life-les_1')).tap();
+    await element(by.id('extra-life-resource-les_1')).tap();
     await weExpect(element(by.id('button-next-question'))).toBeVisible();
     await element(by.id('button-next-question')).tap();
   });

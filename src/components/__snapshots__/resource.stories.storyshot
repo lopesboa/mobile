@@ -6,7 +6,7 @@ exports[`Storyshots Resource PDF (with extra life) 1`] = `
 <View
   style={
     Object {
-      "height": 200,
+      "height": 180,
     }
   }
 >
@@ -527,7 +527,7 @@ exports[`Storyshots Resource PDF 1`] = `
 <View
   style={
     Object {
-      "height": 200,
+      "height": 180,
     }
   }
 >
@@ -838,7 +838,7 @@ Array [
         },
         false,
         Object {
-          "height": 200,
+          "height": 180,
         },
       ]
     }
@@ -1372,7 +1372,7 @@ Array [
         },
         false,
         Object {
-          "height": 200,
+          "height": 180,
         },
       ]
     }
@@ -1555,4 +1555,48 @@ Array [
     </View>
   </View>,
 ]
+`;
+
+exports[`Storyshots Resource WithImage 1`] = `
+<View
+  style={
+    Object {
+      "width": 320,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 180,
+        "width": 320,
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      source={
+        Object {
+          "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 180,
+            "width": 320,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
 `;
