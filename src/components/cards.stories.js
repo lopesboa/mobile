@@ -30,7 +30,6 @@ storiesOf('Cards', module).add('Default', () => (
     testID="cards-story"
     onSwiped={handleFakePress}
     onSwipedAll={handleFakePress}
-    onRef={handleFakePress}
     items={items}
     renderItem={renderCard}
   />
@@ -38,17 +37,15 @@ storiesOf('Cards', module).add('Default', () => (
 
 if (__TEST__) {
   describe('Cards', () => {
-    it('should handle onSwiped callback', () => {
+    it('should handle callbacks (onSwiped and forceUpdate)', () => {
       const mockOnSwiped = jest.fn();
       const mockOnSwipedAll = jest.fn();
-      const mockOnRef = jest.fn();
 
       const component = renderer.create(
         <Cards
           testID="cards-story"
           onSwiped={mockOnSwiped}
           onSwipedAll={mockOnSwipedAll}
-          onRef={mockOnRef}
           cardIndexShown={0}
           items={items}
           renderItem={renderCard}
@@ -59,7 +56,9 @@ if (__TEST__) {
       swiper.instance.onSwipedCallbacks(false, true);
       expect(mockOnSwiped.mock.calls.length).toBe(1);
       expect(mockOnSwipedAll.mock.calls.length).toBe(1);
-      expect(mockOnRef.mock.calls.length).toBe(1);
+
+      const cards = component.root.find(el => el.props.testID === 'cards-story');
+      cards.instance.forceUpdate();
     });
   });
 }

@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {Animated, Easing, StyleSheet, View} from 'react-native';
+import {Animated, StyleSheet, View} from 'react-native';
 
 import Card, {LAYOUT as CARD_LAYOUT} from '../components/card';
 import CardHeader from '../components/card-header';
@@ -18,7 +18,7 @@ type Props = $Exact<{|
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
-  hintSwipe?: boolean,
+  animationStyle?: GenericStyleProp,
   offsetBottom: number,
   expandedOffsetBottom: number,
   testID?: string
@@ -58,49 +58,9 @@ class CardScalable extends React.PureComponent<Props, State> {
     isExpanded: Boolean(this.props.isExpanded)
   };
 
-  // to expand/collapse the card
   top: Animated.Value = new Animated.Value(0);
 
   height: Animated.Value = new Animated.Value(this.props.height - this.props.offsetBottom);
-
-  // to simulate the swipe
-  rotate: Animated.Value = new Animated.Value(0);
-
-  translateX: Animated.Value = new Animated.Value(0);
-
-  translateY: Animated.Value = new Animated.Value(0);
-
-  hint = Animated.loop(
-    Animated.sequence([
-      Animated.delay(3000),
-      Animated.timing(this.rotate, {
-        toValue: 1,
-        duration: 200,
-        easing: Easing.inOut(Easing.quad)
-      }),
-      Animated.delay(150),
-      Animated.timing(this.rotate, {
-        toValue: 2,
-        duration: 400,
-        easing: Easing.inOut(Easing.quad)
-      }),
-      Animated.delay(150),
-      Animated.timing(this.rotate, {
-        toValue: 3,
-        duration: 200,
-        easing: Easing.inOut(Easing.quad)
-      }),
-      Animated.delay(3000)
-    ])
-  );
-
-  componentDidMount = () => {
-    if (!this.props.hintSwipe || this.state.isExpanded) {
-      return;
-    }
-
-    this.hint.start();
-  };
 
   componentWillReceiveProps = (props: Props) =>
     this.setState({
@@ -128,44 +88,22 @@ class CardScalable extends React.PureComponent<Props, State> {
   };
 
   handlePress = () => {
-    this.hint.stop();
     this.setState((state: State) => ({
       isExpanded: !state.isExpanded
     }));
   };
 
   render() {
-    const {type, title, isCorrect, hintSwipe, children, style, testID} = this.props;
-    let transform;
-
-    if (hintSwipe) {
-      const rotate = this.rotate.interpolate({
-        inputRange: [0, 1, 1.5, 2, 3],
-        outputRange: ['0deg', '5deg', '0deg', '-5deg', '0deg']
-      });
-
-      const translateX = this.rotate.interpolate({
-        inputRange: [0, 1, 1.5, 2, 3],
-        outputRange: [0, 30, 0, -30, 0]
-      });
-
-      const translateY = this.rotate.interpolate({
-        inputRange: [0, 1, 1.5, 2, 3],
-        outputRange: [0, 30, 0, 30, 0]
-      });
-
-      transform = [{rotate}, {translateX}, {translateY}];
-    }
+    const {type, title, isCorrect, children, style, testID, animationStyle} = this.props;
+    const _style = {
+      ...style,
+      ...((!this.state.isExpanded && animationStyle) || {}),
+      height: this.height,
+      top: this.top
+    };
 
     return (
-      <Animated.View
-        style={{
-          ...style,
-          height: this.height,
-          top: this.top,
-          transform: transform
-        }}
-      >
+      <Animated.View style={_style}>
         <Touchable
           onPress={this.handlePress}
           activeOpacity={1}

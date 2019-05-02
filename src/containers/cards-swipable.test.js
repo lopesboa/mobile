@@ -7,10 +7,10 @@ import {ANALYTICS_EVENT_TYPE, CARD_TYPE, RESOURCE_TYPE} from '../const';
 import {createFakeAnalytics} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
 import type {Card} from '../components/cards';
-import {Component as CardsScalable} from './cards-scalable';
+import {Component as CardsSwipable} from './cards-swipable';
 
 if (__TEST__) {
-  describe('CardsScalable', () => {
+  describe('CardsSwipable', () => {
     it('should handle onSwipe on resource card and forward analytics data', () => {
       const dummyResourceCard: Card = {
         type: CARD_TYPE.RESOURCE,
@@ -36,7 +36,7 @@ if (__TEST__) {
       const analytics = createFakeAnalytics();
 
       const component = renderer.create(
-        <CardsScalable analytics={analytics} items={[dummyResourceCard]} renderItem={renderItem} />
+        <CardsSwipable analytics={analytics} items={[dummyResourceCard]} renderItem={renderItem} />
       );
 
       const cards = component.root.find(el => el.props.testID === 'cards');
@@ -61,7 +61,7 @@ if (__TEST__) {
       const analytics = createFakeAnalytics();
 
       const component = renderer.create(
-        <CardsScalable analytics={analytics} items={[dummyResourceCard]} renderItem={renderItem} />
+        <CardsSwipable analytics={analytics} items={[dummyResourceCard]} renderItem={renderItem} />
       );
 
       const cards = component.root.find(el => el.props.testID === 'cards');

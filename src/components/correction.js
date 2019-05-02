@@ -8,7 +8,7 @@ import theme from '../modules/theme';
 import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
-import Cards from '../containers/cards-scalable';
+import Cards from '../containers/cards-swipable';
 import LivesAnimated from '../containers/lives-animated';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
@@ -173,10 +173,6 @@ class Correction extends React.PureComponent<Props> {
       cards = [correctionCard, ...lessonCards, keyPointCard, tipCard];
     }
 
-    if (!showResourcesFirst) {
-      cards[0].isTopCard = true;
-    }
-
     return cards;
   }
 
@@ -191,7 +187,11 @@ class Correction extends React.PureComponent<Props> {
   // @todo to be enhanced
   getCardsHeight = (): number => CARDS_HEIGHT;
 
-  renderCard = ({type, title: cardTitle, resource, offeringExtraLife, isTopCard}: Card) => {
+  renderCard = (
+    {type, title: cardTitle, resource, offeringExtraLife}: Card,
+    index: number,
+    animationStyle: GenericStyleProp
+  ) => {
     const {answers, userAnswers, question, tip, keyPoint, isCorrect} = this.props;
     // This is the offset added by the deck swiper
     const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
@@ -208,8 +208,8 @@ class Correction extends React.PureComponent<Props> {
             <CardComponent
               title={cardTitle}
               isCorrect={isCorrect}
-              hintSwipe={isTopCard}
               type={type}
+              animationStyle={!offeringExtraLife && animationStyle}
               height={this.getCardsHeight()}
               expandedHeight={this.getCardsExpandedHeight()}
               offsetBottom={this.getOffsetBottom()}
