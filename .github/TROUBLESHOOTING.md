@@ -236,11 +236,12 @@ your Xcode version.
 
 ##### IDENTIFIED PROBLEM
 
-Your Detox cache is out of date (or missing).
+Your Detox cache is out of date (or missing) and applesimutils too.
 
 ##### HOW TO RESOLVE
 
 ```
+brew upgrade applesimutils
 detox clean-framework-cache
 detox build-framework-cache
 ```
