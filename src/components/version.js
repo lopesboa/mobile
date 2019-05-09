@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 const Version = ({style}: Props) => (
   <Text style={[styles.version, style]}>
-    {translations.formatString('{0}: {1}', 'Version', version.commit)}
+    {translations.formatString('{0}: {1}', 'Version', `${version.tag}.${version.commit}`)}
   </Text>
 );
 

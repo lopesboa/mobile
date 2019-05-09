@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   version: {
-    color: theme.colors.white
+    color: theme.colors.white,
+    paddingBottom: theme.spacing.medium
   }
 });
 

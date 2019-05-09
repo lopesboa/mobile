@@ -160,11 +160,12 @@ exports[`Storyshots Home Default 1`] = `
           },
           Object {
             "color": "#FFFFFF",
+            "paddingBottom": 32,
           },
         ]
       }
     >
-      Version: test
+      Version: 0.0.0.test
     </Text>
   </Mock$ReactNavigation$SafeAreaView>
 </View>
