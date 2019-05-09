@@ -39,24 +39,24 @@ class CardsSwipable extends React.PureComponent<Props, State> {
   cards: Cards;
 
   // to simulate the swipe
-  rotate: Animated.Value = new Animated.Value(0);
+  animation: Animated.Value = new Animated.Value(0);
 
   hint = Animated.loop(
     Animated.sequence([
       Animated.delay(3000),
-      Animated.timing(this.rotate, {
+      Animated.timing(this.animation, {
         toValue: 1,
         duration: 200,
         easing: Easing.inOut(Easing.quad)
       }),
       Animated.delay(150),
-      Animated.timing(this.rotate, {
+      Animated.timing(this.animation, {
         toValue: 2,
         duration: 400,
         easing: Easing.inOut(Easing.quad)
       }),
       Animated.delay(150),
-      Animated.timing(this.rotate, {
+      Animated.timing(this.animation, {
         toValue: 3,
         duration: 200,
         easing: Easing.inOut(Easing.quad)
@@ -115,6 +115,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
 
     this.setState({cardIndexShown: cardIndexSwiped + 1});
     this.hint.stop();
+    this.animation.resetAnimation();
   };
 
   handleSwipedAll = () => {
@@ -122,17 +123,17 @@ class CardsSwipable extends React.PureComponent<Props, State> {
   };
 
   getAnimationStyle = (): GenericStyleProp => {
-    const rotate = this.rotate.interpolate({
+    const rotate = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
       outputRange: ['0deg', '5deg', '0deg', '-5deg', '0deg']
     });
 
-    const translateX = this.rotate.interpolate({
+    const translateX = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
       outputRange: [0, 30, 0, -30, 0]
     });
 
-    const translateY = this.rotate.interpolate({
+    const translateY = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
       outputRange: [0, 30, 0, 30, 0]
     });
