@@ -284,6 +284,15 @@ class Correction extends React.PureComponent<Props> {
 
     const cards = this.createCards();
 
+    let analyticsID;
+    if (canGoNext) {
+      analyticsID = 'button-next-question';
+    } else if (offeringExtraLife) {
+      analyticsID = 'button-refuse-extralife';
+    } else {
+      analyticsID = 'button-game-over';
+    }
+
     return (
       <View
         style={[styles.container, isCorrect ? styles.positive : styles.negative]}
@@ -323,7 +332,7 @@ class Correction extends React.PureComponent<Props> {
             onPress={onButtonPress}
             isLoading={isLoading}
             testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
-            analyticsID={`button-${canGoNext ? 'next-question' : 'quit'}`}
+            analyticsID={analyticsID}
           >
             {offeringExtraLife ? translations.quit : translations.next}
           </Button>

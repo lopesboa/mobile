@@ -2,9 +2,9 @@
 
 import type {AnalyticsService as PlayerAnalyticsService} from '@coorpacademy/player-services';
 import type {Lesson, Progression, Config} from '@coorpacademy/progression-engine';
-
 import type {DataLayer} from '../layer/data';
-import {CONTENT_TYPE, ANALYTICS_EVENT_TYPE} from '../const';
+
+import {ANALYTICS_EVENT_TYPE} from '../const';
 
 const sendViewedMediaAnalytics = (
   dataLayer: DataLayer
@@ -17,9 +17,9 @@ const sendViewedMediaAnalytics = (
     location
   });
 
-const sendProgressionAnalytics = (
+const sendProgressionFinished = (
   dataLayer: DataLayer
-): $PropertyType<PlayerAnalyticsService, 'sendProgressionAnalytics'> => (
+): $PropertyType<PlayerAnalyticsService, 'sendProgressionFinished'> => (
   currentProgression: Progression,
   engineConfig: Config
 ): void => {
@@ -31,15 +31,13 @@ const sendProgressionAnalytics = (
 
   const nextContent = state.nextContent;
 
-  if ([CONTENT_TYPE.SUCCESS, CONTENT_TYPE.FAILURE].includes(nextContent.type)) {
-    const engineRef = engine.ref;
-    const extraLife = engineConfig.remainingLifeRequests > state.remainingLifeRequests;
-    dataLayer.logEvent(ANALYTICS_EVENT_TYPE.FINISH_PROGRESSION, {
-      type: engineRef,
-      state: nextContent.type,
-      extraLife: Number(extraLife)
-    });
-  }
+  const engineRef = engine.ref;
+  const extraLife = engineConfig.remainingLifeRequests > state.remainingLifeRequests;
+  dataLayer.logEvent(ANALYTICS_EVENT_TYPE.FINISH_PROGRESSION, {
+    type: engineRef,
+    state: nextContent.type,
+    extraLife: Number(extraLife)
+  });
 };
 
 export type AnalyticsService = $Exact<{
@@ -49,7 +47,7 @@ export type AnalyticsService = $Exact<{
 
 const service = (dataLayer: DataLayer): AnalyticsService => ({
   sendViewedMediaAnalytics: sendViewedMediaAnalytics(dataLayer),
-  sendProgressionAnalytics: sendProgressionAnalytics(dataLayer),
+  sendProgressionFinished: sendProgressionFinished(dataLayer),
   logEvent: dataLayer.logEvent
 });
 

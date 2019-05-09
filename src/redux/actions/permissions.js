@@ -1,6 +1,6 @@
 // @flow strict
 
-import {PERMISSION_STATUS} from '../../const';
+import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {PermissionStatus} from '../../types';
 import translations from '../../translations';
 import type {Options} from '../_types';
@@ -60,6 +60,11 @@ const _requestPermission = (type: PermissionType, onDeny?: () => void) => async 
   if (currentPermissionStatus !== status) {
     dispatch(change(type, status));
   }
+
+  services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
+    status,
+    type
+  });
 
   return status;
 };

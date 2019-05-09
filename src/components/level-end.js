@@ -280,6 +280,7 @@ class LevelEnd extends React.PureComponent<Props> {
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
+              analyticsID={`button-level-end-${isSuccess ? 'next' : 'retry'}-level`}
             >
               {buttonTranslation}
             </ButtonSticky>

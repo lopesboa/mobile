@@ -2,7 +2,7 @@
 
 import type {Middleware, Dispatch} from 'redux';
 
-import {UI_PROGRESSION_ACTION_TYPES} from '@coorpacademy/player-store';
+import {PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE} from '@coorpacademy/player-store';
 import type {Options, StoreAction} from '../_types';
 import type {StoreState} from '../store';
 import translationUtil from '../../translations';
@@ -19,7 +19,7 @@ Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({
   dispatch,
   getState
 }) => next => action => {
-  if (action.type === UI_PROGRESSION_ACTION_TYPES.PROGRESSION_UPDATED) {
+  if ([PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE].includes(action.type)) {
     const language = translationUtil.getLanguage();
     dispatch(getAndRefreshCard(action.meta.id, language));
   }

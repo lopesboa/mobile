@@ -1,7 +1,9 @@
 // @flow
 
 import * as React from 'react';
+import {connect} from 'react-redux';
 import {Animated, Easing} from 'react-native';
+import {selectResource} from '@coorpacademy/player-store';
 
 import Cards from '../components/cards';
 import type {Props as CardsProps, Card as CardType} from '../components/cards';
@@ -10,8 +12,13 @@ import {ANALYTICS_EVENT_TYPE} from '../const';
 import withAnalytics from './with-analytics';
 import type {WithAnalyticsProps} from './with-analytics';
 
+type ConnectedDispatchProps = {|
+  selectResource: typeof selectResource
+|};
+
 type Props = $Exact<{|
   ...WithAnalyticsProps,
+  ...ConnectedDispatchProps,
   items: Array<CardType>,
   renderItem: (CardType, number, GenericStyleProp | void) => React.Node,
   cardStyle?: GenericStyleProp,
@@ -60,6 +67,11 @@ class CardsSwipable extends React.PureComponent<Props, State> {
 
   componentDidMount = () => {
     this.hint.start();
+
+    const cardOnTop = this.props.items[0];
+    if (cardOnTop && cardOnTop.resource) {
+      this.props.selectResource(cardOnTop.resource._id);
+    }
   };
 
   componentWillUpdate = (nextProps: Props) => {
@@ -95,6 +107,11 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     }
 
     analytics && analytics.logEvent(ANALYTICS_EVENT_TYPE.SWIPE, data);
+
+    const cardOnTop = items[(cardIndexSwiped + 1) % items.length];
+    if (cardOnTop && cardOnTop.resource) {
+      this.props.selectResource(cardOnTop.resource._id);
+    }
 
     this.setState({cardIndexShown: cardIndexSwiped + 1});
     this.hint.stop();
@@ -150,5 +167,13 @@ class CardsSwipable extends React.PureComponent<Props, State> {
   }
 }
 
+const mapDispatchToProps: ConnectedDispatchProps = {
+  selectResource
+};
+
 export {CardsSwipable as Component};
-export default withAnalytics(CardsSwipable);
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withAnalytics(CardsSwipable));

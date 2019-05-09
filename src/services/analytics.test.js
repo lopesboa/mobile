@@ -19,28 +19,17 @@ describe('Analytics', () => {
     expect(logEvent).toHaveBeenCalledWith('mediaViewed', {mediaType: 'foobar', location: 'baz'});
   });
 
-  describe('sendProgressionAnalytics', () => {
+  describe('sendProgressionFinished', () => {
     it('without progression', () => {
       const logEvent = jest.fn();
       // $FlowFixMe
       const service = createService({logEvent});
       // $FlowFixMe
-      service.sendProgressionAnalytics({});
+      service.sendProgressionFinished({});
       expect(logEvent).not.toHaveBeenCalled();
     });
 
-    it('with progression and not finished', () => {
-      // $FlowFixMe
-      const progression = createProgression({engine: 'learner', state: {}});
-      const logEvent = jest.fn();
-      // $FlowFixMe
-      const service = createService({logEvent});
-      // $FlowFixMe
-      service.sendProgressionAnalytics(progression);
-      expect(logEvent).not.toHaveBeenCalled();
-    });
-
-    it('with progression and finished', () => {
+    it('with progression and engineConfig', () => {
       // $FlowFixMe
       const progression = createProgression({
         engine: ENGINE.LEARNER,
@@ -50,7 +39,7 @@ describe('Analytics', () => {
       // $FlowFixMe
       const service = createService({logEvent});
       // $FlowFixMe
-      service.sendProgressionAnalytics(progression, {remainingLifeRequests: 1});
+      service.sendProgressionFinished(progression, {remainingLifeRequests: 1});
       expect(logEvent).toHaveBeenCalledWith('finishProgression', {
         type: ENGINE.LEARNER,
         state: CONTENT_TYPE.FAILURE,

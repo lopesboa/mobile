@@ -162,7 +162,8 @@ export const ANALYTICS_EVENT_TYPE: {
   SIGN_IN: 'signIn',
   SIGN_OUT: 'signOut',
   NAVIGATE: 'navigate',
-  VALIDATE_ANSWER: 'validateAnswer'
+  VALIDATE_ANSWER: 'validateAnswer',
+  PERMISSION: 'permission'
 } = {
   PRESS: 'press',
   SWIPE: 'swipe',
@@ -178,7 +179,8 @@ export const ANALYTICS_EVENT_TYPE: {
   SIGN_IN: 'signIn',
   SIGN_OUT: 'signOut',
   NAVIGATE: 'navigate',
-  VALIDATE_ANSWER: 'validateAnswer'
+  VALIDATE_ANSWER: 'validateAnswer',
+  PERMISSION: 'permission'
 };
 // FlowAssert
 (Object.keys(ANALYTICS_EVENT_TYPE).map(k => ANALYTICS_EVENT_TYPE[k]): Array<AnalyticsEventType>);

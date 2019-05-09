@@ -1,8 +1,9 @@
 // @flow strict
 
-import {PERMISSION_STATUS} from '../../const';
+import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {PermissionStatus} from '../../types';
 import translations from '../../translations';
+import {createFakeAnalytics} from '../../utils/tests';
 import type {Action} from './permissions';
 import {check, request, change, CHECK, REQUEST, CHANGE} from './permissions';
 
@@ -84,6 +85,7 @@ describe('Permissions', () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.UNDETERMINED);
         const handleDeny = jest.fn();
         const services = {
+          Analytics: createFakeAnalytics(),
           Permissions: {
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
           }
@@ -103,12 +105,18 @@ describe('Permissions', () => {
         expect(handleDeny.mock.calls.length).toBe(1);
         expect(services.Permissions.request.mock.calls.length).toBe(1);
         expect(services.Permissions.request.mock.calls[0]).toEqual(['camera']);
+
+        expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
+          type: 'camera',
+          status: PERMISSION_STATUS.DENIED
+        });
       });
 
       it('without deny callback and no change', async () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.UNDETERMINED);
         const handleDeny = jest.fn();
         const services = {
+          Analytics: createFakeAnalytics(),
           Permissions: {
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
           }
@@ -120,6 +128,11 @@ describe('Permissions', () => {
         expect(handleDeny.mock.calls.length).toBe(0);
         expect(services.Permissions.request.mock.calls.length).toBe(1);
         expect(services.Permissions.request.mock.calls[0]).toEqual(['camera']);
+
+        expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
+          type: 'camera',
+          status: PERMISSION_STATUS.UNDETERMINED
+        });
       });
     });
 
@@ -128,6 +141,7 @@ describe('Permissions', () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
         const handleDeny = jest.fn();
         const services = {
+          Analytics: createFakeAnalytics(),
           Permissions: {
             canOpenSettings: jest.fn(() => Promise.resolve(true)),
             openSettings: jest.fn(() => Promise.resolve(undefined)),
@@ -160,6 +174,7 @@ describe('Permissions', () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
         const handleDeny = jest.fn();
         const services = {
+          Analytics: createFakeAnalytics(),
           Permissions: {
             canOpenSettings: jest.fn(() => Promise.resolve(false)),
             openSettings: jest.fn(() => Promise.resolve(undefined)),

@@ -95,6 +95,7 @@ export type AnalyticsEventType =
   | 'signIn'
   | 'signOut'
   | 'navigate'
+  | 'permission'
   | 'validateAnswer';
 
 export type AnalyticsEventParams = {

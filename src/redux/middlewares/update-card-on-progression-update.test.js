@@ -1,6 +1,6 @@
 // @flow strict
 
-import {UI_PROGRESSION_ACTION_TYPES} from '@coorpacademy/player-store';
+import {PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE} from '@coorpacademy/player-store';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
 import createMiddleware from './update-card-on-progression-update';
@@ -31,9 +31,26 @@ describe("Progression's synchronization middleware", () => {
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('should dispatch syncrhonizeProgression', async () => {
+  it('should dispatch synchronizeProgression on move action', async () => {
     const updateProgressionAction = {
-      type: UI_PROGRESSION_ACTION_TYPES.PROGRESSION_UPDATED,
+      type: PROGRESSION_UPDATED_ON_MOVE,
+      meta: {
+        id: 'lol'
+      }
+    };
+    const middleware = createMiddleware(options);
+    const store = createStore();
+    const next = jest.fn();
+    middleware(store)(next)(updateProgressionAction);
+    await sleep();
+
+    expect(store.dispatch).toHaveBeenCalled();
+    expect(next).toHaveBeenCalledWith(updateProgressionAction);
+  });
+
+  it('should dispatch synchronizeProgression on node action', async () => {
+    const updateProgressionAction = {
+      type: PROGRESSION_UPDATED_ON_NODE,
       meta: {
         id: 'lol'
       }
