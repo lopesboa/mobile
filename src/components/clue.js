@@ -53,7 +53,7 @@ const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
       slideId={slideId}
       onPress={onPress}
     >
-      <Html fontSize={theme.fontSize.extraLarge} style={styles.text} isTextCentered>
+      <Html fontSize={theme.fontSize.xlarge} style={styles.text} isTextCentered>
         {clue}
       </Html>
     </FlippableCard>

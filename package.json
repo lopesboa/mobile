@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@coorpacademy/acl": "^1.0.1",
-    "@coorpacademy/nova-icons": "^3.0.1",
+    "@coorpacademy/nova-icons": "3.1.4",
     "@coorpacademy/player-services": "^5.0.3",
     "@coorpacademy/player-store": "^3.0.7",
     "@coorpacademy/progression-engine": "^11.0.1",

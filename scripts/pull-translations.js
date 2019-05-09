@@ -25,9 +25,11 @@ const fetchTranslations = (
   // eslint-disable-next-line flowtype/no-weak-types
 ): Promise<Object> => {
   const apiLocale = locale.replace(/-(.*)/, found => '_' + found.replace('-', '').toUpperCase());
+  const branch = repository === 'coorpacademy' ? 'develop' : 'master';
+
   return (
     fetch(
-      `${GITHUB_API}/repos/coorpacademy/${repository}/contents/${contentPath}/${apiLocale}/${file}`,
+      `${GITHUB_API}/repos/coorpacademy/${repository}/contents/${contentPath}/${apiLocale}/${file}?ref=${branch}`,
       {
         headers: {
           Authorization: `token ${githubAccessToken}`
@@ -71,6 +73,12 @@ const generate = async (locale: string) => {
     'core/locales',
     'slides.json'
   );
+  const moocLoginTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'login.json'
+  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -84,16 +92,37 @@ const generate = async (locale: string) => {
     'global.json'
   );
   const translations: Translations = {
-    cancel: formatTranslation(moocFormTranslations.cancel),
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
+    authenticationMagicLinkHeader: formatTranslation(moocLoginTranslations.mobile.magicLink.header),
+    authenticationMagicLinkStepOneDescription: formatTranslation(
+      moocLoginTranslations.mobile.magicLink.stepOne
+    ),
+    authenticationMagicLinkStepTwoDescription: formatTranslation(
+      moocLoginTranslations.mobile.magicLink.stepTwo
+    ),
+    authenticationMagicLinkStepThreeDescription: formatTranslation(
+      moocLoginTranslations.mobile.magicLink.stepThree
+    ),
+    authenticationMagicLinkTitle: formatTranslation(moocLoginTranslations.mobile.magicLink.title),
+    authenticationQRCodeHeader: formatTranslation(moocLoginTranslations.mobile.qrCode.header),
+    authenticationQRCodeStepOneDescription: formatTranslation(
+      moocLoginTranslations.mobile.qrCode.stepOne
+    ),
+    authenticationQRCodeStepTwoDescription: formatTranslation(
+      moocLoginTranslations.mobile.qrCode.stepTwo
+    ),
+    authenticationQRCodeStepThreeDescription: formatTranslation(
+      moocLoginTranslations.mobile.qrCode.stepThree
+    ),
+    authenticationQRCodeTitle: formatTranslation(moocLoginTranslations.mobile.qrCode.title),
     backToHome: formatTranslation(playerTranslations['Back to home']),
     bonus: formatTranslation(playerTranslations['Bonus!']),
+    cancel: formatTranslation(moocFormTranslations.cancel),
     clue: formatTranslation(playerTranslations.Clue),
     clueStarsToLoose: formatTranslation(componentsTranslations.clue_stars_to_loose),
     congratulations: formatTranslation(playerTranslations['Congratulations!']),
     context: formatTranslation(playerTranslations.Context),
     correction: formatTranslation(playerTranslations.Correction),
-    demoMode: formatTranslation(playerTranslations['Demo mode mobile'].replace(/\\/g, '')),
     didYouKnowThat: formatTranslation(playerTranslations['Did you know that?']),
     finishLearning: formatTranslation(playerTranslations['Finish learning']),
     forYou: formatTranslation(playerTranslations['For you']),
@@ -105,26 +134,9 @@ const generate = async (locale: string) => {
     goodJob: formatTranslation(playerTranslations['Good job']),
     goToQuestion: formatTranslation(playerTranslations['Go to question']),
     highscore: formatTranslation(playerTranslations.Highscore || ''),
+    howToSignIn: formatTranslation(moocLoginTranslations.mobile.howToSignIn),
     keyPoint: formatTranslation(playerTranslations['Key point']),
     lesson: formatTranslation(playerTranslations.Media),
-    loginButton: formatTranslation(playerTranslations['Scan your QR code']),
-    loginFirstStepHeader: formatTranslation(playerTranslations.Step1),
-    loginFirstStepDescription: formatTranslation(
-      playerTranslations['Connect to your learning plateform with another device']
-    ),
-    loginSecondStepHeader: formatTranslation(playerTranslations.Step2),
-    loginSecondStepDescription: formatTranslation(
-      playerTranslations['Go to settings account in the upper right hand corner']
-    ),
-    loginThirdStepHeader: formatTranslation(playerTranslations.Step3),
-    loginThirdStepDescription: formatTranslation(
-      playerTranslations['Voila your qr code will be right there']
-    ),
-    loginHeader: formatTranslation(
-      playerTranslations[
-        'To open your companys learning app, you need to scan your personal QR code'
-      ]
-    ),
     logOut: formatTranslation(moocMenuTranslations.header.account_menu.logout),
     needHelp: formatTranslation(moocSlidesTranslations.indice.title),
     new: formatTranslation(moocTranslations.content.new),
@@ -133,34 +145,34 @@ const generate = async (locale: string) => {
     ok: formatTranslation(moocFormTranslations.ok),
     ooops: formatTranslation(playerTranslations.Ooops),
     open: formatTranslation(componentsTranslations.Open),
-    // @todo get it from github
-    openSettings: 'Open settings',
+    openBrowser: formatTranslation(moocLoginTranslations.mobile.openBrowser),
+    openSettings: formatTranslation(moocTranslations.mobile.settings.open),
     ouch: formatTranslation(playerTranslations.Ouch),
     outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
-    // @todo get it from github
-    permission: 'Permission',
-    // @todo get it from github
-    permissionCamera:
-      'We need access to your camera in order to scan your QR code and authenticate you.',
+    permission: formatTranslation(moocTranslations.mobile.settings.permission),
+    permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
     question: formatTranslation(playerTranslations.Question),
     quit: formatTranslation(playerTranslations.Quit),
     relatedSubjects: formatTranslation(playerTranslations['Related subjects']),
     retryLevel: formatTranslation(playerTranslations['Retry level']),
+    scanQRCode: formatTranslation(moocLoginTranslations.mobile.scanQRCode),
     seeClue: formatTranslation(componentsTranslations['See clue']),
     selectSomethingBelow: formatTranslation(playerTranslations['Select something below']),
-    // @todo get it from mooc
+    startDemo: formatTranslation(moocLoginTranslations.mobile.startDemo.replace(/\\/g, '')),
     startLearning: formatTranslation(playerTranslations['Start learning']),
     selectAnAnswer: formatTranslation(playerTranslations['Select an answer']),
+    signInDesktop: formatTranslation(moocLoginTranslations.mobile.signInDesktop),
+    signInMobile: formatTranslation(moocLoginTranslations.mobile.signInMobile),
+    step: formatTranslation(moocLoginTranslations.mobile.step),
     typeHere: formatTranslation(playerTranslations['Type here']),
     validate: formatTranslation(playerTranslations.Validate),
-    // @todo get it from github
-    version: 'Version',
-    // @todo get it from github
+    version: formatTranslation(moocTranslations.mobile.version.title),
     unlockNextLevel: formatTranslation(playerTranslations['Unlock next level'] || ''),
-    upgrade: 'Upgrade',
-    // @todo get it from github
-    upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+    upgrade: formatTranslation(moocTranslations.mobile.version.upgrade),
+    upgradeDescription: formatTranslation(moocTranslations.mobile.version.upgradeDescription),
     winAdditionalStars: formatTranslation(componentsTranslations.media_stars_to_win_plural),
+    welcome: formatTranslation(moocLoginTranslations.mobile.welcome),
+    welcomeDescription: formatTranslation(moocLoginTranslations.mobile.welcomeDescription),
     wrongAnswer: formatTranslation(playerTranslations['Wrong answer']),
     yourAnswer: formatTranslation(playerTranslations['Your answer_']),
     yourAnswers: formatTranslation(playerTranslations['Your answers_'])

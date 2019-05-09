@@ -7,11 +7,12 @@ import splashScreen from 'react-native-splash-screen';
 
 import {assistanceEmail} from '../../app';
 import {BLUE_COORP_DARK} from '../modules/theme';
+import {AUTHENTICATION_TYPE} from '../const';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
-import type {Params as QRCodeScreenParams} from './qr-code';
+import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
 type ConnectedStateToProps = {|
   isAuthenticated: boolean
@@ -76,26 +77,31 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     await this.props.navigation.navigate('Home');
   };
 
-  handleScan = (token?: string) => {
-    if (token) {
-      this.handleSignIn(token);
-    }
-  };
-
-  handlePress = () => {
-    const {navigation} = this.props;
-    const params: QRCodeScreenParams = {
-      onScan: this.handleScan
-    };
-    navigation.navigate('QRCodeModal', params);
-  };
-
-  handleStartDemoPress = () => {
+  handleDemoPress = () => {
     this.handleSignIn();
   };
 
-  handleAssistancePress = () => {
+  handleHelpPress = () => {
     Linking.openURL(`mailto:${assistanceEmail}`);
+  };
+
+  handleDesktopButtonPress = () => {
+    this.handleDetailsNavigation(AUTHENTICATION_TYPE.QR_CODE);
+  };
+
+  handleMobileButtonPress = () => {
+    this.handleDetailsNavigation(AUTHENTICATION_TYPE.MAGIC_LINK);
+  };
+
+  handleDetailsNavigation = (type: $PropertyType<AuthenticationDetailsParams, 'type'>) => {
+    const {navigation} = this.props;
+    const params: AuthenticationDetailsParams = {
+      type,
+      onHelpPress: this.handleHelpPress,
+      onDemoPress: this.handleDemoPress,
+      onSignIn: this.handleSignIn
+    };
+    navigation.navigate('AuthenticationDetails', params);
   };
 
   render() {
@@ -103,12 +109,16 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
     return (
       <Screen testID="authentication-screen" noScroll noSafeArea style={styles.container}>
-        <StatusBar barStyle="light-content" backgroundColor={TOP_COLOR} />
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor={isSplashScreenHidden ? TOP_COLOR : BLUE_COORP_DARK}
+        />
         {isSplashScreenHidden && (
           <Authentication
-            onStartDemoPress={this.handleStartDemoPress}
-            onPress={this.handlePress}
-            onAssistancePress={this.handleAssistancePress}
+            onDemoPress={this.handleDemoPress}
+            onHelpPress={this.handleHelpPress}
+            onDesktopButtonPress={this.handleDesktopButtonPress}
+            onMobileButtonPress={this.handleMobileButtonPress}
           />
         )}
       </Screen>
@@ -117,7 +127,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 }
 
 const mapStateToProps = ({authentication}: StoreState): ConnectedStateToProps => ({
-  isAuthenticated: Boolean(authentication.token)
+  isAuthenticated: Boolean(authentication.user.token)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

@@ -30,6 +30,7 @@ export const HEIGHT = 54;
 
 const styles = StyleSheet.create({
   button: {
+    flexDirection: 'row',
     borderWidth: 0,
     borderRadius: theme.radius.button,
     marginBottom: 0,

@@ -5,7 +5,7 @@ import {reloadApp, bypassAuthentication} from './utils';
 describe('Basic Question', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   it('should see catalog and chosse a discipline', async () => {

@@ -14,7 +14,8 @@ import type {
   AnimationType,
   PermissionStatus,
   AppState,
-  AnalyticsEventType
+  AnalyticsEventType,
+  AuthenticationType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -181,3 +182,13 @@ export const ANALYTICS_EVENT_TYPE: {
 };
 // FlowAssert
 (Object.keys(ANALYTICS_EVENT_TYPE).map(k => ANALYTICS_EVENT_TYPE[k]): Array<AnalyticsEventType>);
+
+export const AUTHENTICATION_TYPE: {
+  QR_CODE: 'qr-code',
+  MAGIC_LINK: 'magic-link'
+} = {
+  QR_CODE: 'qr-code',
+  MAGIC_LINK: 'magic-link'
+};
+// FlowAssert
+(Object.keys(AUTHENTICATION_TYPE).map(k => AUTHENTICATION_TYPE[k]): Array<AuthenticationType>);

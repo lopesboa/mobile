@@ -1,16 +1,16 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, StatusBar} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 import {NavigationActions, NavigationEvents} from 'react-navigation';
 import {connect} from 'react-redux';
-import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 import QRCodeScanner from '../components/qr-code-scanner';
 import type {Props as QRCodeScannerProps} from '../components/qr-code-scanner';
+import Screen from '../components/screen';
 import Touchable from '../components/touchable';
-import theme, {defaultHitSlop} from '../modules/theme';
+import HeaderBackButton from '../components/header-back-button';
+import theme from '../modules/theme';
 import withPermissions from '../containers/with-permissions';
 import {hasPermission} from '../redux/utils/state-extract';
 import type {WithPermissionsProps} from '../containers/with-permissions';
@@ -32,11 +32,6 @@ type Props = $Exact<{|
 |}>;
 
 const styles = StyleSheet.create({
-  close: {
-    position: 'absolute',
-    top: getStatusBarHeight(),
-    padding: theme.spacing.base
-  },
   fakeScanArea: {
     position: 'absolute',
     width: '100%',
@@ -64,7 +59,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
     const {onScan} = this.props.navigation.state.params;
 
     return (
-      <View testID="qr-code-screen">
+      <Screen testID="qr-code-screen" noSafeArea noScroll>
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <QRCodeScanner onScan={onScan} hasPermission={this.props.hasPermission} />
@@ -75,17 +70,8 @@ class QRCodeScreen extends React.PureComponent<Props> {
             analyticsID="qr-code-area"
           />
         )}
-        <View style={styles.close}>
-          <Touchable
-            testID="button-close"
-            onPress={this.handleClose}
-            hitSlop={defaultHitSlop}
-            analyticsID="button-close"
-          >
-            <BackIcon height={16} width={16} color={theme.colors.white} />
-          </Touchable>
-        </View>
-      </View>
+        <HeaderBackButton type="close" onPress={this.handleClose} testID="qr-code-button-close" />
+      </Screen>
     );
   }
 }

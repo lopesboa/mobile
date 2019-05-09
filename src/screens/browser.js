@@ -1,12 +1,11 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, WebView, StyleSheet, StatusBar} from 'react-native';
+import {WebView, StyleSheet, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
-import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
 import Screen from '../components/screen';
-import Touchable from '../components/touchable';
+import HeaderBackButton from '../components/header-back-button';
 import theme from '../modules/theme';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
@@ -21,9 +20,6 @@ type Props = {|
 const styles = StyleSheet.create({
   browser: {
     flex: 1
-  },
-  close: {
-    paddingLeft: theme.spacing.small
   }
 });
 
@@ -43,15 +39,13 @@ class Browser extends React.PureComponent<Props> {
       },
       title: navigation.getParam('title'),
       headerLeft: (
-        <View style={styles.close}>
-          <Touchable
-            testID="button-close"
-            onPress={Browser.handleButtonPress(screenProps)}
-            analyticsID="button-close"
-          >
-            <BackIcon height={16} width={16} color={theme.colors.gray.dark} />
-          </Touchable>
-        </View>
+        <HeaderBackButton
+          type="close"
+          color={theme.colors.gray.dark}
+          onPress={Browser.handleButtonPress(screenProps)}
+          isFloating={false}
+          testID="browser-button-close"
+        />
       )
     };
   };

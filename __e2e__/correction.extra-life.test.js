@@ -2,31 +2,31 @@
 
 import {reloadApp, bypassAuthentication} from './utils';
 
-const wrongAnswer = async ({clickOnNext = true}: {clickOnNext: boolean}) => {
-  await element(by.id('question-screen')).swipe('up');
-  await element(by.id('question-choice-1')).tap();
-  await element(by.id('button-validate')).tap();
-  await waitFor(element(by.id('correction-error'))).toBeVisible();
-  await weExpect(element(by.id('correction-error'))).toBeVisible();
+const wrongAnswer = async (el: DetoxElement, {clickOnNext = true}: {clickOnNext: boolean}) => {
+  await el(by.id('question-screen')).swipe('up');
+  await el(by.id('question-choice-1')).tap();
+  await el(by.id('button-validate')).tap();
+  await waitFor(el(by.id('correction-error'))).toBeVisible();
+  await weExpect(el(by.id('correction-error'))).toBeVisible();
 
   if (clickOnNext) {
-    await element(by.id('button-next-question')).tap();
+    await el(by.id('button-next-question')).tap();
   }
 };
 
 describe('Correction: extra-life', () => {
   beforeAll(async () => {
-    await reloadApp({microphone: 'YES'});
-    await bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication(element);
     await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-basic-dis-1')).tap();
     await waitFor(element(by.id('question'))).toBeVisible();
   });
 
   it('3 wrong answers', async () => {
-    await wrongAnswer({clickOnNext: true});
-    await wrongAnswer({clickOnNext: true});
-    await wrongAnswer({clickOnNext: false});
+    await wrongAnswer(element, {clickOnNext: true});
+    await wrongAnswer(element, {clickOnNext: true});
+    await wrongAnswer(element, {clickOnNext: false});
   });
 
   it('should offer extralife', async () => {
@@ -38,7 +38,7 @@ describe('Correction: extra-life', () => {
   });
 
   it('a 4th wrong answer', async () => {
-    await wrongAnswer({clickOnNext: false});
+    await wrongAnswer(element, {clickOnNext: false});
   });
 
   afterAll(async () => {

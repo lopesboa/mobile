@@ -825,13 +825,47 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <View
-              onLayout={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "width": 320,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": 320,
+                  }
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": "100%",
+                        "width": 320,
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-1-img"
+                />
+              </View>
+            </View>
           </View>
           <View
             style={
@@ -950,13 +984,47 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <View
-              onLayout={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "width": 320,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": 320,
+                  }
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": "100%",
+                        "width": 320,
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-2-img"
+                />
+              </View>
+            </View>
           </View>
           <View
             style={
@@ -1078,13 +1146,47 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
             }
           >
             <View
-              onLayout={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "width": 320,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": 320,
+                  }
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": "100%",
+                        "width": 320,
+                      },
+                      undefined,
+                    ]
+                  }
+                  testID="question-choice-3-img"
+                />
+              </View>
+            </View>
           </View>
           <View
             style={

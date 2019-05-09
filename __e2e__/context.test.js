@@ -5,7 +5,7 @@ import {reloadApp, bypassAuthentication} from './utils';
 describe('Context', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   describe('With image', () => {

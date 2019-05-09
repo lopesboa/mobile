@@ -3,17 +3,32 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Zrušit',
   accessTheLesson: 'Vstup do lekce',
+  authenticationMagicLinkHeader:
+    'Pro ověření své identity na webové identity použijte toto zařízení',
+  authenticationMagicLinkStepOneDescription:
+    'Připojte se ke vzdělávací platformě <b>pomocí tohoto zařízení</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Přejděte na <b>svůj Účet</b> </br>, je v pravém horním rohu',
+  authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>Váš Magic Link bude přímo tam ',
+  authenticationMagicLinkTitle: 'Magic link ',
+  authenticationQRCodeHeader: 'Pro ověření své identity na webové identity použijte počítač',
+  authenticationQRCodeStepOneDescription:
+    'Připojte se ke vzdělávací platformě <b>pomocí počítače</b>',
+  authenticationQRCodeStepTwoDescription:
+    'Přejděte na <b>svůj Účet</b> </br>, je v pravém horním rohu',
+  authenticationQRCodeStepThreeDescription:
+    '<b>Voilà!</b></br>Naskenujte svůj kód QR pomocí tlačítka níže',
+  authenticationQRCodeTitle: 'Kód QR',
   backToHome: 'Zpět domů',
   bonus: 'Bonus!',
+  cancel: 'Zrušit',
   clue: 'Záchytný bod',
   clueStarsToLoose:
     'Odemknutí nápovědy sníží počet hvězd, které můžete získat na této otázce o {{count}} (pokud ji zodpovíte správně)',
   congratulations: 'Blahopřejeme!',
   context: 'Kontext',
   correction: 'Oprava',
-  demoMode: 'Nemáte vzdělávací platformu? <a href="/"><b><u>Spustit ukázku</u></b></a>',
   didYouKnowThat: 'Věděli jste to?',
   finishLearning: 'Nejdřív pokračujte tady',
   forYou: 'Naše nejlepší tipy pro vás',
@@ -23,19 +38,9 @@ const translations: Translations = {
   goodJob: 'Dobře!',
   goToQuestion: 'Přejděte k otázce',
   highscore: 'Máte nové nejvyšší skóre,<br><b>právě jste vyhráli {{score}} hvězdiček</b>',
+  howToSignIn: 'Jakým způsobem se chcete přihlásit? ',
   keyPoint: 'Klíčový bod',
   lesson: 'Lekce',
-  loginButton: 'Naskenujte svůj <b>QR kód</b>',
-  loginFirstStepHeader: 'Krok <b>01</b>',
-  loginFirstStepDescription:
-    'Připojte se na svoji výukovou </br>platformu <b>pomocí jiného </br>zařízení</b>',
-  loginSecondStepHeader: 'Krok <b>02</b>',
-  loginSecondStepDescription:
-    'Přejděte na <b>Nastavení > Účet</b> </br>v pravém horním rohu obrazovky',
-  loginThirdStepHeader: 'Krok <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Váš QR kód bude </br>přímo tady',
-  loginHeader:
-    'Pro otevření školící aplikace vaší společnosti musíte naskenovat <b>váš osobní QR kód.</b>',
   logOut: 'Odhlásit se',
   needHelp: 'Potřebujete pomoc?',
   new: 'nové',
@@ -44,28 +49,38 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Ó jé...',
   open: 'Otevřít',
-  openSettings: 'Open settings',
+  openBrowser: 'Otevřít <b>můj prohlížeč</b>',
+  openSettings: 'Otevřít nastavení',
   ouch: 'Ach...',
   outOfLives: 'Už nemáte životy',
-  permission: 'Permission',
+  permission: 'Povolení',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    'Abychom mohli naskenovat váš kód QR a ověřit vás, potřebujeme přístup k vašemu fotoaparátu. ',
   question: 'Otázka',
   quit: 'Opustit',
   relatedSubjects: 'Doporučeno pro vás:',
   retryLevel: 'Zkuste úroveň znovu',
+  scanQRCode: 'Naskenujte svůj <b>kód QR</b>',
   seeClue: 'Zobrazit nápovědu',
   selectSomethingBelow: 'Vyberte něco níže',
+  startDemo: 'Nemáte účet? <a href="/"><b><u>Začněte zkušební dobu!</u></b></a>',
   startLearning: 'Tímto byste měli začít',
   selectAnAnswer: 'Vyberte odopvěď',
+  signInDesktop: 'Přihlásit se pomocí tohoto počítače',
+  signInMobile: 'Přihlaste se pomocí tohoto zařízení',
+  step: 'Krok ',
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
-  version: 'Version',
+  version: 'Verze',
   unlockNextLevel: 'Právě jste odemkli<br><b>úroveň {{levelName}}</b>',
-  upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgrade: 'Aktualizovat',
+  upgradeDescription:
+    'Vaši aplikace byla aktualizována! Abyste si ji mohli plně vychutnat, stáhněte si prosím nejnovější verzi.',
   winAdditionalStars:
     'Získejte další hvězdy ({{count}}) v této kapitole při prvním zobrazení lekce!',
+  welcome: 'Vítejte ',
+  welcomeDescription:
+    'Tato aplikace je spojena s vaším osobním účtem na vzdělávací platformě vaší společnosti. ',
   wrongAnswer: 'Chybná odpověď',
   yourAnswer: 'Vaše odpověď:',
   yourAnswers: 'Vaše odpovědi:'

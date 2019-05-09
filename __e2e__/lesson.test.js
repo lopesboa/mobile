@@ -5,7 +5,7 @@ import {reloadApp, bypassAuthentication, getLessonTab} from './utils';
 describe('Lesson', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   describe('More than 1 resource', () => {
@@ -150,11 +150,11 @@ describe('Lesson', () => {
       });
 
       it('should close the pdf', async () => {
-        await weExpect(element(by.id('button-close'))).toBeVisible();
-        await element(by.id('button-close')).tap();
+        await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
+        await element(by.id('pdf-button-close')).tap();
         await waitFor(element(by.id('pdf-screen'))).toBeNotVisible();
         await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
-        await weExpect(element(by.id('button-close'))).toBeNotVisible();
+        await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
       });
     });
 

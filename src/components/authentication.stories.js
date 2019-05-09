@@ -8,8 +8,9 @@ import Authentication from './authentication';
 
 storiesOf('Authentication', module).add('Default', () => (
   <Authentication
-    onPress={handleFakePress}
-    onAssistancePress={handleFakePress}
-    onStartDemoPress={handleFakePress}
+    onHelpPress={handleFakePress}
+    onDemoPress={handleFakePress}
+    onDesktopButtonPress={handleFakePress}
+    onMobileButtonPress={handleFakePress}
   />
 ));

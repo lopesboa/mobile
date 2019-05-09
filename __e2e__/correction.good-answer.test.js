@@ -4,8 +4,8 @@ import {reloadApp, bypassAuthentication} from './utils';
 
 describe('Correction: good answer', () => {
   beforeAll(async () => {
-    await reloadApp({microphone: 'YES'});
-    await bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication(element);
     await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-basic-dis-1')).tap();
     await waitFor(element(by.id('question'))).toBeVisible();

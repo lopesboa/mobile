@@ -27,8 +27,9 @@ export type FontSizeType =
   | 'medium'
   | 'regular'
   | 'large'
-  | 'extraLarge'
-  | 'xxlarge';
+  | 'xlarge'
+  | 'xxlarge'
+  | 'xxxlarge';
 
 export type Theme = {|
   colors: Colors,
@@ -47,6 +48,9 @@ export type Theme = {|
   },
   fontSize: {
     [FontSizeType]: FontSize
+  },
+  letterSpacing: {
+    header: number
   }
 |};
 
@@ -94,19 +98,23 @@ const theme: Theme = {
     medium: 13,
     regular: 15,
     large: 17,
-    extraLarge: 22,
-    xxlarge: 28
+    xlarge: 22,
+    xxlarge: 28,
+    xxxlarge: 40
+  },
+  letterSpacing: {
+    header: 5
   }
 };
 
 export const BLUE_COORP_LIGHT: string = '#00B0FF';
 export const BLUE_COORP_DARK: string = '#4481EB';
 
-export const defaultHitSlop = {
-  left: theme.spacing.small,
-  top: theme.spacing.small,
-  right: theme.spacing.small,
-  bottom: theme.spacing.small
-};
+export const getHitSlop = (type: SpaceType = 'small'): HitSlop => ({
+  left: theme.spacing[type],
+  top: theme.spacing[type],
+  right: theme.spacing[type],
+  bottom: theme.spacing[type]
+});
 
 export default theme;

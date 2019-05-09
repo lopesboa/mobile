@@ -142,6 +142,7 @@ if (__TEST__) {
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([disciplineNewCoorp]);
     });
+
     it('should handle onButtonPress callback', () => {
       const handlePress = jest.fn();
       const component = renderer.create(

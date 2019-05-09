@@ -3,17 +3,31 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Visszavonás',
   accessTheLesson: 'Hozzáférés a leckéhez',
+  authenticationMagicLinkHeader:
+    'Használd ezt a készüléket identitásod ellenőrzésére a webes platformon',
+  authenticationMagicLinkStepOneDescription:
+    'Kapcsolódj tanulási platformodhoz <b>ezzel a készülékkel</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Lépjen be a <b>Fiókjába</b> </br>a jobb felső sarokban',
+  authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>Varázshivatkozásod itt is lesz',
+  authenticationMagicLinkTitle: 'Varázshivatkozás',
+  authenticationQRCodeHeader: 'Számítógép segítségével ellenőrizd identitásodat a webes platformon',
+  authenticationQRCodeStepOneDescription:
+    'Kapcsolódj tanulási platformodhoz  <b>egy számítógéppel</b>',
+  authenticationQRCodeStepTwoDescription: 'Lépjen be a <b>Fiókjába</b> </br>a jobb felső sarokban',
+  authenticationQRCodeStepThreeDescription:
+    '<b>Voilà!</b></br>Az alábbi gombbal olvasd be QR-kódodat',
+  authenticationQRCodeTitle: 'QR-kód',
   backToHome: 'Vissza a főoldalra',
   bonus: 'Bónusz!',
+  cancel: 'Visszavonás',
   clue: 'Tipp',
   clueStarsToLoose:
     'A tipp feloldása {{count}} csillaggal csökkentheti a nyereményét ennél a kérdésnél (ha jól válaszol)',
   congratulations: 'Gratulálunk!',
   context: 'Kontextus',
   correction: 'Javítás',
-  demoMode: 'Nincs tanulói platform? <a href="/"><b><u>Indíts egy demót</u></b></a>',
   didYouKnowThat: 'Tudta?',
   finishLearning: 'Folytasd ezt előtte',
   forYou: 'Legjobb ajánlataink számodra',
@@ -23,18 +37,9 @@ const translations: Translations = {
   goodJob: 'Remek munka!',
   goToQuestion: 'Menjen a kérdéshez',
   highscore: 'Új rekordot értél el<br> <b>{{score}} csillagot nyertél</b>',
+  howToSignIn: 'Hogyan szeretnél bejelentkezni?',
   keyPoint: 'Kulcspont',
   lesson: 'Lecke',
-  loginButton: 'Olvasd be <b>QR-kódodat</b>',
-  loginFirstStepHeader: '<b>01.</b> lépés',
-  loginFirstStepDescription:
-    'Csatlakozz tanulói </br>platformodhoz <b> egy másik </br>készülékkel</b>',
-  loginSecondStepHeader: '<b>02.</b> lépés',
-  loginSecondStepDescription: 'Menj a <b>Beállítások > Fiók</b> </br>menübe a jobb felső sarokban',
-  loginThirdStepHeader: '<b>03.</b> lépés',
-  loginThirdStepDescription: '<b>Voilà!</b> Ott találod </br>QR-kódodat </br>',
-  loginHeader:
-    'Vállalatod tanulói alkalmazásának megnyitásához be kell olvasnod <b>személyes QR-kódodat.</b>',
   logOut: 'Kijelentkezés',
   needHelp: 'Segítsünk?',
   new: 'új',
@@ -43,28 +48,38 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Hoppá...',
   open: 'Megnyitás',
-  openSettings: 'Open settings',
+  openBrowser: 'Nyisd meg <b>böngészőmet</b>',
+  openSettings: 'Nyisd meg a beállításokat',
   ouch: 'Jajj...',
   outOfLives: 'Önnek nincs több élete!',
-  permission: 'Permission',
+  permission: 'Engedély',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    'A QR-kód beolvasásához és hitelesítésedhez hozzáféréssel kell rendelkeznünk kamerádhoz.',
   question: 'Kérdés',
   quit: 'Kilépés',
   relatedSubjects: 'Önnek ajánljuk:',
   retryLevel: 'Szint  újrajátszása',
+  scanQRCode: 'Olvasd be <b>QR-kódodat</b>',
   seeClue: 'Tipp megtekintése',
   selectSomethingBelow: 'Válasszon ki valamit alul',
+  startDemo: 'Nincs fiókja? <a href="/"><b><u>Próbálja ki!</u></b></a>',
   startLearning: 'Javasoljuk, hogy ezzel kezdd',
   selectAnAnswer: 'Válasszon ki egy választ',
+  signInDesktop: 'Jelentkezz be egy számítógéppel',
+  signInMobile: 'Jelentkezz be ezzel a készülékkel',
+  step: 'Lépés',
   typeHere: 'Írjon ide',
   validate: 'Érvényesít',
-  version: 'Version',
+  version: 'Verzió',
   unlockNextLevel: 'Elérted a(z) <br><b>{{levelName}} szintet</b>',
-  upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgrade: 'Frissítés',
+  upgradeDescription:
+    'Alkalmazásod frissítve lett! Töltsd le a legújabb verziót, hogy élvezhesd előnyeit.',
   winAdditionalStars:
     'Nyerjen további {{count}} csillagot ebben a fejezetben egy lecke először történő megtekintésével!',
+  welcome: 'Üdvözlünk',
+  welcomeDescription:
+    'Ez az alkalmazás kapcsolódik személyes fiókodhoz vállalatod tanulási platformján.',
   wrongAnswer: 'Rossz válasz',
   yourAnswer: 'Az ön válasza:',
   yourAnswers: 'Az ön válaszai:'

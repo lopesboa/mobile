@@ -14,7 +14,9 @@ platform :android do
   lane :adhoc do
     gradle(
       task: "assemble",
-      build_type: "Release"
+      build_type: "Release",
+      # To avoid OOM (exit code 137) as we generated it before
+      flags: "-x bundleReleaseJsAndAssets"
     )
   end
 
@@ -32,7 +34,9 @@ platform :android do
     )
     gradle(
       task: "assemble",
-      build_type: "Release"
+      build_type: "Release",
+      # To avoid OOM (exit code 137) as we generated it before
+      flags: "-x bundleReleaseJsAndAssets"
     )
     supply(track: "internal")
 

@@ -82,7 +82,7 @@ function withUniversalLinks<P>(WrappedComponent: React$ComponentType<P>): React$
   }
 
   const mapStateToProps = ({authentication}: StoreState): ConnectedStateProps => ({
-    token: authentication.token
+    token: authentication.user.token
   });
 
   const mapDispatchToProps: ConnectedDispatchProps = {

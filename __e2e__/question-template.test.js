@@ -2,7 +2,7 @@
 
 import {reloadApp, bypassAuthentication} from './utils';
 
-const selectAppStoreItem = async el => {
+const selectAppStoreItem = async (el: DetoxElement) => {
   // to simulate tap on picker item
   await el(by.text('Select an answer'))
     .atIndex(0)
@@ -12,7 +12,7 @@ const selectAppStoreItem = async el => {
 describe('Template', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   it('should see catalog and choose a discipline', async () => {

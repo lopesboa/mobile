@@ -3,17 +3,32 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Cancel',
   accessTheLesson: 'Access the lesson',
+  authenticationMagicLinkHeader: 'Use this device to verify your identity on the web platform',
+  authenticationMagicLinkStepOneDescription:
+    'Connect to your learning platform <b>with this device</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Go to <b>your Account</b> </br>in the upper right-hand corner',
+  authenticationMagicLinkStepThreeDescription:
+    '<b>Voilà!</b></br>Your Magic Link will be right there',
+  authenticationMagicLinkTitle: 'Magic link',
+  authenticationQRCodeHeader: 'Use a computer to verify your identity on the web platform',
+  authenticationQRCodeStepOneDescription:
+    'Connect to your learning platform <b>with a computer</b>',
+  authenticationQRCodeStepTwoDescription:
+    'Go to <b>your Account</b> </br>in the upper right-hand corner',
+  authenticationQRCodeStepThreeDescription:
+    '<b>Voilà!</b></br>Scan your QR code using the button below',
+  authenticationQRCodeTitle: 'QR Code',
   backToHome: 'Back to home',
   bonus: 'Bonus!',
+  cancel: 'Cancel',
   clue: 'Clue',
   clueStarsToLoose:
     'Unlocking the clue reduces the stars you can gain on this question by {{count}} (if you get it right)',
   congratulations: 'Congratulations!',
   context: 'Context',
   correction: 'Correction',
-  demoMode: 'No learning platform? <a href="/"><b><u>Start Demo</u></b></a>',
   didYouKnowThat: 'Did you know that?',
   finishLearning: 'Continue this one first',
   forYou: 'Our top picks for you',
@@ -23,18 +38,9 @@ const translations: Translations = {
   goodJob: 'Good job!',
   goToQuestion: 'Go to question',
   highscore: 'You have a new highscore<br><b>you just won {{score}} stars</b>',
+  howToSignIn: 'How would you like to sign in?',
   keyPoint: 'Key point',
   lesson: 'Lesson',
-  loginButton: 'Scan your <b>QR code</b>',
-  loginFirstStepHeader: 'Step <b>01</b>',
-  loginFirstStepDescription:
-    'Connect to your learning </br>platform <b>with another </br>device</b>',
-  loginSecondStepHeader: 'Step <b>02</b>',
-  loginSecondStepDescription: 'Go to <b>Settings > Account</b> </br>in the upper right-hand corner',
-  loginThirdStepHeader: 'Step <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Your QR code will be </br>right there',
-  loginHeader:
-    "To open your company's learning app, you need to scan <b>your personal QR code.</b>",
   logOut: 'Log out',
   needHelp: 'Need help?',
   new: 'new',
@@ -43,28 +49,38 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Ooops...',
   open: 'Open',
+  openBrowser: 'Open <b>my browser</b>',
   openSettings: 'Open settings',
   ouch: 'Ouch...',
   outOfLives: 'You are out of lives!',
   permission: 'Permission',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    'We need to access your camera in order to scan your QR code and authenticate you.',
   question: 'Question',
   quit: 'Quit',
   relatedSubjects: 'Recommended for you:',
   retryLevel: 'Retry level',
+  scanQRCode: 'Scan your <b>QR code</b>',
   seeClue: 'See clue',
   selectSomethingBelow: 'Select something below',
+  startDemo: 'No account? <a href="/"><b><u>Start trial!</u></b></a>',
   startLearning: 'You should start with this one',
   selectAnAnswer: 'Select an answer',
+  signInDesktop: 'Sign in with a computer',
+  signInMobile: 'Sign in with this device',
+  step: 'Step',
   typeHere: 'Type here',
   validate: 'Validate',
   version: 'Version',
   unlockNextLevel: 'You have just unlocked<br><b>{{levelName}} level</b>',
   upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgradeDescription:
+    'Your application has been updated! Please download the latest version to enjoy it.',
   winAdditionalStars:
     'Win {{count}} additional stars in this chapter the first time you view a lesson!',
+  welcome: 'Welcome',
+  welcomeDescription:
+    'This app is linked to your personal account on your company’s Learning Platform.',
   wrongAnswer: 'Wrong answer',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

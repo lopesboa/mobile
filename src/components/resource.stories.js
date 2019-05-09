@@ -77,20 +77,30 @@ storiesOf('Resource', module)
       />
     </TestContextProvider>
   ))
-  .add('Default', () => (
+  .add('Unsupported type', () => (
     <TestContextProvider>
       <Resource
         // In this case we return null whenever we dont match
         // any of the supported types so react doesn't throw
         // an exception for not returning any React Element
         // in the render method
-
         // $FlowFixMe
         type="unhandledType"
         url="not really a url"
         description="some description"
         thumbnail={video.poster}
         layout={fakeLayout}
+        onPress={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Without layout', () => (
+    <TestContextProvider>
+      <Resource
+        type={video.type}
+        url={video.url}
+        description={video.description}
+        thumbnail={video.poster}
         onPress={handleFakePress}
       />
     </TestContextProvider>

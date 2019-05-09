@@ -1,154 +1,134 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet, ImageBackground} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
-import {NovaSolidLocationsLocationPinQuestionMark1 as QuestionIcon} from '@coorpacademy/nova-icons';
 
-import {SPACE} from '../const';
-import logo from '../assets/images/logo-coorp.png';
-import theme, {defaultHitSlop, BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
+import background from '../assets/images/authentication.png';
+import logo from '../assets/images/logo.png';
+import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
 import translations from '../translations';
-import Carousel from '../containers/carousel';
-import Button from './button';
-import Image from './image';
-import Space from './space';
-import Html from './html';
+import AuthenticationFooter from './authentication-footer';
+import type {Props as AuthenticationFooterProps} from './authentication-footer';
 import Gradient from './gradient';
-import StepsIcon, {TARGET} from './steps-icon';
+import Image from './image';
 import Text from './text';
-import Touchable from './touchable';
+import Space from './space';
+import Button from './button';
 
 type Props = {|
-  onPress: () => void,
-  onAssistancePress: () => void,
-  onStartDemoPress: () => void
+  onHelpPress: $PropertyType<AuthenticationFooterProps, 'onHelpPress'>,
+  onDemoPress: $PropertyType<AuthenticationFooterProps, 'onDemoPress'>,
+  onDesktopButtonPress: () => void,
+  onMobileButtonPress: () => void
 |};
 
 const styles = StyleSheet.create({
+  background: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%'
+  },
   gradient: {
-    flex: 1
+    flex: 1,
+    opacity: 0.8
   },
   container: {
-    flex: 1
+    flexGrow: 1
   },
-  wrapper: {
-    padding: theme.spacing.base
-  },
-  titlewrapper: {
-    paddingBottom: theme.spacing.base
-  },
-  headerContainer: {
-    paddingHorizontal: theme.spacing.medium
+  scroll: {
+    paddingTop: theme.spacing.base,
+    paddingBottom: theme.spacing.base,
+    justifyContent: 'space-between'
   },
   header: {
-    color: 'white',
-    textAlign: 'center'
-  },
-  carousel: {
-    height: '40%'
-  },
-  logo: {
+    paddingTop: theme.spacing.base,
+    paddingHorizontal: theme.spacing.base,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  logoImg: {
+  image: {
     width: 192,
     height: 35
   },
-  button: {
-    fontWeight: 'bold',
-    fontSize: theme.fontSize.large,
-    color: BLUE_COORP_LIGHT,
+  footer: {
+    paddingHorizontal: theme.spacing.base
+  },
+  contentHeader: {
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.xxxlarge,
+    color: theme.colors.white,
     textAlign: 'center'
   },
-  buttonWithIcon: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
-  centeredContent: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  needHelp: {
-    textDecorationLine: 'underline',
-    fontSize: theme.fontSize.medium,
-    color: theme.colors.white
-  },
-  startDemo: {
-    textAlign: 'center',
+  contentDescription: {
     fontSize: theme.fontSize.large,
-    color: theme.colors.white
+    color: theme.colors.white,
+    textAlign: 'center'
   },
-  questionIcon: {
-    width: 21,
-    height: 21
+  contentFooter: {
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.large,
+    color: theme.colors.white,
+    textAlign: 'center'
   }
 });
 
 export const TOP_COLOR = BLUE_COORP_DARK;
 export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
-const Authentication = ({onPress, onStartDemoPress, onAssistancePress}: Props) => (
-  <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient}>
+const Authentication = ({
+  onHelpPress,
+  onDemoPress,
+  onDesktopButtonPress,
+  onMobileButtonPress
+}: Props) => (
+  <React.Fragment>
+    <ImageBackground source={background} style={styles.background} resizeMode="cover">
+      <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient} />
+    </ImageBackground>
     <SafeAreaView style={styles.container}>
-      <View style={[styles.wrapper, styles.logo]} testID="logo-header">
-        <Image source={logo} style={styles.logoImg} />
-      </View>
-      <View style={styles.titlewrapper} testID="sign-in-header">
-        <View style={[styles.headerContainer]}>
-          <Html fontSize={theme.fontSize.large} style={styles.header} isTextCentered>
-            {translations.loginHeader}
-          </Html>
+      <ScrollView contentContainerStyle={[styles.container, styles.scroll]} testID="authentication">
+        <View style={styles.header} testID="authentication-header">
+          <Image source={logo} style={styles.image} testID="authentication-logo" />
         </View>
-      </View>
-      <Space type="tiny" />
-      <Carousel />
-      <Space type="tiny" />
-      <View style={styles.wrapper}>
-        <Button
-          isInverted
-          isTextSecondary
-          onPress={onPress}
-          testID="button-scan-qr-code"
-          analyticsID="button-scan-qr-code"
-        >
-          <View style={styles.buttonWithIcon}>
-            <StepsIcon iconName={TARGET} color={BLUE_COORP_LIGHT} height={30} width={30} />
-            <Space />
-            <Html fontSize={theme.fontSize.large} style={styles.button}>
-              {translations.loginButton}
-            </Html>
-          </View>
-        </Button>
-        <Space type={SPACE.TINY} />
-        <View style={styles.centeredContent}>
-          <Html
-            fontSize={theme.fontSize.large}
-            style={styles.startDemo}
-            onLinkPress={onStartDemoPress}
-            anchorTextColor={theme.colors.white}
-            isTextCentered
+        <Space type="large" />
+        <View style={styles.footer}>
+          <Text style={styles.contentHeader} testID="authentication-content-header">
+            {translations.welcome}
+          </Text>
+          <Space type="tiny" />
+          <Text style={styles.contentDescription} testID="authentication-content-description">
+            {translations.welcomeDescription}
+          </Text>
+          <Space type="base" />
+          <Text style={styles.contentFooter} testID="authentication-content-footer">
+            {translations.howToSignIn}
+          </Text>
+          <Space type="base" />
+          <Button
+            isInverted
+            isTextSecondary
+            onPress={onDesktopButtonPress}
+            testID="button-sign-in-desktop"
+            analyticsID="button-sign-in-desktop"
           >
-            {translations.demoMode}
-          </Html>
+            {translations.signInDesktop}
+          </Button>
+          <Space type="tiny" />
+          <Button
+            isInlined
+            onPress={onMobileButtonPress}
+            testID="button-sign-in-mobile"
+            analyticsID="button-sign-in-mobile"
+          >
+            {translations.signInMobile}
+          </Button>
+          <Space type="small" />
+          <AuthenticationFooter onHelpPress={onHelpPress} onDemoPress={onDemoPress} />
         </View>
-        <Space type={SPACE.TINY} />
-        <Touchable
-          hitSlop={defaultHitSlop}
-          onPress={onAssistancePress}
-          style={styles.centeredContent}
-          analyticsID="need-help"
-        >
-          <QuestionIcon color={theme.colors.white} style={styles.questionIcon} />
-          <Space type={SPACE.TINY} />
-          <Text style={styles.needHelp}>{translations.needHelp}</Text>
-        </Touchable>
-      </View>
+      </ScrollView>
     </SafeAreaView>
-  </Gradient>
+  </React.Fragment>
 );
 
 export default Authentication;

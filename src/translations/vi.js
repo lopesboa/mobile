@@ -3,17 +3,33 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Hủy',
   accessTheLesson: 'Truy cập vào bài học này',
+  authenticationMagicLinkHeader:
+    'Dùng thiết bị này để xác minh danh tính của bạn trên nền tảng web',
+  authenticationMagicLinkStepOneDescription:
+    'Kết nối với nền tảng học tập của bạn <b>bằng thiết bị này</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
+  authenticationMagicLinkStepThreeDescription:
+    '<b>Được rồi!</b></br>Liên kết Ma thuật của bạn sẽ hiển thị ngay thôi',
+  authenticationMagicLinkTitle: 'Liên kết ma thuật',
+  authenticationQRCodeHeader: 'Dùng máy tính để xác minh danh tính của bạn trên nền tảng web',
+  authenticationQRCodeStepOneDescription:
+    'Kết nối với nền tảng học tập của bạn bằng <b>máy tính</b>',
+  authenticationQRCodeStepTwoDescription:
+    'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
+  authenticationQRCodeStepThreeDescription:
+    '<b>Được rồi!</b></br>Quét mã QR của bạn bằng nút bên dưới',
+  authenticationQRCodeTitle: 'Mã QR',
   backToHome: 'Quay về trang chủ',
   bonus: 'Thưởng!',
+  cancel: 'Hủy',
   clue: 'Gợi ý',
   clueStarsToLoose:
     'Mở khóa gợi ý làm giảm số sao bạn có thể đạt được cho câu hỏi này đi {{count}} sao (nếu bạn đáp đúng)',
   congratulations: 'Chúc mừng bạn!',
   context: 'Bối cảnh',
   correction: 'Chỉnh sửa',
-  demoMode: 'Không có nền tảng học tập? <a href="/"><b><u>Bắt đầu bản Demo</u></b></a>',
   didYouKnowThat: 'Bạn đã biết điều đó?',
   finishLearning: 'Tiếp tục phần này trước',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
@@ -23,17 +39,9 @@ const translations: Translations = {
   goodJob: 'Bạn làm tốt lắm!',
   goToQuestion: 'Đi đến câu hỏi',
   highscore: 'Bạn có mức điểm cao mới <br><b>bạn vừa giành được {{score}} sao</b>',
+  howToSignIn: 'Bạn muốn đăng nhập bằng cách nào?',
   keyPoint: 'Điểm quan trọng',
   lesson: 'Bài học',
-  loginButton: 'Quét <b>mã QR</b> của bạn',
-  loginFirstStepHeader: 'Bước <b>01</b>',
-  loginFirstStepDescription:
-    'Kết nối </br>nền tảng <b>học trực tuyến của bạn với một </br>thiết bị</b> khác',
-  loginSecondStepHeader: 'Bước <b>02</b>',
-  loginSecondStepDescription: 'Đến phần <b>Cài đặt > Tài khoản</b> </br>ở góc trên bên phải',
-  loginThirdStepHeader: 'Bước <b>03</b>',
-  loginThirdStepDescription: '<b>Xem này!</b> </br>Mã QR của bạn sẽ xuất hiện ở </br>ngay đây',
-  loginHeader: 'Bạn cần quét <b>mã QR cá nhân</b> để mở được ứng dụng học tập của công ty mình.',
   logOut: 'Đăng xuất',
   needHelp: 'Cần giúp đỡ?',
   new: 'new',
@@ -42,28 +50,38 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Rất tiếc…',
   open: 'Mở',
-  openSettings: 'Open settings',
+  openBrowser: 'Mở <b>trình duyệt của tôi</b>',
+  openSettings: 'Mở cài đặt',
   ouch: 'Ối...',
   outOfLives: 'Bạn đã hết mạng!',
-  permission: 'Permission',
+  permission: 'Cấp phép',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    'Chúng tôi cần truy cập vào camera để có thể quét mã QR và xác thực danh tính của bạn.',
   question: 'Câu hỏi',
   quit: 'Thoát',
   relatedSubjects: 'Đề xuất dành cho bạn:',
   retryLevel: 'Thử lại cấp độ',
+  scanQRCode: 'Quét <b>mã QR </b>của bạn',
   seeClue: 'Xem gợi ý',
   selectSomethingBelow: 'Chọn một điều nào đó dưới đây',
+  startDemo: 'Không có tài khoản? <a href="/"><b><u>Hãy bắt đầu dùng thử!</u></b></a>',
   startLearning: 'Bạn nên bắt đầu từ đây',
   selectAnAnswer: 'Chọn câu trả lời',
+  signInDesktop: 'Đăng nhập bằng máy tính',
+  signInMobile: 'Đăng nhập bằng thiết bị này',
+  step: 'Bước',
   typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
-  version: 'Version',
+  version: 'Phiên bản',
   unlockNextLevel: 'Bạn vừa mở khóa cấp độ <br><b>{{levelName}}</b>',
-  upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgrade: 'Nâng cấp',
+  upgradeDescription:
+    'Ứng dụng của bạn đã được cập nhật! Vui lòng tải phiên bản mới nhất để trải nghiệm.',
   winAdditionalStars:
     'Giành được thêm {{count}} sao trong chương này khi xem bài học lần đầu tiên!',
+  welcome: 'Chào mừng',
+  welcomeDescription:
+    'Ứng dụng này được liên kết với tài khoản cá nhân của bạn trên Nền tảng Học tập của công ty bạn.',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

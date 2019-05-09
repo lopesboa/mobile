@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Resource Default 1`] = `null`;
-
 exports[`Storyshots Resource PDF (with extra life) 1`] = `
 <View
   style={
@@ -824,6 +822,8 @@ exports[`Storyshots Resource PDF 1`] = `
 </View>
 `;
 
+exports[`Storyshots Resource Unsupported type 1`] = `null`;
+
 exports[`Storyshots Resource Video (with extra life) 1`] = `
 Array [
   <Mock$ReactNavigation$NavigationEvents
@@ -1600,3 +1600,5 @@ exports[`Storyshots Resource WithImage 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots Resource Without layout 1`] = `null`;

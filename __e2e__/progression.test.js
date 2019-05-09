@@ -5,7 +5,7 @@ import {reloadApp, bypassAuthentication, getLessonTab} from './utils';
 describe('Progression', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   describe('Learner', () => {

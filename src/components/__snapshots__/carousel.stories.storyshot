@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Carousel Default 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  testID="carousel"
+>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Array [
+        Object {
+          "width": 750,
+        },
+        Array [
+          undefined,
+          Object {
+            "width": 320,
+          },
+        ],
+      ]
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        Array [
+          Object {
+            "paddingHorizontal": 0,
+          },
+          Object {
+            "alignItems": "stretch",
+          },
+        ]
+      }
+      data={
+        Array [
+          Object {
+            "color": "#99f",
+            "title": "foo",
+          },
+          Object {
+            "color": "#888",
+            "title": "bar",
+          },
+          Object {
+            "color": "#00f",
+            "title": "baz",
+          },
+          Object {
+            "color": "#123",
+            "title": "qux",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      getItemLayout={[Function]}
+      horizontal={true}
+      initialNumToRender={10}
+      initialScrollIndex={1}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReached={[Function]}
+      onEndReachedThreshold={0.9}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEnabled={false}
+      scrollEventThrottle={1}
+      showsHorizontalScrollIndicator={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 16,
+                },
+                Object {
+                  "opacity": 0.65,
+                },
+                Object {
+                  "width": 320,
+                },
+              ]
+            }
+            testID="carousel-item"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "elevation": 4,
+                    "shadowColor": "#14171A",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.15,
+                    "shadowRadius": 8,
+                  },
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderRadius": 5,
+                    "flexGrow": 1,
+                    "overflow": "hidden",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "#99f",
+                      "color": "#fff",
+                      "padding": 20,
+                    }
+                  }
+                >
+                  foo
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 16,
+                },
+                false,
+                Object {
+                  "width": 320,
+                },
+              ]
+            }
+            testID="carousel-item"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "elevation": 4,
+                    "shadowColor": "#14171A",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.15,
+                    "shadowRadius": 8,
+                  },
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderRadius": 5,
+                    "flexGrow": 1,
+                    "overflow": "hidden",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "#888",
+                      "color": "#fff",
+                      "padding": 20,
+                    }
+                  }
+                >
+                  bar
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 16,
+                },
+                Object {
+                  "opacity": 0.65,
+                },
+                Object {
+                  "width": 320,
+                },
+              ]
+            }
+            testID="carousel-item"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "elevation": 4,
+                    "shadowColor": "#14171A",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.15,
+                    "shadowRadius": 8,
+                  },
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderRadius": 5,
+                    "flexGrow": 1,
+                    "overflow": "hidden",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "#00f",
+                      "color": "#fff",
+                      "padding": 20,
+                    }
+                  }
+                >
+                  baz
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 16,
+                },
+                Object {
+                  "opacity": 0.65,
+                },
+                Object {
+                  "width": 320,
+                },
+              ]
+            }
+            testID="carousel-item"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "elevation": 4,
+                    "shadowColor": "#14171A",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.15,
+                    "shadowRadius": 8,
+                  },
+                  Object {
+                    "flexGrow": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderRadius": 5,
+                    "flexGrow": 1,
+                    "overflow": "hidden",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "#123",
+                      "color": "#fff",
+                      "padding": 20,
+                    }
+                  }
+                >
+                  qux
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <Mock$ReactNativeSnapCarousel$Pagination
+    activeDotIndex={1}
+    containerStyle={
+      Object {
+        "paddingHorizontal": 16,
+        "paddingVertical": 0,
+      }
+    }
+    dotColor="#FFFFFF"
+    dotContainerStyle={
+      Object {
+        "borderColor": "#FFFFFF",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "marginHorizontal": 4,
+        "padding": 2,
+      }
+    }
+    dotStyle={
+      Object {
+        "borderRadius": 8,
+        "height": 8,
+        "padding": 2,
+        "width": 8,
+      }
+    }
+    dotsLength={4}
+    inactiveDotColor="#FFFFFF"
+    inactiveDotOpacity={0}
+    inactiveDotScale={0.6}
+    inactiveDotStyle={
+      Object {
+        "borderRadius": 8,
+        "height": 8,
+        "padding": 2,
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;

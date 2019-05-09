@@ -4,14 +4,13 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
-import {NovaCompositionNavigationArrowLeft} from '@coorpacademy/nova-icons';
 
-import theme from '../modules/theme';
 import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
+import AuthenticationDetailsScreen from '../screens/authentication-details';
 import QRCodeScreen from '../screens/qr-code';
 import {changeScreen} from '../redux/actions/navigation';
 import {slideNavigator, slideModalsNavigator} from './slide';
@@ -33,6 +32,10 @@ const appNavigator = createStackNavigator(
         ...navigationOptionsWithoutHeader,
         gesturesEnabled: false
       }
+    },
+    AuthenticationDetails: {
+      screen: AuthenticationDetailsScreen,
+      navigationOptions: navigationOptionsWithoutHeader
     },
     Home: {
       screen: HomeScreen,
@@ -59,9 +62,6 @@ const appNavigator = createStackNavigator(
     initialRouteName: INITIAL_ROUTE_NAME,
     defaultNavigationOptions: {
       ...navigationOptions,
-      headerBackImage: (
-        <NovaCompositionNavigationArrowLeft height={16} width={16} color={theme.colors.gray.dark} />
-      ),
       gesturesEnabled: true
     }
   }

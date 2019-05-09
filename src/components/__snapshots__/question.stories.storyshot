@@ -253,6 +253,7 @@ exports[`Storyshots Question BasicQuestion 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -1451,6 +1452,7 @@ exports[`Storyshots Question QCM 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -2096,6 +2098,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -3004,13 +3007,47 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
-                    onLayout={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "width": 320,
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "height": "100%",
+                          "width": 320,
+                        }
+                      }
+                    >
+                      <Image
+                        resizeMode="contain"
+                        source={
+                          Object {
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            },
+                            Object {
+                              "height": "100%",
+                              "width": 320,
+                            },
+                            undefined,
+                          ]
+                        }
+                        testID="question-choice-1-img"
+                      />
+                    </View>
+                  </View>
                 </View>
                 <View
                   style={
@@ -3129,13 +3166,47 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
-                    onLayout={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "width": 320,
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "height": "100%",
+                          "width": 320,
+                        }
+                      }
+                    >
+                      <Image
+                        resizeMode="contain"
+                        source={
+                          Object {
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            },
+                            Object {
+                              "height": "100%",
+                              "width": 320,
+                            },
+                            undefined,
+                          ]
+                        }
+                        testID="question-choice-2-img"
+                      />
+                    </View>
+                  </View>
                 </View>
                 <View
                   style={
@@ -3254,13 +3325,47 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
-                    onLayout={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "width": 320,
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "height": "100%",
+                          "width": 320,
+                        }
+                      }
+                    >
+                      <Image
+                        resizeMode="contain"
+                        source={
+                          Object {
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            },
+                            Object {
+                              "height": "100%",
+                              "width": 320,
+                            },
+                            undefined,
+                          ]
+                        }
+                        testID="question-choice-3-img"
+                      />
+                    </View>
+                  </View>
                 </View>
                 <View
                   style={
@@ -3379,13 +3484,47 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
-                    onLayout={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "width": 320,
                       }
                     }
-                  />
+                  >
+                    <View
+                      style={
+                        Object {
+                          "height": "100%",
+                          "width": 320,
+                        }
+                      }
+                    >
+                      <Image
+                        resizeMode="contain"
+                        source={
+                          Object {
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            },
+                            Object {
+                              "height": "100%",
+                              "width": 320,
+                            },
+                            undefined,
+                          ]
+                        }
+                        testID="question-choice-4-img"
+                      />
+                    </View>
+                  </View>
                 </View>
                 <View
                   style={
@@ -3478,6 +3617,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -4899,6 +5039,7 @@ exports[`Storyshots Question Template 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -5111,9 +5252,200 @@ exports[`Storyshots Question With Video 1`] = `
         }
       />
       <View>
-        <View
-          onLayout={[Function]}
+        <Mock$ReactNavigation$NavigationEvents
+          onWillBlur={[Function]}
         />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#14171A",
+                "overflow": "hidden",
+              },
+              false,
+              Object {
+                "height": 180,
+              },
+            ]
+          }
+          testID="video-container-question-resource"
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                  "bottom": 0,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID="preview-video-question-resource"
+              >
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight="70"
+                  bbWidth="70"
+                  color="#FFFFFF"
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      undefined,
+                      false,
+                      Object {
+                        "flex": 0,
+                        "height": 70,
+                        "width": 70,
+                      },
+                    ]
+                  }
+                  vbHeight={24}
+                  vbWidth={24}
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                  <RNSVGPath
+                    d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+                    fill={
+                      Array [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth="1"
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGSvgView>
+              </View>
+            </View>
+          </View>
+        </View>
         <View
           style={
             Object {
@@ -5515,6 +5847,7 @@ exports[`Storyshots Question With Video 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },
@@ -5728,8 +6061,47 @@ exports[`Storyshots Question With image 1`] = `
       />
       <View>
         <View
-          onLayout={[Function]}
-        />
+          style={
+            Object {
+              "width": 320,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 180,
+                "width": 320,
+              }
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": 180,
+                    "width": 320,
+                  },
+                  undefined,
+                ]
+              }
+              testID="question-resource"
+            />
+          </View>
+        </View>
         <View
           style={
             Object {
@@ -6131,6 +6503,7 @@ exports[`Storyshots Question With image 1`] = `
                 Object {
                   "borderRadius": 32,
                   "borderWidth": 0,
+                  "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
                 },

@@ -31,7 +31,7 @@ class QRCodeScanner extends React.PureComponent<Props> {
     const {hasPermission} = this.props;
 
     return (
-      <Animated.View style={[styles.container, styles.camera]}>
+      <Animated.View style={[styles.container, styles.camera]} testID="qr-code-scanner">
         {hasPermission && (
           <QRCodeScannerBase
             onRead={this.handleRead}

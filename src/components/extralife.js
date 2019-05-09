@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   count: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.extraLarge,
+    fontSize: theme.fontSize.xlarge,
     color: theme.colors.gray.dark
   },
   heartContainer: {

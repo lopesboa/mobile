@@ -3,17 +3,33 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Annuler',
   accessTheLesson: 'Accéder à la leçon',
+  authenticationMagicLinkHeader:
+    'Utilisez cet appareil pour vérifier votre identité sur la plateforme web',
+  authenticationMagicLinkStepOneDescription:
+    'Connectez-vous à votre plateforme de formation <b>avec cet appareil</b>',
+  authenticationMagicLinkStepTwoDescription:
+    "Allez sur <b>votre compte</b> </br>dans l'angle supérieur droit",
+  authenticationMagicLinkStepThreeDescription: '<b>Voilà !</b></br>Votre Magic Link sera ici',
+  authenticationMagicLinkTitle: 'Magic link',
+  authenticationQRCodeHeader:
+    'Utilisez un ordinateur pour vérifier votre identité sur la plateforme web',
+  authenticationQRCodeStepOneDescription:
+    'Connectez-vous à votre plateforme de formation <b>avec un ordinateur</b>',
+  authenticationQRCodeStepTwoDescription:
+    "Allez sur <b>votre compte</b> </br>dans l'angle supérieur droit",
+  authenticationQRCodeStepThreeDescription:
+    '<b>Voilà !</b></br>Scannez votre QR code en utilisant le bouton ci-dessous  ',
+  authenticationQRCodeTitle: 'QR Code',
   backToHome: 'Accueil',
   bonus: 'Bonus!',
+  cancel: 'Annuler',
   clue: 'Indice',
   clueStarsToLoose:
     "En regardant l'indice, cette question vous rapportera {{count}} étoile en moins (si vous y répondez correctement)",
   congratulations: 'Félicitations !',
   context: 'Contexte',
   correction: 'Correction',
-  demoMode: 'Vous n\'avez pas de compte ? <a href="/"><b><u>Démarrez la démo</u></b></a>',
   didYouKnowThat: 'Le saviez-vous ?',
   finishLearning: "Continuer celui-ci d'abord",
   forYou: 'Nos meilleurs cours pour vous',
@@ -24,19 +40,9 @@ const translations: Translations = {
   goToQuestion: 'Accès à la question',
   highscore:
     'Vous avez un nouveau meilleur score<br><b>, vous venez de gagner {{score}} étoiles</b>',
+  howToSignIn: 'Comment souhaitez-vous vous connecter ?',
   keyPoint: 'Point-clé',
   lesson: 'Leçon',
-  loginButton: 'Scannez votre <b>QR code</b>',
-  loginFirstStepHeader: 'Étape <b>01</b>',
-  loginFirstStepDescription:
-    'Connectez-vous à votre plateforme </br>de formation <b>avec un autre </br>appareil</b>',
-  loginSecondStepHeader: 'Étape <b>02</b>',
-  loginSecondStepDescription:
-    'Cliquez sur <b>Paramètres > Compte</b> </br>dans le coin en haut à droite.',
-  loginThirdStepHeader: 'Étape <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà !</b> </br>Votre QR code doit être juste </br>ici',
-  loginHeader:
-    'Pour accéder à votre plateforme de formation, vous devez scanner <b>votre QR code personnel.</b>',
   logOut: 'Se déconnecter',
   needHelp: "Besoin d'aide ?",
   new: 'Nouveau',
@@ -45,28 +51,38 @@ const translations: Translations = {
   ok: 'Ok',
   ooops: 'Oups...',
   open: 'Ouvrir',
-  openSettings: 'Open settings',
+  openBrowser: 'Ouvrir <b>mon navigateur</b>',
+  openSettings: 'Ouvrir les paramètres',
   ouch: 'Aïe...',
   outOfLives: "Vous n'avez plus de vies !",
-  permission: 'Permission',
+  permission: 'Autorisation',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    "Nous avons besoin d'accéder à votre appareil photo pour scanner votre QR code et vous authentifier.",
   question: 'Question',
   quit: 'Quitter',
   relatedSubjects: 'Recommandé pour vous : ',
   retryLevel: 'Réessayez ce niveau',
+  scanQRCode: 'Scannez votre <b>QR Code</b>',
   seeClue: "Voir l'indice",
   selectSomethingBelow: 'Sélectionner la ou les option(s) correcte(s) ci-dessous',
+  startDemo: 'Pas encore de compte ? <a href="/"><b><u>Commencez la démo !</u></b></a>',
   startLearning: 'Vous devriez commencer par celui-ci',
   selectAnAnswer: 'Sélectionnez une réponse',
+  signInDesktop: 'Connectez-vous avec un ordinateur',
+  signInMobile: 'Connectez-vous avec cet appareil',
+  step: 'Étape',
   typeHere: 'Saisissez ici',
   validate: 'Valider',
   version: 'Version',
   unlockNextLevel: 'Vous venez de débloquer<br><b>le niveau {{levelName}}</b>',
-  upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgrade: 'Mise à jour',
+  upgradeDescription:
+    'Votre application a été mise à jour ! Veuillez télécharger la dernière version pour en bénéficier. ',
   winAdditionalStars:
     'Gagnez {{count}} étoiles supplémentaires par chapitre en consultant la leçon !',
+  welcome: 'Bienvenue',
+  welcomeDescription:
+    'Cette app est associée à votre compte personnel sur la plateforme de formation de votre société.',
   wrongAnswer: 'Mauvaise réponse',
   yourAnswer: 'Votre réponse :',
   yourAnswers: 'Vos réponses :'

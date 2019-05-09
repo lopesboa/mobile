@@ -1,9 +1,11 @@
+// @flow strict
+
 import {reloadApp, bypassAuthentication} from './utils';
 
 describe('QCM Slider', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   it('shoould see catalog, choose a discipline and see a question slider', async () => {

@@ -31,7 +31,7 @@ const styles = {
     fontStyle: 'italic'
   },
   b: {
-    fontWeight: theme.fontWeight.semiBold
+    fontWeight: theme.fontWeight.bold
   },
   s: {
     textDecorationLine: 'line-through'

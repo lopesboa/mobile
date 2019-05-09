@@ -3,17 +3,33 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Cancelar',
   accessTheLesson: 'Accede a la lección',
+  authenticationMagicLinkHeader:
+    'Usar este dispositivo para comprobar tu identidad en la plataforma web',
+  authenticationMagicLinkStepOneDescription:
+    'Conectar a la plataforma de aprendizaje<b>con este dispositivo</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Ve a <b>tu cuenta</b> </br>en la esquina superior derecha',
+  authenticationMagicLinkStepThreeDescription:
+    '<b>¡Listo!</b></br>El enlace especial estará exactamente aquí',
+  authenticationMagicLinkTitle: 'Enlace especial',
+  authenticationQRCodeHeader: 'Usar un ordenador para comprobar tu identidad en la plataforma web',
+  authenticationQRCodeStepOneDescription:
+    'Conectar a la plataforma de aprendizaje<b>con un ordenador</b>',
+  authenticationQRCodeStepTwoDescription:
+    'Ve a <b>tu cuenta</b> </br>en la esquina superior derecha',
+  authenticationQRCodeStepThreeDescription:
+    '<b>¡Listo!</b></br>Escanea el código QR con el botón que está a continuación',
+  authenticationQRCodeTitle: 'Código QR',
   backToHome: 'Volver al inicio',
   bonus: '¡Bonus!',
+  cancel: 'Cancelar',
   clue: 'Pista',
   clueStarsToLoose:
     'Desbloquear la pista reduce en {{count}} las estrellas que puedes ganar por esta pregunta (si la aciertas)',
   congratulations: '¡Felicidades!',
   context: 'Contexto',
   correction: 'Corrección',
-  demoMode: '¿Sin plataforma de aprendizaje? <a href="/"><b><u>Comenzar demostración</u></b></a>',
   didYouKnowThat: '¿Lo sabías?',
   finishLearning: 'Primero sigue con este',
   forYou: 'Nuestras mejores opciones para ti',
@@ -23,19 +39,9 @@ const translations: Translations = {
   goodJob: '¡Buen trabajo!',
   goToQuestion: 'Ir a la pregunta',
   highscore: 'Tienes una nueva máxima puntuación<br><b>acabas de conseguir {{score}} estrellas</b>',
+  howToSignIn: '¿Cómo quieres iniciar sesión?',
   keyPoint: 'Dato clave',
   lesson: 'Lección',
-  loginButton: 'Escanea tu <b>código QR</b>',
-  loginFirstStepHeader: 'Paso <b>01</b>',
-  loginFirstStepDescription:
-    'Conéctate a tu </br>plataforma <b>de aprendizaje con otro </br>dispositivo</b>',
-  loginSecondStepHeader: 'Paso <b>02</b>',
-  loginSecondStepDescription:
-    'Dirígete a <b>Ajustes > Cuenta</b>, </br>ubicado en la esquina superior derecha',
-  loginThirdStepHeader: 'Paso <b>03</b>',
-  loginThirdStepDescription: '<b>¡Listo!</b> </br>Tu código QR estará </br>justo ahí',
-  loginHeader:
-    'Para abrir la aplicación de aprendizaje de tu empresa, escanea <b>tu código QR personal.</b>',
   logOut: 'Cerrar sesión',
   needHelp: '¿Necesitas ayuda?',
   new: 'Nuevo',
@@ -44,28 +50,38 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Ups...',
   open: 'Abrir',
-  openSettings: 'Open settings',
+  openBrowser: 'Abrir <b>el navegador</b>',
+  openSettings: 'Abrir la configuración',
   ouch: 'Auch...',
   outOfLives: '¡No te quedan vidas!',
-  permission: 'Permission',
+  permission: 'Permiso',
   permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+    'Tenemos que acceder a la cámara para escanear el código QR y poder autentificarte.',
   question: 'Pregunta',
   quit: 'Salir',
   relatedSubjects: 'Recomendado para ti:',
   retryLevel: 'Reintentar nivel',
+  scanQRCode: 'Escanea el <b>código QR</b>',
   seeClue: 'Ver pista',
   selectSomethingBelow: 'Selecciona algo de abajo',
+  startDemo: '¿No tienes una cuenta? <a href="/"><b><u>¡Inicia la prueba!</u></b></a>',
   startLearning: 'Debes comenzar con este',
   selectAnAnswer: 'Selecciona una respuesta',
+  signInDesktop: 'Iniciar sesión con un ordenador',
+  signInMobile: 'Iniciar sesión con este dispositivo',
+  step: 'Paso',
   typeHere: 'Escribe aquí',
   validate: 'Validar',
-  version: 'Version',
+  version: 'Licencia',
   unlockNextLevel: 'Acabas de desbloquear el<br><b>nivel {{levelName}}</b>',
-  upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgrade: 'Actualizar',
+  upgradeDescription:
+    'La aplicación se ha actualizado. Descarga la última versión para disfrutarla.',
   winAdditionalStars:
     'Gana {{count}} estrellas adicionales en este capítulo la primera vez que veas una lección.',
+  welcome: 'Bienvenido',
+  welcomeDescription:
+    'Esta aplicación está vinculada a tu cuenta personal en la plataforma de aprendizaje de la empresa.',
   wrongAnswer: 'Respuesta incorrecta',
   yourAnswer: 'Su respuesta:',
   yourAnswers: 'Sus respuestas:'

@@ -162,7 +162,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
               style={
                 Array [
                   Object {
-                    "fontWeight": "500",
+                    "fontWeight": "700",
                   },
                   Object {},
                   Object {},
@@ -183,7 +183,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
                     Object {
                       "color": "#14171A",
                       "fontSize": 15,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                     }
                   }
                 >
@@ -704,7 +704,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
               style={
                 Array [
                   Object {
-                    "fontWeight": "500",
+                    "fontWeight": "700",
                   },
                   Object {},
                   Object {},
@@ -725,7 +725,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
                     Object {
                       "color": "#14171A",
                       "fontSize": 15,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                     }
                   }
                 >

@@ -280,7 +280,7 @@ exports[`Storyshots Html Default 1`] = `
         style={
           Array [
             Object {
-              "fontWeight": "500",
+              "fontWeight": "700",
             },
             Object {},
             Object {},
@@ -304,7 +304,7 @@ exports[`Storyshots Html Default 1`] = `
                 Object {
                   "color": "#14171A",
                   "fontSize": 20,
-                  "fontWeight": "500",
+                  "fontWeight": "700",
                 }
               }
             >
@@ -338,7 +338,7 @@ exports[`Storyshots Html Default 1`] = `
                     "color": "#14171A",
                     "fontSize": 20,
                     "fontStyle": "italic",
-                    "fontWeight": "500",
+                    "fontWeight": "700",
                   }
                 }
               >
@@ -620,7 +620,7 @@ exports[`Storyshots Html Default 1`] = `
         style={
           Array [
             Object {
-              "fontWeight": "500",
+              "fontWeight": "700",
             },
             Object {},
             Object {},
@@ -644,7 +644,7 @@ exports[`Storyshots Html Default 1`] = `
                 Object {
                   "color": "#14171A",
                   "fontSize": 20,
-                  "fontWeight": "500",
+                  "fontWeight": "700",
                 }
               }
             >
@@ -678,7 +678,7 @@ exports[`Storyshots Html Default 1`] = `
                     "color": "#14171A",
                     "fontSize": 20,
                     "fontStyle": "italic",
-                    "fontWeight": "500",
+                    "fontWeight": "700",
                   }
                 }
               >

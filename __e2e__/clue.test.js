@@ -6,7 +6,7 @@ import {reloadApp, bypassAuthentication, getClueTab} from './utils';
 describe('Clue', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   describe('With clue', () => {

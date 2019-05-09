@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     padding: theme.spacing.base
   },
   titleCover: {
-    fontSize: theme.fontSize.extraLarge
+    fontSize: theme.fontSize.xlarge
   },
   subtitleCover: {
     fontSize: theme.fontSize.regular

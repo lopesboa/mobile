@@ -3,18 +3,34 @@
 import type {Translations} from './_types';
 
 const translations: Translations = {
-  cancel: 'Anulează',
   accessTheLesson: 'Urmăriți lecția',
+  authenticationMagicLinkHeader:
+    'Folosește acest dispozitiv pentru a-ți verifica identitatea pe platforma web',
+  authenticationMagicLinkStepOneDescription:
+    'Conectează-te la platforma de învățare <b>cu acest dispozitiv</b>',
+  authenticationMagicLinkStepTwoDescription:
+    'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
+  authenticationMagicLinkStepThreeDescription:
+    '<b>Voilà!</b></br>Linkul tău magic va apărea imediat',
+  authenticationMagicLinkTitle: 'Link magic',
+  authenticationQRCodeHeader:
+    'Folosește un computer ca să îți verifici identitatea pe platforma web',
+  authenticationQRCodeStepOneDescription:
+    'Conectează-te la platforma de învățare <b>cu un computer</b>',
+  authenticationQRCodeStepTwoDescription:
+    'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
+  authenticationQRCodeStepThreeDescription:
+    '<b>Voilà!</b></br>Scanează codul QR folosind butonul de mai jos',
+  authenticationQRCodeTitle: 'Cod QR',
   backToHome: 'Înapoi la pagina de start',
   bonus: 'Bonus!',
+  cancel: 'Anulează',
   clue: 'Indiciu',
   clueStarsToLoose:
     'Utilizarea indiciului va lua {{count}} din numărul maxim de stele pe care le puteți obține răspunzând la această întrebare (dacă răspunsul este corect)',
   congratulations: 'Felicitări!',
   context: 'Context',
   correction: 'Corectură',
-  demoMode:
-    'Nu aveți o platformă de învățare? <a href="/"><b><u>Porniți versiunea demonstrativă</u></b></a>',
   didYouKnowThat: 'Știați asta?',
   finishLearning: 'Întâi continuă-l pe acesta',
   forYou: 'Topul alegerilor noastre',
@@ -24,18 +40,9 @@ const translations: Translations = {
   goodJob: 'V-ați descurcat bine!',
   goToQuestion: 'Salt la întrebare',
   highscore: 'Ți-ai îmbunătățit recordul personal<br><b>tocmai ai câștigat {{score}} stele</b>',
+  howToSignIn: 'Cum dorești să te conectezi?',
   keyPoint: 'Punct cheie',
   lesson: 'Lecție',
-  loginButton: 'Scanează <b>codul QR</b>',
-  loginFirstStepHeader: 'Pasul <b>01</b>',
-  loginFirstStepDescription:
-    'Conectează-te la </br>platforma de învățare <b>cu alt </br>dispozitiv</b>',
-  loginSecondStepHeader: 'Pasul <b>02</b>',
-  loginSecondStepDescription: 'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
-  loginThirdStepHeader: 'Pasul <b>03</b>',
-  loginThirdStepDescription: '<b>Voilà!</b> </br>Codul tău QR va fi </br>chiar acolo',
-  loginHeader:
-    'Pentru a deschide aplicația de învățare a companiei tale, trebuie să scanezi <b>codul QR personal.</b>',
   logOut: 'Deconectați-vă',
   needHelp: 'Ai nevoie de ajutor?',
   new: 'noi',
@@ -44,28 +51,37 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Opa...',
   open: 'Deschide',
-  openSettings: 'Open settings',
+  openBrowser: 'Deschide <b>browser-ul meu</b>',
+  openSettings: 'Deschide setările',
   ouch: 'Aoleu...',
   outOfLives: 'Nu mai aveți vieți!',
-  permission: 'Permission',
-  permissionCamera:
-    'We need access to your camera in order to scan your QR code and authenticate you.',
+  permission: 'Permisiune',
+  permissionCamera: 'Trebuie să accesăm camera ca să scanăm codul QR și să te autentificăm.',
   question: 'Întrebare',
   quit: 'Renunță',
   relatedSubjects: 'Recomandări:',
   retryLevel: 'Încercați din nou acest nivel',
+  scanQRCode: 'Scanează <b>codul QR</b>',
   seeClue: 'Arată indiciul',
   selectSomethingBelow: 'Selectați din opțiunile de mai jos',
+  startDemo: 'Nicio platformă de învățare? <a href="/"><b><u>Începe modul demonstrativ</u></b></a>',
   startLearning: 'Ar trebui să începi cu asta',
   selectAnAnswer: 'Selectați răspunsul',
+  signInDesktop: 'Conectează-te cu un computer',
+  signInMobile: 'Conectează-te cu acest dispozitiv',
+  step: 'Pas',
   typeHere: 'Tastați aici',
   validate: 'Validează',
-  version: 'Version',
+  version: 'Versiune',
   unlockNextLevel: 'Tocmai ai deblocat<br><b>nivelul {{levelName}}</b>',
   upgrade: 'Upgrade',
-  upgradeDescription: 'Your app must be upgrade in order to enjoy learning!',
+  upgradeDescription:
+    'Aplicația a fost actualizată! Descarcă cea mai recentă versiune ca să o utilizezi.',
   winAdditionalStars:
     'Câștigați {{count}} stele în plus prima oară când urmăriți o lecție din acest capitol!',
+  welcome: 'Bine ai venit!',
+  welcomeDescription:
+    'Această aplicație este conectată la contul personal de pe platforma de învățare a companiei tale.',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: 'Răspunsul dumneavoastră:',
   yourAnswers: 'Răspunsurile dumneavoastră:'

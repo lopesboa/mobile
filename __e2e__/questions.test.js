@@ -2,10 +2,10 @@
 
 import {reloadApp, bypassAuthentication} from './utils';
 
-const rightAnswer = async () => {
-  await element(by.id('question-screen')).swipe('up');
-  await element(by.id('question-choice-2')).tap();
-  await element(by.id('button-validate')).tap();
+const rightAnswer = async (el: DetoxElement) => {
+  await el(by.id('question-screen')).swipe('up');
+  await el(by.id('question-choice-2')).tap();
+  await el(by.id('button-validate')).tap();
 };
 
 // @todo split this file into few files (1 per question type)
@@ -13,7 +13,7 @@ const rightAnswer = async () => {
 describe('Questions', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   it('should see the catalog and choose a discipline', async () => {
@@ -166,10 +166,10 @@ describe('Questions', () => {
   describe('QCM Graphic', () => {
     beforeAll(async () => {
       // fast forward to next chapter
-      await rightAnswer();
+      await rightAnswer(element);
       await waitFor(element(by.id('correction-success'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
-      await rightAnswer();
+      await rightAnswer(element);
       await waitFor(element(by.id('correction-success'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
     });

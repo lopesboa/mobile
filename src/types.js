@@ -104,3 +104,5 @@ export type AnalyticsEventParams = {
 export type URLEventType = {|
   url: string
 |};
+
+export type AuthenticationType = 'qr-code' | 'magic-link';

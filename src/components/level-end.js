@@ -2,15 +2,14 @@
 /* eslint import/max-dependencies: 0 */
 
 import * as React from 'react';
-import {NovaSolidPlacesPlacesHome2 as HomeIcon} from '@coorpacademy/nova-icons';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
 import ConfettiCannon from 'react-native-confetti-cannon';
 
 import translations from '../translations';
 import {getCleanUri} from '../modules/uri';
 import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
-import theme, {defaultHitSlop} from '../modules/theme';
+import theme from '../modules/theme';
+import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import {CARD_TYPE} from '../layer/data/_const';
 import ButtonSticky from './button-sticky';
@@ -26,7 +25,7 @@ import Text from './text';
 import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
 import Tooltip from './tooltip';
-import Touchable from './touchable';
+import HeaderBackButton from './header-back-button';
 
 type Props = {|
   isSuccess: boolean,
@@ -71,13 +70,6 @@ const styles = StyleSheet.create({
   negative: {
     backgroundColor: theme.colors.negative
   },
-  close: {
-    height: 20,
-    width: 20,
-    marginBottom: theme.spacing.base,
-    paddingTop: getStatusBarHeight(),
-    paddingLeft: theme.spacing.base
-  },
   mainHeader: {
     color: theme.colors.white,
     textAlign: 'center',
@@ -92,7 +84,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: PADDING_WIDTH
+    paddingHorizontal: PADDING_WIDTH,
+    // @todo quick fix, we have to rework the component
+    paddingTop: getStatusBarHeight() + 18
   },
   card: {
     borderRadius: theme.radius.card,
@@ -203,16 +197,7 @@ class LevelEnd extends React.PureComponent<Props> {
                   spiralColor="rgba(0,0,0,0.06)"
                   backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
                 />
-                <View style={styles.close}>
-                  <Touchable
-                    testID="button-close"
-                    onPress={onClose}
-                    hitSlop={defaultHitSlop}
-                    analyticsID="button-close"
-                  >
-                    <HomeIcon height={16} width={16} color={theme.colors.white} />
-                  </Touchable>
-                </View>
+                <HeaderBackButton onPress={onClose} type="home" testID="level-end-button-close" />
                 <View style={styles.header}>
                   <Text style={styles.mainHeader} testID="level-end-header">
                     {header}

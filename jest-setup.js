@@ -117,3 +117,13 @@ jest.mock('react-native-firebase', () => ({
   }),
   utils: jest.fn(() => ({}))
 }));
+
+// react-native-status-bar-height
+
+jest.mock('react-native-status-bar-height', () => ({
+  getStatusBarHeight: jest.fn(() => 0)
+}));
+
+// ./src/containers/with-layout
+
+jest.mock('./src/containers/with-layout');

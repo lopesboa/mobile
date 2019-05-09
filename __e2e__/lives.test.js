@@ -2,16 +2,16 @@
 
 import {reloadApp, bypassAuthentication} from './utils';
 
-const wrongAnswer = async () => {
-  await element(by.id('question-screen')).swipe('up');
-  await element(by.id('question-choice-1')).tap();
-  await element(by.id('button-validate')).tap();
+const wrongAnswer = async (el: DetoxElement) => {
+  await el(by.id('question-screen')).swipe('up');
+  await el(by.id('question-choice-1')).tap();
+  await el(by.id('button-validate')).tap();
 };
 
 describe('Lives', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   // describe('Learner', () => {
@@ -125,7 +125,7 @@ describe('Lives', () => {
     });
 
     it('should see a button to continue', async () => {
-      await wrongAnswer();
+      await wrongAnswer(element);
       await waitFor(element(by.id('correction-error'))).toBeVisible();
       await weExpect(element(by.id('button-next-question'))).toBeVisible();
     });

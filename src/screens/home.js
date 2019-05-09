@@ -3,7 +3,6 @@
 import * as React from 'react';
 import {Alert, StatusBar, RefreshControl} from 'react-native';
 import {connect} from 'react-redux';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
@@ -12,6 +11,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {signOut} from '../redux/actions/authentication';
 import translations from '../translations';
 import theme from '../modules/theme';
+import {getStatusBarHeight} from '../modules/status-bar';
 
 type ConnectedDispatchProps = {|
   selectCard: typeof selectCard,

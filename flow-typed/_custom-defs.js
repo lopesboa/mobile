@@ -6,6 +6,7 @@ import type {
   ____Styles_Internal,
   ____TextStyle_Internal
 } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type {EdgeInsetsProp} from 'react-native/Libraries/StyleSheet/EdgeInsetsPropType';
 import type {Dispatch as Redux$Dispatch} from 'redux';
 
 import type {StoreState} from '../src/redux/store';
@@ -18,6 +19,7 @@ declare type GenericStyleProp = ____Styles_Internal;
 declare type FontWeight = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontWeight'>>;
 declare type FontSize = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontSize'>>;
 declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
+declare type HitSlop = EdgeInsetsProp;
 
 // React navigation props, easier to use
 

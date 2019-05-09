@@ -1,14 +1,13 @@
 // @flow strict
 
 import * as React from 'react';
-import {StyleSheet, View, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
-import {NovaSolidStatusClose as BackIcon} from '@coorpacademy/nova-icons';
 
 import Pdf from '../components/pdf';
 import Screen from '../components/screen';
-import Touchable from '../components/touchable';
-import theme, {defaultHitSlop} from '../modules/theme';
+import HeaderBackButton from '../components/header-back-button';
+import theme from '../modules/theme';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
 export type Params = {|
@@ -19,12 +18,6 @@ export type Params = {|
 type Props = {|
   ...ReactNavigation$ScreenPropsWithParams<Params>
 |};
-
-const styles = StyleSheet.create({
-  close: {
-    paddingLeft: theme.spacing.small
-  }
-});
 
 class PdfScreen extends React.PureComponent<Props> {
   props: Props;
@@ -42,16 +35,13 @@ class PdfScreen extends React.PureComponent<Props> {
       },
       title: navigation.getParam('title'),
       headerLeft: (
-        <View style={styles.close}>
-          <Touchable
-            testID="button-close"
-            onPress={PdfScreen.handleButtonPress(screenProps)}
-            hitSlop={defaultHitSlop}
-            analyticsID="button-close"
-          >
-            <BackIcon height={16} width={16} color={theme.colors.gray.dark} />
-          </Touchable>
-        </View>
+        <HeaderBackButton
+          type="close"
+          color={theme.colors.gray.dark}
+          onPress={PdfScreen.handleButtonPress(screenProps)}
+          isFloating={false}
+          testID="pdf-button-close"
+        />
       )
     };
   };

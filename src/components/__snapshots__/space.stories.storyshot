@@ -40,6 +40,46 @@ exports[`Storyshots Space Large 1`] = `
 </View>
 `;
 
+exports[`Storyshots Space Medium 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "borderWidth": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 32,
+        "width": 32,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots Space Micro 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "borderWidth": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
 exports[`Storyshots Space Small 1`] = `
 <View
   style={
@@ -74,6 +114,26 @@ exports[`Storyshots Space Tiny 1`] = `
       Object {
         "height": 8,
         "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots Space XLarge 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "borderWidth": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 64,
+        "width": 64,
       }
     }
   />

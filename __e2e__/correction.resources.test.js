@@ -4,8 +4,8 @@ import {reloadApp, bypassAuthentication} from './utils';
 
 describe('Correction: resources', () => {
   beforeAll(async () => {
-    await reloadApp({microphone: 'YES'});
-    await bypassAuthentication();
+    await reloadApp();
+    await bypassAuthentication(element);
     await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
     await element(by.id('catalog-item-basic-dis-1')).tap();
     await waitFor(element(by.id('question'))).toBeVisible();
@@ -68,11 +68,11 @@ describe('Correction: resources', () => {
   });
 
   it('should close the pdf', async () => {
-    await weExpect(element(by.id('button-close'))).toBeVisible();
-    await element(by.id('button-close')).tap();
+    await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
+    await element(by.id('pdf-button-close')).tap();
     await waitFor(element(by.id('pdf-screen'))).toBeNotVisible();
     await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
-    await weExpect(element(by.id('button-close'))).toBeNotVisible();
+    await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
   });
   afterAll(async () => {
     await element(by.id('button-next-question')).tap();

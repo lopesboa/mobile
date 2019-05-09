@@ -2,13 +2,13 @@
 
 import {reloadApp, bypassAuthentication} from './utils';
 
-const selectQCMRightDragItem = async () => {
-  await element(by.id(`choice-1-unselected`)).tap();
-  await element(by.id(`choice-2-unselected`)).tap();
+const selectQCMRightDragItem = async (el: DetoxElement) => {
+  await el(by.id(`choice-1-unselected`)).tap();
+  await el(by.id(`choice-2-unselected`)).tap();
 };
 
 const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
-  await selectQCMRightDragItem();
+  await selectQCMRightDragItem(element);
   await element(by.id('question-screen')).swipe('up');
   await element(by.id('button-validate')).tap();
   await waitFor(element(by.id('correction-success'))).toBeVisible();
@@ -18,7 +18,7 @@ const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
 describe('QCM Drag', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
   });
 
   it('should see catalog and choose a discipline', async () => {
@@ -33,7 +33,7 @@ describe('QCM Drag', () => {
   });
 
   it('select some items and see them inside the dropzone', async () => {
-    await selectQCMRightDragItem();
+    await selectQCMRightDragItem(element);
     await weExpect(element(by.id(`choice-1-unselected`))).toBeNotVisible();
     await weExpect(element(by.id(`choice-2-unselected`))).toBeNotVisible();
     await weExpect(element(by.id(`choice-1-selected`))).toBeVisible();
@@ -50,7 +50,7 @@ describe('QCM Drag', () => {
   });
 
   it('should be able to select few items and give the CORRECT answer', async () => {
-    await selectQCMRightDragItem();
+    await selectQCMRightDragItem(element);
     await element(by.id('question-screen')).swipe('up');
     await element(by.id('button-validate')).tap();
     await waitFor(element(by.id('correction-success'))).toBeVisible();

@@ -5,7 +5,7 @@ import {reloadApp, bypassAuthentication} from './utils';
 describe('Dashboard', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication();
+    await bypassAuthentication(element);
     await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
   });
 
