@@ -1,6 +1,6 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.119.0"
+fastlane_version "2.122.0"
 
 default_platform :ios
 
@@ -11,9 +11,9 @@ platform :ios do
     ENV["CURRENT_USER"] = `whoami`.chomp
     skip_docs
     setup_circle_ci
-    yarn(command: 'xcode:check', package_path: '../package.json')
-    yarn(command: 'update:version', package_path: '../package.json')
-    yarn(command: 'generate:bundle:ios', package_path: '../package.json')
+    yarn(step_name: 'xcode_check', command: 'xcode:check', project_root: '..')
+    yarn(step_name: 'update_version', command: 'update:version', project_root: '..')
+    yarn(step_name: 'generate_ios_bundle', command: 'generate:bundle:ios', project_root: '..')
   end
 
 
@@ -87,9 +87,14 @@ platform :ios do
       skip_waiting_for_build_processing: true
     )
     yarn(
-      command: "notify:publication ':iphone: Build number *#{version_code}* should be available in the store soon :rocket:'"+
-               " good 'Publication of Ios App Successful'",
-      package_path: '../package.json'
-      )
+      step_name: "notify_publication",
+      command: "notify:publication",
+      options: [
+        ":iphone: Build number *#{version_code}* should be available in the store soon :rocket:",
+        "good",
+        "Publication of Ios App Successful"
+      ],
+      project_root: '..'
+    )
   end
 end

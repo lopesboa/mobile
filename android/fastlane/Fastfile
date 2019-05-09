@@ -1,13 +1,13 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.119.0"
+fastlane_version "2.122.0"
 
 default_platform :android
 
 platform :android do
   before_all do
-    yarn(command: 'update:version', package_path: '../package.json')
-    yarn(command: 'generate:bundle:android', package_path: '../package.json')
+    yarn(step_name: 'update_version', command: 'update:version', project_root: '..')
+    yarn(step_name: 'generate_android_bundle', command: 'generate:bundle:android', project_root: '..')
   end
 
   desc "build an adhoc release for internal store"
@@ -41,11 +41,15 @@ platform :android do
     supply(track: "internal")
 
     yarn(
-      command: "notify:publication ':iphone: Build number *#{version_code}* should be available in the store soon :rocket:'"+
-               " good 'Publication of Android App Successful'",
-      package_path: '../package.json'
-      )
-
+      step_name: "notify_publication",
+      command: "notify:publication",
+      options: [
+        ":iphone: Build number *#{version_code}* should be available in the store soon :rocket:",
+        "good",
+        "Publication of Android App Successful"
+      ],
+      project_root: '..'
+    )
   end
 
   desc "Promote a build to the target step"
