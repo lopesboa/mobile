@@ -17211,17 +17211,6 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               "shadowOpacity": 0.15,
               "shadowRadius": 8,
               "top": 0,
-              "transform": Array [
-                Object {
-                  "rotate": "0deg",
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
             }
           }
         >

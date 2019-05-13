@@ -209,7 +209,7 @@ class Correction extends React.PureComponent<Props> {
               title={cardTitle}
               isCorrect={isCorrect}
               type={type}
-              animationStyle={!offeringExtraLife && animationStyle}
+              animationStyle={type !== CARD_TYPE.RESOURCE && animationStyle}
               height={this.getCardsHeight()}
               expandedHeight={this.getCardsExpandedHeight()}
               offsetBottom={this.getOffsetBottom()}
