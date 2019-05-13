@@ -8,7 +8,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Connect to your learning platform <b>with this device</b>',
   authenticationMagicLinkStepTwoDescription:
-    'Go to <b>your Account</b> </br>in the upper right-hand corner',
+    'Go to <b>your Account</b> </br>in the upper left-hand corner',
   authenticationMagicLinkStepThreeDescription:
     '<b>Voilà!</b></br>Your Magic Link will be right there',
   authenticationMagicLinkTitle: 'Magic link',

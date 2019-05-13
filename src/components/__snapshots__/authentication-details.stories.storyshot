@@ -236,7 +236,7 @@ Array [
                       "icon": [Function],
                     },
                     Object {
-                      "description": "Go to <b>your Account</b> </br>in the upper right-hand corner",
+                      "description": "Go to <b>your Account</b> </br>in the upper left-hand corner",
                       "icon": [Function],
                     },
                     Object {
@@ -1137,7 +1137,7 @@ Array [
                                         }
                                       }
                                     >
-                                      in the upper right-hand corner
+                                      in the upper left-hand corner
                                     </Text>
                                   </Text>
                                 </Text>

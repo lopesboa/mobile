@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Conectează-te la platforma de învățare <b>cu acest dispozitiv</b>',
   authenticationMagicLinkStepTwoDescription:
-    'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
+    'Mergi la <b>contul tău</b> </br>în colțul din dreapta sus',
   authenticationMagicLinkStepThreeDescription:
     '<b>Voilà!</b></br>Linkul tău magic va apărea imediat',
   authenticationMagicLinkTitle: 'Link magic',
@@ -18,7 +18,7 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Conectează-te la platforma de învățare <b>cu un computer</b>',
   authenticationQRCodeStepTwoDescription:
-    'Accesează <b>Setări > Cont</b> </br>în colțul din dreapta sus',
+    'Mergi la <b>contul tău</b> </br>în colțul din dreapta sus',
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Scanează codul QR folosind butonul de mai jos',
   authenticationQRCodeTitle: 'Cod QR',
@@ -64,7 +64,7 @@ const translations: Translations = {
   scanQRCode: 'Scanează <b>codul QR</b>',
   seeClue: 'Arată indiciul',
   selectSomethingBelow: 'Selectați din opțiunile de mai jos',
-  startDemo: 'Nicio platformă de învățare? <a href="/"><b><u>Începe modul demonstrativ</u></b></a>',
+  startDemo: 'Niciun cont? <a href="/"> <b> <u>Începe perioada de probă! </u> </b> </a>',
   startLearning: 'Ar trebui să începi cu asta',
   selectAnAnswer: 'Selectați răspunsul',
   signInDesktop: 'Conectează-te cu un computer',

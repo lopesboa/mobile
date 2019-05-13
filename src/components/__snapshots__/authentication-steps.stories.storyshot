@@ -54,7 +54,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
             "icon": [Function],
           },
           Object {
-            "description": "Go to <b>your Account</b> </br>in the upper right-hand corner",
+            "description": "Go to <b>your Account</b> </br>in the upper left-hand corner",
             "icon": [Function],
           },
           Object {
@@ -955,7 +955,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                               }
                             }
                           >
-                            in the upper right-hand corner
+                            in the upper left-hand corner
                           </Text>
                         </Text>
                       </Text>
