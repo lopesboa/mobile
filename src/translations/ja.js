@@ -8,8 +8,7 @@ const translations: Translations = {
     'このデバイスを使って、ウェブプラットフォーム上であなたの身元を確認する',
   authenticationMagicLinkStepOneDescription:
     '<b>この端末で</b>自分の学習プラットフォームに接続する',
-  authenticationMagicLinkStepTwoDescription:
-    '右上の隅にある<b>あなたのアカウント</b></br>にお進みください',
+  authenticationMagicLinkStepTwoDescription: '左上隅の<b>アカウント</b></br>に移動して',
   authenticationMagicLinkStepThreeDescription:
     '<b>ほら！</b></br>あなたのマジックリンクはすぐそこにあります',
   authenticationMagicLinkTitle: 'マジックリンク',
@@ -22,6 +21,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>ほら！</b></br>下のボタンを使ってあなたのQRコードをスキャンしてください',
   authenticationQRCodeTitle: 'QRコード',
+  askForHelp: 'ヘルプをリクエストしてください。',
   backToHome: 'ホームへ戻る',
   bonus: 'ボーナスポイント',
   cancel: 'キャンセルする',
@@ -30,6 +30,7 @@ const translations: Translations = {
   congratulations: 'おめでとうございます!',
   context: 'コンテキスト',
   correction: '解答',
+  dataLost: 'データが失われたようです。',
   didYouKnowThat: 'ご存知でしたか。',
   finishLearning: 'まずはこれを続ける',
   forYou: 'おすすめ厳選情報',
@@ -40,6 +41,7 @@ const translations: Translations = {
   goToQuestion: '質問に行く',
   highscore: 'ハイスコアを更新<br><b>{{score}}の星を獲得しました</b>',
   howToSignIn: 'どういう方法でログインしたいですか？',
+  iWantIt: '有効化したい！',
   keyPoint: '重要なポイント',
   lesson: 'レッスン',
   logOut: 'ログアウト',
@@ -57,8 +59,15 @@ const translations: Translations = {
   permission: '許可',
   permissionCamera:
     'QRコードをスキャンして認証するためには、あなたのカメラにアクセスする必要があります。',
+  platformHasBeenDisabled: 'このアプリは、あなたのプラットフォームでは無効化されています。',
   question: '質問',
   quit: '終了する',
+  reactivatePlatform:
+    '再び有効化させたい場合、マネージャーへ連絡するか、以下のリンクをクリックしていただければ、メッセージを転送します。',
+  refresh: 'リフレッシュ',
+  refreshEnjoyLearning:
+    '土星と地球間のネットワークのどこかに消えてしまいました。続けて学習を楽しむには、リフレッシュしてください。',
+  refreshNotWorking: 'リフレッシュが機能していませんか？',
   relatedSubjects: 'あなたへおすすめのコース',
   retryLevel: 'リトライする',
   scanQRCode: 'あなたの<b>QRコードを</b>スキャンする',

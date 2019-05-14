@@ -1,9 +1,9 @@
 // @flow
 
 import {AsyncStorage} from 'react-native';
-
-import fetch from 'cross-fetch';
 import type {Progression, Action} from '@coorpacademy/progression-engine';
+
+import fetch from '../../modules/fetch';
 import {isDone, isFailure} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 import type {SupportedLanguage} from '../../translations/_types';

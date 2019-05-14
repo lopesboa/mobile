@@ -77,6 +77,7 @@ export type UnlockedLevelInfo = {|
   isUnlocked: boolean,
   levelName: string
 |};
+export type ErrorType = 'PLATFORM_NOT_ACTIVATED' | 'NO_CONTENT_FOUND';
 
 export type AppState = 'active' | 'background' | 'inactive';
 

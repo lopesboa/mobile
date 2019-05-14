@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     '<b>Użyj tego urządzenia</b>, aby połączyć się z platformą edukacyjną',
   authenticationMagicLinkStepTwoDescription:
-    'Przejdź do <b>swojego Konta</b> </br>w prawym górnym rogu',
+    'Przejdź do <b>swojego konta</b> </br>w lewym górnym rogu',
   authenticationMagicLinkStepThreeDescription:
     '<b>Gotowe!</b></br>Tutaj znajdziesz swój magiczny link',
   authenticationMagicLinkTitle: 'Magiczny link',
@@ -22,6 +22,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Gotowe!</b></br>Zeskanuj swój kod QR, naciskając poniższy przycisk',
   authenticationQRCodeTitle: 'Kod QR',
+  askForHelp: 'Poproś o pomoc',
   backToHome: 'Powrót do początku',
   bonus: 'Bonus!',
   cancel: 'Anuluj',
@@ -31,6 +32,7 @@ const translations: Translations = {
   congratulations: 'Gratulacje!',
   context: 'Kontekst',
   correction: 'Korekta',
+  dataLost: 'Wygląda na to, że Twoje dane zgubiły się',
   didYouKnowThat: 'Czy wiedziałeś(-łaś) o tym?',
   finishLearning: 'Kontynuuj najpierw to',
   forYou: 'Polecane dla Ciebie',
@@ -41,6 +43,7 @@ const translations: Translations = {
   goToQuestion: 'Przejdź do pytania',
   highscore: 'Masz nowy wysoki wynik<br><b>właśnie wygrałeś(aś) {{score}} gwiazd</b>',
   howToSignIn: 'Jak chcesz się zalogować?',
+  iWantIt: 'Chcę!',
   keyPoint: 'Kluczowe zagadnienie',
   lesson: 'Lekcja',
   logOut: 'Wyloguj się',
@@ -58,8 +61,14 @@ const translations: Translations = {
   permission: 'Uprawnienie',
   permissionCamera:
     'Aby zeskanować Twój kod QR i Cię uwierzytelnić, potrzebujemy dostępu do Twojego aparatu.',
+  platformHasBeenDisabled: 'Zdezaktywowano aplikację dla Twojej platformy',
   question: 'Pytanie',
   quit: 'Zakończ',
+  reactivatePlatform:
+    'Jeśli chcesz ją reaktywować, skontaktuj się ze swoim menedżerem lub kliknij poniższy link, a my przekażemy wiadomość dalej',
+  refresh: 'Odśwież',
+  refreshEnjoyLearning: 'w sieci gdzieś pomiędzy Saturnem a Ziemią; odśwież, aby cieszyć się nauką',
+  refreshNotWorking: 'Odświeżanie nie działa?',
   relatedSubjects: 'Polecane dla Ciebie:',
   retryLevel: 'Ponów próbę',
   scanQRCode: 'Zeskanuj <b>kod QR</b>',

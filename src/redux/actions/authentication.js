@@ -2,8 +2,8 @@
 
 import decode from 'jwt-decode';
 import {AsyncStorage} from 'react-native';
-import fetch from 'cross-fetch';
 
+import fetch from '../../modules/fetch';
 import type {StoreAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT} from '../../types';

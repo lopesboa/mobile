@@ -8,8 +8,7 @@ const translations: Translations = {
     'Verwenden Sie dieses Gerät, um Ihre Identität auf der Web-Plattform zu bestätigen',
   authenticationMagicLinkStepOneDescription:
     'Verbinden Sie sich <b>mit diesem Gerät</b> mit Ihrer Lernplattform.',
-  authenticationMagicLinkStepTwoDescription:
-    'Gehen Sie auf <b>Ihr Konto</b> </br>in der Ecke rechts oben',
+  authenticationMagicLinkStepTwoDescription: 'Rufen Sie oben links <b>Ihr Konto</b> </br>auf.',
   authenticationMagicLinkStepThreeDescription:
     '<b>Voilà!</b></br>Ihr Magic Link wird genau dort sein',
   authenticationMagicLinkTitle: 'Magic Link',
@@ -22,6 +21,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Scannen Sie Ihren QR-Code unter Nutzung der unten stehenden Taste',
   authenticationQRCodeTitle: 'QR-Code',
+  askForHelp: 'Um Hilfe bitten',
   backToHome: 'Zurück zur Startseite',
   bonus: 'Bonus!',
   cancel: 'Abbrechen',
@@ -31,6 +31,7 @@ const translations: Translations = {
   congratulations: 'Herzlichen Glückwunsch!',
   context: 'Kontext',
   correction: 'Verbesserung',
+  dataLost: 'Ihre Daten scheinen verloren gegangen zu sein',
   didYouKnowThat: 'Wussten Sie das?',
   finishLearning: 'Setze diese zuerst fort',
   forYou: 'Unsere besten Vorschläge für Sie',
@@ -41,6 +42,7 @@ const translations: Translations = {
   goToQuestion: 'Zur Frage',
   highscore: 'Du hast eine neue Highscore<br><b>, du hast gerade {{score}} Sterne gewonnen</b>',
   howToSignIn: 'Wie möchten Sie sich gerne anmelden?',
+  iWantIt: 'Ich möchte es !',
   keyPoint: 'Hauptpunkt',
   lesson: 'Lektion',
   logOut: 'Abmelden',
@@ -58,8 +60,15 @@ const translations: Translations = {
   permission: 'Berechtigung',
   permissionCamera:
     'Wir benötigen den Zugriff auf Ihre Kamera, um den QR-Code zu scannen und Sie zu authentifizieren.',
+  platformHasBeenDisabled: 'Die App wurde für Ihre Plattform deaktiviert',
   question: 'Frage',
   quit: 'Beenden',
+  reactivatePlatform:
+    'Wenn Sie es erneut aktivieren möchten, kontaktieren Sie Ihren Manager oder klicken Sie auf den Link unten und wir leiten die Mitteilung weiter',
+  refresh: 'Aktualisieren',
+  refreshEnjoyLearning:
+    'Bitte aktualisieren Sie es im Netzwerk zwischen Saturn und der Erde, um das Lernen zu genießen',
+  refreshNotWorking: "Funktioniert 'Aktualisieren' nicht?",
   relatedSubjects: 'Ihre Empfehlung:',
   retryLevel: 'Level nochmal versuchen',
   scanQRCode: 'Scannen Sie Ihren <b>QR-Code</b>',

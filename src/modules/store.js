@@ -1,10 +1,10 @@
 // @flow strict
 
 import {Platform} from 'react-native';
-import fetch from 'cross-fetch';
 import {gt as isGreeterVersion} from 'semver';
 import storeLink from 'app-store-link';
 
+import fetch from './fetch';
 import version from './version';
 
 export const API_HOST = 'api.coorpacademy.com';

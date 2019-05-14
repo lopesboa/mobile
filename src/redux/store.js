@@ -14,12 +14,14 @@ import type {State as PermissionsState} from './reducers/permissions';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
 import type {State as GodModeState} from './reducers/godmode';
+import type {State as ErrorState} from './reducers/ui/error';
 import disciplineBundle from './reducers/discipline-bundle';
 import cards from './reducers/cards';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
 import video from './reducers/video';
 import godmode from './reducers/godmode';
+import error from './reducers/ui/error';
 import DisciplineBundle from './middlewares/discipline-bundle';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
@@ -34,6 +36,7 @@ export type StoreState = $Exact<{|
   authentication: AuthenticationState,
   permissions: PermissionsState,
   video: VideoState,
+  error: ErrorState<void>,
   godmode: GodModeState
 |}>;
 
@@ -43,6 +46,7 @@ const {data, ui} = storeReducers;
 const reducers = combineReducers({
   data: resetOnLogout(data),
   ui: resetOnLogout(ui),
+  error,
   navigation,
   disciplineBundle: resetOnLogout(disciplineBundle),
   cards: resetOnLogout(cards),

@@ -6,7 +6,7 @@ const translations: Translations = {
   accessTheLesson: 'Derse eriş',
   authenticationMagicLinkHeader: 'Kimliğini web platformunda doğrulamak için bu cihazı kullan',
   authenticationMagicLinkStepOneDescription: 'Öğrenme platformuna <b>bu cihazla</b> bağlan',
-  authenticationMagicLinkStepTwoDescription: '</br>Sağ üst köşedeki <b>Hesabınıza</b> gidin',
+  authenticationMagicLinkStepTwoDescription: 'Sol üst köşede bulunan <b>Hesabına</b> </br>git',
   authenticationMagicLinkStepThreeDescription:
     '<b>Voilà!</b></br>Sihirli Bağlantın tam burada olacak',
   authenticationMagicLinkTitle: 'Sihirli bağlantı',
@@ -16,6 +16,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Aşağıdaki düğmeyi kullanarak QR kodunu tara',
   authenticationQRCodeTitle: 'QR Kodu',
+  askForHelp: 'Yardım İste',
   backToHome: 'Ana sayfaya dön',
   bonus: 'Bonus!',
   cancel: 'İptal et',
@@ -25,6 +26,7 @@ const translations: Translations = {
   congratulations: 'Tebrikler!',
   context: 'İçerik',
   correction: 'Düzeltme',
+  dataLost: 'Verileriniz kaybolmuş gibi görünüyor',
   didYouKnowThat: 'Biliyor muydunuz?',
   finishLearning: 'Önce buna devam et',
   forYou: 'Sizin için seçtiklerimiz',
@@ -35,6 +37,7 @@ const translations: Translations = {
   goToQuestion: 'Soruya git',
   highscore: 'Yeni bir yüksek puanın var<br><b>az önce {{score}} yıldız kazandın</b>',
   howToSignIn: 'Nasıl oturum açmak istersin?',
+  iWantIt: 'İstiyorum !',
   keyPoint: 'Anahtar noktası',
   lesson: 'Ders',
   logOut: 'Bağlantıyı kes',
@@ -51,8 +54,15 @@ const translations: Translations = {
   outOfLives: 'Canınız bitti!',
   permission: 'İzin',
   permissionCamera: 'QR kodunu taramak ve kimliğini doğrulamak için kamerana erişmemiz gerekiyor.',
+  platformHasBeenDisabled: 'Uygulama, platformunuz için devre dışı bırakıldı',
   question: 'Soru',
   quit: 'Çık',
+  reactivatePlatform:
+    'Yeniden etkinleştirmek istiyorsanız, yöneticinize başvurun veya aşağıdaki bağlantıya tıklayın.',
+  refresh: 'Yenile',
+  refreshEnjoyLearning:
+    'Satürn ve Dünya arasındaki ağda, öğrenmenin tadını çıkarmak için lütfen yenileyin',
+  refreshNotWorking: 'Yenilemek işe yaramıyor mu?',
   relatedSubjects: 'Sizin için öneriliyor:',
   retryLevel: 'Seviyeyi  yeniden dene',
   scanQRCode: '<b>QR kodunu</b> tara',

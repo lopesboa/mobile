@@ -195,6 +195,9 @@ describe('storeFixture', () => {
 
     const expectedResult = {
       data: data,
+      error: {
+        isVisible: false
+      },
       ui: {
         answers: {},
         coaches: {

@@ -5,6 +5,7 @@ import {createChapter} from '../../__fixtures__/chapters';
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
 import {createProgression} from '../../__fixtures__/progression';
 import {CARD_STATUS} from '../../layer/data/_const';
+import {ERROR_TYPE} from '../../const';
 import {
   fetchRequest,
   fetchSuccess,
@@ -14,6 +15,8 @@ import {
   selectCardFailure,
   getAndRefreshCard
 } from './cards';
+
+import {SHOW} from './ui/modal';
 
 jest.mock('./progression', () => ({
   createLevelProgression: jest.fn(() =>
@@ -166,6 +169,56 @@ describe('Cards', () => {
       const actual = await fetchCards(language)(dispatch, getState, options);
 
       return expect(actual).toEqual(fetchError('Error'));
+    });
+    it('no cards found', async () => {
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      const options = {
+        services: {
+          Cards: {
+            find: jest.fn()
+          }
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchRequest(language));
+        return Promise.resolve(action);
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        return action;
+      });
+
+      getState.mockReturnValue({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+      });
+      options.services.Cards.find.mockReturnValue(Promise.resolve([]));
+
+      // $FlowFixMe
+      const result = await fetchCards(language)(dispatch, getState, options);
+
+      const expectedResult = {
+        type: SHOW,
+        payload: {
+          errorType: ERROR_TYPE.NO_CONTENT_FOUND,
+          lastAction: expect.any(Function)
+        }
+      };
+      expect(result).toEqual(expectedResult);
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchRequest(language));
+        return Promise.resolve(action);
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        return action;
+      });
+
+      const newResult = await result.payload.lastAction()(dispatch, getState, options);
+
+      expect(newResult).toEqual(expectedResult);
     });
   });
 

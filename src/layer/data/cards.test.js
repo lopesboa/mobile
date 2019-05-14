@@ -91,6 +91,19 @@ describe('cards', () => {
         });
       });
 
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          `${HOST}/api/v2/most-popular?contentType=course&limit=5&withoutAdaptive=true&lang=en`
+        );
+
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              hits: cards.slice(0, 1)
+            })
+        });
+      });
+
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
@@ -157,6 +170,16 @@ describe('cards', () => {
         });
       });
 
+      const mostPopular = cards.slice(2, 5);
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              hits: mostPopular
+            })
+        });
+      });
+
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
 
@@ -186,6 +209,14 @@ describe('cards', () => {
           json: () =>
             Promise.resolve({
               hits: recommendations
+            })
+        });
+      });
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              hits: []
             })
         });
       });
@@ -224,6 +255,12 @@ describe('cards', () => {
           json: () => Promise.resolve({})
         });
       });
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () => Promise.resolve({})
+        });
+      });
+
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           json: () => Promise.resolve({})

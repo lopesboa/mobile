@@ -7,7 +7,7 @@ const translations: Translations = {
   authenticationMagicLinkHeader: '이 기기를 사용하여 웹 플랫폼에서 본인의 신원을 확인하세요 ',
   authenticationMagicLinkStepOneDescription: '<b>이 기기로</b> 학습 플랫폼에 연결하세요 ',
   authenticationMagicLinkStepTwoDescription:
-    '상단 오른쪽 모퉁이에서 <b>귀하의 계정</b> </br>으로 가세요',
+    '좌상단 구석에 있는 <b>귀하의 계정</b>으로 이동하세요</br>',
   authenticationMagicLinkStepThreeDescription:
     '<b>자 보세요!</b></br>매직 링크가 바로 거기에 있습니다',
   authenticationMagicLinkTitle: '매직 링크',
@@ -18,6 +18,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>자 보세요!</b></br> 아래 버튼을 사용하여 QR 코드를 스캔하세요',
   authenticationQRCodeTitle: 'QR 코드',
+  askForHelp: '문의하기',
   backToHome: '홈으로 돌아가기',
   bonus: '보너스!',
   cancel: '취소',
@@ -27,6 +28,7 @@ const translations: Translations = {
   congratulations: '축하합니다!',
   context: '문맥',
   correction: '수정',
+  dataLost: '데이터가 유실된 것 같습니다',
   didYouKnowThat: '귀하는 그것을 알았습니까?',
   finishLearning: '먼저 이것을 계속하기',
   forYou: '저희의 추천 선정 내용',
@@ -37,6 +39,7 @@ const translations: Translations = {
   goToQuestion: '질문으로 이동',
   highscore: '새로운 최고 점수입니다<br><b>{{score}}별을 획득했습니다</b>',
   howToSignIn: '어떻게 로그인 하시겠습니까? ',
+  iWantIt: '다시 활성화하겠습니다',
   keyPoint: '핵심 포인트',
   lesson: '강의',
   logOut: '로그 아웃',
@@ -53,8 +56,15 @@ const translations: Translations = {
   outOfLives: '귀하의 생명이 다했습니다!',
   permission: '승인',
   permissionCamera: 'QR 코드를 스캔하고 본인 인증을 하려면 카메라 접근 권한이 필요합니다.',
+  platformHasBeenDisabled: '사용하시는 플랫폼에 앱이 비활성화되어 있습니다',
   question: '질문',
   quit: '끝내기',
+  reactivatePlatform:
+    '다시 활성화하길 원하시면 관리자에게 문의하세요. 또는 아래 링크를 클릭하시면 저희가 메시지를 전하겠습니다',
+  refresh: '새로고침',
+  refreshEnjoyLearning:
+    '토성과 지구 사이의 네트워크 어딘가에서요. 새로고침하고 배움의 기쁨을 누리세요',
+  refreshNotWorking: '새로고침이 효과가 없나요?',
   relatedSubjects: '귀하에 대한 추천:',
   retryLevel: '레벨 재시도',
   scanQRCode: ' <b>QR 코드</b> 스캔하기 ',

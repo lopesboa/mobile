@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@coorpacademy/acl": "^1.0.1",
-    "@coorpacademy/nova-icons": "3.1.4",
+    "@coorpacademy/nova-icons": "3.1.5",
     "@coorpacademy/player-services": "5.0.5",
     "@coorpacademy/player-store": "4.0.3",
     "@coorpacademy/progression-engine": "^11.0.1",
@@ -89,6 +89,7 @@
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localization": "^2.0.3",
+    "react-native-modal": "^11.0.1",
     "react-native-orientation-locker": "1.1.5",
     "react-native-pdf": "5.0.9",
     "react-native-picker-select": "^6.0.0",

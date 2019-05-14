@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     "Під'єднайтесь до вашої навчальної платформи <b>через цей пристрій</b>",
   authenticationMagicLinkStepTwoDescription:
-    'Перейдіть до <b>вашого облікового запису</b> </br> у верхньому правому куті',
+    'Перейдіть до <b>свого облікового запису</b> </br>у верхньому лівому куті',
   authenticationMagicLinkStepThreeDescription:
     '<b>Вуаля!</b></br>Ваше Магічне Посилання буде прямо тут',
   authenticationMagicLinkTitle: 'Магічне Посилання',
@@ -20,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Вуаля!</b></br>Відскануйте свій QR-код, використовуючи кнопку нижче',
   authenticationQRCodeTitle: 'QR-код',
+  askForHelp: 'Попросити про допомогу',
   backToHome: 'Назад на домашню сторінку',
   bonus: 'Бонус!',
   cancel: 'Відмінити',
@@ -29,6 +30,7 @@ const translations: Translations = {
   congratulations: 'Вітаємо!',
   context: 'Контекст',
   correction: 'Виправлення',
+  dataLost: 'Схоже, що ваші дані втрачено',
   didYouKnowThat: 'Ви знали це?',
   finishLearning: 'Спершу продовжте цей',
   forYou: 'Найкращі пропозиції для вас',
@@ -39,6 +41,7 @@ const translations: Translations = {
   goToQuestion: 'Перейти до запитання',
   highscore: 'У вас новий рекорд<br><b>ви щойно виграли {{score}} зірок</b>',
   howToSignIn: 'Як ви хочете увійти?',
+  iWantIt: 'Хочу!',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
   logOut: 'Вийти',
@@ -56,8 +59,15 @@ const translations: Translations = {
   permission: 'Дозвіл',
   permissionCamera:
     'Нам потрібно отримати доступ до вашої камери, щоб відсканувати ваш QR-код і автентифікувати вас.',
+  platformHasBeenDisabled: 'Застосунок було вимкнено для вашої платформи',
   question: 'Питання',
   quit: 'Вийти',
+  reactivatePlatform:
+    "якщо ви хочете знову його активувати, зв'яжіться з вашим менеджером або клацніть на посиланні нижче і ми передамо це повідомлення",
+  refresh: 'Оновити',
+  refreshEnjoyLearning:
+    'у мережі між Сатурном та Землею, будь ласка, оновіть сторінку, щоб насолоджуватись навчанням',
+  refreshNotWorking: 'Оновлення не працює?',
   relatedSubjects: 'Рекомендовано для Вас:',
   retryLevel: 'Пройти рівень ще раз',
   scanQRCode: 'Відскануйте свій <b>QR-код</b>',

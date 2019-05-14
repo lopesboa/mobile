@@ -1,7 +1,8 @@
 // @flow strict
 
 import decode from 'jwt-decode';
-import fetch from 'cross-fetch';
+
+import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import type {Brand, JWT} from '../../types';
 import {createBrand} from '../../__fixtures__/brands';

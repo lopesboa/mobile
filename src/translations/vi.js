@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Kết nối với nền tảng học tập của bạn <b>bằng thiết bị này</b>',
   authenticationMagicLinkStepTwoDescription:
-    'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
+    'Vào mục <b>Tài khoản của bạn</b> </br>ở góc trên bên trái',
   authenticationMagicLinkStepThreeDescription:
     '<b>Được rồi!</b></br>Liên kết Ma thuật của bạn sẽ hiển thị ngay thôi',
   authenticationMagicLinkTitle: 'Liên kết ma thuật',
@@ -21,6 +21,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Được rồi!</b></br>Quét mã QR của bạn bằng nút bên dưới',
   authenticationQRCodeTitle: 'Mã QR',
+  askForHelp: 'Yêu cầu trợ giúp',
   backToHome: 'Quay về trang chủ',
   bonus: 'Thưởng!',
   cancel: 'Hủy',
@@ -30,6 +31,7 @@ const translations: Translations = {
   congratulations: 'Chúc mừng bạn!',
   context: 'Bối cảnh',
   correction: 'Chỉnh sửa',
+  dataLost: 'Có vẻ dữ liệu của bạn đã thất lạc',
   didYouKnowThat: 'Bạn đã biết điều đó?',
   finishLearning: 'Tiếp tục phần này trước',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
@@ -40,6 +42,7 @@ const translations: Translations = {
   goToQuestion: 'Đi đến câu hỏi',
   highscore: 'Bạn có mức điểm cao mới <br><b>bạn vừa giành được {{score}} sao</b>',
   howToSignIn: 'Bạn muốn đăng nhập bằng cách nào?',
+  iWantIt: 'Tôi muốn có ứng dụng!',
   keyPoint: 'Điểm quan trọng',
   lesson: 'Bài học',
   logOut: 'Đăng xuất',
@@ -57,8 +60,15 @@ const translations: Translations = {
   permission: 'Cấp phép',
   permissionCamera:
     'Chúng tôi cần truy cập vào camera để có thể quét mã QR và xác thực danh tính của bạn.',
+  platformHasBeenDisabled: 'Ứng dụng đã bị vô hiệu hóa đối với nền tảng của bạn',
   question: 'Câu hỏi',
   quit: 'Thoát',
+  reactivatePlatform:
+    'Nếu bạn muốn kích hoạt lại ứng dụng, hãy liên hệ với quản lý của bạn hoặc bấm vào đường link dưới đây và chúng tôi sẽ gửi thông điệp đi',
+  refresh: 'Tải lại',
+  refreshEnjoyLearning:
+    'trong mạng giữa sao Thổ và Trái Đất, vui lòng tải lại để được thoải mái học tập',
+  refreshNotWorking: 'Tải lại không hiệu quả?',
   relatedSubjects: 'Đề xuất dành cho bạn:',
   retryLevel: 'Thử lại cấp độ',
   scanQRCode: 'Quét <b>mã QR </b>của bạn',

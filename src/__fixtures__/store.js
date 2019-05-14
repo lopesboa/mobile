@@ -146,6 +146,9 @@ export const createStoreState = ({
   return {
     data: (baseData && {...data, ...baseData}) || data,
     ui: (baseUi && {...ui, ...baseUi}) || ui,
+    error: {
+      isVisible: false
+    },
     navigation: {
       currentNavigatorName: 'dummyNavigatorName',
       currentAppScreenName: 'dummycurrentAppScreenName',

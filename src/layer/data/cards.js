@@ -1,7 +1,8 @@
 // @flow strict
 
 import {AsyncStorage} from 'react-native';
-import fetch from 'cross-fetch';
+
+import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import {createDisciplinesCards} from '../../__fixtures__/cards';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
@@ -200,6 +201,21 @@ const fetchRecommendationCards = async (
   const result: {hits?: Cards} = await response.json();
   return result.hits || [];
 };
+
+const fetchMostPopularCards = async (
+  token: string,
+  host: string,
+  language: SupportedLanguage
+): Promise<Cards> => {
+  const response = await fetch(
+    `${host}/api/v2/most-popular?contentType=course&limit=${LIMIT_CARDS}&withoutAdaptive=true&lang=${language}`,
+    {
+      headers: {authorization: token}
+    }
+  );
+  const result: {hits?: Cards} = await response.json();
+  return result.hits || [];
+};
 export const fetchCards = async (
   token: string,
   host: string,
@@ -218,6 +234,7 @@ export const fetchCards = async (
   const mapRefreshCard = cards => Promise.all(cards.map(refreshCard));
   const favoritesP = fetchFavoriteCards(token, host, language).then(mapRefreshCard);
   const recommendationsP = fetchRecommendationCards(token, host, language).then(mapRefreshCard);
+  const mostPopularP = fetchMostPopularCards(token, host, language).then(mapRefreshCard);
 
   const favorites = await favoritesP;
 
@@ -227,11 +244,13 @@ export const fetchCards = async (
     return fetchedFavorites;
   }
   const recommendations = await recommendationsP;
+  const mostPopular = await mostPopularP;
 
-  const recoCards = uniqBy(card => card.universalRef, [...favorites, ...recommendations]).slice(
-    0,
-    LIMIT_CARDS
-  );
+  const recoCards = uniqBy(card => card.universalRef, [
+    ...favorites,
+    ...recommendations,
+    ...mostPopular
+  ]).slice(0, LIMIT_CARDS);
   await saveDashboardCardsInAsyncStorage(recoCards, language);
 
   return recoCards;

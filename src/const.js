@@ -15,6 +15,7 @@ import type {
   PermissionStatus,
   AppState,
   AnalyticsEventType,
+  ErrorType,
   AuthenticationType
 } from './types';
 
@@ -24,6 +25,11 @@ export const RESOURCE_TYPE: {
   VIDEO: 'video',
   PDF: 'pdf',
   IMG: 'img'
+};
+
+export const ERROR_TYPE: {[string]: ErrorType} = {
+  PLATFORM_NOT_ACTIVATED: 'PLATFORM_NOT_ACTIVATED',
+  NO_CONTENT_FOUND: 'NO_CONTENT_FOUND'
 };
 
 export const CARD_DISPLAY_MODE: {

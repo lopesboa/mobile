@@ -79,6 +79,13 @@ const generate = async (locale: string) => {
     'core/locales',
     'login.json'
   );
+
+  const moocErrorTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'error.json'
+  );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
@@ -91,6 +98,7 @@ const generate = async (locale: string) => {
     'packages/@coorpacademy-components/locales',
     'global.json'
   );
+
   const translations: Translations = {
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
     authenticationMagicLinkHeader: formatTranslation(moocLoginTranslations.mobile.magicLink.header),
@@ -115,6 +123,7 @@ const generate = async (locale: string) => {
       moocLoginTranslations.mobile.qrCode.stepThree
     ),
     authenticationQRCodeTitle: formatTranslation(moocLoginTranslations.mobile.qrCode.title),
+    askForHelp: formatTranslation(moocErrorTranslations.modal.mobile.ask_for_help),
     backToHome: formatTranslation(playerTranslations['Back to home']),
     bonus: formatTranslation(playerTranslations['Bonus!']),
     cancel: formatTranslation(moocFormTranslations.cancel),
@@ -123,6 +132,7 @@ const generate = async (locale: string) => {
     congratulations: formatTranslation(playerTranslations['Congratulations!']),
     context: formatTranslation(playerTranslations.Context),
     correction: formatTranslation(playerTranslations.Correction),
+    dataLost: formatTranslation(moocErrorTranslations.modal.mobile.data_lost),
     didYouKnowThat: formatTranslation(playerTranslations['Did you know that?']),
     finishLearning: formatTranslation(playerTranslations['Finish learning']),
     forYou: formatTranslation(playerTranslations['For you']),
@@ -135,6 +145,7 @@ const generate = async (locale: string) => {
     goToQuestion: formatTranslation(playerTranslations['Go to question']),
     highscore: formatTranslation(playerTranslations.Highscore || ''),
     howToSignIn: formatTranslation(moocLoginTranslations.mobile.howToSignIn),
+    iWantIt: formatTranslation(moocErrorTranslations.modal.mobile.i_want_it),
     keyPoint: formatTranslation(playerTranslations['Key point']),
     lesson: formatTranslation(playerTranslations.Media),
     logOut: formatTranslation(moocMenuTranslations.header.account_menu.logout),
@@ -151,8 +162,18 @@ const generate = async (locale: string) => {
     outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
     permission: formatTranslation(moocTranslations.mobile.settings.permission),
     permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
+
+    platformHasBeenDisabled: formatTranslation(
+      moocErrorTranslations.modal.mobile.platform_has_been_disabled
+    ),
     question: formatTranslation(playerTranslations.Question),
     quit: formatTranslation(playerTranslations.Quit),
+    reactivatePlatform: formatTranslation(moocErrorTranslations.modal.mobile.reactivate_platform),
+    refresh: formatTranslation(moocErrorTranslations.modal.mobile.refresh),
+    refreshEnjoyLearning: formatTranslation(
+      moocErrorTranslations.modal.mobile.refresh_enjoy_learning
+    ),
+    refreshNotWorking: formatTranslation(moocErrorTranslations.modal.mobile.refresh_not_working),
     relatedSubjects: formatTranslation(playerTranslations['Related subjects']),
     retryLevel: formatTranslation(playerTranslations['Retry level']),
     scanQRCode: formatTranslation(moocLoginTranslations.mobile.scanQRCode),

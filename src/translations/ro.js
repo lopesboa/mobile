@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Conectează-te la platforma de învățare <b>cu acest dispozitiv</b>',
   authenticationMagicLinkStepTwoDescription:
-    'Mergi la <b>contul tău</b> </br>în colțul din dreapta sus',
+    'Accesați <b>Contul dvs.</b> </br>în colțul din stânga sus',
   authenticationMagicLinkStepThreeDescription:
     '<b>Voilà!</b></br>Linkul tău magic va apărea imediat',
   authenticationMagicLinkTitle: 'Link magic',
@@ -22,6 +22,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Scanează codul QR folosind butonul de mai jos',
   authenticationQRCodeTitle: 'Cod QR',
+  askForHelp: 'Cere ajutor',
   backToHome: 'Înapoi la pagina de start',
   bonus: 'Bonus!',
   cancel: 'Anulează',
@@ -31,6 +32,7 @@ const translations: Translations = {
   congratulations: 'Felicitări!',
   context: 'Context',
   correction: 'Corectură',
+  dataLost: 'Se pare că datele tale s-au pierdut.',
   didYouKnowThat: 'Știați asta?',
   finishLearning: 'Întâi continuă-l pe acesta',
   forYou: 'Topul alegerilor noastre',
@@ -41,6 +43,7 @@ const translations: Translations = {
   goToQuestion: 'Salt la întrebare',
   highscore: 'Ți-ai îmbunătățit recordul personal<br><b>tocmai ai câștigat {{score}} stele</b>',
   howToSignIn: 'Cum dorești să te conectezi?',
+  iWantIt: 'O vreau!',
   keyPoint: 'Punct cheie',
   lesson: 'Lecție',
   logOut: 'Deconectați-vă',
@@ -57,8 +60,15 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   permission: 'Permisiune',
   permissionCamera: 'Trebuie să accesăm camera ca să scanăm codul QR și să te autentificăm.',
+  platformHasBeenDisabled: 'Aplicația a fost dezactivată pe platforma ta.',
   question: 'Întrebare',
   quit: 'Renunță',
+  reactivatePlatform:
+    'Dacă dorești să reactivezi aplicația, contactează-l pe managerul tău sau fă clic pe link-ul de mai jos și noi da transmite mesajul mai departe.',
+  refresh: 'Reîmprospătare',
+  refreshEnjoyLearning:
+    'în rețeaua dintre Saturn și Pământ. Te rugăm să reîmprospătezi pentru a te bucura de învățare.',
+  refreshNotWorking: 'Nu merge reîmprospătarea?',
   relatedSubjects: 'Recomandări:',
   retryLevel: 'Încercați din nou acest nivel',
   scanQRCode: 'Scanează <b>codul QR</b>',

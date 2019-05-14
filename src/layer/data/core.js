@@ -1,8 +1,8 @@
 // @flow strict
 
 import {AsyncStorage} from 'react-native';
-import fetch from 'cross-fetch';
 
+import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import type {SupportedLanguage} from '../../translations/_types';

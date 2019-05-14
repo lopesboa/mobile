@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Maak <b>met dit toestel</b> verbinding met uw leerplatform',
   authenticationMagicLinkStepTwoDescription:
-    'Ga naar <b>je account</b> </br> in de rechterbovenhoek',
+    'Ga naar <b>je Account</b> </br> in de linkerbovenhoek',
   authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>Uw magische link komt hier',
   authenticationMagicLinkTitle: 'Magische link',
   authenticationQRCodeHeader:
@@ -20,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Sca uw QR-code met de knop hieronder',
   authenticationQRCodeTitle: 'QR-code',
+  askForHelp: 'Ask for help',
   backToHome: 'Terug naar startpagina',
   bonus: 'Bonus!',
   cancel: 'Annuleren',
@@ -29,6 +30,7 @@ const translations: Translations = {
   congratulations: 'Proficiat!',
   context: 'Context',
   correction: 'Correctie',
+  dataLost: 'Je gegevens lijken verloren te zijn',
   didYouKnowThat: 'Wist je dat?',
   finishLearning: 'Ga eerst met deze door',
   forYou: 'Onze topkeuzes voor jou',
@@ -39,6 +41,7 @@ const translations: Translations = {
   goToQuestion: 'Naar de vraag',
   highscore: 'Je hebt een nieuwe topscore <br><b> je won zojuist {{score}} sterren </b>',
   howToSignIn: 'Hoe wilt u inloggen?',
+  iWantIt: 'Ik wil het!',
   keyPoint: 'Key point',
   lesson: 'Les',
   logOut: 'Afmelden',
@@ -56,8 +59,15 @@ const translations: Translations = {
   permission: 'Toestemming',
   permissionCamera:
     'We hebben toegang tot uw camera nodig om uw QR-code te scannen en uw identiteit te verifiëren.',
+  platformHasBeenDisabled: 'De app is uitgeschakeld voor je platform',
   question: 'Vraag',
   quit: 'Verlaten',
+  reactivatePlatform:
+    'Als je het opnieuw wilt activeren, neem dan contact op met je manager of klik op de onderstaande link en we zullen het bericht doorgeven',
+  refresh: 'Vernieuwen',
+  refreshEnjoyLearning:
+    'In het netwerk tussen Saturnus en de aarde, vernieuw dit om te genieten van het leren',
+  refreshNotWorking: 'Vernieuwen werkt niet?',
   relatedSubjects: 'Aanbevolen voor jou:',
   retryLevel: 'Probeer dit niveau opnieuw',
   scanQRCode: 'Scan uw <b>QR-code</b>',

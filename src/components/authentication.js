@@ -1,5 +1,4 @@
 // @flow
-
 import * as React from 'react';
 import {ScrollView, View, StyleSheet, ImageBackground} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
@@ -130,5 +129,4 @@ const Authentication = ({
     </SafeAreaView>
   </React.Fragment>
 );
-
 export default Authentication;

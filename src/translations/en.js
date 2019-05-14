@@ -20,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Scan your QR code using the button below',
   authenticationQRCodeTitle: 'QR Code',
+  askForHelp: 'Ask for help',
   backToHome: 'Back to home',
   bonus: 'Bonus!',
   cancel: 'Cancel',
@@ -29,6 +30,7 @@ const translations: Translations = {
   congratulations: 'Congratulations!',
   context: 'Context',
   correction: 'Correction',
+  dataLost: 'Your data seems to be lost',
   didYouKnowThat: 'Did you know that?',
   finishLearning: 'Continue this one first',
   forYou: 'Our top picks for you',
@@ -39,6 +41,7 @@ const translations: Translations = {
   goToQuestion: 'Go to question',
   highscore: 'You have a new highscore<br><b>you just won {{score}} stars</b>',
   howToSignIn: 'How would you like to sign in?',
+  iWantIt: 'I want it !',
   keyPoint: 'Key point',
   lesson: 'Lesson',
   logOut: 'Log out',
@@ -56,8 +59,15 @@ const translations: Translations = {
   permission: 'Permission',
   permissionCamera:
     'We need to access your camera in order to scan your QR code and authenticate you.',
+  platformHasBeenDisabled: 'The app has been disabled for your platform',
   question: 'Question',
   quit: 'Quit',
+  reactivatePlatform:
+    'if you want to reactivate it, contact your manager or click on the link below and we will pass the message on',
+  refresh: 'Refresh',
+  refreshEnjoyLearning:
+    'in the network between Saturn and the Earth, please refresh in order to enjoy learning',
+  refreshNotWorking: 'Refresh not working?',
   relatedSubjects: 'Recommended for you:',
   retryLevel: 'Retry level',
   scanQRCode: 'Scan your <b>QR code</b>',

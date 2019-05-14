@@ -8,7 +8,8 @@ const translations: Translations = {
     'Utilizar este dispositivo para verificar a sua identidade na plataforma web',
   authenticationMagicLinkStepOneDescription:
     'Ligue-se à sua plataforma de aprendizagem <b>com este dispositivo</b>',
-  authenticationMagicLinkStepTwoDescription: 'Vá à <b>sua Conta</b> </br>no canto superior direito',
+  authenticationMagicLinkStepTwoDescription:
+    'Vá à <b>sua Conta</b> </br>no canto superior esquerdo.',
   authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>A sua Ligação Mágica estará lá',
   authenticationMagicLinkTitle: 'Ligação mágica',
   authenticationQRCodeHeader:
@@ -19,6 +20,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Voilà!</b></br>Digitalize o seu código QR utilizando o botão abaixo',
   authenticationQRCodeTitle: 'Código QR',
+  askForHelp: 'Pedir ajuda',
   backToHome: 'Voltar ao início ',
   bonus: 'Bónus!',
   cancel: 'Cancelar',
@@ -28,6 +30,7 @@ const translations: Translations = {
   congratulations: 'Parabéns!',
   context: 'Contexto',
   correction: 'Correção',
+  dataLost: 'Os seus dados parecem estar perdidos',
   didYouKnowThat: 'Sabias que?',
   finishLearning: 'Continuar primeiro este',
   forYou: 'As nossas escolhas para si',
@@ -38,6 +41,7 @@ const translations: Translations = {
   goToQuestion: 'Vai para a pergunta',
   highscore: 'Obteve uma nova pontuação máxima<br><b>acaba de ganhar {{score}} estrelas</b>',
   howToSignIn: 'Como gostaria de iniciar sessão?',
+  iWantIt: 'Quero!',
   keyPoint: 'Ponto-chave',
   lesson: 'Lição',
   logOut: 'Desconectar-se',
@@ -55,8 +59,14 @@ const translations: Translations = {
   permission: 'Permissão',
   permissionCamera:
     'Precisamos de aceder à sua câmara para digitalizar o seu código QR e autenticá-lo.',
+  platformHasBeenDisabled: 'A aplicação foi desativada para a sua plataforma',
   question: 'Pergunta',
   quit: 'Desistir',
+  reactivatePlatform:
+    'Se quer reativá-la, contacte o seu gestor ou clique no link abaixo e vamos passar a mensagem',
+  refresh: 'Atualizar',
+  refreshEnjoyLearning: 'na rede entre Saturno e a Terra, atualize para desfrutar da aprendizagem',
+  refreshNotWorking: 'Não está a conseguir atualizar?',
   relatedSubjects: 'Recomendado para si:',
   retryLevel: 'Voltar a tentar nível',
   scanQRCode: 'Digitalize o seu <b>código QR</b>',

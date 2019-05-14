@@ -1476,10 +1476,10 @@
     prettier "1.16.4"
     requireindex "^1.2.0"
 
-"@coorpacademy/nova-icons@3.1.4":
-  version "3.1.4"
-  resolved "https://registry.npmjs.org/@coorpacademy/nova-icons/-/nova-icons-3.1.4.tgz#043a9fd67832b1feba69a61f7ef28fd121d30dce"
-  integrity sha512-yzHbZFItXCP6wWvW703gtNhfuuuGe2PckhkrZ566YJOuWO7iDbxHjBSAfu7dpR9ewujFg3bKODO39wfw8cLjhw==
+"@coorpacademy/nova-icons@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.npmjs.org/@coorpacademy/nova-icons/-/nova-icons-3.1.5.tgz#6ef83c3e1cdcd10540b09f1db2ebc57c2919d772"
+  integrity sha512-Sj0BJuN5304bS5eBjJ4aH+XlUKfQqGwt+6oyS6o71qvmSRqhx7bQA/wDNaRs86fuxQlXA8+CMwXIpBuihalKUg==
   dependencies:
     "@babel/cli" "^7.4.3"
     async "^2.6.2"
@@ -11147,6 +11147,13 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-native-animatable@^1.3.1:
+  version "1.3.2"
+  resolved "https://registry.npmjs.org/react-native-animatable/-/react-native-animatable-1.3.2.tgz#4783ee1a73dc98815aef234ce6b819f80bfe7d80"
+  integrity sha512-rmah3KQ63ft8DxkzFUwJSuZeq+oSYwldoGF4DTOR5WM2WR5wiWLgBAtrAHlI3Di3by323uOR21s+MlqPcHz2Kw==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-camera@^1.12.0:
   version "1.12.0"
   resolved "https://registry.npmjs.org/react-native-camera/-/react-native-camera-1.12.0.tgz#64cfb95fe4ad00f4fc4d94281bb3c913025964ca"
@@ -11213,6 +11220,14 @@ react-native-localization@^2.0.3:
   dependencies:
     react "^16.0.0"
     react-localization "^1.0.13"
+
+react-native-modal@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.npmjs.org/react-native-modal/-/react-native-modal-11.0.1.tgz#0c7e546557938981f188c56b80474ddfe7c9835c"
+  integrity sha512-qXKRCFj28uJ1AopMPwf4HssscZ4LwTCY+PlDKnXERdxrbGK626rduj4fHyLXSZ1xJvrDy8doHqVAYoQ9YuObgQ==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-animatable "^1.3.1"
 
 react-native-orientation-locker@1.1.5:
   version "1.1.5"

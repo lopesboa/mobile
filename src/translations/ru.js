@@ -9,7 +9,7 @@ const translations: Translations = {
   authenticationMagicLinkStepOneDescription:
     'Соединяйтесь с вашей учебной платформой <b>с помощью этого устройства</b>',
   authenticationMagicLinkStepTwoDescription:
-    'Перейдите в <b>свой аккаунт</b> </br>в правом верхнем углу',
+    'Перейдите в <b>свой аккаунт</b> </br> в левом верхнем углу',
   authenticationMagicLinkStepThreeDescription:
     '<b>Вуаля!</b></br>Ваша волшебная ссылка окажется прямо здесь',
   authenticationMagicLinkTitle: 'Волшебная ссылка ',
@@ -22,6 +22,7 @@ const translations: Translations = {
   authenticationQRCodeStepThreeDescription:
     '<b>Вуаля!</b></br>сканируйте свой QR-код с помощью кнопки ниже',
   authenticationQRCodeTitle: 'QR-код',
+  askForHelp: 'Попросить помощи',
   backToHome: 'Назад на главную',
   bonus: 'Бонус!',
   cancel: 'Отменить',
@@ -31,6 +32,7 @@ const translations: Translations = {
   congratulations: 'Поздравляем!',
   context: 'Контекст',
   correction: 'Исправление',
+  dataLost: 'Кажется, ваши данные потеряны',
   didYouKnowThat: 'Вы знали это?',
   finishLearning: 'Сначала продолжите этот',
   forYou: 'Наша лучшая подборка для вас',
@@ -41,6 +43,7 @@ const translations: Translations = {
   goToQuestion: 'Перейти к вопросу',
   highscore: 'У вас новый рекорд <br><b>вы только что выиграли {{score}} звезд(ы)</b>',
   howToSignIn: 'Как вы хотите входить? ',
+  iWantIt: 'Я хочу!',
   keyPoint: 'Ключевой момент',
   lesson: 'Урок',
   logOut: 'Выйти',
@@ -58,8 +61,14 @@ const translations: Translations = {
   permission: 'Разрешение ',
   permissionCamera:
     'Нам нужен доступ к вашей камере для сканирования вашего QR-кода и вашей аутентификации. ',
+  platformHasBeenDisabled: 'Приложение отключено для вашей платформы',
   question: 'Вопрос',
   quit: 'Выйти',
+  reactivatePlatform:
+    'если вы захотите снова активировать его, свяжитесь с вашим менеджером или нажмите на ссылку внизу и мы передадим сообщение',
+  refresh: 'Обновить',
+  refreshEnjoyLearning: 'в сети между Сатурном и Землей, обновите, чтобы наслаждаться учебой',
+  refreshNotWorking: 'Обновление не работает?',
   relatedSubjects: 'Рекомендовано вам:',
   retryLevel: 'Повторить уровень',
   scanQRCode: 'Сканируйте свой <b>QR-код</b>',
