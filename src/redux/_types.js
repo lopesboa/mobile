@@ -16,3 +16,9 @@ type ThunkAction<S, A, O> =
     ) => Promise<A | void>);
 
 export type StoreAction<A> = ThunkAction<StoreState, A, Options>;
+
+export type ErrorAction<T> = {|
+  ...T,
+  payload: Error,
+  error: boolean
+|};

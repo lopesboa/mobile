@@ -26,6 +26,7 @@ import DisciplineBundle from './middlewares/discipline-bundle';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
 import UpdateCardOnProgressionUpdate from './middlewares/update-card-on-progression-update';
+import ErrorHandler from './middlewares/error-handler';
 import type {Options, ReduxDevTools} from './_types';
 
 export type StoreState = $Exact<{|
@@ -65,7 +66,8 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       DisciplineBundle(options),
       ResetDisplayedProgression(options),
       ProgressionsSynchronization(options),
-      UpdateCardOnProgressionUpdate(options)
+      UpdateCardOnProgressionUpdate(options),
+      ErrorHandler()
     ),
     // $FlowFixMe
     reduxDevTools || (f => f)

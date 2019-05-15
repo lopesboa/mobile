@@ -5,10 +5,10 @@ import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
 import pMap from 'p-map';
-import type {StoreAction} from '../_types';
+
+import type {StoreAction, ErrorAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';
 import {isDone} from '../../utils/progressions';
-
 import {ENGINE} from '../../const';
 
 const ENGINE_VERSION = '1';
@@ -45,12 +45,10 @@ export type Action =
       type: '@@progression/SYNCHRONIZE_SUCCESS',
       meta: {|id: string|}
     |}
-  | {|
+  | ErrorAction<{|
       type: '@@progression/SYNCHRONIZE_FAILURE',
-      error: true,
-      payload: Error,
       meta: {|id: string|}
-    |};
+    |}>;
 
 export const synchronizeProgression = (progressionId: string): StoreAction<Action> => {
   return async (dispatch, getState, options) => {

@@ -99,7 +99,7 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('TypeError: Token not defined'));
+        expect(action).toEqual(fetchError(new TypeError('Token not defined')));
         return action;
       });
       getState.mockReturnValue({
@@ -110,7 +110,7 @@ describe('Cards', () => {
       const actual = await fetchCards(language)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('TypeError: Token not defined'));
+      return expect(actual).toEqual(fetchError(new TypeError('Token not defined')));
     });
     it('brand is missing', async () => {
       const dispatch = jest.fn();
@@ -128,7 +128,7 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('TypeError: Brand not defined'));
+        expect(action).toEqual(fetchError(new TypeError('Brand not defined')));
         return action;
       });
       getState.mockReturnValue({
@@ -139,7 +139,7 @@ describe('Cards', () => {
       const actual = await fetchCards(language)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('TypeError: Brand not defined'));
+      return expect(actual).toEqual(fetchError(new TypeError('Brand not defined')));
     });
     it('error on fetch failure', async () => {
       const dispatch = jest.fn();
@@ -157,7 +157,7 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('Error'));
+        expect(action).toEqual(fetchError(new Error()));
         return action;
       });
       getState.mockReturnValue({
@@ -168,7 +168,7 @@ describe('Cards', () => {
       // $FlowFixMe
       const actual = await fetchCards(language)(dispatch, getState, options);
 
-      return expect(actual).toEqual(fetchError('Error'));
+      return expect(actual).toEqual(fetchError(new Error()));
     });
     it('no cards found', async () => {
       const dispatch = jest.fn();

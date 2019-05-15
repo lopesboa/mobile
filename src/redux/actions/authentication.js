@@ -4,7 +4,7 @@ import decode from 'jwt-decode';
 import {AsyncStorage} from 'react-native';
 
 import fetch from '../../modules/fetch';
-import type {StoreAction} from '../_types';
+import type {StoreAction, ErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT} from '../../types';
 import localToken from '../../utils/local-token';
@@ -29,11 +29,9 @@ export type Action =
       type: '@@authentication/SIGN_IN_SUCCESS',
       payload: SignInSuccess
     |}
-  | {|
-      type: '@@authentication/SIGN_IN_ERROR',
-      payload: Error,
-      error: true
-    |}
+  | ErrorAction<{|
+      type: '@@authentication/SIGN_IN_ERROR'
+    |}>
   | {|
       type: '@@authentication/SIGN_OUT'
     |};
@@ -83,7 +81,8 @@ export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => a
 
     // $FlowFixMe wrong StoreAction type
     const action = await fetchBrand(token)(dispatch, getState, options);
-    if (action.payload.error) {
+
+    if (action.error) {
       throw new Error(action.payload.error);
     }
 
@@ -115,12 +114,12 @@ export const signOut = (): StoreAction<Action> => async (dispatch, getState, opt
 
   const brand = getBrand(getState());
   const token = getToken(getState());
-  const jwt: JWT = decode(token || '');
+  const jwt: JWT | void = token ? decode(token) : undefined;
 
   const {services} = options;
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
     ...(brand ? {brand: brand.name} : {}),
-    userId: jwt.user
+    userId: jwt && jwt.user
   });
 
   return dispatch({

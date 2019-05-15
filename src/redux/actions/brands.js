@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {Brand} from '../../types';
-import type {StoreAction} from '../_types';
+import type {StoreAction, ErrorAction} from '../_types';
 import {getToken} from '../utils/state-extract';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
@@ -18,12 +18,9 @@ export type Action =
         item: Brand
       |}
     |}
-  | {|
-      type: '@@brands/FETCH_ERROR',
-      payload: {|
-        error: string
-      |}
-    |};
+  | ErrorAction<{|
+      type: '@@brands/FETCH_ERROR'
+    |}>;
 
 export const fetchRequest = (): Action => ({
   type: FETCH_REQUEST
@@ -36,11 +33,10 @@ export const fetchSuccess = (item: Brand): Action => ({
   }
 });
 
-export const fetchError = (error: string): Action => ({
+export const fetchError = (e: Error): Action => ({
   type: FETCH_ERROR,
-  payload: {
-    error
-  }
+  payload: e,
+  error: true
 });
 
 export const fetchBrand = (token: string): StoreAction<Action> => async (
@@ -48,18 +44,16 @@ export const fetchBrand = (token: string): StoreAction<Action> => async (
   getState,
   {services}
 ) => {
-  await dispatch(fetchRequest());
-
-  if (!token) {
-    return dispatch(fetchError('Token not defined'));
-  }
-
   try {
+    await dispatch(fetchRequest());
+    if (!token) {
+      throw new Error('Token not defined');
+    }
     const brand = await services.Brands.find(token);
 
     return dispatch(fetchSuccess(brand));
   } catch (e) {
-    return dispatch(fetchError(e.message));
+    return dispatch(fetchError(e));
   }
 };
 

@@ -50,7 +50,7 @@ describe('Brands', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('Token not defined'));
+        expect(action).toEqual(fetchError(new Error('Token not defined')));
         return action;
       });
 
@@ -58,7 +58,7 @@ describe('Brands', () => {
       const actual = await fetchBrand()(dispatch, getState, options);
 
       expect(options.services.Brands.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('Token not defined'));
+      return expect(actual).toEqual(fetchError(new Error('Token not defined')));
     });
 
     it('error on fetch failure', async () => {
@@ -77,14 +77,14 @@ describe('Brands', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError(fakeError.message));
+        expect(action).toEqual(fetchError(fakeError));
         return action;
       });
       options.services.Brands.find.mockRejectedValueOnce(fakeError);
 
       // $FlowFixMe
       const actual = await fetchBrand('__TOKEN__')(dispatch, getState, options);
-      return expect(actual).toEqual(fetchError(fakeError.message));
+      return expect(actual).toEqual(fetchError(fakeError));
     });
   });
 
@@ -136,7 +136,7 @@ describe('Brands', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError('Token not defined'));
+        expect(action).toEqual(fetchError(new Error('Token not defined')));
         return action;
       });
       getState.mockReturnValueOnce({authentication: {user: {token, isGodModeUser: false}}});
@@ -145,7 +145,7 @@ describe('Brands', () => {
       const actual = await fetchCurrentBrand()(dispatch, getState, options);
 
       expect(options.services.Brands.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError('Token not defined'));
+      return expect(actual).toEqual(fetchError(new Error('Token not defined')));
     });
   });
 });

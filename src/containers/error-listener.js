@@ -1,18 +1,19 @@
 // @flow
-import React from 'react';
 
+import React from 'react';
 import Modal from 'react-native-modal';
 import {Linking} from 'react-native';
 import {connect} from 'react-redux';
+
 import ErrorModalComponent from '../components/error-modal';
 import type {ErrorType} from '../types';
 import {ERROR_TYPE} from '../const';
 import {hideModal, refresh} from '../redux/actions/ui/modal';
 import {signOut} from '../redux/actions/authentication';
-
 import {assistanceEmail} from '../../app';
 
 type ConnectedStateToProps = {|
+  ...ReactNavigation$WithNavigationProps,
   isVisible: boolean,
   errorType: ErrorType,
   lastAction?: () => void
@@ -26,13 +27,11 @@ type ConnectedDispatchProps = {|
 
 export type Props = {|
   ...ConnectedStateToProps,
-  ...ConnectedDispatchProps
+  ...ConnectedDispatchProps,
+  onClose: () => void
 |};
 
-type State = {
-  isVisible: boolean
-};
-class ErrorModal extends React.PureComponent<Props, State> {
+class ErrorModal extends React.PureComponent<Props> {
   props: Props;
 
   handleAssistancePress = () => {
@@ -40,10 +39,9 @@ class ErrorModal extends React.PureComponent<Props, State> {
   };
 
   handleClose = () => {
-    if (this.props.errorType === ERROR_TYPE.NO_CONTENT_FOUND) {
-      this.props.signOut();
-    }
     this.props.hideModal();
+    this.props.signOut();
+    this.props.onClose();
   };
 
   handlePress = () => {

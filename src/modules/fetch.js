@@ -5,15 +5,13 @@ import _fetch from 'cross-fetch';
 import {ForbiddenError} from '../models/error';
 
 const fetch: typeof _fetch = async (...args) => {
-  try {
-    return await _fetch(...args);
-  } catch (e) {
-    if (e.status === 403) {
-      throw new ForbiddenError(e.message);
-    }
+  const result = await _fetch(...args);
 
-    throw e;
+  if (result && result.status === 403) {
+    throw new ForbiddenError('Fetch Forbidden');
   }
+
+  return result;
 };
 
 export default fetch;

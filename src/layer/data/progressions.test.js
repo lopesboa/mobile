@@ -1,8 +1,11 @@
 // @flow
+
 import {AsyncStorage} from 'react-native';
+
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {createProgression, createState} from '../../__fixtures__/progression';
 import createCompletion from '../../__fixtures__/completion';
+import {ForbiddenError} from '../../models/error';
 import {
   findById,
   getAll,
@@ -354,7 +357,8 @@ describe('progresssion', () => {
       const {synchronize} = require('./progressions');
       await expect(synchronize(TOKEN, HOST, fakeProgression)).resolves.toBeUndefined();
     });
-    it('should throw error if post fail', async () => {
+
+    it('should throw error if forbidden', async () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
@@ -390,8 +394,52 @@ describe('progresssion', () => {
       });
 
       const {synchronize} = require('./progressions');
-      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow('Forbidden');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
+        new ForbiddenError('Fetch Forbidden')
+      );
     });
+
+    it('should throw error if status code >= 400', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = 'learner';
+      const progressionContent = {
+        ref: 'foo',
+        type: 'chapter'
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          status: 400,
+          statusText: 'Foo bar baz',
+          json: () => Promise.resolve({})
+        });
+      });
+
+      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+        expect(keys).toEqual(`progression_${progressionId}`);
+        return Promise.resolve();
+      });
+
+      const {synchronize} = require('./progressions');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
+        new Error('Foo bar baz')
+      );
+    });
+
     it('should support only progression with _id', async () => {
       const engine = 'learner';
       const progressionContent = {

@@ -301,11 +301,11 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError(fakeError.message));
+        expect(action).toEqual(fetchError(fakeError));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInError(fakeError));
+        expect(action).toEqual(signInError(new Error()));
         return action;
       });
 
@@ -313,7 +313,7 @@ describe('Authentication', () => {
       const actual = await signIn(token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
-      return expect(actual).toEqual(signInError(fakeError));
+      return expect(actual).toEqual(signInError(new Error()));
     });
 
     it('should reject if brand is missing', async () => {
@@ -412,6 +412,50 @@ describe('Authentication', () => {
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
           userId: '42',
+          brand: brand.name
+        }
+      );
+      expect(actual).toEqual(expected);
+    });
+
+    it('should dispatch sign out -- without token', async () => {
+      const token = null;
+
+      const {SIGN_OUT, signOut} = require('./authentication');
+
+      const brand = createBrand();
+
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          user: {
+            token,
+            isGodModeUser: false
+          },
+          brand
+        }
+      });
+      const options = {
+        services: {
+          Analytics: createFakeAnalytics()
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: SIGN_OUT
+        });
+        return action;
+      });
+
+      // $FlowFixMe
+      const actual = await signOut()(dispatch, getState, options);
+      const expected = {type: SIGN_OUT};
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.SIGN_OUT,
+        {
+          userId: undefined,
           brand: brand.name
         }
       );

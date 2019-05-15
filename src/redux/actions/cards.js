@@ -2,7 +2,7 @@
 
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
-import type {StoreAction} from '../_types';
+import type {StoreAction, ErrorAction} from '../_types';
 import {ENGINE, ERROR_TYPE} from '../../const';
 import {getToken, getBrand} from '../utils/state-extract';
 import {pickNextLevel} from '../../utils/content';
@@ -56,10 +56,9 @@ export type Action =
       type: '@@cards/FETCH_SUCCESS',
       payload: FetchSuccessPayload
     |}
-  | {|
-      type: '@@cards/FETCH_ERROR',
-      payload: FetchErrorPayload
-    |}
+  | ErrorAction<{|
+      type: '@@cards/FETCH_ERROR'
+    |}>
   | {|
       type: '@@cards/SELECT_CARD',
       payload: SelectCardPayload
@@ -91,11 +90,10 @@ export const fetchSuccess = (
   }
 });
 
-export const fetchError = (error: string): Action => ({
+export const fetchError = (error: Error): Action => ({
   type: FETCH_ERROR,
-  payload: {
-    error
-  }
+  payload: error,
+  error: true
 });
 
 export const refreshCard = (
@@ -141,7 +139,7 @@ export const fetchCards = (
 
       return dispatch(fetchSuccess(cards, language));
     } catch (err) {
-      return dispatch(fetchError(err.toString()));
+      return dispatch(fetchError(err));
     }
   };
 };

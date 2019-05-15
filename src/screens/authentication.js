@@ -12,6 +12,7 @@ import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import localToken from '../utils/local-token';
+import ErrorListener from '../containers/error-listener';
 import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
 type ConnectedStateToProps = {|
@@ -57,7 +58,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.isAuthenticated && !this.props.isAuthenticated) {
-      this.props.navigation.popToTop();
+      this.handleSignOut();
     }
   }
 
@@ -71,6 +72,8 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
     splashScreen.hide();
   };
+
+  handleSignOut = () => this.props.navigation.popToTop();
 
   handleSignIn = async (token?: string) => {
     await this.props.signIn(token);
@@ -121,6 +124,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
             onMobileButtonPress={this.handleMobileButtonPress}
           />
         )}
+        <ErrorListener onClose={this.handleSignOut} />
       </Screen>
     );
   }

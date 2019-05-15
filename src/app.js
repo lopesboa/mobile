@@ -14,7 +14,6 @@ import BrandThemeProvider from './components/brand-theme-provider';
 import AnalyticsProvider from './components/analytics-provider';
 import VersionListener from './containers/version-listener';
 import VideoFullscreenListener from './containers/video-fullscreen-listener';
-import ErrorListener from './containers/error-listener';
 import createDataLayer from './layer/data';
 import createServices from './services';
 import createStore from './redux';
@@ -58,7 +57,6 @@ class App extends React.PureComponent<Props> {
                 <Navigator />
               </View>
             </BrandThemeProvider>
-            <ErrorListener />
             {Platform.OS === 'android' && <VideoFullscreenListener />}
           </PortalProvider>
         </AnalyticsProvider>
