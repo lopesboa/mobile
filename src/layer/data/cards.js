@@ -163,11 +163,13 @@ const saveDashboardCardsInAsyncStorage = async (
   cards: Array<DisciplineCard | ChapterCard>,
   language: SupportedLanguage
 ): Promise<void> => {
-  const _cards = cardsToKeys(cards, language);
-  try {
-    await AsyncStorage.multiSet(cardsToPairs(_cards));
-  } catch (e) {
-    throw new Error('could not store the dashboard cards');
+  if (cards.length > 0) {
+    try {
+      const _cards = cardsToPairs(cardsToKeys(cards, language));
+      await AsyncStorage.multiSet(_cards);
+    } catch (e) {
+      throw new Error('could not store the dashboard cards');
+    }
   }
 };
 

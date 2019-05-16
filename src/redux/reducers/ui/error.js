@@ -29,9 +29,7 @@ const reducer = <T>(state: State<T> = initialState, action: Action<T>): State<T>
     case HIDE: {
       return {
         ...state,
-        isVisible: false,
-        errorType: undefined,
-        lastAction: undefined
+        isVisible: false
       };
     }
     default:
