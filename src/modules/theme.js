@@ -17,7 +17,8 @@ export type Colors = {
   black: string,
   battle: string,
   notification: string,
-  salmon: string
+  salmon: string,
+  pink: string
 };
 
 export type FontWeightType = 'bold' | 'semiBold' | 'regular';
@@ -71,7 +72,8 @@ const theme: Theme = {
     black: '#14171A',
     battle: '#FFE100',
     notification: '#FF7043',
-    salmon: '#ffded4'
+    salmon: '#fde2e5',
+    pink: '#f73f52'
   },
   spacing: {
     micro: 4,

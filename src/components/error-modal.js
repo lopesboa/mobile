@@ -7,6 +7,7 @@ import {
   NovaLineMobilephoneMobilePhoneClose1 as PhoneCloseIcon,
   NovaSolidSpaceRingPlanet as RingPlanet
 } from '@coorpacademy/nova-icons';
+
 import theme from '../modules/theme';
 import type {ErrorType} from '../types';
 import translations from '../translations';
@@ -25,6 +26,10 @@ export type Props = {|
   onAssistancePress: () => void
 |};
 
+const HEADER_HEIGHT = 75;
+const BADGE_BORDER_WIDTH = 5;
+const BADGE_HEIGHT = 93 + BADGE_BORDER_WIDTH * 2;
+
 const styles = StyleSheet.create({
   container: {
     borderRadius: theme.radius.card,
@@ -33,34 +38,37 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: theme.colors.salmon,
     alignItems: 'flex-end',
-    padding: theme.spacing.base
+    justifyContent: 'center',
+    paddingHorizontal: theme.spacing.medium,
+    height: HEADER_HEIGHT
   },
   heading: {
-    fontWeight: theme.fontWeight.bold,
-    paddingVertical: theme.spacing.small
+    fontWeight: theme.fontWeight.bold
   },
   content: {
     backgroundColor: theme.colors.white,
-    padding: theme.spacing.base,
+    paddingTop: BADGE_HEIGHT / 4 + theme.spacing.medium,
+    paddingHorizontal: theme.spacing.medium,
+    paddingBottom: theme.spacing.medium,
     alignItems: 'center'
   },
   contentFooter: {
     alignItems: 'center',
     flexDirection: 'row'
   },
-  buttonContainer: {
-    width: '100%',
-    paddingVertical: theme.spacing.base
+  button: {
+    width: '100%'
   },
   badge: {
     position: 'absolute',
-    backgroundColor: '#f73f52',
-    height: 93,
-    width: 93,
-    borderRadius: 50,
-    top: -50,
+    backgroundColor: theme.colors.pink,
+    height: BADGE_HEIGHT,
+    width: BADGE_HEIGHT,
+    borderRadius: BADGE_HEIGHT,
+    alignSelf: 'center',
+    top: HEADER_HEIGHT / 4,
     borderColor: theme.colors.white,
-    borderWidth: 5,
+    borderWidth: BADGE_BORDER_WIDTH,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -109,7 +117,7 @@ const ErrorModal = ({onPress, onClose, onAssistancePress, type}: Props) => {
       ? translations.refreshEnjoyLearning
       : translations.reactivatePlatform;
 
-  const assitanceHelper =
+  const assistanceHelper =
     type === ERROR_TYPE.NO_CONTENT_FOUND ? (
       <View style={styles.contentFooter}>
         <Text style={[styles.text, styles.smallText]}>{translations.refreshNotWorking}</Text>
@@ -125,11 +133,9 @@ const ErrorModal = ({onPress, onClose, onAssistancePress, type}: Props) => {
   const button =
     type === ERROR_TYPE.NO_CONTENT_FOUND ? (
       <Button onPress={onPress} analyticsID="button-retry-action">
-        <React.Fragment>
-          <RedoIcon color={theme.colors.white} height={30} width={30} />
-          <Space />
-          <Text style={styles.buttonText}>{translations.refresh}</Text>
-        </React.Fragment>
+        <RedoIcon color={theme.colors.white} height={25} width={25} />
+        <Space />
+        <Text style={styles.buttonText}>{translations.refresh}</Text>
       </Button>
     ) : (
       <Button onPress={onPress} analyticsID="button-retry-action">
@@ -149,13 +155,15 @@ const ErrorModal = ({onPress, onClose, onAssistancePress, type}: Props) => {
         />
       </View>
       <View style={styles.content}>
-        <View style={styles.badge}>{icon}</View>
-        <Space />
-        <Text style={[styles.heading, styles.text]}> {headerText} </Text>
+        <Text style={[styles.heading, styles.text]}>{headerText}</Text>
+        <Space type="base" />
         <Text style={styles.text}>{content}</Text>
-        <View style={styles.buttonContainer}>{button}</View>
-        {assitanceHelper}
+        <Space type="base" />
+        <View style={styles.button}>{button}</View>
+        <Space type="base" />
+        {assistanceHelper}
       </View>
+      <View style={styles.badge}>{icon}</View>
     </View>
   );
 };

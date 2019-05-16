@@ -12,6 +12,10 @@ import {getStatusBarHeight} from '../modules/status-bar';
 import HeaderBackIcon from './header-back-icon';
 import Touchable from './touchable';
 
+export const HOME_ICON_HEIGHT = 16;
+export const CLOSE_ICON_HEIGHT = 16;
+export const BACK_ICON_HEIGHT = 20;
+
 type Props = {|
   type: 'close' | 'back' | 'home',
   color?: string,
@@ -51,9 +55,15 @@ const HeaderBackButton = ({
     ]}
   >
     <Touchable testID={testID} onPress={onPress} hitSlop={getHitSlop()} analyticsID="button-close">
-      {type === 'home' && <HomeIcon height={16} width={16} color={color} />}
-      {type === 'close' && <CloseIcon height={16} width={16} color={color} />}
-      {type === 'back' && <HeaderBackIcon height={20} width={20} color={color} />}
+      {type === 'home' && (
+        <HomeIcon height={HOME_ICON_HEIGHT} width={HOME_ICON_HEIGHT} color={color} />
+      )}
+      {type === 'close' && (
+        <CloseIcon height={CLOSE_ICON_HEIGHT} width={CLOSE_ICON_HEIGHT} color={color} />
+      )}
+      {type === 'back' && (
+        <HeaderBackIcon height={BACK_ICON_HEIGHT} width={BACK_ICON_HEIGHT} color={color} />
+      )}
     </Touchable>
   </View>
 );
