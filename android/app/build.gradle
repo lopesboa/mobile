@@ -49,7 +49,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         multiDexEnabled true
         versionCode 1
-        versionName "1.1.56"
+        versionName "1.1.57"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
