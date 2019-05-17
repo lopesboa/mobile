@@ -8,6 +8,7 @@ import splashScreen from 'react-native-splash-screen';
 import {assistanceEmail} from '../../app';
 import {BLUE_COORP_DARK} from '../modules/theme';
 import {AUTHENTICATION_TYPE} from '../const';
+import type {AuthenticationType} from '../types';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
@@ -50,7 +51,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     const token = await localToken.get();
 
     if (token) {
-      await this.handleSignIn(token);
+      await this.handleSignIn(AUTHENTICATION_TYPE.RECONNECTION, token);
     }
 
     return this.hideSplashScreen();
@@ -75,13 +76,13 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
   handleSignOut = () => this.props.navigation.popToTop();
 
-  handleSignIn = async (token?: string) => {
-    await this.props.signIn(token);
+  handleSignIn = async (authenticationType: AuthenticationType, token?: string) => {
+    await this.props.signIn(authenticationType, token);
     await this.props.navigation.navigate('Home');
   };
 
   handleDemoPress = () => {
-    this.handleSignIn();
+    this.handleSignIn(AUTHENTICATION_TYPE.DEMO);
   };
 
   handleHelpPress = () => {

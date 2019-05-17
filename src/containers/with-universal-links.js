@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 import {withNavigation} from 'react-navigation';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
+import {AUTHENTICATION_TYPE} from '../const';
 import {signIn, signOut} from '../redux/actions/authentication';
 import type {State as TokenState} from '../redux/reducers/authentication/token';
 import type {URLEventType} from '../types';
@@ -62,7 +63,7 @@ function withUniversalLinks<P>(WrappedComponent: React$ComponentType<P>): React$
           if (this.props.token) {
             await this.props.signOut();
           }
-          await this.props.signIn(query.jwt);
+          await this.props.signIn(AUTHENTICATION_TYPE.MAGIC_LINK, query.jwt);
         }
 
         return this.handleNavigate(route);

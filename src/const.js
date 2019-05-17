@@ -193,10 +193,14 @@ export const ANALYTICS_EVENT_TYPE: {
 
 export const AUTHENTICATION_TYPE: {
   QR_CODE: 'qr-code',
-  MAGIC_LINK: 'magic-link'
+  DEMO: 'demo',
+  MAGIC_LINK: 'magic-link',
+  RECONNECTION: 'reconnection'
 } = {
   QR_CODE: 'qr-code',
-  MAGIC_LINK: 'magic-link'
+  DEMO: 'demo',
+  MAGIC_LINK: 'magic-link',
+  RECONNECTION: 'reconnection'
 };
 // FlowAssert
 (Object.keys(AUTHENTICATION_TYPE).map(k => AUTHENTICATION_TYPE[k]): Array<AuthenticationType>);

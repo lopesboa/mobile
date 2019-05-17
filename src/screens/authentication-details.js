@@ -5,6 +5,7 @@ import {StatusBar, Linking} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 
 import {AUTHENTICATION_TYPE} from '../const';
+import type {AuthenticationType} from '../types';
 import AuthenticationDetails, {TOP_COLOR} from '../components/authentication-details';
 import type {Props as AuthenticationDetailsProps} from '../components/authentication-details';
 import Screen from '../components/screen';
@@ -12,7 +13,7 @@ import type {Params as QRCodeScreenParams} from './qr-code';
 
 export type Params = {|
   type: $PropertyType<AuthenticationDetailsProps, 'type'>,
-  onSignIn: string => Promise<void>,
+  onSignIn: (AuthenticationType, string) => Promise<void>,
   onHelpPress: $PropertyType<AuthenticationDetailsProps, 'onHelpPress'>,
   onDemoPress: $PropertyType<AuthenticationDetailsProps, 'onDemoPress'>
 |};
@@ -24,13 +25,18 @@ type Props = {|
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   props: Props;
 
+  handleScan = () => {
+    const {navigation} = this.props;
+    navigation.state.params.onSignIn(AUTHENTICATION_TYPE.QR_CODE);
+  };
+
   handleButtonPress = () => {
     const {type} = this.props.navigation.state.params;
 
     if (type === AUTHENTICATION_TYPE.QR_CODE) {
       const {navigation} = this.props;
       const params: QRCodeScreenParams = {
-        onScan: navigation.state.params.onSignIn
+        onScan: this.handleScan
       };
       navigation.navigate('QRCodeModal', params);
     }

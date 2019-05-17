@@ -6,9 +6,10 @@ import {AsyncStorage} from 'react-native';
 import fetch from '../../modules/fetch';
 import type {StoreAction, ErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
-import type {JWT} from '../../types';
+import type {JWT, AuthenticationType} from '../../types';
 import localToken from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
+
 import {hasGodMode} from '../utils/has-role';
 import {fetchBrand} from './brands';
 import type {Action as BrandsAction} from './brands';
@@ -64,11 +65,10 @@ export const getAnonymousToken = async (): Promise<string> => {
   return token;
 };
 
-export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => async (
-  dispatch,
-  getState,
-  options
-) => {
+export const signIn = (
+  authenticationType: AuthenticationType,
+  _token?: string
+): StoreAction<Action | BrandsAction> => async (dispatch, getState, options) => {
   await dispatch(signInRequest(_token));
   try {
     const token = _token || (await getAnonymousToken());
@@ -94,9 +94,11 @@ export const signIn = (_token?: string): StoreAction<Action | BrandsAction> => a
 
     const isGodModeUser = hasGodMode(jwt, brand.name);
     const {services} = options;
+
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
       userId: jwt.user,
-      brand: brand.name
+      brand: brand.name,
+      authenticationType
     });
 
     await localToken.set(token);

@@ -2,7 +2,7 @@
 
 import {createBrand} from '../../__fixtures__/brands';
 import {toJWT, createFakeAnalytics, fakeError} from '../../utils/tests';
-import {ANALYTICS_EVENT_TYPE} from '../../const';
+import {ANALYTICS_EVENT_TYPE, AUTHENTICATION_TYPE} from '../../const';
 
 jest.mock('../../utils/local-token');
 jest.mock('cross-fetch');
@@ -49,6 +49,7 @@ describe('Authentication', () => {
   });
 
   describe('signIn', () => {
+    const authenticationType = AUTHENTICATION_TYPE.QR_CODE;
     it('should sign in the user', async () => {
       const {signIn, signInRequest, signInSuccess} = require('./authentication');
       const {fetchRequest, fetchSuccess} = require('./brands');
@@ -95,12 +96,13 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(token)(dispatch, getState, options);
+      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
           userId: '42',
-          brand: brand.name
+          brand: brand.name,
+          authenticationType
         }
       );
 
@@ -161,12 +163,13 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn()(dispatch, getState, options);
+      const actual = await signIn(authenticationType)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
           userId: '4242',
-          brand: brand.name
+          brand: brand.name,
+          authenticationType
         }
       );
 
@@ -202,7 +205,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn()(dispatch, getState, options);
+      const actual = await signIn(authenticationType)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
       return expect(actual).toEqual(signInError(new Error('Oops i did it again')));
@@ -234,7 +237,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(token)(dispatch, getState, options);
+      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
       return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
@@ -265,7 +268,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(token)(dispatch, getState, options);
+      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
       return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
@@ -310,7 +313,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(token)(dispatch, getState, options);
+      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
       return expect(actual).toEqual(signInError(new Error()));
@@ -362,7 +365,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(token)(dispatch, getState, options);
+      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
 
       return expect(actual).toEqual(signInError(new Error('Incorrect brand')));
