@@ -25,9 +25,9 @@ type Props = {|
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   props: Props;
 
-  handleScan = () => {
+  handleScan = (token?: string) => {
     const {navigation} = this.props;
-    navigation.state.params.onSignIn(AUTHENTICATION_TYPE.QR_CODE);
+    navigation.state.params.onSignIn(AUTHENTICATION_TYPE.QR_CODE, token);
   };
 
   handleButtonPress = () => {
