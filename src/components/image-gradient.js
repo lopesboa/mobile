@@ -24,13 +24,7 @@ const ImageGradient = ({
   image,
   children,
   style,
-  gradient = [
-    'rgba(0,0,0,0)',
-    'rgba(0,0,0,0)',
-    'rgba(0,0,0,0.4)',
-    'rgba(0,0,0,0.7)',
-    'rgba(0,0,0,0.9)'
-  ],
+  gradient = ['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)'],
   minHeight = 205,
   testID
 }: Props) => {

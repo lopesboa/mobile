@@ -985,10 +985,9 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                         colors={
                           Array [
                             0,
-                            0,
                             1711276032,
                             3003121664,
-                            3858759680,
+                            4278190080,
                           ]
                         }
                         endPoint={
@@ -2300,10 +2299,9 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                         colors={
                           Array [
                             0,
-                            0,
                             1711276032,
                             3003121664,
-                            3858759680,
+                            4278190080,
                           ]
                         }
                         endPoint={
@@ -4509,10 +4507,9 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                         colors={
                           Array [
                             0,
-                            0,
                             1711276032,
                             3003121664,
-                            3858759680,
+                            4278190080,
                           ]
                         }
                         endPoint={
@@ -6885,10 +6882,9 @@ exports[`Storyshots LevelEnd Success 1`] = `
                         colors={
                           Array [
                             0,
-                            0,
                             1711276032,
                             3003121664,
-                            3858759680,
+                            4278190080,
                           ]
                         }
                         endPoint={
@@ -9063,10 +9059,9 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                         colors={
                           Array [
                             0,
-                            0,
                             1711276032,
                             3003121664,
-                            3858759680,
+                            4278190080,
                           ]
                         }
                         endPoint={

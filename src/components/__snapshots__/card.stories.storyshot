@@ -94,10 +94,9 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
             colors={
               Array [
                 0,
-                0,
                 1711276032,
                 3003121664,
-                3858759680,
+                4278190080,
               ]
             }
             endPoint={
@@ -594,10 +593,9 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
             colors={
               Array [
                 0,
-                0,
                 1711276032,
                 3003121664,
-                3858759680,
+                4278190080,
               ]
             }
             endPoint={

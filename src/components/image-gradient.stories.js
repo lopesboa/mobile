@@ -4,6 +4,7 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {View} from 'react-native';
 import image from '../__fixtures__/assets/landscape-1.jpg';
+import portrait7 from '../__fixtures__/assets/portrait-7-with-text.jpg';
 import ImageGradient from './image-gradient';
 
 storiesOf('Image Gradient', module)
@@ -24,6 +25,11 @@ storiesOf('Image Gradient', module)
       image={image}
       minHeight={250}
     >
+      <View />
+    </ImageGradient>
+  ))
+  .add('Extrem Gradient', () => (
+    <ImageGradient testID="image-gradient" image={portrait7} minHeight={250}>
       <View />
     </ImageGradient>
   ));

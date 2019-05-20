@@ -60,10 +60,9 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
         colors={
           Array [
             0,
-            0,
             1711276032,
             3003121664,
-            3858759680,
+            4278190080,
           ]
         }
         endPoint={
@@ -354,10 +353,9 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
         colors={
           Array [
             0,
-            0,
             1711276032,
             3003121664,
-            3858759680,
+            4278190080,
           ]
         }
         endPoint={
@@ -827,10 +825,9 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
         colors={
           Array [
             0,
-            0,
             1711276032,
             3003121664,
-            3858759680,
+            4278190080,
           ]
         }
         endPoint={
@@ -1288,10 +1285,9 @@ exports[`Storyshots Catalog Item New 1`] = `
         colors={
           Array [
             0,
-            0,
             1711276032,
             3003121664,
-            3858759680,
+            4278190080,
           ]
         }
         endPoint={
