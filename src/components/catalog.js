@@ -190,7 +190,7 @@ class Catalog extends React.PureComponent<Props> {
                             isCertified={getAuthorType(nextItem) === AUTHOR_TYPE.VERIFIED}
                             universalRef={cover.universalRef}
                             type={
-                              item.type === CARD_TYPE.CHAPTER
+                              nextItem.type === CARD_TYPE.CHAPTER
                                 ? ENGINE.MICROLEARNING
                                 : ENGINE.LEARNER
                             }
