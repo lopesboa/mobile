@@ -2,7 +2,7 @@
 
 import type {Content} from '@coorpacademy/progression-engine';
 import type {Slide} from '../../layer/data/_types';
-import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
+import type {OfflineContents, OfflineStatus} from '../reducers/bundle';
 import type {Engine} from '../../types';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';

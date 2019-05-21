@@ -5,8 +5,8 @@ import {Answers, Clues, Content, LeaderBoard} from '@coorpacademy/player-service
 import type {AnswersService, CluesService, ContentService} from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
-import type {DisciplineBundleService} from './discipline-bundle';
-import DisciplineBundle from './discipline-bundle';
+import type {BundleService} from './bundle';
+import Bundle from './bundle';
 import type {CardsService} from './cards';
 import Cards from './cards';
 import type {BrandsService} from './brands';
@@ -25,7 +25,7 @@ export type Services = {|
   Cards: CardsService,
   Clues: CluesService,
   Content: ContentService,
-  DisciplineBundle: DisciplineBundleService,
+  Bundle: BundleService,
   Progressions: ProgressionService,
   Brands: BrandsService,
   Permissions: PermissionsService,
@@ -42,7 +42,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Clues: Clues(dataLayer),
   // $FlowFixMe
   Content: Content(dataLayer),
-  DisciplineBundle: DisciplineBundle(dataLayer),
+  Bundle: Bundle(dataLayer),
   Progressions: Progressions(dataLayer),
   Brands: Brands(dataLayer),
   Recommendations: Recommendations(dataLayer),

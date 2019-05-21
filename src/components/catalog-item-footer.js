@@ -4,6 +4,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {
   NovaCompositionCoorpacademyAdaptive,
+  NovaCompositionCoorpacademyTimer,
   NovaSolidStatusCheckCircle2
 } from '@coorpacademy/nova-icons';
 import type {Progression} from '../types';
@@ -17,10 +18,11 @@ type Props = {|
   progression?: Progression,
   isAdaptive: boolean,
   isCertified?: boolean,
+  isCourse: boolean,
   testID: string,
   titleStyle?: GenericStyleProp,
   subtitleStyle?: GenericStyleProp,
-  iconAdaptiveSize?: number,
+  topIconSize?: number,
   iconCertifiedSize?: number
 |};
 
@@ -61,24 +63,34 @@ const CatalogItemFooter = ({
   isAdaptive,
   isCertified,
   testID,
+  isCourse,
   titleStyle = {
     fontSize: theme.fontSize.regular
   },
   subtitleStyle = {
     fontSize: theme.fontSize.small
   },
-  iconAdaptiveSize = 16,
+  topIconSize = 16,
   iconCertifiedSize = 14
 }: Props) => {
   const iconCertifiedMargin: number = -iconCertifiedSize / 2;
+
   return (
     <View style={styles.container}>
       {isAdaptive && (
         <NovaCompositionCoorpacademyAdaptive
           testID={`infinite-${testID}`}
           color={theme.colors.white}
-          height={iconAdaptiveSize}
-          width={iconAdaptiveSize}
+          height={topIconSize}
+          width={topIconSize}
+        />
+      )}
+      {!isCourse && (
+        <NovaCompositionCoorpacademyTimer
+          testID={`infinite-${testID}`}
+          color={theme.colors.white}
+          height={topIconSize}
+          width={topIconSize}
         />
       )}
       <Text testID={`title-${testID}`} style={[styles.title, titleStyle]}>

@@ -1,16 +1,17 @@
 // @flow strict
 
-import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/discipline-bundle';
-import type {Action} from '../actions/discipline-bundle';
+import {CARD_TYPE} from '../../layer/data/_const';
+import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/bundle';
+import type {Action} from '../actions/bundle';
 import reducer, {
   reducePendingContentStatus,
   reducePendingContent,
   reduceReadyContent,
   reduceReadyContentStatus
-} from './discipline-bundle';
-import type {State, OfflineStatus, OfflineContents} from './discipline-bundle';
+} from './bundle';
+import type {State, OfflineStatus, OfflineContents} from './bundle';
 
-describe('Discipline bundle', () => {
+describe('Bundle', () => {
   const expectedInitialState: State = {
     disciplines: {},
     chapters: {}
@@ -118,6 +119,7 @@ describe('Discipline bundle', () => {
       const action: Action = {
         type: FETCH_REQUEST,
         payload: {
+          type: CARD_TYPE.COURSE,
           ref: 'foobarbaz',
           languages: ['de', 'en']
         }

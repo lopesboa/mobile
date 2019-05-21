@@ -4,10 +4,11 @@
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
+import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
 import {getCleanUri} from '../modules/uri';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
+import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE, CONTENT_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
@@ -28,6 +29,7 @@ import Tooltip from './tooltip';
 import HeaderBackButton from './header-back-button';
 
 type Props = {|
+  contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
@@ -160,6 +162,7 @@ class LevelEnd extends React.PureComponent<Props> {
 
   render() {
     const {
+      contentType,
       isSuccess,
       bestScore,
       onClose,
@@ -177,10 +180,21 @@ class LevelEnd extends React.PureComponent<Props> {
       /{{levelName}}/g,
       levelUnlockedName
     );
+
+    const nextLabel =
+      contentType === CONTENT_TYPE.LEVEL ? translations.nextLevel : translations.nextChapter;
+    const retryLabel =
+      contentType === CONTENT_TYPE.LEVEL ? translations.retryLevel : translations.retryChapter;
+
     const buttonTranslation =
       (isSuccess && hasFinishedCourse && translations.backToHome) ||
-      (isSuccess && translations.nextLevel) ||
-      translations.retryLevel;
+      (isSuccess && nextLabel) ||
+      retryLabel;
+
+    const buttonAnalyticsID =
+      (isSuccess && hasFinishedCourse && `button-end-${contentType}-back-to-home`) ||
+      (isSuccess && `button-end-next-${contentType}`) ||
+      `button-end-retry-${contentType}`;
 
     return (
       <BrandThemeContext.Consumer>
@@ -280,7 +294,7 @@ class LevelEnd extends React.PureComponent<Props> {
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}
-              analyticsID={`button-level-end-${isSuccess ? 'next' : 'retry'}-level`}
+              analyticsID={buttonAnalyticsID}
             >
               {buttonTranslation}
             </ButtonSticky>

@@ -384,11 +384,19 @@ describe('Cards', () => {
           return action;
         });
 
+        dispatch.mockImplementationOnce(async action => {
+          expect(await action).toEqual({
+            type: '@@mock/SELECT_PROGRESSION',
+            payload: {id: '__ID__'}
+          });
+          return action;
+        });
+
         // $FlowFixMe
         const actual = await selectCard(chapterCard)(dispatch, getState, options);
         return expect(actual).toEqual({
-          type: '@@mock/CREATE_CHAPTER_PROGRESSION',
-          payload: {_id: '__ID__'}
+          type: '@@mock/SELECT_PROGRESSION',
+          payload: {id: '__ID__'}
         });
       });
       it('should handle content find rejection', async () => {

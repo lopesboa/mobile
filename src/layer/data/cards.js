@@ -1,22 +1,27 @@
 // @flow strict
 
 import {AsyncStorage} from 'react-native';
-
+import {getConfig} from '@coorpacademy/progression-engine';
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
-import {createDisciplinesCards} from '../../__fixtures__/cards';
+import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/cards';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
+import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
 import {uniqBy} from '../../utils';
+import {ENGINE} from '../../const';
 import {getItem} from './core';
 import type {Cards, DisciplineCard, ChapterCard, Card, CardLevel, Completion} from './_types';
 import {CARD_TYPE} from './_const';
 import {buildCompletionKey, mergeCompletion} from './progressions';
 
-const SLIDE_TO_COMPLETE = 4; // @TODO; MAKE it dynamic
 // @TODO; Adaptive support
-const computeLevelCompletionRate = (completion: Completion, nbChapters: number): number => {
-  return Math.min(completion.current / (SLIDE_TO_COMPLETE * nbChapters), 1);
+const computeLevelCompletionRate = (
+  completion: Completion,
+  nbChapters: number,
+  slidesToComplete: number
+): number => {
+  return Math.min(completion.current / (slidesToComplete * nbChapters), 1);
 };
 
 const computeCardCompletionRate = (levels: Array<CardLevel>): number =>
@@ -29,18 +34,29 @@ const cardToCompletion = (card: DisciplineCard | ChapterCard | CardLevel): Compl
 });
 
 export const updateDisciplineCardDependingOnCompletion = (
-  completions: Array<Completion | null>,
+  latestCompletions: Array<Completion | null>,
   card: DisciplineCard
 ): DisciplineCard => {
-  const levelCards = card.modules.map((levelCard, index) => {
-    const completion = completions[index];
-    if (!completion) return levelCard;
+  const config = getConfig({
+    ref: ENGINE.LEARNER,
+    version: '1'
+  });
 
-    const levelCompletion = mergeCompletion(cardToCompletion(levelCard), completion);
-    const levelStars = Math.max(levelCard.stars, completion.stars);
+  const levelCards = card.modules.map((levelCard, index) => {
+    const latestCompletion = latestCompletions[index];
+    if (!latestCompletion) return levelCard;
+
+    const cardCompletion = cardToCompletion(levelCard);
+
+    const levelCompletion = mergeCompletion(cardCompletion, latestCompletion);
+    const levelStars = Math.max(levelCard.stars, latestCompletion.stars);
     return {
       ...levelCard,
-      completion: computeLevelCompletionRate(levelCompletion, levelCard.nbChapters),
+      completion: computeLevelCompletionRate(
+        levelCompletion,
+        levelCard.nbChapters,
+        config.slidesToComplete
+      ),
       stars: levelStars
     };
   });
@@ -59,18 +75,23 @@ export const updateChapterCardAccordingToCompletion = (
   completion: Completion,
   chapterCard: ChapterCard
 ): ChapterCard => {
+  const config = getConfig({
+    ref: ENGINE.MICROLEARNING,
+    version: '1'
+  });
+
   return {
     ...chapterCard,
     stars: Math.max(completion.stars, chapterCard.stars),
-    completion: completion.current
+    completion: completion.current / config.slidesToComplete
   };
 };
 
 const refreshDisciplineCard = async (disciplineCard: DisciplineCard): Promise<DisciplineCard> => {
-  const levelCompletions = await Promise.all(
+  const latestCompletions = await Promise.all(
     disciplineCard.modules.map(
       async (level): Promise<Completion | null> => {
-        const completionKey = buildCompletionKey('learner', level.universalRef || level.ref);
+        const completionKey = buildCompletionKey(ENGINE.LEARNER, level.universalRef || level.ref);
         const completionString = await AsyncStorage.getItem(completionKey);
         if (!completionString) return null;
         return JSON.parse(completionString);
@@ -78,18 +99,19 @@ const refreshDisciplineCard = async (disciplineCard: DisciplineCard): Promise<Di
     )
   );
 
-  return updateDisciplineCardDependingOnCompletion(levelCompletions, disciplineCard);
+  return updateDisciplineCardDependingOnCompletion(latestCompletions, disciplineCard);
 };
 
 const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard> => {
-  const completion: Completion = {stars: chapterCard.stars, current: chapterCard.completion};
-  const completionKey = buildCompletionKey('learner', chapterCard.moduleRef);
-  const storedCompletion = await AsyncStorage.getItem(completionKey);
+  const cardCompletion: Completion = {stars: chapterCard.stars, current: chapterCard.completion};
+  const completionKey = buildCompletionKey(ENGINE.MICROLEARNING, chapterCard.ref);
+  const latestCompletion = await AsyncStorage.getItem(completionKey);
 
-  if (!storedCompletion) {
+  if (!latestCompletion) {
     return chapterCard;
   }
-  const mergedCompletion = mergeCompletion(JSON.parse(storedCompletion), completion);
+
+  const mergedCompletion = mergeCompletion(cardCompletion, JSON.parse(latestCompletion));
   return updateChapterCardAccordingToCompletion(mergedCompletion, chapterCard);
 };
 
@@ -105,7 +127,7 @@ export const getCardFromLocalStorage = async (
   language: SupportedLanguage
 ): Promise<DisciplineCard | ChapterCard> => {
   // $FlowFixMe
-  const card = await getItem('card', ref, language);
+  const card = await getItem('card', language, ref);
   return refreshCard(card);
 };
 
@@ -116,7 +138,7 @@ const cardsToPairs = (cards: {[key: string]: DisciplineCard | ChapterCard}) => {
   }, []);
 };
 
-const createDisiciplineCardForModules = (card: DisciplineCard, language: SupportedLanguage) => {
+const createDisciplineCardForModules = (card: DisciplineCard, language: SupportedLanguage) => {
   return card.modules.reduce((acc, mod) => {
     const key = `card:${language}:${mod.universalRef || mod.ref}`;
     const moduleCard = {
@@ -142,7 +164,7 @@ export const cardsToKeys = (
       };
       modulesCards = {
         // $FlowFixMe
-        ...createDisiciplineCardForModules(card, language)
+        ...createDisciplineCardForModules(card, language)
       };
     }
     if (cardType === CARD_TYPE.CHAPTER) {
@@ -227,7 +249,8 @@ export const fetchCards = async (
     const disciplines = Object.keys(disciplinesBundle.disciplines).map(
       key => disciplinesBundle.disciplines[key]
     );
-    const cards = createDisciplinesCards(disciplines);
+    const chapters = Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key]);
+    const cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
     await saveDashboardCardsInAsyncStorage(cards, language);
 
     return Promise.all(cards.map(refreshCard));

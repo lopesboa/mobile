@@ -17,7 +17,7 @@ import type {Lives} from '@coorpacademy/player-store';
 import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {StoreState} from '../store';
 import type {SupportedLanguage} from '../../translations/_types';
-import type {OfflineContents, OfflineStatus} from '../reducers/discipline-bundle';
+import type {OfflineContents, OfflineStatus} from '../reducers/bundle';
 import type {State as PermissionsState} from '../reducers/permissions';
 import type {PermissionType} from '../actions/permissions';
 

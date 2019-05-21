@@ -9,8 +9,8 @@ import {pickNextLevel} from '../../utils/content';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../layer/data/_const';
 import {showModal} from './ui/modal';
 import {createLevelProgression, createChapterProgression, selectProgression} from './progression';
-import type {Action as BundleAction} from './discipline-bundle';
-import {fetchBundles} from './discipline-bundle';
+import type {Action as BundleAction} from './bundle';
+import {fetchBundles} from './bundle';
 import type {Action as ModalAction} from './ui/modal';
 
 export const FETCH_REQUEST = '@@cards/FETCH_REQUEST';
@@ -175,7 +175,9 @@ export const selectCard = (item: DisciplineCard | ChapterCard): StoreAction<Acti
           );
 
           // $FlowFixMe union type
-          return await dispatch(createChapterProgression(chapter));
+          const {payload: progression} = await dispatch(createChapterProgression(chapter));
+          // $FlowFixMe union type
+          return dispatch(selectProgression(progression._id));
         } catch (e) {
           return dispatch(selectCardFailure(item, 'Chapter progression not created'));
         }

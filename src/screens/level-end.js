@@ -4,7 +4,8 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {NavigationActions, NavigationEvents} from 'react-navigation';
-import {getNextContent} from '@coorpacademy/player-store';
+import type {ContentType} from '@coorpacademy/progression-engine';
+import {getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
 import get from 'lodash/fp/get';
 import {selectCard} from '../redux/actions/cards';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
@@ -21,6 +22,7 @@ type ConnectedDispatchProps = {|
 |};
 
 type ConnectedStateProps = {|
+  contentType: ContentType | void,
   recommendation: DisciplineCard | ChapterCard,
   currentContent: DisciplineCard | ChapterCard | void,
   bestScore?: string,
@@ -90,6 +92,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
 
   render() {
     const {
+      contentType,
       navigation,
       recommendation,
       unlockedLevelInfo,
@@ -107,6 +110,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
         <NavigationEvents onDidFocus={this.handleDidFocus} />
         <LevelEnd
+          contentType={contentType}
           recommendation={recommendation}
           isFocused={this.state.isFocused}
           isSuccess={isCorrect}
@@ -132,6 +136,9 @@ export const mapStateToProps = (state: StoreState, {navigation}: Props): Connect
   );
 
   const bestScore = getBestScore(state);
+  const progression = getCurrentProgression(state);
+  const contentType = progression && progression.content.type;
+
   // $FlowFixMe
   const nextContent: DisciplineCard | ChapterCard | void = getNextContent(state);
   const currentContent: DisciplineCard | ChapterCard | void =
@@ -141,7 +148,9 @@ export const mapStateToProps = (state: StoreState, {navigation}: Props): Connect
     currentContentInfo && currentContent && didUnlockLevel(currentContentInfo, currentContent);
 
   const hasFinishedCourse = currentContent && currentContent.completion === 1;
+
   return {
+    contentType,
     currentContent,
     nextContent,
     bestScore,

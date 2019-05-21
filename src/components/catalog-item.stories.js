@@ -84,4 +84,22 @@ storiesOf('Catalog Item', module)
       type="learner"
       section="finishLearning"
     />
+  ))
+  .add('Microlearning', () => (
+    <CatalogItem
+      title="Predicting the future"
+      subtitle="Coorpacademy"
+      progression={progression}
+      image={image}
+      authorType={AUTHOR_TYPE.VERIFIED}
+      badge={translations.new}
+      isAdaptive
+      displayMode={CARD_DISPLAY_MODE.CARD}
+      isCertified
+      onPress={handleFakePress}
+      testID="catalog4"
+      universalRef="foobar"
+      type="microlearning"
+      section="finishLearning"
+    />
   ));

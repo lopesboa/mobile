@@ -12,8 +12,8 @@ export const findById = (userLanguage: SupportedLanguage) => async (
   universalRef: string
 ): Promise<ChapterAPI> => {
   // $FlowFixMe union type
-  const item: Chapter = await getItem(CONTENT_TYPE.CHAPTER, universalRef, userLanguage);
-  return mapToChapterAPI(item);
+  const item: Chapter = await getItem(CONTENT_TYPE.CHAPTER, userLanguage, universalRef);
+  return item && mapToChapterAPI(item);
 };
 
 export const find = (userLanguage: SupportedLanguage) => async (): Promise<Array<ChapterAPI>> => {

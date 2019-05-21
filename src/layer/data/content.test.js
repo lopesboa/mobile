@@ -8,11 +8,11 @@ jest.mock('./core', () => {
   const utils = require('../../utils/tests');
 
   return {
-    fetchDisciplineBundle: () => {
+    fetchBundle: () => {
       // Dunno why we need this function only in this file
       return Promise.reject(utils.fakeError);
     },
-    getItem: (type, ref) => {
+    getItem: (type, language, ref) => {
       if (type === 'ref_exception') {
         return Promise.reject(utils.fakeError);
       }

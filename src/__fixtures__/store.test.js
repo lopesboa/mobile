@@ -117,7 +117,7 @@ describe('storeFixture', () => {
       }
     };
 
-    const disciplineBundleState = {
+    const bundleState = {
       chapters: {},
       disciplines: {}
     };
@@ -221,7 +221,7 @@ describe('storeFixture', () => {
         currentScreenName: 'dummyScreenName',
         currentTabName: 'dummyScreenName'
       },
-      disciplineBundle: disciplineBundleState,
+      bundle: bundleState,
       cards: cardsState,
       permissions: permissionsState,
       authentication: authenticationState,

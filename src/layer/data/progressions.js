@@ -27,12 +27,12 @@ export const mapProgressionToCompletion = (progression: Progression): Completion
 };
 
 export const mergeCompletion = (
-  asyncStorageCompletion: Completion,
-  progressionCompletion: Completion
+  previousCompletion: Completion,
+  latestCompletion: Completion
 ): Completion => {
   return {
-    current: progressionCompletion.current,
-    stars: Math.max(asyncStorageCompletion.stars, progressionCompletion.stars)
+    current: latestCompletion.current,
+    stars: Math.max(previousCompletion.stars, latestCompletion.stars)
   };
 };
 
@@ -178,7 +178,7 @@ const findBestOf = (language: SupportedLanguage) => async (
   progressionId: string
 ): Promise<number> => {
   // $FlowFixMe
-  const card = await getItem('card', contentRef, language);
+  const card = await getItem('card', language, contentRef);
   return card && card.stars;
 };
 export {save, getAll, findById, findLast, findBestOf, synchronize};

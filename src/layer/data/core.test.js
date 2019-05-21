@@ -3,6 +3,7 @@
 import {AsyncStorage} from 'react-native';
 
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
+import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
@@ -10,17 +11,17 @@ import {createSlide} from '../../__fixtures__/slides';
 import {createQCM, createQCMGraphic} from '../../__fixtures__/questions';
 import {failureExitNode, successExitNode} from '../../__fixtures__/exit-nodes';
 import {fakeError} from '../../utils/tests';
-import type {Discipline, BundledDiscipline} from './_types';
+import type {Discipline, BundledDiscipline, BundledChapter} from './_types';
 import {CONTENT_TYPE} from './_const';
 import {
   buildKeyValuePair,
-  normalizeDisciplineBundle,
+  normalizeBundle,
   createReduceToNormalizedItemFunction,
   buildKey,
   getItem,
   getItemsPerResourceType,
   filterKeys,
-  storeDisciplineBundle,
+  storeBundle,
   buildLevels,
   mapToResourceType
 } from './core';
@@ -34,6 +35,23 @@ const disciplineBundle: BundledDiscipline = {
   disciplines: {
     dis_1: createDiscipline({ref: 'dis_1', levels: [level], name: 'Basic course'})
   },
+  chapters: {
+    cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
+    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
+  },
+  slides: {
+    sli_1: createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm}),
+    sli_2: createSlide({ref: 'sli_2', chapterId: 'cha_1', question: qcmGraphic}),
+    sli_3: createSlide({ref: 'sli_3', chapterId: 'cha_2', question: qcm}),
+    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic})
+  },
+  exitNodes: {
+    [failureExitNode.ref]: failureExitNode,
+    [successExitNode.ref]: successExitNode
+  },
+  chapterRules: {}
+};
+const chapterBundle: BundledChapter = {
   chapters: {
     cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
     cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
@@ -104,7 +122,7 @@ describe('Data Layer Core', () => {
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBundle, 'en');
+    const result = normalizeBundle(disciplineBundle, 'en');
 
     expect(result).toEqual(expectedResult);
   });
@@ -132,7 +150,7 @@ describe('Data Layer Core', () => {
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, 'en');
+    const result = normalizeBundle(disciplineBundleWithoutModules, 'en');
 
     expect(result).toEqual(expectedResult);
   });
@@ -155,7 +173,7 @@ describe('Data Layer Core', () => {
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
-    const result = normalizeDisciplineBundle(disciplineBundleWithoutModules, 'en');
+    const result = normalizeBundle(disciplineBundleWithoutModules, 'en');
 
     expect(result).toEqual(expectedResult);
   });
@@ -179,15 +197,15 @@ describe('Data Layer Core', () => {
         .fn()
         .mockImplementation(() => Promise.resolve(JSON.stringify(disciplines.dis_1)));
 
-      const result = getItem(resourceType, resourceReference, userLanguage);
+      const result = getItem(resourceType, userLanguage, resourceReference);
       return expect(result).resolves.toEqual(disciplines.dis_1);
     });
 
     it('should not build the too', () => {
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.reject(fakeError));
 
-      const result = getItem(resourceType, resourceReference, userLanguage);
-      return expect(result).rejects.toThrow('resource not found with cha_1');
+      const result = getItem(resourceType, userLanguage, resourceReference);
+      return expect(result).rejects.toThrow('Resource not found with ref: cha_1');
     });
   });
 
@@ -240,79 +258,88 @@ describe('Data Layer Core', () => {
     expect(dummyFunction).toThrow(new Error('current type toto not supported'));
   });
 
-  describe('storeDisciplineBundle', () => {
+  describe('storeBundle', () => {
     it('should store the discipline bundle', async () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
-      const result = await storeDisciplineBundle(disciplineBundle, 'en');
+      const result = await storeBundle(disciplineBundle, 'en');
       expect(result).toBeUndefined();
     });
 
-    it('should not store the discipline bundle', () => {
+    it('should not store the bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.reject(fakeError));
-      const result = storeDisciplineBundle(disciplineBundle, 'en');
-      return expect(result).rejects.toThrow(
-        new Error('could not store the provided bundledResource')
-      );
+      const result = storeBundle(disciplineBundle, 'en');
+      return expect(result).rejects.toThrow(new Error('Could not store the provided resource'));
     });
   });
 
-  describe('fetchDisciplineBundle', () => {
+  describe('fetchBundle', () => {
     beforeEach(() => {
       jest.resetModules();
     });
 
     AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
 
-    it('should fetch fixtures', () => {
+    it('should fetch discipline bundle fixture', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: true
       }));
-      const {fetchDisciplineBundle} = require('./core');
+      const {fetchBundle} = require('./core');
       const keys = Object.keys(disciplinesBundle.disciplines);
-      const result = fetchDisciplineBundle(keys[0], 'en', token, host);
+      const result = fetchBundle(CONTENT_TYPE.DISCIPLINE, keys[0], 'en', token, host);
       // @todo should be mocked
       return expect(result).resolves.toEqual(disciplinesBundle);
     });
 
-    it('should try to fetch disciplineBundle', () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
-      const {fetchDisciplineBundle} = require('./core');
-      jest.mock('cross-fetch');
-
-      const fetch = require('cross-fetch');
-      fetch.mockImplementationOnce((url, options) => {
-        expect(url).toEqual(
-          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"ref": ["foobarbaz"]}`
-        );
-        return Promise.resolve({
-          json: () => Promise.resolve(disciplineBundle)
-        });
-      });
-
-      const result = fetchDisciplineBundle('foobarbaz', 'en', token, host);
-      return expect(result).resolves.toBe(disciplineBundle);
-    });
-    it('should try to fetch disciplineBundle', () => {
+    it('should fetch chapter bundle fixture', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: true
       }));
-      const {fetchDisciplineBundle} = require('./core');
+      const {fetchBundle} = require('./core');
+      const keys = Object.keys(chaptersBundle.chapters);
+      const result = fetchBundle(CONTENT_TYPE.CHAPTER, keys[0], 'en', token, host);
+      return expect(result).resolves.toEqual(chaptersBundle);
+    });
+
+    it('should try to fetch discipline bundle', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+      const {fetchBundle} = require('./core');
       jest.mock('cross-fetch');
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toEqual(
-          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"ref": ["foobarbaz"]}`
+          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`
         );
         return Promise.resolve({
           json: () => Promise.resolve(disciplineBundle)
         });
       });
 
-      const result = fetchDisciplineBundle('foobarbaz', 'en', token, host);
+      const result = fetchBundle(CONTENT_TYPE.DISCIPLINE, 'foobarbaz', 'en', token, host);
       return expect(result).resolves.toBe(disciplineBundle);
+    });
+
+    it('should try to fetch chapter bundle', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {fetchBundle} = require('./core');
+      jest.mock('cross-fetch');
+
+      const fetch = require('cross-fetch');
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toEqual(
+          `${host}/api/v2/chapters/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`
+        );
+        return Promise.resolve({
+          json: () => Promise.resolve(chapterBundle)
+        });
+      });
+
+      const result = fetchBundle(CONTENT_TYPE.CHAPTER, 'foobarbaz', 'en', token, host);
+      return expect(result).resolves.toBe(chapterBundle);
     });
 
     afterAll(() => {

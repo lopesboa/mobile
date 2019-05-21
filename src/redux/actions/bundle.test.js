@@ -1,7 +1,7 @@
 // @flow strict
 
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
-import {CARD_STATUS} from '../../layer/data/_const';
+import {CARD_STATUS, CARD_TYPE} from '../../layer/data/_const';
 import {
   FETCH_REQUEST,
   FETCH_SUCCESS,
@@ -10,8 +10,8 @@ import {
   fetchSuccess,
   fetchError,
   fetchBundles
-} from './discipline-bundle';
-import type {Action} from './discipline-bundle';
+} from './bundle';
+import type {Action} from './bundle';
 
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
 const disciplineCard = createDisciplineCard({
@@ -27,14 +27,15 @@ const chapterCard = createChapterCard({
   title: 'Chapter'
 });
 
-describe('Discipline bundle', () => {
+describe('Bundle', () => {
   it('fetchRequest', () => {
     const ref = 'foobarbaz';
     const languages = ['en', 'de', 'it', 'ja'];
-    const result = fetchRequest(ref, languages);
+    const result = fetchRequest(CARD_TYPE.COURSE, ref, languages);
     const expected: Action = {
       type: FETCH_REQUEST,
       payload: {
+        type: CARD_TYPE.COURSE,
         ref,
         languages: ['en', 'de', 'it', 'ja']
       }
@@ -65,12 +66,14 @@ describe('Discipline bundle', () => {
   });
 
   it('fetchError', () => {
+    const type = CARD_TYPE.COURSE;
     const ref = 'foobarbaz';
     const languages = ['en', 'de', 'it', 'ja'];
-    const result = fetchError(ref, languages);
+    const result = fetchError(type, ref, languages);
     const expected: Action = {
       type: FETCH_ERROR,
       payload: {
+        type,
         ref,
         languages
       }
@@ -84,7 +87,16 @@ describe('Discipline bundle', () => {
       const dispatch = jest.fn();
 
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchRequest(disciplineCard.universalRef, ['en', 'de']));
+        expect(action).toEqual(
+          fetchRequest(CARD_TYPE.COURSE, disciplineCard.universalRef, ['en', 'de'])
+        );
+        return Promise.resolve(action);
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(
+          fetchRequest(CARD_TYPE.CHAPTER, chapterCard.universalRef, ['en', 'de'])
+        );
         return Promise.resolve(action);
       });
 
@@ -92,7 +104,7 @@ describe('Discipline bundle', () => {
       const actual = await fetchBundles(cards, ['en', 'de'])(dispatch);
       expect(actual).toBeUndefined();
 
-      expect(dispatch).toHaveBeenCalledTimes(1);
+      expect(dispatch).toHaveBeenCalledTimes(2);
     });
   });
 });

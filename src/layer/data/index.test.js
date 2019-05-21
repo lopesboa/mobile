@@ -27,8 +27,8 @@ describe('Data layer', () => {
       refreshCard: expect.any(Function),
       getCardFromLocalStorage: expect.any(Function),
       getChapterRulesByContent: expect.any(Function),
-      fetchDisciplineBundle: expect.any(Function),
-      storeDisciplineBundle: expect.any(Function),
+      fetchBundle: expect.any(Function),
+      storeBundle: expect.any(Function),
       logEvent: expect.any(Function)
     };
     expect(expected).toEqual(result);

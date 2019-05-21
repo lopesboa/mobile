@@ -7,7 +7,7 @@ import type {
 import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
 import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
-import {initialState as bundledDisciplineState} from '../redux/reducers/discipline-bundle';
+import {initialState as bundleState} from '../redux/reducers/bundle';
 import {initialState as cardsState} from '../redux/reducers/cards';
 import type {State as CardsState} from '../redux/reducers/cards';
 import {initialState as permissionsState} from '../redux/reducers/permissions';
@@ -155,7 +155,7 @@ export const createStoreState = ({
       currentScreenName: 'dummyScreenName',
       currentTabName: 'dummyScreenName'
     },
-    disciplineBundle: bundledDisciplineState,
+    bundle: bundleState,
     cards: cards || cardsState,
     permissions: permissionsState,
     authentication: {

@@ -14,7 +14,7 @@ import {
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
-import {fetchDisciplineBundle, storeDisciplineBundle} from './core';
+import {fetchBundle, storeBundle} from './core';
 import {fetchCards, refreshCard, getCardFromLocalStorage} from './cards';
 import {fetchBrand} from './brand';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
@@ -27,8 +27,8 @@ import type {DisciplineCard} from './_types';
 
 export type DataLayer = {
   ...DataLayerBase,
-  fetchDisciplineBundle: typeof fetchDisciplineBundle,
-  storeDisciplineBundle: typeof storeDisciplineBundle,
+  fetchBundle: typeof fetchBundle,
+  storeBundle: typeof storeBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
   refreshCard: typeof refreshCard,
@@ -65,8 +65,8 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   getCardFromLocalStorage,
   // @todo implement it
   getChapterRulesByContent: () => [],
-  fetchDisciplineBundle,
-  storeDisciplineBundle,
+  fetchBundle,
+  storeBundle,
   logEvent
 });
 

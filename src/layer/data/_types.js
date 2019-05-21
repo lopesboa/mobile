@@ -7,7 +7,6 @@ import type {
   LevelAPI,
   ChapterRule
 } from '@coorpacademy/player-services';
-
 import type {Context, Lesson, ResourceMimeType} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
 
@@ -99,13 +98,17 @@ export type Discipline = $Exact<{|
   modules: Array<Level>
 |}>;
 
-export type BundledDiscipline = {|
-  disciplines: {[key: string]: Discipline},
+export type BundledChapter = {|
   // $FlowFixMe dont understand "looks promising" from Flow
   chapters: {[key: string]: Chapter},
   exitNodes: {[key: string]: ExitNode},
   slides: {[key: string]: Slide},
   chapterRules: {[key: string]: ChapterRule}
+|};
+
+export type BundledDiscipline = {|
+  disciplines: {[key: string]: Discipline},
+  ...BundledChapter
 |};
 
 export type CardThematique = {|
@@ -121,7 +124,6 @@ export type CardAuthor = {|
   label: string,
   authorType: 'coorp' | 'verified' | 'custom' | 'marketplace'
 |};
-export type CardType = 'course' | 'chapter';
 export type CardStatus = 'isStarted' | 'isLocked' | 'isActive';
 export type CardLevel = {|
   nbChapters: number,
@@ -198,6 +200,8 @@ export type ChapterCard = {|
   status: CardStatus,
   accessible: boolean
 |};
+
+export type CardType = $PropertyType<DisciplineCard, 'type'> | $PropertyType<ChapterCard, 'type'>;
 
 export type Resource = Slide | Discipline | Chapter | ExitNode | ChapterCard | DisciplineCard;
 

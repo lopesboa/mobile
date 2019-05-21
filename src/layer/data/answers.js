@@ -9,7 +9,7 @@ export const getCorrectAnswer = (userLanguage: SupportedLanguage) => async (
   slideId: string
 ): Promise<Array<Array<string>>> => {
   // $FlowFixMe union type
-  const slide: Slide = await getItem(CONTENT_TYPE.SLIDE, slideId, userLanguage);
+  const slide: Slide = await getItem(CONTENT_TYPE.SLIDE, userLanguage, slideId);
   return slide.question.content.answers;
 };
 

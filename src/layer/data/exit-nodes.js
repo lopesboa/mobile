@@ -11,7 +11,7 @@ export const getExitNode = (userLanguage: SupportedLanguage) => async (
   exitNodeRef: string
 ): Promise<ExitNodeAPI> => {
   // $FlowFixMe union type
-  const item: ExitNode = await getItem(CONTENT_TYPE.EXIT_NODE, exitNodeRef, userLanguage);
+  const item: ExitNode = await getItem(CONTENT_TYPE.EXIT_NODE, userLanguage, exitNodeRef);
   return mapToExitNodeAPI(item);
 };
 

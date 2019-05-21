@@ -15,11 +15,11 @@ jest.mock('./core', () => {
   const slide = slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question});
 
   return {
-    fetchDisciplineBundle: () => {
+    fetchBundle: () => {
       // Dunno why we need this function only in this file
       return Promise.reject(utils.fakeError);
     },
-    getItem: (type, ref) => {
+    getItem: (type, language, ref) => {
       if (ref === 'ref_exception') {
         return Promise.reject(utils.fakeError);
       }

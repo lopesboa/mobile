@@ -1,14 +1,15 @@
 // @flow strict
 
-import type {BundledDiscipline} from '../../layer/data/_types';
+import {CARD_TYPE} from '../../layer/data/_const';
+import type {BundledDiscipline, BundledChapter} from '../../layer/data/_types';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createBrand} from '../../__fixtures__/brands';
-import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR} from '../actions/discipline-bundle';
-import type {Action} from '../actions/discipline-bundle';
+import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR} from '../actions/bundle';
+import type {Action} from '../actions/bundle';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
-import createMiddleware from './discipline-bundle';
+import createMiddleware from './bundle';
 
 const createStore = () => ({
   getState: jest.fn(),
@@ -29,12 +30,20 @@ const disciplineBundle: BundledDiscipline = {
   exitNodes: {},
   chapterRules: {}
 };
+const chapterBundle: BundledChapter = {
+  chapters: {
+    foobarbazqux: chapter
+  },
+  slides: {},
+  exitNodes: {},
+  chapterRules: {}
+};
 
-describe('Discipline bundle', () => {
+describe('Bundle', () => {
   const options: Options = {
     // $FlowFixMe we dont want to mock the entire services object
     services: {
-      DisciplineBundle: {
+      Bundle: {
         findById: jest.fn(() => Promise.reject(new Error('Fake error'))),
         store: jest.fn(() => Promise.reject(new Error('Fake error')))
       }
@@ -58,6 +67,7 @@ describe('Discipline bundle', () => {
     const action: Action = {
       type: FETCH_REQUEST,
       payload: {
+        type: CARD_TYPE.COURSE,
         ref: 'foobarbaz',
         languages: ['en', 'de']
       }
@@ -80,6 +90,7 @@ describe('Discipline bundle', () => {
       const expectedAction: Action = {
         type: FETCH_ERROR,
         payload: {
+          type: undefined,
           ref: undefined,
           languages: undefined
         }
@@ -100,6 +111,7 @@ describe('Discipline bundle', () => {
       const expectedAction: Action = {
         type: FETCH_ERROR,
         payload: {
+          type: CARD_TYPE.COURSE,
           ref: 'foobarbaz',
           languages: ['en', 'de']
         }
@@ -120,6 +132,7 @@ describe('Discipline bundle', () => {
       const expectedAction: Action = {
         type: FETCH_ERROR,
         payload: {
+          type: CARD_TYPE.COURSE,
           ref: 'foobarbaz',
           languages: ['en', 'de']
         }
@@ -128,12 +141,12 @@ describe('Discipline bundle', () => {
       expect(next).toHaveBeenCalledWith(action);
     });
 
-    it('should fetch the discipline bundle', async () => {
+    it('should fetch a discipline bundle', async () => {
       // $FlowFixMe we dont want to mock the entire services object
       const extendedOptions: Options = {
         services: {
-          DisciplineBundle: {
-            ...options.services.DisciplineBundle,
+          Bundle: {
+            ...options.services.Bundle,
             findById: jest.fn(() => Promise.resolve(disciplineBundle)),
             store: jest.fn(() => Promise.resolve())
           }
@@ -153,6 +166,38 @@ describe('Discipline bundle', () => {
           disciplines: {
             foobarbaz: ['en', 'de']
           },
+          chapters: {
+            foobarbazqux: ['en', 'de']
+          }
+        }
+      };
+      expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(next).toHaveBeenCalledWith(action);
+    });
+
+    it('should fetch a chapter bundle', async () => {
+      // $FlowFixMe we dont want to mock the entire services object
+      const extendedOptions: Options = {
+        services: {
+          Bundle: {
+            ...options.services.Bundle,
+            findById: jest.fn(() => Promise.resolve(chapterBundle)),
+            store: jest.fn(() => Promise.resolve())
+          }
+        }
+      };
+      const middleware = createMiddleware(extendedOptions);
+      const store = createStore();
+      store.getState.mockImplementation(() => ({
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
+      }));
+      const next = jest.fn();
+      middleware(store)(next)(action);
+      await sleep();
+      const expectedAction: Action = {
+        type: FETCH_SUCCESS,
+        payload: {
+          disciplines: {},
           chapters: {
             foobarbazqux: ['en', 'de']
           }

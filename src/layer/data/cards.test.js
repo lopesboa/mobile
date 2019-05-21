@@ -2,15 +2,16 @@
 
 import {AsyncStorage} from 'react-native';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
+import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import {
   createDisciplinesCards,
   createDisciplineCard,
+  createChaptersCards,
   createCardLevel,
   createChapterCard
 } from '../../__fixtures__/cards';
 
 import createCompletion from '../../__fixtures__/completion';
-
 import {
   cardsToKeys,
   updateDisciplineCardDependingOnCompletion,
@@ -21,6 +22,14 @@ import {
 const HOST = 'https://host.coorpacademy.com';
 const TOKEN = '__TOKEN__';
 const LANGUAGE = 'en';
+
+const disciplinesCards = createDisciplinesCards(
+  Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
+);
+const chaptersCards = createChaptersCards(
+  Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key])
+);
+const cards = disciplinesCards.concat(chaptersCards);
 
 describe('cards', () => {
   describe('fetchCards', () => {
@@ -47,15 +56,10 @@ describe('cards', () => {
       }));
       const {fetchCards} = require('./cards');
       const result = fetchCards(TOKEN, HOST, LANGUAGE);
-      const expected = createDisciplinesCards(
-        Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
-      );
+      const expected = cards;
+
       return expect(result).resolves.toEqual(expected);
     });
-
-    const cards = createDisciplinesCards(
-      Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
-    );
 
     it('should fetch favorites and recommendations to populate dashboard cards', async () => {
       jest.mock('../../modules/environment', () => ({
@@ -658,6 +662,7 @@ describe('cards', () => {
     it('should refresh the chapter Card', async () => {
       const maxStars = 666;
       const nbChapters = 1;
+      const slidesToComplete = 4;
       const chapterCard = createChapterCard({
         ref: 'lol',
         nbChapters,
@@ -667,7 +672,7 @@ describe('cards', () => {
         stars: 0
       });
 
-      const completion = createCompletion({stars: maxStars, current: 0});
+      const completion = createCompletion({stars: maxStars, current: 2});
 
       AsyncStorage.getItem = jest
         .fn()
@@ -677,6 +682,7 @@ describe('cards', () => {
 
       const expectedResult = {
         ...chapterCard,
+        completion: completion.current / slidesToComplete,
         stars: maxStars
       };
 

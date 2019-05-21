@@ -10,7 +10,7 @@ describe('Context', () => {
 
   describe('With image', () => {
     beforeAll(async () => {
-      await device.launchApp({newInstance: true});
+      await reloadApp();
       await waitFor(element(by.id('catalog-item-with-image-context-dis-1'))).toBeVisible();
       await element(by.id('catalog-item-with-image-context-dis-1')).tap();
     });
@@ -35,7 +35,7 @@ describe('Context', () => {
 
   describe('With video', () => {
     beforeAll(async () => {
-      await element(by.id('home-screen')).swipe('up');
+      await reloadApp();
       await waitFor(element(by.id('catalog-item-with-video-context-dis-2'))).toBeVisible();
       await element(by.id('catalog-item-with-video-context-dis-2')).tap();
     });

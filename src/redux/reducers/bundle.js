@@ -1,8 +1,8 @@
 // @flow strict
 
 import type {SupportedLanguage} from '../../translations/_types';
-import type {Action} from '../actions/discipline-bundle';
-import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/discipline-bundle';
+import type {Action} from '../actions/bundle';
+import {FETCH_REQUEST, FETCH_SUCCESS} from '../actions/bundle';
 
 export type OfflineStatus = {|
   pending: Array<SupportedLanguage>,

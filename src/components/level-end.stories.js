@@ -50,6 +50,7 @@ const chapterNewCoorp = createChapterCard({
 storiesOf('LevelEnd', module)
   .add('Failure', () => (
     <LevelEnd
+      contentType="level"
       isSuccess={false}
       isFocused={false}
       onButtonPress={handleFakePress}
@@ -64,6 +65,7 @@ storiesOf('LevelEnd', module)
   ))
   .add('Success', () => (
     <LevelEnd
+      contentType="level"
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -78,6 +80,7 @@ storiesOf('LevelEnd', module)
   ))
   .add('Failure Author Coorp', () => (
     <LevelEnd
+      contentType="level"
       isSuccess={false}
       isFocused
       onButtonPress={handleFakePress}
@@ -92,6 +95,7 @@ storiesOf('LevelEnd', module)
   ))
   .add('Success Author Coorp', () => (
     <LevelEnd
+      contentType="level"
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -106,6 +110,22 @@ storiesOf('LevelEnd', module)
   ))
   .add('Finished', () => (
     <LevelEnd
+      contentType="level"
+      isSuccess
+      isFocused
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      recommendation={chapterNewCoorp}
+      bestScore="0"
+      isLevelUnlocked
+      levelUnlockedName=""
+      hasFinishedCourse
+    />
+  ))
+  .add('Microlearning', () => (
+    <LevelEnd
+      contentType="chapter"
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -125,6 +145,7 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const component = renderer.create(
         <LevelEnd
+          contentType="level"
           isSuccess={false}
           isFocused
           onButtonPress={handleFakePress}
@@ -147,6 +168,7 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const component = renderer.create(
         <LevelEnd
+          contentType="level"
           isSuccess={false}
           isFocused
           onButtonPress={handlePress}
@@ -161,6 +183,8 @@ if (__TEST__) {
       );
       const item = component.root.find(el => el.props.testID === 'button-retry-level');
       item.props.onPress();
+
+      expect(item.props.analyticsID).toBe('button-end-retry-level');
       expect(handlePress.mock.calls.length).toBe(1);
     });
   });

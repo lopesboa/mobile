@@ -12,7 +12,7 @@ export const findById = (userLanguage: SupportedLanguage) => async (
   universalRef: string
 ): Promise<SlideAPI> => {
   // $FlowFixMe union type
-  const item: Slide = await getItem(CONTENT_TYPE.SLIDE, universalRef, userLanguage);
+  const item: Slide = await getItem(CONTENT_TYPE.SLIDE, userLanguage, universalRef);
   return mapToSlideAPI(item);
 };
 

@@ -13,7 +13,7 @@ export const find = (userLanguage: SupportedLanguage) => async (
   resourceType: RestrictedResourceType,
   ref: string
 ): Promise<ChapterAPI | LevelAPI | SlideAPI> => {
-  const resource: Resource = await getItem(resourceType, ref, userLanguage);
+  const resource: Resource = await getItem(resourceType, userLanguage, ref);
 
   switch (resourceType) {
     case CONTENT_TYPE.DISCIPLINE: {
