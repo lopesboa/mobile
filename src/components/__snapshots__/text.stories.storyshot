@@ -2,6 +2,12 @@
 
 exports[`Storyshots Text Default 1`] = `
 <Text
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
   testID="basic-text"
 >
   foo

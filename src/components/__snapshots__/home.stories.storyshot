@@ -154,14 +154,17 @@ exports[`Storyshots Home Default 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 10,
-            "textAlign": "center",
-          },
-          Object {
-            "color": "#FFFFFF",
-            "paddingBottom": 32,
-          },
+          Object {},
+          Array [
+            Object {
+              "fontSize": 10,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#FFFFFF",
+              "paddingBottom": 32,
+            },
+          ],
         ]
       }
     >

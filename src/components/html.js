@@ -1,10 +1,11 @@
 // @flow
 
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import HtmlBase from 'react-native-render-html';
 
 import theme from '../modules/theme';
+import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
 type Props = {|
   children: string,
@@ -61,23 +62,7 @@ const Html = ({
     img: imageStyle
   };
 
-  const renderers = {
-    // eslint-disable-next-line react/display-name
-    font: (htmlAttribs, componentChildren) => {
-      return (
-        <Text
-          key={1}
-          style={{
-            color: htmlAttribs.color
-          }}
-        >
-          {componentChildren}
-        </Text>
-      );
-    }
-  };
-
-  let baseFontStyle = {fontSize, color: theme.colors.black};
+  let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: theme.colors.black};
   if (style) {
     if (Array.isArray(style)) {
       const styleObject = style.reduce((result, child) => ({
@@ -95,6 +80,21 @@ const Html = ({
       };
     }
   }
+
+  const renderers = {
+    // eslint-disable-next-line react/display-name
+    font: (htmlAttribs, componentChildren) => (
+      <Text
+        key={1}
+        style={{
+          ...baseFontStyle,
+          color: htmlAttribs.color
+        }}
+      >
+        {componentChildren}
+      </Text>
+    )
+  };
 
   return (
     <View testID={testID} style={containerStyle}>

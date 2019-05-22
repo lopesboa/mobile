@@ -10,6 +10,7 @@ import type {WithAnalyticsProps} from '../containers/with-analytics';
 import type {AnalyticsEventParams} from '../types';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import {BrandThemeContext} from './brand-theme-provider';
+import {DEFAULT_STYLE as DEFAULT_TEXT_TYPE} from './text';
 
 export type Props = $Exact<{|
   ...WithAnalyticsProps,
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
     height: HEIGHT
   },
   text: {
+    ...DEFAULT_TEXT_TYPE,
     color: theme.colors.white,
     fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold,

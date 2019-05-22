@@ -392,9 +392,12 @@ exports[`Storyshots DropZone With No SelectedChoics 1`] = `
 >
   <Text
     style={
-      Object {
-        "color": "#90A4AE",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#90A4AE",
+        },
+      ]
     }
   >
     Select something below

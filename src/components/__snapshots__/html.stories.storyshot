@@ -205,9 +205,13 @@ exports[`Storyshots Html Default 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "blue",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "blue",
+                  "fontSize": 20,
+                },
+              ]
             }
           >
             <Text
@@ -406,9 +410,13 @@ exports[`Storyshots Html Default 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "blue",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "blue",
+                  "fontSize": 20,
+                },
+              ]
             }
           >
             <Text
@@ -545,9 +553,13 @@ exports[`Storyshots Html Default 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "blue",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "blue",
+                  "fontSize": 20,
+                },
+              ]
             }
           >
             <Text
@@ -746,9 +758,13 @@ exports[`Storyshots Html Default 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "blue",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "blue",
+                  "fontSize": 20,
+                },
+              ]
             }
           >
             <Text

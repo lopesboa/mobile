@@ -18,14 +18,17 @@ exports[`Storyshots QuestionSlider Default 1`] = `
   <Text
     style={
       Array [
-        Object {
-          "fontSize": 25,
-          "fontWeight": "700",
-          "textAlign": "center",
-        },
-        Object {
-          "color": "#00B0FF",
-        },
+        Object {},
+        Array [
+          Object {
+            "fontSize": 25,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ],
       ]
     }
     testID="slider-value"
@@ -161,12 +164,15 @@ exports[`Storyshots QuestionSlider Default 1`] = `
     >
       <Text
         style={
-          Object {
-            "color": "#14171A",
-            "fontSize": 15,
-            "fontWeight": "700",
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
         }
         testID="slider-min-value"
       >
@@ -183,12 +189,15 @@ exports[`Storyshots QuestionSlider Default 1`] = `
     >
       <Text
         style={
-          Object {
-            "color": "#14171A",
-            "fontSize": 15,
-            "fontWeight": "700",
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
         }
         testID="slider-max-value"
       >
@@ -217,14 +226,17 @@ exports[`Storyshots QuestionSlider With default step 1`] = `
   <Text
     style={
       Array [
-        Object {
-          "fontSize": 25,
-          "fontWeight": "700",
-          "textAlign": "center",
-        },
-        Object {
-          "color": "#00B0FF",
-        },
+        Object {},
+        Array [
+          Object {
+            "fontSize": 25,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ],
       ]
     }
     testID="slider-value"
@@ -360,12 +372,15 @@ exports[`Storyshots QuestionSlider With default step 1`] = `
     >
       <Text
         style={
-          Object {
-            "color": "#14171A",
-            "fontSize": 15,
-            "fontWeight": "700",
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
         }
         testID="slider-min-value"
       >
@@ -382,12 +397,15 @@ exports[`Storyshots QuestionSlider With default step 1`] = `
     >
       <Text
         style={
-          Object {
-            "color": "#14171A",
-            "fontSize": 15,
-            "fontWeight": "700",
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
         }
         testID="slider-max-value"
       >

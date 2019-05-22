@@ -185,14 +185,17 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "fontWeight": "700",
-            },
-            Object {
-              "color": "#546E7A",
-              "fontSize": 17,
-              "textAlign": "center",
-            },
+            Object {},
+            Array [
+              Object {
+                "fontWeight": "700",
+              },
+              Object {
+                "color": "#546E7A",
+                "fontSize": 17,
+                "textAlign": "center",
+              },
+            ],
           ]
         }
       >
@@ -208,11 +211,14 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
       />
       <Text
         style={
-          Object {
-            "color": "#546E7A",
-            "fontSize": 17,
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#546E7A",
+              "fontSize": 17,
+              "textAlign": "center",
+            },
+          ]
         }
       >
         in the network between Saturn and the Earth, please refresh in order to enjoy learning
@@ -423,11 +429,14 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
             />
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                  },
+                ]
               }
             >
               Refresh
@@ -454,14 +463,17 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
         <Text
           style={
             Array [
-              Object {
-                "color": "#546E7A",
-                "fontSize": 17,
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 15,
-              },
+              Object {},
+              Array [
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 17,
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 15,
+                },
+              ],
             ]
           }
         >
@@ -493,18 +505,21 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontSize": 17,
-                  "textAlign": "center",
-                },
-                Object {
-                  "fontSize": 15,
-                },
-                Object {
-                  "fontWeight": "700",
-                  "textDecorationLine": "underline",
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontSize": 17,
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 15,
+                  },
+                  Object {
+                    "fontWeight": "700",
+                    "textDecorationLine": "underline",
+                  },
+                ],
               ]
             }
           >
@@ -919,14 +934,17 @@ exports[`Storyshots ErrorModal Platform not activated case 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "fontWeight": "700",
-            },
-            Object {
-              "color": "#546E7A",
-              "fontSize": 17,
-              "textAlign": "center",
-            },
+            Object {},
+            Array [
+              Object {
+                "fontWeight": "700",
+              },
+              Object {
+                "color": "#546E7A",
+                "fontSize": 17,
+                "textAlign": "center",
+              },
+            ],
           ]
         }
       >
@@ -942,11 +960,14 @@ exports[`Storyshots ErrorModal Platform not activated case 1`] = `
       />
       <Text
         style={
-          Object {
-            "color": "#546E7A",
-            "fontSize": 17,
-            "textAlign": "center",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#546E7A",
+              "fontSize": 17,
+              "textAlign": "center",
+            },
+          ]
         }
       >
         if you want to reactivate it, contact your manager or click on the link below and we will pass the message on
@@ -993,11 +1014,14 @@ exports[`Storyshots ErrorModal Platform not activated case 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                  },
+                ]
               }
             >
               I want it !

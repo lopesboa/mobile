@@ -181,13 +181,16 @@ exports[`Storyshots Card Header Correction good 1`] = `
   <Text
     numberOfLines={1}
     style={
-      Object {
-        "color": "#546E7A",
-        "fontSize": 17,
-        "fontWeight": "bold",
-        "paddingLeft": 8,
-        "textAlign": "center",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "paddingLeft": 8,
+          "textAlign": "center",
+        },
+      ]
     }
   >
     Foo bar baz
@@ -376,13 +379,16 @@ exports[`Storyshots Card Header Correction wrong 1`] = `
   <Text
     numberOfLines={1}
     style={
-      Object {
-        "color": "#546E7A",
-        "fontSize": 17,
-        "fontWeight": "bold",
-        "paddingLeft": 8,
-        "textAlign": "center",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "paddingLeft": 8,
+          "textAlign": "center",
+        },
+      ]
     }
   >
     Foo bar baz
@@ -524,13 +530,16 @@ exports[`Storyshots Card Header Key point 1`] = `
   <Text
     numberOfLines={1}
     style={
-      Object {
-        "color": "#546E7A",
-        "fontSize": 17,
-        "fontWeight": "bold",
-        "paddingLeft": 8,
-        "textAlign": "center",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "paddingLeft": 8,
+          "textAlign": "center",
+        },
+      ]
     }
   >
     Foo bar baz
@@ -719,13 +728,16 @@ exports[`Storyshots Card Header Resource 1`] = `
   <Text
     numberOfLines={1}
     style={
-      Object {
-        "color": "#546E7A",
-        "fontSize": 17,
-        "fontWeight": "bold",
-        "paddingLeft": 8,
-        "textAlign": "center",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "paddingLeft": 8,
+          "textAlign": "center",
+        },
+      ]
     }
   >
     Foo bar baz
@@ -966,13 +978,16 @@ exports[`Storyshots Card Header Tip 1`] = `
   <Text
     numberOfLines={1}
     style={
-      Object {
-        "color": "#546E7A",
-        "fontSize": 17,
-        "fontWeight": "bold",
-        "paddingLeft": 8,
-        "textAlign": "center",
-      }
+      Array [
+        Object {},
+        Object {
+          "color": "#546E7A",
+          "fontSize": 17,
+          "fontWeight": "700",
+          "paddingLeft": 8,
+          "textAlign": "center",
+        },
+      ]
     }
   >
     Foo bar baz

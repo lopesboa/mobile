@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {Animated, View, Text, StyleSheet} from 'react-native';
+import {Animated, View, StyleSheet} from 'react-native';
 import {
   NovaSolidVoteRewardsVoteHeart as HeartIcon,
   NovaCompositionCoorpacademyBrokenHeart as HeartBrokenIcon,
@@ -9,6 +9,7 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
+import Text from './text';
 
 export type Props = {|
   count: number,

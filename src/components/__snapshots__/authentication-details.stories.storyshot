@@ -2444,11 +2444,14 @@ Array [
               />
               <Text
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 13,
-                    "textDecorationLine": "underline",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 13,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
                 }
               >
                 Need help?
@@ -5284,11 +5287,14 @@ Array [
               />
               <Text
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 13,
-                    "textDecorationLine": "underline",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 13,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
                 }
               >
                 Need help?

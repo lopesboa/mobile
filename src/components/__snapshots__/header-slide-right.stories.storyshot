@@ -61,13 +61,16 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
         <Text
           style={
             Array [
-              Object {
-                "color": "#546E7A",
-                "fontWeight": "700",
-              },
-              Object {
-                "fontSize": 14.666666666666666,
-              },
+              Object {},
+              Array [
+                Object {
+                  "color": "#546E7A",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "fontSize": 14.666666666666666,
+                },
+              ],
             ]
           }
         >
@@ -480,13 +483,16 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
         <Text
           style={
             Array [
-              Object {
-                "color": "#546E7A",
-                "fontWeight": "700",
-              },
-              Object {
-                "fontSize": 14.666666666666666,
-              },
+              Object {},
+              Array [
+                Object {
+                  "color": "#546E7A",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "fontSize": 14.666666666666666,
+                },
+              ],
             ]
           }
         >

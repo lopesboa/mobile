@@ -181,14 +181,17 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontWeight": "700",
-                  "paddingTop": 8,
-                },
-                Object {
-                  "fontSize": 22,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontWeight": "700",
+                    "paddingTop": 8,
+                  },
+                  Object {
+                    "fontSize": 22,
+                  },
+                ],
               ]
             }
             testID="title-catalog1"
@@ -206,16 +209,19 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
             <Text
               style={
                 Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "flex": 1,
-                    "fontWeight": "400",
-                    "paddingBottom": 16,
-                    "paddingTop": 8,
-                  },
-                  Object {
-                    "fontSize": 15,
-                  },
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "flex": 1,
+                      "fontWeight": "400",
+                      "paddingBottom": 16,
+                      "paddingTop": 8,
+                    },
+                    Object {
+                      "fontSize": 15,
+                    },
+                  ],
                 ]
               }
               testID="subtitle-catalog1"
@@ -271,16 +277,19 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "color": "#FFFFFF",
-              "textAlign": "center",
-              "textShadowColor": "rgba(0, 0, 0, 1)",
-              "textShadowRadius": 2,
-            },
-            Object {
-              "fontSize": 12,
-              "letterSpacing": 2.25,
-            },
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              Object {
+                "fontSize": 12,
+                "letterSpacing": 2.25,
+              },
+            ],
           ]
         }
         testID="author-catalog1"
@@ -417,14 +426,17 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
             <Text
               style={
                 Array [
-                  "New",
-                  Object {
-                    "fontSize": 12,
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "color": "#00B0FF",
-                  },
+                  Object {},
+                  Array [
+                    "New",
+                    Object {
+                      "fontSize": 12,
+                      "fontWeight": "700",
+                    },
+                    Object {
+                      "color": "#00B0FF",
+                    },
+                  ],
                 ]
               }
               testID="badge-catalog3"
@@ -519,14 +531,17 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontWeight": "700",
-                  "paddingTop": 8,
-                },
-                Object {
-                  "fontSize": 22,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontWeight": "700",
+                    "paddingTop": 8,
+                  },
+                  Object {
+                    "fontSize": 22,
+                  },
+                ],
               ]
             }
             testID="title-catalog3"
@@ -544,16 +559,19 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
             <Text
               style={
                 Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "flex": 1,
-                    "fontWeight": "400",
-                    "paddingBottom": 16,
-                    "paddingTop": 8,
-                  },
-                  Object {
-                    "fontSize": 15,
-                  },
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "flex": 1,
+                      "fontWeight": "400",
+                      "paddingBottom": 16,
+                      "paddingTop": 8,
+                    },
+                    Object {
+                      "fontSize": 15,
+                    },
+                  ],
                 ]
               }
               testID="subtitle-catalog3"
@@ -735,16 +753,19 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "color": "#FFFFFF",
-              "textAlign": "center",
-              "textShadowColor": "rgba(0, 0, 0, 1)",
-              "textShadowRadius": 2,
-            },
-            Object {
-              "fontSize": 12,
-              "letterSpacing": 2.25,
-            },
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              Object {
+                "fontSize": 12,
+                "letterSpacing": 2.25,
+              },
+            ],
           ]
         }
         testID="author-catalog3"
@@ -752,9 +773,12 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
         COORP 
         <Text
           style={
-            Object {
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "fontWeight": "700",
+              },
+            ]
           }
         >
           ORIGINAL
@@ -888,14 +912,17 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
             <Text
               style={
                 Array [
-                  "New",
-                  Object {
-                    "fontSize": 10,
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "color": "#00B0FF",
-                  },
+                  Object {},
+                  Array [
+                    "New",
+                    Object {
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                    },
+                    Object {
+                      "color": "#00B0FF",
+                    },
+                  ],
                 ]
               }
               testID="badge-catalog4"
@@ -990,14 +1017,17 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontWeight": "700",
-                  "paddingTop": 8,
-                },
-                Object {
-                  "fontSize": 15,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontWeight": "700",
+                    "paddingTop": 8,
+                  },
+                  Object {
+                    "fontSize": 15,
+                  },
+                ],
               ]
             }
             testID="title-catalog4"
@@ -1015,16 +1045,19 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
             <Text
               style={
                 Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "flex": 1,
-                    "fontWeight": "400",
-                    "paddingBottom": 16,
-                    "paddingTop": 8,
-                  },
-                  Object {
-                    "fontSize": 12,
-                  },
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "flex": 1,
+                      "fontWeight": "400",
+                      "paddingBottom": 16,
+                      "paddingTop": 8,
+                    },
+                    Object {
+                      "fontSize": 12,
+                    },
+                  ],
                 ]
               }
               testID="subtitle-catalog4"
@@ -1206,16 +1239,19 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "color": "#FFFFFF",
-              "textAlign": "center",
-              "textShadowColor": "rgba(0, 0, 0, 1)",
-              "textShadowRadius": 2,
-            },
-            Object {
-              "fontSize": 10,
-              "letterSpacing": 1.88,
-            },
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              Object {
+                "fontSize": 10,
+                "letterSpacing": 1.88,
+              },
+            ],
           ]
         }
         testID="author-catalog4"
@@ -2014,14 +2050,17 @@ exports[`Storyshots Catalog Item New 1`] = `
             <Text
               style={
                 Array [
-                  "New",
-                  Object {
-                    "fontSize": 12,
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "color": "#00B0FF",
-                  },
+                  Object {},
+                  Array [
+                    "New",
+                    Object {
+                      "fontSize": 12,
+                      "fontWeight": "700",
+                    },
+                    Object {
+                      "color": "#00B0FF",
+                    },
+                  ],
                 ]
               }
               testID="badge-catalog2"
@@ -2041,14 +2080,17 @@ exports[`Storyshots Catalog Item New 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontWeight": "700",
-                  "paddingTop": 8,
-                },
-                Object {
-                  "fontSize": 22,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontWeight": "700",
+                    "paddingTop": 8,
+                  },
+                  Object {
+                    "fontSize": 22,
+                  },
+                ],
               ]
             }
             testID="title-catalog2"
@@ -2066,16 +2108,19 @@ exports[`Storyshots Catalog Item New 1`] = `
             <Text
               style={
                 Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "flex": 1,
-                    "fontWeight": "400",
-                    "paddingBottom": 16,
-                    "paddingTop": 8,
-                  },
-                  Object {
-                    "fontSize": 15,
-                  },
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "flex": 1,
+                      "fontWeight": "400",
+                      "paddingBottom": 16,
+                      "paddingTop": 8,
+                    },
+                    Object {
+                      "fontSize": 15,
+                    },
+                  ],
                 ]
               }
               testID="subtitle-catalog2"
@@ -2131,16 +2176,19 @@ exports[`Storyshots Catalog Item New 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "color": "#FFFFFF",
-              "textAlign": "center",
-              "textShadowColor": "rgba(0, 0, 0, 1)",
-              "textShadowRadius": 2,
-            },
-            Object {
-              "fontSize": 12,
-              "letterSpacing": 2.25,
-            },
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              Object {
+                "fontSize": 12,
+                "letterSpacing": 2.25,
+              },
+            ],
           ]
         }
         testID="author-catalog2"

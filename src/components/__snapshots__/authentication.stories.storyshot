@@ -131,12 +131,15 @@ Array [
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 40,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="authentication-content-header"
           >
@@ -152,11 +155,14 @@ Array [
           />
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 17,
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="authentication-content-description"
           >
@@ -172,12 +178,15 @@ Array [
           />
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="authentication-content-footer"
           >
@@ -1069,11 +1078,14 @@ Array [
               />
               <Text
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 13,
-                    "textDecorationLine": "underline",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 13,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
                 }
               >
                 Need help?

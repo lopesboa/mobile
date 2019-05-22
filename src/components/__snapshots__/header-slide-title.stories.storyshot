@@ -78,13 +78,16 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       numberOfLines={1}
       style={
         Array [
-          Object {
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
-          Object {
-            "color": "#00B0FF",
-          },
+          Object {},
+          Array [
+            Object {
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#00B0FF",
+            },
+          ],
         ]
       }
     >
@@ -93,11 +96,14 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
     <Text
       numberOfLines={1}
       style={
-        Object {
-          "color": "#546E7A",
-          "fontSize": 12,
-          "fontWeight": "700",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#546E7A",
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+        ]
       }
       testID="header-slide-title-title"
     >
@@ -185,13 +191,16 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       numberOfLines={1}
       style={
         Array [
-          Object {
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
-          Object {
-            "color": "#00B0FF",
-          },
+          Object {},
+          Array [
+            Object {
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#00B0FF",
+            },
+          ],
         ]
       }
     >
@@ -200,11 +209,14 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
     <Text
       numberOfLines={1}
       style={
-        Object {
-          "color": "#546E7A",
-          "fontSize": 12,
-          "fontWeight": "700",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#546E7A",
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+        ]
       }
       testID="header-slide-title-title"
     >
@@ -292,13 +304,16 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       numberOfLines={1}
       style={
         Array [
-          Object {
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
-          Object {
-            "color": "#00B0FF",
-          },
+          Object {},
+          Array [
+            Object {
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#00B0FF",
+            },
+          ],
         ]
       }
     >
@@ -307,11 +322,14 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
     <Text
       numberOfLines={1}
       style={
-        Object {
-          "color": "#546E7A",
-          "fontSize": 12,
-          "fontWeight": "700",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#546E7A",
+            "fontSize": 12,
+            "fontWeight": "700",
+          },
+        ]
       }
       testID="header-slide-title-title"
     >

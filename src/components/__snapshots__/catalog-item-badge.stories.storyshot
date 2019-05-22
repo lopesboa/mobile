@@ -30,14 +30,17 @@ exports[`Storyshots Catalog Item Badge Default 1`] = `
     <Text
       style={
         Array [
-          "new",
-          Object {
-            "fontSize": 10,
-            "fontWeight": "700",
-          },
-          Object {
-            "color": "#00B0FF",
-          },
+          Object {},
+          Array [
+            "new",
+            Object {
+              "fontSize": 10,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#00B0FF",
+            },
+          ],
         ]
       }
       testID="badge"

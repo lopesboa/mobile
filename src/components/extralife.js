@@ -1,13 +1,14 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {
   NovaSolidAudioAudioControlPlay as PlayIcon,
   NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
+import Text from './text';
 
 export type Props = {|
   count: number,

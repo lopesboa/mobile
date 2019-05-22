@@ -87,14 +87,17 @@ exports[`Storyshots Catalog Item Footer Default 1`] = `
   <Text
     style={
       Array [
-        Object {
-          "color": "#FFFFFF",
-          "fontWeight": "700",
-          "paddingTop": 8,
-        },
-        Object {
-          "fontSize": 15,
-        },
+        Object {},
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontWeight": "700",
+            "paddingTop": 8,
+          },
+          Object {
+            "fontSize": 15,
+          },
+        ],
       ]
     }
     testID="title-catalog-item-footer"
@@ -112,16 +115,19 @@ exports[`Storyshots Catalog Item Footer Default 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "color": "#FFFFFF",
-            "flex": 1,
-            "fontWeight": "400",
-            "paddingBottom": 16,
-            "paddingTop": 8,
-          },
-          Object {
-            "fontSize": 12,
-          },
+          Object {},
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "flex": 1,
+              "fontWeight": "400",
+              "paddingBottom": 16,
+              "paddingTop": 8,
+            },
+            Object {
+              "fontSize": 12,
+            },
+          ],
         ]
       }
       testID="subtitle-catalog-item-footer"

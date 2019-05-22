@@ -37,13 +37,16 @@ exports[`Storyshots Lives Bigger height 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "color": "#546E7A",
-            "fontWeight": "700",
-          },
-          Object {
-            "fontSize": 40,
-          },
+          Object {},
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontWeight": "700",
+            },
+            Object {
+              "fontSize": 40,
+            },
+          ],
         ]
       }
     >
@@ -430,13 +433,16 @@ exports[`Storyshots Lives Broken 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "color": "#546E7A",
-            "fontWeight": "700",
-          },
-          Object {
-            "fontSize": 20,
-          },
+          Object {},
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontWeight": "700",
+            },
+            Object {
+              "fontSize": 20,
+            },
+          ],
         ]
       }
     >
@@ -823,13 +829,16 @@ exports[`Storyshots Lives Default 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "color": "#546E7A",
-            "fontWeight": "700",
-          },
-          Object {
-            "fontSize": 20,
-          },
+          Object {},
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontWeight": "700",
+            },
+            Object {
+              "fontSize": 20,
+            },
+          ],
         ]
       }
     >
@@ -1216,13 +1225,16 @@ exports[`Storyshots Lives God mode 1`] = `
     <Text
       style={
         Array [
-          Object {
-            "color": "#546E7A",
-            "fontWeight": "700",
-          },
-          Object {
-            "fontSize": 40,
-          },
+          Object {},
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontWeight": "700",
+            },
+            Object {
+              "fontSize": 40,
+            },
+          ],
         ]
       }
     >

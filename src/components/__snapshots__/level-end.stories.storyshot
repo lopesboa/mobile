@@ -627,12 +627,15 @@ exports[`Storyshots LevelEnd Failure 1`] = `
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 28,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="level-end-header"
           >
@@ -640,10 +643,13 @@ exports[`Storyshots LevelEnd Failure 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 17,
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                },
+              ]
             }
             testID="level-end-subtitle"
           >
@@ -892,13 +898,16 @@ exports[`Storyshots LevelEnd Failure 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "paddingBottom": 16,
-                  "paddingTop": 24,
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "paddingBottom": 16,
+                    "paddingTop": 24,
+                  },
+                ]
               }
             >
               Recommended for you:
@@ -1048,14 +1057,17 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                             <Text
                               style={
                                 Array [
-                                  "New",
-                                  Object {
-                                    "fontSize": 10,
-                                    "fontWeight": "700",
-                                  },
-                                  Object {
-                                    "color": "#00B0FF",
-                                  },
+                                  Object {},
+                                  Array [
+                                    "New",
+                                    Object {
+                                      "fontSize": 10,
+                                      "fontWeight": "700",
+                                    },
+                                    Object {
+                                      "color": "#00B0FF",
+                                    },
+                                  ],
                                 ]
                               }
                               testID="badge-recommend-item-dis-2"
@@ -1075,14 +1087,17 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                           <Text
                             style={
                               Array [
-                                Object {
-                                  "color": "#FFFFFF",
-                                  "fontWeight": "700",
-                                  "paddingTop": 8,
-                                },
-                                Object {
-                                  "fontSize": 15,
-                                },
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "700",
+                                    "paddingTop": 8,
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                ],
                               ]
                             }
                             testID="title-recommend-item-dis-2"
@@ -1100,16 +1115,19 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                             <Text
                               style={
                                 Array [
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "flex": 1,
-                                    "fontWeight": "400",
-                                    "paddingBottom": 16,
-                                    "paddingTop": 8,
-                                  },
-                                  Object {
-                                    "fontSize": 12,
-                                  },
+                                  Object {},
+                                  Array [
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "flex": 1,
+                                      "fontWeight": "400",
+                                      "paddingBottom": 16,
+                                      "paddingTop": 8,
+                                    },
+                                    Object {
+                                      "fontSize": 12,
+                                    },
+                                  ],
                                 ]
                               }
                               testID="subtitle-recommend-item-dis-2"
@@ -1165,16 +1183,19 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                       <Text
                         style={
                           Array [
-                            Object {
-                              "color": "#FFFFFF",
-                              "textAlign": "center",
-                              "textShadowColor": "rgba(0, 0, 0, 1)",
-                              "textShadowRadius": 2,
-                            },
-                            Object {
-                              "fontSize": 10,
-                              "letterSpacing": 1.88,
-                            },
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
+                              },
+                              Object {
+                                "fontSize": 10,
+                                "letterSpacing": 1.88,
+                              },
+                            ],
                           ]
                         }
                         testID="author-recommend-item-dis-2"
@@ -1941,12 +1962,15 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 28,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="level-end-header"
           >
@@ -1954,10 +1978,13 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
           </Text>
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 17,
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                },
+              ]
             }
             testID="level-end-subtitle"
           >
@@ -2206,13 +2233,16 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "paddingBottom": 16,
-                  "paddingTop": 24,
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "paddingBottom": 16,
+                    "paddingTop": 24,
+                  },
+                ]
               }
             >
               Recommended for you:
@@ -2362,14 +2392,17 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                             <Text
                               style={
                                 Array [
-                                  "New",
-                                  Object {
-                                    "fontSize": 10,
-                                    "fontWeight": "700",
-                                  },
-                                  Object {
-                                    "color": "#00B0FF",
-                                  },
+                                  Object {},
+                                  Array [
+                                    "New",
+                                    Object {
+                                      "fontSize": 10,
+                                      "fontWeight": "700",
+                                    },
+                                    Object {
+                                      "color": "#00B0FF",
+                                    },
+                                  ],
                                 ]
                               }
                               testID="badge-recommend-item-dis-2"
@@ -2389,14 +2422,17 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                           <Text
                             style={
                               Array [
-                                Object {
-                                  "color": "#FFFFFF",
-                                  "fontWeight": "700",
-                                  "paddingTop": 8,
-                                },
-                                Object {
-                                  "fontSize": 15,
-                                },
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "700",
+                                    "paddingTop": 8,
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                ],
                               ]
                             }
                             testID="title-recommend-item-dis-2"
@@ -2414,16 +2450,19 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                             <Text
                               style={
                                 Array [
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "flex": 1,
-                                    "fontWeight": "400",
-                                    "paddingBottom": 16,
-                                    "paddingTop": 8,
-                                  },
-                                  Object {
-                                    "fontSize": 12,
-                                  },
+                                  Object {},
+                                  Array [
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "flex": 1,
+                                      "fontWeight": "400",
+                                      "paddingBottom": 16,
+                                      "paddingTop": 8,
+                                    },
+                                    Object {
+                                      "fontSize": 12,
+                                    },
+                                  ],
                                 ]
                               }
                               testID="subtitle-recommend-item-dis-2"
@@ -2479,16 +2518,19 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                       <Text
                         style={
                           Array [
-                            Object {
-                              "color": "#FFFFFF",
-                              "textAlign": "center",
-                              "textShadowColor": "rgba(0, 0, 0, 1)",
-                              "textShadowRadius": 2,
-                            },
-                            Object {
-                              "fontSize": 10,
-                              "letterSpacing": 1.88,
-                            },
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
+                              },
+                              Object {
+                                "fontSize": 10,
+                                "letterSpacing": 1.88,
+                              },
+                            ],
                           ]
                         }
                         testID="author-recommend-item-dis-2"
@@ -2496,9 +2538,12 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                         COORP 
                         <Text
                           style={
-                            Object {
-                              "fontWeight": "700",
-                            }
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "700",
+                              },
+                            ]
                           }
                         >
                           ORIGINAL
@@ -3263,12 +3308,15 @@ exports[`Storyshots LevelEnd Finished 1`] = `
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 28,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="level-end-header"
           >
@@ -4414,13 +4462,16 @@ exports[`Storyshots LevelEnd Finished 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "paddingBottom": 16,
-                  "paddingTop": 24,
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "paddingBottom": 16,
+                    "paddingTop": 24,
+                  },
+                ]
               }
             >
               Recommended for you:
@@ -7125,14 +7176,17 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                           <Text
                             style={
                               Array [
-                                Object {
-                                  "color": "#FFFFFF",
-                                  "fontWeight": "700",
-                                  "paddingTop": 8,
-                                },
-                                Object {
-                                  "fontSize": 15,
-                                },
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "700",
+                                    "paddingTop": 8,
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                ],
                               ]
                             }
                             testID="title-recommend-item-cha-2"
@@ -7150,16 +7204,19 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                             <Text
                               style={
                                 Array [
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "flex": 1,
-                                    "fontWeight": "400",
-                                    "paddingBottom": 16,
-                                    "paddingTop": 8,
-                                  },
-                                  Object {
-                                    "fontSize": 12,
-                                  },
+                                  Object {},
+                                  Array [
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "flex": 1,
+                                      "fontWeight": "400",
+                                      "paddingBottom": 16,
+                                      "paddingTop": 8,
+                                    },
+                                    Object {
+                                      "fontSize": 12,
+                                    },
+                                  ],
                                 ]
                               }
                               testID="subtitle-recommend-item-cha-2"
@@ -7215,16 +7272,19 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                       <Text
                         style={
                           Array [
-                            Object {
-                              "color": "#FFFFFF",
-                              "textAlign": "center",
-                              "textShadowColor": "rgba(0, 0, 0, 1)",
-                              "textShadowRadius": 2,
-                            },
-                            Object {
-                              "fontSize": 10,
-                              "letterSpacing": 1.88,
-                            },
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
+                              },
+                              Object {
+                                "fontSize": 10,
+                                "letterSpacing": 1.88,
+                              },
+                            ],
                           ]
                         }
                         testID="author-recommend-item-cha-2"
@@ -7232,9 +7292,12 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                         COORP 
                         <Text
                           style={
-                            Object {
-                              "fontWeight": "700",
-                            }
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "700",
+                              },
+                            ]
                           }
                         >
                           ORIGINAL
@@ -7999,12 +8062,15 @@ exports[`Storyshots LevelEnd Success 1`] = `
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 28,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="level-end-header"
           >
@@ -9362,13 +9428,16 @@ exports[`Storyshots LevelEnd Success 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "paddingBottom": 16,
-                  "paddingTop": 24,
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "paddingBottom": 16,
+                    "paddingTop": 24,
+                  },
+                ]
               }
             >
               Recommended for you:
@@ -9705,14 +9774,17 @@ exports[`Storyshots LevelEnd Success 1`] = `
                           <Text
                             style={
                               Array [
-                                Object {
-                                  "color": "#FFFFFF",
-                                  "fontWeight": "700",
-                                  "paddingTop": 8,
-                                },
-                                Object {
-                                  "fontSize": 15,
-                                },
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "700",
+                                    "paddingTop": 8,
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                ],
                               ]
                             }
                             testID="title-recommend-item-cha-2"
@@ -9730,16 +9802,19 @@ exports[`Storyshots LevelEnd Success 1`] = `
                             <Text
                               style={
                                 Array [
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "flex": 1,
-                                    "fontWeight": "400",
-                                    "paddingBottom": 16,
-                                    "paddingTop": 8,
-                                  },
-                                  Object {
-                                    "fontSize": 12,
-                                  },
+                                  Object {},
+                                  Array [
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "flex": 1,
+                                      "fontWeight": "400",
+                                      "paddingBottom": 16,
+                                      "paddingTop": 8,
+                                    },
+                                    Object {
+                                      "fontSize": 12,
+                                    },
+                                  ],
                                 ]
                               }
                               testID="subtitle-recommend-item-cha-2"
@@ -9795,16 +9870,19 @@ exports[`Storyshots LevelEnd Success 1`] = `
                       <Text
                         style={
                           Array [
-                            Object {
-                              "color": "#FFFFFF",
-                              "textAlign": "center",
-                              "textShadowColor": "rgba(0, 0, 0, 1)",
-                              "textShadowRadius": 2,
-                            },
-                            Object {
-                              "fontSize": 10,
-                              "letterSpacing": 1.88,
-                            },
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
+                              },
+                              Object {
+                                "fontSize": 10,
+                                "letterSpacing": 1.88,
+                              },
+                            ],
                           ]
                         }
                         testID="author-recommend-item-cha-2"
@@ -10593,12 +10671,15 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
         >
           <Text
             style={
-              Object {
-                "color": "#FFFFFF",
-                "fontSize": 28,
-                "fontWeight": "700",
-                "textAlign": "center",
-              }
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
             }
             testID="level-end-header"
           >
@@ -11744,13 +11825,16 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "paddingBottom": 16,
-                  "paddingTop": 24,
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "paddingBottom": 16,
+                    "paddingTop": 24,
+                  },
+                ]
               }
             >
               Recommended for you:
@@ -12087,14 +12171,17 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                           <Text
                             style={
                               Array [
-                                Object {
-                                  "color": "#FFFFFF",
-                                  "fontWeight": "700",
-                                  "paddingTop": 8,
-                                },
-                                Object {
-                                  "fontSize": 15,
-                                },
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "700",
+                                    "paddingTop": 8,
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                ],
                               ]
                             }
                             testID="title-recommend-item-cha-2"
@@ -12112,16 +12199,19 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                             <Text
                               style={
                                 Array [
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "flex": 1,
-                                    "fontWeight": "400",
-                                    "paddingBottom": 16,
-                                    "paddingTop": 8,
-                                  },
-                                  Object {
-                                    "fontSize": 12,
-                                  },
+                                  Object {},
+                                  Array [
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "flex": 1,
+                                      "fontWeight": "400",
+                                      "paddingBottom": 16,
+                                      "paddingTop": 8,
+                                    },
+                                    Object {
+                                      "fontSize": 12,
+                                    },
+                                  ],
                                 ]
                               }
                               testID="subtitle-recommend-item-cha-2"
@@ -12177,16 +12267,19 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                       <Text
                         style={
                           Array [
-                            Object {
-                              "color": "#FFFFFF",
-                              "textAlign": "center",
-                              "textShadowColor": "rgba(0, 0, 0, 1)",
-                              "textShadowRadius": 2,
-                            },
-                            Object {
-                              "fontSize": 10,
-                              "letterSpacing": 1.88,
-                            },
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
+                              },
+                              Object {
+                                "fontSize": 10,
+                                "letterSpacing": 1.88,
+                              },
+                            ],
                           ]
                         }
                         testID="author-recommend-item-cha-2"
@@ -12194,9 +12287,12 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                         COORP 
                         <Text
                           style={
-                            Object {
-                              "fontWeight": "700",
-                            }
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "700",
+                              },
+                            ]
                           }
                         >
                           ORIGINAL

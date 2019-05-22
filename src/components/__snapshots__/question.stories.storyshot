@@ -1711,9 +1711,12 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
           >
             <Text
               style={
-                Object {
-                  "color": "#90A4AE",
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#90A4AE",
+                  },
+                ]
               }
             >
               Select something below

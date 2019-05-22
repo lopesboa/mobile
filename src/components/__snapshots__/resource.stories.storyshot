@@ -207,11 +207,14 @@ exports[`Storyshots Resource PDF (with extra life) 1`] = `
             >
               <Text
                 style={
-                  Object {
-                    "color": "#546E7A",
-                    "fontSize": 22,
-                    "fontWeight": "700",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                    },
+                  ]
                 }
               >
                 +
@@ -488,11 +491,14 @@ exports[`Storyshots Resource PDF (with extra life) 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 15,
-                  "textAlign": "center",
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 15,
+                    "textAlign": "center",
+                  },
+                ]
               }
             >
               Bonus!
@@ -500,14 +506,17 @@ exports[`Storyshots Resource PDF (with extra life) 1`] = `
             <Text
               style={
                 Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 15,
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontWeight": "700",
-                  },
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "fontWeight": "700",
+                    },
+                  ],
                 ]
               }
             >
@@ -1043,11 +1052,14 @@ Array [
               >
                 <Text
                   style={
-                    Object {
-                      "color": "#546E7A",
-                      "fontSize": 22,
-                      "fontWeight": "700",
-                    }
+                    Array [
+                      Object {},
+                      Object {
+                        "color": "#546E7A",
+                        "fontSize": 22,
+                        "fontWeight": "700",
+                      },
+                    ]
                   }
                 >
                   +
@@ -1324,11 +1336,14 @@ Array [
             >
               <Text
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 15,
-                    "textAlign": "center",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
                 }
               >
                 Bonus!
@@ -1336,14 +1351,17 @@ Array [
               <Text
                 style={
                   Array [
-                    Object {
-                      "color": "#FFFFFF",
-                      "fontSize": 15,
-                      "textAlign": "center",
-                    },
-                    Object {
-                      "fontWeight": "700",
-                    },
+                    Object {},
+                    Array [
+                      Object {
+                        "color": "#FFFFFF",
+                        "fontSize": 15,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontWeight": "700",
+                      },
+                    ],
                   ]
                 }
               >

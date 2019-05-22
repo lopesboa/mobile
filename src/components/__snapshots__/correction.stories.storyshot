@@ -39,11 +39,14 @@ exports[`Storyshots Correction Bad answer 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -51,10 +54,13 @@ exports[`Storyshots Correction Bad answer 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -97,13 +103,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -797,13 +806,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -958,14 +970,17 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -1403,13 +1418,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -1999,13 +2017,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -2652,13 +2673,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -3072,13 +3096,16 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -3286,11 +3313,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -3298,10 +3328,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -3344,13 +3377,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -4044,13 +4080,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -4205,14 +4244,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -4623,13 +4665,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -5219,13 +5264,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -5872,13 +5920,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -6292,13 +6343,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -6500,11 +6554,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -6512,10 +6569,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -6558,13 +6618,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -7258,13 +7321,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -7419,14 +7485,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -7837,13 +7906,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -8433,13 +8505,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -9086,13 +9161,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -9506,13 +9584,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -9714,11 +9795,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -9726,10 +9810,13 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -9772,13 +9859,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -10461,13 +10551,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -10708,11 +10801,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               >
                                 <Text
                                   style={
-                                    Object {
-                                      "color": "#546E7A",
-                                      "fontSize": 22,
-                                      "fontWeight": "700",
-                                    }
+                                    Array [
+                                      Object {},
+                                      Object {
+                                        "color": "#546E7A",
+                                        "fontSize": 22,
+                                        "fontWeight": "700",
+                                      },
+                                    ]
                                   }
                                 >
                                   +
@@ -10989,11 +11085,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                             >
                               <Text
                                 style={
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": 15,
-                                    "textAlign": "center",
-                                  }
+                                  Array [
+                                    Object {},
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "fontSize": 15,
+                                      "textAlign": "center",
+                                    },
+                                  ]
                                 }
                               >
                                 Bonus!
@@ -11001,14 +11100,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               <Text
                                 style={
                                   Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 15,
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "fontWeight": "700",
-                                    },
+                                    Object {},
+                                    Array [
+                                      Object {
+                                        "color": "#FFFFFF",
+                                        "fontSize": 15,
+                                        "textAlign": "center",
+                                      },
+                                      Object {
+                                        "fontWeight": "700",
+                                      },
+                                    ],
                                   ]
                                 }
                               >
@@ -11392,13 +11494,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -11628,11 +11733,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               >
                                 <Text
                                   style={
-                                    Object {
-                                      "color": "#546E7A",
-                                      "fontSize": 22,
-                                      "fontWeight": "700",
-                                    }
+                                    Array [
+                                      Object {},
+                                      Object {
+                                        "color": "#546E7A",
+                                        "fontSize": 22,
+                                        "fontWeight": "700",
+                                      },
+                                    ]
                                   }
                                 >
                                   +
@@ -11909,11 +12017,14 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                             >
                               <Text
                                 style={
-                                  Object {
-                                    "color": "#FFFFFF",
-                                    "fontSize": 15,
-                                    "textAlign": "center",
-                                  }
+                                  Array [
+                                    Object {},
+                                    Object {
+                                      "color": "#FFFFFF",
+                                      "fontSize": 15,
+                                      "textAlign": "center",
+                                    },
+                                  ]
                                 }
                               >
                                 Bonus!
@@ -11921,14 +12032,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               <Text
                                 style={
                                   Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 15,
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "fontWeight": "700",
-                                    },
+                                    Object {},
+                                    Array [
+                                      Object {
+                                        "color": "#FFFFFF",
+                                        "fontSize": 15,
+                                        "textAlign": "center",
+                                      },
+                                      Object {
+                                        "fontWeight": "700",
+                                      },
+                                    ],
                                   ]
                                 }
                               >
@@ -12312,13 +12426,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -12473,14 +12590,17 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -12844,13 +12964,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -13264,13 +13387,16 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -13474,11 +13600,14 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -13486,10 +13615,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -13532,13 +13664,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -14232,13 +14367,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -14393,14 +14531,17 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -14764,13 +14905,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -15132,13 +15276,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -15728,13 +15875,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -16480,13 +16630,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -16688,11 +16841,14 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -16700,10 +16856,13 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -16746,13 +16905,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -17435,13 +17597,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -18031,13 +18196,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -18731,13 +18899,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -18892,14 +19063,17 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -19263,13 +19437,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -19683,13 +19860,16 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -19891,11 +20071,14 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -19903,10 +20086,13 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -19949,13 +20135,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -20649,13 +20838,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -20810,14 +21002,17 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -21255,13 +21450,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -21851,13 +22049,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -22504,13 +22705,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -22924,13 +23128,16 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -23138,11 +23345,14 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -23150,10 +23360,13 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -23496,13 +23709,16 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -23657,14 +23873,17 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -24102,13 +24321,16 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -24698,13 +24920,16 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -25351,13 +25576,16 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -25771,13 +25999,16 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -25985,11 +26216,14 @@ exports[`Storyshots Correction Default 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -25997,10 +26231,13 @@ exports[`Storyshots Correction Default 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -26043,13 +26280,16 @@ exports[`Storyshots Correction Default 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -26535,11 +26775,14 @@ exports[`Storyshots Correction Good answer 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -26547,10 +26790,13 @@ exports[`Storyshots Correction Good answer 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -26593,13 +26839,16 @@ exports[`Storyshots Correction Good answer 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -27345,13 +27594,16 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -27713,13 +27965,16 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -28309,13 +28564,16 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -28962,13 +29220,16 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -29330,13 +29591,16 @@ exports[`Storyshots Correction Good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -29491,14 +29755,17 @@ exports[`Storyshots Correction Good answer 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -29755,11 +30022,14 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -29767,10 +30037,13 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -29813,13 +30086,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -30565,13 +30841,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -30933,13 +31212,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -31529,13 +31811,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -32182,13 +32467,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -32550,13 +32838,16 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -32711,14 +33002,17 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -32969,11 +33263,14 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -32981,10 +33278,13 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -33027,13 +33327,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -33779,13 +34082,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -34100,13 +34406,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -34468,13 +34777,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -34629,14 +34941,17 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -35047,13 +35362,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -35643,13 +35961,16 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -36183,11 +36504,14 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -36195,10 +36519,13 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -36593,13 +36920,16 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -36961,13 +37291,16 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -37557,13 +37890,16 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -38210,13 +38546,16 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -38578,13 +38917,16 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -38739,14 +39081,17 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -39003,11 +39348,14 @@ exports[`Storyshots Correction Last bad answer 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -39015,10 +39363,13 @@ exports[`Storyshots Correction Last bad answer 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -39061,13 +39412,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -39761,13 +40115,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -39922,14 +40279,17 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -40367,13 +40727,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -40963,13 +41326,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -41616,13 +41982,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -42036,13 +42405,16 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -42250,11 +42622,14 @@ exports[`Storyshots Correction Last good answer 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -42262,10 +42637,13 @@ exports[`Storyshots Correction Last good answer 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -42308,13 +42686,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -43060,13 +43441,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -43428,13 +43812,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -44024,13 +44411,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -44677,13 +45067,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -45045,13 +45438,16 @@ exports[`Storyshots Correction Last good answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -45206,14 +45602,17 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -45470,11 +45869,14 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -45482,10 +45884,13 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -45880,13 +46285,16 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -46248,13 +46656,16 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -46844,13 +47255,16 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -47497,13 +47911,16 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -47865,13 +48282,16 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -48026,14 +48446,17 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -48290,11 +48713,14 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -48302,10 +48728,13 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -48700,13 +49129,16 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -49068,13 +49500,16 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -49664,13 +50099,16 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -50317,13 +50755,16 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -50685,13 +51126,16 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -50846,14 +51290,17 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -51104,11 +51551,14 @@ exports[`Storyshots Correction With only one answer 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -51116,10 +51566,13 @@ exports[`Storyshots Correction With only one answer 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -51162,13 +51615,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -51914,13 +52370,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?
@@ -52282,13 +52741,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -52878,13 +53340,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -53531,13 +53996,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -53899,13 +54367,16 @@ exports[`Storyshots Correction With only one answer 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -54006,14 +54477,17 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -54216,11 +54690,14 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
       <View>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 28,
-              "fontWeight": "700",
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
           }
           testID="correction-title"
         >
@@ -54228,10 +54705,13 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
         </Text>
         <Text
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-            }
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
           }
           testID="correction-explanation"
         >
@@ -54274,13 +54754,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
           <Text
             style={
               Array [
-                Object {
-                  "color": "#546E7A",
-                  "fontWeight": "700",
-                },
-                Object {
-                  "fontSize": 22.333333333333332,
-                },
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 22.333333333333332,
+                  },
+                ],
               ]
             }
           >
@@ -54974,13 +55457,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Correction
@@ -55135,14 +55621,17 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     <Text
                       style={
                         Array [
-                          Object {
-                            "color": "#546E7A",
-                            "fontSize": 15,
-                            "fontWeight": "400",
-                          },
-                          Object {
-                            "fontWeight": "700",
-                          },
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#546E7A",
+                              "fontSize": 15,
+                              "fontWeight": "400",
+                            },
+                            Object {
+                              "fontWeight": "700",
+                            },
+                          ],
                         ]
                       }
                     >
@@ -55634,13 +56123,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -56230,13 +56722,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Access the lesson
@@ -56883,13 +57378,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Key point
@@ -57303,13 +57801,16 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                   <Text
                     numberOfLines={1}
                     style={
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "bold",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      }
+                      Array [
+                        Object {},
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                      ]
                     }
                   >
                     Did you know that?

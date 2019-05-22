@@ -137,11 +137,14 @@ exports[`Storyshots Extralife Default 1`] = `
   >
     <Text
       style={
-        Object {
-          "color": "#546E7A",
-          "fontSize": 22,
-          "fontWeight": "700",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#546E7A",
+            "fontSize": 22,
+            "fontWeight": "700",
+          },
+        ]
       }
     >
       +

@@ -1,17 +1,32 @@
 // @flow strict
 
 import * as React from 'react';
-import {Text as TextBase} from 'react-native';
+import {Text as TextBase, Platform, StyleSheet} from 'react-native';
 
 type Props = {|
   // copied from node_modules/react-native/Libraries/Text/TextProps.js
   children: React.Node,
   style?: GenericStyleProp,
-  testID?: string
+  testID?: string,
+  numberOfLines?: number
 |};
 
-const Text = ({testID, children, style}: Props) => (
-  <TextBase style={style} testID={testID}>
+export const DEFAULT_STYLE = {
+  ...Platform.select({
+    android: {
+      fontFamily: 'Roboto'
+    }
+  })
+};
+
+const styles = StyleSheet.create({
+  text: {
+    ...DEFAULT_STYLE
+  }
+});
+
+const Text = ({testID, children, style, numberOfLines}: Props) => (
+  <TextBase style={[styles.text, style]} testID={testID} numberOfLines={numberOfLines}>
     {children}
   </TextBase>
 );

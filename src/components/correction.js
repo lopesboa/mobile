@@ -1,8 +1,10 @@
 // @flow strict
 /* eslint-disable import/max-dependencies*/
+
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {LessonType} from '@coorpacademy/progression-engine';
+
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
 import CardComponent from '../containers/card-scalable';

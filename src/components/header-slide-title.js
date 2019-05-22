@@ -1,11 +1,12 @@
 // @flow strict
 
 import * as React from 'react';
-import {Text, View, StyleSheet, ImageBackground} from 'react-native';
+import {View, StyleSheet, ImageBackground} from 'react-native';
 
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
+import Text from './text';
 
 type Props = {|
   image?: {uri: string} | File,

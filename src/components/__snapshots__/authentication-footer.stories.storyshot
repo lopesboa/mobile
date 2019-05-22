@@ -742,11 +742,14 @@ exports[`Storyshots AuthenticationFooter Default 1`] = `
     />
     <Text
       style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 13,
-          "textDecorationLine": "underline",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 13,
+            "textDecorationLine": "underline",
+          },
+        ]
       }
     >
       Need help?

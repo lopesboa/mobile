@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {
   NovaCompositionCoorpacademyLightbulb as TipIcon,
   NovaSolidLoginKey1 as KeyPointIcon,
@@ -13,6 +13,7 @@ import {
 import theme from '../modules/theme';
 import type {CardType} from '../types';
 import {CARD_TYPE} from '../const';
+import Text from './text';
 
 export type Props = {|
   type: CardType,
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     paddingLeft: theme.spacing.tiny,
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.large,
-    fontWeight: 'bold',
+    fontWeight: theme.fontWeight.bold,
     textAlign: 'center'
   },
   headerTip: {

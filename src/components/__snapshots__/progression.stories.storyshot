@@ -48,13 +48,16 @@ exports[`Storyshots Progression Default 1`] = `
       <Text
         style={
           Array [
-            Object {
-              "fontSize": 13,
-              "fontWeight": "700",
-            },
-            Object {
-              "color": "#00B0FF",
-            },
+            Object {},
+            Array [
+              Object {
+                "fontSize": 13,
+                "fontWeight": "700",
+              },
+              Object {
+                "color": "#00B0FF",
+              },
+            ],
           ]
         }
       >
@@ -62,11 +65,14 @@ exports[`Storyshots Progression Default 1`] = `
       </Text>
       <Text
         style={
-          Object {
-            "color": "#90A4AE",
-            "fontSize": 13,
-            "fontWeight": "700",
-          }
+          Array [
+            Object {},
+            Object {
+              "color": "#90A4AE",
+              "fontSize": 13,
+              "fontWeight": "700",
+            },
+          ]
         }
       >
         /

@@ -2,12 +2,13 @@
 // @flow
 
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Slider from '@coorpacademy/react-native-slider';
 
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 import {STYLE as BOX_STYLE} from './box';
+import Text from './text';
 
 export type Edge = {|
   value: number,

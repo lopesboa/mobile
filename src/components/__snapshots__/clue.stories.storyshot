@@ -138,12 +138,15 @@ exports[`Storyshots Clue Default 1`] = `
           >
             <Text
               style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 22,
-                  "fontStyle": "italic",
-                  "textAlign": "center",
-                }
+                Array [
+                  Object {},
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 22,
+                    "fontStyle": "italic",
+                    "textAlign": "center",
+                  },
+                ]
               }
               testID="clue-advice"
             >

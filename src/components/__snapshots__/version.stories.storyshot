@@ -4,11 +4,14 @@ exports[`Storyshots Version Default 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 10,
-        "textAlign": "center",
-      },
-      undefined,
+      Object {},
+      Array [
+        Object {
+          "fontSize": 10,
+          "textAlign": "center",
+        },
+        undefined,
+      ],
     ]
   }
 >
