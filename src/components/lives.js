@@ -14,9 +14,11 @@ import Text from './text';
 export type Props = {|
   count: number,
   height: number,
+  winningLife?: boolean,
   isBroken?: boolean,
   testID?: string,
   translateX?: Animated.Interpolation,
+  textTranslateY?: Animated.Interpolation,
   scaleX?: Animated.Interpolation,
   scaleY?: Animated.Interpolation,
   heartOpacity?: Animated.Interpolation,
@@ -45,19 +47,17 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0
-  },
-  text: {
-    fontWeight: theme.fontWeight.bold,
-    color: theme.colors.gray.dark
   }
 });
 
 const Lives = ({
   count,
+  winningLife = false,
   height,
   isBroken,
   testID = 'lives',
   translateX,
+  textTranslateY,
   scaleX,
   scaleY,
   heartOpacity,
@@ -69,13 +69,13 @@ const Lives = ({
   const heartIconStyle = {height: heartHeight, width: heartHeight};
   const offsetLeft = (heartHeight * maxScaleX) / 2;
   const heartColor = (isGodMode && theme.colors.positive) || theme.colors.negative;
-  const livesCount = (isGodMode && '∞') || `x${count}`;
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     height
   };
   const transform = [];
+  const textTransform = [];
   if (translateX) {
     transform.push({translateX});
   }
@@ -85,6 +85,10 @@ const Lives = ({
   if (scaleY) {
     transform.push({scaleY});
   }
+  if (textTranslateY) {
+    textTransform.push({translateY: textTranslateY});
+  }
+
   const heartStyle = {
     height: heartHeight,
     width: heartHeight,
@@ -93,18 +97,44 @@ const Lives = ({
   };
   const livesStyle = {
     width: height,
-    height
+    height,
+    overflow: 'hidden'
   };
   const textStyle = {
-    fontSize: height / 3
+    fontSize: height / 3,
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.gray.dark,
+    textAlign: 'center'
+  };
+  const animatedTextStyle = {
+    transform: textTransform,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center'
+  };
+
+  const textWrapper = {
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center'
   };
 
   const brokenSuffix = isBroken ? '-broken' : '';
+  const topText = (isGodMode && '∞') || winningLife ? count - 1 : count;
+  const bottomText = winningLife ? count : count + 1;
 
   return (
     <View style={[styles.container, containerStyle]} testID={testID}>
       <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
-        <Text style={[styles.text, textStyle]}>{livesCount}</Text>
+        <Animated.View style={animatedTextStyle}>
+          <View style={textWrapper}>
+            <Text style={textStyle}>x{topText}</Text>
+          </View>
+          <View style={textWrapper}>
+            <Text style={textStyle}>x{bottomText}</Text>
+          </View>
+        </Animated.View>
       </View>
       <Animated.View style={[styles.heart, heartStyle]}>
         <HeartOutlineIcon

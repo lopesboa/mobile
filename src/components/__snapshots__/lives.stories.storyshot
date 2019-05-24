@@ -28,30 +28,78 @@ exports[`Storyshots Lives Bigger height 1`] = `
         },
         Object {
           "height": 120,
+          "overflow": "hidden",
           "width": 120,
         },
       ]
     }
     testID="lives-3"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {},
-          Array [
-            Object {
-              "color": "#546E7A",
-              "fontWeight": "700",
-            },
-            Object {
-              "fontSize": 40,
-            },
-          ],
-        ]
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
       }
     >
-      x3
-    </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          3
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          4
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -424,30 +472,78 @@ exports[`Storyshots Lives Broken 1`] = `
         },
         Object {
           "height": 60,
+          "overflow": "hidden",
           "width": 60,
         },
       ]
     }
     testID="lives-2-broken"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {},
-          Array [
-            Object {
-              "color": "#546E7A",
-              "fontWeight": "700",
-            },
-            Object {
-              "fontSize": 20,
-            },
-          ],
-        ]
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
       }
     >
-      x2
-    </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 20,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 20,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          3
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -820,30 +916,78 @@ exports[`Storyshots Lives Default 1`] = `
         },
         Object {
           "height": 60,
+          "overflow": "hidden",
           "width": 60,
         },
       ]
     }
     testID="lives-3"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {},
-          Array [
-            Object {
-              "color": "#546E7A",
-              "fontWeight": "700",
-            },
-            Object {
-              "fontSize": 20,
-            },
-          ],
-        ]
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
       }
     >
-      x3
-    </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 20,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          3
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 20,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          4
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -1216,30 +1360,1414 @@ exports[`Storyshots Lives God mode 1`] = `
         },
         Object {
           "height": 120,
+          "overflow": "hidden",
           "width": 120,
         },
       ]
     }
     testID="lives-3"
   >
-    <Text
+    <View
       style={
-        Array [
-          Object {},
-          Array [
-            Object {
-              "color": "#546E7A",
-              "fontWeight": "700",
-            },
-            Object {
-              "fontSize": 40,
-            },
-          ],
-        ]
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
       }
     >
-      ∞
-    </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          4
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 72,
+        "left": 0,
+        "position": "absolute",
+        "transform": Array [],
+        "width": 72,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="undefined"
+      bbWidth="undefined"
+      color="#FFFFFF"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#FFFFFF"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          Object {
+            "height": 72,
+            "width": 72,
+          },
+          false,
+          undefined,
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+    >
+      <RNSVGPath
+        d="M0 .001h24v24H0z"
+        fill={null}
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="1"
+        x={0}
+        y={0}
+      />
+      <RNSVGPath
+        d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+        fill={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "stroke",
+            "strokeWidth",
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="5"
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#3EC483"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M0 .001h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+        <RNSVGPath
+          d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+          fill={
+            Array [
+              0,
+              0.24313725490196078,
+              0.7686274509803922,
+              0.5137254901960784,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#F73F52"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={25}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+          fill={
+            Array [
+              0,
+              0.9686274509803922,
+              0.24705882352941178,
+              0.3215686274509804,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Lives Losing life 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": 120,
+        "paddingLeft": 43.199999999999996,
+        "width": 163.2,
+      },
+    ]
+  }
+  testID="lives"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 1000,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 120,
+          "overflow": "hidden",
+          "width": 120,
+        },
+      ]
+    }
+    testID="lives-3"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          4
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 72,
+        "left": 0,
+        "position": "absolute",
+        "transform": Array [],
+        "width": 72,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="undefined"
+      bbWidth="undefined"
+      color="#FFFFFF"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#FFFFFF"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          Object {
+            "height": 72,
+            "width": 72,
+          },
+          false,
+          undefined,
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+    >
+      <RNSVGPath
+        d="M0 .001h24v24H0z"
+        fill={null}
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="1"
+        x={0}
+        y={0}
+      />
+      <RNSVGPath
+        d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+        fill={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "stroke",
+            "strokeWidth",
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="5"
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#3EC483"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M0 .001h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+        <RNSVGPath
+          d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+          fill={
+            Array [
+              0,
+              0.24313725490196078,
+              0.7686274509803922,
+              0.5137254901960784,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#F73F52"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={25}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+          fill={
+            Array [
+              0,
+              0.9686274509803922,
+              0.24705882352941178,
+              0.3215686274509804,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Lives Winning life 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": 120,
+        "paddingLeft": 43.199999999999996,
+        "width": 163.2,
+      },
+    ]
+  }
+  testID="lives"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 1000,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 120,
+          "overflow": "hidden",
+          "width": 120,
+        },
+      ]
+    }
+    testID="lives-3"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [],
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          3
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 72,
+        "left": 0,
+        "position": "absolute",
+        "transform": Array [],
+        "width": 72,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="undefined"
+      bbWidth="undefined"
+      color="#FFFFFF"
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#FFFFFF"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          Object {
+            "height": 72,
+            "width": 72,
+          },
+          false,
+          undefined,
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+    >
+      <RNSVGPath
+        d="M0 .001h24v24H0z"
+        fill={null}
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="1"
+        x={0}
+        y={0}
+      />
+      <RNSVGPath
+        d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+        fill={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "stroke",
+            "strokeWidth",
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={
+          Array [
+            0,
+            1,
+            1,
+            1,
+            1,
+          ]
+        }
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth="5"
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#3EC483"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={24}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M0 .001h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+        <RNSVGPath
+          d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+          fill={
+            Array [
+              0,
+              0.24313725490196078,
+              0.7686274509803922,
+              0.5137254901960784,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="undefined"
+        bbWidth="undefined"
+        color="#F73F52"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {
+              "height": 72,
+              "width": 72,
+            },
+            false,
+            undefined,
+          ]
+        }
+        vbHeight={25}
+        vbWidth={24}
+      >
+        <RNSVGPath
+          d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+          fill={
+            Array [
+              0,
+              0.9686274509803922,
+              0.24705882352941178,
+              0.3215686274509804,
+              1,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth="1"
+          x={0}
+          y={0}
+        />
+      </RNSVGSvgView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Lives with text translate interpolation 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": 120,
+        "paddingLeft": 43.199999999999996,
+        "width": 163.2,
+      },
+    ]
+  }
+  testID="lives"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 1000,
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 120,
+          "overflow": "hidden",
+          "width": 120,
+        },
+      ]
+    }
+    testID="lives-3"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "transform": Array [
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#546E7A",
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          x
+          4
+        </Text>
+      </View>
+    </View>
   </View>
   <View
     style={

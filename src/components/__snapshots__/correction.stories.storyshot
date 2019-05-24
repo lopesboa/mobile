@@ -94,30 +94,78 @@ exports[`Storyshots Correction Bad answer 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-3-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x3
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                4
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -3368,30 +3416,78 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-2-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x2
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -6609,30 +6705,78 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-0-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x0
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -9850,30 +9994,78 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-0-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x0
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -13655,30 +13847,78 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-2-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x2
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -16896,30 +17136,78 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-1-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x1
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -20126,30 +20414,78 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-3-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x3
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                4
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -26271,30 +26607,78 @@ exports[`Storyshots Correction Default 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-3-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x3
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                4
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -26830,30 +27214,78 @@ exports[`Storyshots Correction Good answer 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-2"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x2
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -30077,30 +30509,78 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-2"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x2
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -33318,30 +33798,78 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-1"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x1
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -39403,30 +39931,78 @@ exports[`Storyshots Correction Last bad answer 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-0-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x0
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -42677,30 +43253,78 @@ exports[`Storyshots Correction Last good answer 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-1"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x1
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                1
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -51606,30 +52230,78 @@ exports[`Storyshots Correction With only one answer 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-3"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x3
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                4
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -54745,30 +55417,78 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
               },
               Object {
                 "height": 67,
+                "overflow": "hidden",
                 "width": 67,
               },
             ]
           }
           testID="correction-lives-2-broken"
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Array [
-                  Object {
-                    "color": "#546E7A",
-                    "fontWeight": "700",
-                  },
-                  Object {
-                    "fontSize": 22.333333333333332,
-                  },
-                ],
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "transform": Array [],
+                "width": "100%",
+              }
             }
           >
-            x2
-          </Text>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                2
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {},
+                    Object {
+                      "color": "#546E7A",
+                      "fontSize": 22.333333333333332,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                x
+                3
+              </Text>
+            </View>
+          </View>
         </View>
         <View
           style={
