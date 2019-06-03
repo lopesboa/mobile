@@ -103,7 +103,7 @@ jest.mock('react-navigation', () => ({
 
 // react-native-confetti-cannon
 
-jest.mock('react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');
+jest.mock('@coorpacademy/react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');
 
 // react-native-firebase
 

@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
-import ConfettiCannon from 'react-native-confetti-cannon';
+import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
