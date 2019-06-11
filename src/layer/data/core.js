@@ -1,6 +1,6 @@
-// @flow strict
+// @flow
 
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';

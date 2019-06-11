@@ -8,6 +8,7 @@ exports[`Storyshots QuestionTitle Default 1`] = `
     style={Object {}}
   >
     <Text
+      allowFontScaling={true}
       selectable={false}
       style={
         Array [
@@ -21,6 +22,7 @@ exports[`Storyshots QuestionTitle Default 1`] = `
       }
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -30,6 +32,7 @@ exports[`Storyshots QuestionTitle Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",

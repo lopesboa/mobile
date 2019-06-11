@@ -18,7 +18,7 @@ export type Props = {|
   testID?: string
 |};
 
-const styles: GenericStyleProp = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,

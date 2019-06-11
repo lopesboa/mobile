@@ -40,8 +40,8 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
     >
       <RNSVGSvgView
         align="xMidYMid"
-        bbHeight="undefined"
-        bbWidth="undefined"
+        bbHeight={21}
+        bbWidth={21}
         color="#fca833"
         meetOrSlice={0}
         minX={0}
@@ -50,31 +50,34 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
           Array [
             Object {
               "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             Object {
               "height": 21,
               "width": 21,
             },
-            false,
-            undefined,
+            null,
+            Object {
+              "flex": 0,
+              "height": 21,
+              "width": 21,
+            },
           ]
         }
+        tintColor="#fca833"
         vbHeight={16}
         vbWidth={16}
       >
-        <RNSVGPath
-          d="M8 0l1.888 6.111H16L11.056 9.89 12.944 16 8 12.223 3.056 16l1.888-6.111L0 6.11h6.112z"
+        <RNSVGGroup
           fill={
             Array [
               0,
-              0.9882352941176471,
-              0.6588235294117647,
-              0.2,
-              1,
+              4278190080,
             ]
           }
           fillOpacity={1}
           fillRule={1}
+          font={Object {}}
           matrix={
             Array [
               1,
@@ -88,12 +91,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
           opacity={1}
           originX={0}
           originY={0}
-          propList={
-            Array [
-              "fill",
-              "fillRule",
-            ]
-          }
+          propList={Array []}
           rotation={0}
           scaleX={1}
           scaleY={1}
@@ -106,10 +104,58 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
           strokeLinejoin={0}
           strokeMiterlimit={4}
           strokeOpacity={1}
-          strokeWidth="1"
+          strokeWidth={1}
+          vectorEffect={0}
           x={0}
           y={0}
-        />
+        >
+          <RNSVGPath
+            d="M8 0l1.888 6.111H16L11.056 9.89 12.944 16 8 12.223 3.056 16l1.888-6.111L0 6.11h6.112z"
+            fill={
+              Array [
+                0,
+                4294748211,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+                "fillRule",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+        </RNSVGGroup>
       </RNSVGSvgView>
     </View>
     <View
@@ -124,9 +170,11 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -136,6 +184,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -147,6 +196,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
               </Text>
             </Text>
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "flex": 1,
@@ -158,6 +208,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
 
             </Text>
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -170,6 +221,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -179,6 +231,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -255,8 +308,8 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
     >
       <RNSVGSvgView
         align="xMidYMid"
-        bbHeight="undefined"
-        bbWidth="undefined"
+        bbHeight={21}
+        bbWidth={21}
         meetOrSlice={0}
         minX={0}
         minY={0}
@@ -264,31 +317,33 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
           Array [
             Object {
               "backgroundColor": "transparent",
+              "borderWidth": 0,
             },
             Object {
               "height": 21,
               "width": 21,
             },
-            false,
-            undefined,
+            null,
+            Object {
+              "flex": 0,
+              "height": 21,
+              "width": 21,
+            },
           ]
         }
         vbHeight={25}
         vbWidth={16}
       >
-        <RNSVGPath
-          d="M1.27 7.231l.903 5.121 1.477-.26-.903-5.121a4.481 4.481 0 0 1 3.65-5.213L6.137.28C2.887.854.697 3.98 1.27 7.23"
+        <RNSVGGroup
           fill={
             Array [
               0,
-              0.5529411764705883,
-              0.5529411764705883,
-              0.5529411764705883,
-              1,
+              4278190080,
             ]
           }
           fillOpacity={1}
           fillRule={1}
+          font={Object {}}
           matrix={
             Array [
               1,
@@ -302,11 +357,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
           opacity={1}
           originX={0}
           originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
+          propList={Array []}
           rotation={0}
           scaleX={1}
           scaleY={1}
@@ -319,339 +370,372 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
           strokeLinejoin={0}
           strokeMiterlimit={4}
           strokeOpacity={1}
-          strokeWidth="1"
+          strokeWidth={1}
+          vectorEffect={0}
           x={0}
           y={0}
-        />
-        <RNSVGPath
-          d="M13.406 7.528l-1.477.26-.417-2.363c-.434-2.462-2.751-4.084-5.115-3.667L6.137.28c3.25-.574 6.378 1.617 6.95 4.866l.319 2.381z"
-          fill={
-            Array [
-              0,
-              0.8156862745098039,
-              0.8156862745098039,
-              0.8156862745098039,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M8.3 11.4H1.6c-.6 0-1.2.5-1.2 1.2v10.8c0 .6.5 1.2 1.2 1.2h6.7V11.4"
-          fill={
-            Array [
-              0,
-              0.9647058823529412,
-              0.803921568627451,
-              0.3568627450980392,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M8.2 11.4h6.6c.6 0 1.1.5 1.1 1.2v10.8c0 .6-.5 1.2-1.1 1.2H8.2V11.4"
-          fill={
-            Array [
-              0,
-              0.9607843137254902,
-              0.6862745098039216,
-              0.24705882352941178,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M1.5 23.4h6.9V12.5H1.5z"
-          fill={
-            Array [
-              0,
-              0.9607843137254902,
-              0.6862745098039216,
-              0.24705882352941178,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M8.2 23.4h6.6V12.5H8.2z"
-          fill={
-            Array [
-              0,
-              0.9647058823529412,
-              0.803921568627451,
-              0.3568627450980392,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M9.8 16.7c0-.9-.7-1.6-1.6-1.6-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6c.8.1 1.6-.7 1.6-1.6"
-          fill={
-            Array [
-              0,
-              0.011764705882352941,
-              0.2549019607843137,
-              0.34509803921568627,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
-        <RNSVGPath
-          d="M8.9 16.7c0-.4-.4-.8-.8-.8s-.8.4-.8.8V20c0 .4.4.8.8.8s.8-.4.8-.8v-3.3"
-          fill={
-            Array [
-              0,
-              0.011764705882352941,
-              0.2549019607843137,
-              0.34509803921568627,
-              1,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth="1"
-          x={0}
-          y={0}
-        />
+        >
+          <RNSVGPath
+            d="M1.27 7.231l.903 5.121 1.477-.26-.903-5.121a4.481 4.481 0 0 1 3.65-5.213L6.137.28C2.887.854.697 3.98 1.27 7.23"
+            fill={
+              Array [
+                0,
+                4287466893,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M13.406 7.528l-1.477.26-.417-2.363c-.434-2.462-2.751-4.084-5.115-3.667L6.137.28c3.25-.574 6.378 1.617 6.95 4.866l.319 2.381z"
+            fill={
+              Array [
+                0,
+                4291875024,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M8.3 11.4H1.6c-.6 0-1.2.5-1.2 1.2v10.8c0 .6.5 1.2 1.2 1.2h6.7V11.4"
+            fill={
+              Array [
+                0,
+                4294364507,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M8.2 11.4h6.6c.6 0 1.1.5 1.1 1.2v10.8c0 .6-.5 1.2-1.1 1.2H8.2V11.4"
+            fill={
+              Array [
+                0,
+                4294291263,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M1.5 23.4h6.9V12.5H1.5z"
+            fill={
+              Array [
+                0,
+                4294291263,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M8.2 23.4h6.6V12.5H8.2z"
+            fill={
+              Array [
+                0,
+                4294364507,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M9.8 16.7c0-.9-.7-1.6-1.6-1.6-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6c.8.1 1.6-.7 1.6-1.6"
+            fill={
+              Array [
+                0,
+                4278403416,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+          <RNSVGPath
+            d="M8.9 16.7c0-.4-.4-.8-.8-.8s-.8.4-.8.8V20c0 .4.4.8.8.8s.8-.4.8-.8v-3.3"
+            fill={
+              Array [
+                0,
+                4278403416,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={
+              Array [
+                "fill",
+              ]
+            }
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          />
+        </RNSVGGroup>
       </RNSVGSvgView>
     </View>
     <View
@@ -666,9 +750,11 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -678,6 +764,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -689,6 +776,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
               </Text>
             </Text>
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "flex": 1,
@@ -700,6 +788,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
 
             </Text>
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -712,6 +801,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -721,6 +811,7 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",

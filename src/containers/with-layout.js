@@ -12,7 +12,7 @@ export type Layout = {|
 export type WithLayoutProps = {|
   onLayout?: LayoutEvent => void,
   layout?: Layout,
-  containerStyle?: GenericStyleProp
+  containerStyle?: ViewStyleProp
 |};
 
 function withLayout<P>(
@@ -41,7 +41,7 @@ function withLayout<P>(
       });
 
     render() {
-      const {containerStyle} = this.props;
+      const containerStyle: ViewStyleProp = this.props.containerStyle;
 
       if (options && options.withoutContainer) {
         return (

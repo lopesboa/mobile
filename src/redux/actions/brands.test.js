@@ -80,6 +80,7 @@ describe('Brands', () => {
         expect(action).toEqual(fetchError(fakeError));
         return action;
       });
+      // $FlowFixMe
       options.services.Brands.find.mockRejectedValueOnce(fakeError);
 
       // $FlowFixMe

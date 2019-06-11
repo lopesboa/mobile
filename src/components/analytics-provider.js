@@ -18,7 +18,7 @@ export type State = $PropertyType<Services, 'Analytics'>;
 
 const initialState: State = services.Analytics;
 
-export const AnalyticsContext = React.createContext(initialState);
+export const AnalyticsContext: React.Context<State> = React.createContext(initialState);
 
 const AnalyticsProvider = ({children}: Props) => (
   <AnalyticsContext.Provider value={initialState}>{children}</AnalyticsContext.Provider>

@@ -1,4 +1,5 @@
 // @flow strict
+
 /* eslint-disable import/max-dependencies*/
 
 import * as React from 'react';
@@ -192,7 +193,7 @@ class Correction extends React.PureComponent<Props> {
   renderCard = (
     {type, title: cardTitle, resource, offeringExtraLife}: Card,
     index: number,
-    animationStyle: GenericStyleProp
+    animationStyle: AnimationStyleProp
   ) => {
     const {answers, userAnswers, question, tip, keyPoint, isCorrect} = this.props;
     // This is the offset added by the deck swiper

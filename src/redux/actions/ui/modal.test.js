@@ -81,6 +81,7 @@ describe('modal', () => {
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(lastAction);
+        return action;
       });
 
       dispatch.mockImplementationOnce(action => {

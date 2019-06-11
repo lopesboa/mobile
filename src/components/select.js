@@ -21,7 +21,7 @@ type Props = {|
   placeholder?: string,
   color?: string,
   onChange: (value: string) => void,
-  style?: GenericStyleProp,
+  style?: TextStyleProp,
   testID?: string
 |};
 

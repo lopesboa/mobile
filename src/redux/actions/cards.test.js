@@ -1,5 +1,6 @@
 // @flow strict
 
+import {fakeError} from '../../utils/tests';
 import {createBrand} from '../../__fixtures__/brands';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
@@ -15,7 +16,6 @@ import {
   selectCardFailure,
   getAndRefreshCard
 } from './cards';
-
 import {SHOW} from './ui/modal';
 
 jest.mock('./progression', () => ({
@@ -33,11 +33,11 @@ jest.mock('./progression', () => ({
 const brand = createBrand();
 const language = 'en';
 
-const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
+const levelCard = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
 const disciplineCard = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
-  levels: [level],
+  levels: [levelCard],
   title: 'Discipline'
 });
 const chapterCard = createChapterCard({
@@ -157,18 +157,20 @@ describe('Cards', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchError(new Error()));
+        expect(action).toEqual(fetchError(fakeError));
         return action;
       });
       getState.mockReturnValue({
         authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
       });
-      options.services.Cards.find.mockRejectedValueOnce(new Error());
+      options.services.Cards.find.mockImplementationOnce(() => {
+        throw fakeError;
+      });
 
       // $FlowFixMe
       const actual = await fetchCards(language)(dispatch, getState, options);
 
-      return expect(actual).toEqual(fetchError(new Error()));
+      return expect(actual).toEqual(fetchError(fakeError));
     });
     it('no cards found', async () => {
       const dispatch = jest.fn();
@@ -238,13 +240,15 @@ describe('Cards', () => {
           }
         };
 
-        options.services.Content.find.mockReturnValueOnce(Promise.resolve(level));
+        // $FlowFixMe duplicated type between store and layer
+        options.services.Content.find.mockReturnValueOnce(Promise.resolve(levelCard));
 
         dispatch.mockImplementationOnce(async action => {
           expect(await action).toEqual({
             type: '@@mock/CREATE_LEVEL_PROGRESSION',
             payload: {_id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
         dispatch.mockImplementationOnce(async action => {
@@ -252,6 +256,7 @@ describe('Cards', () => {
             type: '@@mock/SELECT_PROGRESSION',
             payload: {id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
 
@@ -285,7 +290,9 @@ describe('Cards', () => {
 
         const expected = selectCardFailure(disciplineCardWihoutLevel, 'Course has no level');
 
-        options.services.Content.find.mockReturnValueOnce(Promise.reject(new Error()));
+        options.services.Content.find.mockImplementationOnce(() => {
+          throw fakeError;
+        });
 
         dispatch.mockImplementationOnce(action => {
           expect(action).toEqual(expected);
@@ -312,10 +319,13 @@ describe('Cards', () => {
 
         const expected = selectCardFailure(disciplineCard, 'Level progression not created');
 
-        options.services.Content.find.mockReturnValueOnce(Promise.reject(new Error()));
+        options.services.Content.find.mockImplementationOnce(() => {
+          throw fakeError;
+        });
 
         dispatch.mockImplementationOnce(async action => {
           expect(await action).toEqual(expected);
+          // $FlowFixMe Promise definition
           return action;
         });
         // $FlowFixMe
@@ -334,7 +344,7 @@ describe('Cards', () => {
             Progressions: {
               findLast: jest.fn((engineRef, contentRef) => {
                 expect(engineRef).toBe('learner');
-                expect(contentRef).toBe(level.universalRef);
+                expect(contentRef).toBe(levelCard.universalRef);
                 return Promise.resolve({_id: '__ID__'});
               })
             }
@@ -347,6 +357,7 @@ describe('Cards', () => {
             type: '@@mock/SELECT_PROGRESSION',
             payload: {id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
 
@@ -373,6 +384,7 @@ describe('Cards', () => {
           }
         };
 
+        // $FlowFixMe duplicated type between store and layer
         options.services.Content.find.mockReturnValueOnce(Promise.resolve(chapter));
 
         dispatch.mockImplementationOnce(async action => {
@@ -381,6 +393,7 @@ describe('Cards', () => {
             type: '@@mock/CREATE_CHAPTER_PROGRESSION',
             payload: {_id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
 
@@ -389,6 +402,7 @@ describe('Cards', () => {
             type: '@@mock/SELECT_PROGRESSION',
             payload: {id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
 
@@ -415,7 +429,9 @@ describe('Cards', () => {
 
         const expected = selectCardFailure(chapterCard, 'Chapter progression not created');
 
-        options.services.Content.find.mockReturnValueOnce(Promise.reject(new Error()));
+        options.services.Content.find.mockImplementationOnce(() => {
+          throw fakeError;
+        });
 
         dispatch.mockImplementationOnce(action => {
           expect(action).toEqual(expected);
@@ -450,6 +466,7 @@ describe('Cards', () => {
             type: '@@mock/SELECT_PROGRESSION',
             payload: {id: '__ID__'}
           });
+          // $FlowFixMe Promise definition
           return action;
         });
 

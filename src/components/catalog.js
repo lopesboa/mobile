@@ -79,7 +79,7 @@ class Catalog extends React.PureComponent<Props> {
   render() {
     const {items, titleCover, titleCards, logo} = this.props;
 
-    if (items.length > 0) {
+    if (items.length > 0 && items) {
       let nextItem: DisciplineCard | ChapterCard;
       let rowIndex: number = -1;
       const cover: DisciplineCard | ChapterCard = items.splice(0, 1)[0];

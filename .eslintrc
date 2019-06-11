@@ -12,6 +12,10 @@
   ],
   "plugins": ["@coorpacademy/coorpacademy"],
   "settings": {
+    "react": {
+      "version": "16.8.5",
+      "flowVersion": "0.92.1"
+    },
     "import/resolver": {
       "babel-module": {
         "extensions": [".ios.js", ".js", ".json"]
@@ -61,6 +65,8 @@
     "fp/no-class": "off",
     "flowtype-errors/enforce-min-coverage": "off",
     "flowtype/require-return-type": "off",
+    "flowtype-errors/show-warnings": "off",
+    "flowtype-errors/show-errors": "off",
     "promise/no-native": "off",
     "class-methods-use-this": "off"
   }

@@ -10,7 +10,7 @@ type Props = {|
   color?: string,
   height?: number,
   width?: number,
-  style?: GenericStyleProp
+  style?: ViewStyleProp
 |};
 
 const HeaderBackIcon = ({

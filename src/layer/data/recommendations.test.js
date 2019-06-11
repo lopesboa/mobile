@@ -1,11 +1,14 @@
 // @flow
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {find, getNextLevel} from './recommendations';
 
 describe('Recommendation data layer', () => {
   describe('find', () => {
     it('should be mocked', async () => {
+      AsyncStorage.getAllKeys = jest.fn().mockImplementation(key => {
+        return Promise.resolve([]);
+      });
       const actual = await find('type', 'ref');
       expect(actual).toEqual([]);
     });

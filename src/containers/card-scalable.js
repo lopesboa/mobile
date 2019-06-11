@@ -18,7 +18,7 @@ type Props = $Exact<{|
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
-  animationStyle?: GenericStyleProp,
+  animationStyle?: AnimationStyleProp,
   offsetBottom: number,
   expandedOffsetBottom: number,
   testID?: string

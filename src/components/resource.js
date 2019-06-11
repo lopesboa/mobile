@@ -21,7 +21,7 @@ type Props = {|
   description?: string,
   onPress?: (url?: string, description?: string) => void,
   subtitles?: string,
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   resizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch',
   extralifeOverlay?: boolean
 |};

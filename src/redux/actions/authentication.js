@@ -1,7 +1,7 @@
-// @flow strict
+// @flow
 
 import decode from 'jwt-decode';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import fetch from '../../modules/fetch';
 import type {StoreAction, ErrorAction} from '../_types';

@@ -88,4 +88,11 @@ storiesOf('Card', module)
         section="finishLearning"
       />
     </Card>
+  ))
+  // This is just to handle the default case in the switch statement
+  .add('Default Case', () => (
+    // $FlowFixMe
+    <Card style={styles.card} shadowStyle={BOX_STYLE} type="fake">
+      <Text>Handle default case</Text>
+    </Card>
   ));

@@ -60,19 +60,24 @@ export const createStoreState = ({
   disciplines,
   progression,
   cards,
+  godmode: baseGodMode,
   data: baseData,
-  ui: baseUi
+  ui: baseUi,
+  authentication: baseAuthentication
 }: {
   levels: Array<Level>,
   slides: Array<Slide>,
   chapters: Array<Chapter>,
   disciplines: Array<Discipline>,
   progression: Progression,
+  godmode?: boolean,
   // @todo type this later, im so sorry
   // eslint-disable-next-line flowtype/no-weak-types
   data?: any,
   // eslint-disable-next-line flowtype/no-weak-types
   ui?: any,
+  // eslint-disable-next-line flowtype/no-weak-types
+  authentication?: any,
   cards?: CardsState
 }): StoreState => {
   const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
@@ -81,6 +86,16 @@ export const createStoreState = ({
   const mappedDisciplines: {[key: string]: DisciplinStore} = createMapObject(
     disciplines.map(mapToDiscipline)
   );
+
+  const godmode = baseGodMode || false;
+
+  const authentication = baseAuthentication || {
+    user: {
+      token: '__TOKEN__',
+      isGodModeUser: false
+    },
+    brand: null
+  };
 
   const data = {
     answers: {
@@ -158,14 +173,8 @@ export const createStoreState = ({
     bundle: bundleState,
     cards: cards || cardsState,
     permissions: permissionsState,
-    authentication: {
-      user: {
-        token: '__TOKEN__',
-        isGodModeUser: false
-      },
-      brand: null
-    },
-    godmode: false,
+    authentication,
+    godmode,
     video: {
       isFullScreen: false
     }

@@ -7,8 +7,9 @@ import type {
   NavigationStateRoute
 } from 'react-navigation';
 import type {
-  ____Styles_Internal,
-  ____TextStyle_Internal
+  ____ViewStyleProp_Internal,
+  ____TextStyleProp_Internal,
+  ____ImageStyleProp_Internal
 } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import type {EdgeInsetsProp} from 'react-native/Libraries/StyleSheet/EdgeInsetsPropType';
 import type {Dispatch as Redux$Dispatch} from 'redux';
@@ -17,11 +18,20 @@ import type {StoreState} from '../src/redux/store';
 
 declare type File = number;
 
+// Helper
+
+declare type $ExtractPropType = <T, R>(props: R) => R;
+
 // React native types
 
-declare type GenericStyleProp = ____Styles_Internal;
-declare type FontWeight = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontWeight'>>;
-declare type FontSize = $NonMaybeType<$PropertyType<____TextStyle_Internal, 'fontSize'>>;
+declare type ViewStyleProp = ____ViewStyleProp_Internal;
+declare type TextStyleProp = ____TextStyleProp_Internal;
+declare type ImageStyleProp = ____ImageStyleProp_Internal;
+declare type AnimationStyleProp = {|
+  ...$PropertyType<ViewStyleProp, 'transform'>
+|};
+declare type FontWeight = $NonMaybeType<$PropertyType<TextStyleProp, 'fontWeight'>>;
+declare type FontSize = $NonMaybeType<$PropertyType<TextStyleProp, 'fontSize'>>;
 declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 declare type HitSlop = EdgeInsetsProp;
 

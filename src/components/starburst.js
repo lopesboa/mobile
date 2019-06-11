@@ -7,8 +7,8 @@ import Gradient from './gradient';
 
 export type Props = {|
   spiralColor: string,
-  style?: GenericStyleProp,
-  spiralStyle?: GenericStyleProp,
+  style?: ViewStyleProp,
+  spiralStyle?: ViewStyleProp,
   testID?: string,
   backgroundColor: string
 |};

@@ -2,6 +2,7 @@
 
 exports[`Storyshots Image Gradient Custom Gradient 1`] = `
 <View
+  accessibilityIgnoresInvertColors={true}
   style={
     Array [
       Object {
@@ -79,6 +80,7 @@ exports[`Storyshots Image Gradient Custom Gradient 1`] = `
 
 exports[`Storyshots Image Gradient Default 1`] = `
 <View
+  accessibilityIgnoresInvertColors={true}
   style={
     Array [
       Object {
@@ -156,6 +158,7 @@ exports[`Storyshots Image Gradient Default 1`] = `
 
 exports[`Storyshots Image Gradient Extrem Gradient 1`] = `
 <View
+  accessibilityIgnoresInvertColors={true}
   style={
     Array [
       Object {

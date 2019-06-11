@@ -56,6 +56,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -65,6 +66,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -145,6 +147,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -154,6 +157,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -231,6 +235,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -240,6 +245,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -317,6 +323,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -326,6 +333,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -368,6 +376,7 @@ exports[`Storyshots QuestionChoices QCM Basic 1`] = `
     onFocus={[Function]}
     placeholder="Type here"
     placeholderTextColor="#90A4AE"
+    rejectResponderTermination={true}
     selectTextOnFocus={true}
     style={
       Array [
@@ -478,6 +487,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -487,6 +497,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#FFFFFF",
@@ -570,6 +581,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -579,6 +591,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#14171A",
@@ -653,6 +666,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -662,6 +676,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#14171A",
@@ -736,6 +751,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -745,6 +761,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#14171A",
@@ -832,6 +849,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
               }
             >
               <View
+                accessibilityIgnoresInvertColors={true}
                 style={
                   Object {
                     "height": "100%",
@@ -886,6 +904,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -895,6 +914,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#14171A",
@@ -991,6 +1011,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
               }
             >
               <View
+                accessibilityIgnoresInvertColors={true}
                 style={
                   Object {
                     "height": "100%",
@@ -1048,6 +1069,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -1057,6 +1079,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#FFFFFF",
@@ -1153,6 +1176,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
               }
             >
               <View
+                accessibilityIgnoresInvertColors={true}
                 style={
                   Object {
                     "height": "100%",
@@ -1207,6 +1231,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                 style={Object {}}
               >
                 <Text
+                  allowFontScaling={true}
                   selectable={false}
                   style={
                     Array [
@@ -1216,6 +1241,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                   }
                 >
                   <Text
+                    allowFontScaling={true}
                     style={
                       Object {
                         "color": "#14171A",
@@ -1483,6 +1509,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         style={Object {}}
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -1492,6 +1519,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             style={
               Object {
                 "color": "#14171A",
@@ -1526,6 +1554,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         onFocus={[Function]}
         placeholder="Type here"
         placeholderTextColor="#90A4AE"
+        rejectResponderTermination={true}
         selectTextOnFocus={true}
         style={
           Array [
@@ -1556,6 +1585,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         style={Object {}}
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -1568,6 +1598,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -1577,6 +1608,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -1632,6 +1664,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             <TextInput
               allowFontScaling={true}
               editable={false}
+              rejectResponderTermination={true}
               style={
                 Array [
                   Object {
@@ -1677,9 +1710,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             >
               <RNSVGSvgView
                 align="xMidYMid"
-                bbHeight="15"
-                bbWidth="15"
+                bbHeight={15}
+                bbWidth={15}
                 color=""
+                height={15}
                 id="prefix__Calque_1"
                 meetOrSlice={0}
                 minX={0}
@@ -1688,9 +1722,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "borderWidth": 0,
                     },
                     undefined,
-                    false,
+                    null,
                     Object {
                       "flex": 0,
                       "height": 15,
@@ -1698,8 +1733,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                     },
                   ]
                 }
+                tintColor=""
                 vbHeight={20}
                 vbWidth={20}
+                width={15}
                 x={0}
                 xmlSpace="preserve"
                 y={0}
@@ -1708,10 +1745,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   fill={
                     Array [
                       0,
-                      0,
-                      0,
-                      0,
-                      1,
+                      4278190080,
                     ]
                   }
                   fillOpacity={1}
@@ -1727,7 +1761,6 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                       0,
                     ]
                   }
-                  name="prefix__Page-1"
                   opacity={1}
                   originX={0}
                   originY={0}
@@ -1744,23 +1777,21 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   strokeLinejoin={0}
                   strokeMiterlimit={4}
                   strokeOpacity={1}
-                  strokeWidth="1"
+                  strokeWidth={1}
+                  vectorEffect={0}
                   x={0}
                   y={0}
                 >
-                  <RNSVGPath
-                    d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                  <RNSVGGroup
                     fill={
                       Array [
                         0,
-                        0,
-                        0,
-                        0,
-                        1,
+                        4278190080,
                       ]
                     }
                     fillOpacity={1}
                     fillRule={1}
+                    font={Object {}}
                     matrix={
                       Array [
                         1,
@@ -1771,15 +1802,11 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                         0,
                       ]
                     }
-                    name="prefix__arrow_down"
+                    name="prefix__Page-1"
                     opacity={1}
                     originX={0}
                     originY={0}
-                    propList={
-                      Array [
-                        "fill",
-                      ]
-                    }
+                    propList={Array []}
                     rotation={0}
                     scaleX={1}
                     scaleY={1}
@@ -1792,10 +1819,58 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                     strokeLinejoin={0}
                     strokeMiterlimit={4}
                     strokeOpacity={1}
-                    strokeWidth="1"
+                    strokeWidth={1}
+                    vectorEffect={0}
                     x={0}
                     y={0}
-                  />
+                  >
+                    <RNSVGPath
+                      d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      name="prefix__arrow_down"
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGGroup>
                 </RNSVGGroup>
               </RNSVGSvgView>
             </View>
@@ -1827,6 +1902,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   "opacity": 1,
                 }
               }
+              testID="ios_modal_top"
             />
             <View
               style={
@@ -2036,6 +2112,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                       undefined,
                     ]
                   }
+                  testID="question-part-4-select-picker"
                 />
               </View>
             </View>
@@ -2050,6 +2127,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         style={Object {}}
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -2059,6 +2137,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             style={
               Object {
                 "color": "#14171A",
@@ -2093,6 +2172,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         onFocus={[Function]}
         placeholder="Type here"
         placeholderTextColor="#90A4AE"
+        rejectResponderTermination={true}
         selectTextOnFocus={true}
         style={
           Array [
@@ -2126,6 +2206,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
         style={Object {}}
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -2138,6 +2219,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -2147,6 +2229,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -2202,6 +2285,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             <TextInput
               allowFontScaling={true}
               editable={false}
+              rejectResponderTermination={true}
               style={
                 Array [
                   Object {
@@ -2252,9 +2336,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
             >
               <RNSVGSvgView
                 align="xMidYMid"
-                bbHeight="15"
-                bbWidth="15"
+                bbHeight={15}
+                bbWidth={15}
                 color="#00B0FF"
+                height={15}
                 id="prefix__Calque_1"
                 meetOrSlice={0}
                 minX={0}
@@ -2263,9 +2348,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
+                      "borderWidth": 0,
                     },
                     undefined,
-                    false,
+                    null,
                     Object {
                       "flex": 0,
                       "height": 15,
@@ -2273,8 +2359,10 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                     },
                   ]
                 }
+                tintColor="#00B0FF"
                 vbHeight={20}
                 vbWidth={20}
+                width={15}
                 x={0}
                 xmlSpace="preserve"
                 y={0}
@@ -2283,10 +2371,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   fill={
                     Array [
                       0,
-                      0,
-                      0,
-                      0,
-                      1,
+                      4278190080,
                     ]
                   }
                   fillOpacity={1}
@@ -2302,7 +2387,6 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                       0,
                     ]
                   }
-                  name="prefix__Page-1"
                   opacity={1}
                   originX={0}
                   originY={0}
@@ -2319,23 +2403,21 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   strokeLinejoin={0}
                   strokeMiterlimit={4}
                   strokeOpacity={1}
-                  strokeWidth="1"
+                  strokeWidth={1}
+                  vectorEffect={0}
                   x={0}
                   y={0}
                 >
-                  <RNSVGPath
-                    d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                  <RNSVGGroup
                     fill={
                       Array [
                         0,
-                        0,
-                        0.6901960784313725,
-                        1,
-                        1,
+                        4278190080,
                       ]
                     }
                     fillOpacity={1}
                     fillRule={1}
+                    font={Object {}}
                     matrix={
                       Array [
                         1,
@@ -2346,15 +2428,11 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                         0,
                       ]
                     }
-                    name="prefix__arrow_down"
+                    name="prefix__Page-1"
                     opacity={1}
                     originX={0}
                     originY={0}
-                    propList={
-                      Array [
-                        "fill",
-                      ]
-                    }
+                    propList={Array []}
                     rotation={0}
                     scaleX={1}
                     scaleY={1}
@@ -2367,10 +2445,58 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                     strokeLinejoin={0}
                     strokeMiterlimit={4}
                     strokeOpacity={1}
-                    strokeWidth="1"
+                    strokeWidth={1}
+                    vectorEffect={0}
                     x={0}
                     y={0}
-                  />
+                  >
+                    <RNSVGPath
+                      d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                      fill={
+                        Array [
+                          0,
+                          4278235391,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      name="prefix__arrow_down"
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGGroup>
                 </RNSVGGroup>
               </RNSVGSvgView>
             </View>
@@ -2402,6 +2528,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                   "opacity": 1,
                 }
               }
+              testID="ios_modal_top"
             />
             <View
               style={
@@ -2611,6 +2738,7 @@ exports[`Storyshots QuestionChoices Template 1`] = `
                       undefined,
                     ]
                   }
+                  testID="question-part-8-select-selected-picker"
                 />
               </View>
             </View>

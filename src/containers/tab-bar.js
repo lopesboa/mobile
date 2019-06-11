@@ -6,9 +6,7 @@ import type {_BottomTabBarProps} from 'react-navigation';
 
 import {BrandThemeContext} from '../components/brand-theme-provider';
 
-type Props = {|
-  ...$Exact<_BottomTabBarProps>
-|};
+type Props = $Exact<_BottomTabBarProps>;
 
 const TabBar = (props: Props) => (
   <BrandThemeContext.Consumer>

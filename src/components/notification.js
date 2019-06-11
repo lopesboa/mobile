@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 });
 
 const Notification = ({height = DEFAULT_HEIGHT, testID}: Props) => {
-  const style: GenericStyleProp = {
+  const style: ViewStyleProp = {
     height,
     width: height,
     borderRadius: height

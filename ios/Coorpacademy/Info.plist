@@ -34,17 +34,21 @@
 	<key>FirebaseDebugEnabled</key>
 	<string>$(FIREBASE_DEBUG_ENABLED)</string>
 	<key>LSApplicationCategoryType</key>
-	<string />
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
-	<true />
+	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Some description</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true />
+				<true/>
 			</dict>
 		</dict>
 	</dict>
@@ -60,8 +64,6 @@
 	<string>Not used in this app</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Not used in this app</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Some description</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Some description</string>
 	<key>NSMotionUsageDescription</key>
@@ -79,7 +81,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
-	<true />
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
@@ -93,6 +95,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false />
+	<false/>
 </dict>
 </plist>

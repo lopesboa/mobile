@@ -138,34 +138,44 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="undefined"
-          bbWidth="undefined"
+          bbHeight={26.4}
+          bbWidth={26.4}
           color="#FFFFFF"
           meetOrSlice={0}
           minX={0}
           minY={0}
-          stroke="#FFFFFF"
           style={
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               Object {
                 "height": 26.4,
                 "width": 26.4,
               },
-              false,
-              undefined,
+              null,
+              Object {
+                "flex": 0,
+                "height": 26,
+                "width": 26,
+              },
             ]
           }
+          tintColor="#FFFFFF"
           vbHeight={24}
           vbWidth={24}
         >
-          <RNSVGPath
-            d="M0 .001h24v24H0z"
-            fill={null}
+          <RNSVGGroup
+            fill={
+              Array [
+                0,
+                4278190080,
+              ]
+            }
             fillOpacity={1}
             fillRule={1}
+            font={Object {}}
             matrix={
               Array [
                 1,
@@ -179,11 +189,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
             opacity={1}
             originX={0}
             originY={0}
-            propList={
-              Array [
-                "fill",
-              ]
-            }
+            propList={Array []}
             rotation={0}
             scaleX={1}
             scaleY={1}
@@ -196,101 +202,10 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
-          />
-          <RNSVGPath
-            d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
-            fill={
-              Array [
-                0,
-                1,
-                1,
-                1,
-                1,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={
-              Array [
-                "stroke",
-                "strokeWidth",
-                "fill",
-              ]
-            }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={
-              Array [
-                0,
-                1,
-                1,
-                1,
-                1,
-              ]
-            }
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth="5"
-            x={0}
-            y={0}
-          />
-        </RNSVGSvgView>
-        <View
-          style={
-            Object {
-              "left": 0,
-              "opacity": 1,
-              "position": "absolute",
-              "top": 0,
-            }
-          }
-        >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="undefined"
-            bbWidth="undefined"
-            color="#F73F52"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                Object {
-                  "height": 26.4,
-                  "width": 26.4,
-                },
-                false,
-                undefined,
-              ]
-            }
-            vbHeight={24}
-            vbWidth={24}
           >
             <RNSVGPath
               d="M0 .001h24v24H0z"
@@ -327,7 +242,8 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
             />
@@ -336,10 +252,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               fill={
                 Array [
                   0,
-                  0.9686274509803922,
-                  0.24705882352941178,
-                  0.3215686274509804,
-                  1,
+                  4294967295,
                 ]
               }
               fillOpacity={1}
@@ -360,8 +273,98 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               propList={
                 Array [
                   "fill",
+                  "stroke",
+                  "strokeWidth",
                 ]
               }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={
+                Array [
+                  0,
+                  4294967295,
+                ]
+              }
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={5}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+        <View
+          style={
+            Object {
+              "left": 0,
+              "opacity": 1,
+              "position": "absolute",
+              "top": 0,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={26.4}
+            bbWidth={26.4}
+            color="#F73F52"
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                Object {
+                  "height": 26.4,
+                  "width": 26.4,
+                },
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 26,
+                  "width": 26,
+                },
+              ]
+            }
+            tintColor="#F73F52"
+            vbHeight={24}
+            vbWidth={24}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -374,10 +377,97 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 .001h24v24H0z"
+                fill={null}
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+              <RNSVGPath
+                d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+                fill={
+                  Array [
+                    0,
+                    4294393682,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGSvgView>
         </View>
         <View
@@ -392,8 +482,8 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
         >
           <RNSVGSvgView
             align="xMidYMid"
-            bbHeight="undefined"
-            bbWidth="undefined"
+            bbHeight={26.4}
+            bbWidth={26.4}
             color="#F73F52"
             meetOrSlice={0}
             minX={0}
@@ -402,31 +492,34 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               Array [
                 Object {
                   "backgroundColor": "transparent",
+                  "borderWidth": 0,
                 },
                 Object {
                   "height": 26.4,
                   "width": 26.4,
                 },
-                false,
-                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 26,
+                  "width": 26,
+                },
               ]
             }
+            tintColor="#F73F52"
             vbHeight={25}
             vbWidth={24}
           >
-            <RNSVGPath
-              d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  0.9686274509803922,
-                  0.24705882352941178,
-                  0.3215686274509804,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -440,12 +533,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                  "fillRule",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -458,10 +546,58 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+                fill={
+                  Array [
+                    0,
+                    4294393682,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGSvgView>
         </View>
       </View>
@@ -608,34 +744,44 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="undefined"
-          bbWidth="undefined"
+          bbHeight={26.4}
+          bbWidth={26.4}
           color="#FFFFFF"
           meetOrSlice={0}
           minX={0}
           minY={0}
-          stroke="#FFFFFF"
           style={
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               Object {
                 "height": 26.4,
                 "width": 26.4,
               },
-              false,
-              undefined,
+              null,
+              Object {
+                "flex": 0,
+                "height": 26,
+                "width": 26,
+              },
             ]
           }
+          tintColor="#FFFFFF"
           vbHeight={24}
           vbWidth={24}
         >
-          <RNSVGPath
-            d="M0 .001h24v24H0z"
-            fill={null}
+          <RNSVGGroup
+            fill={
+              Array [
+                0,
+                4278190080,
+              ]
+            }
             fillOpacity={1}
             fillRule={1}
+            font={Object {}}
             matrix={
               Array [
                 1,
@@ -649,11 +795,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
             opacity={1}
             originX={0}
             originY={0}
-            propList={
-              Array [
-                "fill",
-              ]
-            }
+            propList={Array []}
             rotation={0}
             scaleX={1}
             scaleY={1}
@@ -666,101 +808,10 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
-          />
-          <RNSVGPath
-            d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
-            fill={
-              Array [
-                0,
-                1,
-                1,
-                1,
-                1,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={
-              Array [
-                "stroke",
-                "strokeWidth",
-                "fill",
-              ]
-            }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={
-              Array [
-                0,
-                1,
-                1,
-                1,
-                1,
-              ]
-            }
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth="5"
-            x={0}
-            y={0}
-          />
-        </RNSVGSvgView>
-        <View
-          style={
-            Object {
-              "left": 0,
-              "opacity": 1,
-              "position": "absolute",
-              "top": 0,
-            }
-          }
-        >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight="undefined"
-            bbWidth="undefined"
-            color="#3EC483"
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                },
-                Object {
-                  "height": 26.4,
-                  "width": 26.4,
-                },
-                false,
-                undefined,
-              ]
-            }
-            vbHeight={24}
-            vbWidth={24}
           >
             <RNSVGPath
               d="M0 .001h24v24H0z"
@@ -797,7 +848,8 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
             />
@@ -806,10 +858,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               fill={
                 Array [
                   0,
-                  0.24313725490196078,
-                  0.7686274509803922,
-                  0.5137254901960784,
-                  1,
+                  4294967295,
                 ]
               }
               fillOpacity={1}
@@ -830,8 +879,98 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               propList={
                 Array [
                   "fill",
+                  "stroke",
+                  "strokeWidth",
                 ]
               }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={
+                Array [
+                  0,
+                  4294967295,
+                ]
+              }
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={5}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+        <View
+          style={
+            Object {
+              "left": 0,
+              "opacity": 1,
+              "position": "absolute",
+              "top": 0,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={26.4}
+            bbWidth={26.4}
+            color="#3EC483"
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                Object {
+                  "height": 26.4,
+                  "width": 26.4,
+                },
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 26,
+                  "width": 26,
+                },
+              ]
+            }
+            tintColor="#3EC483"
+            vbHeight={24}
+            vbWidth={24}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -844,10 +983,97 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 .001h24v24H0z"
+                fill={null}
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+              <RNSVGPath
+                d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
+                fill={
+                  Array [
+                    0,
+                    4282303619,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGSvgView>
         </View>
         <View
@@ -862,8 +1088,8 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
         >
           <RNSVGSvgView
             align="xMidYMid"
-            bbHeight="undefined"
-            bbWidth="undefined"
+            bbHeight={26.4}
+            bbWidth={26.4}
             color="#F73F52"
             meetOrSlice={0}
             minX={0}
@@ -872,31 +1098,34 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               Array [
                 Object {
                   "backgroundColor": "transparent",
+                  "borderWidth": 0,
                 },
                 Object {
                   "height": 26.4,
                   "width": 26.4,
                 },
-                false,
-                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 26,
+                  "width": 26,
+                },
               ]
             }
+            tintColor="#F73F52"
             vbHeight={25}
             vbWidth={24}
           >
-            <RNSVGPath
-              d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  0.9686274509803922,
-                  0.24705882352941178,
-                  0.3215686274509804,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -910,12 +1139,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                  "fillRule",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -928,10 +1152,58 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M11.727 5.64C10.745 4.79 9.218 4 7.964 4 4.964 4 3 7.279 3 9.95 3 14.868 12 21 12 21s9-6.071 9-11.05C21 7.279 19.036 4 16.036 4c-1.036 0-2.29.546-3.272 1.275l1.472 1.76-1.963 1.7 2.782 2.915L12 15.293l1.527-3.46-2.89-2.915 2.072-1.882s-.49-.79-.982-1.397z"
+                fill={
+                  Array [
+                    0,
+                    4294393682,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGSvgView>
         </View>
       </View>

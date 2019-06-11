@@ -87,7 +87,10 @@ class ResourcesBrowser extends React.PureComponent<Props> {
         <BrandThemeContext.Consumer>
           {brandTheme => {
             const selectedStyle = {
-              borderColor: brandTheme.colors.primary,
+              borderColor: brandTheme.colors.primary
+            };
+
+            const selectedTextStyle = {
               color: brandTheme.colors.primary
             };
 
@@ -133,7 +136,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                   containerStyle={styles.descriptionContainer}
                   style={[
                     styles.description,
-                    isSelected && selectedStyle,
+                    isSelected && selectedTextStyle,
                     isSelected && styles.descriptionSelected
                   ]}
                 >

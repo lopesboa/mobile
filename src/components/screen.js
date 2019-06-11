@@ -5,7 +5,7 @@ import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
 import theme from '../modules/theme';
 
 type Props = {|
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   noScroll?: boolean,
   children: React.Node,
   testID?: string,

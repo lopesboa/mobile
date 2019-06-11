@@ -1,3 +1,4 @@
+va
 package com.coorpacademy.app;
 
 import com.wix.detox.Detox;

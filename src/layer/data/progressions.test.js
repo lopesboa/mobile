@@ -1,6 +1,6 @@
 // @flow
 
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {createProgression, createState} from '../../__fixtures__/progression';

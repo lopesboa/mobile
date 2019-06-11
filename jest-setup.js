@@ -1,7 +1,10 @@
 // @flow
 
 import {NativeModules, ScrollView} from 'react-native';
+import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 
+// AsyncStorage
+jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 // global mocks
 global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
 

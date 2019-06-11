@@ -20,8 +20,8 @@ type Props = $Exact<{|
   ...WithAnalyticsProps,
   ...ConnectedDispatchProps,
   items: Array<CardType>,
-  renderItem: (CardType, number, GenericStyleProp | void) => React.Node,
-  cardStyle?: GenericStyleProp,
+  renderItem: (CardType, number, AnimationStyleProp | void) => React.Node,
+  cardStyle?: ViewStyleProp,
   onRef?: $PropertyType<CardsProps, 'onRef'>
 |}>;
 
@@ -122,7 +122,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     this.setState({cardIndexShown: 0});
   };
 
-  getAnimationStyle = (): GenericStyleProp => {
+  getAnimationStyle = (): AnimationStyleProp => {
     const rotate = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
       outputRange: ['0deg', '5deg', '0deg', '-5deg', '0deg']

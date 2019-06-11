@@ -10,7 +10,7 @@ import {
 import theme from '../modules/theme';
 
 export type Props = {|
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   testID?: string
 |};
 

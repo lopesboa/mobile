@@ -139,7 +139,6 @@ const Lives = ({
       <Animated.View style={[styles.heart, heartStyle]}>
         <HeartOutlineIcon
           color={theme.colors.white}
-          stroke={theme.colors.white}
           style={{height: heartHeight, width: heartHeight}}
         />
         <Animated.View

@@ -10,7 +10,7 @@ export type Props = {|
   source: File,
   width?: number,
   maxHeight?: number,
-  style?: GenericStyleProp,
+  style?: ImageStyleProp,
   testID?: string
 |};
 

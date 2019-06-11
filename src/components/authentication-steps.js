@@ -28,7 +28,7 @@ export type Props = {|
   type: AuthenticationType,
   currentIndex: number,
   onChange: number => void,
-  style?: GenericStyleProp
+  style?: ViewStyleProp
 |};
 
 class AuthenticationSteps extends React.PureComponent<Props> {

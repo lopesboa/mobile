@@ -6,11 +6,11 @@ import {StyleSheet, View, Platform} from 'react-native';
 import theme from '../modules/theme';
 
 type Props = {|
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   children: React.Node
 |};
 
-export const STYLE: GenericStyleProp = {
+export const STYLE: ViewStyleProp = {
   ...Platform.select({
     android: {
       backgroundColor: 'rgba(0,0,0,0.015)' // fix shadow not visible bug on android

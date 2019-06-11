@@ -6,7 +6,7 @@ import {Text as TextBase, Platform, StyleSheet} from 'react-native';
 type Props = {|
   // copied from node_modules/react-native/Libraries/Text/TextProps.js
   children: React.Node,
-  style?: GenericStyleProp,
+  style?: TextStyleProp,
   testID?: string,
   numberOfLines?: number
 |};

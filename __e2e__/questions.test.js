@@ -74,6 +74,7 @@ describe('Questions', () => {
         await element(by.id('card-resource-les_4')).swipe('left');
         await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
       });
+
       it('should see key-point card', async () => {
         await weExpect(element(by.id('card-keypoint'))).toBeVisible();
         await weExpect(element(by.id('card-tip'))).toBeNotVisible();

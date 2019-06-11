@@ -1,6 +1,9 @@
 // @flow strict
 
 import {combineReducers} from 'redux';
+import type {Reducer} from 'redux';
+import type {Action} from '../../actions/authentication';
+import type {Action as BrandAction} from '../../actions/brands';
 import tokenReducer from './token';
 import type {State as TokenState} from './token';
 import brandReducer from './brand';
@@ -11,4 +14,8 @@ export type State = {|
   brand: BrandState
 |};
 
-export default combineReducers({brand: brandReducer, user: tokenReducer});
+const reducers: Reducer<State, BrandAction | Action> = combineReducers({
+  brand: brandReducer,
+  user: tokenReducer
+});
+export default reducers;

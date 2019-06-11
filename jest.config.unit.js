@@ -6,9 +6,6 @@ module.exports = {
   moduleNameMapper: {
     '^[./a-zA-Z0-9$_-]+.png$': 'RelativeImageStub'
   },
-  transform: {
-    '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js'
-  },
   transformIgnorePatterns: [
     'node_modules/@coorpacademy/(?!(.*-)?react-(.*-)?(native|universal|navigation|router|native-iphone-x-helper|native-deck-swiper)(-.*)?)',
     'node_modules/core-js'

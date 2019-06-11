@@ -6,12 +6,12 @@ declare module 'react-native-portal' {
   |};
   declare type BlackPortalProps = {|
     name: string,
-    style?: GenericStyleProp,
+    style?: ViewStyleProp,
     children?: React$Node
   |};
   declare type WhitePortalProps = {|
     name: string,
-    style?: GenericStyleProp,
+    style?: ViewStyleProp,
     children?: React$Node,
     childrenProps?: Object
   |};

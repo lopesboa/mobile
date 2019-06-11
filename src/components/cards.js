@@ -18,7 +18,7 @@ export type Props = {|
   testID: string,
   items: Array<Card>,
   renderItem: (Card, number) => React.Node,
-  cardStyle?: GenericStyleProp,
+  cardStyle?: ViewStyleProp,
   onSwiped: (cardIndexSwiped: number) => void,
   onSwipedAll: () => void,
   cardIndexShown?: number

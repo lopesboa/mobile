@@ -10,7 +10,7 @@ export const DEFAULT_HEIGHT = DEFAULT_HEIGHT_BASE;
 type Props = {|
   height?: number,
   testID?: string,
-  style?: GenericStyleProp
+  style?: ViewStyleProp
 |};
 
 class NotificationAnimated extends React.PureComponent<Props> {

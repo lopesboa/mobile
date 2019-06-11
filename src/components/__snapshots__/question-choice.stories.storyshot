@@ -52,6 +52,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -61,6 +62,7 @@ exports[`Storyshots QuestionChoice Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -132,6 +134,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
         }
       >
         <View
+          accessibilityIgnoresInvertColors={true}
           style={
             Object {
               "height": "100%",
@@ -189,6 +192,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -198,6 +202,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#FFFFFF",
@@ -271,6 +276,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -280,6 +286,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#FFFFFF",
@@ -351,6 +358,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
         }
       >
         <View
+          accessibilityIgnoresInvertColors={true}
           style={
             Object {
               "height": "100%",
@@ -408,6 +416,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -417,6 +426,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#FFFFFF",
@@ -493,6 +503,7 @@ exports[`Storyshots QuestionChoice Squeezed 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -502,6 +513,7 @@ exports[`Storyshots QuestionChoice Squeezed 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -573,6 +585,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
         }
       >
         <View
+          accessibilityIgnoresInvertColors={true}
           style={
             Object {
               "height": "100%",
@@ -627,6 +640,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -636,6 +650,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -706,9 +721,11 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -721,6 +738,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -730,6 +748,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -744,6 +763,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
               </Text>
             </Text>
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -753,6 +773,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -765,6 +786,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
               </Text>
             </Text>
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -777,6 +799,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -786,6 +809,7 @@ exports[`Storyshots QuestionChoice with html content 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",

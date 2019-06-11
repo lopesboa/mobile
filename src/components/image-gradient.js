@@ -11,7 +11,7 @@ type Props = {|
   testID: string,
   gradient?: Array<string>,
   minHeight?: number,
-  style?: GenericStyleProp
+  style?: ImageStyleProp
 |};
 
 const styles = StyleSheet.create({

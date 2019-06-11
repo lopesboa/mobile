@@ -16,7 +16,7 @@ type Props = $Exact<{|
   isWithoutFeedback?: boolean,
   // for TouchableOpacity
   activeOpacity?: number,
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   // Analytics
   analyticsID: string,
   analyticsParams?: AnalyticsEventParams
@@ -25,7 +25,7 @@ type Props = $Exact<{|
 class Touchable extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = () => {
+  handlePress: $PropertyType<Props, 'onPress'> = event => {
     const {analytics, analyticsID, analyticsParams, onPress} = this.props;
 
     if (!onPress) {
@@ -38,10 +38,10 @@ class Touchable extends React.PureComponent<Props> {
         id: analyticsID
       });
 
-    onPress();
+    onPress(event);
   };
 
-  handleLongPress = () => {
+  handleLongPress: $PropertyType<Props, 'onPress'> = event => {
     const {analytics, analyticsID, analyticsParams, onLongPress} = this.props;
 
     if (!onLongPress) {
@@ -54,7 +54,7 @@ class Touchable extends React.PureComponent<Props> {
         id: analyticsID
       });
 
-    onLongPress();
+    onLongPress(event);
   };
 
   render() {

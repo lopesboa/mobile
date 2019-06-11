@@ -20,7 +20,7 @@ type Props = {|
   testID?: string,
   media?: Media,
   squeezed?: boolean,
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   questionType: QuestionType
 |};
 

@@ -9,7 +9,7 @@ import theme from '../modules/theme';
 import Text from './text';
 
 type Props = {|
-  style?: GenericStyleProp
+  style?: TextStyleProp
 |};
 
 const styles = StyleSheet.create({

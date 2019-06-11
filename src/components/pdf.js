@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 
 const Pdf = ({source}: Props) => (
   <PdfBase
+    // $FlowFixMe - unknown 'body' property
     source={source}
     fitWidth
     style={styles.container}

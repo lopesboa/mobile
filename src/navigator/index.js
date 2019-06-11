@@ -170,6 +170,7 @@ class NavigatorWithState extends React.PureComponent<Props> {
   };
 
   render() {
+    // $FlowFixMe Bad react-navigation definition with interfaces
     return <Navigator onNavigationStateChange={this.handleNavigationStateChange} />;
   }
 }

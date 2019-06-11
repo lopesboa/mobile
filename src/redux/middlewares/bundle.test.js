@@ -5,11 +5,36 @@ import type {BundledDiscipline, BundledChapter} from '../../layer/data/_types';
 import {createDiscipline} from '../../__fixtures__/disciplines';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createBrand} from '../../__fixtures__/brands';
+import {createProgression} from '../../__fixtures__/progression';
 import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR} from '../actions/bundle';
 import type {Action} from '../actions/bundle';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
+import {createStoreState as createFixtureStore} from '../../__fixtures__/store';
 import createMiddleware from './bundle';
+
+const SlideRef = 'dummySlideRef';
+const progression = createProgression({
+  engine: 'learner',
+  progressionContent: {
+    type: 'slide',
+    ref: SlideRef
+  },
+  state: {
+    nextContent: {
+      type: 'slide',
+      ref: 'dummySlideRef'
+    }
+  }
+});
+
+const mockedStore = createFixtureStore({
+  levels: [],
+  disciplines: [],
+  chapters: [],
+  slides: [],
+  progression
+});
 
 const createStore = () => ({
   getState: jest.fn(),
@@ -80,9 +105,7 @@ describe('Bundle', () => {
       };
       const middleware = createMiddleware(options);
       const store = createStore();
-      store.getState.mockImplementation(() => ({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
-      }));
+      store.getState.mockImplementation(() => mockedStore);
       const next = jest.fn();
       // $FlowFixMe this si to test only
       middleware(store)(next)(emptyAction);
@@ -101,8 +124,10 @@ describe('Bundle', () => {
 
     it('should handle findById rejection', async () => {
       const middleware = createMiddleware(options);
+
       const store = createStore();
       store.getState.mockImplementation(() => ({
+        ...mockedStore,
         authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
@@ -123,9 +148,7 @@ describe('Bundle', () => {
     it('should handle if token is not defined', async () => {
       const middleware = createMiddleware(options);
       const store = createStore();
-      store.getState.mockImplementation(() => ({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
-      }));
+      store.getState.mockImplementation(() => mockedStore);
       const next = jest.fn();
       middleware(store)(next)(action);
       await sleep();
@@ -155,6 +178,7 @@ describe('Bundle', () => {
       const middleware = createMiddleware(extendedOptions);
       const store = createStore();
       store.getState.mockImplementation(() => ({
+        ...mockedStore,
         authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();
@@ -189,6 +213,7 @@ describe('Bundle', () => {
       const middleware = createMiddleware(extendedOptions);
       const store = createStore();
       store.getState.mockImplementation(() => ({
+        ...mockedStore,
         authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
       }));
       const next = jest.fn();

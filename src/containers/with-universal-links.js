@@ -24,7 +24,7 @@ type ConnectedDispatchProps = {|
 
 const UNIVERSAL_LINKS_PATTERN = /(.*)\/open-app/;
 
-function withUniversalLinks<P>(WrappedComponent: React$ComponentType<P>): React$ComponentType<P> {
+function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): T {
   type Props = $Exact<{|
     ...P,
     ...ReactNavigation$WithNavigationProps,

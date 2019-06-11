@@ -6,9 +6,11 @@ exports[`Storyshots Html Default 1`] = `
     style={Object {}}
   >
     <Text
+      allowFontScaling={true}
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -18,6 +20,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -25,10 +28,12 @@ exports[`Storyshots Html Default 1`] = `
             }
           }
         >
-              Les deux adverbes ont
+          
+    Les deux adverbes ont
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -41,6 +46,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -50,6 +56,7 @@ exports[`Storyshots Html Default 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             style={
               Object {
                 "color": "#14171A",
@@ -63,6 +70,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -72,6 +80,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -83,6 +92,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -95,6 +105,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           selectable={false}
           style={
             Array [
@@ -104,6 +115,7 @@ exports[`Storyshots Html Default 1`] = `
           }
         >
           <Text
+            allowFontScaling={true}
             style={
               Object {
                 "color": "#14171A",
@@ -117,6 +129,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -126,6 +139,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -133,10 +147,12 @@ exports[`Storyshots Html Default 1`] = `
             }
           }
         >
-          , mais leur orthographe diffère. On écrit ainsi :    
+          , mais leur orthographe diffère. On écrit ainsi :
+    
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         style={
           Object {
             "flex": 1,
@@ -148,6 +164,7 @@ exports[`Storyshots Html Default 1`] = `
 
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -157,6 +174,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -168,6 +186,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -180,9 +199,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -192,6 +213,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -215,6 +237,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -224,6 +247,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -237,6 +261,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -246,6 +271,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -260,6 +286,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -269,6 +296,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -280,6 +308,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -292,9 +321,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -304,6 +335,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -316,6 +348,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -328,6 +361,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -337,6 +371,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -353,6 +388,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -362,6 +398,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -373,6 +410,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -385,9 +423,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -397,6 +437,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -420,6 +461,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -429,6 +471,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -442,6 +485,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -451,6 +495,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -465,6 +510,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -474,6 +520,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -481,10 +528,12 @@ exports[`Storyshots Html Default 1`] = `
             }
           }
         >
-          ) ;    
+          ) ;
+    
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         style={
           Object {
             "flex": 1,
@@ -496,6 +545,7 @@ exports[`Storyshots Html Default 1`] = `
 
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -505,6 +555,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -516,6 +567,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -528,9 +580,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -540,6 +594,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -563,6 +618,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -572,6 +628,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -585,6 +642,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -594,6 +652,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -608,6 +667,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -617,6 +677,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -628,6 +689,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -640,9 +702,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -652,6 +716,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -664,6 +729,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -676,6 +742,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -685,6 +752,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -701,6 +769,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -710,6 +779,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -721,6 +791,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -733,9 +804,11 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={Object {}}
         >
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -745,6 +818,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -768,6 +842,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -777,6 +852,7 @@ exports[`Storyshots Html Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#14171A",
@@ -790,6 +866,7 @@ exports[`Storyshots Html Default 1`] = `
             </Text>
           </Text>
           <Text
+            allowFontScaling={true}
             selectable={false}
             style={
               Array [
@@ -799,6 +876,7 @@ exports[`Storyshots Html Default 1`] = `
             }
           >
             <Text
+              allowFontScaling={true}
               style={
                 Object {
                   "color": "#14171A",
@@ -813,6 +891,7 @@ exports[`Storyshots Html Default 1`] = `
         </Text>
       </Text>
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -822,6 +901,7 @@ exports[`Storyshots Html Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -830,6 +910,7 @@ exports[`Storyshots Html Default 1`] = `
           }
         >
           ).
+
         </Text>
       </Text>
     </Text>
@@ -871,9 +952,11 @@ exports[`Storyshots Html WithImage 1`] = `
       />
     </View>
     <Text
+      allowFontScaling={true}
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -883,6 +966,7 @@ exports[`Storyshots Html WithImage 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#14171A",
@@ -890,7 +974,11 @@ exports[`Storyshots Html WithImage 1`] = `
             }
           }
         >
-                  On this platform, you earn 4 stars per right answer.        If you successfully complete this level, the stars you’ve accumulated so far will be added to your score and you will rise in the ranks!        Let’s do it! Good luck on your last question, this is a tough one!      
+          
+        On this platform, you earn 4 stars per right answer.
+        If you successfully complete this level, the stars you’ve accumulated so far will be added to your score and you will rise in the ranks!
+        Let’s do it! Good luck on your last question, this is a tough one!
+      
         </Text>
       </Text>
     </Text>

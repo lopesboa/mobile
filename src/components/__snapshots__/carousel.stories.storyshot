@@ -85,6 +85,7 @@ exports[`Storyshots Carousel Default 1`] = `
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEnabled={false}
       scrollEventThrottle={1}

@@ -26,6 +26,7 @@ exports[`Storyshots Select Colored 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={false}
+        rejectResponderTermination={true}
         style={
           Array [
             Object {
@@ -59,9 +60,10 @@ exports[`Storyshots Select Colored 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="15"
-          bbWidth="15"
+          bbHeight={15}
+          bbWidth={15}
           color="#ff00ff"
+          height={15}
           id="prefix__Calque_1"
           meetOrSlice={0}
           minX={0}
@@ -70,9 +72,10 @@ exports[`Storyshots Select Colored 1`] = `
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               undefined,
-              false,
+              null,
               Object {
                 "flex": 0,
                 "height": 15,
@@ -80,8 +83,10 @@ exports[`Storyshots Select Colored 1`] = `
               },
             ]
           }
+          tintColor="#ff00ff"
           vbHeight={20}
           vbWidth={20}
+          width={15}
           x={0}
           xmlSpace="preserve"
           y={0}
@@ -90,10 +95,7 @@ exports[`Storyshots Select Colored 1`] = `
             fill={
               Array [
                 0,
-                0,
-                0,
-                0,
-                1,
+                4278190080,
               ]
             }
             fillOpacity={1}
@@ -109,7 +111,6 @@ exports[`Storyshots Select Colored 1`] = `
                 0,
               ]
             }
-            name="prefix__Page-1"
             opacity={1}
             originX={0}
             originY={0}
@@ -126,23 +127,21 @@ exports[`Storyshots Select Colored 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
           >
-            <RNSVGPath
-              d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  1,
-                  0,
-                  1,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -153,15 +152,11 @@ exports[`Storyshots Select Colored 1`] = `
                   0,
                 ]
               }
-              name="prefix__arrow_down"
+              name="prefix__Page-1"
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -174,10 +169,58 @@ exports[`Storyshots Select Colored 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                fill={
+                  Array [
+                    0,
+                    4294902015,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                name="prefix__arrow_down"
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGGroup>
         </RNSVGSvgView>
       </View>
@@ -209,6 +252,7 @@ exports[`Storyshots Select Colored 1`] = `
             "opacity": 1,
           }
         }
+        testID="ios_modal_top"
       />
       <View
         style={
@@ -452,6 +496,7 @@ exports[`Storyshots Select Default 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={false}
+        rejectResponderTermination={true}
         style={
           Array [
             Object {
@@ -483,9 +528,10 @@ exports[`Storyshots Select Default 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="15"
-          bbWidth="15"
+          bbHeight={15}
+          bbWidth={15}
           color="#546E7A"
+          height={15}
           id="prefix__Calque_1"
           meetOrSlice={0}
           minX={0}
@@ -494,9 +540,10 @@ exports[`Storyshots Select Default 1`] = `
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               undefined,
-              false,
+              null,
               Object {
                 "flex": 0,
                 "height": 15,
@@ -504,8 +551,10 @@ exports[`Storyshots Select Default 1`] = `
               },
             ]
           }
+          tintColor="#546E7A"
           vbHeight={20}
           vbWidth={20}
+          width={15}
           x={0}
           xmlSpace="preserve"
           y={0}
@@ -514,10 +563,7 @@ exports[`Storyshots Select Default 1`] = `
             fill={
               Array [
                 0,
-                0,
-                0,
-                0,
-                1,
+                4278190080,
               ]
             }
             fillOpacity={1}
@@ -533,7 +579,6 @@ exports[`Storyshots Select Default 1`] = `
                 0,
               ]
             }
-            name="prefix__Page-1"
             opacity={1}
             originX={0}
             originY={0}
@@ -550,23 +595,21 @@ exports[`Storyshots Select Default 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
           >
-            <RNSVGPath
-              d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  0.32941176470588235,
-                  0.43137254901960786,
-                  0.47843137254901963,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -577,15 +620,11 @@ exports[`Storyshots Select Default 1`] = `
                   0,
                 ]
               }
-              name="prefix__arrow_down"
+              name="prefix__Page-1"
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -598,10 +637,58 @@ exports[`Storyshots Select Default 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                fill={
+                  Array [
+                    0,
+                    4283723386,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                name="prefix__arrow_down"
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGGroup>
         </RNSVGSvgView>
       </View>
@@ -633,6 +720,7 @@ exports[`Storyshots Select Default 1`] = `
             "opacity": 1,
           }
         }
+        testID="ios_modal_top"
       />
       <View
         style={
@@ -876,6 +964,7 @@ exports[`Storyshots Select Disabled 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={false}
+        rejectResponderTermination={true}
         style={
           Array [
             Object {
@@ -907,9 +996,10 @@ exports[`Storyshots Select Disabled 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="15"
-          bbWidth="15"
+          bbHeight={15}
+          bbWidth={15}
           color="#546E7A"
+          height={15}
           id="prefix__Calque_1"
           meetOrSlice={0}
           minX={0}
@@ -918,9 +1008,10 @@ exports[`Storyshots Select Disabled 1`] = `
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               undefined,
-              false,
+              null,
               Object {
                 "flex": 0,
                 "height": 15,
@@ -928,8 +1019,10 @@ exports[`Storyshots Select Disabled 1`] = `
               },
             ]
           }
+          tintColor="#546E7A"
           vbHeight={20}
           vbWidth={20}
+          width={15}
           x={0}
           xmlSpace="preserve"
           y={0}
@@ -938,10 +1031,7 @@ exports[`Storyshots Select Disabled 1`] = `
             fill={
               Array [
                 0,
-                0,
-                0,
-                0,
-                1,
+                4278190080,
               ]
             }
             fillOpacity={1}
@@ -957,7 +1047,6 @@ exports[`Storyshots Select Disabled 1`] = `
                 0,
               ]
             }
-            name="prefix__Page-1"
             opacity={1}
             originX={0}
             originY={0}
@@ -974,23 +1063,21 @@ exports[`Storyshots Select Disabled 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
           >
-            <RNSVGPath
-              d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  0.32941176470588235,
-                  0.43137254901960786,
-                  0.47843137254901963,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -1001,15 +1088,11 @@ exports[`Storyshots Select Disabled 1`] = `
                   0,
                 ]
               }
-              name="prefix__arrow_down"
+              name="prefix__Page-1"
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -1022,10 +1105,58 @@ exports[`Storyshots Select Disabled 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                fill={
+                  Array [
+                    0,
+                    4283723386,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                name="prefix__arrow_down"
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGGroup>
         </RNSVGSvgView>
       </View>
@@ -1057,6 +1188,7 @@ exports[`Storyshots Select Disabled 1`] = `
             "opacity": 1,
           }
         }
+        testID="ios_modal_top"
       />
       <View
         style={
@@ -1300,6 +1432,7 @@ exports[`Storyshots Select Not empty 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={false}
+        rejectResponderTermination={true}
         style={
           Array [
             Object {
@@ -1331,9 +1464,10 @@ exports[`Storyshots Select Not empty 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight="15"
-          bbWidth="15"
+          bbHeight={15}
+          bbWidth={15}
           color="#546E7A"
+          height={15}
           id="prefix__Calque_1"
           meetOrSlice={0}
           minX={0}
@@ -1342,9 +1476,10 @@ exports[`Storyshots Select Not empty 1`] = `
             Array [
               Object {
                 "backgroundColor": "transparent",
+                "borderWidth": 0,
               },
               undefined,
-              false,
+              null,
               Object {
                 "flex": 0,
                 "height": 15,
@@ -1352,8 +1487,10 @@ exports[`Storyshots Select Not empty 1`] = `
               },
             ]
           }
+          tintColor="#546E7A"
           vbHeight={20}
           vbWidth={20}
+          width={15}
           x={0}
           xmlSpace="preserve"
           y={0}
@@ -1362,10 +1499,7 @@ exports[`Storyshots Select Not empty 1`] = `
             fill={
               Array [
                 0,
-                0,
-                0,
-                0,
-                1,
+                4278190080,
               ]
             }
             fillOpacity={1}
@@ -1381,7 +1515,6 @@ exports[`Storyshots Select Not empty 1`] = `
                 0,
               ]
             }
-            name="prefix__Page-1"
             opacity={1}
             originX={0}
             originY={0}
@@ -1398,23 +1531,21 @@ exports[`Storyshots Select Not empty 1`] = `
             strokeLinejoin={0}
             strokeMiterlimit={4}
             strokeOpacity={1}
-            strokeWidth="1"
+            strokeWidth={1}
+            vectorEffect={0}
             x={0}
             y={0}
           >
-            <RNSVGPath
-              d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+            <RNSVGGroup
               fill={
                 Array [
                   0,
-                  0.32941176470588235,
-                  0.43137254901960786,
-                  0.47843137254901963,
-                  1,
+                  4278190080,
                 ]
               }
               fillOpacity={1}
               fillRule={1}
+              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -1425,15 +1556,11 @@ exports[`Storyshots Select Not empty 1`] = `
                   0,
                 ]
               }
-              name="prefix__arrow_down"
+              name="prefix__Page-1"
               opacity={1}
               originX={0}
               originY={0}
-              propList={
-                Array [
-                  "fill",
-                ]
-              }
+              propList={Array []}
               rotation={0}
               scaleX={1}
               scaleY={1}
@@ -1446,10 +1573,58 @@ exports[`Storyshots Select Not empty 1`] = `
               strokeLinejoin={0}
               strokeMiterlimit={4}
               strokeOpacity={1}
-              strokeWidth="1"
+              strokeWidth={1}
+              vectorEffect={0}
               x={0}
               y={0}
-            />
+            >
+              <RNSVGPath
+                d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
+                fill={
+                  Array [
+                    0,
+                    4283723386,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                name="prefix__arrow_down"
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
           </RNSVGGroup>
         </RNSVGSvgView>
       </View>
@@ -1481,6 +1656,7 @@ exports[`Storyshots Select Not empty 1`] = `
             "opacity": 1,
           }
         }
+        testID="ios_modal_top"
       />
       <View
         style={

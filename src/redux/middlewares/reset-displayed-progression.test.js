@@ -6,12 +6,38 @@ import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
+import {createStoreState as createFixtureStore} from '../../__fixtures__/store';
+import {createProgression} from '../../__fixtures__/progression';
 import createMiddleware from './reset-displayed-progression';
 
 const brand = createBrand();
 const createStore = () => ({
   getState: jest.fn(),
   dispatch: jest.fn()
+});
+
+const SlideRef = 'dummySlideRef';
+const progression = createProgression({
+  engine: 'learner',
+  progressionContent: {
+    type: 'slide',
+    ref: SlideRef
+  },
+  state: {
+    nextContent: {
+      type: 'slide',
+      ref: 'dummySlideRef'
+    }
+  }
+});
+
+const mockedStore = createFixtureStore({
+  levels: [],
+  disciplines: [],
+  chapters: [],
+  slides: [],
+  progression,
+  authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
 });
 
 describe('Rest displayed Progression', () => {
@@ -44,9 +70,7 @@ describe('Rest displayed Progression', () => {
     };
     const middleware = createMiddleware(options);
     const store = createStore();
-    store.getState.mockImplementation(() => ({
-      authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
-    }));
+    store.getState.mockImplementation(() => mockedStore);
     const next = jest.fn();
     // $FlowFixMe this si to test only
     middleware(store)(next)(gotoHomeAction);

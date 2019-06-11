@@ -21,7 +21,7 @@ export type Props = {|
   value: number,
   onChange: (value: number) => void,
   onSlidingComplete: () => void,
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   step?: number,
   testID?: string
 |};

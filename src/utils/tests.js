@@ -25,7 +25,7 @@ export const TestContextProvider = (props: TestContextProviderProps) => (
 
 export const fakeError = new Error('Fake error');
 
-export const sleep = (duration: number = 10) =>
+export const sleep = (duration: number = 10): Promise<void> =>
   new Promise(resolve => setTimeout(resolve, duration));
 
 export const fakeLayout: Layout = {width: 320, height: 768};

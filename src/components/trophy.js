@@ -5,7 +5,7 @@ import {View, StyleSheet} from 'react-native';
 import {NovaCompositionCoorpacademyTrophyCup as TrophyIcon} from '@coorpacademy/nova-icons';
 
 export type Props = {|
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   testID?: string
 |};
 

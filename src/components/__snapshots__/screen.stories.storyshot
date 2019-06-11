@@ -2,6 +2,7 @@
 
 exports[`Storyshots Screen Default 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -33,6 +34,7 @@ exports[`Storyshots Screen Default 1`] = `
 
 exports[`Storyshots Screen Not scrollable 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -87,6 +89,7 @@ exports[`Storyshots Screen Not scrollable without safeArea 1`] = `
 
 exports[`Storyshots Screen With custom style 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {
@@ -120,6 +123,7 @@ exports[`Storyshots Screen With custom style 1`] = `
 
 exports[`Storyshots Screen With refresh control 1`] = `
 <RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Array [
       Object {

@@ -1,8 +1,9 @@
 // @flow strict
 
 import * as React from 'react';
-import {WebView, StyleSheet, StatusBar} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+import {WebView} from 'react-native-webview';
 
 import Screen from '../components/screen';
 import HeaderBackButton from '../components/header-back-button';

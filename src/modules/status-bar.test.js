@@ -1,4 +1,4 @@
-// @flow strict
+// @flow
 
 jest.mock('react-native-status-bar-height', () => ({
   getStatusBarHeight: jest.fn(() => 42)

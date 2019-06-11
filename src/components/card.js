@@ -8,8 +8,8 @@ export type CardType = 'deckSwipe' | 'contain' | 'default';
 
 export type Props = {|
   children: React.Node,
-  style?: GenericStyleProp,
-  shadowStyle?: GenericStyleProp,
+  style?: ViewStyleProp,
+  shadowStyle?: ViewStyleProp,
   testID?: string,
   type?: CardType
 |};
@@ -25,25 +25,34 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: theme.radius.card
   },
-  overflowHiddeniOS: {
+  deckSwipe: {
     ...Platform.select({
       ios: {
         overflow: 'hidden'
       }
     })
   },
-  overflowHidden: {overflow: 'hidden'}
+  overflowHidden: {
+    overflow: 'hidden'
+  }
 });
 
 const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Props) => {
   switch (type) {
     case LAYOUT.DECK_SWIPE:
+      /* istanbul ignore next */
       return (
-        <View style={[style, styles.container, styles.overflowHiddeniOS]}>
-          <View style={[styles.container]} testID={testID}>
+        (Platform.OS === 'ios' && (
+          <View style={[style, styles.container, styles.deckSwipe]}>
+            <View style={[styles.container]} testID={testID}>
+              {children}
+            </View>
+          </View>
+        )) || (
+          <View style={[style, styles.container, styles.deckSwipe]} testID={testID}>
             {children}
           </View>
-        </View>
+        )
       );
     case LAYOUT.CONTAIN:
       return (
@@ -57,6 +66,8 @@ const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Pro
           <View style={[style, styles.overflowHidden]}>{children}</View>
         </View>
       );
+    default:
+      return null;
   }
 };
 

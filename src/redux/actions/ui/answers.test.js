@@ -23,12 +23,15 @@ describe('Answers', () => {
 
       const dispatch = jest.fn();
       const getState = jest.fn();
+      // $FlowFixMe
       getState.mockReturnValueOnce({
         godmode: {isGodMode: false}
       });
+      // $FlowFixMe
       getState.mockReturnValueOnce({
         godLove: {isGodLove: false}
       });
+
       const options = {
         services: {
           Analytics: createFakeAnalytics()

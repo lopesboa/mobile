@@ -8,7 +8,7 @@ type Props = {|
   children?: React.Node,
   colors: Array<string>,
   height?: number,
-  style?: GenericStyleProp,
+  style?: ViewStyleProp,
   testID?: string,
   pointerEvents?: string
 |};

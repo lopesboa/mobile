@@ -83,6 +83,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -92,6 +93,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -169,6 +171,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -178,6 +181,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -261,6 +265,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -270,6 +275,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -344,6 +350,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -353,6 +360,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -427,6 +435,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -436,6 +445,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -539,6 +549,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -548,6 +559,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -625,6 +637,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -634,6 +647,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -717,6 +731,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -726,6 +741,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -800,6 +816,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -809,6 +826,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -883,6 +901,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -892,6 +911,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -995,6 +1015,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -1004,6 +1025,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -1081,6 +1103,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -1090,6 +1113,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#FFFFFF",
@@ -1173,6 +1197,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -1182,6 +1207,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -1256,6 +1282,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -1265,6 +1292,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",
@@ -1339,6 +1367,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               style={Object {}}
             >
               <Text
+                allowFontScaling={true}
                 selectable={false}
                 style={
                   Array [
@@ -1348,6 +1377,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                 }
               >
                 <Text
+                  allowFontScaling={true}
                   style={
                     Object {
                       "color": "#14171A",

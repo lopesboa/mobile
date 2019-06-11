@@ -81,6 +81,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEnabled={false}
       scrollEventThrottle={1}
@@ -165,9 +166,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -175,9 +177,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -185,56 +188,16 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={24}
                     vbWidth={24}
+                    width={27}
                   >
-                    <RNSVGPath
-                      d="M0 0h24v24H0z"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
                     <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
@@ -253,11 +216,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -270,21 +229,14 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
                     >
                       <RNSVGPath
-                        d="M0 12c0 5.515 4.486 10 10 10v-2a7.968 7.968 0 0 1-3-.588V16h3v-2H7v-4h3V8H7V4.59A7.95 7.95 0 0 1 10 4V2C4.486 2 0 6.486 0 12zm2.264 2A7.947 7.947 0 0 1 2 12c0-.691.098-1.359.264-2H5v4H2.264zm.818 2H5v2.235A8.04 8.04 0 0 1 3.082 16zM5 5.766V8H3.082A8.064 8.064 0 0 1 5 5.766zM21 2h-8c-1.104 0-2 .898-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4c0-1.102-.896-2-2-2zm0 2v2h-8V4h8zm0 4l.001 8H13V8h8zm-8 12v-2h8.002v2H13z"
-                        fill={
-                          Array [
-                            0,
-                            0,
-                            0,
-                            0,
-                            1,
-                          ]
-                        }
+                        d="M0 0h24v24H0z"
+                        fill={null}
                         fillOpacity={1}
                         fillRule={1}
                         matrix={
@@ -300,7 +252,11 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         opacity={1}
                         originX={0}
                         originY={0}
-                        propList={Array []}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
                         rotation={0}
                         scaleX={1}
                         scaleY={1}
@@ -313,10 +269,98 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         strokeLinejoin={0}
                         strokeMiterlimit={4}
                         strokeOpacity={1}
-                        strokeWidth="1"
+                        strokeWidth={1}
+                        vectorEffect={0}
                         x={0}
                         y={0}
                       />
+                      <RNSVGGroup
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        font={Object {}}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      >
+                        <RNSVGPath
+                          d="M0 12c0 5.515 4.486 10 10 10v-2a7.968 7.968 0 0 1-3-.588V16h3v-2H7v-4h3V8H7V4.59A7.95 7.95 0 0 1 10 4V2C4.486 2 0 6.486 0 12zm2.264 2A7.947 7.947 0 0 1 2 12c0-.691.098-1.359.264-2H5v4H2.264zm.818 2H5v2.235A8.04 8.04 0 0 1 3.082 16zM5 5.766V8H3.082A8.064 8.064 0 0 1 5 5.766zM21 2h-8c-1.104 0-2 .898-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4c0-1.102-.896-2-2-2zm0 2v2h-8V4h8zm0 4l.001 8H13V8h8zm-8 12v-2h8.002v2H13z"
+                          fill={
+                            Array [
+                              0,
+                              4278190080,
+                            ]
+                          }
+                          fillOpacity={1}
+                          fillRule={1}
+                          matrix={
+                            Array [
+                              1,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                            ]
+                          }
+                          opacity={1}
+                          originX={0}
+                          originY={0}
+                          propList={Array []}
+                          rotation={0}
+                          scaleX={1}
+                          scaleY={1}
+                          skewX={0}
+                          skewY={0}
+                          stroke={null}
+                          strokeDasharray={null}
+                          strokeDashoffset={null}
+                          strokeLinecap={0}
+                          strokeLinejoin={0}
+                          strokeMiterlimit={4}
+                          strokeOpacity={1}
+                          strokeWidth={1}
+                          vectorEffect={0}
+                          x={0}
+                          y={0}
+                        />
+                      </RNSVGGroup>
                     </RNSVGGroup>
                   </RNSVGSvgView>
                   <View
@@ -332,6 +376,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -345,6 +390,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -354,6 +400,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -370,6 +417,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -382,6 +430,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -391,6 +440,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -424,6 +474,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -437,6 +488,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -446,6 +498,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -462,6 +515,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -474,6 +528,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -483,6 +538,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -575,9 +631,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -585,9 +642,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -595,17 +653,16 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={27}
                     vbWidth={27}
+                    width={27}
                   >
                     <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
@@ -624,11 +681,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -641,21 +694,102 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
                     >
-                      <RNSVGPath
-                        d="M13.502 12.506c1.8 0 3.2-1.5 3.2-3.2s-1.4-3.3-3.2-3.3-3.3 1.5-3.3 3.2 1.5 3.3 3.3 3.3zM13.502 13.306c-3.8 0-6.5 2-6.5 4.9v.8h13v-.8c0-2.9-2.7-4.9-6.5-4.9z"
+                      <RNSVGGroup
                         fill={
                           Array [
                             0,
-                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        font={Object {}}
+                        matrix={
+                          Array [
+                            1,
                             0,
                             0,
                             1,
+                            0,
+                            0,
                           ]
                         }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      >
+                        <RNSVGPath
+                          d="M13.502 12.506c1.8 0 3.2-1.5 3.2-3.2s-1.4-3.3-3.2-3.3-3.3 1.5-3.3 3.2 1.5 3.3 3.3 3.3zM13.502 13.306c-3.8 0-6.5 2-6.5 4.9v.8h13v-.8c0-2.9-2.7-4.9-6.5-4.9z"
+                          fill={
+                            Array [
+                              0,
+                              4278190080,
+                            ]
+                          }
+                          fillOpacity={1}
+                          fillRule={1}
+                          matrix={
+                            Array [
+                              1,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                            ]
+                          }
+                          opacity={1}
+                          originX={0}
+                          originY={0}
+                          propList={Array []}
+                          rotation={0}
+                          scaleX={1}
+                          scaleY={1}
+                          skewX={0}
+                          skewY={0}
+                          stroke={null}
+                          strokeDasharray={null}
+                          strokeDashoffset={null}
+                          strokeLinecap={0}
+                          strokeLinejoin={0}
+                          strokeMiterlimit={4}
+                          strokeOpacity={1}
+                          strokeWidth={1}
+                          vectorEffect={0}
+                          x={0}
+                          y={0}
+                        />
+                      </RNSVGGroup>
+                      <RNSVGCircle
+                        cx={13.5}
+                        cy={13.5}
+                        fill={null}
                         fillOpacity={1}
                         fillRule={1}
                         matrix={
@@ -671,75 +805,37 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         opacity={1}
                         originX={0}
                         originY={0}
-                        propList={Array []}
+                        propList={
+                          Array [
+                            "fill",
+                            "stroke",
+                            "strokeWidth",
+                          ]
+                        }
+                        r={12.5}
                         rotation={0}
                         scaleX={1}
                         scaleY={1}
                         skewX={0}
                         skewY={0}
-                        stroke={null}
+                        stroke={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
                         strokeDasharray={null}
                         strokeDashoffset={null}
                         strokeLinecap={0}
                         strokeLinejoin={0}
                         strokeMiterlimit={4}
                         strokeOpacity={1}
-                        strokeWidth="1"
+                        strokeWidth={2}
+                        vectorEffect={0}
                         x={0}
                         y={0}
                       />
                     </RNSVGGroup>
-                    <RNSVGCircle
-                      cx="13.5"
-                      cy="13.5"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "stroke",
-                          "strokeWidth",
-                          "fill",
-                        ]
-                      }
-                      r="12.5"
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={
-                        Array [
-                          0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
-                        ]
-                      }
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="2"
-                      x={0}
-                      y={0}
-                    />
                   </RNSVGSvgView>
                   <View
                     style={
@@ -754,6 +850,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -767,6 +864,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -776,6 +874,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -792,6 +891,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -804,6 +904,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -813,6 +914,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -846,6 +948,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -859,6 +962,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -868,6 +972,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -884,6 +989,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -896,6 +1002,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -905,6 +1012,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -923,6 +1031,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           style={
                             Object {
                               "flex": 1,
@@ -934,6 +1043,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
 
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -943,6 +1053,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -1035,9 +1146,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -1045,9 +1157,10 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -1055,22 +1168,21 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={21}
                     vbWidth={21}
+                    width={27}
                   >
-                    <RNSVGPath
-                      d="M13.2 12L12 10.7l.6-1.9c.1-.3-.2-.5-.4-.4l-1.9.6L9 7.8c-.2-.3-.6-.1-.5.2l.2 1.9L6.8 11c-.3.1-.2.5.1.6l1.3.3-8 8c-.3.3-.3.7 0 .9.3.3.7.3.9 0l8-8 .3 1.3c.1.3.5.3.6.1l1.1-1.9 1.9.2c.3.1.5-.3.2-.5"
+                    <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
-                      fillRule={0}
+                      fillRule={1}
+                      font={Object {}}
                       matrix={
                         Array [
                           1,
@@ -1084,12 +1196,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                          "fillRule",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -1102,60 +1209,106 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
-                    />
-                    <RNSVGPath
-                      d="M18.3 11H20M15.8 5.2l1.7-1.7M10 2.7V1M5.8 6L4.3 4.5M2.5 11H.8M10 17.7v2.5M15.8 15.2l1.7 1.7"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "stroke",
-                          "strokeLinecap",
-                          "strokeLinejoin",
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={
-                        Array [
-                          0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
-                        ]
-                      }
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={1}
-                      strokeLinejoin={1}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
+                    >
+                      <RNSVGPath
+                        d="M13.2 12L12 10.7l.6-1.9c.1-.3-.2-.5-.4-.4l-1.9.6L9 7.8c-.2-.3-.6-.1-.5.2l.2 1.9L6.8 11c-.3.1-.2.5.1.6l1.3.3-8 8c-.3.3-.3.7 0 .9.3.3.7.3.9 0l8-8 .3 1.3c.1.3.5.3.6.1l1.1-1.9 1.9.2c.3.1.5-.3.2-.5"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={0}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                            "fillRule",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M18.3 11H20M15.8 5.2l1.7-1.7M10 2.7V1M5.8 6L4.3 4.5M2.5 11H.8M10 17.7v2.5M15.8 15.2l1.7 1.7"
+                        fill={null}
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                            "stroke",
+                            "strokeLinecap",
+                            "strokeLinejoin",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={1}
+                        strokeLinejoin={1}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                    </RNSVGGroup>
                   </RNSVGSvgView>
                   <View
                     style={
@@ -1170,6 +1323,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -1183,6 +1337,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1192,6 +1347,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -1208,6 +1364,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1220,6 +1377,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -1229,6 +1387,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -1262,6 +1421,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -1275,6 +1435,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1287,6 +1448,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -1296,6 +1458,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -1314,6 +1477,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           style={
                             Object {
                               "flex": 1,
@@ -1325,6 +1489,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
 
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1334,6 +1499,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -1483,6 +1649,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEnabled={false}
       scrollEventThrottle={1}
@@ -1565,9 +1732,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -1575,9 +1743,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -1585,61 +1754,21 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={24}
                     vbWidth={24}
+                    width={27}
                   >
-                    <RNSVGPath
-                      d="M0 0h24v24H0z"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
-                    <RNSVGPath
-                      d="M22 3H2C.897 3 0 3.896 0 5v13c0 1.103.897 2 2 2h9v2H7v2h10v-2h-4v-2h9c1.103 0 2-.897 2-2V5c0-1.104-.897-2-2-2zm0 2l-.002 10H2V5h20zM2 18v-1h19.997v1H2z"
+                    <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
                       fillRule={1}
+                      font={Object {}}
                       matrix={
                         Array [
                           1,
@@ -1653,11 +1782,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -1670,10 +1795,97 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
-                    />
+                    >
+                      <RNSVGPath
+                        d="M0 0h24v24H0z"
+                        fill={null}
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M22 3H2C.897 3 0 3.896 0 5v13c0 1.103.897 2 2 2h9v2H7v2h10v-2h-4v-2h9c1.103 0 2-.897 2-2V5c0-1.104-.897-2-2-2zm0 2l-.002 10H2V5h20zM2 18v-1h19.997v1H2z"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                    </RNSVGGroup>
                   </RNSVGSvgView>
                   <View
                     style={
@@ -1688,6 +1900,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -1701,6 +1914,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1710,6 +1924,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -1726,6 +1941,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1738,6 +1954,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -1747,6 +1964,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -1780,6 +1998,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -1793,6 +2012,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1802,6 +2022,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -1818,6 +2039,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -1830,6 +2052,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -1839,6 +2062,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -1933,9 +2157,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -1943,9 +2168,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -1953,17 +2179,16 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={27}
                     vbWidth={27}
+                    width={27}
                   >
                     <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
@@ -1982,11 +2207,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -1999,21 +2220,102 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
                     >
-                      <RNSVGPath
-                        d="M13.502 12.506c1.8 0 3.2-1.5 3.2-3.2s-1.4-3.3-3.2-3.3-3.3 1.5-3.3 3.2 1.5 3.3 3.3 3.3zM13.502 13.306c-3.8 0-6.5 2-6.5 4.9v.8h13v-.8c0-2.9-2.7-4.9-6.5-4.9z"
+                      <RNSVGGroup
                         fill={
                           Array [
                             0,
-                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        font={Object {}}
+                        matrix={
+                          Array [
+                            1,
                             0,
                             0,
                             1,
+                            0,
+                            0,
                           ]
                         }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      >
+                        <RNSVGPath
+                          d="M13.502 12.506c1.8 0 3.2-1.5 3.2-3.2s-1.4-3.3-3.2-3.3-3.3 1.5-3.3 3.2 1.5 3.3 3.3 3.3zM13.502 13.306c-3.8 0-6.5 2-6.5 4.9v.8h13v-.8c0-2.9-2.7-4.9-6.5-4.9z"
+                          fill={
+                            Array [
+                              0,
+                              4278190080,
+                            ]
+                          }
+                          fillOpacity={1}
+                          fillRule={1}
+                          matrix={
+                            Array [
+                              1,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                            ]
+                          }
+                          opacity={1}
+                          originX={0}
+                          originY={0}
+                          propList={Array []}
+                          rotation={0}
+                          scaleX={1}
+                          scaleY={1}
+                          skewX={0}
+                          skewY={0}
+                          stroke={null}
+                          strokeDasharray={null}
+                          strokeDashoffset={null}
+                          strokeLinecap={0}
+                          strokeLinejoin={0}
+                          strokeMiterlimit={4}
+                          strokeOpacity={1}
+                          strokeWidth={1}
+                          vectorEffect={0}
+                          x={0}
+                          y={0}
+                        />
+                      </RNSVGGroup>
+                      <RNSVGCircle
+                        cx={13.5}
+                        cy={13.5}
+                        fill={null}
                         fillOpacity={1}
                         fillRule={1}
                         matrix={
@@ -2029,75 +2331,37 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         opacity={1}
                         originX={0}
                         originY={0}
-                        propList={Array []}
+                        propList={
+                          Array [
+                            "fill",
+                            "stroke",
+                            "strokeWidth",
+                          ]
+                        }
+                        r={12.5}
                         rotation={0}
                         scaleX={1}
                         scaleY={1}
                         skewX={0}
                         skewY={0}
-                        stroke={null}
+                        stroke={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
                         strokeDasharray={null}
                         strokeDashoffset={null}
                         strokeLinecap={0}
                         strokeLinejoin={0}
                         strokeMiterlimit={4}
                         strokeOpacity={1}
-                        strokeWidth="1"
+                        strokeWidth={2}
+                        vectorEffect={0}
                         x={0}
                         y={0}
                       />
                     </RNSVGGroup>
-                    <RNSVGCircle
-                      cx="13.5"
-                      cy="13.5"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "stroke",
-                          "strokeWidth",
-                          "fill",
-                        ]
-                      }
-                      r="12.5"
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={
-                        Array [
-                          0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
-                        ]
-                      }
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="2"
-                      x={0}
-                      y={0}
-                    />
                   </RNSVGSvgView>
                   <View
                     style={
@@ -2112,6 +2376,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -2125,6 +2390,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2134,6 +2400,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -2150,6 +2417,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2162,6 +2430,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -2171,6 +2440,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -2204,6 +2474,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -2217,6 +2488,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2226,6 +2498,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -2242,6 +2515,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2254,6 +2528,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -2263,6 +2538,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -2281,6 +2557,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           style={
                             Object {
                               "flex": 1,
@@ -2292,6 +2569,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
 
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2301,6 +2579,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",
@@ -2393,9 +2672,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
-                    bbHeight="27"
-                    bbWidth="27"
+                    bbHeight={27}
+                    bbWidth={27}
                     color="#00B0FF"
+                    height={27}
                     meetOrSlice={0}
                     minX={0}
                     minY={0}
@@ -2403,9 +2683,10 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       Array [
                         Object {
                           "backgroundColor": "transparent",
+                          "borderWidth": 0,
                         },
                         undefined,
-                        false,
+                        null,
                         Object {
                           "flex": 0,
                           "height": 27,
@@ -2413,61 +2694,21 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         },
                       ]
                     }
+                    tintColor="#00B0FF"
                     vbHeight={24}
                     vbWidth={24}
+                    width={27}
                   >
-                    <RNSVGPath
-                      d="M0-.001h24v24H0z"
-                      fill={null}
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
-                    <RNSVGPath
-                      d="M12 9.999h-2v-4h4v2h-2zM11 14.999H6v-5h2v3h3zM12 10.999h2v4h-2zM18 13.999h-2v-2h-1v-2h3z"
+                    <RNSVGGroup
                       fill={
                         Array [
                           0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
+                          4278190080,
                         ]
                       }
                       fillOpacity={1}
                       fillRule={1}
+                      font={Object {}}
                       matrix={
                         Array [
                           1,
@@ -2481,11 +2722,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       opacity={1}
                       originX={0}
                       originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
+                      propList={Array []}
                       rotation={0}
                       scaleX={1}
                       scaleY={1}
@@ -2498,104 +2735,187 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       strokeLinejoin={0}
                       strokeMiterlimit={4}
                       strokeOpacity={1}
-                      strokeWidth="1"
+                      strokeWidth={1}
+                      vectorEffect={0}
                       x={0}
                       y={0}
-                    />
-                    <RNSVGPath
-                      d="M20 21.999H4c-1.103 0-2-.896-2-2v-16c0-1.104.897-2 2-2h16c1.103 0 2 .896 2 2v16c0 1.104-.897 2-2 2zm-16-18v16h16.001l-.001-16H4z"
-                      fill={
-                        Array [
-                          0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
-                        ]
-                      }
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
-                    <RNSVGPath
-                      d="M6 5.999h3v3H6zM15 14.999h3v3h-3zM15 5.999h3v3h-3zM9 15.999h5v2H9zM6 15.999h2v2H6z"
-                      fill={
-                        Array [
-                          0,
-                          0,
-                          0.6901960784313725,
-                          1,
-                          1,
-                        ]
-                      }
-                      fillOpacity={1}
-                      fillRule={1}
-                      matrix={
-                        Array [
-                          1,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                        ]
-                      }
-                      opacity={1}
-                      originX={0}
-                      originY={0}
-                      propList={
-                        Array [
-                          "fill",
-                        ]
-                      }
-                      rotation={0}
-                      scaleX={1}
-                      scaleY={1}
-                      skewX={0}
-                      skewY={0}
-                      stroke={null}
-                      strokeDasharray={null}
-                      strokeDashoffset={null}
-                      strokeLinecap={0}
-                      strokeLinejoin={0}
-                      strokeMiterlimit={4}
-                      strokeOpacity={1}
-                      strokeWidth="1"
-                      x={0}
-                      y={0}
-                    />
+                    >
+                      <RNSVGPath
+                        d="M0-.001h24v24H0z"
+                        fill={null}
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M12 9.999h-2v-4h4v2h-2zM11 14.999H6v-5h2v3h3zM12 10.999h2v4h-2zM18 13.999h-2v-2h-1v-2h3z"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M20 21.999H4c-1.103 0-2-.896-2-2v-16c0-1.104.897-2 2-2h16c1.103 0 2 .896 2 2v16c0 1.104-.897 2-2 2zm-16-18v16h16.001l-.001-16H4z"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                      <RNSVGPath
+                        d="M6 5.999h3v3H6zM15 14.999h3v3h-3zM15 5.999h3v3h-3zM9 15.999h5v2H9zM6 15.999h2v2H6z"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
+                        fillOpacity={1}
+                        fillRule={1}
+                        matrix={
+                          Array [
+                            1,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                          ]
+                        }
+                        opacity={1}
+                        originX={0}
+                        originY={0}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                        rotation={0}
+                        scaleX={1}
+                        scaleY={1}
+                        skewX={0}
+                        skewY={0}
+                        stroke={null}
+                        strokeDasharray={null}
+                        strokeDashoffset={null}
+                        strokeLinecap={0}
+                        strokeLinejoin={0}
+                        strokeMiterlimit={4}
+                        strokeOpacity={1}
+                        strokeWidth={1}
+                        vectorEffect={0}
+                        x={0}
+                        y={0}
+                      />
+                    </RNSVGGroup>
                   </RNSVGSvgView>
                   <View
                     style={
@@ -2610,6 +2930,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -2623,6 +2944,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2632,6 +2954,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "color": "#00B0FF",
@@ -2648,6 +2971,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2660,6 +2984,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -2669,6 +2994,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "color": "#00B0FF",
@@ -2702,6 +3028,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                       style={Object {}}
                     >
                       <Text
+                        allowFontScaling={true}
                         selectable={false}
                         style={
                           Array [
@@ -2715,6 +3042,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                         }
                       >
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2727,6 +3055,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             selectable={false}
                             style={
                               Array [
@@ -2736,6 +3065,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                             }
                           >
                             <Text
+                              allowFontScaling={true}
                               style={
                                 Object {
                                   "alignSelf": "center",
@@ -2754,6 +3084,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           </Text>
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           style={
                             Object {
                               "flex": 1,
@@ -2765,6 +3096,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
 
                         </Text>
                         <Text
+                          allowFontScaling={true}
                           selectable={false}
                           style={
                             Array [
@@ -2774,6 +3106,7 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
                           }
                         >
                           <Text
+                            allowFontScaling={true}
                             style={
                               Object {
                                 "alignSelf": "center",

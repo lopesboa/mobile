@@ -12,7 +12,7 @@ type Props = {|
   authorType: AuthorType,
   authorName: string,
   testID: string,
-  style?: GenericStyleProp
+  style?: TextStyleProp
 |};
 
 const styles = StyleSheet.create({

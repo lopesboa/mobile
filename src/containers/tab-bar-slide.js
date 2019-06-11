@@ -113,7 +113,7 @@ class TabBarSlide extends React.Component<Props> {
     return renderIcon(scene);
   };
 
-  getButtonComponent = (scene: TabScene): React$Element<*> => {
+  getButtonComponent = (scene: TabScene) => {
     const {getButtonComponent, hasNoContext} = this.props;
     const HiddenView = () => <View style={styles.hidden} />;
 
@@ -128,6 +128,8 @@ class TabBarSlide extends React.Component<Props> {
   getLabelText = (scene: TabScene) => ({tintColor}) => {
     const {getLabelText, labelStyle, hasNoClue, hasNoLesson, hasNewLesson} = this.props;
     const labelText = getLabelText(scene);
+
+    if (!labelText) return null;
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||

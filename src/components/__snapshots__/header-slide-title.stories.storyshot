@@ -27,6 +27,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
     }
   >
     <View
+      accessibilityIgnoresInvertColors={true}
       style={
         Array [
           Object {
@@ -140,6 +141,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
     }
   >
     <View
+      accessibilityIgnoresInvertColors={true}
       style={
         Array [
           Object {
@@ -253,6 +255,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
     }
   >
     <View
+      accessibilityIgnoresInvertColors={true}
       style={
         Array [
           Object {

@@ -13,6 +13,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -22,6 +23,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -48,6 +50,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -57,6 +60,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -75,6 +79,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -84,6 +89,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -102,6 +108,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -111,6 +118,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -164,6 +172,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -173,6 +182,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -191,6 +201,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -200,6 +211,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -218,6 +230,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -227,6 +240,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -256,6 +270,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -265,6 +280,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -291,6 +307,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -300,6 +317,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -318,6 +336,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -327,6 +346,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -345,6 +365,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -354,6 +375,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -407,6 +429,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -416,6 +439,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -434,6 +458,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -443,6 +468,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -461,6 +487,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -470,6 +497,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -499,6 +527,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -508,6 +537,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -534,6 +564,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -543,6 +574,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -596,6 +628,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -605,6 +638,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -634,6 +668,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -643,6 +678,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -669,6 +705,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -678,6 +715,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -696,6 +734,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -705,6 +744,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -723,6 +763,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -732,6 +773,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#3EC483",
@@ -785,6 +827,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -794,6 +837,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -812,6 +856,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -821,6 +866,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -839,6 +885,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -848,6 +895,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -866,6 +914,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -875,6 +924,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -893,6 +943,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -902,6 +953,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",
@@ -920,6 +972,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
       style={Object {}}
     >
       <Text
+        allowFontScaling={true}
         selectable={false}
         style={
           Array [
@@ -929,6 +982,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
         }
       >
         <Text
+          allowFontScaling={true}
           style={
             Object {
               "color": "#546E7A",

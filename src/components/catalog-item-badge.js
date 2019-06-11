@@ -13,8 +13,8 @@ export type Item = Discipline | Chapter;
 type Props = {|
   label: string,
   testID: string,
-  style?: GenericStyleProp,
-  labelStyle?: GenericStyleProp
+  style?: ViewStyleProp,
+  labelStyle?: TextStyleProp
 |};
 
 const styles = StyleSheet.create({

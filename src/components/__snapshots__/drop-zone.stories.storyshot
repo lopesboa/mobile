@@ -80,6 +80,7 @@ exports[`Storyshots DropZone Default 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -89,6 +90,7 @@ exports[`Storyshots DropZone Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -166,6 +168,7 @@ exports[`Storyshots DropZone Default 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -175,6 +178,7 @@ exports[`Storyshots DropZone Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -252,6 +256,7 @@ exports[`Storyshots DropZone Default 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -261,6 +266,7 @@ exports[`Storyshots DropZone Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -338,6 +344,7 @@ exports[`Storyshots DropZone Default 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -347,6 +354,7 @@ exports[`Storyshots DropZone Default 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -485,6 +493,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -494,6 +503,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -571,6 +581,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -580,6 +591,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -657,6 +669,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -666,6 +679,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",
@@ -743,6 +757,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             style={Object {}}
           >
             <Text
+              allowFontScaling={true}
               selectable={false}
               style={
                 Array [
@@ -752,6 +767,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
               }
             >
               <Text
+                allowFontScaling={true}
                 style={
                   Object {
                     "color": "#FFFFFF",

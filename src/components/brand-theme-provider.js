@@ -29,7 +29,7 @@ const initialState: State = {
   }
 };
 
-export const BrandThemeContext = React.createContext(initialState);
+export const BrandThemeContext: React.Context<State> = React.createContext(initialState);
 
 const BrandThemeProvider = ({children, brand}: Props) => (
   <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>

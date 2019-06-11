@@ -43,7 +43,10 @@ jobs:
           at: ~/app
       - run:
           name: Lint
-          command: yarn lint && yarn flow
+          command: yarn lint
+      - run:
+          name: Flow
+          command: yarn lint:flow
 
   unit_tests:
     working_directory: ~/app
@@ -74,19 +77,40 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v6-{{ arch }}
+          key: detox-v11-{{ arch }}
 
       - run:
           name: Detox framework
           command: |
             yarn global add detox-cli
-            detox build-framework-cache
+            detox clean-framework-cache && detox build-framework-cache
 
       - save_cache:
-          key: detox-v6-{{ arch }}
+          key: detox-v11-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
+
+      - restore_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+
+      - run:
+          name: Brew dependencies
+          command: |
+            if brew ls --versions watchman > /dev/null; then
+              echo "Watchman already installed."
+              brew link watchman pcre
+            else
+              echo "Watchman not installed."
+              brew install watchman
+            fi
+
+      - save_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+          paths:
+            - ~/Library/Caches/Homebrew
+            - /usr/local/Cellar
+            - /usr/local/var/run/watchman
 
       - run:
           name: Build
@@ -110,10 +134,10 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v6-{{ arch }}
+          key: detox-v11-{{ arch }}
 
       - restore_cache:
-          key: brew-v2-ios-{{ arch }}
+          key: brew-e2e-v4-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -128,7 +152,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-v2-ios-{{ arch }}
+          key: brew-e2e-v4-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -194,6 +218,27 @@ jobs:
 
       - attach_workspace:
           at: ~/app
+
+      - restore_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+
+      - run:
+          name: Brew dependencies
+          command: |
+            if brew ls --versions watchman > /dev/null; then
+              echo "Watchman already installed."
+              brew link watchman pcre
+            else
+              echo "Watchman not installed."
+              brew install watchman
+            fi
+
+      - save_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+          paths:
+            - ~/Library/Caches/Homebrew
+            - /usr/local/Cellar
+            - /usr/local/var/run/watchman
 
       - run:
           name: Build
@@ -276,7 +321,11 @@ jobs:
 
       - run:
           name: Build
-          command: cd android && bundle exec fastlane adhoc
+          # Duplicate resources issue: https://github.com/facebook/react-native/issues/22234
+          command: |
+            cd android
+            rm -rf app/src/main/res/drawable-* && rm -rf app/src/main/res/raw/*
+            bundle exec fastlane adhoc
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
             GRADLE_OPTS: '-Xmx1024m -Dorg.gradle.daemon=false'

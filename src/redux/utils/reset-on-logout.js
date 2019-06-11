@@ -1,10 +1,14 @@
 // @flow strict
+
+import type {Reducer} from 'redux';
+
+import type {StoreAction} from '../_types';
 import {SIGN_OUT} from '../actions/authentication';
 
-const resetOnLogout = <S, A: {type: string}>(reducer: (state?: S, action: A) => S) => (
-  state?: S,
-  action: A
-): S => {
+const resetOnLogout = <S, A: StoreAction<*>>(reducer: Reducer<S, A>): Reducer<S, A> => (
+  state,
+  action
+) => {
   switch (action.type) {
     case SIGN_OUT: {
       return reducer(undefined, action);

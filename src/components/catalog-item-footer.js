@@ -20,8 +20,8 @@ type Props = {|
   isCertified?: boolean,
   isCourse: boolean,
   testID: string,
-  titleStyle?: GenericStyleProp,
-  subtitleStyle?: GenericStyleProp,
+  titleStyle?: TextStyleProp,
+  subtitleStyle?: TextStyleProp,
   topIconSize?: number,
   iconCertifiedSize?: number
 |};

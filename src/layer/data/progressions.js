@@ -1,6 +1,6 @@
 // @flow
 
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import type {Progression, Action} from '@coorpacademy/progression-engine';
 
 import fetch from '../../modules/fetch';

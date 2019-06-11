@@ -11,10 +11,10 @@ type Props = {|
   children: string,
   fontSize: number,
   onLinkPress?: () => void,
-  containerStyle?: GenericStyleProp,
+  containerStyle?: ViewStyleProp,
   anchorTextColor?: string,
-  imageStyle?: GenericStyleProp,
-  style?: GenericStyleProp,
+  imageStyle?: ImageStyleProp,
+  style?: TextStyleProp,
   testID?: string,
   isTextCentered?: boolean
 |};

@@ -22,7 +22,7 @@ export type Props<ItemT> = {|
   currentIndex: number,
   onChange: number => void,
   testID?: string,
-  style?: GenericStyleProp
+  style?: ViewStyleProp
 |};
 
 const PAGINATION_DOT_WIDTH = 8;
