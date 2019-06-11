@@ -26,7 +26,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.66</string>
+	<string>1.1.67</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -34,21 +34,21 @@
 	<key>FirebaseDebugEnabled</key>
 	<string>$(FIREBASE_DEBUG_ENABLED)</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string />
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<true />
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Some description</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<true />
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
+				<true />
 			</dict>
 		</dict>
 	</dict>
@@ -81,7 +81,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
-	<true/>
+	<true />
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
@@ -95,6 +95,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<false />
 </dict>
 </plist>
