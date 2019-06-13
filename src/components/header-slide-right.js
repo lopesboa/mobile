@@ -7,12 +7,14 @@ import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
 import Lives from './lives';
 
-type OnGodModeToggle = () => void;
+type OnToggleFn = () => void;
 
 type Props = {|
   count: number,
-  isGodMode: boolean,
-  onGodModeToggle: null | OnGodModeToggle
+  isGodModeActivated: boolean,
+  isFastSlideActivated: boolean,
+  onGodModeToggle: null | OnToggleFn,
+  onFastSlideToggle: null | OnToggleFn
 |};
 
 const LIVES_VERTICAL_PADDING = theme.spacing.tiny;
@@ -25,13 +27,24 @@ const styles = StyleSheet.create({
   }
 });
 
-const HeaderSlideRight = ({count, isGodMode, onGodModeToggle}: Props) => {
+const HeaderSlideRight = ({
+  count,
+  isGodModeActivated,
+  isFastSlideActivated,
+  onGodModeToggle,
+  onFastSlideToggle
+}: Props) => {
   const disabled = (typeof onGodModeToggle === 'object' && true) || false;
   return (
     <View style={styles.lives}>
-      <TouchableOpacity onPress={onGodModeToggle} disabled={disabled}>
+      <TouchableOpacity
+        onPress={onGodModeToggle}
+        onLongPress={onFastSlideToggle}
+        disabled={disabled}
+      >
         <Lives
-          isGodMode={isGodMode}
+          isGodModeActivated={isGodModeActivated}
+          isFastSlideActivated={isFastSlideActivated}
           count={count}
           height={HEADER_HEIGHT - LIVES_VERTICAL_PADDING * 2}
         />

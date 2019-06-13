@@ -23,14 +23,17 @@ describe('Answers', () => {
 
       const dispatch = jest.fn();
       const getState = jest.fn();
-      // $FlowFixMe
-      getState.mockReturnValueOnce({
-        godmode: {isGodMode: false}
-      });
-      // $FlowFixMe
-      getState.mockReturnValueOnce({
-        godLove: {isGodLove: false}
-      });
+      getState
+        // $FlowFixMe
+        .mockReturnValueOnce({
+          godmode: false,
+          fastSlide: false
+        })
+        // $FlowFixMe
+        .mockReturnValueOnce({
+          godLove: false,
+          fastLove: false
+        });
 
       const options = {
         services: {
@@ -39,9 +42,9 @@ describe('Answers', () => {
       };
 
       // $FlowFixMe
-      await validateAnswer({godMode: false})(dispatch, getState, options);
+      await validateAnswer({godMode: false, fastSlide: false})(dispatch, getState, options);
 
-      expect(getPreviousSlide).toHaveBeenCalledWith({godLove: {isGodLove: false}});
+      expect(getPreviousSlide).toHaveBeenCalledWith({godLove: false, fastLove: false});
       expect(_validateAnswer).toHaveBeenCalled();
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.VALIDATE_ANSWER,

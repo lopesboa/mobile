@@ -14,16 +14,65 @@ const textTranslateY = textTranslate.interpolate({
 });
 
 storiesOf('Lives', module)
-  .add('Default', () => <Lives winningLife={false} count={3} height={60} isGodMode={false} />)
+  .add('Default', () => (
+    <Lives
+      winningLife={false}
+      count={3}
+      height={60}
+      isFastSlideActivated={false}
+      isGodModeActivated={false}
+    />
+  ))
   .add('Broken', () => (
-    <Lives winningLife={false} count={2} isBroken height={60} isGodMode={false} />
+    <Lives
+      winningLife={false}
+      count={2}
+      isBroken
+      height={60}
+      isFastSlideActivated={false}
+      isGodModeActivated={false}
+    />
   ))
   .add('Bigger height', () => (
-    <Lives winningLife={false} count={3} height={120} isGodMode={false} />
+    <Lives
+      winningLife={false}
+      count={3}
+      height={120}
+      isFastSlideActivated={false}
+      isGodModeActivated={false}
+    />
   ))
-  .add('God mode', () => <Lives winningLife={false} count={3} height={120} isGodMode />)
-  .add('Winning life', () => <Lives winningLife count={3} height={120} isGodMode />)
-  .add('Losing life', () => <Lives winningLife={false} count={3} height={120} isGodMode />)
+  .add('God mode', () => (
+    <Lives
+      winningLife={false}
+      count={3}
+      height={120}
+      isFastSlideActivated={false}
+      isGodModeActivated
+    />
+  ))
+  .add('Winning life', () => (
+    <Lives winningLife count={3} height={120} isFastSlideActivated={false} isGodModeActivated />
+  ))
+  .add('Fast Slide', () => (
+    <Lives winningLife count={3} height={120} isFastSlideActivated isGodModeActivated />
+  ))
+  .add('Losing life', () => (
+    <Lives
+      winningLife={false}
+      count={3}
+      height={120}
+      isFastSlideActivated={false}
+      isGodModeActivated
+    />
+  ))
   .add('with text translate interpolation', () => (
-    <Lives textTranslateY={textTranslateY} winningLife={false} count={3} height={120} isGodMode />
+    <Lives
+      textTranslateY={textTranslateY}
+      winningLife={false}
+      count={3}
+      height={120}
+      isFastSlideActivated={false}
+      isGodModeActivated
+    />
   ));

@@ -8,7 +8,7 @@ import {
   NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon
 } from '@coorpacademy/nova-icons';
 
-import theme from '../modules/theme';
+import theme, {FAST_SLIDE_AND_GODMODE_COLOR, FAST_SLIDE_COLOR} from '../modules/theme';
 import Text from './text';
 
 export type Props = {|
@@ -24,7 +24,8 @@ export type Props = {|
   heartOpacity?: Animated.Interpolation,
   heartBrokenOpacity?: Animated.Interpolation,
   maxScaleX?: number,
-  isGodMode: boolean
+  isGodModeActivated: boolean,
+  isFastSlideActivated: boolean
 |};
 
 const HEART_OFFSET_RIGHT = 0.4;
@@ -63,12 +64,17 @@ const Lives = ({
   heartOpacity,
   heartBrokenOpacity,
   maxScaleX = 0,
-  isGodMode
+  isGodModeActivated,
+  isFastSlideActivated
 }: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
   const offsetLeft = (heartHeight * maxScaleX) / 2;
-  const heartColor = (isGodMode && theme.colors.positive) || theme.colors.negative;
+  const heartColor =
+    (isGodModeActivated && isFastSlideActivated && FAST_SLIDE_AND_GODMODE_COLOR) ||
+    (isGodModeActivated && theme.colors.positive) ||
+    (isFastSlideActivated && FAST_SLIDE_COLOR) ||
+    theme.colors.negative;
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
@@ -121,20 +127,29 @@ const Lives = ({
   };
 
   const brokenSuffix = isBroken ? '-broken' : '';
-  const topText = (isGodMode && '∞') || winningLife ? count - 1 : count;
+  const topText = winningLife ? count - 1 : count;
+  const godModeInfiniteLoopChar = '∞';
   const bottomText = winningLife ? count : count + 1;
 
   return (
     <View style={[styles.container, containerStyle]} testID={testID}>
       <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
-        <Animated.View style={animatedTextStyle}>
+        {(isGodModeActivated && isFastSlideActivated) ||
+        isFastSlideActivated ||
+        isGodModeActivated ? (
           <View style={textWrapper}>
-            <Text style={textStyle}>x{topText}</Text>
+            <Text style={textStyle}>{godModeInfiniteLoopChar}</Text>
           </View>
-          <View style={textWrapper}>
-            <Text style={textStyle}>x{bottomText}</Text>
-          </View>
-        </Animated.View>
+        ) : (
+          <Animated.View style={animatedTextStyle}>
+            <View style={textWrapper}>
+              <Text style={textStyle}>x{topText}</Text>
+            </View>
+            <View style={textWrapper}>
+              <Text style={textStyle}>x{bottomText}</Text>
+            </View>
+          </Animated.View>
+        )}
       </View>
       <Animated.View style={[styles.heart, heartStyle]}>
         <HeartOutlineIcon

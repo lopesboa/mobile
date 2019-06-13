@@ -7,7 +7,8 @@ import {Animated, Easing} from 'react-native';
 import Lives from '../components/lives';
 
 type ConnectedStateProps = {|
-  isGodMode: boolean
+  isGodModeActivated: boolean,
+  isFastSlideActivated: boolean
 |};
 type Props = {|
   ...ConnectedStateProps,
@@ -123,8 +124,7 @@ class LivesAnimated extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const {count, height, isBroken, isGodMode, testID} = this.props;
-
+    const {count, height, isBroken, isGodModeActivated, isFastSlideActivated, testID} = this.props;
     const translateX = this.shake.interpolate({
       inputRange: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
       outputRange: [0, -2, 2, -2, 2, -2, 2, -2, 2, -2, 0]
@@ -166,7 +166,8 @@ class LivesAnimated extends React.PureComponent<Props, State> {
         winningLife={this.state.winningLife}
         height={height}
         isBroken={isBroken}
-        isGodMode={isGodMode}
+        isGodModeActivated={isGodModeActivated}
+        isFastSlideActivated={isFastSlideActivated}
         testID={testID}
         translateX={translateX}
         textTranslateY={textTranslateY}
@@ -181,7 +182,8 @@ class LivesAnimated extends React.PureComponent<Props, State> {
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  isGodMode: state.godmode
+  isGodModeActivated: state.godmode,
+  isFastSlideActivated: state.fastSlide
 });
 
 export default connect(mapStateToProps)(LivesAnimated);

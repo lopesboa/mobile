@@ -114,6 +114,9 @@ const theme: Theme = {
 export const BLUE_COORP_LIGHT: string = '#00B0FF';
 export const BLUE_COORP_DARK: string = '#4481EB';
 
+export const FAST_SLIDE_AND_GODMODE_COLOR: string = '#19b8cd';
+export const FAST_SLIDE_COLOR: string = BLUE_COORP_LIGHT;
+
 export const getHitSlop = (type: SpaceType = 'small'): HitSlop => ({
   left: theme.spacing[type],
   top: theme.spacing[type],

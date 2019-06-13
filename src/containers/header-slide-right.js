@@ -8,17 +8,20 @@ import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
 import {getLives} from '../redux/utils/state-extract';
 import {toggleGodMode} from '../redux/actions/godmode';
+import {toggleFastSlide} from '../redux/actions/fastslide';
 
 type ConnectedStateProps = {|
   hide: boolean,
   count: number,
-  isGodMode: boolean
+  isGodModeActivated: boolean,
+  isFastSlideActivated: boolean
 |};
 
-type ToggleGodMode = () => void;
+type ToggleFn = () => void;
 
 type DispatchProps = {|
-  toggleGodMode: () => null | ToggleGodMode
+  toggleGodMode: () => null | ToggleFn,
+  toggleFastSlide: () => null | ToggleFn
 |};
 
 type Props = {|
@@ -41,8 +44,18 @@ class HeaderSlideRight extends React.Component<Props> {
     return null;
   };
 
+  handleFastSlideToggle = () => {
+    const toggleFn = this.props.toggleFastSlide();
+    if (typeof toggleFn !== 'object') {
+      return () => {
+        return toggleFn && toggleFn();
+      };
+    }
+    return null;
+  };
+
   render() {
-    const {hide, count, isGodMode} = this.props;
+    const {hide, count, isGodModeActivated, isFastSlideActivated} = this.props;
 
     if (hide) {
       return null;
@@ -50,9 +63,11 @@ class HeaderSlideRight extends React.Component<Props> {
 
     return (
       <HeaderSlideRightComponent
-        isGodMode={isGodMode}
+        isGodModeActivated={isGodModeActivated}
+        isFastSlideActivated={isFastSlideActivated}
         count={count}
         onGodModeToggle={this.handleGodModeToggle()}
+        onFastSlideToggle={this.handleFastSlideToggle()}
       />
     );
   }
@@ -60,13 +75,15 @@ class HeaderSlideRight extends React.Component<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
-  const isGodMode = state.godmode;
+  const isGodModeActivated = state.godmode;
+  const isFastSlideActivated = state.fastSlide;
   if (!progression) {
-    return {hide: true, count: 0, isGodMode};
+    return {hide: true, count: 0, isGodModeActivated, isFastSlideActivated};
   }
   const {hide, count} = getLives(state);
   return {
-    isGodMode,
+    isGodModeActivated,
+    isFastSlideActivated,
     hide,
     count
   };
@@ -74,5 +91,5 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 
 export default connect(
   mapStateToProps,
-  {toggleGodMode}
+  {toggleGodMode, toggleFastSlide}
 )(HeaderSlideRight);

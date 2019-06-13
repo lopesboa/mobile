@@ -137,6 +137,7 @@ describe('storeFixture', () => {
     const permissionsState = {};
 
     const godModeState = false;
+    const fastSlideState = false;
     const videoState = {
       isFullScreen: false
     };
@@ -226,6 +227,7 @@ describe('storeFixture', () => {
       permissions: permissionsState,
       authentication: authenticationState,
       godmode: godModeState,
+      fastSlide: fastSlideState,
       video: videoState
     };
 

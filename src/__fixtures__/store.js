@@ -61,6 +61,7 @@ export const createStoreState = ({
   progression,
   cards,
   godmode: baseGodMode,
+  fastSlide: basefastSlide,
   data: baseData,
   ui: baseUi,
   authentication: baseAuthentication
@@ -71,6 +72,7 @@ export const createStoreState = ({
   disciplines: Array<Discipline>,
   progression: Progression,
   godmode?: boolean,
+  fastSlide?: boolean,
   // @todo type this later, im so sorry
   // eslint-disable-next-line flowtype/no-weak-types
   data?: any,
@@ -88,6 +90,7 @@ export const createStoreState = ({
   );
 
   const godmode = baseGodMode || false;
+  const fastSlide = basefastSlide || false;
 
   const authentication = baseAuthentication || {
     user: {
@@ -175,6 +178,7 @@ export const createStoreState = ({
     permissions: permissionsState,
     authentication,
     godmode,
+    fastSlide,
     video: {
       isFullScreen: false
     }

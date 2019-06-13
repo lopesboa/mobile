@@ -11,8 +11,14 @@ import {ANALYTICS_EVENT_TYPE} from '../../../const';
 
 export const validateAnswer: typeof _validateAnswer = () => async (dispatch, getState, options) => {
   const {services} = options;
+
   // $FlowFixMe
-  const result = await _validateAnswer({godMode: getState().godmode})(dispatch, getState, options);
+  const {godmode, fastSlide} = getState();
+  // $FlowFixMe
+  const result = await _validateAnswer({
+    godMode: godmode,
+    fastSlide: fastSlide
+  })(dispatch, getState, options);
 
   const state: StoreState = getState();
 
