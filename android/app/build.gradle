@@ -123,9 +123,8 @@ android {
         }
     }
     packagingOptions {
+        pickFirst '**/libjsc.so'
         pickFirst 'lib/x86/libc++_shared.so'
-        pickFirst 'lib/x86_64/libjsc.so'
-        pickFirst 'lib/arm64-v8a/libjsc.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
         pickFirst 'lib/x86_64/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
@@ -135,6 +134,9 @@ android {
 }
 
 dependencies {
+    // For 64 Bits support
+    implementation "org.webkit:android-jsc:r241213"
+
     implementation project(':react-native-webview')
     implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-camera')
