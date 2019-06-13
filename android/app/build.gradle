@@ -55,7 +55,7 @@ android {
         multiDexEnabled true
         missingDimensionStrategy 'react-native-camera', 'general'
         versionCode 1
-        versionName "1.1.67"
+        versionName "1.1.68"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
