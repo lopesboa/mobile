@@ -62,7 +62,6 @@ com.google.firebase:firebase-core:16.0.9
 com.google.firebase:firebase-iid-interop:16.0.1
 com.google.firebase:firebase-iid:17.1.2
 com.google.firebase:firebase-measurement-connector:17.0.1
-com.parse.bolts:bolts-tasks:1.4.0
 com.squareup.okhttp3:okhttp-urlconnection:3.12.1
 com.squareup.okhttp3:okhttp:3.12.1
 com.squareup.okio:okio:1.15.0
