@@ -18,7 +18,8 @@ type Props = {|
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    overflow: 'hidden'
   },
   text: {
     color: theme.colors.gray.dark,

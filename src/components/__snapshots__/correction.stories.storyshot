@@ -1069,6 +1069,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -4865,6 +4866,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -8626,6 +8628,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -14619,6 +14622,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -16894,6 +16898,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -22132,6 +22137,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -24405,6 +24411,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -27614,6 +27621,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -34479,6 +34487,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -38246,6 +38255,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -40519,6 +40529,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -45181,6 +45192,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -46622,6 +46634,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -52744,6 +52757,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -55924,6 +55938,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -59104,6 +59119,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -62865,6 +62881,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >
@@ -64190,6 +64207,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     style={
                       Object {
                         "flex": 1,
+                        "overflow": "hidden",
                       }
                     }
                   >

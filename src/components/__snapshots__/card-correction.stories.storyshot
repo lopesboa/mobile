@@ -5,6 +5,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
   style={
     Object {
       "flex": 1,
+      "overflow": "hidden",
     }
   }
 >
@@ -262,6 +263,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
   style={
     Object {
       "flex": 1,
+      "overflow": "hidden",
     }
   }
 >
@@ -519,6 +521,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
   style={
     Object {
       "flex": 1,
+      "overflow": "hidden",
     }
   }
 >
@@ -660,6 +663,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
   style={
     Object {
       "flex": 1,
+      "overflow": "hidden",
     }
   }
 >
