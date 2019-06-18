@@ -426,6 +426,27 @@ jobs:
       - attach_workspace:
           at: ~/app
 
+      - restore_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+
+      - run:
+          name: Brew dependencies
+          command: |
+            if brew ls --versions watchman > /dev/null; then
+              echo "Watchman already installed."
+              brew link watchman pcre
+            else
+              echo "Watchman not installed."
+              brew install watchman
+            fi
+
+      - save_cache:
+          key: brew-watchman-v4-ios-{{ arch }}
+          paths:
+            - ~/Library/Caches/Homebrew
+            - /usr/local/Cellar
+            - /usr/local/var/run/watchman
+
       - run:
           name: Build and publish
           command: cd ios && bundle exec fastlane beta
