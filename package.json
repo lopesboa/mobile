@@ -83,7 +83,7 @@
     "jsc-android": "^241213.2.0",
     "jwt-decode": "^2.2.0",
     "p-map": "^2.1.0",
-    "react": "16.8.6",
+    "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-camera": "2.9.0",
     "react-native-card-flip": "^1.0.4",
