@@ -2,7 +2,6 @@
 
 import type {Content} from '@coorpacademy/progression-engine';
 import type {Slide} from '../../layer/data/_types';
-import type {OfflineContents, OfflineStatus} from '../reducers/bundle';
 import type {Engine} from '../../types';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
@@ -13,8 +12,6 @@ import bundledDiscipline from '../../__fixtures__/discipline-bundle';
 
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {
-  isContentReady,
-  getContents,
   checkIsExitNode,
   checkIsCorrect,
   checkIsValidating,
@@ -71,47 +68,6 @@ const createState = ({
 };
 
 describe('State-extract', () => {
-  describe('isContentReady', () => {
-    it('should return true', () => {
-      const status: OfflineStatus = {
-        pending: ['en'],
-        ready: ['de']
-      };
-      const result = isContentReady('de', status);
-      expect(result).toBeTruthy();
-    });
-
-    it('should return false', () => {
-      const status: OfflineStatus = {
-        pending: ['en'],
-        ready: ['de']
-      };
-      const result = isContentReady('en', status);
-      expect(result).toBeFalsy();
-    });
-  });
-
-  describe('getContents', () => {
-    it('should return filtered contents by language', () => {
-      const contents: OfflineContents = {
-        ref1: {
-          pending: ['en'],
-          ready: ['de']
-        },
-        ref2: {
-          pending: ['pl'],
-          ready: ['en']
-        },
-        ref3: {
-          pending: ['de'],
-          ready: ['it']
-        }
-      };
-      const result = getContents('en', contents);
-      expect(result).toEqual(['ref1', 'ref2']);
-    });
-  });
-
   describe('checkIsExitNode', () => {
     it('should return false if nextContent is falsy', () => {
       const state: StoreState = createState({});

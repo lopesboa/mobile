@@ -80,8 +80,9 @@ describe('Brands', () => {
         expect(action).toEqual(fetchError(fakeError));
         return action;
       });
+
       // $FlowFixMe
-      options.services.Brands.find.mockRejectedValueOnce(fakeError);
+      options.services.Brands.find.mockImplementationOnce(Promise.reject(fakeError));
 
       // $FlowFixMe
       const actual = await fetchBrand('__TOKEN__')(dispatch, getState, options);

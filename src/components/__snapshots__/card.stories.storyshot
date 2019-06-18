@@ -3,22 +3,10 @@
 exports[`Storyshots Card Catalog Item Card 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-        "flex": 1,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+      "flex": 1,
+    }
   }
 >
   <View
@@ -28,6 +16,16 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
           "borderBottomWidth": 1,
           "borderColor": "rgba(20, 23, 26, 0.15)",
           "borderRadius": 5,
+        },
+        Object {
+          "elevation": 4,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
         Object {
           "overflow": "hidden",
@@ -44,7 +42,11 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      style={null}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
       testID="catalog2"
     >
       <View
@@ -89,7 +91,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                 undefined,
               ]
             }
-            testID="background-image-catalog2"
+            testID="background-image-catalog2-image"
           />
           <BVLinearGradient
             colors={
@@ -120,14 +122,15 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                     "flex": 1,
                   },
                   Object {
-                    "minHeight": 205,
+                    "height": 205,
                     "padding": 16,
+                    "width": 168,
                   },
                 ],
                 undefined,
               ]
             }
-            testID="gradient-catalog2"
+            testID="gradient-catalog2-image"
           >
             <View
               style={
@@ -171,7 +174,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
                       ],
                     ]
                   }
-                  testID="badge-catalog2"
+                  testID="catalog2-badge"
                 >
                   New
                 </Text>
@@ -604,22 +607,10 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
 exports[`Storyshots Card Catalog Item Cover 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-        "flex": 1,
-      },
-      Object {
-        "elevation": 4,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
-        },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      },
-    ]
+    Object {
+      "borderRadius": 5,
+      "flex": 1,
+    }
   }
 >
   <View
@@ -629,6 +620,16 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
           "borderBottomWidth": 1,
           "borderColor": "rgba(20, 23, 26, 0.15)",
           "borderRadius": 5,
+        },
+        Object {
+          "elevation": 4,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
         Object {
           "overflow": "hidden",
@@ -645,7 +646,11 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      style={null}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
       testID="catalog1"
     >
       <View
@@ -690,7 +695,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                 undefined,
               ]
             }
-            testID="background-image-catalog1"
+            testID="background-image-catalog1-image"
           />
           <BVLinearGradient
             colors={
@@ -729,7 +734,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                 undefined,
               ]
             }
-            testID="gradient-catalog1"
+            testID="gradient-catalog1-image"
           >
             <View
               style={
@@ -773,7 +778,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
                       ],
                     ]
                   }
-                  testID="badge-catalog1"
+                  testID="catalog1-badge"
                 >
                   New
                 </Text>
@@ -1206,18 +1211,16 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
 exports[`Storyshots Card Correction 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-        "flex": 1,
-      },
-      undefined,
-    ]
+    Object {
+      "borderRadius": 5,
+      "flex": 1,
+    }
   }
 >
   <View
     style={
       Array [
+        undefined,
         undefined,
         Object {
           "overflow": "hidden",
@@ -1477,18 +1480,16 @@ exports[`Storyshots Card Default Case 1`] = `null`;
 exports[`Storyshots Card Key point 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-        "flex": 1,
-      },
-      undefined,
-    ]
+    Object {
+      "borderRadius": 5,
+      "flex": 1,
+    }
   }
 >
   <View
     style={
       Array [
+        undefined,
         undefined,
         Object {
           "overflow": "hidden",
@@ -1701,18 +1702,16 @@ exports[`Storyshots Card Key point 1`] = `
 exports[`Storyshots Card Tip 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 5,
-        "flex": 1,
-      },
-      undefined,
-    ]
+    Object {
+      "borderRadius": 5,
+      "flex": 1,
+    }
   }
 >
   <View
     style={
       Array [
+        undefined,
         undefined,
         Object {
           "overflow": "hidden",

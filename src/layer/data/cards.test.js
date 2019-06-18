@@ -1,6 +1,7 @@
 // @flow
 
 import AsyncStorage from '@react-native-community/async-storage';
+import {fakeError} from '../../utils/tests';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import {
@@ -10,8 +11,8 @@ import {
   createCardLevel,
   createChapterCard
 } from '../../__fixtures__/cards';
-
 import createCompletion from '../../__fixtures__/completion';
+import {createSections} from '../../__fixtures__/sections';
 import {
   cardsToKeys,
   updateDisciplineCardDependingOnCompletion,
@@ -19,9 +20,10 @@ import {
   refreshCard
 } from './cards';
 
-const HOST = 'https://host.coorpacademy.com';
-const TOKEN = '__TOKEN__';
-const LANGUAGE = 'en';
+const host = 'https://host.coorpacademy.com';
+const token = '__token__';
+const section = createSections()[0];
+const language = 'en';
 
 const disciplinesCards = createDisciplinesCards(
   Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
@@ -55,13 +57,16 @@ describe('cards', () => {
         __E2E__: true
       }));
       const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
-      const expected = cards;
+      const result = fetchCards(token, host, section, 1, 3, language);
+      const expected = {
+        cards: cards.slice(1, 4),
+        total: cards.length
+      };
 
       return expect(result).resolves.toEqual(expected);
     });
 
-    it('should fetch favorites and recommendations to populate dashboard cards', async () => {
+    it('should fetch cards', async () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
@@ -70,167 +75,32 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          `${HOST}/api/v2/contents?contentType=course&limit=5&playlist=favorites&withoutAdaptive=true&lang=en`
+          `${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en&withoutAdaptive=true`
         );
 
-        expect(options).toHaveProperty('headers.authorization', TOKEN);
+        expect(options).toHaveProperty('headers.authorization', token);
 
         return Promise.resolve({
           json: () =>
             Promise.resolve({
+              search_meta: {
+                total: cards.length
+              },
               hits: cards.slice(0, 2)
             })
         });
       });
-      fetch.mockImplementationOnce((url, options) => {
-        expect(url).toBe(
-          `${HOST}/api/v2/recommendations?contentType=course&limit=5&withoutAdaptive=true&lang=en`
-        );
-
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: cards.slice(2, 7)
-            })
-        });
-      });
-
-      fetch.mockImplementationOnce((url, options) => {
-        expect(url).toBe(
-          `${HOST}/api/v2/most-popular?contentType=course&limit=5&withoutAdaptive=true&lang=en`
-        );
-
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: cards.slice(0, 1)
-            })
-        });
-      });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
+      const result = fetchCards(token, host, section, 0, 2, language);
+      const expected = {
+        cards: cards.slice(0, 2),
+        total: cards.length
+      };
 
-      const expected = cards.slice(0, 5);
       await expect(result).resolves.toEqual(expected);
     });
 
-    it('should fetch only favorites', async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
-      jest.mock('cross-fetch');
-      const fetch = require('cross-fetch');
-
-      const favorites = cards.slice(0, 5);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: favorites
-            })
-        });
-      });
-      const recommendations = cards.slice(5, 10);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: recommendations
-            })
-        });
-      });
-
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
-
-      const expected = favorites;
-      await expect(result).resolves.toEqual(expected);
-    });
-
-    it('should return unique cards', async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
-      jest.mock('cross-fetch');
-      const fetch = require('cross-fetch');
-
-      const favorites = cards.slice(0, 3);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: favorites
-            })
-        });
-      });
-      const recommendations = cards.slice(1, 5);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: recommendations
-            })
-        });
-      });
-
-      const mostPopular = cards.slice(2, 5);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: mostPopular
-            })
-        });
-      });
-
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
-
-      const expected = cards.slice(0, 5);
-      await expect(result).resolves.toEqual(expected);
-    });
-
-    it('should fetch recommendations to fill', async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
-      jest.mock('cross-fetch');
-      const fetch = require('cross-fetch');
-
-      const favorites = [];
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: favorites
-            })
-        });
-      });
-      const recommendations = cards.slice(0, 5);
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: recommendations
-            })
-        });
-      });
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              hits: []
-            })
-        });
-      });
-
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
-
-      const expected = recommendations;
-      await expect(result).resolves.toEqual(expected);
-    });
     it('should reject error', async () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
@@ -238,11 +108,10 @@ describe('cards', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
-      fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
+      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
+      const result = fetchCards(token, host, section, 0, 3, language);
 
       await expect(result).rejects.toThrow();
     });
@@ -256,25 +125,23 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
-          json: () => Promise.resolve({})
-        });
-      });
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () => Promise.resolve({})
-        });
-      });
-
-      fetch.mockImplementationOnce((url, options) => {
-        return Promise.resolve({
-          json: () => Promise.resolve({})
+          json: () =>
+            Promise.resolve({
+              search_meta: {
+                total: 0
+              },
+              hits: []
+            })
         });
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(TOKEN, HOST, LANGUAGE);
+      const result = fetchCards(token, host, section, 0, 3, language);
 
-      const expected = [];
+      const expected = {
+        cards: [],
+        total: 0
+      };
       await expect(result).resolves.toEqual(expected);
     });
 

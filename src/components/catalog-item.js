@@ -7,6 +7,7 @@ import type {Progression, CardDisplayMode, AuthorType, Engine} from '../types';
 import {CARD_DISPLAY_MODE, ENGINE} from '../const';
 import theme from '../modules/theme';
 import type {Chapter, Discipline} from '../layer/data/_types';
+
 import CatalogItemFooter from './catalog-item-footer';
 import Badge from './catalog-item-badge';
 import ImageGradient from './image-gradient';
@@ -18,37 +19,41 @@ export type Item = Discipline | Chapter;
 type CourseInfo = {|
   title: string,
   subtitle: string,
+  isAdaptive: boolean,
   progression?: Progression,
   image: File | {uri: string},
   badge?: string,
   authorType?: AuthorType,
   authorName?: string,
-  isAdaptive: boolean,
   isCertified?: boolean
 |};
 
 type AnalyticsParams = {|
   universalRef: string,
   type: Engine,
-  section: 'finishLearning' | 'forYou' | 'recommendation'
+  section: string
 |};
 
 type Props = $Exact<{|
   ...CourseInfo,
   ...AnalyticsParams,
-  onPress: (item: Item) => void,
+  onPress: () => void,
   displayMode?: CardDisplayMode,
   testID: string
 |}>;
 
 const {height: screenHeight} = Dimensions.get('window');
 
+export const HEIGHT = 205;
+export const WIDTH = 168;
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.white
   },
   image: {
-    minHeight: 205,
+    height: HEIGHT,
+    width: WIDTH,
     padding: theme.spacing.small
   },
   title: {
@@ -91,6 +96,9 @@ const styles = StyleSheet.create({
   badgeLabelCover: {
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.small
+  },
+  touchableHighlight: {
+    flex: 1
   }
 });
 
@@ -121,12 +129,13 @@ const CatalogItem = ({
       testID={testID}
       onPress={onPress}
       isHighlight
+      style={styles.touchableHighlight}
       analyticsID="card"
       analyticsParams={{ref: universalRef, type, section}}
     >
       <View style={styles.container}>
         <ImageGradient
-          testID={testID}
+          testID={`${testID}-image`}
           image={image}
           style={mode === CARD_DISPLAY_MODE.CARD ? styles.image : styles.imageCover}
         >
@@ -137,10 +146,9 @@ const CatalogItem = ({
               labelStyle={
                 mode === CARD_DISPLAY_MODE.CARD ? styles.badgeLabel : styles.badgeLabelCover
               }
-              testID={`badge-${testID}`}
+              testID={`${testID}-badge`}
             />
           )}
-
           <CatalogItemFooter
             isCourse={isCourse}
             title={title}

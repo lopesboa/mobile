@@ -28,13 +28,67 @@ export const getQuestionTab = (el: DetoxElement) => el(by.id('slide-tab')).atInd
 export const getLessonTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(1);
 export const getClueTab = (el: DetoxElement) => el(by.id('slide-tab')).atIndex(0);
 
-export const bypassAuthentication = async (el: DetoxElement) => {
-  await el(by.id('button-sign-in-desktop')).tap();
-  await el(by.id('authentication-details-qr-code-button')).tap();
-  await waitFor(el(by.id('qr-code-scanner'))).toExist();
-  await weExpect(el(by.id('qr-code-scanner'))).toExist();
-  await el(by.id('qr-code-screen')).longPress();
-  await waitFor(el(by.id('home'))).toExist();
+export const waitForExist = async (testID: string, useText: boolean = false) => {
+  const getter = useText ? by.text : by.id;
+  const el = element(getter(testID));
+
+  // eslint-disable-next-line no-undef
+  await waitFor(el)
+    .toExist()
+    .withTimeout(3000);
+  await weExpect(el).toExist();
+};
+
+export const waitForVisible = async (testID: string) => {
+  const el = element(by.id(testID));
+  // eslint-disable-next-line no-undef
+  await waitFor(el)
+    .toBeVisible()
+    .withTimeout(3000);
+  await weExpect(el).toBeVisible();
+};
+
+export const waitForNotVisible = async (testID: string) => {
+  const el = element(by.id(testID));
+  // eslint-disable-next-line no-undef
+  await waitFor(el)
+    .toBeNotVisible()
+    .withTimeout(10000);
+  await weExpect(el).toBeNotVisible();
+};
+
+export const tap = async (testID: string) => {
+  await waitForExist(testID);
+  await element(by.id(testID)).tap();
+};
+
+// export const wait = (time: number) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, time);
+//   });
+// };
+
+export const tapCardOnSection = async (testID: string, num: number) => {
+  const offsetX = 184 * (num - 1) + 1; // Scroll amount must be positive and greater than zero
+  await waitForExist(testID);
+  await element(by.id(testID)).scrollTo('left');
+  await element(by.id(testID)).scroll(offsetX, 'right');
+  await element(by.id(testID)).tapAtPoint({x: 100 + offsetX, y: 100});
+};
+
+export const longPress = async (testID: string) => {
+  await waitForVisible(testID);
+  await element(by.id(testID)).longPress();
+};
+
+export const bypassAuthentication = async () => {
+  await tap('button-sign-in-desktop');
+  await tap('authentication-details-qr-code-button');
+  await waitForExist('qr-code-scanner');
+  await longPress('qr-code-screen');
+  await waitForExist('home');
 };
 
 export default {

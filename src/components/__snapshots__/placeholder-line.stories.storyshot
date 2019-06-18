@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots PlaceholderLine Custom color 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#000000",
+          },
+        ],
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots PlaceholderLine Custom width 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "30%",
+        },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots PlaceholderLine Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots PlaceholderLine Small 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 5,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots PlaceholderLine Tiny 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 2,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
+      ]
+    }
+  />
+</View>
+`;

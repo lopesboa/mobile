@@ -1,13 +1,12 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
 
 const wrongAnswer = async (el: DetoxElement, {clickOnNext = true}: {clickOnNext: boolean}) => {
   await el(by.id('question-screen')).swipe('up');
   await el(by.id('question-choice-1')).tap();
   await el(by.id('button-validate')).tap();
-  await waitFor(el(by.id('correction-error'))).toBeVisible();
-  await weExpect(el(by.id('correction-error'))).toBeVisible();
+  await waitForExist('correction-error');
 
   if (clickOnNext) {
     await el(by.id('button-next-question')).tap();
@@ -17,10 +16,10 @@ const wrongAnswer = async (el: DetoxElement, {clickOnNext = true}: {clickOnNext:
 describe('Correction: extra-life', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
-    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-basic-dis-1')).tap();
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await bypassAuthentication();
+    await waitForExist('catalog-section-recommended-item-basic-dis-1');
+    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await waitForExist('question');
   });
 
   it('3 wrong answers', async () => {

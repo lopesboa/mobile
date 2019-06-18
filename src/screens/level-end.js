@@ -7,7 +7,7 @@ import {NavigationActions, NavigationEvents} from 'react-navigation';
 import type {ContentType} from '@coorpacademy/progression-engine';
 import {getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
 import get from 'lodash/fp/get';
-import {selectCard} from '../redux/actions/cards';
+import {selectCard} from '../redux/actions/catalog/cards';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Screen from '../components/screen';
@@ -142,7 +142,7 @@ export const mapStateToProps = (state: StoreState, {navigation}: Props): Connect
   // $FlowFixMe
   const nextContent: DisciplineCard | ChapterCard | void = getNextContent(state);
   const currentContent: DisciplineCard | ChapterCard | void =
-    currentContentInfo && getCurrentContent(state.cards, currentContentInfo, language);
+    currentContentInfo && getCurrentContent(state.catalog, currentContentInfo, language);
 
   const unlockedLevelInfo =
     currentContentInfo && currentContent && didUnlockLevel(currentContentInfo, currentContent);
@@ -156,8 +156,8 @@ export const mapStateToProps = (state: StoreState, {navigation}: Props): Connect
     bestScore,
     unlockedLevelInfo,
     hasFinishedCourse,
-    recommendation: Object.keys(state.cards.entities)
-      .map(key => state.cards.entities[key][language])
+    recommendation: Object.keys(state.catalog.entities.cards)
+      .map(key => state.catalog.entities.cards[key][language])
       .filter(item => item !== undefined)
       .filter(item => item !== currentContent)
       .sort(compareCards)[0]

@@ -59,6 +59,27 @@ export type Progression = {|
   count: number
 |};
 
+export type SectionType = 'cards' | 'news' | 'battle';
+export type SectionContentType = 'course' | 'chapter' | 'all';
+
+export type Section = {|
+  type: SectionType,
+  order: number,
+  key: string,
+  title: string,
+  endpoint: string,
+  query: {
+    contentType?: SectionContentType,
+    goal?: string,
+    playlist?: string,
+    skill?: string,
+    sort?: string,
+    theme?: string,
+    type?: SectionContentType
+  },
+  cardsRef?: Array<string | void>
+|};
+
 export type Brand = {|
   name: string,
   host: string,

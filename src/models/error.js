@@ -12,3 +12,15 @@ export class ForbiddenError extends Error {
     }
   }
 }
+export class NoContentFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+
+    this.name = 'NoContentFoundError';
+    this.description = 'Error encountered fetching an API having a response with 404 status code.';
+
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, NoContentFoundError);
+    }
+  }
+}

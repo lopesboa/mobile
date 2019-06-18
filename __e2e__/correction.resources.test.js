@@ -1,22 +1,27 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  tapCardOnSection,
+  waitForExist,
+  waitForNotVisible
+} from './utils';
 
 describe('Correction: resources', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
-    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-basic-dis-1')).tap();
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await bypassAuthentication();
+    await waitForExist('catalog-section-recommended-item-basic-dis-1');
+    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await waitForExist('question');
   });
 
   it('should be able to see ressource (pdf & video) in correction', async () => {
     await element(by.id('question-screen')).swipe('up');
     await element(by.id('question-choice-1')).tap();
     await element(by.id('button-validate')).tap();
-    await waitFor(element(by.id('correction-error'))).toBeVisible();
-    await weExpect(element(by.id('correction-error'))).toBeVisible();
+    await waitForExist('correction-error');
     await element(by.id('card-correction')).swipe('up');
     await weExpect(element(by.id('card-correction'))).toBeNotVisible();
     await weExpect(element(by.id('card-resource-les_1'))).toBeVisible();
@@ -28,15 +33,13 @@ describe('Correction: resources', () => {
   });
 
   it('should see lesson preview, lesson description when video', async () => {
-    await waitFor(element(by.id('preview-video-resource-les_1'))).toBeVisible();
-    await weExpect(element(by.id('preview-video-resource-les_1'))).toBeVisible();
+    await waitForExist('preview-video-resource-les_1');
     await weExpect(element(by.id('resource-description-les_1'))).toBeVisible();
   });
 
   it('should start the video', async () => {
     await element(by.id('preview-video-resource-les_1')).tap();
-    await waitFor(element(by.id('video-container-resource-les_1'))).toBeVisible();
-    await weExpect(element(by.id('video-container-resource-les_1'))).toBeVisible();
+    await waitForExist('video-container-resource-les_1');
   });
 
   it('should pause the video', async () => {
@@ -63,15 +66,13 @@ describe('Correction: resources', () => {
     await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
     await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
     await element(by.id('button-open-pdf')).tap();
-    await waitFor(element(by.id('pdf-screen'))).toBeVisible();
-    await weExpect(element(by.id('pdf-screen'))).toBeVisible();
+    await waitForExist('pdf-screen');
   });
 
   it('should close the pdf', async () => {
     await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
     await element(by.id('pdf-button-close')).tap();
-    await waitFor(element(by.id('pdf-screen'))).toBeNotVisible();
-    await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
+    await waitForNotVisible('pdf-screen');
     await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
   });
   afterAll(async () => {

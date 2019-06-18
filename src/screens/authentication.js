@@ -77,8 +77,8 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   handleSignOut = () => this.props.navigation.popToTop();
 
   handleSignIn = async (authenticationType: AuthenticationType, token?: string) => {
-    await this.props.signIn(authenticationType, token);
     await this.props.navigation.navigate('Home');
+    await this.props.signIn(authenticationType, token);
   };
 
   handleDemoPress = () => {

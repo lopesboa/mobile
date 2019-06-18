@@ -53,25 +53,28 @@ describe('Utils', () => {
       status: 'isActive',
       title: 'Chapter'
     });
-    const cards = {
+    const catalog = {
       entities: {
-        dis1: {
-          en: dis1
+        cards: {
+          dis1: {
+            en: dis1
+          },
+          dis2: {
+            fr: dis2
+          },
+          cha1: {
+            es: chapter1
+          },
+          cha2: {
+            pt: chapter2
+          }
         },
-        dis2: {
-          fr: dis2
-        },
-        cha1: {
-          es: chapter1
-        },
-        cha2: {
-          pt: chapter2
-        }
+        sections: {}
       }
     };
 
-    const currentDiscipline = getCurrentContent(cards, {type: 'level', ref: 'mod_2'}, 'en');
-    const currentChapter = getCurrentContent(cards, {type: 'chapter', ref: 'cha2'}, 'pt');
+    const currentDiscipline = getCurrentContent(catalog, {type: 'level', ref: 'mod_2'}, 'en');
+    const currentChapter = getCurrentContent(catalog, {type: 'chapter', ref: 'cha2'}, 'pt');
     // $FlowFixMe
     expect('dis1').toEqual(currentDiscipline.universalRef);
     // $FlowFixMe

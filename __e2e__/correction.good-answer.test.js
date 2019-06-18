@@ -1,29 +1,21 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
 
 describe('Correction: good answer', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
-    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-basic-dis-1')).tap();
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await bypassAuthentication();
+    await waitForExist('catalog-section-recommended-item-basic-dis-1');
+    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await waitForExist('question');
   });
 
-  it('answer successfully', async () => {
+  it('answer successfully and see correction', async () => {
     await element(by.id('question-screen')).swipe('up');
     await element(by.id('question-choice-2')).tap();
     await element(by.id('button-validate')).tap();
+    await waitForExist('correction-success');
     await element(by.id('button-next-question')).tap();
-  });
-
-  it('answer successfully the last question and see correction', async () => {
-    await waitFor(element(by.id('question'))).toBeVisible();
-    await element(by.id('question-screen')).swipe('up');
-    await element(by.id('question-choice-2')).tap();
-    await element(by.id('button-validate')).tap();
-    await waitFor(element(by.id('correction-error'))).toBeVisible();
-    await weExpect(element(by.id('button-next-question'))).toBeVisible();
   });
 });

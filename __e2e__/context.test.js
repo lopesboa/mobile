@@ -1,22 +1,21 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tap, tapCardOnSection, waitForExist} from './utils';
 
 describe('Context', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   describe('With image', () => {
     beforeAll(async () => {
       await reloadApp();
-      await waitFor(element(by.id('catalog-item-with-image-context-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-with-image-context-dis-1')).tap();
+      await tapCardOnSection('catalog-section-recommended-items', 3);
     });
 
     it('should see elements', async () => {
-      await waitFor(element(by.id('context-screen'))).toBeVisible();
+      await waitForExist('context-screen');
       await weExpect(element(by.id('context'))).toBeVisible();
       await weExpect(element(by.id('img-resource'))).toBeVisible();
       await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
@@ -36,20 +35,18 @@ describe('Context', () => {
   describe('With video', () => {
     beforeAll(async () => {
       await reloadApp();
-      await waitFor(element(by.id('catalog-item-with-video-context-dis-2'))).toBeVisible();
-      await element(by.id('catalog-item-with-video-context-dis-2')).tap();
+      await tapCardOnSection('catalog-section-recommended-items', 4);
     });
 
     it('should see elements', async () => {
-      await waitFor(element(by.id('context-screen'))).toBeVisible();
+      await waitForExist('context-screen');
       await weExpect(element(by.id('context'))).toBeVisible();
-      await waitFor(element(by.id('preview-video-video-resource'))).toBeVisible();
-      await weExpect(element(by.id('preview-video-video-resource'))).toBeVisible();
+      await waitForExist('preview-video-video-resource');
     });
 
     it('should go to the question', async () => {
-      await element(by.id('button-redirect-question')).tap();
-      await weExpect(element(by.id('question-screen'))).toBeVisible();
+      await tap('button-redirect-question');
+      await waitForExist('question-screen');
     });
 
     afterAll(async () => {
@@ -59,9 +56,7 @@ describe('Context', () => {
 
   describe('Without', () => {
     beforeAll(async () => {
-      await element(by.id('home-screen')).swipe('down');
-      await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-basic-dis-1')).tap();
+      await tapCardOnSection('catalog-section-recommended-items', 2);
     });
 
     it('should not see elements', async () => {

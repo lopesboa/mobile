@@ -13,10 +13,10 @@ import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import {CARD_TYPE} from '../layer/data/_const';
+import {getAuthorName, getAuthorType} from '../utils/content';
 import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
 import Card, {LAYOUT as CARD_LAYOUT} from './card';
-import {getAuthorType, getAuthorName} from './catalog';
 import CatalogItem from './catalog-item';
 import Starburst from './starburst';
 import HeartBroken from './heart-broken';
@@ -240,6 +240,7 @@ class LevelEnd extends React.PureComponent<Props> {
                       )}
                     </View>
                   )}
+                  {/* @todo refactor to use CatalogSection there and not reinvent the wheel */}
                   {recommendation && (
                     <View style={styles.recommendation}>
                       <Text style={styles.title}>{translations.relatedSubjects}</Text>

@@ -24,6 +24,7 @@ describe('Data layer', () => {
       fetchBrand: expect.any(Function),
       findBestOf: expect.any(Function),
       findLast: expect.any(Function),
+      fetchSections: expect.any(Function),
       refreshCard: expect.any(Function),
       getCardFromLocalStorage: expect.any(Function),
       getChapterRulesByContent: expect.any(Function),

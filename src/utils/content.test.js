@@ -2,7 +2,8 @@
 
 import {createDisciplineCard, createCardLevel, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
-import {compareCards, pickNextLevel} from './content';
+import {AUTHOR_TYPE} from '../const';
+import {compareCards, pickNextLevel, getAuthorName, getAuthorType} from './content';
 
 describe('ContentUtils', () => {
   describe('pickNextModule', () => {
@@ -197,5 +198,39 @@ describe('ContentUtils', () => {
       finishedChapter,
       finishedDiscipline
     ]);
+  });
+
+  describe('getAuthorName', () => {
+    const disciplineCard = createDisciplineCard({
+      title: 'dis_1',
+      ref: 'dis_1',
+      completion: 0,
+      levels: [],
+      name: 'dis_1'
+    });
+
+    it('should return the author name', () => {
+      const result = getAuthorName(disciplineCard);
+      const expected = 'A good guy with blue eyes';
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getAuthorType', () => {
+    const disciplineCard = createDisciplineCard({
+      title: 'dis_1',
+      ref: 'dis_1',
+      completion: 0,
+      levels: [],
+      name: 'dis_1'
+    });
+
+    it('should return the author type', () => {
+      const result = getAuthorType(disciplineCard);
+      const expected = AUTHOR_TYPE.VERIFIED;
+
+      expect(result).toEqual(expected);
+    });
   });
 });

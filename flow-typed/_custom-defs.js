@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {SyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
+import type {SyntheticEvent, LayoutEvent as _LayoutEvent, ScrollEvent as _ScrollEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 import type {
   NavigationScreenConfig,
   NavigationScreenProp,
@@ -34,6 +34,7 @@ declare type FontWeight = $NonMaybeType<$PropertyType<TextStyleProp, 'fontWeight
 declare type FontSize = $NonMaybeType<$PropertyType<TextStyleProp, 'fontSize'>>;
 declare type LayoutEvent = SyntheticEvent<LayoutEvent>;
 declare type HitSlop = EdgeInsetsProp;
+declare type ScrollEvent = _ScrollEvent;
 
 // React navigation props, easier to use
 

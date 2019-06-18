@@ -1109,7 +1109,11 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-dis-2"
                 >
                   <View
@@ -1154,7 +1158,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-dis-2"
+                        testID="background-image-recommend-item-dis-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -1185,14 +1189,15 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-dis-2"
+                        testID="gradient-recommend-item-dis-2-image"
                       >
                         <View
                           style={
@@ -1236,7 +1241,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                   ],
                                 ]
                               }
-                              testID="badge-recommend-item-dis-2"
+                              testID="recommend-item-dis-2-badge"
                             >
                               New
                             </Text>
@@ -2610,7 +2615,11 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-dis-2"
                 >
                   <View
@@ -2655,7 +2664,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-dis-2"
+                        testID="background-image-recommend-item-dis-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -2686,14 +2695,15 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-dis-2"
+                        testID="gradient-recommend-item-dis-2-image"
                       >
                         <View
                           style={
@@ -2737,7 +2747,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                   ],
                                 ]
                               }
-                              testID="badge-recommend-item-dis-2"
+                              testID="recommend-item-dis-2-badge"
                             >
                               New
                             </Text>
@@ -4978,7 +4988,11 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-cha-2"
                 >
                   <View
@@ -5023,7 +5037,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2"
+                        testID="background-image-recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -5054,14 +5068,15 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2"
+                        testID="gradient-recommend-item-cha-2-image"
                       >
                         <View
                           style={
@@ -7417,7 +7432,11 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-cha-2"
                 >
                   <View
@@ -7462,7 +7481,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2"
+                        testID="background-image-recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -7493,14 +7512,15 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2"
+                        testID="gradient-recommend-item-cha-2-image"
                       >
                         <View
                           style={
@@ -10121,7 +10141,11 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-cha-2"
                 >
                   <View
@@ -10166,7 +10190,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2"
+                        testID="background-image-recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -10197,14 +10221,15 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2"
+                        testID="gradient-recommend-item-cha-2-image"
                       >
                         <View
                           style={
@@ -12571,7 +12596,11 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  style={null}
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
                   testID="recommend-item-cha-2"
                 >
                   <View
@@ -12616,7 +12645,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2"
+                        testID="background-image-recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -12647,14 +12676,15 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "minHeight": 205,
+                                "height": 205,
                                 "padding": 16,
+                                "width": 168,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2"
+                        testID="gradient-recommend-item-cha-2-image"
                       >
                         <View
                           style={

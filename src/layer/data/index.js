@@ -14,7 +14,7 @@ import {
 import {find as findContent} from './content';
 import {findById as findChapterById} from './chapters';
 import {getExitNode} from './exit-nodes';
-import {fetchBundle, storeBundle} from './core';
+import {fetchBundle, storeBundle} from './bundle';
 import {fetchCards, refreshCard, getCardFromLocalStorage} from './cards';
 import {fetchBrand} from './brand';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
@@ -24,6 +24,7 @@ import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
 import type {DisciplineCard} from './_types';
+import {fetchSections} from './sections';
 
 export type DataLayer = {
   ...DataLayerBase,
@@ -31,6 +32,7 @@ export type DataLayer = {
   storeBundle: typeof storeBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
+  fetchSections: typeof fetchSections,
   refreshCard: typeof refreshCard,
   getCardFromLocalStorage: typeof getCardFromLocalStorage,
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
@@ -61,6 +63,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   // $FlowFixMe
   findBestOf: findBestOf(userLanguage),
   findLast: findLastProgression,
+  fetchSections,
   refreshCard,
   getCardFromLocalStorage,
   // @todo implement it

@@ -1,17 +1,16 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
 
 describe('Microlearning', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   it('should open chapter', async () => {
     await element(by.id('home-screen')).swipe('up');
-    await waitFor(element(by.id('catalog-item-microlearning-basic-cha-1'))).toBeVisible();
-    await element(by.id('catalog-item-microlearning-basic-cha-1')).tap();
+    await tapCardOnSection('catalog-section-recommended-items', 10);
   });
 
   it('should see 1 life', async () => {
@@ -19,7 +18,7 @@ describe('Microlearning', () => {
   });
 
   it('should see QCM elements', async () => {
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await waitForExist('question');
     await weExpect(element(by.id('question-title'))).toBeVisible();
   });
 
@@ -28,9 +27,5 @@ describe('Microlearning', () => {
     await weExpect(element(by.id('question-choice-1-selected'))).toBeVisible();
     await element(by.id('question-screen')).swipe('up');
     await weExpect(element(by.id('button-validate'))).toBeVisible();
-  });
-
-  afterAll(async () => {
-    await element(by.id('header-back')).tap();
   });
 });

@@ -12,6 +12,18 @@ import type {
   CardAuthor
 } from '../layer/data/_types';
 import {CARD_STATUS} from '../layer/data/_const';
+import type {AuthorType} from '../types';
+import {AUTHOR_TYPE} from '../const';
+
+export const createCardAuthor = ({
+  authorType = AUTHOR_TYPE.VERIFIED
+}: {
+  authorType?: AuthorType
+}): CardAuthor => ({
+  ref: 'part_VyFl5hZ3V',
+  label: 'A good guy with blue eyes',
+  authorType
+});
 
 export const createCardLevel = ({
   ref,
@@ -59,13 +71,7 @@ export const createDisciplineCard = ({
   isFavorite = false,
   stars = 0,
   nbChapters = 8,
-  authors = [
-    {
-      ref: 'part_VyFl5hZ3V',
-      label: 'A good guy with blue eyes',
-      authorType: 'verified'
-    }
-  ]
+  authors = [createCardAuthor({})]
 }: {
   ref: string,
   completion: number,
@@ -102,7 +108,7 @@ export const createDisciplineCard = ({
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
-  authors: authors,
+  authors,
   authorsListHidden: 'A good guy',
   type: 'course',
   title,
@@ -139,13 +145,7 @@ export const createChapterCard = ({
   isDone = false,
   status,
   stars = 0,
-  authors = [
-    {
-      ref: 'part_VyFl5hZ3V',
-      label: 'A good guy',
-      authorType: 'verified'
-    }
-  ]
+  authors = [createCardAuthor({})]
 }: {
   ref: string,
   completion: number,
@@ -183,7 +183,7 @@ export const createChapterCard = ({
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
-  authors: authors,
+  authors,
   authorsListHidden: 'A good guy',
   type: 'chapter',
   title,

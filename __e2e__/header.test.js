@@ -1,16 +1,22 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  tapCardOnSection,
+  waitForExist,
+  waitForVisible
+} from './utils';
 
 describe('Header', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-basic-dis-1')).tap();
+    await waitForExist('catalog-section-recommended-item-basic-dis-1');
+    await tapCardOnSection('catalog-section-recommended-items', 2);
   });
 
   it('should see the header elements', async () => {
@@ -21,7 +27,6 @@ describe('Header', () => {
 
   it('should back to home', async () => {
     await element(by.id('header-back')).tap();
-    await waitFor(element(by.id('home-screen'))).toBeVisible();
-    await weExpect(element(by.id('home-screen'))).toBeVisible();
+    await waitForVisible('home-screen');
   });
 });

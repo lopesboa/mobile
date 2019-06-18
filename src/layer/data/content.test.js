@@ -13,6 +13,9 @@ jest.mock('./core', () => {
       return Promise.reject(utils.fakeError);
     },
     getItem: (type, language, ref) => {
+      if (ref === 'void_ref') {
+        return Promise.resolve(undefined);
+      }
       if (type === 'ref_exception') {
         return Promise.reject(utils.fakeError);
       }
@@ -64,6 +67,12 @@ describe('content', () => {
       // $FlowFixMe this is only to test
       const result = find('en')(CONTENT_TYPE.SLIDE, 'ref_exception');
       expect(result).rejects.toThrow(fakeError);
+    });
+
+    it('should return undefined', async () => {
+      // $FlowFixMe this is only to test
+      const result = await find('en')(CONTENT_TYPE.SLIDE, 'void_ref');
+      expect(result).not.toBeDefined();
     });
   });
 });

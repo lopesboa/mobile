@@ -12,7 +12,6 @@ type Props = {|
 const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
-    backgroundColor: '#222',
     height: '100%',
     width: '100%',
     borderTopLeftRadius: 300,

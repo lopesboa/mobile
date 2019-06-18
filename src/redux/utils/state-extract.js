@@ -15,23 +15,11 @@ import type {Slide} from '@coorpacademy/progression-engine';
 import type {Lives} from '@coorpacademy/player-store';
 
 import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
+import type {Section} from '../../types';
 import type {StoreState} from '../store';
-import type {SupportedLanguage} from '../../translations/_types';
-import type {OfflineContents, OfflineStatus} from '../reducers/bundle';
 import type {State as PermissionsState} from '../reducers/permissions';
 import type {PermissionType} from '../actions/permissions';
-
-export const isContentReady = (language: SupportedLanguage, status: OfflineStatus): boolean =>
-  status.ready.includes(language);
-
-export const getContents = (
-  language: SupportedLanguage,
-  contents: OfflineContents
-): Array<string> =>
-  Object.keys(contents).filter(ref => {
-    const status: OfflineStatus = contents[ref];
-    return status.pending.concat(status.ready).includes(language);
-  });
+import translations from '../../translations';
 
 export const checkIsExitNode = (state: StoreState): boolean => {
   const nextContent = getStepContent(state);
@@ -124,3 +112,7 @@ export const getBestScore = (state: StoreState): string | void => {
   // $FlowFixMe
   if (stars) return stars > bestScore ? `${stars - bestScore}` : '0';
 };
+
+export const getSection = (state: StoreState, key: string): Section | void =>
+  state.catalog.entities.sections[key] &&
+  state.catalog.entities.sections[key][translations.getLanguage()];

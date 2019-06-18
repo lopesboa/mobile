@@ -7,12 +7,16 @@ import {TestContextProvider, handleFakePress} from '../utils/tests';
 import version from '../modules/version';
 import Home from './home';
 
-storiesOf('Home', module).add('Default', () => {
-  version.commit = 'test';
+version.commit = 'test';
 
-  return (
+storiesOf('Home', module)
+  .add('Default', () => (
     <TestContextProvider>
-      <Home onCardPress={handleFakePress} onLogoLongPress={handleFakePress} />
+      <Home onCardPress={handleFakePress} onLogoLongPress={handleFakePress} isFetching={false} />
     </TestContextProvider>
-  );
-});
+  ))
+  .add('Fetching', () => (
+    <TestContextProvider>
+      <Home onCardPress={handleFakePress} onLogoLongPress={handleFakePress} isFetching />
+    </TestContextProvider>
+  ));

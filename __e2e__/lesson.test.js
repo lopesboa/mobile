@@ -1,22 +1,25 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, getLessonTab} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  getLessonTab,
+  tapCardOnSection,
+  waitForExist,
+  waitForVisible,
+  waitForNotVisible
+} from './utils';
 
 describe('Lesson', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   describe('More than 1 resource', () => {
     it('should see catalog and choose a discipline', async () => {
-      await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-basic-dis-1')).tap();
-    });
-
-    it('should see lesson tab', async () => {
-      await waitFor(getLessonTab(element)).toBeVisible();
-      await weExpect(getLessonTab(element)).toBeVisible();
+      await waitForExist('catalog-section-recommended-item-basic-dis-1');
+      await tapCardOnSection('catalog-section-recommended-items', 2);
     });
 
     it('should see lesson tab icon with notification', async () => {
@@ -25,8 +28,7 @@ describe('Lesson', () => {
 
     it('should be redirected to lesson tab', async () => {
       await getLessonTab(element).tap();
-      await waitFor(element(by.id('lesson-screen'))).toBeVisible();
-      await weExpect(element(by.id('lesson-screen'))).toBeVisible();
+      await waitForVisible('lesson-screen');
     });
 
     it('should see resources browser', async () => {
@@ -53,11 +55,7 @@ describe('Lesson', () => {
 
       it('should start the video', async () => {
         await element(by.id('preview-video-lesson-resource')).tap();
-        await waitFor(element(by.id('video-container-lesson-resource'))).toBeVisible();
-        await weExpect(
-          element(by.id('video-container-container-lesson-resource'))
-        ).toBeNotVisible();
-        await weExpect(element(by.id('video-container-lesson-resource'))).toBeVisible();
+        await waitForVisible('video-container-lesson-resource');
         await weExpect(element(by.id('video-lesson-resource'))).toBeVisible();
         await weExpect(element(by.id('video-pause'))).toBeVisible();
         await weExpect(element(by.id('video-play'))).toBeNotVisible();
@@ -89,8 +87,7 @@ describe('Lesson', () => {
 
       it('should fast forward the video', async () => {
         await element(by.id('video-seekbar-pin')).swipe('right');
-        await waitFor(element(by.id('video-replay-lesson-resource'))).toBeVisible();
-        await weExpect(element(by.id('video-replay-lesson-resource'))).toBeVisible();
+        await waitForVisible('video-replay-lesson-resource');
       });
 
       it('should replay the video', async () => {
@@ -145,15 +142,13 @@ describe('Lesson', () => {
 
       it('should open the pdf', async () => {
         await element(by.id('button-open-pdf')).tap();
-        await waitFor(element(by.id('pdf-screen'))).toBeVisible();
-        await weExpect(element(by.id('pdf-screen'))).toBeVisible();
+        await waitForVisible('pdf-screen');
       });
 
       it('should close the pdf', async () => {
         await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
         await element(by.id('pdf-button-close')).tap();
-        await waitFor(element(by.id('pdf-screen'))).toBeNotVisible();
-        await weExpect(element(by.id('pdf-screen'))).toBeNotVisible();
+        await waitForNotVisible('pdf-screen');
         await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
       });
     });
@@ -166,23 +161,17 @@ describe('Lesson', () => {
   describe('1 resource only', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await waitFor(element(by.id('catalog-item-adaptive-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-adaptive-dis-1')).tap();
+      await tapCardOnSection('catalog-section-recommended-items', 1);
       await getLessonTab(element).tap();
-    });
-
-    it('should see lesson tab', async () => {
-      await waitFor(getLessonTab(element)).toBeVisible();
-      await weExpect(getLessonTab(element)).toBeVisible();
     });
 
     it('should be redirected to lesson tab', async () => {
       await getLessonTab(element).tap();
-      await waitFor(element(by.id('lesson-screen'))).toBeVisible();
-      await weExpect(element(by.id('lesson-screen'))).toBeVisible();
+      await waitForVisible('lesson-screen');
     });
 
     it('should not see resources browser', async () => {
+      // eslint-disable-next-line no-undef
       await waitFor(element(by.id('resources-browser'))).toNotExist();
     });
   });
@@ -190,13 +179,7 @@ describe('Lesson', () => {
   describe('Without resource', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await waitFor(element(by.id('catalog-item-no-clue-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-no-clue-dis-1')).tap();
-    });
-
-    it('should see lesson tab', async () => {
-      await waitFor(getLessonTab(element)).toBeVisible();
-      await weExpect(getLessonTab(element)).toBeVisible();
+      await tapCardOnSection('catalog-section-recommended-items', 5);
     });
 
     it('should not be redirected to lesson tab', async () => {

@@ -1,10 +1,10 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
 
-const selectAppStoreItem = async (el: DetoxElement) => {
+const selectAppStoreItem = async () => {
   // to simulate tap on picker item
-  await el(by.text('Select an answer'))
+  await element(by.text('Select an answer'))
     .atIndex(0)
     .tapAtPoint({x: 200, y: 80});
 };
@@ -12,17 +12,15 @@ const selectAppStoreItem = async (el: DetoxElement) => {
 describe('Template', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await element(by.id('home-screen')).swipe('up');
-    await waitFor(element(by.id('catalog-item-template-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-template-dis-1')).tap();
+    await tapCardOnSection('catalog-section-recommended-items', 6);
   });
 
   it('should see template elements', async () => {
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await waitForExist('question');
     await weExpect(element(by.id('question-title'))).toBeVisible();
     await weExpect(element(by.id('explanation'))).toBeVisible();
     await weExpect(element(by.id('question-choices'))).toBeVisible();
@@ -42,15 +40,12 @@ describe('Template', () => {
 
   it('should open select picker', async () => {
     await element(by.id('ios_touchable_wrapper')).tap();
-    await waitFor(element(by.id('question-part-4-select'))).toBeVisible();
-    await weExpect(element(by.id('question-part-4-select'))).toBeVisible();
+    await waitForExist('question-part-4-select');
   });
 
   it('should select item in picker', async () => {
-    await selectAppStoreItem(element);
+    await selectAppStoreItem();
     await element(by.id('done_button')).tap();
-    await waitFor(element(by.id('question-part-4-select-selected'))).toBeVisible();
-    await weExpect(element(by.id('question-part-4-select-selected'))).toBeVisible();
   });
 
   it('should be able to validate', async () => {
@@ -63,8 +58,7 @@ describe('Template', () => {
     });
 
     it('should see a negative correction', async () => {
-      await waitFor(element(by.id('correction-error'))).toBeVisible();
-      await weExpect(element(by.id('correction-error'))).toBeVisible();
+      await waitForExist('correction-error');
     });
 
     afterAll(async () => {
@@ -76,14 +70,13 @@ describe('Template', () => {
     beforeAll(async () => {
       await element(by.id('question-part-2-text')).replaceText('Coorpacademy');
       await element(by.id('question-part-4-select')).tap();
-      await selectAppStoreItem(element);
+      await selectAppStoreItem();
       await element(by.id('done_button')).tap();
       await element(by.id('button-validate')).tap();
     });
 
     it('should see a positive correction', async () => {
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
-      await weExpect(element(by.id('correction-success'))).toBeVisible();
+      await waitForExist('correction-success');
     });
   });
 });

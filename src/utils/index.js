@@ -1,5 +1,5 @@
 // @flow strict
-import type {State as CardsState} from '../redux/reducers/cards';
+import type {State as CatalogState} from '../redux/reducers/catalog';
 import type {SupportedLanguage} from '../translations/_types';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../layer/data/_const';
@@ -17,12 +17,12 @@ type Card = DisciplineCard | ChapterCard;
 const values = <K, O>(obj: {[key: K]: O}): Array<O> => Object.keys(obj).map(k => obj[k]);
 
 export const getCurrentContent = (
-  cardsState: CardsState,
+  catalog: CatalogState,
   {ref, type}: ContentInfo,
   language: SupportedLanguage
 ): Card | void => {
-  const cards = values(cardsState.entities).map(
-    (o: $Values<$PropertyType<CardsState, 'entities'>>) => o[language]
+  const cards = values(catalog.entities.cards).map(
+    (o: $Values<$PropertyType<$PropertyType<CatalogState, 'entities'>, 'cards'>>) => o[language]
   );
   switch (type) {
     case RESTRICTED_RESOURCE_TYPE.LEVEL: {

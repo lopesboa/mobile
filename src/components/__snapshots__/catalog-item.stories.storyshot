@@ -10,7 +10,11 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
   testID="catalog1"
 >
   <View
@@ -55,7 +59,7 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
             undefined,
           ]
         }
-        testID="background-image-catalog1"
+        testID="background-image-catalog1-image"
       />
       <BVLinearGradient
         colors={
@@ -94,7 +98,7 @@ exports[`Storyshots Catalog Item Adaptive 1`] = `
             undefined,
           ]
         }
-        testID="gradient-catalog1"
+        testID="gradient-catalog1-image"
       >
         <View
           style={
@@ -357,7 +361,11 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
   testID="catalog3"
 >
   <View
@@ -402,7 +410,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
             undefined,
           ]
         }
-        testID="background-image-catalog3"
+        testID="background-image-catalog3-image"
       />
       <BVLinearGradient
         colors={
@@ -441,7 +449,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
             undefined,
           ]
         }
-        testID="gradient-catalog3"
+        testID="gradient-catalog3-image"
       >
         <View
           style={
@@ -485,7 +493,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Coorp 1`] = `
                   ],
                 ]
               }
-              testID="badge-catalog3"
+              testID="catalog3-badge"
             >
               New
             </Text>
@@ -934,7 +942,11 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
   testID="catalog4"
 >
   <View
@@ -979,7 +991,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
             undefined,
           ]
         }
-        testID="background-image-catalog4"
+        testID="background-image-catalog4-image"
       />
       <BVLinearGradient
         colors={
@@ -1010,14 +1022,15 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
                 "flex": 1,
               },
               Object {
-                "minHeight": 205,
+                "height": 205,
                 "padding": 16,
+                "width": 168,
               },
             ],
             undefined,
           ]
         }
-        testID="gradient-catalog4"
+        testID="gradient-catalog4-image"
       >
         <View
           style={
@@ -1061,7 +1074,7 @@ exports[`Storyshots Catalog Item Adaptive/New/Certified/Custom 1`] = `
                   ],
                 ]
               }
-              testID="badge-catalog4"
+              testID="catalog4-badge"
             >
               New
             </Text>
@@ -1496,7 +1509,11 @@ exports[`Storyshots Catalog Item Microlearning 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
   testID="catalog4"
 >
   <View
@@ -1541,7 +1558,7 @@ exports[`Storyshots Catalog Item Microlearning 1`] = `
             undefined,
           ]
         }
-        testID="background-image-catalog4"
+        testID="background-image-catalog4-image"
       />
       <BVLinearGradient
         colors={
@@ -1572,14 +1589,15 @@ exports[`Storyshots Catalog Item Microlearning 1`] = `
                 "flex": 1,
               },
               Object {
-                "minHeight": 205,
+                "height": 205,
                 "padding": 16,
+                "width": 168,
               },
             ],
             undefined,
           ]
         }
-        testID="gradient-catalog4"
+        testID="gradient-catalog4-image"
       >
         <View
           style={
@@ -1623,7 +1641,7 @@ exports[`Storyshots Catalog Item Microlearning 1`] = `
                   ],
                 ]
               }
-              testID="badge-catalog4"
+              testID="catalog4-badge"
             >
               New
             </Text>
@@ -2177,7 +2195,11 @@ exports[`Storyshots Catalog Item New 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
   testID="catalog2"
 >
   <View
@@ -2222,7 +2244,7 @@ exports[`Storyshots Catalog Item New 1`] = `
             undefined,
           ]
         }
-        testID="background-image-catalog2"
+        testID="background-image-catalog2-image"
       />
       <BVLinearGradient
         colors={
@@ -2261,7 +2283,7 @@ exports[`Storyshots Catalog Item New 1`] = `
             undefined,
           ]
         }
-        testID="gradient-catalog2"
+        testID="gradient-catalog2-image"
       >
         <View
           style={
@@ -2305,7 +2327,7 @@ exports[`Storyshots Catalog Item New 1`] = `
                   ],
                 ]
               }
-              testID="badge-catalog2"
+              testID="catalog2-badge"
             >
               New
             </Text>

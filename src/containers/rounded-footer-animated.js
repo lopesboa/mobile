@@ -13,6 +13,8 @@ type Props = {|
   animationType?: AnimationType
 |};
 
+const HEIGHT_PERCENTAGE = 40;
+
 class RoundedFooterAnimated extends React.PureComponent<Props> {
   props: Props;
 
@@ -20,10 +22,6 @@ class RoundedFooterAnimated extends React.PureComponent<Props> {
 
   componentDidMount() {
     this.animateFooter();
-  }
-
-  componentDidUpdate(prevProps: Props) {
-    // this.animateFooter();
   }
 
   animateFooter = () => {
@@ -41,11 +39,11 @@ class RoundedFooterAnimated extends React.PureComponent<Props> {
       animationType === ANIMATION_TYPE.IN
         ? this.footerAnim.interpolate({
             inputRange: [0, 1],
-            outputRange: ['-300%', '-50%']
+            outputRange: ['-300%', `-${100 - HEIGHT_PERCENTAGE}%`]
           })
         : this.footerAnim.interpolate({
             inputRange: [0, 1],
-            outputRange: ['-50%', '-300%']
+            outputRange: [`-${100 - HEIGHT_PERCENTAGE}%`, '-300%']
           });
 
     return <RoundedFooter color={color} translateY={translateY} testID={testID} />;

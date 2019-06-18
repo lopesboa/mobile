@@ -2,14 +2,16 @@
 
 import AsyncStorage from '@react-native-community/async-storage';
 import {getConfig} from '@coorpacademy/progression-engine';
+
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/cards';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
-import {uniqBy} from '../../utils';
+// import {uniqBy} from '../../utils';
 import {ENGINE} from '../../const';
+import type {Section} from '../../types';
 import {getItem} from './core';
 import type {Cards, DisciplineCard, ChapterCard, Card, CardLevel, Completion} from './_types';
 import {CARD_TYPE} from './_const';
@@ -195,56 +197,17 @@ const saveDashboardCardsInAsyncStorage = async (
   }
 };
 
-const LIMIT_CARDS = 5;
-
-const fetchFavoriteCards = async (
-  token: string,
-  host: string,
-  language: SupportedLanguage
-): Promise<Cards> => {
-  const response = await fetch(
-    `${host}/api/v2/contents?contentType=course&limit=${LIMIT_CARDS}&playlist=favorites&withoutAdaptive=true&lang=${language}`,
-    {
-      headers: {authorization: token}
-    }
-  );
-  const result: {hits?: Cards} = await response.json();
-  return result.hits || [];
-};
-const fetchRecommendationCards = async (
-  token: string,
-  host: string,
-  language: SupportedLanguage
-): Promise<Cards> => {
-  const response = await fetch(
-    `${host}/api/v2/recommendations?contentType=course&limit=${LIMIT_CARDS}&withoutAdaptive=true&lang=${language}`,
-    {
-      headers: {authorization: token}
-    }
-  );
-  const result: {hits?: Cards} = await response.json();
-  return result.hits || [];
-};
-
-const fetchMostPopularCards = async (
-  token: string,
-  host: string,
-  language: SupportedLanguage
-): Promise<Cards> => {
-  const response = await fetch(
-    `${host}/api/v2/most-popular?contentType=course&limit=${LIMIT_CARDS}&withoutAdaptive=true&lang=${language}`,
-    {
-      headers: {authorization: token}
-    }
-  );
-  const result: {hits?: Cards} = await response.json();
-  return result.hits || [];
-};
 export const fetchCards = async (
   token: string,
   host: string,
+  section: Section,
+  offset: number,
+  limit: number,
   language: SupportedLanguage
-): Promise<Cards> => {
+): Promise<{|
+  cards: Cards,
+  total: number
+|}> => {
   if (__E2E__) {
     const disciplines = Object.keys(disciplinesBundle.disciplines).map(
       key => disciplinesBundle.disciplines[key]
@@ -253,32 +216,42 @@ export const fetchCards = async (
     const cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
     await saveDashboardCardsInAsyncStorage(cards, language);
 
-    return Promise.all(cards.map(refreshCard));
+    const refreshedCards = await Promise.all(cards.map(refreshCard));
+
+    return Promise.resolve({
+      cards: refreshedCards.slice(offset, offset + limit),
+      total: refreshedCards.length
+    });
   }
 
-  const mapRefreshCard = cards => Promise.all(cards.map(refreshCard));
-  const favoritesP = fetchFavoriteCards(token, host, language).then(mapRefreshCard);
-  const recommendationsP = fetchRecommendationCards(token, host, language).then(mapRefreshCard);
-  const mostPopularP = fetchMostPopularCards(token, host, language).then(mapRefreshCard);
+  const query = {
+    ...section.query,
+    offset,
+    limit,
+    lang: language,
+    withoutAdaptive: true
+  };
 
-  const favorites = await favoritesP;
+  const queryParams = Object.keys(query)
+    .map(key => {
+      const value = (query[key] !== undefined && query[key]).toString() || '';
 
-  if (favorites.length >= LIMIT_CARDS) {
-    const fetchedFavorites = favorites.slice(0, LIMIT_CARDS);
-    await saveDashboardCardsInAsyncStorage(fetchedFavorites, language);
-    return fetchedFavorites;
-  }
-  const recommendations = await recommendationsP;
-  const mostPopular = await mostPopularP;
+      return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+    })
+    .join('&');
 
-  const recoCards = uniqBy(card => card.universalRef, [
-    ...favorites,
-    ...recommendations,
-    ...mostPopular
-  ]).slice(0, LIMIT_CARDS);
-  await saveDashboardCardsInAsyncStorage(recoCards, language);
+  const response = await fetch(`${host}${section.endpoint}?${queryParams}`, {
+    headers: {authorization: token}
+  });
+  const {
+    search_meta: {total},
+    hits = []
+  }: {search_meta: {total: number}, hits?: Cards} = await response.json();
 
-  return recoCards;
+  return {
+    cards: hits,
+    total
+  };
 };
 
 export default {

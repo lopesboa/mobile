@@ -3,7 +3,6 @@
     "device": true,
     "element": true,
     "by": true,
-    "waitFor": true,
     "weExpect": true,
     "jasmine": true
   },

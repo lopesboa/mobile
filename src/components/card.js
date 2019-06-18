@@ -55,8 +55,8 @@ const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Pro
       );
     case LAYOUT.DEFAULT:
       return (
-        <View style={[styles.container, shadowStyle]} testID={testID}>
-          <View style={[style, styles.overflowHidden]}>{children}</View>
+        <View style={styles.container} testID={testID}>
+          <View style={[style, shadowStyle, styles.overflowHidden]}>{children}</View>
         </View>
       );
     default:

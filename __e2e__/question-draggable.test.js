@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForVisible} from './utils';
 
 const selectQCMRightDragItem = async (el: DetoxElement) => {
   await el(by.id(`choice-1-unselected`)).tap();
@@ -11,20 +11,18 @@ const tapOnCorrectQCMDRagItemAndGoToSuccess = async () => {
   await selectQCMRightDragItem(element);
   await element(by.id('question-screen')).swipe('up');
   await element(by.id('button-validate')).tap();
-  await waitFor(element(by.id('correction-success'))).toBeVisible();
+  await waitForVisible('correction-success');
   await element(by.id('button-next-question')).tap();
 };
 
 describe('QCM Drag', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await waitFor(element(by.id('catalog-item-qcm-drag-dis-1'))).toBeVisible();
-    await element(by.id('home-screen')).swipe('up');
-    await element(by.id('catalog-item-qcm-drag-dis-1')).tap();
+    await tapCardOnSection('catalog-section-recommended-items', 7);
   });
 
   it('should see only choice item', async () => {
@@ -53,8 +51,7 @@ describe('QCM Drag', () => {
     await selectQCMRightDragItem(element);
     await element(by.id('question-screen')).swipe('up');
     await element(by.id('button-validate')).tap();
-    await waitFor(element(by.id('correction-success'))).toBeVisible();
-    await weExpect(element(by.id('correction-success'))).toBeVisible();
+    await waitForVisible('correction-success');
     await element(by.id('button-next-question')).tap();
   });
 
@@ -62,8 +59,7 @@ describe('QCM Drag', () => {
     await element(by.id(`choice-4-unselected`)).tap();
     await element(by.id(`choice-3-unselected`)).tap();
     await element(by.id('button-validate')).tap();
-    await waitFor(element(by.id('correction-error'))).toBeVisible();
-    await weExpect(element(by.id('correction-error'))).toBeVisible();
+    await waitForVisible('correction-error');
     await element(by.id('button-next-question')).tap();
   });
 
@@ -73,7 +69,6 @@ describe('QCM Drag', () => {
     await element(by.id(`choice-2-unselected`)).tap();
     await element(by.id(`choice-1-unselected`)).tap();
     await element(by.id('button-validate')).tap();
-    await waitFor(element(by.id('correction-error'))).toBeVisible();
-    await weExpect(element(by.id('correction-error'))).toBeVisible();
+    await waitForVisible('correction-error');
   });
 });

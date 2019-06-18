@@ -1,26 +1,22 @@
 // @flow strict
 
 // import {sleep} from '../src/utils/tests';
-import {reloadApp, bypassAuthentication, getClueTab} from './utils';
+import {reloadApp, bypassAuthentication, getClueTab, tapCardOnSection, waitForExist} from './utils';
 
 describe('Clue', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   describe('With clue', () => {
-    beforeAll(async () => {
-      // launch new instance to test the redirect to home screen directly if user is connected
-      await device.launchApp({newInstance: true});
-      await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-basic-dis-1')).tap();
+    it('should open the player', async () => {
+      await tapCardOnSection('catalog-section-recommended-items', 2);
     });
 
     it('should be able to open the clue tab', async () => {
       await getClueTab(element).tap();
-      await waitFor(element(by.id('clue'))).toBeVisible();
-      await weExpect(element(by.id('clue'))).toBeVisible();
+      await waitForExist('clue');
       await weExpect(element(by.id('clue-advice'))).toBeVisible();
       await weExpect(element(by.id('button-clue'))).toBeVisible();
     });
@@ -38,8 +34,7 @@ describe('Clue', () => {
   describe('Without clue', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await waitFor(element(by.id('catalog-item-no-clue-dis-1'))).toBeVisible();
-      await element(by.id('catalog-item-no-clue-dis-1')).tap();
+      await tapCardOnSection('catalog-section-recommended-items', 5);
     });
 
     it('should not be able to open the clue tab', async () => {

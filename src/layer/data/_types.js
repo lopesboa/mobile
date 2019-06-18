@@ -9,6 +9,7 @@ import type {
 } from '@coorpacademy/player-services';
 import type {Context, Lesson, ResourceMimeType} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
+import type {SupportedLanguage} from '../../translations/_types';
 
 export type MimeType = ResourceMimeType;
 
@@ -150,7 +151,7 @@ export type ICard = {|
   time: number,
   adaptiv: boolean,
   certification: boolean,
-  lang: string,
+  lang: SupportedLanguage,
   thematiques: Array<CardThematique>,
   skills: Array<CardSkill>,
   groupsHidden: string,

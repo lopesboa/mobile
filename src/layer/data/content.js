@@ -3,7 +3,7 @@
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
 import type {SupportedLanguage} from '../../translations/_types';
-import type {Resource, RestrictedResourceType} from './_types';
+import type {RestrictedResourceType} from './_types';
 import {CONTENT_TYPE} from './_const';
 import {getItem} from './core';
 
@@ -12,8 +12,10 @@ import {mapToLevelAPI, mapToChapterAPI, mapToSlideAPI} from './mappers';
 export const find = (userLanguage: SupportedLanguage) => async (
   resourceType: RestrictedResourceType,
   ref: string
-): Promise<ChapterAPI | LevelAPI | SlideAPI> => {
-  const resource: Resource = await getItem(resourceType, userLanguage, ref);
+): Promise<ChapterAPI | LevelAPI | SlideAPI | void> => {
+  const resource = await getItem(resourceType, userLanguage, ref);
+
+  if (!resource) return undefined;
 
   switch (resourceType) {
     case CONTENT_TYPE.DISCIPLINE: {

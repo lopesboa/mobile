@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
 
 const rightAnswer = async (el: DetoxElement) => {
   await el(by.id('question-screen')).swipe('up');
@@ -13,16 +13,15 @@ const rightAnswer = async (el: DetoxElement) => {
 describe('Questions', () => {
   beforeAll(async () => {
     await reloadApp();
-    await bypassAuthentication(element);
+    await bypassAuthentication();
   });
 
   it('should see the catalog and choose a discipline', async () => {
-    await waitFor(element(by.id('catalog-item-basic-dis-1'))).toBeVisible();
-    await element(by.id('catalog-item-basic-dis-1')).tap();
+    await tapCardOnSection('catalog-section-recommended-items', 2);
   });
 
   it('should see QCM elements', async () => {
-    await waitFor(element(by.id('question'))).toBeVisible();
+    await waitForExist('question');
     await weExpect(element(by.id('question-title'))).toBeVisible();
     await weExpect(element(by.id('explanation'))).toBeVisible();
     await weExpect(element(by.id('question-resource'))).toBeVisible();
@@ -50,10 +49,9 @@ describe('Questions', () => {
       beforeAll(async () => {
         await element(by.id('question-screen')).swipe('up');
         await element(by.id('button-validate')).tap();
-        await waitFor(element(by.id('correction-error'))).toBeVisible();
       });
       it('should see elements', async () => {
-        await weExpect(element(by.id('correction-error'))).toBeVisible();
+        await waitForExist('correction-error');
         await weExpect(element(by.id('correction-title'))).toBeVisible();
         await weExpect(element(by.id('correction-explanation'))).toBeVisible();
         await weExpect(element(by.id('card-correction'))).toBeVisible();
@@ -95,7 +93,7 @@ describe('Questions', () => {
       it('should back to the question', async () => {
         await weExpect(element(by.id('button-next-question'))).toBeVisible();
         await element(by.id('button-next-question')).tap();
-        await waitFor(element(by.id('question'))).toBeVisible();
+        await waitForExist('question');
       });
       it('should see lives updated', async () => {
         await weExpect(element(by.id('lives-2'))).toBeVisible();
@@ -111,7 +109,7 @@ describe('Questions', () => {
         await element(by.id('question-choice-2')).tap();
         await weExpect(element(by.id('question-choice-2-selected'))).toBeVisible();
         await element(by.id('button-validate')).tap();
-        await waitFor(element(by.id('correction-success'))).toBeVisible();
+        await waitForExist('correction-success');
       });
       it('should see elements', async () => {
         await weExpect(element(by.id('correction-success'))).toBeVisible();
@@ -153,7 +151,7 @@ describe('Questions', () => {
       it('should be able to close the modal', async () => {
         await weExpect(element(by.id('button-next-question'))).toBeVisible();
         await element(by.id('button-next-question')).tap();
-        await waitFor(element(by.id('question'))).toBeVisible();
+        await waitForExist('question');
       });
       it('should see lives', async () => {
         await weExpect(element(by.id('lives-2'))).toBeVisible();
@@ -168,10 +166,10 @@ describe('Questions', () => {
     beforeAll(async () => {
       // fast forward to next chapter
       await rightAnswer(element);
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
+      await waitForExist('correction-success');
       await element(by.id('button-next-question')).tap();
       await rightAnswer(element);
-      await waitFor(element(by.id('correction-success'))).toBeVisible();
+      await waitForExist('correction-success');
       await element(by.id('button-next-question')).tap();
     });
     it('should see choices with images', async () => {

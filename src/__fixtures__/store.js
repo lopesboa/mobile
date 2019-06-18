@@ -7,9 +7,8 @@ import type {
 import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
 import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
-import {initialState as bundleState} from '../redux/reducers/bundle';
-import {initialState as cardsState} from '../redux/reducers/cards';
-import type {State as CardsState} from '../redux/reducers/cards';
+import {initialState as defaultCatalog} from '../redux/reducers/catalog';
+import type {State as CatalogState} from '../redux/reducers/catalog';
 import {initialState as permissionsState} from '../redux/reducers/permissions';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 
@@ -59,7 +58,7 @@ export const createStoreState = ({
   chapters,
   disciplines,
   progression,
-  cards,
+  catalog,
   godmode: baseGodMode,
   fastSlide: basefastSlide,
   data: baseData,
@@ -80,7 +79,7 @@ export const createStoreState = ({
   ui?: any,
   // eslint-disable-next-line flowtype/no-weak-types
   authentication?: any,
-  cards?: CardsState
+  catalog?: CatalogState
 }): StoreState => {
   const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
   const mappedSlide: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
@@ -173,8 +172,7 @@ export const createStoreState = ({
       currentScreenName: 'dummyScreenName',
       currentTabName: 'dummyScreenName'
     },
-    bundle: bundleState,
-    cards: cards || cardsState,
+    catalog: catalog || defaultCatalog,
     permissions: permissionsState,
     authentication,
     godmode,

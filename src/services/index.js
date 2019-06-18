@@ -18,6 +18,8 @@ import type {PermissionsService} from './permissions';
 import Progressions from './progressions';
 import Recommendations from './recommendations';
 import type {ProgressionService} from './progressions';
+import type {SectionsService} from './sections';
+import Sections from './sections';
 
 export type Services = {|
   Analytics: AnalyticsService,
@@ -30,7 +32,8 @@ export type Services = {|
   Brands: BrandsService,
   Permissions: PermissionsService,
   LeaderBoard: typeof LeaderBoard,
-  Recommendations: typeof Recommendations
+  Recommendations: typeof Recommendations,
+  Sections: SectionsService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -47,7 +50,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Brands: Brands(dataLayer),
   Recommendations: Recommendations(dataLayer),
   Permissions,
-  LeaderBoard
+  LeaderBoard,
+  Sections: Sections(dataLayer)
 });
 
 export default createServices;

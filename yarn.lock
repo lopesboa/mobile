@@ -1087,10 +1087,10 @@
     globby "^9.1.0"
     mkdirp-promise "^5.0.1"
 
-"@coorpacademy/player-services@5.0.6":
-  version "5.0.6"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.6.tgz#f6c4ea422c08f7d71206583f67f0374de59c7976"
-  integrity sha512-cSYAjZB9YDysebXW7qLLk9u4vsmQqJ80RCLpyp80/yUH1+4dnRmdZlVVskXJJ3KlaYAdzlib6X6SU4LteCxhIA==
+"@coorpacademy/player-services@5.0.7":
+  version "5.0.7"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.7.tgz#fb10f9c1595f805ce069af2ba0e74162accfcd70"
+  integrity sha512-M8EKFYasjsYHsSfpP0ulguu2Ewdq9+o4anKSTuxI6z1XH7opU7md9L8QGiiW7y4+aWf9aP1w5VG6DqqTXTgoHw==
   dependencies:
     "@coorpacademy/progression-engine" "11.0.2"
     lodash "^4.17.4"
@@ -10850,7 +10850,7 @@ prop-types@15.5.10:
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@15.6.2, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -12166,6 +12166,13 @@ rn-fetch-blob@0.10.15:
   dependencies:
     base-64 "0.1.0"
     glob "7.0.6"
+
+rn-placeholder@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/rn-placeholder/-/rn-placeholder-2.0.0.tgz#8d72a432e9a6b02f0b3cb7de8ddf22b200b80ffd"
+  integrity sha512-bVy0GYu3LrxR0o/fGo09YN3a4OR13f6/Y1HFZ0s9f/ejUZWU2E1cvmNuPmPvEyjRQATa8NQcwNhB0CvXFJhbSg==
+  dependencies:
+    prop-types "15.6.2"
 
 rsvp@^3.3.3:
   version "3.6.2"

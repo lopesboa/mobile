@@ -64,17 +64,20 @@ describe('level-end', () => {
       title: 'Second discipline'
     });
 
-    const cards = {
+    const catalog = {
       entities: {
-        dis1: {
-          en: dis1
+        cards: {
+          dis1: {
+            en: dis1
+          },
+          dis2: {
+            en: dis2
+          },
+          dis3: {
+            en: dis3
+          }
         },
-        dis2: {
-          en: dis2
-        },
-        dis3: {
-          en: dis3
-        }
+        sections: {}
       }
     };
     const mockedStore = createStoreState({
@@ -83,7 +86,7 @@ describe('level-end', () => {
       chapters: [],
       slides: [slide, slide],
       progression,
-      cards,
+      catalog,
       data: {
         progressions: {
           entities: {
@@ -165,14 +168,17 @@ describe('level-end', () => {
       title: 'Second discipline'
     });
 
-    const cards = {
+    const catalog = {
       entities: {
-        dis1: {
-          en: dis1
+        cards: {
+          dis1: {
+            en: dis1
+          },
+          dis2: {
+            en: dis2
+          }
         },
-        dis2: {
-          en: dis2
-        }
+        sections: {}
       }
     };
     const mockedStore = createStoreState({
@@ -181,7 +187,7 @@ describe('level-end', () => {
       chapters: [],
       slides: [slide, slide],
       progression,
-      cards,
+      catalog,
       data: {
         progressions: {
           entities: {

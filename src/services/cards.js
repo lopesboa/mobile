@@ -3,9 +3,20 @@
 import type {DataLayer} from '../layer/data';
 import type {Cards, DisciplineCard, ChapterCard} from '../layer/data/_types';
 import type {SupportedLanguage} from '../translations/_types';
+import type {Section} from '../types';
 
 export type CardsService = {|
-  find: (token: string, host: string, language: SupportedLanguage) => Promise<Cards>,
+  find: (
+    token: string,
+    host: string,
+    section: Section,
+    offset: number,
+    limit: number,
+    language: SupportedLanguage
+  ) => Promise<{|
+    cards: Cards,
+    total: number
+  |}>,
   refreshCard: (card: DisciplineCard | ChapterCard) => Promise<DisciplineCard | ChapterCard>,
   getCardFromLocalStorage: (
     levelRef: string,

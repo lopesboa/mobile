@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Placeholder Default 1`] = `
+<View
+  style={
+    Object {
+      "opacity": 0.5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "justifyContent": "center",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#efefef",
+              "borderRadius": 3,
+              "height": 12,
+              "marginBottom": 0,
+              "width": "100%",
+            },
+            Array [
+              Object {
+                "borderRadius": 0,
+              },
+              Object {
+                "height": 10,
+              },
+              Object {
+                "backgroundColor": "#ECEFF1",
+              },
+            ],
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
