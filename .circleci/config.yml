@@ -321,10 +321,8 @@ jobs:
 
       - run:
           name: Build
-          # Duplicate resources issue: https://github.com/facebook/react-native/issues/22234
           command: |
             cd android
-            rm -rf app/src/main/res/drawable-* && rm -rf app/src/main/res/raw/*
             bundle exec fastlane adhoc
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1

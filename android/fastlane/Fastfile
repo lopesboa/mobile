@@ -7,13 +7,16 @@ default_platform :android
 platform :android do
   before_all do
     yarn(step_name: 'update_version', command: 'update:version', project_root: '..')
+    yarn(step_name: 'generate_android_bundle', command: 'generate:bundle:android', project_root: '..')
   end
 
   desc "build an adhoc release for internal store"
   lane :adhoc do
     gradle(
       task: "assemble",
-      build_type: "Release"
+      build_type: "Release",
+      # To avoid OOM (exit code 137) as we generated it before
+      flags: "-x bundleReleaseJsAndAssets"
     )
   end
 

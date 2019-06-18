@@ -85,6 +85,11 @@ junit.xml
 ios/release
 src/modules/version.json
 
+
+# Build Android(assets)
+android/app/src/main/res/drawable-*
+app/src/main/res/raw/*
+
 # VSCODE
 .vscode
 
