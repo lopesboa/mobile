@@ -105,8 +105,11 @@ const refreshDisciplineCard = async (disciplineCard: DisciplineCard): Promise<Di
 };
 
 const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard> => {
-  const cardCompletion: Completion = {stars: chapterCard.stars, current: chapterCard.completion};
-  const completionKey = buildCompletionKey(ENGINE.MICROLEARNING, chapterCard.ref);
+  const cardCompletion: Completion = {
+    stars: chapterCard && chapterCard.stars,
+    current: chapterCard && chapterCard.completion
+  };
+  const completionKey = buildCompletionKey(ENGINE.MICROLEARNING, chapterCard && chapterCard.ref);
   const latestCompletion = await AsyncStorage.getItem(completionKey);
 
   if (!latestCompletion) {
@@ -118,7 +121,7 @@ const refreshChapterCard = async (chapterCard: ChapterCard): Promise<ChapterCard
 };
 
 export const refreshCard = (card: Card): Promise<Card> => {
-  if (card.type === 'course') {
+  if (card && card.type === 'course') {
     return refreshDisciplineCard(card);
   }
   return refreshChapterCard(card);

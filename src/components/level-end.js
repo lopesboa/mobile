@@ -261,7 +261,7 @@ class LevelEnd extends React.PureComponent<Props> {
                           }
                           badge={recommendation.isNew ? translations.new : ''}
                           isAdaptive={recommendation.adaptiv}
-                          displayMode={CARD_DISPLAY_MODE.CARD}
+                          displayMode={CARD_DISPLAY_MODE.COVER}
                           onPress={this.handleCardPress(recommendation)}
                           testID={`recommend-item-${recommendation.universalRef.replace(
                             /_/g,

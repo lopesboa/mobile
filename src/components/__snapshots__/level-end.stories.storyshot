@@ -1189,9 +1189,9 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -1219,8 +1219,8 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                   "paddingRight": 12,
                                 },
                                 Object {
-                                  "minHeight": 17,
-                                  "minWidth": 40,
+                                  "minHeight": 20,
+                                  "minWidth": 45,
                                 },
                               ]
                             }
@@ -1232,7 +1232,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                   Array [
                                     "New",
                                     Object {
-                                      "fontSize": 10,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                     },
                                     Object {
@@ -1266,7 +1266,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -1296,7 +1296,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -1363,8 +1363,8 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
@@ -2695,9 +2695,9 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -2725,8 +2725,8 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                   "paddingRight": 12,
                                 },
                                 Object {
-                                  "minHeight": 17,
-                                  "minWidth": 40,
+                                  "minHeight": 20,
+                                  "minWidth": 45,
                                 },
                               ]
                             }
@@ -2738,7 +2738,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                   Array [
                                     "New",
                                     Object {
-                                      "fontSize": 10,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                     },
                                     Object {
@@ -2772,7 +2772,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -2802,7 +2802,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -2869,8 +2869,8 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
@@ -5068,9 +5068,9 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -5088,10 +5088,10 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
-                            bbHeight={16}
-                            bbWidth={16}
+                            bbHeight={22}
+                            bbWidth={22}
                             color="#FFFFFF"
-                            height={16}
+                            height={22}
                             meetOrSlice={0}
                             minX={0}
                             minY={0}
@@ -5105,8 +5105,8 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 null,
                                 Object {
                                   "flex": 0,
-                                  "height": 16,
-                                  "width": 16,
+                                  "height": 22,
+                                  "width": 22,
                                 },
                               ]
                             }
@@ -5114,7 +5114,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
-                            width={16}
+                            width={22}
                           >
                             <RNSVGGroup
                               fill={
@@ -5216,7 +5216,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -5246,7 +5246,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -5313,8 +5313,8 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
@@ -7512,9 +7512,9 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -7532,10 +7532,10 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
-                            bbHeight={16}
-                            bbWidth={16}
+                            bbHeight={22}
+                            bbWidth={22}
                             color="#FFFFFF"
-                            height={16}
+                            height={22}
                             meetOrSlice={0}
                             minX={0}
                             minY={0}
@@ -7549,8 +7549,8 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 null,
                                 Object {
                                   "flex": 0,
-                                  "height": 16,
-                                  "width": 16,
+                                  "height": 22,
+                                  "width": 22,
                                 },
                               ]
                             }
@@ -7558,7 +7558,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
-                            width={16}
+                            width={22}
                           >
                             <RNSVGGroup
                               fill={
@@ -7660,7 +7660,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -7690,7 +7690,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -7757,8 +7757,8 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
@@ -10221,9 +10221,9 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -10241,10 +10241,10 @@ exports[`Storyshots LevelEnd Success 1`] = `
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
-                            bbHeight={16}
-                            bbWidth={16}
+                            bbHeight={22}
+                            bbWidth={22}
                             color="#FFFFFF"
-                            height={16}
+                            height={22}
                             meetOrSlice={0}
                             minX={0}
                             minY={0}
@@ -10258,8 +10258,8 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 null,
                                 Object {
                                   "flex": 0,
-                                  "height": 16,
-                                  "width": 16,
+                                  "height": 22,
+                                  "width": 22,
                                 },
                               ]
                             }
@@ -10267,7 +10267,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
-                            width={16}
+                            width={22}
                           >
                             <RNSVGGroup
                               fill={
@@ -10369,7 +10369,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -10399,7 +10399,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -10466,8 +10466,8 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
@@ -12676,9 +12676,9 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 205,
-                                "padding": 16,
-                                "width": 168,
+                                "height": 400.2,
+                                "minHeight": 215,
+                                "padding": 24,
                               },
                             ],
                             undefined,
@@ -12696,10 +12696,10 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
-                            bbHeight={16}
-                            bbWidth={16}
+                            bbHeight={22}
+                            bbWidth={22}
                             color="#FFFFFF"
-                            height={16}
+                            height={22}
                             meetOrSlice={0}
                             minX={0}
                             minY={0}
@@ -12713,8 +12713,8 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 null,
                                 Object {
                                   "flex": 0,
-                                  "height": 16,
-                                  "width": 16,
+                                  "height": 22,
+                                  "width": 22,
                                 },
                               ]
                             }
@@ -12722,7 +12722,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
-                            width={16}
+                            width={22}
                           >
                             <RNSVGGroup
                               fill={
@@ -12824,7 +12824,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                     "paddingTop": 8,
                                   },
                                   Object {
-                                    "fontSize": 15,
+                                    "fontSize": 22,
                                   },
                                 ],
                               ]
@@ -12854,7 +12854,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                       "paddingTop": 8,
                                     },
                                     Object {
-                                      "fontSize": 12,
+                                      "fontSize": 15,
                                     },
                                   ],
                                 ]
@@ -12921,8 +12921,8 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 10,
-                                "letterSpacing": 1.88,
+                                "fontSize": 12,
+                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
