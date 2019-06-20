@@ -86,6 +86,7 @@ exports[`Storyshots Home Default 1`] = `
     onEndReachedThreshold={2}
     onLayout={[Function]}
     onMomentumScrollEnd={[Function]}
+    onRefresh={[Function]}
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
@@ -95,6 +96,7 @@ exports[`Storyshots Home Default 1`] = `
         refreshing={false}
       />
     }
+    refreshing={false}
     removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={50}

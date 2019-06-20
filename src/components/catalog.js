@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, RefreshControl, FlatList} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
 
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import type {Section} from '../types';
@@ -73,7 +73,8 @@ class Catalog extends React.PureComponent<Props> {
 
     return (
       <FlatList
-        refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />}
+        refreshing={isRefreshing}
+        onRefresh={onRefresh}
         data={sections.length > 0 ? sections : new Array(2).fill()}
         renderItem={this.renderItem}
         keyExtractor={this.keyExtractor}

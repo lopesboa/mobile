@@ -22,6 +22,7 @@ exports[`Storyshots Catalog Default 1`] = `
   onEndReachedThreshold={2}
   onLayout={[Function]}
   onMomentumScrollEnd={[Function]}
+  onRefresh={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
@@ -31,6 +32,7 @@ exports[`Storyshots Catalog Default 1`] = `
       refreshing={false}
     />
   }
+  refreshing={false}
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEventThrottle={50}
@@ -2847,6 +2849,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
   onEndReachedThreshold={2}
   onLayout={[Function]}
   onMomentumScrollEnd={[Function]}
+  onRefresh={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
@@ -2856,6 +2859,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
       refreshing={true}
     />
   }
+  refreshing={true}
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEventThrottle={50}
@@ -5692,6 +5696,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
   onEndReachedThreshold={2}
   onLayout={[Function]}
   onMomentumScrollEnd={[Function]}
+  onRefresh={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
@@ -5701,6 +5706,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
       refreshing={false}
     />
   }
+  refreshing={false}
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEventThrottle={50}
@@ -5788,6 +5794,7 @@ exports[`Storyshots Catalog Sections with cards 1`] = `
   onEndReachedThreshold={2}
   onLayout={[Function]}
   onMomentumScrollEnd={[Function]}
+  onRefresh={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
@@ -5797,6 +5804,7 @@ exports[`Storyshots Catalog Sections with cards 1`] = `
       refreshing={false}
     />
   }
+  refreshing={false}
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEventThrottle={50}
