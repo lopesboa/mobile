@@ -1,6 +1,7 @@
 // @flow
 
 import AsyncStorage from '@react-native-community/async-storage';
+
 import {fakeError} from '../../utils/tests';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
@@ -19,6 +20,7 @@ import {
   updateChapterCardAccordingToCompletion,
   refreshCard
 } from './cards';
+import type {Card} from './_types';
 
 const host = 'https://host.coorpacademy.com';
 const token = '__token__';
@@ -73,23 +75,37 @@ describe('cards', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => {
-        expect(url).toBe(
-          `${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en&withoutAdaptive=true`
-        );
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<{|
+            search_meta: {
+              total: number
+            },
+            hits: Array<Card>
+          |}>
+        }> => {
+          expect(url).toBe(
+            `${host}${
+              section.endpoint
+            }?contentType=all&offset=0&limit=2&lang=en&withoutAdaptive=true`
+          );
 
-        expect(options).toHaveProperty('headers.authorization', token);
+          expect(options).toHaveProperty('headers.authorization', token);
 
-        return Promise.resolve({
-          json: () =>
-            Promise.resolve({
-              search_meta: {
-                total: cards.length
-              },
-              hits: cards.slice(0, 2)
-            })
-        });
-      });
+          return Promise.resolve({
+            json: () =>
+              Promise.resolve({
+                search_meta: {
+                  total: cards.length
+                },
+                hits: cards.slice(0, 2)
+              })
+          });
+        }
+      );
 
       const {fetchCards} = require('./cards');
       const result = fetchCards(token, host, section, 0, 2, language);

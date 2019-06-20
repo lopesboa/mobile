@@ -57,10 +57,16 @@ describe('Catalog', () => {
 
   const reduceSectionsExpected = {
     [sections[0].key]: {
-      en: sections[0]
+      en: {
+        ...sections[0],
+        cardsRef: undefined
+      }
     },
     [sections[1].key]: {
-      en: sections[1]
+      en: {
+        ...sections[1],
+        cardsRef: undefined
+      }
     }
   };
 
@@ -74,12 +80,16 @@ describe('Catalog', () => {
       const action: SECTIONS_ACTION = {
         type: SECTIONS_FETCH_SUCCESS,
         payload: {
+          offset: 1,
+          limit: 2,
+          total: 4,
           items: sections,
           language: 'en'
         }
       };
       const result = reducer(undefined, action);
       const expected: State = {
+        sectionsRef: [undefined, sections[0].key, sections[1].key, undefined],
         entities: {
           cards: {},
           sections: reduceSectionsExpected

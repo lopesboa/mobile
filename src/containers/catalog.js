@@ -3,13 +3,16 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import CatalogComponent from '../components/catalog';
+import CatalogComponent, {SEPARATOR_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
+import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {fetchCards} from '../redux/actions/catalog/cards';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import translations from '../translations';
 import type {Section} from '../types';
+import withLayout from './with-layout';
+import type {WithLayoutProps} from './with-layout';
 
 type ConnectedStateProps = {|
   sections: Array<Section>,
@@ -25,6 +28,7 @@ type ConnectedDispatchProps = {|
 type Props = {|
   ...ConnectedStateProps,
   ...ConnectedDispatchProps,
+  ...WithLayoutProps,
   onCardPress: $PropertyType<ComponentProps, 'onCardPress'>,
   children?: $PropertyType<ComponentProps, 'children'>
 |};
@@ -33,6 +37,9 @@ type State = {|
   isRefreshing: boolean
 |};
 
+const DEFAULT_LIMIT = 3;
+const DEBOUNCE_DURATION = 100;
+
 class Catalog extends React.PureComponent<Props, State> {
   props: Props;
 
@@ -40,23 +47,61 @@ class Catalog extends React.PureComponent<Props, State> {
     isRefreshing: false
   };
 
+  timeout: TimeoutID;
+
+  offsetY: number = 0;
+
   componentDidMount() {
-    this.fetchContent();
+    this.fetchSections(0, DEFAULT_LIMIT);
   }
 
-  fetchContent = async () => {
-    await this.props.fetchSections(translations.getLanguage());
+  fetchSections = async (offset: number, limit: number) => {
+    await this.props.fetchSections(offset, limit, translations.getLanguage());
   };
 
   handleRefresh = () => {
     this.setState({isRefreshing: true});
-    this.fetchContent()
+    this.fetchSections(0, DEFAULT_LIMIT)
       .then(() => this.setState({isRefreshing: false}))
       .catch(e => {
         this.setState({isRefreshing: false});
         // eslint-disable-next-line no-console
         console.error(e);
       });
+  };
+
+  getOffset = (offsetY: number): number =>
+    Math.trunc(offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
+
+  getLimit = (): number => {
+    const {layout} = this.props;
+    if (!layout) {
+      return 1;
+    }
+
+    return Math.ceil(layout.height / (SECTION_HEIGHT + SEPARATOR_HEIGHT) + 1);
+  };
+
+  handleScroll = ({nativeEvent}: ScrollEvent) => {
+    const {layout, sections} = this.props;
+    const offsetY = nativeEvent.contentOffset.y;
+
+    if (offsetY !== this.offsetY && layout) {
+      this.offsetY = offsetY;
+      const offset = this.getOffset(offsetY);
+      const limit = this.getLimit();
+      const hasUnfetchedSections =
+        sections && sections.slice(offset, offset + limit).findIndex(section => !section) !== -1;
+
+      if (hasUnfetchedSections) {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+          if (this.offsetY === offsetY) {
+            this.fetchSections(offset, limit);
+          }
+        }, DEBOUNCE_DURATION);
+      }
+    }
   };
 
   handleCardsScroll = (section: Section, offset: number, limit: number) => {
@@ -75,6 +120,7 @@ class Catalog extends React.PureComponent<Props, State> {
         onRefresh={this.handleRefresh}
         isRefreshing={isRefreshing}
         onCardsScroll={this.handleCardsScroll}
+        onScroll={this.handleScroll}
       >
         {children}
       </CatalogComponent>
@@ -83,13 +129,19 @@ class Catalog extends React.PureComponent<Props, State> {
 }
 
 const mapStateToProps = ({catalog, authentication, ...state}: StoreState): ConnectedStateProps => {
+  const {sectionsRef = []} = catalog;
   const language = translations.getLanguage();
+  const sections = sectionsRef.map(key => {
+    if (key) {
+      const section = catalog.entities.sections[key];
+      return section[language];
+    }
+
+    return key;
+  });
 
   return {
-    sections: Object.keys(catalog.entities.sections)
-      .map(key => catalog.entities.sections[key][language])
-      .filter(item => !(item && item.cardsRef && item.cardsRef.length === 0))
-      .sort((a, b) => a.order - b.order),
+    sections,
     cards: Object.keys(catalog.entities.cards)
       .map(key => catalog.entities.cards[key][language])
       .filter(item => item !== undefined)
@@ -104,4 +156,4 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Catalog);
+)(withLayout(Catalog));

@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
     paddingTop: HEADER_HEIGHT,
     right: 0
   },
+  catalog: {
+    flexGrow: 1
+  },
   version: {
     color: theme.colors.white,
     paddingBottom: theme.spacing.base,
@@ -85,7 +88,7 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
               transparencyPosition="bottom"
               style={styles.gradient}
             />
-            <Catalog onCardPress={onCardPress}>
+            <Catalog onCardPress={onCardPress} containerStyle={styles.catalog}>
               <Version style={styles.version} />
             </Catalog>
             <View style={styles.header}>

@@ -35,11 +35,14 @@ const ITEM_VERTICAL_OFFSET = theme.spacing.small;
 const ITEM_HORIZONTAL_OFFSET = theme.spacing.tiny;
 export const ITEM_WIDTH = CATALOG_ITEM_WIDTH + ITEM_HORIZONTAL_OFFSET * 2;
 const ITEM_HEIGHT = CATALOG_ITEM_HEIGHT + ITEM_VERTICAL_OFFSET * 2;
+const TITLE_HEIGHT = theme.fontSize.large;
+export const HEIGHT = ITEM_HEIGHT + TITLE_HEIGHT;
+const PLACEHOLDER_LENGTH = 5;
 
 const styles = StyleSheet.create({
   title: {
     paddingHorizontal: theme.spacing.small,
-    fontSize: theme.fontSize.large,
+    fontSize: TITLE_HEIGHT,
     fontWeight: theme.fontWeight.bold
   },
   list: {
@@ -138,7 +141,7 @@ class CatalogSection extends React.PureComponent<Props> {
       <View>
         {this.renderTitle()}
         <FlatList
-          data={cards && cards.length > 0 ? cards : new Array(5).fill()}
+          data={cards && cards.length > 0 ? cards : new Array(PLACEHOLDER_LENGTH).fill()}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
           contentContainerStyle={styles.list}

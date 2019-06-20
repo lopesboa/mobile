@@ -28,7 +28,10 @@ describe('Sections', () => {
     const options = {
       services: {
         Sections: {
-          find: () => sections
+          find: () => ({
+            sections,
+            total: sections.length
+          })
         },
         Cards: {
           find: () => ({
@@ -40,12 +43,12 @@ describe('Sections', () => {
     };
 
     dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual(fetchRequest('en'));
+      expect(action).toEqual(fetchRequest(0, 2, 'en'));
       return Promise.resolve(action);
     });
 
     dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual(fetchSuccess(sections, 'en'));
+      expect(action).toEqual(fetchSuccess(0, 2, sections.length, sections, 'en'));
       return Promise.resolve(action);
     });
 
@@ -60,7 +63,7 @@ describe('Sections', () => {
     });
 
     // $FlowFixMe
-    await fetchSections('en')(dispatch, getState, options);
+    await fetchSections(0, 2, 'en')(dispatch, getState, options);
     expect(dispatch).toHaveBeenCalledTimes(2 + sections.length * 2);
   });
 
@@ -76,7 +79,7 @@ describe('Sections', () => {
     };
 
     dispatch.mockImplementationOnce((action: Action) => {
-      expect(action).toEqual(fetchRequest('de'));
+      expect(action).toEqual(fetchRequest(0, 2, 'de'));
       return Promise.resolve(action);
     });
 
@@ -96,11 +99,11 @@ describe('Sections', () => {
     });
 
     // $FlowFixMe
-    const result = await fetchSections('de')(dispatch, getState, options);
+    const result = await fetchSections(0, 2, 'de')(dispatch, getState, options);
     expect(dispatch).toHaveBeenCalledTimes(3);
 
     dispatch.mockImplementationOnce((action: Action) => {
-      expect(action).toEqual(fetchRequest('de'));
+      expect(action).toEqual(fetchRequest(0, 2, 'de'));
       return Promise.resolve(action);
     });
 

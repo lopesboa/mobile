@@ -48,6 +48,7 @@ storiesOf('Catalog', module)
       onCardPress={handleFakePress}
       onRefresh={handleFakePress}
       onCardsScroll={handleFakePress}
+      onScroll={handleFakePress}
     />
   ))
   .add('Refreshing', () => (
@@ -57,6 +58,7 @@ storiesOf('Catalog', module)
       onCardPress={handleFakePress}
       onRefresh={handleFakePress}
       onCardsScroll={handleFakePress}
+      onScroll={handleFakePress}
       isRefreshing
     />
   ))
@@ -67,6 +69,7 @@ storiesOf('Catalog', module)
       onCardPress={handleFakePress}
       onRefresh={handleFakePress}
       onCardsScroll={handleFakePress}
+      onScroll={handleFakePress}
     />
   ))
   .add('Sections with bad card refs', () => (
@@ -76,6 +79,7 @@ storiesOf('Catalog', module)
       onCardPress={handleFakePress}
       onRefresh={handleFakePress}
       onCardsScroll={handleFakePress}
+      onScroll={handleFakePress}
     />
   ));
 
@@ -90,6 +94,7 @@ if (__TEST__) {
           onCardPress={handleFakePress}
           onRefresh={handleFakePress}
           onCardsScroll={handleCardsScroll}
+          onScroll={handleFakePress}
         />
       );
       const firstSection = sectionsWithCardsRef[0];

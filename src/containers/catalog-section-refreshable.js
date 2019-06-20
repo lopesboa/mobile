@@ -18,7 +18,7 @@ type Props = {|
   onScroll?: (offset: number, limit: number) => void
 |};
 
-export const DEBOUNCE_DURATION = 100;
+const DEBOUNCE_DURATION = 100;
 
 class CatalogSectionRefreshable extends React.PureComponent<Props> {
   props: Props;
@@ -29,7 +29,7 @@ class CatalogSectionRefreshable extends React.PureComponent<Props> {
 
   getOffset = (offsetX: number): number => Math.trunc(offsetX / ITEM_WIDTH);
 
-  getLimit = (offsetX: number): number => {
+  getLimit = (): number => {
     const {layout} = this.props;
     if (!layout) {
       return 1;
@@ -45,7 +45,7 @@ class CatalogSectionRefreshable extends React.PureComponent<Props> {
     if (offsetX !== this.offsetX && layout) {
       this.offsetX = offsetX;
       const offset = this.getOffset(offsetX);
-      const limit = this.getLimit(offsetX);
+      const limit = this.getLimit();
       const hasUnfetchedCards =
         cards && cards.slice(offset, offset + limit).findIndex(card => card === undefined) !== -1;
 

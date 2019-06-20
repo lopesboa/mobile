@@ -19,12 +19,17 @@ export type Action =
   | {|
       type: '@@sections/FETCH_REQUEST',
       payload: {
+        offset: number,
+        limit: number,
         language: SupportedLanguage
       }
     |}
   | {|
       type: '@@sections/FETCH_SUCCESS',
       payload: {
+        offset: number,
+        limit: number,
+        total: number,
         items: Array<Section>,
         language: SupportedLanguage
       }
@@ -33,16 +38,31 @@ export type Action =
       type: '@@sections/FETCH_ERROR'
     |}>;
 
-export const fetchRequest = (language: SupportedLanguage): Action => ({
+export const fetchRequest = (
+  offset: number,
+  limit: number,
+  language: SupportedLanguage
+): Action => ({
   type: FETCH_REQUEST,
   payload: {
+    offset,
+    limit,
     language
   }
 });
 
-export const fetchSuccess = (items: Array<Section>, language: SupportedLanguage): Action => ({
+export const fetchSuccess = (
+  offset: number,
+  limit: number,
+  total: number,
+  items: Array<Section>,
+  language: SupportedLanguage
+): Action => ({
   type: FETCH_SUCCESS,
   payload: {
+    offset,
+    limit,
+    total,
     items,
     language
   }
@@ -55,6 +75,8 @@ export const fetchError = (error: Error): Action => ({
 });
 
 export const fetchSections = (
+  offset: number,
+  limit: number,
   language: SupportedLanguage
 ): StoreAction<Action | ModalAction<StoreAction<Action>>> => async (
   dispatch,
@@ -64,15 +86,15 @@ export const fetchSections = (
   const {services} = options;
 
   try {
-    await dispatch(fetchRequest(language));
+    await dispatch(fetchRequest(offset, limit, language));
     const token = getToken(getState());
 
     if (!token) {
       throw new Error('Token not defined');
     }
 
-    const sections = await services.Sections.find(token);
-    const result = await dispatch(fetchSuccess(sections, language));
+    const {total, sections} = await services.Sections.find(token, offset, limit);
+    const result = await dispatch(fetchSuccess(offset, limit, total, sections, language));
 
     await Promise.all(
       sections.map(section =>
@@ -87,7 +109,7 @@ export const fetchSections = (
     return dispatch(
       showModal({
         errorType: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction: () => fetchSections(language)
+        lastAction: () => fetchSections(offset, limit, language)
       })
     );
   }

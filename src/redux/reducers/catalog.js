@@ -9,6 +9,7 @@ import type {SupportedLanguage} from '../../translations/_types';
 import type {Section} from '../../types';
 
 export type State = {|
+  sectionsRef?: Array<string | void>,
   entities: {
     cards: {
       [key: string]: {
@@ -87,18 +88,40 @@ export const reduceCardsRef = (
   return cardsRef;
 };
 
+export const reduceSectionsRef = (
+  items: Array<Section>,
+  offset: number,
+  total: number,
+  state?: Array<string | void>
+): Array<string | void> => {
+  let sectionsRef = state || new Array(total).fill();
+
+  items.forEach((item, index) => {
+    sectionsRef[index + offset] = item.key;
+  });
+
+  return sectionsRef;
+};
+
 const reducer = (state: State = initialState, action: CardAction | SectionAction): State => {
   switch (action.type) {
     case FETCH_SECTIONS_SUCCESS: {
-      const {items, language} = action.payload;
+      const {offset, total, items, language} = action.payload;
 
       return {
         ...state,
+        sectionsRef: reduceSectionsRef(items, offset, total, state.sectionsRef),
         entities: {
           ...state.entities,
           sections: {
             ...state.entities.sections,
-            ...reduceSections(items, language)
+            ...reduceSections(
+              items.filter(item => {
+                const section = state.entities.sections[item.key];
+                return !(section && section[language]);
+              }),
+              language
+            )
           }
         }
       };

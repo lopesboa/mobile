@@ -4,7 +4,14 @@ import type {DataLayer} from '../layer/data';
 import type {Section} from '../types';
 
 export type SectionsService = {|
-  find: (token: string) => Promise<Array<Section>>
+  find: (
+    token: string,
+    offset: number,
+    limit: number
+  ) => Promise<{|
+    total: number,
+    sections: Array<Section>
+  |}>
 |};
 
 const service = (dataLayer: DataLayer): SectionsService => ({

@@ -28,8 +28,8 @@ describe('sections', () => {
         __E2E__: true
       }));
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token);
-      const expected = sections;
+      const actual = fetchSections(token, 0, 3);
+      const expected = {total: sections.length, sections: sections.slice(0, 3)};
       return expect(actual).resolves.toEqual(expected);
     });
 
@@ -45,20 +45,31 @@ describe('sections', () => {
           url,
           options
         ): Promise<{
-          json: () => Promise<Array<Section>>
+          json: () => Promise<{|
+            search_meta: {
+              total: number
+            },
+            hits: Array<Section>
+          |}>
         }> => {
-          expect(url).toBe('host/api/v2/sections');
+          expect(url).toBe('host/api/v2/sections?offset=1&limit=2&type=cards');
           expect(options).toHaveProperty('headers.authorization', token);
 
           return Promise.resolve({
-            json: () => Promise.resolve(sections)
+            json: () =>
+              Promise.resolve({
+                search_meta: {
+                  total: sections.length
+                },
+                hits: sections.slice(1, 2)
+              })
           });
         }
       );
 
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token);
-      const expected = sections;
+      const actual = fetchSections(token, 1, 2);
+      const expected = {total: sections.length, sections: sections.slice(1, 2)};
       return expect(actual).resolves.toEqual(expected);
     });
 
@@ -72,7 +83,7 @@ describe('sections', () => {
       fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
 
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token);
+      const actual = fetchSections(token, 2, 3);
 
       return expect(actual).rejects.toThrow();
     });
