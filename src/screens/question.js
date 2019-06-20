@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
+import {ScrollView, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {
   editAnswer,
@@ -61,14 +61,6 @@ type Props = {|
   ...ConnectedStateProps,
   ...ConnectedDispatchProps
 |};
-
-const styles = StyleSheet.create({
-  loaderContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
 
 class QuestionScreen extends React.PureComponent<Props> {
   props: Props;
@@ -163,28 +155,25 @@ class QuestionScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="question-screen" onRef={this.handleRef}>
         <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
-        {!header && <View style={styles.loaderContainer}>{/* <Loader height={60} /> */}</View>}
-        {type && header && explanation && (
-          <Question
-            type={type}
-            choices={choices}
-            header={header}
-            explanation={explanation}
-            template={template}
-            media={media}
-            userChoices={userChoices}
-            onChoicePress={this.handleChoicePress}
-            onButtonPress={this.handleButtonPress}
-            onSliderChange={this.handleOnSliderChange}
-            onChoiceInputChange={this.handleChoiceInputChange}
-            onInputValueChange={this.handleInputValueChange}
-            isValidating={isValidating}
-            min={min}
-            max={max}
-            step={step}
-            value={value}
-          />
-        )}
+        <Question
+          type={type}
+          choices={choices}
+          header={header}
+          explanation={explanation}
+          template={template}
+          media={media}
+          userChoices={userChoices}
+          onChoicePress={this.handleChoicePress}
+          onButtonPress={this.handleButtonPress}
+          onSliderChange={this.handleOnSliderChange}
+          onChoiceInputChange={this.handleChoiceInputChange}
+          onInputValueChange={this.handleInputValueChange}
+          isValidating={isValidating}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+        />
       </Screen>
     );
   }

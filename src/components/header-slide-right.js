@@ -14,16 +14,20 @@ type Props = {|
   isGodModeActivated: boolean,
   isFastSlideActivated: boolean,
   onGodModeToggle: null | OnToggleFn,
-  onFastSlideToggle: null | OnToggleFn
+  onFastSlideToggle: null | OnToggleFn,
+  isLoading?: boolean
 |};
 
 const LIVES_VERTICAL_PADDING = theme.spacing.tiny;
 
 const styles = StyleSheet.create({
-  lives: {
+  container: {
     paddingVertical: LIVES_VERTICAL_PADDING,
     paddingHorizontal: theme.spacing.small,
     backgroundColor: theme.colors.gray.light
+  },
+  containerPlaceholder: {
+    backgroundColor: 'transparent'
   }
 });
 
@@ -32,11 +36,13 @@ const HeaderSlideRight = ({
   isGodModeActivated,
   isFastSlideActivated,
   onGodModeToggle,
-  onFastSlideToggle
+  onFastSlideToggle,
+  isLoading
 }: Props) => {
   const disabled = (typeof onGodModeToggle === 'object' && true) || false;
+
   return (
-    <View style={styles.lives}>
+    <View style={[styles.container, isLoading && styles.containerPlaceholder]}>
       <TouchableOpacity
         onPress={onGodModeToggle}
         onLongPress={onFastSlideToggle}
@@ -47,6 +53,7 @@ const HeaderSlideRight = ({
           isFastSlideActivated={isFastSlideActivated}
           count={count}
           height={HEADER_HEIGHT - LIVES_VERTICAL_PADDING * 2}
+          isLoading={isLoading}
         />
       </TouchableOpacity>
     </View>

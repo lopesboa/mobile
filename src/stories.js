@@ -46,6 +46,7 @@ require('./components/lives.stories.js');
 require('./components/loader.stories.js');
 require('./components/notification.stories.js');
 require('./components/pdf.stories.js');
+require('./components/placeholder-circle.stories.js');
 require('./components/placeholder-line.stories.js');
 require('./components/placeholder.stories.js');
 require('./components/preview.stories.js');

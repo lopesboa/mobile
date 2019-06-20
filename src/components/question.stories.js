@@ -11,6 +11,18 @@ import Question from './question';
 import {template, items, userChoices} from './question-template.stories';
 
 storiesOf('Question', module)
+  .add('Default', () => (
+    <Question
+      choices={choices}
+      userChoices={[]}
+      onInputValueChange={handleFakePress}
+      onChoicePress={handleFakePress}
+      onChoiceInputChange={handleFakePress}
+      onButtonPress={handleFakePress}
+      isValidating={false}
+      onSliderChange={handleFakePress}
+    />
+  ))
   .add('QCM', () => (
     <Question
       type={QUESTION_TYPE.QCM}

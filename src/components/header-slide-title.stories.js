@@ -6,6 +6,7 @@ import {storiesOf} from '@storybook/react-native';
 import HeaderSlideTitle from './header-slide-title';
 
 storiesOf('HeaderSlideTitle', module)
+  .add('Default', () => <HeaderSlideTitle />)
   .add('Basic', () => (
     <HeaderSlideTitle
       image={{uri: 'https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg'}}

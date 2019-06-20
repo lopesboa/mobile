@@ -31,8 +31,8 @@ class HomeScreen extends React.PureComponent<Props> {
   props: Props;
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
-    this.props.selectCard(item);
     this.props.navigation.navigate('Slide');
+    this.props.selectCard(item);
   };
 
   handleLogoLongPress = () =>

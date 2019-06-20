@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Line as LineBase} from 'rn-placeholder';
+import LineBase from 'rn-placeholder';
 
 import theme from '../modules/theme';
 import type {FontSizeType} from '../modules/theme';
@@ -11,7 +11,8 @@ type Props = {|
   size?: 'tiny' | 'small' | 'base',
   fontSize?: FontSizeType,
   color?: string,
-  width?: string
+  width?: string | number,
+  style?: ViewStyleProp
 |};
 
 const styles = StyleSheet.create({
@@ -36,12 +37,13 @@ const PlaceholderLine = ({
   size = 'base',
   fontSize,
   color = theme.colors.gray.light,
-  width = '100%'
+  width,
+  style
 }: Props) => (
-  <View style={[styles.container, {height: fontSize && theme.fontSize[fontSize] * 1.25}]}>
+  <View style={[styles.container, {height: fontSize && theme.fontSize[fontSize] * 1.25}, style]}>
     <LineBase
       style={[styles.line, styles[size], {backgroundColor: color}]}
-      width={width}
+      width={width || '100%'}
       noMargin
     />
   </View>

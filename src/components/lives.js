@@ -25,10 +25,12 @@ export type Props = {|
   heartBrokenOpacity?: Animated.Interpolation,
   maxScaleX?: number,
   isGodModeActivated: boolean,
-  isFastSlideActivated: boolean
+  isFastSlideActivated: boolean,
+  isLoading?: boolean
 |};
 
 const HEART_OFFSET_RIGHT = 0.4;
+const PLACEHOLDER_COLOR = theme.colors.gray.light;
 
 const styles = StyleSheet.create({
   container: {
@@ -43,6 +45,9 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.thumbnail,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  livesPlaceholder: {
+    backgroundColor: PLACEHOLDER_COLOR
   },
   heartIcon: {
     position: 'absolute',
@@ -65,12 +70,14 @@ const Lives = ({
   heartBrokenOpacity,
   maxScaleX = 0,
   isGodModeActivated,
-  isFastSlideActivated
+  isFastSlideActivated,
+  isLoading
 }: Props) => {
   const heartHeight = height * 0.6;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
   const offsetLeft = (heartHeight * maxScaleX) / 2;
   const heartColor =
+    (isLoading && PLACEHOLDER_COLOR) ||
     (isGodModeActivated && isFastSlideActivated && FAST_SLIDE_AND_GODMODE_COLOR) ||
     (isGodModeActivated && theme.colors.positive) ||
     (isFastSlideActivated && FAST_SLIDE_COLOR) ||
@@ -133,22 +140,29 @@ const Lives = ({
 
   return (
     <View style={[styles.container, containerStyle]} testID={testID}>
-      <View style={[styles.lives, livesStyle]} testID={`${testID}-${count}${brokenSuffix}`}>
-        {(isGodModeActivated && isFastSlideActivated) ||
-        isFastSlideActivated ||
-        isGodModeActivated ? (
-          <View style={textWrapper}>
-            <Text style={textStyle}>{godModeInfiniteLoopChar}</Text>
-          </View>
-        ) : (
-          <Animated.View style={animatedTextStyle}>
-            <View style={textWrapper}>
-              <Text style={textStyle}>x{topText}</Text>
-            </View>
-            <View style={textWrapper}>
-              <Text style={textStyle}>x{bottomText}</Text>
-            </View>
-          </Animated.View>
+      <View
+        style={[styles.lives, isLoading && styles.livesPlaceholder, livesStyle]}
+        testID={`${testID}-${count}${brokenSuffix}`}
+      >
+        {!isLoading && (
+          <React.Fragment>
+            {(isGodModeActivated && isFastSlideActivated) ||
+            isFastSlideActivated ||
+            isGodModeActivated ? (
+              <View style={textWrapper}>
+                <Text style={textStyle}>{godModeInfiniteLoopChar}</Text>
+              </View>
+            ) : (
+              <Animated.View style={animatedTextStyle}>
+                <View style={textWrapper}>
+                  <Text style={textStyle}>x{topText}</Text>
+                </View>
+                <View style={textWrapper}>
+                  <Text style={textStyle}>x{bottomText}</Text>
+                </View>
+              </Animated.View>
+            )}
+          </React.Fragment>
         )}
       </View>
       <Animated.View style={[styles.heart, heartStyle]}>

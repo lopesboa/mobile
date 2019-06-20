@@ -6,9 +6,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
-
 import theme from '../modules/theme';
-
 import translations from '../translations';
 import {QUESTION_TYPE, RESOURCE_TYPE} from '../const';
 import Resource from './resource';
@@ -16,13 +14,14 @@ import Html from './html';
 import QuestionChoices from './question-choices';
 import type {Props as QuestionChoicesProps} from './question-choices';
 import QuestionTitle from './question-title';
+import PlaceholderLine from './placeholder-line';
 import Space from './space';
 import Button from './button';
 
 export type Props = {|
-  type: QuestionType,
-  header: string,
-  explanation: string,
+  type?: QuestionType,
+  header?: string,
+  explanation?: string,
   template?: string,
   choices: Array<Choice>,
   userChoices: Array<string>,
@@ -45,12 +44,20 @@ export type State = {|
   imageWidth?: number
 |};
 
+const PLACEHOLDER_COLOR = theme.colors.gray.light;
+
 const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,
     flexGrow: 1,
     justifyContent: 'space-between'
+  },
+  containerPlaceholder: {
+    paddingTop: theme.spacing.large
+  },
+  placeholder: {
+    alignItems: 'center'
   },
   choicesContainer: {
     paddingHorizontal: theme.spacing.small
@@ -90,6 +97,18 @@ const Question = ({
   step,
   value
 }: Props) => {
+  if (!type || !header || !explanation) {
+    return (
+      <View style={styles.containerPlaceholder}>
+        <View>
+          <PlaceholderLine color={PLACEHOLDER_COLOR} width="45%" style={styles.placeholder} />
+          <Space />
+          <PlaceholderLine color={PLACEHOLDER_COLOR} width="70%" style={styles.placeholder} />
+        </View>
+      </View>
+    );
+  }
+
   const oneChoiceSelected =
     type === QUESTION_TYPE.TEMPLATE
       ? choices.length === userChoices.filter(choice => choice).length
@@ -114,7 +133,6 @@ const Question = ({
         <View style={styles.questionContainer}>
           <QuestionTitle>{header}</QuestionTitle>
           <Space type="small" />
-
           <Html
             fontSize={theme.fontSize.regular}
             style={styles.explanation}

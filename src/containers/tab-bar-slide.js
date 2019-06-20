@@ -10,12 +10,15 @@ import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
+import PlaceholderCircle from '../components/placeholder-circle';
+import PlaceholderLine from '../components/placeholder-line';
 import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
   isValidating: boolean,
   hasNoClue: boolean,
+  isLoading: boolean,
   hasNoContext: boolean,
   hasNoLesson: boolean,
   hasNewLesson: boolean,
@@ -33,6 +36,7 @@ type Props = {|
 |};
 
 const INACTIVE_COLOR = theme.colors.gray.lightMedium;
+const PLACEHOLDER_COLOR = theme.colors.gray.light;
 
 const styles = StyleSheet.create({
   inactiveText: {
@@ -98,7 +102,11 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasNoClue, hasNoLesson} = this.props;
+    const {renderIcon, hasNoClue, hasNoLesson, isLoading} = this.props;
+
+    if (isLoading) {
+      return <PlaceholderCircle width={20} color={PLACEHOLDER_COLOR} />;
+    }
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||
@@ -126,10 +134,17 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   getLabelText = (scene: TabScene) => ({tintColor}) => {
-    const {getLabelText, labelStyle, hasNoClue, hasNoLesson, hasNewLesson} = this.props;
+    const {getLabelText, labelStyle, hasNoClue, hasNoLesson, hasNewLesson, isLoading} = this.props;
+
+    if (isLoading) {
+      return <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />;
+    }
+
     const labelText = getLabelText(scene);
 
-    if (!labelText) return null;
+    if (!labelText) {
+      return null;
+    }
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||
@@ -156,6 +171,7 @@ class TabBarSlide extends React.Component<Props> {
       navigation,
       /* eslint-disable no-unused-vars */
       hasNewLesson,
+      isLoading,
       hasNoClue,
       hasNoContext,
       hasNoLesson,
@@ -165,6 +181,7 @@ class TabBarSlide extends React.Component<Props> {
       /* eslint-enable no-unused-vars */
       ...props
     } = this.props;
+
     return (
       <TabBar
         {...props}
@@ -189,8 +206,11 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
 
   const isValidating = checkIsValidating(state);
 
+  const isLoading = !slide;
+
   return {
     isValidating,
+    isLoading,
     hasNoClue: !(slide && slide.clue),
     hasNoLesson: !resources.length,
     hasNoContext: !(slide && slide.context && slide.context.title),

@@ -92,6 +92,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -3889,6 +3890,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -7651,6 +7653,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -11413,6 +11416,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -15921,6 +15925,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -19683,6 +19688,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -23434,6 +23440,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -30441,6 +30448,7 @@ exports[`Storyshots Correction Default 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -31184,6 +31192,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -34952,6 +34961,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -38714,6 +38724,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -45657,6 +45668,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -49454,6 +49466,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -59578,6 +59591,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",
@@ -63230,6 +63244,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                 "flex": 1,
                 "justifyContent": "center",
               },
+              undefined,
               Object {
                 "height": 67,
                 "overflow": "hidden",

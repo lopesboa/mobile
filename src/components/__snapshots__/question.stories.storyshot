@@ -314,6 +314,109 @@ exports[`Storyshots Question BasicQuestion 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Question Default 1`] = `
+<View
+  style={
+    Object {
+      "paddingTop": 48,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "justifyContent": "center",
+          },
+          Object {
+            "height": undefined,
+          },
+          Object {
+            "alignItems": "center",
+          },
+        ]
+      }
+    >
+      <View
+        noMargin={true}
+        style={
+          Array [
+            Object {
+              "borderRadius": 0,
+            },
+            Object {
+              "height": 10,
+            },
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+        width="45%"
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "justifyContent": "center",
+          },
+          Object {
+            "height": undefined,
+          },
+          Object {
+            "alignItems": "center",
+          },
+        ]
+      }
+    >
+      <View
+        noMargin={true}
+        style={
+          Array [
+            Object {
+              "borderRadius": 0,
+            },
+            Object {
+              "height": 10,
+            },
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+        width="70%"
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Question Option selected 1`] = `
 <RCTScrollView
   automaticallyAdjustContentInsets={false}

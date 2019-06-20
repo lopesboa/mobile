@@ -51,6 +51,16 @@ storiesOf('Lives', module)
       isGodModeActivated
     />
   ))
+  .add('Placeholder', () => (
+    <Lives
+      winningLife={false}
+      count={3}
+      height={60}
+      isFastSlideActivated={false}
+      isGodModeActivated={false}
+      isLoading
+    />
+  ))
   .add('Winning life', () => (
     <Lives winningLife count={3} height={120} isFastSlideActivated={false} isGodModeActivated />
   ))
@@ -66,7 +76,7 @@ storiesOf('Lives', module)
       isGodModeActivated
     />
   ))
-  .add('with text translate interpolation', () => (
+  .add('With text translate interpolation', () => (
     <Lives
       textTranslateY={textTranslateY}
       winningLife={false}

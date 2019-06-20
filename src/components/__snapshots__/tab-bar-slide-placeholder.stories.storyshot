@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TabBarSlidePlaceholder Default 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#ECEFF1",
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "paddingVertical": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 20,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+            "height": 25,
+            "width": 25,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "height": 5,
+            "width": 35,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 20,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+            "height": 25,
+            "width": 25,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "height": 5,
+            "width": 35,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 20,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+            "height": 25,
+            "width": 25,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "height": 5,
+            "width": 35,
+          },
+          Object {
+            "backgroundColor": "#CFD8DC",
+          },
+        ]
+      }
+    />
+  </View>
+</RCTSafeAreaView>
+`;

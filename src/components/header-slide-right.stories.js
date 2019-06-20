@@ -33,4 +33,14 @@ storiesOf('HeaderSlideRight', module)
       onGodModeToggle={handleFakePress}
       count={3}
     />
+  ))
+  .add('Placeholder', () => (
+    <HeaderSlideRight
+      isGodModeActivated={false}
+      isFastSlideActivated={false}
+      onFastSlideToggle={handleFakePress}
+      onGodModeToggle={null}
+      count={3}
+      isLoading
+    />
   ));

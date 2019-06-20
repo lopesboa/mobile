@@ -11,13 +11,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
-    >
+    <View>
       <View
         style={
           Object {
@@ -34,34 +28,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
               Object {
                 "height": 21.25,
               },
+              undefined,
             ]
           }
         >
           <View
+            noMargin={true}
             style={
               Array [
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
-                  "borderRadius": 3,
-                  "height": 12,
-                  "marginBottom": 0,
-                  "width": "30%",
+                  "borderRadius": 0,
                 },
-                Array [
-                  Object {
-                    "borderRadius": 0,
-                  },
-                  Object {
-                    "height": 10,
-                  },
-                  Object {
-                    "backgroundColor": "#ECEFF1",
-                  },
-                ],
+                Object {
+                  "height": 10,
+                },
+                Object {
+                  "backgroundColor": "#ECEFF1",
+                },
               ]
             }
-          />
+            width="30%"
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -169,7 +164,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -189,34 +183,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -235,34 +230,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -281,34 +277,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -327,34 +324,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -422,7 +420,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -442,34 +439,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -488,34 +486,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -534,34 +533,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -580,34 +580,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -675,7 +676,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -695,34 +695,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -741,34 +742,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -787,34 +789,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -833,34 +836,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -928,7 +932,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -948,34 +951,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -994,34 +998,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1040,34 +1045,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1086,34 +1092,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -1181,7 +1188,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -1201,34 +1207,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1247,34 +1254,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1293,34 +1301,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1339,34 +1348,35 @@ exports[`Storyshots CatalogSection Default 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -1390,13 +1400,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
-    >
+    <View>
       <View
         style={
           Object {
@@ -1413,34 +1417,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               Object {
                 "height": 21.25,
               },
+              undefined,
             ]
           }
         >
           <View
+            noMargin={true}
             style={
               Array [
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
-                  "borderRadius": 3,
-                  "height": 12,
-                  "marginBottom": 0,
-                  "width": "30%",
+                  "borderRadius": 0,
                 },
-                Array [
-                  Object {
-                    "borderRadius": 0,
-                  },
-                  Object {
-                    "height": 10,
-                  },
-                  Object {
-                    "backgroundColor": "#ECEFF1",
-                  },
-                ],
+                Object {
+                  "height": 10,
+                },
+                Object {
+                  "backgroundColor": "#ECEFF1",
+                },
               ]
             }
-          />
+            width="30%"
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -1573,7 +1578,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -1593,34 +1597,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1639,34 +1644,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1685,34 +1691,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1731,34 +1738,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -1826,7 +1834,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -1846,34 +1853,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1892,34 +1900,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1938,34 +1947,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -1984,34 +1994,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -2079,7 +2090,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -2099,34 +2109,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2145,34 +2156,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2191,34 +2203,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2237,34 +2250,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -2332,7 +2346,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -2352,34 +2365,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2398,34 +2412,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2444,34 +2459,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2490,34 +2506,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -2585,7 +2602,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -2605,34 +2621,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2651,34 +2668,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2697,34 +2715,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2743,34 +2762,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -2838,7 +2858,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -2858,34 +2877,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2904,34 +2924,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2950,34 +2971,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -2996,34 +3018,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -3091,7 +3114,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -3111,34 +3133,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3157,34 +3180,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3203,34 +3227,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3249,34 +3274,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -3344,7 +3370,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -3364,34 +3389,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3410,34 +3436,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3456,34 +3483,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3502,34 +3530,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -3597,7 +3626,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -3617,34 +3645,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3663,34 +3692,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3709,34 +3739,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3755,34 +3786,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -3850,7 +3882,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -3870,34 +3901,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3916,34 +3948,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -3962,34 +3995,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -4008,34 +4042,35 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -5211,7 +5246,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -5231,34 +5265,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5277,34 +5312,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5323,34 +5359,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5369,34 +5406,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -5464,7 +5502,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -5484,34 +5521,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5530,34 +5568,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5576,34 +5615,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5622,34 +5662,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -5717,7 +5758,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -5737,34 +5777,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5783,34 +5824,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5829,34 +5871,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -5875,34 +5918,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -5970,7 +6014,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -5990,34 +6033,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6036,34 +6080,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6082,34 +6127,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6128,34 +6174,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -6223,7 +6270,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -6243,34 +6289,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6289,34 +6336,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6335,34 +6383,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6381,34 +6430,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -6476,7 +6526,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -6496,34 +6545,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6542,34 +6592,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6588,34 +6639,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6634,34 +6686,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -6729,7 +6782,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -6749,34 +6801,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6795,34 +6848,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6841,34 +6895,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -6887,34 +6942,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -6982,7 +7038,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 style={
                   Object {
                     "height": 75,
-                    "opacity": 0.5,
                   }
                 }
               >
@@ -7002,34 +7057,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "70%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="70%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -7048,34 +7104,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "80%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 10,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 10,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="80%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -7094,34 +7151,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "40%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 5,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 5,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="40%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                   <View
                     style={
@@ -7140,34 +7198,35 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         Object {
                           "height": undefined,
                         },
+                        undefined,
                       ]
                     }
                   >
                     <View
+                      noMargin={true}
                       style={
                         Array [
                           Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#efefef",
-                            "borderRadius": 3,
-                            "height": 12,
-                            "marginBottom": 0,
-                            "width": "100%",
+                            "borderRadius": 0,
                           },
-                          Array [
-                            Object {
-                              "borderRadius": 0,
-                            },
-                            Object {
-                              "height": 2,
-                            },
-                            Object {
-                              "backgroundColor": "#CFD8DC",
-                            },
-                          ],
+                          Object {
+                            "height": 2,
+                          },
+                          Object {
+                            "backgroundColor": "#CFD8DC",
+                          },
                         ]
                       }
-                    />
+                      width="100%"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                          }
+                        }
+                      />
+                    </View>
                   </View>
                 </View>
               </View>

@@ -21,24 +21,24 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
   <View
     style={
       Object {
+        "backgroundColor": "#ECEFF1",
         "borderRadius": 1000,
+        "height": 28,
         "overflow": "hidden",
+        "width": 28,
       }
     }
   >
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Array [
-          Object {
-            "height": 28,
-            "width": 28,
-          },
-          Object {
-            "borderRadius": 1000,
-            "overflow": "hidden",
-          },
-        ]
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "borderRadius": 1000,
+          "height": 28,
+          "overflow": "hidden",
+          "width": 28,
+        }
       }
     >
       <Image
@@ -57,8 +57,8 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
               "top": 0,
             },
             Object {
-              "height": undefined,
-              "width": undefined,
+              "height": 28,
+              "width": 28,
             },
             undefined,
           ]
@@ -135,24 +135,24 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
   <View
     style={
       Object {
+        "backgroundColor": "#ECEFF1",
         "borderRadius": 1000,
+        "height": 28,
         "overflow": "hidden",
+        "width": 28,
       }
     }
   >
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Array [
-          Object {
-            "height": 28,
-            "width": 28,
-          },
-          Object {
-            "borderRadius": 1000,
-            "overflow": "hidden",
-          },
-        ]
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "borderRadius": 1000,
+          "height": 28,
+          "overflow": "hidden",
+          "width": 28,
+        }
       }
     >
       <Image
@@ -171,8 +171,8 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
               "top": 0,
             },
             Object {
-              "height": undefined,
-              "width": undefined,
+              "height": 28,
+              "width": 28,
             },
             undefined,
           ]
@@ -249,24 +249,24 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
   <View
     style={
       Object {
+        "backgroundColor": "#ECEFF1",
         "borderRadius": 1000,
+        "height": 28,
         "overflow": "hidden",
+        "width": 28,
       }
     }
   >
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Array [
-          Object {
-            "height": 28,
-            "width": 28,
-          },
-          Object {
-            "borderRadius": 1000,
-            "overflow": "hidden",
-          },
-        ]
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "borderRadius": 1000,
+          "height": 28,
+          "overflow": "hidden",
+          "width": 28,
+        }
       }
     >
       <Image
@@ -285,8 +285,8 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
               "top": 0,
             },
             Object {
-              "height": undefined,
-              "width": undefined,
+              "height": 28,
+              "width": 28,
             },
             undefined,
           ]
@@ -338,6 +338,133 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
     </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots HeaderSlideTitle Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingRight": 48,
+        "paddingVertical": 16,
+      },
+      Object {
+        "height": 60,
+      },
+    ]
+  }
+  testID="header-slide-title"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "borderRadius": 1000,
+        "height": 28,
+        "overflow": "hidden",
+        "width": 28,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "justifyContent": "center",
+          },
+          Object {
+            "height": undefined,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        noMargin={true}
+        style={
+          Array [
+            Object {
+              "borderRadius": 0,
+            },
+            Object {
+              "height": 5,
+            },
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+        width="15%"
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "justifyContent": "center",
+          },
+          Object {
+            "height": undefined,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        noMargin={true}
+        style={
+          Array [
+            Object {
+              "borderRadius": 0,
+            },
+            Object {
+              "height": 5,
+            },
+            Object {
+              "backgroundColor": "#ECEFF1",
+            },
+          ]
+        }
+        width="50%"
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
   </View>
 </View>
 `;

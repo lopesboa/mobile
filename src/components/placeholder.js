@@ -2,15 +2,15 @@
 
 import * as React from 'react';
 import PlaceholderBase from 'rn-placeholder';
-import {__E2E__} from '../modules/environment';
 
 type Props = {|
   children: React.Node,
-  style?: ViewStyleProp
+  style?: ViewStyleProp,
+  renderLeft?: () => React.Node
 |};
 
-const Placeholder = ({children, style}: Props) => (
-  <PlaceholderBase animation={!__E2E__ && 'fade'} style={style}>
+const Placeholder = ({children, style, renderLeft}: Props) => (
+  <PlaceholderBase renderLeft={renderLeft} style={style}>
     {children}
   </PlaceholderBase>
 );
