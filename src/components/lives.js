@@ -4,11 +4,12 @@ import * as React from 'react';
 import {Animated, View, StyleSheet} from 'react-native';
 import {
   NovaSolidVoteRewardsVoteHeart as HeartIcon,
+  NovaSolidAudioAudioControlFastForward as FastForward,
   NovaCompositionCoorpacademyBrokenHeart as HeartBrokenIcon,
   NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon
 } from '@coorpacademy/nova-icons';
 
-import theme, {FAST_SLIDE_AND_GODMODE_COLOR, FAST_SLIDE_COLOR} from '../modules/theme';
+import theme from '../modules/theme';
 import Text from './text';
 
 export type Props = {|
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0
-  }
+  },
+  fastSlideIcon: {}
 });
 
 const Lives = ({
@@ -74,18 +76,24 @@ const Lives = ({
   isLoading
 }: Props) => {
   const heartHeight = height * 0.6;
+  const fastSlideIconHeight = height * 0.4;
   const heartIconStyle = {height: heartHeight, width: heartHeight};
+  const fastSlideIconStyle = {height: fastSlideIconHeight, width: fastSlideIconHeight};
   const offsetLeft = (heartHeight * maxScaleX) / 2;
   const heartColor =
     (isLoading && PLACEHOLDER_COLOR) ||
-    (isGodModeActivated && isFastSlideActivated && FAST_SLIDE_AND_GODMODE_COLOR) ||
     (isGodModeActivated && theme.colors.positive) ||
-    (isFastSlideActivated && FAST_SLIDE_COLOR) ||
     theme.colors.negative;
   const containerStyle = {
     paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     height
+  };
+  const fastSlideContainerStyle = {
+    position: 'absolute',
+    top: 0,
+    paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
+    marginTop: theme.spacing.micro
   };
   const transform = [];
   const textTransform = [];
@@ -191,6 +199,11 @@ const Lives = ({
           <HeartBrokenIcon color={theme.colors.negative} style={heartIconStyle} />
         </Animated.View>
       </Animated.View>
+      {isFastSlideActivated && (
+        <View style={fastSlideContainerStyle}>
+          <FastForward color={theme.colors.gray.dark} style={fastSlideIconStyle} />
+        </View>
+      )}
     </View>
   );
 };
