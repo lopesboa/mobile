@@ -20,6 +20,7 @@ import type {StoreState} from '../store';
 import type {State as PermissionsState} from '../reducers/permissions';
 import type {PermissionType} from '../actions/permissions';
 import translations from '../../translations';
+import type {SupportedLanguage} from '../../translations/_types';
 
 export const checkIsExitNode = (state: StoreState): boolean => {
   const nextContent = getStepContent(state);
@@ -113,6 +114,9 @@ export const getBestScore = (state: StoreState): string | void => {
   if (stars) return stars > bestScore ? `${stars - bestScore}` : '0';
 };
 
-export const getSection = (state: StoreState, key: string): Section | void =>
-  state.catalog.entities.sections[key] &&
-  state.catalog.entities.sections[key][translations.getLanguage()];
+export const getSection = (
+  state: StoreState,
+  key: string,
+  language?: SupportedLanguage = translations.getLanguage()
+): Section | void =>
+  state.catalog.entities.sections[key] && state.catalog.entities.sections[key][language];

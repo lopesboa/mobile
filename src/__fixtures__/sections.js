@@ -3,6 +3,7 @@
 import {SECTION_TYPE, SECTION_CONTENT_TYPE} from '../const';
 import type {Section} from '../types';
 
+// @todo explode this function to have a section creator alone
 export const createSections = (): Array<Section> => [
   {
     type: SECTION_TYPE.CARDS,

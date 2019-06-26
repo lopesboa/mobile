@@ -3,17 +3,15 @@
 import type {Section} from '../../../types';
 import type {SupportedLanguage} from '../../../translations/_types';
 import type {StoreAction, ErrorAction} from '../../_types';
-import {getToken} from '../../utils/state-extract';
+import {getToken, getSection} from '../../utils/state-extract';
 import {ERROR_TYPE} from '../../../const';
 import {showModal} from '../ui/modal';
 import type {Action as ModalAction} from '../ui/modal';
-import {fetchCards} from './cards';
+import {fetchCards, DEFAULT_LIMIT} from './cards';
 
 export const FETCH_REQUEST = '@@sections/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@sections/FETCH_SUCCESS';
 export const FETCH_ERROR = '@@sections/FETCH_ERROR';
-
-export const DEFAULT_LIMIT = 3;
 
 export type Action =
   | {|
@@ -77,7 +75,8 @@ export const fetchError = (error: Error): Action => ({
 export const fetchSections = (
   offset: number,
   limit: number,
-  language: SupportedLanguage
+  language: SupportedLanguage,
+  forceRefresh?: boolean = false
 ): StoreAction<Action | ModalAction<StoreAction<Action>>> => async (
   dispatch,
   getState,
@@ -97,10 +96,16 @@ export const fetchSections = (
     const result = await dispatch(fetchSuccess(offset, limit, total, sections, language));
 
     await Promise.all(
-      sections.map(section =>
-        // $FlowFixMe callable signature
-        fetchCards(section.key, 0, DEFAULT_LIMIT, language)(dispatch, getState, options)
-      )
+      sections
+        // Fetch only new sections
+        .filter(({key}: Section) => {
+          const section = getSection(getState(), key);
+          return forceRefresh || !(section && section.cardsRef);
+        })
+        .map(section =>
+          // $FlowFixMe callable signature
+          fetchCards(section.key, 0, DEFAULT_LIMIT, language)(dispatch, getState, options)
+        )
     );
 
     return result;
@@ -109,7 +114,7 @@ export const fetchSections = (
     return dispatch(
       showModal({
         errorType: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction: () => fetchSections(offset, limit, language)
+        lastAction: () => fetchSections(offset, limit, language, forceRefresh)
       })
     );
   }

@@ -9,13 +9,15 @@ import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {fetchCards} from '../redux/actions/catalog/cards';
 import {fetchSections} from '../redux/actions/catalog/sections';
+import {getSection} from '../redux/utils/state-extract';
+import {getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import translations from '../translations';
 import type {Section} from '../types';
 import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
 type ConnectedStateProps = {|
-  sections: Array<Section>,
+  sections: Array<Section | void>,
   cards: Array<DisciplineCard | ChapterCard>,
   children?: React.Node
 |};
@@ -37,7 +39,7 @@ type State = {|
   isRefreshing: boolean
 |};
 
-const DEFAULT_LIMIT = 3;
+const DEFAULT_LIMIT = 4;
 const DEBOUNCE_DURATION = 100;
 
 class Catalog extends React.PureComponent<Props, State> {
@@ -52,16 +54,33 @@ class Catalog extends React.PureComponent<Props, State> {
   offsetY: number = 0;
 
   componentDidMount() {
-    this.fetchSections(0, DEFAULT_LIMIT);
+    this.fetchSections(0, this.getLimit(0));
   }
 
-  fetchSections = async (offset: number, limit: number) => {
-    await this.props.fetchSections(offset, limit, translations.getLanguage());
+  componentDidUpdate(prevProps: Props) {
+    const {sections} = this.props;
+    const emptySections = sections.filter(section => section && isEmptySection(section));
+    const previousEmptySections = prevProps.sections.filter(
+      section => section && isEmptySection(section)
+    );
+
+    if (emptySections.length !== previousEmptySections.length) {
+      const offset = this.getOffset();
+      const limit = this.getLimit(offset);
+
+      if (this.hasUnfetchedSections(offset, limit)) {
+        this.fetchSections(offset, limit);
+      }
+    }
+  }
+
+  fetchSections = async (offset: number, limit: number, forceRefresh?: boolean = false) => {
+    await this.props.fetchSections(offset, limit, translations.getLanguage(), forceRefresh);
   };
 
   handleRefresh = () => {
     this.setState({isRefreshing: true});
-    this.fetchSections(0, DEFAULT_LIMIT)
+    this.fetchSections(0, this.getLimit(0), true)
       .then(() => this.setState({isRefreshing: false}))
       .catch(e => {
         this.setState({isRefreshing: false});
@@ -70,30 +89,47 @@ class Catalog extends React.PureComponent<Props, State> {
       });
   };
 
-  getOffset = (offsetY: number): number =>
-    Math.trunc(offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
+  getOffset = (): number => {
+    const {sections} = this.props;
+    const offset = Math.trunc(this.offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
+    const previousSections = sections.slice(0, offset);
 
-  getLimit = (): number => {
-    const {layout} = this.props;
-    if (!layout) {
-      return 1;
+    return offset + previousSections.filter(section => section && isEmptySection(section)).length;
+  };
+
+  getLimit = (offset: number): number => {
+    const {layout, sections} = this.props;
+    if (!layout || !sections) {
+      return DEFAULT_LIMIT;
     }
 
-    return Math.ceil(layout.height / (SECTION_HEIGHT + SEPARATOR_HEIGHT) + 1);
+    const limit = Math.ceil(layout.height / (SECTION_HEIGHT + SEPARATOR_HEIGHT) + 1);
+
+    return getLimitWithoutCards(sections, offset, limit);
+  };
+
+  hasUnfetchedSections = (offset: number, limit: number): boolean => {
+    const {sections} = this.props;
+
+    return (
+      sections
+        .filter(section => !(section && isEmptySection(section)))
+        .slice(offset, offset + limit)
+        .findIndex(section => !section) !== -1
+    );
   };
 
   handleScroll = ({nativeEvent}: ScrollEvent) => {
-    const {layout, sections} = this.props;
+    const {layout} = this.props;
     const offsetY = nativeEvent.contentOffset.y;
 
     if (offsetY !== this.offsetY && layout) {
       this.offsetY = offsetY;
-      const offset = this.getOffset(offsetY);
-      const limit = this.getLimit();
-      const hasUnfetchedSections =
-        sections && sections.slice(offset, offset + limit).findIndex(section => !section) !== -1;
 
-      if (hasUnfetchedSections) {
+      const offset = this.getOffset();
+      const limit = this.getLimit(offset);
+
+      if (this.hasUnfetchedSections(offset, limit)) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           if (this.offsetY === offsetY) {
@@ -114,7 +150,7 @@ class Catalog extends React.PureComponent<Props, State> {
 
     return (
       <CatalogComponent
-        sections={sections}
+        sections={sections.filter(section => !(section && isEmptySection(section)))}
         cards={cards}
         onCardPress={onCardPress}
         onRefresh={this.handleRefresh}
@@ -128,22 +164,14 @@ class Catalog extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = ({catalog, authentication, ...state}: StoreState): ConnectedStateProps => {
-  const {sectionsRef = []} = catalog;
+const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const {sectionsRef = [], entities} = state.catalog;
   const language = translations.getLanguage();
-  const sections = sectionsRef.map(key => {
-    if (key) {
-      const section = catalog.entities.sections[key];
-      return section[language];
-    }
-
-    return key;
-  });
 
   return {
-    sections,
-    cards: Object.keys(catalog.entities.cards)
-      .map(key => catalog.entities.cards[key][language])
+    sections: sectionsRef.map(key => key && getSection(state, key)),
+    cards: Object.keys(entities.cards)
+      .map(key => entities.cards[key][language])
       .filter(item => item !== undefined)
   };
 };

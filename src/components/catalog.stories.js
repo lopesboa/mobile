@@ -99,6 +99,7 @@ if (__TEST__) {
       );
       const firstSection = sectionsWithCardsRef[0];
       const catalogSection = component.root.find(
+        // $FlowFixMe from fixtures
         el => el.props.testID === `catalog-section-${firstSection.key}`
       );
       catalogSection.props.onScroll(500, 3);

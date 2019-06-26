@@ -22,6 +22,8 @@ export const SELECT_CARD = '@@cards/SELECT_CARD';
 export const SELECT_CARD_FAILURE = '@@cards/SELECT_CARD_FAILURE';
 export const REFRESH_CARD = '@@cards/REFRESH_CARD';
 
+export const DEFAULT_LIMIT = 5;
+
 export type Action =
   | {|
       type: '@@cards/FETCH_REQUEST',

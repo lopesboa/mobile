@@ -4,8 +4,12 @@ import {createSections} from '../../../__fixtures__/sections';
 import {createBrand} from '../../../__fixtures__/brands';
 import {showModal} from '../ui/modal';
 import {ERROR_TYPE} from '../../../const';
-import {fetchRequest, fetchSuccess, fetchError, fetchSections, DEFAULT_LIMIT} from './sections';
-import {fetchRequest as fetchCardsRequest, fetchSuccess as fetchCardsSuccess} from './cards';
+import {fetchRequest, fetchSuccess, fetchError, fetchSections} from './sections';
+import {
+  fetchRequest as fetchCardsRequest,
+  fetchSuccess as fetchCardsSuccess,
+  DEFAULT_LIMIT
+} from './cards';
 import type {Action} from './sections';
 
 const sections = createSections().slice(0, 1);

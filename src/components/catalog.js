@@ -10,7 +10,7 @@ import theme from '../modules/theme';
 import Space from './space';
 
 export type Props = {|
-  sections: Array<Section>,
+  sections: Array<Section | void>,
   cards: Array<DisciplineCard | ChapterCard>,
   onCardPress: (DisciplineCard | ChapterCard) => void,
   onRefresh: () => void,

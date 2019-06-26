@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 
+import {DEFAULT_LIMIT} from '../redux/actions/catalog/cards';
 import CatalogSection, {ITEM_WIDTH} from '../components/catalog-section';
 import type {Props as CatalogSectionProps} from '../components/catalog-section';
 import withLayout from './with-layout';
@@ -32,7 +33,7 @@ class CatalogSectionRefreshable extends React.PureComponent<Props> {
   getLimit = (): number => {
     const {layout} = this.props;
     if (!layout) {
-      return 1;
+      return DEFAULT_LIMIT;
     }
 
     return Math.ceil(layout.width / ITEM_WIDTH) + 1;
