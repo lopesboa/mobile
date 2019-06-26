@@ -1,26 +1,11 @@
- <!-- Before creating your PR :
- - Have you added a Modification Type Label ?
- - Did you use the trello power up to link your PR and the trello ticket ?
--->
-
+ <!-- Please add Labels to the PR, and link it to Trello -->
 ## Detailed purpose of the PR
+<!--What existing problem does the PR solve? -->
+> :wave: Write here :wink:
 
-<!--What existing problem does the PR solve?/
-What is the current behavior? -->
+<!-- Please mention Breaking change if appropriate and extra libs!! -->
 
-### Result and observation
+### Testing strategy
 
-<!--Please describe the new behaviour you’ve introduced. -->
-<!-- Add some screenshots or a good gif of the new behavior, if you’ve introduced UI change -->
-
-- [ ] **Breaking changes ?**  
-       If checked, what have you broken ?
-
-- [ ] **Extra dependency ?**
-      If checked, Which extra dependency did you add ? (name, purpose, link ...).
-
-### Testing Strategy
-
-- [ ] Already covered by tests
-- [ ] Manual testing
-- [ ] Unit testing
+- [ ] I ensured my code is tested: <!-- (how: ) -->
+- [ ] I took care to mention breaking changes and extra libs if appropriate
