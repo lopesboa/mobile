@@ -4,7 +4,6 @@ import type {LessonType, QuestionType, MediaType} from '@coorpacademy/progressio
 
 import type {
   AnalyticsEventType,
-  AnimationType,
   AppState,
   AuthenticationType,
   AuthorType,
@@ -126,13 +125,6 @@ export const CONTENT_TYPE: {
   SLIDE: 'slide',
   SUCCESS: 'success',
   FAILURE: 'failure'
-};
-
-export const ANIMATION_TYPE: {
-  [string]: AnimationType
-} = {
-  IN: 'in',
-  OUT: 'out'
 };
 
 type SpecificContentRef = 'extraLife' | 'failureExitNode' | 'successExitNode';

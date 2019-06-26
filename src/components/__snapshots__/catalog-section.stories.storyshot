@@ -65,7 +65,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
     contentContainerStyle={
       Object {
         "height": 237,
-        "paddingHorizontal": 8,
+        "paddingHorizontal": 4,
       }
     }
     data={
@@ -129,7 +129,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -385,7 +385,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -641,7 +641,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -897,7 +897,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -1153,7 +1153,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -1454,7 +1454,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
     contentContainerStyle={
       Object {
         "height": 237,
-        "paddingHorizontal": 8,
+        "paddingHorizontal": 4,
       }
     }
     data={
@@ -1543,7 +1543,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -1799,7 +1799,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -2055,7 +2055,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -2311,7 +2311,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -2567,7 +2567,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -2823,7 +2823,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -3079,7 +3079,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -3335,7 +3335,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -3591,7 +3591,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -3847,7 +3847,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -4110,7 +4110,7 @@ exports[`Storyshots CatalogSection With content 1`] = `
     contentContainerStyle={
       Object {
         "height": 237,
-        "paddingHorizontal": 8,
+        "paddingHorizontal": 4,
       }
     }
     data={
@@ -4324,7 +4324,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -4768,7 +4768,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -5211,7 +5211,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -5467,7 +5467,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -5723,7 +5723,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -5979,7 +5979,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -6235,7 +6235,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -6491,7 +6491,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -6747,7 +6747,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {
@@ -7003,7 +7003,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 Object {
                   "borderRadius": 5,
                   "flex": 1,
-                  "marginHorizontal": 8,
+                  "marginHorizontal": 4,
                   "marginVertical": 16,
                 },
                 Object {

@@ -2,8 +2,9 @@
 
 import type {BundledChapter} from '../../layer/data/_types';
 import basic from './basic';
+import template from './template';
 
-const items = [basic];
+const items = [basic, template];
 
 const initialChaptersBundle: BundledChapter = {
   chapters: {},

@@ -5,8 +5,6 @@ import {View, StyleSheet, ImageBackground} from 'react-native';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
-import RoundedFooterAnimated from '../containers/rounded-footer-animated';
-import {ANIMATION_TYPE} from '../const';
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 import Version from './version';
@@ -77,11 +75,6 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
       <BrandThemeContext.Consumer>
         {brandTheme => (
           <React.Fragment>
-            <RoundedFooterAnimated
-              color={brandTheme.colors.primary}
-              testID="home-footer"
-              animationType={ANIMATION_TYPE.IN}
-            />
             <Gradient
               height={HEADER_HEIGHT + theme.spacing.small}
               colors={[theme.colors.white]}

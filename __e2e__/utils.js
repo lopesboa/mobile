@@ -1,5 +1,7 @@
 // @flow strict
 
+import {ITEM_WIDTH, ITEM_HEIGHT} from '../src/components/catalog-section';
+
 let alreadyLaunched = false;
 
 const defaultPermissions: DetoxDevicePermissionsType = {
@@ -70,12 +72,12 @@ export const tap = async (testID: string) => {
 //   });
 // };
 
-export const tapCardOnSection = async (testID: string, num: number) => {
-  const offsetX = 184 * (num - 1) + 1; // Scroll amount must be positive and greater than zero
+export const tapCardOnSection = async (testID: string, index: number) => {
+  const offsetX = ITEM_WIDTH * (index - 1) + 1; // Scroll amount must be positive and greater than zero
   await waitForExist(testID);
   await element(by.id(testID)).scrollTo('left');
   await element(by.id(testID)).scroll(offsetX, 'right');
-  await element(by.id(testID)).tapAtPoint({x: 100 + offsetX, y: 100});
+  await element(by.id(testID)).tapAtPoint({x: offsetX + ITEM_HEIGHT / 2, y: ITEM_WIDTH / 2});
 };
 
 export const longPress = async (testID: string) => {

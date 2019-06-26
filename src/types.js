@@ -36,8 +36,6 @@ export type CardDisplayMode = 'card' | 'cover';
 
 export type AuthorType = 'coorp' | 'verified' | 'custom' | 'marketplace';
 
-export type AnimationType = 'in' | 'out';
-
 export type Question = string;
 
 export type Engine = 'learner' | 'microlearning';
