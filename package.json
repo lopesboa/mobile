@@ -45,7 +45,7 @@
     "test:unit": "jest src -c jest.config.unit.js",
     "test": "npm run lint && npm run flow && npm run test:unit && npm run test:end2end:ios:release",
     "storybook:generate-stories": "babel-node scripts/generate-stories.js",
-    "pull:certificate:ios": "cd ios && fastlane match development --readonly && fastlane match adhoc --readonly",
+    "pull:certificate:ios": "cd ios && bundle exec fastlane match development --readonly && bundle exec fastlane match adhoc --readonly",
     "pull:certificate:android": "node scripts/pull-certificate-android.js",
     "pull:firebase:config": "babel-node scripts/pull-firebase-config.js",
     "generate:bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
