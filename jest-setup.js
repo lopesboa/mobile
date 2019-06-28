@@ -5,6 +5,8 @@ import mockAsyncStorage from '@react-native-community/async-storage/jest/async-s
 
 // AsyncStorage
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
+
+jest.mock('react-native-sound', () => ({IsAndroid: true, setCategory: () => {}}));
 // global mocks
 global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
 

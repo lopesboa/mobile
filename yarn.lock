@@ -11347,6 +11347,11 @@ react-native-snap-carousel@^3.8.0:
     prop-types "^15.6.1"
     react-addons-shallow-compare "15.6.2"
 
+react-native-sound@^0.10.12:
+  version "0.10.12"
+  resolved "https://registry.npmjs.org/react-native-sound/-/react-native-sound-0.10.12.tgz#f912d6f9d6e9e2b42b391e0226787628d940f01a"
+  integrity sha512-lhvzZ+ekNSHW9s4FjmxxGAQmd7yDT9FnHgJNP824cMyHRrTES/LgHnSOxES/1FWVoaQ8FdfbEHkWd2rN0G/L9A==
+
 react-native-splash-screen@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"

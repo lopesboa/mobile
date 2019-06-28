@@ -24,6 +24,7 @@ import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
+import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
 
@@ -118,6 +119,14 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
       backgroundColor: navigation.state.params.isCorrect ? POSITIVE_COLOR : NEGATIVE_COLOR
     }
   });
+
+  componentDidMount() {
+    const {isCorrect} = this.props;
+    if (isCorrect) {
+      return playSound(AUDIO_FILE.GOOD_ANSWER);
+    }
+    return playSound(AUDIO_FILE.WRONG_ANSWER);
+  }
 
   componentDidUpdate = (prevProps: Props) => {
     const {nextScreen} = this.props;

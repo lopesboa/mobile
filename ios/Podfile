@@ -54,6 +54,8 @@ target 'Coorpacademy' do
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
 end
 
 # The following is needed to ensure the "archive" step works in XCode.
