@@ -160,7 +160,7 @@ jobs:
       - run:
           name: Tests
           command: |
-            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f
+            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
           environment:
             JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml
 
