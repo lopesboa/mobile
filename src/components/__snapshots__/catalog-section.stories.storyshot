@@ -5,6 +5,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
   <View
     style={
       Object {
+        "color": "#14171A",
         "fontSize": 17,
         "fontWeight": "700",
         "paddingHorizontal": 16,
@@ -1394,6 +1395,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
   <View
     style={
       Object {
+        "color": "#14171A",
         "fontSize": 17,
         "fontWeight": "700",
         "paddingHorizontal": 16,
@@ -4097,6 +4099,7 @@ exports[`Storyshots CatalogSection With content 1`] = `
       Array [
         Object {},
         Object {
+          "color": "#14171A",
           "fontSize": 17,
           "fontWeight": "700",
           "paddingHorizontal": 16,

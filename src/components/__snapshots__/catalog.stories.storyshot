@@ -59,6 +59,7 @@ exports[`Storyshots Catalog Default 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -1458,6 +1459,7 @@ exports[`Storyshots Catalog Default 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -2857,6 +2859,7 @@ exports[`Storyshots Catalog Default 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -4306,6 +4309,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -5705,6 +5709,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -7104,6 +7109,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
         <View
           style={
             Object {
+              "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
               "paddingHorizontal": 16,
@@ -8574,6 +8580,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
             Array [
               Object {},
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
@@ -9928,6 +9935,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
             Array [
               Object {},
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
@@ -11355,6 +11363,7 @@ exports[`Storyshots Catalog Sections with cards 1`] = `
             Array [
               Object {},
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
@@ -11940,6 +11949,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
             Array [
               Object {},
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,

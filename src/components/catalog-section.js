@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
   title: {
     paddingHorizontal: theme.spacing.small,
     fontSize: TITLE_HEIGHT,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.black
   },
   list: {
     paddingHorizontal: theme.spacing.micro,

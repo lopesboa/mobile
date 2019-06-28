@@ -104,6 +104,7 @@ exports[`Storyshots Home Default 1`] = `
           <View
             style={
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
@@ -1503,6 +1504,7 @@ exports[`Storyshots Home Default 1`] = `
           <View
             style={
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
@@ -2902,6 +2904,7 @@ exports[`Storyshots Home Default 1`] = `
           <View
             style={
               Object {
+                "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
                 "paddingHorizontal": 16,
