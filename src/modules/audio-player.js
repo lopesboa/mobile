@@ -4,7 +4,7 @@
 
 import Sound from 'react-native-sound';
 
-Sound.setCategory('Playback');
+Sound.setCategory('Ambient');
 
 type AudioFile = {
   WRONG_ANSWER: File,
@@ -25,6 +25,7 @@ const playSound = (soundFile: File) => {
     if (error) {
       return;
     }
+
     sound.play(() => {
       sound.release();
     });
