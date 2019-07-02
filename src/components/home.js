@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   version: {
-    color: theme.colors.white,
+    color: theme.colors.gray.medium,
     paddingBottom: theme.spacing.base,
     paddingTop: theme.spacing.small
   }

@@ -4301,7 +4301,7 @@ exports[`Storyshots Home Default 1`] = `
                   "textAlign": "center",
                 },
                 Object {
-                  "color": "#FFFFFF",
+                  "color": "#90A4AE",
                   "paddingBottom": 24,
                   "paddingTop": 16,
                 },
