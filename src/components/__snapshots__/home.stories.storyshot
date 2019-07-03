@@ -107,7 +107,7 @@ exports[`Storyshots Home Default 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               }
             }
           >
@@ -1507,7 +1507,7 @@ exports[`Storyshots Home Default 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               }
             }
           >
@@ -2907,7 +2907,7 @@ exports[`Storyshots Home Default 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               }
             }
           >

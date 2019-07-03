@@ -31,6 +31,7 @@ export type Props = {|
   testID: string
 |};
 
+const LIST_HORIZONTAL_OFFSET = theme.spacing.micro;
 const ITEM_VERTICAL_OFFSET = theme.spacing.small;
 const ITEM_HORIZONTAL_OFFSET = theme.spacing.micro;
 export const ITEM_WIDTH = CATALOG_ITEM_WIDTH + ITEM_HORIZONTAL_OFFSET * 2;
@@ -41,13 +42,13 @@ const PLACEHOLDER_LENGTH = 5;
 
 const styles = StyleSheet.create({
   title: {
-    paddingHorizontal: theme.spacing.small,
+    paddingHorizontal: LIST_HORIZONTAL_OFFSET + ITEM_HORIZONTAL_OFFSET,
     fontSize: TITLE_HEIGHT,
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.black
   },
   list: {
-    paddingHorizontal: theme.spacing.micro,
+    paddingHorizontal: LIST_HORIZONTAL_OFFSET,
     height: ITEM_HEIGHT
   },
   card: {

@@ -62,7 +62,7 @@ exports[`Storyshots Catalog Default 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -1462,7 +1462,7 @@ exports[`Storyshots Catalog Default 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -2862,7 +2862,7 @@ exports[`Storyshots Catalog Default 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -4312,7 +4312,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -5712,7 +5712,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -7112,7 +7112,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
               "color": "#14171A",
               "fontSize": 17,
               "fontWeight": "700",
-              "paddingHorizontal": 16,
+              "paddingHorizontal": 8,
             }
           }
         >
@@ -8583,7 +8583,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               },
             ]
           }
@@ -9938,7 +9938,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               },
             ]
           }
@@ -11366,7 +11366,7 @@ exports[`Storyshots Catalog Sections with cards 1`] = `
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               },
             ]
           }
@@ -11952,7 +11952,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                 "color": "#14171A",
                 "fontSize": 17,
                 "fontWeight": "700",
-                "paddingHorizontal": 16,
+                "paddingHorizontal": 8,
               },
             ]
           }

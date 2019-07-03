@@ -8,7 +8,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
         "color": "#14171A",
         "fontSize": 17,
         "fontWeight": "700",
-        "paddingHorizontal": 16,
+        "paddingHorizontal": 8,
       }
     }
   >
@@ -1398,7 +1398,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         "color": "#14171A",
         "fontSize": 17,
         "fontWeight": "700",
-        "paddingHorizontal": 16,
+        "paddingHorizontal": 8,
       }
     }
   >
@@ -4102,7 +4102,7 @@ exports[`Storyshots CatalogSection With content 1`] = `
           "color": "#14171A",
           "fontSize": 17,
           "fontWeight": "700",
-          "paddingHorizontal": 16,
+          "paddingHorizontal": 8,
         },
       ]
     }
