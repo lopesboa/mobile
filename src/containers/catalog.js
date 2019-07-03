@@ -10,7 +10,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {fetchCards} from '../redux/actions/catalog/cards';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import {getSection} from '../redux/utils/state-extract';
-import {getLimitWithoutCards, isEmptySection} from '../modules/sections';
+import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import translations from '../translations';
 import type {Section} from '../types';
 import withLayout from './with-layout';
@@ -67,8 +67,9 @@ class Catalog extends React.PureComponent<Props, State> {
     if (emptySections.length !== previousEmptySections.length) {
       const offset = this.getOffset();
       const limit = this.getLimit(offset);
+      const hasUnfetchedSections = this.hasUnfetchedSections(offset, limit);
 
-      if (this.hasUnfetchedSections(offset, limit)) {
+      if (hasUnfetchedSections) {
         this.fetchSections(offset, limit);
       }
     }
@@ -92,9 +93,8 @@ class Catalog extends React.PureComponent<Props, State> {
   getOffset = (): number => {
     const {sections} = this.props;
     const offset = Math.trunc(this.offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
-    const previousSections = sections.slice(0, offset);
 
-    return offset + previousSections.filter(section => section && isEmptySection(section)).length;
+    return getOffsetWithoutCards(sections, offset);
   };
 
   getLimit = (offset: number): number => {
@@ -111,12 +111,7 @@ class Catalog extends React.PureComponent<Props, State> {
   hasUnfetchedSections = (offset: number, limit: number): boolean => {
     const {sections} = this.props;
 
-    return (
-      sections
-        .filter(section => !(section && isEmptySection(section)))
-        .slice(offset, offset + limit)
-        .findIndex(section => !section) !== -1
-    );
+    return sections.slice(offset, offset + limit).findIndex(section => !section) !== -1;
   };
 
   handleScroll = ({nativeEvent}: ScrollEvent) => {
@@ -128,8 +123,9 @@ class Catalog extends React.PureComponent<Props, State> {
 
       const offset = this.getOffset();
       const limit = this.getLimit(offset);
+      const hasUnfetchedSections = this.hasUnfetchedSections(offset, limit);
 
-      if (this.hasUnfetchedSections(offset, limit)) {
+      if (hasUnfetchedSections) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           if (this.offsetY === offsetY) {

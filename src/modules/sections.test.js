@@ -25,6 +25,39 @@ describe('Sections', () => {
     });
   });
 
+  describe('getOffsetWithoutCards', () => {
+    it('should return the original offset', () => {
+      const {getOffsetWithoutCards} = require('./sections');
+      const sections = [undefined, undefined, undefined, undefined, undefined, undefined];
+      const result = getOffsetWithoutCards(sections, 0);
+      const expected = 0;
+      expect(result).toEqual(expected);
+    });
+
+    it('should increase the offset to bypass empty sections', () => {
+      const {getOffsetWithoutCards} = require('./sections');
+      const sections = [emptySection, emptySection, undefined, undefined, emptySection, undefined];
+      const result = getOffsetWithoutCards(sections, 0);
+      const expected = 2;
+      expect(result).toEqual(expected);
+    });
+
+    it('should increase the offset to bypass empty sections after the first placeholder', () => {
+      const {getOffsetWithoutCards} = require('./sections');
+      const sections = [
+        emptySection,
+        emptySection,
+        undefined,
+        emptySection,
+        emptySection,
+        undefined
+      ];
+      const result = getOffsetWithoutCards(sections, 1);
+      const expected = 5;
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('getLimitWithoutCards', () => {
     it('should return the default limit', () => {
       const {getLimitWithoutCards} = require('./sections');
