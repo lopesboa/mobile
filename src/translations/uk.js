@@ -5,15 +5,16 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Доступ до уроку ',
   authenticationMagicLinkHeader:
-    'Використайте цей пристрій, щоб підтвердити свою особу на веб-платформі',
+    'Увійдіть до платформи через посилання, яке ви отримали в електронному листі',
   authenticationMagicLinkStepOneDescription:
-    "Під'єднайтесь до вашої навчальної платформи <b>через цей пристрій</b>",
+    'Перейдіть у свою <b>робочу поштову скриньку</b> за допомогою цього телефону',
   authenticationMagicLinkStepTwoDescription:
-    'Перейдіть до <b>свого облікового запису</b> </br>у верхньому лівому куті',
+    '<b>Відкрити лист</b> із запрошенням для звантаження застосунку Coorpacademy',
   authenticationMagicLinkStepThreeDescription:
-    '<b>Вуаля!</b></br>Ваше Магічне Посилання буде прямо тут',
+    'Клацніть на кнопку <b>"Під\'єднатися до застосунку"</b>',
   authenticationMagicLinkTitle: 'Магічне Посилання',
-  authenticationQRCodeHeader: "Використайте комп'ютер, щоб підтвердити вашу особу на веб-платформі",
+  authenticationQRCodeHeader:
+    "Не отримали електронного листа? Нічого! Ми підтвердимо вашу особу на веб-платформі за допомогою комп'ютера",
   authenticationQRCodeStepOneDescription: "Зв'яжіть вашу навчальну платформу <b>з комп'ютером</b>",
   authenticationQRCodeStepTwoDescription:
     'Перейдіть до <b>вашого облікового запису</b> </br> у верхньому правому куті',
@@ -40,7 +41,7 @@ const translations: Translations = {
   goodJob: 'Гарна робота!',
   goToQuestion: 'Перейти до запитання',
   highscore: 'У вас новий рекорд<br><b>ви щойно виграли {{score}} зірок</b>',
-  howToSignIn: 'Як ви хочете увійти?',
+  howToSignIn: 'Ви отримали електронного листа для звантаження застосунку?',
   iWantIt: 'Хочу!',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
@@ -53,7 +54,7 @@ const translations: Translations = {
   ok: 'Гаразд',
   ooops: 'Упс...',
   open: 'Відкрити',
-  openBrowser: 'Відкрити <b>мій браузер</b>',
+  openBrowser: 'Відкрити <b>мою поштову скриньку</b>',
   openSettings: 'Відкрити налаштування',
   ouch: 'Ой...',
   outOfLives: 'У Вас закінчилися життя!',
@@ -79,8 +80,8 @@ const translations: Translations = {
     'Не маєте облікового запису? <a href="/"><b><u> Розпочніть пробний період!</u></b></a>',
   startLearning: 'Вам слід почати з цього',
   selectAnAnswer: 'Обрати відповідь',
-  signInDesktop: "Увійти з комп'ютера",
-  signInMobile: 'Увійти з цього пристрою',
+  signInDesktop: 'Ні',
+  signInMobile: 'Так',
   step: 'Крок',
   typeHere: 'Ввести тут',
   validate: 'Підтвердити',
@@ -93,7 +94,7 @@ const translations: Translations = {
     'Вигравайте {{count}} додаткових зірок за перший перегляд уроку в цьому розділі!',
   welcome: 'Ласкаво просимо',
   welcomeDescription:
-    "Цей застосунок пов'язаний з вашим особистим обліковим записом на Навчальній Платформі вашої компанії.",
+    "Цей застосунок прив'язаний до вашого облікового запису на Навчальній платформі вашої компанії.",
   wrongAnswer: 'Неправильна відповідь',
   yourAnswer: 'Ваша відповідь:',
   yourAnswers: 'Ваші відповіді:'

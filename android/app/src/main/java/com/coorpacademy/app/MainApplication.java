@@ -5,6 +5,7 @@ import android.support.multidex.MultiDexApplication;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.react.modules.email.EmailPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -42,6 +43,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new EmailPackage(),
             new RNSoundPackage(),
             new RNCWebViewPackage(),
             new AsyncStoragePackage(),

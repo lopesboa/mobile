@@ -5,22 +5,22 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Перейти к уроку',
   authenticationMagicLinkHeader:
-    'Используйте это устройство для подтверждения своей личности на веб-платформе',
+    'Нажмите на полученную в электронном сообщении ссылку для подключения к платформе',
   authenticationMagicLinkStepOneDescription:
-    'Соединяйтесь с вашей учебной платформой <b>с помощью этого устройства</b>',
+    'Зайдите в <b>рабочий почтовый ящик</b> с помощью этого телефона',
   authenticationMagicLinkStepTwoDescription:
-    'Перейдите в <b>свой аккаунт</b> </br> в левом верхнем углу',
+    '<b>Открыть электронное сообщение</b> с приглашением скачать приложение Coorpacademy',
   authenticationMagicLinkStepThreeDescription:
-    '<b>Вуаля!</b></br>Ваша волшебная ссылка окажется прямо здесь',
+    'Нажмите на кнопку <b>"Подключиться к приложению"</b>',
   authenticationMagicLinkTitle: 'Волшебная ссылка ',
   authenticationQRCodeHeader:
-    'Используйте свой компьютер для подтверждения своей личности на веб-платформе',
+    'Вы не получили сообщения по электронной почте? Ничего страшного! Мы проверим вашу идентификационную информацию на веб-платформе с помощью компьютера',
   authenticationQRCodeStepOneDescription:
-    'Соединяйтесь с вашей учебной платформой <b>с помощью компьютера</b>',
+    'Подключиться к вашей учебной платформе <b>с помощью компьютера</b>',
   authenticationQRCodeStepTwoDescription:
     'Перейдите в <b>свой аккаунт</b> </br>в правом верхнем углу',
   authenticationQRCodeStepThreeDescription:
-    '<b>Вуаля!</b></br>сканируйте свой QR-код с помощью кнопки ниже',
+    '<b>Готово!</b></br>сканируйте свой QR-код с помощью кнопки ниже',
   authenticationQRCodeTitle: 'QR-код',
   askForHelp: 'Попросить помощи',
   backToHome: 'Назад на главную',
@@ -42,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Отличная работа!',
   goToQuestion: 'Перейти к вопросу',
   highscore: 'У вас новый рекорд <br><b>вы только что выиграли {{score}} звезд(ы)</b>',
-  howToSignIn: 'Как вы хотите входить? ',
+  howToSignIn: 'Вы получили электронное сообщение для скачивания приложения?',
   iWantIt: 'Я хочу!',
   keyPoint: 'Ключевой момент',
   lesson: 'Урок',
@@ -55,7 +55,7 @@ const translations: Translations = {
   ok: 'Хорошо',
   ooops: 'Ой...',
   open: 'Открыть',
-  openBrowser: 'Открыть в <b>моем браузере</b>',
+  openBrowser: 'Открыть <b>мой почтовый ящик</b>',
   openSettings: 'Открыть настройки ',
   ouch: 'Ох...',
   outOfLives: 'У вас закончились жизни!',
@@ -80,9 +80,9 @@ const translations: Translations = {
     'Нет аккаунта? <a href="/"><b><u>Начните бесплатное пробное использование!</u></b></a>',
   startLearning: 'Вам нужно начать с этого',
   selectAnAnswer: 'Выберите ответ',
-  signInDesktop: 'Войдите с помощью компьютера ',
-  signInMobile: 'Войдите с помощью этого устройства',
-  step: 'Шаг',
+  signInDesktop: 'Нет',
+  signInMobile: 'Да',
+  step: 'Этап',
   typeHere: 'Введите текст здесь',
   validate: 'Подтвердить',
   version: 'Версия',
@@ -94,7 +94,7 @@ const translations: Translations = {
     'Выиграйте {{count}} дополнительных звезд в этой главе при первом просмотре урока!',
   welcome: 'Добро пожаловать',
   welcomeDescription:
-    'Это приложение связано с вашим личным счёте на учебной платформе вашей компании. ',
+    'Это приложение связано с вашей учетной записью на Учебной Платформе вашей компании.',
   wrongAnswer: 'Неверный ответ',
   yourAnswer: 'Ваш ответ:',
   yourAnswers: 'Ваши ответы:'

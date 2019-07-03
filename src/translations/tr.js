@@ -4,13 +4,16 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   accessTheLesson: 'Derse eriş',
-  authenticationMagicLinkHeader: 'Kimliğini web platformunda doğrulamak için bu cihazı kullan',
-  authenticationMagicLinkStepOneDescription: 'Öğrenme platformuna <b>bu cihazla</b> bağlan',
-  authenticationMagicLinkStepTwoDescription: 'Sol üst köşede bulunan <b>Hesabına</b> </br>git',
-  authenticationMagicLinkStepThreeDescription:
-    '<b>Voilà!</b></br>Sihirli Bağlantın tam burada olacak',
+  authenticationMagicLinkHeader:
+    'Platformunuza bağlanmak için e-posta ile gönderilen bağlantıya tıklayın',
+  authenticationMagicLinkStepOneDescription:
+    'Bu telefon ile <b>profesyonel gelen ileti kutusu</b>na git',
+  authenticationMagicLinkStepTwoDescription:
+    'Coorpacademy App uygulamasını indirmek için, davetiyeyi içeren <b>e-postayı aç</b>',
+  authenticationMagicLinkStepThreeDescription: '<b>"Uygulamaya bağlan"</b> tuşuna basın',
   authenticationMagicLinkTitle: 'Sihirli bağlantı',
-  authenticationQRCodeHeader: 'Web platformunda kimliğini doğrulamak için bir bilgisayar kullan',
+  authenticationQRCodeHeader:
+    'Bir e-posta almadınız mı? Sorun değil! Web platform üzerinde kimliğinizi doğrulamak için, bir bilgisayar kullanacağız',
   authenticationQRCodeStepOneDescription: 'Öğrenme platformuna <b>bir bilgisayarla</b> bağlan',
   authenticationQRCodeStepTwoDescription: '</br>Sağ üst köşedeki <b>Hesabınıza</b> gidin',
   authenticationQRCodeStepThreeDescription:
@@ -36,7 +39,7 @@ const translations: Translations = {
   goodJob: 'Tebrikler!',
   goToQuestion: 'Soruya git',
   highscore: 'Yeni bir yüksek puanın var<br><b>az önce {{score}} yıldız kazandın</b>',
-  howToSignIn: 'Nasıl oturum açmak istersin?',
+  howToSignIn: 'Uygulamayı indirmek için bir e-posta adresi aldınız mı?',
   iWantIt: 'İstiyorum !',
   keyPoint: 'Anahtar noktası',
   lesson: 'Ders',
@@ -49,7 +52,7 @@ const translations: Translations = {
   ok: 'Tamam',
   ooops: 'Üzgünüz.',
   open: 'Aç',
-  openBrowser: '<b>Tarayıcımı</b> aç',
+  openBrowser: '<b>Gelen ileti kutusu</b>nu aç',
   openSettings: 'Ayarları aç',
   ouch: 'Üzgünüz.',
   outOfLives: 'Canınız bitti!',
@@ -73,8 +76,8 @@ const translations: Translations = {
   startDemo: 'Hesabınız yok mu? <a href="/"><b><u>Denemeye başlayın! </u></b></a>',
   startLearning: 'Bununla başlamalısınız',
   selectAnAnswer: 'Cevap seçin',
-  signInDesktop: 'Bir bilgisayarla oturum aç',
-  signInMobile: 'Bu cihazla oturum aç',
+  signInDesktop: 'Hayır',
+  signInMobile: 'Evet',
   step: 'Adım',
   typeHere: 'Buraya yazın',
   validate: 'Onayla',
@@ -84,7 +87,7 @@ const translations: Translations = {
   upgradeDescription: 'Uygulaman güncellendi! Keyfini sürmek için lütfen en son sürümü indir.',
   winAdditionalStars: 'İlk dersinizi görüntülediğinizde bu ünitede {{count}} ek yıldız kazanın!',
   welcome: 'Hoş Geldin',
-  welcomeDescription: 'Bu uygulama, şirketinin Öğrenme Platformundaki kişisel hesabına bağlıdır.',
+  welcomeDescription: "Bu uygulama, şirketinizin Öğrenme Platformu'ndaki hesabınıza bağlanır.",
   wrongAnswer: 'Yanlış cevap',
   yourAnswer: 'Yanıtınız:',
   yourAnswers: 'Yanıtlarınız:'

@@ -5,14 +5,16 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Vstup do lekce',
   authenticationMagicLinkHeader:
-    'Pro ověření své identity na webové identity použijte toto zařízení',
+    'Chcete-li se připojit ke svojí platformě, klikněte na odkaz, který jste obdrželi e-mailem',
   authenticationMagicLinkStepOneDescription:
-    'Připojte se ke vzdělávací platformě <b>pomocí tohoto zařízení</b>',
+    'Na tomto telefonu přejděte do svojí <b>profesionální poštovní schránky</b>',
   authenticationMagicLinkStepTwoDescription:
-    'V levém horním rohu přejděte na <b>svůj účet</b> </br>',
-  authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>Váš Magic Link bude přímo tam ',
+    '<b>Otevřete e-mail</b> s pozvánkou na stažení aplikace Coorpacademy',
+  authenticationMagicLinkStepThreeDescription:
+    'Klikněte na tlačítko <b>„Připojit se k aplikaci"</b>',
   authenticationMagicLinkTitle: 'Magic link ',
-  authenticationQRCodeHeader: 'Pro ověření své identity na webové identity použijte počítač',
+  authenticationQRCodeHeader:
+    'Nedostali jste e-mail? To nevadí! K ověření vaší identity na webové platformě použijeme počítač',
   authenticationQRCodeStepOneDescription:
     'Připojte se ke vzdělávací platformě <b>pomocí počítače</b>',
   authenticationQRCodeStepTwoDescription:
@@ -40,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Dobře!',
   goToQuestion: 'Přejděte k otázce',
   highscore: 'Máte nové nejvyšší skóre,<br><b>právě jste vyhráli {{score}} hvězdiček</b>',
-  howToSignIn: 'Jakým způsobem se chcete přihlásit? ',
+  howToSignIn: 'Dostali jste e-mail ke stažení aplikace?',
   iWantIt: 'To chci!',
   keyPoint: 'Klíčový bod',
   lesson: 'Lekce',
@@ -53,7 +55,7 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Ó jé...',
   open: 'Otevřít',
-  openBrowser: 'Otevřít <b>můj prohlížeč</b>',
+  openBrowser: 'Otevřete <b>moji schránku</b>',
   openSettings: 'Otevřít nastavení',
   ouch: 'Ach...',
   outOfLives: 'Už nemáte životy',
@@ -78,8 +80,8 @@ const translations: Translations = {
   startDemo: 'Nemáte účet? <a href="/"><b><u>Začněte zkušební dobu!</u></b></a>',
   startLearning: 'Tímto byste měli začít',
   selectAnAnswer: 'Vyberte odopvěď',
-  signInDesktop: 'Přihlásit se pomocí tohoto počítače',
-  signInMobile: 'Přihlaste se pomocí tohoto zařízení',
+  signInDesktop: 'Ne',
+  signInMobile: 'Ano',
   step: 'Krok ',
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
@@ -92,7 +94,7 @@ const translations: Translations = {
     'Získejte další hvězdy ({{count}}) v této kapitole při prvním zobrazení lekce!',
   welcome: 'Vítejte ',
   welcomeDescription:
-    'Tato aplikace je spojena s vaším osobním účtem na vzdělávací platformě vaší společnosti. ',
+    'Tato aplikace je propojena s vaším účtem na vzdělávací platformě vaší společnosti.',
   wrongAnswer: 'Chybná odpověď',
   yourAnswer: 'Vaše odpověď:',
   yourAnswers: 'Vaše odpovědi:'

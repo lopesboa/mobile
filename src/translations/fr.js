@@ -5,15 +5,15 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Accéder à la leçon',
   authenticationMagicLinkHeader:
-    'Utilisez cet appareil pour vérifier votre identité sur la plateforme web',
+    'Cliquez sur le lien que vous avez reçu par mail pour vous connecter à votre plateforme',
   authenticationMagicLinkStepOneDescription:
-    'Connectez-vous à votre plateforme de formation <b>avec cet appareil</b>',
+    'Ouvrez votre <b>boîte mail professionnelle</b> avec ce téléphone',
   authenticationMagicLinkStepTwoDescription:
-    "Allez sur <b>votre compte</b> </br>dans l'angle supérieur gauche",
-  authenticationMagicLinkStepThreeDescription: '<b>Voilà !</b></br>Votre Magic Link sera ici',
+    "<b>Ouvrez l'e-mail</b> avec l'invitation à télécharger l'application Coorpacademy",
+  authenticationMagicLinkStepThreeDescription: 'Cliquez sur le bouton <b>"Connectez-vous"</b>',
   authenticationMagicLinkTitle: 'Magic link',
   authenticationQRCodeHeader:
-    'Utilisez un ordinateur pour vérifier votre identité sur la plateforme web',
+    "Vous n'avez pas reçu d'e-mail ? Pas de problème ! Nous allons utiliser un ordinateur pour vérifier votre identité sur la plateforme web",
   authenticationQRCodeStepOneDescription:
     'Connectez-vous à votre plateforme de formation <b>avec un ordinateur</b>',
   authenticationQRCodeStepTwoDescription:
@@ -42,7 +42,7 @@ const translations: Translations = {
   goToQuestion: 'Accès à la question',
   highscore:
     'Vous avez un nouveau meilleur score<br><b>, vous venez de gagner {{score}} étoiles</b>',
-  howToSignIn: 'Comment souhaitez-vous vous connecter ?',
+  howToSignIn: "Avez-vous reçu un email pour télécharger l'appli ?",
   iWantIt: 'Je le veux !',
   keyPoint: 'Point-clé',
   lesson: 'Leçon',
@@ -55,7 +55,7 @@ const translations: Translations = {
   ok: 'Ok',
   ooops: 'Oups...',
   open: 'Ouvrir',
-  openBrowser: 'Ouvrir <b>mon navigateur</b>',
+  openBrowser: 'Ouvrir <b>ma boîte mail</b>',
   openSettings: 'Ouvrir les paramètres',
   ouch: 'Aïe...',
   outOfLives: "Vous n'avez plus de vies !",
@@ -80,8 +80,8 @@ const translations: Translations = {
   startDemo: 'Pas encore de compte ? <a href="/"><b><u>Commencez la démo !</u></b></a>',
   startLearning: 'Vous devriez commencer par celui-ci',
   selectAnAnswer: 'Sélectionnez une réponse',
-  signInDesktop: 'Connectez-vous avec un ordinateur',
-  signInMobile: 'Connectez-vous avec cet appareil',
+  signInDesktop: 'Non',
+  signInMobile: 'Oui',
   step: 'Étape',
   typeHere: 'Saisissez ici',
   validate: 'Valider',
@@ -92,9 +92,9 @@ const translations: Translations = {
     'Votre application a été mise à jour ! Veuillez télécharger la dernière version pour en bénéficier. ',
   winAdditionalStars:
     'Gagnez {{count}} étoiles supplémentaires par chapitre en consultant la leçon !',
-  welcome: 'Bienvenue',
+  welcome: 'Bonjour',
   welcomeDescription:
-    'Cette app est associée à votre compte personnel sur la plateforme de formation de votre société.',
+    'Cette app est associée à votre compte sur la plateforme de formation de votre société.',
   wrongAnswer: 'Mauvaise réponse',
   yourAnswer: 'Votre réponse :',
   yourAnswers: 'Vos réponses :'

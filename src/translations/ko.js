@@ -4,14 +4,14 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   accessTheLesson: '강의에 접속하기',
-  authenticationMagicLinkHeader: '이 기기를 사용하여 웹 플랫폼에서 본인의 신원을 확인하세요 ',
-  authenticationMagicLinkStepOneDescription: '<b>이 기기로</b> 학습 플랫폼에 연결하세요 ',
+  authenticationMagicLinkHeader: '플랫폼에 연결하려면 이메일로 받은 링크를 클릭하세요.',
+  authenticationMagicLinkStepOneDescription: '이 전화기에서 <b>프로페셔널 편지함</b>으로 가세요.',
   authenticationMagicLinkStepTwoDescription:
-    '좌상단 구석에 있는 <b>귀하의 계정</b>으로 이동하세요</br>',
-  authenticationMagicLinkStepThreeDescription:
-    '<b>자 보세요!</b></br>매직 링크가 바로 거기에 있습니다',
+    'Coorpacademy App을 다운로드할 수 있는 초대장을 통해 <b>이메일을 열으세요.</b>',
+  authenticationMagicLinkStepThreeDescription: '<b>"앱으로 연결"</b> 버튼을 클릭하세요.',
   authenticationMagicLinkTitle: '매직 링크',
-  authenticationQRCodeHeader: '컴퓨터를 사용하여 웹 플랫폼에서 본인의 신원을 확인하세요',
+  authenticationQRCodeHeader:
+    '이메일을 받지 못하셨나요? 괜찮습니다! 웹플랫폼에서의 신원을 확인하기 위해 컴퓨터를 사용하겠습니다.',
   authenticationQRCodeStepOneDescription: '<b>컴퓨터로</b> 학습 플랫폼에 연결하세요 ',
   authenticationQRCodeStepTwoDescription:
     '상단 오른쪽 모퉁이에서 <b>귀하의 계정</b> </br>으로 가세요',
@@ -38,7 +38,7 @@ const translations: Translations = {
   goodJob: '잘 했습니다!',
   goToQuestion: '질문으로 이동',
   highscore: '새로운 최고 점수입니다<br><b>{{score}}별을 획득했습니다</b>',
-  howToSignIn: '어떻게 로그인 하시겠습니까? ',
+  howToSignIn: '앱을 다운로드할 수 있는 이메일을 받으셨나요?',
   iWantIt: '다시 활성화하겠습니다',
   keyPoint: '핵심 포인트',
   lesson: '강의',
@@ -51,7 +51,7 @@ const translations: Translations = {
   ok: 'OK',
   ooops: '에구...',
   open: '열기',
-  openBrowser: '<b>내 브라우저</b> 열기',
+  openBrowser: '<b>내 편지함</b> 열기',
   openSettings: '설정 열기',
   ouch: '에구...',
   outOfLives: '귀하의 생명이 다했습니다!',
@@ -75,8 +75,8 @@ const translations: Translations = {
   startDemo: '계정이 없으세요? <a href="/"><b><u>체험을 시작하세요!</u></b></a>',
   startLearning: '이것으로 시작해야 합니다',
   selectAnAnswer: '답을 선택하세요',
-  signInDesktop: '컴퓨터로 로그인하기',
-  signInMobile: '이 기기로 로그인하기 ',
+  signInDesktop: '아니요',
+  signInMobile: '예',
   step: '단계',
   typeHere: '여기에 입력하세요',
   validate: '인증하기',
@@ -85,8 +85,8 @@ const translations: Translations = {
   upgrade: '업그레이드 ',
   upgradeDescription: '응용 프로그램이 업데이트 되었습니다! 최신 버전을 다운로드하고 즐겨 보세요.',
   winAdditionalStars: '귀하가 레슨을 처음 볼 때, 이 장에서 {{count}}개의 추가 스타를 획득하세요!',
-  welcome: '환영합니다 ',
-  welcomeDescription: '이 앱은 본인의 컴퓨터 학습 플랫폼에서 개인 계정에 연결되어 있습니다.',
+  welcome: '환영합니다',
+  welcomeDescription: '이 앱은 귀사의 학습 플랫폼에 있는 귀하의 계정에 연결되어 있습니다.',
   wrongAnswer: '오답',
   yourAnswer: '귀하의 답:',
   yourAnswers: '귀하의 답:'

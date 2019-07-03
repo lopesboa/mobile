@@ -132,3 +132,9 @@ jest.mock('react-native-status-bar-height', () => ({
 // ./src/containers/with-layout
 
 jest.mock('./src/containers/with-layout');
+
+// react-native-email-link
+
+jest.mock('react-native-email-link', () => ({
+  openInbox: jest.fn(() => {})
+}));

@@ -107,20 +107,20 @@ const Authentication = ({
           <Button
             isInverted
             isTextSecondary
-            onPress={onDesktopButtonPress}
-            testID="button-sign-in-desktop"
-            analyticsID="button-sign-in-desktop"
-          >
-            {translations.signInDesktop}
-          </Button>
-          <Space type="tiny" />
-          <Button
-            isInlined
             onPress={onMobileButtonPress}
             testID="button-sign-in-mobile"
             analyticsID="button-sign-in-mobile"
           >
             {translations.signInMobile}
+          </Button>
+          <Space type="tiny" />
+          <Button
+            isInlined
+            onPress={onDesktopButtonPress}
+            testID="button-sign-in-desktop"
+            analyticsID="button-sign-in-desktop"
+          >
+            {translations.signInDesktop}
           </Button>
           <Space type="small" />
           <AuthenticationFooter onHelpPress={onHelpPress} onDemoPress={onDemoPress} />

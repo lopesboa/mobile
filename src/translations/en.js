@@ -4,15 +4,16 @@ import type {Translations} from './_types';
 
 const translations: Translations = {
   accessTheLesson: 'Access the lesson',
-  authenticationMagicLinkHeader: 'Use this device to verify your identity on the web platform',
+  authenticationMagicLinkHeader:
+    'Click on the link you received by email to connect to your platform',
   authenticationMagicLinkStepOneDescription:
-    'Connect to your learning platform <b>with this device</b>',
+    'Go to your <b>professional mailbox</b> with this phone',
   authenticationMagicLinkStepTwoDescription:
-    'Go to <b>your Account</b> </br>in the upper left-hand corner',
-  authenticationMagicLinkStepThreeDescription:
-    '<b>Voilà!</b></br>Your Magic Link will be right there',
+    '<b>Open the email</b> with the invitation to download the Coorpacademy App',
+  authenticationMagicLinkStepThreeDescription: 'Click on the button <b>"Connect to the App"</b>',
   authenticationMagicLinkTitle: 'Magic link',
-  authenticationQRCodeHeader: 'Use a computer to verify your identity on the web platform',
+  authenticationQRCodeHeader:
+    "Didn't receive an email? That's fine! We'll use a computer to verify your identity on the web platform",
   authenticationQRCodeStepOneDescription:
     'Connect to your learning platform <b>with a computer</b>',
   authenticationQRCodeStepTwoDescription:
@@ -40,7 +41,7 @@ const translations: Translations = {
   goodJob: 'Good job!',
   goToQuestion: 'Go to question',
   highscore: 'You have a new highscore<br><b>you just won {{score}} stars</b>',
-  howToSignIn: 'How would you like to sign in?',
+  howToSignIn: 'Have you received an email to download the app?',
   iWantIt: 'I want it !',
   keyPoint: 'Key point',
   lesson: 'Lesson',
@@ -53,7 +54,7 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Ooops...',
   open: 'Open',
-  openBrowser: 'Open <b>my browser</b>',
+  openBrowser: 'Open <b>my mailbox</b>',
   openSettings: 'Open settings',
   ouch: 'Ouch...',
   outOfLives: 'You are out of lives!',
@@ -78,8 +79,8 @@ const translations: Translations = {
   startDemo: 'No account? <a href="/"><b><u>Start trial!</u></b></a>',
   startLearning: 'You should start with this one',
   selectAnAnswer: 'Select an answer',
-  signInDesktop: 'Sign in with a computer',
-  signInMobile: 'Sign in with this device',
+  signInDesktop: 'No',
+  signInMobile: 'Yes',
   step: 'Step',
   typeHere: 'Type here',
   validate: 'Validate',
@@ -91,8 +92,7 @@ const translations: Translations = {
   winAdditionalStars:
     'Win {{count}} additional stars in this chapter the first time you view a lesson!',
   welcome: 'Welcome',
-  welcomeDescription:
-    'This app is linked to your personal account on your company’s Learning Platform.',
+  welcomeDescription: 'This app is linked to your account on your company’s Learning Platform.',
   wrongAnswer: 'Wrong answer',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

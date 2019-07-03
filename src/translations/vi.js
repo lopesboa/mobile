@@ -5,17 +5,18 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Truy cập vào bài học này',
   authenticationMagicLinkHeader:
-    'Dùng thiết bị này để xác minh danh tính của bạn trên nền tảng web',
+    'Nhấp vào liên kết bạn nhận được qua email để kết nối với nền tảng của bạn',
   authenticationMagicLinkStepOneDescription:
-    'Kết nối với nền tảng học tập của bạn <b>bằng thiết bị này</b>',
+    'Truy cập vào <b>hộp thư chuyên nghiệp</b> của bạn bằng điện thoại này',
   authenticationMagicLinkStepTwoDescription:
-    'Vào mục <b>Tài khoản của bạn</b> </br>ở góc trên bên trái',
+    '<b>Mở email</b> có lời mời tải xuống Ứng dụng Coorpacademy',
   authenticationMagicLinkStepThreeDescription:
-    '<b>Được rồi!</b></br>Liên kết Ma thuật của bạn sẽ hiển thị ngay thôi',
-  authenticationMagicLinkTitle: 'Liên kết ma thuật',
-  authenticationQRCodeHeader: 'Dùng máy tính để xác minh danh tính của bạn trên nền tảng web',
+    'Nhấp vào nút <b>"Connect to the App"</b> (Kết nối đến Ứng dụng)',
+  authenticationMagicLinkTitle: 'Ma thuật liên kết',
+  authenticationQRCodeHeader:
+    'Bạn không nhận được email? Không sao hết! Chúng tôi sẽ sử dụng máy tính để xác minh danh tính của bạn trên nền tảng web',
   authenticationQRCodeStepOneDescription:
-    'Kết nối với nền tảng học tập của bạn bằng <b>máy tính</b>',
+    'Kết nối với nền tảng học tập của bạn <b>với máy tính</b>',
   authenticationQRCodeStepTwoDescription:
     'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
   authenticationQRCodeStepThreeDescription:
@@ -41,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Bạn làm tốt lắm!',
   goToQuestion: 'Đi đến câu hỏi',
   highscore: 'Bạn có mức điểm cao mới <br><b>bạn vừa giành được {{score}} sao</b>',
-  howToSignIn: 'Bạn muốn đăng nhập bằng cách nào?',
+  howToSignIn: 'Bạn đã nhận được email để tải xuống ứng dụng chưa?',
   iWantIt: 'Tôi muốn có ứng dụng!',
   keyPoint: 'Điểm quan trọng',
   lesson: 'Bài học',
@@ -54,7 +55,7 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Rất tiếc…',
   open: 'Mở',
-  openBrowser: 'Mở <b>trình duyệt của tôi</b>',
+  openBrowser: 'Mở <b>hộp thư của tôi</b>',
   openSettings: 'Mở cài đặt',
   ouch: 'Ối...',
   outOfLives: 'Bạn đã hết mạng!',
@@ -73,14 +74,14 @@ const translations: Translations = {
   relatedSubjects: 'Đề xuất dành cho bạn:',
   retryChapter: 'Thử lại chương',
   retryLevel: 'Thử lại cấp độ',
-  scanQRCode: 'Quét <b>mã QR </b>của bạn',
+  scanQRCode: 'Quét <b>mã QR</b> của bạn',
   seeClue: 'Xem gợi ý',
   selectSomethingBelow: 'Chọn một điều nào đó dưới đây',
-  startDemo: 'Không có tài khoản? <a href="/"><b><u>Hãy bắt đầu dùng thử!</u></b></a>',
+  startDemo: 'Không có tài khoản? <a href="/"> <b> <u>Bắt đầu dùng thử!</u></b></a>',
   startLearning: 'Bạn nên bắt đầu từ đây',
   selectAnAnswer: 'Chọn câu trả lời',
-  signInDesktop: 'Đăng nhập bằng máy tính',
-  signInMobile: 'Đăng nhập bằng thiết bị này',
+  signInDesktop: 'Không',
+  signInMobile: 'Rồi',
   step: 'Bước',
   typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
@@ -93,7 +94,7 @@ const translations: Translations = {
     'Giành được thêm {{count}} sao trong chương này khi xem bài học lần đầu tiên!',
   welcome: 'Chào mừng',
   welcomeDescription:
-    'Ứng dụng này được liên kết với tài khoản cá nhân của bạn trên Nền tảng Học tập của công ty bạn.',
+    'Ứng dụng này được liên kết với tài khoản của bạn trên Nền tảng Học tập của công ty bạn.',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

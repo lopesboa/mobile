@@ -50,15 +50,15 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
       data={
         Array [
           Object {
-            "description": "Connect to your learning platform <b>with this device</b>",
+            "description": "Go to your <b>professional mailbox</b> with this phone",
             "icon": [Function],
           },
           Object {
-            "description": "Go to <b>your Account</b> </br>in the upper left-hand corner",
+            "description": "<b>Open the email</b> with the invitation to download the Coorpacademy App",
             "icon": [Function],
           },
           Object {
-            "description": "<b>Voilà!</b></br>Your Magic Link will be right there",
+            "description": "Click on the button <b>\\"Connect to the App\\"</b>",
             "icon": [Function],
           },
         ]
@@ -189,7 +189,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       ]
                     }
                     tintColor="#00B0FF"
-                    vbHeight={24}
+                    vbHeight={14}
                     vbWidth={24}
                     width={27}
                   >
@@ -235,8 +235,13 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       y={0}
                     >
                       <RNSVGPath
-                        d="M0 0h24v24H0z"
-                        fill={null}
+                        d="M23.9 6.2l-3.5-6c-.1-.1-.2-.2-.4-.2H4c-.2 0-.3.1-.4.2l-3.5 6c-.1.1-.1.2-.1.3v7c0 .3.2.5.5.5h23c.3 0 .5-.2.5-.5v-7c0-.1 0-.2-.1-.3zm-7.9.3v1c0 .8-.7 1.5-1.5 1.5H10c-.8 0-1.5-.7-1.5-1.5v-1c0-.3-.2-.5-.5-.5H1.4l2.9-5h15.4l2.9 5h-6.1c-.3 0-.5.2-.5.5z"
+                        fill={
+                          Array [
+                            0,
+                            4278235391,
+                          ]
+                        }
                         fillOpacity={1}
                         fillRule={1}
                         matrix={
@@ -274,93 +279,6 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         x={0}
                         y={0}
                       />
-                      <RNSVGGroup
-                        fill={
-                          Array [
-                            0,
-                            4278235391,
-                          ]
-                        }
-                        fillOpacity={1}
-                        fillRule={1}
-                        font={Object {}}
-                        matrix={
-                          Array [
-                            1,
-                            0,
-                            0,
-                            1,
-                            0,
-                            0,
-                          ]
-                        }
-                        opacity={1}
-                        originX={0}
-                        originY={0}
-                        propList={
-                          Array [
-                            "fill",
-                          ]
-                        }
-                        rotation={0}
-                        scaleX={1}
-                        scaleY={1}
-                        skewX={0}
-                        skewY={0}
-                        stroke={null}
-                        strokeDasharray={null}
-                        strokeDashoffset={null}
-                        strokeLinecap={0}
-                        strokeLinejoin={0}
-                        strokeMiterlimit={4}
-                        strokeOpacity={1}
-                        strokeWidth={1}
-                        vectorEffect={0}
-                        x={0}
-                        y={0}
-                      >
-                        <RNSVGPath
-                          d="M0 12c0 5.515 4.486 10 10 10v-2a7.968 7.968 0 0 1-3-.588V16h3v-2H7v-4h3V8H7V4.59A7.95 7.95 0 0 1 10 4V2C4.486 2 0 6.486 0 12zm2.264 2A7.947 7.947 0 0 1 2 12c0-.691.098-1.359.264-2H5v4H2.264zm.818 2H5v2.235A8.04 8.04 0 0 1 3.082 16zM5 5.766V8H3.082A8.064 8.064 0 0 1 5 5.766zM21 2h-8c-1.104 0-2 .898-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4c0-1.102-.896-2-2-2zm0 2v2h-8V4h8zm0 4l.001 8H13V8h8zm-8 12v-2h8.002v2H13z"
-                          fill={
-                            Array [
-                              0,
-                              4278190080,
-                            ]
-                          }
-                          fillOpacity={1}
-                          fillRule={1}
-                          matrix={
-                            Array [
-                              1,
-                              0,
-                              0,
-                              1,
-                              0,
-                              0,
-                            ]
-                          }
-                          opacity={1}
-                          originX={0}
-                          originY={0}
-                          propList={Array []}
-                          rotation={0}
-                          scaleX={1}
-                          scaleY={1}
-                          skewX={0}
-                          skewY={0}
-                          stroke={null}
-                          strokeDasharray={null}
-                          strokeDashoffset={null}
-                          strokeLinecap={0}
-                          strokeLinejoin={0}
-                          strokeMiterlimit={4}
-                          strokeOpacity={1}
-                          strokeWidth={1}
-                          vectorEffect={0}
-                          x={0}
-                          y={0}
-                        />
-                      </RNSVGGroup>
                     </RNSVGGroup>
                   </RNSVGSvgView>
                   <View
@@ -511,7 +429,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                               }
                             }
                           >
-                            Connect to your learning platform 
+                            Go to your 
                           </Text>
                         </Text>
                         <Text
@@ -552,8 +470,35 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                                 }
                               }
                             >
-                              with this device
+                              professional mailbox
                             </Text>
+                          </Text>
+                        </Text>
+                        <Text
+                          allowFontScaling={true}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={true}
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                             with this phone
                           </Text>
                         </Text>
                       </Text>
@@ -654,8 +599,8 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       ]
                     }
                     tintColor="#00B0FF"
-                    vbHeight={27}
-                    vbWidth={27}
+                    vbHeight={23}
+                    vbWidth={24}
                     width={27}
                   >
                     <RNSVGGroup
@@ -699,7 +644,8 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                       x={0}
                       y={0}
                     >
-                      <RNSVGGroup
+                      <RNSVGPath
+                        d="M23.9 15.2l-3.5-6c-.1-.1-.2-.2-.4-.2h-1V.5c0-.3-.2-.5-.5-.5h-13c-.3 0-.5.2-.5.5V9H4c-.2 0-.3.1-.4.2l-3.5 6c-.1.1-.1.2-.1.3v7c0 .3.2.5.5.5h23c.3 0 .5-.2.5-.5v-7c0-.1 0-.2-.1-.3zM10.5 5h5c.3 0 .5.2.5.5s-.2.5-.5.5h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm-2-2h1c.3 0 .5.2.5.5s-.2.5-.5.5h-1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm0 4h7c.3 0 .5.2.5.5s-.2.5-.5.5h-7c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm0 2h7c.3 0 .5.2.5.5s-.2.5-.5.5h-7c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm0 2h7c.3 0 .5.2.5.5s-.2.5-.5.5h-7c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm8 4c-.3 0-.5.2-.5.5v1c0 .8-.7 1.5-1.5 1.5H10c-.8 0-1.5-.7-1.5-1.5v-1c0-.3-.2-.5-.5-.5H1.4l2.9-5H5v3.5c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5V10h.7l2.9 5h-6.1z"
                         fill={
                           Array [
                             0,
@@ -708,7 +654,6 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         }
                         fillOpacity={1}
                         fillRule={1}
-                        font={Object {}}
                         matrix={
                           Array [
                             1,
@@ -740,97 +685,6 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                         strokeMiterlimit={4}
                         strokeOpacity={1}
                         strokeWidth={1}
-                        vectorEffect={0}
-                        x={0}
-                        y={0}
-                      >
-                        <RNSVGPath
-                          d="M13.502 12.506c1.8 0 3.2-1.5 3.2-3.2s-1.4-3.3-3.2-3.3-3.3 1.5-3.3 3.2 1.5 3.3 3.3 3.3zM13.502 13.306c-3.8 0-6.5 2-6.5 4.9v.8h13v-.8c0-2.9-2.7-4.9-6.5-4.9z"
-                          fill={
-                            Array [
-                              0,
-                              4278190080,
-                            ]
-                          }
-                          fillOpacity={1}
-                          fillRule={1}
-                          matrix={
-                            Array [
-                              1,
-                              0,
-                              0,
-                              1,
-                              0,
-                              0,
-                            ]
-                          }
-                          opacity={1}
-                          originX={0}
-                          originY={0}
-                          propList={Array []}
-                          rotation={0}
-                          scaleX={1}
-                          scaleY={1}
-                          skewX={0}
-                          skewY={0}
-                          stroke={null}
-                          strokeDasharray={null}
-                          strokeDashoffset={null}
-                          strokeLinecap={0}
-                          strokeLinejoin={0}
-                          strokeMiterlimit={4}
-                          strokeOpacity={1}
-                          strokeWidth={1}
-                          vectorEffect={0}
-                          x={0}
-                          y={0}
-                        />
-                      </RNSVGGroup>
-                      <RNSVGCircle
-                        cx={13.5}
-                        cy={13.5}
-                        fill={null}
-                        fillOpacity={1}
-                        fillRule={1}
-                        matrix={
-                          Array [
-                            1,
-                            0,
-                            0,
-                            1,
-                            0,
-                            0,
-                          ]
-                        }
-                        opacity={1}
-                        originX={0}
-                        originY={0}
-                        propList={
-                          Array [
-                            "fill",
-                            "stroke",
-                            "strokeWidth",
-                          ]
-                        }
-                        r={12.5}
-                        rotation={0}
-                        scaleX={1}
-                        scaleY={1}
-                        skewX={0}
-                        skewY={0}
-                        stroke={
-                          Array [
-                            0,
-                            4278235391,
-                          ]
-                        }
-                        strokeDasharray={null}
-                        strokeDashoffset={null}
-                        strokeLinecap={0}
-                        strokeLinejoin={0}
-                        strokeMiterlimit={4}
-                        strokeOpacity={1}
-                        strokeWidth={2}
                         vectorEffect={0}
                         x={0}
                         y={0}
@@ -966,33 +820,6 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           selectable={false}
                           style={
                             Array [
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            allowFontScaling={true}
-                            style={
-                              Object {
-                                "alignSelf": "center",
-                                "color": "#546E7A",
-                                "fontSize": 15,
-                                "marginBottom": 15,
-                                "marginTop": 15,
-                                "marginVertical": 0,
-                                "textAlign": "center",
-                              }
-                            }
-                          >
-                            Go to 
-                          </Text>
-                        </Text>
-                        <Text
-                          allowFontScaling={true}
-                          selectable={false}
-                          style={
-                            Array [
                               Object {
                                 "fontWeight": "700",
                               },
@@ -1026,21 +853,9 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                                 }
                               }
                             >
-                              your Account
+                              Open the email
                             </Text>
                           </Text>
-                        </Text>
-                        <Text
-                          allowFontScaling={true}
-                          style={
-                            Object {
-                              "flex": 1,
-                              "height": 16.8,
-                            }
-                          }
-                        >
-                          
-
                         </Text>
                         <Text
                           allowFontScaling={true}
@@ -1066,7 +881,7 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                               }
                             }
                           >
-                            in the upper left-hand corner
+                             with the invitation to download the Coorpacademy App
                           </Text>
                         </Text>
                       </Text>
@@ -1439,6 +1254,33 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                           selectable={false}
                           style={
                             Array [
+                              Object {},
+                              Object {},
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={true}
+                            style={
+                              Object {
+                                "alignSelf": "center",
+                                "color": "#546E7A",
+                                "fontSize": 15,
+                                "marginBottom": 15,
+                                "marginTop": 15,
+                                "marginVertical": 0,
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            Click on the button 
+                          </Text>
+                        </Text>
+                        <Text
+                          allowFontScaling={true}
+                          selectable={false}
+                          style={
+                            Array [
                               Object {
                                 "fontWeight": "700",
                               },
@@ -1472,47 +1314,8 @@ exports[`Storyshots AuthenticationSteps Magic link 1`] = `
                                 }
                               }
                             >
-                              Voilà!
+                              "Connect to the App"
                             </Text>
-                          </Text>
-                        </Text>
-                        <Text
-                          allowFontScaling={true}
-                          style={
-                            Object {
-                              "flex": 1,
-                              "height": 16.8,
-                            }
-                          }
-                        >
-                          
-
-                        </Text>
-                        <Text
-                          allowFontScaling={true}
-                          selectable={false}
-                          style={
-                            Array [
-                              Object {},
-                              Object {},
-                            ]
-                          }
-                        >
-                          <Text
-                            allowFontScaling={true}
-                            style={
-                              Object {
-                                "alignSelf": "center",
-                                "color": "#546E7A",
-                                "fontSize": 15,
-                                "marginBottom": 15,
-                                "marginTop": 15,
-                                "marginVertical": 0,
-                                "textAlign": "center",
-                              }
-                            }
-                          >
-                            Your Magic Link will be right there
                           </Text>
                         </Text>
                       </Text>

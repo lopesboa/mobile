@@ -5,15 +5,15 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: 'Naar de les',
   authenticationMagicLinkHeader:
-    'Gebruik dit toestel om uw identiteit op het webplatform te verifiëren',
+    'Maak verbinding met uw platform door op de link te klikken die u via e-mail hebt ontvangen',
   authenticationMagicLinkStepOneDescription:
-    'Maak <b>met dit toestel</b> verbinding met uw leerplatform',
+    'Gebruik deze telefoon om uw <b>professionele mailbox</b> te openen',
   authenticationMagicLinkStepTwoDescription:
-    'Ga naar <b>je Account</b> </br> in de linkerbovenhoek',
-  authenticationMagicLinkStepThreeDescription: '<b>Voilà!</b></br>Uw magische link komt hier',
+    '<b>Open het e-mailbericht</b> met de uitnodiging om de Coorpacademy App te downloaden',
+  authenticationMagicLinkStepThreeDescription: 'Klik op de knop <b>"Verbinden met de App"</b>',
   authenticationMagicLinkTitle: 'Magische link',
   authenticationQRCodeHeader:
-    'Gebruik een computer om uw identiteit op het webplatform te verifiëren',
+    'Geen e-mail ontvangen? Geen probleem! We gebruiken een computer om uw identiteit te identificeren op het webplatform',
   authenticationQRCodeStepOneDescription:
     'Maak <b>met een computer</b> verbinding met uw leerplatform',
   authenticationQRCodeStepTwoDescription: 'Ga naar <b>je account</b> </br> in de rechterbovenhoek',
@@ -40,7 +40,7 @@ const translations: Translations = {
   goodJob: 'Super!',
   goToQuestion: 'Naar de vraag',
   highscore: 'Je hebt een nieuwe topscore <br><b> je won zojuist {{score}} sterren </b>',
-  howToSignIn: 'Hoe wilt u inloggen?',
+  howToSignIn: 'Hebt u een e-mail ontvangen om de app te downloaden?',
   iWantIt: 'Ik wil het!',
   keyPoint: 'Key point',
   lesson: 'Les',
@@ -53,7 +53,7 @@ const translations: Translations = {
   ok: 'OK',
   ooops: 'Oeps...',
   open: 'Openen',
-  openBrowser: '<b>Mijn browser</b> openen',
+  openBrowser: '<b>Mijn mailbox</b> openen',
   openSettings: 'Instellingen openen',
   ouch: 'Ai...',
   outOfLives: 'Je heb geen levens meer!',
@@ -78,8 +78,8 @@ const translations: Translations = {
   startDemo: 'Nog geen account? <a href="/"><b><u>Begin een proefperiode!</u></b></a>',
   startLearning: 'Begin met deze',
   selectAnAnswer: 'Kies een antwoord',
-  signInDesktop: 'Inloggen met een computer',
-  signInMobile: 'Inloggen met dit toestel',
+  signInDesktop: 'Nee',
+  signInMobile: 'Ja',
   step: 'Stap',
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
@@ -90,8 +90,7 @@ const translations: Translations = {
   winAdditionalStars:
     'Win {{count}} extra sterren in dit hoofdstuk de eerste keer dat je een les bekijkt!',
   welcome: 'Welkom',
-  welcomeDescription:
-    'Deze app is gekoppeld aan uw persoonlijke account op het leerplatform van uw bedrijf.',
+  welcomeDescription: 'De app is gekoppeld aan uw account op het Learning Platform van uw bedrijf.',
   wrongAnswer: 'Verkeerd antwoord',
   yourAnswer: 'Jouw antwoord:',
   yourAnswers: 'Jouw antwoorden:'

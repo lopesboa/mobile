@@ -167,7 +167,7 @@ Array [
             }
             testID="authentication-content-description"
           >
-            This app is linked to your personal account on your company’s Learning Platform.
+            This app is linked to your account on your company’s Learning Platform.
           </Text>
           <View
             style={
@@ -191,7 +191,7 @@ Array [
             }
             testID="authentication-content-footer"
           >
-            How would you like to sign in?
+            Have you received an email to download the app?
           </Text>
           <View
             style={
@@ -202,7 +202,7 @@ Array [
             }
           />
           <View
-            testID="button-sign-in-desktop"
+            testID="button-sign-in-mobile"
           >
             <View
               accessible={true}
@@ -227,7 +227,7 @@ Array [
                   "opacity": 1,
                 }
               }
-              testID="button-sign-in-desktop-native"
+              testID="button-sign-in-mobile-native"
             >
               <Text
                 style={
@@ -258,7 +258,7 @@ Array [
                   ]
                 }
               >
-                Sign in with a computer
+                Yes
               </Text>
             </View>
           </View>
@@ -271,7 +271,7 @@ Array [
             }
           />
           <View
-            testID="button-sign-in-mobile"
+            testID="button-sign-in-desktop"
           >
             <View
               accessible={true}
@@ -297,7 +297,7 @@ Array [
                   "opacity": 1,
                 }
               }
-              testID="button-sign-in-mobile-native"
+              testID="button-sign-in-desktop-native"
             >
               <Text
                 style={
@@ -326,7 +326,7 @@ Array [
                   ]
                 }
               >
-                Sign in with this device
+                No
               </Text>
             </View>
           </View>

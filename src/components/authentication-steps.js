@@ -5,7 +5,8 @@ import {
   NovaLineComputersComputerScreen1 as DesktopIcon,
   NovaLineMobilephoneQrCode1 as QRCodeIcon,
   NovaCompositionCoorpacademyProfile as ProfileIcon,
-  NovaLineNetworkNetworkMobile as MobileIcon,
+  NovaCompositionCoorpacademyMailInbox as MailIcon,
+  NovaCompositionCoorpacademyMailInboxDocument as MailDocumentIcon,
   NovaCompositionCoorpacademyMagicWand as MagicWandIcon
 } from '@coorpacademy/nova-icons';
 
@@ -69,11 +70,11 @@ class AuthenticationSteps extends React.PureComponent<Props> {
     ];
     const magicLinkSteps = [
       {
-        icon: MobileIcon,
+        icon: MailIcon,
         description: translations.authenticationMagicLinkStepOneDescription
       },
       {
-        icon: ProfileIcon,
+        icon: MailDocumentIcon,
         description: translations.authenticationMagicLinkStepTwoDescription
       },
       {
