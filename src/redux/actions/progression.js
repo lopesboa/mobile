@@ -5,6 +5,7 @@ import type {Level, Chapter} from '@coorpacademy/player-store';
 import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
 import pMap from 'p-map';
+import {getMostAccurateRef} from '../../modules/reference';
 
 import type {StoreAction, ErrorAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';
@@ -17,9 +18,10 @@ const ENGINE_CONFIG_VERSION = '1';
 export {selectProgression};
 
 export const createLevelProgression = (level: Level) => {
+  const ref = getMostAccurateRef(level);
   const engine: Engine = {ref: ENGINE.LEARNER, version: ENGINE_VERSION};
   // @todo use universalRef
-  const content: GenericContent = {type: CONTENT_TYPE.LEVEL, ref: level.ref};
+  const content: GenericContent = {type: CONTENT_TYPE.LEVEL, ref};
   const engineConfig: EngineConfig = {
     version: ENGINE_CONFIG_VERSION,
     livesDisabled: level.infiniteLives
@@ -30,7 +32,8 @@ export const createLevelProgression = (level: Level) => {
 
 export const createChapterProgression = (chapter: Chapter) => {
   const engine: Engine = {ref: ENGINE.MICROLEARNING, version: ENGINE_VERSION};
-  const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref: chapter.universalRef};
+  const ref = getMostAccurateRef(chapter);
+  const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref};
   const engineConfig: EngineConfig = {version: ENGINE_CONFIG_VERSION};
 
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);

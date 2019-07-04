@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
+import {getMostAccurateRef} from '../../modules/reference';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
@@ -31,7 +32,10 @@ export const buildLevels = (
   levels: Array<Level>,
   language: SupportedLanguage
 ): Array<Array<string>> =>
-  levels.map(item => [`${CONTENT_TYPE.LEVEL}:${language}:${item.ref}`, JSON.stringify(item)]);
+  levels.map(item => [
+    `${CONTENT_TYPE.LEVEL}:${language}:${getMostAccurateRef(item)}`,
+    JSON.stringify(item)
+  ]);
 
 export const mapToResourceType = (value: string): ResourceType => {
   switch (value) {
