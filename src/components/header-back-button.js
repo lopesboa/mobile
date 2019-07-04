@@ -12,7 +12,7 @@ import {getStatusBarHeight} from '../modules/status-bar';
 import HeaderBackIcon from './header-back-icon';
 import Touchable from './touchable';
 
-export const HOME_ICON_HEIGHT = 16;
+export const HOME_ICON_HEIGHT = 20;
 export const CLOSE_ICON_HEIGHT = 16;
 export const BACK_ICON_HEIGHT = 20;
 

@@ -493,6 +493,48 @@ exports[`Storyshots LevelEnd Failure 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Ooops...
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                },
+              ]
+            }
+            testID="level-end-subtitle"
+          >
+            You are out of lives!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -532,10 +574,10 @@ exports[`Storyshots LevelEnd Failure 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -549,15 +591,15 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -688,48 +730,6 @@ exports[`Storyshots LevelEnd Failure 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Ooops...
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                },
-              ]
-            }
-            testID="level-end-subtitle"
-          >
-            You are out of lives!
-          </Text>
         </View>
         <View
           style={
@@ -1999,6 +1999,48 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Ooops...
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                },
+              ]
+            }
+            testID="level-end-subtitle"
+          >
+            You are out of lives!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -2038,10 +2080,10 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -2055,15 +2097,15 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -2194,48 +2236,6 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Ooops...
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                },
-              ]
-            }
-            testID="level-end-subtitle"
-          >
-            You are out of lives!
-          </Text>
         </View>
         <View
           style={
@@ -3516,6 +3516,34 @@ exports[`Storyshots LevelEnd Finished 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Congratulations!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -3555,10 +3583,10 @@ exports[`Storyshots LevelEnd Finished 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -3572,15 +3600,15 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -3711,34 +3739,6 @@ exports[`Storyshots LevelEnd Finished 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Congratulations!
-          </Text>
         </View>
         <View
           style={
@@ -5960,6 +5960,34 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Congratulations!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -5999,10 +6027,10 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -6016,15 +6044,15 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -6155,34 +6183,6 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Congratulations!
-          </Text>
         </View>
         <View
           style={
@@ -8404,6 +8404,34 @@ exports[`Storyshots LevelEnd Success 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Congratulations!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -8443,10 +8471,10 @@ exports[`Storyshots LevelEnd Success 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -8460,15 +8488,15 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -8599,34 +8627,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Congratulations!
-          </Text>
         </View>
         <View
           style={
@@ -11124,6 +11124,34 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
         </View>
         <View
           style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "paddingHorizontal": 24,
+              "paddingTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="level-end-header"
+          >
+            Congratulations!
+          </Text>
+        </View>
+        <View
+          style={
             Array [
               Object {
                 "paddingLeft": 24,
@@ -11163,10 +11191,10 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
           >
             <RNSVGSvgView
               align="xMidYMid"
-              bbHeight={16}
-              bbWidth={16}
+              bbHeight={20}
+              bbWidth={20}
               color="#FFFFFF"
-              height={16}
+              height={20}
               meetOrSlice={0}
               minX={0}
               minY={0}
@@ -11180,15 +11208,15 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   null,
                   Object {
                     "flex": 0,
-                    "height": 16,
-                    "width": 16,
+                    "height": 20,
+                    "width": 20,
                   },
                 ]
               }
               tintColor="#FFFFFF"
               vbHeight={24}
               vbWidth={24}
-              width={16}
+              width={20}
             >
               <RNSVGGroup
                 fill={
@@ -11319,34 +11347,6 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
               </RNSVGGroup>
             </RNSVGSvgView>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignContent": "center",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "paddingHorizontal": 24,
-              "paddingTop": 18,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 28,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
-            }
-            testID="level-end-header"
-          >
-            Congratulations!
-          </Text>
         </View>
         <View
           style={

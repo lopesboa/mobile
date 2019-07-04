@@ -211,7 +211,6 @@ class LevelEnd extends React.PureComponent<Props> {
                   spiralColor="rgba(0,0,0,0.06)"
                   backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
                 />
-                <HeaderBackButton onPress={onClose} type="home" testID="level-end-button-close" />
                 <View style={styles.header}>
                   <Text style={styles.mainHeader} testID="level-end-header">
                     {header}
@@ -222,6 +221,7 @@ class LevelEnd extends React.PureComponent<Props> {
                     </Text>
                   )}
                 </View>
+                <HeaderBackButton onPress={onClose} type="home" testID="level-end-button-close" />
                 {isSuccess ? (
                   <Trophy style={[styles.icon, {height: screenWidth}]} />
                 ) : (
@@ -247,7 +247,10 @@ class LevelEnd extends React.PureComponent<Props> {
                       <Card type={CARD_LAYOUT.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
                         <CatalogItem
                           title={recommendation.title}
-                          subtitle={recommendation.authors.map(author => author.label).join(', ')}
+                          subtitle={
+                            recommendation.authors &&
+                            recommendation.authors.map(author => author.label).join(', ')
+                          }
                           progression={{
                             current: recommendation.completion,
                             count: 1

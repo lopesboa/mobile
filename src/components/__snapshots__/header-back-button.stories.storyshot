@@ -655,10 +655,10 @@ exports[`Storyshots HeaderBackButton Home 1`] = `
   >
     <RNSVGSvgView
       align="xMidYMid"
-      bbHeight={16}
-      bbWidth={16}
+      bbHeight={20}
+      bbWidth={20}
       color="#FFFFFF"
-      height={16}
+      height={20}
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -672,15 +672,15 @@ exports[`Storyshots HeaderBackButton Home 1`] = `
           null,
           Object {
             "flex": 0,
-            "height": 16,
-            "width": 16,
+            "height": 20,
+            "width": 20,
           },
         ]
       }
       tintColor="#FFFFFF"
       vbHeight={24}
       vbWidth={24}
-      width={16}
+      width={20}
     >
       <RNSVGGroup
         fill={
