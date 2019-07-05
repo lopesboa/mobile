@@ -14,7 +14,7 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
       style={
         Object {
           "alignItems": "flex-end",
-          "backgroundColor": "#fde2e5",
+          "backgroundColor": "#FDE2E5",
           "height": 75,
           "justifyContent": "center",
           "paddingHorizontal": 32,
@@ -621,7 +621,7 @@ exports[`Storyshots ErrorModal No Content Found case 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "center",
-          "backgroundColor": "#f73f52",
+          "backgroundColor": "#F73F52",
           "borderColor": "#FFFFFF",
           "borderRadius": 103,
           "borderWidth": 5,
@@ -892,7 +892,7 @@ exports[`Storyshots ErrorModal Platform not activated case 1`] = `
       style={
         Object {
           "alignItems": "flex-end",
-          "backgroundColor": "#fde2e5",
+          "backgroundColor": "#FDE2E5",
           "height": 75,
           "justifyContent": "center",
           "paddingHorizontal": 32,
@@ -1217,7 +1217,7 @@ exports[`Storyshots ErrorModal Platform not activated case 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "center",
-          "backgroundColor": "#f73f52",
+          "backgroundColor": "#F73F52",
           "borderColor": "#FFFFFF",
           "borderRadius": 103,
           "borderWidth": 5,

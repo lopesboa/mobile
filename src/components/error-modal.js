@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   badge: {
     position: 'absolute',
-    backgroundColor: theme.colors.pink,
+    backgroundColor: theme.colors.negative,
     height: BADGE_HEIGHT,
     width: BADGE_HEIGHT,
     borderRadius: BADGE_HEIGHT,
