@@ -4,13 +4,17 @@ import decode from 'jwt-decode';
 
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
+import {buildUrlQueryParams} from '../../modules/uri';
+import type {QueryParams} from '../../modules/uri';
+
 import type {Section, JWT} from '../../types';
 import {createSections} from '../../__fixtures__/sections';
 
 export const fetchSections = async (
   token: string,
   offset: number,
-  limit: number
+  limit: number,
+  language: string
 ): Promise<{|
   sections: Array<Section>,
   total: number
@@ -25,14 +29,17 @@ export const fetchSections = async (
 
   const jwt: JWT = decode(token);
 
-  const response = await fetch(
-    `${jwt.host}/api/v2/sections?offset=${offset}&limit=${limit}&type=cards`,
-    {
-      headers: {
-        authorization: token
-      }
-    }
-  );
+  const query: QueryParams = {
+    type: 'cards',
+    offset,
+    limit,
+    lang: language
+  };
+
+  const response = await fetch(`${jwt.host}/api/v2/sections?${buildUrlQueryParams(query)}`, {
+    headers: {authorization: token}
+  });
+
   const {
     search_meta: {total},
     hits = []

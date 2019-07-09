@@ -92,7 +92,7 @@ export const fetchSections = (
       throw new Error('Token not defined');
     }
 
-    const {total, sections} = await services.Sections.find(token, offset, limit);
+    const {total, sections} = await services.Sections.find(token, offset, limit, language);
     const result = await dispatch(fetchSuccess(offset, limit, total, sections, language));
 
     await Promise.all(

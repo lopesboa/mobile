@@ -9,7 +9,9 @@ import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/ca
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
-// import {uniqBy} from '../../utils';
+import {buildUrlQueryParams} from '../../modules/uri';
+import type {QueryParams} from '../../modules/uri';
+
 import {ENGINE} from '../../const';
 import type {Section} from '../../types';
 import {getItem} from './core';
@@ -227,7 +229,7 @@ export const fetchCards = async (
     });
   }
 
-  const query = {
+  const query: QueryParams = {
     ...section.query,
     offset,
     limit,
@@ -235,15 +237,7 @@ export const fetchCards = async (
     withoutAdaptive: true
   };
 
-  const queryParams = Object.keys(query)
-    .map(key => {
-      const value = (query[key] !== undefined && query[key]).toString() || '';
-
-      return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-    })
-    .join('&');
-
-  const response = await fetch(`${host}${section.endpoint}?${queryParams}`, {
+  const response = await fetch(`${host}${section.endpoint}?${buildUrlQueryParams(query)}`, {
     headers: {authorization: token}
   });
   const {

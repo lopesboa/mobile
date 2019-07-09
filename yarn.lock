@@ -11327,10 +11327,10 @@ react-native-linear-gradient@^2.5.4:
   resolved "https://registry.npmjs.org/react-native-linear-gradient/-/react-native-linear-gradient-2.5.4.tgz#dce133526f5a5510a639af94544f1ed0c984bd1e"
   integrity sha512-FF1NhlerA4uBiS0gFIHa4FBp8/aftv4vPj14Y47lGNkYjSI94tnI6oYO3EfUxXjEyCUPiOVNKZOB9kScyjc5Ew==
 
-react-native-localization@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npmjs.org/react-native-localization/-/react-native-localization-2.1.2.tgz#1760d6352a53e685e808828740f47d649eb57946"
-  integrity sha512-2wl6mZnfQyD2u9+eNJnB5fMd1Aq41oeOBgVYBTh0s7S9cNuoAdswPap6p/vFnzbhAfjgRh/06qn4HvzIy/p43Q==
+react-native-localization@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/react-native-localization/-/react-native-localization-2.1.0.tgz#950e947e3e7f9ff5817ed7f882575a9449b368bd"
+  integrity sha512-4e4A2EdKRaBFfPMUOTbMZDAOeIeZozQcCl29GBGjVzaAYyGBSIob5R7hVLY0gEhJFRKB44EANhaNt/LAOTlr+g==
   dependencies:
     react "^16.0.0"
     react-localization "^1.0.13"

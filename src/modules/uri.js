@@ -20,3 +20,16 @@ export const getResourceUrl = (resource: Lesson): string | void => {
 
   return url;
 };
+
+export type QueryParams = {
+  [key: string]: string | number | boolean
+};
+
+export const buildUrlQueryParams = (params: QueryParams) =>
+  Object.keys(params)
+    .map(key => {
+      const value = (params[key] !== undefined && params[key]).toString() || '';
+
+      return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+    })
+    .join('&');

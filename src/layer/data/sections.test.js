@@ -28,7 +28,7 @@ describe('sections', () => {
         __E2E__: true
       }));
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token, 0, 3);
+      const actual = fetchSections(token, 0, 3, 'fr');
       const expected = {total: sections.length, sections: sections.slice(0, 3)};
       return expect(actual).resolves.toEqual(expected);
     });
@@ -52,7 +52,7 @@ describe('sections', () => {
             hits: Array<Section>
           |}>
         }> => {
-          expect(url).toBe('host/api/v2/sections?offset=1&limit=2&type=cards');
+          expect(url).toBe('host/api/v2/sections?type=cards&offset=1&limit=2&lang=fr');
           expect(options).toHaveProperty('headers.authorization', token);
 
           return Promise.resolve({
@@ -68,7 +68,7 @@ describe('sections', () => {
       );
 
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token, 1, 2);
+      const actual = fetchSections(token, 1, 2, 'fr');
       const expected = {total: sections.length, sections: sections.slice(1, 2)};
       return expect(actual).resolves.toEqual(expected);
     });
@@ -83,7 +83,7 @@ describe('sections', () => {
       fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
 
       const {fetchSections} = require('./sections');
-      const actual = fetchSections(token, 2, 3);
+      const actual = fetchSections(token, 2, 3, 'fr');
 
       return expect(actual).rejects.toThrow();
     });

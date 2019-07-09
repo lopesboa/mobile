@@ -134,7 +134,7 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - ReactNativeLocalization (2.1.2):
+  - ReactNativeLocalization (2.1.0):
     - React
   - ReactNativePermissions (1.1.1):
     - React
@@ -274,7 +274,7 @@ SPEC CHECKSUMS:
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: 9aecbfc4628128838187df9d9c9f630670cfb1d1
   react-native-webview: d388bd8c7f3499640feb60f776b4c89f9c069961
-  ReactNativeLocalization: b1e9b19b24c38310302bf9f4abe40a62a287e57e
+  ReactNativeLocalization: 0ef9ccdb2800fe7974c255ae2b9d4e5496dea509
   ReactNativePermissions: b64e084dff6a5cad51587d38c306f09246246384
   rn-fetch-blob: 766f85cabd2992300dfa1be2bc9e4e258abc6f04
   RNCAsyncStorage: 0d2b0cf659d2def90d8ed7de76f502d335268156
