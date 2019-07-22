@@ -4,10 +4,12 @@ import type {Level} from '../layer/data/_types';
 
 export const createLevel = ({
   ref,
-  chapterIds
+  chapterIds,
+  bestScore
 }: {
   ref: string,
-  chapterIds: Array<string>
+  chapterIds: Array<string>,
+  bestScore?: number
 }): Level => ({
   _id: 'foobarbaz',
   taggedNewUntil: '2018-12-08T09:07:19.302Z',
@@ -36,7 +38,8 @@ export const createLevel = ({
     "Identifier les enjeux liés à un champ d’application majeur de la donnée : l'Intelligence Artificielle"
   ],
   version: '2',
-  external_refs: []
+  external_refs: [],
+  bestScore
 });
 
 export default {

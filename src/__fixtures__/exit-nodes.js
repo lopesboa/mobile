@@ -5,7 +5,6 @@ import type {ExitNode} from '../layer/data/_types';
 export const failureExitNode: ExitNode = {
   ref: 'failExitNode',
   _id: 'string',
-  __v: 18,
   type: 'failure',
   description: 'description',
   title: 'title',
@@ -24,7 +23,6 @@ export const failureExitNode: ExitNode = {
 export const successExitNode: ExitNode = {
   ref: 'successExitNode',
   _id: 'string',
-  __v: 18,
   type: 'success',
   title: 'title',
   description: 'description',

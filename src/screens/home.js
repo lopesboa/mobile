@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
-import {selectCard} from '../redux/actions/catalog/cards';
+import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {signOut} from '../redux/actions/authentication';
 import translations from '../translations';

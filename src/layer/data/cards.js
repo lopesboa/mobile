@@ -245,6 +245,8 @@ export const fetchCards = async (
     hits = []
   }: {search_meta: {total: number}, hits?: Cards} = await response.json();
 
+  await saveDashboardCardsInAsyncStorage(hits, language);
+
   return {
     cards: hits,
     total

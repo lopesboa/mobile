@@ -3,7 +3,7 @@
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
 import type {SupportedLanguage} from '../../translations/_types';
-import type {RestrictedResourceType} from './_types';
+import type {RestrictedResourceType, Level, Chapter, Slide} from './_types';
 import {CONTENT_TYPE} from './_const';
 import {getItem} from './core';
 
@@ -13,28 +13,21 @@ export const find = (userLanguage: SupportedLanguage) => async (
   resourceType: RestrictedResourceType,
   ref: string
 ): Promise<ChapterAPI | LevelAPI | SlideAPI | void> => {
+  // $FlowFixMe exact type vs inexact type
   const resource = await getItem(resourceType, userLanguage, ref);
 
   if (!resource) return undefined;
 
   switch (resourceType) {
-    case CONTENT_TYPE.DISCIPLINE: {
-      // $FlowFixMe @todo use generic type there
-      const discipline: Discipline = resource;
-      return discipline;
-    }
     case CONTENT_TYPE.LEVEL: {
-      // $FlowFixMe @todo use generic type there
       const level: Level = resource;
       return mapToLevelAPI(level);
     }
     case CONTENT_TYPE.CHAPTER: {
-      // $FlowFixMe @todo use generic type there
       const chapter: Chapter = resource;
       return mapToChapterAPI(chapter);
     }
     case CONTENT_TYPE.SLIDE: {
-      // $FlowFixMe @todo use generic type there
       const slide: Slide = resource;
       return mapToSlideAPI(slide);
     }

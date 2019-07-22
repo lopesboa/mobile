@@ -36,14 +36,14 @@ module.exports = {
     'src/redux': {
       branches: 88,
       function: 100,
-      lines: 100,
-      statements: 100
+      lines: 95,
+      statements: 95
     },
     'src/layer': {
       // @todo increase this value
       branches: 84,
       function: 100,
-      lines: 99,
+      lines: 98,
       statements: 98
     },
     'src/modules': {

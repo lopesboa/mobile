@@ -66,7 +66,6 @@ export const mapToSlide = (rawSlide: Slide): SlideEngine => ({
 
 export const mapToChapter = (rawChapter: Chapter): ChapterStore => ({
   _id: rawChapter._id,
-  __v: rawChapter.__v,
   universalRef: rawChapter.universalRef,
   name: rawChapter.name,
   stars: rawChapter.stars,
@@ -86,7 +85,6 @@ export const mapToDiscipline = (rawDiscipline: Discipline): DisciplineStore => (
   partnershipType: rawDiscipline.partnershipType,
   deliverCoachStatus: rawDiscipline.deliverCoachStatus,
   hidden: rawDiscipline.hidden,
-  __v: rawDiscipline.__v,
   position: rawDiscipline.position,
   conditions: rawDiscipline.conditions,
   skills: rawDiscipline.skills,

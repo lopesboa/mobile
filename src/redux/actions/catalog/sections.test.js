@@ -9,7 +9,7 @@ import {
   fetchRequest as fetchCardsRequest,
   fetchSuccess as fetchCardsSuccess,
   DEFAULT_LIMIT
-} from './cards';
+} from './cards/fetch';
 import type {Action} from './sections';
 
 const sections = createSections().slice(0, 1);

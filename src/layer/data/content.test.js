@@ -33,12 +33,6 @@ jest.mock('./mappers', () => ({
 
 describe('content', () => {
   describe('find', () => {
-    it('should find discipline', async () => {
-      // $FlowFixMe this is only to test
-      const result = await find('en')(CONTENT_TYPE.DISCIPLINE, 'ref_discipline');
-      expect(result).toEqual({foo: 'bar'});
-    });
-
     it('should find level', async () => {
       // $FlowFixMe this is only to test
       const result = await find('en')(CONTENT_TYPE.LEVEL, 'ref_level');

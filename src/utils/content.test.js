@@ -3,10 +3,10 @@
 import {createDisciplineCard, createCardLevel, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
 import {AUTHOR_TYPE} from '../const';
-import {compareCards, pickNextLevel, getAuthorName, getAuthorType} from './content';
+import {compareCards, pickNextCardLevel, getAuthorName, getAuthorType} from './content';
 
-describe('ContentUtils', () => {
-  describe('pickNextModule', () => {
+describe('Content', () => {
+  describe('pickNextCardLevel', () => {
     const notStartedLevel = createCardLevel({
       label: 'mod_1',
       ref: 'mod_1',
@@ -31,9 +31,10 @@ describe('ContentUtils', () => {
       status: CARD_STATUS.STARTED,
       completion: 1
     });
+
     it("should return first module which haven't completion to 100%", () => {
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -44,7 +45,7 @@ describe('ContentUtils', () => {
         )
       ).toBe(notStartedLevel);
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -55,7 +56,7 @@ describe('ContentUtils', () => {
         )
       ).toBe(notStartedLevel);
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -66,7 +67,7 @@ describe('ContentUtils', () => {
         )
       ).toBe(notStartedLevel);
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -77,9 +78,10 @@ describe('ContentUtils', () => {
         )
       ).toBe(onGoingLevel);
     });
+
     it('should return the last one if every levels are finished', () => {
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -92,7 +94,7 @@ describe('ContentUtils', () => {
     });
     it('should return null if discipline has not level', () => {
       expect(
-        pickNextLevel(
+        pickNextCardLevel(
           createDisciplineCard({
             title: 'dis_1',
             ref: 'dis_1',
@@ -105,99 +107,101 @@ describe('ContentUtils', () => {
     });
   });
 
-  it('compareCards', () => {
-    const notStartedChapter = createChapterCard({
-      title: 'cha_1',
-      ref: 'cha_1',
-      completion: 0,
-      status: CARD_STATUS.STARTED
-    });
-    const onGoingChapter = createChapterCard({
-      title: 'cha_2',
-      ref: 'cha_2',
-      completion: 0.5,
-      status: CARD_STATUS.STARTED
-    });
-    const finishedChapter = createChapterCard({
-      title: 'cha_3',
-      ref: 'cha_3',
-      completion: 1,
-      status: CARD_STATUS.STARTED
-    });
-    const notStartedDiscipline = createDisciplineCard({
-      title: 'dis_1',
-      ref: 'dis_1',
-      completion: 0,
-      levels: [],
-      status: CARD_STATUS.STARTED
-    });
-    const onGoingDiscipline = createDisciplineCard({
-      title: 'dis_2',
-      ref: 'dis_2',
-      completion: 0.5,
-      levels: [],
-      status: CARD_STATUS.STARTED
-    });
-    const finishedDiscipline = createDisciplineCard({
-      title: 'dis_3',
-      ref: 'dis_3',
-      completion: 1,
-      levels: [],
-      status: CARD_STATUS.STARTED
-    });
+  describe('compareCards', () => {
+    it('should sort cards by completion', () => {
+      const notStartedChapter = createChapterCard({
+        title: 'cha_1',
+        ref: 'cha_1',
+        completion: 0,
+        status: CARD_STATUS.STARTED
+      });
+      const onGoingChapter = createChapterCard({
+        title: 'cha_2',
+        ref: 'cha_2',
+        completion: 0.5,
+        status: CARD_STATUS.STARTED
+      });
+      const finishedChapter = createChapterCard({
+        title: 'cha_3',
+        ref: 'cha_3',
+        completion: 1,
+        status: CARD_STATUS.STARTED
+      });
+      const notStartedDiscipline = createDisciplineCard({
+        title: 'dis_1',
+        ref: 'dis_1',
+        completion: 0,
+        levels: [],
+        status: CARD_STATUS.STARTED
+      });
+      const onGoingDiscipline = createDisciplineCard({
+        title: 'dis_2',
+        ref: 'dis_2',
+        completion: 0.5,
+        levels: [],
+        status: CARD_STATUS.STARTED
+      });
+      const finishedDiscipline = createDisciplineCard({
+        title: 'dis_3',
+        ref: 'dis_3',
+        completion: 1,
+        levels: [],
+        status: CARD_STATUS.STARTED
+      });
 
-    expect(
-      [
+      expect(
+        [
+          onGoingChapter,
+          onGoingDiscipline,
+          notStartedChapter,
+          notStartedDiscipline,
+          finishedChapter,
+          finishedDiscipline
+        ].sort(compareCards)
+      ).toEqual([
         onGoingChapter,
         onGoingDiscipline,
         notStartedChapter,
         notStartedDiscipline,
         finishedChapter,
         finishedDiscipline
-      ].sort(compareCards)
-    ).toEqual([
-      onGoingChapter,
-      onGoingDiscipline,
-      notStartedChapter,
-      notStartedDiscipline,
-      finishedChapter,
-      finishedDiscipline
-    ]);
-    expect(
-      [
+      ]);
+      expect(
+        [
+          onGoingDiscipline,
+          onGoingChapter,
+          notStartedDiscipline,
+          notStartedChapter,
+          finishedDiscipline,
+          finishedChapter
+        ].sort(compareCards)
+      ).toEqual([
         onGoingDiscipline,
         onGoingChapter,
         notStartedDiscipline,
         notStartedChapter,
         finishedDiscipline,
         finishedChapter
-      ].sort(compareCards)
-    ).toEqual([
-      onGoingDiscipline,
-      onGoingChapter,
-      notStartedDiscipline,
-      notStartedChapter,
-      finishedDiscipline,
-      finishedChapter
-    ]);
+      ]);
 
-    expect(
-      [
-        finishedChapter,
-        finishedDiscipline,
+      expect(
+        [
+          finishedChapter,
+          finishedDiscipline,
+          notStartedChapter,
+          notStartedDiscipline,
+          onGoingChapter,
+          onGoingDiscipline
+        ].sort(compareCards)
+      ).toEqual([
+        onGoingChapter,
+        onGoingDiscipline,
         notStartedChapter,
         notStartedDiscipline,
-        onGoingChapter,
-        onGoingDiscipline
-      ].sort(compareCards)
-    ).toEqual([
-      onGoingChapter,
-      onGoingDiscipline,
-      notStartedChapter,
-      notStartedDiscipline,
-      finishedChapter,
-      finishedDiscipline
-    ]);
+        finishedChapter,
+        finishedDiscipline
+      ]);
+    });
   });
 
   describe('getAuthorName', () => {

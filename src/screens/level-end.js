@@ -3,33 +3,33 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationActions, NavigationEvents} from 'react-navigation';
+import {NavigationEvents} from 'react-navigation';
 import type {ContentType} from '@coorpacademy/progression-engine';
-import {getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
-import get from 'lodash/fp/get';
-import {selectCard} from '../redux/actions/catalog/cards';
+import {getCurrentContent, getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
+import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
+
+import {createNextProgression} from '../redux/actions/progression';
+import {selectCard} from '../redux/actions/catalog/cards/select';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Screen from '../components/screen';
 import {compareCards} from '../utils/content';
-import {getCurrentContent, didUnlockLevel} from '../utils';
 import {getBestScore} from '../redux/utils/state-extract';
-import type {UnlockedLevelInfo} from '../types';
-import translationUtil from '../translations';
+import translations from '../translations';
 import playSound, {AUDIO_FILE} from '../modules/audio-player';
+import {CONTENT_TYPE} from '../const';
 
 type ConnectedDispatchProps = {|
+  createNextProgression: typeof createNextProgression,
   selectCard: typeof selectCard
 |};
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   contentType: ContentType | void,
   recommendation: DisciplineCard | ChapterCard,
-  currentContent: DisciplineCard | ChapterCard | void,
   bestScore?: string,
-  nextContent: DisciplineCard | ChapterCard | void,
-  unlockedLevelInfo?: UnlockedLevelInfo,
-  hasFinishedCourse?: boolean
+  currentContent?: LevelAPI | ChapterAPI,
+  nextContent?: LevelAPI | ChapterAPI
 |};
 
 export type Params = {|
@@ -62,6 +62,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     const {isCorrect} = this.props.navigation.state.params;
+
     if (isCorrect) {
       return playSound(AUDIO_FILE.SUCCESS_LEVEL);
     }
@@ -70,49 +71,40 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
 
   handleClosePress = () => {
     const {navigation} = this.props;
-    navigation.dispatch(
-      NavigationActions.navigate({
-        routeName: 'Home'
-      })
-    );
+    return navigation.navigate('Home');
   };
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
-    this.props.selectCard(this.props.recommendation);
-    this.props.navigation.navigate('Slide');
+    const {navigation, recommendation} = this.props;
+
+    this.props.selectCard(recommendation);
+    navigation.navigate('Slide');
   };
 
   handleButtonPress = () => {
-    const {isCorrect} = this.props.navigation.state.params;
-    if (this.props.currentContent) {
-      if (this.props.hasFinishedCourse) {
-        return this.props.navigation.navigate('Home');
-      }
-      if (this.props.nextContent && isCorrect) {
-        this.props.selectCard(this.props.nextContent);
-        return this.props.navigation.navigate('Slide');
-      }
-      this.props.selectCard(this.props.currentContent);
-      return this.props.navigation.navigate('Slide');
+    const {navigation, contentType: currentContentType, currentContent, nextContent} = this.props;
+    const {isCorrect} = navigation.state.params;
+
+    const contentToStart = isCorrect ? nextContent : currentContent;
+
+    if (contentToStart) {
+      this.props.createNextProgression(currentContentType, contentToStart.universalRef);
+      return navigation.navigate('Slide');
     }
+
+    return navigation.navigate('Home');
   };
 
   handleDidFocus = () => this.setState({isFocused: true});
 
   render() {
-    const {
-      contentType,
-      navigation,
-      recommendation,
-      unlockedLevelInfo,
-      bestScore = '',
-      hasFinishedCourse = false
-    } = this.props;
+    const {contentType, navigation, recommendation, bestScore = '', nextContent} = this.props;
     const {isCorrect} = navigation.state.params;
 
+    const nextContentType =
+      nextContent && ((nextContent.chaptersIds && CONTENT_TYPE.LEVEL) || CONTENT_TYPE.CHAPTER);
+
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
-    const isLevelUnlocked = unlockedLevelInfo && unlockedLevelInfo.isUnlocked;
-    const levelUnlockedName = unlockedLevelInfo && unlockedLevelInfo.levelName;
 
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
@@ -124,56 +116,52 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
           isFocused={this.state.isFocused}
           isSuccess={isCorrect}
           bestScore={bestScore}
-          isLevelUnlocked={isLevelUnlocked}
-          levelUnlockedName={levelUnlockedName}
+          nextContentType={nextContentType}
+          nextContentLabel={nextContent && nextContent.label}
           onClose={this.handleClosePress}
           onCardPress={this.handleCardPress}
           onButtonPress={this.handleButtonPress}
-          hasFinishedCourse={hasFinishedCourse}
         />
       </Screen>
     );
   }
 }
 
-export const mapStateToProps = (state: StoreState, {navigation}: Props): ConnectedStateProps => {
-  const language = translationUtil.getLanguage();
-  const currentProgressionId = navigation.state.params.progressionId;
-  const currentContentInfo = get(
-    `data.progressions.entities.${currentProgressionId}.content`,
-    state
-  );
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+  const language = translations.getLanguage();
 
   const bestScore = getBestScore(state);
   const progression = getCurrentProgression(state);
   const contentType = progression && progression.content.type;
 
-  // $FlowFixMe
-  const nextContent: DisciplineCard | ChapterCard | void = getNextContent(state);
-  const currentContent: DisciplineCard | ChapterCard | void =
-    currentContentInfo && getCurrentContent(state.catalog, currentContentInfo, language);
+  // $FlowFixMe union type
+  const nextContent: LevelAPI | void = getNextContent(state);
 
-  const unlockedLevelInfo =
-    currentContentInfo && currentContent && didUnlockLevel(currentContentInfo, currentContent);
+  // $FlowFixMe union type
+  const currentContent: LevelAPI | ChapterAPI | void = getCurrentContent(state);
 
-  const hasFinishedCourse = currentContent && currentContent.completion === 1;
+  const cards = Object.keys(state.catalog.entities.cards)
+    .map(key => state.catalog.entities.cards[key][language])
+    .filter(card => card !== undefined)
+    .filter(
+      card =>
+        !card.modules ||
+        !card.modules.find(mod =>
+          [mod.ref, mod.universalRef].includes(currentContent && currentContent.universalRef)
+        )
+    );
 
   return {
     contentType,
-    currentContent,
     nextContent,
+    currentContent,
     bestScore,
-    unlockedLevelInfo,
-    hasFinishedCourse,
-    recommendation: Object.keys(state.catalog.entities.cards)
-      .map(key => state.catalog.entities.cards[key][language])
-      .filter(item => item !== undefined)
-      .filter(item => item !== currentContent)
-      .sort(compareCards)[0]
+    recommendation: cards.sort(compareCards)[0]
   };
 };
 
 const mapDispatchToProps: ConnectedDispatchProps = {
+  createNextProgression,
   selectCard
 };
 

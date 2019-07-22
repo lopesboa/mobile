@@ -5,6 +5,7 @@ import type {
   Discipline as DisciplinStore
 } from '@coorpacademy/player-store';
 import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
+import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
 import {initialState as defaultCatalog} from '../redux/reducers/catalog';
@@ -63,7 +64,8 @@ export const createStoreState = ({
   fastSlide: basefastSlide,
   data: baseData,
   ui: baseUi,
-  authentication: baseAuthentication
+  authentication: baseAuthentication,
+  nextContent
 }: {
   levels: Array<Level>,
   slides: Array<Slide>,
@@ -79,7 +81,8 @@ export const createStoreState = ({
   ui?: any,
   // eslint-disable-next-line flowtype/no-weak-types
   authentication?: any,
-  catalog?: CatalogState
+  catalog?: CatalogState,
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI
 }): StoreState => {
   const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
   const mappedSlide: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
@@ -123,6 +126,9 @@ export const createStoreState = ({
         entities: mappedDisciplines
       }
     },
+    videos: {
+      entities: {}
+    },
     clues: {
       entities: {}
     },
@@ -139,7 +145,9 @@ export const createStoreState = ({
       entities: {}
     },
     nextContent: {
-      entities: {}
+      entities: {
+        progression1: nextContent
+      }
     }
   };
 

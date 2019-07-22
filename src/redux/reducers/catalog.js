@@ -1,9 +1,12 @@
 // @flow strict
 
-import type {Action as CardAction} from '../actions/catalog/cards';
+import type {Action as FetchCardAction} from '../actions/catalog/cards/fetch';
+import type {Action as SelectCardAction} from '../actions/catalog/cards/select';
+import type {Action as RefreshCardAction} from '../actions/catalog/cards/refresh';
 import type {Action as SectionAction} from '../actions/catalog/sections';
 import {FETCH_SUCCESS as FETCH_SECTIONS_SUCCESS} from '../actions/catalog/sections';
-import {FETCH_SUCCESS as FETCH_CARDS_SUCCESS, REFRESH_CARD} from '../actions/catalog/cards';
+import {FETCH_SUCCESS as FETCH_CARDS_SUCCESS} from '../actions/catalog/cards/fetch';
+import {REFRESH as REFRESH_CARD} from '../actions/catalog/cards/refresh';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {Section} from '../../types';
@@ -103,7 +106,10 @@ export const reduceSectionsRef = (
   return sectionsRef;
 };
 
-const reducer = (state: State = initialState, action: CardAction | SectionAction): State => {
+const reducer = (
+  state: State = initialState,
+  action: FetchCardAction | RefreshCardAction | SelectCardAction | SectionAction
+): State => {
   switch (action.type) {
     case FETCH_SECTIONS_SUCCESS: {
       const {offset, total, items, language} = action.payload;
@@ -162,8 +168,9 @@ const reducer = (state: State = initialState, action: CardAction | SectionAction
         entities: {
           ...state.entities,
           cards: {
+            ...state.entities.cards,
             [item.universalRef]: {
-              ...(state.entities[item.universalRef] || {}),
+              ...(state.entities.cards[item.universalRef] || {}),
               [language]: item
             }
           }

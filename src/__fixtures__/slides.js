@@ -27,7 +27,6 @@ export const createSlide = ({
   tips:
     "L'initiative de l'Open Compute Project remonte à 2011, lorsque Facebook a redesigné l'un de ses data centers dans l'Oregon et a décidé d'en rendre public le plan. Le réseau social a depuis été rejoint au sein de l'OCP par tous les géants du numérique, d'IBM à Google en passant par Alibaba, Nokia et Microsoft.",
   chapter_id: chapterId,
-  __v: 0,
   authors: [],
   context: context || createEmptyContext(),
   meta: {

@@ -24,9 +24,10 @@ describe('Uri', () => {
     it('should return the given params in a query params format', () => {
       const params = {
         type: 'cards',
-        offset: 2
+        offset: 2,
+        disabled: true
       };
-      const expectedResult = `type=${params.type}&offset=${params.offset}`;
+      const expectedResult = `type=${params.type}&offset=${params.offset}&disabled=true`;
       expect(buildUrlQueryParams(params)).toBe(expectedResult);
     });
   });

@@ -41,7 +41,8 @@ export type Level = $Exact<{|
   deliverCoachStatus: boolean,
   taggedNewUntil: string,
   name: string,
-  levelTranslation: string
+  levelTranslation: string,
+  bestScore?: number
 |}>;
 
 export type LevelType = 'base' | 'advanced' | 'coach';
@@ -56,12 +57,12 @@ export type Chapter = $Exact<{|
   stars: number,
   hidden: boolean,
   poster: Poster,
-  __v: number,
   _id: string,
   isConditional: boolean,
   isStandalone: boolean,
   name: string,
-  partners: Array<Partner>
+  partners: Array<Partner>,
+  bestScore?: number
 |}>;
 
 type Author = string;
@@ -69,7 +70,6 @@ type Author = string;
 export type Slide = $Exact<{|
   ...SlideAPI,
   lessons: Array<Lesson>,
-  __v: number,
   universalRef: string,
   authors: Array<Author>,
   context: Context
@@ -78,7 +78,6 @@ export type Slide = $Exact<{|
 export type ExitNode = $Exact<{
   ...ExitNodeAPI,
   ref: string,
-  __v: number,
   _id: string
 }>;
 

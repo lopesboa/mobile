@@ -1,4 +1,5 @@
 // @flow
+
 import {createStoreState} from '../__fixtures__/store';
 import {createLevel} from '../__fixtures__/levels';
 import {createQCMGraphic} from '../__fixtures__/questions';
@@ -214,14 +215,14 @@ describe('correction', () => {
 
     const props = {
       ...mapStateToProps(mockedStore),
-      selectProgression: jest.fn(),
+      selectCurrentProgression: jest.fn(),
       navigation: {
         navigate: jest.fn() // navigate to level-end
       }
     };
 
     await goNext(() => props);
-    expect(props.selectProgression.mock.calls.length).toBe(1);
+    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls.length).toBe(0);
   });
 
@@ -238,14 +239,14 @@ describe('correction', () => {
 
     const props = {
       ...mapStateToProps(mockedStore),
-      selectProgression: jest.fn(),
+      selectCurrentProgression: jest.fn(),
       navigation: {
         navigate: jest.fn() // navigate to level-end
       }
     };
 
     await goNext(() => props);
-    expect(props.selectProgression.mock.calls.length).toBe(1);
+    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls[0]).toEqual([
       'LevelEnd',
@@ -266,14 +267,14 @@ describe('correction', () => {
 
     const props = {
       ...mapStateToProps(mockedStore),
-      selectProgression: jest.fn(),
+      selectCurrentProgression: jest.fn(),
       navigation: {
         navigate: jest.fn() // navigate to level-end
       }
     };
 
     await goNext(() => props);
-    expect(props.selectProgression.mock.calls.length).toBe(1);
+    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls.length).toBe(1);
     expect(props.navigation.navigate.mock.calls[0]).toEqual([
       'LevelEnd',

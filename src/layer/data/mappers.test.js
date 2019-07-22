@@ -55,7 +55,6 @@ export const mapToLevelAPIExpectedResult: LevelAPI = {
 
 export const mapToChapterAPIExpectedResult: ChapterAPI = {
   _id: chapter._id,
-  __v: chapter.__v,
   universalRef: chapter.universalRef,
   name: chapter.name,
   stars: chapter.stars,

@@ -25,7 +25,6 @@ export const mapToExitNodeAPI = (rawExitNode: ExitNode): ExitNodeAPI => ({
 
 export const mapToChapterAPI = (rawChapter: Chapter): ChapterAPI => ({
   _id: rawChapter._id,
-  __v: rawChapter.__v,
   universalRef: rawChapter.universalRef,
   name: rawChapter.name,
   stars: rawChapter.stars,

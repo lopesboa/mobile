@@ -3,12 +3,17 @@
 import {createSections} from '../../__fixtures__/sections';
 import {createDisciplineCard} from '../../__fixtures__/cards';
 import {FETCH_SUCCESS as SECTIONS_FETCH_SUCCESS} from '../actions/catalog/sections';
-import {FETCH_SUCCESS as CARD_FETCH_SUCCESS, REFRESH_CARD} from '../actions/catalog/cards';
-import type {Action as SECTIONS_ACTION} from '../actions/catalog/sections';
-import type {Action} from '../actions/catalog/cards';
+import {FETCH_SUCCESS as CARD_FETCH_SUCCESS} from '../actions/catalog/cards/fetch';
+import {REFRESH as REFRESH_CARD} from '../actions/catalog/cards/refresh';
+import type {Action as SectionAction} from '../actions/catalog/sections';
+import type {Action as FetchAction} from '../actions/catalog/cards/fetch';
+import type {Action as SelectAction} from '../actions/catalog/cards/select';
+import type {Action as RefreshAction} from '../actions/catalog/cards/refresh';
 import reducer, {reduceCards, reduceSections} from './catalog';
 
 import type {State} from './catalog';
+
+type Action = SectionAction | FetchAction | SelectAction | RefreshAction;
 
 const dis1 = createDisciplineCard({
   ref: 'dis1',
@@ -77,7 +82,7 @@ describe('Catalog', () => {
 
   describe(SECTIONS_FETCH_SUCCESS, () => {
     it('Default', () => {
-      const action: SECTIONS_ACTION = {
+      const action: Action = {
         type: SECTIONS_FETCH_SUCCESS,
         payload: {
           offset: 1,
@@ -169,8 +174,9 @@ describe('Catalog', () => {
         entities: {
           ...initialState.entities,
           cards: {
+            ...initialState.entities.cards,
             [dis1.universalRef]: {
-              ...initialState.entities[dis1.universalRef],
+              ...initialState.entities.cards[dis1.universalRef],
               [language]: dis3
             }
           },

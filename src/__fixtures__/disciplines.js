@@ -17,7 +17,6 @@ export const createDiscipline = ({
   name,
   partnershipType: 'paidpartner',
   hidden: false,
-  __v: 0,
   position: 8,
   conditions: [],
   skills: ['skill_NkOqattjS'],

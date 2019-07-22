@@ -1,7 +1,8 @@
 // @flow
 import type {QCMQuestion} from '@coorpacademy/progression-engine';
-import {createMapObject, createStoreState} from './store';
 
+import type {StoreState} from '../redux/store';
+import {createMapObject, createStoreState} from './store';
 import {createLevel} from './levels';
 import {createSlide} from './slides';
 import {createQCM} from './questions';
@@ -172,6 +173,9 @@ describe('storeFixture', () => {
           entities: {}
         }
       },
+      videos: {
+        entities: {}
+      },
       clues: {
         entities: {}
       },
@@ -192,7 +196,7 @@ describe('storeFixture', () => {
       }
     };
 
-    const expectedResult = {
+    const expectedResult: StoreState = {
       data: data,
       error: {
         isVisible: false

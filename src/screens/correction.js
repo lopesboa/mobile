@@ -11,7 +11,6 @@ import {
   hasViewedAResourceAtThisStep as checkHasViewedAResourceAtThisStep,
   getLives,
   getRoute,
-  selectProgression,
   selectRoute,
   getCurrentProgression,
   getCurrentProgressionId,
@@ -23,6 +22,7 @@ import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
+import {selectCurrentProgression} from '../redux/actions/progression';
 import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
 import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import type {Params as LevelEndScreenParams} from './level-end';
@@ -57,7 +57,7 @@ type ConnectedStateProps = {|
 
 type ConnectedDispatchProps = {|
   play: typeof play,
-  selectProgression: () => (dispatch: Dispatch, getState: GetState) => void,
+  selectCurrentProgression: () => (dispatch: Dispatch, getState: GetState) => void,
   selectRoute: typeof selectRoute,
   acceptExtraLife: typeof acceptExtraLife,
   refuseExtraLife: typeof refuseExtraLife
@@ -84,7 +84,7 @@ export const goNext = async (getProps: () => Props): Promise<void> => {
   } else if (props.offeringExtraLife) {
     await props.refuseExtraLife();
   } else {
-    await props.selectProgression();
+    await props.selectCurrentProgression();
   }
 
   const {isFinished, lives, progressionId} = getProps();
@@ -223,15 +223,6 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
   }
 }
 
-const _selectProgression = () => (dispatch: Dispatch, getState: GetState) => {
-  const state = getState();
-  const progressionId = getCurrentProgressionId(state);
-
-  if (progressionId) {
-    dispatch(selectProgression(progressionId));
-  }
-};
-
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
   const progressionState = get('state', progression);
@@ -290,7 +281,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 
 export const mapDispatchToProps: ConnectedDispatchProps = {
   play,
-  selectProgression: _selectProgression,
+  selectCurrentProgression,
   acceptExtraLife,
   refuseExtraLife,
   selectRoute

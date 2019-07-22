@@ -1,6 +1,6 @@
 // @flow
 
-import type {DataLayer as DataLayerBase} from '@coorpacademy/player-services';
+import type {ChapterAPI, DataLayer as DataLayerBase, LevelAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
 import type {SupportedLanguage} from '../../translations/_types';
 import {
@@ -12,18 +12,17 @@ import {
   findBestOf
 } from './progressions';
 import {find as findContent} from './content';
-import {findById as findChapterById} from './chapters';
+import {findById as findChapterById, getNextChapter} from './chapters';
 import {getExitNode} from './exit-nodes';
 import {fetchBundle, storeBundle} from './bundle';
 import {fetchCards, refreshCard, getCardFromLocalStorage} from './cards';
 import {fetchBrand} from './brand';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
-import {find as findRecommendations, getNextLevel} from './recommendations';
-import {findById as findLevelById} from './levels';
+import {find as findRecommendations} from './recommendations';
+import {findById as findLevelById, getNextLevel} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
-import type {DisciplineCard} from './_types';
 import {fetchSections} from './sections';
 
 export type DataLayer = {
@@ -38,8 +37,9 @@ export type DataLayer = {
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
   synchronizeProgression: typeof synchronizeProgression,
   getAllProgressions: typeof getAllProgressions,
-  findBestOf: (language: SupportedLanguage) => Promise<number>,
-  getNextLevel: (language: SupportedLanguage) => Promise<DisciplineCard | void>,
+  findBestOf: () => Promise<number>,
+  getNextChapter: (ref: string) => Promise<ChapterAPI | void>,
+  getNextLevel: (ref: string) => Promise<LevelAPI | void>,
   logEvent: typeof logEvent
 };
 
@@ -56,6 +56,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   saveProgression,
   synchronizeProgression,
   findRecommendations,
+  getNextChapter: getNextChapter(userLanguage),
   getNextLevel: getNextLevel(userLanguage),
   findLevelById: findLevelById(userLanguage),
   fetchCards,

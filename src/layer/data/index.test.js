@@ -18,6 +18,7 @@ describe('Data layer', () => {
       saveProgression: expect.any(Function),
       synchronizeProgression: expect.any(Function),
       findRecommendations: expect.any(Function),
+      getNextChapter: expect.any(Function),
       getNextLevel: expect.any(Function),
       findLevelById: expect.any(Function),
       fetchCards: expect.any(Function),

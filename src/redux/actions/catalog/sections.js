@@ -7,7 +7,7 @@ import {getToken, getSection} from '../../utils/state-extract';
 import {ERROR_TYPE} from '../../../const';
 import {showModal} from '../ui/modal';
 import type {Action as ModalAction} from '../ui/modal';
-import {fetchCards, DEFAULT_LIMIT} from './cards';
+import {fetchCards, DEFAULT_LIMIT} from './cards/fetch';
 
 export const FETCH_REQUEST = '@@sections/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@sections/FETCH_SUCCESS';

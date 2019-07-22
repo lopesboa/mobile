@@ -3,10 +3,12 @@
 import type {DisciplineCard, CardLevel, ChapterCard} from '../layer/data/_types';
 import type {AuthorType} from '../types';
 
-export const pickNextLevel = (discipline: DisciplineCard): CardLevel | null => {
+export const pickNextCardLevel = (discipline: DisciplineCard): CardLevel | null => {
   return discipline.modules.reduce((selectedModule, currentModule) => {
-    if (!selectedModule) return currentModule;
-    if (selectedModule.completion === 1) return currentModule;
+    if (!selectedModule || selectedModule.completion === 1) {
+      return currentModule;
+    }
+
     return selectedModule;
   }, null);
 };

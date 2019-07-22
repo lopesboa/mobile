@@ -1,75 +1,32 @@
-// @flow
-import AsyncStorage from '@react-native-community/async-storage';
-import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
-import {find, getNextLevel} from './recommendations';
+// @flow strict
+
+jest.mock('./chapters', () => {
+  const {mapToChapterAPIExpectedResult} = require('./mappers.test');
+
+  return {
+    find: () => () => Promise.resolve([mapToChapterAPIExpectedResult])
+  };
+});
 
 describe('Recommendation data layer', () => {
   describe('find', () => {
-    it('should be mocked', async () => {
-      AsyncStorage.getAllKeys = jest.fn().mockImplementation(key => {
-        return Promise.resolve([]);
-      });
-      const actual = await find('type', 'ref');
-      expect(actual).toEqual([]);
-    });
-  });
-  describe('getNextLevel', () => {
-    it('should return next level', async () => {
-      const currentLevelCard = createCardLevel({
-        ref: 'mod_current',
-        status: 'isActive',
-        label: 'Fake level',
-        level: 'advanced',
-        completion: 1
-      });
-      const nextLevelCard = createCardLevel({
-        ref: 'mod_next',
-        status: 'isActive',
-        label: 'Fake level',
-        level: 'advanced',
-        completion: 0
-      });
-      const disciplineCard = createDisciplineCard({
-        ref: 'dis_something',
-        completion: 0.5,
-        levels: [currentLevelCard, nextLevelCard],
-        title: 'Second discipline'
-      });
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
-        if (key === 'card:en:mod_current') return Promise.resolve(JSON.stringify(disciplineCard));
-        return Promise.resolve();
-      });
-      const actual = await getNextLevel('en')('mod_current');
-      expect(actual && actual.universalRef).toEqual('dis_something');
-    });
-    it('should return none if all levels are complets', async () => {
-      const disciplineCard = createDisciplineCard({
-        ref: 'dis_something',
-        completion: 1,
-        levels: [
-          createCardLevel({
-            ref: 'mod_dirst',
-            status: 'isActive',
-            label: 'Fake level',
-            level: 'advanced',
-            completion: 1
-          }),
-          createCardLevel({
-            ref: 'mod_second',
-            status: 'isActive',
-            label: 'Fake level',
-            level: 'advanced',
-            completion: 1
-          })
-        ],
-        title: 'Second discipline'
-      });
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
-        if (key === 'card:en:mod_second') return Promise.resolve(JSON.stringify(disciplineCard));
-        return Promise.resolve();
-      });
-      const actual = await getNextLevel('en')('mod_second');
-      expect(actual).toBeUndefined();
+    const {find} = require('./recommendations');
+
+    it('should return recommendations', async () => {
+      const result = await find('type', 'ref');
+      const recommendation = {
+        image:
+          '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/dataculture1a4-1542378128060.jpg',
+        progress: 1,
+        ref: 'cha_1',
+        time: '8m',
+        title: 'Fake chapter',
+        type: 'chapter',
+        view: 'grid'
+      };
+      const expected = [recommendation];
+
+      expect(result).toEqual(expected);
     });
   });
 });

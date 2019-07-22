@@ -40,7 +40,6 @@ export const mapToLeveExpectedResult: LevelStore = {
 
 export const mapToChapterExpectedResult: ChapterStore = {
   _id: chapter._id,
-  __v: chapter.__v,
   universalRef: chapter.universalRef,
   name: chapter.name,
   stars: chapter.stars,

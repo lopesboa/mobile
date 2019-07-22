@@ -8,7 +8,7 @@ import {__TEST__} from '../modules/environment';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress} from '../utils/tests';
-import {AUTHOR_TYPE} from '../const';
+import {AUTHOR_TYPE, CONTENT_TYPE} from '../const';
 import LevelEnd from './level-end';
 
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
@@ -50,7 +50,7 @@ const chapterNewCoorp = createChapterCard({
 storiesOf('LevelEnd', module)
   .add('Failure', () => (
     <LevelEnd
-      contentType="level"
+      contentType={CONTENT_TYPE.LEVEL}
       isSuccess={false}
       isFocused={false}
       onButtonPress={handleFakePress}
@@ -58,14 +58,11 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNew}
       bestScore="0"
-      isLevelUnlocked={false}
-      levelUnlockedName=""
-      hasFinishedCourse={false}
     />
   ))
   .add('Success', () => (
     <LevelEnd
-      contentType="level"
+      contentType={CONTENT_TYPE.LEVEL}
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -73,14 +70,13 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNew}
       bestScore="20"
-      hasFinishedCourse={false}
-      isLevelUnlocked
-      levelUnlockedName="avancé"
+      nextContentType={CONTENT_TYPE.LEVEL}
+      nextContentLabel="Advanced"
     />
   ))
   .add('Failure Author Coorp', () => (
     <LevelEnd
-      contentType="level"
+      contentType={CONTENT_TYPE.LEVEL}
       isSuccess={false}
       isFocused
       onButtonPress={handleFakePress}
@@ -88,14 +84,11 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNewCoorp}
       bestScore="0"
-      isLevelUnlocked={false}
-      levelUnlockedName=""
-      hasFinishedCourse={false}
     />
   ))
   .add('Success Author Coorp', () => (
     <LevelEnd
-      contentType="level"
+      contentType={CONTENT_TYPE.LEVEL}
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -103,14 +96,13 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
       bestScore="0"
-      isLevelUnlocked
-      levelUnlockedName=""
-      hasFinishedCourse={false}
+      nextContentType={CONTENT_TYPE.LEVEL}
+      nextContentLabel="Advanced"
     />
   ))
   .add('Finished', () => (
     <LevelEnd
-      contentType="level"
+      contentType={CONTENT_TYPE.LEVEL}
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -118,14 +110,11 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
       bestScore="0"
-      isLevelUnlocked
-      levelUnlockedName=""
-      hasFinishedCourse
     />
   ))
   .add('Microlearning', () => (
     <LevelEnd
-      contentType="chapter"
+      contentType={CONTENT_TYPE.CHAPTER}
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
@@ -133,9 +122,8 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
       bestScore="0"
-      isLevelUnlocked
-      levelUnlockedName=""
-      hasFinishedCourse
+      nextContentType={CONTENT_TYPE.CHAPTER}
+      nextContentLabel="foobar"
     />
   ));
 
@@ -145,7 +133,7 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const component = renderer.create(
         <LevelEnd
-          contentType="level"
+          contentType={CONTENT_TYPE.LEVEL}
           isSuccess={false}
           isFocused
           onButtonPress={handleFakePress}
@@ -153,9 +141,6 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           bestScore="0"
-          isLevelUnlocked={false}
-          levelUnlockedName=""
-          hasFinishedCourse={false}
         />
       );
       const item = component.root.find(el => el.props.testID === 'recommend-item-dis-2');
@@ -168,7 +153,7 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const component = renderer.create(
         <LevelEnd
-          contentType="level"
+          contentType={CONTENT_TYPE.LEVEL}
           isSuccess={false}
           isFocused
           onButtonPress={handlePress}
@@ -176,9 +161,6 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNew}
           bestScore="0"
-          isLevelUnlocked={false}
-          levelUnlockedName=""
-          hasFinishedCourse={false}
         />
       );
       const item = component.root.find(el => el.props.testID === 'button-retry-level');

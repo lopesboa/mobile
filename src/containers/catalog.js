@@ -7,7 +7,7 @@ import CatalogComponent, {SEPARATOR_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import {fetchCards} from '../redux/actions/catalog/cards';
+import {fetchCards} from '../redux/actions/catalog/cards/fetch';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import {getSection} from '../redux/utils/state-extract';
 import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';

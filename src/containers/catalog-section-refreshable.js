@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import {DEFAULT_LIMIT} from '../redux/actions/catalog/cards';
+import {DEFAULT_LIMIT} from '../redux/actions/catalog/cards/fetch';
 import CatalogSection, {ITEM_WIDTH} from '../components/catalog-section';
 import type {Props as CatalogSectionProps} from '../components/catalog-section';
 import withLayout from './with-layout';

@@ -28,21 +28,6 @@ import {BrandThemeContext} from './brand-theme-provider';
 import Tooltip from './tooltip';
 import HeaderBackButton from './header-back-button';
 
-type Props = {|
-  contentType: ContentType,
-  isSuccess: boolean,
-  onButtonPress: () => void,
-  onCardPress: (item: DisciplineCard | ChapterCard) => void,
-  onClose: () => void,
-  isLevelUnlocked: boolean,
-  isFocused: boolean,
-  bestScore: string,
-  isLevelUnlocked: boolean,
-  levelUnlockedName: string,
-  hasFinishedCourse: boolean,
-  recommendation: DisciplineCard | ChapterCard
-|};
-
 const PADDING_WIDTH = theme.spacing.base;
 export const POSITIVE_COLOR = theme.colors.positive;
 export const NEGATIVE_COLOR = theme.colors.negative;
@@ -155,7 +140,22 @@ const styles = StyleSheet.create({
 
 const {width: screenWidth} = Dimensions.get('window');
 
+type Props = {|
+  contentType: ContentType,
+  isSuccess: boolean,
+  onButtonPress: () => void,
+  onCardPress: (item: DisciplineCard | ChapterCard) => void,
+  onClose: () => void,
+  isFocused: boolean,
+  bestScore: string,
+  nextContentType?: typeof CONTENT_TYPE.LEVEL | typeof CONTENT_TYPE.CHAPTER,
+  nextContentLabel?: string,
+  recommendation: DisciplineCard | ChapterCard
+|};
+
 class LevelEnd extends React.PureComponent<Props> {
+  props: Props;
+
   handleCardPress = (item: DisciplineCard | ChapterCard) => () => this.props.onCardPress(item);
 
   handleButtonPress = () => this.props.onButtonPress();
@@ -166,9 +166,8 @@ class LevelEnd extends React.PureComponent<Props> {
       isSuccess,
       bestScore,
       onClose,
-      isLevelUnlocked,
-      levelUnlockedName,
-      hasFinishedCourse,
+      nextContentType,
+      nextContentLabel = '',
       recommendation,
       isFocused
     } = this.props;
@@ -178,7 +177,7 @@ class LevelEnd extends React.PureComponent<Props> {
     const bestScoreTranslation = translations.highscore.replace(/{{score}}/g, bestScore);
     const unlockNextLevelTranslation = translations.unlockNextLevel.replace(
       /{{levelName}}/g,
-      levelUnlockedName
+      nextContentLabel
     );
 
     const nextLabel =
@@ -187,12 +186,12 @@ class LevelEnd extends React.PureComponent<Props> {
       contentType === CONTENT_TYPE.LEVEL ? translations.retryLevel : translations.retryChapter;
 
     const buttonTranslation =
-      (isSuccess && hasFinishedCourse && translations.backToHome) ||
+      (isSuccess && !nextContentType && translations.backToHome) ||
       (isSuccess && nextLabel) ||
       retryLabel;
 
     const buttonAnalyticsID =
-      (isSuccess && hasFinishedCourse && `button-end-${contentType}-back-to-home`) ||
+      (isSuccess && !nextContentType && `button-end-${contentType}-back-to-home`) ||
       (isSuccess && `button-end-next-${contentType}`) ||
       `button-end-retry-${contentType}`;
 
@@ -235,7 +234,7 @@ class LevelEnd extends React.PureComponent<Props> {
                         <Tooltip type="highscore" text={bestScoreTranslation} />
                       )}
                       <Space type="tiny" />
-                      {isLevelUnlocked && (
+                      {nextContentType === CONTENT_TYPE.LEVEL && (
                         <Tooltip type="unlock" text={unlockNextLevelTranslation} />
                       )}
                     </View>

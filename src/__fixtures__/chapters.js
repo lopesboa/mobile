@@ -5,11 +5,13 @@ import type {Chapter} from '../layer/data/_types';
 export const createChapter = ({
   ref,
   name,
-  isConditional = false
+  isConditional = false,
+  bestScore
 }: {
   ref: string,
   name: string,
-  isConditional?: boolean
+  isConditional?: boolean,
+  bestScore?: number
 }): Chapter => ({
   _id: ref,
   universalRef: ref,
@@ -17,7 +19,6 @@ export const createChapter = ({
   stars: 20,
   freeRun: true,
   hidden: false,
-  __v: 0,
   meta: {
     taggedNewUntil: '2018-12-08T09:11:54.894Z',
     updatedAt: '2019-01-15T15:19:43.244Z',
@@ -38,7 +39,8 @@ export const createChapter = ({
   isStandalone: false,
   isConditional,
   time: 8,
-  version: '9'
+  version: '9',
+  bestScore
 });
 
 export default {
