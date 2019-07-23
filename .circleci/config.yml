@@ -7,9 +7,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
       - restore_cache:
-          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
       - run:
           name: Node dependencies
           command: |
@@ -18,11 +18,11 @@ jobs:
             yarn config set registry https://registry.npmjs.org/
             yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
             - ~/.cache/yarn
       - save_cache:
-          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -67,7 +67,7 @@ jobs:
 
   end2end_tests_ios_build:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.1'
     working_directory: ~/app
 
     steps:
@@ -77,7 +77,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v11-{{ arch }}
+          key: detox-v12-{{ arch }}
 
       - run:
           name: Detox framework
@@ -86,13 +86,13 @@ jobs:
             detox clean-framework-cache && detox build-framework-cache
 
       - save_cache:
-          key: detox-v11-{{ arch }}
+          key: detox-v12-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
 
       - restore_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -106,7 +106,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -123,7 +123,7 @@ jobs:
 
   end2end_tests_ios_run:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.1'
     working_directory: ~/app
     parallelism: 8
 
@@ -134,10 +134,10 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v11-{{ arch }}
+          key: detox-v12-{{ arch }}
 
       - restore_cache:
-          key: brew-e2e-v4-ios-{{ arch }}
+          key: brew-e2e-v5-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -147,12 +147,12 @@ jobs:
               brew link applesimutils
             else
               echo "Applesimutils not installed."
-              brew tap wix/brew
+              brew untap wix/brew && brew tap wix/brew
               brew install applesimutils
             fi
 
       - save_cache:
-          key: brew-e2e-v4-ios-{{ arch }}
+          key: brew-e2e-v5-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -160,6 +160,8 @@ jobs:
       - run:
           name: Tests
           command: |
+            yarn global add detox-cli
+            detox clean-framework-cache && detox build-framework-cache
             circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
           environment:
             JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml
@@ -169,7 +171,7 @@ jobs:
 
   prepare_ios:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.1'
     working_directory: ~/app
 
     steps:
@@ -179,26 +181,26 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: gems-v1-ios-{{ arch }}
+          key: gems-v3-ios-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd ios && bundle install
 
       - save_cache:
-          key: gems-v1-ios-{{ arch }}
+          key: gems-v3-ios-{{ arch }}
           paths:
             - ios/gems
 
       - restore_cache:
-          key: pods-v4-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v5-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v4-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v5-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
             - ios/Pods
 
@@ -210,7 +212,7 @@ jobs:
 
   build_ios:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.1'
     working_directory: ~/app
 
     steps:
@@ -220,7 +222,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -234,7 +236,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -265,19 +267,19 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: gems-v1-android-{{ arch }}
+          key: gems-v3-android-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd android && bundle install
 
       - save_cache:
-          key: gems-v1-android-{{ arch }}
+          key: gems-v3-android-{{ arch }}
           paths:
             - android/gems
 
       - restore_cache:
-          key: gradle-v2-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v3-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
           name: SDK licenses
@@ -291,7 +293,7 @@ jobs:
             ANDROID_HOME: /opt/android/sdk
 
       - save_cache:
-          key: gradle-v2-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v3-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
           paths:
             - ~/.gradle/caches
 
@@ -418,7 +420,7 @@ jobs:
 
   publish_ios:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.1'
     working_directory: ~/app
     steps:
       - checkout
@@ -427,7 +429,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -441,7 +443,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v5-ios-{{ arch }}
+          key: brew-watchman-v6-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
