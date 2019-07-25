@@ -36,7 +36,6 @@ export const buildLevels = (
     `${CONTENT_TYPE.LEVEL}:${language}:${getMostAccurateRef(item)}`,
     JSON.stringify(item)
   ]);
-
 export const mapToResourceType = (value: string): ResourceType => {
   switch (value) {
     case 'chapters':
@@ -89,12 +88,10 @@ export const normalizeBundle = (
   return keys.reduce(createReduceToNormalizedItemFunction(bundledResource, language), []);
 };
 
-export const storeBundle = async (
-  bundledResource: BundledDiscipline | BundledChapter,
-  language: SupportedLanguage
+export const storeBundle = (userLanguage: SupportedLanguage) => async (
+  bundledResource: BundledDiscipline | BundledChapter
 ): Promise<void> => {
-  const normalizedBundle = normalizeBundle(bundledResource, language);
-
+  const normalizedBundle = normalizeBundle(bundledResource, userLanguage);
   try {
     // eslint-disable-next-line no-console
     console.debug('Storing:', normalizedBundle.map(item => item[0]));
@@ -104,10 +101,9 @@ export const storeBundle = async (
   }
 };
 
-export const fetchBundle = async (
+export const fetchBundle = (userLanguage: SupportedLanguage) => async (
   type: typeof CONTENT_TYPE.DISCIPLINE | typeof CONTENT_TYPE.CHAPTER,
   ref: string,
-  language: SupportedLanguage,
   token: string,
   host: string
 ): Promise<BundledDiscipline | BundledChapter> => {
@@ -125,7 +121,7 @@ export const fetchBundle = async (
 
   const endpoint = type === CONTENT_TYPE.DISCIPLINE ? 'disciplines' : 'chapters';
   const response = await fetch(
-    `${host}/api/v2/${endpoint}/bundle?lang=${language}&conditions={"universalRef": ["${ref}"]}`,
+    `${host}/api/v2/${endpoint}/bundle?lang=${userLanguage}&conditions={"universalRef": ["${ref}"]}`,
     {
       headers: {authorization: token}
     }

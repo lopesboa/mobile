@@ -11,6 +11,7 @@ import {
   synchronize as synchronizeProgression,
   findBestOf
 } from './progressions';
+
 import {find as findContent} from './content';
 import {findById as findChapterById, getNextChapter} from './chapters';
 import {getExitNode} from './exit-nodes';
@@ -27,8 +28,8 @@ import {fetchSections} from './sections';
 
 export type DataLayer = {
   ...DataLayerBase,
-  fetchBundle: typeof fetchBundle,
-  storeBundle: typeof storeBundle,
+  fetchBundle: $Call<typeof fetchBundle, SupportedLanguage>,
+  storeBundle: $Call<typeof storeBundle, SupportedLanguage>,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
   fetchSections: typeof fetchSections,
@@ -69,8 +70,8 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   getCardFromLocalStorage,
   // @todo implement it
   getChapterRulesByContent: () => [],
-  fetchBundle,
-  storeBundle,
+  fetchBundle: fetchBundle(userLanguage),
+  storeBundle: storeBundle(userLanguage),
   logEvent
 });
 

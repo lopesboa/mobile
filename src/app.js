@@ -24,6 +24,7 @@ const reduxDevTools: ReduxDevTools | void =
   window && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined;
 
 const dataLayer = createDataLayer(translations.getLanguage());
+
 const services = createServices(dataLayer);
 const store = createStore(services, reduxDevTools);
 

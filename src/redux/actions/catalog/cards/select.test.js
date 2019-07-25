@@ -49,16 +49,14 @@ const mockNoContent = expectedType =>
   });
 
 const Bundle = {
-  store: jest.fn().mockImplementationOnce((bundle, lang) => {
+  store: jest.fn().mockImplementationOnce(bundle => {
     expect(bundle).toEqual('bundle');
-    expect(lang).toEqual('en');
     // $FlowFixMe
     return;
   }),
-  findById: jest.fn().mockImplementationOnce((bundleType, universalRef, lang, token, host) => {
+  findById: jest.fn().mockImplementationOnce((bundleType, universalRef, token, host) => {
     expect(bundleType).toEqual(CONTENT_TYPE.DISCIPLINE);
     expect(universalRef).toEqual(disciplineCard.universalRef);
-    expect(lang).toEqual('en');
     expect(token).toEqual('foo');
     expect(host).toEqual('digital');
     // $FlowFixMe
@@ -144,6 +142,7 @@ describe('Cards', () => {
                     // $FlowFixMe
                     return null;
                   default:
+                    // $FlowFixMe
                     return Promise.resolve();
                 }
               })
@@ -151,12 +150,15 @@ describe('Cards', () => {
                 switch (type) {
                   case CONTENT_TYPE.LEVEL:
                     expect(card.type).toEqual(CARD_TYPE.COURSE);
-                    return level;
+                    // $FlowFixMe
+                    return () => level;
                   case CONTENT_TYPE.CHAPTER:
                     expect(card.type).toEqual(CARD_TYPE.CHAPTER);
-                    return chapter;
+                    // $FlowFixMe
+                    return () => chapter;
                   default:
-                    return Promise.resolve();
+                    // $FlowFixMe
+                    return () => Promise.resolve();
                 }
               })
           },
@@ -357,7 +359,7 @@ describe('Cards', () => {
             .mockImplementationOnce(type => {
               expect(type).toEqual(CONTENT_TYPE.LEVEL);
               // $FlowFixMe
-              return;
+              return null;
             })
             .mockImplementationOnce(type => {
               expect(type).toEqual(CONTENT_TYPE.LEVEL);

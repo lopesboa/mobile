@@ -79,15 +79,10 @@ const attemptToRetrieveContent = async (
       : RESTRICTED_RESOURCE_TYPE.CHAPTER;
 
   const contentId = card.type === CARD_TYPE.COURSE && levelRef ? levelRef : card.universalRef;
-  const bundle = await services.Bundle.findById(
-    bundleType,
-    card.universalRef,
-    card.lang,
-    token,
-    brand.host
-  );
 
-  await services.Bundle.store(bundle, card.lang);
+  const bundle = await services.Bundle.findById(bundleType, card.universalRef, token, brand.host);
+
+  await services.Bundle.store(bundle);
   const content = await services.Content.find(contentType, contentId);
 
   if (!content) {
