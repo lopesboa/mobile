@@ -6,9 +6,7 @@ import type {Media} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import translations from '../translations';
-
 import type {WithLayoutProps} from '../containers/with-layout';
-
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
 import Html from './html';
 import Space from './space';
@@ -24,7 +22,7 @@ export type Props = $Exact<{|
   onOpenBrowser: () => void,
   onPDFButtonPress: (url: string, description: string) => void,
   testID?: string,
-  mediaSources: Media
+  media?: Media
 |}>;
 
 const styles = StyleSheet.create({
@@ -68,12 +66,19 @@ class Context extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, description, onPress, mediaSources, onOpenBrowser, testID} = this.props;
+    const {header, description, onPress, media, onOpenBrowser, testID} = this.props;
 
-    const url = mediaSources && getMediaUrl(mediaSources);
-    const mediaType = mediaSources && getMediaType(mediaSources);
+    // do not know why when pressing back button the render method here is called one more time even if
+    // the media is not provided by the screen
+    if (!media) {
+      return null;
+    }
+    const url = getMediaUrl(media);
+    const mediaType = getMediaType(media);
 
-    if (!url || !mediaType) return null;
+    if (!mediaType) {
+      return null;
+    }
 
     return (
       <View style={styles.container} testID={testID}>
@@ -83,11 +88,14 @@ class Context extends React.PureComponent<Props> {
           </View>
           <Space type="base" />
           <Resource
-            testID={`${mediaType}-resource`}
+            testID={`context-resource-${mediaType}`}
             url={url}
+            // $FlowFixMe incomplete media type
+            videoId={media.videoId}
+            mimeType={media.mimeType}
             onPress={this.handlePDFButtonPress}
-            thumbnail={getMediaPoster(mediaSources)}
-            description={mediaSources.description}
+            thumbnail={getMediaPoster(media)}
+            description={media.description}
             type={mediaType}
           />
         </View>

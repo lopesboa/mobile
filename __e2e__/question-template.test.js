@@ -16,7 +16,7 @@ describe('Template', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 6);
+    await tapCardOnSection('catalog-section-recommended-items', 7);
   });
 
   it('should see template elements', async () => {

@@ -17,12 +17,14 @@ import ResourceOverlay from './resource-overlay';
 import ExtraLife from './extralife';
 import Text from './text';
 import Touchable from './touchable';
+import Loader from './loader';
 
 export const EXTRALIFE: string = 'extralife';
 
 type Props = {|
   type: LessonType | typeof EXTRALIFE,
   source: File | {uri: string},
+  isLoading?: boolean,
   onPress: () => void,
   testID?: string
 |};
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Preview = ({type, source, onPress, testID}: Props) => {
+const Preview = ({type, source, isLoading, onPress, testID}: Props) => {
   const testIDSuffix = testID ? '-' + testID : '';
   return (
     <ImageBackground source={source} style={styles.image}>
@@ -61,7 +63,8 @@ const Preview = ({type, source, onPress, testID}: Props) => {
             testID={'preview-video' + testIDSuffix}
             analyticsID="preview-video"
           >
-            <PlayIcon color={theme.colors.white} height={70} width={70} />
+            {!isLoading && <PlayIcon color={theme.colors.white} height={70} width={70} />}
+            {isLoading && <Loader height={36} />}
           </Touchable>
         )}
         {type === RESOURCE_TYPE.PDF && (

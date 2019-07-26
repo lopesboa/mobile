@@ -85,6 +85,7 @@ const translations: Translations = {
   typeHere: 'Digita qui',
   validate: 'Convalida',
   version: 'Versione',
+  videoLoadingError: '',
   unlockNextLevel: 'Hai appena sbloccato<br><b>il livello {{levelName}}</b>',
   upgrade: "Esegui l'upgrade",
   upgradeDescription:

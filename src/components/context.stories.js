@@ -4,7 +4,6 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 
-import {RESOURCE_TYPE} from '../const';
 import {handleFakePress, TestContextProvider} from '../utils/tests';
 import {mediaContextImage, mediaContextVideo, mediaContextPDF} from '../__fixtures__/context';
 import {__TEST__} from '../modules/environment';
@@ -16,7 +15,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={{}}
+        media={{}}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -29,7 +28,7 @@ storiesOf('Context', module)
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
         // $FlowFixMe
-        mediaSources={{type: 'video', src: [{url: null}]}}
+        media={{type: 'video', src: [{url: null}]}}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -41,7 +40,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaContextImage}
+        media={mediaContextImage}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -53,7 +52,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaContextVideo}
+        media={mediaContextVideo}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -65,7 +64,7 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaContextPDF}
+        media={mediaContextPDF}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -77,7 +76,19 @@ storiesOf('Context', module)
       <Context
         header="Better now"
         description="You probably think that you are better now <img src='gr\' />"
-        mediaSources={mediaContextPDF}
+        media={mediaContextPDF}
+        onPress={handleFakePress}
+        onPDFButtonPress={handleFakePress}
+        onOpenBrowser={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Without Layout 2', () => (
+    <TestContextProvider>
+      <Context
+        header="Better now"
+        description="You probably think that you are better now <img src='gr\' />"
+        media={undefined}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onOpenBrowser={handleFakePress}
@@ -89,14 +100,14 @@ if (__TEST__) {
   describe('Context', () => {
     it('should handle onPress callback', () => {
       const handlePress = jest.fn();
-      const testID = `${RESOURCE_TYPE.PDF}-resource`;
+      const testID = 'context-resource-pdf';
 
       const component = renderer.create(
         <TestContextProvider>
           <Context
             header="Better now"
             description="You probably think that you are better now <img src='gr\' />"
-            mediaSources={mediaContextPDF}
+            media={mediaContextPDF}
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
             onOpenBrowser={handleFakePress}
@@ -114,14 +125,14 @@ if (__TEST__) {
 
     it('should handle onPress callback -- without context or url', () => {
       const handlePress = jest.fn();
-      const testID = `${RESOURCE_TYPE.PDF}-resource`;
+      const testID = 'context-resource-pdf';
 
       const component = renderer.create(
         <TestContextProvider>
           <Context
             header="Better now"
             description="You probably think that you are better now <img src='gr\' />"
-            mediaSources={mediaContextPDF}
+            media={mediaContextPDF}
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
             onOpenBrowser={handleFakePress}
@@ -143,7 +154,7 @@ if (__TEST__) {
           <Context
             header="Better now"
             description="You probably think that you are better now <img src='gr\' />"
-            mediaSources={{...mediaContextPDF, mediaUrl: undefined}}
+            media={{...mediaContextPDF, mediaUrl: undefined}}
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
             onOpenBrowser={handleFakePress}
@@ -160,7 +171,7 @@ if (__TEST__) {
           <Context
             header="Better now"
             description="You probably think that you are better now <img src='gr\' />"
-            mediaSources={{...mediaContextImage, src: undefined}}
+            media={{...mediaContextImage, src: undefined}}
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
             onOpenBrowser={handleFakePress}

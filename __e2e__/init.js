@@ -8,7 +8,7 @@ const config = json.detox;
 
 // $FlowFixMe jest flow type is incomplete
 jasmine.getEnv().addReporter(adapter);
-jest.setTimeout(120000);
+jest.setTimeout(570000);
 
 beforeAll(async () => {
   await detox.init(config);

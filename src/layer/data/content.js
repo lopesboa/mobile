@@ -16,7 +16,9 @@ export const find = (userLanguage: SupportedLanguage) => async (
   // $FlowFixMe exact type vs inexact type
   const resource = await getItem(resourceType, userLanguage, ref);
 
-  if (!resource) return undefined;
+  if (!resource) {
+    return undefined;
+  }
 
   switch (resourceType) {
     case CONTENT_TYPE.LEVEL: {

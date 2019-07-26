@@ -34,7 +34,7 @@ describe('Clue', () => {
   describe('Without clue', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await tapCardOnSection('catalog-section-recommended-items', 5);
+      await tapCardOnSection('catalog-section-recommended-items', 6);
     });
 
     it('should not be able to open the clue tab', async () => {

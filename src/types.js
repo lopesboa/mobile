@@ -18,13 +18,17 @@ export type JWT = {|
 
 export type QuestionChoiceInputType = 'text' | 'select';
 
+export type VideoProviderMimeType =
+  | 'application/jwplayer'
+  | 'application/kontiki'
+  | 'application/vimeo';
+
 export type MimeType =
+  | VideoProviderMimeType
   | 'video/mp4'
-  | 'application/vimeo'
   | 'image/jpeg'
   | 'image/png'
-  | 'application/pdf'
-  | 'application/vimeo';
+  | 'application/pdf';
 
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xlarge';
 

@@ -3,19 +3,22 @@
 import * as React from 'react';
 import {View, ImageBackground} from 'react-native';
 import type {LessonType} from '@coorpacademy/progression-engine';
+
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {RESOURCE_TYPE} from '../const';
-
+import type {MimeType} from '../types';
 import Video from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
-
+import {getVideoProvider} from '../modules/media';
 import Preview, {EXTRALIFE} from './preview';
 
 type Props = {|
   ...WithLayoutProps,
   type: LessonType,
-  url: string,
+  url?: string,
+  videoId?: string,
+  mimeType?: MimeType,
   testID?: string,
   thumbnail?: string,
   description?: string,
@@ -31,14 +34,16 @@ class Resource extends React.PureComponent<Props> {
 
   handlePress = () => {
     const {url, description, onPress} = this.props;
-    if (!onPress) return;
-    onPress(getCleanUri(url), description);
+
+    onPress && url && onPress(getCleanUri(url), description);
   };
 
   render() {
     const {
       type,
       url,
+      videoId,
+      mimeType,
       subtitles,
       layout,
       testID,
@@ -50,13 +55,17 @@ class Resource extends React.PureComponent<Props> {
 
     const height = layout && layout.width / (16 / 9);
 
-    if (!layout) return null;
+    if (!layout) {
+      return null;
+    }
 
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
         return (
           <Video
-            source={{uri: getCleanUri(url)}}
+            source={{uri: url && getCleanUri(url)}}
+            videoId={videoId}
+            videoProvider={mimeType && getVideoProvider(mimeType)}
             subtitles={subtitles}
             testID={testID}
             preview={{uri: thumbnail && getCleanUri(thumbnail)}}
@@ -85,7 +94,7 @@ class Resource extends React.PureComponent<Props> {
           <View style={{width: layout && layout.width}}>
             <ImageBackground
               testID={testID}
-              source={{uri: getCleanUri(url)}}
+              source={{uri: url && getCleanUri(url)}}
               resizeMode={resizeMode}
               style={{
                 ...style,

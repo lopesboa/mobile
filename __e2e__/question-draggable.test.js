@@ -22,7 +22,7 @@ describe('QCM Drag', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 7);
+    await tapCardOnSection('catalog-section-recommended-items', 8);
   });
 
   it('should see only choice item', async () => {

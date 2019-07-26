@@ -86,6 +86,7 @@ const translations: Translations = {
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Verze',
+  videoLoadingError: '',
   unlockNextLevel: 'Právě jste odemkli<br><b>úroveň {{levelName}}</b>',
   upgrade: 'Aktualizovat',
   upgradeDescription:

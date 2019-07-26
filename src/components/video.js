@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View, Platform} from 'react-native';
+import {StyleSheet, View, Text, Platform} from 'react-native';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {TextTrackType} from 'react-native-video';
 import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
@@ -14,8 +14,9 @@ import translations from '../translations';
 import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
 import Touchable from './touchable';
+import Space from './space';
 
-export type Step = 'preview' | 'play' | 'end';
+export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
 export type Subtitles = {|
   title: string,
@@ -25,7 +26,7 @@ export type Subtitles = {|
 |};
 
 type Props = {|
-  source: File | {uri: string},
+  source: File | {uri?: string},
   preview: File | {uri: string},
   height: number,
   step: Step,
@@ -40,12 +41,15 @@ type Props = {|
   onSubtitlesToggle?: () => void,
   onProgress?: () => void,
   onRef?: (VideoPlayer | null) => void,
+  onError?: () => void,
   testID?: string,
   extralifeOverlay?: boolean
 |};
 
 export const STEP: {[key: string]: Step} = {
   PREVIEW: 'preview',
+  LOADING: 'loading',
+  ERROR: 'error',
   PLAY: 'play',
   END: 'end'
 };
@@ -90,7 +94,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: theme.spacing.small
+  },
+  error: {
+    textAlign: 'center',
+    color: theme.colors.white
   }
 });
 
@@ -109,6 +118,7 @@ const Video = ({
   onShrink,
   onSubtitlesToggle,
   onRef,
+  onError,
   onProgress,
   testID,
   extralifeOverlay = false
@@ -144,10 +154,11 @@ const Video = ({
       style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
       testID={`video-container${testIDFullscreenSuffix}`}
     >
-      {step === STEP.PREVIEW && (
+      {[STEP.PREVIEW, STEP.LOADING].includes(step) && (
         <Preview
           type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.VIDEO}
           source={preview}
+          isLoading={step === STEP.LOADING}
           onPress={onPlay}
           testID={testID}
         />
@@ -156,7 +167,7 @@ const Video = ({
         <React.Fragment>
           <BlackPortal name="video">
             <VideoPlayer
-              testID={'video' + testIDFullscreenSuffix}
+              testID={`video${testIDFullscreenSuffix}`}
               source={source}
               ref={onRef}
               style={styles.video}
@@ -172,6 +183,7 @@ const Video = ({
               onFullscreenPlayerWillDismiss={onShrink}
               onEnd={onEnd}
               onReadyForDisplay={onReady}
+              onError={onError}
               onProgress={onProgress}
               onCC={onSubtitlesToggle}
               disableCC={!subtitlesUri}
@@ -183,15 +195,21 @@ const Video = ({
           {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
         </React.Fragment>
       )}
-      {step === STEP.END && (
+      {[STEP.END, STEP.ERROR].includes(step) && (
         <ResourceOverlay>
           <Touchable
             onPress={onPlay}
             style={styles.replay}
-            testID={'video-replay' + testIDSuffix}
-            analyticsID="video-replay"
+            testID={`video-${step}-replay-${testIDSuffix}`}
+            analyticsID={`video-${step}-replay`}
           >
             <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
+            {step === STEP.ERROR && (
+              <React.Fragment>
+                <Space />
+                <Text style={styles.error}>{translations.videoLoadingError}</Text>
+              </React.Fragment>
+            )}
           </Touchable>
         </ResourceOverlay>
       )}

@@ -85,6 +85,7 @@ const translations: Translations = {
   typeHere: 'Tastați aici',
   validate: 'Validează',
   version: 'Versiune',
+  videoLoadingError: '',
   unlockNextLevel: 'Tocmai ai deblocat<br><b>nivelul {{levelName}}</b>',
   upgrade: 'Modernizare',
   upgradeDescription:

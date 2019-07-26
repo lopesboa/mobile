@@ -5,6 +5,7 @@ import adaptive from './adaptive';
 import basic from './basic';
 import contextWithImage from './context-with-image';
 import contextWithVideo from './context-with-video';
+import contextWithPDF from './context-with-pdf';
 import withBasicQuestion from './with-question-basic';
 import noClue from './no-clue';
 import template from './template';
@@ -16,6 +17,7 @@ const items = [
   basic,
   contextWithImage,
   contextWithVideo,
+  contextWithPDF,
   noClue,
   template,
   qcmDrag,

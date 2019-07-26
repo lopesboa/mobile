@@ -247,6 +247,8 @@ class Correction extends React.PureComponent<Props> {
                   <Resource
                     type={resource.type}
                     url={resource.url}
+                    videoId={resource.videoId}
+                    mimeType={resource.mimeType}
                     description={resource.description}
                     thumbnail={resource.poster}
                     subtitles={subtitleUri}

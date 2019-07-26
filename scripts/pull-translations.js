@@ -190,6 +190,7 @@ const generate = async (locale: string) => {
     typeHere: formatTranslation(playerTranslations['Type here']),
     validate: formatTranslation(playerTranslations.Validate),
     version: formatTranslation(moocTranslations.mobile.version.title),
+    videoLoadingError: formatTranslation(componentsTranslations['Video Loading Error'] || ''),
     unlockNextLevel: formatTranslation(playerTranslations['Unlock next level'] || ''),
     upgrade: formatTranslation(moocTranslations.mobile.version.upgrade),
     upgradeDescription: formatTranslation(moocTranslations.mobile.version.upgradeDescription),

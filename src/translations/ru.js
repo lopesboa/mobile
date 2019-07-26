@@ -86,6 +86,7 @@ const translations: Translations = {
   typeHere: 'Введите текст здесь',
   validate: 'Подтвердить',
   version: 'Версия',
+  videoLoadingError: '',
   unlockNextLevel: 'Вы только что разблокировали<br><b>уровень {{levelName}}</b> ',
   upgrade: 'Повысить уровень ',
   upgradeDescription:

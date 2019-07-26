@@ -1,7 +1,7 @@
 // @flow strict
 
-import {VIDEO_TOGGLE_FULLSCREEN} from '../actions/video';
-import type {Action} from '../actions/video';
+import {TOGGLE_FULLSCREEN} from '../actions/video/full-screen';
+import type {Action as ToggleAction} from '../actions/video/full-screen';
 import reducer from './video';
 import type {State} from './video';
 
@@ -19,10 +19,10 @@ describe('Video', () => {
     expect(result).toEqual(expectedInitialState);
   });
 
-  describe(VIDEO_TOGGLE_FULLSCREEN, () => {
+  describe(TOGGLE_FULLSCREEN, () => {
     it('Default', () => {
-      const action: Action = {
-        type: VIDEO_TOGGLE_FULLSCREEN,
+      const action: ToggleAction = {
+        type: TOGGLE_FULLSCREEN,
         payload: false
       };
       const result = reducer(undefined, action);

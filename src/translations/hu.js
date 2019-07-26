@@ -85,6 +85,7 @@ const translations: Translations = {
   typeHere: 'Írjon ide',
   validate: 'Érvényesít',
   version: 'Verzió',
+  videoLoadingError: '',
   unlockNextLevel: 'Elérted a(z) <br><b>{{levelName}} szintet</b>',
   upgrade: 'Frissítés',
   upgradeDescription:

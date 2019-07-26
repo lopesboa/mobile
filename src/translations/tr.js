@@ -82,6 +82,7 @@ const translations: Translations = {
   typeHere: 'Buraya yazın',
   validate: 'Onayla',
   version: 'Sürüm',
+  videoLoadingError: '',
   unlockNextLevel: 'Az önce <br><b>{{levelName}} seviyesinin</b> kilidini açtın',
   upgrade: 'Yükselt',
   upgradeDescription: 'Uygulaman güncellendi! Keyfini sürmek için lütfen en son sürümü indir.',

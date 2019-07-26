@@ -9,7 +9,7 @@ describe('QCM Slider', () => {
   });
 
   it('should see catalog, choose a discipline and see a question slider', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 8);
+    await tapCardOnSection('catalog-section-recommended-items', 9);
     await waitForExist('question-slider');
   });
 

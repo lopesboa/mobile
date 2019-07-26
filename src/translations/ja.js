@@ -82,6 +82,7 @@ const translations: Translations = {
   typeHere: 'ここに入力します',
   validate: '回答',
   version: 'バージョン',
+  videoLoadingError: '',
   unlockNextLevel: '新たにアンロックしました<br><b>{{levelName}}レベル</b>',
   upgrade: 'アップグレード',
   upgradeDescription:

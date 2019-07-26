@@ -64,13 +64,13 @@ describe('Questions', () => {
       it('should be able to swipe resources cards', async () => {
         await element(by.id('card-correction')).swipe('up');
         await element(by.id('card-resource-les_1')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
+        await weExpect(element(by.id('card-resource-les_1-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_2')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
+        await weExpect(element(by.id('card-resource-les_2-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_3')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
+        await weExpect(element(by.id('card-resource-les_3-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_4')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
+        await weExpect(element(by.id('card-resource-les_4-pdf'))).toBeNotVisible();
       });
 
       it('should see key-point card', async () => {

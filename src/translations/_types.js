@@ -100,6 +100,7 @@ export type Translations = {|
   upgradeDescription: string,
   validate: string,
   version: string,
+  videoLoadingError: string,
   welcome: string,
   welcomeDescription: string,
   winAdditionalStars: string,

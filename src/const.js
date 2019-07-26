@@ -17,7 +17,8 @@ import type {
   PermissionStatus,
   QuestionChoiceInputType,
   SpaceType,
-  TooltipType
+  TooltipType,
+  VideoProviderMimeType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -161,6 +162,14 @@ export const APP_STATE: {
   ACTIVE: 'active',
   BACKGROUND: 'background',
   INACTIVE: 'inactive'
+};
+
+export const VIDEO_PROVIDER_MIME_TYPE: {
+  ['KONTIKI' | 'JWPLAYER' | 'VIMEO']: VideoProviderMimeType
+} = {
+  KONTIKI: 'application/kontiki',
+  JWPLAYER: 'application/jwplayer',
+  VIMEO: 'application/vimeo'
 };
 
 export const ANALYTICS_EVENT_TYPE: {

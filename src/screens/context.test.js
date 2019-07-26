@@ -50,7 +50,7 @@ describe('slide-context', () => {
         'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
       header: 'A beautifull rainy day',
       hasNoContext: false,
-      mediaSources: {
+      media: {
         type: 'img',
         mimeType: 'image/jpeg',
         src: [
@@ -85,7 +85,7 @@ describe('slide-context', () => {
       description: undefined,
       hasNoContext: true,
       header: undefined,
-      mediaSources: undefined
+      media: undefined
     };
     expect(expectedResult).toEqual(mapStateToProps(emptyStore));
   });

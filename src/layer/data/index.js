@@ -25,6 +25,7 @@ import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
 import {fetchSections} from './sections';
+import {findUriById as findVideoUriById} from './videos';
 
 export type DataLayer = {
   ...DataLayerBase,
@@ -62,6 +63,7 @@ const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
   findLevelById: findLevelById(userLanguage),
   fetchCards,
   fetchBrand,
+  findVideoUriById,
   // $FlowFixMe
   findBestOf: findBestOf(userLanguage),
   findLast: findLastProgression,

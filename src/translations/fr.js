@@ -86,6 +86,8 @@ const translations: Translations = {
   typeHere: 'Saisissez ici',
   validate: 'Valider',
   version: 'Version',
+  videoLoadingError:
+    'Une erreur est survenue lors du chargement de la vidéo. Pouvez-vous vérifier votre connection internet et réessayer ?',
   unlockNextLevel: 'Vous venez de débloquer<br><b>le niveau {{levelName}}</b>',
   upgrade: 'Mise à jour',
   upgradeDescription:

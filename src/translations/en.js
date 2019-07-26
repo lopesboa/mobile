@@ -85,6 +85,7 @@ const translations: Translations = {
   typeHere: 'Type here',
   validate: 'Validate',
   version: 'Version',
+  videoLoadingError: 'An error occurred while loading the video, please try again.',
   unlockNextLevel: 'You have just unlocked<br><b>{{levelName}} level</b>',
   upgrade: 'Upgrade',
   upgradeDescription:

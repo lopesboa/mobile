@@ -31,6 +31,8 @@ jest.mock('./mappers', () => ({
   mapToSlideAPI: () => ({type: 'slide'})
 }));
 
+jest.mock('cross-fetch');
+
 describe('content', () => {
   describe('find', () => {
     it('should find level', async () => {

@@ -1,5 +1,7 @@
 // @flow strict
 
+import type {VideoProvider} from '@coorpacademy/player-services';
+
 import type {CardStatus, CardType, RestrictedResourceType} from './_types';
 
 export type ContentType = 'chapter' | 'slide' | 'level' | 'exitNode' | 'discipline' | 'chapterRule';
@@ -59,3 +61,15 @@ export const RESTRICTED_RESOURCE_TYPE: {|
 (Object.keys(RESTRICTED_RESOURCE_TYPE).map(
   k => RESTRICTED_RESOURCE_TYPE[k]
 ): Array<RestrictedResourceType>);
+
+export const VIDEO_PROVIDER: {|
+  KONTIKI: 'kontiki',
+  JWPLAYER: 'jwplayer',
+  VIMEO: 'vimeo'
+|} = {
+  KONTIKI: 'kontiki',
+  JWPLAYER: 'jwplayer',
+  VIMEO: 'vimeo'
+};
+// FlowAssert
+(Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<VideoProvider>);

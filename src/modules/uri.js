@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {Lesson} from '@coorpacademy/progression-engine';
-import {RESOURCE_TYPE} from '../const';
+import {RESOURCE_TYPE, VIDEO_PROVIDER_MIME_TYPE} from '../const';
 
 export const getCleanUri = (originalUri: string): string =>
   originalUri && originalUri.replace(/(http:|https:|)\/\//g, 'https://');
@@ -12,12 +12,16 @@ export const getResourceUrl = (resource: Lesson): string | void => {
   const downloadUrl = resource && resource.downloadUrl;
   const url = (resource.type === RESOURCE_TYPE.VIDEO && downloadUrl) || mediaUrl;
 
-  const jwpWithNoUrl = !url || resource.mimeType === 'application/jwplayer';
-
-  if (jwpWithNoUrl && videoId !== undefined) {
+  // This will remain here as a workaround to app crash for vimeo videos
+  if (
+    !url ||
+    // $FlowFixMe - must be fixed in progression/engine package
+    resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.KONTIKI ||
+    resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.JWPLAYER
+  ) {
+    // $FlowFixMe - interpolation
     return `https://content.jwplatform.com/videos/${videoId}.mp4`;
   }
-
   return url;
 };
 

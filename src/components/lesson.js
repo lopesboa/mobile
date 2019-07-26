@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
 import type {LessonType} from '@coorpacademy/progression-engine';
+
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
@@ -99,6 +100,8 @@ class Lesson extends React.Component<Props> {
                   testID="lesson-resource"
                   type={openedResource.type}
                   url={openedResource.url}
+                  videoId={openedResource.videoId}
+                  mimeType={openedResource.mimeType}
                   description={openedResource.description}
                   thumbnail={openedResource.poster}
                   subtitles={subtitles}

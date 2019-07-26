@@ -76,6 +76,7 @@ const translations: Translations = {
   typeHere: '在这里输入',
   validate: '确认',
   version: '版本',
+  videoLoadingError: '',
   unlockNextLevel: '你刚刚解锁了<br><b>{{levelName}} 级</b>',
   upgrade: '升级',
   upgradeDescription: '您的应用程序已经更新！请下载并使用最新版本。',

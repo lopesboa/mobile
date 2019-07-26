@@ -15,7 +15,7 @@ import type {Params as PdfScreenParams} from './pdf';
 type ConnectedStateProps = {|
   header?: string,
   description?: string,
-  mediaSources?: Media,
+  media?: Media,
   hasNoContext?: boolean
 |};
 
@@ -58,7 +58,7 @@ class ContextScreen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, description, mediaSources} = this.props;
+    const {header, description, media} = this.props;
 
     return (
       <Screen testID="context-screen">
@@ -66,7 +66,7 @@ class ContextScreen extends React.PureComponent<Props> {
         <Context
           header={header}
           description={description}
-          mediaSources={mediaSources}
+          media={media}
           onPress={this.handleButtonPress}
           onPDFButtonPress={this.handlePDFButtonPress}
           onOpenBrowser={this.handleOpenBrowserButtonPress}
@@ -85,7 +85,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     description: slideContext && slideContext.description,
     header: slideContext && slideContext.title,
     hasNoContext: !(slideContext && slideContext.title),
-    mediaSources: slideContext && slideContext.media
+    media: slideContext && slideContext.media
   };
 };
 

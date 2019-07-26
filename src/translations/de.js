@@ -86,6 +86,7 @@ const translations: Translations = {
   typeHere: 'Hier einfügen',
   validate: 'Bestätigen',
   version: 'Version',
+  videoLoadingError: '',
   unlockNextLevel: 'Du hast gerade die Ebene<br><b>{{levelName}} freigeschaltet.</b>',
   upgrade: 'Nachrüsten',
   upgradeDescription:

@@ -81,6 +81,7 @@ const translations: Translations = {
   typeHere: '여기에 입력하세요',
   validate: '인증하기',
   version: '버전 ',
+  videoLoadingError: '',
   unlockNextLevel: '<br><b>{{levelName}} 레벨</b>의 잠금이 해제되었습니다',
   upgrade: '업그레이드 ',
   upgradeDescription: '응용 프로그램이 업데이트 되었습니다! 최신 버전을 다운로드하고 즐겨 보세요.',

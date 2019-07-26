@@ -84,6 +84,7 @@ const translations: Translations = {
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
   version: 'Versie',
+  videoLoadingError: '',
   unlockNextLevel: 'Je hebt zojuist {{levelName}} niveau <br><b> ontgrendeld </b>',
   upgrade: 'Bijwerken',
   upgradeDescription: 'Uw app is bijgewerkt! Download de nieuwste versie om ervan te genieten.',

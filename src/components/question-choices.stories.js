@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 import {__TEST__} from '../modules/environment';
 import {QUESTION_TYPE} from '../const';
 import {choices, choicesWithImage} from '../__fixtures__/question-choices';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, TestContextProvider} from '../utils/tests';
 import QuestionChoices from './question-choices';
 import {
   template,
@@ -30,15 +30,17 @@ storiesOf('QuestionChoices', module)
     />
   ))
   .add('QCM Graphic', () => (
-    <QuestionChoices
-      type={QUESTION_TYPE.QCM_GRAPHIC}
-      items={choicesWithImage.slice(0, 3)}
-      onInputValueChange={handleFakePress}
-      userChoices={answers}
-      onItemPress={handleFakePress}
-      onItemInputChange={handleFakePress}
-      onSliderChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <QuestionChoices
+        type={QUESTION_TYPE.QCM_GRAPHIC}
+        items={choicesWithImage.slice(0, 3)}
+        onInputValueChange={handleFakePress}
+        userChoices={answers}
+        onItemPress={handleFakePress}
+        onItemInputChange={handleFakePress}
+        onSliderChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Template', () => (
     <QuestionChoices

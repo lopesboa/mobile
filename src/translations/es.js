@@ -86,6 +86,7 @@ const translations: Translations = {
   typeHere: 'Escribe aquí',
   validate: 'Validar',
   version: 'Licencia',
+  videoLoadingError: '',
   unlockNextLevel: 'Acabas de desbloquear el<br><b>nivel {{levelName}}</b>',
   upgrade: 'Actualizar',
   upgradeDescription:

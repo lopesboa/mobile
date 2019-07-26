@@ -24,6 +24,7 @@ describe('Data layer', () => {
       fetchCards: expect.any(Function),
       fetchBrand: expect.any(Function),
       findBestOf: expect.any(Function),
+      findVideoUriById: expect.any(Function),
       findLast: expect.any(Function),
       fetchSections: expect.any(Function),
       refreshCard: expect.any(Function),

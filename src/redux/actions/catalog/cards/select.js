@@ -103,7 +103,6 @@ export const selectCard = (
 ) => {
   const {services} = options;
   const state = getState();
-
   dispatch(selectRequest(item));
 
   try {

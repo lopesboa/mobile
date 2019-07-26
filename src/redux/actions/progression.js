@@ -16,7 +16,6 @@ import type {
 } from '@coorpacademy/progression-engine';
 import {ObjectId} from 'bson';
 import pMap from 'p-map';
-
 import {getMostAccurateRef} from '../../modules/reference';
 import type {StoreAction, ErrorAction} from '../_types';
 import {getToken, getBrand} from '../utils/state-extract';

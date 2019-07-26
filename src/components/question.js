@@ -148,6 +148,10 @@ const Question = ({
             <Resource
               type={mediaType}
               url={mediaUrl}
+              // $FlowFixMe incomplete media type
+              videoId={media.videoId}
+              // $FlowFixMe incomplete media type
+              mimeType={media.mimeType}
               thumbnail={mediaPoster}
               resizeMode={mediaType === RESOURCE_TYPE.VIDEO ? 'cover' : 'contain'}
               testID="question-resource"

@@ -4,8 +4,8 @@ import {
   reloadApp,
   bypassAuthentication,
   tapCardOnSection,
-  waitForExist,
-  waitForNotVisible
+  waitForExist
+  // waitForNotVisible
 } from './utils';
 
 describe('Correction: resources', () => {
@@ -37,44 +37,45 @@ describe('Correction: resources', () => {
     await weExpect(element(by.id('resource-description-les_1'))).toBeVisible();
   });
 
-  it('should start the video', async () => {
-    await element(by.id('preview-video-resource-les_1')).tap();
-    await waitForExist('video-container-resource-les_1');
-  });
+  // TODO: Tests takes too long in the CI
+  // it('should start the video', async () => {
+  //   await element(by.id('preview-video-resource-les_1')).tap();
+  //   await waitForExist('video-container-resource-les_1');
+  // });
 
-  it('should pause the video', async () => {
-    await element(by.id('video-pause')).tap();
-    await weExpect(element(by.id('video-play'))).toBeVisible();
-    await weExpect(element(by.id('video-pause'))).toBeNotVisible();
-  });
+  // it('should pause the video', async () => {
+  //   await element(by.id('video-pause')).tap();
+  //   await weExpect(element(by.id('video-play'))).toBeVisible();
+  //   await weExpect(element(by.id('video-pause'))).toBeNotVisible();
+  // });
 
-  it('should resume the video', async () => {
-    await element(by.id('video-play')).tap();
-    await weExpect(element(by.id('video-play'))).toBeNotVisible();
-    await weExpect(element(by.id('video-pause'))).toBeVisible();
-  });
+  // it('should resume the video', async () => {
+  //   await element(by.id('video-play')).tap();
+  //   await weExpect(element(by.id('video-play'))).toBeNotVisible();
+  //   await weExpect(element(by.id('video-pause'))).toBeVisible();
+  // });
 
-  it('should open the pdf', async () => {
-    await element(by.id('card-resource-les_1')).swipe('up');
-    await element(by.id('card-resource-les_2')).swipe('up');
-    await element(by.id('card-resource-les_3')).swipe('up');
-    await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
-    await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
-    await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
-    await weExpect(element(by.id('card-resource-les_4'))).toBeVisible();
-    await weExpect(element(by.id('preview-pdf-resource-les_4'))).toBeVisible();
-    await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
-    await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
-    await element(by.id('button-open-pdf')).tap();
-    await waitForExist('pdf-screen');
-  });
+  // it('should open the pdf', async () => {
+  //   await element(by.id('card-resource-les_1')).swipe('up');
+  //   await element(by.id('card-resource-les_2')).swipe('up');
+  //   await element(by.id('card-resource-les_3')).swipe('up');
+  //   await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
+  //   await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
+  //   await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
+  //   await weExpect(element(by.id('card-resource-les_4'))).toBeVisible();
+  //   await weExpect(element(by.id('preview-pdf-resource-les_4'))).toBeVisible();
+  //   await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
+  //   await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
+  //   await element(by.id('button-open-pdf')).tap();
+  //   await waitForExist('pdf-screen');
+  // });
 
-  it('should close the pdf', async () => {
-    await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
-    await element(by.id('pdf-button-close')).tap();
-    await waitForNotVisible('pdf-screen');
-    await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
-  });
+  // it('should close the pdf', async () => {
+  //   await weExpect(element(by.id('pdf-button-close'))).toBeVisible();
+  //   await element(by.id('pdf-button-close')).tap();
+  //   await waitForNotVisible('pdf-screen');
+  //   await weExpect(element(by.id('pdf-button-close'))).toBeNotVisible();
+  // });
   afterAll(async () => {
     await element(by.id('button-next-question')).tap();
     await element(by.id('header-back')).tap();

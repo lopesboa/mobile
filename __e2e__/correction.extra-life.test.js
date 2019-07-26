@@ -28,17 +28,18 @@ describe('Correction: extra-life', () => {
     await wrongAnswer(element, {clickOnNext: false});
   });
 
-  it('should offer extralife', async () => {
-    await weExpect(element(by.id('extra-life-resource-les_1'))).toBeVisible();
-    await weExpect(element(by.id('button-quit'))).toBeVisible();
-    await element(by.id('extra-life-resource-les_1')).tap();
-    await weExpect(element(by.id('button-next-question'))).toBeVisible();
-    await element(by.id('button-next-question')).tap();
-  });
+  // TODO: Tests takes too long in the CI
+  // it('should offer extralife', async () => {
+  //   await weExpect(element(by.id('extra-life-resource-les_1'))).toBeVisible();
+  //   await weExpect(element(by.id('button-quit'))).toBeVisible();
+  //   await element(by.id('extra-life-resource-les_1')).tap();
+  //   await weExpect(element(by.id('button-next-question'))).toBeVisible();
+  //   await element(by.id('button-next-question')).tap();
+  // });
 
-  it('a 4th wrong answer', async () => {
-    await wrongAnswer(element, {clickOnNext: false});
-  });
+  // it('a 4th wrong answer', async () => {
+  //   await wrongAnswer(element, {clickOnNext: false});
+  // });
 
   afterAll(async () => {
     await element(by.id('button-quit')).tap();

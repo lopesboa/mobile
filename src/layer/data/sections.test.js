@@ -1,6 +1,6 @@
 // @flow strict
 
-import {toJWT} from '../../utils/tests';
+import {toJWT, fakeError} from '../../utils/tests';
 import {createSections} from '../../__fixtures__/sections';
 import type {JWT, Section} from '../../types';
 
@@ -80,12 +80,12 @@ describe('sections', () => {
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => Promise.reject(new Error()));
+      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
 
       const {fetchSections} = require('./sections');
       const actual = fetchSections(token, 2, 3, 'fr');
 
-      return expect(actual).rejects.toThrow();
+      return expect(actual).rejects.toThrow(fakeError);
     });
   });
 

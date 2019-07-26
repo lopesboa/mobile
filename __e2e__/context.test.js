@@ -17,7 +17,9 @@ describe('Context', () => {
     it('should see elements', async () => {
       await waitForExist('context-screen');
       await weExpect(element(by.id('context'))).toBeVisible();
-      await weExpect(element(by.id('img-resource'))).toBeVisible();
+      await weExpect(
+        element(by.type('RCTImageView').and(by.id('context-resource-img')))
+      ).toBeVisible();
       await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
     });
 
@@ -41,7 +43,9 @@ describe('Context', () => {
     it('should see elements', async () => {
       await waitForExist('context-screen');
       await weExpect(element(by.id('context'))).toBeVisible();
-      await waitForExist('preview-video-video-resource');
+      await weExpect(
+        element(by.type('RCTView').and(by.id('preview-video-context-resource-video')))
+      ).toBeVisible();
     });
 
     it('should go to the question', async () => {

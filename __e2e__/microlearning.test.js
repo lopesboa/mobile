@@ -10,7 +10,7 @@ describe('Microlearning', () => {
 
   it('should open chapter', async () => {
     await element(by.id('home-screen')).swipe('up');
-    await tapCardOnSection('catalog-section-recommended-items', 10);
+    await tapCardOnSection('catalog-section-recommended-items', 11);
   });
 
   it('should see 1 life', async () => {

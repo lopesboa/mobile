@@ -119,7 +119,7 @@ exports[`Storyshots Context With Image 1`] = `
               undefined,
             ]
           }
-          testID="img-resource"
+          testID="context-resource-img"
         />
       </View>
     </View>
@@ -429,7 +429,7 @@ exports[`Storyshots Context With PDF 1`] = `
                 "width": "45%",
               }
             }
-            testID="preview-pdf-pdf-resource"
+            testID="preview-pdf-context-resource-pdf"
           >
             <View
               style={
@@ -977,7 +977,7 @@ exports[`Storyshots Context With Video 1`] = `
           },
         ]
       }
-      testID="video-container-video-resource"
+      testID="video-container-context-resource-video"
     >
       <View
         accessibilityIgnoresInvertColors={true}
@@ -1038,7 +1038,7 @@ exports[`Storyshots Context With Video 1`] = `
                 "opacity": 1,
               }
             }
-            testID="preview-video-video-resource"
+            testID="preview-video-context-resource-video"
           >
             <RNSVGSvgView
               align="xMidYMid"
@@ -1371,7 +1371,493 @@ exports[`Storyshots Context With Video 1`] = `
 </View>
 `;
 
-exports[`Storyshots Context With badly formatted video 1`] = `null`;
+exports[`Storyshots Context With badly formatted video 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingBottom": 24,
+      "paddingTop": 32,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    >
+      <View
+        testID="question-title"
+      >
+        <View
+          style={Object {}}
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                },
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "marginBottom": 17,
+                    "marginTop": 17,
+                    "marginVertical": 0,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Better now
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 24,
+          "width": 24,
+        }
+      }
+    />
+    <Mock$ReactNavigation$NavigationEvents
+      onWillBlur={[Function]}
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#14171A",
+            "overflow": "hidden",
+          },
+          false,
+          Object {
+            "height": 180,
+          },
+        ]
+      }
+      testID="video-container-context-resource-video"
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": null,
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 0, 0, 0.5)",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="preview-video-context-resource-video"
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={70}
+              bbWidth={70}
+              color="#FFFFFF"
+              height={70}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  undefined,
+                  null,
+                  Object {
+                    "flex": 0,
+                    "height": 70,
+                    "width": 70,
+                  },
+                ]
+              }
+              tintColor="#FFFFFF"
+              vbHeight={24}
+              vbWidth={24}
+              width={70}
+            >
+              <RNSVGGroup
+                fill={
+                  Array [
+                    0,
+                    4278190080,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                font={Object {}}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={Array []}
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              >
+                <RNSVGPath
+                  d="M0 0h24v24H0z"
+                  fill={null}
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                />
+                <RNSVGPath
+                  d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+                  fill={
+                    Array [
+                      0,
+                      4294967295,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View>
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
+              Object {},
+              Object {
+                "marginVertical": 0,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 17,
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              You probably think that you are better now 
+            </Text>
+          </Text>
+          <Image
+            source={
+              Object {
+                "uri": "gr\\\\",
+              }
+            }
+            style={
+              Array [
+                Array [
+                  Object {
+                    "height": 200,
+                    "marginLeft": "auto",
+                    "marginRight": "auto",
+                    "width": 200,
+                  },
+                  Object {},
+                ],
+                Object {
+                  "height": 100,
+                  "resizeMode": "cover",
+                  "width": 100,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-redirect-question"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "transparent",
+            "borderColor": "#00B0FF",
+            "borderRadius": 32,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+        testID="button-redirect-question-native"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "color": "#00B0FF",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Go to question
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`Storyshots Context Without Layout 1`] = `
 <View
@@ -1509,7 +1995,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                 "width": "45%",
               }
             }
-            testID="preview-pdf-pdf-resource"
+            testID="preview-pdf-context-resource-pdf"
           >
             <View
               style={
@@ -1962,3 +2448,5 @@ exports[`Storyshots Context Without Layout 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots Context Without Layout 2 1`] = `null`;

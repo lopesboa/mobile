@@ -86,6 +86,7 @@ const translations: Translations = {
   typeHere: 'Nhập vào đây',
   validate: 'Xác nhận',
   version: 'Phiên bản',
+  videoLoadingError: '',
   unlockNextLevel: 'Bạn vừa mở khóa cấp độ <br><b>{{levelName}}</b>',
   upgrade: 'Nâng cấp',
   upgradeDescription:

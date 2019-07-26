@@ -9,7 +9,7 @@ describe('Basic Question', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 9);
+    await tapCardOnSection('catalog-section-recommended-items', 10);
   });
 
   it('should see the question elements', async () => {

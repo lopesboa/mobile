@@ -1,8 +1,13 @@
 // @flow
 
-import {Answers, Clues, Content, LeaderBoard} from '@coorpacademy/player-services';
+import {Answers, Clues, Content, LeaderBoard, Videos} from '@coorpacademy/player-services';
 
-import type {AnswersService, CluesService, ContentService} from '@coorpacademy/player-services';
+import type {
+  AnswersService,
+  CluesService,
+  ContentService,
+  VideosService
+} from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
 import type {BundleService} from './bundle';
@@ -33,17 +38,18 @@ export type Services = {|
   Permissions: PermissionsService,
   LeaderBoard: typeof LeaderBoard,
   Recommendations: typeof Recommendations,
-  Sections: SectionsService
+  Sections: SectionsService,
+  Videos: VideosService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
   Analytics: Analytics(dataLayer),
-  // $FlowFixMe
+  // $FlowFixMe datalayer definition error
   Answers: Answers(dataLayer),
   Cards: Cards(dataLayer),
-  // $FlowFixMe
+  // $FlowFixMe datalayer definition error
   Clues: Clues(dataLayer),
-  // $FlowFixMe
+  // $FlowFixMe datalayer definition error
   Content: Content(dataLayer),
   Bundle: Bundle(dataLayer),
   Progressions: Progressions(dataLayer),
@@ -51,7 +57,9 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Recommendations: Recommendations(dataLayer),
   Permissions,
   LeaderBoard,
-  Sections: Sections(dataLayer)
+  Sections: Sections(dataLayer),
+  // $FlowFixMe datalayer definition error
+  Videos: Videos(dataLayer)
 });
 
 export default createServices;
