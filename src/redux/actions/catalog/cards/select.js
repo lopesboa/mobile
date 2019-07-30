@@ -6,7 +6,7 @@ import {ERROR_TYPE} from '../../../../const';
 import {getToken, getBrand} from '../../../utils/state-extract';
 import {pickNextCardLevel} from '../../../../utils/content';
 import {CARD_TYPE, RESTRICTED_RESOURCE_TYPE} from '../../../../layer/data/_const';
-import {createNextProgression} from '../../progression';
+import {createNextProgression} from '../../progressions/create-next-progression';
 import type {Action as ModalAction} from '../../ui/modal';
 import {showModal} from '../../ui/modal';
 import type {StoreState} from '../../../store';

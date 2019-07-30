@@ -20,7 +20,11 @@ import {
   getSlide,
   hasPermission,
   getBestRank,
-  getBestScore
+  getBestScore,
+  getCard,
+  getSection,
+  getToken,
+  getBrand
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -277,7 +281,7 @@ describe('State-extract', () => {
   });
 
   describe('getBestScore', () => {
-    it('should get the best score', () => {
+    it('should get the best score when bestScore is already existing', () => {
       const level = createLevel({ref: 'mod_10B', chapterIds: ['666']});
       const levelCard = createCardLevel({
         ref: 'mod_10B',
@@ -337,6 +341,160 @@ describe('State-extract', () => {
       const bestScore = getBestScore({...state, ...partialState});
       expect(bestScore).toEqual('10');
     });
+
+    it('should get the best score when bestScore is not set so far', () => {
+      const level = createLevel({ref: 'mod_10B', chapterIds: ['666']});
+      const levelCard = createCardLevel({
+        ref: 'mod_10B',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis1',
+        completion: 0,
+        levels: [levelCard],
+        title: 'First discipline'
+      });
+
+      const progression = createProgression({
+        engine: 'learner',
+        progressionContent: {
+          type: 'level',
+          ref: 'mod_10B'
+        }
+      });
+
+      const partialState = {
+        cards: {
+          entities: {
+            dis1: {
+              en: disciplineCard
+            }
+          }
+        },
+        data: {
+          contents: {
+            level: {
+              entities: {
+                mod_10B: level
+              }
+            }
+          },
+          progressions: {
+            entities: {
+              progression1: {...progression, state: {...progression.state, stars: 40}}
+            }
+          },
+          nextContent: {}
+        },
+        ui: {
+          current: {
+            progressionId: 'progression1'
+          }
+        }
+      };
+      const state: StoreState = createState({
+        engine: 'learner',
+        levelRef: 'mod_10B'
+      });
+
+      const bestScore = getBestScore({...state, ...partialState});
+      expect(bestScore).toEqual('40');
+    });
+
+    it('should show no updates if new stars not higher than bestScore', () => {
+      const level = createLevel({ref: 'mod_10B', chapterIds: ['666']});
+      const levelCard = createCardLevel({
+        ref: 'mod_10B',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis1',
+        completion: 0,
+        levels: [levelCard],
+        title: 'First discipline'
+      });
+
+      const progression = createProgression({
+        engine: 'learner',
+        progressionContent: {
+          type: 'level',
+          ref: 'mod_10B'
+        }
+      });
+
+      const partialState = {
+        cards: {
+          entities: {
+            dis1: {
+              en: disciplineCard
+            }
+          }
+        },
+        data: {
+          contents: {
+            level: {
+              entities: {
+                mod_10B: {...level, bestScore: 30}
+              }
+            }
+          },
+          progressions: {
+            entities: {
+              progression1: {...progression, state: {...progression.state, stars: 10}}
+            }
+          },
+          nextContent: {}
+        },
+        ui: {
+          current: {
+            progressionId: 'progression1'
+          }
+        }
+      };
+      const state: StoreState = createState({
+        engine: 'learner',
+        levelRef: 'mod_10B'
+      });
+
+      const bestScore = getBestScore({...state, ...partialState});
+      expect(bestScore).toEqual('0');
+    });
+
+    it('should return undefined if no stars are set', () => {
+      const progression = createProgression({
+        engine: 'learner',
+        progressionContent: {
+          type: 'level',
+          ref: 'mod_10B'
+        }
+      });
+
+      const partialState = {
+        data: {
+          progressions: {
+            entities: {
+              progression1: {...progression, state: {...progression.state}}
+            }
+          }
+        },
+        ui: {
+          current: {
+            progressionId: 'progression1'
+          }
+        }
+      };
+      const state: StoreState = createState({
+        engine: 'learner',
+        levelRef: 'mod_10B'
+      });
+
+      const bestScore = getBestScore({...state, ...partialState});
+      expect(bestScore).toEqual(undefined);
+    });
   });
   describe('getBestRank', () => {
     it('should get the best rank if start and end are different', () => {
@@ -366,6 +524,97 @@ describe('State-extract', () => {
       // $FlowFixMe
       const bestScore = getBestRank(state);
       expect(bestScore).toEqual(null);
+    });
+    it('should return +score if end < start', () => {
+      const state = {
+        data: {
+          rank: {
+            start: 20,
+            end: 10
+          }
+        }
+      };
+
+      // $FlowFixMe
+      const bestScore = getBestRank(state);
+      expect(bestScore).toEqual('+10');
+    });
+  });
+
+  describe('getters', () => {
+    it('should get card', () => {
+      const state = {
+        catalog: {
+          entities: {
+            cards: {
+              foo: {
+                en: 'card'
+              }
+            }
+          }
+        }
+      };
+      // $FlowFixMe
+      const result = getCard(state, 'foo', 'en');
+      expect(result).toEqual('card');
+    });
+
+    it('should get section', () => {
+      const state = {
+        catalog: {
+          entities: {
+            sections: {
+              foo: {
+                en: 'section'
+              }
+            }
+          }
+        }
+      };
+      // $FlowFixMe
+      const result = getSection(state, 'foo', 'en');
+      expect(result).toEqual('section');
+    });
+
+    it('should get section with default lang', () => {
+      const state = {
+        catalog: {
+          entities: {
+            sections: {
+              foo: {
+                en: 'section'
+              }
+            }
+          }
+        }
+      };
+      // $FlowFixMe
+      const result = getSection(state, 'foo');
+      expect(result).toEqual('section');
+    });
+
+    it('should get token', () => {
+      const state = {
+        authentication: {
+          user: {
+            token: 'foo'
+          }
+        }
+      };
+      // $FlowFixMe
+      const result = getToken(state);
+      expect(result).toEqual('foo');
+    });
+
+    it('should get brand', () => {
+      const state = {
+        authentication: {
+          brand: 'foo'
+        }
+      };
+      // $FlowFixMe
+      const result = getBrand(state);
+      expect(result).toEqual('foo');
     });
   });
 });

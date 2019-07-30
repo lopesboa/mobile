@@ -8,7 +8,7 @@ import type {ContentType} from '@coorpacademy/progression-engine';
 import {getCurrentContent, getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
 
-import {createNextProgression} from '../redux/actions/progression';
+import {createNextProgression} from '../redux/actions/progressions/create-next-progression';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';

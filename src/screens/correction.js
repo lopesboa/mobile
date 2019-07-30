@@ -22,7 +22,7 @@ import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
-import {selectCurrentProgression} from '../redux/actions/progression';
+import {selectCurrentProgression} from '../redux/actions/progressions/select-progression';
 import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
 import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import type {Params as LevelEndScreenParams} from './level-end';

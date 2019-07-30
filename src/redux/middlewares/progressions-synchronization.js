@@ -6,8 +6,8 @@ import type {Options, StoreAction} from '../_types';
 import type {StoreState} from '../store';
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action as NavigationAction} from '../actions/navigation';
-import type {Action as ProgressionAction} from '../actions/progression';
-import {synchronizeProgressions} from '../actions/progression';
+import type {Action as ProgressionAction} from '../actions/progressions/synchronize';
+import {synchronizeProgressions} from '../actions/progressions/synchronize';
 
 type Action = NavigationAction | ProgressionAction;
 type State = StoreState;

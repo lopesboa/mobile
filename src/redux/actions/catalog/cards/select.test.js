@@ -64,7 +64,7 @@ const Bundle = {
   })
 };
 
-jest.mock('../../progression', () => ({
+jest.mock('../../progressions/create-next-progression', () => ({
   createNextProgression: jest.fn(() =>
     Promise.resolve({type: '@@mock/CREATE_NEXT_PROGRESSION', meta: {type: 'level', ref: 'mod_1'}})
   )

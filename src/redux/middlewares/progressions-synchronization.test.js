@@ -4,7 +4,7 @@ import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
-import {synchronizeProgressions} from '../actions/progression';
+import {synchronizeProgressions} from '../actions/progressions/synchronize';
 import createMiddleware from './progressions-synchronization';
 
 const brand = createBrand();

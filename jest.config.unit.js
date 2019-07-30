@@ -36,8 +36,8 @@ module.exports = {
     'src/redux': {
       branches: 88,
       function: 100,
-      lines: 95,
-      statements: 95
+      lines: 100,
+      statements: 100
     },
     'src/layer': {
       // @todo increase this value

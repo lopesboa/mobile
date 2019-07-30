@@ -1,18 +1,9 @@
 // @flow strict
 
-import {ObjectId} from 'bson';
-import {ENGINE, CONTENT_TYPE} from '../../const';
-import {createBrand} from '../../__fixtures__/brands';
-import {createProgression} from '../../__fixtures__/progression';
-import {createChapter} from '../../__fixtures__/chapters';
-import {createLevel} from '../../__fixtures__/levels';
-import {
-  synchronizeProgressions,
-  synchronizeProgression,
-  createChapterProgression,
-  createLevelProgression,
-  selectProgression
-} from './progression';
+import {ENGINE, CONTENT_TYPE} from '../../../const';
+import {createBrand} from '../../../__fixtures__/brands';
+import {createProgression} from '../../../__fixtures__/progression';
+import {synchronizeProgressions, synchronizeProgression} from './synchronize';
 
 const brand = createBrand();
 
@@ -24,9 +15,7 @@ jest.mock('@coorpacademy/player-store', () => ({
   CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
 }));
 
-const playerStore = require('@coorpacademy/player-store');
-
-describe('Progressions actions', () => {
+describe('Progressions synchronization', () => {
   const inProgressProgression = createProgression({
     _id: 'inProgressProgressionId',
     engine: ENGINE.LEARNER,
@@ -496,66 +485,6 @@ describe('Progressions actions', () => {
         payload: new Error('Brand not defined'),
         meta: {id: successProgression._id}
       });
-    });
-  });
-
-  describe('createProgression', () => {
-    it('createChapterProgression', async () => {
-      const chapter = createChapter({
-        ref: 'cha_1',
-        name: 'chapter'
-      });
-
-      // $FlowFixMe
-      playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
-        expect(ObjectId.isValid(_id)).toBeTruthy();
-        expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: '1'});
-        expect(content).toEqual({type: CONTENT_TYPE.CHAPTER, ref: 'cha_1'});
-        expect(engineConfig).toEqual({version: '1'});
-        return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
-      });
-
-      // $FlowFixMe
-      const actual = await createChapterProgression(chapter);
-
-      expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
-      expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});
-    });
-    it('createLevelProgression', async () => {
-      const level = createLevel({
-        ref: 'lev_1',
-        chapterIds: []
-      });
-
-      // $FlowFixMe
-      playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
-        expect(ObjectId.isValid(_id)).toBeTruthy();
-        expect(engine).toEqual({ref: ENGINE.LEARNER, version: '1'});
-        expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
-        expect(engineConfig).toEqual({livesDisabled: false, version: '1'});
-        return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
-      });
-
-      // $FlowFixMe
-      const actual = await createLevelProgression(level);
-
-      expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
-      expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});
-    });
-    afterEach(() => {
-      // $FlowFixMe
-      playerStore.createProgression.mockReset();
-    });
-    afterEach(() => {
-      // $FlowFixMe
-      playerStore.createProgression.mockReset();
-    });
-  });
-
-  it('selectProgression', async () => {
-    expect(await selectProgression('foo')).toEqual({
-      type: '@@mock/SELECT_PROGRESSION',
-      payload: {id: 'foo'}
     });
   });
 });
