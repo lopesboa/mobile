@@ -9,7 +9,7 @@ export const createState = (state: StateExtension | void): State => {
     livesDisabled = false,
     isCorrect = true,
     slides = [],
-    lives = 3,
+    lives = 4,
     step = {
       current: 1
     },
@@ -58,11 +58,11 @@ export const createProgression = ({
     _id: _id || undefined,
     engine: {
       ref: engine,
-      version: '1'
+      version: '2'
     },
     content: progressionContent,
     engineOptions: {
-      version: '1'
+      version: '2'
     },
     actions: [
       {

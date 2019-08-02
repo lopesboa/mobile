@@ -58,7 +58,7 @@ describe('correction', () => {
       isCorrect: true,
       isResourceViewed: false,
       showResourcesFirst: false,
-      lives: 3,
+      lives: 4,
       progressionId: 'progression1',
       offeringExtraLife: false,
       consumedExtraLife: false

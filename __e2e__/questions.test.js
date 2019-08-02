@@ -59,7 +59,7 @@ describe('Questions', () => {
         await weExpect(element(by.id('card-tip'))).toExist();
       });
       it('should lose a life', async () => {
-        await weExpect(element(by.id('correction-lives-2-broken'))).toBeVisible();
+        await weExpect(element(by.id('correction-lives-3-broken'))).toBeVisible();
       });
       it('should be able to swipe resources cards', async () => {
         await element(by.id('card-correction')).swipe('up');
@@ -96,7 +96,7 @@ describe('Questions', () => {
         await waitForExist('question');
       });
       it('should see lives updated', async () => {
-        await weExpect(element(by.id('lives-2'))).toBeVisible();
+        await weExpect(element(by.id('lives-3'))).toBeVisible();
       });
       it('should see the progression change', async () => {
         await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
@@ -120,7 +120,7 @@ describe('Questions', () => {
         await weExpect(element(by.id('card-correction'))).toExist();
       });
       it('should keep lives', async () => {
-        await weExpect(element(by.id('correction-lives-2'))).toBeVisible();
+        await weExpect(element(by.id('correction-lives-3'))).toBeVisible();
       });
       it('should be able to swipe to correction card', async () => {
         await element(by.id('card-tip')).swipe('up');
@@ -154,7 +154,7 @@ describe('Questions', () => {
         await waitForExist('question');
       });
       it('should see lives', async () => {
-        await weExpect(element(by.id('lives-2'))).toBeVisible();
+        await weExpect(element(by.id('lives-3'))).toBeVisible();
       });
       it('should see the progression change', async () => {
         await weExpect(element(by.id('progression-bar-2'))).toBeNotVisible();

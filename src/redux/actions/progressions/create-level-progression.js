@@ -8,8 +8,8 @@ import {ObjectId} from 'bson';
 import {ENGINE} from '../../../const';
 import {getMostAccurateRef} from '../../../modules/reference';
 
-const ENGINE_VERSION = '1';
-const ENGINE_CONFIG_VERSION = '1';
+const ENGINE_VERSION = '2';
+const ENGINE_CONFIG_VERSION = '2';
 
 export const createLevelProgression = (level: Level) => {
   const ref = getMostAccurateRef(level);

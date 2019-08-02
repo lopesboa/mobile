@@ -22,9 +22,9 @@ describe('createLevelProgression', () => {
     // $FlowFixMe
     playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
       expect(ObjectId.isValid(_id)).toBeTruthy();
-      expect(engine).toEqual({ref: ENGINE.LEARNER, version: '1'});
+      expect(engine).toEqual({ref: ENGINE.LEARNER, version: '2'});
       expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
-      expect(engineConfig).toEqual({livesDisabled: false, version: '1'});
+      expect(engineConfig).toEqual({livesDisabled: false, version: '2'});
       return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
     });
 

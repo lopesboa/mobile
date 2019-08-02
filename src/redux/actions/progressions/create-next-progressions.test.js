@@ -79,8 +79,8 @@ describe('Create next Progression', () => {
             expect(engineConfig).toEqual({version: '1'});
           }
           if (contentType === CONTENT_TYPE.LEVEL) {
-            expect(engine).toEqual({ref: ENGINE.LEARNER, version: '1'});
-            expect(engineConfig).toEqual({version: '1', livesDisabled: false});
+            expect(engine).toEqual({ref: ENGINE.LEARNER, version: '2'});
+            expect(engineConfig).toEqual({version: '2', livesDisabled: false});
           }
           return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
         }
