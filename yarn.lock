@@ -1087,29 +1087,29 @@
     globby "^9.1.0"
     mkdirp-promise "^5.0.1"
 
-"@coorpacademy/player-services@5.0.13":
-  version "5.0.13"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.13.tgz#9bf169245d621f4abe79cf66846ff4eb0adb2b2a"
-  integrity sha512-kGqUKofdlD/fz4IdDQeXfh6MD7mKYQSIfTd/t2ax48Q4Xfg1rmYHM/aWGAMdVhMCNC6WrYxMuy3+Atg2nweZbw==
+"@coorpacademy/player-services@5.0.14":
+  version "5.0.14"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.14.tgz#b85e26bd4e3fea1021d2a56b2a44b6bcffcf7600"
+  integrity sha512-DgIGhPW3+06cJxFnQXda50GF9Yvt+bjXZ32lJ63MAEhDOOtoB4t5PfPygquIU+fFsPBB4W4PrxnSX3yfrIZxOg==
   dependencies:
-    "@coorpacademy/progression-engine" "11.0.3"
+    "@coorpacademy/progression-engine" "11.0.4"
     lodash "^4.17.4"
 
-"@coorpacademy/player-store@4.0.9":
-  version "4.0.9"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.0.9.tgz#bc1b682ed4c781a91ea23d861700f2e91f7ce2bf"
-  integrity sha512-yIZUwtDW205qaSfVkp79dHUIgVqI7fEXMOqFdq1VDhY5HczouiV8gtbBOi9E7E18R6UsKh7hRDS/vaWyzLPvhA==
+"@coorpacademy/player-store@4.0.10":
+  version "4.0.10"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.0.10.tgz#0c6f3cf7beea7b83aea55b6c213b1324c9a32ca4"
+  integrity sha512-Fn7saSQnUUJOP5qG+KVBch9kIwrBPxXDDxistqSmhsZP/ReMxZMstJhuZPsFeG0K8tiWgeHuDBzcyp1sSNhLlQ==
   dependencies:
-    "@coorpacademy/progression-engine" "11.0.3"
+    "@coorpacademy/progression-engine" "11.0.4"
     "@coorpacademy/redux-task" "1.0.1"
     lodash "^4.17.4"
     redux "^4.0.0"
     redux-thunk "^2.2.0"
 
-"@coorpacademy/progression-engine@11.0.3", "@coorpacademy/progression-engine@^11.0.3":
-  version "11.0.3"
-  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-11.0.3.tgz#c1bce87f50b73688296e051c499e21a718e57442"
-  integrity sha512-vFtpVkR5NTIJkdoyg5kRxYdFn3mDbVh85ir6SbIbNMnmdpedSof2A+jz1YibvuiYWFQ58o28mmaGIwtwfZUMhg==
+"@coorpacademy/progression-engine@11.0.4", "@coorpacademy/progression-engine@^11.0.4":
+  version "11.0.4"
+  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-11.0.4.tgz#b8a00b2c7caf25d638e9ecd69d201317b06cd2ba"
+  integrity sha512-TPfXDiRHhqjxckoDuqptC9OiZjkw6/Ek+P4D01A6e+Asx1/kDfl1T8DD+jV2X2LePmnDWoQlgER9hl8wh1+Cig==
   dependencies:
     fuzzy-matching "^0.4.3"
     lodash "^4.17.4"
