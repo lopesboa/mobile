@@ -1,21 +1,26 @@
 // @flow
 
 import {createBrand} from '../../__fixtures__/brands';
-import {toJWT, createFakeAnalytics, fakeError} from '../../utils/tests';
+import {createToken} from '../../__fixtures__/tokens';
+import {createFakeAnalytics, fakeError} from '../../utils/tests';
 import {ANALYTICS_EVENT_TYPE, AUTHENTICATION_TYPE} from '../../const';
+import {fetchRequest as fetchBrandRequest, fetchSuccess as fetchBrandSuccess} from './brands';
+import {
+  fetchRequest as fetchLanguageRequest,
+  fetchSuccess as fetchLanguageSuccess
+} from './language/fetch';
+import {setRequest as setLanguageRequest, setSuccess as setLanguageSuccess} from './language/set';
 
 jest.mock('../../utils/local-token');
 jest.mock('cross-fetch');
+
+const language = 'fr';
 
 describe('Authentication', () => {
   describe('getAnonymousToken', () => {
     it('should return token', async () => {
       const fetch = require('cross-fetch');
-      const token = toJWT({
-        user: '42',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const token = createToken({});
       fetch.mockImplementationOnce((url, fetchOptions) => {
         expect(fetchOptions.method).toBe('POST');
         expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
@@ -34,17 +39,18 @@ describe('Authentication', () => {
     it('should handle error', () => {
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, fetchOptions) => {
+        const {fakeError: _fakeError} = require('../../utils/tests');
         expect(fetchOptions.method).toBe('POST');
         expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
 
-        throw new Error('Oops i did it again');
+        throw _fakeError;
       });
 
       const {getAnonymousToken} = require('./authentication');
 
       const result = getAnonymousToken();
 
-      return expect(result).rejects.toThrow();
+      return expect(result).rejects.toThrow(fakeError);
     });
   });
 
@@ -52,7 +58,6 @@ describe('Authentication', () => {
     const authenticationType = AUTHENTICATION_TYPE.QR_CODE;
     it('should sign in the user', async () => {
       const {signIn, signInRequest, signInSuccess} = require('./authentication');
-      const {fetchRequest, fetchSuccess} = require('./brands');
 
       const brand = createBrand();
 
@@ -68,14 +73,16 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
+          },
+          Language: {
+            fetch: jest.fn(() => Promise.resolve(language)),
+            set: jest.fn()
           }
         }
       };
 
-      const token = toJWT({
-        user: '42',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
+      const token = createToken({
+        brand: brand.name
       });
 
       dispatch.mockImplementationOnce(action => {
@@ -83,11 +90,27 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchRequest());
+        expect(action).toEqual(fetchBrandRequest());
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchSuccess(brand));
+        expect(action).toEqual(fetchBrandSuccess(brand));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -96,25 +119,25 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
+      const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
-          userId: '42',
+          userId: 'foobar',
           brand: brand.name,
           authenticationType
         }
       );
+      expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInSuccess({token, isGodModeUser: false}));
+      return expect(current).toEqual(signInSuccess({token, isGodModeUser: false}));
     });
 
     it('should sign in as anonymous', async () => {
-      const token = toJWT({
-        user: '4242',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const brand = createBrand();
+      const token = createToken({brand: brand.name});
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, fetchOptions) => {
@@ -125,9 +148,6 @@ describe('Authentication', () => {
       });
 
       const {signIn, signInRequest, signInSuccess} = require('./authentication');
-      const {fetchRequest, fetchSuccess} = require('./brands');
-
-      const brand = createBrand();
 
       const dispatch = jest.fn();
       const getState = jest.fn();
@@ -141,6 +161,10 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
+          },
+          Language: {
+            fetch: jest.fn(() => Promise.resolve(language)),
+            set: jest.fn()
           }
         }
       };
@@ -150,39 +174,61 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchRequest());
+        expect(action).toEqual(fetchBrandRequest());
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchSuccess(brand));
+        expect(action).toEqual(fetchBrandSuccess(brand));
         return action;
       });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => action);
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInSuccess({token, isGodModeUser: false}));
         return action;
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType)(dispatch, getState, options);
+      const current = await signIn(authenticationType)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
-          userId: '4242',
+          userId: 'foobar',
           brand: brand.name,
           authenticationType
         }
       );
+      expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInSuccess({token, isGodModeUser: false}));
+      return expect(current).toEqual(signInSuccess({token, isGodModeUser: false}));
     });
 
     it('should handle error on anonymous sign in', async () => {
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, fetchOptions) => {
+        const {fakeError: _fakeError} = require('../../utils/tests');
+
         expect(fetchOptions.method).toBe('POST');
         expect(url).toEqual('https://up.coorpacademy.com/api/v1/anonymous/mobile');
 
-        throw new Error('Oops i did it again');
+        throw _fakeError;
       });
 
       const {signIn, signInRequest, signInError} = require('./authentication');
@@ -191,7 +237,11 @@ describe('Authentication', () => {
       const getState = jest.fn();
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
         }
       };
 
@@ -200,15 +250,26 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInError(new Error('Oops i did it again')));
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInError(fakeError));
         return action;
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType)(dispatch, getState, options);
+      const current = await signIn(authenticationType)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInError(new Error('Oops i did it again')));
+      return expect(current).toEqual(signInError(fakeError));
     });
 
     it('should reject non-coorpacademy token', async () => {
@@ -218,17 +279,26 @@ describe('Authentication', () => {
       const getState = jest.fn();
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
         }
       };
 
-      const token = toJWT({
-        iss: '360-learning',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const token = createToken({iss: '360-learning'});
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -237,10 +307,13 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
+      const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
+      return expect(current).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
     });
 
     it('should reject if host is missing', async () => {
@@ -250,16 +323,28 @@ describe('Authentication', () => {
       const getState = jest.fn();
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
         }
       };
 
-      const token = toJWT({
-        iss: 'coorpacademy-jwt'
+      const token = createToken({
+        host: null
       });
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -268,10 +353,13 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
+      const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
+      return expect(current).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
     });
 
     it('should reject if fetching brand failed', async () => {
@@ -285,15 +373,15 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.reject(fakeError))
+          },
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
           }
         }
       };
 
-      const token = toJWT({
-        user: '42',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const token = createToken({});
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
@@ -308,15 +396,26 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInError(new Error()));
         return action;
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
+      const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInError(new Error()));
+      return expect(current).toEqual(signInError(new Error()));
     });
 
     it('should reject if brand is missing', async () => {
@@ -337,15 +436,15 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
+          },
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
           }
         }
       };
 
-      const token = toJWT({
-        user: '42',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const token = createToken({});
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
@@ -360,25 +459,32 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInError(new Error('Incorrect brand')));
         return action;
       });
 
       // $FlowFixMe
-      const actual = await signIn(authenticationType, token)(dispatch, getState, options);
+      const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(actual).toEqual(signInError(new Error('Incorrect brand')));
+      return expect(current).toEqual(signInError(new Error('Incorrect brand')));
     });
   });
 
   describe('signOut', () => {
     it('should dispatch sign out', async () => {
-      const token = toJWT({
-        user: '42',
-        iss: 'coorpacademy-jwt',
-        host: 'https://onboarding.coorpacademy.com'
-      });
+      const token = createToken({});
 
       const {SIGN_OUT, signOut} = require('./authentication');
 
@@ -397,10 +503,22 @@ describe('Authentication', () => {
       });
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
         }
       };
 
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: SIGN_OUT
@@ -409,16 +527,19 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signOut()(dispatch, getState, options);
+      const current = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
-          userId: '42',
+          userId: 'foobar',
           brand: brand.name
         }
       );
-      expect(actual).toEqual(expected);
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
+      expect(current).toEqual(expected);
     });
 
     it('should dispatch sign out -- without token', async () => {
@@ -441,10 +562,22 @@ describe('Authentication', () => {
       });
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
         }
       };
 
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: SIGN_OUT
@@ -453,7 +586,7 @@ describe('Authentication', () => {
       });
 
       // $FlowFixMe
-      const actual = await signOut()(dispatch, getState, options);
+      const current = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
@@ -462,7 +595,10 @@ describe('Authentication', () => {
           brand: brand.name
         }
       );
-      expect(actual).toEqual(expected);
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
+      expect(current).toEqual(expected);
     });
   });
 });

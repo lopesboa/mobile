@@ -1,6 +1,7 @@
 // @flow strict
 
 import type {DisciplineCard, ChapterCard} from '../../../../layer/data/_types';
+import translations from '../../../../translations';
 import type {SupportedLanguage} from '../../../../translations/_types';
 import type {StoreAction} from '../../../_types';
 import {CONTENT_TYPE} from '../../../../const';
@@ -37,10 +38,11 @@ export const updateCard = (
   };
 };
 
-export const getAndRefreshCard = (
-  progressionId: string,
-  language: SupportedLanguage
-): StoreAction<Action> => async (dispatch, getState, options) => {
+export const getAndRefreshCard = (progressionId: string): StoreAction<Action> => async (
+  dispatch,
+  getState,
+  options
+) => {
   const {services} = options;
 
   const progression = await services.Progressions.findById(progressionId);
@@ -49,8 +51,9 @@ export const getAndRefreshCard = (
     (progression.content.type === CONTENT_TYPE.CHAPTER ||
       progression.content.type === CONTENT_TYPE.LEVEL)
   ) {
-    const card = await services.Cards.getCardFromLocalStorage(progression.content.ref, language);
+    const card = await services.Cards.getCardFromLocalStorage(progression.content.ref);
     if (card) {
+      const language = translations.getLanguage();
       return dispatch(updateCard(language, card));
     }
   }

@@ -36,7 +36,7 @@ NativeModules.Linking = {
 
 // react-native-localization
 NativeModules.ReactLocalization = {
-  language: 'en'
+  language: 'en-US'
 };
 
 // react-native-video-controls

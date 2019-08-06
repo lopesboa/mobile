@@ -2,12 +2,11 @@
 
 import type {ChapterAPI, RecommendationAPI} from '@coorpacademy/player-services';
 
-import translations from '../../translations';
 import {CONTENT_TYPE} from './_const';
 import {find as findChapters} from './chapters';
 
 const find = async (type: string, ref: string): Promise<Array<RecommendationAPI>> => {
-  const chapters: Array<ChapterAPI> = await findChapters(translations.getLanguage())();
+  const chapters: Array<ChapterAPI> = await findChapters();
 
   // $FlowFixMe this type is totally fucked up
   const recommendations: Array<RecommendationAPI> = chapters.map(chapter => ({

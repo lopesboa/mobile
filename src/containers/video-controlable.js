@@ -186,7 +186,8 @@ class VideoControlable extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = ({video, data}: StoreState, {videoId}: Props): ConnectedStateProps => {
+const mapStateToProps = (state: StoreState, {videoId}: Props): ConnectedStateProps => {
+  const {video, data} = state;
   const videoUrl = data.videos.entities[videoId];
 
   return {

@@ -2,19 +2,20 @@
 
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
-import type {SupportedLanguage} from '../../translations/_types';
+import translations from '../../translations';
 import type {RestrictedResourceType, Level, Chapter, Slide} from './_types';
 import {CONTENT_TYPE} from './_const';
 import {getItem} from './core';
 
 import {mapToLevelAPI, mapToChapterAPI, mapToSlideAPI} from './mappers';
 
-export const find = (userLanguage: SupportedLanguage) => async (
+export const find = async (
   resourceType: RestrictedResourceType,
   ref: string
 ): Promise<ChapterAPI | LevelAPI | SlideAPI | void> => {
+  const language = translations.getLanguage();
   // $FlowFixMe exact type vs inexact type
-  const resource = await getItem(resourceType, userLanguage, ref);
+  const resource = await getItem(resourceType, language, ref);
 
   if (!resource) {
     return undefined;

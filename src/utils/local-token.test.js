@@ -1,19 +1,52 @@
 // @flow
 
 import AsyncStorage from '@react-native-community/async-storage';
-import localToken from './local-token';
 
-describe('LocalToken', () => {
-  it('should successfully set a token', async () => {
-    AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve('mytoken'));
-    await localToken.set('mytoken');
-    const token = localToken.get();
-    return expect(token).resolves.toEqual('mytoken');
+describe('Local token', () => {
+  describe('set', () => {
+    it('should successfully set a token', async () => {
+      AsyncStorage.setItem.mockImplementation((key, value) => {
+        expect(key).toEqual('@@token');
+        expect(value).toEqual('mytoken');
+      });
+
+      const {set} = require('./local-token').default;
+
+      await set('mytoken');
+
+      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
+    });
   });
-  it('should return null', async () => {
-    AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(null));
-    await localToken.set('mytoken');
-    const token = localToken.get();
-    return expect(token).resolves.toEqual(null);
+
+  describe('get', () => {
+    it('should return token', async () => {
+      AsyncStorage.getItem.mockImplementation(key => {
+        expect(key).toEqual('@@token');
+
+        return 'foobar';
+      });
+
+      const {get} = require('./local-token').default;
+
+      const result = await get();
+
+      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
+      expect(result).toEqual('foobar');
+    });
+  });
+
+  describe('remove', () => {
+    it('should remove a token', async () => {
+      AsyncStorage.setItem.mockImplementation((key, value) => {
+        expect(key).toEqual('@@token');
+        expect(value).toEqual(null);
+      });
+
+      const {remove} = require('./local-token').default;
+
+      await remove();
+
+      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
+    });
   });
 });

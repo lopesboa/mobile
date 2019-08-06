@@ -82,12 +82,7 @@ class Lesson extends React.Component<Props> {
           const subtitles =
             openedResource &&
             openedResource.subtitleRef &&
-            // @todo use user language
-            getSubtitlesUri(
-              brandTheme.host,
-              openedResource.subtitleRef,
-              translations.getLanguage()
-            );
+            getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
 
           return (
             <View testID="lesson" style={styles.container}>

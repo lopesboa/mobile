@@ -44,7 +44,7 @@ describe("Progression's synchronization middleware", () => {
     const middleware = createMiddleware(options);
     const store = createStore();
     store.getState.mockImplementation(() => ({
-      authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
+      authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
     }));
     const next = jest.fn();
     // $FlowFixMe this si to test only

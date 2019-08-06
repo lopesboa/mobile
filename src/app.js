@@ -8,7 +8,6 @@ import {PortalProvider} from 'react-native-portal';
 // import DeviceInfo from 'react-native-device-info';
 import orientation from 'react-native-orientation-locker';
 
-import translations from './translations';
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 import AnalyticsProvider from './components/analytics-provider';
@@ -23,7 +22,7 @@ const reduxDevTools: ReduxDevTools | void =
   // eslint-disable-next-line no-undef
   window && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined;
 
-const dataLayer = createDataLayer(translations.getLanguage());
+const dataLayer = createDataLayer();
 
 const services = createServices(dataLayer);
 const store = createStore(services, reduxDevTools);

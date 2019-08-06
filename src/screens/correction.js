@@ -42,7 +42,7 @@ export type Params = {|
   resources: Array<Resource>
 |};
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   nextScreen?: string,
   isCorrect?: boolean,
   isFinished?: boolean,

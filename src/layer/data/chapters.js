@@ -2,33 +2,28 @@
 
 import type {ChapterAPI} from '@coorpacademy/player-services';
 
-import type {SupportedLanguage} from '../../translations/_types';
+import translations from '../../translations';
 import {mapToChapterAPI} from './mappers';
 import {getItem, getItemsPerResourceType} from './core';
 import {CONTENT_TYPE} from './_const';
 import type {Chapter, Discipline} from './_types';
 import {findByChapter as findDisciplineByChapter} from './disciplines';
 
-export const findById = (userLanguage: SupportedLanguage) => async (
-  universalRef: string
-): Promise<ChapterAPI> => {
+export const findById = async (universalRef: string): Promise<ChapterAPI> => {
+  const language = translations.getLanguage();
   // $FlowFixMe union type
-  const item: Chapter = await getItem(CONTENT_TYPE.CHAPTER, userLanguage, universalRef);
+  const item: Chapter = await getItem(CONTENT_TYPE.CHAPTER, language, universalRef);
   return item && mapToChapterAPI(item);
 };
 
-export const find = (userLanguage: SupportedLanguage) => async (): Promise<Array<ChapterAPI>> => {
-  const chapters: Array<Chapter> = await getItemsPerResourceType(
-    CONTENT_TYPE.CHAPTER,
-    userLanguage
-  );
+export const find = async (): Promise<Array<ChapterAPI>> => {
+  const language = translations.getLanguage();
+  const chapters: Array<Chapter> = await getItemsPerResourceType(CONTENT_TYPE.CHAPTER, language);
   return chapters.map(mapToChapterAPI);
 };
 
-export const getNextChapter = (userLanguage: SupportedLanguage) => async (
-  ref: string
-): Promise<ChapterAPI | void> => {
-  const discipline: Discipline | void = await findDisciplineByChapter(userLanguage)(ref);
+export const getNextChapter = async (ref: string): Promise<ChapterAPI | void> => {
+  const discipline: Discipline | void = await findDisciplineByChapter(ref);
 
   if (!discipline) {
     return;
@@ -43,5 +38,5 @@ export const getNextChapter = (userLanguage: SupportedLanguage) => async (
     return;
   }
 
-  return findById(userLanguage)(nextChapterRef);
+  return findById(nextChapterRef);
 };

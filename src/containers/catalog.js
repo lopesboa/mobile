@@ -10,8 +10,8 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {fetchCards} from '../redux/actions/catalog/cards/fetch';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import {getSection} from '../redux/utils/state-extract';
-import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import translations from '../translations';
+import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import type {Section} from '../types';
 import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
@@ -76,7 +76,7 @@ class Catalog extends React.PureComponent<Props, State> {
   }
 
   fetchSections = async (offset: number, limit: number, forceRefresh?: boolean = false) => {
-    await this.props.fetchSections(offset, limit, translations.getLanguage(), forceRefresh);
+    await this.props.fetchSections(offset, limit, forceRefresh);
   };
 
   handleRefresh = () => {
@@ -137,7 +137,7 @@ class Catalog extends React.PureComponent<Props, State> {
   };
 
   handleCardsScroll = (section: Section, offset: number, limit: number) => {
-    this.props.fetchCards(section.key, offset, limit, translations.getLanguage());
+    this.props.fetchCards(section.key, offset, limit);
   };
 
   render() {

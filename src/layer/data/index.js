@@ -2,7 +2,6 @@
 
 import type {ChapterAPI, DataLayer as DataLayerBase, LevelAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
-import type {SupportedLanguage} from '../../translations/_types';
 import {
   findById as findProgressionById,
   getAll as getAllProgressions,
@@ -24,15 +23,19 @@ import {findById as findLevelById, getNextLevel} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
+import {fetchLanguage, setLanguage, getInterfaceLanguage} from './language';
 import {fetchSections} from './sections';
 import {findUriById as findVideoUriById} from './videos';
 
 export type DataLayer = {
   ...DataLayerBase,
-  fetchBundle: $Call<typeof fetchBundle, SupportedLanguage>,
-  storeBundle: $Call<typeof storeBundle, SupportedLanguage>,
+  fetchBundle: typeof fetchBundle,
+  storeBundle: typeof storeBundle,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
+  fetchLanguage: typeof fetchLanguage,
+  setLanguage: typeof setLanguage,
+  getInterfaceLanguage: typeof getInterfaceLanguage,
   fetchSections: typeof fetchSections,
   refreshCard: typeof refreshCard,
   getCardFromLocalStorage: typeof getCardFromLocalStorage,
@@ -45,35 +48,38 @@ export type DataLayer = {
   logEvent: typeof logEvent
 };
 
-const createDataLayer = (userLanguage: SupportedLanguage): DataLayer => ({
-  getExitNode: getExitNode(userLanguage),
-  findSlideById: findSlideById(userLanguage),
-  findSlideByChapter: findSlideByChapter(userLanguage),
-  findChapterById: findChapterById(userLanguage),
-  findContent: findContent(userLanguage),
-  getCorrectAnswer: getCorrectAnswer(userLanguage),
-  getClue: getClue(userLanguage),
+const createDataLayer = (): DataLayer => ({
+  getExitNode,
+  findSlideById,
+  findSlideByChapter,
+  findChapterById,
+  findContent,
+  getCorrectAnswer,
+  getClue,
   findProgressionById,
   getAllProgressions,
   saveProgression,
   synchronizeProgression,
   findRecommendations,
-  getNextChapter: getNextChapter(userLanguage),
-  getNextLevel: getNextLevel(userLanguage),
-  findLevelById: findLevelById(userLanguage),
+  getNextChapter,
+  getNextLevel,
+  findLevelById,
   fetchCards,
   fetchBrand,
+  fetchLanguage,
+  setLanguage,
+  getInterfaceLanguage,
   findVideoUriById,
   // $FlowFixMe
-  findBestOf: findBestOf(userLanguage),
+  findBestOf: findBestOf,
   findLast: findLastProgression,
   fetchSections,
   refreshCard,
   getCardFromLocalStorage,
   // @todo implement it
   getChapterRulesByContent: () => [],
-  fetchBundle: fetchBundle(userLanguage),
-  storeBundle: storeBundle(userLanguage),
+  fetchBundle,
+  storeBundle,
   logEvent
 });
 

@@ -41,10 +41,10 @@ module.exports = {
     },
     'src/layer': {
       // @todo increase this value
-      branches: 84,
+      branches: 90,
       function: 100,
-      lines: 98,
-      statements: 98
+      lines: 99,
+      statements: 99
     },
     'src/modules': {
       branches: 97,

@@ -13,6 +13,8 @@ export type Config = {|
     baseUrl: string,
     contentCategoryName: string
   },
+  defaultLanguage: string,
+  supportedLngs: Array<string>,
   themes: [
     {
       common: {

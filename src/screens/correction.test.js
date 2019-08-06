@@ -9,6 +9,7 @@ import type {StateExtension} from '../__fixtures__/progression';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../const';
 import {goNext, mapStateToProps} from './correction';
+import type {ConnectedStateProps} from './correction';
 
 const levelRef = 'dummyLevelRef';
 const slideRef = 'dummySlideRef';
@@ -51,7 +52,7 @@ describe('correction', () => {
       }
     });
 
-    const expectedProps = {
+    const expectedProps: ConnectedStateProps = {
       nextScreen: undefined,
       isFinished: false,
       canGoNext: true,
@@ -78,7 +79,7 @@ describe('correction', () => {
       lives: 2
     });
 
-    const expectedProps = {
+    const expectedProps: ConnectedStateProps = {
       canGoNext: true,
       nextScreen: undefined,
       isFinished: false,
@@ -105,7 +106,7 @@ describe('correction', () => {
       lives: 0
     });
 
-    const expectedProps = {
+    const expectedProps: ConnectedStateProps = {
       canGoNext: false,
       nextScreen: undefined,
       isFinished: true,
@@ -133,7 +134,7 @@ describe('correction', () => {
       hasViewedAResourceAtThisStep: true
     });
 
-    const expectedProps = {
+    const expectedProps: ConnectedStateProps = {
       nextScreen: undefined,
       canGoNext: true,
       isFinished: false,

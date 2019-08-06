@@ -1,22 +1,11 @@
 // @flow strict
 
-import {toJWT} from '../../utils/tests';
+import {createToken} from '../../__fixtures__/tokens';
 import {createBrand} from '../../__fixtures__/brands';
-import type {JWT} from '../../types';
 import type {Config} from './brand';
 
 const brand = createBrand();
-const jwt: JWT = {
-  host: brand.host,
-  user: 'plop',
-  iss: 'plip',
-  grants: {mooc: 'foo'},
-  exp: 1,
-  iat: 1,
-  usage: 'ploup'
-};
-
-const token = toJWT(jwt);
+const token = createToken({host: brand.host});
 
 describe('brand', () => {
   beforeEach(() => {
@@ -60,6 +49,8 @@ describe('brand', () => {
                   baseUrl: 'https://mobile-staging.coorpacademy.com',
                   contentCategoryName: 'Mobile'
                 },
+                defaultLanguage: 'fr',
+                supportedLngs: ['de', 'es', 'fr'],
                 themes: [
                   {
                     common: {
@@ -81,6 +72,7 @@ describe('brand', () => {
       const expected = brand;
       return expect(actual).resolves.toEqual(expected);
     });
+
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false

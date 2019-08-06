@@ -7,12 +7,15 @@ import fetch from '../../modules/fetch';
 import type {StoreAction, ErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
-import localToken from '../../utils/local-token';
+import {set as setToken} from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
-
 import {hasGodMode} from '../utils/has-role';
 import {fetchBrand} from './brands';
 import type {Action as BrandsAction} from './brands';
+import {fetchLanguage} from './language/fetch';
+import type {Action as FetchLanguageAction} from './language/fetch';
+import {setLanguage} from './language/set';
+import type {Action as SetLanguageAction} from './language/set';
 
 export const SIGN_IN_REQUEST = `@@authentication/SIGN_IN_REQUEST`;
 export const SIGN_IN_SUCCESS = `@@authentication/SIGN_IN_SUCCESS`;
@@ -68,10 +71,15 @@ export const getAnonymousToken = async (): Promise<string> => {
 export const signIn = (
   authenticationType: AuthenticationType,
   _token?: string
-): StoreAction<Action | BrandsAction> => async (dispatch, getState, options) => {
+): StoreAction<Action | BrandsAction | FetchLanguageAction | SetLanguageAction> => async (
+  dispatch,
+  getState,
+  options
+) => {
   await dispatch(signInRequest(_token));
   try {
     const token = _token || (await getAnonymousToken());
+    await setToken(token);
 
     const jwt: JWT = decode(token);
 
@@ -92,6 +100,9 @@ export const signIn = (
       throw new Error('Incorrect brand');
     }
 
+    // $FlowFixMe wrong StoreAction type
+    await fetchLanguage(dispatch, getState, options);
+
     const isGodModeUser = hasGodMode(jwt, brand.name);
     const {services} = options;
 
@@ -101,18 +112,24 @@ export const signIn = (
       authenticationType
     });
 
-    await localToken.set(token);
-
     return dispatch(signInSuccess({token, isGodModeUser}));
   } catch (e) {
-    localToken.set(null);
-
+    setToken(null);
+    // $FlowFixMe wrong StoreAction type
+    await setLanguage(null)(dispatch, getState, options);
     return dispatch(signInError(e));
   }
 };
 
-export const signOut = (): StoreAction<Action> => async (dispatch, getState, options) => {
+export const signOut = (): StoreAction<Action | SetLanguageAction> => async (
+  dispatch,
+  getState,
+  options
+) => {
   await AsyncStorage.clear();
+
+  // $FlowFixMe wrong StoreAction type
+  await setLanguage(null)(dispatch, getState, options);
 
   const brand = getBrand(getState());
   const token = getToken(getState());

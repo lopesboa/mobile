@@ -1,7 +1,8 @@
-// @flow strict
+// @flow
 
 import decode from 'jwt-decode';
 
+import translations from '../../translations';
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import {buildUrlQueryParams} from '../../modules/uri';
@@ -13,8 +14,7 @@ import {createSections} from '../../__fixtures__/sections';
 export const fetchSections = async (
   token: string,
   offset: number,
-  limit: number,
-  language: string
+  limit: number
 ): Promise<{|
   sections: Array<Section>,
   total: number
@@ -27,13 +27,14 @@ export const fetchSections = async (
     });
   }
 
+  const lang = translations.getLanguage();
   const jwt: JWT = decode(token);
 
   const query: QueryParams = {
     type: 'cards',
     offset,
     limit,
-    lang: language
+    lang
   };
 
   const response = await fetch(`${jwt.host}/api/v2/sections?${buildUrlQueryParams(query)}`, {

@@ -12,7 +12,7 @@ import type {AuthenticationType} from '../types';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
-import localToken from '../utils/local-token';
+import {get as getToken} from '../utils/local-token';
 import ErrorListener from '../containers/error-listener';
 import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
@@ -48,7 +48,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   };
 
   async componentDidMount() {
-    const token = await localToken.get();
+    const token = await getToken();
 
     if (token) {
       await this.handleSignIn(AUTHENTICATION_TYPE.RECONNECTION, token);

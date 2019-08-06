@@ -40,19 +40,19 @@ describe('disciplines', () => {
 
     it('should find discipline', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')('ref_discipline');
+      const result = await find('ref_discipline');
       expect(result).toEqual({foo: 'bar'});
     });
 
     it('should handle exception', () => {
       // $FlowFixMe this is only to test
-      const result = find('en')('ref_exception');
+      const result = find('ref_exception');
       expect(result).rejects.toThrow(fakeError);
     });
 
     it('should return undefined', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')('void_ref');
+      const result = await find('void_ref');
       expect(result).not.toBeDefined();
     });
   });
@@ -61,12 +61,12 @@ describe('disciplines', () => {
     const {findByLevel} = require('./disciplines');
 
     it('should handle level without discipline', async () => {
-      const result = await findByLevel('en')('dummyId');
+      const result = await findByLevel('dummyId');
       expect(result).toBeUndefined();
     });
 
     it('should find discipline', async () => {
-      const result = await findByLevel('en')('mod_1');
+      const result = await findByLevel('mod_1');
 
       expect(result && result.universalRef).toEqual('dis_1');
     });
@@ -76,12 +76,12 @@ describe('disciplines', () => {
     const {findByChapter} = require('./disciplines');
 
     it('should handle level without discipline', async () => {
-      const result = await findByChapter('en')('dummyId');
+      const result = await findByChapter('dummyId');
       expect(result).toBeUndefined();
     });
 
     it('should find discipline', async () => {
-      const result = await findByChapter('en')('cha_1');
+      const result = await findByChapter('cha_1');
 
       expect(result && result.universalRef).toEqual('dis_1');
     });

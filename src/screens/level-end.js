@@ -8,6 +8,7 @@ import type {ContentType} from '@coorpacademy/progression-engine';
 import {getCurrentContent, getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
 
+import translations from '../translations';
 import {createNextProgression} from '../redux/actions/progressions/create-next-progression';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
@@ -15,7 +16,6 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Screen from '../components/screen';
 import {compareCards} from '../utils/content';
 import {getBestScore} from '../redux/utils/state-extract';
-import translations from '../translations';
 import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import {CONTENT_TYPE} from '../const';
 
@@ -129,7 +129,6 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const language = translations.getLanguage();
-
   const bestScore = getBestScore(state);
   const progression = getCurrentProgression(state);
   const contentType = progression && progression.content.type;

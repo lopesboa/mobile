@@ -20,12 +20,12 @@ jest.mock('./core', () => {
 
 describe('slide', () => {
   it('should find the slides given a chapter id', async () => {
-    const result = await findByChapter('en')('cha_1');
+    const result = await findByChapter('cha_1');
     expect(result).toEqual([mapToSlideAPIExpectedResult]);
   });
 
   it('should find the slides given id', async () => {
-    const result = await findById('en')('dummyId');
+    const result = await findById('dummyId');
     expect(result).toEqual(mapToSlideAPIExpectedResult);
   });
 });

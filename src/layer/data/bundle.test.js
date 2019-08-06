@@ -201,13 +201,13 @@ describe('Data Layer Bundle', () => {
   describe('storeBundle', () => {
     it('should store the discipline bundle', async () => {
       AsyncStorage.multiSet = jest.fn().mockImplementation(() => Promise.resolve());
-      const result = await storeBundle('en')(disciplineBundle);
+      const result = await storeBundle(disciplineBundle);
       expect(result).toBeUndefined();
     });
 
     it('should not store the bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockReturnValueOnce(Promise.reject(fakeError));
-      return expect(storeBundle('en')(disciplineBundle)).rejects.toThrow(
+      return expect(storeBundle(disciplineBundle)).rejects.toThrow(
         new Error('Could not store the provided resource')
       );
     });
@@ -226,7 +226,7 @@ describe('Data Layer Bundle', () => {
       }));
       const {fetchBundle} = require('./bundle');
       const keys = Object.keys(disciplinesBundle.disciplines);
-      const result = fetchBundle('en')(CONTENT_TYPE.DISCIPLINE, keys[0], token, host);
+      const result = fetchBundle(CONTENT_TYPE.DISCIPLINE, keys[0], token, host);
       // @todo should be mocked
       return expect(result).resolves.toEqual(disciplinesBundle);
     });
@@ -237,7 +237,7 @@ describe('Data Layer Bundle', () => {
       }));
       const {fetchBundle} = require('./bundle');
       const keys = Object.keys(chaptersBundle.chapters);
-      const result = fetchBundle('en')(CONTENT_TYPE.CHAPTER, keys[0], token, host);
+      const result = fetchBundle(CONTENT_TYPE.CHAPTER, keys[0], token, host);
       return expect(result).resolves.toEqual(chaptersBundle);
     });
 
@@ -258,7 +258,7 @@ describe('Data Layer Bundle', () => {
         });
       });
 
-      const result = fetchBundle('en')(CONTENT_TYPE.DISCIPLINE, 'foobarbaz', token, host);
+      const result = fetchBundle(CONTENT_TYPE.DISCIPLINE, 'foobarbaz', token, host);
       return expect(result).resolves.toBe(disciplineBundle);
     });
 
@@ -279,7 +279,7 @@ describe('Data Layer Bundle', () => {
         });
       });
 
-      const result = fetchBundle('en')(CONTENT_TYPE.CHAPTER, 'foobarbaz', token, host);
+      const result = fetchBundle(CONTENT_TYPE.CHAPTER, 'foobarbaz', token, host);
       return expect(result).resolves.toBe(chapterBundle);
     });
 

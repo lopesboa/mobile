@@ -16,6 +16,8 @@ import type {CardsService} from './cards';
 import Cards from './cards';
 import type {BrandsService} from './brands';
 import Brands from './brands';
+import type {LanguageService} from './language';
+import Language from './language';
 import Analytics from './analytics';
 import type {AnalyticsService} from './analytics';
 import Permissions from './permissions';
@@ -35,6 +37,7 @@ export type Services = {|
   Bundle: BundleService,
   Progressions: ProgressionService,
   Brands: BrandsService,
+  Language: LanguageService,
   Permissions: PermissionsService,
   LeaderBoard: typeof LeaderBoard,
   Recommendations: typeof Recommendations,
@@ -54,6 +57,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Bundle: Bundle(dataLayer),
   Progressions: Progressions(dataLayer),
   Brands: Brands(dataLayer),
+  Language: Language(dataLayer),
   Recommendations: Recommendations(dataLayer),
   Permissions,
   LeaderBoard,

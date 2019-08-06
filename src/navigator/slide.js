@@ -15,7 +15,6 @@ import DeviceInfo from 'react-native-device-info';
 import Progression from '../containers/progression';
 import TabBarSlide from '../containers/tab-bar-slide';
 import theme from '../modules/theme';
-import translations from '../translations';
 import CorrectionScreen from '../screens/correction';
 import LevelEndScreen from '../screens/level-end';
 import QuestionScreen from '../screens/question';
@@ -51,7 +50,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Context: {
       screen: ContextScreen,
       navigationOptions: {
-        tabBarLabel: translations.context,
+        tabBarLabel: 'context',
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <ContextIcon color={tintColor} style={styles.contextIcon} />
@@ -61,7 +60,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Question: {
       screen: QuestionScreen,
       navigationOptions: {
-        tabBarLabel: translations.question,
+        tabBarLabel: 'question',
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <QuestionIcon color={tintColor} style={styles.questionIcon} />
@@ -71,7 +70,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Lesson: {
       screen: LessonScreen,
       navigationOptions: {
-        tabBarLabel: translations.lesson,
+        tabBarLabel: 'lesson',
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <LessonIcon color={tintColor} style={styles.lessonIcon} />
@@ -81,7 +80,7 @@ const slideTabsNavigator = createBottomTabNavigator(
     Clue: {
       screen: ClueScreen,
       navigationOptions: {
-        tabBarLabel: translations.clue,
+        tabBarLabel: 'clue',
         // eslint-disable-next-line react/display-name
         tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
           <ClueIcon color={tintColor} style={styles.clueIcon} />

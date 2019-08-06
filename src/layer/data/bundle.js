@@ -7,6 +7,7 @@ import {getMostAccurateRef} from '../../modules/reference';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
+import translations from '../../translations';
 import {buildKey} from './core';
 import type {
   BundledDiscipline,
@@ -84,14 +85,14 @@ export const normalizeBundle = (
   language: SupportedLanguage
 ): Array<Array<string>> => {
   const keys: Array<string> = Object.keys(bundledResource);
-
   return keys.reduce(createReduceToNormalizedItemFunction(bundledResource, language), []);
 };
 
-export const storeBundle = (userLanguage: SupportedLanguage) => async (
+export const storeBundle = async (
   bundledResource: BundledDiscipline | BundledChapter
 ): Promise<void> => {
-  const normalizedBundle = normalizeBundle(bundledResource, userLanguage);
+  const language = translations.getLanguage();
+  const normalizedBundle = normalizeBundle(bundledResource, language);
   try {
     // eslint-disable-next-line no-console
     console.debug('Storing:', normalizedBundle.map(item => item[0]));
@@ -101,12 +102,14 @@ export const storeBundle = (userLanguage: SupportedLanguage) => async (
   }
 };
 
-export const fetchBundle = (userLanguage: SupportedLanguage) => async (
+export const fetchBundle = async (
   type: typeof CONTENT_TYPE.DISCIPLINE | typeof CONTENT_TYPE.CHAPTER,
   ref: string,
   token: string,
   host: string
 ): Promise<BundledDiscipline | BundledChapter> => {
+  const language = translations.getLanguage();
+
   if (__E2E__) {
     if (
       type === CONTENT_TYPE.DISCIPLINE &&
@@ -121,7 +124,7 @@ export const fetchBundle = (userLanguage: SupportedLanguage) => async (
 
   const endpoint = type === CONTENT_TYPE.DISCIPLINE ? 'disciplines' : 'chapters';
   const response = await fetch(
-    `${host}/api/v2/${endpoint}/bundle?lang=${userLanguage}&conditions={"universalRef": ["${ref}"]}`,
+    `${host}/api/v2/${endpoint}/bundle?lang=${language}&conditions={"universalRef": ["${ref}"]}`,
     {
       headers: {authorization: token}
     }

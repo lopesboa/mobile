@@ -1,6 +1,7 @@
 // @flow strict
 
 import type {DisciplineCard, ChapterCard} from '../../../../layer/data/_types';
+import translations from '../../../../translations';
 import type {SupportedLanguage} from '../../../../translations/_types';
 import type {StoreAction, ErrorAction} from '../../../_types';
 import {getToken, getBrand, getSection} from '../../../utils/state-extract';
@@ -83,13 +84,13 @@ export const fetchError = (error: Error): FetchErrorAction => ({
 export const fetchCards = (
   sectionKey: string,
   offset: number,
-  limit: number,
-  language: SupportedLanguage
+  limit: number
 ): StoreAction<Action | ModalAction<StoreAction<Action>>> => async (
   dispatch,
   getState,
   options
 ) => {
+  const language = translations.getLanguage();
   await dispatch(fetchRequest(sectionKey, offset, limit, language));
 
   const state = getState();
@@ -104,14 +105,7 @@ export const fetchCards = (
     if (brand === null) throw new TypeError('Brand not defined');
     if (!section) throw new Error('Section not found');
 
-    const {cards, total} = await services.Cards.find(
-      token,
-      brand.host,
-      section,
-      offset,
-      limit,
-      language
-    );
+    const {cards, total} = await services.Cards.find(token, brand.host, section, offset, limit);
 
     return dispatch(fetchSuccess(sectionKey, offset, limit, total, cards, language));
   } catch (e) {

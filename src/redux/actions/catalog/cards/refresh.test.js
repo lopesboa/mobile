@@ -45,7 +45,7 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await getAndRefreshCard(progressionId, language)(
+      const actual = await getAndRefreshCard(progressionId)(
         // $FlowFixMe
         dispatch,
         getState,

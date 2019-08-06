@@ -38,7 +38,7 @@ jest.mock('./disciplines', () => {
   });
 
   return {
-    findByLevel: () => ref => Promise.resolve(ref !== 'mod_foo' ? firstDiscipline : undefined)
+    findByLevel: ref => Promise.resolve(ref !== 'mod_foo' ? firstDiscipline : undefined)
   };
 });
 
@@ -47,7 +47,7 @@ describe('levels', () => {
     const {findById} = require('./levels');
 
     it('should return level', async () => {
-      const result = await findById('en')('mod_1');
+      const result = await findById('mod_1');
       expect(result).toEqual(mapToLevelAPIExpectedResult);
     });
   });
@@ -56,17 +56,17 @@ describe('levels', () => {
     const {getNextLevel} = require('./levels');
 
     it('should handle level without discipline', async () => {
-      const result = await getNextLevel('en')('mod_foo');
+      const result = await getNextLevel('mod_foo');
       expect(result).toBeUndefined();
     });
 
     it('should handle last level', async () => {
-      const result = await getNextLevel('en')('mod_2');
+      const result = await getNextLevel('mod_2');
       expect(result).toBeUndefined();
     });
 
     it('should get next level', async () => {
-      const result = await getNextLevel('en')('mod_1');
+      const result = await getNextLevel('mod_1');
       const expected = {
         ...mapToLevelAPIExpectedResult,
         _id: 'foobarbaz',

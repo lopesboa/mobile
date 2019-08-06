@@ -30,7 +30,7 @@ jest.mock('./disciplines', () => {
   });
 
   return {
-    findByChapter: () => ref => Promise.resolve(ref !== 'cha_foo' ? firstDiscipline : undefined)
+    findByChapter: ref => Promise.resolve(ref !== 'cha_foo' ? firstDiscipline : undefined)
   };
 });
 
@@ -39,7 +39,7 @@ describe('chapters', () => {
     const {find} = require('./chapters');
 
     it('should return all chapters', async () => {
-      const result = await find('en')();
+      const result = await find();
       expect(result).toEqual([
         mapToChapterAPIExpectedResult,
         {...mapToChapterAPIExpectedResult, _id: 'cha_2', universalRef: 'cha_2'}
@@ -51,7 +51,7 @@ describe('chapters', () => {
     const {findById} = require('./chapters');
 
     it('should return chapter', async () => {
-      const result = await findById('en')('cha_1');
+      const result = await findById('cha_1');
       expect(result).toEqual(mapToChapterAPIExpectedResult);
     });
   });
@@ -60,17 +60,17 @@ describe('chapters', () => {
     const {getNextChapter} = require('./chapters');
 
     it('should handle chapter without discipline', async () => {
-      const result = await getNextChapter('en')('cha_foo');
+      const result = await getNextChapter('cha_foo');
       expect(result).toBeUndefined();
     });
 
     it('should handle last chapter', async () => {
-      const result = await getNextChapter('en')('cha_2');
+      const result = await getNextChapter('cha_2');
       expect(result).toBeUndefined();
     });
 
     it('should get next chapter', async () => {
-      const result = await getNextChapter('en')('cha_1');
+      const result = await getNextChapter('cha_1');
       const expected = {...mapToChapterAPIExpectedResult, _id: 'cha_2', universalRef: 'cha_2'};
 
       expect(result).toEqual(expected);

@@ -4,7 +4,7 @@ jest.mock('./chapters', () => {
   const {mapToChapterAPIExpectedResult} = require('./mappers.test');
 
   return {
-    find: () => () => Promise.resolve([mapToChapterAPIExpectedResult])
+    find: () => Promise.resolve([mapToChapterAPIExpectedResult])
   };
 });
 

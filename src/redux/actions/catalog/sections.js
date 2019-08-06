@@ -1,6 +1,7 @@
 // @flow strict
 
 import type {Section} from '../../../types';
+import translations from '../../../translations';
 import type {SupportedLanguage} from '../../../translations/_types';
 import type {StoreAction, ErrorAction} from '../../_types';
 import {getToken, getSection} from '../../utils/state-extract';
@@ -75,7 +76,6 @@ export const fetchError = (error: Error): Action => ({
 export const fetchSections = (
   offset: number,
   limit: number,
-  language: SupportedLanguage,
   forceRefresh?: boolean = false
 ): StoreAction<Action | ModalAction<StoreAction<Action>>> => async (
   dispatch,
@@ -83,6 +83,7 @@ export const fetchSections = (
   options
 ) => {
   const {services} = options;
+  const language = translations.getLanguage();
 
   try {
     await dispatch(fetchRequest(offset, limit, language));
@@ -92,7 +93,7 @@ export const fetchSections = (
       throw new Error('Token not defined');
     }
 
-    const {total, sections} = await services.Sections.find(token, offset, limit, language);
+    const {total, sections} = await services.Sections.find(token, offset, limit);
     const result = await dispatch(fetchSuccess(offset, limit, total, sections, language));
 
     await Promise.all(
@@ -114,7 +115,7 @@ export const fetchSections = (
     return dispatch(
       showModal({
         errorType: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction: () => fetchSections(offset, limit, language, forceRefresh)
+        lastAction: () => fetchSections(offset, limit, forceRefresh)
       })
     );
   }

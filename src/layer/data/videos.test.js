@@ -1,25 +1,19 @@
 // @flow
 
-import AsyncStorage from '@react-native-community/async-storage';
-
-import {toJWT, fakeError} from '../../utils/tests';
+import {fakeError} from '../../utils/tests';
+import {createToken} from '../../__fixtures__/tokens';
 import {createVideoUrl} from '../../__fixtures__/videos';
-import type {JWT} from '../../types';
 import {VIDEO_PROVIDER} from './_const';
 
 const videoUrl = createVideoUrl('1234', VIDEO_PROVIDER.JWPLAYER);
-const jwt: JWT = {
-  host: 'host',
-  user: 'plop',
-  iss: 'plip',
-  grants: {mooc: 'foo'},
-  exp: 1,
-  iat: 1,
-  usage: 'ploup'
-};
-const token = toJWT(jwt);
 
-AsyncStorage.getItem = jest.fn().mockImplementation(key => (key === '@@token' ? token : null));
+jest.mock('../../utils/local-token', () => {
+  const {createToken: _createToken} = require('../../__fixtures__/tokens');
+
+  return {
+    get: jest.fn(() => Promise.resolve(_createToken({})))
+  };
+});
 
 describe('videos', () => {
   beforeEach(() => {
@@ -27,6 +21,20 @@ describe('videos', () => {
   });
 
   describe('findUriById', () => {
+    it('should handle invalid token', async () => {
+      const localToken = require('../../utils/local-token');
+      // $FlowFixMe this function is mocked
+      localToken.get.mockImplementationOnce(() => Promise.resolve(null));
+
+      const {findUriById} = require('./videos');
+
+      const id = '1234';
+
+      const result = findUriById(id, VIDEO_PROVIDER.JWPLAYER);
+
+      await expect(result).rejects.toThrow(new Error('Invalid token'));
+    });
+
     it('should fetch e2e fixtures', async () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: true
@@ -59,8 +67,8 @@ describe('videos', () => {
             url: string
           |}>
         }> => {
-          expect(url).toBe(`host/api/v2/videos/1234/provider/${provider}`);
-          expect(options).toHaveProperty('headers.authorization', token);
+          expect(url).toBe(`https://domain.tld/api/v2/videos/1234/provider/${provider}`);
+          expect(options).toHaveProperty('headers.authorization', createToken({}));
 
           return Promise.resolve({
             json: () => Promise.resolve({url: videoUrl})

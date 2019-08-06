@@ -17,7 +17,7 @@ jest.mock('./core', () => {
 
 describe('answers', () => {
   it('should find the correct answers', async () => {
-    const result = await getCorrectAnswer('en')('cha_1');
+    const result = await getCorrectAnswer('cha_1');
     const expectedResult = qcm.content.answers;
     expect(result).toEqual(expectedResult);
   });

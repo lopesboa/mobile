@@ -5,7 +5,6 @@ import {PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE} from '@coorpac
 
 import type {Options, StoreAction} from '../_types';
 import type {StoreState} from '../store';
-import translationUtil from '../../translations';
 import {getAndRefreshCard} from '../actions/catalog/cards/refresh';
 
 type Action = {||};
@@ -19,8 +18,7 @@ Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({
   getState
 }) => next => action => {
   if ([PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE].includes(action.type)) {
-    const language = translationUtil.getLanguage();
-    dispatch(getAndRefreshCard(action.meta.id, language));
+    dispatch(getAndRefreshCard(action.meta.id));
   }
 
   return next(action);

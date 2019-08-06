@@ -16,7 +16,7 @@ jest.mock('./core', () => {
 
 describe('exitNode', () => {
   it('should find the exit node given his ref', async () => {
-    const result = await getExitNode('en')(failureExitNode.ref);
+    const result = await getExitNode(failureExitNode.ref);
     expect(result).toEqual(mapToExitNodeAPIExpectedResult);
   });
 });

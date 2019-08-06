@@ -1,6 +1,6 @@
 // @flow strict
 
-import {toJWT} from '../../utils/tests';
+import {createToken} from '../../__fixtures__/tokens';
 import {TOGGLE_GOD_MODE, toggleGodMode} from './godmode';
 import type {Action} from './godmode';
 
@@ -9,19 +9,8 @@ describe('God mode', () => {
     const dispatch: Dispatch = jest.fn();
     const getState: GetState = jest.fn();
 
-    const token = toJWT({
-      user: '42',
-      iss: 'coorpacademy-jwt',
-      grants: {
-        mooc: {
-          grants: {
-            onboarding: {
-              roles: ['user', 'godmode']
-            }
-          }
-        }
-      },
-      host: 'https://onboarding.coorpacademy.com'
+    const token = createToken({
+      roles: ['user', 'godmode']
     });
 
     dispatch.mockImplementationOnce(action => {
@@ -41,24 +30,12 @@ describe('God mode', () => {
     };
     expect(toggleFn && toggleFn()).toEqual(expected);
   });
+
   it('should not toggleGodMode if user is not godmode', () => {
     const dispatch: Dispatch = jest.fn();
     const getState: GetState = jest.fn();
 
-    const token = toJWT({
-      user: '42',
-      iss: 'coorpacademy-jwt',
-      grants: {
-        mooc: {
-          grants: {
-            onboarding: {
-              roles: ['user']
-            }
-          }
-        }
-      },
-      host: 'https://onboarding.coorpacademy.com'
-    });
+    const token = createToken({});
 
     getState.mockReturnValue({
       godmode: false,

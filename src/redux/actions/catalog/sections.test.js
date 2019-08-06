@@ -19,7 +19,7 @@ describe('Sections', () => {
   it('should fetch sections', async () => {
     const dispatch = jest.fn();
     const getState = () => ({
-      authentication: {user: {token: '__TOKEN__'}, brand},
+      authentication: {user: {token: '__TOKEN__'}, brand, language: 'en'},
       catalog: {
         entities: {
           cards: {},
@@ -67,7 +67,7 @@ describe('Sections', () => {
     });
 
     // $FlowFixMe
-    await fetchSections(0, 2, 'en')(dispatch, getState, options);
+    await fetchSections(0, 2)(dispatch, getState, options);
     expect(dispatch).toHaveBeenCalledTimes(2 + sections.length * 2);
   });
 
@@ -83,7 +83,7 @@ describe('Sections', () => {
     };
 
     dispatch.mockImplementationOnce((action: Action) => {
-      expect(action).toEqual(fetchRequest(0, 2, 'de'));
+      expect(action).toEqual(fetchRequest(0, 2, 'en'));
       return Promise.resolve(action);
     });
 
@@ -103,11 +103,11 @@ describe('Sections', () => {
     });
 
     // $FlowFixMe
-    const result = await fetchSections(0, 2, 'de')(dispatch, getState, options);
+    const result = await fetchSections(0, 2)(dispatch, getState, options);
     expect(dispatch).toHaveBeenCalledTimes(3);
 
     dispatch.mockImplementationOnce((action: Action) => {
-      expect(action).toEqual(fetchRequest(0, 2, 'de'));
+      expect(action).toEqual(fetchRequest(0, 2, 'en'));
       return Promise.resolve(action);
     });
 

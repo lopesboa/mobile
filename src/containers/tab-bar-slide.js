@@ -12,6 +12,7 @@ import theme from '../modules/theme';
 import Text from '../components/text';
 import PlaceholderCircle from '../components/placeholder-circle';
 import PlaceholderLine from '../components/placeholder-line';
+import translations from '../translations';
 import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
@@ -140,11 +141,14 @@ class TabBarSlide extends React.Component<Props> {
       return <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />;
     }
 
-    const labelText = getLabelText(scene);
+    const labelKey = getLabelText(scene);
 
-    if (!labelText) {
+    if (!labelKey) {
       return null;
     }
+
+    // $FlowFixMe Cannot access computed property
+    const labelText = translations[labelKey];
 
     if (
       (scene.route.key === 'Clue' && hasNoClue) ||

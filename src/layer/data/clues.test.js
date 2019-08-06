@@ -34,18 +34,18 @@ jest.mock('./core', () => {
 describe('clue', () => {
   describe('getClue', () => {
     it('should not find the clue for a given slide universalRef', async () => {
-      const result = await getClue('en')('ref_withoutclue');
+      const result = await getClue('ref_withoutclue');
       expect(result).toBeUndefined();
     });
 
     it('should find the clue for a given slide universalRef', async () => {
       const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm});
-      const result = await getClue('en')('ref_withclue');
+      const result = await getClue('ref_withclue');
       expect(result).toEqual(slide.clue);
     });
 
     it('should handle exception', () => {
-      const result = getClue('en')('ref_exception');
+      const result = getClue('ref_exception');
       expect(result).rejects.toThrow(fakeError);
     });
   });

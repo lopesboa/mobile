@@ -544,6 +544,9 @@ describe('State-extract', () => {
   describe('getters', () => {
     it('should get card', () => {
       const state = {
+        authentication: {
+          language: 'en'
+        },
         catalog: {
           entities: {
             cards: {
@@ -561,6 +564,9 @@ describe('State-extract', () => {
 
     it('should get section', () => {
       const state = {
+        authentication: {
+          language: 'en'
+        },
         catalog: {
           entities: {
             sections: {
@@ -578,6 +584,9 @@ describe('State-extract', () => {
 
     it('should get section with default lang', () => {
       const state = {
+        authentication: {
+          language: 'en'
+        },
         catalog: {
           entities: {
             sections: {

@@ -3,11 +3,10 @@
 import * as React from 'react';
 
 import type {Services} from '../services';
-import translations from '../translations';
 import createServices from '../services';
 import createDataLayer from '../layer/data';
 
-const dataLayer = createDataLayer(translations.getLanguage());
+const dataLayer = createDataLayer();
 const services = createServices(dataLayer);
 
 type Props = {|

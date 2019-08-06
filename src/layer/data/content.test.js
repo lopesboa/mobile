@@ -37,37 +37,37 @@ describe('content', () => {
   describe('find', () => {
     it('should find level', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')(CONTENT_TYPE.LEVEL, 'ref_level');
+      const result = await find(CONTENT_TYPE.LEVEL, 'ref_level');
       expect(result).toEqual({type: 'level'});
     });
 
     it('should find chapter', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')(CONTENT_TYPE.CHAPTER, 'ref_chapter');
+      const result = await find(CONTENT_TYPE.CHAPTER, 'ref_chapter');
       expect(result).toEqual({type: 'chapter'});
     });
 
     it('should find slide', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')(CONTENT_TYPE.SLIDE, 'ref_slide');
+      const result = await find(CONTENT_TYPE.SLIDE, 'ref_slide');
       expect(result).toEqual({type: 'slide'});
     });
 
     it('should handle unsupported type', () => {
       // $FlowFixMe this is only to test
-      const result = find('en')('foobarbaz', 'ref_foobarbaz');
+      const result = find('foobarbaz', 'ref_foobarbaz');
       expect(result).rejects.toThrow('foobarbaz not implemented');
     });
 
     it('should handle exception', () => {
       // $FlowFixMe this is only to test
-      const result = find('en')(CONTENT_TYPE.SLIDE, 'ref_exception');
+      const result = find(CONTENT_TYPE.SLIDE, 'ref_exception');
       expect(result).rejects.toThrow(fakeError);
     });
 
     it('should return undefined', async () => {
       // $FlowFixMe this is only to test
-      const result = await find('en')(CONTENT_TYPE.SLIDE, 'void_ref');
+      const result = await find(CONTENT_TYPE.SLIDE, 'void_ref');
       expect(result).not.toBeDefined();
     });
   });

@@ -2,7 +2,6 @@
 
 import type {DataLayer} from '../layer/data';
 import type {Cards, DisciplineCard, ChapterCard} from '../layer/data/_types';
-import type {SupportedLanguage} from '../translations/_types';
 import type {Section} from '../types';
 
 export type CardsService = {|
@@ -11,17 +10,13 @@ export type CardsService = {|
     host: string,
     section: Section,
     offset: number,
-    limit: number,
-    language: SupportedLanguage
+    limit: number
   ) => Promise<{|
     cards: Cards,
     total: number
   |}>,
   refreshCard: (card: DisciplineCard | ChapterCard) => Promise<DisciplineCard | ChapterCard>,
-  getCardFromLocalStorage: (
-    levelRef: string,
-    language: SupportedLanguage
-  ) => Promise<DisciplineCard | ChapterCard>
+  getCardFromLocalStorage: (levelRef: string) => Promise<DisciplineCard | ChapterCard>
 |};
 
 const service = (dataLayer: DataLayer): CardsService => ({

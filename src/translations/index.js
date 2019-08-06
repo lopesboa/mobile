@@ -55,7 +55,9 @@ const localizedTranslations: {[key: SupportedLanguage]: Translations} = {
 type CustomLocalizedStrings = $Exact<{|
   ...Translations,
   formatString: (...args: Array<string>) => string,
-  getLanguage: void => SupportedLanguage
+  getLanguage: void => SupportedLanguage,
+  setLanguage: SupportedLanguage => void,
+  getInterfaceLanguage: void => SupportedLanguage
 |}>;
 
 const translations: CustomLocalizedStrings = new LocalizedStrings(localizedTranslations);

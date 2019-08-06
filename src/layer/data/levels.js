@@ -2,25 +2,22 @@
 
 import type {LevelAPI} from '@coorpacademy/player-services';
 
-import type {SupportedLanguage} from '../../translations/_types';
+import translations from '../../translations';
 import {getItem} from './core';
 import {CONTENT_TYPE} from './_const';
 import type {Level, Discipline} from './_types';
 import {mapToLevelAPI} from './mappers';
 import {findByLevel as findDisciplineByLevel} from './disciplines';
 
-export const findById = (userLanguage: SupportedLanguage) => async (
-  ref: string
-): Promise<LevelAPI> => {
+export const findById = async (ref: string): Promise<LevelAPI> => {
+  const language = translations.getLanguage();
   // $FlowFixMe union type
-  const item: Level = await getItem(CONTENT_TYPE.LEVEL, userLanguage, ref);
+  const item: Level = await getItem(CONTENT_TYPE.LEVEL, language, ref);
   return item && mapToLevelAPI(item);
 };
 
-export const getNextLevel = (userLanguage: SupportedLanguage) => async (
-  ref: string
-): Promise<LevelAPI | void> => {
-  const discipline: Discipline | void = await findDisciplineByLevel(userLanguage)(ref);
+export const getNextLevel = async (ref: string): Promise<LevelAPI | void> => {
+  const discipline: Discipline | void = await findDisciplineByLevel(ref);
 
   if (!discipline) {
     return;
@@ -33,5 +30,5 @@ export const getNextLevel = (userLanguage: SupportedLanguage) => async (
     return;
   }
 
-  return findById(userLanguage)(nextLevel.ref);
+  return findById(nextLevel.ref);
 };

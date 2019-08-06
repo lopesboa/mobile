@@ -18,14 +18,14 @@ import {
   cardsToKeys,
   updateDisciplineCardDependingOnCompletion,
   updateChapterCardAccordingToCompletion,
-  refreshCard
+  refreshCard,
+  getCardFromLocalStorage
 } from './cards';
 import type {Card} from './_types';
 
 const host = 'https://host.coorpacademy.com';
 const token = '__token__';
 const section = createSections()[0];
-const language = 'en';
 
 const disciplinesCards = createDisciplinesCards(
   Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
@@ -59,7 +59,7 @@ describe('cards', () => {
         __E2E__: true
       }));
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 1, 3, language);
+      const result = fetchCards(token, host, section, 1, 3);
       const expected = {
         cards: cards.slice(1, 4),
         total: cards.length
@@ -108,7 +108,7 @@ describe('cards', () => {
       );
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 2, language);
+      const result = fetchCards(token, host, section, 0, 2);
       const expected = {
         cards: cards.slice(0, 2),
         total: cards.length
@@ -127,7 +127,7 @@ describe('cards', () => {
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 3, language);
+      const result = fetchCards(token, host, section, 0, 3);
 
       await expect(result).rejects.toThrow();
     });
@@ -152,7 +152,7 @@ describe('cards', () => {
       });
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 3, language);
+      const result = fetchCards(token, host, section, 0, 3);
 
       const expected = {
         cards: [],
@@ -460,6 +460,23 @@ describe('cards', () => {
       );
 
       expect(result).toEqual(expectedResult);
+    });
+  });
+
+  describe('getCardFromLocalStorage', () => {
+    it('should get card card', async () => {
+      const _card = cards[1];
+      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+        if (key === '@@lang') {
+          return 'en';
+        }
+        if (key === `card:en:${_card.ref}`) {
+          return JSON.stringify(_card);
+        }
+      });
+
+      const card = await getCardFromLocalStorage(_card.ref);
+      expect(_card).toEqual(card);
     });
   });
 

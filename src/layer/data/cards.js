@@ -9,6 +9,7 @@ import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/ca
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import type {SupportedLanguage} from '../../translations/_types';
+import translations from '../../translations';
 import {buildUrlQueryParams} from '../../modules/uri';
 import type {QueryParams} from '../../modules/uri';
 
@@ -130,9 +131,9 @@ export const refreshCard = (card: Card): Promise<Card> => {
 };
 
 export const getCardFromLocalStorage = async (
-  ref: string,
-  language: SupportedLanguage
+  ref: string
 ): Promise<DisciplineCard | ChapterCard> => {
+  const language = translations.getLanguage();
   // $FlowFixMe
   const card = await getItem('card', language, ref);
   return refreshCard(card);
@@ -207,12 +208,13 @@ export const fetchCards = async (
   host: string,
   section: Section,
   offset: number,
-  limit: number,
-  language: SupportedLanguage
+  limit: number
 ): Promise<{|
   cards: Cards,
   total: number
 |}> => {
+  const language = translations.getLanguage();
+
   if (__E2E__) {
     const disciplines = Object.keys(disciplinesBundle.disciplines).map(
       key => disciplinesBundle.disciplines[key]

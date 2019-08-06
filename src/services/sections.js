@@ -2,14 +2,12 @@
 
 import type {DataLayer} from '../layer/data';
 import type {Section} from '../types';
-import type {SupportedLanguage} from '../translations/_types';
 
 export type SectionsService = {|
   find: (
     token: string,
     offset: number,
-    limit: number,
-    language: SupportedLanguage
+    limit: number
   ) => Promise<{|
     total: number,
     sections: Array<Section>

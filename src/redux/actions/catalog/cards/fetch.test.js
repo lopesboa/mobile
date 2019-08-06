@@ -53,7 +53,7 @@ describe('Cards', () => {
         return Promise.resolve(action);
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand},
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand, language},
         catalog: {entities: {sections: {foo: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(
@@ -64,7 +64,7 @@ describe('Cards', () => {
       );
 
       // $FlowFixMe
-      const actual = await fetchCards('foo', 0, 3, language)(dispatch, getState, options);
+      const actual = await fetchCards('foo', 0, 3)(dispatch, getState, options);
       return expect(actual).toEqual(fetchSuccess('foo', 0, 3, 8, items, language));
     });
 
@@ -93,7 +93,7 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchCards('bar', 2, 5, language)(dispatch, getState, options);
+      const actual = await fetchCards('bar', 2, 5)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
       return expect(actual).toEqual(fetchError(new TypeError('Token not defined')));
@@ -155,7 +155,7 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchCards('qux', 0, 3, language)(dispatch, getState, options);
+      const actual = await fetchCards('qux', 0, 3)(dispatch, getState, options);
 
       expect(options.services.Cards.find).not.toHaveBeenCalled();
       return expect(actual).toEqual(fetchError(new TypeError('Section not found')));
@@ -182,13 +182,13 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand},
+        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand, language},
         catalog: {entities: {sections: {quux: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(Promise.reject(fakeError));
 
       // $FlowFixMe
-      const actual = await fetchCards('quux', 1, 3, language)(dispatch, getState, options);
+      const actual = await fetchCards('quux', 1, 3)(dispatch, getState, options);
 
       return expect(actual).toEqual(fetchError(fakeError));
     });
