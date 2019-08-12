@@ -75,8 +75,8 @@ describe('Create next Progression', () => {
           expect(_content.ref).toEqual(mockedContent.universalRef);
           if (contentType === CONTENT_TYPE.CHAPTER) {
             // $FlowFixMe
-            expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: '1'});
-            expect(engineConfig).toEqual({version: '1'});
+            expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: '2'});
+            expect(engineConfig).toEqual({version: '2'});
           }
           if (contentType === CONTENT_TYPE.LEVEL) {
             expect(engine).toEqual({ref: ENGINE.LEARNER, version: '2'});

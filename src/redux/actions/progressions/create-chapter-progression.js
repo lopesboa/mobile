@@ -8,8 +8,8 @@ import {ObjectId} from 'bson';
 import {getMostAccurateRef} from '../../../modules/reference';
 import {ENGINE} from '../../../const';
 
-const ENGINE_VERSION = '1';
-const ENGINE_CONFIG_VERSION = '1';
+const ENGINE_VERSION = '2';
+const ENGINE_CONFIG_VERSION = '2';
 
 export const createChapterProgression = (chapter: Chapter) => {
   const engine: Engine = {ref: ENGINE.MICROLEARNING, version: ENGINE_VERSION};

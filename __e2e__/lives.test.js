@@ -45,4 +45,16 @@ describe('Lives', () => {
       await weExpect(element(by.id('lives'))).toBeNotVisible();
     });
   });
+
+  describe('Microlearning', () => {
+    beforeAll(async () => {
+      await element(by.id('header-back')).tap();
+      await element(by.id('home-screen')).swipe('up');
+      await tapCardOnSection('catalog-section-recommended-items', 11);
+    });
+
+    it('should not see lives', async () => {
+      await weExpect(element(by.id('lives'))).toBeNotVisible();
+    });
+  });
 });
