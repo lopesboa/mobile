@@ -33,7 +33,7 @@ platform :android do
       version_code: version_code
     )
     gradle(
-      task: "assemble",
+      task: "bundle",
       build_type: "Release",
       # To avoid OOM (exit code 137) as we generated it before
       flags: "-x bundleReleaseJsAndAssets"

@@ -147,7 +147,7 @@ jobs:
               brew link applesimutils
             else
               echo "Applesimutils not installed."
-              brew untap wix/brew && brew tap wix/brew
+              brew tap wix/brew
               brew install applesimutils
             fi
 
