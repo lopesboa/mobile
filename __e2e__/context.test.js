@@ -44,7 +44,7 @@ describe('Context', () => {
       await waitForExist('context-screen');
       await weExpect(element(by.id('context'))).toBeVisible();
       await weExpect(
-        element(by.type('RCTView').and(by.id('preview-video-context-resource-video')))
+        element(by.type('RCTView').and(by.id('context-resource-video-preview-video')))
       ).toBeVisible();
     });
 

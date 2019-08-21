@@ -1,12 +1,13 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, ImageBackground} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
+import ImageBackground from './image-background';
 import Version from './version';
 import Gradient from './gradient';
 import Touchable from './touchable';
@@ -94,7 +95,9 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
                 <ImageBackground
                   style={styles.logo}
                   testID="brand-logo"
-                  source={{uri: brandTheme.images['logo-mobile']}}
+                  source={{
+                    uri: brandTheme.images['logo-mobile']
+                  }}
                   resizeMode="contain"
                 />
               </Touchable>

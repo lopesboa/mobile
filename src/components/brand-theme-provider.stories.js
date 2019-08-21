@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {Text, Image} from 'react-native';
+import {Text} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
 import {TestContextProvider} from '../utils/tests';
@@ -17,7 +17,7 @@ storiesOf('BrandThemeProvider', module).add('Default', () => (
             <Text style={{color: brandTheme.colors.primary}}>Primary color</Text>
             <Text>Content category name: {brandTheme.contentCategoryName}</Text>
             <Text>Name: {brandTheme.name}</Text>
-            <Image source={{uri: brandTheme.images['logo-mobile']}} style={{width: 200}} />
+            <Text>Logo: {brandTheme.images['logo-mobile']}</Text>
           </React.Fragment>
         )}
       </BrandThemeContext.Consumer>

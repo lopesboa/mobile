@@ -364,9 +364,18 @@ exports[`Storyshots Video Loading 1`] = `
   <View
     accessibilityIgnoresInvertColors={true}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
+      ]
     }
   >
     <Image
@@ -391,6 +400,7 @@ exports[`Storyshots Video Loading 1`] = `
           undefined,
         ]
       }
+      testID="container"
     />
     <View
       style={
@@ -545,9 +555,18 @@ exports[`Storyshots Video Local preview 1`] = `
   <View
     accessibilityIgnoresInvertColors={true}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
+      ]
     }
   >
     <Image
@@ -572,6 +591,7 @@ exports[`Storyshots Video Local preview 1`] = `
           undefined,
         ]
       }
+      testID="container"
     />
     <View
       style={
@@ -803,9 +823,18 @@ exports[`Storyshots Video Remote preview 1`] = `
   <View
     accessibilityIgnoresInvertColors={true}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
+      ]
     }
   >
     <Image
@@ -830,6 +859,7 @@ exports[`Storyshots Video Remote preview 1`] = `
           undefined,
         ]
       }
+      testID="container"
     />
     <View
       style={

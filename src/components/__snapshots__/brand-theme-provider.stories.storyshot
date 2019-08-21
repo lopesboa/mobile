@@ -23,17 +23,9 @@ Array [
     Name: 
     onboarding
   </Text>,
-  <Image
-    source={
-      Object {
-        "uri": "https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png",
-      }
-    }
-    style={
-      Object {
-        "width": 200,
-      }
-    }
-  />,
+  <Text>
+    Logo: 
+    https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png
+  </Text>,
 ]
 `;

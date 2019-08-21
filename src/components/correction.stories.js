@@ -479,32 +479,6 @@ storiesOf('Correction', module)
       </View>
     </TestContextProvider>
   ))
-  .add('Bad answer and lesson was viewed (cards order 4)', () => (
-    <TestContextProvider>
-      <View style={fakeLayout}>
-        <Correction
-          answers={answers}
-          userAnswers={answers}
-          tip={
-            "The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you without checking it on Wikipedia before"
-          }
-          isCorrect={false}
-          isResourceViewed
-          offeringExtraLife={false}
-          showResourcesFirst={false}
-          onButtonPress={handleFakePress}
-          question={question}
-          keyPoint="The KEY POINT"
-          layout={fakeLayout}
-          isLoading
-          resources={[resources[0], resources[1]]}
-          onPDFButtonPress={handleFakePress}
-          onVideoPlay={handleFakePress}
-          lives={2}
-        />
-      </View>
-    </TestContextProvider>
-  ))
   .add('Bad answer and subtitles from resource with subtitleRef (android)', () => (
     <TestContextProvider>
       <View style={fakeLayout}>
@@ -535,7 +509,7 @@ if (__TEST__) {
     it('should handle onPDFButtonPress callback', () => {
       const handlePress = jest.fn();
       const handleVideoPress = jest.fn();
-      const testId = `resource-${resources[1].ref.toLowerCase()}`;
+      const testID = `card-resource-${resources[1].ref.toLowerCase()}-resource`;
       const component = renderer.create(
         <TestContextProvider>
           <View style={fakeLayout}>
@@ -563,7 +537,7 @@ if (__TEST__) {
         </TestContextProvider>
       );
 
-      const resource = component.root.find(el => el.props.testID === testId);
+      const resource = component.root.find(el => el.props.testID === testID);
       resource.props.onPress('fakeUrl', 'fakeDescription');
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handleVideoPress.mock.calls.length).toBe(0);
@@ -572,7 +546,7 @@ if (__TEST__) {
     it('should handle onVideoPlay callback', () => {
       const handlePress = jest.fn();
       const handleVideoPress = jest.fn();
-      const testId = `resource-${resources[1].ref.toLowerCase()}`;
+      const testID = `card-resource-${resources[1].ref.toLowerCase()}-resource`;
       const component = renderer.create(
         <TestContextProvider>
           <View style={fakeLayout}>
@@ -600,7 +574,7 @@ if (__TEST__) {
         </TestContextProvider>
       );
 
-      const resource = component.root.find(el => el.props.testID === testId);
+      const resource = component.root.find(el => el.props.testID === testID);
       resource.props.onPress();
       expect(handlePress.mock.calls.length).toBe(0);
       expect(handleVideoPress.mock.calls.length).toBe(1);

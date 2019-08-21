@@ -3,9 +3,8 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import image from '../__fixtures__/assets/landscape-1.jpg';
 import type {Progression} from '../types';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
+import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
 import {handleFakePress} from '../utils/tests';
 import translations from '../translations';
 import CatalogItem from './catalog-item';
@@ -13,6 +12,11 @@ import CatalogItem from './catalog-item';
 const progression: Progression = {
   current: 3,
   count: 10
+};
+
+const image = {
+  uri:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
 };
 
 storiesOf('Catalog Item', module)
@@ -28,7 +32,7 @@ storiesOf('Catalog Item', module)
       onPress={handleFakePress}
       testID="catalog1"
       universalRef="foobar"
-      type="learner"
+      type={ENGINE.LEARNER}
       section="finishLearning"
     />
   ))
@@ -45,7 +49,7 @@ storiesOf('Catalog Item', module)
       onPress={handleFakePress}
       testID="catalog2"
       universalRef="foobar"
-      type="learner"
+      type={ENGINE.LEARNER}
       section="finishLearning"
     />
   ))
@@ -63,7 +67,7 @@ storiesOf('Catalog Item', module)
       onPress={handleFakePress}
       testID="catalog3"
       universalRef="foobar"
-      type="learner"
+      type={ENGINE.LEARNER}
       section="finishLearning"
     />
   ))
@@ -81,7 +85,7 @@ storiesOf('Catalog Item', module)
       onPress={handleFakePress}
       testID="catalog4"
       universalRef="foobar"
-      type="learner"
+      type={ENGINE.LEARNER}
       section="finishLearning"
     />
   ))

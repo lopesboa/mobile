@@ -7,10 +7,9 @@ import type {Progression, CardDisplayMode, AuthorType, Engine} from '../types';
 import {CARD_DISPLAY_MODE, ENGINE} from '../const';
 import theme from '../modules/theme';
 import type {Chapter, Discipline} from '../layer/data/_types';
-
 import CatalogItemFooter from './catalog-item-footer';
 import Badge from './catalog-item-badge';
-import ImageGradient from './image-gradient';
+import ImageBackground from './image-background';
 import CatalogItemAuthor from './catalog-item-author';
 import Touchable from './touchable';
 
@@ -21,7 +20,7 @@ type CourseInfo = {|
   subtitle: string,
   isAdaptive: boolean,
   progression?: Progression,
-  image: File | {uri: string},
+  image: {uri: string},
   badge?: string,
   authorType?: AuthorType,
   authorName?: string,
@@ -53,7 +52,9 @@ const styles = StyleSheet.create({
   },
   image: {
     height: HEIGHT,
-    width: WIDTH,
+    width: WIDTH
+  },
+  imageGradient: {
     padding: theme.spacing.small
   },
   title: {
@@ -76,7 +77,9 @@ const styles = StyleSheet.create({
   },
   imageCover: {
     minHeight: 215,
-    height: screenHeight * 0.3,
+    height: screenHeight * 0.3
+  },
+  imageCoverGradient: {
     padding: theme.spacing.base
   },
   titleCover: {
@@ -134,10 +137,15 @@ const CatalogItem = ({
       analyticsParams={{ref: universalRef, type, section}}
     >
       <View style={styles.container}>
-        <ImageGradient
+        <ImageBackground
           testID={`${testID}-image`}
-          image={image}
+          source={image}
+          gradient={['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)']}
+          resizeMode="cover"
           style={mode === CARD_DISPLAY_MODE.CARD ? styles.image : styles.imageCover}
+          gradientStyle={
+            mode === CARD_DISPLAY_MODE.CARD ? styles.imageGradient : styles.imageCoverGradient
+          }
         >
           {badgeLabel && (
             <Badge
@@ -162,7 +170,7 @@ const CatalogItem = ({
             iconCertifiedSize={mode === CARD_DISPLAY_MODE.CARD ? 14 : 16}
             testID={testID}
           />
-        </ImageGradient>
+        </ImageBackground>
         {authorType && (
           <CatalogItemAuthor
             authorType={authorType}

@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import {ScrollView, View, StyleSheet, ImageBackground} from 'react-native';
+import {ScrollView, View, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
 
 import background from '../assets/images/authentication.png';
@@ -9,8 +9,7 @@ import theme, {BLUE_COORP_DARK, BLUE_COORP_LIGHT} from '../modules/theme';
 import translations from '../translations';
 import AuthenticationFooter from './authentication-footer';
 import type {Props as AuthenticationFooterProps} from './authentication-footer';
-import Gradient from './gradient';
-import Image from './image';
+import ImageBackground from './image-background';
 import Text from './text';
 import Space from './space';
 import Button from './button';
@@ -24,12 +23,9 @@ type Props = {|
 
 const styles = StyleSheet.create({
   background: {
-    position: 'absolute',
-    height: '100%',
-    width: '100%'
+    position: 'absolute'
   },
   gradient: {
-    flex: 1,
     opacity: 0.8
   },
   container: {
@@ -82,13 +78,17 @@ const Authentication = ({
   onMobileButtonPress
 }: Props) => (
   <React.Fragment>
-    <ImageBackground source={background} style={styles.background} resizeMode="cover">
-      <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient} />
-    </ImageBackground>
+    <ImageBackground
+      source={background}
+      gradient={[TOP_COLOR, BOTTOM_COLOR]}
+      gradientStyle={styles.gradient}
+      resizeMode="cover"
+      style={styles.background}
+    />
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={[styles.container, styles.scroll]} testID="authentication">
         <View style={styles.header} testID="authentication-header">
-          <Image source={logo} style={styles.image} testID="authentication-logo" />
+          <ImageBackground source={logo} style={styles.image} testID="authentication-logo" />
         </View>
         <Space type="large" />
         <View style={styles.footer}>

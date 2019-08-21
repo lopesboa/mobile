@@ -1128,18 +1128,21 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -1158,7 +1161,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-dis-2-image"
+                        testID="recommend-item-dis-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -1189,15 +1192,13 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-dis-2-image"
+                        testID="recommend-item-dis-2-image-gradient"
                       >
                         <View
                           style={
@@ -2634,18 +2635,21 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -2664,7 +2668,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-dis-2-image"
+                        testID="recommend-item-dis-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -2695,15 +2699,13 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-dis-2-image"
+                        testID="recommend-item-dis-2-image-gradient"
                       >
                         <View
                           style={
@@ -4430,18 +4432,21 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -4460,7 +4465,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -4491,15 +4496,13 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image-gradient"
                       >
                         <View
                           style={
@@ -6297,18 +6300,21 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -6327,7 +6333,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -6358,15 +6364,13 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image-gradient"
                       >
                         <View
                           style={
@@ -9006,18 +9010,21 @@ exports[`Storyshots LevelEnd Success 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -9036,7 +9043,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -9067,15 +9074,13 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image-gradient"
                       >
                         <View
                           style={
@@ -11461,18 +11466,21 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                       style={
                         Array [
                           Object {
-                            "flex": 1,
+                            "height": "100%",
+                            "width": "100%",
                           },
                           Object {
-                            "minHeight": 205,
+                            "height": 400.2,
+                            "minHeight": 215,
                           },
                         ]
                       }
                     >
                       <Image
+                        resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
                           }
                         }
                         style={
@@ -11491,7 +11499,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                             undefined,
                           ]
                         }
-                        testID="background-image-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image"
                       />
                       <BVLinearGradient
                         colors={
@@ -11522,15 +11530,13 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 "flex": 1,
                               },
                               Object {
-                                "height": 400.2,
-                                "minHeight": 215,
                                 "padding": 24,
                               },
                             ],
                             undefined,
                           ]
                         }
-                        testID="gradient-recommend-item-cha-2-image"
+                        testID="recommend-item-cha-2-image-gradient"
                       >
                         <View
                           style={

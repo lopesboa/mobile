@@ -33,14 +33,14 @@ describe('Correction: resources', () => {
   });
 
   it('should see lesson preview, lesson description when video', async () => {
-    await waitForExist('preview-video-resource-les_1');
-    await weExpect(element(by.id('resource-description-les_1'))).toBeVisible();
+    await waitForExist('card-resource-les_1-resource-preview-video');
+    await weExpect(element(by.id('card-resource-les_1-resource-description'))).toBeVisible();
   });
 
   // TODO: Tests takes too long in the CI
   // it('should start the video', async () => {
-  //   await element(by.id('preview-video-resource-les_1')).tap();
-  //   await waitForExist('video-container-resource-les_1');
+  //   await element(by.id('card-resource-les_1-resource-preview-video')).tap();
+  //   await waitForExist('card-resource-les_1-resource-video-container');
   // });
 
   // it('should pause the video', async () => {
@@ -63,8 +63,8 @@ describe('Correction: resources', () => {
   //   await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
   //   await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
   //   await weExpect(element(by.id('card-resource-les_4'))).toBeVisible();
-  //   await weExpect(element(by.id('preview-pdf-resource-les_4'))).toBeVisible();
-  //   await weExpect(element(by.id('preview-pdf-icon'))).toBeVisible();
+  //   await weExpect(element(by.id('card-resource-les_4-resource-preview-pdf'))).toBeVisible();
+  //   await weExpect(element(by.id('card-resource-preview-pdf-icon'))).toBeVisible();
   //   await weExpect(element(by.id('button-open-pdf'))).toBeVisible();
   //   await element(by.id('button-open-pdf')).tap();
   //   await waitForExist('pdf-screen');

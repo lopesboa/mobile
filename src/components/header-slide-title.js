@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, StyleSheet, ImageBackground} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
@@ -9,14 +9,17 @@ import {BrandThemeContext} from './brand-theme-provider';
 import Text from './text';
 import PlaceholderLine from './placeholder-line';
 import Space from './space';
+import ImageBackground from './image-background';
 
 type Props = {|
-  image?: {uri: string} | File,
+  image?: {uri: string},
   subtitle?: string,
   title?: string
 |};
 
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
+const THUMBNAIL_WIDTH = 28;
+const THUMBNAIL_HEIGHT = 28;
 
 const styles = StyleSheet.create({
   container: {
@@ -30,8 +33,8 @@ const styles = StyleSheet.create({
     backgroundColor: PLACEHOLDER_COLOR,
     borderRadius: theme.radius.thumbnail,
     overflow: 'hidden',
-    width: 28,
-    height: 28
+    width: THUMBNAIL_WIDTH,
+    height: THUMBNAIL_HEIGHT
   },
   text: {
     paddingLeft: theme.spacing.tiny,
@@ -53,13 +56,11 @@ const HeaderSlide = ({image, subtitle, title}: Props) => (
     {brandTheme => (
       <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
         <View style={styles.thumbnail}>
-          {image && image.uri !== '' && (
-            <ImageBackground
-              testID="header-slide-title-image"
-              source={image}
-              style={styles.thumbnail}
-            />
-          )}
+          <ImageBackground
+            testID="header-slide-title-image"
+            source={image}
+            style={styles.thumbnail}
+          />
         </View>
         <View style={styles.text}>
           {subtitle && (

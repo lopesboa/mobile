@@ -4,9 +4,18 @@ exports[`Storyshots Preview Extra Life 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
-    Object {
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ],
+    ]
   }
 >
   <Image
@@ -31,6 +40,7 @@ exports[`Storyshots Preview Extra Life 1`] = `
         undefined,
       ]
     }
+    testID="container"
   />
   <View
     style={
@@ -63,7 +73,7 @@ exports[`Storyshots Preview Extra Life 1`] = `
       testID="preview-extralife"
     >
       <View
-        testID="extra-life"
+        testID="preview-extralife-icon"
       >
         <View
           style={
@@ -662,9 +672,18 @@ exports[`Storyshots Preview PDF Remote 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
-    Object {
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ],
+    ]
   }
 >
   <Image
@@ -689,6 +708,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
         undefined,
       ]
     }
+    testID="container"
   />
   <View
     style={
@@ -929,7 +949,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
         }
       />
       <View
-        testID="button-open-pdf"
+        testID="preview-pdf-button"
       >
         <View
           accessible={true}
@@ -955,7 +975,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
               "opacity": 1,
             }
           }
-          testID="button-open-pdf-native"
+          testID="preview-pdf-button-native"
         >
           <Text
             style={
@@ -999,9 +1019,18 @@ exports[`Storyshots Preview Video Remote 1`] = `
 <View
   accessibilityIgnoresInvertColors={true}
   style={
-    Object {
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+      ],
+    ]
   }
 >
   <Image
@@ -1026,6 +1055,7 @@ exports[`Storyshots Preview Video Remote 1`] = `
         undefined,
       ]
     }
+    testID="container"
   />
   <View
     style={

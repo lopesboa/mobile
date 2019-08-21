@@ -3182,47 +3182,45 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "width": 320,
-                      }
-                    }
-                  >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
-                      style={
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
                         Object {
                           "height": "100%",
                           "width": 320,
+                        },
+                      ]
+                    }
+                  >
+                    <Image
+                      resizeMode="contain"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
                         }
                       }
-                    >
-                      <Image
-                        resizeMode="contain"
-                        source={
+                      style={
+                        Array [
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": "100%",
-                              "width": 320,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="question-choice-1-img"
-                      />
-                    </View>
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                      testID="question-choice-1-img"
+                    />
                   </View>
                 </View>
                 <View
@@ -3344,47 +3342,45 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "width": 320,
-                      }
-                    }
-                  >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
-                      style={
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
                         Object {
                           "height": "100%",
                           "width": 320,
+                        },
+                      ]
+                    }
+                  >
+                    <Image
+                      resizeMode="contain"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
                         }
                       }
-                    >
-                      <Image
-                        resizeMode="contain"
-                        source={
+                      style={
+                        Array [
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": "100%",
-                              "width": 320,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="question-choice-2-img"
-                      />
-                    </View>
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                      testID="question-choice-2-img"
+                    />
                   </View>
                 </View>
                 <View
@@ -3506,47 +3502,45 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "width": 320,
-                      }
-                    }
-                  >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
-                      style={
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
                         Object {
                           "height": "100%",
                           "width": 320,
+                        },
+                      ]
+                    }
+                  >
+                    <Image
+                      resizeMode="contain"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
                         }
                       }
-                    >
-                      <Image
-                        resizeMode="contain"
-                        source={
+                      style={
+                        Array [
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": "100%",
-                              "width": 320,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="question-choice-3-img"
-                      />
-                    </View>
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                      testID="question-choice-3-img"
+                    />
                   </View>
                 </View>
                 <View
@@ -3668,47 +3662,45 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   }
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "width": 320,
-                      }
-                    }
-                  >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
-                      style={
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
                         Object {
                           "height": "100%",
                           "width": 320,
+                        },
+                      ]
+                    }
+                  >
+                    <Image
+                      resizeMode="contain"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
                         }
                       }
-                    >
-                      <Image
-                        resizeMode="contain"
-                        source={
+                      style={
+                        Array [
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": "100%",
-                              "width": 320,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="question-choice-4-img"
-                      />
-                    </View>
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          undefined,
+                        ]
+                      }
+                      testID="question-choice-4-img"
+                    />
                   </View>
                 </View>
                 <View
@@ -5574,9 +5566,18 @@ exports[`Storyshots Question With Video 1`] = `
           <View
             accessibilityIgnoresInvertColors={true}
             style={
-              Object {
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "height": "100%",
+                  "width": "100%",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                  },
+                  undefined,
+                ],
+              ]
             }
           >
             <Image
@@ -5601,6 +5602,7 @@ exports[`Storyshots Question With Video 1`] = `
                   undefined,
                 ]
               }
+              testID="question-resource-container"
             />
             <View
               style={
@@ -5630,7 +5632,7 @@ exports[`Storyshots Question With Video 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="preview-video-question-resource"
+                testID="question-resource-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -6422,47 +6424,45 @@ exports[`Storyshots Question With image 1`] = `
       />
       <View>
         <View
+          accessibilityIgnoresInvertColors={true}
           style={
-            Object {
-              "width": 320,
-            }
-          }
-        >
-          <View
-            accessibilityIgnoresInvertColors={true}
-            style={
+            Array [
+              Object {
+                "height": "100%",
+                "width": "100%",
+              },
               Object {
                 "height": 180,
                 "width": 320,
+              },
+            ]
+          }
+        >
+          <Image
+            resizeMode="contain"
+            source={
+              Object {
+                "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320&h=180",
               }
             }
-          >
-            <Image
-              resizeMode="contain"
-              source={
+            style={
+              Array [
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": 180,
-                    "width": 320,
-                  },
-                  undefined,
-                ]
-              }
-              testID="question-resource"
-            />
-          </View>
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                },
+                undefined,
+              ]
+            }
+            testID="question-resource"
+          />
         </View>
         <View
           style={

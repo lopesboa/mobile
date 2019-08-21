@@ -67,11 +67,11 @@ storiesOf('Resource', module)
       />
     </TestContextProvider>
   ))
-  .add('WithImage', () => (
+  .add('Image', () => (
     <TestContextProvider>
       <Resource
         type={image.type}
-        url={image.url}
+        url={image.poster}
         layout={fakeLayout}
         description="some description"
       />
@@ -110,6 +110,7 @@ if (__TEST__) {
   describe('Resource', () => {
     it('should handle onPress callback', () => {
       const handlePress = jest.fn();
+      const testID = 'resource-1';
       const component = renderer.create(
         <TestContextProvider>
           <Resource
@@ -118,11 +119,12 @@ if (__TEST__) {
             layout={fakeLayout}
             description={pdf.description}
             thumbnail={pdf.poster}
+            testID={testID}
             onPress={handlePress}
           />
         </TestContextProvider>
       );
-      const button = component.root.find(el => el.props.testID === 'button-open-pdf');
+      const button = component.root.find(el => el.props.testID === `${testID}-preview-pdf-button`);
 
       button.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
@@ -131,6 +133,7 @@ if (__TEST__) {
 
     it('should handle onVideoPlay callback', () => {
       const handlePress = jest.fn();
+      const testID = 'resource-2';
       const component = renderer.create(
         <TestContextProvider>
           <Resource
@@ -139,18 +142,19 @@ if (__TEST__) {
             description={video.description}
             thumbnail={video.poster}
             layout={fakeLayout}
-            testID="demo"
+            testID={testID}
             onPress={handlePress}
           />
         </TestContextProvider>
       );
 
-      const preview = component.root.find(el => el.props.testID === 'preview-video-demo');
+      const preview = component.root.find(el => el.props.testID === `${testID}-preview-video`);
       preview.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
     });
 
     it('should not call on Press if not provided', () => {
+      const testID = 'resource-3';
       const component = renderer.create(
         <TestContextProvider>
           <Resource
@@ -159,13 +163,13 @@ if (__TEST__) {
             description={video.description}
             thumbnail={video.poster}
             layout={fakeLayout}
-            testID="demo"
+            testID={testID}
             onPress={undefined}
           />
         </TestContextProvider>
       );
 
-      const preview = component.root.find(el => el.props.testID === 'preview-video-demo');
+      const preview = component.root.find(el => el.props.testID === `${testID}-preview-video`);
       const result = preview.props.onPress();
       expect(result).toBe(undefined);
     });
@@ -179,7 +183,7 @@ if (__TEST__) {
             layout={fakeLayout}
             description="some description"
             style={{height: 300}}
-            testID="demo"
+            testID="resource-4"
             onPress={undefined}
           />
         </TestContextProvider>

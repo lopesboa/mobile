@@ -6,7 +6,7 @@ import {storiesOf} from '@storybook/react-native';
 import {handleFakePress} from '../utils/tests';
 import {Component as ButtonSticky} from './button-sticky';
 
-storiesOf('Button Footer', module)
+storiesOf('ButtonSticky', module)
   .add('Default', () => (
     <ButtonSticky onPress={handleFakePress} testID="button-fake" analyticsID="button-fake">
       Here we go!

@@ -4330,10 +4330,16 @@ exports[`Storyshots Home Default 1`] = `
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Object {
-          "height": 35,
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          Object {
+            "height": 35,
+            "width": "100%",
+          },
+        ]
       }
     >
       <Image
@@ -4347,7 +4353,7 @@ exports[`Storyshots Home Default 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "uri": "https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=35",
           }
         }
         style={
@@ -4360,8 +4366,8 @@ exports[`Storyshots Home Default 1`] = `
               "top": 0,
             },
             Object {
-              "height": 35,
-              "width": "100%",
+              "height": undefined,
+              "width": undefined,
             },
             undefined,
           ]

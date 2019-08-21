@@ -1,33 +1,34 @@
 // @flow strict
 
-import {getImageDimensions} from './image';
-import type {Dimensions} from './image';
+import {getResizedImage} from './image';
 
 describe('Image', () => {
-  it('should return original dimensions', () => {
-    const result = getImageDimensions(640, 480);
-    const expected: Dimensions = {
-      width: 640,
-      height: 480
-    };
-    expect(result).toEqual(expected);
-  });
+  describe('getResizedImage', () => {
+    it('should return original url', () => {
+      const result = getResizedImage('//foo.bar.baz', {});
+      const expected = '//foo.bar.baz';
+      expect(result).toEqual(expected);
+    });
 
-  it('should return dimensions with ratio aspect set by width', () => {
-    const result = getImageDimensions(640, 480, 400);
-    const expected: Dimensions = {
-      width: 400,
-      height: 300
-    };
-    expect(result).toEqual(expected);
-  });
+    it('should return image cropped by width', () => {
+      const result = getResizedImage('//foo.bar.baz', {maxWidth: 200});
+      const expected =
+        'https://api.coorpacademy.com/api-service/medias?url=%2F%2Ffoo.bar.baz&m=crop&q=90&w=200';
+      expect(result).toEqual(expected);
+    });
 
-  it('should return dimensions with ratio aspect set by height and width', () => {
-    const result = getImageDimensions(640, 480, 400, 180);
-    const expected: Dimensions = {
-      width: 240,
-      height: 180
-    };
-    expect(result).toEqual(expected);
+    it('should return image cropped by height', () => {
+      const result = getResizedImage('//foo.bar.baz', {maxHeight: 200});
+      const expected =
+        'https://api.coorpacademy.com/api-service/medias?url=%2F%2Ffoo.bar.baz&m=crop&q=90&h=200';
+      expect(result).toEqual(expected);
+    });
+
+    it('should return image cropped width and height', () => {
+      const result = getResizedImage('//foo.bar.baz', {maxWidth: 300, maxHeight: 200});
+      const expected =
+        'https://api.coorpacademy.com/api-service/medias?url=%2F%2Ffoo.bar.baz&m=crop&q=90&w=300&h=200';
+      expect(result).toEqual(expected);
+    });
   });
 });

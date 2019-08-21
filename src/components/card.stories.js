@@ -5,7 +5,6 @@ import {Text, StyleSheet} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
 import {CARD_TYPE, CARD_DISPLAY_MODE, AUTHOR_TYPE} from '../const';
-import image from '../__fixtures__/assets/landscape-1.jpg';
 import type {Progression} from '../types';
 import theme from '../modules/theme';
 import {handleFakePress} from '../utils/tests';
@@ -27,6 +26,11 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(20, 23, 26, 0.15)'
   }
 });
+
+const image = {
+  uri:
+    '//static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
+};
 
 storiesOf('Card', module)
   .add('Tip', () => (

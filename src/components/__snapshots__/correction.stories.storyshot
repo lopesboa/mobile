@@ -1759,14 +1759,23 @@ exports[`Storyshots Correction Bad answer 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -1791,6 +1800,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -1820,7 +1830,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -1992,7 +2002,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -2446,9 +2456,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -2473,6 +2492,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -2494,7 +2514,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -2502,7 +2522,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -2713,7 +2733,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -2739,7 +2759,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -2787,7 +2807,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -5528,14 +5548,23 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -5560,6 +5589,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -5589,7 +5619,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -5761,7 +5791,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -6215,9 +6245,18 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -6242,6 +6281,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -6263,7 +6303,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -6271,7 +6311,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -6482,7 +6522,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -6508,7 +6548,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -6556,7 +6596,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed (cards order
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -9291,14 +9331,23 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -9323,6 +9372,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -9352,7 +9402,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -9524,7 +9574,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -9978,9 +10028,18 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -10005,6 +10064,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -10026,7 +10086,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -10034,7 +10094,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -10245,7 +10305,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -10271,7 +10331,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -10319,7 +10379,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed but extralif
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -12398,14 +12458,23 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -12430,6 +12499,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -12459,10 +12529,10 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               "opacity": 1,
                             }
                           }
-                          testID="preview-extralife-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-extralife"
                         >
                           <View
-                            testID="extra-life-resource-les_1"
+                            testID="card-resource-les_1-resource-preview-extralife-icon"
                           >
                             <View
                               style={
@@ -13065,7 +13135,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -13519,9 +13589,18 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -13546,6 +13625,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -13575,10 +13655,10 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                               "opacity": 1,
                             }
                           }
-                          testID="preview-extralife-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-extralife"
                         >
                           <View
-                            testID="extra-life-resource-les_2"
+                            testID="card-resource-les_2-resource-preview-extralife-icon"
                           >
                             <View
                               style={
@@ -14181,7 +14261,7 @@ exports[`Storyshots Correction Bad answer and lesson was not viewed, extralife i
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -17936,14 +18016,23 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -17968,6 +18057,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -17997,7 +18087,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -18169,7 +18259,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -18623,9 +18713,18 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -18650,6 +18749,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -18671,7 +18771,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -18679,7 +18779,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -18890,7 +18990,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -18916,7 +19016,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -18964,7 +19064,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed (cards order 4) 
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -20670,14 +20770,23 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -20702,6 +20811,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -20731,7 +20841,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -20903,7 +21013,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -21357,9 +21467,18 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -21384,6 +21503,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -21405,7 +21525,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -21413,7 +21533,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -21624,7 +21744,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -21650,7 +21770,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -21698,7 +21818,7 @@ exports[`Storyshots Correction Bad answer and lesson was viewed: extralife is co
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -25107,14 +25227,23 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                         },
                       ]
                     }
-                    testID="video-container-resource-les_7"
+                    testID="video-container-card-resource-les_7-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -25139,6 +25268,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_7-resource-container"
                       />
                       <View
                         style={
@@ -25168,7 +25298,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_7"
+                          testID="card-resource-les_7-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -25340,7 +25470,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     }
                   >
                     <View
-                      testID="resource-description-les_7"
+                      testID="card-resource-les_7-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -25794,9 +25924,18 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -25821,6 +25960,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -25842,7 +25982,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -25850,7 +25990,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -26061,7 +26201,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -26087,7 +26227,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -26135,7 +26275,7 @@ exports[`Storyshots Correction Bad answer and subtitles from resource with subti
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -28317,14 +28457,23 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -28349,6 +28498,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -28378,7 +28528,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -28550,7 +28700,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -29004,9 +29154,18 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -29031,6 +29190,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -29052,7 +29212,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -29060,7 +29220,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -29271,7 +29431,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -29297,7 +29457,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -29345,7 +29505,7 @@ exports[`Storyshots Correction Bad answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -32650,14 +32810,23 @@ exports[`Storyshots Correction Good answer 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -32682,6 +32851,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -32711,7 +32881,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -32883,7 +33053,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -33337,9 +33507,18 @@ exports[`Storyshots Correction Good answer 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -33364,6 +33543,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -33385,7 +33565,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -33393,7 +33573,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -33604,7 +33784,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -33630,7 +33810,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -33678,7 +33858,7 @@ exports[`Storyshots Correction Good answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -36419,14 +36599,23 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -36451,6 +36640,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -36480,7 +36670,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -36652,7 +36842,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -37106,9 +37296,18 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -37133,6 +37332,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -37154,7 +37354,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -37162,7 +37362,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -37373,7 +37573,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -37399,7 +37599,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -37447,7 +37647,7 @@ exports[`Storyshots Correction Good answer and lesson was not viewed (cards orde
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -41200,14 +41400,23 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -41232,6 +41441,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -41261,7 +41471,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -41433,7 +41643,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -41887,9 +42097,18 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -41914,6 +42133,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -41935,7 +42155,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -41943,7 +42163,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -42154,7 +42374,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -42180,7 +42400,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -42228,7 +42448,7 @@ exports[`Storyshots Correction Good answer and lesson was viewed (cards order 1)
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -43357,14 +43577,23 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -43389,6 +43618,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -43418,7 +43648,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -43590,7 +43820,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -44044,9 +44274,18 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -44071,6 +44310,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -44092,7 +44332,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -44100,7 +44340,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -44311,7 +44551,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -44337,7 +44577,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -44385,7 +44625,7 @@ exports[`Storyshots Correction Good answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -47335,14 +47575,23 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -47367,6 +47616,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -47396,7 +47646,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -47568,7 +47818,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -48022,9 +48272,18 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -48049,6 +48308,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -48070,7 +48330,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -48078,7 +48338,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -48289,7 +48549,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -48315,7 +48575,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -48363,7 +48623,7 @@ exports[`Storyshots Correction Last bad answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -50924,14 +51184,23 @@ exports[`Storyshots Correction Last good answer 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -50956,6 +51225,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -50985,7 +51255,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -51157,7 +51427,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -51611,9 +51881,18 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -51638,6 +51917,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -51659,7 +51939,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -51667,7 +51947,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -51878,7 +52158,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -51904,7 +52184,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -51952,7 +52232,7 @@ exports[`Storyshots Correction Last good answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -54105,14 +54385,23 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -54137,6 +54426,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -54166,7 +54456,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -54338,7 +54628,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -54792,9 +55082,18 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -54819,6 +55118,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -54840,7 +55140,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -54848,7 +55148,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -55059,7 +55359,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -55085,7 +55385,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -55133,7 +55433,7 @@ exports[`Storyshots Correction Last good answer without lives 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -57286,14 +57586,23 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -57318,6 +57627,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -57347,7 +57657,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -57519,7 +57829,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -57973,9 +58283,18 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -58000,6 +58319,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -58021,7 +58341,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -58029,7 +58349,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -58240,7 +58560,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -58266,7 +58586,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -58314,7 +58634,7 @@ exports[`Storyshots Correction Next button was pressed, should be set in loading
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -61049,14 +61369,23 @@ exports[`Storyshots Correction With only one answer 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -61081,6 +61410,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -61110,7 +61440,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -61282,7 +61612,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -61736,9 +62066,18 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -61763,6 +62102,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -61784,7 +62124,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -61792,7 +62132,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -62003,7 +62343,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -62029,7 +62369,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -62077,7 +62417,7 @@ exports[`Storyshots Correction With only one answer 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -64969,14 +65309,23 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                         },
                       ]
                     }
-                    testID="video-container-resource-les_1"
+                    testID="video-container-card-resource-les_1-resource"
                   >
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -65001,6 +65350,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_1-resource-container"
                       />
                       <View
                         style={
@@ -65030,7 +65380,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                               "opacity": 1,
                             }
                           }
-                          testID="preview-video-resource-les_1"
+                          testID="card-resource-les_1-resource-preview-video"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -65202,7 +65552,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_1"
+                      testID="card-resource-les_1-resource-description"
                     >
                       <View
                         style={Object {}}
@@ -65656,9 +66006,18 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     <View
                       accessibilityIgnoresInvertColors={true}
                       style={
-                        Object {
-                          "flex": 1,
-                        }
+                        Array [
+                          Object {
+                            "height": "100%",
+                            "width": "100%",
+                          },
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            undefined,
+                          ],
+                        ]
                       }
                     >
                       <Image
@@ -65683,6 +66042,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                             undefined,
                           ]
                         }
+                        testID="card-resource-les_2-resource-container"
                       />
                       <View
                         style={
@@ -65704,7 +66064,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                               "width": "45%",
                             }
                           }
-                          testID="preview-pdf-resource-les_2"
+                          testID="card-resource-les_2-resource-preview-pdf"
                         >
                           <View
                             style={
@@ -65712,7 +66072,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                                 "alignSelf": "center",
                               }
                             }
-                            testID="preview-pdf-icon"
+                            testID="card-resource-les_2-resource-preview-pdf-icon"
                           >
                             <RNSVGSvgView
                               align="xMidYMid"
@@ -65923,7 +66283,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                             }
                           />
                           <View
-                            testID="button-open-pdf"
+                            testID="card-resource-les_2-resource-preview-pdf-button"
                           >
                             <View
                               accessible={true}
@@ -65949,7 +66309,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                                   "opacity": 1,
                                 }
                               }
-                              testID="button-open-pdf-native"
+                              testID="card-resource-les_2-resource-preview-pdf-button-native"
                             >
                               <Text
                                 style={
@@ -65997,7 +66357,7 @@ exports[`Storyshots Correction With plenty of user answers and questions 1`] = `
                     }
                   >
                     <View
-                      testID="resource-description-les_2"
+                      testID="card-resource-les_2-resource-description"
                     >
                       <View
                         style={Object {}}

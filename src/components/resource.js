@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View} from 'react-native';
 import type {LessonType} from '@coorpacademy/progression-engine';
 
 import withLayout from '../containers/with-layout';
@@ -12,6 +12,7 @@ import Video from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
 import {getVideoProvider} from '../modules/media';
 import Preview, {EXTRALIFE} from './preview';
+import ImageBackground from './image-background';
 
 type Props = {|
   ...WithLayoutProps,
@@ -91,18 +92,16 @@ class Resource extends React.PureComponent<Props> {
 
       case RESOURCE_TYPE.IMG: {
         return (
-          <View style={{width: layout && layout.width}}>
-            <ImageBackground
-              testID={testID}
-              source={{uri: url && getCleanUri(url)}}
-              resizeMode={resizeMode}
-              style={{
-                ...style,
-                height: (style && style.height) || height, // it was too risky to refactor this so here we cover every possible case
-                width: layout && layout.width
-              }}
-            />
-          </View>
+          <ImageBackground
+            testID={testID}
+            source={{uri: url && getCleanUri(url)}}
+            resizeMode={resizeMode}
+            style={{
+              ...style,
+              height: (style && style.height) || height, // it was too risky to refactor this so here we cover every possible case
+              width: layout && layout.width
+            }}
+          />
         );
       }
       default:

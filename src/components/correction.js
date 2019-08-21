@@ -197,7 +197,11 @@ class Correction extends React.PureComponent<Props> {
   ) => {
     const {answers, userAnswers, question, tip, keyPoint, isCorrect} = this.props;
     // This is the offset added by the deck swiper
-    const testIDSuffix: string = resource ? resource.ref.toLowerCase() : '';
+    const testIDSuffix = resource ? resource.ref.toLowerCase() : '';
+    const testID =
+      type !== CARD_TYPE.RESOURCE
+        ? `card-${type.toLowerCase()}`
+        : `card-${type.toLowerCase()}-` + testIDSuffix;
 
     return (
       <BrandThemeContext.Consumer>
@@ -217,11 +221,7 @@ class Correction extends React.PureComponent<Props> {
               offsetBottom={this.getOffsetBottom()}
               expandedOffsetBottom={this.getExpandedOffsetBottom()}
               style={styles.card}
-              testID={
-                type !== CARD_TYPE.RESOURCE
-                  ? `card-${type.toLowerCase()}`
-                  : `card-${type.toLowerCase()}-` + testIDSuffix
-              }
+              testID={testID}
             >
               {type === CARD_TYPE.TIP && (
                 <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
@@ -252,14 +252,14 @@ class Correction extends React.PureComponent<Props> {
                     thumbnail={resource.poster}
                     subtitles={subtitleUri}
                     onPress={this.handlePress(resource.type)}
-                    testID={`resource-${testIDSuffix}`}
+                    testID={`${testID}-resource`}
                     extralifeOverlay={offeringExtraLife}
                     containerStyle={styles.resource}
                   />
                   <View style={styles.resourceTitleContainer}>
                     <Html
                       fontSize={theme.fontSize.regular}
-                      testID={`resource-description-${testIDSuffix}`}
+                      testID={`${testID}-resource-description`}
                       style={styles.resourceTitle}
                       isTextCentered
                     >

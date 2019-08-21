@@ -1,13 +1,13 @@
 // @flow strict
 
 import * as React from 'react';
-import {ImageBackground, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {
   NovaSolidAudioAudioControlPlay as PlayIcon,
   NovaLineFilesOfficeFileOfficePdf as PDFIcon
 } from '@coorpacademy/nova-icons';
-
 import type {LessonType} from '@coorpacademy/progression-engine';
+
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
@@ -18,6 +18,7 @@ import ExtraLife from './extralife';
 import Text from './text';
 import Touchable from './touchable';
 import Loader from './loader';
+import ImageBackground from './image-background';
 
 export const EXTRALIFE: string = 'extralife';
 
@@ -25,8 +26,13 @@ type Props = {|
   type: LessonType | typeof EXTRALIFE,
   source: File | {uri: string},
   isLoading?: boolean,
-  onPress: () => void,
-  testID?: string
+  hasOverlay?: boolean,
+  iconWidth?: number,
+  iconHeight?: number,
+  isIconVisible?: boolean,
+  onPress?: () => void,
+  testID?: string,
+  style?: ImageStyleProp
 |};
 
 const styles = StyleSheet.create({
@@ -52,45 +58,78 @@ const styles = StyleSheet.create({
   }
 });
 
-const Preview = ({type, source, isLoading, onPress, testID}: Props) => {
-  const testIDSuffix = testID ? '-' + testID : '';
+const Preview = ({
+  type,
+  source,
+  isLoading,
+  hasOverlay = true,
+  iconWidth,
+  iconHeight,
+  isIconVisible = true,
+  onPress,
+  testID,
+  style
+}: Props) => {
+  const testIDPrefix = testID ? `${testID}-` : '';
+  const Overlay = hasOverlay ? ResourceOverlay : React.Fragment;
+
   return (
-    <ImageBackground source={source} style={styles.image}>
-      <ResourceOverlay>
+    <ImageBackground
+      source={source}
+      style={[styles.image, style]}
+      testID={`${testIDPrefix}container`}
+    >
+      <Overlay>
         {type === RESOURCE_TYPE.VIDEO && (
           <Touchable
             onPress={onPress}
-            testID={'preview-video' + testIDSuffix}
+            testID={`${testIDPrefix}preview-video`}
             analyticsID="preview-video"
           >
-            {!isLoading && <PlayIcon color={theme.colors.white} height={70} width={70} />}
+            {isIconVisible && !isLoading && (
+              <PlayIcon
+                color={theme.colors.white}
+                height={iconHeight || 70}
+                width={iconWidth || 70}
+              />
+            )}
             {isLoading && <Loader height={36} />}
           </Touchable>
         )}
         {type === RESOURCE_TYPE.PDF && (
-          <View style={styles.pdf} testID={'preview-pdf' + testIDSuffix}>
-            <View testID="preview-pdf-icon" style={styles.pdfIcon}>
-              <PDFIcon color={theme.colors.white} height={45} width={45} />
-            </View>
-            <Space type="base" />
-            <Button
-              isInverted
-              isInlined
-              testID="button-open-pdf"
-              onPress={onPress}
-              analyticsID="button-open-pdf"
-            >
-              {translations.open}
-            </Button>
+          <View style={styles.pdf} testID={`${testIDPrefix}preview-pdf`}>
+            {isIconVisible && (
+              <View testID={`${testIDPrefix}preview-pdf-icon`} style={styles.pdfIcon}>
+                <PDFIcon
+                  color={theme.colors.white}
+                  height={iconHeight || 45}
+                  width={iconWidth || 45}
+                />
+              </View>
+            )}
+            {onPress && (
+              <React.Fragment>
+                <Space type="base" />
+                <Button
+                  isInverted
+                  isInlined
+                  testID={`${testIDPrefix}preview-pdf-button`}
+                  onPress={onPress}
+                  analyticsID="button-open-pdf"
+                >
+                  {translations.open}
+                </Button>
+              </React.Fragment>
+            )}
           </View>
         )}
         {type === EXTRALIFE && (
           <Touchable
             onPress={onPress}
-            testID={'preview-extralife' + testIDSuffix}
+            testID={`${testIDPrefix}preview-extralife`}
             analyticsID="preview-extralife"
           >
-            <View testID={'extra-life' + testIDSuffix}>
+            <View testID={`${testIDPrefix}preview-extralife-icon`}>
               <ExtraLife count={1} />
               <View style={styles.extralifeTxtContainer}>
                 <Text style={styles.extralifeTxt}>Bonus!</Text>
@@ -101,7 +140,7 @@ const Preview = ({type, source, isLoading, onPress, testID}: Props) => {
             </View>
           </Touchable>
         )}
-      </ResourceOverlay>
+      </Overlay>
     </ImageBackground>
   );
 };

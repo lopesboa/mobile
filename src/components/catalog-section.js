@@ -5,7 +5,6 @@ import {View, StyleSheet, FlatList} from 'react-native';
 
 import theme from '../modules/theme';
 import translations from '../translations';
-import {getCleanUri} from '../modules/uri';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {CARD_TYPE} from '../layer/data/_const';
 import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
@@ -102,7 +101,7 @@ class CatalogSection extends React.PureComponent<Props> {
                 current: item.completion,
                 count: 1
               }}
-              image={{uri: getCleanUri(item.image)}}
+              image={{uri: item.image}}
               authorType={authorType}
               authorName={authorType !== AUTHOR_TYPE.CUSTOM ? authorName : brandTheme.name}
               badge={item.isNew ? translations.new : ''}

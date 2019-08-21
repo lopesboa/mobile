@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Footer Default 1`] = `
+exports[`Storyshots ButtonSticky Default 1`] = `
 <View
   pointerEvents="none"
   style={
@@ -48,7 +48,7 @@ exports[`Storyshots Button Footer Default 1`] = `
 </View>
 `;
 
-exports[`Storyshots Button Footer With Layout 1`] = `
+exports[`Storyshots ButtonSticky With Layout 1`] = `
 Array [
   <View
     pointerEvents="none"

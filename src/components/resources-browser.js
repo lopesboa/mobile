@@ -1,27 +1,26 @@
 // @flow strict
 
 import * as React from 'react';
-import {FlatList, ImageBackground, View, StyleSheet} from 'react-native';
-import {
-  NovaSolidAudioAudioControlPlay as PlayIcon,
-  NovaLineFilesOfficeFileOfficePdf as PDFIcon
-} from '@coorpacademy/nova-icons';
+import {FlatList, View, StyleSheet} from 'react-native';
 
 import type {Resource} from '../types';
-import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
-import {getCleanUri} from '../modules/uri';
 import {BrandThemeContext} from './brand-theme-provider';
 import Html from './html';
 import Space from './space';
-import ResourceOverlay from './resource-overlay';
 import Touchable from './touchable';
+import Preview from './preview';
 
 type Props = {|
   onChange: (id: string) => void,
   selected?: string,
   resources: Array<Resource>
 |};
+
+const THUMBNAIL_PADDING = 2;
+const THUMBNAIL_BORDER_WIDTH = 2;
+const THUMBNAIL_WIDTH = 70;
+const THUMBNAIL_HEIGHT = 45;
 
 const styles = StyleSheet.create({
   container: {
@@ -32,15 +31,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: theme.spacing.small
   },
-  thumbnail: {
-    width: 70,
-    height: 45,
+  thumbnailContainer: {
+    height: THUMBNAIL_HEIGHT + THUMBNAIL_PADDING * 2 + THUMBNAIL_BORDER_WIDTH * 2,
+    width: THUMBNAIL_WIDTH + THUMBNAIL_PADDING * 2 + THUMBNAIL_BORDER_WIDTH * 2,
     padding: 2,
     resizeMode: 'stretch',
     borderWidth: 2,
     borderColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  thumbnail: {
+    width: THUMBNAIL_WIDTH,
+    height: THUMBNAIL_HEIGHT
   },
   image: {
     width: '100%',
@@ -97,37 +100,19 @@ class ResourcesBrowser extends React.PureComponent<Props> {
             return (
               <React.Fragment>
                 <View
-                  style={[styles.thumbnail, isSelected && selectedStyle]}
+                  style={[styles.thumbnailContainer, isSelected && selectedStyle]}
                   testID={`${testID}-thumbnail`}
                 >
-                  <View style={styles.image}>
-                    <ImageBackground
-                      source={{uri: resource.poster && getCleanUri(resource.poster)}}
-                      style={styles.image}
-                      resizeMode="cover"
-                    />
-                    {!isSelected && <ResourceOverlay />}
-                  </View>
-                  {/* $FlowFixMe img is not defined in progression-engine */}
-                  {resource.type === RESOURCE_TYPE.VIDEO && (
-                    <PlayIcon
-                      style={styles.icon}
-                      color={theme.colors.white}
-                      testID={`${testID}-video-icon`}
-                      height={20}
-                      width={20}
-                    />
-                  )}
-                  {/* $FlowFixMe img is not defined in progression-engine */}
-                  {resource.type === RESOURCE_TYPE.PDF && (
-                    <PDFIcon
-                      style={styles.icon}
-                      color={theme.colors.white}
-                      testID={`${testID}-pdf-icon`}
-                      height={20}
-                      width={20}
-                    />
-                  )}
+                  <Preview
+                    type={resource.type}
+                    source={{uri: resource.poster}}
+                    hasOverlay={!isSelected}
+                    iconWidth={20}
+                    iconHeight={20}
+                    isIconVisible={!isSelected}
+                    style={styles.thumbnail}
+                    testID={`${testID}-thumbnail-preview`}
+                  />
                 </View>
                 <Space type="small" />
                 <Html

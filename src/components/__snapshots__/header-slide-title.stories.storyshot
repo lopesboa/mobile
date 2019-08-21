@@ -32,19 +32,25 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Object {
-          "backgroundColor": "#ECEFF1",
-          "borderRadius": 1000,
-          "height": 28,
-          "overflow": "hidden",
-          "width": 28,
-        }
+        Array [
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 1000,
+            "height": 28,
+            "overflow": "hidden",
+            "width": 28,
+          },
+        ]
       }
     >
       <Image
         source={
           Object {
-            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
           }
         }
         style={
@@ -57,8 +63,8 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
               "top": 0,
             },
             Object {
-              "height": 28,
-              "width": 28,
+              "height": undefined,
+              "width": undefined,
             },
             undefined,
           ]
@@ -146,19 +152,25 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Object {
-          "backgroundColor": "#ECEFF1",
-          "borderRadius": 1000,
-          "height": 28,
-          "overflow": "hidden",
-          "width": 28,
-        }
+        Array [
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 1000,
+            "height": 28,
+            "overflow": "hidden",
+            "width": 28,
+          },
+        ]
       }
     >
       <Image
         source={
           Object {
-            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
           }
         }
         style={
@@ -171,8 +183,8 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
               "top": 0,
             },
             Object {
-              "height": 28,
-              "width": 28,
+              "height": undefined,
+              "width": undefined,
             },
             undefined,
           ]
@@ -260,19 +272,25 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
     <View
       accessibilityIgnoresInvertColors={true}
       style={
-        Object {
-          "backgroundColor": "#ECEFF1",
-          "borderRadius": 1000,
-          "height": 28,
-          "overflow": "hidden",
-          "width": 28,
-        }
+        Array [
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 1000,
+            "height": 28,
+            "overflow": "hidden",
+            "width": 28,
+          },
+        ]
       }
     >
       <Image
         source={
           Object {
-            "uri": "https://assets-jpcust.jwpsrv.com/thumbnails/2ad64hgq-720.jpg",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
           }
         }
         style={
@@ -285,8 +303,8 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
               "top": 0,
             },
             Object {
-              "height": 28,
-              "width": 28,
+              "height": undefined,
+              "width": undefined,
             },
             undefined,
           ]
@@ -370,7 +388,46 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
         "width": 28,
       }
     }
-  />
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Array [
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 1000,
+            "height": 28,
+            "overflow": "hidden",
+            "width": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+        testID="header-slide-title-image"
+      />
+    </View>
+  </View>
   <View
     style={
       Object {

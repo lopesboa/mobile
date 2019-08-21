@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {getProgressionContent, getLevel, getChapter} from '@coorpacademy/player-store';
+
 import {getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import {getCleanUri} from '../modules/uri';

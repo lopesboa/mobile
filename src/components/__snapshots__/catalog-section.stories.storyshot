@@ -4374,18 +4374,21 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   style={
                     Array [
                       Object {
-                        "flex": 1,
+                        "height": "100%",
+                        "width": "100%",
                       },
                       Object {
-                        "minHeight": 205,
+                        "height": 205,
+                        "width": 168,
                       },
                     ]
                   }
                 >
                   <Image
+                    resizeMode="cover"
                     source={
                       Object {
-                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg",
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&w=168&h=205",
                       }
                     }
                     style={
@@ -4404,7 +4407,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         undefined,
                       ]
                     }
-                    testID="background-image-catalog-section-withsomecards-item-foo-image"
+                    testID="catalog-section-withsomecards-item-foo-image"
                   />
                   <BVLinearGradient
                     colors={
@@ -4435,15 +4438,13 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             "flex": 1,
                           },
                           Object {
-                            "height": 205,
                             "padding": 16,
-                            "width": 168,
                           },
                         ],
                         undefined,
                       ]
                     }
-                    testID="gradient-catalog-section-withsomecards-item-foo-image"
+                    testID="catalog-section-withsomecards-item-foo-image-gradient"
                   >
                     <View
                       style={
@@ -4818,18 +4819,21 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   style={
                     Array [
                       Object {
-                        "flex": 1,
+                        "height": "100%",
+                        "width": "100%",
                       },
                       Object {
-                        "minHeight": 205,
+                        "height": 205,
+                        "width": 168,
                       },
                     ]
                   }
                 >
                   <Image
+                    resizeMode="cover"
                     source={
                       Object {
-                        "uri": "https://static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=168&h=205",
                       }
                     }
                     style={
@@ -4848,7 +4852,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                         undefined,
                       ]
                     }
-                    testID="background-image-catalog-section-withsomecards-item-bar-image"
+                    testID="catalog-section-withsomecards-item-bar-image"
                   />
                   <BVLinearGradient
                     colors={
@@ -4879,15 +4883,13 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             "flex": 1,
                           },
                           Object {
-                            "height": 205,
                             "padding": 16,
-                            "width": 168,
                           },
                         ],
                         undefined,
                       ]
                     }
-                    testID="gradient-catalog-section-withsomecards-item-bar-image"
+                    testID="catalog-section-withsomecards-item-bar-image-gradient"
                   >
                     <View
                       style={

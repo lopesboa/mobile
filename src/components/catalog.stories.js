@@ -19,7 +19,11 @@ if (__TEST__) {
 const sections = createSections();
 const sectionsWithCardsRef = sections.map((section, index) => ({
   ...section,
-  cardsRef: (index === 0 && ['foo']) || (index === 1 && ['bar']) || (index === 2 && []) || undefined
+  cardsRef:
+    (index === 0 && ['foo', 'bar']) ||
+    (index === 1 && ['bar', 'foo']) ||
+    (index === 2 && []) ||
+    undefined
 }));
 const sectionsWithEmptyCardsRef = sections.map((section, index) => ({
   ...section,
