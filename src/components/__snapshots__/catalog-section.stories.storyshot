@@ -81,6 +81,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
     disableVirtualization={false}
     getItem={[Function]}
     getItemCount={[Function]}
+    getItemLayout={[Function]}
     horizontal={true}
     initialNumToRender={10}
     keyExtractor={[Function]}
@@ -106,7 +107,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
   >
     <View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -362,7 +362,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -618,7 +617,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -874,7 +872,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -1130,7 +1127,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -1496,6 +1492,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
     disableVirtualization={false}
     getItem={[Function]}
     getItemCount={[Function]}
+    getItemLayout={[Function]}
     horizontal={true}
     initialNumToRender={10}
     keyExtractor={[Function]}
@@ -1521,7 +1518,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
   >
     <View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -1777,7 +1773,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -2033,7 +2028,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -2289,7 +2283,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -2545,7 +2538,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -2801,7 +2793,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -3057,7 +3048,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -3313,7 +3303,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -3569,7 +3558,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -3825,7 +3813,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -4083,7 +4070,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       <View
         style={
           Object {
-            "width": 0,
+            "width": 3520,
           }
         }
       />
@@ -4278,6 +4265,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
     disableVirtualization={false}
     getItem={[Function]}
     getItemCount={[Function]}
+    getItemLayout={[Function]}
     horizontal={true}
     initialNumToRender={10}
     keyExtractor={[Function]}
@@ -4303,7 +4291,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
   >
     <View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -4748,7 +4735,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -5192,7 +5178,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -5448,7 +5433,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -5704,7 +5688,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -5960,7 +5943,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -6216,7 +6198,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -6472,7 +6453,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -6728,7 +6708,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -6984,7 +6963,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
         </View>
       </View>
       <View
-        onLayout={[Function]}
         style={
           Array [
             Object {
@@ -7242,7 +7220,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       <View
         style={
           Object {
-            "width": 0,
+            "width": 3520,
           }
         }
       />

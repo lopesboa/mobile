@@ -119,6 +119,7 @@ describe('storeFixture', () => {
     };
 
     const catalogState = {
+      sectionsRef: [],
       entities: {
         cards: {},
         sections: {}
@@ -133,7 +134,9 @@ describe('storeFixture', () => {
       brand: null
     };
 
-    const permissionsState = {};
+    const permissionsState = {
+      camera: undefined
+    };
 
     const godModeState = false;
     const fastSlideState = false;
@@ -192,7 +195,9 @@ describe('storeFixture', () => {
         entities: {}
       },
       nextContent: {
-        entities: {}
+        entities: {
+          progression1: undefined
+        }
       }
     };
 

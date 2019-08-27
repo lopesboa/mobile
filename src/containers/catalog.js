@@ -2,47 +2,48 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {createArraySelector} from 'reselect-map';
 
 import CatalogComponent, {SEPARATOR_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
-import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import {fetchCards} from '../redux/actions/catalog/cards/fetch';
 import {fetchSections} from '../redux/actions/catalog/sections';
-import {getSection} from '../redux/utils/state-extract';
+import type {StoreState} from '../redux/store';
 import translations from '../translations';
+import isEqual from '../modules/equal';
 import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import type {Section} from '../types';
 import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
-type ConnectedStateProps = {|
-  sections: Array<Section | void>,
-  cards: Array<DisciplineCard | ChapterCard>,
-  children?: React.Node
+export type ConnectedStateProps = {|
+  sections: Array<Section | void>
 |};
 
 type ConnectedDispatchProps = {|
-  fetchCards: typeof fetchCards,
   fetchSections: typeof fetchSections
+|};
+
+export type OwnProps = {|
+  onCardPress: $PropertyType<ComponentProps, 'onCardPress'>,
+  children?: $PropertyType<ComponentProps, 'children'>
 |};
 
 type Props = {|
   ...ConnectedStateProps,
   ...ConnectedDispatchProps,
   ...WithLayoutProps,
-  onCardPress: $PropertyType<ComponentProps, 'onCardPress'>,
-  children?: $PropertyType<ComponentProps, 'children'>
+  ...OwnProps
 |};
 
 type State = {|
   isRefreshing: boolean
 |};
 
-const DEFAULT_LIMIT = 4;
-const DEBOUNCE_DURATION = 100;
+export const DEFAULT_LIMIT = 4;
+export const DEBOUNCE_DURATION = 100;
 
-class Catalog extends React.PureComponent<Props, State> {
+class Catalog extends React.Component<Props, State> {
   props: Props;
 
   state: State = {
@@ -55,6 +56,23 @@ class Catalog extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     this.fetchSections(0, this.getLimit(0));
+  }
+
+  shouldComponentUpdate({sections: nextSections, ...nextProps}: Props, nextState: State) {
+    const {sections, ...props} = this.props;
+    const emptySections = sections.filter(s => s && isEmptySection(s));
+    const nextEmptySections = nextSections.filter(s => s && isEmptySection(s));
+    const placeholderSections = sections.filter(s => s && s.cardsRef === undefined);
+    const nextPlaceholderSections = nextSections.filter(s => s && s.cardsRef === undefined);
+
+    // For performance purpose only (prevent useless render)
+    return (
+      sections.length !== nextSections.length ||
+      emptySections.length !== nextEmptySections.length ||
+      placeholderSections.length !== nextPlaceholderSections.length ||
+      !isEqual(this.state, nextState) ||
+      !isEqual(props, nextProps)
+    );
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -99,7 +117,7 @@ class Catalog extends React.PureComponent<Props, State> {
 
   getLimit = (offset: number): number => {
     const {layout, sections} = this.props;
-    if (!layout || !sections) {
+    if (!layout || sections.length === 0) {
       return DEFAULT_LIMIT;
     }
 
@@ -136,22 +154,16 @@ class Catalog extends React.PureComponent<Props, State> {
     }
   };
 
-  handleCardsScroll = (section: Section, offset: number, limit: number) => {
-    this.props.fetchCards(section.key, offset, limit);
-  };
-
   render() {
-    const {sections, cards, onCardPress, children} = this.props;
+    const {sections, onCardPress, children} = this.props;
     const {isRefreshing} = this.state;
 
     return (
       <CatalogComponent
         sections={sections.filter(section => !(section && isEmptySection(section)))}
-        cards={cards}
         onCardPress={onCardPress}
         onRefresh={this.handleRefresh}
         isRefreshing={isRefreshing}
-        onCardsScroll={this.handleCardsScroll}
         onScroll={this.handleScroll}
       >
         {children}
@@ -160,23 +172,23 @@ class Catalog extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const {sectionsRef = [], entities} = state.catalog;
-  const language = translations.getLanguage();
+const getSections = (state: StoreState) => state.catalog.entities.sections;
+const getSectionsRef = (state: StoreState) => state.catalog.sectionsRef || [];
+const getSectionsState = createArraySelector(
+  [getSectionsRef, getSections],
+  (sectionRef, sections) =>
+    sectionRef && sections[sectionRef] && sections[sectionRef][translations.getLanguage()]
+);
 
-  return {
-    sections: sectionsRef.map(key => key && getSection(state, key)),
-    cards: Object.keys(entities.cards)
-      .map(key => entities.cards[key][language])
-      .filter(item => item !== undefined)
-  };
-};
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  sections: getSectionsState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  fetchCards,
   fetchSections
 };
 
+export {Catalog as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

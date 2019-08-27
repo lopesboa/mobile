@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class CatalogSection extends React.PureComponent<Props> {
+class CatalogSection extends React.Component<Props> {
   props: Props;
 
   offsetX: number = 0;
@@ -71,6 +71,12 @@ class CatalogSection extends React.PureComponent<Props> {
 
     return `catalog-section-${sectionRef || testID}-item-${suffix}`;
   };
+
+  getItemLayout = (data?: Array<DisciplineCard | ChapterCard | void> | null, index: number) => ({
+    length: ITEM_WIDTH,
+    offset: ITEM_WIDTH * index,
+    index
+  });
 
   handleItemPress = (item: DisciplineCard | ChapterCard) => () =>
     this.props.onCardPress && this.props.onCardPress(item);
@@ -138,6 +144,7 @@ class CatalogSection extends React.PureComponent<Props> {
 
   render() {
     const {sectionRef, cards, onScroll, testID} = this.props;
+
     return (
       <View>
         {this.renderTitle()}
@@ -145,6 +152,7 @@ class CatalogSection extends React.PureComponent<Props> {
           data={cards && cards.length > 0 ? cards : new Array(PLACEHOLDER_LENGTH).fill()}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
+          getItemLayout={this.getItemLayout}
           contentContainerStyle={styles.list}
           showsHorizontalScrollIndicator={false}
           onScroll={onScroll}

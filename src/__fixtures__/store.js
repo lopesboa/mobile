@@ -6,9 +6,17 @@ import type {
 } from '@coorpacademy/player-store';
 import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
-import type {Level, Slide, Chapter, Discipline} from '../layer/data/_types';
+
+import type {Section} from '../types';
+import type {
+  Level,
+  Slide,
+  Chapter,
+  Discipline,
+  DisciplineCard,
+  ChapterCard
+} from '../layer/data/_types';
 import type {StoreState} from '../redux/store';
-import {initialState as defaultCatalog} from '../redux/reducers/catalog';
 import type {State as CatalogState} from '../redux/reducers/catalog';
 import {initialState as permissionsState} from '../redux/reducers/permissions';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
@@ -52,6 +60,27 @@ const reduceToMappedObject = <T: MappableObject>(
 export const createMapObject = <T: MappableObject>(items: Array<T>): {[key: string]: T} => {
   return items.reduce(reduceToMappedObject, {});
 };
+
+export const createCatalogState = (
+  sections?: Array<Section | void> = [],
+  cards?: Array<DisciplineCard | ChapterCard> = []
+): CatalogState => ({
+  sectionsRef: sections.map(section => (section ? section.key : undefined)),
+  entities: {
+    sections: sections.reduce((result, section) => {
+      if (section) {
+        return {...result, [section.key]: {en: section}};
+      }
+      return result;
+    }, {}),
+    cards: cards.reduce((result, card) => {
+      if (card) {
+        return {...result, [card.universalRef]: {en: card}};
+      }
+      return result;
+    }, {})
+  }
+});
 
 export const createStoreState = ({
   levels,
@@ -180,7 +209,7 @@ export const createStoreState = ({
       currentScreenName: 'dummyScreenName',
       currentTabName: 'dummyScreenName'
     },
-    catalog: catalog || defaultCatalog,
+    catalog: catalog || createCatalogState(),
     permissions: permissionsState,
     authentication,
     godmode,

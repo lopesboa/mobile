@@ -2,12 +2,12 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import renderer from 'react-test-renderer';
 
 import {createSections} from '../__fixtures__/sections';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
+import {createCatalogState} from '../__fixtures__/store';
 import {CARD_STATUS} from '../layer/data/_const';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, TestContextProvider} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
 import Catalog from './catalog';
 
@@ -46,69 +46,49 @@ const chapterCard = createChapterCard({
 
 storiesOf('Catalog', module)
   .add('Default', () => (
-    <Catalog
-      sections={[]}
-      cards={[]}
-      onCardPress={handleFakePress}
-      onRefresh={handleFakePress}
-      onCardsScroll={handleFakePress}
-      onScroll={handleFakePress}
-    />
+    <TestContextProvider store={{catalog: createCatalogState([], [])}}>
+      <Catalog
+        sections={[]}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Refreshing', () => (
-    <Catalog
-      sections={[]}
-      cards={[]}
-      onCardPress={handleFakePress}
-      onRefresh={handleFakePress}
-      onCardsScroll={handleFakePress}
-      onScroll={handleFakePress}
-      isRefreshing
-    />
+    <TestContextProvider store={{catalog: createCatalogState([], [])}}>
+      <Catalog
+        sections={[]}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+        isRefreshing
+      />
+    </TestContextProvider>
   ))
   .add('Sections with cards', () => (
-    <Catalog
-      sections={sectionsWithCardsRef}
-      cards={[disciplineCard, chapterCard]}
-      onCardPress={handleFakePress}
-      onRefresh={handleFakePress}
-      onCardsScroll={handleFakePress}
-      onScroll={handleFakePress}
-    />
+    <TestContextProvider
+      store={{catalog: createCatalogState(sectionsWithCardsRef, [disciplineCard, chapterCard])}}
+    >
+      <Catalog
+        sections={sectionsWithCardsRef}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Sections with bad card refs', () => (
-    <Catalog
-      sections={sectionsWithEmptyCardsRef}
-      cards={[disciplineCard, chapterCard]}
-      onCardPress={handleFakePress}
-      onRefresh={handleFakePress}
-      onCardsScroll={handleFakePress}
-      onScroll={handleFakePress}
-    />
+    <TestContextProvider
+      store={{
+        catalog: createCatalogState(sectionsWithEmptyCardsRef, [disciplineCard, chapterCard])
+      }}
+    >
+      <Catalog
+        sections={sectionsWithEmptyCardsRef}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+      />
+    </TestContextProvider>
   ));
-
-if (__TEST__) {
-  describe('Catalog', () => {
-    it('should handle scroll', () => {
-      const handleCardsScroll = jest.fn();
-      const component = renderer.create(
-        <Catalog
-          sections={sectionsWithCardsRef}
-          cards={[disciplineCard, chapterCard]}
-          onCardPress={handleFakePress}
-          onRefresh={handleFakePress}
-          onCardsScroll={handleCardsScroll}
-          onScroll={handleFakePress}
-        />
-      );
-      const firstSection = sectionsWithCardsRef[0];
-      const catalogSection = component.root.find(
-        // $FlowFixMe from fixtures
-        el => el.props.testID === `catalog-section-${firstSection.key}`
-      );
-      catalogSection.props.onScroll(500, 3);
-      expect(handleCardsScroll.mock.calls.length).toBe(1);
-      expect(handleCardsScroll.mock.calls[0]).toEqual([firstSection, 500, 3]);
-    });
-  });
-}

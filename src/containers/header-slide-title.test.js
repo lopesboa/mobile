@@ -2,16 +2,16 @@
 
 import {createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
-
+import {ENGINE, CONTENT_TYPE} from '../const';
 import {mapStateToProps} from './header-slide-title';
 
 describe('header-slide-title', () => {
   it('should return the accurate props', () => {
     const levelRef = 'dummyRef';
     const progression = createProgression({
-      engine: 'microlearning',
+      engine: ENGINE.MICROLEARNING,
       progressionContent: {
-        type: 'level',
+        type: CONTENT_TYPE.LEVEL,
         ref: levelRef
       }
     });
@@ -35,9 +35,9 @@ describe('header-slide-title', () => {
 
   it('should return empty props if the content level is unavailable', () => {
     const progression = createProgression({
-      engine: 'microlearning',
+      engine: ENGINE.MICROLEARNING,
       progressionContent: {
-        type: 'level',
+        type: CONTENT_TYPE.LEVEL,
         ref: '666'
       }
     });

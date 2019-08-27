@@ -1,6 +1,6 @@
 // @flow strict
 
-import {createStoreState} from '../__fixtures__/store';
+import {createStoreState, createCatalogState} from '../__fixtures__/store';
 import {createQCMGraphic} from '../__fixtures__/questions';
 import {createSlide} from '../__fixtures__/slides';
 import {createDiscipline} from '../__fixtures__/disciplines';
@@ -68,19 +68,7 @@ const disciplineCardTwo = createDisciplineCard({
 
 describe('LevelEnd', () => {
   describe('Props', () => {
-    const catalog = {
-      entities: {
-        cards: {
-          [disciplineCardOne.ref]: {
-            en: disciplineCardOne
-          },
-          [disciplineCardTwo.ref]: {
-            en: disciplineCardTwo
-          }
-        },
-        sections: {}
-      }
-    };
+    const catalog = createCatalogState([], [disciplineCardOne, disciplineCardTwo]);
 
     it('should have learner props', () => {
       const {mapStateToProps} = require('./level-end');

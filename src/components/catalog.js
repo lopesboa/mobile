@@ -11,12 +11,10 @@ import Space from './space';
 
 export type Props = {|
   sections: Array<Section | void>,
-  cards: Array<DisciplineCard | ChapterCard>,
   onCardPress: (DisciplineCard | ChapterCard) => void,
   onRefresh: () => void,
   isRefreshing?: boolean,
   onScroll: ScrollEvent => void,
-  onCardsScroll: (Section, offset: number, limit: number) => void,
   children?: React.Node
 |};
 
@@ -30,12 +28,8 @@ const SEPARATOR_SIZE = 'small';
 export const SEPARATOR_HEIGHT = theme.spacing[SEPARATOR_SIZE];
 const PLACEHOLDER_LENGTH = 3;
 
-class Catalog extends React.PureComponent<Props> {
+class Catalog extends React.Component<Props> {
   props: Props;
-
-  handleCardsScroll = (section: Section) => (offset: number, limit: number) => {
-    this.props.onCardsScroll(section, offset, limit);
-  };
 
   keyExtractor = (item: Section | void, index: number) => {
     const suffix = (item && item.key) || `${index}-placeholder`;
@@ -44,23 +38,18 @@ class Catalog extends React.PureComponent<Props> {
   };
 
   renderItem = ({item, index}: {item: Section | void, index: number}) => {
-    const {cards, onCardPress} = this.props;
+    const {onCardPress} = this.props;
     const testID = this.keyExtractor(item, index);
 
     if (!item) {
       return <CatalogSection testID={testID} />;
     }
 
-    const sectionCards =
-      item.cardsRef && item.cardsRef.map(ref => cards.find(card => card.universalRef === ref));
-
     return (
       <CatalogSection
         title={item.title}
         sectionRef={item.key}
-        cards={sectionCards}
         onCardPress={onCardPress}
-        onScroll={this.handleCardsScroll(item)}
         testID={testID}
       />
     );

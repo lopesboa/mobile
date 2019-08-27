@@ -21,6 +21,8 @@ declare type File = number;
 // Helper
 
 declare type $ExtractPropType = <T, R>(props: R) => R;
+type _ExtractReturn<B, F: (...args: any[]) => B> = B;
+declare type $ExtractReturn<F> = _ExtractReturn<*, F>;
 
 // React native types
 
