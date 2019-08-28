@@ -82,6 +82,12 @@ export type Section = {|
   cardsRef?: Array<string | void>
 |};
 
+export type ProgressionEngineVersions = {|
+  versions: {
+    [Engine]: string
+  }
+|};
+
 export type Brand = {|
   name: string,
   host: string,
@@ -91,7 +97,8 @@ export type Brand = {|
   },
   images: {
     'logo-mobile': string
-  }
+  },
+  progressionEngine: ProgressionEngineVersions
 |};
 
 export type PermissionStatus = 'authorized' | 'denied' | 'restricted' | 'undetermined';

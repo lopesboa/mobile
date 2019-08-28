@@ -8,6 +8,7 @@ import type {StoreAction, ErrorAction} from '../../_types';
 import {ENGINE} from '../../../const';
 import type {RestrictedResourceType} from '../../../layer/data/_types';
 import {RESTRICTED_RESOURCE_TYPE} from '../../../layer/data/_const';
+import {getEngineVersions} from '../../utils/state-extract';
 import {createChapterProgression} from './create-chapter-progression';
 import {createLevelProgression} from './create-level-progression';
 
@@ -45,6 +46,9 @@ export const createNextProgression = (
       throw new Error(`content type ${type} is not handled`);
     }
 
+    const state = getState();
+    const engineConfig = getEngineVersions(state);
+
     const lastProgression: Progression | null = await services.Progressions.findLast(
       type === RESTRICTED_RESOURCE_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
       ref
@@ -62,7 +66,7 @@ export const createNextProgression = (
       // $FlowFixMe await on dispatched action
       const {payload: progression}: {payload: Progression} = await dispatch(
         // $FlowFixMe wrong action
-        createChapterProgression(chapter)
+        createChapterProgression(chapter, engineConfig && engineConfig.versions.microlearning)
       );
 
       // $FlowFixMe wrong thunk action
@@ -76,7 +80,7 @@ export const createNextProgression = (
       // $FlowFixMe await on dispatched action
       const {payload: progression}: {payload: Progression} = await dispatch(
         // $FlowFixMe wrong action
-        createLevelProgression(level)
+        createLevelProgression(level, engineConfig && engineConfig.versions.learner)
       );
 
       // $FlowFixMe wrong thunk action

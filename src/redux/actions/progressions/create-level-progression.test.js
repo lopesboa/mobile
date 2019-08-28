@@ -19,17 +19,19 @@ describe('createLevelProgression', () => {
       chapterIds: []
     });
 
+    const ENGINE_VERSION = '2';
+
     // $FlowFixMe
     playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
       expect(ObjectId.isValid(_id)).toBeTruthy();
-      expect(engine).toEqual({ref: ENGINE.LEARNER, version: '2'});
+      expect(engine).toEqual({ref: ENGINE.LEARNER, version: ENGINE_VERSION});
       expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
-      expect(engineConfig).toEqual({livesDisabled: false, version: '2'});
+      expect(engineConfig).toEqual({livesDisabled: false, version: ENGINE_VERSION});
       return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
     });
 
     // $FlowFixMe
-    const actual = await createLevelProgression(level);
+    const actual = await createLevelProgression(level, ENGINE_VERSION);
 
     expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
     expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});

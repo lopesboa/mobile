@@ -7,7 +7,7 @@ import type {
 import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
-import type {Section} from '../types';
+import type {Section, Brand} from '../types';
 import type {
   Level,
   Slide,
@@ -20,6 +20,7 @@ import type {StoreState} from '../redux/store';
 import type {State as CatalogState} from '../redux/reducers/catalog';
 import {initialState as permissionsState} from '../redux/reducers/permissions';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
+import {createBrand} from './brands';
 
 type MappableObject =
   | {
@@ -82,6 +83,16 @@ export const createCatalogState = (
   }
 });
 
+export const createAuthenticationState = ({brand}: {brand?: Brand}) => {
+  return {
+    user: {
+      token: '__TOKEN__',
+      isGodModeUser: false
+    },
+    brand: brand || createBrand({})
+  };
+};
+
 export const createStoreState = ({
   levels,
   slides,
@@ -93,7 +104,7 @@ export const createStoreState = ({
   fastSlide: basefastSlide,
   data: baseData,
   ui: baseUi,
-  authentication: baseAuthentication,
+  authentication,
   nextContent
 }: {
   levels: Array<Level>,
@@ -122,14 +133,6 @@ export const createStoreState = ({
 
   const godmode = baseGodMode || false;
   const fastSlide = basefastSlide || false;
-
-  const authentication = baseAuthentication || {
-    user: {
-      token: '__TOKEN__',
-      isGodModeUser: false
-    },
-    brand: null
-  };
 
   const data = {
     answers: {
@@ -211,7 +214,7 @@ export const createStoreState = ({
     },
     catalog: catalog || createCatalogState(),
     permissions: permissionsState,
-    authentication,
+    authentication: authentication || createAuthenticationState({}),
     godmode,
     fastSlide,
     video: {

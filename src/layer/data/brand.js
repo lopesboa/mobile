@@ -4,7 +4,7 @@ import decode from 'jwt-decode';
 
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
-import type {Brand, JWT} from '../../types';
+import type {Brand, JWT, ProgressionEngineVersions} from '../../types';
 import {createBrand} from '../../__fixtures__/brands';
 
 export type Config = {|
@@ -24,7 +24,8 @@ export type Config = {|
         'logo-mobile': string
       }
     }
-  ]
+  ],
+  progressionEngine: ProgressionEngineVersions
 |};
 
 export const fetchBrand = async (token: string): Promise<Brand> => {
@@ -40,7 +41,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     }
   });
 
-  const {brand, themes}: Config = await response.json();
+  const {brand, themes, progressionEngine}: Config = await response.json();
 
   return {
     name: brand.name,
@@ -51,7 +52,8 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     },
     images: {
       'logo-mobile': themes[0].images['logo-mobile']
-    }
+    },
+    progressionEngine
   };
 };
 

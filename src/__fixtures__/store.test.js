@@ -2,13 +2,44 @@
 import type {QCMQuestion} from '@coorpacademy/progression-engine';
 
 import type {StoreState} from '../redux/store';
-import {createMapObject, createStoreState} from './store';
+import {createMapObject, createStoreState, createAuthenticationState} from './store';
 import {createLevel} from './levels';
 import {createSlide} from './slides';
 import {createQCM} from './questions';
 import {createProgression} from './progression';
 
 describe('storeFixture', () => {
+  it('should override progressionEngine', () => {
+    const authState = createAuthenticationState({
+      brand: {
+        colors: {
+          primary: '#00B0FF'
+        },
+        contentCategoryName: 'Mobile',
+        host: 'https://mobile-staging.coorpacademy.com',
+        images: {
+          'logo-mobile':
+            'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+        },
+        name: 'mobile',
+        progressionEngine: {
+          versions: {
+            learner: '1',
+            microlearning: 'latest'
+          }
+        }
+      }
+    });
+    const versions =
+      authState &&
+      authState.brand &&
+      authState.brand.progressionEngine &&
+      authState.brand.progressionEngine.versions;
+    expect(versions).toEqual({
+      learner: '1',
+      microlearning: 'latest'
+    });
+  });
   it('should reduce an array  of Mappable Objects to an object -- with ref', () => {
     const dummyObject1 = {ref: 'dummyId'};
     const dummyObject2 = {ref: 'dummyId2'};
@@ -131,7 +162,24 @@ describe('storeFixture', () => {
         token: '__TOKEN__',
         isGodModeUser: false
       },
-      brand: null
+      brand: {
+        colors: {
+          primary: '#00B0FF'
+        },
+        contentCategoryName: 'Mobile',
+        host: 'https://mobile-staging.coorpacademy.com',
+        images: {
+          'logo-mobile':
+            'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+        },
+        name: 'mobile',
+        progressionEngine: {
+          versions: {
+            learner: '2',
+            microlearning: '2'
+          }
+        }
+      }
     };
 
     const permissionsState = {

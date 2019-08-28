@@ -4,7 +4,7 @@ exports[`Storyshots BrandThemeProvider Default 1`] = `
 Array [
   <Text>
     Host: 
-    https://onboarding.coorpacademy.com
+    https://mobile-staging.coorpacademy.com
   </Text>,
   <Text
     style={
@@ -17,11 +17,41 @@ Array [
   </Text>,
   <Text>
     Content category name: 
-    Onboarding
+    Mobile
   </Text>,
   <Text>
     Name: 
-    onboarding
+    mobile
+  </Text>,
+  <Text>
+    Logo: 
+    https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png
+  </Text>,
+]
+`;
+
+exports[`Storyshots BrandThemeProvider With Brand 1`] = `
+Array [
+  <Text>
+    Host: 
+    https://mobile-staging.coorpacademy.com
+  </Text>,
+  <Text
+    style={
+      Object {
+        "color": "#00B0FF",
+      }
+    }
+  >
+    Primary color
+  </Text>,
+  <Text>
+    Content category name: 
+    Mobile
+  </Text>,
+  <Text>
+    Name: 
+    mobile
   </Text>,
   <Text>
     Logo: 

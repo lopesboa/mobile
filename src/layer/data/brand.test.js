@@ -61,7 +61,13 @@ describe('brand', () => {
                         'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
                     }
                   }
-                ]
+                ],
+                progressionEngine: {
+                  versions: {
+                    learner: '2',
+                    microlearning: '2'
+                  }
+                }
               })
           });
         }

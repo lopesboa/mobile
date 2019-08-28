@@ -15,7 +15,7 @@ import type {Slide} from '@coorpacademy/progression-engine';
 import type {Lives} from '@coorpacademy/player-store';
 
 import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
-import type {Section} from '../../types';
+import type {Section, ProgressionEngineVersions} from '../../types';
 import type {StoreState} from '../store';
 import type {State as PermissionsState} from '../reducers/permissions';
 import type {PermissionType} from '../actions/permissions';
@@ -123,3 +123,10 @@ export const getSection = (state: StoreState, key: string): Section | void =>
 export const getCard = (state: StoreState, ref: string): DisciplineCard | ChapterCard | void =>
   state.catalog.entities.cards[ref] &&
   state.catalog.entities.cards[ref][translations.getLanguage()];
+
+export const getEngineVersions = (state: StoreState): ProgressionEngineVersions | null =>
+  state &&
+  state.authentication &&
+  state.authentication.brand &&
+  state.authentication.brand.progressionEngine &&
+  state.authentication.brand.progressionEngine;

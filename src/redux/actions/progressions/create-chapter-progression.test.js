@@ -19,17 +19,19 @@ describe('createChapterProgression', () => {
       name: 'chapter'
     });
 
+    const ENGINE_VERSION = '2';
+
     // $FlowFixMe
     playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
       expect(ObjectId.isValid(_id)).toBeTruthy();
-      expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: '2'});
+      expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: ENGINE_VERSION});
       expect(content).toEqual({type: CONTENT_TYPE.CHAPTER, ref: 'cha_1'});
-      expect(engineConfig).toEqual({version: '2'});
+      expect(engineConfig).toEqual({version: ENGINE_VERSION});
       return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
     });
 
     // $FlowFixMe
-    const actual = await createChapterProgression(chapter);
+    const actual = await createChapterProgression(chapter, ENGINE_VERSION);
 
     expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
     expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});

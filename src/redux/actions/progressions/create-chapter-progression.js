@@ -8,14 +8,11 @@ import {ObjectId} from 'bson';
 import {getMostAccurateRef} from '../../../modules/reference';
 import {ENGINE} from '../../../const';
 
-const ENGINE_VERSION = '2';
-const ENGINE_CONFIG_VERSION = '2';
-
-export const createChapterProgression = (chapter: Chapter) => {
-  const engine: Engine = {ref: ENGINE.MICROLEARNING, version: ENGINE_VERSION};
+export const createChapterProgression = (chapter: Chapter, engineVersion?: string) => {
+  const engine: Engine = {ref: ENGINE.MICROLEARNING, version: engineVersion || 'latest'};
   const ref = getMostAccurateRef(chapter);
   const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref};
-  const engineConfig: EngineConfig = {version: ENGINE_CONFIG_VERSION};
+  const engineConfig: EngineConfig = {version: engineVersion || 'latest'};
 
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);
 };

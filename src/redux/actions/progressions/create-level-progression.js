@@ -8,16 +8,13 @@ import {ObjectId} from 'bson';
 import {ENGINE} from '../../../const';
 import {getMostAccurateRef} from '../../../modules/reference';
 
-const ENGINE_VERSION = '2';
-const ENGINE_CONFIG_VERSION = '2';
-
-export const createLevelProgression = (level: Level) => {
+export const createLevelProgression = (level: Level, engineVersion?: string) => {
   const ref = getMostAccurateRef(level);
-  const engine: Engine = {ref: ENGINE.LEARNER, version: ENGINE_VERSION};
+  const engine: Engine = {ref: ENGINE.LEARNER, version: engineVersion || 'latest'};
   // @todo use universalRef
   const content: GenericContent = {type: CONTENT_TYPE.LEVEL, ref};
   const engineConfig: EngineConfig = {
-    version: ENGINE_CONFIG_VERSION,
+    version: engineVersion || 'latest',
     livesDisabled: level.infiniteLives
   };
 

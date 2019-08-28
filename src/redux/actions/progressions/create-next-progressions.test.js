@@ -4,6 +4,8 @@ import {CONTENT_TYPE, ENGINE} from '../../../const';
 
 import {createChapter} from '../../../__fixtures__/chapters';
 import {createLevel} from '../../../__fixtures__/levels';
+import {createStoreState, createAuthenticationState} from '../../../__fixtures__/store';
+import {createProgression} from '../../../__fixtures__/progression';
 import {CREATE_NEXT_SUCCESS, createNextProgression} from './create-next-progression';
 
 const playerStore = require('@coorpacademy/player-store');
@@ -18,6 +20,24 @@ const level = createLevel({
   chapterIds: ['bar', 'baz'],
   name: 'level1'
 });
+
+const progression = createProgression({
+  engine: ENGINE.MICROLEARNING,
+  progressionContent: {
+    type: CONTENT_TYPE.LEVEL,
+    ref: ''
+  }
+});
+
+const getState = () =>
+  createStoreState({
+    levels: [],
+    disciplines: [],
+    chapters: [],
+    slides: [],
+    progression,
+    authentication: createAuthenticationState({})
+  });
 
 const getMockedContent = contentType => {
   switch (contentType) {
@@ -41,7 +61,6 @@ describe('Create next Progression', () => {
     it(`should create a new progression | ${contentType}`, async () => {
       const mockedContent = getMockedContent(contentType);
       const dispatch = jest.fn();
-      const getState = jest.fn();
       const options = {
         services: {
           Content: {
@@ -145,7 +164,6 @@ describe('Create next Progression', () => {
 
   it('should fail creating a progression of unknow type', async () => {
     const dispatch = jest.fn();
-    const getState = jest.fn();
     const options = {
       services: {}
     };
@@ -188,7 +206,6 @@ describe('Create next Progression', () => {
 
   it('should continue last progression if not finished yet', async () => {
     const dispatch = jest.fn();
-    const getState = jest.fn();
     const options = {
       services: {
         Content: {

@@ -26,6 +26,12 @@ const initialState: State = {
   images: {
     'logo-mobile':
       'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+  },
+  progressionEngine: {
+    versions: {
+      learner: '2',
+      microlearning: '2'
+    }
   }
 };
 
@@ -35,8 +41,9 @@ const BrandThemeProvider = ({children, brand}: Props) => (
   <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>
 );
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   brand: state.authentication.brand || initialState
 });
 
+export {BrandThemeProvider as Component};
 export default connect(mapStateToProps)(BrandThemeProvider);
