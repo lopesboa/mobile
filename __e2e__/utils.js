@@ -93,6 +93,12 @@ export const bypassAuthentication = async () => {
   await waitForExist('home');
 };
 
+export const wrongAnswer = async () => {
+  await element(by.id('question-screen')).swipe('up');
+  await element(by.id('question-choice-1')).tap();
+  await element(by.id('button-validate')).tap();
+};
+
 export default {
   reloadApp,
   getQuestionTab,

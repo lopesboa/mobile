@@ -1,12 +1,12 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
-
-const wrongAnswer = async () => {
-  await element(by.id('question-screen')).swipe('up');
-  await element(by.id('question-choice-1')).tap();
-  await element(by.id('button-validate')).tap();
-};
+import {
+  reloadApp,
+  bypassAuthentication,
+  tapCardOnSection,
+  waitForExist,
+  wrongAnswer
+} from './utils';
 
 describe('Lives', () => {
   beforeAll(async () => {
