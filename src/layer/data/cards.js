@@ -214,43 +214,44 @@ export const fetchCards = async (
   total: number
 |}> => {
   const language = translations.getLanguage();
+  let cards;
+  let total;
 
   if (__E2E__) {
     const disciplines = Object.keys(disciplinesBundle.disciplines).map(
       key => disciplinesBundle.disciplines[key]
     );
     const chapters = Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key]);
-    const cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
-    await saveDashboardCardsInAsyncStorage(cards, language);
 
-    const refreshedCards = await Promise.all(cards.map(refreshCard));
+    const _cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
+    cards = _cards.slice(offset, offset + limit);
+    total = _cards.length;
+  } else {
+    const query: QueryParams = {
+      ...section.query,
+      offset,
+      limit,
+      lang: language,
+      withoutAdaptive: true
+    };
 
-    return Promise.resolve({
-      cards: refreshedCards.slice(offset, offset + limit),
-      total: refreshedCards.length
+    const response = await fetch(`${host}${section.endpoint}?${buildUrlQueryParams(query)}`, {
+      headers: {authorization: token}
     });
+    const {
+      search_meta: {total: _total},
+      hits = []
+    }: {search_meta: {total: number}, hits?: Cards} = await response.json();
+
+    cards = hits;
+    total = _total;
   }
 
-  const query: QueryParams = {
-    ...section.query,
-    offset,
-    limit,
-    lang: language,
-    withoutAdaptive: true
-  };
-
-  const response = await fetch(`${host}${section.endpoint}?${buildUrlQueryParams(query)}`, {
-    headers: {authorization: token}
-  });
-  const {
-    search_meta: {total},
-    hits = []
-  }: {search_meta: {total: number}, hits?: Cards} = await response.json();
-
-  await saveDashboardCardsInAsyncStorage(hits, language);
+  await saveDashboardCardsInAsyncStorage(cards, language);
+  const refreshedCards = await Promise.all(cards.map(refreshCard));
 
   return {
-    cards: hits,
+    cards: refreshedCards,
     total
   };
 };

@@ -48,13 +48,19 @@ class CatalogSectionRefreshable extends React.Component<Props> {
 
   shouldComponentUpdate = ({cards: nextCards, ...nextProps}: Props) => {
     const {cards, ...props} = this.props;
+    const cardsCount = cards && cards.filter(Boolean).length;
+    const nextCardsCount = nextCards && nextCards.filter(Boolean).length;
+    const completion = cards.reduce((total, card) => total + ((card && card.completion) || 0), 0);
+    const nextCompletion = nextCards.reduce(
+      (total, card) => total + ((card && card.completion) || 0),
+      0
+    );
 
     return (
       typeof cards !== typeof nextCards ||
       // For performance purpose only (prevent useless render)
-      (cards &&
-        nextCards &&
-        cards.filter(card => card).length !== nextCards.filter(card => card).length) ||
+      cardsCount !== nextCardsCount ||
+      completion !== nextCompletion ||
       !isEqual(props, nextProps)
     );
   };
