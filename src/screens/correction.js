@@ -29,7 +29,6 @@ import {
   isGodModeEnabled as _isGodModeEnabled,
   isFastSlideEnabled as _isFastSlideEnabled
 } from '../redux/utils/state-extract';
-import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import {reduceToResources} from '../layer/data/mappers';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
@@ -82,14 +81,6 @@ type Props = {|
 
 class CorrectionScreen extends React.PureComponent<Props> {
   props: Props;
-
-  componentDidUpdate(prevProps: Props) {
-    const {isCorrect} = this.props;
-
-    if (prevProps.isCorrect === undefined && isCorrect !== undefined) {
-      playSound(isCorrect ? AUDIO_FILE.GOOD_ANSWER : AUDIO_FILE.WRONG_ANSWER);
-    }
-  }
 
   handlePDFButtonPress = (url: string, description: string) => {
     const pdfParams: PdfScreenParams = {

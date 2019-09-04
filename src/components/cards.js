@@ -5,6 +5,8 @@ import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 
 import theme from '../modules/theme';
 import type {CardType, Resource} from '../types';
+import withVibration from '../containers/with-vibration';
+import type {WithVibrationProps} from '../containers/with-vibration';
 
 export type Card = {|
   isCorrect: boolean,
@@ -15,6 +17,7 @@ export type Card = {|
 |};
 
 export type Props = {|
+  ...WithVibrationProps,
   testID: string,
   items: Array<Card>,
   renderItem: (Card, number) => React.Node,
@@ -33,26 +36,26 @@ class Cards extends React.PureComponent<Props> {
     this.swiper && this.swiper.forceUpdate();
   };
 
+  handleSwiped = (cardIndexSwiped: number) => {
+    const {onSwiped, vibration} = this.props;
+
+    vibration.vibrate();
+
+    onSwiped(cardIndexSwiped);
+  };
+
   handleRef = (element: DeckSwiper | null) => {
     this.swiper = element;
   };
 
   render() {
-    const {
-      items,
-      renderItem,
-      cardStyle,
-      onSwiped,
-      onSwipedAll,
-      cardIndexShown = 0,
-      testID
-    } = this.props;
+    const {items, renderItem, cardStyle, onSwipedAll, cardIndexShown = 0, testID} = this.props;
 
     return (
       <DeckSwiper
         testID={testID}
         cards={items}
-        onSwiped={onSwiped}
+        onSwiped={this.handleSwiped}
         onSwipedAll={onSwipedAll}
         cardIndex={cardIndexShown}
         renderCard={renderItem}
@@ -71,4 +74,5 @@ class Cards extends React.PureComponent<Props> {
   }
 }
 
-export default Cards;
+export {Cards as Component};
+export default withVibration(Cards);

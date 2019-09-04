@@ -16,7 +16,6 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Screen from '../components/screen';
 import {compareCards} from '../utils/content';
 import {getBestScore} from '../redux/utils/state-extract';
-import playSound, {AUDIO_FILE} from '../modules/audio-player';
 import {CONTENT_TYPE} from '../const';
 
 type ConnectedDispatchProps = {|
@@ -59,15 +58,6 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
     ...navigationOptions,
     headerStyle: {}
   });
-
-  componentDidMount() {
-    const {isCorrect} = this.props.navigation.state.params;
-
-    if (isCorrect) {
-      return playSound(AUDIO_FILE.SUCCESS_LEVEL);
-    }
-    return playSound(AUDIO_FILE.FAILURE_LEVEL);
-  }
 
   handleClosePress = () => {
     const {navigation} = this.props;

@@ -32,45 +32,49 @@ module.exports = {
       statements: 100
     },
     'src/containers': {
-      branches: 42,
-      functions: 44,
-      lines: 47,
+      // @todo increase this value
+      branches: 40,
+      // @todo increase this value
+      functions: 42,
+      // @todo increase this value
+      lines: 46,
+      // @todo increase this value
       statements: 47
     },
     'src/screens': {
-      branches: 39,
-      functions: 11,
-      lines: 27,
-      statements: 26
+      // @todo increase this value
+      branches: 41,
+      // @todo increase this value
+      functions: 12,
+      // @todo increase this value
+      lines: 28,
+      // @todo increase this value
+      statements: 27
     },
     'src/redux': {
-      branches: 88,
+      branches: 96,
       function: 100,
       lines: 100,
       statements: 100
     },
     'src/layer': {
       // @todo increase this value
-      branches: 90,
+      branches: 91,
       function: 100,
       lines: 99,
       statements: 99
     },
     'src/modules': {
-      branches: 97,
+      branches: 100,
       functions: 100,
       lines: 100,
       statements: 100
     },
     'src/services': {
-      // @todo increase this value
-      branches: 83.3,
-      // @todo increase this value
-      function: 75,
-      // @todo increase this value
-      lines: 55,
-      // @todo increase this value
-      statements: 55
+      branches: 100,
+      function: 100,
+      lines: 100,
+      statements: 100
     }
   },
   verbose: true

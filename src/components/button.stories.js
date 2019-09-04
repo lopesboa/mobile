@@ -4,7 +4,7 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
-import {handleFakePress, createFakeAnalytics} from '../utils/tests';
+import {handleFakePress, createFakeAnalytics, createFakeVibration} from '../utils/tests';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import {__TEST__} from '../modules/environment';
 import {Component as Button} from './button';
@@ -14,6 +14,7 @@ storiesOf('Button', module)
     <Button
       onPress={handleFakePress}
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -25,6 +26,7 @@ storiesOf('Button', module)
       onPress={handleFakePress}
       isDisabled
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -36,6 +38,7 @@ storiesOf('Button', module)
       onPress={handleFakePress}
       isLoading
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -47,6 +50,7 @@ storiesOf('Button', module)
       onPress={handleFakePress}
       isInverted
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -58,6 +62,7 @@ storiesOf('Button', module)
       onPress={handleFakePress}
       isSecondary
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -70,6 +75,7 @@ storiesOf('Button', module)
       isSecondary
       isInverted
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -81,6 +87,7 @@ storiesOf('Button', module)
       onPress={handleFakePress}
       isTextSecondary
       testID="fake-button"
+      vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
     >
@@ -94,11 +101,13 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const analytics = createFakeAnalytics();
       const analyticsID = 'fake-button';
+      const vibration = createFakeVibration();
       const component = renderer.create(
         <Button
           onPress={handlePress}
           isTextSecondary
           testID="fake-button"
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
         >
@@ -110,6 +119,7 @@ if (__TEST__) {
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
     });
 
@@ -117,6 +127,7 @@ if (__TEST__) {
       const handlePress = jest.fn();
       const analytics = createFakeAnalytics();
       const analyticsID = 'fake-button';
+      const vibration = createFakeVibration();
       const analyticsParams = {
         foo: 'bar',
         baz: 'qux'
@@ -126,6 +137,7 @@ if (__TEST__) {
           onPress={handlePress}
           isTextSecondary
           testID="fake-button"
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
           analyticsParams={analyticsParams}
@@ -139,6 +151,7 @@ if (__TEST__) {
         ...analyticsParams,
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
     });
   });

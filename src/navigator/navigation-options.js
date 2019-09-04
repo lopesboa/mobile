@@ -4,8 +4,9 @@ import * as React from 'react';
 import {StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
-import {BACKGROUND_COLOR as SCREEN_BACKGROUND_COLOR} from '../components/screen';
+import HeaderLeft from '../containers/header-left';
 import HeaderBackIcon from '../components/header-back-icon';
+import {BACKGROUND_COLOR as SCREEN_BACKGROUND_COLOR} from '../components/screen';
 
 export const HEADER_BACKGROUND_COLOR = theme.colors.gray.extra;
 export const HEADER_HEIGHT = 60;
@@ -36,12 +37,14 @@ const navigationOptions: NavigationScreenConfig<*> = {
     paddingTop: 0,
     height: HEADER_HEIGHT
   },
+  headerLeft: HeaderLeft,
   headerBackImage: <HeaderBackIcon style={styles.back} />
 };
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<*> = {
   ...navigationOptions,
   header: null,
+  headerLeft: null,
   headerBackImage: null,
   headerRight: null,
   gesturesEnabled: false,

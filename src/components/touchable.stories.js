@@ -4,15 +4,21 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
-import {createFakeAnalytics} from '../utils/tests';
+import {createFakeAnalytics, createFakeVibration} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import {Component as Touchable} from './touchable';
 
 storiesOf('Touchable', module)
-  .add('Default', () => <Touchable analyticsID="fake-touchable" />)
-  .add('Without feedback', () => <Touchable analyticsID="fake-touchable" />)
-  .add('Highlight', () => <Touchable analyticsID="fake-touchable" />);
+  .add('Default', () => (
+    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+  ))
+  .add('Without feedback', () => (
+    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+  ))
+  .add('Highlight', () => (
+    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+  ));
 
 if (__TEST__) {
   describe('Touchable', () => {
@@ -23,22 +29,31 @@ if (__TEST__) {
     };
 
     it('should not handle onPress', () => {
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
-        <Touchable analytics={analytics} analyticsID={analyticsID} testID="touchable-fake" />
+        <Touchable
+          vibration={vibration}
+          analytics={analytics}
+          analyticsID={analyticsID}
+          testID="touchable-fake"
+        />
       );
       const touchable = component.root.find(
         el => el.props.testID === 'touchable-fake' && !el.props.analytics
       );
       touchable.props.onPress();
+      expect(vibration.vibrate).not.toHaveBeenCalled();
       expect(analytics.logEvent).not.toHaveBeenCalled();
     });
 
     it('should handle onPress', () => {
       const handlePress = jest.fn();
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
         <Touchable
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
           onPress={handlePress}
@@ -52,14 +67,17 @@ if (__TEST__) {
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
     });
 
     it('should handle onPress with arguments', () => {
       const handlePress = jest.fn();
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
         <Touchable
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
           analyticsParams={analyticsParams}
@@ -75,26 +93,36 @@ if (__TEST__) {
         ...analyticsParams,
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
     });
 
     it('should not handle onLongPress', () => {
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
-        <Touchable analytics={analytics} analyticsID={analyticsID} testID="touchable-fake" />
+        <Touchable
+          vibration={vibration}
+          analytics={analytics}
+          analyticsID={analyticsID}
+          testID="touchable-fake"
+        />
       );
       const touchable = component.root.find(
         el => el.props.testID === 'touchable-fake' && !el.props.analytics
       );
       touchable.props.onLongPress();
+      expect(vibration.vibrate).not.toHaveBeenCalled();
       expect(analytics.logEvent).not.toHaveBeenCalled();
     });
 
     it('should handle onLongPress', () => {
       const handleLongPress = jest.fn();
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
         <Touchable
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
           onLongPress={handleLongPress}
@@ -108,14 +136,17 @@ if (__TEST__) {
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleLongPress).toHaveBeenCalled();
     });
 
     it('should handle onLongPress with arguments', () => {
       const handleLongPress = jest.fn();
+      const vibration = createFakeVibration();
       const analytics = createFakeAnalytics();
       const component = renderer.create(
         <Touchable
+          vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
           analyticsParams={analyticsParams}
@@ -131,6 +162,7 @@ if (__TEST__) {
         ...analyticsParams,
         id: analyticsID
       });
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleLongPress).toHaveBeenCalled();
     });
   });

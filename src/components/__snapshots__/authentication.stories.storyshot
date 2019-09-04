@@ -801,6 +801,7 @@ Array [
                         },
                       }
                     }
+                    testID="html-base"
                     textSelectable={false}
                   >
                     <Text

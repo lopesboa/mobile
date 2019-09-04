@@ -51,10 +51,9 @@ target 'Coorpacademy' do
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
-
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
-
   pod 'RNSound', :path => '../node_modules/react-native-sound'
+  pod 'RNReactNativeHapticFeedback', :path => '../node_modules/react-native-haptic-feedback'
 
 end
 

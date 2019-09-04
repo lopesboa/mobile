@@ -8,10 +8,13 @@ import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {AnalyticsEventParams} from '../types';
 import withAnalytics from '../containers/with-analytics';
 import type {WithAnalyticsProps} from '../containers/with-analytics';
+import withVibration from '../containers/with-vibration';
+import type {WithVibrationProps} from '../containers/with-vibration';
 
 type Props = $Exact<{|
   ...TouchableGenericProps,
   ...WithAnalyticsProps,
+  ...WithVibrationProps,
   isHighlight?: boolean,
   isWithoutFeedback?: boolean,
   // for TouchableOpacity
@@ -26,11 +29,13 @@ class Touchable extends React.PureComponent<Props> {
   props: Props;
 
   handlePress: $PropertyType<Props, 'onPress'> = event => {
-    const {analytics, analyticsID, analyticsParams, onPress} = this.props;
+    const {vibration, analytics, analyticsID, analyticsParams, onPress} = this.props;
 
     if (!onPress) {
       return;
     }
+
+    vibration.vibrate();
 
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.PRESS, {
@@ -42,11 +47,13 @@ class Touchable extends React.PureComponent<Props> {
   };
 
   handleLongPress: $PropertyType<Props, 'onPress'> = event => {
-    const {analytics, analyticsID, analyticsParams, onLongPress} = this.props;
+    const {vibration, analytics, analyticsID, analyticsParams, onLongPress} = this.props;
 
     if (!onLongPress) {
       return;
     }
+
+    vibration.vibrate();
 
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
@@ -61,6 +68,7 @@ class Touchable extends React.PureComponent<Props> {
     const {
       /* only used by this component */
       /* eslint-disable no-unused-vars */
+      vibration,
       analytics,
       analyticsID,
       analyticsParams,
@@ -106,4 +114,4 @@ class Touchable extends React.PureComponent<Props> {
 }
 
 export {Touchable as Component};
-export default withAnalytics(Touchable);
+export default withVibration(withAnalytics(Touchable));

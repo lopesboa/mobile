@@ -11,6 +11,10 @@ import theme from '../modules/theme';
 import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
+import withVibration from '../containers/with-vibration';
+import type {WithVibrationProps} from '../containers/with-vibration';
+import withAudio from '../containers/with-audio';
+import type {WithAudioProps} from '../containers/with-audio';
 import Cards from '../containers/cards-swipable';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
@@ -101,6 +105,8 @@ const styles = StyleSheet.create({
 
 type Props = $Exact<{|
   ...WithLayoutProps,
+  ...WithVibrationProps,
+  ...WithAudioProps,
   question: string,
   answers: Array<string>,
   userAnswers: Array<string>,
@@ -121,6 +127,20 @@ type Props = $Exact<{|
 
 class Correction extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidUpdate(prevProps: Props) {
+    const {isCorrect, vibration, audio} = this.props;
+
+    if (prevProps.isCorrect === undefined && isCorrect !== undefined) {
+      if (!isCorrect) {
+        vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
+        audio.play(audio.AUDIO_FILE.WRONG_ANSWER);
+      } else {
+        vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
+        audio.play(audio.AUDIO_FILE.GOOD_ANSWER);
+      }
+    }
+  }
 
   handleResourcePress = (lessonType: LessonType) => (url?: string, description?: string) => {
     const {onPDFButtonPress, onVideoPlay} = this.props;
@@ -366,4 +386,4 @@ class Correction extends React.PureComponent<Props> {
 }
 
 export {Correction as Component};
-export default withLayout(Correction);
+export default withVibration(withAudio(withLayout(Correction)));

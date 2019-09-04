@@ -7,7 +7,13 @@ import renderer from 'react-test-renderer';
 import {__TEST__} from '../modules/environment';
 import {createAnswer} from '../__fixtures__/answers';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
-import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
+import {
+  TestContextProvider,
+  handleFakePress,
+  fakeLayout,
+  createFakeVibration,
+  createFakeAudio
+} from '../utils/tests';
 import {reduceToResources} from '../layer/data/mappers';
 import {Component as Correction} from './correction';
 
@@ -36,6 +42,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -54,6 +62,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -73,6 +83,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -91,6 +103,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -110,6 +124,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -127,6 +143,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -146,6 +164,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -165,6 +185,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ))
@@ -183,6 +205,8 @@ storiesOf('Correction', module)
         onButtonPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        vibration={createFakeVibration()}
+        audio={createFakeAudio()}
       />
     </TestContextProvider>
   ));
@@ -207,6 +231,8 @@ if (__TEST__) {
             onButtonPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleVideoPlay}
+            vibration={createFakeVibration()}
+            audio={createFakeAudio()}
           />
         </TestContextProvider>
       );
@@ -235,6 +261,8 @@ if (__TEST__) {
             onButtonPress={handleFakePress}
             onPDFButtonPress={handlePDFButtonPress}
             onVideoPlay={handleFakePress}
+            vibration={createFakeVibration()}
+            audio={createFakeAudio()}
           />
         </TestContextProvider>
       );
@@ -246,6 +274,166 @@ if (__TEST__) {
 
       expect(handlePDFButtonPress).toHaveBeenCalledTimes(1);
       expect(handlePDFButtonPress).toHaveBeenCalledWith(fakeUrl, fakeDescription);
+    });
+
+    it('should trigger sound and vibration on success', () => {
+      const vibration = createFakeVibration();
+      const audio = createFakeAudio();
+
+      const correction = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
+      expect(audio.play).toHaveBeenCalledTimes(0);
+
+      correction.update(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            isCorrect
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(vibration.vibrate).toHaveBeenCalledWith(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
+      expect(audio.play).toHaveBeenCalledTimes(1);
+      expect(audio.play).toHaveBeenCalledWith(audio.AUDIO_FILE.GOOD_ANSWER);
+    });
+
+    it('should trigger sound and vibration on error', () => {
+      const vibration = createFakeVibration();
+      const audio = createFakeAudio();
+
+      const correction = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
+      expect(audio.play).toHaveBeenCalledTimes(0);
+
+      correction.update(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            isCorrect={false}
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(vibration.vibrate).toHaveBeenCalledWith(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
+      expect(audio.play).toHaveBeenCalledTimes(1);
+      expect(audio.play).toHaveBeenCalledWith(audio.AUDIO_FILE.WRONG_ANSWER);
+    });
+
+    it('should not trigger any sound or vibration', () => {
+      const vibration = createFakeVibration();
+      const audio = createFakeAudio();
+
+      const correction = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            isCorrect={false}
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
+      expect(audio.play).toHaveBeenCalledTimes(0);
+
+      correction.update(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
+            lives={3}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={audio}
+          />
+        </TestContextProvider>
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
+      expect(audio.play).toHaveBeenCalledTimes(0);
     });
   });
 }

@@ -7,13 +7,14 @@ import ButtonBase from 'apsl-react-native-button';
 import theme from '../modules/theme';
 import withAnalytics from '../containers/with-analytics';
 import type {WithAnalyticsProps} from '../containers/with-analytics';
+import withVibration from '../containers/with-vibration';
+import type {WithVibrationProps} from '../containers/with-vibration';
 import type {AnalyticsEventParams} from '../types';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import {BrandThemeContext} from './brand-theme-provider';
 import {DEFAULT_STYLE as DEFAULT_TEXT_TYPE} from './text';
 
-export type Props = $Exact<{|
-  ...WithAnalyticsProps,
+export type OwnProps = {|
   onPress: () => void,
   isDisabled?: boolean,
   isInverted?: boolean,
@@ -25,6 +26,12 @@ export type Props = $Exact<{|
   testID?: string,
   analyticsID: string,
   analyticsParams?: AnalyticsEventParams
+|};
+
+export type Props = $Exact<{|
+  ...WithAnalyticsProps,
+  ...WithVibrationProps,
+  ...OwnProps
 |}>;
 
 export const HEIGHT = 54;
@@ -70,7 +77,9 @@ class Button extends React.PureComponent<Props> {
   props: Props;
 
   handlePress = () => {
-    const {onPress, analytics, analyticsID, analyticsParams} = this.props;
+    const {onPress, vibration, analytics, analyticsID, analyticsParams} = this.props;
+
+    vibration.vibrate();
 
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.PRESS, {
@@ -141,4 +150,4 @@ class Button extends React.PureComponent<Props> {
 }
 
 export {Button as Component};
-export default withAnalytics(Button);
+export default withVibration(withAnalytics(Button));

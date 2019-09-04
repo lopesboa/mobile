@@ -14,15 +14,6 @@ import {CARD_STATUS} from '../layer/data/_const';
 import {mapToLevelAPI, mapToChapterAPI} from '../layer/data/mappers';
 import type {ConnectedStateProps} from './level-end';
 
-jest.mock('../modules/audio-player', () => ({
-  __esModule: true,
-  default: jest.fn(),
-  AUDIO_FILE: {
-    SUCCESS_LEVEL: 'success.mp3',
-    FAILURE_LEVEL: 'failure.mp3'
-  }
-}));
-
 const question = createQCMGraphic({});
 const context = createContextWithImage({title: 'A beautifull rainy day'});
 const slide = createSlide({

@@ -435,6 +435,7 @@ exports[`Storyshots AuthenticationFooter Default 1`] = `
               },
             }
           }
+          testID="html-base"
           textSelectable={false}
         >
           <Text

@@ -1,12 +1,11 @@
 // @flow
 
-import {NativeModules, ScrollView} from 'react-native';
+import {NativeModules, ScrollView, Vibration} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 
 // AsyncStorage
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
-jest.mock('react-native-sound', () => ({IsAndroid: true, setCategory: () => {}}));
 // global mocks
 global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
 
@@ -14,6 +13,9 @@ global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
 ScrollView.propTypes = {
   decelerationRate: () => {}
 };
+
+Vibration.vibrate = () => {};
+Vibration.cancel = () => {};
 
 jest.mock('NativeEventEmitter', () => {
   return class MockNativeEventEmitter {
@@ -137,4 +139,17 @@ jest.mock('./src/containers/with-layout');
 
 jest.mock('react-native-email-link', () => ({
   openInbox: jest.fn(() => {})
+}));
+
+// react-native-sound
+
+jest.mock('react-native-sound', () => ({
+  IsAndroid: true,
+  setCategory: () => {}
+}));
+
+// react-native-haptic-feedback
+
+jest.mock('react-native-haptic-feedback', () => ({
+  trigger: jest.fn()
 }));

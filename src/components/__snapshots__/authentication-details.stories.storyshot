@@ -2118,6 +2118,7 @@ Array [
                         },
                       }
                     }
+                    testID="html-base"
                     textSelectable={false}
                   >
                     <Text
@@ -5271,6 +5272,7 @@ Array [
                         },
                       }
                     }
+                    testID="html-base"
                     textSelectable={false}
                   >
                     <Text

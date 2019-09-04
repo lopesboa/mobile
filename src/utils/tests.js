@@ -11,6 +11,10 @@ import createStore from '../redux';
 import {__TEST__} from '../modules/environment';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Layout} from '../containers/with-layout';
+import {VIBRATION_TYPE} from '../containers/with-vibration';
+import type {Vibration} from '../containers/with-vibration';
+import {AUDIO_FILE} from '../containers/with-audio';
+import type {Audio} from '../containers/with-audio';
 import type {State as AnalyticsState} from '../components/analytics-provider';
 
 export const createFakeStore = <S>(state?: S) => ({
@@ -54,8 +58,16 @@ export const sleep = (duration: number = 10): Promise<void> =>
 
 export const fakeLayout: Layout = {width: 320, height: 768};
 
-export const createFakeAnalytics = (): AnalyticsState => {
-  return {
-    logEvent: __TEST__ ? jest.fn() : () => {}
-  };
-};
+export const createFakeAnalytics = (): AnalyticsState => ({
+  logEvent: __TEST__ ? jest.fn() : () => {}
+});
+
+export const createFakeVibration = (): Vibration => ({
+  VIBRATION_TYPE,
+  vibrate: __TEST__ ? jest.fn() : () => {}
+});
+
+export const createFakeAudio = (): Audio => ({
+  AUDIO_FILE,
+  play: __TEST__ ? jest.fn() : () => {}
+});

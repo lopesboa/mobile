@@ -6,10 +6,10 @@ import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, createFakeVibration} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
 import {CARD_TYPE} from '../const';
-import Cards from './cards';
+import {Component as Cards} from './cards';
 import type {Card} from './cards';
 
 const items: Array<Card> = [
@@ -32,30 +32,35 @@ storiesOf('Cards', module).add('Default', () => (
     onSwipedAll={handleFakePress}
     items={items}
     renderItem={renderCard}
+    vibration={createFakeVibration()}
   />
 ));
 
 if (__TEST__) {
   describe('Cards', () => {
     it('should handle callbacks (onSwiped and forceUpdate)', () => {
-      const mockOnSwiped = jest.fn();
-      const mockOnSwipedAll = jest.fn();
+      const handleSwiped = jest.fn();
+      const handleSwipedAll = jest.fn();
+      const vibration = createFakeVibration();
 
       const component = renderer.create(
         <Cards
           testID="cards-story"
-          onSwiped={mockOnSwiped}
-          onSwipedAll={mockOnSwipedAll}
+          onSwiped={handleSwiped}
+          onSwipedAll={handleSwipedAll}
           cardIndexShown={0}
           items={items}
           renderItem={renderCard}
+          vibration={vibration}
         />
       );
 
       const swiper = component.root.findByType(DeckSwiper);
       swiper.instance.onSwipedCallbacks(false, true);
-      expect(mockOnSwiped.mock.calls.length).toBe(1);
-      expect(mockOnSwipedAll.mock.calls.length).toBe(1);
+
+      expect(handleSwiped).toHaveBeenCalledTimes(1);
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(handleSwipedAll).toHaveBeenCalledTimes(1);
 
       const cards = component.root.find(el => el.props.testID === 'cards-story');
       cards.instance.forceUpdate();

@@ -36,7 +36,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     cardIndexShown: 0
   };
 
-  cards: Cards;
+  cards: typeof Cards;
 
   // to simulate the swipe
   animation: Animated.Value = new Animated.Value(0);
@@ -77,11 +77,12 @@ class CardsSwipable extends React.PureComponent<Props, State> {
   componentWillUpdate = (nextProps: Props) => {
     if (JSON.stringify(this.props.cardStyle) !== JSON.stringify(nextProps.cardStyle)) {
       // Force update when cardStyle prop changes
+      // $FlowFixMe HOC type is not perfect
       this.cards && this.cards.forceUpdate();
     }
   };
 
-  handleRef = (element: Cards | null) => {
+  handleRef = (element: typeof Cards | null) => {
     if (element) {
       this.cards = element;
     }

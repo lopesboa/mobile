@@ -7,9 +7,9 @@ import renderer from 'react-test-renderer';
 import {__TEST__} from '../modules/environment';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, createFakeVibration, createFakeAudio} from '../utils/tests';
 import {AUTHOR_TYPE, CONTENT_TYPE} from '../const';
-import LevelEnd from './level-end';
+import {Component as LevelEnd} from './level-end';
 
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
 
@@ -58,6 +58,8 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNew}
       bestScore="0"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ))
   .add('Success', () => (
@@ -72,6 +74,8 @@ storiesOf('LevelEnd', module)
       bestScore="20"
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ))
   .add('Failure Author Coorp', () => (
@@ -84,6 +88,8 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNewCoorp}
       bestScore="0"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ))
   .add('Success Author Coorp', () => (
@@ -98,6 +104,8 @@ storiesOf('LevelEnd', module)
       bestScore="0"
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ))
   .add('Finished', () => (
@@ -110,6 +118,8 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
       bestScore="0"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ))
   .add('Microlearning', () => (
@@ -124,6 +134,8 @@ storiesOf('LevelEnd', module)
       bestScore="0"
       nextContentType={CONTENT_TYPE.CHAPTER}
       nextContentLabel="foobar"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
     />
   ));
 
@@ -141,6 +153,8 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           bestScore="0"
+          vibration={createFakeVibration()}
+          audio={createFakeAudio()}
         />
       );
       const item = component.root.find(el => el.props.testID === 'recommend-item-dis-2');
@@ -161,6 +175,8 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNew}
           bestScore="0"
+          vibration={createFakeVibration()}
+          audio={createFakeAudio()}
         />
       );
       const item = component.root.find(el => el.props.testID === 'button-retry-level');
@@ -168,6 +184,56 @@ if (__TEST__) {
 
       expect(item.props.analyticsID).toBe('button-end-retry-level');
       expect(handlePress.mock.calls.length).toBe(1);
+    });
+
+    it('should trigger sound and vibration on success', () => {
+      const vibration = createFakeVibration();
+      const audio = createFakeAudio();
+
+      renderer.create(
+        <LevelEnd
+          contentType={CONTENT_TYPE.LEVEL}
+          isSuccess
+          isFocused
+          onButtonPress={handleFakePress}
+          onCardPress={handleFakePress}
+          onClose={handleFakePress}
+          recommendation={disciplineNewCoorp}
+          bestScore="0"
+          vibration={vibration}
+          audio={audio}
+        />
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(vibration.vibrate).toHaveBeenCalledWith(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
+      expect(audio.play).toHaveBeenCalledTimes(1);
+      expect(audio.play).toHaveBeenCalledWith(audio.AUDIO_FILE.SUCCESS_LEVEL);
+    });
+
+    it('should trigger sound and vibration on error', () => {
+      const vibration = createFakeVibration();
+      const audio = createFakeAudio();
+
+      renderer.create(
+        <LevelEnd
+          contentType={CONTENT_TYPE.LEVEL}
+          isSuccess={false}
+          isFocused
+          onButtonPress={handleFakePress}
+          onCardPress={handleFakePress}
+          onClose={handleFakePress}
+          recommendation={disciplineNewCoorp}
+          bestScore="0"
+          vibration={vibration}
+          audio={audio}
+        />
+      );
+
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(vibration.vibrate).toHaveBeenCalledWith(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
+      expect(audio.play).toHaveBeenCalledTimes(1);
+      expect(audio.play).toHaveBeenCalledWith(audio.AUDIO_FILE.FAILURE_LEVEL);
     });
   });
 }

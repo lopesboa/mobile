@@ -1110,7 +1110,7 @@ declare module 'react-navigation' {
   };
   declare export var HeaderTitle: React$ComponentType<_HeaderTitleProps>;
 
-  declare type _HeaderBackButtonProps = {
+  declare export type _HeaderBackButtonProps = {
     onPress?: () => void,
     pressColorAndroid?: string,
     title?: ?string,

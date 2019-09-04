@@ -1,13 +1,16 @@
 // @flow
 
 import * as React from 'react';
+import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
-import Html from './html';
+import {createFakeVibration} from '../utils/tests';
+import {__TEST__} from '../modules/environment';
+import {Component as Html} from './html';
 
 storiesOf('Html', module)
   .add('Default', () => (
-    <Html fontSize={20}>
+    <Html fontSize={20} vibration={createFakeVibration()}>
       {`
     Les deux adverbes ont<s>une terminaison</s> qui se <u>prononce "ament"</u>, mais leur orthographe diffère. On écrit ainsi :
     <br/>– <i>vaill<font color="blue">a</font>mment</i>, parce que l'adverbe est formé à partir d’un <b>adjectif en <i>-ant</i></b> (<i>vaill<font color="blue">a</font>nt</i>) ;
@@ -16,7 +19,7 @@ storiesOf('Html', module)
     </Html>
   ))
   .add('WithImage', () => (
-    <Html fontSize={20}>
+    <Html fontSize={20} vibration={createFakeVibration()}>
       {`
       <center>
           <img src="https://static.coorpacademy.com/content/enjoytesting/raw/Anim_Etoile_1.gif"/>
@@ -27,3 +30,21 @@ storiesOf('Html', module)
       `}
     </Html>
   ));
+
+if (__TEST__) {
+  describe('Html', () => {
+    it('should handle onLinkPress', () => {
+      const handleLinkPress = jest.fn();
+      const vibration = createFakeVibration();
+      const component = renderer.create(
+        <Html fontSize={20} onLinkPress={handleLinkPress} vibration={vibration}>
+          {`<a href="https://domain.tld"></a>`}
+        </Html>
+      );
+      const html = component.root.find(el => el.props.testID === 'html-base');
+      html.props.onLinkPress();
+      expect(vibration.vibrate).toHaveBeenCalledTimes(1);
+      expect(handleLinkPress).toHaveBeenCalled();
+    });
+  });
+}

@@ -7,7 +7,7 @@ import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import theme from '../modules/theme';
 import Button from './button';
-import type {Props as ButtonProps} from './button';
+import type {OwnProps as ButtonProps} from './button';
 import Gradient from './gradient';
 
 export type Props = $Exact<{|

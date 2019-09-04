@@ -14,6 +14,10 @@ import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import {CARD_TYPE} from '../layer/data/_const';
 import {getAuthorName, getAuthorType} from '../utils/content';
+import withVibration from '../containers/with-vibration';
+import type {WithVibrationProps} from '../containers/with-vibration';
+import withAudio from '../containers/with-audio';
+import type {WithAudioProps} from '../containers/with-audio';
 import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
 import Card, {LAYOUT as CARD_LAYOUT} from './card';
@@ -141,6 +145,8 @@ const styles = StyleSheet.create({
 const {width: screenWidth} = Dimensions.get('window');
 
 type Props = {|
+  ...WithVibrationProps,
+  ...WithAudioProps,
   contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,
@@ -155,6 +161,18 @@ type Props = {|
 
 class LevelEnd extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    const {isSuccess, vibration, audio} = this.props;
+
+    if (!isSuccess) {
+      vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
+      audio.play(audio.AUDIO_FILE.FAILURE_LEVEL);
+    } else {
+      vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
+      audio.play(audio.AUDIO_FILE.SUCCESS_LEVEL);
+    }
+  }
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => () => this.props.onCardPress(item);
 
@@ -308,4 +326,5 @@ class LevelEnd extends React.PureComponent<Props> {
   }
 }
 
-export default LevelEnd;
+export {LevelEnd as Component};
+export default withVibration(withAudio(LevelEnd));
