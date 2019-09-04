@@ -2,9 +2,13 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getProgressionContent, getLevel, getChapter} from '@coorpacademy/player-store';
+import {
+  getProgressionContent,
+  getLevel,
+  getChapter,
+  getCurrentSlide
+} from '@coorpacademy/player-store';
 
-import {getSlide} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import {getCleanUri} from '../modules/uri';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
@@ -32,7 +36,7 @@ class HeaderSlideTitle extends React.Component<Props> {
 }
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getSlide(state);
+  const slide = getCurrentSlide(state);
   const content = getProgressionContent(state);
 
   if (!content || !slide) {

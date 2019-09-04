@@ -3,28 +3,34 @@
 import * as React from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import get from 'lodash/fp/get';
-import {NavigationEvents} from 'react-navigation';
 import {
   acceptExtraLife,
   refuseExtraLife,
-  hasViewedAResourceAtThisStep as checkHasViewedAResourceAtThisStep,
+  hasViewedAResourceAtThisStep as _hasViewedAResourceAtThisStep,
   getLives,
-  getRoute,
-  selectRoute,
-  getCurrentProgression,
   getCurrentProgressionId,
-  hasSeenLesson as checkHasSeenLesson,
-  play
+  hasSeenLesson as _hasSeenLesson,
+  play,
+  getCurrentCorrection,
+  getPreviousSlide
 } from '@coorpacademy/player-store';
+import type {Lesson} from '@coorpacademy/progression-engine';
 
 import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import {selectCurrentProgression} from '../redux/actions/progressions/select-progression';
-import {checkIsCorrect, checkIsExitNode} from '../redux/utils/state-extract';
+import {
+  isCorrect as _isCorrect,
+  isExitNode as _isExitNode,
+  getNextContentRef,
+  getContext,
+  isGodModeEnabled as _isGodModeEnabled,
+  isFastSlideEnabled as _isFastSlideEnabled
+} from '../redux/utils/state-extract';
 import playSound, {AUDIO_FILE} from '../modules/audio-player';
+import {reduceToResources} from '../layer/data/mappers';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
 
@@ -33,113 +39,57 @@ const styles = StyleSheet.create({
     flex: 1
   }
 });
+
 export type Params = {|
-  tip: string,
-  answers: Array<string>,
-  question: string,
-  userAnswers: Array<string>,
-  keyPoint: string,
-  resources: Array<Resource>
+  slideId: string
 |};
 
 export type ConnectedStateProps = {|
-  nextScreen?: string,
   isCorrect?: boolean,
   isFinished?: boolean,
   lives?: number,
-  consumedExtraLife?: boolean,
-  showResourcesFirst?: boolean,
-  canGoNext?: boolean,
-  progressionId: string,
-  isResourceViewed: boolean,
-  offeringExtraLife?: boolean
+  isGodModeEnabled?: boolean,
+  isFastSlideEnabled?: boolean,
+  progressionId?: string,
+  isResourceViewed?: boolean,
+  offeringExtraLife?: boolean,
+  hasConsumedExtraLife?: boolean,
+  hasContext?: boolean,
+  question: string,
+  answers: Array<string>,
+  userAnswers: Array<string>,
+  tip: string,
+  keyPoint: string,
+  resources?: Array<Resource>
 |};
 
 type ConnectedDispatchProps = {|
   play: typeof play,
-  selectCurrentProgression: () => (dispatch: Dispatch, getState: GetState) => void,
-  selectRoute: typeof selectRoute,
+  selectCurrentProgression: typeof selectCurrentProgression,
   acceptExtraLife: typeof acceptExtraLife,
   refuseExtraLife: typeof refuseExtraLife
 |};
 
+export type OwnProps = {|
+  ...ReactNavigation$ScreenPropsWithParams<Params>
+|};
+
 type Props = {|
-  ...ReactNavigation$ScreenPropsWithParams<Params>,
+  ...OwnProps,
   ...ConnectedStateProps,
   ...ConnectedDispatchProps
 |};
 
-type State = {|
-  lives?: number,
-  isLoading: boolean,
-  hasLivesBeenAnimated: boolean,
-  isResourceViewed: boolean
-|};
-
-// @todo move it in class
-export const goNext = async (getProps: () => Props): Promise<void> => {
-  const props = getProps();
-  if (props.consumedExtraLife) {
-    await props.acceptExtraLife();
-  } else if (props.offeringExtraLife) {
-    await props.refuseExtraLife();
-  } else {
-    await props.selectCurrentProgression();
-  }
-
-  const {isFinished, lives, progressionId} = getProps();
-
-  if (isFinished) {
-    const levelEndParams: LevelEndScreenParams = {
-      isCorrect: lives === undefined || lives > 0,
-      progressionId
-    };
-
-    props.navigation.navigate('LevelEnd', levelEndParams);
-  }
-};
-
-class CorrectionScreen extends React.PureComponent<Props, State> {
+class CorrectionScreen extends React.PureComponent<Props> {
   props: Props;
 
-  state: State = {
-    hasLivesBeenAnimated: false,
-    isLoading: false,
-    lives:
-      this.props.lives !== undefined && !this.props.isCorrect
-        ? this.props.lives + 1
-        : this.props.lives,
-    isResourceViewed: this.props.isResourceViewed
-  };
-
-  static navigationOptions = ({navigationOptions, navigation}: ReactNavigation$ScreenProps) => ({
-    ...navigationOptions,
-    headerStyle: {
-      ...navigationOptions.headerStyle,
-      backgroundColor: navigation.state.params.isCorrect ? POSITIVE_COLOR : NEGATIVE_COLOR
-    }
-  });
-
-  componentDidMount() {
+  componentDidUpdate(prevProps: Props) {
     const {isCorrect} = this.props;
-    if (isCorrect) {
-      return playSound(AUDIO_FILE.GOOD_ANSWER);
+
+    if (prevProps.isCorrect === undefined && isCorrect !== undefined) {
+      playSound(isCorrect ? AUDIO_FILE.GOOD_ANSWER : AUDIO_FILE.WRONG_ANSWER);
     }
-    return playSound(AUDIO_FILE.WRONG_ANSWER);
   }
-
-  componentDidUpdate = (prevProps: Props) => {
-    const {nextScreen} = this.props;
-
-    switch (nextScreen) {
-      case 'context':
-        this.props.navigation.navigate('Context');
-        break;
-      case 'answer':
-        this.props.navigation.navigate('Question');
-        break;
-    }
-  };
 
   handlePDFButtonPress = (url: string, description: string) => {
     const pdfParams: PdfScreenParams = {
@@ -154,51 +104,63 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
   handleVideoPlay = () => this.props.play();
 
   handleButtonPress = () => {
-    this.setState({isLoading: true});
-    goNext(() => this.props);
-  };
+    const {
+      offeringExtraLife,
+      hasConsumedExtraLife,
+      isFinished,
+      lives,
+      progressionId = '',
+      navigation,
+      hasContext
+    } = this.props;
 
-  handleDidFocus = () => {
-    const {isCorrect} = this.props;
-    if (!this.state.hasLivesBeenAnimated && !isCorrect && this.state.lives) {
-      this.loseLife();
+    if (hasConsumedExtraLife) {
+      this.props.acceptExtraLife();
+    } else if (offeringExtraLife) {
+      this.props.refuseExtraLife();
+    } else {
+      this.props.selectCurrentProgression();
     }
 
-    this.props.selectRoute('correction');
-  };
+    if (isFinished) {
+      const levelEndParams: LevelEndScreenParams = {
+        isCorrect: lives === undefined || lives > 0,
+        progressionId
+      };
 
-  loseLife = () =>
-    this.setState((state: State) => ({
-      lives: state.lives !== undefined ? state.lives - 1 : state.lives,
-      hasLivesBeenAnimated: true
-    }));
+      return navigation.navigate('LevelEnd', levelEndParams);
+    }
+
+    return navigation.navigate(hasContext ? 'Context' : 'Question');
+  };
 
   render() {
     const {
+      isCorrect,
+      isResourceViewed,
+      offeringExtraLife,
+      hasConsumedExtraLife,
       tip,
       answers,
       question,
       userAnswers,
       keyPoint,
-      resources
-    } = this.props.navigation.state.params;
-
-    const {
-      isCorrect,
-      lives: realLives,
-      canGoNext,
-      showResourcesFirst,
-      offeringExtraLife
+      resources,
+      lives,
+      isGodModeEnabled,
+      isFastSlideEnabled
     } = this.props;
-    const {isResourceViewed} = this.state;
 
-    const {lives: livesToAnimate, isLoading} = this.state;
+    const isValidating = isCorrect === undefined;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
     return (
-      <Screen testID="correction-screen" noScroll style={{backgroundColor}}>
-        <NavigationEvents onDidFocus={this.handleDidFocus} />
-        <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
+      <Screen
+        testID="correction-screen"
+        noScroll
+        style={{backgroundColor: !isValidating && backgroundColor}}
+      >
+        {!isValidating && <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />}
         <Correction
           containerStyle={styles.layoutContainer}
           tip={tip}
@@ -208,13 +170,13 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
           isCorrect={isCorrect}
           keyPoint={keyPoint}
           onButtonPress={this.handleButtonPress}
-          isLoading={isLoading}
           offeringExtraLife={offeringExtraLife}
-          showResourcesFirst={showResourcesFirst}
-          canGoNext={canGoNext}
+          hasConsumedExtraLife={hasConsumedExtraLife}
           isResourceViewed={isResourceViewed}
           resources={resources}
-          lives={this.state.hasLivesBeenAnimated ? realLives : livesToAnimate}
+          lives={lives}
+          isGodModeEnabled={isGodModeEnabled}
+          isFastSlideEnabled={isFastSlideEnabled}
           onPDFButtonPress={this.handlePDFButtonPress}
           onVideoPlay={this.handleVideoPlay}
         />
@@ -223,59 +185,76 @@ class CorrectionScreen extends React.PureComponent<Props, State> {
   }
 }
 
-export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const progression = getCurrentProgression(state);
-  const progressionState = get('state', progression);
-  if (progression === undefined || progressionState === undefined) {
-    return {
-      nextScreen: undefined,
-      showResourcesFirst: false,
-      isFinished: false,
-      isCorrect: false,
-      offeringExtraLife: false,
-      canGoNext: false,
-      progressionId: '',
-      isResourceViewed: false
-    };
+export const mapStateToProps = (state: StoreState, {navigation}: OwnProps): ConnectedStateProps => {
+  const defaultState: ConnectedStateProps = {
+    question: '',
+    tip: '',
+    keyPoint: '',
+    answers: [],
+    userAnswers: []
+  };
+  const previousSlide = getPreviousSlide(state);
+
+  if (!previousSlide || previousSlide._id !== navigation.state.params.slideId) {
+    return defaultState;
+  }
+
+  const progressionId = getCurrentProgressionId(state);
+  const nextContentRef = getNextContentRef(state);
+  const isCorrect = _isCorrect(state);
+  const correction = getCurrentCorrection(state);
+
+  if (isCorrect === undefined || !nextContentRef || !correction) {
+    return defaultState;
   }
 
   const {hide: hideLives, count: livesCount} = getLives(state);
   const lives = hideLives ? undefined : livesCount;
 
-  const isCorrect = checkIsCorrect(state);
-  const progressionId = getCurrentProgressionId(state);
-  const hasViewedAResource = checkHasSeenLesson(state, true);
-  const hasViewedAResourceAtThisStep = checkHasViewedAResourceAtThisStep(state);
-  const nextContentRef = get('state.nextContent.ref', progression);
-  const contentRef = get('state.content.ref', progression);
+  const hasViewedAResource = _hasSeenLesson(state, true);
+  const hasViewedAResourceAtThisStep = _hasViewedAResourceAtThisStep(state);
   const stateExtraLife = nextContentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const justAcceptedExtraLife = contentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
   const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
-  const consumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
+  const hasConsumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
   const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
 
-  const isExitNode = checkIsExitNode(state);
+  const isExitNode = _isExitNode(state);
   const isOfferingExtraLife = lives === 0 && offeringExtraLife;
 
   const isFinished = isExitNode || isOfferingExtraLife;
 
-  const hasLivesRemaining = lives === undefined || lives > 0;
-  const canGoNext = (hasLivesRemaining && !offeringExtraLife) || consumedExtraLife;
+  const answers: Array<string> = (correction && correction.correctAnswer[0]) || [];
+  const userAnswers: Array<string> = ((correction && correction.corrections) || []).reduce(
+    (result, item) => {
+      if (item.answer) {
+        result.push(item.answer);
+      }
+      return result;
+    },
+    []
+  );
 
-  const showResourcesFirst =
-    !isCorrect && (offeringExtraLife || consumedExtraLife || justAcceptedExtraLife);
+  const lessons: Array<Lesson> = (previousSlide && previousSlide.lessons) || [];
+  const resources: Array<Resource> = reduceToResources(lessons);
+  const context = getContext(state);
 
   return {
-    nextScreen: getRoute(state),
     isFinished,
     isCorrect,
     isResourceViewed,
-    consumedExtraLife,
     offeringExtraLife,
+    hasConsumedExtraLife,
+    hasContext: context !== undefined,
     progressionId,
-    lives: consumedExtraLife ? lives + 1 : lives,
-    canGoNext,
-    showResourcesFirst
+    lives,
+    isGodModeEnabled: _isGodModeEnabled(state),
+    isFastSlideEnabled: _isFastSlideEnabled(state),
+    question: previousSlide.question.header || '',
+    answers,
+    userAnswers,
+    tip: previousSlide.tips,
+    keyPoint: previousSlide.klf,
+    resources
   };
 };
 
@@ -283,8 +262,7 @@ export const mapDispatchToProps: ConnectedDispatchProps = {
   play,
   selectCurrentProgression,
   acceptExtraLife,
-  refuseExtraLife,
-  selectRoute
+  refuseExtraLife
 };
 
 export default connect(

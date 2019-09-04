@@ -1,30 +1,35 @@
 // @flow strict
 
 import type {Content} from '@coorpacademy/progression-engine';
-import type {Slide} from '../../layer/data/_types';
-import type {Engine} from '../../types';
 
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
-import {createStoreState} from '../../__fixtures__/store';
+import type {Slide} from '../../layer/data/_types';
+import type {Engine, ProgressionEngineVersions} from '../../types';
+import {ENGINE, CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
+import {createBrand} from '../../__fixtures__/brands';
 import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
-import bundledDiscipline from '../../__fixtures__/discipline-bundle';
-
+import {createSlide} from '../../__fixtures__/slides';
+import {createTemplate} from '../../__fixtures__/questions';
+import {createContextWithPDF} from '../../__fixtures__/context';
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
+import {createAuthenticationState, createStoreState} from '../../__fixtures__/store';
 import {
-  checkIsExitNode,
-  checkIsCorrect,
-  checkIsValidating,
+  isExitNode,
+  isCorrect,
   getCurrentStep,
-  getLives,
-  getSlide,
+  getNextContentRef,
   hasPermission,
   getBestRank,
   getBestScore,
   getCard,
   getSection,
   getToken,
-  getBrand
+  getBrand,
+  getEngineVersions,
+  isGodModeEnabled,
+  isFastSlideEnabled,
+  getCurrentScreenName,
+  getContext
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -38,7 +43,7 @@ const createDefaultProgression = (
   createProgression({
     engine,
     progressionContent: {
-      type: 'level',
+      type: CONTENT_TYPE.LEVEL,
       ref: levelRef
     },
     state: {
@@ -47,8 +52,20 @@ const createDefaultProgression = (
     }
   });
 
+const brand = createBrand({});
+const authentication = createAuthenticationState({brand});
+
+const context = createContextWithPDF({title: 'Foo bar'});
+const template = createTemplate({});
+const slide = createSlide({
+  ref: 'sli_foo',
+  chapterId: 'cha_foo',
+  question: template,
+  context
+});
+
 const createState = ({
-  engine = 'microlearning',
+  engine = ENGINE.MICROLEARNING,
   levelRef = 'dummyRef',
   content,
   nextContent,
@@ -66,17 +83,20 @@ const createState = ({
     disciplines: [],
     chapters: [],
     slides,
-    progression: createDefaultProgression(engine, levelRef, content, nextContent)
+    progression: createDefaultProgression(engine, levelRef, content, nextContent),
+    authentication,
+    godMode: true,
+    fastSlide: true
   });
   return state;
 };
 
 describe('State-extract', () => {
-  describe('checkIsExitNode', () => {
+  describe('isExitNode', () => {
     it('should return false if nextContent is falsy', () => {
       const state: StoreState = createState({});
       delete state.data.progressions.entities.progression1.state.nextContent;
-      const result = checkIsExitNode(state);
+      const result = isExitNode(state);
       expect(result).toEqual(false);
     });
 
@@ -87,7 +107,7 @@ describe('State-extract', () => {
           ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
         }
       });
-      const result = checkIsExitNode(state);
+      const result = isExitNode(state);
       expect(result).toEqual(true);
     });
 
@@ -98,7 +118,7 @@ describe('State-extract', () => {
           ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
         }
       });
-      const result = checkIsExitNode(state);
+      const result = isExitNode(state);
       expect(result).toEqual(true);
     });
 
@@ -107,7 +127,7 @@ describe('State-extract', () => {
         type: CONTENT_TYPE.SLIDE,
         ref: '1234567'
       });
-      const result = checkIsExitNode(state);
+      const result = isExitNode(state);
       expect(result).toEqual(false);
     });
 
@@ -118,153 +138,50 @@ describe('State-extract', () => {
           ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
         }
       });
-      const result = checkIsExitNode(state);
+      const result = isExitNode(state);
       expect(result).toEqual(false);
     });
   });
 
-  describe('checkIsCorrect', () => {
+  describe('isCorrect', () => {
     it('should return undefined if progression.state.isCorrect is null or not defined', () => {
       const state: StoreState = createState({});
 
       state.data.progressions.entities.progression1.state.isCorrect = null;
-      expect(checkIsCorrect(state)).toEqual(undefined);
+      expect(isCorrect(state)).toEqual(undefined);
 
       delete state.data.progressions.entities.progression1.state;
-      expect(checkIsCorrect(state)).toEqual(undefined);
+      expect(isCorrect(state)).toEqual(undefined);
 
       delete state.data.progressions.entities.progression1;
-      expect(checkIsCorrect(state)).toEqual(undefined);
+      expect(isCorrect(state)).toEqual(undefined);
     });
 
     it('should return progression.state.isCorrect if defined properly', () => {
       const state: StoreState = createState({});
-      expect(checkIsCorrect(state)).toEqual(true);
-    });
-  });
-
-  describe('checkIsValidating', () => {
-    it('should return true is route === correction', () => {
-      const state: StoreState = createState({});
-      state.ui.route.progression1 = 'correction';
-      expect(checkIsValidating(state)).toEqual(true);
-    });
-  });
-
-  describe('getSlide', () => {
-    it('should return undefined if nextContent is no defined properly', () => {
-      const state: StoreState = createState({});
-      delete state.data.progressions.entities.progression1.state.nextContent;
-      const result = getSlide(state);
-      expect(result).toEqual(undefined);
-    });
-
-    it('should return currentSlide from nextContent', () => {
-      const state: StoreState = createState({
-        nextContent: {type: 'slide', ref: 'basic_sli_1'},
-        slides: [bundledDiscipline.slides.basic_sli_1]
-      });
-
-      const slide = getSlide(state);
-      // $FlowFixMe UT slide is not undefined
-      expect(slide._id).toEqual(bundledDiscipline.slides.basic_sli_1._id);
-    });
-
-    it('should return previousSlide when isValidating', () => {
-      const state: StoreState = createState({
-        nextContent: {type: 'slide', ref: 'basic_sli_2'},
-        content: {type: 'slide', ref: 'basic_sli_1'},
-        slides: [bundledDiscipline.slides.basic_sli_1, bundledDiscipline.slides.basic_sli_2]
-      });
-      state.ui.route.progression1 = 'correction';
-
-      const slide = getSlide(state);
-      // $FlowFixMe UT slide is not undefined
-      expect(slide._id).toEqual(bundledDiscipline.slides.basic_sli_1._id);
-    });
-
-    it('should return previousSlide on exit node', () => {
-      const state: StoreState = createState({
-        nextContent: {
-          type: CONTENT_TYPE.SUCCESS,
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
-        },
-        content: {type: 'slide', ref: 'basic_sli_1'},
-        slides: [bundledDiscipline.slides.basic_sli_1, bundledDiscipline.slides.basic_sli_2]
-      });
-      state.ui.route.progression1 = 'correction';
-
-      const slide = getSlide(state);
-      // $FlowFixMe UT slide is not undefined
-      expect(slide._id).toEqual(bundledDiscipline.slides.basic_sli_1._id);
-    });
-
-    it('should return currentSlide while waiting for correction', () => {
-      const state: StoreState = createState({
-        nextContent: {type: 'slide', ref: 'basic_sli_1'},
-        slides: [bundledDiscipline.slides.basic_sli_1]
-      });
-      state.data.progressions.entities.progression1.state.isCorrect = null;
-
-      const slide = getSlide(state);
-      // $FlowFixMe UT slide is not undefined
-      expect(slide._id).toEqual(bundledDiscipline.slides.basic_sli_1._id);
-    });
-  });
-
-  describe('getLives', () => {
-    it('should add a life when isValidating and provided a wrong answer', () => {
-      const state: StoreState = createState({});
-      state.ui.route.progression1 = 'correction';
-      state.data.progressions.entities.progression1.state.isCorrect = false;
-
-      const lives = getLives(state);
-      expect(lives).toEqual({
-        count: state.data.progressions.entities.progression1.state.lives + 1,
-        hide: false
-      });
-    });
-
-    it('should return state.lives when not waiting for correction', () => {
-      const state: StoreState = createState({});
-      state.ui.route.progression1 = 'answer';
-      state.data.progressions.entities.progression1.state.isCorrect = false;
-
-      const lives = getLives(state);
-      expect(lives).toEqual({
-        count: state.data.progressions.entities.progression1.state.lives,
-        hide: false
-      });
-    });
-
-    it('should return state.lives when waiting for correction and provided a good answer', () => {
-      const state: StoreState = createState({});
-      state.ui.route.progression1 = 'correction';
-      state.data.progressions.entities.progression1.state.isCorrect = true;
-
-      const lives = getLives(state);
-      expect(lives).toEqual({
-        count: state.data.progressions.entities.progression1.state.lives,
-        hide: false
-      });
+      expect(isCorrect(state)).toEqual(true);
     });
   });
 
   describe('getCurrentStep', () => {
-    it('should return currentStep-1 when isValidating', () => {
+    it('should return current step', () => {
       const state: StoreState = createState({});
-      state.ui.route.progression1 = 'correction';
 
       const current = getCurrentStep(state);
-      expect(current).toEqual(state.data.progressions.entities.progression1.state.step.current - 1);
+      const expected = 1;
+
+      expect(current).toEqual(expected);
     });
+  });
 
-    it('should return currentStep when not waiting for correction', () => {
+  describe('getNextContentRef', () => {
+    it('should return next content ref', () => {
       const state: StoreState = createState({});
-      state.ui.route.progression1 = 'answer';
 
-      const current = getCurrentStep(state);
-      expect(current).toEqual(state.data.progressions.entities.progression1.state.step.current);
+      const current = getNextContentRef(state);
+      const expected = 'sli_foo';
+
+      expect(current).toEqual(expected);
     });
   });
 
@@ -297,9 +214,9 @@ describe('State-extract', () => {
       });
 
       const progression = createProgression({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
-          type: 'level',
+          type: CONTENT_TYPE.LEVEL,
           ref: 'mod_10B'
         }
       });
@@ -334,7 +251,7 @@ describe('State-extract', () => {
         }
       };
       const state: StoreState = createState({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         levelRef: 'mod_10B'
       });
 
@@ -358,9 +275,9 @@ describe('State-extract', () => {
       });
 
       const progression = createProgression({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
-          type: 'level',
+          type: CONTENT_TYPE.LEVEL,
           ref: 'mod_10B'
         }
       });
@@ -395,7 +312,7 @@ describe('State-extract', () => {
         }
       };
       const state: StoreState = createState({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         levelRef: 'mod_10B'
       });
 
@@ -419,9 +336,9 @@ describe('State-extract', () => {
       });
 
       const progression = createProgression({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
-          type: 'level',
+          type: CONTENT_TYPE.LEVEL,
           ref: 'mod_10B'
         }
       });
@@ -456,7 +373,7 @@ describe('State-extract', () => {
         }
       };
       const state: StoreState = createState({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         levelRef: 'mod_10B'
       });
 
@@ -466,9 +383,9 @@ describe('State-extract', () => {
 
     it('should return undefined if no stars are set', () => {
       const progression = createProgression({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
-          type: 'level',
+          type: CONTENT_TYPE.LEVEL,
           ref: 'mod_10B'
         }
       });
@@ -488,7 +405,7 @@ describe('State-extract', () => {
         }
       };
       const state: StoreState = createState({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         levelRef: 'mod_10B'
       });
 
@@ -496,6 +413,7 @@ describe('State-extract', () => {
       expect(bestScore).toEqual(undefined);
     });
   });
+
   describe('getBestRank', () => {
     it('should get the best rank if start and end are different', () => {
       const state = {
@@ -541,7 +459,7 @@ describe('State-extract', () => {
     });
   });
 
-  describe('getters', () => {
+  describe('getCard', () => {
     it('should get card', () => {
       const state = {
         authentication: {
@@ -561,7 +479,9 @@ describe('State-extract', () => {
       const result = getCard(state, 'foo', 'en');
       expect(result).toEqual('card');
     });
+  });
 
+  describe('getSection', () => {
     it('should get section', () => {
       const state = {
         authentication: {
@@ -601,7 +521,9 @@ describe('State-extract', () => {
       const result = getSection(state, 'foo');
       expect(result).toEqual('section');
     });
+  });
 
+  describe('getToken', () => {
     it('should get token', () => {
       const state = {
         authentication: {
@@ -614,16 +536,87 @@ describe('State-extract', () => {
       const result = getToken(state);
       expect(result).toEqual('foo');
     });
+  });
 
+  describe('getBrand', () => {
     it('should get brand', () => {
-      const state = {
-        authentication: {
-          brand: 'foo'
+      const state = createState({});
+
+      const result = getBrand(state);
+      const expected = brand;
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getEngineVersions', () => {
+    it('should get engine versions if brand is defined', () => {
+      const state = createState({});
+
+      const result = getEngineVersions(state);
+      const expected: ProgressionEngineVersions = {
+        versions: {
+          [ENGINE.LEARNER]: '2',
+          [ENGINE.MICROLEARNING]: '2'
         }
       };
-      // $FlowFixMe
-      const result = getBrand(state);
-      expect(result).toEqual('foo');
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should get undefined if brand is not defined', () => {
+      const state = createState({});
+
+      delete state.authentication.brand;
+
+      const result = getEngineVersions(state);
+      const expected = undefined;
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('isGodModeEnabled', () => {
+    it('should get value from state', () => {
+      const state = createState({});
+
+      const result = isGodModeEnabled(state);
+
+      expect(result).toBeTruthy();
+    });
+  });
+
+  describe('isFastSlideEnabled', () => {
+    it('should get value from state', () => {
+      const state = createState({});
+
+      const result = isFastSlideEnabled(state);
+
+      expect(result).toBeTruthy();
+    });
+  });
+
+  describe('getCurrentScreenName', () => {
+    it('should get current screen name', () => {
+      const state = createState({});
+
+      const result = getCurrentScreenName(state);
+      const expected = 'dummyScreenName';
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getContext', () => {
+    it('should get context', () => {
+      const state = createState({
+        slides: [slide]
+      });
+
+      const result = getContext(state);
+      const expected = context;
+
+      expect(result).toEqual(expected);
     });
   });
 });

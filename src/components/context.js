@@ -19,7 +19,7 @@ export type Props = $Exact<{|
   header: string,
   description: string,
   onPress: () => void,
-  onOpenBrowser: () => void,
+  onLinkPress: () => void,
   onPDFButtonPress: (url: string, description: string) => void,
   testID?: string,
   media?: Media
@@ -66,19 +66,7 @@ class Context extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, description, onPress, media, onOpenBrowser, testID} = this.props;
-
-    // do not know why when pressing back button the render method here is called one more time even if
-    // the media is not provided by the screen
-    if (!media) {
-      return null;
-    }
-    const url = getMediaUrl(media);
-    const mediaType = getMediaType(media);
-
-    if (!mediaType) {
-      return null;
-    }
+    const {header, description, onPress, media, onLinkPress, testID} = this.props;
 
     return (
       <View style={styles.container} testID={testID}>
@@ -87,17 +75,19 @@ class Context extends React.PureComponent<Props> {
             <Title isTextCentered>{header}</Title>
           </View>
           <Space type="base" />
-          <Resource
-            testID={`context-resource-${mediaType}`}
-            url={url}
-            // $FlowFixMe incomplete media type
-            videoId={media.videoId}
-            mimeType={media.mimeType}
-            onPress={this.handlePDFButtonPress}
-            thumbnail={getMediaPoster(media)}
-            description={media.description}
-            type={mediaType}
-          />
+          {media && (
+            <Resource
+              testID={`context-resource-${getMediaType(media) || ''}`}
+              url={getMediaUrl(media)}
+              // $FlowFixMe incomplete media type
+              videoId={media.videoId}
+              mimeType={media.mimeType}
+              onPress={this.handlePDFButtonPress}
+              thumbnail={getMediaPoster(media)}
+              description={media.description}
+              type={getMediaType(media)}
+            />
+          )}
         </View>
         <Space type="base" />
         <View style={styles.content}>
@@ -105,14 +95,13 @@ class Context extends React.PureComponent<Props> {
             fontSize={theme.fontSize.small}
             style={styles.text}
             imageStyle={styles.image}
-            onLinkPress={onOpenBrowser}
+            onLinkPress={onLinkPress}
             isTextCentered
           >
             {description}
           </Html>
         </View>
         <Space type="base" />
-
         <View style={styles.footer}>
           <Button
             onPress={onPress}

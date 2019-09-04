@@ -11,15 +11,15 @@ import resetOnLogout from './utils/reset-on-logout';
 import type {State as PermissionsState} from './reducers/permissions';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
-import type {State as GodModeState} from './reducers/godmode';
-import type {State as FastSlideState} from './reducers/fastslide';
+import type {State as GodModeState} from './reducers/god-mode';
+import type {State as FastSlideState} from './reducers/fast-slide';
 import type {State as ErrorState} from './reducers/ui/error';
 import catalog from './reducers/catalog';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
 import video from './reducers/video';
-import godmode from './reducers/godmode';
-import fastSlide from './reducers/fastslide';
+import godMode from './reducers/god-mode';
+import fastSlide from './reducers/fast-slide';
 import error from './reducers/ui/error';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
@@ -27,6 +27,8 @@ import UpdateCardOnProgressionUpdate from './middlewares/update-card-on-progress
 import ErrorHandler from './middlewares/error-handler';
 import type {Options, ReduxDevTools} from './_types';
 
+export type UiState = $PropertyType<ReduxState, 'ui'>;
+export type DataState = $PropertyType<ReduxState, 'data'>;
 export type StoreState = $Exact<{|
   ...$Exact<ReduxState>,
   navigation: NavigationState,
@@ -35,7 +37,7 @@ export type StoreState = $Exact<{|
   permissions: PermissionsState,
   video: VideoState,
   error: ErrorState<void>,
-  godmode: GodModeState,
+  godMode: GodModeState,
   fastSlide: FastSlideState
 |}>;
 
@@ -51,7 +53,7 @@ const reducers = combineReducers({
   authentication: resetOnLogout(authentication),
   permissions,
   video,
-  godmode,
+  godMode,
   fastSlide
 });
 

@@ -1,10 +1,11 @@
 // @flow
+
 import type {
   Level as LevelStore,
   Chapter as ChapterStore,
-  Discipline as DisciplinStore
+  Discipline as DisciplineStore
 } from '@coorpacademy/player-store';
-import type {Slide as SlideEngine, Progression} from '@coorpacademy/progression-engine';
+import type {Slide as SlideEngine, Progression, Answer} from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
 import type {Section, Brand} from '../types';
@@ -16,9 +17,15 @@ import type {
   DisciplineCard,
   ChapterCard
 } from '../layer/data/_types';
-import type {StoreState} from '../redux/store';
+import type {StoreState, DataState, UiState} from '../redux/store';
+import type {State as AuthenticationState} from '../redux/reducers/authentication';
 import type {State as CatalogState} from '../redux/reducers/catalog';
-import {initialState as permissionsState} from '../redux/reducers/permissions';
+import type {State as ErrorState} from '../redux/reducers/ui/error';
+import type {State as GodModeState} from '../redux/reducers/god-mode';
+import type {State as NavigationState} from '../redux/reducers/navigation';
+import type {State as FastSlideState} from '../redux/reducers/fast-slide';
+import type {State as PermissionsState} from '../redux/reducers/permissions';
+import type {State as VideoState} from '../redux/reducers/video';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 import {createBrand} from './brands';
 
@@ -83,60 +90,81 @@ export const createCatalogState = (
   }
 });
 
-export const createAuthenticationState = ({brand}: {brand?: Brand}) => {
-  return {
-    user: {
-      token: '__TOKEN__',
-      isGodModeUser: false
-    },
-    brand: brand || createBrand({})
-  };
-};
+export const createAuthenticationState = ({
+  brand
+}: {
+  brand?: Brand | null
+}): AuthenticationState => ({
+  user: {
+    token: '__TOKEN__',
+    isGodModeUser: false
+  },
+  brand: brand !== undefined ? brand : createBrand({})
+});
 
-export const createStoreState = ({
+export const createUiState = ({
+  answers = {}
+}: {
+  answers?: $PropertyType<UiState, 'answers'>
+}): UiState => ({
+  answers,
+  coaches: {
+    availableCoaches: 0
+  },
+  comments: {
+    text: null
+  },
+  corrections: {
+    accordion: [false, false, false],
+    playResource: ''
+  },
+  current: {
+    progressionId: 'progression1'
+  },
+  route: {}
+});
+
+export const createDataState = ({
+  answers,
   levels,
   slides,
   chapters,
   disciplines,
   progression,
-  catalog,
-  godmode: baseGodMode,
-  fastSlide: basefastSlide,
-  data: baseData,
-  ui: baseUi,
-  authentication,
   nextContent
 }: {
+  answers?: Answer,
   levels: Array<Level>,
   slides: Array<Slide>,
   chapters: Array<Chapter>,
   disciplines: Array<Discipline>,
   progression: Progression,
-  godmode?: boolean,
-  fastSlide?: boolean,
-  // @todo type this later, im so sorry
-  // eslint-disable-next-line flowtype/no-weak-types
-  data?: any,
-  // eslint-disable-next-line flowtype/no-weak-types
-  ui?: any,
-  // eslint-disable-next-line flowtype/no-weak-types
-  authentication?: any,
-  catalog?: CatalogState,
   nextContent?: SlideAPI | ChapterAPI | LevelAPI
-}): StoreState => {
-  const mappedLevel: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
-  const mappedSlide: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
-  const mappedChapter: {[key: string]: ChapterStore} = createMapObject(chapters.map(mapToChapter));
-  const mappedDisciplines: {[key: string]: DisciplinStore} = createMapObject(
+}): DataState => {
+  const _levels: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
+  const _slides: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
+  const _chapters: {[key: string]: ChapterStore} = createMapObject(chapters.map(mapToChapter));
+  const _disciplines: {[key: string]: DisciplineStore} = createMapObject(
     disciplines.map(mapToDiscipline)
   );
+  const _answers =
+    answers && progression._id && slides[0]
+      ? {
+          [progression._id]: {
+            [slides[0]._id]: {
+              correctAnswer: [answers],
+              corrections: answers.concat(['Foo bar']).map(answer => ({
+                answer: answer,
+                isCorrect: answer !== 'Foo bar'
+              }))
+            }
+          }
+        }
+      : {};
 
-  const godmode = baseGodMode || false;
-  const fastSlide = basefastSlide || false;
-
-  const data = {
+  return {
     answers: {
-      entities: {}
+      entities: _answers
     },
     comments: {
       entities: {}
@@ -146,16 +174,16 @@ export const createStoreState = ({
     },
     contents: {
       level: {
-        entities: mappedLevel
+        entities: _levels
       },
       slide: {
-        entities: mappedSlide
+        entities: _slides
       },
       chapter: {
-        entities: mappedChapter
+        entities: _chapters
       },
       discipline: {
-        entities: mappedDisciplines
+        entities: _disciplines
       }
     },
     videos: {
@@ -182,43 +210,79 @@ export const createStoreState = ({
       }
     }
   };
-
-  const ui = {
-    answers: {},
-    coaches: {
-      availableCoaches: 0
-    },
-    comments: {
-      text: null
-    },
-    corrections: {
-      accordion: [false, false, false],
-      playResource: ''
-    },
-    current: {
-      progressionId: 'progression1'
-    },
-    route: {}
-  };
-  return {
-    data: (baseData && {...data, ...baseData}) || data,
-    ui: (baseUi && {...ui, ...baseUi}) || ui,
-    error: {
-      isVisible: false
-    },
-    navigation: {
-      currentNavigatorName: 'dummyNavigatorName',
-      currentAppScreenName: 'dummycurrentAppScreenName',
-      currentScreenName: 'dummyScreenName',
-      currentTabName: 'dummyScreenName'
-    },
-    catalog: catalog || createCatalogState(),
-    permissions: permissionsState,
-    authentication: authentication || createAuthenticationState({}),
-    godmode,
-    fastSlide,
-    video: {
-      isFullScreen: false
-    }
-  };
 };
+
+export const createErrorState = ({isVisible = false}: {isVisible?: boolean}): ErrorState<void> => ({
+  isVisible
+});
+
+export const createNavigationState = (): NavigationState => ({
+  currentNavigatorName: 'dummyNavigatorName',
+  currentAppScreenName: 'dummycurrentAppScreenName',
+  currentScreenName: 'dummyScreenName',
+  currentTabName: 'dummyScreenName'
+});
+
+export const createPermissionsState = (): PermissionsState => ({
+  camera: undefined
+});
+
+export const createVideoState = (): VideoState => ({
+  isFullScreen: false
+});
+
+export const createStoreState = ({
+  levels,
+  slides,
+  chapters,
+  disciplines,
+  progression,
+  catalog,
+  data,
+  ui,
+  authentication,
+  nextContent,
+  godMode = false,
+  fastSlide = false,
+  error,
+  navigation,
+  permissions,
+  video
+}: {
+  levels: Array<Level>,
+  slides: Array<Slide>,
+  chapters: Array<Chapter>,
+  disciplines: Array<Discipline>,
+  progression: Progression,
+  data?: DataState,
+  ui?: UiState,
+  authentication?: AuthenticationState,
+  catalog?: CatalogState,
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI,
+  godMode?: GodModeState,
+  fastSlide?: FastSlideState,
+  error?: ErrorState<void>,
+  navigation?: NavigationState,
+  permissions?: PermissionsState,
+  video?: VideoState
+}): StoreState => ({
+  data:
+    data ||
+    createDataState({
+      levels,
+      slides,
+      chapters,
+      disciplines,
+      progression,
+      nextContent
+    }),
+  ui: ui || createUiState({}),
+  error: error || createErrorState({}),
+  navigation: navigation || createNavigationState(),
+  catalog: catalog || createCatalogState(),
+  permissions: permissions || createPermissionsState(),
+  authentication: authentication || createAuthenticationState({}),
+  godMode,
+  fastSlide,
+  video: video || createVideoState()
+});

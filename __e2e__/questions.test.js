@@ -171,6 +171,7 @@ describe('Questions', () => {
       await rightAnswer(element);
       await waitForExist('correction-success');
       await element(by.id('button-next-question')).tap();
+      await element(by.id('question-screen')).swipe('up');
     });
     it('should see choices with images', async () => {
       await weExpect(element(by.id('question-choice-1-img'))).toBeVisible();

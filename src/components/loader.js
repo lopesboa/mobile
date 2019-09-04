@@ -7,10 +7,6 @@ import type {CompositeAnimation} from 'react-native/Libraries/Animated/src/Anima
 import theme from '../modules/theme';
 import {BrandThemeContext} from './brand-theme-provider';
 
-type Props = {|
-  height: number
-|};
-
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
@@ -29,6 +25,10 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.battle
   }
 });
+
+type Props = {|
+  height?: number
+|};
 
 const CYCLE_DURATION = 3000;
 
@@ -83,7 +83,7 @@ class Loader extends React.PureComponent<Props> {
   }
 
   render() {
-    const {height} = this.props;
+    const {height = 60} = this.props;
 
     const scale = this.scale.interpolate({
       inputRange: [0, 0.45, 1, 1.32, 1.5, 2, 2.3, 2.64, 3],

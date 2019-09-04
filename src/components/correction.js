@@ -12,39 +12,20 @@ import CardComponent from '../containers/card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import Cards from '../containers/cards-swipable';
-import LivesAnimated from '../containers/lives-animated';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
 import {RESOURCE_TYPE, CARD_TYPE} from '../const';
 import Resource from './resource';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
+import Loader from './loader';
 import Text from './text';
 import Html from './html';
 import Space from './space';
+import Lives from './lives';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
 import {BrandThemeContext} from './brand-theme-provider';
-
-type Props = $Exact<{|
-  ...WithLayoutProps,
-  tip: string,
-  answers: Array<string>,
-  question: string,
-  userAnswers: Array<string>,
-  isCorrect: boolean,
-  keyPoint: string,
-  onButtonPress: () => void,
-  isLoading: boolean,
-  isResourceViewed?: boolean,
-  offeringExtraLife?: boolean,
-  showResourcesFirst?: boolean,
-  canGoNext?: boolean,
-  resources: Array<ResourceType>,
-  lives?: number,
-  onPDFButtonPress: (url: string, description: string) => void,
-  onVideoPlay: () => void
-|}>;
 
 const CARDS_HEIGHT = 360;
 const CARDS_LENGTH = 3;
@@ -53,6 +34,11 @@ export const POSITIVE_COLOR = theme.colors.positive;
 export const NEGATIVE_COLOR = theme.colors.negative;
 
 const styles = StyleSheet.create({
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   container: {
     flex: 1,
     justifyContent: 'space-between'
@@ -113,10 +99,30 @@ const styles = StyleSheet.create({
   }
 });
 
+type Props = $Exact<{|
+  ...WithLayoutProps,
+  question: string,
+  answers: Array<string>,
+  userAnswers: Array<string>,
+  tip: string,
+  keyPoint: string,
+  isCorrect?: boolean,
+  onButtonPress: () => void,
+  isResourceViewed?: boolean,
+  offeringExtraLife?: boolean,
+  hasConsumedExtraLife?: boolean,
+  resources?: Array<ResourceType>,
+  lives?: number,
+  isGodModeEnabled?: boolean,
+  isFastSlideEnabled?: boolean,
+  onPDFButtonPress: (url: string, description: string) => void,
+  onVideoPlay: () => void
+|}>;
+
 class Correction extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = (lessonType: LessonType) => (url?: string, description?: string) => {
+  handleResourcePress = (lessonType: LessonType) => (url?: string, description?: string) => {
     const {onPDFButtonPress, onVideoPlay} = this.props;
 
     // here the condition url && description in not enough te determine (the url and description are send everytime)
@@ -130,14 +136,9 @@ class Correction extends React.PureComponent<Props> {
     return onVideoPlay();
   };
 
-  createCards(): Array<Card> {
-    const {
-      isCorrect,
-      isResourceViewed,
-      resources,
-      offeringExtraLife,
-      showResourcesFirst
-    } = this.props;
+  getCards(isCorrect: boolean): Array<Card> {
+    const {isResourceViewed, resources, offeringExtraLife, hasConsumedExtraLife} = this.props;
+
     const correctionCard: Card = {
       type: CARD_TYPE.CORRECTION,
       title: translations.correction,
@@ -154,21 +155,24 @@ class Correction extends React.PureComponent<Props> {
       title: translations.keyPoint,
       isCorrect
     };
-    const lessonCards = resources.map(resource => ({
-      type: CARD_TYPE.RESOURCE,
-      title: translations.accessTheLesson,
-      resource,
-      isCorrect,
-      offeringExtraLife
-    }));
+    const lessonCards =
+      (resources &&
+        resources.map(resource => ({
+          type: CARD_TYPE.RESOURCE,
+          title: translations.accessTheLesson,
+          resource,
+          isCorrect,
+          offeringExtraLife
+        }))) ||
+      [];
 
-    let cards: Array<Card>;
+    let cards: Array<Card> = [];
 
     if (isCorrect && isResourceViewed) {
       cards = [tipCard, keyPointCard, correctionCard, ...lessonCards];
     } else if (isCorrect && !isResourceViewed) {
       cards = [tipCard, ...lessonCards, keyPointCard, correctionCard];
-    } else if (showResourcesFirst) {
+    } else if (!isCorrect && (offeringExtraLife || hasConsumedExtraLife)) {
       cards = [...lessonCards, correctionCard, keyPointCard, tipCard];
     } else if (!isCorrect && isResourceViewed) {
       cards = [correctionCard, keyPointCard, ...lessonCards, tipCard];
@@ -233,7 +237,7 @@ class Correction extends React.PureComponent<Props> {
                   question={question}
                   answers={answers}
                   userAnswers={userAnswers}
-                  isCorrect={isCorrect}
+                  isCorrect={Boolean(isCorrect)}
                 />
               )}
               {type === CARD_TYPE.KEY_POINT && (
@@ -251,7 +255,7 @@ class Correction extends React.PureComponent<Props> {
                     description={resource.description}
                     thumbnail={resource.poster}
                     subtitles={subtitleUri}
-                    onPress={this.handlePress(resource.type)}
+                    onPress={this.handleResourcePress(resource.type)}
                     testID={`${testID}-resource`}
                     extralifeOverlay={offeringExtraLife}
                     containerStyle={styles.resource}
@@ -280,13 +284,14 @@ class Correction extends React.PureComponent<Props> {
       isCorrect,
       onButtonPress,
       layout,
-      isLoading,
-      lives,
+      lives: _lives,
+      isGodModeEnabled,
+      isFastSlideEnabled,
       offeringExtraLife,
-      canGoNext
+      hasConsumedExtraLife
     } = this.props;
-
-    const cards = this.createCards();
+    const lives = hasConsumedExtraLife && _lives !== undefined ? _lives + 1 : _lives;
+    const canGoNext = lives === undefined || lives > 0;
 
     let analyticsID;
     if (canGoNext) {
@@ -297,50 +302,64 @@ class Correction extends React.PureComponent<Props> {
       analyticsID = 'button-game-over';
     }
 
+    const isLoading = isCorrect === undefined;
+
     return (
       <View
-        style={[styles.container, isCorrect ? styles.positive : styles.negative]}
-        testID={`correction-${isCorrect ? 'success' : 'error'}`}
+        style={[
+          styles.container,
+          isLoading && styles.loaderContainer,
+          !isLoading && (isCorrect ? styles.positive : styles.negative)
+        ]}
+        testID={`correction-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
       >
-        <View style={styles.header}>
-          <View>
-            <Text style={styles.title} testID="correction-title">
-              {(isCorrect && translations.goodJob) || translations.ouch}
-            </Text>
-            <Text style={styles.explanation} testID="correction-explanation">
-              {(isCorrect && translations.goodAnswer) || translations.wrongAnswer}
-            </Text>
-          </View>
-          {lives !== undefined && (
-            <LivesAnimated
-              count={lives}
-              isBroken={!isCorrect}
-              height={67}
-              testID="correction-lives"
-            />
-          )}
-        </View>
-        <Space type="base" />
-        {layout && (
-          <Cards
-            items={cards}
-            renderItem={this.renderCard}
-            cardStyle={{paddingTop: (layout.height - this.getCardsHeight()) / 2}}
-          />
+        {isLoading && <Loader />}
+        {!isLoading && (
+          <React.Fragment>
+            <View style={styles.header}>
+              <View>
+                <Text style={styles.title} testID="correction-title">
+                  {(isCorrect && translations.goodJob) || translations.ouch}
+                </Text>
+                <Text style={styles.explanation} testID="correction-explanation">
+                  {(isCorrect && translations.goodAnswer) || translations.wrongAnswer}
+                </Text>
+              </View>
+              {lives !== undefined && (
+                <Lives
+                  count={lives}
+                  animationDirection={
+                    (hasConsumedExtraLife && 'top') || (!isCorrect && 'bottom') || undefined
+                  }
+                  isGodModeEnabled={isGodModeEnabled}
+                  isFastSlideEnabled={isFastSlideEnabled}
+                  height={67}
+                  testID="correction-lives"
+                />
+              )}
+            </View>
+            <Space type="base" />
+            {layout && (
+              <Cards
+                items={this.getCards(Boolean(isCorrect))}
+                renderItem={this.renderCard}
+                cardStyle={{paddingTop: (layout.height - this.getCardsHeight()) / 2}}
+              />
+            )}
+            <Space type="base" />
+            <View style={styles.footer}>
+              <Button
+                isInverted={!offeringExtraLife}
+                isInlined={offeringExtraLife}
+                onPress={onButtonPress}
+                testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
+                analyticsID={analyticsID}
+              >
+                {offeringExtraLife ? translations.quit : translations.next}
+              </Button>
+            </View>
+          </React.Fragment>
         )}
-        <Space type="base" />
-        <View style={styles.footer}>
-          <Button
-            isInverted={!offeringExtraLife}
-            isInlined={offeringExtraLife}
-            onPress={onButtonPress}
-            isLoading={isLoading}
-            testID={`button-${canGoNext ? 'next-question' : 'quit'}`}
-            analyticsID={analyticsID}
-          >
-            {offeringExtraLife ? translations.quit : translations.next}
-          </Button>
-        </View>
       </View>
     );
   }

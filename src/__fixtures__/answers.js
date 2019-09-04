@@ -1,11 +1,10 @@
 // @flow strict
 
-export const answers: Array<string> = [
-  'Lorem Elsass ipsum',
-  'Chulia Roberstau',
-  'Miss Dahlias vulputate salu barapli schnaps blottkopf'
-];
+import type {Answer} from '@coorpacademy/progression-engine';
 
-export default {
-  answers
-};
+export const createAnswer = ({values}: {values?: Answer}): Answer =>
+  values || [
+    'Lorem Elsass ipsum',
+    'Chulia Roberstau',
+    'Miss Dahlias vulputate salu barapli schnaps blottkopf'
+  ];

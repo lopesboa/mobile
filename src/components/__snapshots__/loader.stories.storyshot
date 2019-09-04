@@ -1,5 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Loader Bigger height 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 120,
+      "justifyContent": "center",
+      "transform": Array [
+        Object {
+          "scaleX": 0.5,
+        },
+        Object {
+          "scaleY": 0.5,
+        },
+        Object {
+          "rotateZ": "0deg",
+        },
+      ],
+      "width": 120,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#F73F52",
+        "borderRadius": 10,
+        "height": 20,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "rotateZ": "45deg",
+          },
+          Object {
+            "translateX": -50,
+          },
+        ],
+        "width": 60,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#3EC483",
+        "borderRadius": 10,
+        "height": 20,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "rotateZ": "135deg",
+          },
+          Object {
+            "translateX": -50,
+          },
+        ],
+        "width": 60,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFE100",
+        "borderRadius": 10,
+        "height": 20,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "rotateZ": "225deg",
+          },
+          Object {
+            "translateX": -50,
+          },
+        ],
+        "width": 60,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#00B0FF",
+        "borderRadius": 10,
+        "height": 20,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "rotateZ": "315deg",
+          },
+          Object {
+            "translateX": -50,
+          },
+        ],
+        "width": 60,
+      }
+    }
+  />
+</View>
+`;
+
 exports[`Storyshots Loader Default 1`] = `
 <View
   style={

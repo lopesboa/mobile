@@ -1,38 +1,40 @@
-// @flow
+// @flow strict
 
 import {createStoreState} from '../__fixtures__/store';
 import {createLevel} from '../__fixtures__/levels';
 import {createQCMGraphic} from '../__fixtures__/questions';
 import {createSlide} from '../__fixtures__/slides';
 import {createProgression} from '../__fixtures__/progression';
-
 import {createContextWithImage} from '../__fixtures__/context';
+import {ENGINE, CONTENT_TYPE} from '../const';
 import {mapStateToProps} from './context';
+import type {ConnectedStateProps} from './context';
 
-describe('slide-context', () => {
+const slideRef = 'dummySlideRef';
+const levelRef = 'dummyLevelRef';
+const chapterId = '666';
+const level = createLevel({ref: levelRef, chapterIds: [chapterId]});
+const question = createQCMGraphic({});
+const context = createContextWithImage({title: 'A beautifull rainy day'});
+const slide = createSlide({
+  ref: slideRef,
+  chapterId,
+  question,
+  context
+});
+
+describe('Context', () => {
   it('should return the accurate props', () => {
-    const levelRef = 'dummyLevelRef';
-    const SlideRef = 'dummySlideRef';
-    const level = createLevel({ref: levelRef, chapterIds: ['666']});
-    const question = createQCMGraphic({});
-    const context = createContextWithImage({title: 'A beautifull rainy day'});
-    const slide = createSlide({
-      ref: SlideRef,
-      chapterId: '666',
-      chapterIds: ['666'],
-      question,
-      context
-    });
     const progression = createProgression({
-      engine: 'learner',
+      engine: ENGINE.LEARNER,
       progressionContent: {
-        type: 'slide',
-        ref: SlideRef
+        type: CONTENT_TYPE.SLIDE,
+        ref: slideRef
       },
       state: {
         nextContent: {
-          type: 'slide',
-          ref: 'dummySlideRef'
+          type: CONTENT_TYPE.SLIDE,
+          ref: slideRef
         }
       }
     });
@@ -45,33 +47,21 @@ describe('slide-context', () => {
       progression
     });
 
-    const expectedResult = {
-      description:
-        'Lorem ipsum dolor sit amet, vim ad probatus conceptam philosophia. Follow this <a href="https://coorpacademy.com">link</a>.',
-      header: 'A beautifull rainy day',
-      hasNoContext: false,
-      media: {
-        type: 'img',
-        mimeType: 'image/jpeg',
-        src: [
-          {
-            _id: 'someImage_ID',
-            mimeType: 'image/jpeg',
-            url:
-              '//api-staging.coorpacademy.com/api-service/medias?h=400&w=400&q=90&url=http://static.coorpacademy.com/content/CoorpAcademy/content/cockpitRecette-joan/default/corbeau-1501504511632.jpg'
-          }
-        ]
-      }
+    const result = mapStateToProps(mockedStore);
+    const expected: ConnectedStateProps = {
+      description: context.description,
+      header: context.title,
+      media: context.media
     };
-    expect(expectedResult).toEqual(mapStateToProps(mockedStore));
+    expect(expected).toEqual(result);
   });
 
-  it('should return empty props if the content there is no context', () => {
+  it('should return default props', () => {
     const progression = createProgression({
-      engine: 'learner',
+      engine: ENGINE.LEARNER,
       progressionContent: {
-        type: 'slide',
-        ref: '666'
+        type: CONTENT_TYPE.SLIDE,
+        ref: slideRef
       }
     });
     const emptyStore = createStoreState({
@@ -81,12 +71,13 @@ describe('slide-context', () => {
       slides: [],
       progression
     });
-    const expectedResult = {
+
+    const result = mapStateToProps(emptyStore);
+    const expected: ConnectedStateProps = {
       description: undefined,
-      hasNoContext: true,
       header: undefined,
       media: undefined
     };
-    expect(expectedResult).toEqual(mapStateToProps(emptyStore));
+    expect(result).toEqual(expected);
   });
 });

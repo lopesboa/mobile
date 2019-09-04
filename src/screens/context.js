@@ -4,47 +4,32 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import type {Media} from '@coorpacademy/progression-engine';
-import {selectRoute} from '@coorpacademy/player-store';
+import {getCurrentSlide} from '@coorpacademy/player-store';
 
-import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Context from '../components/context';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import type {Params as PdfScreenParams} from './pdf';
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   header?: string,
   description?: string,
-  media?: Media,
-  hasNoContext?: boolean
-|};
-
-type ConnectedDispatchProps = {|
-  selectRoute: typeof selectRoute
+  media?: Media
 |};
 
 type Props = $Exact<{|
   ...ReactNavigation$ScreenProps,
-  ...ConnectedStateProps,
-  ...ConnectedDispatchProps
+  ...ConnectedStateProps
 |}>;
 
 class ContextScreen extends React.PureComponent<Props> {
   props: Props;
 
-  UNSAFE_componentWillMount() {
-    if (this.props.hasNoContext) {
-      this.props.selectRoute('answer');
-      this.props.navigation.navigate('Question');
-    }
-  }
-
   handleButtonPress = () => {
-    this.props.selectRoute('answer');
     this.props.navigation.navigate('Question');
   };
 
-  handleOpenBrowserButtonPress = (_, url) => {
+  handleLinkPress = (_, url) => {
     this.props.navigation.navigate('BrowserModal', {url});
   };
 
@@ -69,7 +54,7 @@ class ContextScreen extends React.PureComponent<Props> {
           media={media}
           onPress={this.handleButtonPress}
           onPDFButtonPress={this.handlePDFButtonPress}
-          onOpenBrowser={this.handleOpenBrowserButtonPress}
+          onLinkPress={this.handleLinkPress}
           testID="context"
         />
       </Screen>
@@ -78,22 +63,14 @@ class ContextScreen extends React.PureComponent<Props> {
 }
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getSlide(state);
-  const slideContext = slide && slide.context;
+  const slide = getCurrentSlide(state);
+  const context = slide && slide.context;
 
   return {
-    description: slideContext && slideContext.description,
-    header: slideContext && slideContext.title,
-    hasNoContext: !(slideContext && slideContext.title),
-    media: slideContext && slideContext.media
+    description: context && context.description,
+    header: context && context.title,
+    media: context && context.media
   };
 };
 
-const mapDispatchToProps: ConnectedDispatchProps = {
-  selectRoute
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContextScreen);
+export default connect(mapStateToProps)(ContextScreen);

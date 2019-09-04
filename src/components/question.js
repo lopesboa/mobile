@@ -26,14 +26,12 @@ export type Props = {|
   choices: Array<Choice>,
   userChoices: Array<string>,
   media?: Media,
-  isValidating: boolean,
   // @todo mutualize the callback ?
   onChoicePress: (item: Choice) => void,
   onSliderChange: $PropertyType<QuestionChoicesProps, 'onSliderChange'>,
   onChoiceInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void,
   onButtonPress: () => void,
-  isValidating?: boolean,
   min?: $PropertyType<QuestionChoicesProps, 'min'>,
   max?: $PropertyType<QuestionChoicesProps, 'max'>,
   value?: $PropertyType<QuestionChoicesProps, 'value'>,
@@ -91,7 +89,6 @@ const Question = ({
   onChoiceInputChange,
   onInputValueChange,
   onButtonPress,
-  isValidating,
   min,
   max,
   step,
@@ -173,7 +170,6 @@ const Question = ({
           onItemPress={onChoicePress}
           onSliderChange={onSliderChange}
           onItemInputChange={onChoiceInputChange}
-          isDisabled={isValidating}
           min={min}
           max={max}
           step={step}
@@ -184,8 +180,7 @@ const Question = ({
       <View style={styles.footer}>
         <Button
           onPress={onButtonPress}
-          isDisabled={!oneChoiceSelected || isValidating}
-          isLoading={isValidating}
+          isDisabled={!oneChoiceSelected}
           testID="button-validate"
           analyticsID="button-validate"
           analyticsParams={{questionType: type}}

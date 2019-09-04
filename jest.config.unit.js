@@ -21,8 +21,6 @@ module.exports = {
     '!<rootDir>/src/*.js',
     '!<rootDir>/src/utils/tests.js',
     '!<rootDir>/src/**/*.stories.js',
-    '!<rootDir>/src/screens/*',
-    '!<rootDir>/src/containers/*',
     '!<rootDir>/src/navigator/*',
     '!**/__fixtures__/**'
   ],
@@ -32,6 +30,18 @@ module.exports = {
       functions: 100,
       lines: 100,
       statements: 100
+    },
+    'src/containers': {
+      branches: 42,
+      functions: 44,
+      lines: 47,
+      statements: 47
+    },
+    'src/screens': {
+      branches: 39,
+      functions: 11,
+      lines: 27,
+      statements: 26
     },
     'src/redux': {
       branches: 88,

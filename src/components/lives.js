@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {Animated, View, StyleSheet} from 'react-native';
+import {Animated, View, StyleSheet, Easing} from 'react-native';
 import {
   NovaSolidVoteRewardsVoteHeart as HeartIcon,
   NovaSolidAudioAudioControlFastForward as FastForward,
@@ -12,26 +12,11 @@ import {
 import theme from '../modules/theme';
 import Text from './text';
 
-export type Props = {|
-  count: number,
-  height: number,
-  winningLife?: boolean,
-  isBroken?: boolean,
-  testID?: string,
-  translateX?: Animated.Interpolation,
-  textTranslateY?: Animated.Interpolation,
-  scaleX?: Animated.Interpolation,
-  scaleY?: Animated.Interpolation,
-  heartOpacity?: Animated.Interpolation,
-  heartBrokenOpacity?: Animated.Interpolation,
-  maxScaleX?: number,
-  isGodModeActivated: boolean,
-  isFastSlideActivated: boolean,
-  isLoading?: boolean
-|};
-
+const GOD_MODE_TEXT = '∞';
 const HEART_OFFSET_RIGHT = 0.4;
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
+const MAX_SCALE_X = 1.6;
+const MAX_SCALE_Y = 1.4;
 
 const styles = StyleSheet.create({
   container: {
@@ -45,167 +30,287 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     borderRadius: theme.radius.thumbnail,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    overflow: 'hidden'
   },
   livesPlaceholder: {
     backgroundColor: PLACEHOLDER_COLOR
+  },
+  text: {
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.gray.dark,
+    textAlign: 'center'
+  },
+  textContainer: {
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center'
+  },
+  textAnimated: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center'
   },
   heartIcon: {
     position: 'absolute',
     top: 0,
     left: 0
   },
-  fastSlideIcon: {}
-});
-
-const Lives = ({
-  count,
-  winningLife = false,
-  height,
-  isBroken,
-  testID = 'lives',
-  translateX,
-  textTranslateY,
-  scaleX,
-  scaleY,
-  heartOpacity,
-  heartBrokenOpacity,
-  maxScaleX = 0,
-  isGodModeActivated,
-  isFastSlideActivated,
-  isLoading
-}: Props) => {
-  const heartHeight = height * 0.6;
-  const fastSlideIconHeight = height * 0.4;
-  const heartIconStyle = {height: heartHeight, width: heartHeight};
-  const fastSlideIconStyle = {height: fastSlideIconHeight, width: fastSlideIconHeight};
-  const offsetLeft = (heartHeight * maxScaleX) / 2;
-  const heartColor =
-    (isLoading && PLACEHOLDER_COLOR) ||
-    (isGodModeActivated && theme.colors.positive) ||
-    theme.colors.negative;
-  const containerStyle = {
-    paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
-    width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
-    height
-  };
-  const fastSlideContainerStyle = {
+  fastSlide: {
     position: 'absolute',
     top: 0,
-    paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     marginTop: theme.spacing.micro
-  };
-  const transform = [];
-  const textTransform = [];
-  if (translateX) {
-    transform.push({translateX});
   }
-  if (scaleX) {
-    transform.push({scaleX});
-  }
-  if (scaleY) {
-    transform.push({scaleY});
-  }
-  if (textTranslateY) {
-    textTransform.push({translateY: textTranslateY});
+});
+
+export type AnimationDirection = 'top' | 'bottom';
+
+export type Props = {|
+  count?: number,
+  height: number,
+  animationDirection?: AnimationDirection,
+  maxScaleX?: number,
+  isGodModeEnabled?: boolean,
+  isFastSlideEnabled?: boolean,
+  onAnimate?: (AnimationDirection | void) => void,
+  testID?: string
+|};
+
+class Lives extends React.PureComponent<Props> {
+  props: Props;
+
+  shake: Animated.Value = new Animated.Value(0);
+
+  scale: Animated.Value = new Animated.Value(0);
+
+  broken: Animated.Value = new Animated.Value(0);
+
+  textTranslate: Animated.Value = new Animated.Value(0);
+
+  componentDidMount() {
+    this.animate();
   }
 
-  const heartStyle = {
-    height: heartHeight,
-    width: heartHeight,
-    transform,
-    left: offsetLeft
-  };
-  const livesStyle = {
-    width: height,
-    height,
-    overflow: 'hidden'
-  };
-  const textStyle = {
-    fontSize: height / 3,
-    fontWeight: theme.fontWeight.bold,
-    color: theme.colors.gray.dark,
-    textAlign: 'center'
-  };
-  const animatedTextStyle = {
-    transform: textTransform,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center'
+  componentDidUpdate(prevProps: Props) {
+    this.animate();
+  }
+
+  animate = () => {
+    const {animationDirection, onAnimate} = this.props;
+
+    this.resetAnimation();
+
+    if (animationDirection === 'top') {
+      this.winLife();
+    } else if (animationDirection === 'bottom') {
+      this.loseLife();
+    }
+
+    onAnimate && onAnimate(animationDirection);
   };
 
-  const textWrapper = {
-    alignItems: 'center',
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center'
+  resetAnimation = () =>
+    Animated.sequence([
+      Animated.timing(this.textTranslate, {toValue: 0, duration: 0}),
+      Animated.timing(this.broken, {toValue: 0, duration: 0}),
+      Animated.timing(this.shake, {toValue: 0, duration: 0}),
+      Animated.timing(this.scale, {toValue: 0, duration: 0})
+    ]);
+
+  loseLife = () => {
+    Animated.sequence([
+      Animated.timing(this.shake, {
+        toValue: 1
+      }),
+      Animated.delay(350),
+      Animated.parallel([
+        Animated.delay(500),
+        Animated.timing(this.textTranslate, {
+          toValue: 1,
+          duration: 1200,
+          easing: Easing.out(Easing.poly(3))
+        }),
+        Animated.timing(this.shake, {toValue: 0, duration: 0}),
+        Animated.timing(this.shake, {
+          toValue: 1,
+          duration: 200
+        }),
+        Animated.timing(this.scale, {
+          toValue: 1,
+          duration: 200
+        }),
+        Animated.sequence([
+          Animated.delay(0.6 * 200),
+          Animated.timing(this.broken, {
+            toValue: 1,
+            duration: 0.2 * 200
+          })
+        ])
+      ])
+    ]).start();
   };
 
-  const brokenSuffix = isBroken ? '-broken' : '';
-  const topText = winningLife ? count - 1 : count;
-  const godModeInfiniteLoopChar = '∞';
-  const bottomText = winningLife ? count : count + 1;
+  winLife = () => {
+    Animated.sequence([
+      Animated.parallel([
+        Animated.sequence([
+          Animated.delay(1000),
+          Animated.timing(this.textTranslate, {
+            toValue: 1,
+            duration: 2200,
+            easing: Easing.out(Easing.poly(5))
+          })
+        ]),
+        Animated.timing(this.scale, {
+          toValue: 1,
+          duration: 1200
+        }),
+        Animated.timing(this.broken, {
+          toValue: 1,
+          duration: 1200
+        })
+      ])
+    ]).start();
+  };
 
-  return (
-    <View style={[styles.container, containerStyle]} testID={testID}>
-      <View
-        style={[styles.lives, isLoading && styles.livesPlaceholder, livesStyle]}
-        testID={`${testID}-${count}${brokenSuffix}`}
-      >
-        {!isLoading && (
-          <React.Fragment>
-            {(isGodModeActivated && isFastSlideActivated) ||
-            isFastSlideActivated ||
-            isGodModeActivated ? (
-              <View style={textWrapper}>
-                <Text style={textStyle}>{godModeInfiniteLoopChar}</Text>
-              </View>
-            ) : (
-              <Animated.View style={animatedTextStyle}>
-                <View style={textWrapper}>
-                  <Text style={textStyle}>x{topText}</Text>
+  render() {
+    const {
+      count,
+      height,
+      testID = 'lives',
+      maxScaleX = 0,
+      isGodModeEnabled,
+      isFastSlideEnabled,
+      animationDirection
+    } = this.props;
+
+    const heartHeight = height * 0.6;
+    const fastSlideIconHeight = height * 0.4;
+    const heartIconStyle = {height: heartHeight, width: heartHeight};
+    const fastSlideIconStyle = {height: fastSlideIconHeight, width: fastSlideIconHeight};
+    const offsetLeft = (heartHeight * maxScaleX) / 2;
+    const heartColor =
+      (count === undefined && PLACEHOLDER_COLOR) ||
+      (isGodModeEnabled && theme.colors.positive) ||
+      theme.colors.negative;
+    const containerStyle = {
+      paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
+      width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
+      height
+    };
+    const fastSlideStyle = {
+      paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft
+    };
+    const livesStyle = {
+      width: height,
+      height
+    };
+    const textStyle = {
+      fontSize: height / 3
+    };
+
+    const translateX = this.shake.interpolate({
+      inputRange: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      outputRange: [0, -2, 2, -2, 2, -2, 2, -2, 2, -2, 0]
+    });
+    const scaleX = this.scale.interpolate({
+      inputRange: [0, 0.8, 0.95, 1],
+      outputRange: [1, MAX_SCALE_X, 0.9, 1]
+    });
+    const scaleY = this.scale.interpolate({
+      inputRange: [0, 0.8, 0.95, 1],
+      outputRange: [1, MAX_SCALE_Y, 0.9, 1]
+    });
+    const heartOpacity = this.broken.interpolate({
+      inputRange: [0, 1],
+      outputRange: animationDirection === 'top' ? [0, 1] : [1, 0]
+    });
+    const heartBrokenOpacity = this.broken.interpolate({
+      inputRange: [0, 1],
+      outputRange: animationDirection === 'top' ? [1, 0] : [0, 1]
+    });
+    const textTranslateY = this.textTranslate.interpolate({
+      inputRange: [0, 1],
+      outputRange: (animationDirection === 'bottom' && [0, -height]) ||
+        (animationDirection === 'top' && [-height, 0]) || [0, 0]
+    });
+
+    const heartStyle = {
+      height: heartHeight,
+      width: heartHeight,
+      transform: [{translateX}, {scaleX}, {scaleY}],
+      left: offsetLeft
+    };
+
+    const countSuffix = (count !== undefined && `-${count}`) || '';
+    const brokenSuffix = (animationDirection === 'bottom' && '-broken') || '';
+
+    return (
+      <View style={[styles.container, containerStyle]} testID={testID}>
+        <View
+          style={[styles.lives, count === undefined && styles.livesPlaceholder, livesStyle]}
+          testID={`${testID}${countSuffix}${brokenSuffix}`}
+        >
+          {count !== undefined && (
+            <React.Fragment>
+              {isGodModeEnabled ? (
+                <View style={styles.textContainer}>
+                  <Text style={[styles.text, textStyle]}>{GOD_MODE_TEXT}</Text>
                 </View>
-                <View style={textWrapper}>
-                  <Text style={textStyle}>x{bottomText}</Text>
-                </View>
-              </Animated.View>
-            )}
-          </React.Fragment>
+              ) : (
+                <Animated.View
+                  style={[styles.textAnimated, {transform: [{translateY: textTranslateY}]}]}
+                >
+                  <View style={styles.textContainer}>
+                    <Text style={[styles.text, textStyle]}>
+                      x{animationDirection === 'bottom' ? count + 1 : count}
+                    </Text>
+                  </View>
+                  <View style={styles.textContainer}>
+                    <Text style={[styles.text, textStyle]}>
+                      x{animationDirection === 'bottom' ? count : count - 1}
+                    </Text>
+                  </View>
+                </Animated.View>
+              )}
+            </React.Fragment>
+          )}
+        </View>
+        <Animated.View style={[styles.heart, heartStyle]}>
+          <HeartOutlineIcon
+            color={theme.colors.white}
+            style={{height: heartHeight, width: heartHeight}}
+          />
+          <Animated.View
+            style={[
+              styles.heartIcon,
+              {
+                opacity: heartOpacity
+              }
+            ]}
+          >
+            <HeartIcon color={heartColor} style={heartIconStyle} />
+          </Animated.View>
+          <Animated.View
+            style={[
+              styles.heartIcon,
+              {
+                opacity: heartBrokenOpacity
+              }
+            ]}
+          >
+            <HeartBrokenIcon color={heartColor} style={heartIconStyle} />
+          </Animated.View>
+        </Animated.View>
+        {isFastSlideEnabled && (
+          <View style={[styles.fastSlide, fastSlideStyle]}>
+            <FastForward color={theme.colors.gray.dark} style={fastSlideIconStyle} />
+          </View>
         )}
       </View>
-      <Animated.View style={[styles.heart, heartStyle]}>
-        <HeartOutlineIcon
-          color={theme.colors.white}
-          style={{height: heartHeight, width: heartHeight}}
-        />
-        <Animated.View
-          style={[
-            styles.heartIcon,
-            {
-              opacity: heartOpacity || 1
-            }
-          ]}
-        >
-          <HeartIcon color={heartColor} style={heartIconStyle} />
-        </Animated.View>
-        <Animated.View
-          style={[
-            styles.heartIcon,
-            {
-              opacity: heartBrokenOpacity || 0
-            }
-          ]}
-        >
-          <HeartBrokenIcon color={theme.colors.negative} style={heartIconStyle} />
-        </Animated.View>
-      </Animated.View>
-      {isFastSlideActivated && (
-        <View style={fastSlideContainerStyle}>
-          <FastForward color={theme.colors.gray.dark} style={fastSlideIconStyle} />
-        </View>
-      )}
-    </View>
-  );
-};
+    );
+  }
+}
 
 export default Lives;

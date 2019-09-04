@@ -3,10 +3,11 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import {answers} from '../__fixtures__/answers';
+import {createAnswer} from '../__fixtures__/answers';
 import CardCorrection from './card-correction';
 
 const question = 'Where is Waldo ?';
+const answers = createAnswer({});
 
 storiesOf('CardCorrection', module)
   .add('Default', () => (

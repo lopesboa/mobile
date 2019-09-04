@@ -4,9 +4,9 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
-import {getRoute, selectRoute, hasSeenLesson} from '@coorpacademy/player-store';
+import {hasSeenLesson, getCurrentSlide} from '@coorpacademy/player-store';
 
-import {checkIsValidating, getSlide} from '../redux/utils/state-extract';
+import {getCurrentScreenName, getContext} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
@@ -17,22 +17,16 @@ import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
-  isValidating: boolean,
-  hasNoClue: boolean,
+  isFocused: boolean,
   isLoading: boolean,
-  hasNoContext: boolean,
-  hasNoLesson: boolean,
-  hasNewLesson: boolean,
-  showContext: boolean
-|};
-
-type ConnectedDispatchProps = {|
-  selectRoute: typeof selectRoute
+  hasClue: boolean,
+  hasContext: boolean,
+  hasLesson: boolean,
+  hasNewLesson: boolean
 |};
 
 type Props = {|
   ...ConnectedStateToProps,
-  ...ConnectedDispatchProps,
   ...$Exact<_BottomTabBarProps>
 |};
 
@@ -61,58 +55,52 @@ const styles = StyleSheet.create({
 class TabBarSlide extends React.Component<Props> {
   props: Props;
 
+  componentDidMount() {
+    this.switchTab();
+  }
+
   componentDidUpdate(prevProps: Props) {
-    if (!prevProps.showContext && this.props.showContext) {
-      this.props.navigation.navigate('Context');
+    const {hasContext, isFocused} = this.props;
+
+    const hasContextChanged = prevProps.hasContext !== hasContext;
+    const hasFocusChanged = prevProps.isFocused !== isFocused;
+
+    if (isFocused && (hasContextChanged || hasFocusChanged)) {
+      this.switchTab();
     }
   }
 
-  handleTabPress = (scene: TabScene) => {
-    const {isValidating, onTabPress, hasNoClue, hasNoLesson} = this.props;
-    if (isValidating) {
-      return;
+  switchTab = () => {
+    const {hasContext} = this.props;
+
+    if (hasContext) {
+      this.props.navigation.navigate('Context');
+    } else {
+      this.props.navigation.navigate('Question');
     }
+  };
+
+  handleTabPress = (scene: TabScene) => {
+    const {onTabPress, hasClue, hasLesson} = this.props;
 
     if (
-      (scene.route.routeName === 'Clue' && hasNoClue) ||
-      (scene.route.routeName === 'Lesson' && hasNoLesson)
+      (scene.route.routeName === 'Clue' && !hasClue) ||
+      (scene.route.routeName === 'Lesson' && !hasLesson)
     ) {
       return;
     }
-
-    let route;
-    switch (scene.route.routeName) {
-      case 'Context':
-        route = 'context';
-        break;
-      case 'Clue':
-        route = 'clue';
-        break;
-      case 'Lesson':
-        route = 'media';
-        break;
-      case 'Question':
-      default:
-        route = 'answer';
-        break;
-    }
-
-    this.props.selectRoute(route);
 
     return onTabPress(scene);
   };
 
   renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasNoClue, hasNoLesson, isLoading} = this.props;
+    const {renderIcon, hasClue, hasLesson, isLoading} = this.props;
 
     if (isLoading) {
       return <PlaceholderCircle width={20} color={PLACEHOLDER_COLOR} />;
     }
 
-    if (
-      (scene.route.key === 'Clue' && hasNoClue) ||
-      (scene.route.key === 'Lesson' && hasNoLesson)
-    ) {
+    if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
       return renderIcon({
         ...scene,
         tintColor: INACTIVE_COLOR
@@ -123,10 +111,10 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   getButtonComponent = (scene: TabScene) => {
-    const {getButtonComponent, hasNoContext} = this.props;
+    const {getButtonComponent, hasContext} = this.props;
     const HiddenView = () => <View style={styles.hidden} />;
 
-    if (scene.route.key === 'Context' && hasNoContext) {
+    if (scene.route.key === 'Context' && !hasContext) {
       // $FlowFixMe dont understand why it cries
       return HiddenView;
     }
@@ -135,7 +123,7 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   getLabelText = (scene: TabScene) => ({tintColor}) => {
-    const {getLabelText, labelStyle, hasNoClue, hasNoLesson, hasNewLesson, isLoading} = this.props;
+    const {getLabelText, labelStyle, hasClue, hasLesson, hasNewLesson, isLoading} = this.props;
 
     if (isLoading) {
       return <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />;
@@ -150,10 +138,7 @@ class TabBarSlide extends React.Component<Props> {
     // $FlowFixMe Cannot access computed property
     const labelText = translations[labelKey];
 
-    if (
-      (scene.route.key === 'Clue' && hasNoClue) ||
-      (scene.route.key === 'Lesson' && hasNoLesson)
-    ) {
+    if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
       return <Text style={[labelStyle, styles.inactiveText]}>{labelText}</Text>;
     }
 
@@ -174,14 +159,12 @@ class TabBarSlide extends React.Component<Props> {
     const {
       navigation,
       /* eslint-disable no-unused-vars */
-      hasNewLesson,
+      isFocused,
       isLoading,
-      hasNoClue,
-      hasNoContext,
-      hasNoLesson,
-      isValidating,
-      selectRoute: _selectRoute,
-      showContext,
+      hasClue,
+      hasContext,
+      hasLesson,
+      hasNewLesson,
       /* eslint-enable no-unused-vars */
       ...props
     } = this.props;
@@ -201,33 +184,20 @@ class TabBarSlide extends React.Component<Props> {
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
-  const slide = getSlide(state);
+  const currentScreenName = getCurrentScreenName(state);
+  const slide = getCurrentSlide(state);
+  const context = getContext(state);
   // $FlowFixMe overrided type
   const resources: Array<LessonType> = (slide && slide.lessons) || [];
 
-  const currentRoute = getRoute(state);
-  const showContext = currentRoute === 'context';
-
-  const isValidating = checkIsValidating(state);
-
-  const isLoading = !slide;
-
   return {
-    isValidating,
-    isLoading,
-    hasNoClue: !(slide && slide.clue),
-    hasNoLesson: !resources.length,
-    hasNoContext: !(slide && slide.context && slide.context.title),
-    hasNewLesson: !hasSeenLesson(state),
-    showContext
+    isFocused: currentScreenName === 'Slide',
+    isLoading: !slide,
+    hasClue: Boolean(slide && slide.clue),
+    hasLesson: resources.length > 0,
+    hasContext: context !== undefined,
+    hasNewLesson: !hasSeenLesson(state)
   };
 };
 
-const mapDispatchToProps: ConnectedDispatchProps = {
-  selectRoute
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TabBarSlide);
+export default connect(mapStateToProps)(TabBarSlide);

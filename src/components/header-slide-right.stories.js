@@ -8,39 +8,30 @@ import HeaderSlideRight from './header-slide-right';
 
 storiesOf('HeaderSlideRight', module)
   .add('Default', () => (
-    <HeaderSlideRight
-      isGodModeActivated={false}
-      isFastSlideActivated={false}
-      onFastSlideToggle={handleFakePress}
-      onGodModeToggle={null}
-      count={3}
-    />
+    <HeaderSlideRight onPress={handleFakePress} onLongPress={handleFakePress} count={3} />
   ))
   .add('God mode', () => (
     <HeaderSlideRight
-      isGodModeActivated
-      isFastSlideActivated={false}
-      onFastSlideToggle={handleFakePress}
-      onGodModeToggle={handleFakePress}
+      isGodModeEnabled
+      onPress={handleFakePress}
+      onLongPress={handleFakePress}
       count={3}
     />
   ))
-  .add('FastSlide', () => (
+  .add('Fast slide', () => (
     <HeaderSlideRight
-      isGodModeActivated={false}
-      isFastSlideActivated
-      onFastSlideToggle={handleFakePress}
-      onGodModeToggle={handleFakePress}
+      isFastSlideEnabled
+      onPress={handleFakePress}
+      onLongPress={handleFakePress}
       count={3}
     />
   ))
-  .add('Placeholder', () => (
+  .add('God mode + fast slide', () => (
     <HeaderSlideRight
-      isGodModeActivated={false}
-      isFastSlideActivated={false}
-      onFastSlideToggle={handleFakePress}
-      onGodModeToggle={null}
+      isGodModeEnabled
+      isFastSlideEnabled
+      onPress={handleFakePress}
+      onLongPress={handleFakePress}
       count={3}
-      isLoading
     />
   ));

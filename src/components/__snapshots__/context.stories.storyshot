@@ -1,6 +1,252 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Context Default 1`] = `null`;
+exports[`Storyshots Context Default 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingBottom": 24,
+      "paddingTop": 32,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    >
+      <View
+        testID="question-title"
+      >
+        <View
+          style={Object {}}
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                },
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "marginBottom": 17,
+                    "marginTop": 17,
+                    "marginVertical": 0,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Better now
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 24,
+          "width": 24,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View>
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
+              Object {},
+              Object {
+                "marginVertical": 0,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 17,
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              You probably think that you are better now 
+            </Text>
+          </Text>
+          <Image
+            source={
+              Object {
+                "uri": "gr\\\\",
+              }
+            }
+            style={
+              Array [
+                Array [
+                  Object {
+                    "height": 200,
+                    "marginLeft": "auto",
+                    "marginRight": "auto",
+                    "width": 200,
+                  },
+                  Object {},
+                ],
+                Object {
+                  "height": 100,
+                  "resizeMode": "cover",
+                  "width": 100,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-redirect-question"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "transparent",
+            "borderColor": "#00B0FF",
+            "borderRadius": 32,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+        testID="button-redirect-question-native"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "color": "#00B0FF",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Go to question
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`Storyshots Context With Image 1`] = `
 <View
@@ -2487,4 +2733,250 @@ exports[`Storyshots Context Without Layout 1`] = `
 </View>
 `;
 
-exports[`Storyshots Context Without Layout 2 1`] = `null`;
+exports[`Storyshots Context Without Layout 2 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+      "justifyContent": "space-between",
+      "paddingBottom": 24,
+      "paddingTop": 32,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    >
+      <View
+        testID="question-title"
+      >
+        <View
+          style={Object {}}
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                },
+                Object {},
+                Object {},
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                style={
+                  Object {
+                    "color": "#14171A",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "marginBottom": 17,
+                    "marginTop": 17,
+                    "marginVertical": 0,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Better now
+              </Text>
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 24,
+          "width": 24,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View>
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginVertical": 0,
+                "textAlign": "center",
+              },
+              Object {},
+              Object {
+                "marginVertical": 0,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={true}
+              style={
+                Object {
+                  "color": "#546E7A",
+                  "fontSize": 17,
+                  "marginBottom": 17,
+                  "marginTop": 17,
+                  "marginVertical": 0,
+                  "textAlign": "center",
+                }
+              }
+            >
+              You probably think that you are better now 
+            </Text>
+          </Text>
+          <Image
+            source={
+              Object {
+                "uri": "gr\\\\",
+              }
+            }
+            style={
+              Array [
+                Array [
+                  Object {
+                    "height": 200,
+                    "marginLeft": "auto",
+                    "marginRight": "auto",
+                    "width": 200,
+                  },
+                  Object {},
+                ],
+                Object {
+                  "height": 100,
+                  "resizeMode": "cover",
+                  "width": 100,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 24,
+      }
+    }
+  >
+    <View
+      testID="button-redirect-question"
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "transparent",
+            "borderColor": "#00B0FF",
+            "borderRadius": 32,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+          }
+        }
+        testID="button-redirect-question-native"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "flex": 1,
+                "fontSize": 18,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "color": "#00B0FF",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          Go to question
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

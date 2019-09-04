@@ -54,7 +54,8 @@ export const createSlider = ({
     min,
     max,
     defaultValue,
-    unitLabel: '',
+    step: 3,
+    unitLabel: '°C',
     maxTypos: null,
     choices: [],
     answers,
@@ -104,11 +105,4 @@ export const createBasicQuestion = ({maxTypos}: {maxTypos?: ?number}): BasicQues
       answers: [[choices[0].label]]
     }
   };
-};
-
-export default {
-  createQCM,
-  createQCMGraphic,
-  createTemplate,
-  createSlider
 };

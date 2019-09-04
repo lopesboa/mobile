@@ -18,7 +18,7 @@ storiesOf('Context', module)
         media={{}}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -31,7 +31,7 @@ storiesOf('Context', module)
         media={{type: 'video', src: [{url: null}]}}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -43,7 +43,7 @@ storiesOf('Context', module)
         media={mediaContextImage}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -55,7 +55,7 @@ storiesOf('Context', module)
         media={mediaContextVideo}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -67,7 +67,7 @@ storiesOf('Context', module)
         media={mediaContextPDF}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -79,7 +79,7 @@ storiesOf('Context', module)
         media={mediaContextPDF}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -91,7 +91,7 @@ storiesOf('Context', module)
         media={undefined}
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
-        onOpenBrowser={handleFakePress}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ));
@@ -110,7 +110,7 @@ if (__TEST__) {
             media={mediaContextPDF}
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
-            onOpenBrowser={handleFakePress}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -135,7 +135,7 @@ if (__TEST__) {
             media={mediaContextPDF}
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
-            onOpenBrowser={handleFakePress}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -157,7 +157,7 @@ if (__TEST__) {
             media={{...mediaContextPDF, mediaUrl: undefined}}
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
-            onOpenBrowser={handleFakePress}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -174,7 +174,7 @@ if (__TEST__) {
             media={{...mediaContextImage, src: undefined}}
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
-            onOpenBrowser={handleFakePress}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );

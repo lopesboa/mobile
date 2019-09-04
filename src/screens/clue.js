@@ -3,9 +3,13 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
-import {getCurrentClue, getClue, getEngineConfig} from '@coorpacademy/player-store';
+import {
+  getCurrentClue,
+  getClue,
+  getEngineConfig,
+  getCurrentSlide
+} from '@coorpacademy/player-store';
 
-import {getSlide} from '../redux/utils/state-extract';
 import Screen from '../components/screen';
 import Clue from '../components/clue';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
@@ -55,7 +59,7 @@ class ClueScreen extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const clue = getCurrentClue(state);
-  const slide = getSlide(state);
+  const slide = getCurrentSlide(state);
   const engineConfig = getEngineConfig(state);
   const slideId = slide && slide._id;
   // $FlowFixMe union type

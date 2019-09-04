@@ -12,7 +12,8 @@ import {__TEST__} from '../modules/environment';
 import {
   BrandThemeContext,
   Component as BrandThemeProvider,
-  mapStateToProps
+  mapStateToProps,
+  initialState
 } from './brand-theme-provider';
 
 const brand = createBrand({});
@@ -35,7 +36,7 @@ storiesOf('BrandThemeProvider', module).add('Default', () => (
 
 if (__TEST__) {
   describe('mapStateToProps', () => {
-    it('should return the state brand', () => {
+    it('should return the brand from state', () => {
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
@@ -49,13 +50,14 @@ if (__TEST__) {
         chapters: [],
         slides: [],
         progression,
-        authentication: createAuthenticationState({})
+        authentication: createAuthenticationState({brand})
       });
 
       const result = mapStateToProps(state);
       expect(result.brand).toEqual(brand);
     });
-    it('should return the default brand', () => {
+
+    it('should return the initial state', () => {
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
@@ -69,13 +71,11 @@ if (__TEST__) {
         chapters: [],
         slides: [],
         progression,
-        authentication: {
-          brand: null
-        }
+        authentication: createAuthenticationState({brand: null})
       });
 
       const result = mapStateToProps(state);
-      expect(result.brand.name).toEqual('onboarding');
+      expect(result.brand).toEqual(initialState);
     });
   });
 }

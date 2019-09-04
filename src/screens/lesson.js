@@ -3,7 +3,13 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
-import {play, getEngineConfig, getResourceToPlay, selectResource} from '@coorpacademy/player-store';
+import {
+  play,
+  getEngineConfig,
+  getResourceToPlay,
+  selectResource,
+  getCurrentSlide
+} from '@coorpacademy/player-store';
 import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 
 import type {Resource} from '../types';
@@ -12,7 +18,6 @@ import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import Screen from '../components/screen';
 import Lesson from '../components/lesson';
 import {reduceToResources} from '../layer/data/mappers';
-import {getSlide} from '../redux/utils/state-extract';
 import type {Params as PdfScreenParams} from './pdf';
 
 export type ConnectedStateProps = {|
@@ -77,7 +82,7 @@ class LessonScreen extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getSlide(state);
+  const slide = getCurrentSlide(state);
   const header = (slide && slide.question && slide.question.header) || undefined;
   // $FlowFixMe overrided type
 

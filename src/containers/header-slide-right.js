@@ -2,74 +2,59 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getCurrentProgression} from '@coorpacademy/player-store';
+import {getCurrentProgression, getLives} from '@coorpacademy/player-store';
 
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
-import {getLives, getSlide} from '../redux/utils/state-extract';
-import {toggleGodMode} from '../redux/actions/godmode';
-import {toggleFastSlide} from '../redux/actions/fastslide';
+import {
+  isGodModeEnabled as _isGodModeEnabled,
+  isFastSlideEnabled as _isFastSlideEnabled
+} from '../redux/utils/state-extract';
+import {toggle as toggleGodMode} from '../redux/actions/god-mode';
+import {toggle as toggleFastSlide} from '../redux/actions/fast-slide';
 
 type ConnectedStateProps = {|
-  hide: boolean,
-  count: number,
-  isLoading: boolean,
-  isGodModeActivated: boolean,
-  isFastSlideActivated: boolean
+  count?: number,
+  isGodModeEnabled?: boolean,
+  isFastSlideEnabled?: boolean
 |};
 
-type ToggleFn = () => void;
-
-type DispatchProps = {|
-  toggleGodMode: () => null | ToggleFn,
-  toggleFastSlide: () => null | ToggleFn
+type ConnectedDispatchProps = {|
+  toggleGodMode: typeof toggleGodMode,
+  toggleFastSlide: typeof toggleFastSlide
 |};
 
 type Props = {|
   ...ConnectedStateProps,
-  ...DispatchProps
+  ...ConnectedDispatchProps
 |};
 
 // react-navigation needs this to be a class
-// eslint-disable-next-line react/prefer-stateless-function
 class HeaderSlideRight extends React.Component<Props> {
   props: Props;
 
-  handleGodModeToggle = () => {
-    const toggleFn = this.props.toggleGodMode();
-    if (typeof toggleFn !== 'object') {
-      return () => {
-        return toggleFn && toggleFn();
-      };
-    }
-    return null;
+  handlePress = () => {
+    this.props.toggleGodMode();
   };
 
-  handleFastSlideToggle = () => {
-    const toggleFn = this.props.toggleFastSlide();
-    if (typeof toggleFn !== 'object') {
-      return () => {
-        return toggleFn && toggleFn();
-      };
-    }
-    return null;
+  handleLongPress = () => {
+    this.props.toggleFastSlide();
   };
 
   render() {
-    const {isLoading, hide, count, isGodModeActivated, isFastSlideActivated} = this.props;
+    const {count, isGodModeEnabled, isFastSlideEnabled} = this.props;
 
-    if (hide) {
+    if (count === undefined) {
       return null;
     }
 
     return (
       <HeaderSlideRightComponent
-        isGodModeActivated={isGodModeActivated}
-        isFastSlideActivated={isFastSlideActivated}
         count={count}
-        onGodModeToggle={this.handleGodModeToggle()}
-        onFastSlideToggle={this.handleFastSlideToggle()}
-        isLoading={isLoading}
+        isGodModeEnabled={isGodModeEnabled}
+        isFastSlideEnabled={isFastSlideEnabled}
+        onPress={this.handlePress}
+        onLongPress={this.handleLongPress}
       />
     );
   }
@@ -77,24 +62,21 @@ class HeaderSlideRight extends React.Component<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
-  const isGodModeActivated = state.godmode;
-  const isFastSlideActivated = state.fastSlide;
-  if (!progression) {
-    return {hide: false, count: 0, isLoading: true, isGodModeActivated, isFastSlideActivated};
-  }
-  const slide = getSlide(state);
-  const isLoading = !slide;
   const {hide, count} = getLives(state);
+
   return {
-    isLoading,
-    isGodModeActivated,
-    isFastSlideActivated,
-    hide,
-    count
+    count: (progression && !hide && count) || undefined,
+    isGodModeEnabled: _isGodModeEnabled(state),
+    isFastSlideEnabled: _isFastSlideEnabled(state)
   };
+};
+
+const mapDispatchToProps: ConnectedDispatchProps = {
+  toggleGodMode,
+  toggleFastSlide
 };
 
 export default connect(
   mapStateToProps,
-  {toggleGodMode, toggleFastSlide}
+  mapDispatchToProps
 )(HeaderSlideRight);

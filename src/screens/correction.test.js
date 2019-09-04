@@ -1,344 +1,639 @@
-// @flow
+// @flow strict
 
-import {createStoreState} from '../__fixtures__/store';
-import {createLevel} from '../__fixtures__/levels';
-import {createQCMGraphic} from '../__fixtures__/questions';
+import {createAnswer} from '../__fixtures__/answers';
+import {createQCM} from '../__fixtures__/questions';
+import {createPdf} from '../__fixtures__/lessons';
 import {createSlide} from '../__fixtures__/slides';
+import {createContextWithImage} from '../__fixtures__/context';
 import {createProgression} from '../__fixtures__/progression';
-import type {StateExtension} from '../__fixtures__/progression';
+import {createNavigation} from '../__fixtures__/navigation';
+import {createUiState, createDataState, createStoreState} from '../__fixtures__/store';
+import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../const';
+import type {ConnectedStateProps, OwnProps, Params} from './correction';
 
-import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../const';
-import {goNext, mapStateToProps} from './correction';
-import type {ConnectedStateProps} from './correction';
-
-const levelRef = 'dummyLevelRef';
-const slideRef = 'dummySlideRef';
-const level = createLevel({ref: levelRef, chapterIds: ['666']});
-const question = createQCMGraphic({});
-const slide = createSlide({
-  ref: slideRef,
-  chapterId: '666',
-  chapterIds: ['666'],
-  question
-});
-
-const createStore = (state?: StateExtension) => {
-  const progression = createProgression({
-    engine: 'learner',
-    progressionContent: {
-      type: CONTENT_TYPE.SLIDE,
-      ref: slideRef
-    },
-    state: state || undefined
-  });
-
-  const mockedStore = createStoreState({
-    levels: [level],
-    disciplines: [],
-    chapters: [],
-    slides: [slide, slide],
-    progression
-  });
-
-  return mockedStore;
-};
-
-describe('correction', () => {
-  it('should display success correction', () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
-      }
-    });
-
-    const expectedProps: ConnectedStateProps = {
-      nextScreen: undefined,
-      isFinished: false,
-      canGoNext: true,
-      isCorrect: true,
-      isResourceViewed: false,
-      showResourcesFirst: false,
-      lives: 4,
-      progressionId: 'progression1',
-      offeringExtraLife: false,
-      consumedExtraLife: false
+describe('Correction', () => {
+  describe('Props', () => {
+    const defaultProps: ConnectedStateProps = {
+      question: '',
+      tip: '',
+      keyPoint: '',
+      answers: [],
+      userAnswers: []
     };
 
-    const props = mapStateToProps(mockedStore);
-    expect(props).toEqual(expectedProps);
-  });
+    describe('Loading', () => {
+      it('should handle empty next content', () => {
+        const {mapStateToProps} = require('./correction');
 
-  it('should display failure correction with remaining lives', () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
-      },
-      isCorrect: false,
-      lives: 2
-    });
-
-    const expectedProps: ConnectedStateProps = {
-      canGoNext: true,
-      nextScreen: undefined,
-      isFinished: false,
-      isCorrect: false,
-      isResourceViewed: false,
-      showResourcesFirst: false,
-      lives: 2,
-      progressionId: 'progression1',
-      offeringExtraLife: false,
-      consumedExtraLife: false
-    };
-
-    const props = mapStateToProps(mockedStore);
-    expect(props).toEqual(expectedProps);
-  });
-
-  it('should offer extra life', () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.NODE,
-        ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-      },
-      isCorrect: false,
-      lives: 0
-    });
-
-    const expectedProps: ConnectedStateProps = {
-      canGoNext: false,
-      nextScreen: undefined,
-      isFinished: true,
-      isCorrect: false,
-      isResourceViewed: false,
-      showResourcesFirst: true,
-      lives: 0,
-      progressionId: 'progression1',
-      offeringExtraLife: true,
-      consumedExtraLife: false
-    };
-
-    const props = mapStateToProps(mockedStore);
-    expect(props).toEqual(expectedProps);
-  });
-
-  it('should consume extra life', () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.NODE,
-        ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-      },
-      isCorrect: false,
-      lives: 0,
-      hasViewedAResourceAtThisStep: true
-    });
-
-    const expectedProps: ConnectedStateProps = {
-      nextScreen: undefined,
-      canGoNext: true,
-      isFinished: false,
-      isCorrect: false,
-      isResourceViewed: false,
-      showResourcesFirst: true,
-      lives: 1,
-      progressionId: 'progression1',
-      offeringExtraLife: false,
-      consumedExtraLife: true
-    };
-
-    const props = mapStateToProps(mockedStore);
-    expect(props).toEqual(expectedProps);
-  });
-
-  it('should accept extra life', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.NODE,
-        ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-      },
-      isCorrect: false,
-      lives: 0,
-      hasViewedAResourceAtThisStep: true
-    });
-
-    const props = {
-      ...mapStateToProps(mockedStore),
-      acceptExtraLife: jest.fn(),
-      refuseExtraLife: jest.fn()
-    };
-
-    await goNext(() => props);
-    expect(props.refuseExtraLife.mock.calls.length).toBe(0);
-    expect(props.acceptExtraLife.mock.calls.length).toBe(1);
-  });
-
-  it('should refuse extra life, and go to end screen on failure', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.NODE,
-        ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-      },
-      isCorrect: false,
-      lives: 0,
-      hasViewedAResourceAtThisStep: false
-    });
-
-    const props = {
-      ...mapStateToProps(mockedStore),
-      acceptExtraLife: jest.fn(),
-      refuseExtraLife: jest.fn(),
-      navigation: {
-        navigate: jest.fn() // navigate to level-end
-      }
-    };
-
-    await goNext(() => props);
-    expect(props.refuseExtraLife.mock.calls.length).toBe(1);
-    expect(props.acceptExtraLife.mock.calls.length).toBe(0);
-    expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual([
-      'LevelEnd',
-      {isCorrect: false, progressionId: 'progression1'}
-    ]);
-  });
-
-  it('should close correction and proceed to question', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
-      },
-      isCorrect: false,
-      lives: 1,
-      hasViewedAResourceAtThisStep: false
-    });
-
-    const props = {
-      ...mapStateToProps(mockedStore),
-      selectCurrentProgression: jest.fn(),
-      navigation: {
-        navigate: jest.fn() // navigate to level-end
-      }
-    };
-
-    await goNext(() => props);
-    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls.length).toBe(0);
-  });
-
-  it('should close correction and quit to success end screen', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.SUCCESS,
-        ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
-      },
-      isCorrect: false,
-      lives: 2,
-      hasViewedAResourceAtThisStep: false
-    });
-
-    const props = {
-      ...mapStateToProps(mockedStore),
-      selectCurrentProgression: jest.fn(),
-      navigation: {
-        navigate: jest.fn() // navigate to level-end
-      }
-    };
-
-    await goNext(() => props);
-    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual([
-      'LevelEnd',
-      {isCorrect: true, progressionId: 'progression1'}
-    ]);
-  });
-
-  it('should close correction and quit to fail end screen', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.FAILURE,
-        ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
-      },
-      isCorrect: false,
-      lives: 0,
-      hasViewedAResourceAtThisStep: false
-    });
-
-    const props = {
-      ...mapStateToProps(mockedStore),
-      selectCurrentProgression: jest.fn(),
-      navigation: {
-        navigate: jest.fn() // navigate to level-end
-      }
-    };
-
-    await goNext(() => props);
-    expect(props.selectCurrentProgression.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual([
-      'LevelEnd',
-      {isCorrect: false, progressionId: 'progression1'}
-    ]);
-  });
-
-  it('should close correction and quit to success end screen thanks to extra life', async () => {
-    const mockedStore = createStore({
-      nextContent: {
-        type: CONTENT_TYPE.NODE,
-        ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-      },
-      isCorrect: false,
-      lives: 0,
-      hasViewedAResourceAtThisStep: true
-    });
-
-    let props = {
-      ...mapStateToProps(mockedStore),
-      acceptExtraLife: () => {
-        const newStore = createStore({
-          content: {
-            type: CONTENT_TYPE.NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-          },
-          nextContent: {
-            type: CONTENT_TYPE.SUCCESS,
-            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
-          },
-          isCorrect: false,
-          lives: 1,
-          hasViewedAResourceAtThisStep: false
+        const state = createStoreState({
+          slides: [],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.CHAPTER,
+                ref: 'bar'
+              }
+            }
+          })
         });
 
-        props = {
-          ...props,
-          ...mapStateToProps(newStore)
+        const navigation = createNavigation({});
+        const ownProps: OwnProps = {navigation};
+
+        const result = mapStateToProps(state, ownProps);
+
+        expect(result).toEqual(defaultProps);
+      });
+
+      it('should handle different slide than the question one', () => {
+        const {mapStateToProps} = require('./correction');
+
+        const question = createQCM({title: 'Foo bar'});
+        const slide = createSlide({title: 'Foo bar', ref: 'sli_foo', chapterId: 'bar', question});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'mod_foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: 'sli_foo'
+              }
+            }
+          })
+        });
+
+        const params: Params = {
+          slideId: 'sli_bar'
         };
+        const navigation = createNavigation({params});
+        const ownProps: OwnProps = {navigation};
 
-        expect(props.lives).toEqual(1);
-        expect(props.canGoNext).toEqual(true);
-        expect(props.offeringExtraLife).toEqual(false);
-        expect(props.consumedExtraLife).toEqual(false);
-        expect(props.showResourcesFirst).toEqual(true);
-        return Promise.resolve(true);
-      },
-      navigation: {
-        navigate: jest.fn() // navigate to level-end
-      }
-    };
+        const result = mapStateToProps(state, ownProps);
 
-    expect(props.lives).toEqual(1);
-    expect(props.canGoNext).toEqual(true);
-    expect(props.offeringExtraLife).toEqual(false);
-    expect(props.consumedExtraLife).toEqual(true);
-    expect(props.showResourcesFirst).toEqual(true);
+        expect(result).toEqual(defaultProps);
+      });
 
-    await goNext(() => props);
-    expect(props.navigation.navigate.mock.calls.length).toBe(1);
-    expect(props.navigation.navigate.mock.calls[0]).toEqual([
-      'LevelEnd',
-      {isCorrect: true, progressionId: 'progression1'}
-    ]);
+      it('should handle correction loading', () => {
+        const {mapStateToProps} = require('./correction');
+
+        const question = createQCM({title: 'Foo bar'});
+        const slide = createSlide({title: 'Foo bar', ref: 'sli_foo', chapterId: 'bar', question});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'mod_foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: 'sli_foo'
+              },
+              isCorrect: null
+            }
+          })
+        });
+
+        const params: Params = {
+          slideId: 'sli_foo'
+        };
+        const navigation = createNavigation({params});
+        const ownProps: OwnProps = {navigation};
+
+        const result = mapStateToProps(state, ownProps);
+
+        expect(result).toEqual(defaultProps);
+      });
+
+      it('should handle correction loading', () => {
+        const {mapStateToProps} = require('./correction');
+
+        const question = createQCM({title: 'Foo bar'});
+        const slide = createSlide({title: 'Foo bar', ref: 'sli_foo', chapterId: 'bar', question});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'mod_foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: ''
+              }
+            }
+          })
+        });
+
+        const params: Params = {
+          slideId: 'sli_foo'
+        };
+        const navigation = createNavigation({params});
+        const ownProps: OwnProps = {navigation};
+
+        const result = mapStateToProps(state, ownProps);
+
+        expect(result).toEqual(defaultProps);
+      });
+    });
+
+    it('should get all props', () => {
+      const {mapStateToProps} = require('./correction');
+
+      const question = createQCM({title: 'Foo bar'});
+      const context = createContextWithImage({title: 'Foo bar'});
+      const lesson = createPdf({ref: 'baz'});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'sli_foo',
+        chapterId: 'bar',
+        question,
+        context,
+        lessons: [lesson]
+      });
+      const answer = createAnswer({});
+      const progression = createProgression({
+        _id: 'foobar',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'mod_foo'
+        },
+        state: {
+          viewedResources: [
+            {
+              type: CONTENT_TYPE.CHAPTER,
+              ref: 'bar',
+              resources: [lesson.ref]
+            }
+          ],
+          nextContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          }
+        }
+      });
+
+      const state = createStoreState({
+        slides: [slide],
+        levels: [],
+        chapters: [],
+        disciplines: [],
+        ui: createUiState({
+          answers: {
+            progression1: {
+              value: answer
+            }
+          }
+        }),
+        data: createDataState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          answers: answer,
+          progression
+        }),
+        progression,
+        fastSlide: true,
+        godMode: true
+      });
+
+      const params: Params = {
+        slideId: 'sli_foo'
+      };
+      const navigation = createNavigation({params});
+      const ownProps: OwnProps = {navigation};
+
+      const result = mapStateToProps(state, ownProps);
+
+      const props: ConnectedStateProps = {
+        hasConsumedExtraLife: false,
+        hasContext: true,
+        isCorrect: true,
+        isFinished: false,
+        isFastSlideEnabled: true,
+        isGodModeEnabled: true,
+        isResourceViewed: true,
+        answers: answer,
+        userAnswers: answer.concat(['Foo bar']),
+        keyPoint: slide.klf,
+        tip: slide.tips,
+        lives: 4,
+        offeringExtraLife: false,
+        progressionId: 'progression1',
+        // $FlowFixMe wrong type
+        question: question.header,
+        resources: [
+          {
+            ...lesson,
+            url: lesson.mediaUrl,
+            videoId: undefined
+          }
+        ]
+      };
+
+      expect(result).toEqual(props);
+    });
+
+    it('should get props without lives', () => {
+      const {mapStateToProps} = require('./correction');
+
+      const question = createQCM({title: 'Foo bar'});
+      const context = createContextWithImage({title: 'Foo bar'});
+      const lesson = createPdf({ref: 'baz'});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'sli_foo',
+        chapterId: 'bar',
+        question,
+        context,
+        lessons: [lesson]
+      });
+      const answer = createAnswer({});
+      const progression = createProgression({
+        _id: 'foobar',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'mod_foo'
+        },
+        state: {
+          livesDisabled: true,
+          nextContent: {
+            type: CONTENT_TYPE.EXIT_NODE,
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+          }
+        }
+      });
+
+      const state = createStoreState({
+        slides: [slide],
+        levels: [],
+        chapters: [],
+        disciplines: [],
+        ui: createUiState({
+          answers: {
+            progression1: {
+              value: answer
+            }
+          }
+        }),
+        data: createDataState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          answers: answer,
+          progression
+        }),
+        progression,
+        fastSlide: true,
+        godMode: true
+      });
+
+      const params: Params = {
+        slideId: 'sli_foo'
+      };
+      const navigation = createNavigation({params});
+      const ownProps: OwnProps = {navigation};
+
+      const result = mapStateToProps(state, ownProps);
+
+      const props: ConnectedStateProps = {
+        hasConsumedExtraLife: false,
+        hasContext: false,
+        isCorrect: true,
+        isFinished: false,
+        isFastSlideEnabled: true,
+        isGodModeEnabled: true,
+        isResourceViewed: false,
+        answers: answer,
+        userAnswers: answer.concat(['Foo bar']),
+        keyPoint: slide.klf,
+        tip: slide.tips,
+        lives: undefined,
+        offeringExtraLife: true,
+        progressionId: 'progression1',
+        // $FlowFixMe wrong type
+        question: question.header,
+        resources: [
+          {
+            ...lesson,
+            url: lesson.mediaUrl,
+            videoId: undefined
+          }
+        ]
+      };
+
+      expect(result).toEqual(props);
+    });
+
+    it('should get props without lessons', () => {
+      const {mapStateToProps} = require('./correction');
+
+      const question = createQCM({title: 'Foo bar'});
+      const context = createContextWithImage({title: 'Foo bar'});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'sli_foo',
+        chapterId: 'bar',
+        question,
+        context
+      });
+      const answer = createAnswer({});
+      const progression = createProgression({
+        _id: 'foobar',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'mod_foo'
+        },
+        state: {
+          livesDisabled: true,
+          nextContent: {
+            type: CONTENT_TYPE.EXIT_NODE,
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+          }
+        }
+      });
+
+      const state = createStoreState({
+        slides: [slide],
+        levels: [],
+        chapters: [],
+        disciplines: [],
+        ui: createUiState({
+          answers: {
+            progression1: {
+              value: answer
+            }
+          }
+        }),
+        data: createDataState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          answers: answer,
+          progression
+        }),
+        progression,
+        fastSlide: true,
+        godMode: true
+      });
+
+      const params: Params = {
+        slideId: 'sli_foo'
+      };
+      const navigation = createNavigation({params});
+      const ownProps: OwnProps = {navigation};
+
+      const result = mapStateToProps(state, ownProps);
+
+      const props: ConnectedStateProps = {
+        hasConsumedExtraLife: false,
+        hasContext: false,
+        isCorrect: true,
+        isFinished: false,
+        isFastSlideEnabled: true,
+        isGodModeEnabled: true,
+        isResourceViewed: true,
+        answers: answer,
+        userAnswers: answer.concat(['Foo bar']),
+        keyPoint: slide.klf,
+        tip: slide.tips,
+        lives: undefined,
+        offeringExtraLife: true,
+        progressionId: 'progression1',
+        // $FlowFixMe wrong type
+        question: question.header,
+        resources: []
+      };
+
+      expect(result).toEqual(props);
+    });
+
+    it('should get extralife props', () => {
+      const {mapStateToProps} = require('./correction');
+
+      const question = createQCM({title: 'Foo bar'});
+      const context = createContextWithImage({title: 'Foo bar'});
+      const lesson = createPdf({ref: 'baz'});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'sli_foo',
+        chapterId: 'bar',
+        question,
+        context,
+        lessons: [lesson]
+      });
+      const answer = createAnswer({});
+      const progression = createProgression({
+        _id: 'foobar',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'mod_foo'
+        },
+        state: {
+          lives: 0,
+          nextContent: {
+            type: CONTENT_TYPE.EXIT_NODE,
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+          }
+        }
+      });
+
+      const state = createStoreState({
+        slides: [slide],
+        levels: [],
+        chapters: [],
+        disciplines: [],
+        ui: createUiState({
+          answers: {
+            progression1: {
+              value: answer
+            }
+          }
+        }),
+        data: createDataState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          answers: answer,
+          progression
+        }),
+        progression,
+        fastSlide: true,
+        godMode: true
+      });
+
+      const params: Params = {
+        slideId: 'sli_foo'
+      };
+      const navigation = createNavigation({params});
+      const ownProps: OwnProps = {navigation};
+
+      const result = mapStateToProps(state, ownProps);
+
+      const props: ConnectedStateProps = {
+        hasConsumedExtraLife: false,
+        hasContext: false,
+        isCorrect: true,
+        isFinished: true,
+        isFastSlideEnabled: true,
+        isGodModeEnabled: true,
+        isResourceViewed: false,
+        answers: answer,
+        userAnswers: answer.concat(['Foo bar']),
+        keyPoint: slide.klf,
+        tip: slide.tips,
+        lives: 0,
+        offeringExtraLife: true,
+        progressionId: 'progression1',
+        // $FlowFixMe wrong type
+        question: question.header,
+        resources: [
+          {
+            ...lesson,
+            url: lesson.mediaUrl,
+            videoId: undefined
+          }
+        ]
+      };
+
+      expect(result).toEqual(props);
+    });
+
+    it('should get extralife consumed props', () => {
+      const {mapStateToProps} = require('./correction');
+
+      const question = createQCM({title: 'Foo bar'});
+      const context = createContextWithImage({title: 'Foo bar'});
+      const lesson = createPdf({ref: 'baz'});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'sli_foo',
+        chapterId: 'bar',
+        question,
+        context,
+        lessons: [lesson]
+      });
+      const answer = createAnswer({});
+      const progression = createProgression({
+        _id: 'foobar',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'mod_foo'
+        },
+        state: {
+          hasViewedAResourceAtThisStep: true,
+          viewedResources: [
+            {
+              type: CONTENT_TYPE.CHAPTER,
+              ref: 'bar',
+              resources: [lesson.ref]
+            }
+          ],
+          nextContent: {
+            type: CONTENT_TYPE.EXIT_NODE,
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+          }
+        }
+      });
+
+      const state = createStoreState({
+        slides: [slide],
+        levels: [],
+        chapters: [],
+        disciplines: [],
+        ui: createUiState({
+          answers: {
+            progression1: {
+              value: answer
+            }
+          }
+        }),
+        data: createDataState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          answers: answer,
+          progression
+        }),
+        progression,
+        fastSlide: true,
+        godMode: true
+      });
+
+      const params: Params = {
+        slideId: 'sli_foo'
+      };
+      const navigation = createNavigation({params});
+      const ownProps: OwnProps = {navigation};
+
+      const result = mapStateToProps(state, ownProps);
+
+      const props: ConnectedStateProps = {
+        hasConsumedExtraLife: true,
+        hasContext: false,
+        isCorrect: true,
+        isFinished: false,
+        isFastSlideEnabled: true,
+        isGodModeEnabled: true,
+        isResourceViewed: false,
+        answers: answer,
+        userAnswers: answer.concat(['Foo bar']),
+        keyPoint: slide.klf,
+        tip: slide.tips,
+        lives: 4,
+        offeringExtraLife: false,
+        progressionId: 'progression1',
+        // $FlowFixMe wrong type
+        question: question.header,
+        resources: [
+          {
+            ...lesson,
+            url: lesson.mediaUrl,
+            videoId: undefined
+          }
+        ]
+      };
+
+      expect(result).toEqual(props);
+    });
   });
 });

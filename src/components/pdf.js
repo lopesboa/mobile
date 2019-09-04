@@ -24,7 +24,7 @@ const Pdf = ({source}: Props) => (
     source={source}
     fitWidth
     style={styles.container}
-    activityIndicator={<Loader height={60} />}
+    activityIndicator={<Loader />}
   />
 );
 

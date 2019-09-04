@@ -18,8 +18,8 @@ export const createState = (state: StateExtension | void): State => {
     viewedResources = [],
     remainingLifeRequests = 1,
     hasViewedAResourceAtThisStep = false,
-    content = {type: 'slide', ref: 'sli_N1uxMsUIV'},
-    nextContent = {type: 'slide', ref: 'sli_N1uxMsUIV'},
+    content = {type: 'slide', ref: 'sli_foo'},
+    nextContent = {type: 'slide', ref: 'sli_foo'},
     allAnswers = [],
     variables = {}
   } = state || {};
@@ -72,7 +72,7 @@ export const createProgression = ({
           instructions: null,
           nextContent: {
             type: 'slide',
-            ref: 'sli_N1uxMsUIV'
+            ref: 'sli_foo'
           }
         }
       }

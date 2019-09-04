@@ -16,7 +16,7 @@ type Props = {|
 
 type State = Brand;
 
-const initialState: State = {
+export const initialState: State = {
   host: 'https://onboarding.coorpacademy.com',
   colors: {
     primary: '#00B0FF'

@@ -186,8 +186,6 @@ describe('storeFixture', () => {
       camera: undefined
     };
 
-    const godModeState = false;
-    const fastSlideState = false;
     const videoState = {
       isFullScreen: false
     };
@@ -280,8 +278,8 @@ describe('storeFixture', () => {
       catalog: catalogState,
       permissions: permissionsState,
       authentication: authenticationState,
-      godmode: godModeState,
-      fastSlide: fastSlideState,
+      godMode: false,
+      fastSlide: false,
       video: videoState
     };
 

@@ -66,7 +66,7 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID="home">
-        <Loader height={60} />
+        <Loader />
       </View>
     );
   }

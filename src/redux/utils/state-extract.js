@@ -2,27 +2,24 @@
 
 import {
   getCurrentProgression,
-  getCurrentSlide,
-  getLives as _getLives,
-  getPreviousSlide,
-  getRoute,
   getStepContent,
   getStartRank,
   getEndRank,
-  getBestScore as _getBestScore
+  getBestScore as _getBestScore,
+  getCurrentSlide
 } from '@coorpacademy/player-store';
-import type {Slide} from '@coorpacademy/progression-engine';
-import type {Lives} from '@coorpacademy/player-store';
+import type {Context} from '@coorpacademy/progression-engine';
 
 import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {Section, ProgressionEngineVersions} from '../../types';
 import type {StoreState} from '../store';
 import type {State as PermissionsState} from '../reducers/permissions';
+import type {State as BrandState} from '../reducers/authentication/brand';
 import type {PermissionType} from '../actions/permissions';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import translations from '../../translations';
 
-export const checkIsExitNode = (state: StoreState): boolean => {
+export const isExitNode = (state: StoreState): boolean => {
   const nextContent = getStepContent(state);
   if (!nextContent) {
     return false;
@@ -33,61 +30,32 @@ export const checkIsExitNode = (state: StoreState): boolean => {
   return isFinished;
 };
 
-export const checkIsCorrect = (state: StoreState): boolean | void => {
+export const isCorrect = (state: StoreState): boolean | void => {
   const progression = getCurrentProgression(state);
-  const isCorrect =
+  const _isCorrect =
     progression && progression.state && progression.state.isCorrect !== null
       ? progression.state.isCorrect
       : undefined;
 
-  return isCorrect;
-};
-
-export const checkIsValidating = (state: StoreState): boolean => {
-  const currentRoute = getRoute(state);
-  return currentRoute === 'correction';
-};
-
-export const getSlide = (state: StoreState): Slide | void => {
-  const nextContent = getStepContent(state);
-
-  if (!nextContent) {
-    return;
-  }
-
-  const isCorrect = checkIsCorrect(state);
-  const isFinished = checkIsExitNode(state);
-  const isValidating = checkIsValidating(state);
-
-  const openingCorrection = isValidating && isCorrect !== undefined;
-  const slide = isFinished || openingCorrection ? getPreviousSlide(state) : getCurrentSlide(state);
-
-  return slide;
-};
-
-export const getLives = (state: StoreState): Lives => {
-  const lives = _getLives(state);
-  const isCorrect = checkIsCorrect(state);
-  const isValidating = checkIsValidating(state);
-
-  return {
-    ...lives,
-    count: isValidating && !isCorrect ? lives.count + 1 : lives.count
-  };
+  return _isCorrect;
 };
 
 export const getCurrentStep = (state: StoreState): number | void => {
   const progression = getCurrentProgression(state);
-  const isValidating = checkIsValidating(state);
-  const current = progression && progression.state && progression.state.step.current;
 
-  return current !== undefined && isValidating ? current - 1 : current;
+  return progression && progression.state && progression.state.step.current;
+};
+
+export const getNextContentRef = (state: StoreState): string | void => {
+  const progression = getCurrentProgression(state);
+
+  return progression && progression.state && progression.state.nextContent.ref;
 };
 
 export const getToken = (state: StoreState) =>
   state.authentication && state.authentication.user && state.authentication.user.token;
 
-export const getBrand = (state: StoreState) => state.authentication.brand;
+export const getBrand = (state: StoreState): BrandState => state.authentication.brand;
 
 export const hasPermission = (state: PermissionsState, type: PermissionType): boolean =>
   state[type] === PERMISSION_STATUS.AUTHORIZED;
@@ -124,9 +92,23 @@ export const getCard = (state: StoreState, ref: string): DisciplineCard | Chapte
   state.catalog.entities.cards[ref] &&
   state.catalog.entities.cards[ref][translations.getLanguage()];
 
-export const getEngineVersions = (state: StoreState): ProgressionEngineVersions | null =>
-  state &&
-  state.authentication &&
-  state.authentication.brand &&
-  state.authentication.brand.progressionEngine &&
-  state.authentication.brand.progressionEngine;
+export const getEngineVersions = (state: StoreState): ProgressionEngineVersions | void => {
+  const brand = getBrand(state);
+
+  return (brand && brand.progressionEngine) || undefined;
+};
+
+export const isGodModeEnabled = (state: StoreState): boolean => state.godMode;
+
+export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlide;
+
+export const getCurrentScreenName = (state: StoreState): string | void =>
+  state.navigation.currentScreenName;
+
+export const getContext = (state: StoreState): Context | void => {
+  const currentSlide = getCurrentSlide(state);
+
+  return currentSlide && currentSlide.context && currentSlide.context.title
+    ? currentSlide.context
+    : undefined;
+};

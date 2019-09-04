@@ -1,88 +1,53 @@
 // @flow
 
 import * as React from 'react';
-import {Animated} from 'react-native';
+import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
+import {__TEST__} from '../modules/environment';
 import Lives from './lives';
 
-const textTranslate = new Animated.Value(0);
-Animated.timing(textTranslate, {toValue: 0, duration: 0});
-const textTranslateY = textTranslate.interpolate({
-  inputRange: [0, 1],
-  outputRange: [0, 1]
-});
+const HEIGHT = 180;
 
 storiesOf('Lives', module)
-  .add('Default', () => (
-    <Lives
-      winningLife={false}
-      count={3}
-      height={60}
-      isFastSlideActivated={false}
-      isGodModeActivated={false}
-    />
+  .add('Default', () => <Lives height={HEIGHT} />)
+  .add('With value', () => <Lives count={3} height={HEIGHT} />)
+  .add('Bigger height', () => <Lives count={3} height={HEIGHT * 2} />)
+  .add('God mode', () => <Lives count={3} height={HEIGHT} isGodModeEnabled />)
+  .add('Fast slide', () => <Lives count={3} height={HEIGHT} isFastSlideEnabled />)
+  .add('God mode + fast slide', () => (
+    <Lives count={3} height={HEIGHT} isGodModeEnabled isFastSlideEnabled />
   ))
-  .add('Broken', () => (
-    <Lives
-      winningLife={false}
-      count={2}
-      isBroken
-      height={60}
-      isFastSlideActivated={false}
-      isGodModeActivated={false}
-    />
-  ))
-  .add('Bigger height', () => (
-    <Lives
-      winningLife={false}
-      count={3}
-      height={120}
-      isFastSlideActivated={false}
-      isGodModeActivated={false}
-    />
-  ))
-  .add('God mode', () => (
-    <Lives
-      winningLife={false}
-      count={3}
-      height={120}
-      isFastSlideActivated={false}
-      isGodModeActivated
-    />
-  ))
-  .add('Placeholder', () => (
-    <Lives
-      winningLife={false}
-      count={3}
-      height={60}
-      isFastSlideActivated={false}
-      isGodModeActivated={false}
-      isLoading
-    />
-  ))
-  .add('Winning life', () => (
-    <Lives winningLife count={3} height={120} isFastSlideActivated={false} isGodModeActivated />
-  ))
-  .add('Fast Slide', () => (
-    <Lives winningLife count={3} height={120} isFastSlideActivated isGodModeActivated />
-  ))
-  .add('Losing life', () => (
-    <Lives
-      winningLife={false}
-      count={3}
-      height={120}
-      isFastSlideActivated={false}
-      isGodModeActivated
-    />
-  ))
-  .add('With text translate interpolation', () => (
-    <Lives
-      textTranslateY={textTranslateY}
-      winningLife={false}
-      count={3}
-      height={120}
-      isFastSlideActivated={false}
-      isGodModeActivated
-    />
-  ));
+  .add('Losing life', () => <Lives animationDirection="bottom" count={3} height={HEIGHT} />)
+  .add('Winning life', () => <Lives animationDirection="top" count={3} height={HEIGHT} />);
+
+if (__TEST__) {
+  describe('Lives', () => {
+    it('should handle update', () => {
+      const handleAnimate = jest.fn();
+      const component = renderer.create(
+        <Lives animationDirection="bottom" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+      );
+
+      const broken = component.root.find(el => el.props.testID === 'lives-2-broken');
+      expect(broken).toBeDefined();
+      expect(handleAnimate).toHaveBeenCalledTimes(1);
+      expect(handleAnimate).toHaveBeenCalledWith('bottom');
+
+      component.update(
+        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+      );
+
+      let notBroken = component.root.find(el => el.props.testID === 'lives-2');
+      expect(notBroken).toBeDefined();
+      expect(handleAnimate).toHaveBeenCalledTimes(2);
+      expect(handleAnimate).toHaveBeenCalledWith('top');
+
+      component.update(
+        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+      );
+
+      expect(handleAnimate).toHaveBeenCalledTimes(2);
+    });
+  });
+}

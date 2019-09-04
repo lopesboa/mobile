@@ -3,14 +3,11 @@
 exports[`Storyshots HeaderSlideRight Default 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 16,
-        "paddingVertical": 8,
-      },
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "#ECEFF1",
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
   }
 >
   <View
@@ -52,11 +49,11 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               "borderRadius": 1000,
               "flex": 1,
               "justifyContent": "center",
+              "overflow": "hidden",
             },
-            undefined,
+            false,
             Object {
               "height": 44,
-              "overflow": "hidden",
               "width": 44,
             },
           ]
@@ -68,7 +65,11 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
             Object {
               "alignItems": "center",
               "height": "100%",
-              "transform": Array [],
+              "transform": Array [
+                Object {
+                  "translateY": 0,
+                },
+              ],
               "width": "100%",
             }
           }
@@ -87,12 +88,16 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               style={
                 Array [
                   Object {},
-                  Object {
-                    "color": "#546E7A",
-                    "fontSize": 14.666666666666666,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
+                  Array [
+                    Object {
+                      "color": "#546E7A",
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "fontSize": 14.666666666666666,
+                    },
+                  ],
                 ]
               }
             >
@@ -114,17 +119,21 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               style={
                 Array [
                   Object {},
-                  Object {
-                    "color": "#546E7A",
-                    "fontSize": 14.666666666666666,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
+                  Array [
+                    Object {
+                      "color": "#546E7A",
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "fontSize": 14.666666666666666,
+                    },
+                  ],
                 ]
               }
             >
               x
-              4
+              2
             </Text>
           </View>
         </View>
@@ -135,7 +144,17 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
             "height": 26.4,
             "left": 0,
             "position": "absolute",
-            "transform": Array [],
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+            ],
             "width": 26.4,
           }
         }
@@ -610,17 +629,14 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
 </View>
 `;
 
-exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
+exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 16,
-        "paddingVertical": 8,
-      },
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "#ECEFF1",
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
   }
 >
   <View
@@ -662,11 +678,11 @@ exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
               "borderRadius": 1000,
               "flex": 1,
               "justifyContent": "center",
+              "overflow": "hidden",
             },
-            undefined,
+            false,
             Object {
               "height": 44,
-              "overflow": "hidden",
               "width": 44,
             },
           ]
@@ -678,26 +694,77 @@ exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
             Object {
               "alignItems": "center",
               "height": "100%",
-              "justifyContent": "center",
+              "transform": Array [
+                Object {
+                  "translateY": 0,
+                },
+              ],
               "width": "100%",
             }
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {},
-                Object {
-                  "color": "#546E7A",
-                  "fontSize": 14.666666666666666,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              }
             }
           >
-            ∞
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#546E7A",
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "fontSize": 14.666666666666666,
+                    },
+                  ],
+                ]
+              }
+            >
+              x
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "height": "100%",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {},
+                  Array [
+                    Object {
+                      "color": "#546E7A",
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    Object {
+                      "fontSize": 14.666666666666666,
+                    },
+                  ],
+                ]
+              }
+            >
+              x
+              2
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -706,7 +773,17 @@ exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
             "height": 26.4,
             "left": 0,
             "position": "absolute",
-            "transform": Array [],
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+            ],
             "width": 26.4,
           }
         }
@@ -1178,12 +1255,16 @@ exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
       </View>
       <View
         style={
-          Object {
-            "marginTop": 4,
-            "paddingLeft": 15.839999999999998,
-            "position": "absolute",
-            "top": 0,
-          }
+          Array [
+            Object {
+              "marginTop": 4,
+              "position": "absolute",
+              "top": 0,
+            },
+            Object {
+              "paddingLeft": 15.839999999999998,
+            },
+          ]
         }
       >
         <RNSVGSvgView
@@ -1350,17 +1431,14 @@ exports[`Storyshots HeaderSlideRight FastSlide 1`] = `
 </View>
 `;
 
-exports[`Storyshots HeaderSlideRight God mode 1`] = `
+exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 16,
-        "paddingVertical": 8,
-      },
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "#ECEFF1",
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
   }
 >
   <View
@@ -1402,11 +1480,11 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               "borderRadius": 1000,
               "flex": 1,
               "justifyContent": "center",
+              "overflow": "hidden",
             },
-            undefined,
+            false,
             Object {
               "height": 44,
-              "overflow": "hidden",
               "width": 44,
             },
           ]
@@ -1427,12 +1505,16 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "color": "#546E7A",
-                  "fontSize": 14.666666666666666,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 14.666666666666666,
+                  },
+                ],
               ]
             }
           >
@@ -1446,7 +1528,17 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
             "height": 26.4,
             "left": 0,
             "position": "absolute",
-            "transform": Array [],
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+            ],
             "width": 26.4,
           }
         }
@@ -1799,7 +1891,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
             align="xMidYMid"
             bbHeight={26.4}
             bbWidth={26.4}
-            color="#F73F52"
+            color="#3EC483"
             meetOrSlice={0}
             minX={0}
             minY={0}
@@ -1821,7 +1913,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
                 },
               ]
             }
-            tintColor="#F73F52"
+            tintColor="#3EC483"
             vbHeight={25}
             vbWidth={24}
           >
@@ -1871,7 +1963,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
                 fill={
                   Array [
                     0,
-                    4294393682,
+                    4282303619,
                   ]
                 }
                 fillOpacity={1}
@@ -1916,24 +2008,192 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
           </RNSVGSvgView>
         </View>
       </View>
+      <View
+        style={
+          Array [
+            Object {
+              "marginTop": 4,
+              "position": "absolute",
+              "top": 0,
+            },
+            Object {
+              "paddingLeft": 15.839999999999998,
+            },
+          ]
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={17.6}
+          bbWidth={17.6}
+          color="#546E7A"
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              Object {
+                "height": 17.6,
+                "width": 17.6,
+              },
+              null,
+              Object {
+                "flex": 0,
+                "height": 17,
+                "width": 17,
+              },
+            ]
+          }
+          tintColor="#546E7A"
+          vbHeight={24}
+          vbWidth={24}
+        >
+          <RNSVGGroup
+            fill={
+              Array [
+                0,
+                4278190080,
+              ]
+            }
+            fillOpacity={1}
+            fillRule={1}
+            font={Object {}}
+            matrix={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            opacity={1}
+            originX={0}
+            originY={0}
+            propList={Array []}
+            rotation={0}
+            scaleX={1}
+            scaleY={1}
+            skewX={0}
+            skewY={0}
+            stroke={null}
+            strokeDasharray={null}
+            strokeDashoffset={null}
+            strokeLinecap={0}
+            strokeLinejoin={0}
+            strokeMiterlimit={4}
+            strokeOpacity={1}
+            strokeWidth={1}
+            vectorEffect={0}
+            x={0}
+            y={0}
+          >
+            <RNSVGPath
+              d="M0 0h24v24H0z"
+              fill={null}
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            />
+            <RNSVGPath
+              d="M12 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm0 14V12.67l-5 3.333v-8l5 3.333V8.003l6 4-6 4z"
+              fill={
+                Array [
+                  0,
+                  4283723386,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
+exports[`Storyshots HeaderSlideRight God mode 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 16,
-        "paddingVertical": 8,
-      },
-      Object {
-        "backgroundColor": "transparent",
-      },
-    ]
+    Object {
+      "backgroundColor": "#ECEFF1",
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
   }
 >
   <View
@@ -1975,26 +2235,65 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
               "borderRadius": 1000,
               "flex": 1,
               "justifyContent": "center",
+              "overflow": "hidden",
             },
-            Object {
-              "backgroundColor": "#ECEFF1",
-            },
+            false,
             Object {
               "height": 44,
-              "overflow": "hidden",
               "width": 44,
             },
           ]
         }
         testID="lives-3"
-      />
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": "100%",
+              "justifyContent": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "color": "#546E7A",
+                    "fontWeight": "700",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 14.666666666666666,
+                  },
+                ],
+              ]
+            }
+          >
+            ∞
+          </Text>
+        </View>
+      </View>
       <View
         style={
           Object {
             "height": 26.4,
             "left": 0,
             "position": "absolute",
-            "transform": Array [],
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+            ],
             "width": 26.4,
           }
         }
@@ -2178,7 +2477,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
             align="xMidYMid"
             bbHeight={26.4}
             bbWidth={26.4}
-            color="#ECEFF1"
+            color="#3EC483"
             meetOrSlice={0}
             minX={0}
             minY={0}
@@ -2200,7 +2499,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
                 },
               ]
             }
-            tintColor="#ECEFF1"
+            tintColor="#3EC483"
             vbHeight={24}
             vbWidth={24}
           >
@@ -2290,7 +2589,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
                 fill={
                   Array [
                     0,
-                    4293718001,
+                    4282303619,
                   ]
                 }
                 fillOpacity={1}
@@ -2347,7 +2646,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
             align="xMidYMid"
             bbHeight={26.4}
             bbWidth={26.4}
-            color="#F73F52"
+            color="#3EC483"
             meetOrSlice={0}
             minX={0}
             minY={0}
@@ -2369,7 +2668,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
                 },
               ]
             }
-            tintColor="#F73F52"
+            tintColor="#3EC483"
             vbHeight={25}
             vbWidth={24}
           >
@@ -2419,7 +2718,7 @@ exports[`Storyshots HeaderSlideRight Placeholder 1`] = `
                 fill={
                   Array [
                     0,
-                    4294393682,
+                    4282303619,
                   ]
                 }
                 fillOpacity={1}

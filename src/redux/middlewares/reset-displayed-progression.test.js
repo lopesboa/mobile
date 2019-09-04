@@ -6,7 +6,7 @@ import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
-import {createStoreState as createFixtureStore} from '../../__fixtures__/store';
+import {createStoreState} from '../../__fixtures__/store';
 import {createProgression} from '../../__fixtures__/progression';
 import createMiddleware from './reset-displayed-progression';
 
@@ -31,7 +31,7 @@ const progression = createProgression({
   }
 });
 
-const mockedStore = createFixtureStore({
+const mockedStore = createStoreState({
   levels: [],
   disciplines: [],
   chapters: [],

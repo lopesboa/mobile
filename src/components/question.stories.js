@@ -19,7 +19,6 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -34,7 +33,6 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -49,7 +47,6 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -65,7 +62,6 @@ storiesOf('Question', module)
       onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -80,7 +76,6 @@ storiesOf('Question', module)
       onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -96,7 +91,6 @@ storiesOf('Question', module)
       onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -113,7 +107,6 @@ storiesOf('Question', module)
         onInputValueChange={handleFakePress}
         onChoiceInputChange={handleFakePress}
         onButtonPress={handleFakePress}
-        isValidating={false}
         onSliderChange={handleFakePress}
       />
     </TestContextProvider>
@@ -129,7 +122,6 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onInputValueChange={handleFakePress}
       onButtonPress={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -144,7 +136,6 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       onInputValueChange={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ))
@@ -159,7 +150,6 @@ storiesOf('Question', module)
       onChoiceInputChange={handleFakePress}
       onButtonPress={handleFakePress}
       onInputValueChange={handleFakePress}
-      isValidating={false}
       onSliderChange={handleFakePress}
     />
   ));

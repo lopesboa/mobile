@@ -10,4 +10,6 @@ if (__TEST__) {
   jest.useFakeTimers();
 }
 
-storiesOf('Loader', module).add('Default', () => <Loader height={60} />);
+storiesOf('Loader', module)
+  .add('Default', () => <Loader />)
+  .add('Bigger height', () => <Loader height={120} />);

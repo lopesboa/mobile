@@ -1,6 +1,7 @@
 // @flow strict
 
 import type {Lesson} from '@coorpacademy/progression-engine';
+
 import {RESOURCE_TYPE} from '../const';
 
 export const createVideo = ({

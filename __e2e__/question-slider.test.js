@@ -24,8 +24,8 @@ describe('QCM Slider', () => {
     await waitForExist('slider-values-container');
     await weExpect(element(by.id('slider-min-value'))).toExist();
     await weExpect(element(by.id('slider-max-value'))).toExist();
-    await weExpect(element(by.id('slider-min-value'))).toHaveText('10 ');
-    await weExpect(element(by.id('slider-max-value'))).toHaveText('200 ');
+    await weExpect(element(by.id('slider-min-value'))).toHaveText('10 °C');
+    await weExpect(element(by.id('slider-max-value'))).toHaveText('200 °C');
   });
 
   it('should be able to move the slider question and validate the answer', async () => {
