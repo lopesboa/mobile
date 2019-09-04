@@ -29,6 +29,7 @@ import {
   isGodModeEnabled,
   isFastSlideEnabled,
   getCurrentScreenName,
+  getCurrentTabName,
   getContext
 } from './state-extract';
 
@@ -602,6 +603,17 @@ describe('State-extract', () => {
 
       const result = getCurrentScreenName(state);
       const expected = 'dummyScreenName';
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getCurrentTabName', () => {
+    it('should get current tab name', () => {
+      const state = createState({});
+
+      const result = getCurrentTabName(state);
+      const expected = 'dummyTabName';
 
       expect(result).toEqual(expected);
     });

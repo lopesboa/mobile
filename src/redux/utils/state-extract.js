@@ -105,6 +105,9 @@ export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlid
 export const getCurrentScreenName = (state: StoreState): string | void =>
   state.navigation.currentScreenName;
 
+export const getCurrentTabName = (state: StoreState): string | void =>
+  state.navigation.currentTabName;
+
 export const getContext = (state: StoreState): Context | void => {
   const currentSlide = getCurrentSlide(state);
 

@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {hasSeenLesson, getCurrentSlide} from '@coorpacademy/player-store';
 
-import {getCurrentScreenName, getContext} from '../redux/utils/state-extract';
+import {getCurrentScreenName, getCurrentTabName, getContext} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
@@ -18,6 +18,7 @@ import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 type ConnectedStateToProps = {|
   isFocused: boolean,
+  isSwitchDisabled: boolean,
   isLoading: boolean,
   hasClue: boolean,
   hasContext: boolean,
@@ -60,12 +61,12 @@ class TabBarSlide extends React.Component<Props> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const {hasContext, isFocused} = this.props;
+    const {hasContext, isFocused, isSwitchDisabled} = this.props;
 
     const hasContextChanged = prevProps.hasContext !== hasContext;
     const hasFocusChanged = prevProps.isFocused !== isFocused;
 
-    if (isFocused && (hasContextChanged || hasFocusChanged)) {
+    if (isFocused && !isSwitchDisabled && (hasContextChanged || hasFocusChanged)) {
       this.switchTab();
     }
   }
@@ -160,6 +161,7 @@ class TabBarSlide extends React.Component<Props> {
       navigation,
       /* eslint-disable no-unused-vars */
       isFocused,
+      isSwitchDisabled,
       isLoading,
       hasClue,
       hasContext,
@@ -185,6 +187,7 @@ class TabBarSlide extends React.Component<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   const currentScreenName = getCurrentScreenName(state);
+  const currentTabName = getCurrentTabName(state);
   const slide = getCurrentSlide(state);
   const context = getContext(state);
   // $FlowFixMe overrided type
@@ -192,6 +195,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
 
   return {
     isFocused: currentScreenName === 'Slide',
+    isSwitchDisabled: !['Context', 'Question'].includes(currentTabName),
     isLoading: !slide,
     hasClue: Boolean(slide && slide.clue),
     hasLesson: resources.length > 0,
