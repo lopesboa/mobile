@@ -3,15 +3,14 @@
 import _url from 'url';
 
 import * as React from 'react';
-import {Linking} from 'react-native';
 import {connect} from 'react-redux';
 import {withNavigation} from 'react-navigation';
+import firebase from 'react-native-firebase';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import {AUTHENTICATION_TYPE} from '../const';
 import {signIn, signOut} from '../redux/actions/authentication';
 import type {State as TokenState} from '../redux/reducers/authentication/token';
-import type {URLEventType} from '../types';
 
 type ConnectedStateProps = {|
   token: TokenState
@@ -35,21 +34,23 @@ function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): 
   class ComponentWithUniversalLinks extends React.PureComponent<Props> {
     props: Props;
 
-    async componentDidMount() {
-      Linking.addEventListener('url', this.handleOpenURL);
+    subscriber: (() => void) | void;
 
-      const url = await Linking.getInitialURL();
+    async componentDidMount() {
+      this.subscriber = firebase.links().onLink(this.handleOpenURL);
+
+      const url = await firebase.links().getInitialLink();
 
       if (url) {
-        await this.handleOpenURL({url});
+        await this.handleOpenURL(url);
       }
     }
 
     componentWillUnmount() {
-      Linking.removeEventListener('url', this.handleOpenURL);
+      this.subscriber && this.subscriber();
     }
 
-    handleOpenURL = async ({url}: URLEventType) => {
+    handleOpenURL = async (url: string) => {
       const {pathname, query} = _url.parse(url, true);
 
       if (!query || !query.jwt || !pathname) {

@@ -27,6 +27,7 @@ import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import io.invertase.firebase.links.RNFirebaseLinksPackage;
 
 
 import java.util.Arrays;
@@ -61,6 +62,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
             new RNDeviceInfo(),
             new RNFirebasePackage(),
             new RNFirebaseAnalyticsPackage(),
+            new RNFirebaseLinksPackage(),
             new SplashScreenReactPackage()
       );
     }

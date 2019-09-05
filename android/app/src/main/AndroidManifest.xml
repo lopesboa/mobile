@@ -42,7 +42,8 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data android:scheme="coorpacademyapp" />
-        <data android:scheme="https" android:host="redirect.coorpacademy.com" android:pathPattern="/open-app" />
+        <data android:host="coorpacademy.page.link" android:scheme="http"/>
+        <data android:host="coorpacademy.page.link" android:scheme="https"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

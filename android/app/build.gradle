@@ -55,7 +55,7 @@ android {
         multiDexEnabled true
         missingDimensionStrategy 'react-native-camera', 'general'
         versionCode 1
-        versionName "1.1.120"
+        versionName "2.0.0-0"
 
         // For Detox
         // testBuildType System.getProperty('testBuildType', 'debug')
@@ -73,6 +73,13 @@ android {
         }
     }
     signingConfigs {
+        // uncomment below if you want to test it with certificate
+        /*debug {
+            storeFile file("../../${System.env.KEYSTORE_FILE}")
+            storePassword "${System.env.KEYSTORE_PASSWORD}"
+            keyAlias "${System.env.KEYSTORE_ALIAS}"
+            keyPassword "${System.env.KEYSTORE_ALIAS_PASSWORD}"
+        }*/
         release {
             storeFile file("../../${System.env.KEYSTORE_FILE}")
             storePassword "${System.env.KEYSTORE_PASSWORD}"
@@ -154,10 +161,12 @@ dependencies {
     // androidTestImplementation(project(path: ":detox"))
     // androidTestImplementation 'junit:junit:4.12+'
 
-      // Firebase dependencies
+    // Firebase dependencies
     implementation project(':react-native-firebase')
     implementation "com.google.android.gms:play-services-base:16.1.0"
     implementation "com.google.firebase:firebase-core:16.0.9"
+    implementation "com.google.firebase:firebase-dynamic-links:16.1.8"
+    implementation "com.google.firebase:firebase-invites:16.1.1"
     implementation 'com.android.support:multidex:1.0.3'
 }
 

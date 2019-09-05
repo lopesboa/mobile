@@ -32,6 +32,7 @@ target 'Coorpacademy' do
 
   # Firebase
   pod 'Firebase/Core', '~> 5.20.1'
+  pod 'Firebase/DynamicLinks', '~> 5.20.1'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
 
   # Tracking

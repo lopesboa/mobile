@@ -13,6 +13,7 @@
 #import "RNSplashScreen.h"
 #import "Orientation.h"
 #import <React/RCTLinkingManager.h>
+#import "RNFirebaseLinks.h"
 
 @import Firebase;
 
@@ -22,7 +23,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-  return [RCTLinkingManager application:application openURL:url options:options];
+  return  [[RNFirebaseLinks instance] application:application openURL:url options:options];
 }
 
 // To support universal links
@@ -30,9 +31,7 @@
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
 {
-  return [RCTLinkingManager application:application
-                   continueUserActivity:userActivity
-                     restorationHandler:restorationHandler];
+  return [[RNFirebaseLinks instance] application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -54,6 +53,7 @@
   }
   [[NSProcessInfo processInfo] setValue:[newArguments copy] forKey:@"arguments"];
 
+  [FIROptions defaultOptions].deepLinkURLScheme = @"coorpacademyapp";
   [FIRApp configure];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

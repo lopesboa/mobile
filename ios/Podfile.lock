@@ -8,6 +8,9 @@ PODS:
     - FirebaseAnalytics (= 5.8.1)
   - Firebase/CoreOnly (5.20.2):
     - FirebaseCore (= 5.4.1)
+  - Firebase/DynamicLinks (5.20.2):
+    - Firebase/CoreOnly
+    - FirebaseDynamicLinks (= 3.4.3)
   - FirebaseAnalytics (5.8.1):
     - FirebaseCore (~> 5.4)
     - FirebaseInstanceID (~> 3.8)
@@ -17,9 +20,14 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - FirebaseAnalyticsInterop (1.2.0)
   - FirebaseCore (5.4.1):
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDynamicLinks (3.4.3):
+    - FirebaseAnalytics (~> 5.1)
+    - FirebaseAnalyticsInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
   - FirebaseInstanceID (3.8.1):
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
@@ -164,6 +172,7 @@ DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs`)
   - Firebase/Core (~> 5.20.1)
+  - Firebase/DynamicLinks (~> 5.20.1)
   - Folly (from `../node_modules/react-native/third-party-podspecs`)
   - glog (from `../node_modules/react-native/third-party-podspecs`)
   - GoogleTagManager
@@ -199,7 +208,9 @@ SPEC REPOS:
     - boost-for-react-native
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
     - FirebaseCore
+    - FirebaseDynamicLinks
     - FirebaseInstanceID
     - GoogleAnalytics
     - GoogleAppMeasurement
@@ -261,7 +272,9 @@ SPEC CHECKSUMS:
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
+  FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
+  FirebaseDynamicLinks: f7a8717e2c7ea652923882a2d60b0045d6fd99d5
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
@@ -291,6 +304,6 @@ SPEC CHECKSUMS:
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: a4172dc63ef200fc4adbc21f5f3e3a27b95cb2fc
+PODFILE CHECKSUM: b9decb710c45b83298359305505a976fa51e1814
 
 COCOAPODS: 1.6.1
