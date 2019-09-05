@@ -4341,7 +4341,7 @@ exports[`Storyshots Home Default 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=35",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=70",
           }
         }
         style={

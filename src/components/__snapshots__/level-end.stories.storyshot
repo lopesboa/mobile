@@ -1142,7 +1142,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={
@@ -2649,7 +2649,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={
@@ -4446,7 +4446,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={
@@ -6314,7 +6314,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={
@@ -9024,7 +9024,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={
@@ -11480,7 +11480,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                         resizeMode="cover"
                         source={
                           Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=400.2",
+                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
                           }
                         }
                         style={

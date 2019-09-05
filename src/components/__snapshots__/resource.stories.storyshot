@@ -20,7 +20,7 @@ exports[`Storyshots Resource Image 1`] = `
     resizeMode="contain"
     source={
       Object {
-        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=contain&q=90&w=320&h=180",
+        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=contain&q=90&w=640&h=360",
       }
     }
     style={

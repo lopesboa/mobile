@@ -1,5 +1,6 @@
 // @flow strict
 
+import {PixelRatio} from 'react-native';
 import type {ImageProps} from 'react-native/Libraries/Image/ImageProps';
 
 import {buildUrlQueryParams} from './uri';
@@ -27,14 +28,14 @@ export const getResizedImage = (
   if (maxWidth) {
     queryParams = {
       ...queryParams,
-      w: maxWidth
+      w: PixelRatio.getPixelSizeForLayoutSize(maxWidth)
     };
   }
 
   if (maxHeight) {
     queryParams = {
       ...queryParams,
-      h: maxHeight
+      h: PixelRatio.getPixelSizeForLayoutSize(maxHeight)
     };
   }
 

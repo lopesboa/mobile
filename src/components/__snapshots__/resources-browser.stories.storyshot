@@ -190,7 +190,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -519,7 +519,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -891,7 +891,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -1220,7 +1220,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -1549,7 +1549,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -1878,7 +1878,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -2332,7 +2332,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -2663,7 +2663,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fimage-support-de-cours-1543490353160.jpg&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -2812,7 +2812,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -3141,7 +3141,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -3470,7 +3470,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={
@@ -3799,7 +3799,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=70&h=45",
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-partnerships-fabernovel%2Fcockpit-fabernovel%2Fdefault%2Fvignette_fabernovel_new-1543482536203.png&m=crop&q=90&w=140&h=90",
                 }
               }
               style={

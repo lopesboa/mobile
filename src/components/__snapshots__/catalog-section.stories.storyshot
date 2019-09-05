@@ -4375,7 +4375,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     resizeMode="cover"
                     source={
                       Object {
-                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&w=168&h=205",
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&w=336&h=410",
                       }
                     }
                     style={
@@ -4819,7 +4819,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     resizeMode="cover"
                     source={
                       Object {
-                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=168&h=205",
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=336&h=410",
                       }
                     }
                     style={

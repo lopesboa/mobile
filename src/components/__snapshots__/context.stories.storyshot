@@ -345,7 +345,7 @@ exports[`Storyshots Context With Image 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi-staging.coorpacademy.com%2Fapi-service%2Fmedias%3Fh%3D400%26w%3D400%26q%3D90%26url%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent%2FcockpitRecette-joan%2Fdefault%2Fcorbeau-1501504511632.jpg&m=contain&q=90&w=320&h=180",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi-staging.coorpacademy.com%2Fapi-service%2Fmedias%3Fh%3D400%26w%3D400%26q%3D90%26url%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent%2FcockpitRecette-joan%2Fdefault%2Fcorbeau-1501504511632.jpg&m=contain&q=90&w=640&h=360",
           }
         }
         style={

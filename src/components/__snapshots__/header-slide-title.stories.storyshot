@@ -50,7 +50,7 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       <Image
         source={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=56&h=56",
           }
         }
         style={
@@ -170,7 +170,7 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       <Image
         source={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=56&h=56",
           }
         }
         style={
@@ -290,7 +290,7 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       <Image
         source={
           Object {
-            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=28&h=28",
+            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=56&h=56",
           }
         }
         style={

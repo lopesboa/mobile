@@ -145,7 +145,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
           resizeMode="contain"
           source={
             Object {
-              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
+              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=640",
             }
           }
           style={
@@ -367,7 +367,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
           resizeMode="contain"
           source={
             Object {
-              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
+              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=640",
             }
           }
           style={
@@ -592,7 +592,7 @@ exports[`Storyshots QuestionChoice With image 1`] = `
           resizeMode="contain"
           source={
             Object {
-              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=320",
+              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fapi.coorpacademy.com%2Fapi-service%2Fmedias%3Furl%3Dhttps%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg%26h%3D500%26w%3D500%26q%3D90%26m%3Dcontain&m=contain&q=90&w=640",
             }
           }
           style={

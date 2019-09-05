@@ -75,7 +75,7 @@ exports[`Storyshots Card Catalog Item Card 1`] = `
             resizeMode="cover"
             source={
               Object {
-                "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=168&h=205",
+                "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&w=336&h=410",
               }
             }
             style={
@@ -680,7 +680,7 @@ exports[`Storyshots Card Catalog Item Cover 1`] = `
             resizeMode="cover"
             source={
               Object {
-                "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&h=400.2",
+                "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-eyrolles%2Fcockpit-eyrolles%2Fdefault%2Fshutterstock_123603871-1-1545058448041.jpg&m=crop&q=90&h=800",
               }
             }
             style={
