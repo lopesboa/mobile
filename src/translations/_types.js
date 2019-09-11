@@ -3,7 +3,6 @@
 export type SupportedLanguage =
   | 'cs'
   | 'de'
-  | 'en-US'
   | 'en'
   | 'es'
   | 'fr'

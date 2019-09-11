@@ -1,4 +1,5 @@
 // @flow strict
+import {NativeModules} from 'react-native';
 
 import translations from '../../translations';
 import type {Config} from './brand';
@@ -113,11 +114,24 @@ describe('Language', () => {
   });
 
   describe('getPlatformMatchingLanguage', () => {
+    beforeEach(() => {
+      NativeModules.ReactLocalization = {
+        language: 'zh-TW'
+      };
+      jest.resetModules();
+    });
+
+    afterAll(() => {
+      NativeModules.ReactLocalization = {
+        language: 'en-US'
+      };
+      jest.resetAllMocks();
+    });
     it('should return exact matching', () => {
       const {getPlatformMatchingLanguage} = require('./language');
 
-      const result = getPlatformMatchingLanguage(['en-US', 'fr', 'de']);
-      const expected = 'en-US';
+      const result = getPlatformMatchingLanguage(['zh-TW', 'fr', 'de']);
+      const expected = 'zh-TW';
 
       expect(result).toEqual(expected);
     });
@@ -125,8 +139,8 @@ describe('Language', () => {
     it('should return short matching', () => {
       const {getPlatformMatchingLanguage} = require('./language');
 
-      const result = getPlatformMatchingLanguage(['en', 'fr', 'de']);
-      const expected = 'en';
+      const result = getPlatformMatchingLanguage(['zh', 'fr', 'de']);
+      const expected = 'zh';
 
       expect(result).toEqual(expected);
     });
