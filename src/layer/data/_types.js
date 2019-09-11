@@ -7,7 +7,12 @@ import type {
   LevelAPI,
   ChapterRule
 } from '@coorpacademy/player-services';
-import type {Context, Lesson, ResourceMimeType} from '@coorpacademy/progression-engine';
+import type {
+  ContentType,
+  Context,
+  Lesson,
+  ResourceMimeType
+} from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
 import type {SupportedLanguage} from '../../translations/_types';
 
@@ -212,4 +217,16 @@ export type Cards = Array<Card>;
 export type Completion = {|
   current: number,
   stars: number
+|};
+
+export type ProgressionAggregationByContent = {|
+  stars: number,
+  success: boolean,
+  content: {
+    ref: string,
+    type: ContentType,
+    version: string
+  },
+  latestNbQuestions: number,
+  updatedAt: string
 |};
