@@ -112,7 +112,7 @@ describe('Brands', () => {
         expect(action).toEqual(fetchSuccess(brand));
         return action;
       });
-      getState.mockReturnValueOnce({authentication: {user: {token, isGodModeUser: false}}});
+      getState.mockReturnValueOnce({authentication: {user: {token}}});
       options.services.Brands.find.mockReturnValueOnce(Promise.resolve(brand));
 
       // $FlowFixMe
@@ -141,7 +141,7 @@ describe('Brands', () => {
         expect(action).toEqual(fetchError(new Error('Token not defined')));
         return action;
       });
-      getState.mockReturnValueOnce({authentication: {user: {token, isGodModeUser: false}}});
+      getState.mockReturnValueOnce({authentication: {user: {token}}});
 
       // $FlowFixMe
       const actual = await fetchCurrentBrand()(dispatch, getState, options);

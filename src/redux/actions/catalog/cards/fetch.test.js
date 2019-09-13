@@ -53,7 +53,7 @@ describe('Cards', () => {
         return Promise.resolve(action);
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand, language},
+        authentication: {user: {token: '__TOKEN__'}, brand, language},
         catalog: {entities: {sections: {foo: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(
@@ -88,7 +88,7 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: null, isGodModeUser: false}, brand: null},
+        authentication: {user: {token: null}, brand: null},
         catalog: {entities: {sections: {bar: {[language]: section}}}}
       });
 
@@ -119,7 +119,7 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: null},
+        authentication: {user: {token: '__TOKEN__'}, brand: null},
         catalog: {entities: {sections: {baz: {[language]: section}}}}
       });
 
@@ -150,7 +150,7 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand},
+        authentication: {user: {token: '__TOKEN__'}, brand},
         catalog: {entities: {sections: {}}}
       });
 
@@ -182,7 +182,7 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand, language},
+        authentication: {user: {token: '__TOKEN__'}, brand, language},
         catalog: {entities: {sections: {quux: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(Promise.reject(fakeError));

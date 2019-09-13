@@ -37,7 +37,7 @@ const mockedStore = createStoreState({
   chapters: [],
   slides: [],
   progression,
-  authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: brand}
+  authentication: {user: {token: '__TOKEN__'}, brand: brand}
 });
 
 describe('Rest displayed Progression', () => {

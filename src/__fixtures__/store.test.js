@@ -159,8 +159,7 @@ describe('storeFixture', () => {
 
     const authenticationState = {
       user: {
-        token: '__TOKEN__',
-        isGodModeUser: false
+        token: '__TOKEN__'
       },
       brand: {
         colors: {

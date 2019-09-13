@@ -1,7 +1,10 @@
-// @flow strict
+// @flow
+
+import {ROLES} from '@coorpacademy/acl';
 
 import {createProgression} from '../../__fixtures__/progression';
-import {createStoreState} from '../../__fixtures__/store';
+import {createToken} from '../../__fixtures__/tokens';
+import {createStoreState, createAuthenticationState} from '../../__fixtures__/store';
 import {ENGINE, CONTENT_TYPE} from '../../const';
 import {TOGGLE, toggle} from './fast-slide';
 import type {Action} from './fast-slide';
@@ -24,7 +27,12 @@ describe('FastSlide', () => {
           disciplines: [],
           chapters: [],
           slides: [],
-          progression
+          progression,
+          authentication: createAuthenticationState({
+            token: createToken({
+              roles: [ROLES.GODMODE]
+            })
+          })
         })
       );
       const expected: Action = {
@@ -45,7 +53,12 @@ describe('FastSlide', () => {
           chapters: [],
           slides: [],
           progression,
-          fastSlide: true
+          fastSlide: true,
+          authentication: createAuthenticationState({
+            token: createToken({
+              roles: [ROLES.GODMODE]
+            })
+          })
         })
       );
       const expected: Action = {
@@ -55,6 +68,25 @@ describe('FastSlide', () => {
       // $FlowFixMe missing callable signature
       await toggle()(dispatch, getState);
       expect(dispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should have the right role', async () => {
+      const dispatch: Dispatch = jest.fn();
+      const getState: GetState = jest.fn(() =>
+        createStoreState({
+          levels: [],
+          disciplines: [],
+          chapters: [],
+          slides: [],
+          progression,
+          authentication: createAuthenticationState({
+            token: createToken({})
+          })
+        })
+      );
+      // $FlowFixMe missing callable signature
+      await toggle()(dispatch, getState);
+      expect(dispatch).toHaveBeenCalledTimes(0);
     });
   });
 });

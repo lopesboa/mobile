@@ -1,6 +1,6 @@
 // @flow strict
 
-import {isFastSlideEnabled} from '../utils/state-extract';
+import {isFastSlideEnabled, isGodModeUser} from '../utils/state-extract';
 import type {StoreAction} from '../_types';
 
 export const TOGGLE = '@@fast-slide/TOGGLE';
@@ -11,10 +11,14 @@ export type Action = {|
 |};
 
 export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
-  const value = isFastSlideEnabled(getState());
+  const state = getState();
+
+  if (!isGodModeUser(state)) {
+    return Promise.resolve();
+  }
 
   return dispatch({
     type: TOGGLE,
-    payload: !value
+    payload: !isFastSlideEnabled(state)
   });
 };

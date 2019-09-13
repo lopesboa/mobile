@@ -9,7 +9,6 @@ import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
 import {set as setToken} from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
-import {hasGodMode} from '../utils/has-role';
 import {fetchBrand} from './brands';
 import type {Action as BrandsAction} from './brands';
 import {fetchLanguage} from './language/fetch';
@@ -22,8 +21,6 @@ export const SIGN_IN_SUCCESS = `@@authentication/SIGN_IN_SUCCESS`;
 export const SIGN_IN_ERROR = `@@authentication/SIGN_IN_ERROR`;
 export const SIGN_OUT = `@@authentication/SIGN_OUT`;
 
-type SignInSuccess = {|token: string, isGodModeUser: boolean|};
-
 export type Action =
   | {|
       type: '@@authentication/SIGN_IN_REQUEST',
@@ -31,7 +28,9 @@ export type Action =
     |}
   | {|
       type: '@@authentication/SIGN_IN_SUCCESS',
-      payload: SignInSuccess
+      payload: {
+        token: string
+      }
     |}
   | ErrorAction<{|
       type: '@@authentication/SIGN_IN_ERROR'
@@ -45,11 +44,10 @@ export const signInRequest = (token?: string): Action => ({
   payload: token
 });
 
-export const signInSuccess = ({token, isGodModeUser}: SignInSuccess): Action => ({
+export const signInSuccess = ({token}: {token: string}): Action => ({
   type: SIGN_IN_SUCCESS,
   payload: {
-    token,
-    isGodModeUser
+    token
   }
 });
 
@@ -103,7 +101,6 @@ export const signIn = (
     // $FlowFixMe wrong StoreAction type
     await fetchLanguage(dispatch, getState, options);
 
-    const isGodModeUser = hasGodMode(jwt, brand.name);
     const {services} = options;
 
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
@@ -112,7 +109,7 @@ export const signIn = (
       authenticationType
     });
 
-    return dispatch(signInSuccess({token, isGodModeUser}));
+    return dispatch(signInSuccess({token}));
   } catch (e) {
     setToken(null);
     // $FlowFixMe wrong StoreAction type

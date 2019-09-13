@@ -1,11 +1,13 @@
-// @flow strict
+// @flow
 
 import type {Content} from '@coorpacademy/progression-engine';
+import {ROLES} from '@coorpacademy/acl';
 
 import type {Slide} from '../../layer/data/_types';
-import type {Engine, ProgressionEngineVersions} from '../../types';
+import type {Engine, ProgressionEngineVersions, Brand} from '../../types';
 import {ENGINE, CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
+import {createToken} from '../../__fixtures__/tokens';
 import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
 import {createSlide} from '../../__fixtures__/slides';
@@ -30,7 +32,8 @@ import {
   isFastSlideEnabled,
   getCurrentScreenName,
   getCurrentTabName,
-  getContext
+  getContext,
+  isGodModeUser
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -53,9 +56,6 @@ const createDefaultProgression = (
     }
   });
 
-const brand = createBrand({});
-const authentication = createAuthenticationState({brand});
-
 const context = createContextWithPDF({title: 'Foo bar'});
 const template = createTemplate({});
 const slide = createSlide({
@@ -70,13 +70,17 @@ const createState = ({
   levelRef = 'dummyRef',
   content,
   nextContent,
-  slides = []
+  slides = [],
+  token,
+  brand
 }: {
   engine?: Engine,
   levelRef?: string,
   content?: Content | void,
   nextContent?: Content | void,
-  slides?: Array<Slide>
+  slides?: Array<Slide>,
+  token?: string | null,
+  brand?: Brand | null
 }): StoreState => {
   const level = createDefaultLevel(levelRef);
   const state: StoreState = createStoreState({
@@ -85,7 +89,10 @@ const createState = ({
     chapters: [],
     slides,
     progression: createDefaultProgression(engine, levelRef, content, nextContent),
-    authentication,
+    authentication: createAuthenticationState({
+      token,
+      brand
+    }),
     godMode: true,
     fastSlide: true
   });
@@ -541,7 +548,8 @@ describe('State-extract', () => {
 
   describe('getBrand', () => {
     it('should get brand', () => {
-      const state = createState({});
+      const brand = createBrand({});
+      const state = createState({brand});
 
       const result = getBrand(state);
       const expected = brand;
@@ -629,6 +637,48 @@ describe('State-extract', () => {
       const expected = context;
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('isGodModeUser', () => {
+    it('should return true', () => {
+      const brand = createBrand({});
+      const token = createToken({
+        brand: brand.name,
+        roles: [ROLES.USER, ROLES.GODMODE]
+      });
+      const state = createState({
+        token,
+        brand
+      });
+
+      const result = isGodModeUser(state);
+
+      expect(result).toBeTruthy();
+    });
+
+    it('should return false', () => {
+      const token = createToken({});
+      const brand = createBrand({});
+      const state = createState({
+        token,
+        brand
+      });
+
+      const result = isGodModeUser(state);
+
+      expect(result).toBeFalsy();
+    });
+
+    it('should return false if no token or brand are defined', () => {
+      const state = createState({
+        token: null,
+        brand: null
+      });
+
+      const result = isGodModeUser(state);
+
+      expect(result).toBeFalsy();
     });
   });
 });

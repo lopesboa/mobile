@@ -227,7 +227,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+        authentication: {user: {token: '__TOKEN__'}, brand}
       });
 
       store.dispatch.mockImplementationOnce(action => {
@@ -285,7 +285,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}},
+        authentication: {user: {token: '__TOKEN__'}},
         brand
       });
 
@@ -343,7 +343,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand}
+        authentication: {user: {token: '__TOKEN__'}, brand}
       });
 
       store.dispatch.mockImplementationOnce(action => {
@@ -418,7 +418,7 @@ describe('Progressions synchronization', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: null, isGodModeUser: false}, brand: null}
+        authentication: {user: {token: null}, brand: null}
       });
 
       // $FlowFixMe
@@ -466,7 +466,7 @@ describe('Progressions synchronization', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__', isGodModeUser: false}, brand: null}
+        authentication: {user: {token: '__TOKEN__'}, brand: null}
       });
 
       // $FlowFixMe

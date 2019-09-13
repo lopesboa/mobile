@@ -114,7 +114,7 @@ describe('Authentication', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess({token, isGodModeUser: false}));
+        expect(action).toEqual(signInSuccess({token}));
         return action;
       });
 
@@ -132,7 +132,7 @@ describe('Authentication', () => {
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(current).toEqual(signInSuccess({token, isGodModeUser: false}));
+      return expect(current).toEqual(signInSuccess({token}));
     });
 
     it('should sign in as anonymous', async () => {
@@ -199,7 +199,7 @@ describe('Authentication', () => {
       });
       dispatch.mockImplementationOnce(action => action);
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess({token, isGodModeUser: false}));
+        expect(action).toEqual(signInSuccess({token}));
         return action;
       });
 
@@ -217,7 +217,7 @@ describe('Authentication', () => {
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(current).toEqual(signInSuccess({token, isGodModeUser: false}));
+      return expect(current).toEqual(signInSuccess({token}));
     });
 
     it('should handle error on anonymous sign in', async () => {
@@ -495,8 +495,7 @@ describe('Authentication', () => {
       getState.mockReturnValue({
         authentication: {
           user: {
-            token,
-            isGodModeUser: false
+            token
           },
           brand
         }
@@ -554,8 +553,7 @@ describe('Authentication', () => {
       getState.mockReturnValue({
         authentication: {
           user: {
-            token,
-            isGodModeUser: false
+            token
           },
           brand
         }
@@ -593,6 +591,64 @@ describe('Authentication', () => {
         {
           userId: undefined,
           brand: brand.name
+        }
+      );
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.set).toHaveBeenCalledWith(language);
+      expect(current).toEqual(expected);
+    });
+
+    it('should dispatch sign out -- without brand', async () => {
+      const token = createToken({});
+
+      const {SIGN_OUT, signOut} = require('./authentication');
+
+      const brand = null;
+
+      const dispatch = jest.fn();
+      const getState = jest.fn();
+      getState.mockReturnValue({
+        authentication: {
+          user: {
+            token
+          },
+          brand
+        }
+      });
+      const options = {
+        services: {
+          Analytics: createFakeAnalytics(),
+          Language: {
+            getFromInterface: jest.fn().mockImplementation(() => language),
+            set: jest.fn()
+          }
+        }
+      };
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageRequest());
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(setLanguageSuccess(language));
+        return action;
+      });
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual({
+          type: SIGN_OUT
+        });
+        return action;
+      });
+
+      // $FlowFixMe
+      const current = await signOut()(dispatch, getState, options);
+      const expected = {type: SIGN_OUT};
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
+        ANALYTICS_EVENT_TYPE.SIGN_OUT,
+        {
+          userId: 'foobar',
+          brand: undefined
         }
       );
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);

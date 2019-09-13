@@ -21,7 +21,7 @@ describe('Authentification', () => {
 
   describe(SIGN_IN_SUCCESS, () => {
     it('Default', () => {
-      const payload = {token: TOKEN, isGodModeUser: false};
+      const payload = {token: TOKEN};
       const action: Action = {type: SIGN_IN_SUCCESS, payload};
       const result = reducer(undefined, action);
       const expected: State = payload;

@@ -1,4 +1,4 @@
-// @flow strict
+// @flow
 
 import {
   getCurrentProgression,
@@ -9,6 +9,8 @@ import {
   getCurrentSlide
 } from '@coorpacademy/player-store';
 import type {Context} from '@coorpacademy/progression-engine';
+import {ROLES, SCOPES, hasRole} from '@coorpacademy/acl';
+import decode from 'jwt-decode';
 
 import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {Section, ProgressionEngineVersions} from '../../types';
@@ -114,4 +116,15 @@ export const getContext = (state: StoreState): Context | void => {
   return currentSlide && currentSlide.context && currentSlide.context.title
     ? currentSlide.context
     : undefined;
+};
+
+export const isGodModeUser = (state: StoreState): boolean => {
+  const token = getToken(state);
+  const brand = getBrand(state);
+
+  if (!token || !brand) {
+    return false;
+  }
+
+  return hasRole(SCOPES.MOOC(brand.name), ROLES.GODMODE, decode(token));
 };

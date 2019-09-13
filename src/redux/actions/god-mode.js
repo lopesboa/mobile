@@ -1,6 +1,6 @@
 // @flow strict
 
-import {isGodModeEnabled} from '../utils/state-extract';
+import {isGodModeEnabled, isGodModeUser} from '../utils/state-extract';
 import type {StoreAction} from '../_types';
 
 export const TOGGLE = '@@god-mode/TOGGLE';
@@ -11,10 +11,14 @@ export type Action = {|
 |};
 
 export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
-  const value = isGodModeEnabled(getState());
+  const state = getState();
+
+  if (!isGodModeUser(state)) {
+    return Promise.resolve();
+  }
 
   return dispatch({
     type: TOGGLE,
-    payload: !value
+    payload: !isGodModeEnabled(state)
   });
 };

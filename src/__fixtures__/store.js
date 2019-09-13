@@ -91,13 +91,14 @@ export const createCatalogState = (
 });
 
 export const createAuthenticationState = ({
+  token,
   brand
 }: {
+  token?: string | null,
   brand?: Brand | null
 }): AuthenticationState => ({
   user: {
-    token: '__TOKEN__',
-    isGodModeUser: false
+    token: token !== undefined ? token : '__TOKEN__'
   },
   brand: brand !== undefined ? brand : createBrand({})
 });

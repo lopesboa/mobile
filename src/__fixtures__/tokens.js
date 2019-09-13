@@ -1,4 +1,6 @@
-// @flow strict
+// @flow
+
+import {ROLES} from '@coorpacademy/acl';
 
 const toJWT = <S>(payload: S): string =>
   ['', Buffer.from(JSON.stringify(payload) || '').toString('base64'), ''].join('.');
@@ -7,7 +9,7 @@ export const createToken = ({
   user = 'foobar',
   host,
   iss = 'coorpacademy-jwt',
-  roles = ['user']
+  roles = [ROLES.USER]
 }: {
   user?: string,
   host?: string | null,
@@ -19,8 +21,12 @@ export const createToken = ({
     user,
     iss,
     grants: {
-      onboarding: {
-        roles
+      mooc: {
+        grants: {
+          mobile: {
+            roles
+          }
+        }
       }
     },
     exp: 1,
