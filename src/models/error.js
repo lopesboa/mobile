@@ -7,9 +7,7 @@ export class ForbiddenError extends Error {
     this.name = 'ForbiddenError';
     this.description = 'Error encountered fetching an API having a response with 403 status code.';
 
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, ForbiddenError);
-    }
+    Error.captureStackTrace && Error.captureStackTrace(this, ForbiddenError);
   }
 }
 export class NoContentFoundError extends Error {
@@ -19,8 +17,6 @@ export class NoContentFoundError extends Error {
     this.name = 'NoContentFoundError';
     this.description = 'Error encountered fetching an API having a response with 404 status code.';
 
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, NoContentFoundError);
-    }
+    Error.captureStackTrace && Error.captureStackTrace(this, NoContentFoundError);
   }
 }

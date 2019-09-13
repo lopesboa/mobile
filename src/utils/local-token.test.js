@@ -4,6 +4,14 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 describe('Local token', () => {
   describe('set', () => {
+    it('should not store the token if undefined', async () => {
+      const {set} = require('./local-token').default;
+
+      await set(null);
+
+      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(0);
+    });
+
     it('should successfully set a token', async () => {
       AsyncStorage.setItem.mockImplementation((key, value) => {
         expect(key).toEqual('@@token');

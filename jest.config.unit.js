@@ -57,6 +57,12 @@ module.exports = {
       lines: 100,
       statements: 100
     },
+    'src/models': {
+      branches: 100,
+      function: 100,
+      lines: 100,
+      statements: 100
+    },
     'src/layer': {
       // @todo increase this value
       branches: 91,
@@ -71,6 +77,18 @@ module.exports = {
       statements: 100
     },
     'src/services': {
+      branches: 100,
+      function: 100,
+      lines: 100,
+      statements: 100
+    },
+    'src/translations': {
+      branches: 100,
+      function: 100,
+      lines: 100,
+      statements: 100
+    },
+    'src/utils': {
       branches: 100,
       function: 100,
       lines: 100,
