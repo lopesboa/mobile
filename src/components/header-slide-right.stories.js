@@ -13,6 +13,7 @@ storiesOf('HeaderSlideRight', module)
   .add('God mode', () => (
     <HeaderSlideRight
       isGodModeEnabled
+      isGodModeUser
       onPress={handleFakePress}
       onLongPress={handleFakePress}
       count={3}
@@ -20,6 +21,7 @@ storiesOf('HeaderSlideRight', module)
   ))
   .add('Fast slide', () => (
     <HeaderSlideRight
+      isGodModeUser
       isFastSlideEnabled
       onPress={handleFakePress}
       onLongPress={handleFakePress}
@@ -29,6 +31,7 @@ storiesOf('HeaderSlideRight', module)
   .add('God mode + fast slide', () => (
     <HeaderSlideRight
       isGodModeEnabled
+      isGodModeUser
       isFastSlideEnabled
       onPress={handleFakePress}
       onLongPress={handleFakePress}

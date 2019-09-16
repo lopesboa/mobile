@@ -7,6 +7,7 @@ import {getCurrentProgression, getLives} from '@coorpacademy/player-store';
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
 import {
+  isGodModeUser as _isGodModeUser,
   isGodModeEnabled as _isGodModeEnabled,
   isFastSlideEnabled as _isFastSlideEnabled
 } from '../redux/utils/state-extract';
@@ -15,6 +16,7 @@ import {toggle as toggleFastSlide} from '../redux/actions/fast-slide';
 
 type ConnectedStateProps = {|
   count?: number,
+  isGodModeUser?: boolean,
   isGodModeEnabled?: boolean,
   isFastSlideEnabled?: boolean
 |};
@@ -42,7 +44,7 @@ class HeaderSlideRight extends React.Component<Props> {
   };
 
   render() {
-    const {count, isGodModeEnabled, isFastSlideEnabled} = this.props;
+    const {count, isGodModeUser, isGodModeEnabled, isFastSlideEnabled} = this.props;
 
     if (count === undefined) {
       return null;
@@ -53,6 +55,7 @@ class HeaderSlideRight extends React.Component<Props> {
         count={count}
         isGodModeEnabled={isGodModeEnabled}
         isFastSlideEnabled={isFastSlideEnabled}
+        isGodModeUser={isGodModeUser}
         onPress={this.handlePress}
         onLongPress={this.handleLongPress}
       />
@@ -66,6 +69,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateProps => {
 
   return {
     count: (progression && !hide && count) || undefined,
+    isGodModeUser: _isGodModeUser(state),
     isGodModeEnabled: _isGodModeEnabled(state),
     isFastSlideEnabled: _isFastSlideEnabled(state)
   };

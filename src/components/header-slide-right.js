@@ -9,6 +9,7 @@ import Lives from './lives';
 
 type Props = {|
   count: number,
+  isGodModeUser?: boolean,
   isGodModeEnabled?: boolean,
   isFastSlideEnabled?: boolean,
   onPress: () => void,
@@ -27,13 +28,14 @@ const styles = StyleSheet.create({
 
 const HeaderSlideRight = ({
   count,
+  isGodModeUser,
   isGodModeEnabled,
   isFastSlideEnabled,
   onPress,
   onLongPress
 }: Props) => (
   <View style={styles.container}>
-    <TouchableOpacity onPress={onPress} onLongPress={onLongPress}>
+    <TouchableOpacity onPress={onPress} onLongPress={onLongPress} disabled={!isGodModeUser}>
       <Lives
         count={count}
         height={HEADER_HEIGHT - LIVES_VERTICAL_PADDING * 2}
