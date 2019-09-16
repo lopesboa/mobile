@@ -39,7 +39,7 @@ export const mapToLesson = (rawLesson: Lesson): LessonEngine => ({
   _id: rawLesson._id,
   description: rawLesson.description,
   mediaUrl: rawLesson.mediaUrl,
-  mediaRef: 'med_Vy4JQKFhN',
+  mediaRef: rawLesson.mediaRef,
   mimeType: rawLesson.mimeType,
   poster: rawLesson.poster,
   posters: rawLesson.posters,

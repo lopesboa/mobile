@@ -8,8 +8,7 @@ import {__TEST__} from '../modules/environment';
 
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
-import type {Resource} from '../types';
-import {reduceToResources} from '../layer/data/mappers';
+import {mapToResource} from '../layer/data/mappers';
 import Lesson from './lesson';
 
 const video = createVideo({ref: 'les_1', description: 'Foo bar baz - Video'});
@@ -20,7 +19,7 @@ const videoSubtitles = createVideo({
   subtitleRef: 'foobarbaz'
 });
 const lessons = [video, videoSubtitles, pdf];
-const resources: Array<Resource> = reduceToResources(lessons);
+const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
 
 storiesOf('Lesson', module)
   .add('Default', () => (

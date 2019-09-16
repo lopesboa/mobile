@@ -53,7 +53,7 @@ describe('Context', () => {
       header: context.title,
       media: context.media
     };
-    expect(expected).toEqual(result);
+    expect(result).toEqual(expected);
   });
 
   it('should return default props', () => {

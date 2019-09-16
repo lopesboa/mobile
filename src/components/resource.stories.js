@@ -8,13 +8,13 @@ import {__TEST__} from '../modules/environment';
 import {createVideo, createPdf, createImage} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
 import {getCleanUri} from '../modules/uri';
-import {reduceToResources} from '../layer/data/mappers';
+import {mapToResource} from '../layer/data/mappers';
 import {Component as Resource} from './resource';
 
 const _video = createVideo({ref: 'les_1', description: 'Foo bar baz'});
 const _pdf = createPdf({ref: 'les_2', description: 'Foo bar baz'});
 const _img = createImage({ref: 'les_2', description: 'Foo bar baz'});
-const [video, pdf, image] = reduceToResources([_video, _pdf, _img]);
+const [video, pdf, image] = [_video, _pdf, _img].map(mapToResource).filter(lesson => lesson.url);
 
 storiesOf('Resource', module)
   .add('Video', () => (

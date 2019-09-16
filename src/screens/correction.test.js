@@ -14,10 +14,21 @@ import type {ConnectedStateProps, OwnProps, Params} from './correction';
 describe('Correction', () => {
   describe('Props', () => {
     const defaultProps: ConnectedStateProps = {
-      question: '',
-      tip: '',
-      keyPoint: '',
       answers: [],
+      hasConsumedExtraLife: false,
+      hasContext: false,
+      isCorrect: undefined,
+      isFastSlideEnabled: false,
+      isFinished: false,
+      isGodModeEnabled: false,
+      isResourceViewed: false,
+      keyPoint: '',
+      lives: 4,
+      offeringExtraLife: false,
+      progressionId: 'progression1',
+      question: '',
+      resources: [],
+      tip: '',
       userAnswers: []
     };
 
@@ -86,8 +97,15 @@ describe('Correction', () => {
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
+        const expected: ConnectedStateProps = {
+          ...defaultProps,
+          isResourceViewed: true,
+          keyPoint: slide.klf,
+          tip: slide.tips,
+          question: question.header
+        };
 
-        expect(result).toEqual(defaultProps);
+        expect(result).toEqual(expected);
       });
 
       it('should handle correction loading', () => {
@@ -124,8 +142,15 @@ describe('Correction', () => {
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
+        const expected: ConnectedStateProps = {
+          ...defaultProps,
+          isResourceViewed: true,
+          keyPoint: slide.klf,
+          tip: slide.tips,
+          question: question.header
+        };
 
-        expect(result).toEqual(defaultProps);
+        expect(result).toEqual(expected);
       });
 
       it('should handle correction loading', () => {
@@ -161,8 +186,15 @@ describe('Correction', () => {
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
+        const expected: ConnectedStateProps = {
+          ...defaultProps,
+          isResourceViewed: true,
+          keyPoint: slide.klf,
+          tip: slide.tips,
+          question: question.header
+        };
 
-        expect(result).toEqual(defaultProps);
+        expect(result).toEqual(expected);
       });
     });
 

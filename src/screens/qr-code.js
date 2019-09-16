@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {StyleSheet, StatusBar} from 'react-native';
+import {createSelector} from 'reselect';
 import {NavigationActions, NavigationEvents} from 'react-navigation';
 import {connect} from 'react-redux';
 
@@ -11,8 +12,9 @@ import Screen from '../components/screen';
 import Touchable from '../components/touchable';
 import HeaderBackButton from '../components/header-back-button';
 import theme from '../modules/theme';
+import {PERMISSION_STATUS} from '../const';
 import withPermissions from '../containers/with-permissions';
-import {hasPermission} from '../redux/utils/state-extract';
+import {getPermissionStatus} from '../redux/utils/state-extract';
 import type {WithPermissionsProps} from '../containers/with-permissions';
 import translations from '../translations';
 import {__DEV__, __E2E__, DEV_TOKEN} from '../modules/environment';
@@ -21,7 +23,7 @@ export type Params = {|
   onScan: $PropertyType<QRCodeScannerProps, 'onScan'>
 |};
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   hasPermission: boolean
 |};
 
@@ -56,13 +58,14 @@ class QRCodeScreen extends React.PureComponent<Props> {
   };
 
   render() {
+    const {hasPermission} = this.props;
     const {onScan} = this.props.navigation.state.params;
 
     return (
       <Screen testID="qr-code-screen" noSafeArea noScroll>
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
         <NavigationEvents onDidFocus={this.handleDidFocus} />
-        <QRCodeScanner onScan={onScan} hasPermission={this.props.hasPermission} />
+        <QRCodeScanner onScan={onScan} hasPermission={hasPermission} />
         {(__DEV__ || __E2E__) && (
           <Touchable
             onLongPress={this.handleFakeScan}
@@ -76,8 +79,13 @@ class QRCodeScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = ({permissions}: StoreState): ConnectedStateProps => ({
-  hasPermission: hasPermission(permissions, 'camera')
+const getHasPermissionState: StoreState => boolean = createSelector(
+  [getPermissionStatus('camera')],
+  permission => permission === PERMISSION_STATUS.AUTHORIZED
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  hasPermission: getHasPermissionState(state)
 });
 
 export default connect(mapStateToProps)(withPermissions(QRCodeScreen, ['camera']));

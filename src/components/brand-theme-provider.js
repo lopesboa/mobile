@@ -2,8 +2,11 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
+
 import type {Brand} from '../types';
 import type {StoreState} from '../redux/store';
+import {getBrand} from '../redux/utils/state-extract';
 
 type ConnectedStateProps = {|
   brand: Brand
@@ -41,8 +44,13 @@ const BrandThemeProvider = ({children, brand}: Props) => (
   <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>
 );
 
+const getBrandState = createSelector(
+  [getBrand],
+  brand => brand || initialState
+);
+
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  brand: state.authentication.brand || initialState
+  brand: getBrandState(state)
 });
 
 export {BrandThemeProvider as Component};

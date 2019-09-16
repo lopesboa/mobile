@@ -9,14 +9,18 @@ import QuestionSlider from './question-slider';
 storiesOf('QuestionSlider', module)
   .add('Default', () => (
     <QuestionSlider
-      min={{
-        label: '0',
-        value: 0
-      }}
-      max={{
-        label: '100',
-        value: 100
-      }}
+      min={0}
+      max={100}
+      value={10}
+      onChange={handleFakePress}
+      onSlidingComplete={handleFakePress}
+      testID="question-slider"
+    />
+  ))
+  .add('With step', () => (
+    <QuestionSlider
+      min={0}
+      max={100}
       value={10}
       step={10}
       onChange={handleFakePress}
@@ -24,17 +28,13 @@ storiesOf('QuestionSlider', module)
       testID="question-slider"
     />
   ))
-  .add('With default step', () => (
+  .add('With unit', () => (
     <QuestionSlider
-      min={{
-        label: '0',
-        value: 0
-      }}
-      max={{
-        label: '100',
-        value: 100
-      }}
+      min={0}
+      max={100}
+      unit="°C"
       value={10}
+      step={10}
       onChange={handleFakePress}
       onSlidingComplete={handleFakePress}
       testID="question-slider"

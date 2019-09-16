@@ -24,6 +24,7 @@ export type Props = $Exact<{|
   onSliderChange: (value: number) => void,
   min?: $PropertyType<QuestionSliderProps, 'min'>,
   max?: $PropertyType<QuestionSliderProps, 'max'>,
+  unit?: $PropertyType<QuestionSliderProps, 'unit'>,
   step?: $PropertyType<QuestionSliderProps, 'step'>,
   value?: $PropertyType<QuestionSliderProps, 'value'>,
   onItemInputChange: (item: Choice, value: string) => void,
@@ -83,6 +84,7 @@ class QuestionChoices extends React.PureComponent<Props> {
       userChoices,
       min,
       max,
+      unit,
       value,
       step,
       onSliderChange,
@@ -138,13 +140,15 @@ class QuestionChoices extends React.PureComponent<Props> {
           </View>
         );
       case QUESTION_TYPE.SLIDER: {
-        if (!min || !max) {
+        if (min === undefined || max === undefined) {
           return null;
         }
+
         return (
           <QuestionSlider
             min={min}
             max={max}
+            unit={unit}
             value={value}
             step={step}
             onChange={onSliderChange}

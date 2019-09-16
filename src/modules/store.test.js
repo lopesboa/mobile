@@ -1,13 +1,15 @@
 // @flow strict
 
+jest.mock('cross-fetch');
+
 describe('store', () => {
-  let {Platform} = require('react-native');
-  Platform.OS = 'ios';
-  jest.mock('cross-fetch');
-  const fetch = require('cross-fetch');
+  beforeEach(() => {
+    jest.resetModules();
+  });
 
   describe('getMinimalVersion', () => {
     it('should handle resolve', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve('1.0.0')
       }));
@@ -19,6 +21,7 @@ describe('store', () => {
     });
 
     it('should handle reject', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => Promise.reject(new Error('Fake error')));
       const {getMinimalVersion} = require('./store');
 
@@ -30,6 +33,7 @@ describe('store', () => {
 
   describe('needUpgrade', () => {
     it('should return false on undefined version', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve(undefined)
       }));
@@ -41,6 +45,7 @@ describe('store', () => {
     });
 
     it('should return false on same version', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve('0.0.0')
       }));
@@ -52,6 +57,7 @@ describe('store', () => {
     });
 
     it('should return true on anterior version', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve('0.0.1')
       }));
@@ -62,7 +68,23 @@ describe('store', () => {
       expect(result).toBeTruthy();
     });
 
+    it('should return false on dev mode', async () => {
+      jest.mock('./environment', () => ({
+        __DEV__: true
+      }));
+      const fetch = require('cross-fetch');
+      fetch.mockImplementation(() => ({
+        text: () => Promise.resolve('0.0.1')
+      }));
+      const {needUpgrade} = require('./store');
+
+      const result = await needUpgrade();
+
+      expect(result).toBeFalsy();
+    });
+
     it('should handle reject', async () => {
+      const fetch = require('cross-fetch');
       fetch.mockImplementation(() => Promise.reject(new Error('Fake error')));
       const {needUpgrade} = require('./store');
 
@@ -74,6 +96,7 @@ describe('store', () => {
 
   describe('getStoreUri', () => {
     it('should return iOS uri', () => {
+      const {Platform} = require('react-native');
       Platform.OS = 'ios';
       const {getStoreUri, APP_STORE_ID} = require('./store');
 
@@ -84,6 +107,7 @@ describe('store', () => {
     });
 
     it('should return Android uri', () => {
+      const {Platform} = require('react-native');
       Platform.OS = 'android';
       const {getStoreUri, PLAY_STORE_ID} = require('./store');
 
@@ -92,5 +116,9 @@ describe('store', () => {
 
       expect(result).toEqual(expected);
     });
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 });

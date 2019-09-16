@@ -9,6 +9,7 @@ import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import type {StoreState} from '../redux/store';
+import {getSections, getSectionsRef} from '../redux/utils/state-extract';
 import translations from '../translations';
 import isEqual from '../modules/equal';
 import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
@@ -172,8 +173,6 @@ class Catalog extends React.Component<Props, State> {
   }
 }
 
-const getSections = (state: StoreState) => state.catalog.entities.sections;
-const getSectionsRef = (state: StoreState) => state.catalog.sectionsRef || [];
 const getSectionsState = createArraySelector(
   [getSectionsRef, getSections],
   (sectionRef, sections) =>

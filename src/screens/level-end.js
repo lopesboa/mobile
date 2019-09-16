@@ -3,20 +3,21 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {NavigationEvents} from 'react-navigation';
 import type {ContentType} from '@coorpacademy/progression-engine';
 import {getCurrentContent, getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
 
+import Screen from '../components/screen';
+import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import {compareCards} from '../utils/content';
+import {CONTENT_TYPE} from '../const';
 import translations from '../translations';
 import {createNextProgression} from '../redux/actions/progressions/create-next-progression';
 import {selectCard} from '../redux/actions/catalog/cards/select';
-import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
-import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import Screen from '../components/screen';
-import {compareCards} from '../utils/content';
-import {getBestScore} from '../redux/utils/state-extract';
-import {CONTENT_TYPE} from '../const';
+import {getBestScore, getCards} from '../redux/utils/state-extract';
 
 type ConnectedDispatchProps = {|
   createNextProgression: typeof createNextProgression,
@@ -117,37 +118,66 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
   }
 }
 
-export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const language = translations.getLanguage();
-  const bestScore = getBestScore(state);
-  const progression = getCurrentProgression(state);
-  const contentType = progression && progression.content.type;
+const getBestScoreState = createSelector(
+  [getBestScore],
+  bestScore => bestScore
+);
 
-  // $FlowFixMe union type
-  const nextContent: LevelAPI | void = getNextContent(state);
+const getCurrentContentState = createSelector(
+  [getCurrentContent],
+  currentContent => {
+    // $FlowFixMe wrong type
+    const _currentContent: LevelAPI | ChapterAPI | void = currentContent;
 
-  // $FlowFixMe union type
-  const currentContent: LevelAPI | ChapterAPI | void = getCurrentContent(state);
+    return _currentContent;
+  }
+);
 
-  const cards = Object.keys(state.catalog.entities.cards)
-    .map(key => state.catalog.entities.cards[key][language])
-    .filter(card => card !== undefined)
-    .filter(
-      card =>
-        !card.modules ||
-        !card.modules.find(mod =>
-          [mod.ref, mod.universalRef].includes(currentContent && currentContent.universalRef)
-        )
-    );
+const getRecommendationState = createSelector(
+  [getCurrentContent, getCards],
+  (currentContent, cards) => {
+    // $FlowFixMe wrong type
+    const _currentContent: LevelAPI | ChapterAPI | void = currentContent;
+    // $FlowFixMe Object.values returns mixed
+    let _cards: Array<DisciplineCard | ChapterCard> = Object.values(cards);
+    _cards = _cards
+      .map(card => card[translations.getLanguage()])
+      .filter(Boolean)
+      .filter(
+        card =>
+          !card.modules ||
+          !card.modules.find(mod =>
+            [mod.ref, mod.universalRef].includes(_currentContent && _currentContent.universalRef)
+          )
+      )
+      .sort(compareCards);
 
-  return {
-    contentType,
-    nextContent,
-    currentContent,
-    bestScore,
-    recommendation: cards.sort(compareCards)[0]
-  };
-};
+    return _cards[0];
+  }
+);
+
+const getNextContentState = createSelector(
+  [getNextContent],
+  nextContent => {
+    // $FlowFixMe wrong type
+    const _nextContent: LevelAPI | void = nextContent;
+
+    return _nextContent;
+  }
+);
+
+const getContextTypeState: StoreState => void | ContentType = createSelector(
+  [getCurrentProgression],
+  progression => progression && progression.content.type
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  contentType: getContextTypeState(state),
+  nextContent: getNextContentState(state),
+  currentContent: getCurrentContentState(state),
+  bestScore: getBestScoreState(state),
+  recommendation: getRecommendationState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   createNextProgression,

@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {Linking, StatusBar, StyleSheet, InteractionManager} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import splashScreen from 'react-native-splash-screen';
 
 import {assistanceEmail} from '../../app';
@@ -13,10 +14,11 @@ import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
 import {get as getToken} from '../utils/local-token';
+import {getToken as getTokenState} from '../redux/utils/state-extract';
 import ErrorListener from '../containers/error-listener';
 import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
-type ConnectedStateToProps = {|
+export type ConnectedStateProps = {|
   isAuthenticated: boolean
 |};
 
@@ -26,7 +28,7 @@ type ConnectedDispatchProps = {|
 
 type Props = {|
   ...ReactNavigation$ScreenProps,
-  ...ConnectedStateToProps,
+  ...ConnectedStateProps,
   ...ConnectedDispatchProps
 |};
 
@@ -131,8 +133,13 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = ({authentication}: StoreState): ConnectedStateToProps => ({
-  isAuthenticated: Boolean(authentication.user.token)
+const getIsAuthenticatedState: StoreState => boolean = createSelector(
+  [getTokenState],
+  token => Boolean(token)
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  isAuthenticated: getIsAuthenticatedState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

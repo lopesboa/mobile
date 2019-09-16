@@ -23,12 +23,14 @@ describe('Question', () => {
       explanation: undefined,
       template: undefined,
       choices: undefined,
+      unit: undefined,
       userChoices: undefined,
       media: undefined,
       min: undefined,
+      slideId: undefined,
       max: undefined,
       step: undefined,
-      value: undefined
+      value: 0
     };
 
     describe('Loading', () => {
@@ -277,14 +279,9 @@ describe('Question', () => {
         explanation: question.explanation,
         // $FlowFixMe wrong type
         choices: question.content.choices,
-        min: {
-          label: '13 °C',
-          value: 13
-        },
-        max: {
-          label: '37 °C',
-          value: 37
-        },
+        min: 13,
+        max: 37,
+        unit: '°C',
         step: 3,
         userChoices: answer,
         value: 42

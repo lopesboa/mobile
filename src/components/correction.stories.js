@@ -14,7 +14,7 @@ import {
   createFakeVibration,
   createFakeAudio
 } from '../utils/tests';
-import {reduceToResources} from '../layer/data/mappers';
+import {mapToResource} from '../layer/data/mappers';
 import {Component as Correction} from './correction';
 
 const lessons = [
@@ -22,7 +22,7 @@ const lessons = [
   createPdf({ref: 'les_2'}),
   createVideo({ref: 'les_3', subtitleRef: 'foobarbaz'})
 ];
-const resources = reduceToResources(lessons);
+const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
 
 const fakeQuestion = 'Where is Waldo ?';
 const fakeTip =

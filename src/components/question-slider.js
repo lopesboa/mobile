@@ -10,14 +10,10 @@ import {BrandThemeContext} from './brand-theme-provider';
 import {STYLE as BOX_STYLE} from './box';
 import Text from './text';
 
-export type Edge = {|
-  value: number,
-  label: string
-|};
-
 export type Props = {|
-  min: Edge,
-  max: Edge,
+  min: number,
+  max: number,
+  unit?: string,
   value: number,
   onChange: (value: number) => void,
   onSlidingComplete: () => void,
@@ -75,6 +71,7 @@ const QuestionSlider = ({
   style,
   min,
   max,
+  unit = '',
   value,
   onSlidingComplete,
   testID,
@@ -91,8 +88,8 @@ const QuestionSlider = ({
             step={step || 1}
             value={value}
             onValueChange={onChange}
-            maximumValue={max.value}
-            minimumValue={min.value}
+            maximumValue={max}
+            minimumValue={min}
             onSlidingComplete={onSlidingComplete}
             minimumTrackTintColor={brandTheme.colors.primary}
             trackStyle={styles.track}
@@ -105,12 +102,12 @@ const QuestionSlider = ({
     <View style={styles.valuesContainer} testID="slider-values-container">
       <View style={styles.leftValue}>
         <Text style={styles.textValue} testID="slider-min-value">
-          {min.label}
+          {`${min} ${unit}`}
         </Text>
       </View>
       <View style={styles.rightValue}>
         <Text style={styles.textValue} testID="slider-max-value">
-          {max.label}
+          {`${max} ${unit}`}
         </Text>
       </View>
     </View>

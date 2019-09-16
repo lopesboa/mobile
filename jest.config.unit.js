@@ -33,23 +33,23 @@ module.exports = {
     },
     'src/containers': {
       // @todo increase this value
-      branches: 40,
+      branches: 38,
       // @todo increase this value
-      functions: 42,
+      functions: 41,
       // @todo increase this value
       lines: 46,
       // @todo increase this value
-      statements: 47
+      statements: 46
     },
     'src/screens': {
       // @todo increase this value
-      branches: 41,
+      branches: 51,
       // @todo increase this value
-      functions: 12,
+      functions: 35,
       // @todo increase this value
-      lines: 28,
+      lines: 41,
       // @todo increase this value
-      statements: 27
+      statements: 42
     },
     'src/redux': {
       branches: 96,

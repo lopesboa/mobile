@@ -3,16 +3,18 @@
 import * as React from 'react';
 import {Alert, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {signOut} from '../redux/actions/authentication';
+import {getToken} from '../redux/utils/state-extract';
 import translations from '../translations';
 import theme from '../modules/theme';
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   isFetching: boolean
 |};
 
@@ -62,8 +64,13 @@ class HomeScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = ({authentication}: StoreState): ConnectedStateProps => ({
-  isFetching: !authentication.user.token
+const getIsFetchingState: StoreState => boolean = createSelector(
+  [getToken],
+  token => !token
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  isFetching: getIsFetchingState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

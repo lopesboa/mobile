@@ -3,12 +3,10 @@
 import * as React from 'react';
 import {ScrollView, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {
   editAnswer,
   getAnswerValues,
-  getChoices,
-  getCurrentProgression,
-  getStepContent,
   getQuestionMedia,
   getQuestionType,
   getCurrentSlide
@@ -19,6 +17,7 @@ import Question from '../components/question';
 import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
 import type {StoreState} from '../redux/store';
+import {getQuestion} from '../redux/utils/state-extract';
 import {validateAnswer} from '../redux/actions/ui/answers';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {QUESTION_TYPE} from '../const';
@@ -34,6 +33,7 @@ export type ConnectedStateProps = {|
   media?: Media,
   min?: $PropertyType<QuestionProps, 'min'>,
   max?: $PropertyType<QuestionProps, 'max'>,
+  unit?: $PropertyType<QuestionProps, 'unit'>,
   step?: $PropertyType<QuestionProps, 'step'>,
   value?: $PropertyType<QuestionProps, 'value'>,
   slideId?: string
@@ -103,6 +103,7 @@ class QuestionScreen extends React.PureComponent<Props> {
       media,
       min,
       max,
+      unit,
       step,
       value,
       template,
@@ -127,6 +128,7 @@ class QuestionScreen extends React.PureComponent<Props> {
           onInputValueChange={this.handleInputValueChange}
           min={min}
           max={max}
+          unit={unit}
           step={step}
           value={value}
         />
@@ -135,84 +137,99 @@ class QuestionScreen extends React.PureComponent<Props> {
   }
 }
 
-export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const loadingProps: ConnectedStateProps = {
-    type: undefined,
-    header: undefined,
-    explanation: undefined,
-    template: undefined,
-    choices: undefined,
-    userChoices: undefined,
-    media: undefined,
-    min: undefined,
-    max: undefined,
-    step: undefined,
-    value: undefined
-  };
+const getSlideIdState = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide._id
+);
 
-  const nextContent = getStepContent(state);
-  const progression = getCurrentProgression(state);
+const getQuestionTypeState = createSelector(
+  [getQuestion],
+  question => question && question.type
+);
 
-  if (!nextContent || progression === undefined || progression.state === undefined) {
-    return loadingProps;
-  }
+const getQuestionHeaderState = createSelector(
+  [getQuestion],
+  question => question && question.header
+);
 
-  const media = getQuestionMedia(state);
-  const slide = getCurrentSlide(state);
+const getQuestionExplanationState = createSelector(
+  [getQuestion],
+  question => question && question.explanation
+);
 
-  if (!slide) {
-    return loadingProps;
-  }
-
-  const type = getQuestionType(slide);
-  const choices = getChoices(slide);
-
-  // SLIDER QUESTIONS
-  const values = getAnswerValues(slide, state);
-  const sliderDefaultValue = type === QUESTION_TYPE.SLIDER ? parseInt(values[0]) : 0;
-  const userChoices = values || [];
-
+const getQuestionTemplateState = createSelector(
+  [getQuestion],
   // $FlowFixMe union type
-  const header = slide.question.header;
-  // $FlowFixMe union type
-  const explanation = slide.question.explanation;
-  // $FlowFixMe union type
-  const template = slide.question.content.template;
+  question => question && question.content.template
+);
 
+const getQuestionChoicesState = createSelector(
+  [getQuestion],
   // $FlowFixMe union type
-  const sliderUnitLabel = slide.question.content.unitLabel;
-  // $FlowFixMe union type
-  const sliderMaxValue = slide.question.content.max;
-  // $FlowFixMe union type
-  const sliderMinValue = slide.question.content.min;
-  // $FlowFixMe union type
-  const sliderStepValue = slide.question.content.step;
+  question => question && question.content.choices
+);
 
-  return {
-    slideId: slide._id,
-    type,
-    header,
-    explanation,
-    template,
-    choices,
-    userChoices,
-    media,
-    min:
-      (sliderMinValue && {
-        label: `${sliderMinValue} ${sliderUnitLabel}`,
-        value: sliderMinValue
-      }) ||
-      undefined,
-    max:
-      (sliderMaxValue && {
-        label: `${sliderMaxValue} ${sliderUnitLabel}`,
-        value: sliderMaxValue
-      }) ||
-      undefined,
-    step: sliderStepValue,
-    value: sliderDefaultValue
-  };
-};
+const getQuestionUserChoicesState = (state: StoreState) =>
+  createSelector(
+    [getCurrentSlide],
+    slide => slide && getAnswerValues(slide, state)
+  )(state);
+
+const getQuestionMediaState = createSelector(
+  [getQuestionMedia],
+  media => media
+);
+
+const getSliderUnitState = createSelector(
+  [getQuestion],
+  // $FlowFixMe union type
+  question => question && question.content.unitLabel
+);
+
+const getSliderMinState = createSelector(
+  [getQuestion],
+  // $FlowFixMe union type
+  question => question && question.content.min
+);
+
+const getSliderMaxState = createSelector(
+  [getQuestion],
+  // $FlowFixMe union type
+  question => question && question.content.max
+);
+
+const getSliderStepValueState = createSelector(
+  [getQuestion],
+  // $FlowFixMe union type
+  question => question && question.content.step
+);
+
+const getSliderDefaultValueState = (state: StoreState) =>
+  createSelector(
+    [getCurrentSlide],
+    slide => {
+      const type = slide && getQuestionType(slide);
+      const values = slide && getAnswerValues(slide, state);
+
+      return type === QUESTION_TYPE.SLIDER && values ? parseInt(values[0]) : 0;
+    }
+  )(state);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  slideId: getSlideIdState(state),
+  type: getQuestionTypeState(state),
+  header: getQuestionHeaderState(state),
+  explanation: getQuestionExplanationState(state),
+  template: getQuestionTemplateState(state),
+  choices: getQuestionChoicesState(state),
+  userChoices: getQuestionUserChoicesState(state),
+  media: getQuestionMediaState(state),
+  min: getSliderMinState(state),
+  max: getSliderMaxState(state),
+  unit: getSliderUnitState(state),
+  step: getSliderStepValueState(state),
+  value: getSliderDefaultValueState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   editAnswer,

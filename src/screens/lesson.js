@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {
   play,
   getEngineConfig,
@@ -10,20 +11,19 @@ import {
   selectResource,
   getCurrentSlide
 } from '@coorpacademy/player-store';
-import type {Lesson as LessonType} from '@coorpacademy/progression-engine';
 
 import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import Screen from '../components/screen';
 import Lesson from '../components/lesson';
-import {reduceToResources} from '../layer/data/mappers';
+import {mapToResource} from '../layer/data/mappers';
 import type {Params as PdfScreenParams} from './pdf';
 
 export type ConnectedStateProps = {|
   header?: string,
   resources?: Array<Resource>,
-  selected?: string,
+  currentResource?: string,
   starsGranted: number
 |};
 
@@ -60,7 +60,8 @@ class LessonScreen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, resources, starsGranted, selected} = this.props;
+    const {header, resources, starsGranted, currentResource} = this.props;
+    const selected = currentResource || (resources[0] && resources[0]._id);
 
     return (
       <Screen testID="lesson-screen" noScroll>
@@ -81,27 +82,36 @@ class LessonScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getCurrentSlide(state);
-  const header = (slide && slide.question && slide.question.header) || undefined;
-  // $FlowFixMe overrided type
+const getHeaderState: StoreState => string | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide.question && slide.question.header
+);
 
-  const lessons: Array<LessonType> = (slide && slide.lessons) || [];
-  const resources: Array<Resource> = reduceToResources(lessons);
+const getResourcesState: StoreState => Array<Resource> = createSelector(
+  [getCurrentSlide],
+  slide => {
+    const lessons = (slide && slide.lessons) || [];
 
-  const currentResource = getResourceToPlay(state);
-  const selected = currentResource || (resources[0] && resources[0]._id);
+    return lessons.map(mapToResource).filter(lesson => lesson.url);
+  }
+);
 
-  const engineConfig = getEngineConfig(state);
-  const starsGranted = (engineConfig && engineConfig.starsPerResourceViewed) || 0;
+const getCurrentResourceState: typeof getResourceToPlay = createSelector(
+  [getResourceToPlay],
+  resource => resource
+);
 
-  return {
-    header,
-    resources,
-    selected,
-    starsGranted
-  };
-};
+const getStarsGrantedState: StoreState => number = createSelector(
+  [getEngineConfig],
+  engineConfig => (engineConfig && engineConfig.starsPerResourceViewed) || 0
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  header: getHeaderState(state),
+  resources: getResourcesState(state),
+  currentResource: getCurrentResourceState(state),
+  starsGranted: getStarsGrantedState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   play,

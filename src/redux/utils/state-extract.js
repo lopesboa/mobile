@@ -12,13 +12,12 @@ import type {Context} from '@coorpacademy/progression-engine';
 import {ROLES, SCOPES, hasRole} from '@coorpacademy/acl';
 import decode from 'jwt-decode';
 
-import {CONTENT_TYPE, PERMISSION_STATUS} from '../../const';
-import type {Section, ProgressionEngineVersions} from '../../types';
+import {CONTENT_TYPE} from '../../const';
+import type {Section, ProgressionEngineVersions, PermissionStatus} from '../../types';
 import type {StoreState} from '../store';
-import type {State as PermissionsState} from '../reducers/permissions';
 import type {State as BrandState} from '../reducers/authentication/brand';
 import type {PermissionType} from '../actions/permissions';
-import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
+import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
 
 export const isExitNode = (state: StoreState): boolean => {
@@ -59,8 +58,9 @@ export const getToken = (state: StoreState) =>
 
 export const getBrand = (state: StoreState): BrandState => state.authentication.brand;
 
-export const hasPermission = (state: PermissionsState, type: PermissionType): boolean =>
-  state[type] === PERMISSION_STATUS.AUTHORIZED;
+export const getPermissionStatus = (type: PermissionType) => (
+  state: StoreState
+): PermissionStatus | void => state.permissions[type];
 
 export const getBestRank = (state: StoreState): string | null => {
   const start = getStartRank(state);
@@ -128,3 +128,15 @@ export const isGodModeUser = (state: StoreState): boolean => {
 
   return hasRole(SCOPES.MOOC(brand.name), ROLES.GODMODE, decode(token));
 };
+
+export const getQuestion = (state: StoreState): $PropertyType<Slide, 'question'> | void => {
+  const currentSlide = getCurrentSlide(state);
+
+  return currentSlide ? currentSlide.question : undefined;
+};
+
+export const getSections = (state: StoreState) => state.catalog.entities.sections;
+
+export const getSectionsRef = (state: StoreState) => state.catalog.sectionsRef || [];
+
+export const getCards = (state: StoreState) => state.catalog.entities.cards;

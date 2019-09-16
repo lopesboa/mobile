@@ -3,18 +3,18 @@
 import * as React from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {
   acceptExtraLife,
   refuseExtraLife,
   hasViewedAResourceAtThisStep as _hasViewedAResourceAtThisStep,
-  getLives,
+  getLives as _getLives,
   getCurrentProgressionId,
   hasSeenLesson as _hasSeenLesson,
   play,
   getCurrentCorrection,
   getPreviousSlide
 } from '@coorpacademy/player-store';
-import type {Lesson} from '@coorpacademy/progression-engine';
 
 import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
@@ -29,7 +29,7 @@ import {
   isGodModeEnabled as _isGodModeEnabled,
   isFastSlideEnabled as _isFastSlideEnabled
 } from '../redux/utils/state-extract';
-import {reduceToResources} from '../layer/data/mappers';
+import {mapToResource} from '../layer/data/mappers';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
 
@@ -176,78 +176,149 @@ class CorrectionScreen extends React.PureComponent<Props> {
   }
 }
 
-export const mapStateToProps = (state: StoreState, {navigation}: OwnProps): ConnectedStateProps => {
-  const defaultState: ConnectedStateProps = {
-    question: '',
-    tip: '',
-    keyPoint: '',
-    answers: [],
-    userAnswers: []
-  };
-  const previousSlide = getPreviousSlide(state);
-
-  if (!previousSlide || previousSlide._id !== navigation.state.params.slideId) {
-    return defaultState;
-  }
-
-  const progressionId = getCurrentProgressionId(state);
+const getIsLoading = (state: StoreState, {navigation}: OwnProps): boolean => {
+  const slide = getPreviousSlide(state);
   const nextContentRef = getNextContentRef(state);
-  const isCorrect = _isCorrect(state);
   const correction = getCurrentCorrection(state);
+  const isCorrect = _isCorrect(state);
 
-  if (isCorrect === undefined || !nextContentRef || !correction) {
-    return defaultState;
-  }
+  return (
+    !nextContentRef ||
+    !correction ||
+    isCorrect === undefined ||
+    !slide ||
+    slide._id !== navigation.state.params.slideId
+  );
+};
 
-  const {hide: hideLives, count: livesCount} = getLives(state);
-  const lives = hideLives ? undefined : livesCount;
+const getLives = (state: StoreState): number | void => {
+  const {hide, count} = _getLives(state);
 
-  const hasViewedAResource = _hasSeenLesson(state, true);
-  const hasViewedAResourceAtThisStep = _hasViewedAResourceAtThisStep(state);
-  const stateExtraLife = nextContentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
-  const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
-  const hasConsumedExtraLife = stateExtraLife && hasViewedAResourceAtThisStep;
-  const isResourceViewed = hasViewedAResource && !hasViewedAResourceAtThisStep;
+  return hide ? undefined : count;
+};
 
-  const isExitNode = _isExitNode(state);
-  const isOfferingExtraLife = lives === 0 && offeringExtraLife;
+const getLivesState = createSelector(
+  [getLives],
+  lives => lives
+);
 
-  const isFinished = isExitNode || isOfferingExtraLife;
+const getIsCorrectState = createSelector(
+  [getIsLoading, _isCorrect],
+  (isLoading, isCorrect) => (isLoading ? undefined : isCorrect)
+);
 
-  const answers: Array<string> = (correction && correction.correctAnswer[0]) || [];
-  const userAnswers: Array<string> = ((correction && correction.corrections) || []).reduce(
-    (result, item) => {
+const getIsGodModeEnabledState = createSelector(
+  [_isGodModeEnabled],
+  isEnabled => isEnabled
+);
+
+const getIsFastSlideEnabledState = createSelector(
+  [_isFastSlideEnabled],
+  isEnabled => isEnabled
+);
+
+const getProgressionIdState = createSelector(
+  [getCurrentProgressionId],
+  progressionId => progressionId
+);
+
+const getAnswersState = createSelector(
+  [getCurrentCorrection],
+  correction => (correction && correction.correctAnswer[0]) || []
+);
+
+const getUserAnswersState = createSelector(
+  [getCurrentCorrection],
+  correction => {
+    const corrections = (correction && correction.corrections) || [];
+
+    return corrections.reduce((result, item) => {
       if (item.answer) {
         result.push(item.answer);
       }
       return result;
-    },
-    []
-  );
+    }, []);
+  }
+);
 
-  const lessons: Array<Lesson> = (previousSlide && previousSlide.lessons) || [];
-  const resources: Array<Resource> = reduceToResources(lessons);
-  const context = getContext(state);
+const getTipState = createSelector(
+  [getPreviousSlide],
+  previousSlide => (previousSlide && previousSlide.tips) || ''
+);
 
-  return {
-    isFinished,
-    isCorrect,
-    isResourceViewed,
-    offeringExtraLife,
-    hasConsumedExtraLife,
-    hasContext: context !== undefined,
-    progressionId,
-    lives,
-    isGodModeEnabled: _isGodModeEnabled(state),
-    isFastSlideEnabled: _isFastSlideEnabled(state),
-    question: previousSlide.question.header || '',
-    answers,
-    userAnswers,
-    tip: previousSlide.tips,
-    keyPoint: previousSlide.klf,
-    resources
-  };
+const getKeyPointState = createSelector(
+  [getPreviousSlide],
+  previousSlide => (previousSlide && previousSlide.klf) || ''
+);
+
+const getQuestionHeaderState = createSelector(
+  [getPreviousSlide],
+  previousSlide => (previousSlide && previousSlide.question.header) || ''
+);
+
+const getHasContextState = createSelector(
+  [getContext],
+  context => context !== undefined
+);
+
+const getResourcesState = createSelector(
+  [getPreviousSlide],
+  previousSlide => {
+    const lessons = (previousSlide && previousSlide.lessons) || [];
+    return lessons.map(mapToResource).filter(lesson => lesson.url);
+  }
+);
+
+const getIsResourceViewedState = createSelector(
+  [_hasSeenLesson, _hasViewedAResourceAtThisStep],
+  (hasSeenLesson, hasViewedAResourceAtThisStep) => hasSeenLesson && !hasViewedAResourceAtThisStep
+);
+
+const getIsExtraLife = (state: StoreState): boolean => {
+  const nextContentRef = getNextContentRef(state);
+  return nextContentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
 };
+
+const getOfferingExtraLife = (state: StoreState): boolean => {
+  const isExtraLife = getIsExtraLife(state);
+  const hasViewedAResourceAtThisStep = _hasViewedAResourceAtThisStep(state);
+
+  return isExtraLife && !hasViewedAResourceAtThisStep;
+};
+
+const getOfferingExtraLifeState = createSelector(
+  [getOfferingExtraLife],
+  offeringExtraLife => offeringExtraLife
+);
+
+const getConsumedExtraLifeState = createSelector(
+  [getIsExtraLife, _hasViewedAResourceAtThisStep],
+  (isExtraLife, hasViewedAResourceAtThisStep) => isExtraLife && hasViewedAResourceAtThisStep
+);
+
+const getIsFinishedState = createSelector(
+  [_isExitNode, getLives, getOfferingExtraLife],
+  (isExitNode, lives, offeringExtraLife) => isExitNode || (lives === 0 && offeringExtraLife)
+);
+
+export const mapStateToProps = (state: StoreState, ownProps: OwnProps): ConnectedStateProps => ({
+  isFinished: getIsFinishedState(state, ownProps),
+  isCorrect: getIsCorrectState(state, ownProps),
+  isResourceViewed: getIsResourceViewedState(state, ownProps),
+  offeringExtraLife: getOfferingExtraLifeState(state, ownProps),
+  hasConsumedExtraLife: getConsumedExtraLifeState(state, ownProps),
+  hasContext: getHasContextState(state, ownProps),
+  progressionId: getProgressionIdState(state, ownProps),
+  lives: getLivesState(state, ownProps),
+  isGodModeEnabled: getIsGodModeEnabledState(state, ownProps),
+  isFastSlideEnabled: getIsFastSlideEnabledState(state, ownProps),
+  question: getQuestionHeaderState(state, ownProps),
+  answers: getAnswersState(state, ownProps),
+  userAnswers: getUserAnswersState(state, ownProps),
+  tip: getTipState(state, ownProps),
+  keyPoint: getKeyPointState(state, ownProps),
+  resources: getResourcesState(state, ownProps)
+});
 
 export const mapDispatchToProps: ConnectedDispatchProps = {
   play,

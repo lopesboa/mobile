@@ -6,6 +6,7 @@ import {createArraySelector} from 'reselect-map';
 
 import {fetchCards, DEFAULT_LIMIT} from '../redux/actions/catalog/cards/fetch';
 import type {StoreState} from '../redux/store';
+import {getCards} from '../redux/utils/state-extract';
 import CatalogSection, {ITEM_WIDTH} from '../components/catalog-section';
 import type {Props as CatalogSectionProps} from '../components/catalog-section';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
@@ -121,8 +122,6 @@ const getCardsRef = (state: StoreState, {sectionRef}: OwnProps) => {
     [];
   return cardsRef;
 };
-
-const getCards = (state: StoreState) => state.catalog.entities.cards;
 
 const getCardsState = createArraySelector(
   [getCardsRef, getCards],

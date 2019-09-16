@@ -261,7 +261,7 @@ describe('storeFixture', () => {
         },
         corrections: {
           accordion: [false, false, false],
-          playResource: ''
+          playResource: 'foo'
         },
         current: {
           progressionId: 'progression1'

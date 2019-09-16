@@ -3,24 +3,31 @@
 import type {Content} from '@coorpacademy/progression-engine';
 import {ROLES} from '@coorpacademy/acl';
 
-import type {Slide} from '../../layer/data/_types';
-import type {Engine, ProgressionEngineVersions, Brand} from '../../types';
+import type {Slide, DisciplineCard, ChapterCard} from '../../layer/data/_types';
+import {CARD_STATUS} from '../../layer/data/_const';
+import type {Engine, ProgressionEngineVersions, Section, Brand} from '../../types';
 import {ENGINE, CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
 import {createToken} from '../../__fixtures__/tokens';
 import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
 import {createSlide} from '../../__fixtures__/slides';
+import {createSections} from '../../__fixtures__/sections';
 import {createTemplate} from '../../__fixtures__/questions';
 import {createContextWithPDF} from '../../__fixtures__/context';
-import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
-import {createAuthenticationState, createStoreState} from '../../__fixtures__/store';
+import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
+import {
+  createAuthenticationState,
+  createCatalogState,
+  createPermissionsState,
+  createStoreState
+} from '../../__fixtures__/store';
 import {
   isExitNode,
   isCorrect,
   getCurrentStep,
   getNextContentRef,
-  hasPermission,
+  getPermissionStatus,
   getBestRank,
   getBestScore,
   getCard,
@@ -33,7 +40,10 @@ import {
   getCurrentScreenName,
   getCurrentTabName,
   getContext,
-  isGodModeUser
+  isGodModeUser,
+  getSections,
+  getSectionsRef,
+  getCards
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -71,6 +81,9 @@ const createState = ({
   content,
   nextContent,
   slides = [],
+  sections = [],
+  cards = [],
+  permissions,
   token,
   brand
 }: {
@@ -79,12 +92,14 @@ const createState = ({
   content?: Content | void,
   nextContent?: Content | void,
   slides?: Array<Slide>,
+  sections?: Array<Section | void>,
+  cards?: Array<DisciplineCard | ChapterCard>,
+  permissions?: $ExtractReturn<typeof createPermissionsState>,
   token?: string | null,
   brand?: Brand | null
-}): StoreState => {
-  const level = createDefaultLevel(levelRef);
-  const state: StoreState = createStoreState({
-    levels: [level],
+}): StoreState =>
+  createStoreState({
+    levels: [createDefaultLevel(levelRef)],
     disciplines: [],
     chapters: [],
     slides,
@@ -94,10 +109,10 @@ const createState = ({
       brand
     }),
     godMode: true,
-    fastSlide: true
+    fastSlide: true,
+    catalog: createCatalogState(sections, cards),
+    permissions
   });
-  return state;
-};
 
 describe('State-extract', () => {
   describe('isExitNode', () => {
@@ -193,15 +208,16 @@ describe('State-extract', () => {
     });
   });
 
-  describe('hasPermission', () => {
-    it('should return true', () => {
-      const result = hasPermission({camera: PERMISSION_STATUS.AUTHORIZED}, 'camera');
-      expect(result).toBeTruthy();
-    });
+  describe('getPermissionStatus', () => {
+    it('should return permission status', () => {
+      const state: StoreState = createState({
+        permissions: createPermissionsState({camera: PERMISSION_STATUS.DENIED})
+      });
 
-    it('should return false', () => {
-      const result = hasPermission({}, 'camera');
-      expect(result).toBeFalsy();
+      const result = getPermissionStatus('camera')(state);
+      const expected = PERMISSION_STATUS.DENIED;
+
+      expect(result).toEqual(expected);
     });
   });
 
@@ -679,6 +695,79 @@ describe('State-extract', () => {
       const result = isGodModeUser(state);
 
       expect(result).toBeFalsy();
+    });
+  });
+
+  describe('getSections', () => {
+    it('should get sections', () => {
+      const sections = createSections();
+      const state = createState({
+        sections: sections.concat([undefined])
+      });
+
+      const result = getSections(state);
+      const expected = sections.reduce(
+        (_result, section) => ({
+          ..._result,
+          [section.key]: {
+            en: section
+          }
+        }),
+        {}
+      );
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getSectionsRef', () => {
+    it('should get sections ref', () => {
+      const state = createState({
+        sections: createSections().concat([undefined])
+      });
+
+      const result = getSectionsRef(state);
+      const expected = ['recommended', 'most-popular', undefined];
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getCards', () => {
+    it('should get cards', () => {
+      const levelCard = createCardLevel({
+        ref: 'mod_10B',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis1',
+        completion: 0,
+        levels: [levelCard],
+        title: 'First discipline'
+      });
+      const chapterCard = createChapterCard({
+        ref: 'cha1',
+        completion: 0,
+        status: CARD_STATUS.ACTIVE,
+        title: 'First chapter'
+      });
+      const state = createState({
+        cards: [disciplineCard, chapterCard]
+      });
+
+      const result = getCards(state);
+      const expected = {
+        [chapterCard.universalRef]: {
+          en: chapterCard
+        },
+        [disciplineCard.universalRef]: {
+          en: disciplineCard
+        }
+      };
+
+      expect(result).toEqual(expected);
     });
   });
 });

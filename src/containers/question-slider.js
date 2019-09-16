@@ -3,18 +3,10 @@
 import * as React from 'react';
 
 import QuestionSliderComponent from '../components/question-slider';
-import type {
-  Props as QuestionSliderProps,
-  Edge as QuestionSliderEdge
-} from '../components/question-slider';
+import type {Props as QuestionSliderProps} from '../components/question-slider';
 import {QUESTION_TYPE, ANALYTICS_EVENT_TYPE} from '../const';
 import withAnalytics from './with-analytics';
 import type {WithAnalyticsProps} from './with-analytics';
-
-type Edge = {|
-  value?: $PropertyType<QuestionSliderEdge, 'value'>,
-  label?: $PropertyType<QuestionSliderEdge, 'label'>
-|};
 
 export type Props = $Exact<{|
   ...WithAnalyticsProps,
@@ -22,56 +14,40 @@ export type Props = $Exact<{|
     QuestionSliderProps,
     {|
       onSlidingComplete: () => void,
-      min: QuestionSliderEdge,
-      max: QuestionSliderEdge,
       value: number
     |}
   >,
-  min: Edge,
-  max: Edge,
   value?: number
 |}>;
 
 type State = {|
-  min: number,
-  max: number,
   value: number
 |};
-
-const defaultState: State = {
-  value: 0,
-  min: 0,
-  max: 0
-};
 
 class QuestionSlider extends React.PureComponent<Props, State> {
   props: Props;
 
-  state: State = defaultState;
+  state: State = {
+    value: 0
+  };
 
   componentDidMount() {
-    const {min, max, value} = this.props;
-    this.resetState(value, min.value, max.value);
+    const {value} = this.props;
+    this.resetState(value);
   }
 
   componentDidUpdate(prevProps: Props) {
     const {min, max, value} = this.props;
 
-    if (
-      prevProps.min.value !== min.value ||
-      prevProps.max.value !== max.value ||
-      prevProps.value !== value
-    ) {
-      this.resetState(value, min.value, max.value);
+    if (prevProps.min !== min || prevProps.max !== max || prevProps.value !== value) {
+      this.resetState(value);
     }
   }
 
-  resetState = (value?: number, min?: number, max?: number): void =>
-    this.setState(() => ({
-      value: value || defaultState.value,
-      min: min || defaultState.min,
-      max: max || defaultState.max
-    }));
+  resetState = (value?: number = 0): void =>
+    this.setState({
+      value
+    });
 
   handleChange = (value: number) =>
     this.setState({
@@ -96,24 +72,15 @@ class QuestionSlider extends React.PureComponent<Props, State> {
       /* to avoid giving wrong props to child */
       /* eslint-disable no-unused-vars */
       analytics,
-      min,
-      max,
       value,
       onChange,
       /* eslint-enable no-unused-vars */
       ...props
     } = this.props;
+
     return (
       <QuestionSliderComponent
         {...props}
-        min={{
-          value: this.state.min,
-          label: this.props.min.label || ''
-        }}
-        max={{
-          value: this.state.max,
-          label: this.props.max.label || ''
-        }}
         value={this.state.value}
         onChange={this.handleChange}
         onSlidingComplete={this.handleSlidingComplete}

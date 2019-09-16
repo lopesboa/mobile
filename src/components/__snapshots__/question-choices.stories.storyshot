@@ -1443,7 +1443,7 @@ exports[`Storyshots QuestionChoices Slider 1`] = `
         }
         testID="slider-min-value"
       >
-        Min label
+        0 °C
       </Text>
     </View>
     <View
@@ -1468,7 +1468,7 @@ exports[`Storyshots QuestionChoices Slider 1`] = `
         }
         testID="slider-max-value"
       >
-        Max label
+        20 °C
       </Text>
     </View>
   </View>

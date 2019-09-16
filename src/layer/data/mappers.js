@@ -53,18 +53,6 @@ export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
   videoId: rawLesson.videoId
 });
 
-export const reduceToResources = (lessons: Array<Lesson>): Array<Resource> => {
-  const resources = lessons.reduce((result, resource) => {
-    const url = getResourceUrl(resource);
-    if (url !== undefined) {
-      result.push({...resource, url});
-    }
-    return result;
-  }, []);
-
-  return resources;
-};
-
 export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
   _id: rawLevel._id,
   universalRef: rawLevel.universalRef,
@@ -100,4 +88,9 @@ export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
   context: rawSlide.context,
   question: rawSlide.question,
   position: rawSlide.position
+});
+
+export const mapToResource = (lesson: Lesson): Resource => ({
+  ...lesson,
+  url: getResourceUrl(lesson)
 });

@@ -38,214 +38,6 @@ exports[`Storyshots QuestionSlider Default 1`] = `
   <View
     onLayout={[Function]}
     onSlidingComplete={[Function]}
-    step={10}
-    style={
-      Array [
-        Object {
-          "height": 40,
-          "justifyContent": "center",
-        },
-        undefined,
-      ]
-    }
-    value={10}
-  >
-    <View
-      onLayout={[Function]}
-      renderToHardwareTextureAndroid={true}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#b3b3b3",
-          },
-          Object {
-            "borderRadius": 2,
-            "height": 4,
-          },
-          Object {
-            "borderRadius": 32,
-            "height": 10,
-          },
-        ]
-      }
-      testID="slider-track"
-    />
-    <View
-      renderToHardwareTextureAndroid={true}
-      style={
-        Object {
-          "backgroundColor": "#00B0FF",
-          "borderRadius": 32,
-          "height": 10,
-          "opacity": 0,
-          "position": "absolute",
-          "width": 0,
-        }
-      }
-    />
-    <View
-      onLayout={[Function]}
-      renderToHardwareTextureAndroid={true}
-      style={
-        Object {
-          "backgroundColor": "white",
-          "borderColor": "#00B0FF",
-          "borderRadius": 15,
-          "borderWidth": 1,
-          "elevation": 4,
-          "height": 30,
-          "opacity": 0,
-          "position": "absolute",
-          "shadowColor": "#14171A",
-          "shadowOffset": Object {
-            "height": 0,
-            "width": 0,
-          },
-          "shadowOpacity": 0.15,
-          "shadowRadius": 8,
-          "transform": Array [
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-          "width": 30,
-        }
-      }
-      testID="slider-thumb"
-    />
-    <View
-      onMoveShouldSetResponder={[Function]}
-      onMoveShouldSetResponderCapture={[Function]}
-      onResponderEnd={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderReject={[Function]}
-      onResponderRelease={[Function]}
-      onResponderStart={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      onStartShouldSetResponderCapture={[Function]}
-      renderToHardwareTextureAndroid={true}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {},
-        ]
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      }
-    }
-    testID="slider-values-container"
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "flex": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {},
-            Object {
-              "color": "#14171A",
-              "fontSize": 15,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-          ]
-        }
-        testID="slider-min-value"
-      >
-        0
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "flex-end",
-          "flex": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {},
-            Object {
-              "color": "#14171A",
-              "fontSize": 15,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-          ]
-        }
-        testID="slider-max-value"
-      >
-        100
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots QuestionSlider With default step 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "flex": 1,
-        "flexDirection": "column",
-        "justifyContent": "center",
-        "paddingHorizontal": 20,
-      },
-      undefined,
-    ]
-  }
-  testID="question-slider"
->
-  <Text
-    style={
-      Array [
-        Object {},
-        Array [
-          Object {
-            "fontSize": 25,
-            "fontWeight": "700",
-            "textAlign": "center",
-          },
-          Object {
-            "color": "#00B0FF",
-          },
-        ],
-      ]
-    }
-    testID="slider-value"
-  >
-    10
-  </Text>
-  <View
-    onLayout={[Function]}
-    onSlidingComplete={[Function]}
     step={1}
     style={
       Array [
@@ -384,7 +176,7 @@ exports[`Storyshots QuestionSlider With default step 1`] = `
         }
         testID="slider-min-value"
       >
-        0
+        0 
       </Text>
     </View>
     <View
@@ -409,7 +201,423 @@ exports[`Storyshots QuestionSlider With default step 1`] = `
         }
         testID="slider-max-value"
       >
-        100
+        100 
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionSlider With step 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+      },
+      undefined,
+    ]
+  }
+  testID="question-slider"
+>
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "fontSize": 25,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ],
+      ]
+    }
+    testID="slider-value"
+  >
+    10
+  </Text>
+  <View
+    onLayout={[Function]}
+    onSlidingComplete={[Function]}
+    step={10}
+    style={
+      Array [
+        Object {
+          "height": 40,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
+    }
+    value={10}
+  >
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#b3b3b3",
+          },
+          Object {
+            "borderRadius": 2,
+            "height": 4,
+          },
+          Object {
+            "borderRadius": 32,
+            "height": 10,
+          },
+        ]
+      }
+      testID="slider-track"
+    />
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "#00B0FF",
+          "borderRadius": 32,
+          "height": 10,
+          "opacity": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#00B0FF",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "elevation": 4,
+          "height": 30,
+          "opacity": 0,
+          "position": "absolute",
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": 30,
+        }
+      }
+      testID="slider-thumb"
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+    testID="slider-values-container"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="slider-min-value"
+      >
+        0 
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="slider-max-value"
+      >
+        100 
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots QuestionSlider With unit 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+      },
+      undefined,
+    ]
+  }
+  testID="question-slider"
+>
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "fontSize": 25,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ],
+      ]
+    }
+    testID="slider-value"
+  >
+    10
+  </Text>
+  <View
+    onLayout={[Function]}
+    onSlidingComplete={[Function]}
+    step={10}
+    style={
+      Array [
+        Object {
+          "height": 40,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
+    }
+    value={10}
+  >
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#b3b3b3",
+          },
+          Object {
+            "borderRadius": 2,
+            "height": 4,
+          },
+          Object {
+            "borderRadius": 32,
+            "height": 10,
+          },
+        ]
+      }
+      testID="slider-track"
+    />
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "#00B0FF",
+          "borderRadius": 32,
+          "height": 10,
+          "opacity": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#00B0FF",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "elevation": 4,
+          "height": 30,
+          "opacity": 0,
+          "position": "absolute",
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": 30,
+        }
+      }
+      testID="slider-thumb"
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+    testID="slider-values-container"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="slider-min-value"
+      >
+        0 °C
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Object {
+              "color": "#14171A",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="slider-max-value"
+      >
+        100 °C
       </Text>
     </View>
   </View>

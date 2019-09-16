@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {
   getCurrentClue,
   getClue,
@@ -57,22 +58,32 @@ class ClueScreen extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const clue = getCurrentClue(state);
-  const slide = getCurrentSlide(state);
-  const engineConfig = getEngineConfig(state);
-  const slideId = slide && slide._id;
-  // $FlowFixMe union type
-  const header = slide && slide.question.header;
-  const starsDiff = engineConfig && engineConfig.starsPerAskingClue;
+const getClueState: typeof getCurrentClue = createSelector(
+  [getCurrentClue],
+  clue => clue
+);
 
-  return {
-    clue,
-    slideId,
-    header,
-    starsDiff
-  };
-};
+const getSlideIdState: StoreState => string | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide._id
+);
+
+const getSlideHeaderState: StoreState => string | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide.question.header
+);
+
+const getStarsDiffState: StoreState => number | void = createSelector(
+  [getEngineConfig],
+  engineConfig => engineConfig && engineConfig.starsPerAskingClue
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  clue: getClueState(state),
+  slideId: getSlideIdState(state),
+  header: getSlideHeaderState(state),
+  starsDiff: getStarsDiffState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   getClue: () => getClue

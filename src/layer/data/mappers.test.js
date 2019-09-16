@@ -8,19 +8,20 @@ import type {
   LessonAPI
 } from '@coorpacademy/player-services';
 
+import type {Resource} from '../../types';
 import {createQCM} from '../../__fixtures__/questions';
 import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
 import {createVideo} from '../../__fixtures__/lessons';
 import {failureExitNode} from '../../__fixtures__/exit-nodes';
-
 import {
   mapToChapterAPI,
   mapToSlideAPI,
   mapToExitNodeAPI,
   mapToLessonAPI,
-  mapToLevelAPI
+  mapToLevelAPI,
+  mapToResource
 } from './mappers';
 
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
@@ -106,6 +107,11 @@ export const mapToSlideAPIExpectedResult: SlideAPI = {
   position: slide.position
 };
 
+export const mapToResourceExpectedResult: Resource = {
+  ...lesson,
+  url: 'https://content.jwplatform.com/videos/KovTu3zU.mp4'
+};
+
 describe('mappers', () => {
   it('should map to chapter API', () => {
     const result = mapToChapterAPI(chapter);
@@ -130,6 +136,11 @@ describe('mappers', () => {
   it('should map to ExitNode', () => {
     const result = mapToLevelAPI(level);
     expect(result).toEqual(mapToLevelAPIExpectedResult);
+  });
+
+  it('should map to resource', () => {
+    const result = mapToResource(lesson);
+    expect(result).toEqual(mapToResourceExpectedResult);
   });
 });
 

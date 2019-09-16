@@ -5,10 +5,15 @@ import type {
   Chapter as ChapterStore,
   Discipline as DisciplineStore
 } from '@coorpacademy/player-store';
-import type {Slide as SlideEngine, Progression, Answer} from '@coorpacademy/progression-engine';
+import type {
+  Slide as SlideEngine,
+  Progression,
+  Answer,
+  EngineConfig
+} from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
-import type {Section, Brand} from '../types';
+import type {Section, Brand, PermissionStatus} from '../types';
 import type {
   Level,
   Slide,
@@ -117,7 +122,7 @@ export const createUiState = ({
   },
   corrections: {
     accordion: [false, false, false],
-    playResource: ''
+    playResource: 'foo'
   },
   current: {
     progressionId: 'progression1'
@@ -130,17 +135,21 @@ export const createDataState = ({
   levels,
   slides,
   chapters,
+  clue,
   disciplines,
   progression,
-  nextContent
+  nextContent,
+  configs = {}
 }: {
   answers?: Answer,
   levels: Array<Level>,
   slides: Array<Slide>,
   chapters: Array<Chapter>,
   disciplines: Array<Discipline>,
+  clue?: string,
   progression: Progression,
-  nextContent?: SlideAPI | ChapterAPI | LevelAPI
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI,
+  configs?: {[key: string]: EngineConfig}
 }): DataState => {
   const _levels: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
   const _slides: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
@@ -162,6 +171,14 @@ export const createDataState = ({
           }
         }
       : {};
+  const _clues =
+    clue && progression._id && slides[0]
+      ? {
+          [progression._id]: {
+            [slides[0]._id]: clue
+          }
+        }
+      : {};
 
   return {
     answers: {
@@ -171,7 +188,7 @@ export const createDataState = ({
       entities: {}
     },
     configs: {
-      entities: {}
+      entities: configs
     },
     contents: {
       level: {
@@ -191,7 +208,7 @@ export const createDataState = ({
       entities: {}
     },
     clues: {
-      entities: {}
+      entities: _clues
     },
     exitNodes: {
       entities: {}
@@ -224,8 +241,12 @@ export const createNavigationState = (): NavigationState => ({
   currentTabName: 'dummyTabName'
 });
 
-export const createPermissionsState = (): PermissionsState => ({
-  camera: undefined
+export const createPermissionsState = ({
+  camera
+}: {
+  camera?: PermissionStatus
+}): PermissionsState => ({
+  camera
 });
 
 export const createVideoState = (): VideoState => ({
@@ -281,7 +302,7 @@ export const createStoreState = ({
   error: error || createErrorState({}),
   navigation: navigation || createNavigationState(),
   catalog: catalog || createCatalogState(),
-  permissions: permissions || createPermissionsState(),
+  permissions: permissions || createPermissionsState({}),
   authentication: authentication || createAuthenticationState({}),
   godMode,
   fastSlide,

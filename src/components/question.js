@@ -34,6 +34,7 @@ export type Props = {|
   onButtonPress: () => void,
   min?: $PropertyType<QuestionChoicesProps, 'min'>,
   max?: $PropertyType<QuestionChoicesProps, 'max'>,
+  unit?: $PropertyType<QuestionChoicesProps, 'unit'>,
   value?: $PropertyType<QuestionChoicesProps, 'value'>,
   step?: $PropertyType<QuestionChoicesProps, 'step'>
 |};
@@ -91,6 +92,7 @@ const Question = ({
   onButtonPress,
   min,
   max,
+  unit,
   step,
   value
 }: Props) => {
@@ -172,6 +174,7 @@ const Question = ({
           onItemInputChange={onChoiceInputChange}
           min={min}
           max={max}
+          unit={unit}
           step={step}
           value={value}
         />

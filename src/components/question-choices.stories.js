@@ -74,14 +74,9 @@ storiesOf('QuestionChoices', module)
       userChoices={answers}
       onItemPress={handleFakePress}
       onSliderChange={handleFakePress}
-      min={{
-        value: 0,
-        label: 'Min label'
-      }}
-      max={{
-        value: 20,
-        label: 'Max label'
-      }}
+      min={0}
+      max={20}
+      unit="°C"
       value={8}
       step={2}
       onItemInputChange={handleFakePress}

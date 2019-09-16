@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import type {Media} from '@coorpacademy/progression-engine';
 import {getCurrentSlide} from '@coorpacademy/player-store';
 
@@ -62,15 +63,25 @@ class ContextScreen extends React.PureComponent<Props> {
   }
 }
 
-export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
-  const slide = getCurrentSlide(state);
-  const context = slide && slide.context;
+const getContextDescriptionState: StoreState => string | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide.context && slide.context.description
+);
 
-  return {
-    description: context && context.description,
-    header: context && context.title,
-    media: context && context.media
-  };
-};
+const getContextHeaderState: StoreState => string | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide.context && slide.context.title
+);
+
+const getContextMediaState: StoreState => Media | void = createSelector(
+  [getCurrentSlide],
+  slide => slide && slide.context && slide.context.media
+);
+
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  description: getContextDescriptionState(state),
+  header: getContextHeaderState(state),
+  media: getContextMediaState(state)
+});
 
 export default connect(mapStateToProps)(ContextScreen);
