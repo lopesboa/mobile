@@ -6,7 +6,6 @@ import renderer from 'react-test-renderer';
 import {createNavigation} from '../__fixtures__/navigation';
 import type {AuthenticationType} from '../types';
 import {AUTHENTICATION_TYPE} from '../const';
-// import AuthenticationDetails from './authentication-details';
 import type {Params} from './authentication-details';
 import type {Params as QrCodeParams} from './qr-code';
 

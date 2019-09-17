@@ -17,7 +17,7 @@ import {VIBRATION_TYPE} from '../containers/with-vibration';
 import type {Vibration} from '../containers/with-vibration';
 import {AUDIO_FILE} from '../containers/with-audio';
 import type {Audio} from '../containers/with-audio';
-import type {State as AnalyticsState} from '../components/analytics-provider';
+import type {AnalyticsState} from '../containers/with-analytics';
 
 export const createFakeStore = <S>(state?: S) => ({
   ...createStore(createServices(createDataLayer())),

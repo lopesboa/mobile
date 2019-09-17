@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
+
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID="home">
@@ -70,7 +72,6 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
       </View>
     );
   }
-  const brandTheme = React.useContext(BrandThemeContext);
 
   return (
     <View style={styles.container} testID="home">
