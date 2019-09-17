@@ -43,13 +43,13 @@ module.exports = {
     },
     'src/screens': {
       // @todo increase this value
-      branches: 51,
+      branches: 61,
       // @todo increase this value
-      functions: 35,
+      functions: 56,
       // @todo increase this value
-      lines: 41,
+      lines: 51,
       // @todo increase this value
-      statements: 42
+      statements: 52
     },
     'src/redux': {
       branches: 96,

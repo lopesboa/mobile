@@ -105,7 +105,10 @@ jest.mock('react-native-snap-carousel', () => ({
 
 jest.mock('react-navigation', () => ({
   SafeAreaView: 'Mock$ReactNavigation$SafeAreaView',
-  NavigationEvents: 'Mock$ReactNavigation$NavigationEvents'
+  NavigationEvents: 'Mock$ReactNavigation$NavigationEvents',
+  NavigationActions: {
+    back: () => 'Mock$ReactNavigation$NavigationActions$Back'
+  }
 }));
 
 // react-native-confetti-cannon

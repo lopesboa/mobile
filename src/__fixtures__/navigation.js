@@ -8,5 +8,7 @@ export const createNavigation = <T>({
 }): ReactNavigation$ScreenPropsWithParams<T> => ({
   state: {
     params
-  }
+  },
+  navigate: jest.fn(),
+  dispatch: jest.fn()
 });
