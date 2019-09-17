@@ -4,10 +4,11 @@ import _url from 'url';
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {withNavigation} from 'react-navigation';
 import firebase from 'react-native-firebase';
 import hoistNonReactStatic from 'hoist-non-react-statics';
-
+import {getToken} from '../redux/utils/state-extract';
 import {AUTHENTICATION_TYPE} from '../const';
 import {signIn, signOut} from '../redux/actions/authentication';
 import type {State as TokenState} from '../redux/reducers/authentication/token';
@@ -83,8 +84,13 @@ function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): 
     }
   }
 
-  const mapStateToProps = ({authentication}: StoreState): ConnectedStateProps => ({
-    token: authentication.user.token
+  const getTokenState = createSelector(
+    [getToken],
+    token => token
+  );
+
+  const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+    token: getTokenState(state)
   });
 
   const mapDispatchToProps: ConnectedDispatchProps = {

@@ -2,6 +2,7 @@
 
 import {createSections} from '../../../__fixtures__/sections';
 import {createBrand} from '../../../__fixtures__/brands';
+import {createAuthenticationState} from '../../../__fixtures__/store';
 import {showModal} from '../ui/modal';
 import {ERROR_TYPE} from '../../../const';
 import {fetchRequest, fetchSuccess, fetchError, fetchSections} from './sections';
@@ -19,7 +20,7 @@ describe('Sections', () => {
   it('should fetch sections', async () => {
     const dispatch = jest.fn();
     const getState = () => ({
-      authentication: {user: {token: '__TOKEN__'}, brand, language: 'en'},
+      authentication: createAuthenticationState({token: '__TOKEN__', brand}),
       catalog: {
         entities: {
           cards: {},

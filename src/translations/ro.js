@@ -42,7 +42,7 @@ const translations: Translations = {
   goodJob: 'V-ați descurcat bine!',
   goToQuestion: 'Salt la întrebare',
   highscore: 'Ți-ai îmbunătățit recordul personal<br><b>tocmai ai câștigat {{score}} stele</b>',
-  howToSignIn: 'Ați primit un e-mail referitor la descărcarea aplicației?',
+  howToSignIn: 'Ați primit un e-mail de descărcare a aplicației?',
   iWantIt: 'O vreau!',
   keyPoint: 'Punct cheie',
   lesson: 'Lecție',
@@ -85,7 +85,8 @@ const translations: Translations = {
   typeHere: 'Tastați aici',
   validate: 'Validează',
   version: 'Versiune',
-  videoLoadingError: '',
+  videoLoadingError:
+    'S-a produs o eroare în timpul încărcării materialului video. Vă rugăm să încercați din nou.',
   unlockNextLevel: 'Tocmai ai deblocat<br><b>nivelul {{levelName}}</b>',
   upgrade: 'Modernizare',
   upgradeDescription:
@@ -95,6 +96,7 @@ const translations: Translations = {
   welcome: 'Bine aţi venit',
   welcomeDescription:
     'Această aplicație este conectată la contul dvs. de pe platforma de învățare a companiei dvs.',
+  welcomeUser: 'Bine ai venit, {{displayname}}!',
   wrongAnswer: 'Răspuns incorect',
   yourAnswer: 'Răspunsul dumneavoastră:',
   yourAnswers: 'Răspunsurile dumneavoastră:'

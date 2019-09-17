@@ -8,8 +8,6 @@ import type {State} from './token';
 describe('Authentification', () => {
   const expectedInitialState: State = tokenInitialState;
 
-  const TOKEN = '__TOKEN__';
-
   it('Default', () => {
     const action = {
       type: 'FAKE_ACTION'
@@ -21,7 +19,7 @@ describe('Authentification', () => {
 
   describe(SIGN_IN_SUCCESS, () => {
     it('Default', () => {
-      const payload = {token: TOKEN};
+      const payload = 'fakeToken';
       const action: Action = {type: SIGN_IN_SUCCESS, payload};
       const result = reducer(undefined, action);
       const expected: State = payload;

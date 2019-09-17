@@ -10,6 +10,7 @@ import type {JWT, AuthenticationType} from '../../types';
 import {set as setToken} from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
 import {fetchBrand} from './brands';
+import {fetchUser} from './user';
 import type {Action as BrandsAction} from './brands';
 import {fetchLanguage} from './language/fetch';
 import type {Action as FetchLanguageAction} from './language/fetch';
@@ -28,9 +29,7 @@ export type Action =
     |}
   | {|
       type: '@@authentication/SIGN_IN_SUCCESS',
-      payload: {
-        token: string
-      }
+      payload: string
     |}
   | ErrorAction<{|
       type: '@@authentication/SIGN_IN_ERROR'
@@ -44,11 +43,9 @@ export const signInRequest = (token?: string): Action => ({
   payload: token
 });
 
-export const signInSuccess = ({token}: {token: string}): Action => ({
+export const signInSuccess = (token: string): Action => ({
   type: SIGN_IN_SUCCESS,
-  payload: {
-    token
-  }
+  payload: token
 });
 
 export const signInError = (e: Error): Action => ({
@@ -100,6 +97,8 @@ export const signIn = (
 
     // $FlowFixMe wrong StoreAction type
     await fetchLanguage(dispatch, getState, options);
+    // $FlowFixMe wrong StoreAction type
+    await fetchUser(token)(dispatch, getState, options);
 
     const {services} = options;
 
@@ -109,7 +108,7 @@ export const signIn = (
       authenticationType
     });
 
-    return dispatch(signInSuccess({token}));
+    return dispatch(signInSuccess(token));
   } catch (e) {
     setToken(null);
     // $FlowFixMe wrong StoreAction type

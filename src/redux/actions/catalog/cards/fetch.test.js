@@ -3,6 +3,7 @@
 import {fakeError} from '../../../../utils/tests';
 import {createSections} from '../../../../__fixtures__/sections';
 import {createBrand} from '../../../../__fixtures__/brands';
+import {createAuthenticationState} from '../../../../__fixtures__/store';
 import {
   createDisciplineCard,
   createChapterCard,
@@ -14,7 +15,11 @@ import {fetchRequest, fetchSuccess, fetchError, fetchCards} from './fetch';
 const brand = createBrand();
 const language = 'en';
 
-const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
+const level = createCardLevel({
+  ref: 'mod_1',
+  status: CARD_STATUS.ACTIVE,
+  label: 'Fake level'
+});
 const disciplineCard = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
@@ -52,8 +57,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchSuccess('foo', 0, 3, 8, items, language));
         return Promise.resolve(action);
       });
+
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand, language},
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
         catalog: {entities: {sections: {foo: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(
@@ -87,8 +93,9 @@ describe('Cards', () => {
         expect(action).toEqual(fetchError(new TypeError('Token not defined')));
         return action;
       });
+      // @todo replace with fixture creator
       getState.mockReturnValue({
-        authentication: {user: {token: null}, brand: null},
+        authentication: createAuthenticationState({token: null, brand: null}),
         catalog: {entities: {sections: {bar: {[language]: section}}}}
       });
 
@@ -119,7 +126,10 @@ describe('Cards', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand: null},
+        authentication: createAuthenticationState({
+          token: '__TOKEN__',
+          brand: null
+        }),
         catalog: {entities: {sections: {baz: {[language]: section}}}}
       });
 
@@ -149,8 +159,12 @@ describe('Cards', () => {
         expect(action).toEqual(fetchError(new TypeError('Section not found')));
         return action;
       });
+
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand},
+        authentication: createAuthenticationState({
+          token: '__TOKEN__',
+          brand
+        }),
         catalog: {entities: {sections: {}}}
       });
 
@@ -181,8 +195,12 @@ describe('Cards', () => {
         // $FlowFixMe
         return action;
       });
+      // @todo replace with fixture creator
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand, language},
+        authentication: createAuthenticationState({
+          token: '__TOKEN__',
+          brand
+        }),
         catalog: {entities: {sections: {quux: {[language]: section}}}}
       });
       options.services.Cards.find.mockReturnValueOnce(Promise.reject(fakeError));

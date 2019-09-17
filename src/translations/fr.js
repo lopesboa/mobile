@@ -97,6 +97,7 @@ const translations: Translations = {
   welcome: 'Bonjour',
   welcomeDescription:
     'Cette app est associée à votre compte sur la plateforme de formation de votre société.',
+  welcomeUser: 'Bienvenue {{displayname}} !',
   wrongAnswer: 'Mauvaise réponse',
   yourAnswer: 'Votre réponse :',
   yourAnswers: 'Vos réponses :'

@@ -15,6 +15,11 @@ export type Config = {|
   },
   defaultLanguage: string,
   supportedLngs: Array<string>,
+  slider: {
+    start: {
+      image: string
+    }
+  },
   themes: [
     {
       common: {
@@ -41,7 +46,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     }
   });
 
-  const {brand, themes, progressionEngine}: Config = await response.json();
+  const {brand, themes, progressionEngine, slider}: Config = await response.json();
 
   return {
     name: brand.name,
@@ -53,6 +58,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     images: {
       'logo-mobile': themes[0].images['logo-mobile']
     },
+    hero: slider.start.image,
     progressionEngine
   };
 };

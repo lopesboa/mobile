@@ -42,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Отличная работа!',
   goToQuestion: 'Перейти к вопросу',
   highscore: 'У вас новый рекорд <br><b>вы только что выиграли {{score}} звезд(ы)</b>',
-  howToSignIn: 'Вы получили электронное сообщение для скачивания приложения?',
+  howToSignIn: 'Вы получили электронное письмо для скачивания приложения?',
   iWantIt: 'Я хочу!',
   keyPoint: 'Ключевой момент',
   lesson: 'Урок',
@@ -86,7 +86,7 @@ const translations: Translations = {
   typeHere: 'Введите текст здесь',
   validate: 'Подтвердить',
   version: 'Версия',
-  videoLoadingError: '',
+  videoLoadingError: 'Произошла ошибка при загрузке видео, попробуйте еще раз.',
   unlockNextLevel: 'Вы только что разблокировали<br><b>уровень {{levelName}}</b> ',
   upgrade: 'Повысить уровень ',
   upgradeDescription:
@@ -96,6 +96,7 @@ const translations: Translations = {
   welcome: 'Добро пожаловать',
   welcomeDescription:
     'Это приложение связано с вашей учетной записью на Учебной Платформе вашей компании.',
+  welcomeUser: 'Добро пожаловать, {{displayname}}!',
   wrongAnswer: 'Неверный ответ',
   yourAnswer: 'Ваш ответ:',
   yourAnswers: 'Ваши ответы:'

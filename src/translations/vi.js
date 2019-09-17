@@ -42,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Bạn làm tốt lắm!',
   goToQuestion: 'Đi đến câu hỏi',
   highscore: 'Bạn có mức điểm cao mới <br><b>bạn vừa giành được {{score}} sao</b>',
-  howToSignIn: 'Bạn đã nhận được email để tải xuống ứng dụng chưa?',
+  howToSignIn: 'Bạn đã nhận được một email để tải xuống ứng dụng?',
   iWantIt: 'Tôi muốn có ứng dụng!',
   keyPoint: 'Điểm quan trọng',
   lesson: 'Bài học',
@@ -96,6 +96,7 @@ const translations: Translations = {
   welcome: 'Chào mừng',
   welcomeDescription:
     'Ứng dụng này được liên kết với tài khoản của bạn trên Nền tảng Học tập của công ty bạn.',
+  welcomeUser: 'Xin chào, {{displayname}}!',
   wrongAnswer: 'Câu trả lời sai',
   yourAnswer: 'Your answer:',
   yourAnswers: 'Your answers:'

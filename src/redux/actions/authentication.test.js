@@ -1,7 +1,10 @@
-// @flow
+// @flow strict
 
 import {createBrand} from '../../__fixtures__/brands';
 import {createToken} from '../../__fixtures__/tokens';
+import {createUser} from '../../__fixtures__/user';
+import {createAuthenticationState} from '../../__fixtures__/store';
+
 import {createFakeAnalytics, fakeError} from '../../utils/tests';
 import {ANALYTICS_EVENT_TYPE, AUTHENTICATION_TYPE} from '../../const';
 import {fetchRequest as fetchBrandRequest, fetchSuccess as fetchBrandSuccess} from './brands';
@@ -9,6 +12,8 @@ import {
   fetchRequest as fetchLanguageRequest,
   fetchSuccess as fetchLanguageSuccess
 } from './language/fetch';
+
+import {fetchRequest as fetchUserRequest, fetchSuccess as fetchUserSuccess} from './user';
 import {setRequest as setLanguageRequest, setSuccess as setLanguageSuccess} from './language/set';
 
 jest.mock('../../utils/local-token');
@@ -60,13 +65,14 @@ describe('Authentication', () => {
       const {signIn, signInRequest, signInSuccess} = require('./authentication');
 
       const brand = createBrand();
+      const user = createUser();
+      const token = createToken({});
 
       const dispatch = jest.fn();
       const getState = jest.fn();
+
       getState.mockReturnValue({
-        authentication: {
-          brand
-        }
+        authentication: createAuthenticationState({brand})
       });
       const options = {
         services: {
@@ -74,16 +80,15 @@ describe('Authentication', () => {
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
           },
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Language: {
             fetch: jest.fn(() => Promise.resolve(language)),
             set: jest.fn()
           }
         }
       };
-
-      const token = createToken({
-        brand: brand.name
-      });
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
@@ -113,8 +118,19 @@ describe('Authentication', () => {
         expect(action).toEqual(fetchLanguageSuccess(language));
         return action;
       });
+
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess({token}));
+        expect(action).toEqual(fetchUserRequest());
+        return action;
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchUserSuccess(user));
+        return action;
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(signInSuccess(token));
         return action;
       });
 
@@ -132,12 +148,15 @@ describe('Authentication', () => {
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(current).toEqual(signInSuccess({token}));
+      return expect(current).toEqual(signInSuccess(token));
     });
 
     it('should sign in as anonymous', async () => {
       const brand = createBrand();
-      const token = createToken({brand: brand.name});
+      const token = createToken({
+        brand: brand.name
+      });
+      const user = createUser();
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, fetchOptions) => {
@@ -152,15 +171,16 @@ describe('Authentication', () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: {
-          brand
-        }
+        authentication: createAuthenticationState({brand})
       });
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
+          },
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
           },
           Language: {
             fetch: jest.fn(() => Promise.resolve(language)),
@@ -197,9 +217,19 @@ describe('Authentication', () => {
         expect(action).toEqual(fetchLanguageSuccess(language));
         return action;
       });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchUserRequest());
+        return action;
+      });
+
+      dispatch.mockImplementationOnce(action => {
+        expect(action).toEqual(fetchUserSuccess(user));
+        return action;
+      });
       dispatch.mockImplementationOnce(action => action);
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(signInSuccess({token}));
+        expect(action).toEqual(signInSuccess(token));
         return action;
       });
 
@@ -217,7 +247,7 @@ describe('Authentication', () => {
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
-      return expect(current).toEqual(signInSuccess({token}));
+      return expect(current).toEqual(signInSuccess(token));
     });
 
     it('should handle error on anonymous sign in', async () => {
@@ -231,12 +261,17 @@ describe('Authentication', () => {
         throw _fakeError;
       });
 
+      const user = createUser();
+
       const {signIn, signInRequest, signInError} = require('./authentication');
 
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
@@ -275,10 +310,15 @@ describe('Authentication', () => {
     it('should reject non-coorpacademy token', async () => {
       const {signIn, signInRequest, signInError} = require('./authentication');
 
+      const user = createUser();
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
@@ -319,10 +359,15 @@ describe('Authentication', () => {
     it('should reject if host is missing', async () => {
       const {signIn, signInRequest, signInError} = require('./authentication');
 
+      const user = createUser();
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
@@ -366,10 +411,15 @@ describe('Authentication', () => {
       const {signIn, signInRequest, signInError} = require('./authentication');
       const {fetchRequest, fetchError} = require('./brands');
 
+      const user = createUser();
+
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.reject(fakeError))
@@ -423,9 +473,11 @@ describe('Authentication', () => {
       const {fetchRequest, fetchSuccess} = require('./brands');
 
       const brand = createBrand();
+      const user = createUser();
 
       const dispatch = jest.fn();
       const getState = jest.fn();
+      // @todo replace with fixture creator
       getState.mockReturnValue({
         authentication: {
           brand: null
@@ -433,6 +485,9 @@ describe('Authentication', () => {
       });
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
@@ -489,19 +544,18 @@ describe('Authentication', () => {
       const {SIGN_OUT, signOut} = require('./authentication');
 
       const brand = createBrand();
+      const user = createUser();
 
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: {
-          user: {
-            token
-          },
-          brand
-        }
+        authentication: createAuthenticationState({token, brand})
       });
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
@@ -547,19 +601,19 @@ describe('Authentication', () => {
       const {SIGN_OUT, signOut} = require('./authentication');
 
       const brand = createBrand();
+      const user = createUser();
 
       const dispatch = jest.fn();
       const getState = jest.fn();
+
       getState.mockReturnValue({
-        authentication: {
-          user: {
-            token
-          },
-          brand
-        }
+        authentication: createAuthenticationState({token, brand})
       });
       const options = {
         services: {
+          Users: {
+            find: jest.fn(() => Promise.resolve(user))
+          },
           Analytics: createFakeAnalytics(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
@@ -604,17 +658,10 @@ describe('Authentication', () => {
 
       const {SIGN_OUT, signOut} = require('./authentication');
 
-      const brand = null;
-
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: {
-          user: {
-            token
-          },
-          brand
-        }
+        authentication: createAuthenticationState({token, brand: null})
       });
       const options = {
         services: {

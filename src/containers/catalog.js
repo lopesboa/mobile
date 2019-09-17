@@ -4,7 +4,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createArraySelector} from 'reselect-map';
 
-import CatalogComponent, {SEPARATOR_HEIGHT} from '../components/catalog';
+import CatalogComponent, {SEPARATOR_HEIGHT, HERO_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import {fetchSections} from '../redux/actions/catalog/sections';
@@ -111,7 +111,10 @@ class Catalog extends React.Component<Props, State> {
 
   getOffset = (): number => {
     const {sections} = this.props;
-    const offset = Math.trunc(this.offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
+    const heroHeight = HERO_HEIGHT + SEPARATOR_HEIGHT;
+
+    const offsetY = this.offsetY > heroHeight ? this.offsetY - heroHeight : 0;
+    const offset = Math.trunc(offsetY / (SECTION_HEIGHT + SEPARATOR_HEIGHT));
 
     return getOffsetWithoutCards(sections, offset);
   };
@@ -135,12 +138,14 @@ class Catalog extends React.Component<Props, State> {
 
   handleScroll = ({nativeEvent}: ScrollEvent) => {
     const {layout} = this.props;
+
     const offsetY = nativeEvent.contentOffset.y;
 
     if (offsetY !== this.offsetY && layout) {
       this.offsetY = offsetY;
 
       const offset = this.getOffset();
+
       const limit = this.getLimit(offset);
       const hasUnfetchedSections = this.hasUnfetchedSections(offset, limit);
 

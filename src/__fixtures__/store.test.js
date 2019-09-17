@@ -7,6 +7,7 @@ import {createLevel} from './levels';
 import {createSlide} from './slides';
 import {createQCM} from './questions';
 import {createProgression} from './progression';
+import {createUser} from './user';
 
 describe('storeFixture', () => {
   it('should override progressionEngine', () => {
@@ -21,6 +22,8 @@ describe('storeFixture', () => {
           'logo-mobile':
             'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
         },
+        hero:
+          'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png',
         name: 'mobile',
         progressionEngine: {
           versions: {
@@ -158,14 +161,15 @@ describe('storeFixture', () => {
     };
 
     const authenticationState = {
-      user: {
-        token: '__TOKEN__'
-      },
+      token: '__TOKEN__',
+      user: createUser(),
       brand: {
         colors: {
           primary: '#00B0FF'
         },
         contentCategoryName: 'Mobile',
+        hero:
+          'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png',
         host: 'https://mobile-staging.coorpacademy.com',
         images: {
           'logo-mobile':

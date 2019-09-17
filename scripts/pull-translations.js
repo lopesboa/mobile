@@ -99,6 +99,13 @@ const generate = async (locale: string) => {
     'global.json'
   );
 
+  const moocDashboardTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'dashboard.json'
+  );
+
   const translations: Translations = {
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
     authenticationMagicLinkHeader: formatTranslation(moocLoginTranslations.mobile.magicLink.header),
@@ -197,6 +204,7 @@ const generate = async (locale: string) => {
     winAdditionalStars: formatTranslation(componentsTranslations.media_stars_to_win_plural),
     welcome: formatTranslation(moocLoginTranslations.mobile.welcome),
     welcomeDescription: formatTranslation(moocLoginTranslations.mobile.welcomeDescription),
+    welcomeUser: formatTranslation(moocDashboardTranslations.hello),
     wrongAnswer: formatTranslation(playerTranslations['Wrong answer']),
     yourAnswer: formatTranslation(playerTranslations['Your answer_']),
     yourAnswers: formatTranslation(playerTranslations['Your answers_'])

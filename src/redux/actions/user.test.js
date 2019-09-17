@@ -1,20 +1,20 @@
 // @flow strict
 
 import {fakeError} from '../../utils/tests';
-import {createBrand} from '../../__fixtures__/brands';
+import {createUser} from '../../__fixtures__/user';
 
-import {fetchRequest, fetchSuccess, fetchError, fetchBrand} from './brands';
+import {fetchRequest, fetchSuccess, fetchError, fetchUser} from './user';
 
-const brand = createBrand();
+const user = createUser();
 
-describe('Brands', () => {
-  describe('fetchBrand', () => {
+describe('Users', () => {
+  describe('fetchUser', () => {
     it('success', async () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
       const options = {
         services: {
-          Brands: {
+          Users: {
             find: jest.fn()
           }
         }
@@ -25,14 +25,14 @@ describe('Brands', () => {
         return action;
       });
       dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchSuccess(brand));
+        expect(action).toEqual(fetchSuccess(user));
         return action;
       });
-      options.services.Brands.find.mockReturnValueOnce(Promise.resolve(brand));
+      options.services.Users.find.mockReturnValueOnce(Promise.resolve(user));
 
       // $FlowFixMe
-      const actual = await fetchBrand('__TOKEN__')(dispatch, getState, options);
-      return expect(actual).toEqual(fetchSuccess(brand));
+      const actual = await fetchUser('__TOKEN__')(dispatch, getState, options);
+      return expect(actual).toEqual(fetchSuccess(user));
     });
 
     it('token is missing', async () => {
@@ -40,7 +40,7 @@ describe('Brands', () => {
       const getState = jest.fn();
       const options = {
         services: {
-          Brands: {
+          Users: {
             find: jest.fn()
           }
         }
@@ -56,9 +56,9 @@ describe('Brands', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchBrand()(dispatch, getState, options);
+      const actual = await fetchUser()(dispatch, getState, options);
 
-      expect(options.services.Brands.find).not.toHaveBeenCalled();
+      expect(options.services.Users.find).not.toHaveBeenCalled();
       return expect(actual).toEqual(fetchError(new Error('Token not defined')));
     });
 
@@ -67,7 +67,7 @@ describe('Brands', () => {
       const getState = jest.fn();
       const options = {
         services: {
-          Brands: {
+          Users: {
             find: jest.fn()
           }
         }
@@ -83,10 +83,10 @@ describe('Brands', () => {
       });
 
       // $FlowFixMe
-      options.services.Brands.find.mockImplementationOnce(Promise.reject(fakeError));
+      options.services.Users.find.mockImplementationOnce(Promise.reject(fakeError));
 
       // $FlowFixMe
-      const actual = await fetchBrand('__TOKEN__')(dispatch, getState, options);
+      const actual = await fetchUser('__TOKEN__')(dispatch, getState, options);
       return expect(actual).toEqual(fetchError(fakeError));
     });
   });

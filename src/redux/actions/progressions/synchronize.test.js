@@ -2,6 +2,7 @@
 
 import {ENGINE, CONTENT_TYPE} from '../../../const';
 import {createBrand} from '../../../__fixtures__/brands';
+import {createAuthenticationState} from '../../../__fixtures__/store';
 import {createProgression} from '../../../__fixtures__/progression';
 import {synchronizeProgressions, synchronizeProgression} from './synchronize';
 
@@ -227,7 +228,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand}
+        authentication: createAuthenticationState({token: '_TOKEN_'})
       });
 
       store.dispatch.mockImplementationOnce(action => {
@@ -285,7 +286,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}},
+        authentication: createAuthenticationState({token: '_TOKEN_'}),
         brand
       });
 
@@ -343,7 +344,7 @@ describe('Progressions synchronization', () => {
       };
 
       store.getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand}
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
       });
 
       store.dispatch.mockImplementationOnce(action => {
@@ -418,7 +419,7 @@ describe('Progressions synchronization', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: null}, brand: null}
+        authentication: {token: null, brand: null}
       });
 
       // $FlowFixMe
@@ -466,7 +467,9 @@ describe('Progressions synchronization', () => {
         return action;
       });
       getState.mockReturnValue({
-        authentication: {user: {token: '__TOKEN__'}, brand: null}
+        authentication: createAuthenticationState({
+          brand: null
+        })
       });
 
       // $FlowFixMe

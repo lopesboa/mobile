@@ -40,7 +40,7 @@ const translations: Translations = {
   goodJob: 'Super!',
   goToQuestion: 'Naar de vraag',
   highscore: 'Je hebt een nieuwe topscore <br><b> je won zojuist {{score}} sterren </b>',
-  howToSignIn: 'Hebt u een e-mail ontvangen om de app te downloaden?',
+  howToSignIn: 'Heb je een e-mail voor het downloaden van de app ontvangen?',
   iWantIt: 'Ik wil het!',
   keyPoint: 'Key point',
   lesson: 'Les',
@@ -84,7 +84,8 @@ const translations: Translations = {
   typeHere: 'Schrijf hier',
   validate: 'Valideren',
   version: 'Versie',
-  videoLoadingError: '',
+  videoLoadingError:
+    'Er is een fout opgetreden bij het laden van de video. Probeer het alsjeblieft opnieuw.',
   unlockNextLevel: 'Je hebt zojuist {{levelName}} niveau <br><b> ontgrendeld </b>',
   upgrade: 'Bijwerken',
   upgradeDescription: 'Uw app is bijgewerkt! Download de nieuwste versie om ervan te genieten.',
@@ -92,6 +93,7 @@ const translations: Translations = {
     'Win {{count}} extra sterren in dit hoofdstuk de eerste keer dat je een les bekijkt!',
   welcome: 'Welkom',
   welcomeDescription: 'De app is gekoppeld aan uw account op het Learning Platform van uw bedrijf.',
+  welcomeUser: 'Welkom, {{displayname}}!',
   wrongAnswer: 'Verkeerd antwoord',
   yourAnswer: 'Jouw antwoord:',
   yourAnswers: 'Jouw antwoorden:'

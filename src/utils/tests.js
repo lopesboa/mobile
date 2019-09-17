@@ -9,6 +9,8 @@ import createDataLayer from '../layer/data';
 import createServices from '../services';
 import createStore from '../redux';
 import {__TEST__} from '../modules/environment';
+import BrandThemeProvider from '../components/brand-theme-provider';
+import UserProvider from '../components/user-provider';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Layout} from '../containers/with-layout';
 import {VIBRATION_TYPE} from '../containers/with-vibration';
@@ -47,9 +49,15 @@ type TestContextProviderProps<S> = {|
   store?: S,
   children: React.Node
 |};
-export const TestContextProvider = <S>({store, children}: TestContextProviderProps<S>) => (
-  <Provider store={createFakeStore<S>(store)}>{children}</Provider>
-);
+export const TestContextProvider = <S>({store, children}: TestContextProviderProps<S>) => {
+  return (
+    <Provider store={createFakeStore<S>(store)}>
+      <UserProvider>
+        <BrandThemeProvider>{children}</BrandThemeProvider>
+      </UserProvider>
+    </Provider>
+  );
+};
 
 export const fakeError = new Error('Fake error');
 

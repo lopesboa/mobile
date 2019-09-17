@@ -13,7 +13,7 @@ import type {
 } from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
 
-import type {Section, Brand, PermissionStatus} from '../types';
+import type {Section, Brand, PermissionStatus, User} from '../types';
 import type {
   Level,
   Slide,
@@ -33,6 +33,7 @@ import type {State as PermissionsState} from '../redux/reducers/permissions';
 import type {State as VideoState} from '../redux/reducers/video';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 import {createBrand} from './brands';
+import {createUser} from './user';
 
 type MappableObject =
   | {
@@ -97,14 +98,15 @@ export const createCatalogState = (
 
 export const createAuthenticationState = ({
   token,
-  brand
+  brand,
+  user
 }: {
   token?: string | null,
-  brand?: Brand | null
+  brand?: Brand | null,
+  user?: User | null
 }): AuthenticationState => ({
-  user: {
-    token: token !== undefined ? token : '__TOKEN__'
-  },
+  token: token !== undefined ? token : '__TOKEN__',
+  user: user !== undefined ? user : createUser(),
   brand: brand !== undefined ? brand : createBrand({})
 });
 

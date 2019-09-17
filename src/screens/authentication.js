@@ -13,8 +13,9 @@ import type {AuthenticationType} from '../types';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
+
 import {get as getToken} from '../utils/local-token';
-import {getToken as getTokenState} from '../redux/utils/state-extract';
+import {getToken as _getToken} from '../redux/utils/state-extract';
 import ErrorListener from '../containers/error-listener';
 import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
@@ -134,7 +135,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 }
 
 const getIsAuthenticatedState: StoreState => boolean = createSelector(
-  [getTokenState],
+  [_getToken],
   token => Boolean(token)
 );
 

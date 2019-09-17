@@ -6,7 +6,7 @@ import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
-import {createStoreState} from '../../__fixtures__/store';
+import {createStoreState, createAuthenticationState} from '../../__fixtures__/store';
 import {createProgression} from '../../__fixtures__/progression';
 import createMiddleware from './reset-displayed-progression';
 
@@ -37,7 +37,7 @@ const mockedStore = createStoreState({
   chapters: [],
   slides: [],
   progression,
-  authentication: {user: {token: '__TOKEN__'}, brand: brand}
+  authentication: createAuthenticationState({brand})
 });
 
 describe('Rest displayed Progression', () => {

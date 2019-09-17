@@ -220,7 +220,7 @@ Array [
             }
             testID="authentication-content-footer"
           >
-            Have you received an email to download the app?
+            Did you receive an email to download the app?
           </Text>
           <View
             style={

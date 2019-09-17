@@ -14,7 +14,8 @@ export const createToken = ({
   user?: string,
   host?: string | null,
   iss?: string,
-  roles?: Array<string>
+  roles?: Array<string>,
+  brand?: string
 }): string =>
   toJWT({
     host: host === null ? undefined : host || 'https://domain.tld',

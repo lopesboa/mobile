@@ -49,6 +49,12 @@ describe('brand', () => {
                   baseUrl: 'https://mobile-staging.coorpacademy.com',
                   contentCategoryName: 'Mobile'
                 },
+                slider: {
+                  start: {
+                    image:
+                      'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+                  }
+                },
                 defaultLanguage: 'fr',
                 supportedLngs: ['de', 'es', 'fr'],
                 themes: [

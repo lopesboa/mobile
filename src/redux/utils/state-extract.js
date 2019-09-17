@@ -16,6 +16,8 @@ import {CONTENT_TYPE} from '../../const';
 import type {Section, ProgressionEngineVersions, PermissionStatus} from '../../types';
 import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
+import type {State as UserState} from '../reducers/authentication/user';
+import type {State as TokenState} from '../reducers/authentication/token';
 import type {PermissionType} from '../actions/permissions';
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
@@ -53,10 +55,11 @@ export const getNextContentRef = (state: StoreState): string | void => {
   return progression && progression.state && progression.state.nextContent.ref;
 };
 
-export const getToken = (state: StoreState) =>
-  state.authentication && state.authentication.user && state.authentication.user.token;
+export const getToken = (state: StoreState): TokenState =>
+  state.authentication && state.authentication.token;
 
-export const getBrand = (state: StoreState): BrandState => state.authentication.brand;
+export const getBrand = (state: StoreState): BrandState =>
+  state.authentication && state.authentication.brand;
 
 export const getPermissionStatus = (type: PermissionType) => (
   state: StoreState
@@ -117,6 +120,8 @@ export const getContext = (state: StoreState): Context | void => {
     ? currentSlide.context
     : undefined;
 };
+
+export const getUser = (state: StoreState): UserState => state.authentication.user;
 
 export const isGodModeUser = (state: StoreState): boolean => {
   const token = getToken(state);

@@ -41,7 +41,7 @@ const translations: Translations = {
   goodJob: 'Гарна робота!',
   goToQuestion: 'Перейти до запитання',
   highscore: 'У вас новий рекорд<br><b>ви щойно виграли {{score}} зірок</b>',
-  howToSignIn: 'Ви отримали електронного листа для звантаження застосунку?',
+  howToSignIn: 'Ви отримали електронний лист для звантаження застосунку?',
   iWantIt: 'Хочу!',
   keyPoint: 'Ключовий момент',
   lesson: 'Урок',
@@ -86,7 +86,7 @@ const translations: Translations = {
   typeHere: 'Ввести тут',
   validate: 'Підтвердити',
   version: 'Версія',
-  videoLoadingError: '',
+  videoLoadingError: 'Під час завантаження відео сталася помилка. Повторіть ще раз.',
   unlockNextLevel: 'Ви щойно розблокували<br><b>рівень {{levelName}}</b>',
   upgrade: 'Перейти на кращу версію',
   upgradeDescription:
@@ -96,6 +96,7 @@ const translations: Translations = {
   welcome: 'Ласкаво просимо',
   welcomeDescription:
     "Цей застосунок прив'язаний до вашого облікового запису на Навчальній платформі вашої компанії.",
+  welcomeUser: 'Ласкаво просимо, {{displayname}}!',
   wrongAnswer: 'Неправильна відповідь',
   yourAnswer: 'Ваша відповідь:',
   yourAnswers: 'Ваші відповіді:'

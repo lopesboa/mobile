@@ -42,7 +42,7 @@ const translations: Translations = {
   goodJob: 'Gut gemacht!',
   goToQuestion: 'Zur Frage',
   highscore: 'Du hast eine neue Highscore<br><b>, du hast gerade {{score}} Sterne gewonnen</b>',
-  howToSignIn: 'Haben Sie eine E-Mail zum Herunterladen der App erhalten?',
+  howToSignIn: 'Haben Sie eine E-Mail erhalten, um die App herunterzuladen?',
   iWantIt: 'Ich möchte es !',
   keyPoint: 'Hauptpunkt',
   lesson: 'Lektion',
@@ -86,7 +86,8 @@ const translations: Translations = {
   typeHere: 'Hier einfügen',
   validate: 'Bestätigen',
   version: 'Version',
-  videoLoadingError: '',
+  videoLoadingError:
+    'Beim Laden des Videos ist ein Fehler aufgetreten, bitte versuchen Sie es erneut.',
   unlockNextLevel: 'Du hast gerade die Ebene<br><b>{{levelName}} freigeschaltet.</b>',
   upgrade: 'Nachrüsten',
   upgradeDescription:
@@ -96,6 +97,7 @@ const translations: Translations = {
   welcome: 'Willkommen auf der Plattform.',
   welcomeDescription:
     'Diese App ist mit Ihrem Konto auf der Lernplattform Ihres Unternehmens verknüpft.',
+  welcomeUser: 'Willkommen, {{displayname}}!',
   wrongAnswer: 'Falsche Antwort',
   yourAnswer: 'Ihre Antwort:',
   yourAnswers: 'Ihre Antworten:'

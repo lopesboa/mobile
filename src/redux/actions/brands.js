@@ -2,7 +2,6 @@
 
 import type {Brand} from '../../types';
 import type {StoreAction, ErrorAction} from '../_types';
-import {getToken} from '../utils/state-extract';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@brands/FETCH_SUCCESS`;
@@ -55,10 +54,4 @@ export const fetchBrand = (token: string): StoreAction<Action> => async (
   } catch (e) {
     return dispatch(fetchError(e));
   }
-};
-
-export const fetchCurrentBrand = (): StoreAction<Action> => (dispatch, getState, options) => {
-  const token = getToken(getState());
-  // $FlowFixMe wrong StoreAction type
-  return fetchBrand(token)(dispatch, getState, options);
 };

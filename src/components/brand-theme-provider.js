@@ -24,6 +24,7 @@ export const initialState: State = {
   colors: {
     primary: '#00B0FF'
   },
+  hero: undefined,
   contentCategoryName: 'Onboarding',
   name: 'onboarding',
   images: {

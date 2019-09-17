@@ -5,6 +5,7 @@ import createDataLayer from '.';
 describe('Data layer', () => {
   it('should return complete object', () => {
     const result = createDataLayer();
+
     const expected = {
       fetchBrand: expect.any(Function),
       fetchBundle: expect.any(Function),
@@ -35,7 +36,8 @@ describe('Data layer', () => {
       refreshCard: expect.any(Function),
       saveProgression: expect.any(Function),
       storeBundle: expect.any(Function),
-      synchronizeProgression: expect.any(Function)
+      synchronizeProgression: expect.any(Function),
+      fetchUser: expect.any(Function)
     };
     expect(expected).toEqual(result);
   });

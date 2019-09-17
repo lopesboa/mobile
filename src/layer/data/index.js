@@ -17,6 +17,7 @@ import {getExitNode} from './exit-nodes';
 import {fetchBundle, storeBundle} from './bundle';
 import {fetchCards, refreshCard, getCardFromLocalStorage} from './cards';
 import {fetchBrand} from './brand';
+import {fetchUser} from './users';
 import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
 import {find as findRecommendations} from './recommendations';
 import {findById as findLevelById, getNextLevel} from './levels';
@@ -45,7 +46,8 @@ export type DataLayer = {
   findBestOf: () => Promise<number>,
   getNextChapter: (ref: string) => Promise<ChapterAPI | void>,
   getNextLevel: (ref: string) => Promise<LevelAPI | void>,
-  logEvent: typeof logEvent
+  logEvent: typeof logEvent,
+  fetchUser: typeof fetchUser
 };
 
 const createDataLayer = (): DataLayer => ({
@@ -60,6 +62,7 @@ const createDataLayer = (): DataLayer => ({
   getAllProgressions,
   saveProgression,
   synchronizeProgression,
+  fetchUser,
   findRecommendations,
   getNextChapter,
   getNextLevel,

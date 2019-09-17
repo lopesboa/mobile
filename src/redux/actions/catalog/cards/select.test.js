@@ -6,6 +6,8 @@ import {
   createCardLevel
 } from '../../../../__fixtures__/cards';
 import {createChapter} from '../../../../__fixtures__/chapters';
+import {createBrand} from '../../../../__fixtures__/brands';
+import {createAuthenticationState} from '../../../../__fixtures__/store';
 import {CARD_TYPE, CARD_STATUS} from '../../../../layer/data/_const';
 import {SHOW} from '../../ui/modal';
 import {CONTENT_TYPE, ERROR_TYPE} from '../../../../const';
@@ -33,12 +35,12 @@ const chapterCard = createChapterCard({
 
 const noToken = {
   name: 'No token',
-  authentication: {user: {token: null}, brand: 'digital'}
+  authentication: createAuthenticationState({token: null, brand: createBrand({host: 'digital'})})
 };
 
 const noBrand = {
   name: 'No brand',
-  authentication: {user: {token: 'foo'}, brand: null}
+  authentication: createAuthenticationState({token: '__TOURTE__', brand: null})
 };
 
 const mockNoContent = expectedType =>
@@ -123,7 +125,10 @@ describe('Cards', () => {
     it(`should selectCard successfully after fetching content | type: ${card.type}`, async () => {
       const dispatch = jest.fn();
       const getState = () => ({
-        authentication: {user: {token: 'foo'}, brand: {host: 'digital'}}
+        authentication: createAuthenticationState({
+          token: 'foo',
+          brand: createBrand({host: 'digital'})
+        })
       });
 
       const options = {
@@ -194,7 +199,10 @@ describe('Cards', () => {
   it('should fail selectCard when card type is wrong', async () => {
     const dispatch = jest.fn();
     const getState = () => ({
-      authentication: {user: {token: 'foo'}, brand: 'digital'}
+      authentication: createAuthenticationState({
+        token: 'tourte',
+        brand: createBrand({host: 'digital'})
+      })
     });
     const options = {
       services: {
@@ -258,7 +266,10 @@ describe('Cards', () => {
   it('should fail selectCard when content could not be fetched : level.universalRef is not defined', async () => {
     const dispatch = jest.fn();
     const getState = () => ({
-      authentication: {user: {token: 'foo'}, brand: 'digital'}
+      authentication: createAuthenticationState({
+        token: 'tourte',
+        brand: createBrand({host: 'digital'})
+      })
     });
     const options = {
       services: {
@@ -349,7 +360,10 @@ describe('Cards', () => {
   it('should fail selectCard when content could not be fetched, and show a modal', async () => {
     const dispatch = jest.fn();
     const getState = () => ({
-      authentication: {user: {token: 'foo'}, brand: {host: 'digital'}}
+      authentication: createAuthenticationState({
+        token: 'tourte',
+        brand: createBrand({host: 'digital'})
+      })
     });
     const options = {
       services: {

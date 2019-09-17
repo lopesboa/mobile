@@ -10,6 +10,7 @@ import orientation from 'react-native-orientation-locker';
 
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
+import UserProvider from './components/user-provider';
 import AnalyticsProvider from './components/analytics-provider';
 import VersionListener from './containers/version-listener';
 import VideoFullscreenListener from './containers/video-fullscreen-listener';
@@ -52,11 +53,13 @@ class App extends React.PureComponent<Props> {
         <AnalyticsProvider>
           <PortalProvider>
             <VersionListener />
-            <BrandThemeProvider>
-              <View style={styles.container}>
-                <Navigator />
-              </View>
-            </BrandThemeProvider>
+            <UserProvider>
+              <BrandThemeProvider>
+                <View style={styles.container}>
+                  <Navigator />
+                </View>
+              </BrandThemeProvider>
+            </UserProvider>
             {Platform.OS === 'android' && <VideoFullscreenListener />}
           </PortalProvider>
         </AnalyticsProvider>

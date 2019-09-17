@@ -95,10 +95,17 @@ export type Brand = {|
   colors: {
     primary: string
   },
+  hero?: string,
   images: {
     'logo-mobile': string
   },
   progressionEngine: ProgressionEngineVersions
+|};
+
+export type User = {|
+  displayName: string,
+  familyName: string,
+  givenName: string
 |};
 
 export type PermissionStatus = 'authorized' | 'denied' | 'restricted' | 'undetermined';

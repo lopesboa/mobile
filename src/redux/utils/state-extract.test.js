@@ -5,9 +5,10 @@ import {ROLES} from '@coorpacademy/acl';
 
 import type {Slide, DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import {CARD_STATUS} from '../../layer/data/_const';
-import type {Engine, ProgressionEngineVersions, Section, Brand} from '../../types';
+import type {Engine, ProgressionEngineVersions, Section, Brand, User} from '../../types';
 import {ENGINE, CONTENT_TYPE, SPECIFIC_CONTENT_REF, PERMISSION_STATUS} from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
+import {createUser} from '../../__fixtures__/user';
 import {createToken} from '../../__fixtures__/tokens';
 import {createLevel} from '../../__fixtures__/levels';
 import {createProgression} from '../../__fixtures__/progression';
@@ -40,6 +41,7 @@ import {
   getCurrentScreenName,
   getCurrentTabName,
   getContext,
+  getUser,
   isGodModeUser,
   getSections,
   getSectionsRef,
@@ -85,7 +87,8 @@ const createState = ({
   cards = [],
   permissions,
   token,
-  brand
+  brand,
+  user
 }: {
   engine?: Engine,
   levelRef?: string,
@@ -96,7 +99,8 @@ const createState = ({
   cards?: Array<DisciplineCard | ChapterCard>,
   permissions?: $ExtractReturn<typeof createPermissionsState>,
   token?: string | null,
-  brand?: Brand | null
+  brand?: Brand | null,
+  user?: User | null
 }): StoreState =>
   createStoreState({
     levels: [createDefaultLevel(levelRef)],
@@ -105,8 +109,9 @@ const createState = ({
     slides,
     progression: createDefaultProgression(engine, levelRef, content, nextContent),
     authentication: createAuthenticationState({
-      token,
-      brand
+      user: user !== undefined ? user : createUser(),
+      token: token !== undefined ? token : createToken({}),
+      brand: brand !== undefined ? brand : createBrand({})
     }),
     godMode: true,
     fastSlide: true,
@@ -211,7 +216,9 @@ describe('State-extract', () => {
   describe('getPermissionStatus', () => {
     it('should return permission status', () => {
       const state: StoreState = createState({
-        permissions: createPermissionsState({camera: PERMISSION_STATUS.DENIED})
+        permissions: createPermissionsState({
+          camera: PERMISSION_STATUS.DENIED
+        })
       });
 
       const result = getPermissionStatus('camera')(state);
@@ -263,7 +270,10 @@ describe('State-extract', () => {
           },
           progressions: {
             entities: {
-              progression1: {...progression, state: {...progression.state, stars: 40}}
+              progression1: {
+                ...progression,
+                state: {...progression.state, stars: 40}
+              }
             }
           },
           nextContent: {}
@@ -324,7 +334,10 @@ describe('State-extract', () => {
           },
           progressions: {
             entities: {
-              progression1: {...progression, state: {...progression.state, stars: 40}}
+              progression1: {
+                ...progression,
+                state: {...progression.state, stars: 40}
+              }
             }
           },
           nextContent: {}
@@ -385,7 +398,10 @@ describe('State-extract', () => {
           },
           progressions: {
             entities: {
-              progression1: {...progression, state: {...progression.state, stars: 10}}
+              progression1: {
+                ...progression,
+                state: {...progression.state, stars: 10}
+              }
             }
           },
           nextContent: {}
@@ -549,23 +565,22 @@ describe('State-extract', () => {
 
   describe('getToken', () => {
     it('should get token', () => {
-      const state = {
-        authentication: {
-          user: {
-            token: 'foo'
-          }
-        }
-      };
+      const token = createToken({});
+      const state = createState({
+        token
+      });
       // $FlowFixMe
       const result = getToken(state);
-      expect(result).toEqual('foo');
+      expect(result).toEqual(token);
     });
   });
 
   describe('getBrand', () => {
     it('should get brand', () => {
       const brand = createBrand({});
-      const state = createState({brand});
+      const state = createState({
+        brand
+      });
 
       const result = getBrand(state);
       const expected = brand;
@@ -651,6 +666,20 @@ describe('State-extract', () => {
 
       const result = getContext(state);
       const expected = context;
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getUser', () => {
+    it('should return the user', () => {
+      const user = createUser();
+      const state = createState({
+        user
+      });
+
+      const result = getUser(state);
+      const expected = user;
 
       expect(result).toEqual(expected);
     });

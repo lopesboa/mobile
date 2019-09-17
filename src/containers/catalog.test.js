@@ -6,10 +6,14 @@ import renderer from 'react-test-renderer';
 import {createSections} from '../__fixtures__/sections';
 import {createCatalogState, createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
+
 import {fakeLayout, handleFakePress, TestContextProvider} from '../utils/tests';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Section} from '../types';
+import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
+import {HERO_HEIGHT, SEPARATOR_HEIGHT} from '../components/catalog';
 import {Component as Catalog, mapStateToProps, DEBOUNCE_DURATION, DEFAULT_LIMIT} from './catalog';
+
 import type {ConnectedStateProps} from './catalog';
 
 jest.useFakeTimers();
@@ -57,18 +61,29 @@ describe('Catalog', () => {
         </TestContextProvider>
       );
       const catalog = component.root.find(el => el.props.testID === 'catalog');
-      const scrollEvent: ScrollEvent = {
+      let scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: 580
+            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT - 1
           }
         }
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
-      expect(fetchSections).toHaveBeenCalledTimes(2);
+
+      scrollEvent = {
+        nativeEvent: {
+          contentOffset: {
+            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT
+          }
+        }
+      };
+      catalog.props.onScroll(scrollEvent);
+      jest.advanceTimersByTime(DEBOUNCE_DURATION);
+      expect(fetchSections).toHaveBeenCalledTimes(3);
       expect(fetchSections.mock.calls[0]).toEqual([0, 3, false]);
-      expect(fetchSections.mock.calls[1]).toEqual([2, 1, false]);
+      expect(fetchSections.mock.calls[1]).toEqual([0, 3, false]);
+      expect(fetchSections.mock.calls[2]).toEqual([1, 2, false]);
     });
 
     it('should handle scroll on sections already fetched', () => {

@@ -2,6 +2,7 @@
 
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
+import {createAuthenticationState} from '../../__fixtures__/store';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
 import {synchronizeProgressions} from '../actions/progressions/synchronize';
@@ -44,7 +45,7 @@ describe("Progression's synchronization middleware", () => {
     const middleware = createMiddleware(options);
     const store = createStore();
     store.getState.mockImplementation(() => ({
-      authentication: {user: {token: '__TOKEN__'}, brand}
+      authentication: createAuthenticationState({brand})
     }));
     const next = jest.fn();
     // $FlowFixMe this si to test only

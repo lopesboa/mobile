@@ -7,6 +7,7 @@ import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import type {Section} from '../types';
 import CatalogSection from '../containers/catalog-section-refreshable';
 import theme from '../modules/theme';
+import Hero, {HEIGHT as _HERO_HEIGHT} from './hero';
 import Space from './space';
 
 export type Props = {|
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
 
 const SEPARATOR_SIZE = 'small';
 export const SEPARATOR_HEIGHT = theme.spacing[SEPARATOR_SIZE];
+export const HERO_HEIGHT = _HERO_HEIGHT;
 const PLACEHOLDER_LENGTH = 3;
 
 class Catalog extends React.Component<Props> {
@@ -59,11 +61,19 @@ class Catalog extends React.Component<Props> {
 
   renderFooter = (): React.Node | null => this.props.children || null;
 
+  renderHeader = (): React.Node => (
+    <React.Fragment>
+      <Hero />
+      {this.renderSeparator()}
+    </React.Fragment>
+  );
+
   render() {
     const {sections, onRefresh, isRefreshing = false, onScroll} = this.props;
 
     return (
       <FlatList
+        ListHeaderComponent={this.renderHeader}
         refreshing={isRefreshing}
         onRefresh={onRefresh}
         data={sections.length > 0 ? sections : new Array(PLACEHOLDER_LENGTH).fill()}

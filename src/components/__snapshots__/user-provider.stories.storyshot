@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UserProvider Default 1`] = `
+Array [
+  <Text>
+    FamilyName: 
+    Pot
+  </Text>,
+  <Text>
+    GivenName: 
+    Pol
+  </Text>,
+  <Text>
+    DisplayName: 
+    Pol P.
+  </Text>,
+]
+`;

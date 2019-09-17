@@ -15,7 +15,9 @@ import Bundle from './bundle';
 import type {CardsService} from './cards';
 import Cards from './cards';
 import type {BrandsService} from './brands';
+import type {UsersService} from './users';
 import Brands from './brands';
+import Users from './users';
 import type {LanguageService} from './language';
 import Language from './language';
 import Analytics from './analytics';
@@ -40,6 +42,7 @@ export type Services = {|
   Language: LanguageService,
   Permissions: PermissionsService,
   LeaderBoard: typeof LeaderBoard,
+  Users: UsersService,
   Recommendations: typeof Recommendations,
   Sections: SectionsService,
   Videos: VideosService
@@ -61,6 +64,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Recommendations: Recommendations(dataLayer),
   Permissions,
   LeaderBoard,
+  Users: Users(dataLayer),
   Sections: Sections(dataLayer),
   // $FlowFixMe datalayer definition error
   Videos: Videos(dataLayer)
