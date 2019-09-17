@@ -18,12 +18,10 @@ function withAnalytics<P>(
     ...WithAnalyticsProps
   |}>;
 
-  const ComponentWithAnalytics = (props: Props) => (
-    <AnalyticsContext.Consumer>
-      {analytics => <WrappedComponent {...props} analytics={analytics} />}
-    </AnalyticsContext.Consumer>
-  );
-
+  const ComponentWithAnalytics = (props: Props) => {
+    const analytics = React.useContext(AnalyticsContext);
+    return <WrappedComponent {...props} analytics={analytics} />;
+  };
   return hoistNonReactStatic(ComponentWithAnalytics, WrappedComponent);
 }
 

@@ -51,39 +51,38 @@ const styles = StyleSheet.create({
   }
 });
 
-const HeaderSlide = ({image, subtitle, title}: Props) => (
-  <BrandThemeContext.Consumer>
-    {brandTheme => (
-      <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
-        <View style={styles.thumbnail}>
-          <ImageBackground
-            testID="header-slide-title-image"
-            source={image}
-            style={styles.thumbnail}
-          />
-        </View>
-        <View style={styles.text}>
-          {subtitle && (
-            <Text style={[styles.subtitle, {color: brandTheme.colors.primary}]} numberOfLines={1}>
-              {subtitle}
-            </Text>
-          )}
-          {title && (
-            <Text testID="header-slide-title-title" style={styles.discipline} numberOfLines={1}>
-              {title}
-            </Text>
-          )}
-          {!title && (
-            <React.Fragment>
-              <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="15%" />
-              <Space />
-              <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="50%" />
-            </React.Fragment>
-          )}
-        </View>
+const HeaderSlide = ({image, subtitle, title}: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
+  return (
+    <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
+      <View style={styles.thumbnail}>
+        <ImageBackground
+          testID="header-slide-title-image"
+          source={image}
+          style={styles.thumbnail}
+        />
       </View>
-    )}
-  </BrandThemeContext.Consumer>
-);
+      <View style={styles.text}>
+        {subtitle && (
+          <Text style={[styles.subtitle, {color: brandTheme.colors.primary}]} numberOfLines={1}>
+            {subtitle}
+          </Text>
+        )}
+        {title && (
+          <Text testID="header-slide-title-title" style={styles.discipline} numberOfLines={1}>
+            {title}
+          </Text>
+        )}
+        {!title && (
+          <React.Fragment>
+            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="15%" />
+            <Space />
+            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="50%" />
+          </React.Fragment>
+        )}
+      </View>
+    </View>
+  );
+};
 
 export default HeaderSlide;

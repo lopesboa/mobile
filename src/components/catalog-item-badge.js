@@ -48,27 +48,24 @@ const Badge = ({
     fontSize: theme.fontSize.extraSmall
   }
 }: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
   return (
-    <BrandThemeContext.Consumer>
-      {brandTheme => (
-        <View style={styles.container}>
-          <View style={[styles.badge, style]}>
-            <Text
-              testID={testID}
-              style={[
-                label,
-                labelStyle,
-                {
-                  color: brandTheme.colors.primary
-                }
-              ]}
-            >
-              {label}
-            </Text>
-          </View>
-        </View>
-      )}
-    </BrandThemeContext.Consumer>
+    <View style={styles.container}>
+      <View style={[styles.badge, style]}>
+        <Text
+          testID={testID}
+          style={[
+            label,
+            labelStyle,
+            {
+              color: brandTheme.colors.primary
+            }
+          ]}
+        >
+          {label}
+        </Text>
+      </View>
+    </View>
   );
 };
 

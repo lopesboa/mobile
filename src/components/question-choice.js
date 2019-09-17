@@ -83,68 +83,61 @@ const QuestionChoice = ({
   testID: prefixTestID,
   style,
   questionType
-}: Props) => (
-  <BrandThemeContext.Consumer>
-    {brandTheme => {
-      const selectedStyle = {
-        backgroundColor: brandTheme.colors.primary,
-        borderColor: brandTheme.colors.primary
-      };
+}: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
+  const selectedStyle = {
+    backgroundColor: brandTheme.colors.primary,
+    borderColor: brandTheme.colors.primary
+  };
 
-      const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
-      const mediaType =
-        media && media.type && media.type === MEDIA_TYPE.IMAGE && media.type.toLowerCase();
-      const mediaUri =
-        media &&
-        media.type === MEDIA_TYPE.IMAGE &&
-        media.src &&
-        media.src.length > 0 &&
-        getCleanUri(media.src[0].url);
+  const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';
+  const mediaType =
+    media && media.type && media.type === MEDIA_TYPE.IMAGE && media.type.toLowerCase();
+  const mediaUri =
+    media &&
+    media.type === MEDIA_TYPE.IMAGE &&
+    media.src &&
+    media.src.length > 0 &&
+    getCleanUri(media.src[0].url);
 
-      const mediaSuffix = prefixTestID && mediaType ? `-${mediaType}` : '';
-
-      return (
-        <Touchable
-          onPress={!isDisabled ? onPress : undefined}
-          style={style}
-          analyticsID="question-choice"
-          analyticsParams={{questionType}}
-        >
-          <View
-            style={[styles.container]}
-            testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
-          >
-            {mediaUri && (
-              <View style={[styles.imageContainer]}>
-                <Resource
-                  testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
-                  type={RESOURCE_TYPE.IMG}
-                  url={mediaUri}
-                  style={styles.image}
-                  resizeMode="contain"
-                  containerStyle={styles.layoutContainer}
-                />
-              </View>
-            )}
-            <View
-              style={[
-                styles.textContainer,
-                squeezed && styles.squeezedTextContainer,
-                isSelected && selectedStyle
-              ]}
-            >
-              <Html
-                fontSize={squeezed ? theme.fontSize.medium : theme.fontSize.regular}
-                style={[styles.text, isSelected && styles.textSelected]}
-              >
-                {children}
-              </Html>
-            </View>
+  const mediaSuffix = prefixTestID && mediaType ? `-${mediaType}` : '';
+  return (
+    <Touchable
+      onPress={!isDisabled ? onPress : undefined}
+      style={style}
+      analyticsID="question-choice"
+      analyticsParams={{questionType}}
+    >
+      <View style={[styles.container]} testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}>
+        {mediaUri && (
+          <View style={[styles.imageContainer]}>
+            <Resource
+              testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
+              type={RESOURCE_TYPE.IMG}
+              url={mediaUri}
+              style={styles.image}
+              resizeMode="contain"
+              containerStyle={styles.layoutContainer}
+            />
           </View>
-        </Touchable>
-      );
-    }}
-  </BrandThemeContext.Consumer>
-);
+        )}
+        <View
+          style={[
+            styles.textContainer,
+            squeezed && styles.squeezedTextContainer,
+            isSelected && selectedStyle
+          ]}
+        >
+          <Html
+            fontSize={squeezed ? theme.fontSize.medium : theme.fontSize.regular}
+            style={[styles.text, isSelected && styles.textSelected]}
+          >
+            {children}
+          </Html>
+        </View>
+      </View>
+    </Touchable>
+  );
+};
 
 export default QuestionChoice;

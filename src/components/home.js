@@ -70,41 +70,36 @@ const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
       </View>
     );
   }
+  const brandTheme = React.useContext(BrandThemeContext);
 
   return (
     <View style={styles.container} testID="home">
-      <BrandThemeContext.Consumer>
-        {brandTheme => (
-          <React.Fragment>
-            <Gradient
-              height={HEADER_HEIGHT + theme.spacing.small}
-              colors={[theme.colors.white]}
-              transparencyPosition="bottom"
-              style={styles.gradient}
-            />
-            <Catalog onCardPress={onCardPress} containerStyle={styles.catalog}>
-              <Version style={styles.version} />
-            </Catalog>
-            <View style={styles.header}>
-              <Touchable
-                testID="home-logo"
-                onLongPress={onLogoLongPress}
-                analyticsID="sign-out"
-                isWithoutFeedback
-              >
-                <ImageBackground
-                  style={styles.logo}
-                  testID="brand-logo"
-                  source={{
-                    uri: brandTheme.images['logo-mobile']
-                  }}
-                  resizeMode="contain"
-                />
-              </Touchable>
-            </View>
-          </React.Fragment>
-        )}
-      </BrandThemeContext.Consumer>
+      <Gradient
+        height={HEADER_HEIGHT + theme.spacing.small}
+        colors={[theme.colors.white]}
+        transparencyPosition="bottom"
+        style={styles.gradient}
+      />
+      <Catalog onCardPress={onCardPress} containerStyle={styles.catalog}>
+        <Version style={styles.version} />
+      </Catalog>
+      <View style={styles.header}>
+        <Touchable
+          testID="home-logo"
+          onLongPress={onLogoLongPress}
+          analyticsID="sign-out"
+          isWithoutFeedback
+        >
+          <ImageBackground
+            style={styles.logo}
+            testID="brand-logo"
+            source={{
+              uri: brandTheme.images['logo-mobile']
+            }}
+            resizeMode="contain"
+          />
+        </Touchable>
+      </View>
     </View>
   );
 };

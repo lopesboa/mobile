@@ -76,42 +76,39 @@ const QuestionSlider = ({
   onSlidingComplete,
   testID,
   onChange
-}: Props) => (
-  <View style={[styles.container, style]} testID={testID}>
-    <BrandThemeContext.Consumer>
-      {brandTheme => (
-        <React.Fragment>
-          <Text style={[styles.header, {color: brandTheme.colors.primary}]} testID="slider-value">
-            {value}
+}: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
+  return (
+    <View style={[styles.container, style]} testID={testID}>
+      <Text style={[styles.header, {color: brandTheme.colors.primary}]} testID="slider-value">
+        {value}
+      </Text>
+      <Slider
+        step={step || 1}
+        value={value}
+        onValueChange={onChange}
+        maximumValue={max}
+        minimumValue={min}
+        onSlidingComplete={onSlidingComplete}
+        minimumTrackTintColor={brandTheme.colors.primary}
+        trackStyle={styles.track}
+        thumbStyle={[styles.thumb, {borderColor: brandTheme.colors.primary}]}
+        testID="slider"
+      />
+      <View style={styles.valuesContainer} testID="slider-values-container">
+        <View style={styles.leftValue}>
+          <Text style={styles.textValue} testID="slider-min-value">
+            {`${min} ${unit}`}
           </Text>
-          <Slider
-            step={step || 1}
-            value={value}
-            onValueChange={onChange}
-            maximumValue={max}
-            minimumValue={min}
-            onSlidingComplete={onSlidingComplete}
-            minimumTrackTintColor={brandTheme.colors.primary}
-            trackStyle={styles.track}
-            thumbStyle={[styles.thumb, {borderColor: brandTheme.colors.primary}]}
-            testID="slider"
-          />
-        </React.Fragment>
-      )}
-    </BrandThemeContext.Consumer>
-    <View style={styles.valuesContainer} testID="slider-values-container">
-      <View style={styles.leftValue}>
-        <Text style={styles.textValue} testID="slider-min-value">
-          {`${min} ${unit}`}
-        </Text>
-      </View>
-      <View style={styles.rightValue}>
-        <Text style={styles.textValue} testID="slider-max-value">
-          {`${max} ${unit}`}
-        </Text>
+        </View>
+        <View style={styles.rightValue}>
+          <Text style={styles.textValue} testID="slider-max-value">
+            {`${max} ${unit}`}
+          </Text>
+        </View>
       </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default QuestionSlider;

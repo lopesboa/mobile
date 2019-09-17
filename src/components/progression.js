@@ -36,20 +36,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const Progression = ({current, count}: Props) => (
-  <View testID="progression">
-    <ProgressionBar current={current} count={count} />
-    <View style={styles.labelContainer}>
-      <View style={styles.label} testID="progression-label">
-        <BrandThemeContext.Consumer>
-          {brandTheme => (
-            <Text style={[styles.current, {color: brandTheme.colors.primary}]}>{current}</Text>
-          )}
-        </BrandThemeContext.Consumer>
-        <Text style={styles.count}>/{count}</Text>
+const Progression = ({current, count}: Props) => {
+  const brandTheme = React.useContext(BrandThemeContext);
+  return (
+    <View testID="progression">
+      <ProgressionBar current={current} count={count} />
+      <View style={styles.labelContainer}>
+        <View style={styles.label} testID="progression-label">
+          <Text style={[styles.current, {color: brandTheme.colors.primary}]}>{current}</Text>
+          <Text style={styles.count}>/{count}</Text>
+        </View>
       </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default Progression;
