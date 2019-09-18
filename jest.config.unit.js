@@ -52,7 +52,7 @@ module.exports = {
       statements: 52
     },
     'src/redux': {
-      branches: 96,
+      branches: 100,
       function: 100,
       lines: 100,
       statements: 100

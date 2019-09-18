@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {createArraySelector} from 'reselect-map';
 
 import CatalogComponent, {SEPARATOR_HEIGHT, HERO_HEIGHT} from '../components/catalog';
@@ -9,15 +10,17 @@ import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import {fetchSections} from '../redux/actions/catalog/sections';
 import type {StoreState} from '../redux/store';
-import {getSections, getSectionsRef} from '../redux/utils/state-extract';
+import {getSections, getSectionsRef, getHero} from '../redux/utils/state-extract';
 import translations from '../translations';
 import isEqual from '../modules/equal';
 import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import type {Section} from '../types';
+import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
 export type ConnectedStateProps = {|
+  hero?: DisciplineCard | ChapterCard,
   sections: Array<Section | void>
 |};
 
@@ -178,13 +181,19 @@ class Catalog extends React.Component<Props, State> {
   }
 }
 
-const getSectionsState = createArraySelector(
+const getHeroState: StoreState => DisciplineCard | ChapterCard | void = createSelector(
+  [getHero],
+  hero => hero
+);
+
+const getSectionsState: StoreState => Array<Section | void> = createArraySelector(
   [getSectionsRef, getSections],
   (sectionRef, sections) =>
     sectionRef && sections[sectionRef] && sections[sectionRef][translations.getLanguage()]
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
+  hero: getHeroState(state),
   sections: getSectionsState(state)
 });
 

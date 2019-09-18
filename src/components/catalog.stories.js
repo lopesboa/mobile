@@ -46,7 +46,7 @@ const chapterCard = createChapterCard({
 
 storiesOf('Catalog', module)
   .add('Default', () => (
-    <TestContextProvider store={{catalog: createCatalogState([], [])}}>
+    <TestContextProvider store={{catalog: createCatalogState({})}}>
       <Catalog
         sections={[]}
         onCardPress={handleFakePress}
@@ -56,7 +56,7 @@ storiesOf('Catalog', module)
     </TestContextProvider>
   ))
   .add('Refreshing', () => (
-    <TestContextProvider store={{catalog: createCatalogState([], [])}}>
+    <TestContextProvider store={{catalog: createCatalogState({})}}>
       <Catalog
         sections={[]}
         onCardPress={handleFakePress}
@@ -68,7 +68,12 @@ storiesOf('Catalog', module)
   ))
   .add('Sections with cards', () => (
     <TestContextProvider
-      store={{catalog: createCatalogState(sectionsWithCardsRef, [disciplineCard, chapterCard])}}
+      store={{
+        catalog: createCatalogState({
+          sections: sectionsWithCardsRef,
+          cards: [disciplineCard, chapterCard]
+        })
+      }}
     >
       <Catalog
         sections={sectionsWithCardsRef}
@@ -81,7 +86,10 @@ storiesOf('Catalog', module)
   .add('Sections with bad card refs', () => (
     <TestContextProvider
       store={{
-        catalog: createCatalogState(sectionsWithEmptyCardsRef, [disciplineCard, chapterCard])
+        catalog: createCatalogState({
+          sections: sectionsWithEmptyCardsRef,
+          cards: [disciplineCard, chapterCard]
+        })
       }}
     >
       <Catalog

@@ -59,7 +59,7 @@ const disciplineCardTwo = createDisciplineCard({
 
 describe('LevelEnd', () => {
   describe('Props', () => {
-    const catalog = createCatalogState([], [disciplineCardOne, disciplineCardTwo]);
+    const catalog = createCatalogState({cards: [disciplineCardOne, disciplineCardTwo]});
 
     it('should have learner props', () => {
       const {mapStateToProps} = require('./level-end');

@@ -4,16 +4,18 @@ import {createSections} from '../../__fixtures__/sections';
 import {createDisciplineCard} from '../../__fixtures__/cards';
 import {FETCH_SUCCESS as SECTIONS_FETCH_SUCCESS} from '../actions/catalog/sections';
 import {FETCH_SUCCESS as CARD_FETCH_SUCCESS} from '../actions/catalog/cards/fetch';
+import {FETCH_SUCCESS as HERO_FETCH_SUCCESS} from '../actions/catalog/hero';
 import {REFRESH as REFRESH_CARD} from '../actions/catalog/cards/refresh';
 import type {Action as SectionAction} from '../actions/catalog/sections';
 import type {Action as FetchAction} from '../actions/catalog/cards/fetch';
 import type {Action as SelectAction} from '../actions/catalog/cards/select';
 import type {Action as RefreshAction} from '../actions/catalog/cards/refresh';
+import type {Action as FetchHeroAction} from '../actions/catalog/hero';
 import reducer, {reduceCards, reduceSections} from './catalog';
 
 import type {State} from './catalog';
 
-type Action = SectionAction | FetchAction | SelectAction | RefreshAction;
+type Action = SectionAction | FetchAction | SelectAction | RefreshAction | FetchHeroAction;
 
 const dis1 = createDisciplineCard({
   ref: 'dis1',
@@ -102,6 +104,35 @@ describe('Catalog', () => {
       };
       expect(result).toEqual(expected);
     });
+
+    it('With already fetched section', () => {
+      const action: Action = {
+        type: SECTIONS_FETCH_SUCCESS,
+        payload: {
+          offset: 1,
+          limit: 2,
+          total: 4,
+          items: sections,
+          language: 'en'
+        }
+      };
+      const initialState: State = {
+        ...expectedInitialState,
+        entities: {
+          ...expectedInitialState.entities,
+          sections: reduceSectionsExpected
+        }
+      };
+      const result = reducer(initialState, action);
+      const expected: State = {
+        sectionsRef: [undefined, sections[0].key, sections[1].key, undefined],
+        entities: {
+          cards: {},
+          sections: reduceSectionsExpected
+        }
+      };
+      expect(result).toEqual(expected);
+    });
   });
 
   describe(CARD_FETCH_SUCCESS, () => {
@@ -134,6 +165,44 @@ describe('Catalog', () => {
           }
         }
       };
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe(HERO_FETCH_SUCCESS, () => {
+    it('Default', () => {
+      const action: Action = {
+        type: HERO_FETCH_SUCCESS,
+        payload: {
+          item: dis1,
+          language: 'en'
+        }
+      };
+      const result = reducer(undefined, action);
+      const expected: State = {
+        heroRef: dis1.universalRef,
+        entities: {
+          cards: {
+            dis1: {
+              en: dis1
+            }
+          },
+          sections: {}
+        }
+      };
+      expect(result).toEqual(expected);
+    });
+
+    it('Without item', () => {
+      const action: Action = {
+        type: HERO_FETCH_SUCCESS,
+        payload: {
+          language: 'en'
+        }
+      };
+      const result = reducer(undefined, action);
+      const expected = expectedInitialState;
+
       expect(result).toEqual(expected);
     });
   });

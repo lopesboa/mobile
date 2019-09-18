@@ -103,7 +103,7 @@ describe('CatalogSectionRefreshable', () => {
         (index === 2 && []) ||
         undefined
     }));
-    const catalog = createCatalogState(sectionsWithCardsRef, cards);
+    const catalog = createCatalogState({sections: sectionsWithCardsRef, cards});
 
     it('should get all props', () => {
       const sectionRef = sections[0].key;

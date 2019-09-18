@@ -29,6 +29,8 @@ import Recommendations from './recommendations';
 import type {ProgressionService} from './progressions';
 import type {SectionsService} from './sections';
 import Sections from './sections';
+import type {HeroService} from './hero';
+import Hero from './hero';
 
 export type Services = {|
   Analytics: AnalyticsService,
@@ -45,7 +47,8 @@ export type Services = {|
   Users: UsersService,
   Recommendations: typeof Recommendations,
   Sections: SectionsService,
-  Videos: VideosService
+  Videos: VideosService,
+  Hero: HeroService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -67,7 +70,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Users: Users(dataLayer),
   Sections: Sections(dataLayer),
   // $FlowFixMe datalayer definition error
-  Videos: Videos(dataLayer)
+  Videos: Videos(dataLayer),
+  Hero: Hero(dataLayer)
 });
 
 export default createServices;

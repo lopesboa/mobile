@@ -153,7 +153,8 @@ describe('storeFixture', () => {
     };
 
     const catalogState = {
-      sectionsRef: [],
+      heroRef: undefined,
+      sectionsRef: undefined,
       entities: {
         cards: {},
         sections: {}

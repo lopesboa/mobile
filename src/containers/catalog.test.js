@@ -137,7 +137,7 @@ describe('Catalog', () => {
   });
 
   describe('mapStateToProps', () => {
-    const catalog = createCatalogState(sectionsWithCardsRef.concat([undefined]), []);
+    const catalog = createCatalogState({sections: sectionsWithCardsRef.concat([undefined])});
 
     it('should get all props', () => {
       const levelRef = 'dummyRef';

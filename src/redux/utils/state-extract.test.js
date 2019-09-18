@@ -45,7 +45,9 @@ import {
   isGodModeUser,
   getSections,
   getSectionsRef,
-  getCards
+  getCards,
+  getHeroRef,
+  getHero
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -88,7 +90,8 @@ const createState = ({
   permissions,
   token,
   brand,
-  user
+  user,
+  heroRef
 }: {
   engine?: Engine,
   levelRef?: string,
@@ -100,7 +103,8 @@ const createState = ({
   permissions?: $ExtractReturn<typeof createPermissionsState>,
   token?: string | null,
   brand?: Brand | null,
-  user?: User | null
+  user?: User | null,
+  heroRef?: string
 }): StoreState =>
   createStoreState({
     levels: [createDefaultLevel(levelRef)],
@@ -115,7 +119,7 @@ const createState = ({
     }),
     godMode: true,
     fastSlide: true,
-    catalog: createCatalogState(sections, cards),
+    catalog: createCatalogState({sections, cards, heroRef}),
     permissions
   });
 
@@ -501,23 +505,18 @@ describe('State-extract', () => {
 
   describe('getCard', () => {
     it('should get card', () => {
-      const state = {
-        authentication: {
-          language: 'en'
-        },
-        catalog: {
-          entities: {
-            cards: {
-              foo: {
-                en: 'card'
-              }
-            }
-          }
-        }
-      };
+      const card = createChapterCard({
+        ref: 'cha1',
+        completion: 0,
+        status: CARD_STATUS.ACTIVE,
+        title: 'First chapter'
+      });
+      const state = createState({
+        cards: [card]
+      });
       // $FlowFixMe
-      const result = getCard(state, 'foo', 'en');
-      expect(result).toEqual('card');
+      const result = getCard(state, 'cha1');
+      expect(result).toEqual(card);
     });
   });
 
@@ -760,6 +759,15 @@ describe('State-extract', () => {
 
       expect(result).toEqual(expected);
     });
+
+    it('should get empty array', () => {
+      const state = createState({});
+
+      const result = getSectionsRef(state);
+      const expected = [];
+
+      expect(result).toEqual(expected);
+    });
   });
 
   describe('getCards', () => {
@@ -795,6 +803,40 @@ describe('State-extract', () => {
           en: disciplineCard
         }
       };
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getHeroRef', () => {
+    it('should get ref', () => {
+      const heroRef = 'foo';
+      const state = createState({
+        heroRef
+      });
+
+      const result = getHeroRef(state);
+      const expected = heroRef;
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getHero', () => {
+    it('should get hero', () => {
+      const card = createChapterCard({
+        ref: 'cha1',
+        completion: 0,
+        status: CARD_STATUS.ACTIVE,
+        title: 'First chapter'
+      });
+      const state = createState({
+        cards: [card],
+        heroRef: 'cha1'
+      });
+
+      const result = getHero(state);
+      const expected = card;
 
       expect(result).toEqual(expected);
     });

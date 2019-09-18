@@ -4,14 +4,17 @@ import type {Action as FetchCardAction} from '../actions/catalog/cards/fetch';
 import type {Action as SelectCardAction} from '../actions/catalog/cards/select';
 import type {Action as RefreshCardAction} from '../actions/catalog/cards/refresh';
 import type {Action as SectionAction} from '../actions/catalog/sections';
+import type {Action as HeroAction} from '../actions/catalog/hero';
 import {FETCH_SUCCESS as FETCH_SECTIONS_SUCCESS} from '../actions/catalog/sections';
 import {FETCH_SUCCESS as FETCH_CARDS_SUCCESS} from '../actions/catalog/cards/fetch';
 import {REFRESH as REFRESH_CARD} from '../actions/catalog/cards/refresh';
+import {FETCH_SUCCESS as FETCH_HERO_SUCCESS} from '../actions/catalog/hero';
 import type {DisciplineCard, ChapterCard} from '../../layer/data/_types';
 import type {SupportedLanguage} from '../../translations/_types';
 import type {Section} from '../../types';
 
 export type State = {|
+  heroRef?: string,
   sectionsRef?: Array<string | void>,
   entities: {
     cards: {
@@ -108,7 +111,7 @@ export const reduceSectionsRef = (
 
 const reducer = (
   state: State = initialState,
-  action: FetchCardAction | RefreshCardAction | SelectCardAction | SectionAction
+  action: FetchCardAction | RefreshCardAction | SelectCardAction | SectionAction | HeroAction
 ): State => {
   switch (action.type) {
     case FETCH_SECTIONS_SUCCESS: {
@@ -177,6 +180,23 @@ const reducer = (
         }
       };
     }
+
+    case FETCH_HERO_SUCCESS: {
+      const {language, item} = action.payload;
+
+      return {
+        ...state,
+        heroRef: (item && item.universalRef) || undefined,
+        entities: {
+          ...state.entities,
+          cards: {
+            ...state.entities.cards,
+            ...(item ? reduceCards([item], language) : {})
+          }
+        }
+      };
+    }
+
     default:
       return state;
   }

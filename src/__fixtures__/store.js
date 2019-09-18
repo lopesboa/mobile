@@ -75,11 +75,20 @@ export const createMapObject = <T: MappableObject>(items: Array<T>): {[key: stri
   return items.reduce(reduceToMappedObject, {});
 };
 
-export const createCatalogState = (
-  sections?: Array<Section | void> = [],
-  cards?: Array<DisciplineCard | ChapterCard> = []
-): CatalogState => ({
-  sectionsRef: sections.map(section => (section ? section.key : undefined)),
+export const createCatalogState = ({
+  heroRef,
+  sections = [],
+  cards = []
+}: {
+  heroRef?: string,
+  sections?: Array<Section | void>,
+  cards?: Array<DisciplineCard | ChapterCard>
+}): CatalogState => ({
+  heroRef,
+  sectionsRef:
+    sections && sections.length > 1
+      ? sections.map(section => (section ? section.key : undefined))
+      : undefined,
   entities: {
     sections: sections.reduce((result, section) => {
       if (section) {
@@ -303,7 +312,7 @@ export const createStoreState = ({
   ui: ui || createUiState({}),
   error: error || createErrorState({}),
   navigation: navigation || createNavigationState(),
-  catalog: catalog || createCatalogState(),
+  catalog: catalog || createCatalogState({}),
   permissions: permissions || createPermissionsState({}),
   authentication: authentication || createAuthenticationState({}),
   godMode,
