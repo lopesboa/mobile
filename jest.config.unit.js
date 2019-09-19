@@ -42,14 +42,10 @@ module.exports = {
       statements: 46
     },
     'src/screens': {
-      // @todo increase this value
-      branches: 61,
-      // @todo increase this value
-      functions: 56,
-      // @todo increase this value
-      lines: 51,
-      // @todo increase this value
-      statements: 52
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100
     },
     'src/redux': {
       branches: 100,

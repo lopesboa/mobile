@@ -16,7 +16,8 @@ import Loader from './loader';
 type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onLogoLongPress: () => void,
-  isFetching: boolean
+  isFetching: boolean,
+  testID?: string
 |};
 
 const LOGO_HEIGHT = 35;
@@ -62,19 +63,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, onLogoLongPress, isFetching}: Props) => {
+const Home = ({onCardPress, onLogoLongPress, isFetching, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
 
   if (isFetching) {
     return (
-      <View style={styles.loaderContainer} testID="home">
+      <View style={styles.loaderContainer} testID={testID}>
         <Loader />
       </View>
     );
   }
 
   return (
-    <View style={styles.container} testID="home">
+    <View style={styles.container} testID={testID}>
       <Gradient
         height={HEADER_HEIGHT + theme.spacing.small}
         colors={[theme.colors.white]}

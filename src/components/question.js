@@ -36,7 +36,8 @@ export type Props = {|
   max?: $PropertyType<QuestionChoicesProps, 'max'>,
   unit?: $PropertyType<QuestionChoicesProps, 'unit'>,
   value?: $PropertyType<QuestionChoicesProps, 'value'>,
-  step?: $PropertyType<QuestionChoicesProps, 'step'>
+  step?: $PropertyType<QuestionChoicesProps, 'step'>,
+  testID?: string
 |};
 
 export type State = {|
@@ -94,7 +95,8 @@ const Question = ({
   max,
   unit,
   step,
-  value
+  value,
+  testID
 }: Props) => {
   if (!type || !header || !explanation) {
     return (
@@ -124,7 +126,7 @@ const Question = ({
 
   return (
     <KeyboardAwareScrollView
-      testID="question"
+      testID={testID}
       contentContainerStyle={styles.container}
       enableOnAndroid
     >

@@ -35,7 +35,6 @@ exports[`Storyshots Question BasicQuestion 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -452,7 +451,6 @@ exports[`Storyshots Question Option selected 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -1061,7 +1059,6 @@ exports[`Storyshots Question QCM 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -1679,7 +1676,6 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -2342,7 +2338,6 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -2979,7 +2974,6 @@ exports[`Storyshots Question QCM Graphic 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -3885,7 +3879,6 @@ exports[`Storyshots Question Template 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -5415,7 +5408,6 @@ exports[`Storyshots Question With Video 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >
@@ -6293,7 +6285,6 @@ exports[`Storyshots Question With image 1`] = `
   scrollToFocusedInput={[Function]}
   scrollToPosition={[Function]}
   showsVerticalScrollIndicator={true}
-  testID="question"
   update={[Function]}
   viewIsInsideTabBar={false}
 >

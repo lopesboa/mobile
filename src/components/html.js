@@ -13,7 +13,7 @@ type Props = {|
   ...WithVibrationProps,
   children: string,
   fontSize: number,
-  onLinkPress?: () => void,
+  onLinkPress?: (url: string) => void,
   containerStyle?: ViewStyleProp,
   anchorTextColor?: string,
   imageStyle?: ImageStyleProp,
@@ -45,12 +45,13 @@ const styles = {
 class Html extends React.PureComponent<Props> {
   props: Props;
 
-  handleLinkPress = () => {
+  // eslint-disable-next-line flowtype/no-weak-types
+  handleLinkPress = (_: any, url: string) => {
     const {onLinkPress, vibration} = this.props;
 
     vibration.vibrate();
 
-    onLinkPress && onLinkPress();
+    onLinkPress && onLinkPress(url);
   };
 
   render() {

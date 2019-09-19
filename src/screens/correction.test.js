@@ -1,4 +1,7 @@
-// @flow strict
+// @flow
+
+import * as React from 'react';
+import renderer from 'react-test-renderer';
 
 import {createAnswer} from '../__fixtures__/answers';
 import {createQCM} from '../__fixtures__/questions';
@@ -11,7 +14,14 @@ import {createUiState, createDataState, createStoreState} from '../__fixtures__/
 import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../const';
 import type {ConnectedStateProps, OwnProps, Params} from './correction';
 
+// @todo understand why this container triggers hooks error
+jest.mock('../containers/cards-swipable', () => 'Mock$Cards');
+
 describe('Correction', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
   describe('Props', () => {
     const defaultProps: ConnectedStateProps = {
       answers: [],
@@ -667,5 +677,165 @@ describe('Correction', () => {
 
       expect(result).toEqual(props);
     });
+  });
+
+  it('should handle video play', () => {
+    const {Component: Correction} = require('./correction');
+
+    const play = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Correction navigation={navigation} play={play} isCorrect />);
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onVideoPlay();
+
+    expect(play).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle pdf button press', () => {
+    const {Component: Correction} = require('./correction');
+
+    const url = 'https://domain.tld';
+    const description = 'foo';
+    const play = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Correction navigation={navigation} play={play} />);
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onPDFButtonPress(url, description);
+
+    expect(play).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
+      title: description,
+      source: {uri: url}
+    });
+  });
+
+  it('should handle button press', () => {
+    const {Component: Correction} = require('./correction');
+
+    const selectCurrentProgression = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction navigation={navigation} selectCurrentProgression={selectCurrentProgression} />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Question');
+  });
+
+  it('should handle button press (oferring extra life)', () => {
+    const {Component: Correction} = require('./correction');
+
+    const refuseExtraLife = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction navigation={navigation} refuseExtraLife={refuseExtraLife} offeringExtraLife />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(refuseExtraLife).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Question');
+  });
+
+  it('should handle button press (consumed extra life)', () => {
+    const {Component: Correction} = require('./correction');
+
+    const acceptExtraLife = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction navigation={navigation} acceptExtraLife={acceptExtraLife} hasConsumedExtraLife />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(acceptExtraLife).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Question');
+  });
+
+  it('should handle button press (with context)', () => {
+    const {Component: Correction} = require('./correction');
+
+    const selectCurrentProgression = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction
+        navigation={navigation}
+        selectCurrentProgression={selectCurrentProgression}
+        hasContext
+      />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Context');
+  });
+
+  it('should handle button press (finished)', () => {
+    const {Component: Correction} = require('./correction');
+
+    const selectCurrentProgression = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction
+        navigation={navigation}
+        selectCurrentProgression={selectCurrentProgression}
+        isFinished
+        progressionId="42"
+      />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
+      isCorrect: true,
+      progressionId: '42'
+    });
+  });
+
+  it('should handle button press (finished without lives)', () => {
+    const {Component: Correction} = require('./correction');
+
+    const selectCurrentProgression = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction
+        navigation={navigation}
+        selectCurrentProgression={selectCurrentProgression}
+        isFinished
+        progressionId="1337"
+        lives={0}
+      />
+    );
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onButtonPress();
+
+    expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
+      isCorrect: false,
+      progressionId: '1337'
+    });
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 });

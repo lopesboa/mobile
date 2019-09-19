@@ -58,6 +58,7 @@ class HomeScreen extends React.PureComponent<Props> {
           onCardPress={this.handleCardPress}
           onLogoLongPress={this.handleLogoLongPress}
           isFetching={isFetching}
+          testID="home"
         />
       </Screen>
     );
@@ -78,6 +79,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   signOut
 };
 
+export {HomeScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -156,7 +156,8 @@ type Props = {|
   bestScore: string,
   nextContentType?: typeof CONTENT_TYPE.LEVEL | typeof CONTENT_TYPE.CHAPTER,
   nextContentLabel?: string,
-  recommendation: DisciplineCard | ChapterCard
+  recommendation: DisciplineCard | ChapterCard,
+  testID?: string
 |};
 
 class LevelEnd extends React.PureComponent<Props> {
@@ -187,7 +188,8 @@ class LevelEnd extends React.PureComponent<Props> {
       nextContentType,
       nextContentLabel = '',
       recommendation,
-      isFocused
+      isFocused,
+      testID = 'level-end'
     } = this.props;
 
     const header = (isSuccess && translations.congratulations) || translations.ooops;
@@ -216,11 +218,11 @@ class LevelEnd extends React.PureComponent<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <View style={styles.globalContainer}>
+          <View style={styles.globalContainer} testID={testID}>
             <ScrollView>
               <View
                 style={[styles.container, backgroundColor]}
-                testID={`level-end-${isSuccess ? 'success' : 'error'}`}
+                testID={`${testID}-${isSuccess ? 'success' : 'error'}`}
               >
                 <Starburst
                   style={styles.starburst}
@@ -229,16 +231,16 @@ class LevelEnd extends React.PureComponent<Props> {
                   backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
                 />
                 <View style={styles.header}>
-                  <Text style={styles.mainHeader} testID="level-end-header">
+                  <Text style={styles.mainHeader} testID={`${testID}-header`}>
                     {header}
                   </Text>
                   {!isSuccess && (
-                    <Text style={styles.subHeader} testID="level-end-subtitle">
+                    <Text style={styles.subHeader} testID={`${testID}-subtitle`}>
                       {translations.outOfLives}
                     </Text>
                   )}
                 </View>
-                <HeaderBackButton onPress={onClose} type="home" testID="level-end-button-close" />
+                <HeaderBackButton onPress={onClose} type="home" testID={`${testID}-button-close`} />
                 {isSuccess ? (
                   <Trophy style={[styles.icon, {height: screenWidth}]} />
                 ) : (

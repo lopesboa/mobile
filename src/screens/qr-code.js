@@ -17,7 +17,8 @@ import withPermissions from '../containers/with-permissions';
 import {getPermissionStatus} from '../redux/utils/state-extract';
 import type {WithPermissionsProps} from '../containers/with-permissions';
 import translations from '../translations';
-import {__DEV__, __E2E__, DEV_TOKEN} from '../modules/environment';
+import {__DEV__, __E2E__, __TEST__} from '../modules/environment';
+import {devToken} from '../../app';
 
 export type Params = {|
   onScan: $PropertyType<QRCodeScannerProps, 'onScan'>
@@ -54,7 +55,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
 
   handleFakeScan = () => {
     const {onScan} = this.props.navigation.state.params;
-    onScan(DEV_TOKEN);
+    onScan(devToken);
   };
 
   render() {
@@ -64,13 +65,14 @@ class QRCodeScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="qr-code-screen" noSafeArea noScroll>
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
-        <NavigationEvents onDidFocus={this.handleDidFocus} />
-        <QRCodeScanner onScan={onScan} hasPermission={hasPermission} />
-        {(__DEV__ || __E2E__) && (
+        <NavigationEvents onDidFocus={this.handleDidFocus} testID="qr-code-navigation-events" />
+        <QRCodeScanner onScan={onScan} hasPermission={hasPermission} testID="qr-code-scanner" />
+        {(__DEV__ || __E2E__ || __TEST__) && (
           <Touchable
             onLongPress={this.handleFakeScan}
             style={styles.fakeScanArea}
             analyticsID="qr-code-area"
+            testID="qr-code-area"
           />
         )}
         <HeaderBackButton type="close" onPress={this.handleClose} testID="qr-code-button-close" />
@@ -88,4 +90,5 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   hasPermission: getHasPermissionState(state)
 });
 
+export {QRCodeScreen as Component};
 export default connect(mapStateToProps)(withPermissions(QRCodeScreen, ['camera']));

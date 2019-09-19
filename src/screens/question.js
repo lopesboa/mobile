@@ -72,7 +72,7 @@ class QuestionScreen extends React.PureComponent<Props> {
   };
 
   handleChoiceInputChange = (item: Choice, value: string) => {
-    const {choices, userChoices = []} = this.props;
+    const {choices = [], userChoices = []} = this.props;
     const values = choices.map((choice, index) => {
       const currentValue = userChoices[index] !== undefined ? userChoices[index] : '';
 
@@ -131,6 +131,7 @@ class QuestionScreen extends React.PureComponent<Props> {
           unit={unit}
           step={step}
           value={value}
+          testID="question"
         />
       </Screen>
     );
@@ -236,6 +237,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   validateAnswer
 };
 
+export {QuestionScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

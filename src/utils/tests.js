@@ -13,9 +13,7 @@ import BrandThemeProvider from '../components/brand-theme-provider';
 import UserProvider from '../components/user-provider';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Layout} from '../containers/with-layout';
-import {VIBRATION_TYPE} from '../containers/with-vibration';
 import type {Vibration} from '../containers/with-vibration';
-import {AUDIO_FILE} from '../containers/with-audio';
 import type {Audio} from '../containers/with-audio';
 import type {AnalyticsState} from '../containers/with-analytics';
 
@@ -71,11 +69,24 @@ export const createFakeAnalytics = (): AnalyticsState => ({
 });
 
 export const createFakeVibration = (): Vibration => ({
-  VIBRATION_TYPE,
+  VIBRATION_TYPE: {
+    SELECTION: 'selection',
+    IMPACT_LIGHT: 'impactLight',
+    IMPACT_MEDIUM: 'impactMedium',
+    IMPACT_HEAVY: 'impactHeavy',
+    NOTIFICATION_SUCCESS: 'notificationSuccess',
+    NOTIFICATION_WARNING: 'notificationWarning',
+    NOTIFICATION_ERROR: 'notificationError'
+  },
   vibrate: __TEST__ ? jest.fn() : () => {}
 });
 
 export const createFakeAudio = (): Audio => ({
-  AUDIO_FILE,
+  AUDIO_FILE: {
+    WRONG_ANSWER: 0,
+    GOOD_ANSWER: 0,
+    FAILURE_LEVEL: 0,
+    SUCCESS_LEVEL: 0
+  },
   play: __TEST__ ? jest.fn() : () => {}
 });

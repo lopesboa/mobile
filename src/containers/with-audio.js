@@ -35,13 +35,13 @@ function withAudio<P>(
   const audio: Audio = {
     AUDIO_FILE,
     play: (soundFile: File) => {
-      const callback = (error, sound) => {
+      const callback = (error, _player) => {
         if (error) {
           return;
         }
 
-        sound.play(() => {
-          sound.release();
+        _player.play(() => {
+          _player.release();
         });
       };
 

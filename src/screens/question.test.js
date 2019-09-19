@@ -1,5 +1,9 @@
-// @flow strict
+// @flow
 
+import * as React from 'react';
+import renderer from 'react-test-renderer';
+
+import {createNavigation} from '../__fixtures__/navigation';
 import {createAnswer} from '../__fixtures__/answers';
 import {
   createQCM,
@@ -9,6 +13,7 @@ import {
   createQCMDrag,
   createBasicQuestion
 } from '../__fixtures__/questions';
+import {choices} from '../__fixtures__/question-choices';
 import {createSlide} from '../__fixtures__/slides';
 import {createProgression} from '../__fixtures__/progression';
 import {createUiState, createStoreState} from '../__fixtures__/store';
@@ -390,6 +395,103 @@ describe('Question', () => {
       };
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  it('should handle choice press', () => {
+    const {Component: Question} = require('./question');
+
+    const editAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onChoicePress(choices[0]);
+
+    expect(editAnswer).toHaveBeenCalledTimes(1);
+    expect(editAnswer).toHaveBeenCalledWith(choices[0]);
+  });
+
+  it('should handle slider change', () => {
+    const {Component: Question} = require('./question');
+
+    const editAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onSliderChange(42);
+
+    expect(editAnswer).toHaveBeenCalledTimes(1);
+    expect(editAnswer).toHaveBeenCalledWith('42');
+  });
+
+  it('should handle slider change', () => {
+    const {Component: Question} = require('./question');
+
+    const editAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onInputValueChange('foo');
+
+    expect(editAnswer).toHaveBeenCalledTimes(1);
+    expect(editAnswer).toHaveBeenCalledWith(['foo']);
+  });
+
+  it('should handle choice input change', () => {
+    const {Component: Question} = require('./question');
+
+    const editAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Question
+        navigation={navigation}
+        editAnswer={editAnswer}
+        choices={choices}
+        userChoices={[choices[0].value]}
+      />
+    );
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onChoiceInputChange(choices[2], choices[2].value);
+
+    expect(editAnswer).toHaveBeenCalledTimes(1);
+    expect(editAnswer).toHaveBeenCalledWith([choices[0].value, '', choices[2].value, '']);
+  });
+
+  it('should handle choice input change (empty props)', () => {
+    const {Component: Question} = require('./question');
+
+    const editAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onChoiceInputChange(choices[0], choices[0].value);
+
+    expect(editAnswer).toHaveBeenCalledTimes(1);
+    expect(editAnswer).toHaveBeenCalledWith([]);
+  });
+
+  it('should handle choice input change (empty props)', () => {
+    const {Component: Question} = require('./question');
+
+    const slideId = 'sli_foo';
+    const validateAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+    );
+
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onButtonPress();
+
+    expect(validateAnswer).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Correction', {
+      slideId
     });
   });
 });

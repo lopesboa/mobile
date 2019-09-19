@@ -65,7 +65,7 @@ class Lesson extends React.Component<Props> {
   };
 
   render() {
-    const {header, onChange, resources, selected, starsGranted} = this.props;
+    const {header, onChange, resources, selected, starsGranted, testID} = this.props;
     const openedResource = resources.find(resource => resource._id === selected);
 
     if (!selected || !openedResource) {
@@ -85,7 +85,7 @@ class Lesson extends React.Component<Props> {
             getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
 
           return (
-            <View testID="lesson" style={styles.container}>
+            <View testID={testID} style={styles.container}>
               <View style={styles.questionContainer}>
                 <QuestionTitle isTextCentered>{header}</QuestionTitle>
               </View>

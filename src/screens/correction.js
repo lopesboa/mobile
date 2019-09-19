@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
@@ -170,6 +170,7 @@ class CorrectionScreen extends React.PureComponent<Props> {
           isFastSlideEnabled={isFastSlideEnabled}
           onPDFButtonPress={this.handlePDFButtonPress}
           onVideoPlay={this.handleVideoPlay}
+          testID="correction"
         />
       </Screen>
     );
@@ -224,20 +225,18 @@ const getProgressionIdState = createSelector(
 
 const getAnswersState = createSelector(
   [getCurrentCorrection],
-  correction => (correction && correction.correctAnswer[0]) || []
+  correction => correction.correctAnswer[0] || []
 );
 
 const getUserAnswersState = createSelector(
   [getCurrentCorrection],
   correction => {
-    const corrections = (correction && correction.corrections) || [];
+    const userAnswers: Array<string> = correction.corrections
+      .filter(item => item.answer)
+      // $FlowFixMe item.answer is filtered if undefined
+      .map(item => item.answer);
 
-    return corrections.reduce((result, item) => {
-      if (item.answer) {
-        result.push(item.answer);
-      }
-      return result;
-    }, []);
+    return userAnswers;
   }
 );
 
@@ -327,6 +326,7 @@ export const mapDispatchToProps: ConnectedDispatchProps = {
   refuseExtraLife
 };
 
+export {CorrectionScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

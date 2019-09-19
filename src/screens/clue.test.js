@@ -1,4 +1,7 @@
-// @flow strict
+// @flow
+
+import * as React from 'react';
+import renderer from 'react-test-renderer';
 
 import {createEngineConfig} from '../__fixtures__/engine-config';
 import {createStoreState, createDataState} from '../__fixtures__/store';
@@ -6,6 +9,7 @@ import {createLevel} from '../__fixtures__/levels';
 import {createQCMGraphic} from '../__fixtures__/questions';
 import {createSlide} from '../__fixtures__/slides';
 import {createProgression} from '../__fixtures__/progression';
+import {createNavigation} from '../__fixtures__/navigation';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import {mapStateToProps} from './clue';
 import type {ConnectedStateProps} from './clue';
@@ -70,5 +74,20 @@ describe('Clue', () => {
     };
 
     expect(result).toEqual(expected);
+  });
+
+  it('should handle press', () => {
+    const {Component: Clue} = require('./clue');
+
+    const fetchClue = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Clue navigation={navigation} clue="Foo bar" fetchClue={fetchClue} />
+    );
+
+    const clue = component.root.find(el => el.props.testID === 'clue');
+    clue.props.onPress();
+
+    expect(fetchClue).toHaveBeenCalledTimes(1);
   });
 });

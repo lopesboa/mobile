@@ -10,11 +10,11 @@ import HeaderBackButton from '../components/header-back-button';
 import theme from '../modules/theme';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
-type Params = {|
+export type Params = {|
   url: string
 |};
 
-type Props = {|
+export type Props = {|
   ...ReactNavigation$ScreenPropsWithParams<Params>
 |};
 

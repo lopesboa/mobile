@@ -22,7 +22,7 @@ import type {Params as PdfScreenParams} from './pdf';
 
 export type ConnectedStateProps = {|
   header?: string,
-  resources?: Array<Resource>,
+  resources: Array<Resource>,
   currentResource?: string,
   starsGranted: number
 |};
@@ -66,17 +66,16 @@ class LessonScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="lesson-screen" noScroll>
         <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
-        {resources && (
-          <Lesson
-            header={header}
-            resources={resources}
-            starsGranted={starsGranted}
-            onChange={this.handleChange}
-            selected={selected}
-            onPDFButtonPress={this.handlePDFButtonPress}
-            onVideoPlay={this.handleVideoPlay}
-          />
-        )}
+        <Lesson
+          header={header}
+          resources={resources}
+          starsGranted={starsGranted}
+          onChange={this.handleChange}
+          selected={selected}
+          onPDFButtonPress={this.handlePDFButtonPress}
+          onVideoPlay={this.handleVideoPlay}
+          testID="lesson"
+        />
       </Screen>
     );
   }
@@ -118,6 +117,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectResource
 };
 
+export {LessonScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

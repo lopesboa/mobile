@@ -15,7 +15,7 @@ export type Params = {|
   source: File | {uri: string}
 |};
 
-type Props = {|
+export type Props = {|
   ...ReactNavigation$ScreenPropsWithParams<Params>
 |};
 

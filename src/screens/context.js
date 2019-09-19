@@ -11,6 +11,7 @@ import Screen from '../components/screen';
 import Context from '../components/context';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import type {Params as PdfScreenParams} from './pdf';
+import type {Params as BrowserScreenParams} from './browser';
 
 export type ConnectedStateProps = {|
   header?: string,
@@ -30,8 +31,11 @@ class ContextScreen extends React.PureComponent<Props> {
     this.props.navigation.navigate('Question');
   };
 
-  handleLinkPress = (_, url) => {
-    this.props.navigation.navigate('BrowserModal', {url});
+  handleLinkPress = (url: string) => {
+    const params: BrowserScreenParams = {
+      url
+    };
+    this.props.navigation.navigate('BrowserModal', params);
   };
 
   handlePDFButtonPress = (url: string, description: string) => {
@@ -84,4 +88,5 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   media: getContextMediaState(state)
 });
 
+export {ContextScreen as Component};
 export default connect(mapStateToProps)(ContextScreen);

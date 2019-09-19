@@ -7,7 +7,8 @@ import type {Event} from 'react-native-qrcode-scanner';
 
 export type Props = {|
   hasPermission: boolean,
-  onScan: (token?: string) => void
+  onScan: (token?: string) => void,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -28,10 +29,10 @@ class QRCodeScanner extends React.PureComponent<Props> {
   };
 
   render() {
-    const {hasPermission} = this.props;
+    const {hasPermission, testID} = this.props;
 
     return (
-      <Animated.View style={[styles.container, styles.camera]} testID="qr-code-scanner">
+      <Animated.View style={[styles.container, styles.camera]} testID={testID}>
         {hasPermission && (
           <QRCodeScannerBase
             onRead={this.handleRead}

@@ -19,7 +19,7 @@ export type Props = $Exact<{|
   header: string,
   description: string,
   onPress: () => void,
-  onLinkPress: () => void,
+  onLinkPress: (url: string) => void,
   onPDFButtonPress: (url: string, description: string) => void,
   testID?: string,
   media?: Media

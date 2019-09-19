@@ -4,16 +4,12 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {
-  getCurrentClue,
-  getClue,
-  getEngineConfig,
-  getCurrentSlide
-} from '@coorpacademy/player-store';
+import {getCurrentClue, getEngineConfig, getCurrentSlide} from '@coorpacademy/player-store';
 
 import Screen from '../components/screen';
 import Clue from '../components/clue';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
+import {fetchClue} from '../redux/actions/clues';
 
 export type ConnectedStateProps = {|
   header?: string,
@@ -23,7 +19,7 @@ export type ConnectedStateProps = {|
 |};
 
 export type ConnectedDispatchProps = {|
-  getClue: () => typeof getClue
+  fetchClue: typeof fetchClue
 |};
 
 type Props = $Exact<{|
@@ -35,9 +31,7 @@ type Props = $Exact<{|
 class ClueScreen extends React.PureComponent<Props> {
   props: Props;
 
-  handlePress = () => {
-    this.props.getClue();
-  };
+  handlePress = () => this.props.fetchClue();
 
   render() {
     const {header, clue, slideId, starsDiff} = this.props;
@@ -86,9 +80,10 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  getClue: () => getClue
+  fetchClue
 };
 
+export {ClueScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -1,5 +1,9 @@
-// @flow strict
+// @flow
 
+import * as React from 'react';
+import renderer from 'react-test-renderer';
+
+import {createNavigation} from '../__fixtures__/navigation';
 import {createEngineConfig} from '../__fixtures__/engine-config';
 import {createStoreState, createDataState} from '../__fixtures__/store';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
@@ -31,52 +35,142 @@ const slide = createSlide({
 });
 
 describe('Lesson', () => {
-  it('should return the accurate props', () => {
-    const progression = createProgression({
-      _id: 'progression1',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
-      },
-      state: {
-        nextContent: {
+  describe('props', () => {
+    it('should return default props', () => {
+      const progression = createProgression({
+        _id: 'progression1',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
           type: CONTENT_TYPE.SLIDE,
           ref: slideRef
         }
-      }
+      });
+
+      const store = createStoreState({
+        levels: [],
+        disciplines: [],
+        chapters: [],
+        slides: [],
+        progression
+      });
+
+      const result = mapStateToProps(store);
+      const expected: ConnectedStateProps = {
+        header: undefined,
+        resources: [],
+        currentResource: 'foo',
+        starsGranted: 0
+      };
+
+      expect(result).toEqual(expected);
     });
 
-    const chapters = [];
-    const disciplines = [];
-    const levels = [level];
-    const slides = [slide];
-    const store = createStoreState({
-      levels,
-      disciplines,
-      chapters,
-      slides,
-      progression,
-      data: createDataState({
-        levels,
-        slides,
-        chapters,
-        disciplines,
-        progression,
-        configs: {
-          'learner@2': createEngineConfig()
+    it('should return all props', () => {
+      const progression = createProgression({
+        _id: 'progression1',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.SLIDE,
+          ref: slideRef
+        },
+        state: {
+          nextContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: slideRef
+          }
         }
-      })
+      });
+
+      const chapters = [];
+      const disciplines = [];
+      const levels = [level];
+      const slides = [slide];
+      const store = createStoreState({
+        levels,
+        disciplines,
+        chapters,
+        slides,
+        progression,
+        data: createDataState({
+          levels,
+          slides,
+          chapters,
+          disciplines,
+          progression,
+          configs: {
+            'learner@2': createEngineConfig()
+          }
+        })
+      });
+
+      const result = mapStateToProps(store);
+      const expected: ConnectedStateProps = {
+        header: question.header,
+        resources: slide.lessons.map(mapToResource).filter(lesson => lesson.url),
+        currentResource: 'foo',
+        starsGranted: 1337
+      };
+
+      expect(result).toEqual(expected);
     });
+  });
 
-    const result = mapStateToProps(store);
-    const expected: ConnectedStateProps = {
-      header: question.header,
-      resources: slide.lessons.map(mapToResource).filter(lesson => lesson.url),
-      currentResource: 'foo',
-      starsGranted: 1337
-    };
+  it('should handle pdf button press', () => {
+    const {Component: Lesson} = require('./lesson');
 
-    expect(result).toEqual(expected);
+    const url = 'https://domain.tld';
+    const description = 'foo';
+    const play = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />
+    );
+
+    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    lesson.props.onPDFButtonPress(url, description);
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
+      title: description,
+      source: {uri: url}
+    });
+    expect(play).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle video play', () => {
+    const {Component: Lesson} = require('./lesson');
+
+    const play = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />
+    );
+
+    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    lesson.props.onVideoPlay();
+
+    expect(play).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle change', () => {
+    const {Component: Lesson} = require('./lesson');
+
+    const id = 'foo';
+    const selectResource = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Lesson
+        navigation={navigation}
+        selectResource={selectResource}
+        starsGranted={0}
+        resources={[pdf].map(mapToResource)}
+      />
+    );
+
+    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    lesson.props.onChange(id);
+
+    expect(selectResource).toHaveBeenCalledTimes(1);
+    expect(selectResource).toHaveBeenCalledWith(id);
   });
 });

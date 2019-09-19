@@ -91,6 +91,7 @@ describe('AuthenticationDetails', () => {
 
       button.props.onPress();
 
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
       expect(openInbox).toHaveBeenCalledTimes(0);
     });
 

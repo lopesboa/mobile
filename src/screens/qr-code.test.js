@@ -1,37 +1,124 @@
-// @flow strict
+// @flow
 
+import * as React from 'react';
+import renderer from 'react-test-renderer';
+
+import {createNavigation} from '../__fixtures__/navigation';
 import {createStoreState, createPermissionsState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
 import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS} from '../const';
-import {mapStateToProps} from './qr-code';
-import type {ConnectedStateProps} from './qr-code';
+import translations from '../translations';
+import {devToken} from '../../app';
+import type {ConnectedStateProps, Params} from './qr-code';
+
+const createParams = (): Params => ({
+  onScan: jest.fn()
+});
 
 describe('QR Code', () => {
-  it('should return the accurate props', () => {
-    const progression = createProgression({
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        type: CONTENT_TYPE.SLIDE,
-        ref: 'foo'
-      }
+  describe('props', () => {
+    it('should return the accurate props', () => {
+      const {mapStateToProps} = require('./qr-code');
+
+      const progression = createProgression({
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.SLIDE,
+          ref: 'foo'
+        }
+      });
+
+      const store = createStoreState({
+        levels: [],
+        disciplines: [],
+        chapters: [],
+        slides: [],
+        progression,
+        permissions: createPermissionsState({
+          camera: PERMISSION_STATUS.AUTHORIZED
+        })
+      });
+
+      const result = mapStateToProps(store);
+      const expected: ConnectedStateProps = {
+        hasPermission: true
+      };
+
+      expect(result).toEqual(expected);
     });
+  });
 
-    const store = createStoreState({
-      levels: [],
-      disciplines: [],
-      chapters: [],
-      slides: [],
-      progression,
-      permissions: createPermissionsState({
-        camera: PERMISSION_STATUS.AUTHORIZED
-      })
+  it('should handle back', () => {
+    const {Component: QRCode} = require('./qr-code');
+
+    const params = createParams();
+    const navigation = createNavigation({
+      params
     });
+    const component = renderer.create(<QRCode navigation={navigation} />);
 
-    const result = mapStateToProps(store);
-    const expected: ConnectedStateProps = {
-      hasPermission: true
-    };
+    const button = component.root.find(el => el.props.testID === 'qr-code-button-close');
+    button.props.onPress();
 
-    expect(result).toEqual(expected);
+    expect(navigation.dispatch).toHaveBeenCalledTimes(1);
+    expect(navigation.dispatch).toHaveBeenCalledWith('Mock$ReactNavigation$NavigationActions$Back');
+  });
+
+  it('should handle fake scan', () => {
+    const {Component: QRCode} = require('./qr-code');
+
+    const params = createParams();
+    const navigation = createNavigation({
+      params
+    });
+    const component = renderer.create(<QRCode navigation={navigation} />);
+
+    const touchable = component.root.find(el => el.props.testID === 'qr-code-area');
+    touchable.props.onLongPress();
+
+    expect(params.onScan).toHaveBeenCalledTimes(1);
+    expect(params.onScan).toHaveBeenCalledWith(devToken);
+  });
+
+  it('should handle scan', () => {
+    const {Component: QRCode} = require('./qr-code');
+
+    const token = 'foobar';
+    const params = createParams();
+    const navigation = createNavigation({
+      params
+    });
+    const component = renderer.create(<QRCode navigation={navigation} />);
+
+    const touchable = component.root.find(el => el.props.testID === 'qr-code-scanner');
+    touchable.props.onScan(token);
+
+    expect(params.onScan).toHaveBeenCalledTimes(1);
+    expect(params.onScan).toHaveBeenCalledWith(token);
+  });
+
+  it('should handle focus', () => {
+    const {Component: QRCode} = require('./qr-code');
+
+    const requestPermission = jest.fn();
+    const params = createParams();
+    const navigation = createNavigation({
+      params
+    });
+    const component = renderer.create(
+      <QRCode navigation={navigation} requestPermission={requestPermission} />
+    );
+
+    const navigationEvents = component.root.find(
+      el => el.props.testID === 'qr-code-navigation-events'
+    );
+    navigationEvents.props.onDidFocus();
+
+    expect(requestPermission).toHaveBeenCalledTimes(1);
+    expect(requestPermission).toHaveBeenCalledWith(
+      'camera',
+      translations.permissionCamera,
+      expect.any(Function)
+    );
   });
 });

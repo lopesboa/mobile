@@ -58,7 +58,7 @@ jobs:
           at: ~/app
       - run:
           name: Unit tests
-          command: yarn test:unit -i
+          command: yarn test:unit -i --forceExit
           environment:
             TZ: Europe/Paris
             JEST_JUNIT_OUTPUT: ./coverage/results/jest/results.xml
@@ -92,7 +92,7 @@ jobs:
             - ~/.config/yarn/global
 
       - restore_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -106,7 +106,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -222,7 +222,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -236,7 +236,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -429,7 +429,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -443,7 +443,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-watchman-v6-ios-{{ arch }}
+          key: brew-watchman-v7-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar

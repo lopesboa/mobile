@@ -3,27 +3,29 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 
-import {createFakeAudio} from '../utils/tests';
-import withAudio from './with-audio';
-import type {WithAudioProps} from './with-audio';
-
 describe('WithAudio', () => {
   it('should give props', () => {
+    const withAudio = jest.requireActual('./with-audio').default;
+
     const fakeComponent = jest.fn(() => null);
     // $FlowFixMe fake component
     const Component = withAudio(fakeComponent);
     renderer.create(<Component />);
 
-    const audio = createFakeAudio();
-    const props: WithAudioProps = {
+    const expected = {
       audio: {
-        ...audio,
+        AUDIO_FILE: {
+          WRONG_ANSWER: expect.any(Object),
+          GOOD_ANSWER: expect.any(Object),
+          FAILURE_LEVEL: expect.any(Object),
+          SUCCESS_LEVEL: expect.any(Object)
+        },
         // $FlowFixMe no callable signature found
         play: expect.any(Function)
       }
     };
 
     expect(fakeComponent).toHaveBeenCalledTimes(1);
-    expect(fakeComponent.mock.calls[0][0]).toEqual(props);
+    expect(fakeComponent.mock.calls[0][0]).toEqual(expected);
   });
 });

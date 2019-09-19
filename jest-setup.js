@@ -138,6 +138,14 @@ jest.mock('react-native-status-bar-height', () => ({
 
 jest.mock('./src/containers/with-layout');
 
+// ./src/containers/with-audio
+
+jest.mock('./src/containers/with-audio');
+
+// ./src/containers/with-vibration
+
+jest.mock('./src/containers/with-vibration');
+
 // react-native-email-link
 
 jest.mock('react-native-email-link', () => ({
@@ -147,8 +155,16 @@ jest.mock('react-native-email-link', () => ({
 // react-native-sound
 
 jest.mock('react-native-sound', () => ({
-  IsAndroid: true,
-  setCategory: () => {}
+  __esModule: true,
+  default: class {
+    static IsAndroid = true;
+
+    static setCategory = jest.fn();
+
+    play = jest.fn();
+
+    release = jest.fn();
+  }
 }));
 
 // react-native-haptic-feedback

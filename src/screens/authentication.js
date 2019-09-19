@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {Linking, StatusBar, StyleSheet, InteractionManager} from 'react-native';
+import {Linking, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import splashScreen from 'react-native-splash-screen';
@@ -68,10 +68,8 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
   hideSplashScreen = () => {
     // Because iOS automatically hides the splash screen
-    InteractionManager.runAfterInteractions(() => {
-      this.setState({
-        isSplashScreenHidden: true
-      });
+    this.setState({
+      isSplashScreenHidden: true
     });
 
     splashScreen.hide();
@@ -80,7 +78,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   handleSignOut = () => this.props.navigation.popToTop();
 
   handleSignIn = async (authenticationType: AuthenticationType, token?: string) => {
-    await this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('Home');
     await this.props.signIn(authenticationType, token);
   };
 
@@ -126,6 +124,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
             onHelpPress={this.handleHelpPress}
             onDesktopButtonPress={this.handleDesktopButtonPress}
             onMobileButtonPress={this.handleMobileButtonPress}
+            testID="authentication"
           />
         )}
         <ErrorListener onClose={this.handleSignOut} />
@@ -147,6 +146,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   signIn
 };
 
+export {AuthenticationScreen as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

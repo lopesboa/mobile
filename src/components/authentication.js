@@ -18,7 +18,8 @@ type Props = {|
   onHelpPress: $PropertyType<AuthenticationFooterProps, 'onHelpPress'>,
   onDemoPress: $PropertyType<AuthenticationFooterProps, 'onDemoPress'>,
   onDesktopButtonPress: () => void,
-  onMobileButtonPress: () => void
+  onMobileButtonPress: () => void,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -75,7 +76,8 @@ const Authentication = ({
   onHelpPress,
   onDemoPress,
   onDesktopButtonPress,
-  onMobileButtonPress
+  onMobileButtonPress,
+  testID
 }: Props) => (
   <React.Fragment>
     <ImageBackground
@@ -86,7 +88,7 @@ const Authentication = ({
       style={styles.background}
     />
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={[styles.container, styles.scroll]} testID="authentication">
+      <ScrollView contentContainerStyle={[styles.container, styles.scroll]} testID={testID}>
         <View style={styles.header} testID="authentication-header">
           <ImageBackground source={logo} style={styles.image} testID="authentication-logo" />
         </View>

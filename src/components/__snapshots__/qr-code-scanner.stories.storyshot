@@ -9,7 +9,6 @@ exports[`Storyshots QRCodeScanner Default 1`] = `
       "width": "100%",
     }
   }
-  testID="qr-code-scanner"
 />
 `;
 
@@ -22,7 +21,6 @@ exports[`Storyshots QRCodeScanner With permission 1`] = `
       "width": "100%",
     }
   }
-  testID="qr-code-scanner"
 >
   <View
     style={

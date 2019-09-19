@@ -5,7 +5,7 @@ import Modal from 'react-native-modal';
 import {Linking} from 'react-native';
 import {connect} from 'react-redux';
 
-import ErrorModalComponent from '../components/error-modal';
+import ErrorModal from '../components/error-modal';
 import type {ErrorType} from '../types';
 import {ERROR_TYPE} from '../const';
 import {hideModal, refresh} from '../redux/actions/ui/modal';
@@ -31,7 +31,7 @@ export type Props = {|
   onClose: () => void
 |};
 
-class ErrorModal extends React.PureComponent<Props> {
+class ErrorListener extends React.PureComponent<Props> {
   props: Props;
 
   handleAssistancePress = () => {
@@ -61,7 +61,7 @@ class ErrorModal extends React.PureComponent<Props> {
         onSwipeComplete={this.handleClose}
         onBackdropPress={this.handleClose}
       >
-        <ErrorModalComponent
+        <ErrorModal
           onClose={this.handleClose}
           onPress={this.handlePress}
           onAssistancePress={this.handleAssistancePress}
@@ -87,4 +87,4 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorModal);
+)(ErrorListener);

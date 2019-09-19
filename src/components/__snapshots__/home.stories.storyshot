@@ -8,7 +8,6 @@ exports[`Storyshots Home Default 1`] = `
       "paddingTop": 67,
     }
   }
-  testID="home"
 >
   <BVLinearGradient
     colors={
@@ -4481,7 +4480,6 @@ exports[`Storyshots Home Fetching 1`] = `
       "justifyContent": "center",
     }
   }
-  testID="home"
 >
   <View
     style={

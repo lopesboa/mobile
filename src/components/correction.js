@@ -122,7 +122,8 @@ type Props = $Exact<{|
   isGodModeEnabled?: boolean,
   isFastSlideEnabled?: boolean,
   onPDFButtonPress: (url: string, description: string) => void,
-  onVideoPlay: () => void
+  onVideoPlay: () => void,
+  testID?: string
 |}>;
 
 class Correction extends React.PureComponent<Props> {
@@ -308,7 +309,8 @@ class Correction extends React.PureComponent<Props> {
       isGodModeEnabled,
       isFastSlideEnabled,
       offeringExtraLife,
-      hasConsumedExtraLife
+      hasConsumedExtraLife,
+      testID = 'correction'
     } = this.props;
     const lives = hasConsumedExtraLife && _lives !== undefined ? _lives + 1 : _lives;
     const canGoNext = lives === undefined || lives > 0;
@@ -331,7 +333,7 @@ class Correction extends React.PureComponent<Props> {
           isLoading && styles.loaderContainer,
           !isLoading && (isCorrect ? styles.positive : styles.negative)
         ]}
-        testID={`correction-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
+        testID={`${testID}-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
       >
         {isLoading && <Loader />}
         {!isLoading && (
