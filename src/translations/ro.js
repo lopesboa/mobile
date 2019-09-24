@@ -71,6 +71,7 @@ const translations: Translations = {
     'în rețeaua dintre Saturn și Pământ. Te rugăm să reîmprospătezi pentru a te bucura de învățare.',
   refreshNotWorking: 'Nu merge reîmprospătarea?',
   relatedSubjects: 'Recomandări:',
+  resumeLearning: 'Continuați să învățați',
   retryChapter: 'Încercați din nou acest capitol',
   retryLevel: 'Încercați din nou acest nivel',
   scanQRCode: 'Scanează <b>codul QR</b>',

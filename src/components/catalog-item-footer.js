@@ -7,122 +7,201 @@ import {
   NovaCompositionCoorpacademyTimer,
   NovaSolidStatusCheckCircle2
 } from '@coorpacademy/nova-icons';
-import type {Progression} from '../types';
+
+import {CONTENT_TYPE, AUTHOR_TYPE, SPACE} from '../const';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import {getAuthor} from '../utils/content';
 import theme from '../modules/theme';
 import Text from './text';
 import ProgressionBar from './progression-bar';
+import Placeholder from './placeholder';
+import PlaceholderLine, {
+  LARGE_HEIGHT as PLACEHOLDER_LARGE_HEIGHT,
+  BASE_HEIGHT as PLACEHOLDER_BASE_HEIGHT,
+  SMALL_HEIGHT as PLACEHOLDER_SMALL_HEIGHT,
+  TINY_HEIGHT as PLACEHOLDER_TINY_HEIGHT
+} from './placeholder-line';
+import Space from './space';
 
 type Props = {|
-  title: string,
-  subtitle: string,
-  progression?: Progression,
-  isAdaptive: boolean,
-  isCertified?: boolean,
-  isCourse: boolean,
+  item?: ChapterCard | DisciplineCard,
   testID: string,
-  titleStyle?: TextStyleProp,
-  subtitleStyle?: TextStyleProp,
-  topIconSize?: number,
-  iconCertifiedSize?: number
+  size?: 'cover' | 'hero'
 |};
+
+export const PLACEHOLDER_COLOR = theme.colors.gray.lightMedium;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end'
   },
+  icons: {
+    flexDirection: 'row'
+  },
+  textCentered: {
+    textAlign: 'center'
+  },
   title: {
     color: theme.colors.white,
-    fontWeight: theme.fontWeight.bold,
-    paddingTop: theme.spacing.tiny
+    fontWeight: theme.fontWeight.bold
   },
   subtitleContainer: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'flex-start'
   },
   subtitle: {
     flex: 1,
     color: theme.colors.white,
-    fontWeight: theme.fontWeight.regular,
-    paddingBottom: theme.spacing.small,
-    paddingTop: theme.spacing.tiny
-  },
-  certified: {
-    paddingLeft: theme.spacing.tiny
+    fontWeight: theme.fontWeight.regular
   },
   progressionBar: {
     borderRadius: theme.radius.common,
     overflow: 'hidden'
+  },
+  progressionBarCentered: {
+    width: '60%',
+    alignSelf: 'center'
+  },
+  placeholder: {
+    // @todo to be removed once we got a proper placeholder-line component
+    height:
+      PLACEHOLDER_BASE_HEIGHT +
+      theme.spacing.tiny +
+      PLACEHOLDER_BASE_HEIGHT +
+      theme.spacing.base +
+      PLACEHOLDER_SMALL_HEIGHT +
+      theme.spacing.small +
+      PLACEHOLDER_TINY_HEIGHT
+  },
+  placeholderHero: {
+    // @todo to be removed once we got a proper placeholder-line component
+    height:
+      PLACEHOLDER_LARGE_HEIGHT +
+      theme.spacing.tiny +
+      PLACEHOLDER_LARGE_HEIGHT +
+      theme.spacing.base +
+      PLACEHOLDER_SMALL_HEIGHT +
+      theme.spacing.small +
+      PLACEHOLDER_TINY_HEIGHT
   }
 });
 
-const CatalogItemFooter = ({
-  title,
-  subtitle,
-  progression,
-  isAdaptive,
-  isCertified,
-  testID,
-  isCourse,
-  titleStyle = {
-    fontSize: theme.fontSize.regular
-  },
-  subtitleStyle = {
-    fontSize: theme.fontSize.small
-  },
-  topIconSize = 16,
-  iconCertifiedSize = 14
-}: Props) => {
-  const iconCertifiedMargin: number = -iconCertifiedSize / 2;
+const CatalogItemFooter = ({item, testID, size}: Props) => {
+  const isHero = size === 'hero';
 
-  return (
-    <View style={styles.container}>
-      {isAdaptive && (
-        <NovaCompositionCoorpacademyAdaptive
-          testID={`infinite-${testID}`}
-          color={theme.colors.white}
-          height={topIconSize}
-          width={topIconSize}
-        />
-      )}
-      {!isCourse && (
-        <NovaCompositionCoorpacademyTimer
-          testID={`infinite-${testID}`}
-          color={theme.colors.white}
-          height={topIconSize}
-          width={topIconSize}
-        />
-      )}
-      <Text testID={`title-${testID}`} style={[styles.title, titleStyle]}>
-        {title}
-      </Text>
-
-      <View style={styles.subtitleContainer}>
-        <Text testID={`subtitle-${testID}`} style={[styles.subtitle, subtitleStyle]}>
-          {subtitle}
-        </Text>
-        {isCertified && (
-          <View style={[styles.certified, {marginTop: iconCertifiedMargin}]}>
-            <NovaSolidStatusCheckCircle2
-              testID={`certified-${testID}`}
-              color={theme.colors.white}
-              height={iconCertifiedSize}
-              width={iconCertifiedSize}
+  if (!item) {
+    return (
+      <View style={styles.container} testID={`${testID}-placeholder`}>
+        <Placeholder style={[styles.placeholder, isHero && styles.placeholderHero]}>
+          <PlaceholderLine
+            size={(isHero && 'large') || 'base'}
+            width={(isHero && '85%') || '65%'}
+            color={PLACEHOLDER_COLOR}
+            isCentered={isHero}
+          />
+          <Space type={SPACE.TINY} />
+          <PlaceholderLine
+            size={(isHero && 'large') || 'base'}
+            width={(isHero && '65%') || '90%'}
+            color={PLACEHOLDER_COLOR}
+            isCentered={isHero}
+          />
+          <Space type={SPACE.BASE} />
+          <PlaceholderLine size="small" width="50%" color={PLACEHOLDER_COLOR} isCentered={isHero} />
+          <Space type={SPACE.SMALL} />
+          <View style={[styles.progressionBar, isHero && styles.progressionBarCentered]}>
+            <PlaceholderLine
+              size="tiny"
+              width="100%"
+              color={PLACEHOLDER_COLOR}
+              isCentered={isHero}
             />
           </View>
+        </Placeholder>
+      </View>
+    );
+  }
+
+  const titleFontSize =
+    (size && (size === 'hero' ? theme.fontSize.xxlarge : theme.fontSize.xlarge)) ||
+    theme.fontSize.regular;
+  const subtitleFontSize = (size && theme.fontSize.regular) || theme.fontSize.small;
+  const topIconSize = titleFontSize;
+  const iconCertifiedSize = subtitleFontSize * 1.1;
+
+  const author = getAuthor(item);
+  const subtitle = item.authors && item.authors.map(({label}) => label).join(', ');
+  const titleStyle = {fontSize: titleFontSize};
+  const subtitleStyle = {fontSize: subtitleFontSize};
+
+  return (
+    <View style={styles.container} testID={testID}>
+      <View style={styles.icons}>
+        {!isHero && item.type === CONTENT_TYPE.CHAPTER && (
+          <React.Fragment>
+            <NovaCompositionCoorpacademyTimer
+              testID={`infinite-${testID}`}
+              color={theme.colors.white}
+              height={topIconSize}
+              width={topIconSize}
+            />
+            <Space />
+          </React.Fragment>
+        )}
+        {!isHero && item.adaptiv && (
+          <NovaCompositionCoorpacademyAdaptive
+            testID={`infinite-${testID}`}
+            color={theme.colors.white}
+            height={topIconSize}
+            width={topIconSize}
+          />
         )}
       </View>
-      {progression && (
-        <View style={styles.progressionBar} testID={`progressBar-${testID}`}>
-          <ProgressionBar
-            current={progression.current}
-            count={progression.count}
-            height={2}
-            backgroundColor={theme.colors.white}
-            isInnerRounded
-          />
-        </View>
+      <Space type="tiny" />
+      <Text
+        testID={`title-${testID}`}
+        style={[styles.title, titleStyle, isHero && styles.textCentered]}
+      >
+        {item.title}
+      </Text>
+      {subtitle && (
+        <React.Fragment>
+          <Space type="tiny" />
+          <View style={styles.subtitleContainer}>
+            <Text
+              testID={`subtitle-${testID}`}
+              style={[styles.subtitle, subtitleStyle, isHero && styles.textCentered]}
+            >
+              {subtitle}
+            </Text>
+            {author && author.authorType === AUTHOR_TYPE.VERIFIED && size !== 'hero' && (
+              <React.Fragment>
+                <Space type="tiny" />
+                <NovaSolidStatusCheckCircle2
+                  testID={`certified-${testID}`}
+                  color={theme.colors.white}
+                  height={iconCertifiedSize}
+                  width={iconCertifiedSize}
+                />
+              </React.Fragment>
+            )}
+          </View>
+        </React.Fragment>
       )}
+      <Space type="small" />
+      <View
+        style={[styles.progressionBar, isHero && styles.progressionBarCentered]}
+        testID={`progress-bar-${testID}`}
+      >
+        <ProgressionBar
+          current={item.completion}
+          count={1}
+          height={isHero ? 3 : 2}
+          backgroundColor={theme.colors.white}
+          isInnerRounded
+        />
+      </View>
     </View>
   );
 };

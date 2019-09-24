@@ -70,6 +70,7 @@ const translations: Translations = {
     'In het netwerk tussen Saturnus en de aarde, vernieuw dit om te genieten van het leren',
   refreshNotWorking: 'Vernieuwen werkt niet?',
   relatedSubjects: 'Aanbevolen voor jou:',
+  resumeLearning: 'Ga verder met leren',
   retryChapter: 'Probeer hoofdstuk opnieuw',
   retryLevel: 'Probeer dit niveau opnieuw',
   scanQRCode: 'Scan uw <b>QR-code</b>',

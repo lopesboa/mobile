@@ -7,13 +7,15 @@ import {
   getQuestionTab,
   tapCardOnSection,
   waitForExist,
-  wrongAnswer
+  wrongAnswer,
+  scrollHero
 } from './utils';
 
 describe('Progression bar', () => {
   beforeAll(async () => {
     await reloadApp({}, true);
     await bypassAuthentication();
+    await scrollHero();
   });
 
   it('should open a question see a progression bar', async () => {
@@ -40,13 +42,15 @@ describe('Progression bar', () => {
         by
           .type('RCTView')
           .and(by.id('progression-bar-0.08333333333333333'))
-          .withAncestor(by.id('progressBar-catalog-section-recommended-item-basic-dis-1'))
+          .withAncestor(by.id('catalog-section-recommended-item-basic-dis-1'))
       )
     ).toBeVisible();
   });
-  describe('ProgressBar - App Reload', () => {
+
+  describe('Persistency', () => {
     beforeAll(async () => {
       await reloadApp();
+      await scrollHero();
     });
 
     it('should save progress bar to its state before reloading the app', async () => {
@@ -55,7 +59,7 @@ describe('Progression bar', () => {
           by
             .type('RCTView')
             .and(by.id('progression-bar-0.08333333333333333'))
-            .withAncestor(by.id('progressBar-catalog-section-recommended-item-basic-dis-1'))
+            .withAncestor(by.id('catalog-section-recommended-item-basic-dis-1'))
         )
       ).toBeVisible();
     });

@@ -1,9 +1,13 @@
 // @flow strict
 
-import {createDisciplineCard, createCardLevel, createChapterCard} from '../__fixtures__/cards';
+import {
+  createDisciplineCard,
+  createCardLevel,
+  createChapterCard,
+  createCardAuthor
+} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
-import {AUTHOR_TYPE} from '../const';
-import {compareCards, pickNextCardLevel, getAuthorName, getAuthorType} from './content';
+import {compareCards, pickNextCardLevel, getAuthor} from './content';
 
 describe('Content', () => {
   describe('pickNextCardLevel', () => {
@@ -204,35 +208,20 @@ describe('Content', () => {
     });
   });
 
-  describe('getAuthorName', () => {
+  describe('getAuthor', () => {
+    const author = createCardAuthor({});
     const disciplineCard = createDisciplineCard({
       title: 'dis_1',
       ref: 'dis_1',
       completion: 0,
       levels: [],
-      name: 'dis_1'
+      name: 'dis_1',
+      authors: [author]
     });
 
-    it('should return the author name', () => {
-      const result = getAuthorName(disciplineCard);
-      const expected = 'A good guy with blue eyes';
-
-      expect(result).toEqual(expected);
-    });
-  });
-
-  describe('getAuthorType', () => {
-    const disciplineCard = createDisciplineCard({
-      title: 'dis_1',
-      ref: 'dis_1',
-      completion: 0,
-      levels: [],
-      name: 'dis_1'
-    });
-
-    it('should return the author type', () => {
-      const result = getAuthorType(disciplineCard);
-      const expected = AUTHOR_TYPE.VERIFIED;
+    it('should return the author', () => {
+      const result = getAuthor(disciplineCard);
+      const expected = author;
 
       expect(result).toEqual(expected);
     });

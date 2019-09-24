@@ -19,7 +19,7 @@ const translations: Translations = {
   authenticationQRCodeStepTwoDescription:
     "Allez sur <b>votre compte</b> </br>dans l'angle supérieur droit",
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà !</b></br>Scannez votre QR code en utilisant le bouton ci-dessous  ',
+    '<b>Voilà !</b></br>Scannez votre QR code en utilisant le bouton ci-dessous',
   authenticationQRCodeTitle: 'QR Code',
   askForHelp: "Demander de l'aide",
   backToHome: 'Accueil',
@@ -72,6 +72,7 @@ const translations: Translations = {
     'dans le réseau entre Saturne et la Terre, veuillez rafraîchir pour continuer à apprendre',
   refreshNotWorking: 'Ça ne fonctionne pas ?',
   relatedSubjects: 'Recommandé pour vous : ',
+  resumeLearning: 'Continuez à apprendre',
   retryChapter: 'Réessayez ce chapitre',
   retryLevel: 'Réessayez ce niveau',
   scanQRCode: 'Scannez votre <b>QR Code</b>',
@@ -91,7 +92,7 @@ const translations: Translations = {
   unlockNextLevel: 'Vous venez de débloquer<br><b>le niveau {{levelName}}</b>',
   upgrade: 'Mise à jour',
   upgradeDescription:
-    'Votre application a été mise à jour ! Veuillez télécharger la dernière version pour en bénéficier. ',
+    'Votre application a été mise à jour ! Veuillez télécharger la dernière version pour en bénéficier.',
   winAdditionalStars:
     'Gagnez {{count}} étoiles supplémentaires par chapitre en consultant la leçon !',
   welcome: 'Bonjour',

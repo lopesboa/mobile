@@ -3135,36 +3135,32 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -4486,34 +4482,30 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -7287,36 +7279,32 @@ exports[`Storyshots Correction Bad answer 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -9011,34 +8999,30 @@ exports[`Storyshots Correction Bad answer 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -14834,34 +14818,30 @@ exports[`Storyshots Correction Extralife 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-quit-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                false,
-                undefined,
-                Object {
-                  "color": "#FFFFFF",
-                },
-                undefined,
-                undefined,
-              ],
+              false,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -16950,36 +16930,32 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -19348,34 +19324,30 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -22149,36 +22121,32 @@ exports[`Storyshots Correction Game over 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -23873,34 +23841,30 @@ exports[`Storyshots Correction Game over 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-quit-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -27483,36 +27447,32 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -28369,34 +28329,30 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -30961,36 +30917,32 @@ exports[`Storyshots Correction Right answer 1`] = `
                                 "justifyContent": "center",
                                 "marginBottom": 0,
                                 "opacity": 1,
+                                "paddingHorizontal": 24,
                               }
                             }
                             testID="card-resource-les_2-resource-preview-pdf-button-native"
                           >
                             <Text
+                              numberOfLines={1}
                               style={
                                 Array [
                                   Object {
-                                    "backgroundColor": "transparent",
-                                    "flex": 1,
-                                    "fontSize": 18,
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
                                     "textAlign": "center",
                                   },
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "fontSize": 17,
-                                      "fontWeight": "700",
-                                      "textAlign": "center",
-                                    },
-                                    Object {
-                                      "color": "#546E7A",
-                                    },
-                                    undefined,
-                                    Object {
-                                      "color": "#FFFFFF",
-                                    },
-                                    undefined,
-                                    undefined,
-                                  ],
+                                  Object {
+                                    "color": "#546E7A",
+                                  },
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                  },
+                                  undefined,
+                                  undefined,
+                                  undefined,
+                                  undefined,
                                 ]
                               }
                             >
@@ -32865,34 +32817,30 @@ exports[`Storyshots Correction Right answer 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -35179,34 +35127,30 @@ exports[`Storyshots Correction Without resource 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >

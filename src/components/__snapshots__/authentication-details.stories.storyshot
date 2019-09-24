@@ -1597,6 +1597,7 @@ Array [
                   "justifyContent": "center",
                   "marginBottom": 0,
                   "opacity": 1,
+                  "paddingHorizontal": 24,
                 }
               }
               testID="authentication-details-magic-link-button-native"
@@ -4539,6 +4540,7 @@ Array [
                   "justifyContent": "center",
                   "marginBottom": 0,
                   "opacity": 1,
+                  "paddingHorizontal": 24,
                 }
               }
               testID="authentication-details-qr-code-button-native"

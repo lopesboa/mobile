@@ -442,6 +442,7 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
           Object {
             "justifyContent": "center",
           },
+          undefined,
           Object {
             "height": undefined,
           },
@@ -489,6 +490,7 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
           Object {
             "justifyContent": "center",
           },
+          undefined,
           Object {
             "height": undefined,
           },

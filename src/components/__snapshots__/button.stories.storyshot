@@ -25,32 +25,28 @@ exports[`Storyshots Button Default 1`] = `
         "justifyContent": "center",
         "marginBottom": 0,
         "opacity": 1,
+        "paddingHorizontal": 24,
       }
     }
     testID="fake-button-native"
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
@@ -84,10 +80,13 @@ exports[`Storyshots Button Disabled 1`] = `
             "flexDirection": "row",
             "height": 54,
             "marginBottom": 0,
+            "paddingHorizontal": 24,
           },
           Object {
             "backgroundColor": "#00B0FF",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -100,29 +99,24 @@ exports[`Storyshots Button Disabled 1`] = `
     }
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            undefined,
-            Object {
-              "color": "#90A4AE",
-            },
-            undefined,
-            undefined,
-            undefined,
-          ],
+          undefined,
+          Object {
+            "color": "#90A4AE",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
@@ -157,34 +151,30 @@ exports[`Storyshots Button Inverted 1`] = `
         "justifyContent": "center",
         "marginBottom": 0,
         "opacity": 1,
+        "paddingHorizontal": 24,
       }
     }
     testID="fake-button-native"
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            Object {
-              "color": "#546E7A",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ],
+          Object {
+            "color": "#546E7A",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
@@ -218,10 +208,13 @@ exports[`Storyshots Button Loading 1`] = `
             "flexDirection": "row",
             "height": 54,
             "marginBottom": 0,
+            "paddingHorizontal": 24,
           },
           Object {
             "backgroundColor": "#00B0FF",
           },
+          undefined,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -244,6 +237,146 @@ exports[`Storyshots Button Loading 1`] = `
         }
       }
     />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Placeholder 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 44,
+          "justifyContent": "center",
+          "marginBottom": 10,
+        },
+        Array [
+          Object {
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "marginBottom": 0,
+            "paddingHorizontal": 24,
+          },
+          Object {
+            "backgroundColor": "#00B0FF",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        Object {
+          "backgroundColor": "#ECEFF1",
+        },
+      ]
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "color": "#ECEFF1",
+          },
+        ]
+      }
+    >
+      Here we go!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Placeholder with custom color 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 44,
+          "justifyContent": "center",
+          "marginBottom": 10,
+        },
+        Array [
+          Object {
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "marginBottom": 0,
+            "paddingHorizontal": 24,
+          },
+          Object {
+            "backgroundColor": "#00B0FF",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        Object {
+          "backgroundColor": "red",
+        },
+      ]
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "color": "red",
+          },
+        ]
+      }
+    >
+      Here we go!
+    </Text>
   </View>
 </View>
 `;
@@ -274,34 +407,30 @@ exports[`Storyshots Button Secondary 1`] = `
         "justifyContent": "center",
         "marginBottom": 0,
         "opacity": 1,
+        "paddingHorizontal": 24,
       }
     }
     testID="fake-button-native"
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "color": "#00B0FF",
-            },
-            undefined,
-          ],
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "color": "#00B0FF",
+          },
+          undefined,
+          undefined,
         ]
       }
     >
@@ -337,36 +466,90 @@ exports[`Storyshots Button Secondary Inverted 1`] = `
         "justifyContent": "center",
         "marginBottom": 0,
         "opacity": 1,
+        "paddingHorizontal": 24,
       }
     }
     testID="fake-button-native"
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            Object {
-              "color": "#546E7A",
-            },
-            undefined,
-            undefined,
-            Object {
-              "color": "#00B0FF",
-            },
-            undefined,
-          ],
+          Object {
+            "color": "#546E7A",
+          },
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "color": "#00B0FF",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      Here we go!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Small 1`] = `
+<View
+  testID="fake-button"
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#00B0FF",
+        "borderRadius": 32,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "height": 45,
+        "justifyContent": "center",
+        "marginBottom": 0,
+        "opacity": 1,
+        "paddingHorizontal": 24,
+      }
+    }
+    testID="fake-button-native"
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "fontSize": 15,
+          },
+          undefined,
+          undefined,
+          undefined,
         ]
       }
     >
@@ -401,34 +584,30 @@ exports[`Storyshots Button TextSecondary 1`] = `
         "justifyContent": "center",
         "marginBottom": 0,
         "opacity": 1,
+        "paddingHorizontal": 24,
       }
     }
     testID="fake-button-native"
   >
     <Text
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "fontSize": 18,
+            "color": "#FFFFFF",
+            "fontSize": 17,
+            "fontWeight": "700",
             "textAlign": "center",
           },
-          Array [
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 17,
-              "fontWeight": "700",
-              "textAlign": "center",
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "color": "#00B0FF",
-            },
-          ],
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "color": "#00B0FF",
+          },
+          undefined,
         ]
       }
     >

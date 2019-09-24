@@ -1,6 +1,6 @@
 // @flow strict
 
-import {waitForExist, reloadApp, bypassAuthentication} from './utils';
+import {waitForExist, waitForVisible, reloadApp, bypassAuthentication} from './utils';
 
 describe('Dashboard', () => {
   beforeAll(async () => {
@@ -22,6 +22,18 @@ describe('Dashboard', () => {
     it('should prepare more placeholders for the next cards', async () => {
       await waitForExist('catalog-section-recommended-item-6-placeholder');
       await waitForExist('catalog-section-recommended-item-9-placeholder');
+    });
+  });
+
+  describe('Hero', () => {
+    it('should see the hero on dashboard', async () => {
+      await waitForVisible('catalog-hero-footer');
+      await waitForVisible('catalog-hero-button');
+    });
+
+    it('should be redirected to question', async () => {
+      await element(by.id('catalog-hero-button')).tap();
+      await waitForExist('question');
     });
   });
 });

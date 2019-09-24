@@ -2,22 +2,22 @@
 
 import * as React from 'react';
 import {View, StyleSheet, Platform} from 'react-native';
-import theme from '../modules/theme';
 
-export type CardType = 'deckSwipe' | 'contain' | 'default';
+import theme from '../modules/theme';
+import {STYLE as BOX_STYLE} from './box';
+
+export type CardType = 'deckSwipe' | 'contain';
 
 export type Props = {|
   children: React.Node,
   style?: ViewStyleProp,
-  shadowStyle?: ViewStyleProp,
   testID?: string,
   type?: CardType
 |};
 
 export const LAYOUT: {[key: string]: CardType} = {
   DECK_SWIPE: 'deckSwipe',
-  CONTAIN: 'contain',
-  DEFAULT: 'default'
+  CONTAIN: 'contain'
 };
 
 const styles = StyleSheet.create({
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Props) => {
+const Card = ({children, style, testID, type}: Props) => {
   switch (type) {
     case LAYOUT.DECK_SWIPE:
       /* istanbul ignore next */
@@ -49,18 +49,16 @@ const Card = ({children, style, testID, type = LAYOUT.DEFAULT, shadowStyle}: Pro
       );
     case LAYOUT.CONTAIN:
       return (
-        <View style={shadowStyle} testID={testID}>
+        <View style={BOX_STYLE} testID={testID}>
           <View style={style}>{children}</View>
         </View>
       );
-    case LAYOUT.DEFAULT:
+    default:
       return (
         <View style={styles.container} testID={testID}>
-          <View style={[style, shadowStyle, styles.overflowHidden]}>{children}</View>
+          <View style={[style, BOX_STYLE, styles.overflowHidden]}>{children}</View>
         </View>
       );
-    default:
-      return null;
   }
 };
 

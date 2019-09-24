@@ -15,6 +15,7 @@ exports[`Storyshots Placeholder Default 1`] = `
           Object {
             "justifyContent": "center",
           },
+          undefined,
           Object {
             "height": undefined,
           },

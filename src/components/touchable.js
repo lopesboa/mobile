@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {TouchableOpacity, TouchableWithoutFeedback, TouchableHighlight} from 'react-native';
+import {TouchableOpacity, TouchableHighlight} from 'react-native';
 import type {Props as TouchableGenericProps} from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
 
 import {ANALYTICS_EVENT_TYPE} from '../const';
@@ -77,25 +77,10 @@ class Touchable extends React.PureComponent<Props> {
       /* eslint-enable no-unused-vars */
       isWithoutFeedback,
       isHighlight,
+      activeOpacity,
       ...props
     } = this.props;
-    const {
-      /* eslint-disable no-unused-vars */
-      activeOpacity,
-      style,
-      /* eslint-enable no-unused-vars */
-      ...withoutFeedbackProps
-    } = props;
-
-    if (isWithoutFeedback) {
-      return (
-        <TouchableWithoutFeedback
-          {...withoutFeedbackProps}
-          onPress={this.handlePress}
-          onLongPress={this.handleLongPress}
-        />
-      );
-    }
+    const {disabled} = props;
 
     if (isHighlight) {
       return (
@@ -103,12 +88,18 @@ class Touchable extends React.PureComponent<Props> {
           {...props}
           onPress={this.handlePress}
           onLongPress={this.handleLongPress}
+          activeOpacity={activeOpacity || (disabled ? 1 : 0.85)}
         />
       );
     }
 
     return (
-      <TouchableOpacity {...props} onPress={this.handlePress} onLongPress={this.handleLongPress} />
+      <TouchableOpacity
+        {...props}
+        onPress={this.handlePress}
+        onLongPress={this.handleLongPress}
+        activeOpacity={(isWithoutFeedback && 1) || activeOpacity || (disabled ? 1 : 0.2)}
+      />
     );
   }
 }

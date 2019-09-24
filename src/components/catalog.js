@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import * as React from 'react';
 import {StyleSheet, FlatList} from 'react-native';
@@ -11,6 +11,7 @@ import Hero, {HEIGHT as _HERO_HEIGHT} from './hero';
 import Space from './space';
 
 export type Props = {|
+  hero?: DisciplineCard | ChapterCard | null,
   sections: Array<Section | void>,
   onCardPress: (DisciplineCard | ChapterCard) => void,
   onRefresh: () => void,
@@ -41,32 +42,28 @@ class Catalog extends React.Component<Props> {
 
   renderItem = ({item, index}: {item: Section | void, index: number}) => {
     const {onCardPress} = this.props;
-    const testID = this.keyExtractor(item, index);
 
     if (!item) {
-      return <CatalogSection testID={testID} />;
+      return <CatalogSection testID={this.keyExtractor(item, index)} />;
     }
 
-    return (
-      <CatalogSection
-        title={item.title}
-        sectionRef={item.key}
-        onCardPress={onCardPress}
-        testID={testID}
-      />
-    );
+    return <CatalogSection title={item.title} sectionRef={item.key} onCardPress={onCardPress} />;
   };
 
   renderSeparator = () => <Space type={SEPARATOR_SIZE} />;
 
   renderFooter = (): React.Node | null => this.props.children || null;
 
-  renderHeader = (): React.Node => (
-    <React.Fragment>
-      <Hero />
-      {this.renderSeparator()}
-    </React.Fragment>
-  );
+  renderHeader = (): React.Node => {
+    const {hero, onCardPress} = this.props;
+
+    return (
+      <React.Fragment>
+        <Hero content={hero} onPress={onCardPress} />
+        {this.renderSeparator()}
+      </React.Fragment>
+    );
+  };
 
   render() {
     const {sections, onRefresh, isRefreshing = false, onScroll} = this.props;

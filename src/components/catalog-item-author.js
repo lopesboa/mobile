@@ -1,52 +1,58 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+
 import theme from '../modules/theme';
 import {AUTHOR_TYPE} from '../const';
 import type {AuthorType} from '../types';
-
 import Text from './text';
 
 type Props = {|
-  authorType: AuthorType,
-  authorName: string,
-  testID: string,
-  style?: TextStyleProp
+  type: AuthorType,
+  name?: string,
+  size?: 'cover' | 'hero',
+  testID: string
 |};
 
 const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    marginVertical: theme.spacing.base,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%'
-  },
-  author: {
+  text: {
     color: theme.colors.white,
     textShadowColor: 'rgba(0, 0, 0, 1)',
     textShadowRadius: 2,
     textAlign: 'center'
   },
-  bold: {fontWeight: theme.fontWeight.bold}
+  bold: {
+    fontWeight: theme.fontWeight.extraBold
+  }
 });
 
-const CatalogItemAuthor = ({authorType, authorName, style, testID}: Props) => {
+const CatalogItemAuthor = ({type, name = '', size, testID}: Props) => {
+  const fontSize =
+    (size && (size === 'hero' ? theme.fontSize.medium : theme.fontSize.small)) ||
+    theme.fontSize.extraSmall;
+  const textStyle = {
+    fontSize
+  };
+  const letterSpacingStyle = {
+    letterSpacing: fontSize * 0.1875
+  };
+
   return (
-    <View style={styles.container}>
-      <Text testID={`author-${testID}`} style={[styles.author, style]}>
-        {authorType === AUTHOR_TYPE.COORP && (
-          <React.Fragment>
-            COORP <Text style={styles.bold}>ORIGINAL</Text>
-          </React.Fragment>
-        )}
-        {authorType === AUTHOR_TYPE.MARKETPLACE && authorName && authorName.toUpperCase()}
-        {authorType === AUTHOR_TYPE.CUSTOM && (
-          <React.Fragment>{authorName && authorName.toUpperCase()} CREATION</React.Fragment>
-        )}
-      </Text>
-    </View>
+    <Text
+      testID={`author-${testID}`}
+      style={[styles.text, type === AUTHOR_TYPE.COORP && letterSpacingStyle, textStyle]}
+    >
+      {type === AUTHOR_TYPE.COORP && (
+        <React.Fragment>
+          COORP <Text style={styles.bold}>ORIGINAL</Text>
+        </React.Fragment>
+      )}
+      {type === AUTHOR_TYPE.MARKETPLACE && name && name.toUpperCase()}
+      {type === AUTHOR_TYPE.CUSTOM && (
+        <React.Fragment>{name && name.toUpperCase()} CREATION</React.Fragment>
+      )}
+    </Text>
   );
 };
 

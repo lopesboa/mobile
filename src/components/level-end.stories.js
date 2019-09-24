@@ -142,14 +142,14 @@ storiesOf('LevelEnd', module)
 if (__TEST__) {
   describe('LevelEnd', () => {
     it('should handle onCardPress callback', () => {
-      const handlePress = jest.fn();
+      const handleCardPress = jest.fn();
       const component = renderer.create(
         <LevelEnd
           contentType={CONTENT_TYPE.LEVEL}
           isSuccess={false}
           isFocused
           onButtonPress={handleFakePress}
-          onCardPress={handlePress}
+          onCardPress={handleCardPress}
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           bestScore="0"
@@ -157,10 +157,14 @@ if (__TEST__) {
           audio={createFakeAudio()}
         />
       );
-      const item = component.root.find(el => el.props.testID === 'recommend-item-dis-2');
+
+      const item = component.root.find(
+        el => el.props.testID === 'recommend-item-dis-2' && el.props.analyticsID === 'card'
+      );
       item.props.onPress();
-      expect(handlePress.mock.calls.length).toBe(1);
-      expect(handlePress.mock.calls[0]).toEqual([disciplineNewCoorp]);
+
+      expect(handleCardPress).toHaveBeenCalledTimes(1);
+      expect(handleCardPress).toHaveBeenCalledWith(disciplineNewCoorp);
     });
 
     it('should handle onButtonPress callback', () => {

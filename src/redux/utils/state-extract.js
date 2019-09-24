@@ -146,10 +146,10 @@ export const getSectionsRef = (state: StoreState) => state.catalog.sectionsRef |
 
 export const getCards = (state: StoreState) => state.catalog.entities.cards;
 
-export const getHeroRef = (state: StoreState) => state.catalog.heroRef;
+export const getHeroRef = (state: StoreState): string | void | null => state.catalog.heroRef;
 
-export const getHero = (state: StoreState): DisciplineCard | ChapterCard | void => {
+export const getHero = (state: StoreState): DisciplineCard | ChapterCard | void | null => {
   const ref = getHeroRef(state);
 
-  return ref ? getCard(state, ref) : undefined;
+  return typeof ref === 'string' ? getCard(state, ref) : ref;
 };

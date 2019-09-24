@@ -72,6 +72,7 @@ const translations: Translations = {
     'en la red entre Saturno y la Tierra, actualiza para disfrutar del aprendizaje',
   refreshNotWorking: '¿No funciona actualizar?',
   relatedSubjects: 'Recomendado para ti:',
+  resumeLearning: 'Seguir aprendiendo',
   retryChapter: 'Reintentar capítulo',
   retryLevel: 'Reintentar nivel',
   scanQRCode: 'Escanea el <b>código QR</b>',

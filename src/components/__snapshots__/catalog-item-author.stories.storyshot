@@ -1,148 +1,169 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalog Item Author Coorp 1`] = `
-<View
+exports[`Storyshots CatalogItemAuthor Coorp 1`] = `
+<Text
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginVertical": 24,
-      "position": "absolute",
-      "width": "100%",
-    }
+    Array [
+      Object {},
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textAlign": "center",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        Object {
+          "letterSpacing": 1.875,
+        },
+        Object {
+          "fontSize": 10,
+        },
+      ],
+    ]
   }
+  testID="author-catalog-author"
 >
+  COORP 
   <Text
     style={
       Array [
         Object {},
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "textAlign": "center",
-            "textShadowColor": "rgba(0, 0, 0, 1)",
-            "textShadowRadius": 2,
-          },
-          undefined,
-        ],
+        Object {
+          "fontWeight": "900",
+        },
       ]
     }
-    testID="author-catalog-author"
   >
-    COORP 
-    <Text
-      style={
-        Array [
-          Object {},
-          Object {
-            "fontWeight": "700",
-          },
-        ]
-      }
-    >
-      ORIGINAL
-    </Text>
+    ORIGINAL
   </Text>
-</View>
+</Text>
 `;
 
-exports[`Storyshots Catalog Item Author Custom 1`] = `
-<View
+exports[`Storyshots CatalogItemAuthor Cover size 1`] = `
+<Text
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginVertical": 24,
-      "position": "absolute",
-      "width": "100%",
-    }
+    Array [
+      Object {},
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textAlign": "center",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        Object {
+          "letterSpacing": 2.25,
+        },
+        Object {
+          "fontSize": 12,
+        },
+      ],
+    ]
   }
+  testID="author-catalog-author-custom-font-size"
 >
+  COORP 
   <Text
     style={
       Array [
         Object {},
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "textAlign": "center",
-            "textShadowColor": "rgba(0, 0, 0, 1)",
-            "textShadowRadius": 2,
-          },
-          undefined,
-        ],
+        Object {
+          "fontWeight": "900",
+        },
       ]
     }
-    testID="author-catalog-author-custom"
   >
-    CUSTOM AUTHOR
-     CREATION
+    ORIGINAL
   </Text>
-</View>
+</Text>
 `;
 
-exports[`Storyshots Catalog Item Author Marketplace 1`] = `
-<View
+exports[`Storyshots CatalogItemAuthor Custom 1`] = `
+<Text
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginVertical": 24,
-      "position": "absolute",
-      "width": "100%",
-    }
-  }
->
-  <Text
-    style={
+    Array [
+      Object {},
       Array [
-        Object {},
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "textAlign": "center",
-            "textShadowColor": "rgba(0, 0, 0, 1)",
-            "textShadowRadius": 2,
-          },
-          undefined,
-        ],
-      ]
-    }
-    testID="author-catalog-author-marketplace"
-  >
-    MARKETPLACE
-  </Text>
-</View>
+        Object {
+          "color": "#FFFFFF",
+          "textAlign": "center",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        false,
+        Object {
+          "fontSize": 10,
+        },
+      ],
+    ]
+  }
+  testID="author-catalog-author-custom"
+>
+  CUSTOM AUTHOR
+   CREATION
+</Text>
 `;
 
-exports[`Storyshots Catalog Item Author Verified 1`] = `
-<View
+exports[`Storyshots CatalogItemAuthor Hero size 1`] = `
+<Text
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-      "marginVertical": 24,
-      "position": "absolute",
-      "width": "100%",
-    }
+    Array [
+      Object {},
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textAlign": "center",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        Object {
+          "letterSpacing": 2.4375,
+        },
+        Object {
+          "fontSize": 13,
+        },
+      ],
+    ]
   }
+  testID="author-catalog-author-custom-font-size"
 >
+  COORP 
   <Text
     style={
       Array [
         Object {},
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "textAlign": "center",
-            "textShadowColor": "rgba(0, 0, 0, 1)",
-            "textShadowRadius": 2,
-          },
-          undefined,
-        ],
+        Object {
+          "fontWeight": "900",
+        },
       ]
     }
-    testID="author-catalog-author-empty"
-  />
-</View>
+  >
+    ORIGINAL
+  </Text>
+</Text>
+`;
+
+exports[`Storyshots CatalogItemAuthor Marketplace 1`] = `
+<Text
+  style={
+    Array [
+      Object {},
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "textAlign": "center",
+          "textShadowColor": "rgba(0, 0, 0, 1)",
+          "textShadowRadius": 2,
+        },
+        false,
+        Object {
+          "fontSize": 10,
+        },
+      ],
+    ]
+  }
+  testID="author-catalog-author-marketplace"
+>
+  MARKETPLACE
+</Text>
 `;

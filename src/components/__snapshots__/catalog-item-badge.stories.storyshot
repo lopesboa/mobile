@@ -1,52 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Catalog Item Badge Default 1`] = `
+exports[`Storyshots CatalogItemBadge Cover size 1`] = `
 <View
   style={
     Object {
-      "position": "absolute",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomEndRadius": 12,
+      "paddingHorizontal": 8,
+      "paddingVertical": 4,
     }
   }
 >
-  <View
+  <Text
     style={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#FFFFFF",
-          "borderBottomEndRadius": 12,
-          "flex": 1,
-          "justifyContent": "center",
-          "paddingLeft": 8,
-          "paddingRight": 12,
-        },
-        Object {
-          "minHeight": 17,
-          "minWidth": 40,
-        },
+        Object {},
+        Array [
+          Object {
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+            "fontSize": 12,
+          },
+        ],
       ]
     }
+    testID="badge"
   >
-    <Text
-      style={
+    Foo bar
+  </Text>
+</View>
+`;
+
+exports[`Storyshots CatalogItemBadge Default 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "flex-start",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomEndRadius": 12,
+      "paddingHorizontal": 8,
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {},
         Array [
-          Object {},
-          Array [
-            "new",
-            Object {
-              "fontSize": 10,
-              "fontWeight": "700",
-            },
-            Object {
-              "color": "#00B0FF",
-            },
-          ],
-        ]
-      }
-      testID="badge"
-    >
-      new
-    </Text>
-  </View>
+          Object {
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#00B0FF",
+            "fontSize": 10,
+          },
+        ],
+      ]
+    }
+    testID="badge"
+  >
+    Foo bar
+  </Text>
 </View>
 `;

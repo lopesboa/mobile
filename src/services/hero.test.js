@@ -2,7 +2,6 @@
 
 import {createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
 import {CARD_STATUS} from '../layer/data/_const';
-import service from './hero';
 
 const level = createCardLevel({
   ref: 'mod_1',
@@ -17,14 +16,46 @@ const card = createDisciplineCard({
 });
 
 describe('Hero service', () => {
-  it('shoud return card', async () => {
-    // $FlowFixMe
-    const dataLayer: DataLayer = {};
-    const _service = service(dataLayer);
+  beforeEach(() => {
+    jest.resetModules();
+  });
 
-    const result = await _service.get();
+  it('shoud return card in e2e', async () => {
+    jest.mock('../modules/environment', () => ({
+      __E2E__: true
+    }));
+    // $FlowFixMe
+    const dataLayer: DataLayer = {
+      fetchCards: jest.fn(() => Promise.resolve({cards: [card]}))
+    };
+    const createService = require('./hero').default;
+    const service = createService(dataLayer);
+
+    const result = await service.get();
     const expected = card;
 
+    expect(dataLayer.fetchCards).toHaveBeenCalledTimes(1);
     expect(result).toEqual(expected);
+  });
+
+  it('shoud not return card in other environments', async () => {
+    jest.mock('../modules/environment', () => ({
+      __E2E__: false
+    }));
+    // $FlowFixMe
+    const dataLayer: DataLayer = {
+      fetchCards: jest.fn(() => Promise.resolve({cards: [card]}))
+    };
+    const createService = require('./hero').default;
+    const service = createService(dataLayer);
+
+    const result = await service.get();
+
+    expect(dataLayer.fetchCards).toHaveBeenCalledTimes(0);
+    expect(result).toBeUndefined;
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 });

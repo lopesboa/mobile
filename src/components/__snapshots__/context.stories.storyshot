@@ -209,34 +209,30 @@ exports[`Storyshots Context Default 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -498,34 +494,30 @@ exports[`Storyshots Context With Image 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -926,36 +918,32 @@ exports[`Storyshots Context With PDF 1`] = `
                     "justifyContent": "center",
                     "marginBottom": 0,
                     "opacity": 1,
+                    "paddingHorizontal": 24,
                   }
                 }
                 testID="context-resource-pdf-preview-pdf-button-native"
               >
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "flex": 1,
-                        "fontSize": 18,
+                        "color": "#FFFFFF",
+                        "fontSize": 17,
+                        "fontWeight": "700",
                         "textAlign": "center",
                       },
-                      Array [
-                        Object {
-                          "color": "#FFFFFF",
-                          "fontSize": 17,
-                          "fontWeight": "700",
-                          "textAlign": "center",
-                        },
-                        Object {
-                          "color": "#546E7A",
-                        },
-                        undefined,
-                        Object {
-                          "color": "#FFFFFF",
-                        },
-                        undefined,
-                        undefined,
-                      ],
+                      Object {
+                        "color": "#546E7A",
+                      },
+                      undefined,
+                      Object {
+                        "color": "#FFFFFF",
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -1098,34 +1086,30 @@ exports[`Storyshots Context With PDF 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -1596,34 +1580,30 @@ exports[`Storyshots Context With Video 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -2094,34 +2074,30 @@ exports[`Storyshots Context With badly formatted video 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -2522,36 +2498,32 @@ exports[`Storyshots Context Without Layout 1`] = `
                     "justifyContent": "center",
                     "marginBottom": 0,
                     "opacity": 1,
+                    "paddingHorizontal": 24,
                   }
                 }
                 testID="context-resource-pdf-preview-pdf-button-native"
               >
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "flex": 1,
-                        "fontSize": 18,
+                        "color": "#FFFFFF",
+                        "fontSize": 17,
+                        "fontWeight": "700",
                         "textAlign": "center",
                       },
-                      Array [
-                        Object {
-                          "color": "#FFFFFF",
-                          "fontSize": 17,
-                          "fontWeight": "700",
-                          "textAlign": "center",
-                        },
-                        Object {
-                          "color": "#546E7A",
-                        },
-                        undefined,
-                        Object {
-                          "color": "#FFFFFF",
-                        },
-                        undefined,
-                        undefined,
-                      ],
+                      Object {
+                        "color": "#546E7A",
+                      },
+                      undefined,
+                      Object {
+                        "color": "#FFFFFF",
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
                     ]
                   }
                 >
@@ -2694,34 +2666,30 @@ exports[`Storyshots Context Without Layout 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >
@@ -2942,34 +2910,30 @@ exports[`Storyshots Context Without Layout 2 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-redirect-question-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                undefined,
-                undefined,
-                undefined,
-                Object {
-                  "color": "#00B0FF",
-                },
-                undefined,
-              ],
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "color": "#00B0FF",
+              },
+              undefined,
+              undefined,
             ]
           }
         >

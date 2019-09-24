@@ -20,7 +20,7 @@ export type Colors = {
   salmon: string
 };
 
-export type FontWeightType = 'bold' | 'semiBold' | 'regular';
+export type FontWeightType = 'extraBold' | 'bold' | 'semiBold' | 'regular';
 
 export type FontSizeType =
   | 'extraSmall'
@@ -92,7 +92,8 @@ const theme: Theme = {
   fontWeight: {
     regular: '400',
     semiBold: '500',
-    bold: '700'
+    bold: '700',
+    extraBold: '900'
   },
   fontSize: {
     extraSmall: 10,

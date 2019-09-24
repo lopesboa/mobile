@@ -70,6 +70,7 @@ const translations: Translations = {
   refreshEnjoyLearning: 'w sieci gdzieś pomiędzy Saturnem a Ziemią; odśwież, aby cieszyć się nauką',
   refreshNotWorking: 'Odświeżanie nie działa?',
   relatedSubjects: 'Polecane dla Ciebie:',
+  resumeLearning: 'Kontynuować naukę',
   retryChapter: 'Spróbuj ponownie przerobić rozdział',
   retryLevel: 'Ponów próbę',
   scanQRCode: 'Zeskanuj <b>kod QR</b>',

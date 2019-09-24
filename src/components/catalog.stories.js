@@ -2,10 +2,11 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
+import renderer from 'react-test-renderer';
 
 import {createSections} from '../__fixtures__/sections';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
-import {createCatalogState} from '../__fixtures__/store';
+import {createCatalogState, createAuthenticationState} from '../__fixtures__/store';
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress, TestContextProvider} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
@@ -46,9 +47,46 @@ const chapterCard = createChapterCard({
 
 storiesOf('Catalog', module)
   .add('Default', () => (
-    <TestContextProvider store={{catalog: createCatalogState({})}}>
+    <TestContextProvider
+      store={{
+        catalog: createCatalogState({}),
+        authentication: createAuthenticationState({user: null, brand: null})
+      }}
+    >
       <Catalog
         sections={[]}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('User connected', () => (
+    <TestContextProvider
+      store={{
+        catalog: createCatalogState({})
+      }}
+    >
+      <Catalog
+        sections={[]}
+        onCardPress={handleFakePress}
+        onRefresh={handleFakePress}
+        onScroll={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('With hero', () => (
+    <TestContextProvider
+      store={{
+        catalog: createCatalogState({
+          sections: sectionsWithCardsRef,
+          cards: [disciplineCard, chapterCard]
+        })
+      }}
+    >
+      <Catalog
+        hero={chapterCard}
+        sections={sectionsWithCardsRef}
         onCardPress={handleFakePress}
         onRefresh={handleFakePress}
         onScroll={handleFakePress}
@@ -100,3 +138,67 @@ storiesOf('Catalog', module)
       />
     </TestContextProvider>
   ));
+
+if (__TEST__) {
+  describe('Catalog', () => {
+    it('should handle hero onPress callback', () => {
+      const handleCardPress = jest.fn();
+      const hero = chapterCard;
+      const component = renderer.create(
+        <TestContextProvider
+          store={{
+            catalog: createCatalogState({
+              sections: sectionsWithCardsRef,
+              cards: [disciplineCard, chapterCard]
+            })
+          }}
+        >
+          <Catalog
+            hero={hero}
+            sections={sectionsWithCardsRef}
+            onCardPress={handleCardPress}
+            onRefresh={handleFakePress}
+            onScroll={handleFakePress}
+          />
+        </TestContextProvider>
+      );
+
+      const button = component.root.find(el => el.props.testID === 'catalog-hero-button');
+      button.props.onPress();
+
+      expect(handleCardPress).toHaveBeenCalledTimes(1);
+      expect(handleCardPress).toHaveBeenCalledWith(hero);
+    });
+
+    it('should handle card onPress callback', () => {
+      const handleCardPress = jest.fn();
+      const component = renderer.create(
+        <TestContextProvider
+          store={{
+            catalog: createCatalogState({
+              sections: sectionsWithCardsRef,
+              cards: [disciplineCard, chapterCard]
+            })
+          }}
+        >
+          <Catalog
+            sections={sectionsWithCardsRef}
+            onCardPress={handleCardPress}
+            onRefresh={handleFakePress}
+            onScroll={handleFakePress}
+          />
+        </TestContextProvider>
+      );
+
+      const button = component.root.find(
+        el =>
+          el.props.testID === 'catalog-section-most-popular-item-bar' &&
+          el.props.analyticsID === 'card'
+      );
+      button.props.onPress();
+
+      expect(handleCardPress).toHaveBeenCalledTimes(1);
+      expect(handleCardPress).toHaveBeenCalledWith(chapterCard);
+    });
+  });
+}

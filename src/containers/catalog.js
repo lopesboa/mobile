@@ -9,6 +9,7 @@ import CatalogComponent, {SEPARATOR_HEIGHT, HERO_HEIGHT} from '../components/cat
 import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import {fetchSections} from '../redux/actions/catalog/sections';
+import {fetchHero} from '../redux/actions/catalog/hero';
 import type {StoreState} from '../redux/store';
 import {getSections, getSectionsRef, getHero} from '../redux/utils/state-extract';
 import translations from '../translations';
@@ -20,11 +21,12 @@ import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
 export type ConnectedStateProps = {|
-  hero?: DisciplineCard | ChapterCard,
+  hero?: DisciplineCard | ChapterCard | null,
   sections: Array<Section | void>
 |};
 
 type ConnectedDispatchProps = {|
+  fetchHero: typeof fetchHero,
   fetchSections: typeof fetchSections
 |};
 
@@ -59,6 +61,7 @@ class Catalog extends React.Component<Props, State> {
   offsetY: number = 0;
 
   componentDidMount() {
+    this.props.fetchHero();
     this.fetchSections(0, this.getLimit(0));
   }
 
@@ -103,7 +106,7 @@ class Catalog extends React.Component<Props, State> {
 
   handleRefresh = () => {
     this.setState({isRefreshing: true});
-    this.fetchSections(0, this.getLimit(0), true)
+    Promise.all([this.fetchSections(0, this.getLimit(0), true), this.props.fetchHero()])
       .then(() => this.setState({isRefreshing: false}))
       .catch(e => {
         this.setState({isRefreshing: false});
@@ -164,11 +167,12 @@ class Catalog extends React.Component<Props, State> {
   };
 
   render() {
-    const {sections, onCardPress, children} = this.props;
+    const {hero, sections, onCardPress, children} = this.props;
     const {isRefreshing} = this.state;
 
     return (
       <CatalogComponent
+        hero={hero}
         sections={sections.filter(section => !(section && isEmptySection(section)))}
         onCardPress={onCardPress}
         onRefresh={this.handleRefresh}
@@ -181,7 +185,7 @@ class Catalog extends React.Component<Props, State> {
   }
 }
 
-const getHeroState: StoreState => DisciplineCard | ChapterCard | void = createSelector(
+const getHeroState: StoreState => DisciplineCard | ChapterCard | void | null = createSelector(
   [getHero],
   hero => hero
 );
@@ -198,6 +202,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
+  fetchHero,
   fetchSections
 };
 

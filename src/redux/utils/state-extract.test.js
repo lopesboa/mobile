@@ -840,5 +840,16 @@ describe('State-extract', () => {
 
       expect(result).toEqual(expected);
     });
+
+    it('should return undefined', () => {
+      const state = createState({
+        cards: [],
+        heroRef: 'cha1'
+      });
+
+      const result = getHero(state);
+
+      expect(result).toBeUndefined;
+    });
   });
 });

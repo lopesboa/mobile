@@ -7,7 +7,6 @@ import type {
   AppState,
   AuthenticationType,
   AuthorType,
-  CardDisplayMode,
   CardType,
   ContentType,
   SectionContentType,
@@ -32,13 +31,6 @@ export const RESOURCE_TYPE: {
 export const ERROR_TYPE: {[string]: ErrorType} = {
   PLATFORM_NOT_ACTIVATED: 'PLATFORM_NOT_ACTIVATED',
   NO_CONTENT_FOUND: 'NO_CONTENT_FOUND'
-};
-
-export const CARD_DISPLAY_MODE: {
-  [string]: CardDisplayMode
-} = {
-  CARD: 'card',
-  COVER: 'cover'
 };
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'SLIDER' | 'TEMPLATE' | 'DRAG_DROP' | 'BASIC';

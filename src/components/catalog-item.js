@@ -1,187 +1,124 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, Dimensions, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import type {Progression, CardDisplayMode, AuthorType, Engine} from '../types';
-import {CARD_DISPLAY_MODE, ENGINE} from '../const';
+import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import {CARD_TYPE} from '../layer/data/_const';
+import {ENGINE} from '../const';
 import theme from '../modules/theme';
-import type {Chapter, Discipline} from '../layer/data/_types';
-import CatalogItemFooter from './catalog-item-footer';
-import Badge from './catalog-item-badge';
+import translations from '../translations';
+import CatalogItemContent from './catalog-item-content';
+import CatalogItemBadge from './catalog-item-badge';
 import ImageBackground from './image-background';
-import CatalogItemAuthor from './catalog-item-author';
 import Touchable from './touchable';
-
-export type Item = Discipline | Chapter;
-
-type CourseInfo = {|
-  title: string,
-  subtitle: string,
-  isAdaptive: boolean,
-  progression?: Progression,
-  image: {uri: string},
-  badge?: string,
-  authorType?: AuthorType,
-  authorName?: string,
-  isCertified?: boolean
-|};
-
-type AnalyticsParams = {|
-  universalRef: string,
-  type: Engine,
-  section: string
-|};
-
-type Props = $Exact<{|
-  ...CourseInfo,
-  ...AnalyticsParams,
-  onPress: () => void,
-  displayMode?: CardDisplayMode,
-  testID: string
-|}>;
-
-const {height: screenHeight} = Dimensions.get('window');
 
 export const HEIGHT = 205;
 export const WIDTH = 168;
+export const COVER_HEIGHT = 264;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: theme.colors.white
+  content: {
+    backgroundColor: theme.colors.gray.light
   },
   image: {
     height: HEIGHT,
     width: WIDTH
   },
   imageGradient: {
+    paddingTop: theme.spacing.base,
     padding: theme.spacing.small
   },
-  title: {
-    fontSize: theme.fontSize.regular
-  },
-  subtitle: {
-    fontSize: theme.fontSize.small
-  },
-  author: {
-    fontSize: theme.fontSize.extraSmall,
-    letterSpacing: 1.88
-  },
-  badge: {
-    minWidth: 40,
-    minHeight: 17
-  },
-  badgeLabel: {
-    fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.extraSmall
-  },
   imageCover: {
-    minHeight: 215,
-    height: screenHeight * 0.3
+    height: COVER_HEIGHT
   },
   imageCoverGradient: {
-    padding: theme.spacing.base
+    padding: theme.spacing.base,
+    justifyContent: 'flex-end'
   },
-  titleCover: {
-    fontSize: theme.fontSize.xlarge
-  },
-  subtitleCover: {
-    fontSize: theme.fontSize.regular
-  },
-  authorCover: {
-    fontSize: theme.fontSize.small,
-    letterSpacing: 2.25
-  },
-  badgeCover: {
-    minWidth: 45,
-    minHeight: 20
-  },
-  badgeLabelCover: {
-    fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.small
-  },
-  touchableHighlight: {
+  touchable: {
     flex: 1
+  },
+  badge: {
+    position: 'absolute',
+    top: 0,
+    left: 0
   }
 });
 
-const CatalogItem = ({
-  onPress,
-  title,
-  subtitle,
-  progression,
-  image,
-  badge,
-  isAdaptive,
-  authorType,
-  authorName,
-  isCertified,
-  displayMode,
-  testID,
-  universalRef,
-  type,
-  section
-}: Props) => {
-  const mode: CardDisplayMode = displayMode ? displayMode : CARD_DISPLAY_MODE.COVER;
-  const isCourse = type === ENGINE.LEARNER;
-  const badgeLabel =
-    badge && badge !== '' ? badge.charAt(0).toUpperCase() + badge.slice(1) : undefined;
+type AnalyticsParams = {|
+  section?: string
+|};
 
-  return (
-    <Touchable
-      testID={testID}
-      onPress={onPress}
-      isHighlight
-      style={styles.touchableHighlight}
-      analyticsID="card"
-      analyticsParams={{ref: universalRef, type, section}}
-    >
-      <View style={styles.container}>
+type Props = $Exact<{|
+  ...AnalyticsParams,
+  item?: DisciplineCard | ChapterCard,
+  onPress?: (DisciplineCard | ChapterCard) => void,
+  size?: 'cover',
+  testID?: string
+|}>;
+
+class CatalogItem extends React.PureComponent<Props> {
+  props: Props;
+
+  handlePress = () => {
+    const {onPress, item} = this.props;
+
+    item && onPress && onPress(item);
+  };
+
+  render() {
+    const {item, testID = 'catalog-item', section, size} = this.props;
+
+    const analyticsParams = item && {
+      ref: item.universalRef,
+      type: item.type === CARD_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
+      section
+    };
+
+    return (
+      <Touchable
+        testID={testID}
+        onPress={this.handlePress}
+        disabled={!item}
+        isHighlight
+        style={styles.touchable}
+        analyticsID="card"
+        analyticsParams={analyticsParams}
+      >
         <ImageBackground
           testID={`${testID}-image`}
-          source={image}
-          gradient={['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)']}
-          resizeMode="cover"
-          style={mode === CARD_DISPLAY_MODE.CARD ? styles.image : styles.imageCover}
-          gradientStyle={
-            mode === CARD_DISPLAY_MODE.CARD ? styles.imageGradient : styles.imageCoverGradient
+          source={item && {uri: item.image}}
+          gradient={
+            (item && ['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)']) || [
+              'rgba(0,0,0,0)',
+              'rgba(0,0,0,0)',
+              'rgba(0,0,0,0)',
+              'rgba(0,0,0,0)'
+            ]
           }
+          resizeMode="cover"
+          style={[styles.content, (size === 'cover' && styles.imageCover) || styles.image]}
+          gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
         >
-          {badgeLabel && (
-            <Badge
-              label={badgeLabel}
-              style={mode === CARD_DISPLAY_MODE.CARD ? styles.badge : styles.badgeCover}
-              labelStyle={
-                mode === CARD_DISPLAY_MODE.CARD ? styles.badgeLabel : styles.badgeLabelCover
-              }
-              testID={`${testID}-badge`}
-            />
+          {item && item.isNew && (
+            <View style={styles.badge}>
+              <CatalogItemBadge
+                label={translations.formatString(
+                  '{0}{1}',
+                  translations.new.charAt(0).toUpperCase(),
+                  translations.new.slice(1)
+                )}
+                size={size}
+                testID={`${testID}-badge`}
+              />
+            </View>
           )}
-          <CatalogItemFooter
-            isCourse={isCourse}
-            title={title}
-            subtitle={subtitle}
-            isCertified={isCertified}
-            isAdaptive={isAdaptive}
-            progression={progression}
-            titleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.title : styles.titleCover}
-            subtitleStyle={mode === CARD_DISPLAY_MODE.CARD ? styles.subtitle : styles.subtitleCover}
-            topIconSize={mode === CARD_DISPLAY_MODE.CARD ? 16 : 22}
-            iconCertifiedSize={mode === CARD_DISPLAY_MODE.CARD ? 14 : 16}
-            testID={testID}
-          />
+          <CatalogItemContent item={item} size={size} testID={`${testID}-content`} />
         </ImageBackground>
-        {authorType && (
-          <CatalogItemAuthor
-            authorType={authorType}
-            style={mode === CARD_DISPLAY_MODE.CARD ? styles.author : styles.authorCover}
-            authorName={authorName ? authorName : ''}
-            testID={testID}
-          />
-        )}
-      </View>
-    </Touchable>
-  );
-};
+      </Touchable>
+    );
+  }
+}
 
 export default CatalogItem;

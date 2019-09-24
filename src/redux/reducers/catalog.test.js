@@ -33,6 +33,7 @@ const sections = createSections().slice(0, 2);
 
 describe('Catalog', () => {
   const expectedInitialState: State = {
+    heroRef: null,
     entities: {
       cards: {},
       sections: {}
@@ -94,8 +95,9 @@ describe('Catalog', () => {
           language: 'en'
         }
       };
-      const result = reducer(undefined, action);
+      const result = reducer(expectedInitialState, action);
       const expected: State = {
+        ...expectedInitialState,
         sectionsRef: [undefined, sections[0].key, sections[1].key, undefined],
         entities: {
           cards: {},
@@ -125,6 +127,7 @@ describe('Catalog', () => {
       };
       const result = reducer(initialState, action);
       const expected: State = {
+        ...initialState,
         sectionsRef: [undefined, sections[0].key, sections[1].key, undefined],
         entities: {
           cards: {},
@@ -148,11 +151,20 @@ describe('Catalog', () => {
           language: 'en'
         }
       };
-      const result = reducer(
-        {entities: {cards: {}, sections: {[sections[0].key]: {en: sections[0]}}}},
-        action
-      );
+      const initialState: State = {
+        ...expectedInitialState,
+        entities: {
+          cards: {},
+          sections: {
+            [sections[0].key]: {
+              en: sections[0]
+            }
+          }
+        }
+      };
+      const result = reducer(initialState, action);
       const expected: State = {
+        ...initialState,
         entities: {
           cards: reduceCardsExpected,
           sections: {
@@ -178,7 +190,7 @@ describe('Catalog', () => {
           language: 'en'
         }
       };
-      const result = reducer(undefined, action);
+      const result = reducer(expectedInitialState, action);
       const expected: State = {
         heroRef: dis1.universalRef,
         entities: {
@@ -200,8 +212,11 @@ describe('Catalog', () => {
           language: 'en'
         }
       };
-      const result = reducer(undefined, action);
-      const expected = expectedInitialState;
+      const result = reducer(expectedInitialState, action);
+      const expected = {
+        ...expectedInitialState,
+        heroRef: undefined
+      };
 
       expect(result).toEqual(expected);
     });

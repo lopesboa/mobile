@@ -59,23 +59,27 @@ storiesOf('CatalogSection', module)
 if (__TEST__) {
   describe('CatalogSection', () => {
     it('should handle press', () => {
-      const handlePress = jest.fn();
+      const handleCardPress = jest.fn();
       const component = renderer.create(
         <CatalogSection
           sectionRef="foobarbaz"
           title="Some content"
           cards={[disciplineCard, chapterCard].concat(cards.slice(0, 28))}
-          onCardPress={handlePress}
+          onCardPress={handleCardPress}
           onScroll={handleFakePress}
           testID="fake-catalog-section"
         />
       );
-      const catalogSection = component.root.find(
-        el => el.props.testID === 'catalog-section-foobarbaz-item-bar'
+
+      const catalogItem = component.root.find(
+        el =>
+          el.props.testID === 'catalog-section-foobarbaz-item-bar' &&
+          el.props.analyticsID === 'card'
       );
-      catalogSection.props.onPress();
-      expect(handlePress.mock.calls.length).toBe(1);
-      expect(handlePress.mock.calls[0]).toEqual([chapterCard]);
+      catalogItem.props.onPress();
+
+      expect(handleCardPress).toHaveBeenCalledTimes(1);
+      expect(handleCardPress).toHaveBeenCalledWith(chapterCard);
     });
   });
 }

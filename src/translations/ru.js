@@ -12,7 +12,7 @@ const translations: Translations = {
     '<b>Открыть электронное сообщение</b> с приглашением скачать приложение Coorpacademy',
   authenticationMagicLinkStepThreeDescription:
     'Нажмите на кнопку <b>"Подключиться к приложению"</b>',
-  authenticationMagicLinkTitle: 'Волшебная ссылка ',
+  authenticationMagicLinkTitle: 'Волшебная ссылка',
   authenticationQRCodeHeader:
     'Вы не получили сообщения по электронной почте? Ничего страшного! Мы проверим вашу идентификационную информацию на веб-платформе с помощью компьютера',
   authenticationQRCodeStepOneDescription:
@@ -56,12 +56,12 @@ const translations: Translations = {
   ooops: 'Ой...',
   open: 'Открыть',
   openBrowser: 'Открыть <b>мой почтовый ящик</b>',
-  openSettings: 'Открыть настройки ',
+  openSettings: 'Открыть настройки',
   ouch: 'Ох...',
   outOfLives: 'У вас закончились жизни!',
-  permission: 'Разрешение ',
+  permission: 'Разрешение',
   permissionCamera:
-    'Нам нужен доступ к вашей камере для сканирования вашего QR-кода и вашей аутентификации. ',
+    'Нам нужен доступ к вашей камере для сканирования вашего QR-кода и вашей аутентификации.',
   platformHasBeenDisabled: 'Приложение отключено для вашей платформы',
   question: 'Вопрос',
   quit: 'Выйти',
@@ -71,6 +71,7 @@ const translations: Translations = {
   refreshEnjoyLearning: 'в сети между Сатурном и Землей, обновите, чтобы наслаждаться учебой',
   refreshNotWorking: 'Обновление не работает?',
   relatedSubjects: 'Рекомендовано вам:',
+  resumeLearning: 'Продолжить обучение',
   retryChapter: 'Повторить главу',
   retryLevel: 'Повторить уровень',
   scanQRCode: 'Сканируйте свой <b>QR-код</b>',
@@ -88,9 +89,9 @@ const translations: Translations = {
   version: 'Версия',
   videoLoadingError: 'Произошла ошибка при загрузке видео, попробуйте еще раз.',
   unlockNextLevel: 'Вы только что разблокировали<br><b>уровень {{levelName}}</b> ',
-  upgrade: 'Повысить уровень ',
+  upgrade: 'Обновить версию',
   upgradeDescription:
-    'Ваше приложение обновлено! Загрузите последнюю версию, чтобы воспользоваться им. ',
+    'Ваше приложение обновлено! Загрузите последнюю версию для оптимального использования.',
   winAdditionalStars:
     'Выиграйте {{count}} дополнительных звезд в этой главе при первом просмотре урока!',
   welcome: 'Добро пожаловать',

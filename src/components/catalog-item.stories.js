@@ -2,108 +2,65 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
+import renderer from 'react-test-renderer';
 
-import type {Progression} from '../types';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE} from '../const';
-import {handleFakePress} from '../utils/tests';
-import translations from '../translations';
+import {__TEST__} from '../modules/environment';
+import {createChapterCard, createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
+import {CARD_STATUS} from '../layer/data/_const';
 import CatalogItem from './catalog-item';
 
-const progression: Progression = {
-  current: 3,
-  count: 10
-};
+const levelCard = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
+const disciplineCard = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard],
+  title: 'Discipline card',
+  isAdaptive: true,
+  isNew: true
+});
+const chapterCard = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE,
+  isNew: true,
+  isAdaptive: true
+});
 
-const image = {
-  uri:
-    '//static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
-};
+storiesOf('CatalogItem', module)
+  .add('Default', () => <CatalogItem />)
+  .add('Default (cover)', () => <CatalogItem size="cover" />)
+  .add('With chapter', () => <CatalogItem item={chapterCard} />)
+  .add('With chapter (cover)', () => <CatalogItem size="cover" item={chapterCard} />)
+  .add('With discipline', () => <CatalogItem item={disciplineCard} />)
+  .add('With discipline (cover)', () => <CatalogItem size="cover" item={disciplineCard} />);
 
-storiesOf('Catalog Item', module)
-  .add('Adaptive', () => (
-    <CatalogItem
-      title="Predicting the future"
-      subtitle="Coorpacademy"
-      progression={progression}
-      image={image}
-      authorType={AUTHOR_TYPE.CUSTOM}
-      authorName="BREGUET CREATION"
-      isAdaptive
-      onPress={handleFakePress}
-      testID="catalog1"
-      universalRef="foobar"
-      type={ENGINE.LEARNER}
-      section="finishLearning"
-    />
-  ))
-  .add('New', () => (
-    <CatalogItem
-      title="Predicting the future"
-      subtitle="Coorpacademy"
-      progression={progression}
-      image={image}
-      authorType={AUTHOR_TYPE.CUSTOM}
-      authorName="BREGUET CREATION"
-      badge={translations.new}
-      isAdaptive={false}
-      onPress={handleFakePress}
-      testID="catalog2"
-      universalRef="foobar"
-      type={ENGINE.LEARNER}
-      section="finishLearning"
-    />
-  ))
-  .add('Adaptive/New/Certified/Coorp', () => (
-    <CatalogItem
-      title="Predicting the future"
-      subtitle="Coorpacademy"
-      progression={progression}
-      image={image}
-      authorType={AUTHOR_TYPE.COORP}
-      badge={translations.new}
-      isAdaptive
-      displayMode={CARD_DISPLAY_MODE.COVER}
-      isCertified
-      onPress={handleFakePress}
-      testID="catalog3"
-      universalRef="foobar"
-      type={ENGINE.LEARNER}
-      section="finishLearning"
-    />
-  ))
-  .add('Adaptive/New/Certified/Custom', () => (
-    <CatalogItem
-      title="Predicting the future"
-      subtitle="Coorpacademy"
-      progression={progression}
-      image={image}
-      authorType={AUTHOR_TYPE.VERIFIED}
-      badge={translations.new}
-      isAdaptive
-      displayMode={CARD_DISPLAY_MODE.CARD}
-      isCertified
-      onPress={handleFakePress}
-      testID="catalog4"
-      universalRef="foobar"
-      type={ENGINE.LEARNER}
-      section="finishLearning"
-    />
-  ))
-  .add('Microlearning', () => (
-    <CatalogItem
-      title="Predicting the future"
-      subtitle="Coorpacademy"
-      progression={progression}
-      image={image}
-      authorType={AUTHOR_TYPE.VERIFIED}
-      badge={translations.new}
-      isAdaptive
-      displayMode={CARD_DISPLAY_MODE.CARD}
-      isCertified
-      onPress={handleFakePress}
-      testID="catalog4"
-      universalRef="foobar"
-      type="microlearning"
-      section="finishLearning"
-    />
-  ));
+if (__TEST__) {
+  describe('CatalogItem', () => {
+    it('should not handle onPress callback', () => {
+      const handlePress = jest.fn();
+      const component = renderer.create(<CatalogItem onPress={handlePress} />);
+
+      const catalogItem = component.root.find(
+        el => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card'
+      );
+      catalogItem.props.onPress();
+
+      expect(handlePress).toHaveBeenCalledTimes(0);
+    });
+
+    it('should handle onPress callback', () => {
+      const handlePress = jest.fn();
+      const item = chapterCard;
+      const component = renderer.create(<CatalogItem item={item} onPress={handlePress} />);
+
+      const catalogItem = component.root.find(
+        el => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card'
+      );
+      catalogItem.props.onPress();
+
+      expect(handlePress).toHaveBeenCalledTimes(1);
+      expect(handlePress).toHaveBeenCalledWith(item);
+    });
+  });
+}

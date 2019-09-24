@@ -71,6 +71,7 @@ const translations: Translations = {
     'a Szaturnusz és a Föld közötti hálózatban kérjük, frissíts, hogy élvezni tudd a tanulást',
   refreshNotWorking: 'A frissítést nem működik?',
   relatedSubjects: 'Önnek ajánljuk:',
+  resumeLearning: 'Folytatni a tanulást',
   retryChapter: 'Fejezet újrapróbálása',
   retryLevel: 'Szint  újrajátszása',
   scanQRCode: 'Olvasd be <b>QR-kódodat</b>',

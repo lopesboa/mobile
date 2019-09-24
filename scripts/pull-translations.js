@@ -79,7 +79,6 @@ const generate = async (locale: string) => {
     'core/locales',
     'login.json'
   );
-
   const moocErrorTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
@@ -98,7 +97,6 @@ const generate = async (locale: string) => {
     'packages/@coorpacademy-components/locales',
     'global.json'
   );
-
   const moocDashboardTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
@@ -183,6 +181,7 @@ const generate = async (locale: string) => {
     ),
     refreshNotWorking: formatTranslation(moocErrorTranslations.modal.mobile.refresh_not_working),
     relatedSubjects: formatTranslation(playerTranslations['Related subjects']),
+    resumeLearning: formatTranslation(moocDashboardTranslations.slider.resume.cta),
     retryChapter: formatTranslation(playerTranslations['Retry chapter']),
     retryLevel: formatTranslation(playerTranslations['Retry level']),
     scanQRCode: formatTranslation(moocLoginTranslations.mobile.scanQRCode),

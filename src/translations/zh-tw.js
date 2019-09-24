@@ -60,6 +60,7 @@ const translations: Translations = {
   refreshEnjoyLearning: '在土星和地球之間的網路中，請重新整理來開心學習',
   refreshNotWorking: '重新整理沒用嗎？',
   relatedSubjects: '為您推薦：',
+  resumeLearning: '繼續探索',
   retryChapter: '重試章節：',
   retryLevel: '重試級別',
   scanQRCode: '掃描您的 <b>QR 碼</b>',

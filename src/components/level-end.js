@@ -7,13 +7,10 @@ import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
-import {getCleanUri} from '../modules/uri';
-import {CARD_DISPLAY_MODE, AUTHOR_TYPE, ENGINE, CONTENT_TYPE} from '../const';
+import {CONTENT_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
-import {CARD_TYPE} from '../layer/data/_const';
-import {getAuthorName, getAuthorType} from '../utils/content';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import withAudio from '../containers/with-audio';
@@ -175,8 +172,6 @@ class LevelEnd extends React.PureComponent<Props> {
     }
   }
 
-  handleCardPress = (item: DisciplineCard | ChapterCard) => () => this.props.onCardPress(item);
-
   handleButtonPress = () => this.props.onButtonPress();
 
   render() {
@@ -189,7 +184,8 @@ class LevelEnd extends React.PureComponent<Props> {
       nextContentLabel = '',
       recommendation,
       isFocused,
-      testID = 'level-end'
+      testID = 'level-end',
+      onCardPress
     } = this.props;
 
     const header = (isSuccess && translations.congratulations) || translations.ooops;
@@ -263,39 +259,15 @@ class LevelEnd extends React.PureComponent<Props> {
                   {recommendation && (
                     <View style={styles.recommendation}>
                       <Text style={styles.title}>{translations.relatedSubjects}</Text>
-                      <Card type={CARD_LAYOUT.CONTAIN} style={styles.card} shadowStyle={BOX_STYLE}>
+                      <Card type={CARD_LAYOUT.CONTAIN} style={styles.card}>
                         <CatalogItem
-                          title={recommendation.title}
-                          subtitle={
-                            recommendation.authors &&
-                            recommendation.authors.map(author => author.label).join(', ')
-                          }
-                          progression={{
-                            current: recommendation.completion,
-                            count: 1
-                          }}
-                          image={{uri: getCleanUri(recommendation.image)}}
-                          authorType={getAuthorType(recommendation)}
-                          authorName={
-                            getAuthorType(recommendation) !== AUTHOR_TYPE.CUSTOM
-                              ? getAuthorName(recommendation)
-                              : brandTheme.name
-                          }
-                          badge={recommendation.isNew ? translations.new : ''}
-                          isAdaptive={recommendation.adaptiv}
-                          displayMode={CARD_DISPLAY_MODE.COVER}
-                          onPress={this.handleCardPress(recommendation)}
+                          item={recommendation}
+                          onPress={onCardPress}
+                          size="cover"
                           testID={`recommend-item-${recommendation.universalRef.replace(
                             /_/g,
                             '-'
                           )}`}
-                          isCertified={getAuthorType(recommendation) === AUTHOR_TYPE.VERIFIED}
-                          universalRef={recommendation.universalRef}
-                          type={
-                            recommendation.type === CARD_TYPE.CHAPTER
-                              ? ENGINE.MICROLEARNING
-                              : ENGINE.LEARNER
-                          }
                           section="recommendation"
                         />
                       </Card>

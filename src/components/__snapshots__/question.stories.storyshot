@@ -262,10 +262,13 @@ exports[`Storyshots Question BasicQuestion 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -278,29 +281,24 @@ exports[`Storyshots Question BasicQuestion 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -328,6 +326,7 @@ exports[`Storyshots Question Default 1`] = `
           Object {
             "justifyContent": "center",
           },
+          undefined,
           Object {
             "height": undefined,
           },
@@ -377,6 +376,7 @@ exports[`Storyshots Question Default 1`] = `
           Object {
             "justifyContent": "center",
           },
+          undefined,
           Object {
             "height": undefined,
           },
@@ -986,32 +986,28 @@ exports[`Storyshots Question Option selected 1`] = `
               "justifyContent": "center",
               "marginBottom": 0,
               "opacity": 1,
+              "paddingHorizontal": 24,
             }
           }
           testID="button-validate-native"
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  false,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                false,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -1590,10 +1586,13 @@ exports[`Storyshots Question QCM 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -1606,29 +1605,24 @@ exports[`Storyshots Question QCM 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -2252,10 +2246,13 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -2268,29 +2265,24 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -2901,32 +2893,28 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
               "justifyContent": "center",
               "marginBottom": 0,
               "opacity": 1,
+              "paddingHorizontal": 24,
             }
           }
           testID="button-validate-native"
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  false,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                false,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -3793,10 +3781,13 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -3809,29 +3800,24 @@ exports[`Storyshots Question QCM Graphic 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -5322,10 +5308,13 @@ exports[`Storyshots Question Template 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -5338,29 +5327,24 @@ exports[`Storyshots Question Template 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -6199,10 +6183,13 @@ exports[`Storyshots Question With Video 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -6215,29 +6202,24 @@ exports[`Storyshots Question With Video 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >
@@ -6867,10 +6849,13 @@ exports[`Storyshots Question With image 1`] = `
                   "flexDirection": "row",
                   "height": 54,
                   "marginBottom": 0,
+                  "paddingHorizontal": 24,
                 },
                 Object {
                   "backgroundColor": "#00B0FF",
                 },
+                undefined,
+                undefined,
                 undefined,
                 undefined,
                 undefined,
@@ -6883,29 +6868,24 @@ exports[`Storyshots Question With image 1`] = `
           }
         >
           <Text
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "backgroundColor": "transparent",
-                  "flex": 1,
-                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
                   "textAlign": "center",
                 },
-                Array [
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "textAlign": "center",
-                  },
-                  undefined,
-                  Object {
-                    "color": "#90A4AE",
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
+                undefined,
+                Object {
+                  "color": "#90A4AE",
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
               ]
             }
           >

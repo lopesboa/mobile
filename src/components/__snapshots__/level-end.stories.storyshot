@@ -1118,142 +1118,104 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   testID="recommend-item-dis-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-dis-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-dis-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <View
                         style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-dis-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
                           Object {
-                            "x": 0.5,
-                            "y": 1,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
                           }
                         }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
-                            Array [
-                              Object {
-                                "flex": 1,
-                              },
-                              Object {
-                                "padding": 24,
-                              },
-                            ],
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-dis-2-image-gradient"
                       >
                         <View
                           style={
                             Object {
-                              "position": "absolute",
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "#FFFFFF",
-                                  "borderBottomEndRadius": 12,
-                                  "flex": 1,
-                                  "justifyContent": "center",
-                                  "paddingLeft": 8,
-                                  "paddingRight": 12,
-                                },
-                                Object {
-                                  "minHeight": 20,
-                                  "minWidth": 45,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    "New",
-                                    Object {
-                                      "fontSize": 12,
-                                      "fontWeight": "700",
-                                    },
-                                    Object {
-                                      "color": "#00B0FF",
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="recommend-item-dis-2-badge"
-                            >
-                              New
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "alignSelf": "flex-start",
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomEndRadius": 12,
+                              "paddingHorizontal": 8,
+                              "paddingVertical": 4,
                             }
                           }
                         >
@@ -1263,96 +1225,22 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 Object {},
                                 Array [
                                   Object {
-                                    "color": "#FFFFFF",
                                     "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "textAlign": "center",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "color": "#00B0FF",
+                                    "fontSize": 12,
                                   },
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-dis-2"
+                            testID="recommend-item-dis-2-badge"
                           >
-                            Fake discipline
+                            New
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-dis-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "borderRadius": 3,
-                                "overflow": "hidden",
-                              }
-                            }
-                            testID="progressBar-recommend-item-dis-2"
-                          >
-                            <View
-                              style={
-                                Object {
-                                  "backgroundColor": "#FFFFFF",
-                                }
-                              }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
-                          </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
+                      </View>
                       <Text
                         style={
                           Array [
@@ -1364,19 +1252,144 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                                 "textShadowColor": "rgba(0, 0, 0, 1)",
                                 "textShadowRadius": 2,
                               },
+                              false,
                               Object {
                                 "fontSize": 12,
-                                "letterSpacing": 2.25,
                               },
                             ],
                           ]
                         }
-                        testID="author-recommend-item-dis-2"
+                        testID="author-recommend-item-dis-2-content-author"
                       >
-                        ONBOARDING
+                        CUSTOM
                          CREATION
                       </Text>
-                    </View>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-dis-2-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flexDirection": "row",
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-dis-2-content-footer"
+                        >
+                          Fake discipline
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              Array [
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "flex": 1,
+                                    "fontWeight": "400",
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                  false,
+                                ],
+                              ]
+                            }
+                            testID="subtitle-recommend-item-dis-2-content-footer"
+                          >
+                            custom
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "borderRadius": 3,
+                                "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-dis-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
+                              }
+                            }
+                            testID="progression-bar"
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
+                                }
+                              }
+                              testID="progression-bar-0"
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -1469,34 +1482,30 @@ exports[`Storyshots LevelEnd Failure 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-retry-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -2626,142 +2635,104 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   testID="recommend-item-dis-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-dis-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-dis-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <View
                         style={
-                          Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-dis-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
                           Object {
-                            "x": 0.5,
-                            "y": 1,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
                           }
                         }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
-                            Array [
-                              Object {
-                                "flex": 1,
-                              },
-                              Object {
-                                "padding": 24,
-                              },
-                            ],
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-dis-2-image-gradient"
                       >
                         <View
                           style={
                             Object {
-                              "position": "absolute",
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "#FFFFFF",
-                                  "borderBottomEndRadius": 12,
-                                  "flex": 1,
-                                  "justifyContent": "center",
-                                  "paddingLeft": 8,
-                                  "paddingRight": 12,
-                                },
-                                Object {
-                                  "minHeight": 20,
-                                  "minWidth": 45,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    "New",
-                                    Object {
-                                      "fontSize": 12,
-                                      "fontWeight": "700",
-                                    },
-                                    Object {
-                                      "color": "#00B0FF",
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="recommend-item-dis-2-badge"
-                            >
-                              New
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "alignSelf": "flex-start",
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomEndRadius": 12,
+                              "paddingHorizontal": 8,
+                              "paddingVertical": 4,
                             }
                           }
                         >
@@ -2771,96 +2742,22 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 Object {},
                                 Array [
                                   Object {
-                                    "color": "#FFFFFF",
                                     "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "textAlign": "center",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "color": "#00B0FF",
+                                    "fontSize": 12,
                                   },
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-dis-2"
+                            testID="recommend-item-dis-2-badge"
                           >
-                            Fake discipline
+                            New
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-dis-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "borderRadius": 3,
-                                "overflow": "hidden",
-                              }
-                            }
-                            testID="progressBar-recommend-item-dis-2"
-                          >
-                            <View
-                              style={
-                                Object {
-                                  "backgroundColor": "#FFFFFF",
-                                }
-                              }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
-                          </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
+                      </View>
                       <Text
                         style={
                           Array [
@@ -2873,13 +2770,15 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                                 "textShadowRadius": 2,
                               },
                               Object {
-                                "fontSize": 12,
                                 "letterSpacing": 2.25,
+                              },
+                              Object {
+                                "fontSize": 12,
                               },
                             ],
                           ]
                         }
-                        testID="author-recommend-item-dis-2"
+                        testID="author-recommend-item-dis-2-content-author"
                       >
                         COORP 
                         <Text
@@ -2887,7 +2786,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                             Array [
                               Object {},
                               Object {
-                                "fontWeight": "700",
+                                "fontWeight": "900",
                               },
                             ]
                           }
@@ -2895,7 +2794,132 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                           ORIGINAL
                         </Text>
                       </Text>
-                    </View>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-dis-2-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flexDirection": "row",
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-dis-2-content-footer"
+                        >
+                          Fake discipline
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              Array [
+                                Object {},
+                                Array [
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "flex": 1,
+                                    "fontWeight": "400",
+                                  },
+                                  Object {
+                                    "fontSize": 15,
+                                  },
+                                  false,
+                                ],
+                              ]
+                            }
+                            testID="subtitle-recommend-item-dis-2-content-footer"
+                          >
+                            custom
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
+                              Object {
+                                "borderRadius": 3,
+                                "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-dis-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
+                              }
+                            }
+                            testID="progression-bar"
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
+                                }
+                              }
+                              testID="progression-bar-0"
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -2988,34 +3012,30 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-retry-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -4424,94 +4444,136 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-cha-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-cha-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <Text
                         style={
                           Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-cha-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 1,
-                          }
-                        }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
+                            Object {},
                             Array [
                               Object {
-                                "flex": 1,
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
                               },
                               Object {
-                                "padding": 24,
+                                "letterSpacing": 2.25,
+                              },
+                              Object {
+                                "fontSize": 12,
                               },
                             ],
-                            undefined,
                           ]
                         }
-                        testID="recommend-item-cha-2-image-gradient"
+                        testID="author-recommend-item-cha-2-content-author"
+                      >
+                        COORP 
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "900",
+                              },
+                            ]
+                          }
+                        >
+                          ORIGINAL
+                        </Text>
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-cha-2-content-footer"
                       >
                         <View
                           style={
                             Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "flexDirection": "row",
                             }
                           }
                         >
@@ -4539,7 +4601,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 },
                               ]
                             }
-                            testID="infinite-recommend-item-cha-2"
+                            testID="infinite-recommend-item-cha-2-content-footer"
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
@@ -4634,6 +4696,59 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                               />
                             </RNSVGGroup>
                           </RNSVGSvgView>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-cha-2-content-footer"
+                        >
+                          Fake chapter
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
                           <Text
                             style={
                               Array [
@@ -4641,130 +4756,65 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
-                                    "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "flex": 1,
+                                    "fontWeight": "400",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "fontSize": 15,
                                   },
+                                  false,
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-cha-2"
+                            testID="subtitle-recommend-item-cha-2-content-footer"
                           >
-                            Fake chapter
+                            custom
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
                             }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-cha-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
                               Object {
                                 "borderRadius": 3,
                                 "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-cha-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
                               }
                             }
-                            testID="progressBar-recommend-item-cha-2"
+                            testID="progression-bar"
                           >
                             <View
                               style={
                                 Object {
-                                  "backgroundColor": "#FFFFFF",
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
                                 }
                               }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
+                              testID="progression-bar-0"
+                            />
                           </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <Text
-                        style={
-                          Array [
-                            Object {},
-                            Array [
-                              Object {
-                                "color": "#FFFFFF",
-                                "textAlign": "center",
-                                "textShadowColor": "rgba(0, 0, 0, 1)",
-                                "textShadowRadius": 2,
-                              },
-                              Object {
-                                "fontSize": 12,
-                                "letterSpacing": 2.25,
-                              },
-                            ],
-                          ]
-                        }
-                        testID="author-recommend-item-cha-2"
-                      >
-                        COORP 
-                        <Text
-                          style={
-                            Array [
-                              Object {},
-                              Object {
-                                "fontWeight": "700",
-                              },
-                            ]
-                          }
-                        >
-                          ORIGINAL
-                        </Text>
-                      </Text>
-                    </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -4857,34 +4907,30 @@ exports[`Storyshots LevelEnd Finished 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -6293,94 +6339,136 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-cha-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-cha-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <Text
                         style={
                           Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-cha-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 1,
-                          }
-                        }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
+                            Object {},
                             Array [
                               Object {
-                                "flex": 1,
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
                               },
                               Object {
-                                "padding": 24,
+                                "letterSpacing": 2.25,
+                              },
+                              Object {
+                                "fontSize": 12,
                               },
                             ],
-                            undefined,
                           ]
                         }
-                        testID="recommend-item-cha-2-image-gradient"
+                        testID="author-recommend-item-cha-2-content-author"
+                      >
+                        COORP 
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "900",
+                              },
+                            ]
+                          }
+                        >
+                          ORIGINAL
+                        </Text>
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-cha-2-content-footer"
                       >
                         <View
                           style={
                             Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "flexDirection": "row",
                             }
                           }
                         >
@@ -6408,7 +6496,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 },
                               ]
                             }
-                            testID="infinite-recommend-item-cha-2"
+                            testID="infinite-recommend-item-cha-2-content-footer"
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
@@ -6503,6 +6591,59 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                               />
                             </RNSVGGroup>
                           </RNSVGSvgView>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-cha-2-content-footer"
+                        >
+                          Fake chapter
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
                           <Text
                             style={
                               Array [
@@ -6510,130 +6651,65 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
-                                    "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "flex": 1,
+                                    "fontWeight": "400",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "fontSize": 15,
                                   },
+                                  false,
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-cha-2"
+                            testID="subtitle-recommend-item-cha-2-content-footer"
                           >
-                            Fake chapter
+                            custom
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
                             }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-cha-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
                               Object {
                                 "borderRadius": 3,
                                 "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-cha-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
                               }
                             }
-                            testID="progressBar-recommend-item-cha-2"
+                            testID="progression-bar"
                           >
                             <View
                               style={
                                 Object {
-                                  "backgroundColor": "#FFFFFF",
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
                                 }
                               }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
+                              testID="progression-bar-0"
+                            />
                           </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <Text
-                        style={
-                          Array [
-                            Object {},
-                            Array [
-                              Object {
-                                "color": "#FFFFFF",
-                                "textAlign": "center",
-                                "textShadowColor": "rgba(0, 0, 0, 1)",
-                                "textShadowRadius": 2,
-                              },
-                              Object {
-                                "fontSize": 12,
-                                "letterSpacing": 2.25,
-                              },
-                            ],
-                          ]
-                        }
-                        testID="author-recommend-item-cha-2"
-                      >
-                        COORP 
-                        <Text
-                          style={
-                            Array [
-                              Object {},
-                              Object {
-                                "fontWeight": "700",
-                              },
-                            ]
-                          }
-                        >
-                          ORIGINAL
-                        </Text>
-                      </Text>
-                    </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -6726,34 +6802,30 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -9004,94 +9076,123 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-cha-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-cha-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <Text
                         style={
                           Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-cha-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 1,
-                          }
-                        }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
+                            Object {},
                             Array [
                               Object {
-                                "flex": 1,
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
                               },
+                              false,
                               Object {
-                                "padding": 24,
+                                "fontSize": 12,
                               },
                             ],
-                            undefined,
                           ]
                         }
-                        testID="recommend-item-cha-2-image-gradient"
+                        testID="author-recommend-item-cha-2-content-author"
+                      >
+                        CUSTOM
+                         CREATION
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-cha-2-content-footer"
                       >
                         <View
                           style={
                             Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "flexDirection": "row",
                             }
                           }
                         >
@@ -9119,7 +9220,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 },
                               ]
                             }
-                            testID="infinite-recommend-item-cha-2"
+                            testID="infinite-recommend-item-cha-2-content-footer"
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
@@ -9214,6 +9315,59 @@ exports[`Storyshots LevelEnd Success 1`] = `
                               />
                             </RNSVGGroup>
                           </RNSVGSvgView>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-cha-2-content-footer"
+                        >
+                          Fake chapter
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
                           <Text
                             style={
                               Array [
@@ -9221,119 +9375,65 @@ exports[`Storyshots LevelEnd Success 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
-                                    "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "flex": 1,
+                                    "fontWeight": "400",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "fontSize": 15,
                                   },
+                                  false,
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-cha-2"
+                            testID="subtitle-recommend-item-cha-2-content-footer"
                           >
-                            Fake chapter
+                            custom
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
                             }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-cha-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
                               Object {
                                 "borderRadius": 3,
                                 "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-cha-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
                               }
                             }
-                            testID="progressBar-recommend-item-cha-2"
+                            testID="progression-bar"
                           >
                             <View
                               style={
                                 Object {
-                                  "backgroundColor": "#FFFFFF",
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
                                 }
                               }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
+                              testID="progression-bar-0"
+                            />
                           </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <Text
-                        style={
-                          Array [
-                            Object {},
-                            Array [
-                              Object {
-                                "color": "#FFFFFF",
-                                "textAlign": "center",
-                                "textShadowColor": "rgba(0, 0, 0, 1)",
-                                "textShadowRadius": 2,
-                              },
-                              Object {
-                                "fontSize": 12,
-                                "letterSpacing": 2.25,
-                              },
-                            ],
-                          ]
-                        }
-                        testID="author-recommend-item-cha-2"
-                      >
-                        ONBOARDING
-                         CREATION
-                      </Text>
-                    </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -9448,34 +9548,30 @@ exports[`Storyshots LevelEnd Success 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >
@@ -11461,94 +11557,136 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   testID="recommend-item-cha-2"
                 >
                   <View
+                    accessibilityIgnoresInvertColors={true}
                     style={
-                      Object {
-                        "backgroundColor": "#FFFFFF",
-                      }
+                      Array [
+                        Object {
+                          "height": "100%",
+                          "width": "100%",
+                        },
+                        Array [
+                          Object {
+                            "backgroundColor": "#ECEFF1",
+                          },
+                          Object {
+                            "height": 264,
+                          },
+                        ],
+                      ]
                     }
                   >
-                    <View
-                      accessibilityIgnoresInvertColors={true}
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        Object {
+                          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=528",
+                        }
+                      }
                       style={
                         Array [
                           Object {
-                            "height": "100%",
-                            "width": "100%",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
                           },
                           Object {
-                            "height": 400.2,
-                            "minHeight": 215,
+                            "height": undefined,
+                            "width": undefined,
                           },
+                          undefined,
                         ]
                       }
+                      testID="recommend-item-cha-2-image"
+                    />
+                    <BVLinearGradient
+                      colors={
+                        Array [
+                          0,
+                          1711276032,
+                          3003121664,
+                          4278190080,
+                        ]
+                      }
+                      endPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 1,
+                        }
+                      }
+                      locations={null}
+                      startPoint={
+                        Object {
+                          "x": 0.5,
+                          "y": 0,
+                        }
+                      }
+                      style={
+                        Array [
+                          Array [
+                            Object {
+                              "flex": 1,
+                            },
+                            Object {
+                              "justifyContent": "flex-end",
+                              "padding": 24,
+                            },
+                          ],
+                          undefined,
+                        ]
+                      }
+                      testID="recommend-item-cha-2-image-gradient"
                     >
-                      <Image
-                        resizeMode="cover"
-                        source={
-                          Object {
-                            "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&h=800",
-                          }
-                        }
+                      <Text
                         style={
                           Array [
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            },
-                            Object {
-                              "height": undefined,
-                              "width": undefined,
-                            },
-                            undefined,
-                          ]
-                        }
-                        testID="recommend-item-cha-2-image"
-                      />
-                      <BVLinearGradient
-                        colors={
-                          Array [
-                            0,
-                            1711276032,
-                            3003121664,
-                            4278190080,
-                          ]
-                        }
-                        endPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 1,
-                          }
-                        }
-                        locations={null}
-                        startPoint={
-                          Object {
-                            "x": 0.5,
-                            "y": 0,
-                          }
-                        }
-                        style={
-                          Array [
+                            Object {},
                             Array [
                               Object {
-                                "flex": 1,
+                                "color": "#FFFFFF",
+                                "textAlign": "center",
+                                "textShadowColor": "rgba(0, 0, 0, 1)",
+                                "textShadowRadius": 2,
                               },
                               Object {
-                                "padding": 24,
+                                "letterSpacing": 2.25,
+                              },
+                              Object {
+                                "fontSize": 12,
                               },
                             ],
-                            undefined,
                           ]
                         }
-                        testID="recommend-item-cha-2-image-gradient"
+                        testID="author-recommend-item-cha-2-content-author"
+                      >
+                        COORP 
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Object {
+                                "fontWeight": "900",
+                              },
+                            ]
+                          }
+                        >
+                          ORIGINAL
+                        </Text>
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "flex": 1,
+                            "justifyContent": "flex-end",
+                          }
+                        }
+                        testID="recommend-item-cha-2-content-footer"
                       >
                         <View
                           style={
                             Object {
-                              "flex": 1,
-                              "justifyContent": "flex-end",
+                              "flexDirection": "row",
                             }
                           }
                         >
@@ -11576,7 +11714,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 },
                               ]
                             }
-                            testID="infinite-recommend-item-cha-2"
+                            testID="infinite-recommend-item-cha-2-content-footer"
                             tintColor="#FFFFFF"
                             vbHeight={26}
                             vbWidth={26}
@@ -11671,6 +11809,59 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                               />
                             </RNSVGGroup>
                           </RNSVGSvgView>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "fontWeight": "700",
+                                },
+                                Object {
+                                  "fontSize": 22,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="title-recommend-item-cha-2-content-footer"
+                        >
+                          Fake chapter
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
                           <Text
                             style={
                               Array [
@@ -11678,130 +11869,65 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                                 Array [
                                   Object {
                                     "color": "#FFFFFF",
-                                    "fontWeight": "700",
-                                    "paddingTop": 8,
+                                    "flex": 1,
+                                    "fontWeight": "400",
                                   },
                                   Object {
-                                    "fontSize": 22,
+                                    "fontSize": 15,
                                   },
+                                  false,
                                 ],
                               ]
                             }
-                            testID="title-recommend-item-cha-2"
+                            testID="subtitle-recommend-item-cha-2-content-footer"
                           >
-                            Fake chapter
+                            custom
                           </Text>
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "flexDirection": "row",
-                              }
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "height": 16,
+                              "width": 16,
                             }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {},
-                                  Array [
-                                    Object {
-                                      "color": "#FFFFFF",
-                                      "flex": 1,
-                                      "fontWeight": "400",
-                                      "paddingBottom": 16,
-                                      "paddingTop": 8,
-                                    },
-                                    Object {
-                                      "fontSize": 15,
-                                    },
-                                  ],
-                                ]
-                              }
-                              testID="subtitle-recommend-item-cha-2"
-                            >
-                              custom
-                            </Text>
-                          </View>
-                          <View
-                            style={
+                          }
+                        />
+                        <View
+                          style={
+                            Array [
                               Object {
                                 "borderRadius": 3,
                                 "overflow": "hidden",
+                              },
+                              false,
+                            ]
+                          }
+                          testID="progress-bar-recommend-item-cha-2-content-footer"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#FFFFFF",
                               }
                             }
-                            testID="progressBar-recommend-item-cha-2"
+                            testID="progression-bar"
                           >
                             <View
                               style={
                                 Object {
-                                  "backgroundColor": "#FFFFFF",
+                                  "backgroundColor": "#00B0FF",
+                                  "borderBottomRightRadius": 1,
+                                  "borderTopRightRadius": 1,
+                                  "height": 2,
+                                  "width": "0%",
                                 }
                               }
-                              testID="progression-bar"
-                            >
-                              <View
-                                style={
-                                  Object {
-                                    "backgroundColor": "#00B0FF",
-                                    "borderBottomRightRadius": 1,
-                                    "borderTopRightRadius": 1,
-                                    "height": 2,
-                                    "width": "0%",
-                                  }
-                                }
-                                testID="progression-bar-0"
-                              />
-                            </View>
+                              testID="progression-bar-0"
+                            />
                           </View>
                         </View>
-                      </BVLinearGradient>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "justifyContent": "center",
-                          "marginVertical": 24,
-                          "position": "absolute",
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <Text
-                        style={
-                          Array [
-                            Object {},
-                            Array [
-                              Object {
-                                "color": "#FFFFFF",
-                                "textAlign": "center",
-                                "textShadowColor": "rgba(0, 0, 0, 1)",
-                                "textShadowRadius": 2,
-                              },
-                              Object {
-                                "fontSize": 12,
-                                "letterSpacing": 2.25,
-                              },
-                            ],
-                          ]
-                        }
-                        testID="author-recommend-item-cha-2"
-                      >
-                        COORP 
-                        <Text
-                          style={
-                            Array [
-                              Object {},
-                              Object {
-                                "fontWeight": "700",
-                              },
-                            ]
-                          }
-                        >
-                          ORIGINAL
-                        </Text>
-                      </Text>
-                    </View>
+                      </View>
+                    </BVLinearGradient>
                   </View>
                 </View>
               </View>
@@ -11894,34 +12020,30 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
             "justifyContent": "center",
             "marginBottom": 0,
             "opacity": 1,
+            "paddingHorizontal": 24,
           }
         }
         testID="button-next-level-native"
       >
         <Text
+          numberOfLines={1}
           style={
             Array [
               Object {
-                "backgroundColor": "transparent",
-                "flex": 1,
-                "fontSize": 18,
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
                 "textAlign": "center",
               },
-              Array [
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 17,
-                  "fontWeight": "700",
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "#546E7A",
-                },
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-              ],
+              Object {
+                "color": "#546E7A",
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
             ]
           }
         >

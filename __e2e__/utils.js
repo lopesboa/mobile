@@ -1,5 +1,6 @@
 // @flow strict
 
+import {HEIGHT as HERO_HEIGHT} from '../src/components/hero';
 import {ITEM_WIDTH, ITEM_HEIGHT} from '../src/components/catalog-section';
 
 let alreadyLaunched = false;
@@ -97,6 +98,10 @@ export const wrongAnswer = async () => {
   await element(by.id('question-screen')).swipe('up');
   await element(by.id('question-choice-1')).tap();
   await element(by.id('button-validate')).tap();
+};
+
+export const scrollHero = async () => {
+  await element(by.id('catalog')).scroll(HERO_HEIGHT, 'down');
 };
 
 export default {

@@ -80,6 +80,7 @@ export type Translations = {|
   refreshEnjoyLearning: string,
   refreshNotWorking: string,
   relatedSubjects: string,
+  resumeLearning: string,
   retryChapter: string,
   retryLevel: string,
   retryChapter: string,

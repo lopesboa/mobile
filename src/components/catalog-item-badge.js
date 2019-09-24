@@ -4,31 +4,22 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import theme from '../modules/theme';
-import type {Chapter, Discipline} from '../layer/data/_types';
 import Text from './text';
 import {BrandThemeContext} from './brand-theme-provider';
 
-export type Item = Discipline | Chapter;
-
 type Props = {|
   label: string,
-  testID: string,
-  style?: ViewStyleProp,
-  labelStyle?: TextStyleProp
+  size?: 'cover',
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute'
-  },
-  badge: {
-    flex: 1,
+    alignSelf: 'flex-start',
     backgroundColor: theme.colors.white,
     borderBottomEndRadius: theme.radius.medium,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingLeft: theme.spacing.tiny,
-    paddingRight: theme.spacing.tiny + theme.spacing.micro
+    paddingVertical: theme.spacing.micro,
+    paddingHorizontal: theme.spacing.tiny
   },
   label: {
     fontWeight: theme.fontWeight.bold,
@@ -36,35 +27,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const Badge = ({
-  label,
-  testID,
-  style = {
-    minWidth: 40,
-    minHeight: 17
-  },
-  labelStyle = {
-    fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.extraSmall
-  }
-}: Props) => {
+const Badge = ({label, size, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
+  const fontSize = size === 'cover' ? theme.fontSize.small : theme.fontSize.extraSmall;
+  const labelStyle = {
+    fontSize,
+    color: brandTheme.colors.primary
+  };
+
   return (
     <View style={styles.container}>
-      <View style={[styles.badge, style]}>
-        <Text
-          testID={testID}
-          style={[
-            label,
-            labelStyle,
-            {
-              color: brandTheme.colors.primary
-            }
-          ]}
-        >
-          {label}
-        </Text>
-      </View>
+      <Text testID={testID} style={[styles.label, labelStyle]}>
+        {label}
+      </Text>
     </View>
   );
 };

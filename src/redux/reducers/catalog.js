@@ -14,7 +14,7 @@ import type {SupportedLanguage} from '../../translations/_types';
 import type {Section} from '../../types';
 
 export type State = {|
-  heroRef?: string,
+  heroRef?: string | null,
   sectionsRef?: Array<string | void>,
   entities: {
     cards: {
@@ -31,6 +31,7 @@ export type State = {|
 |};
 
 export const initialState: State = {
+  heroRef: null,
   entities: {
     cards: {},
     sections: {}

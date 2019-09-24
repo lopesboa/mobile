@@ -68,6 +68,7 @@ const translations: Translations = {
     '土星と地球間のネットワークのどこかに消えてしまいました。続けて学習を楽しむには、リフレッシュしてください。',
   refreshNotWorking: 'リフレッシュが機能していませんか？',
   relatedSubjects: 'あなたへおすすめのコース',
+  resumeLearning: '学習を続ける',
   retryChapter: '章を再試行します。',
   retryLevel: 'リトライする',
   scanQRCode: 'あなたの<b>QRコードを</b>スキャンする',

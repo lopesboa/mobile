@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react';
+import {Text} from 'react-native';
 import renderer from 'react-test-renderer';
 import {storiesOf} from '@storybook/react-native';
 
@@ -11,13 +12,34 @@ import {Component as Touchable} from './touchable';
 
 storiesOf('Touchable', module)
   .add('Default', () => (
-    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
+  ))
+  .add('Default (disabled)', () => (
+    <Touchable vibration={createFakeVibration()} disabled analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
   ))
   .add('Without feedback', () => (
-    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+    <Touchable vibration={createFakeVibration()} isWithoutFeedback analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
+  ))
+  .add('Without feedback (disabled)', () => (
+    <Touchable vibration={createFakeVibration()} disabled analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
   ))
   .add('Highlight', () => (
-    <Touchable vibration={createFakeVibration()} analyticsID="fake-touchable" />
+    <Touchable vibration={createFakeVibration()} isHighlight analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
+  ))
+  .add('Highlight (disabled)', () => (
+    <Touchable vibration={createFakeVibration()} isHighlight analyticsID="fake-touchable">
+      <Text>Foo</Text>
+    </Touchable>
   ));
 
 if (__TEST__) {

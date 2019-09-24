@@ -5,7 +5,7 @@ import type {Translations} from './_types';
 const translations: Translations = {
   accessTheLesson: '访问课程',
   authenticationMagicLinkHeader: '点击收到的邮件中的链接以连接到您的平台',
-  authenticationMagicLinkStepOneDescription: '在本手机上前往您的<b>职业邮箱</b> ',
+  authenticationMagicLinkStepOneDescription: '在本手机上前往您的<b>职业邮箱</b>',
   authenticationMagicLinkStepTwoDescription: '<b>打开邮件</b>，通过邀请下载  Coorpacademy App',
   authenticationMagicLinkStepThreeDescription: '点击按钮<b>"连接到 App"</b>',
   authenticationMagicLinkTitle: '魔法链接',
@@ -62,6 +62,7 @@ const translations: Translations = {
   refreshEnjoyLearning: '丢失位置为 Saturn 与 Earth 之间的网络；请刷新以进行学习',
   refreshNotWorking: '刷新不起作用？',
   relatedSubjects: '推荐给你：',
+  resumeLearning: '继续学习',
   retryChapter: '重试章节',
   retryLevel: '重试级别',
   scanQRCode: '扫描您的<b>二维码</b>',

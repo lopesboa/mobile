@@ -21,6 +21,18 @@ storiesOf('Button', module)
       Here we go!
     </Button>
   ))
+  .add('Small', () => (
+    <Button
+      onPress={handleFakePress}
+      isSmall
+      testID="fake-button"
+      vibration={createFakeVibration()}
+      analytics={createFakeAnalytics()}
+      analyticsID="fake-button"
+    >
+      Here we go!
+    </Button>
+  ))
   .add('Disabled', () => (
     <Button
       onPress={handleFakePress}
@@ -37,6 +49,31 @@ storiesOf('Button', module)
     <Button
       onPress={handleFakePress}
       isLoading
+      testID="fake-button"
+      vibration={createFakeVibration()}
+      analytics={createFakeAnalytics()}
+      analyticsID="fake-button"
+    >
+      Here we go!
+    </Button>
+  ))
+  .add('Placeholder', () => (
+    <Button
+      onPress={handleFakePress}
+      isPlaceholder
+      testID="fake-button"
+      vibration={createFakeVibration()}
+      analytics={createFakeAnalytics()}
+      analyticsID="fake-button"
+    >
+      Here we go!
+    </Button>
+  ))
+  .add('Placeholder with custom color', () => (
+    <Button
+      onPress={handleFakePress}
+      isPlaceholder
+      placeholderColor="red"
       testID="fake-button"
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}

@@ -36,8 +36,6 @@ export type TooltipType = 'highscore' | 'unlock';
 
 export type CardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
 
-export type CardDisplayMode = 'card' | 'cover';
-
 export type AuthorType = 'coorp' | 'verified' | 'custom' | 'marketplace';
 
 export type Question = string;

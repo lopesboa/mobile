@@ -1,5 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots PlaceholderLine Centered 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "alignItems": "center",
+      },
+      Object {
+        "height": undefined,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    noMargin={true}
+    style={
+      Array [
+        Object {
+          "borderRadius": 0,
+        },
+        Object {
+          "height": 10,
+        },
+        Object {
+          "backgroundColor": "#ECEFF1",
+        },
+      ]
+    }
+    width="30%"
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
 exports[`Storyshots PlaceholderLine Custom color 1`] = `
 <View
   style={
@@ -7,6 +52,7 @@ exports[`Storyshots PlaceholderLine Custom color 1`] = `
       Object {
         "justifyContent": "center",
       },
+      undefined,
       Object {
         "height": undefined,
       },
@@ -49,6 +95,7 @@ exports[`Storyshots PlaceholderLine Custom width 1`] = `
       Object {
         "justifyContent": "center",
       },
+      undefined,
       Object {
         "height": undefined,
       },
@@ -91,6 +138,7 @@ exports[`Storyshots PlaceholderLine Default 1`] = `
       Object {
         "justifyContent": "center",
       },
+      undefined,
       Object {
         "height": undefined,
       },
@@ -133,6 +181,7 @@ exports[`Storyshots PlaceholderLine Small 1`] = `
       Object {
         "justifyContent": "center",
       },
+      undefined,
       Object {
         "height": undefined,
       },
@@ -175,6 +224,7 @@ exports[`Storyshots PlaceholderLine Tiny 1`] = `
       Object {
         "justifyContent": "center",
       },
+      undefined,
       Object {
         "height": undefined,
       },

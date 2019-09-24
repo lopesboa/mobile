@@ -71,6 +71,7 @@ const translations: Translations = {
     'in the network between Saturn and the Earth, please refresh in order to enjoy learning',
   refreshNotWorking: 'Refresh not working?',
   relatedSubjects: 'Recommended for you:',
+  resumeLearning: 'Continue Learning',
   retryChapter: 'Retry chapter',
   retryLevel: 'Retry level',
   scanQRCode: 'Scan your <b>QR code</b>',

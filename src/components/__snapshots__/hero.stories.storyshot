@@ -10,17 +10,429 @@ exports[`Storyshots Hero Default 1`] = `
         "width": "100%",
       },
       Object {
-        "height": 533.6,
+        "backgroundColor": "#ECEFF1",
+        "height": 337,
+        "width": "100%",
       },
     ]
   }
 >
   <Image
-    height={533.6}
+    height={337}
+    resizeMode="cover"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": undefined,
+          "width": undefined,
+        },
+        undefined,
+      ]
+    }
+    testID="image-background"
+    width={320}
+  />
+  <BVLinearGradient
+    colors={
+      Array [
+        0,
+        0,
+        0,
+        0,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      Object {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      Array [
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "justifyContent": "flex-end",
+            "padding": 24,
+          },
+        ],
+        undefined,
+      ]
+    }
+    testID="image-background-gradient"
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+        testID="catalog-hero-footer-placeholder"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "height": 75,
+              },
+              Object {
+                "height": 87,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "alignItems": "center",
+                  },
+                  Object {
+                    "height": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                noMargin={true}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 0,
+                    },
+                    Object {
+                      "height": 16,
+                    },
+                    Object {
+                      "backgroundColor": "#CFD8DC",
+                    },
+                  ]
+                }
+                width="85%"
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 8,
+                  "width": 8,
+                }
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "alignItems": "center",
+                  },
+                  Object {
+                    "height": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                noMargin={true}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 0,
+                    },
+                    Object {
+                      "height": 16,
+                    },
+                    Object {
+                      "backgroundColor": "#CFD8DC",
+                    },
+                  ]
+                }
+                width="65%"
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "alignItems": "center",
+                  },
+                  Object {
+                    "height": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                noMargin={true}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 0,
+                    },
+                    Object {
+                      "height": 5,
+                    },
+                    Object {
+                      "backgroundColor": "#CFD8DC",
+                    },
+                  ]
+                }
+                width="50%"
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 16,
+                  "width": 16,
+                }
+              }
+            />
+            <View
+              noMargin={true}
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 3,
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "alignSelf": "center",
+                    "width": "60%",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "alignItems": "center",
+                    },
+                    Object {
+                      "height": undefined,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  noMargin={true}
+                  style={
+                    Array [
+                      Object {
+                        "borderRadius": 0,
+                      },
+                      Object {
+                        "height": 2,
+                      },
+                      Object {
+                        "backgroundColor": "#CFD8DC",
+                      },
+                    ]
+                  }
+                  width="100%"
+                >
+                  <View
+                    style={
+                      Object {
+                        "flex": 1,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+      />
+      <View
+        testID="catalog-hero-button"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 8,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 44,
+                "justifyContent": "center",
+                "marginBottom": 10,
+              },
+              Array [
+                Object {
+                  "borderRadius": 32,
+                  "borderWidth": 0,
+                  "flexDirection": "row",
+                  "height": 54,
+                  "marginBottom": 0,
+                  "paddingHorizontal": 24,
+                },
+                Object {
+                  "backgroundColor": "#00B0FF",
+                },
+                undefined,
+                undefined,
+                Object {
+                  "height": 45,
+                },
+                undefined,
+                undefined,
+                Object {
+                  "alignSelf": "center",
+                  "minWidth": "40%",
+                },
+              ],
+              Object {
+                "backgroundColor": "#CFD8DC",
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "fontSize": 15,
+                },
+                undefined,
+                undefined,
+                Object {
+                  "color": "#CFD8DC",
+                },
+              ]
+            }
+          >
+            Continue Learning
+          </Text>
+        </View>
+      </View>
+    </View>
+  </BVLinearGradient>
+</View>
+`;
+
+exports[`Storyshots Hero With content 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "height": 337,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <Image
+    height={337}
     resizeMode="cover"
     source={
       Object {
-        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=crop&q=90&w=640&h=1067",
+        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&h=674",
       }
     }
     style={
@@ -80,52 +492,243 @@ exports[`Storyshots Hero Default 1`] = `
     }
     testID="image-background-gradient"
   >
-    <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              Object {
+                "letterSpacing": 2.4375,
+              },
+              Object {
+                "fontSize": 13,
+              },
+            ],
+          ]
+        }
+        testID="author-catalog-hero-author"
+      >
+        COORP 
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "fontWeight": "900",
+              },
+            ]
+          }
+        >
+          ORIGINAL
+        </Text>
+      </Text>
       <View
         style={
           Object {
             "flex": 1,
+            "justifyContent": "flex-end",
           }
         }
+        testID="catalog-hero-footer"
       >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {},
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "fontSize": 28,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ],
+            ]
+          }
+          testID="title-catalog-hero-footer"
+        >
+          Discipline card
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "flex": 1,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "fontSize": 15,
+                  },
+                  Object {
+                    "textAlign": "center",
+                  },
+                ],
+              ]
+            }
+            testID="subtitle-catalog-hero-footer"
+          >
+            A good guy with blue eyes
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 16,
+              "width": 16,
+            }
+          }
+        />
         <View
           style={
             Array [
               Object {
-                "justifyContent": "center",
+                "borderRadius": 3,
+                "overflow": "hidden",
               },
               Object {
-                "height": undefined,
+                "alignSelf": "center",
+                "width": "60%",
               },
-              undefined,
             ]
           }
+          testID="progress-bar-catalog-hero-footer"
         >
           <View
-            noMargin={true}
             style={
-              Array [
-                Object {
-                  "borderRadius": 0,
-                },
-                Object {
-                  "height": 5,
-                },
-                Object {
-                  "backgroundColor": "#CFD8DC",
-                },
-              ]
+              Object {
+                "backgroundColor": "#FFFFFF",
+              }
             }
-            width="40%"
+            testID="progression-bar"
           >
             <View
               style={
                 Object {
-                  "flex": 1,
+                  "backgroundColor": "#00B0FF",
+                  "borderBottomRightRadius": 1.5,
+                  "borderTopRightRadius": 1.5,
+                  "height": 3,
+                  "width": "30%",
                 }
               }
+              testID="progression-bar-0.3"
             />
           </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+      />
+      <View
+        testID="catalog-hero-button"
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "center",
+              "backgroundColor": "#00B0FF",
+              "borderRadius": 32,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "center",
+              "marginBottom": 0,
+              "minWidth": "40%",
+              "opacity": 1,
+              "paddingHorizontal": 24,
+            }
+          }
+          testID="catalog-hero-button-native"
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "fontSize": 15,
+                },
+                undefined,
+                undefined,
+                false,
+              ]
+            }
+          >
+            Continue Learning
+          </Text>
         </View>
       </View>
     </View>
@@ -143,17 +746,19 @@ exports[`Storyshots Hero With user 1`] = `
         "width": "100%",
       },
       Object {
-        "height": 533.6,
+        "backgroundColor": "#ECEFF1",
+        "height": 337,
+        "width": "100%",
       },
     ]
   }
 >
   <Image
-    height={533.6}
+    height={337}
     resizeMode="cover"
     source={
       Object {
-        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=crop&q=90&w=640&h=1067",
+        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=crop&q=90&h=674",
       }
     }
     style={
@@ -215,14 +820,19 @@ exports[`Storyshots Hero With user 1`] = `
   >
     <Text
       style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 28,
-          "fontWeight": "700",
-        }
+        Array [
+          Object {},
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 28,
+            "fontWeight": "700",
+            "textAlign": "center",
+          },
+        ]
       }
     >
-      Welcome, Pol P.!
+      Welcome, 
+Pol P.!
     </Text>
   </BVLinearGradient>
 </View>

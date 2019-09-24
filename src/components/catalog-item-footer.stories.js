@@ -2,22 +2,59 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import type {Progression} from '../types';
+
+import {createChapterCard, createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
+import {CARD_STATUS} from '../layer/data/_const';
 import CatalogItemFooter from './catalog-item-footer';
 
-const progression: Progression = {
-  current: 3,
-  count: 10
-};
+const levelCard = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
+const disciplineCard = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard],
+  title: 'Discipline card'
+});
+const disciplineCardAdaptive = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard],
+  title: 'Discipline card',
+  isAdaptive: true
+});
+const chapterCard = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE
+});
+const chapterCardAdaptive = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE,
+  isAdaptive: true
+});
 
-storiesOf('Catalog Item Footer', module).add('Default', () => (
-  <CatalogItemFooter
-    isCourse
-    title="Cours Test"
-    subtitle="Coorpacademy"
-    isCertified
-    isAdaptive
-    progression={progression}
-    testID="catalog-item-footer"
-  />
-));
+storiesOf('CatalogItemFooter', module)
+  .add('Default', () => <CatalogItemFooter testID="catalog-item-footer" />)
+  .add('Default (hero)', () => <CatalogItemFooter size="hero" testID="catalog-item-footer" />)
+  .add('Chapter', () => <CatalogItemFooter item={chapterCard} testID="catalog-item-footer" />)
+  .add('Chapter (adaptive)', () => (
+    <CatalogItemFooter item={chapterCardAdaptive} testID="catalog-item-footer" />
+  ))
+  .add('Chapter (cover)', () => (
+    <CatalogItemFooter size="cover" item={chapterCard} testID="catalog-item-footer" />
+  ))
+  .add('Chapter (hero)', () => (
+    <CatalogItemFooter size="hero" item={chapterCard} testID="catalog-item-footer" />
+  ))
+  .add('Discipline', () => <CatalogItemFooter item={disciplineCard} testID="catalog-item-footer" />)
+  .add('Discipline (adaptive)', () => (
+    <CatalogItemFooter item={disciplineCardAdaptive} testID="catalog-item-footer" />
+  ))
+  .add('Discipline (cover)', () => (
+    <CatalogItemFooter size="cover" item={disciplineCard} testID="catalog-item-footer" />
+  ))
+  .add('Discipline (hero)', () => (
+    <CatalogItemFooter size="hero" item={disciplineCard} testID="catalog-item-footer" />
+  ));

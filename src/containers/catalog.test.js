@@ -5,8 +5,9 @@ import renderer from 'react-test-renderer';
 
 import {createSections} from '../__fixtures__/sections';
 import {createCatalogState, createStoreState} from '../__fixtures__/store';
+import {createChapterCard} from '../__fixtures__/cards';
+import {CARD_STATUS} from '../layer/data/_const';
 import {createProgression} from '../__fixtures__/progression';
-
 import {fakeLayout, handleFakePress, TestContextProvider} from '../utils/tests';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Section} from '../types';
@@ -27,9 +28,16 @@ const sectionsWithCardsRef = sections.map((section, index) => ({
     (index === 2 && []) ||
     undefined
 }));
+const chapterCard = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE
+});
 
 describe('Catalog', () => {
   it('should fetch at mount', () => {
+    const fetchHero = jest.fn();
     const fetchSections = jest.fn();
     renderer.create(
       <TestContextProvider>
@@ -37,17 +45,20 @@ describe('Catalog', () => {
           sections={[]}
           onCardPress={handleFakePress}
           layout={fakeLayout}
+          fetchHero={fetchHero}
           fetchSections={fetchSections}
         />
       </TestContextProvider>
     );
 
+    expect(fetchHero).toHaveBeenCalledTimes(1);
     expect(fetchSections).toHaveBeenCalledTimes(1);
     expect(fetchSections).toHaveBeenCalledWith(0, DEFAULT_LIMIT, false);
   });
 
   describe('onScroll', () => {
     it('should fetch sections on scroll', () => {
+      const fetchHero = jest.fn();
       const fetchSections = jest.fn();
       const _sections: Array<Section | void> = sectionsWithCardsRef.concat([undefined]);
       const component = renderer.create(
@@ -57,6 +68,7 @@ describe('Catalog', () => {
             onCardPress={handleFakePress}
             layout={fakeLayout}
             fetchSections={fetchSections}
+            fetchHero={fetchHero}
           />
         </TestContextProvider>
       );
@@ -88,6 +100,7 @@ describe('Catalog', () => {
 
     it('should handle scroll on sections already fetched', () => {
       const fetchSections = jest.fn();
+      const fetchHero = jest.fn();
       const _sections: Array<Section | void> = sectionsWithCardsRef;
       const component = renderer.create(
         <TestContextProvider>
@@ -96,6 +109,7 @@ describe('Catalog', () => {
             onCardPress={handleFakePress}
             layout={fakeLayout}
             fetchSections={fetchSections}
+            fetchHero={fetchHero}
           />
         </TestContextProvider>
       );
@@ -116,6 +130,7 @@ describe('Catalog', () => {
 
   describe('onRefresh', () => {
     it('should handle refresh', () => {
+      const fetchHero = jest.fn();
       const fetchSections = jest.fn();
       const _sections: Array<Section | void> = sectionsWithCardsRef;
       const component = renderer.create(
@@ -125,11 +140,13 @@ describe('Catalog', () => {
             onCardPress={handleFakePress}
             layout={fakeLayout}
             fetchSections={fetchSections}
+            fetchHero={fetchHero}
           />
         </TestContextProvider>
       );
       const catalog = component.root.find(el => el.props.testID === 'catalog');
       catalog.props.onRefresh();
+      expect(fetchSections).toHaveBeenCalledTimes(2);
       expect(fetchSections).toHaveBeenCalledTimes(2);
       expect(fetchSections.mock.calls[0]).toEqual([0, 2, false]);
       expect(fetchSections.mock.calls[1]).toEqual([0, 2, true]);
@@ -137,7 +154,11 @@ describe('Catalog', () => {
   });
 
   describe('mapStateToProps', () => {
-    const catalog = createCatalogState({sections: sectionsWithCardsRef.concat([undefined])});
+    const catalog = createCatalogState({
+      heroRef: chapterCard.universalRef,
+      sections: sectionsWithCardsRef.concat([undefined]),
+      cards: [chapterCard]
+    });
 
     it('should get all props', () => {
       const levelRef = 'dummyRef';
@@ -160,6 +181,7 @@ describe('Catalog', () => {
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
+        hero: chapterCard,
         sections: sectionsWithCardsRef.concat([undefined])
       };
 

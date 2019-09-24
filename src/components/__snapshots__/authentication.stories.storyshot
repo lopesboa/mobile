@@ -253,36 +253,32 @@ Array [
                   "justifyContent": "center",
                   "marginBottom": 0,
                   "opacity": 1,
+                  "paddingHorizontal": 24,
                 }
               }
               testID="button-sign-in-mobile-native"
             >
               <Text
+                numberOfLines={1}
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "transparent",
-                      "flex": 1,
-                      "fontSize": 18,
+                      "color": "#FFFFFF",
+                      "fontSize": 17,
+                      "fontWeight": "700",
                       "textAlign": "center",
                     },
-                    Array [
-                      Object {
-                        "color": "#FFFFFF",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "color": "#546E7A",
-                      },
-                      undefined,
-                      undefined,
-                      undefined,
-                      Object {
-                        "color": "#00B0FF",
-                      },
-                    ],
+                    Object {
+                      "color": "#546E7A",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "#00B0FF",
+                    },
+                    undefined,
                   ]
                 }
               >
@@ -323,34 +319,30 @@ Array [
                   "justifyContent": "center",
                   "marginBottom": 0,
                   "opacity": 1,
+                  "paddingHorizontal": 24,
                 }
               }
               testID="button-sign-in-desktop-native"
             >
               <Text
+                numberOfLines={1}
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "transparent",
-                      "flex": 1,
-                      "fontSize": 18,
+                      "color": "#FFFFFF",
+                      "fontSize": 17,
+                      "fontWeight": "700",
                       "textAlign": "center",
                     },
-                    Array [
-                      Object {
-                        "color": "#FFFFFF",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "textAlign": "center",
-                      },
-                      undefined,
-                      undefined,
-                      Object {
-                        "color": "#FFFFFF",
-                      },
-                      undefined,
-                      undefined,
-                    ],
+                    undefined,
+                    undefined,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                   ]
                 }
               >

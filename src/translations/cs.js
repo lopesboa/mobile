@@ -12,7 +12,7 @@ const translations: Translations = {
     '<b>Otevřete e-mail</b> s pozvánkou na stažení aplikace Coorpacademy',
   authenticationMagicLinkStepThreeDescription:
     'Klikněte na tlačítko <b>„Připojit se k aplikaci"</b>',
-  authenticationMagicLinkTitle: 'Magic link ',
+  authenticationMagicLinkTitle: 'Magic link',
   authenticationQRCodeHeader:
     'Nedostali jste e-mail? To nevadí! K ověření vaší identity na webové platformě použijeme počítač',
   authenticationQRCodeStepOneDescription:
@@ -61,7 +61,7 @@ const translations: Translations = {
   outOfLives: 'Už nemáte životy',
   permission: 'Povolení',
   permissionCamera:
-    'Abychom mohli naskenovat váš kód QR a ověřit vás, potřebujeme přístup k vašemu fotoaparátu. ',
+    'Abychom mohli naskenovat váš kód QR a ověřit vás, potřebujeme přístup k vašemu fotoaparátu.',
   platformHasBeenDisabled: 'Aplikace byla pro vaši platformu deaktivována',
   question: 'Otázka',
   quit: 'Opustit',
@@ -72,6 +72,7 @@ const translations: Translations = {
     'v síti mezi Saturnem a Zemí. Abyste si mohli vychutnat učení, proveďte prosím obnovení',
   refreshNotWorking: 'Obnovení nefunguje? ',
   relatedSubjects: 'Doporučeno pro vás:',
+  resumeLearning: 'Pokračovat v učení',
   retryChapter: 'Zkuste kapitolu znovu',
   retryLevel: 'Zkuste úroveň znovu',
   scanQRCode: 'Naskenujte svůj <b>kód QR</b>',
@@ -82,7 +83,7 @@ const translations: Translations = {
   selectAnAnswer: 'Vyberte odopvěď',
   signInDesktop: 'Ne',
   signInMobile: 'Ano',
-  step: 'Krok ',
+  step: 'Krok',
   typeHere: 'Zapište sem',
   validate: 'Potvrdit',
   version: 'Verze',
@@ -93,7 +94,7 @@ const translations: Translations = {
     'Vaši aplikace byla aktualizována! Abyste si ji mohli plně vychutnat, stáhněte si prosím nejnovější verzi.',
   winAdditionalStars:
     'Získejte další hvězdy ({{count}}) v této kapitole při prvním zobrazení lekce!',
-  welcome: 'Vítejte ',
+  welcome: 'Vítejte',
   welcomeDescription:
     'Tato aplikace je propojena s vaším účtem na vzdělávací platformě vaší společnosti.',
   welcomeUser: 'Vítejte, {{displayname}}!',

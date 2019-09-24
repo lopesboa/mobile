@@ -71,6 +71,7 @@ const translations: Translations = {
     'у мережі між Сатурном та Землею, будь ласка, оновіть сторінку, щоб насолоджуватись навчанням',
   refreshNotWorking: 'Оновлення не працює?',
   relatedSubjects: 'Рекомендовано для Вас:',
+  resumeLearning: 'Продовжити навчання',
   retryChapter: 'Пройти розділ ще раз',
   retryLevel: 'Пройти рівень ще раз',
   scanQRCode: 'Відскануйте свій <b>QR-код</b>',

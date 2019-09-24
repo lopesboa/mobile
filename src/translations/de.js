@@ -72,6 +72,7 @@ const translations: Translations = {
     'Bitte aktualisieren Sie es im Netzwerk zwischen Saturn und der Erde, um das Lernen zu genießen',
   refreshNotWorking: "Funktioniert 'Aktualisieren' nicht?",
   relatedSubjects: 'Ihre Empfehlung:',
+  resumeLearning: 'Weiter lernen',
   retryChapter: 'Kapitel nochmal versuchen',
   retryLevel: 'Level nochmal versuchen',
   scanQRCode: 'Scannen Sie Ihren <b>QR-Code</b>',

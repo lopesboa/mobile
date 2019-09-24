@@ -68,6 +68,7 @@ const translations: Translations = {
     'Satürn ve Dünya arasındaki ağda, öğrenmenin tadını çıkarmak için lütfen yenileyin',
   refreshNotWorking: 'Yenilemek işe yaramıyor mu?',
   relatedSubjects: 'Sizin için öneriliyor:',
+  resumeLearning: 'Öğrenmeye devam',
   retryChapter: 'Bölümü yeniden dene',
   retryLevel: 'Seviyeyi  yeniden dene',
   scanQRCode: '<b>QR kodunu</b> tara',

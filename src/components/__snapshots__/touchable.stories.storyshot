@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Touchable Default (disabled) 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Text>
+    Foo
+  </Text>
+</View>
+`;
+
 exports[`Storyshots Touchable Default 1`] = `
 <View
   accessible={true}
@@ -15,10 +37,54 @@ exports[`Storyshots Touchable Default 1`] = `
       "opacity": 1,
     }
   }
-/>
+>
+  <Text>
+    Foo
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Touchable Highlight (disabled) 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+>
+  <Text
+    style={null}
+  >
+    Foo
+  </Text>
+</View>
 `;
 
 exports[`Storyshots Touchable Highlight 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+>
+  <Text
+    style={null}
+  >
+    Foo
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Touchable Without feedback (disabled) 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -33,7 +99,11 @@ exports[`Storyshots Touchable Highlight 1`] = `
       "opacity": 1,
     }
   }
-/>
+>
+  <Text>
+    Foo
+  </Text>
+</View>
 `;
 
 exports[`Storyshots Touchable Without feedback 1`] = `
@@ -51,5 +121,9 @@ exports[`Storyshots Touchable Without feedback 1`] = `
       "opacity": 1,
     }
   }
-/>
+>
+  <Text>
+    Foo
+  </Text>
+</View>
 `;

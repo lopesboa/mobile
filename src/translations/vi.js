@@ -72,6 +72,7 @@ const translations: Translations = {
     'trong mạng giữa sao Thổ và Trái Đất, vui lòng tải lại để được thoải mái học tập',
   refreshNotWorking: 'Tải lại không hiệu quả?',
   relatedSubjects: 'Đề xuất dành cho bạn:',
+  resumeLearning: 'Tiếp tục học',
   retryChapter: 'Thử lại chương',
   retryLevel: 'Thử lại cấp độ',
   scanQRCode: 'Quét <b>mã QR</b> của bạn',

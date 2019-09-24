@@ -105,8 +105,8 @@ class CardScalable extends React.PureComponent<Props, State> {
     return (
       <Animated.View style={_style}>
         <Touchable
+          isWithoutFeedback
           onPress={this.handlePress}
-          activeOpacity={1}
           style={styles.expanded}
           analyticsID="deck-card"
           analyticsParams={{type}}

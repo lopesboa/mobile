@@ -2,10 +2,9 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import translations from '../translations';
 
 import Badge from './catalog-item-badge';
 
-storiesOf('Catalog Item Badge', module).add('Default', () => (
-  <Badge label={translations.new} testID="badge" />
-));
+storiesOf('CatalogItemBadge', module)
+  .add('Default', () => <Badge label="Foo bar" testID="badge" />)
+  .add('Cover size', () => <Badge label="Foo bar" size="cover" testID="badge" />);

@@ -1,7 +1,6 @@
 // @flow strict
 
-import type {DisciplineCard, CardLevel, ChapterCard} from '../layer/data/_types';
-import type {AuthorType} from '../types';
+import type {DisciplineCard, CardLevel, ChapterCard, CardAuthor} from '../layer/data/_types';
 
 export const pickNextCardLevel = (discipline: DisciplineCard): CardLevel | null => {
   return discipline.modules.reduce((selectedModule, currentModule) => {
@@ -25,12 +24,5 @@ export const compareCards = (
   return cardB.completion - cardA.completion;
 };
 
-export const getAuthorType = (card: DisciplineCard | ChapterCard): AuthorType | void => {
-  const author = card && card.authors && card.authors[0];
-  return author && author.authorType;
-};
-
-export const getAuthorName = (card: DisciplineCard | ChapterCard): string | void => {
-  const author = card && card.authors && card.authors[0];
-  return author && author.label;
-};
+export const getAuthor = (card: DisciplineCard | ChapterCard): CardAuthor | void =>
+  card.authors && card.authors[0];
