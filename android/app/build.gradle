@@ -55,7 +55,7 @@ android {
         multiDexEnabled true
         missingDimensionStrategy 'react-native-camera', 'general'
         versionCode 1
-        versionName "2.0.16"
+        versionName "2.0.17"
 
         // For Detox
         // testBuildType System.getProperty('testBuildType', 'debug')
