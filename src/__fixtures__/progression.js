@@ -1,8 +1,22 @@
 // @flow
-import type {GenericContent, Progression, State} from '@coorpacademy/progression-engine';
+import type {GenericContent, Progression, State, Action} from '@coorpacademy/progression-engine';
 import type {Engine} from '../types';
 
 export type StateExtension = $Shape<State>;
+
+export const createAction = ({createdAt}: {createdAt?: string}): Action => {
+  return {
+    type: 'move',
+    createdAt: createdAt || undefined,
+    payload: {
+      instructions: null,
+      nextContent: {
+        type: 'slide',
+        ref: 'sli_foo'
+      }
+    }
+  };
+};
 
 export const createState = (state: StateExtension | void): State => {
   const {
@@ -47,12 +61,14 @@ export const createProgression = ({
   _id,
   engine,
   progressionContent,
-  state
+  state,
+  actions
 }: {
   _id?: string,
   engine: Engine,
   progressionContent: GenericContent,
-  state?: StateExtension
+  state?: StateExtension,
+  actions?: Array<Action>
 }): Progression => {
   return {
     _id: _id || undefined,
@@ -64,19 +80,7 @@ export const createProgression = ({
     engineOptions: {
       version: '2'
     },
-    actions: [
-      {
-        type: 'move',
-        createdAt: new Date().toISOString(),
-        payload: {
-          instructions: null,
-          nextContent: {
-            type: 'slide',
-            ref: 'sli_foo'
-          }
-        }
-      }
-    ],
+    actions: actions ? actions : [],
     state: state ? createState(state) : undefined
   };
 };

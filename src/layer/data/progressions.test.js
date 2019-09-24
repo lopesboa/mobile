@@ -3,7 +3,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
 import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
-import {createProgression, createState} from '../../__fixtures__/progression';
+import {createProgression, createState, createAction} from '../../__fixtures__/progression';
 import createCompletion from '../../__fixtures__/completion';
 import {ForbiddenError} from '../../models/error';
 import {
@@ -116,15 +116,15 @@ describe('progresssion', () => {
         progressionContent: {
           ref: 'foo',
           type: 'chapter'
-        }
+        },
+        actions: [createAction({}), createAction({})]
       });
-      fakeProgression.actions && fakeProgression.actions.forEach(action => delete action.createdAt);
 
       AsyncStorage.setItem = jest.fn();
 
       const result = await save(fakeProgression);
 
-      expect(result.actions).toHaveLength(1);
+      expect(result.actions).toHaveLength(2);
       result.actions &&
         result.actions.forEach(action => {
           expect(action).toHaveProperty('createdAt');
@@ -383,7 +383,7 @@ describe('progresssion', () => {
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 403,
-          statusText: 'Forbidden',
+          statusText: 'Fetch Forbidden',
           json: () => Promise.resolve({})
         });
       });
