@@ -6189,6 +6189,7 @@ exports[`Storyshots Catalog Refreshing 1`] = `
                 },
               ]
             }
+            testID="catalog-hero-welcome-message"
           >
             Welcome, 
 Pol P.!
@@ -12271,6 +12272,7 @@ exports[`Storyshots Catalog Sections with bad card refs 1`] = `
                 },
               ]
             }
+            testID="catalog-hero-welcome-message"
           >
             Welcome, 
 Pol P.!
@@ -16300,6 +16302,7 @@ exports[`Storyshots Catalog Sections with cards 1`] = `
                 },
               ]
             }
+            testID="catalog-hero-welcome-message"
           >
             Welcome, 
 Pol P.!
@@ -18950,6 +18953,7 @@ exports[`Storyshots Catalog User connected 1`] = `
                 },
               ]
             }
+            testID="catalog-hero-welcome-message"
           >
             Welcome, 
 Pol P.!

@@ -830,6 +830,7 @@ exports[`Storyshots Hero With user 1`] = `
           },
         ]
       }
+      testID="catalog-hero-welcome-message"
     >
       Welcome, 
 Pol P.!

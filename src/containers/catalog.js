@@ -4,6 +4,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {createArraySelector} from 'reselect-map';
+import {NavigationEvents} from 'react-navigation';
 
 import CatalogComponent, {SEPARATOR_HEIGHT, HERO_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
@@ -61,7 +62,6 @@ class Catalog extends React.Component<Props, State> {
   offsetY: number = 0;
 
   componentDidMount() {
-    this.props.fetchHero();
     this.fetchSections(0, this.getLimit(0));
   }
 
@@ -166,6 +166,10 @@ class Catalog extends React.Component<Props, State> {
     }
   };
 
+  handleDidFocus = () => {
+    this.props.fetchHero();
+  };
+
   render() {
     const {hero, sections, onCardPress, children} = this.props;
     const {isRefreshing} = this.state;
@@ -179,6 +183,7 @@ class Catalog extends React.Component<Props, State> {
         isRefreshing={isRefreshing}
         onScroll={this.handleScroll}
       >
+        <NavigationEvents onDidFocus={this.handleDidFocus} testID="catalog-navigation-events" />
         {children}
       </CatalogComponent>
     );

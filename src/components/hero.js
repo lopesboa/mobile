@@ -98,7 +98,7 @@ class Hero extends React.PureComponent<Props> {
                   }
                 >
                   {!isLoading && !content && user && (
-                    <Text style={styles.text}>
+                    <Text style={styles.text} testID="catalog-hero-welcome-message">
                       {translations.welcomeUser.replace(
                         /{{displayname}}/g,
                         `\n${user.displayName}`

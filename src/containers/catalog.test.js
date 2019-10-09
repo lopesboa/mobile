@@ -39,7 +39,7 @@ describe('Catalog', () => {
   it('should fetch at mount', () => {
     const fetchHero = jest.fn();
     const fetchSections = jest.fn();
-    renderer.create(
+    const component = renderer.create(
       <TestContextProvider>
         <Catalog
           sections={[]}
@@ -50,6 +50,11 @@ describe('Catalog', () => {
         />
       </TestContextProvider>
     );
+
+    const navigationEvents = component.root.find(
+      el => el.props.testID === 'catalog-navigation-events'
+    );
+    navigationEvents.props.onDidFocus();
 
     expect(fetchHero).toHaveBeenCalledTimes(1);
     expect(fetchSections).toHaveBeenCalledTimes(1);
