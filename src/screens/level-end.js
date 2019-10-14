@@ -27,7 +27,7 @@ type ConnectedDispatchProps = {|
 export type ConnectedStateProps = {|
   contentType?: ContentType,
   recommendation: DisciplineCard | ChapterCard,
-  bestScore?: string,
+  bestScore?: number,
   currentContent?: LevelAPI | ChapterAPI,
   nextContent?: LevelAPI | ChapterAPI
 |};
@@ -84,16 +84,20 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
 
   handleDidFocus = () => this.setState({isFocused: true});
 
-  getContentType = (content: LevelAPI | ChapterAPI): ContentType | void => {
-    return content && (content.chapterIds ? CONTENT_TYPE.LEVEL : CONTENT_TYPE.CHAPTER);
-  };
+  getContentType = (content: LevelAPI | ChapterAPI): ContentType =>
+    content.chapterIds ? CONTENT_TYPE.LEVEL : CONTENT_TYPE.CHAPTER;
+
+  getContentLabel = (content: LevelAPI | ChapterAPI): string | void =>
+    content.chapterIds ? content.levelTranslation : undefined;
 
   render() {
-    const {contentType, navigation, recommendation, bestScore = '', nextContent} = this.props;
+    const {contentType, navigation, recommendation, bestScore, nextContent} = this.props;
     const {isCorrect} = navigation.state.params;
 
-    const nextContentType = this.getContentType(nextContent);
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
+
+    const nextContentType = nextContent && this.getContentType(nextContent);
+    const nextContentLabel = nextContent && this.getContentLabel(nextContent);
 
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
@@ -106,7 +110,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
           isSuccess={isCorrect}
           bestScore={bestScore}
           nextContentType={nextContentType}
-          nextContentLabel={nextContent && nextContent.label}
+          nextContentLabel={nextContentLabel}
           onClose={this.handleClose}
           onCardPress={this.handleCardPress}
           onButtonPress={this.handleButtonPress}

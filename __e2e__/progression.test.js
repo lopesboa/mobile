@@ -41,7 +41,7 @@ describe('Progression bar', () => {
       element(
         by
           .type('RCTView')
-          .and(by.id('progression-bar-0.08333333333333333'))
+          .and(by.id('progression-bar-0.041666666666666664'))
           .withAncestor(by.id('catalog-section-recommended-item-basic-dis-1'))
       )
     ).toBeVisible();
@@ -58,7 +58,7 @@ describe('Progression bar', () => {
         element(
           by
             .type('RCTView')
-            .and(by.id('progression-bar-0.08333333333333333'))
+            .and(by.id('progression-bar-0.041666666666666664'))
             .withAncestor(by.id('catalog-section-recommended-item-basic-dis-1'))
         )
       ).toBeVisible();

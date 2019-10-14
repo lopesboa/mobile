@@ -1,7 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import {Text, StyleSheet, ScrollView, RefreshControl} from 'react-native';
+import {Text, StyleSheet, RefreshControl} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {storiesOf} from '@storybook/react-native';
 
 import {handleFakePress} from '../utils/tests';
@@ -13,7 +14,7 @@ const fakeStyle = StyleSheet.create({
   }
 });
 
-const handleRef = (element: ScrollView) => {};
+const handleRef = (element: KeyboardAwareScrollView) => {};
 
 storiesOf('Screen', module)
   .add('Default', () => (

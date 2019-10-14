@@ -475,7 +475,7 @@ describe('Question', () => {
     expect(editAnswer).toHaveBeenCalledWith([]);
   });
 
-  it('should handle choice input change (empty props)', () => {
+  it('should handle button press', () => {
     const {Component: Question} = require('./question');
 
     const slideId = 'sli_foo';
@@ -493,5 +493,77 @@ describe('Question', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Correction', {
       slideId
     });
+  });
+
+  it('should handle button press (without ref)', () => {
+    const {Component: Question} = require('./question');
+
+    const slideId = 'sli_foo';
+    const validateAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+    );
+
+    const screen = component.root.find(el => el.props.testID === 'question-screen');
+    screen.props.onRef(null);
+    const question = component.root.find(el => el.props.testID === 'question');
+    question.props.onButtonPress();
+
+    expect(validateAnswer).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Correction', {
+      slideId
+    });
+  });
+
+  it('should handle scroll reset when slide ID changes', () => {
+    const {Component: Question} = require('./question');
+
+    const scrollToPosition = jest.fn();
+    const validateAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_foo" />
+    );
+
+    const screen = component.root.find(el => el.props.testID === 'question-screen');
+    screen.props.onRef({
+      props: {
+        scrollToPosition
+      }
+    });
+
+    component.update(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_bar" />
+    );
+
+    expect(scrollToPosition).toHaveBeenCalledTimes(1);
+    expect(scrollToPosition).toHaveBeenCalledWith(0, 0, true);
+  });
+
+  it('should not handle scroll reset when slide ID is the same or undefined', () => {
+    const {Component: Question} = require('./question');
+
+    const slideId = 'slide_foo';
+    const scrollToPosition = jest.fn();
+    const validateAnswer = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+    );
+
+    const screen = component.root.find(el => el.props.testID === 'question-screen');
+    screen.props.onRef({
+      props: {
+        scrollToPosition
+      }
+    });
+
+    component.update(
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={undefined} />
+    );
+
+    expect(scrollToPosition).toHaveBeenCalledTimes(0);
   });
 });

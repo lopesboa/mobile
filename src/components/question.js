@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
@@ -125,11 +124,7 @@ const Question = ({
   }
 
   return (
-    <KeyboardAwareScrollView
-      testID={testID}
-      contentContainerStyle={styles.container}
-      enableOnAndroid
-    >
+    <View testID={testID} style={styles.container}>
       <View>
         <View style={styles.questionContainer}>
           <QuestionTitle>{header}</QuestionTitle>
@@ -193,7 +188,7 @@ const Question = ({
           {translations.validate}
         </Button>
       </View>
-    </KeyboardAwareScrollView>
+    </View>
   );
 };
 

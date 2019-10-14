@@ -1087,18 +1087,18 @@
     globby "^9.1.0"
     mkdirp-promise "^5.0.1"
 
-"@coorpacademy/player-services@5.0.17":
-  version "5.0.17"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.17.tgz#6f47888eada7241f5a6167a62fe14529bad54199"
-  integrity sha512-6NZsvmO6jD//1Z3Tksg1aT0VH7tgHyh3OyARggFo9mTq+KTnnAxqf6ud2A4In7CrE+3Syw4lOypS+kjAmT1S0Q==
+"@coorpacademy/player-services@5.0.19":
+  version "5.0.19"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.0.19.tgz#6ce12a56400851337825d7265821f18d71bd4f14"
+  integrity sha512-3VCIAqUpw4PAHdH10CjaIH0+lWwxcGHErKC5l5yDoOQTwO8cNCZffueHuLUmA66U8PiX8bUi9Bn2NhcxUk5wDA==
   dependencies:
-    "@coorpacademy/progression-engine" "11.0.7"
-    lodash "^4.17.4"
+    "@coorpacademy/progression-engine" "11.0.8"
+    lodash "^4.17.15"
 
-"@coorpacademy/player-store@4.0.17":
-  version "4.0.17"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.0.17.tgz#763bff92f7ff0bba9038abaa476a31fbc6b7c6ac"
-  integrity sha512-LQ1c7Mv4GlCa7g6jkbKgRlt+T7LXUvG5qnFU0FZA+mpljBfeuasSo/j6pbdM4ug41l8dySxpkFDRRamnG4eJGw==
+"@coorpacademy/player-store@4.0.19":
+  version "4.0.19"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.0.19.tgz#e935a27c2b72ac0dc8760d257e15a9ad26ea4cc6"
+  integrity sha512-ohCz+DmNuiKp6d0jnnYdg+vGui3U/2NlbiZp/s5C2EURCIUwhuiIXW5bGDqy1Prz0QCiXQ+HGy7imzBMuUWiVg==
   dependencies:
     "@coorpacademy/progression-engine" "11.0.8"
     "@coorpacademy/redux-task" "1.0.2"

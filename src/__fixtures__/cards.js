@@ -14,6 +14,7 @@ import type {
 import {CARD_STATUS} from '../layer/data/_const';
 import type {AuthorType} from '../types';
 import {AUTHOR_TYPE} from '../const';
+import {createLevelName} from './levels';
 
 export const createCardAuthor = ({
   authorType = AUTHOR_TYPE.VERIFIED
@@ -58,7 +59,7 @@ export const createCardLevel = ({
   completion,
   accessible: true,
   status,
-  label: 'Basic'
+  label: createLevelName({level})
 });
 
 export const createDisciplineCard = ({

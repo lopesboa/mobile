@@ -1,7 +1,9 @@
 // @flow strict
 
 import * as React from 'react';
-import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
+import {StyleSheet, View, SafeAreaView} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import theme from '../modules/theme';
 
 type Props = {|
@@ -9,7 +11,7 @@ type Props = {|
   noScroll?: boolean,
   children: React.Node,
   testID?: string,
-  onRef?: (ref: ScrollView) => void,
+  onRef?: (ref: KeyboardAwareScrollView) => void,
   refreshControl?: React$Element<*>,
   noSafeArea?: boolean
 |};
@@ -29,9 +31,9 @@ const styles = StyleSheet.create({
 class Screen extends React.PureComponent<Props> {
   props: Props;
 
-  scrollView: ScrollView | null;
+  scrollView: KeyboardAwareScrollView | null;
 
-  handleRef = (element: ScrollView | null) => {
+  handleRef = (element: KeyboardAwareScrollView | null) => {
     this.scrollView = element;
 
     if (this.props.onRef && element) {
@@ -51,16 +53,18 @@ class Screen extends React.PureComponent<Props> {
             {children}
           </View>
         ) : (
-          <ScrollView
+          <KeyboardAwareScrollView
             contentContainerStyle={styles.screenScroll}
             showsHorizontalScrollIndicator={false}
             refreshControl={refreshControl}
             testID={testID}
-            ref={this.handleRef}
             nestedScrollEnabled
+            enableOnAndroid
+            // eslint-disable-next-line react/jsx-handler-names
+            innerRef={this.handleRef}
           >
             {children}
-          </ScrollView>
+          </KeyboardAwareScrollView>
         )}
       </CustomView>
     );

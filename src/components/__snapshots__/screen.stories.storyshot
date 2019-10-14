@@ -14,14 +14,42 @@ exports[`Storyshots Screen Default 1`] = `
   }
 >
   <RCTScrollView
+    automaticallyAdjustContentInsets={false}
     contentContainerStyle={
       Object {
         "flexGrow": 1,
       }
     }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    innerRef={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
     nestedScrollEnabled={true}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
     showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={true}
     testID="fake-screen"
+    update={[Function]}
+    viewIsInsideTabBar={false}
   >
     <View>
       <Text>
@@ -103,14 +131,42 @@ exports[`Storyshots Screen With custom style 1`] = `
   }
 >
   <RCTScrollView
+    automaticallyAdjustContentInsets={false}
     contentContainerStyle={
       Object {
         "flexGrow": 1,
       }
     }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    innerRef={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
     nestedScrollEnabled={true}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
     showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={true}
     testID="fake-screen"
+    update={[Function]}
+    viewIsInsideTabBar={false}
   >
     <View>
       <Text>
@@ -137,20 +193,48 @@ exports[`Storyshots Screen With refresh control 1`] = `
   }
 >
   <RCTScrollView
+    automaticallyAdjustContentInsets={false}
     contentContainerStyle={
       Object {
         "flexGrow": 1,
       }
     }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    innerRef={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
     nestedScrollEnabled={true}
+    onScroll={[Function]}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
         refreshing={true}
       />
     }
+    resetKeyboardSpace={[Function]}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
     showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={true}
     testID="fake-screen"
+    update={[Function]}
+    viewIsInsideTabBar={false}
   >
     <RCTRefreshControl />
     <View>
@@ -175,14 +259,42 @@ exports[`Storyshots Screen Without safeArea 1`] = `
   }
 >
   <RCTScrollView
+    automaticallyAdjustContentInsets={false}
     contentContainerStyle={
       Object {
         "flexGrow": 1,
       }
     }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    innerRef={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
     nestedScrollEnabled={true}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
     showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={true}
     testID="fake-screen"
+    update={[Function]}
+    viewIsInsideTabBar={false}
   >
     <View>
       <Text>

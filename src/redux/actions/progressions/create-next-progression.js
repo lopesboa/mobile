@@ -1,11 +1,11 @@
 // @flow strict
 
-import {CONTENT_TYPE, selectProgression} from '@coorpacademy/player-store';
+import {selectProgression, fetchBestProgression} from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
 
 import type {StoreAction, ErrorAction} from '../../_types';
-import {ENGINE} from '../../../const';
+import {ENGINE, CONTENT_TYPE} from '../../../const';
 import type {RestrictedResourceType} from '../../../layer/data/_types';
 import {RESTRICTED_RESOURCE_TYPE} from '../../../layer/data/_const';
 import {getEngineVersions} from '../../utils/state-extract';
@@ -49,43 +49,45 @@ export const createNextProgression = (
     const state = getState();
     const engineConfig = getEngineVersions(state);
 
-    const lastProgression: Progression | null = await services.Progressions.findLast(
+    let progression = await services.Progressions.findLast(
       type === RESTRICTED_RESOURCE_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
       ref
     );
 
-    if (lastProgression && lastProgression._id) {
-      // $FlowFixMe wrong action
-      return dispatch(selectProgression(lastProgression._id));
+    if (!progression || !progression._id) {
+      if (type === RESTRICTED_RESOURCE_TYPE.CHAPTER) {
+        // $FlowFixMe union type
+        const chapter: ChapterAPI = await services.Content.find(type, ref);
+
+        // $FlowFixMe await on dispatched action
+        const action: {payload: Progression} = await dispatch(
+          // $FlowFixMe wrong action
+          createChapterProgression(chapter, engineConfig && engineConfig.versions.microlearning)
+        );
+        progression = action.payload;
+      }
+
+      if (type === RESTRICTED_RESOURCE_TYPE.LEVEL) {
+        // $FlowFixMe union type
+        const level: LevelAPI = await services.Content.find(type, ref);
+
+        // $FlowFixMe await on dispatched action
+        const action: {payload: Progression} = await dispatch(
+          // $FlowFixMe wrong action
+          createLevelProgression(level, engineConfig && engineConfig.versions.learner)
+        );
+        progression = action.payload;
+      }
     }
 
-    if (type === RESTRICTED_RESOURCE_TYPE.CHAPTER) {
-      // $FlowFixMe union type
-      const chapter: ChapterAPI = await services.Content.find(type, ref);
-
-      // $FlowFixMe await on dispatched action
-      const {payload: progression}: {payload: Progression} = await dispatch(
-        // $FlowFixMe wrong action
-        createChapterProgression(chapter, engineConfig && engineConfig.versions.microlearning)
-      );
-
-      // $FlowFixMe wrong thunk action
-      await dispatch(selectProgression(progression._id));
+    if (!progression || !progression._id) {
+      throw new Error('Progression has not been created');
     }
 
-    if (type === RESTRICTED_RESOURCE_TYPE.LEVEL) {
-      // $FlowFixMe union type
-      const level: LevelAPI = await services.Content.find(type, ref);
-
-      // $FlowFixMe await on dispatched action
-      const {payload: progression}: {payload: Progression} = await dispatch(
-        // $FlowFixMe wrong action
-        createLevelProgression(level, engineConfig && engineConfig.versions.learner)
-      );
-
-      // $FlowFixMe wrong thunk action
-      await dispatch(selectProgression(progression._id));
-    }
+    // $FlowFixMe wrong action
+    await dispatch(selectProgression(progression._id));
+    // $FlowFixMe wrong action
+    await dispatch(fetchBestProgression({type, ref}, progression._id, true));
 
     return dispatch({
       type: CREATE_NEXT_SUCCESS,

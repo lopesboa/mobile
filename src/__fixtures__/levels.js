@@ -1,24 +1,35 @@
 // @flow strict
 
-import type {Level} from '../layer/data/_types';
+import type {Level, LevelType} from '../layer/data/_types';
+
+export const createLevelName = ({level = 'base'}: {level?: LevelType}): string => {
+  if (level === 'base') {
+    return 'Basic';
+  }
+
+  return level.charAt(0).toUpperCase() + level.slice(1);
+};
 
 export const createLevel = ({
   ref,
   chapterIds,
-  bestScore
+  bestScore,
+  level = 'base',
+  levelTranslation
 }: {
   ref: string,
   chapterIds: Array<string>,
-  bestScore?: number
+  bestScore?: number,
+  level?: LevelType
 }): Level => ({
-  _id: 'foobarbaz',
+  _id: `id_${ref}`,
   taggedNewUntil: '2018-12-08T09:07:19.302Z',
   timeAlloted: 15,
   name: 'How to play on the platform?',
-  levelTranslation: 'Basic',
+  levelTranslation: createLevelName({level}),
   mediaUrl:
     'https://static.coorpacademy.com/content/CoorpAcademy/content-catalogue/cockpit-tutorial-course/default/iphone__mockup-1531230955049.jpg',
-  level: 'base',
+  level,
   universalRef: ref,
   deliverCoachStatus: true,
   ref: ref,

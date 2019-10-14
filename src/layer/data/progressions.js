@@ -1,14 +1,15 @@
 // @flow
 
 import AsyncStorage from '@react-native-community/async-storage';
-import type {Progression, Action} from '@coorpacademy/progression-engine';
+import type {Progression, Action, ContentType} from '@coorpacademy/progression-engine';
+import decode from 'jwt-decode';
 
 import fetch from '../../modules/fetch';
 import {isDone, isFailure} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
-import type {SupportedLanguage} from '../../translations/_types';
+import type {JWT} from '../../types';
+import {get as getToken} from '../../utils/local-token';
 import type {Completion} from './_types';
-import {getItem} from './core';
 
 export const buildCompletionKey = (engineRef: string, contentRef: string) =>
   `completion_${engineRef}_${contentRef}`;
@@ -70,9 +71,7 @@ const getAll = async () => {
   const filteredKeys = keys.filter(key => key.startsWith('progression'));
   const items = await AsyncStorage.multiGet(filteredKeys);
 
-  return items.map(([key, value]) => {
-    return JSON.parse(value);
-  });
+  return items.map(([key, value]) => JSON.parse(value));
 };
 
 const META = {source: 'mobile'};
@@ -171,14 +170,54 @@ const findLast = async (engineRef: string, contentRef: string) => {
   return progression;
 };
 
-const findBestOf = (language: SupportedLanguage) => async (
+export type FindBestOfResult = {|
+  stars: number
+|};
+
+const findBestOf = async (
   engineRef: string,
-  contentType: {ref: string, type: string},
+  contentType: ContentType,
   contentRef: string,
   progressionId: string
-): Promise<number> => {
-  // $FlowFixMe
-  const card = await getItem('card', language, contentRef);
-  return card && card.stars;
+): Promise<FindBestOfResult> => {
+  const token = await getToken();
+
+  if (!token) {
+    throw new Error('Invalid token');
+  }
+
+  const {host}: JWT = decode(token);
+
+  const response = await fetch(
+    `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`,
+    {
+      headers: {
+        Authorization: token
+      }
+    }
+  );
+
+  const {stars: apiStars = 0} = await response.json();
+
+  const progressions = await getAll();
+  const sortedProgressions = progressions
+    .filter(
+      (progression: Progression) =>
+        progression.content.ref === contentRef && progression._id !== progressionId
+    )
+    .sort((a: Progression, b: Progression) => {
+      const aStars = (a.state && a.state.stars) || 0;
+      const bStars = (b.state && b.state.stars) || 0;
+
+      return bStars - aStars;
+    });
+
+  const bestProgression = sortedProgressions[0];
+  const localStars = (bestProgression && bestProgression.state && bestProgression.state.stars) || 0;
+
+  return {
+    stars: Math.max(apiStars, localStars)
+  };
 };
+
 export {save, getAll, findById, findLast, findBestOf, synchronize};

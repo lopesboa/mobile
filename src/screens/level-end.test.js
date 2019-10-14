@@ -103,7 +103,7 @@ describe('LevelEnd', () => {
         contentType: CONTENT_TYPE.LEVEL,
         nextContent: mapToLevelAPI(levelTwo),
         currentContent: mapToLevelAPI(levelOne),
-        bestScore: '20',
+        bestScore: 20,
         recommendation: disciplineCardTwo
       };
 
@@ -143,7 +143,7 @@ describe('LevelEnd', () => {
         contentType: CONTENT_TYPE.CHAPTER,
         nextContent: mapToChapterAPI(chapter),
         currentContent: mapToChapterAPI(chapter),
-        bestScore: '7',
+        bestScore: 7,
         recommendation: disciplineCardOne
       };
 

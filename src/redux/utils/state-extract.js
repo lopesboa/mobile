@@ -78,14 +78,14 @@ export const getBestRank = (state: StoreState): string | null => {
   }
 };
 
-export const getBestScore = (state: StoreState): string | void => {
+export const getBestScore = (state: StoreState): number | void => {
   const progression = getCurrentProgression(state);
 
   const stars = progression && progression.state && progression.state.stars;
-  const bestScore = _getBestScore(state) || 0;
+  const bestScore = (state && _getBestScore(state)) || 0;
 
   if (stars) {
-    return stars > bestScore ? `${stars - bestScore}` : '0';
+    return stars > bestScore ? stars - bestScore : 0;
   }
 };
 

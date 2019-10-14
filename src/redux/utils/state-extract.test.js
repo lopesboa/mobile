@@ -294,7 +294,7 @@ describe('State-extract', () => {
       });
 
       const bestScore = getBestScore({...state, ...partialState});
-      expect(bestScore).toEqual('10');
+      expect(bestScore).toEqual(10);
     });
 
     it('should get the best score when bestScore is not set so far', () => {
@@ -358,7 +358,7 @@ describe('State-extract', () => {
       });
 
       const bestScore = getBestScore({...state, ...partialState});
-      expect(bestScore).toEqual('40');
+      expect(bestScore).toEqual(40);
     });
 
     it('should show no updates if new stars not higher than bestScore', () => {
@@ -422,7 +422,7 @@ describe('State-extract', () => {
       });
 
       const bestScore = getBestScore({...state, ...partialState});
-      expect(bestScore).toEqual('0');
+      expect(bestScore).toEqual(0);
     });
 
     it('should return undefined if no stars are set', () => {

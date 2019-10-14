@@ -24,6 +24,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
         "opacity": 1,
       }
     }
+    testID="header-slide-right"
   >
     <View
       style={
@@ -653,6 +654,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
         "opacity": 1,
       }
     }
+    testID="header-slide-right-fast-slide"
   >
     <View
       style={
@@ -1455,6 +1457,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
         "opacity": 1,
       }
     }
+    testID="header-slide-right-god-mode-fast-slide"
   >
     <View
       style={
@@ -2210,6 +2213,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
         "opacity": 1,
       }
     }
+    testID="header-slide-right-god-mode"
   >
     <View
       style={

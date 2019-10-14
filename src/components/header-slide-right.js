@@ -33,17 +33,33 @@ const HeaderSlideRight = ({
   isFastSlideEnabled,
   onPress,
   onLongPress
-}: Props) => (
-  <View style={styles.container}>
-    <TouchableOpacity onPress={onPress} onLongPress={onLongPress} disabled={!isGodModeUser}>
-      <Lives
-        count={count}
-        height={HEADER_HEIGHT - LIVES_VERTICAL_PADDING * 2}
-        isGodModeEnabled={isGodModeEnabled}
-        isFastSlideEnabled={isFastSlideEnabled}
-      />
-    </TouchableOpacity>
-  </View>
-);
+}: Props) => {
+  let testID = 'header-slide-right';
+
+  if (isGodModeEnabled) {
+    testID += '-god-mode';
+  }
+  if (isFastSlideEnabled) {
+    testID += '-fast-slide';
+  }
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        onPress={onPress}
+        onLongPress={onLongPress}
+        disabled={!isGodModeUser}
+        testID={testID}
+      >
+        <Lives
+          count={count}
+          height={HEADER_HEIGHT - LIVES_VERTICAL_PADDING * 2}
+          isGodModeEnabled={isGodModeEnabled}
+          isFastSlideEnabled={isFastSlideEnabled}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default HeaderSlideRight;

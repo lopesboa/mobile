@@ -10,9 +10,14 @@ import {createQCM, createQCMGraphic} from '../questions';
 import {failureExitNode, successExitNode} from '../exit-nodes';
 import {image} from '../medias';
 
-const level = createLevel({
+const firstLevel = createLevel({
   ref: 'basic_mod_1',
   chapterIds: ['basic_cha_1', 'basic_cha_2']
+});
+const secondLevel = createLevel({
+  ref: 'basic_mod_2',
+  chapterIds: ['basic_cha_3', 'basic_cha_4'],
+  level: 'advanced'
 });
 const qcm = createQCM({media: image});
 const qcmGraphic = createQCMGraphic({});
@@ -38,11 +43,17 @@ const lessons = [
 
 const bundledDiscipline: BundledDiscipline = {
   disciplines: {
-    basic_dis_1: createDiscipline({ref: 'basic_dis_1', levels: [level], name: 'Basic: course'})
+    basic_dis_1: createDiscipline({
+      ref: 'basic_dis_1',
+      levels: [firstLevel, secondLevel],
+      name: 'Basic: course'
+    })
   },
   chapters: {
     basic_cha_1: createChapter({ref: 'basic_cha_1', name: 'Basic: QCM chapter'}),
-    basic_cha_2: createChapter({ref: 'basic_cha_2', name: 'Basic: QCM Graphic chapter'})
+    basic_cha_2: createChapter({ref: 'basic_cha_2', name: 'Basic: QCM Graphic chapter'}),
+    basic_cha_3: createChapter({ref: 'basic_cha_3', name: 'Basic: QCM chapter (advanced)'}),
+    basic_cha_4: createChapter({ref: 'basic_cha_4', name: 'Basic: QCM Graphic chapter (advanced)'})
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
@@ -91,6 +102,55 @@ const bundledDiscipline: BundledDiscipline = {
     basic_sli_8: createSlide({
       ref: 'basic_sli_8',
       chapterId: 'basic_cha_2',
+      question: qcmGraphic,
+      lessons: lessons.filter(lesson => lesson.ref === 'les_1')
+    }),
+    // group question type in a same chapter, because progression engine choose randomly one of it
+    basic_sli_9: createSlide({
+      ref: 'basic_sli_9',
+      chapterId: 'basic_cha_3',
+      question: qcm,
+      lessons
+    }),
+    basic_sli_10: createSlide({
+      ref: 'basic_sli_10',
+      chapterId: 'basic_cha_3',
+      question: qcm,
+      lessons
+    }),
+    basic_sli_11: createSlide({
+      ref: 'basic_sli_11',
+      chapterId: 'basic_cha_3',
+      question: qcm,
+      lessons
+    }),
+    basic_sli_12: createSlide({
+      ref: 'basic_sli_12',
+      chapterId: 'basic_cha_3',
+      question: qcm,
+      lessons
+    }),
+    basic_sli_13: createSlide({
+      ref: 'basic_sli_13',
+      chapterId: 'basic_cha_4',
+      question: qcmGraphic,
+      lessons: lessons.filter(lesson => lesson.ref === 'les_1')
+    }),
+    basic_sli_14: createSlide({
+      ref: 'basic_sli_14',
+      chapterId: 'basic_cha_4',
+      question: qcmGraphic,
+      lessons: lessons.filter(lesson => lesson.ref === 'les_1')
+    }),
+    basic_sli_15: createSlide({
+      ref: 'basic_sli_15',
+      chapterId: 'basic_cha_4',
+      question: qcmGraphic,
+      lessons: lessons.filter(lesson => lesson.ref === 'les_1')
+    }),
+    basic_sli_16: createSlide({
+      ref: 'basic_sli_16',
+      chapterId: 'basic_cha_4',
       question: qcmGraphic,
       lessons: lessons.filter(lesson => lesson.ref === 'les_1')
     })

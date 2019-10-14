@@ -69,7 +69,7 @@ describe('levels', () => {
       const result = await getNextLevel('mod_1');
       const expected = {
         ...mapToLevelAPIExpectedResult,
-        _id: 'foobarbaz',
+        _id: 'id_mod_2',
         universalRef: 'mod_2',
         ref: 'mod_2'
       };

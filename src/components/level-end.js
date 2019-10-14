@@ -7,7 +7,7 @@ import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
-import {CONTENT_TYPE} from '../const';
+import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
@@ -90,12 +90,10 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSize.large,
     color: theme.colors.white,
     fontWeight: theme.fontWeight.bold,
-    paddingBottom: theme.spacing.small,
-    paddingTop: theme.spacing.base
+    paddingBottom: theme.spacing.small
   },
   recommendation: {
-    flex: 1,
-    borderRadius: theme.radius.card
+    flex: 1
   },
   iconContainer: {
     flex: 1,
@@ -150,8 +148,8 @@ type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onClose: () => void,
   isFocused: boolean,
-  bestScore: string,
-  nextContentType?: typeof CONTENT_TYPE.LEVEL | typeof CONTENT_TYPE.CHAPTER,
+  bestScore?: number,
+  nextContentType?: ContentType,
   nextContentLabel?: string,
   recommendation: DisciplineCard | ChapterCard,
   testID?: string
@@ -178,7 +176,7 @@ class LevelEnd extends React.PureComponent<Props> {
     const {
       contentType,
       isSuccess,
-      bestScore,
+      bestScore = 0,
       onClose,
       nextContentType,
       nextContentLabel = '',
@@ -187,14 +185,8 @@ class LevelEnd extends React.PureComponent<Props> {
       testID = 'level-end',
       onCardPress
     } = this.props;
-
     const header = (isSuccess && translations.congratulations) || translations.ooops;
     const backgroundColor = (isSuccess && styles.positive) || styles.negative;
-    const bestScoreTranslation = translations.highscore.replace(/{{score}}/g, bestScore);
-    const unlockNextLevelTranslation = translations.unlockNextLevel.replace(
-      /{{levelName}}/g,
-      nextContentLabel
-    );
 
     const nextLabel =
       contentType === CONTENT_TYPE.LEVEL ? translations.nextLevel : translations.nextChapter;
@@ -214,12 +206,12 @@ class LevelEnd extends React.PureComponent<Props> {
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
-          <View style={styles.globalContainer} testID={testID}>
+          <View
+            style={styles.globalContainer}
+            testID={`${testID}-${isSuccess ? 'success' : 'error'}`}
+          >
             <ScrollView>
-              <View
-                style={[styles.container, backgroundColor]}
-                testID={`${testID}-${isSuccess ? 'success' : 'error'}`}
-              >
+              <View style={[styles.container, backgroundColor]}>
                 <Starburst
                   style={styles.starburst}
                   spiralStyle={styles.starburstSpiral}
@@ -236,23 +228,32 @@ class LevelEnd extends React.PureComponent<Props> {
                     </Text>
                   )}
                 </View>
-                <HeaderBackButton onPress={onClose} type="home" testID={`${testID}-button-close`} />
                 {isSuccess ? (
                   <Trophy style={[styles.icon, {height: screenWidth}]} />
                 ) : (
                   <HeartBroken style={[styles.icon, {height: screenWidth}]} />
                 )}
-                <Space type="base" />
+                <Space />
                 <View style={styles.content}>
-                  {isSuccess && (
+                  {isSuccess && (bestScore > 0 || nextContentType === CONTENT_TYPE.LEVEL) && (
                     <View>
-                      {bestScore !== '0' && (
-                        <Tooltip type="highscore" text={bestScoreTranslation} />
+                      {bestScore > 0 && (
+                        <Tooltip type={TOOLTIP_TYPE.HIGHSCORE} testID={`${testID}-highscore`}>
+                          {translations.highscore.replace(/{{score}}/g, `+${bestScore}`)}
+                        </Tooltip>
                       )}
-                      <Space type="tiny" />
                       {nextContentType === CONTENT_TYPE.LEVEL && (
-                        <Tooltip type="unlock" text={unlockNextLevelTranslation} />
+                        <React.Fragment>
+                          {bestScore > 0 && <Space type="tiny" />}
+                          <Tooltip type={TOOLTIP_TYPE.UNLOCK} testID={`${testID}-unlock`}>
+                            {translations.unlockNextLevel.replace(
+                              /{{levelName}}/g,
+                              nextContentLabel
+                            )}
+                          </Tooltip>
+                        </React.Fragment>
                       )}
+                      <Space type="base" />
                     </View>
                   )}
                   {/* @todo refactor to use CatalogSection there and not reinvent the wheel */}
@@ -276,7 +277,7 @@ class LevelEnd extends React.PureComponent<Props> {
                 </View>
               </View>
             </ScrollView>
-            {isFocused && isSuccess && bestScore !== '0' && (
+            {isFocused && isSuccess && (
               <View pointerEvents="none" style={styles.confettisContainer}>
                 <ConfettiCannon
                   count={100}
@@ -293,6 +294,7 @@ class LevelEnd extends React.PureComponent<Props> {
             >
               {buttonTranslation}
             </ButtonSticky>
+            <HeaderBackButton onPress={onClose} type="home" testID={`${testID}-button-close`} />
           </View>
         )}
       </BrandThemeContext.Consumer>

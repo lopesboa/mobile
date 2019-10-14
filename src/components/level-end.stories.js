@@ -57,7 +57,6 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={disciplineNew}
-      bestScore="0"
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
     />
@@ -71,7 +70,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={chapterNew}
-      bestScore="20"
+      bestScore={20}
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
       vibration={createFakeVibration()}
@@ -87,7 +86,6 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={disciplineNewCoorp}
-      bestScore="0"
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
     />
@@ -101,7 +99,6 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
-      bestScore="0"
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
       vibration={createFakeVibration()}
@@ -117,7 +114,6 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
-      bestScore="0"
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
     />
@@ -131,7 +127,6 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
-      bestScore="0"
       nextContentType={CONTENT_TYPE.CHAPTER}
       nextContentLabel="foobar"
       vibration={createFakeVibration()}
@@ -152,7 +147,6 @@ if (__TEST__) {
           onCardPress={handleCardPress}
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
-          bestScore="0"
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
         />
@@ -178,7 +172,6 @@ if (__TEST__) {
           onCardPress={handlePress}
           onClose={handleFakePress}
           recommendation={disciplineNew}
-          bestScore="0"
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
         />
@@ -203,7 +196,6 @@ if (__TEST__) {
           onCardPress={handleFakePress}
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
-          bestScore="0"
           vibration={vibration}
           audio={audio}
         />
@@ -228,7 +220,6 @@ if (__TEST__) {
           onCardPress={handleFakePress}
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
-          bestScore="0"
           vibration={vibration}
           audio={audio}
         />

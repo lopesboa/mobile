@@ -1,7 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import {ScrollView, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
@@ -53,9 +54,15 @@ type Props = {|
 class QuestionScreen extends React.PureComponent<Props> {
   props: Props;
 
-  scrollView: ScrollView;
+  scrollView: KeyboardAwareScrollView | void;
 
-  handleRef = (element: ScrollView) => {
+  componentDidUpdate(prevProps: Props) {
+    if (this.scrollView && this.props.slideId && prevProps.slideId !== this.props.slideId) {
+      this.scrollView.props.scrollToPosition(0, 0, true);
+    }
+  }
+
+  handleRef = (element: KeyboardAwareScrollView) => {
     this.scrollView = element;
   };
 
@@ -91,7 +98,6 @@ class QuestionScreen extends React.PureComponent<Props> {
 
     this.props.validateAnswer();
     this.props.navigation.navigate('Correction', params);
-    this.scrollView.scrollTo({x: 0, y: 0, animated: true});
   };
 
   render() {

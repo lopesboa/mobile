@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
+exports[`Storyshots Tooltip Highscore 1`] = `
 <View>
   <View
     style={
@@ -171,78 +171,24 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
         >
           <Text
             allowFontScaling={true}
-            style={Object {}}
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
           >
-            <Text
-              allowFontScaling={true}
-              selectable={false}
-              style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={true}
-                style={
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 15,
-                  }
-                }
-              >
-                You have a new highscore
-              </Text>
-            </Text>
             <Text
               allowFontScaling={true}
               style={
                 Object {
-                  "flex": 1,
-                  "height": 16.8,
+                  "color": "#14171A",
+                  "fontSize": 15,
                 }
               }
             >
-              
-
-            </Text>
-            <Text
-              allowFontScaling={true}
-              selectable={false}
-              style={
-                Array [
-                  Object {
-                    "fontWeight": "700",
-                  },
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={true}
-                selectable={false}
-                style={
-                  Array [
-                    Object {},
-                    Object {},
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={true}
-                  style={
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 15,
-                      "fontWeight": "700",
-                    }
-                  }
-                >
-                  you just won +17 stars
-                </Text>
-              </Text>
+              Foo bar
             </Text>
           </Text>
         </View>
@@ -268,7 +214,7 @@ exports[`Storyshots Tooltip Tooltip HighScore 1`] = `
 </View>
 `;
 
-exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
+exports[`Storyshots Tooltip Unlock 1`] = `
 <View>
   <View
     style={
@@ -751,78 +697,24 @@ exports[`Storyshots Tooltip Tooltip Unlocked 1`] = `
         >
           <Text
             allowFontScaling={true}
-            style={Object {}}
+            selectable={false}
+            style={
+              Array [
+                Object {},
+                Object {},
+              ]
+            }
           >
-            <Text
-              allowFontScaling={true}
-              selectable={false}
-              style={
-                Array [
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={true}
-                style={
-                  Object {
-                    "color": "#14171A",
-                    "fontSize": 15,
-                  }
-                }
-              >
-                You have just unlocked
-              </Text>
-            </Text>
             <Text
               allowFontScaling={true}
               style={
                 Object {
-                  "flex": 1,
-                  "height": 16.8,
+                  "color": "#14171A",
+                  "fontSize": 15,
                 }
               }
             >
-              
-
-            </Text>
-            <Text
-              allowFontScaling={true}
-              selectable={false}
-              style={
-                Array [
-                  Object {
-                    "fontWeight": "700",
-                  },
-                  Object {},
-                  Object {},
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={true}
-                selectable={false}
-                style={
-                  Array [
-                    Object {},
-                    Object {},
-                  ]
-                }
-              >
-                <Text
-                  allowFontScaling={true}
-                  style={
-                    Object {
-                      "color": "#14171A",
-                      "fontSize": 15,
-                      "fontWeight": "700",
-                    }
-                  }
-                >
-                  coach level
-                </Text>
-              </Text>
+              Foo bar
             </Text>
           </Text>
         </View>

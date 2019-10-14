@@ -12,11 +12,6 @@ import type {TooltipType} from '../types';
 import Html from './html';
 import {STYLE as BOX_STYLE} from './box';
 
-type Props = {|
-  type: TooltipType,
-  text: string
-|};
-
 const styles = StyleSheet.create({
   container: {
     ...BOX_STYLE,
@@ -60,16 +55,22 @@ const styles = StyleSheet.create({
   }
 });
 
-const Tooltip = ({type, text}: Props) => {
+type Props = {|
+  type: TooltipType,
+  children: string,
+  testID?: string
+|};
+
+const Tooltip = ({type, children, testID}: Props) => {
   return (
-    <View>
+    <View testID={testID}>
       <View style={styles.container}>
         <View style={styles.iconContainer}>
           {type === TOOLTIP_TYPE.HIGHSCORE && <Star color="#fca833" style={styles.icon} />}
           {type === TOOLTIP_TYPE.UNLOCK && <Lock style={styles.icon} />}
         </View>
         <View style={styles.text}>
-          <Html fontSize={theme.fontSize.regular}>{text}</Html>
+          <Html fontSize={theme.fontSize.regular}>{children}</Html>
         </View>
       </View>
       <View style={styles.corner} />

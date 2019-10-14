@@ -43,7 +43,7 @@ export type DataLayer = {
   findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
   synchronizeProgression: typeof synchronizeProgression,
   getAllProgressions: typeof getAllProgressions,
-  findBestOf: () => Promise<number>,
+  findBestOf: typeof findBestOf,
   getNextChapter: (ref: string) => Promise<ChapterAPI | void>,
   getNextLevel: (ref: string) => Promise<LevelAPI | void>,
   logEvent: typeof logEvent,
@@ -73,8 +73,7 @@ const createDataLayer = (): DataLayer => ({
   setLanguage,
   getInterfaceLanguage,
   findVideoUriById,
-  // $FlowFixMe
-  findBestOf: findBestOf,
+  findBestOf,
   findLast: findLastProgression,
   fetchSections,
   refreshCard,

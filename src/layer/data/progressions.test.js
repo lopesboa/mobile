@@ -1,41 +1,40 @@
 // @flow
 
-import AsyncStorage from '@react-native-community/async-storage';
+import type {ContentType} from '@coorpacademy/progression-engine';
 
-import {createDisciplineCard, createCardLevel} from '../../__fixtures__/cards';
 import {createProgression, createState, createAction} from '../../__fixtures__/progression';
 import createCompletion from '../../__fixtures__/completion';
+import {createToken} from '../../__fixtures__/tokens';
 import {ForbiddenError} from '../../models/error';
-import {
-  findById,
-  getAll,
-  save,
-  findLast,
-  buildLastProgressionKey,
-  findBestOf,
-  buildCompletionKey,
-  mapProgressionToCompletion,
-  mergeCompletion,
-  storeOrReplaceCompletion
-} from './progressions';
+import {ENGINE} from '../../const';
+import {CONTENT_TYPE} from './_const';
+import type {FindBestOfResult} from './progressions';
 
-describe('progresssion', () => {
+jest.mock('cross-fetch');
+
+describe('Progressions', () => {
   describe('buildLastProgressionKey', () => {
     it('should build the lastProgression Key ', () => {
+      const {buildLastProgressionKey} = require('./progressions');
+
       const engineRef = 'lol';
       const contentRef = 'lipop';
       expect(buildLastProgressionKey(engineRef, contentRef)).toBeDefined();
     });
   });
+
   describe('findById', () => {
     it('shoud find a progression by id', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findById} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         }
       });
 
@@ -49,6 +48,9 @@ describe('progresssion', () => {
     });
 
     it("shoud throw error if progression isn't found", async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findById} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve());
 
@@ -57,13 +59,16 @@ describe('progresssion', () => {
   });
   describe('getAll', () => {
     it('shoud get all the progression items', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {getAll} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         }
       });
 
@@ -83,13 +88,16 @@ describe('progresssion', () => {
   });
   describe('save', () => {
     it('shoud the progression and the last progression id simultaneously', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {save} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         }
       });
 
@@ -108,14 +116,18 @@ describe('progresssion', () => {
 
       expect(result).toEqual(fakeProgression);
     });
+
     it('shoud add createAt in each action', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {save} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         },
         actions: [createAction({}), createAction({})]
       });
@@ -130,12 +142,16 @@ describe('progresssion', () => {
           expect(action).toHaveProperty('createdAt');
         });
     });
+
     it('shoud throw on progression without _id', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {save} = require('./progressions');
+
       const fakeProgression = createProgression({
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         }
       });
 
@@ -146,13 +162,17 @@ describe('progresssion', () => {
       await expect(result).rejects.toBeInstanceOf(TypeError);
     });
   });
+
   describe('findLast', () => {
     it('shoud find the last progression', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
 
       const nextContent = {
@@ -181,17 +201,23 @@ describe('progresssion', () => {
     });
 
     it('shoud find the last progression -- without retrieved progression id', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       AsyncStorage.getItem = jest.fn().mockImplementation(() => null);
       const result = await findLast('tata', 'toto');
       expect(result).toEqual(null);
     });
 
     it('shoud find the last progression -- without retrieved progression', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
 
       AsyncStorage.getItem = jest.fn().mockImplementation(key => {
@@ -206,11 +232,14 @@ describe('progresssion', () => {
     });
 
     it('shoud find the last progression -- with success as nextContent type', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
 
       const nextContent = {
@@ -238,11 +267,14 @@ describe('progresssion', () => {
     });
 
     it('shoud find the last progression -- with failure as nextContent type', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
 
       const nextContent = {
@@ -270,11 +302,14 @@ describe('progresssion', () => {
     });
 
     it('shoud find the last progression -- with node as nextContent type and extralife as ref', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
 
       const nextContent = {
@@ -301,22 +336,26 @@ describe('progresssion', () => {
       expect(result).toEqual(null);
     });
   });
+
   describe('synchronize', () => {
     beforeEach(() => {
       jest.resetModules();
       jest.resetAllMocks();
     });
+
     const TOKEN = '__TOKEN__';
     const HOST = 'https://coorp.mobile.com';
+
     it('should synchronize progression', async () => {
-      jest.mock('cross-fetch');
+      const AsyncStorage = require('@react-native-community/async-storage');
+
       const fetch = require('cross-fetch');
 
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
       const nextContent = {
         ref: 'bar',
@@ -359,14 +398,15 @@ describe('progresssion', () => {
     });
 
     it('should throw error if forbidden', async () => {
-      jest.mock('cross-fetch');
+      const AsyncStorage = require('@react-native-community/async-storage');
+
       const fetch = require('cross-fetch');
 
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
       const nextContent = {
         ref: 'bar',
@@ -400,14 +440,15 @@ describe('progresssion', () => {
     });
 
     it('should throw error if status code >= 400', async () => {
-      jest.mock('cross-fetch');
+      const AsyncStorage = require('@react-native-community/async-storage');
+
       const fetch = require('cross-fetch');
 
       const progressionId = 'fakeProgressionId';
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
       const nextContent = {
         ref: 'bar',
@@ -441,10 +482,10 @@ describe('progresssion', () => {
     });
 
     it('should support only progression with _id', async () => {
-      const engine = 'learner';
+      const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: 'chapter'
+        type: CONTENT_TYPE.CHAPTER
       };
       const nextContent = {
         ref: 'bar',
@@ -462,10 +503,14 @@ describe('progresssion', () => {
     });
 
     it('should return the completion key', () => {
+      const {buildCompletionKey} = require('./progressions');
+
       expect(buildCompletionKey('hey', 'ho')).toBeDefined();
     });
 
     it('should map a progression to a completion -- with provided total', () => {
+      const {mapProgressionToCompletion} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeState = createState({
         stars: 22,
@@ -475,10 +520,10 @@ describe('progresssion', () => {
       });
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         },
         state: fakeState
       });
@@ -494,6 +539,8 @@ describe('progresssion', () => {
     });
 
     it('should map a progression to a completion -- without provided total', () => {
+      const {mapProgressionToCompletion} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
       const fakeState = createState({
         stars: 22,
@@ -503,10 +550,10 @@ describe('progresssion', () => {
       });
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         },
         state: fakeState
       });
@@ -522,14 +569,16 @@ describe('progresssion', () => {
     });
 
     it('should map a progression to a completion -- without state', () => {
+      const {mapProgressionToCompletion} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
 
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         }
       });
 
@@ -537,6 +586,8 @@ describe('progresssion', () => {
     });
 
     it('should merge two completion into a single one', () => {
+      const {mergeCompletion} = require('./progressions');
+
       const completion1 = createCompletion({stars: 899, current: 33});
       const completion2 = createCompletion({stars: 898, current: 22});
       const result = mergeCompletion(completion1, completion2);
@@ -546,6 +597,9 @@ describe('progresssion', () => {
     });
 
     it('should store the completion', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {storeOrReplaceCompletion} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
 
       const fakeState = createState({
@@ -558,10 +612,10 @@ describe('progresssion', () => {
 
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         },
         state: fakeState
       });
@@ -588,6 +642,9 @@ describe('progresssion', () => {
     });
 
     it('should update the completion', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {storeOrReplaceCompletion} = require('./progressions');
+
       const progressionId = 'fakeProgressionId';
 
       const fakeState = createState({
@@ -602,10 +659,10 @@ describe('progresssion', () => {
 
       const fakeProgression = createProgression({
         _id: progressionId,
-        engine: 'learner',
+        engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: 'chapter'
+          type: CONTENT_TYPE.CHAPTER
         },
         state: fakeState
       });
@@ -631,35 +688,214 @@ describe('progresssion', () => {
   });
 
   describe('findBestOf', () => {
-    it('shoud return a number of stars from an item', async () => {
-      const language = 'en',
-        progressionId = 'fakeProgressionId',
-        engineRef = 'learner',
-        content = {ref: 'foo', type: 'chapter'},
-        contentRef = 'foo';
+    const engineRef = ENGINE.LEARNER;
+    const contentType: ContentType = CONTENT_TYPE.CHAPTER;
+    const contentRef = 'fakeContentRef';
+    const host = 'https://foo.coorpacademy.com';
+    const token = createToken({
+      host
+    });
+    const fooProgression = createProgression({
+      _id: 'foo',
+      engine: ENGINE.LEARNER,
+      progressionContent: {
+        ref: contentRef,
+        type: contentType
+      },
+      state: {
+        stars: 13
+      }
+    });
+    const barProgression = createProgression({
+      _id: 'bar',
+      engine: ENGINE.LEARNER,
+      progressionContent: {
+        ref: contentRef,
+        type: contentType
+      },
+      state: {
+        stars: 37
+      }
+    });
+    const bazProgression = createProgression({
+      _id: 'bar',
+      engine: ENGINE.LEARNER,
+      progressionContent: {
+        ref: contentRef,
+        type: contentType
+      }
+    });
+    const quxProgression = createProgression({
+      _id: 'qux',
+      engine: ENGINE.LEARNER,
+      progressionContent: {
+        ref: contentRef,
+        type: contentType
+      }
+    });
+    const storageKeys = [
+      'progression_foo',
+      'progression_bar',
+      'progression_baz',
+      'progression_qux',
+      'baaaaz'
+    ];
 
-      const levelCard = createCardLevel({
-        ref: 'mod_yeAh',
-        status: 'isActive',
-        label: 'Fake level',
-        level: 'advanced'
+    it('should trigger error if no token is defined', () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.getItem.mockImplementationOnce(() => Promise.resolve(null));
+
+      const {findBestOf} = require('./progressions');
+
+      const result = findBestOf(engineRef, contentType, contentRef, 'foo');
+
+      expect(result).rejects.toThrow(Error);
+    });
+
+    it('should return default value', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+        );
+        expect(options.headers).toEqual({
+          Authorization: token,
+          'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        return Promise.resolve({
+          json: () => Promise.resolve({})
+        });
       });
-      const disciplineCard = createDisciplineCard({
-        ref: 'dis_something',
-        completion: 0,
-        levels: [levelCard],
-        title: 'Second discipline'
+
+      AsyncStorage.getItem.mockImplementationOnce(key => {
+        expect(key).toEqual('@@token');
+
+        return Promise.resolve(token);
       });
 
-      const fakeCardWithStars = {...disciplineCard, stars: 100};
+      AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
+      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+        expect(keys).toEqual(storageKeys.slice(0, 4));
 
-      AsyncStorage.getItem = jest
-        .fn()
-        .mockImplementation(() => Promise.resolve(JSON.stringify(fakeCardWithStars)));
+        return Promise.resolve([]);
+      });
 
-      const result = await findBestOf(language)(engineRef, content, contentRef, progressionId);
+      const {findBestOf} = require('./progressions');
 
-      expect(result).toEqual(100);
+      const result = await findBestOf(engineRef, contentType, contentRef, 'foo');
+      const expected: FindBestOfResult = {
+        stars: 0
+      };
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should return stars from local progressions', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+        );
+        expect(options.headers).toEqual({
+          Authorization: token,
+          'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        return Promise.resolve({
+          json: () => Promise.resolve({})
+        });
+      });
+
+      AsyncStorage.getItem.mockImplementationOnce(key => {
+        expect(key).toEqual('@@token');
+
+        return Promise.resolve(token);
+      });
+
+      AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
+      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+        expect(keys).toEqual([
+          'progression_foo',
+          'progression_bar',
+          'progression_baz',
+          'progression_qux'
+        ]);
+
+        return Promise.resolve([
+          ['progression_foo', JSON.stringify(fooProgression)],
+          ['progression_bar', JSON.stringify(barProgression)],
+          ['progression_baz', JSON.stringify(bazProgression)],
+          ['progression_qux', JSON.stringify(quxProgression)]
+        ]);
+      });
+
+      const {findBestOf} = require('./progressions');
+
+      const result = await findBestOf(engineRef, contentType, contentRef, 'quuux');
+      const expected: FindBestOfResult = {
+        stars: 37
+      };
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should return stars from api', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+        );
+        expect(options.headers).toEqual({
+          Authorization: token,
+          'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              stars: 1337
+            })
+        });
+      });
+
+      AsyncStorage.getItem.mockImplementationOnce(key => {
+        expect(key).toEqual('@@token');
+
+        return Promise.resolve(token);
+      });
+
+      AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
+      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+        expect(keys).toEqual([
+          'progression_foo',
+          'progression_bar',
+          'progression_baz',
+          'progression_qux'
+        ]);
+
+        return Promise.resolve([
+          ['progression_foo', JSON.stringify(fooProgression)],
+          ['progression_bar', JSON.stringify(barProgression)],
+          ['progression_baz', JSON.stringify(bazProgression)],
+          ['progression_qux', JSON.stringify(quxProgression)]
+        ]);
+      });
+
+      const {findBestOf} = require('./progressions');
+
+      const result = await findBestOf(engineRef, contentType, contentRef, 'quux');
+      const expected: FindBestOfResult = {
+        stars: 1337
+      };
+
+      expect(result).toEqual(expected);
     });
   });
 });

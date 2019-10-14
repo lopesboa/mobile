@@ -1,33 +1,8 @@
 // @flow strict
-import {ObjectId} from 'bson';
-import {CONTENT_TYPE, ENGINE} from '../../../const';
 
-import {createChapter} from '../../../__fixtures__/chapters';
-import {createLevel} from '../../../__fixtures__/levels';
+import {CONTENT_TYPE, ENGINE} from '../../../const';
 import {createStoreState, createAuthenticationState} from '../../../__fixtures__/store';
 import {createProgression} from '../../../__fixtures__/progression';
-import {CREATE_NEXT_SUCCESS, createNextProgression} from './create-next-progression';
-
-const playerStore = require('@coorpacademy/player-store');
-
-const chapter = createChapter({
-  ref: 'cha1',
-  name: 'chapter1'
-});
-
-const level = createLevel({
-  ref: 'lvl1',
-  chapterIds: ['bar', 'baz'],
-  name: 'level1'
-});
-
-const progression = createProgression({
-  engine: ENGINE.MICROLEARNING,
-  progressionContent: {
-    type: CONTENT_TYPE.LEVEL,
-    ref: ''
-  }
-});
 
 const getState = () =>
   createStoreState({
@@ -35,225 +10,256 @@ const getState = () =>
     disciplines: [],
     chapters: [],
     slides: [],
-    progression,
+    progression: createProgression({
+      engine: ENGINE.MICROLEARNING,
+      progressionContent: {
+        type: CONTENT_TYPE.LEVEL,
+        ref: ''
+      }
+    }),
     authentication: createAuthenticationState({})
   });
 
-const getMockedContent = contentType => {
-  switch (contentType) {
-    case CONTENT_TYPE.LEVEL:
-      return level;
-    case CONTENT_TYPE.CHAPTER:
-      return chapter;
-    default:
-      return Promise.resolve();
-  }
-};
-
-jest.mock('@coorpacademy/player-store', () => ({
-  createProgression: jest.fn(),
-  selectProgression: jest.fn(),
-  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
+jest.mock('./create-chapter-progression', () => ({
+  createChapterProgression: jest.fn(() => ({
+    type: '@@mock/CREATE_PROGRESSION',
+    payload: {
+      _id: '__PROG_ID__'
+    }
+  }))
 }));
 
-describe('Create next Progression', () => {
-  [CONTENT_TYPE.CHAPTER, CONTENT_TYPE.LEVEL].map(contentType =>
-    it(`should create a new progression | ${contentType}`, async () => {
-      const mockedContent = getMockedContent(contentType);
-      const dispatch = jest.fn();
+jest.mock('./create-level-progression', () => ({
+  createLevelProgression: jest.fn(() => ({
+    type: '@@mock/CREATE_PROGRESSION',
+    payload: {
+      _id: '__PROG_ID__'
+    }
+  }))
+}));
+
+jest.mock('@coorpacademy/player-store', () => ({
+  selectProgression: jest.fn(() => ({type: '@@mock/SELECT_PROGRESSION'})),
+  fetchBestProgression: jest.fn(() => ({type: '@@mock/FETCH_BEST_PROGRESSION'}))
+}));
+
+describe('createNextProgression', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
+  [CONTENT_TYPE.CHAPTER, CONTENT_TYPE.LEVEL].forEach(contentType => {
+    const isChapter = contentType === CONTENT_TYPE.CHAPTER;
+
+    it(`should create a new ${contentType} progression`, async () => {
+      const {createChapterProgression} = require('./create-chapter-progression');
+      const {createLevelProgression} = require('./create-level-progression');
+      const {selectProgression, fetchBestProgression} = require('@coorpacademy/player-store');
+
+      const {
+        CREATE_NEXT_REQUEST,
+        CREATE_NEXT_SUCCESS,
+        createNextProgression
+      } = require('./create-next-progression');
+
+      const dispatch = jest.fn(action => action);
       const options = {
         services: {
           Content: {
-            find: jest.fn().mockImplementationOnce(type => {
-              expect(type).toEqual(contentType);
-              return mockedContent;
-            })
+            find: jest.fn(() => Promise.resolve({id: '__CONTENT_ID__'}))
           },
           Progressions: {
-            findLast: jest.fn().mockImplementationOnce((type, ref) => {
-              if (contentType === CONTENT_TYPE.CHAPTER) {
-                expect(type).toEqual(ENGINE.MICROLEARNING);
-              }
-              if (contentType === CONTENT_TYPE.LEVEL) {
-                expect(type).toEqual(ENGINE.LEARNER);
-              }
-              // $FlowFixMe
-              expect(ref).toEqual(mockedContent.universalRef);
-              return Promise.resolve(null);
-            })
+            findLast: jest.fn(() => Promise.resolve(null))
           }
         }
       };
 
-      // $FlowFixMe
-      playerStore.createProgression.mockImplementationOnce(
-        (_id, engine, _content, engineConfig) => {
-          expect(ObjectId.isValid(_id)).toBeTruthy();
-          expect(_content.type).toEqual(contentType);
-          // $FlowFixMe
-          expect(_content.ref).toEqual(mockedContent.universalRef);
-          if (contentType === CONTENT_TYPE.CHAPTER) {
-            // $FlowFixMe
-            expect(engine).toEqual({ref: ENGINE.MICROLEARNING, version: '2'});
-            expect(engineConfig).toEqual({version: '2'});
-          }
-          if (contentType === CONTENT_TYPE.LEVEL) {
-            expect(engine).toEqual({ref: ENGINE.LEARNER, version: '2'});
-            expect(engineConfig).toEqual({version: '2', livesDisabled: false});
-          }
-          return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
-        }
-      );
+      // $FlowFixMe wrong type
+      await createNextProgression(contentType, 'foo')(dispatch, getState, options);
 
-      // $FlowFixMe
-      playerStore.selectProgression.mockImplementationOnce(id => {
-        expect(id).toEqual('__ID__');
-        return {type: '@@mock/SELECT_PROGRESSION', meta: {id}};
+      expect(dispatch).toHaveBeenCalledTimes(5);
+      expect(dispatch.mock.calls[0][0]).toEqual({
+        type: CREATE_NEXT_REQUEST,
+        meta: {ref: 'foo', type: contentType}
       });
-
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/CREATE_NEXT_REQUEST',
-          // $FlowFixMe
-          meta: {type: contentType, ref: mockedContent.universalRef}
-        });
-        return action;
+      expect(dispatch.mock.calls[1][0]).toEqual({
+        type: '@@mock/CREATE_PROGRESSION',
+        payload: {_id: '__PROG_ID__'}
       });
-
-      dispatch.mockImplementationOnce(async action => {
-        expect(await action).toEqual({
-          type: '@@mock/CREATE_PROGRESSION',
-          payload: {
-            _id: '__ID__'
-          }
-        });
-        // $FlowFixMe
-        return action;
+      expect(dispatch.mock.calls[2][0]).toEqual({
+        type: '@@mock/SELECT_PROGRESSION'
       });
-
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({type: '@@mock/SELECT_PROGRESSION', meta: {id: '__ID__'}});
-        return action;
+      expect(dispatch.mock.calls[3][0]).toEqual({
+        type: '@@mock/FETCH_BEST_PROGRESSION'
       });
-
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: CREATE_NEXT_SUCCESS,
-          // $FlowFixMe
-          meta: {type: contentType, ref: mockedContent.universalRef}
-        });
-        return action;
-      });
-
-      // $FlowFixMe
-      const result = await createNextProgression(contentType, mockedContent.universalRef)(
-        // $FlowFixMe
-        dispatch,
-        getState,
-        // $FlowFixMe
-        options
-      );
-
-      return expect(result).toEqual({
+      expect(dispatch.mock.calls[4][0]).toEqual({
         type: CREATE_NEXT_SUCCESS,
-        // $FlowFixMe
-        meta: {type: contentType, ref: mockedContent.universalRef}
+        meta: {ref: 'foo', type: contentType}
       });
-    })
-  );
 
-  it('should fail creating a progression of unknow type', async () => {
-    const dispatch = jest.fn();
-    const options = {
-      services: {}
-    };
+      const progressionCreator = isChapter ? createChapterProgression : createLevelProgression;
 
-    dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual({
-        type: '@@progression/CREATE_NEXT_REQUEST',
-        // $FlowFixMe
-        meta: {type: 'plop', ref: 'plup'}
-      });
-      return action;
+      expect(progressionCreator).toHaveBeenCalledTimes(1);
+      expect(progressionCreator).toHaveBeenCalledWith({id: '__CONTENT_ID__'}, '2');
+      expect(selectProgression).toHaveBeenCalledTimes(1);
+      expect(selectProgression).toHaveBeenCalledWith('__PROG_ID__');
+      expect(fetchBestProgression).toHaveBeenCalledTimes(1);
+      expect(fetchBestProgression).toHaveBeenCalledWith(
+        {type: contentType, ref: 'foo'},
+        '__PROG_ID__',
+        true
+      );
     });
 
-    const error = {
-      type: '@@progression/CREATE_NEXT_FAILURE',
-      error: true,
-      meta: {
-        ref: 'plup',
-        type: 'plop'
-      },
-      payload: new Error('content type plop is not handled')
-    };
-    dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual(error);
-      // $FlowFixMe
-      return action;
+    it(`should resume a ${contentType} progression`, async () => {
+      const {createChapterProgression} = require('./create-chapter-progression');
+      const {createLevelProgression} = require('./create-level-progression');
+      const {selectProgression, fetchBestProgression} = require('@coorpacademy/player-store');
+
+      const {
+        CREATE_NEXT_REQUEST,
+        CREATE_NEXT_SUCCESS,
+        createNextProgression
+      } = require('./create-next-progression');
+
+      const dispatch = jest.fn(action => action);
+      const options = {
+        services: {
+          Content: {
+            find: jest.fn(() => Promise.resolve({id: '__CONTENT_ID__'}))
+          },
+          Progressions: {
+            findLast: jest.fn(() => Promise.resolve({_id: '__LAST_PROG_ID__'}))
+          }
+        }
+      };
+
+      // $FlowFixMe wrong type
+      await createNextProgression(contentType, 'foo')(dispatch, getState, options);
+
+      expect(dispatch).toHaveBeenCalledTimes(4);
+      expect(dispatch.mock.calls[0][0]).toEqual({
+        type: CREATE_NEXT_REQUEST,
+        meta: {ref: 'foo', type: contentType}
+      });
+      expect(dispatch.mock.calls[1][0]).toEqual({
+        type: '@@mock/SELECT_PROGRESSION'
+      });
+      expect(dispatch.mock.calls[2][0]).toEqual({
+        type: '@@mock/FETCH_BEST_PROGRESSION'
+      });
+      expect(dispatch.mock.calls[3][0]).toEqual({
+        type: CREATE_NEXT_SUCCESS,
+        meta: {ref: 'foo', type: contentType}
+      });
+
+      const progressionCreator = isChapter ? createChapterProgression : createLevelProgression;
+
+      expect(progressionCreator).toHaveBeenCalledTimes(0);
+      expect(selectProgression).toHaveBeenCalledTimes(1);
+      expect(selectProgression).toHaveBeenCalledWith('__LAST_PROG_ID__');
+      expect(fetchBestProgression).toHaveBeenCalledTimes(1);
+      expect(fetchBestProgression).toHaveBeenCalledWith(
+        {type: contentType, ref: 'foo'},
+        '__LAST_PROG_ID__',
+        true
+      );
     });
 
-    // $FlowFixMe
-    const result = await createNextProgression('plop', 'plup')(
-      // $FlowFixMe
-      dispatch,
-      getState,
-      // $FlowFixMe
-      options
-    );
+    it(`should fail if no ${contentType} progression has been created`, async () => {
+      const {createChapterProgression} = require('./create-chapter-progression');
+      const {createLevelProgression} = require('./create-level-progression');
+      const {selectProgression, fetchBestProgression} = require('@coorpacademy/player-store');
 
-    return expect(result).toEqual(error);
+      const {
+        CREATE_NEXT_REQUEST,
+        CREATE_NEXT_FAILURE,
+        createNextProgression
+      } = require('./create-next-progression');
+
+      const dispatch = jest.fn(action => action);
+      const options = {
+        services: {
+          Content: {
+            find: jest.fn(() => Promise.resolve({id: '__CONTENT_ID__'}))
+          },
+          Progressions: {
+            findLast: jest.fn(() => Promise.resolve(null))
+          }
+        }
+      };
+
+      const progressionCreator = isChapter ? createChapterProgression : createLevelProgression;
+      // $FlowFixMe mock function
+      progressionCreator.mockImplementationOnce(() => ({}));
+
+      // $FlowFixMe wrong type
+      await createNextProgression(contentType, 'foo')(dispatch, getState, options);
+
+      expect(dispatch).toHaveBeenCalledTimes(3);
+      expect(dispatch.mock.calls[0][0]).toEqual({
+        type: CREATE_NEXT_REQUEST,
+        meta: {ref: 'foo', type: contentType}
+      });
+      expect(dispatch.mock.calls[1][0]).toEqual({});
+      expect(dispatch.mock.calls[2][0]).toEqual({
+        error: true,
+        type: CREATE_NEXT_FAILURE,
+        payload: expect.any(Error),
+        meta: {ref: 'foo', type: contentType}
+      });
+
+      expect(progressionCreator).toHaveBeenCalledTimes(1);
+      expect(selectProgression).toHaveBeenCalledTimes(0);
+      expect(fetchBestProgression).toHaveBeenCalledTimes(0);
+    });
   });
 
-  it('should continue last progression if not finished yet', async () => {
-    const dispatch = jest.fn();
+  it('should fail it content type is not supported', async () => {
+    const {createChapterProgression} = require('./create-chapter-progression');
+    const {createLevelProgression} = require('./create-level-progression');
+    const {selectProgression, fetchBestProgression} = require('@coorpacademy/player-store');
+
+    const {
+      CREATE_NEXT_REQUEST,
+      CREATE_NEXT_FAILURE,
+      createNextProgression
+    } = require('./create-next-progression');
+
+    const dispatch = jest.fn(action => action);
     const options = {
       services: {
         Content: {
-          find: jest.fn().mockImplementationOnce(type => {
-            expect(type).toEqual(CONTENT_TYPE.CHAPTER);
-            return chapter;
-          })
+          find: jest.fn(() => Promise.resolve({id: '__CONTENT_ID__'}))
         },
         Progressions: {
-          findLast: jest.fn().mockImplementationOnce((type, ref) => {
-            expect(type).toEqual(ENGINE.MICROLEARNING);
-            // $FlowFixMe
-            expect(ref).toEqual(chapter.universalRef);
-            return Promise.resolve({_id: '__LAST__'});
-          })
+          findLast: jest.fn(() => Promise.resolve(null))
         }
       }
     };
 
-    // $FlowFixMe
-    playerStore.selectProgression.mockImplementationOnce(id => {
-      expect(id).toEqual('__LAST__');
-      return {type: '@@mock/SELECT_PROGRESSION', meta: {id}};
+    // $FlowFixMe wrong type
+    await createNextProgression('qux', 'foo')(dispatch, getState, options);
+
+    expect(dispatch).toHaveBeenCalledTimes(2);
+    expect(dispatch.mock.calls[0][0]).toEqual({
+      type: CREATE_NEXT_REQUEST,
+      meta: {ref: 'foo', type: 'qux'}
+    });
+    expect(dispatch.mock.calls[1][0]).toEqual({
+      error: true,
+      type: CREATE_NEXT_FAILURE,
+      payload: expect.any(Error),
+      meta: {ref: 'foo', type: 'qux'}
     });
 
-    dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual({
-        type: '@@progression/CREATE_NEXT_REQUEST',
-        // $FlowFixMe
-        meta: {type: CONTENT_TYPE.CHAPTER, ref: chapter.universalRef}
-      });
-      return action;
-    });
+    expect(createLevelProgression).toHaveBeenCalledTimes(0);
+    expect(createChapterProgression).toHaveBeenCalledTimes(0);
+    expect(selectProgression).toHaveBeenCalledTimes(0);
+    expect(fetchBestProgression).toHaveBeenCalledTimes(0);
+  });
 
-    dispatch.mockImplementationOnce(action => {
-      expect(action).toEqual({type: '@@mock/SELECT_PROGRESSION', meta: {id: '__LAST__'}});
-      return action;
-    });
-
-    // $FlowFixMe
-    const result = await createNextProgression(CONTENT_TYPE.CHAPTER, chapter.universalRef)(
-      // $FlowFixMe
-      dispatch,
-      getState,
-      // $FlowFixMe
-      options
-    );
-
-    return expect(result).toEqual({type: '@@mock/SELECT_PROGRESSION', meta: {id: '__LAST__'}});
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 });
