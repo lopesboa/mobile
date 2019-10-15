@@ -56,6 +56,9 @@ target 'Coorpacademy' do
   pod 'RNSound', :path => '../node_modules/react-native-sound'
   pod 'RNReactNativeHapticFeedback', :path => '../node_modules/react-native-haptic-feedback'
 
+  # Lottie
+  pod 'lottie-ios', :path => '../node_modules/lottie-ios'
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
 end
 
 # The following is needed to ensure the "archive" step works in XCode.

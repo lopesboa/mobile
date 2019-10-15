@@ -168,6 +168,9 @@ dependencies {
     implementation "com.google.firebase:firebase-dynamic-links:16.1.8"
     implementation "com.google.firebase:firebase-invites:16.1.1"
     implementation 'com.android.support:multidex:1.0.3'
+
+    // Lottie
+    implementation project(':lottie-react-native')
 }
 
 configurations {

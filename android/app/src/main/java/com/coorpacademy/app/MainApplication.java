@@ -28,7 +28,7 @@ import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.links.RNFirebaseLinksPackage;
-
+import com.airbnb.android.react.lottie.LottiePackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -63,7 +63,8 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
             new RNFirebasePackage(),
             new RNFirebaseAnalyticsPackage(),
             new RNFirebaseLinksPackage(),
-            new SplashScreenReactPackage()
+            new SplashScreenReactPackage(),
+            new LottiePackage()
       );
     }
 
