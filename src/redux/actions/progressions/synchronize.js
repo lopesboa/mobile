@@ -1,10 +1,14 @@
-// @flow strict
+// @flow
 
 import pMap from 'p-map';
 
 import type {StoreAction, ErrorAction} from '../../_types';
 import {getToken, getBrand} from '../../utils/state-extract';
-import {isDone, sortProgressionChronologicaly} from '../../../utils/progressions';
+import {
+  isAlreadySynchronized,
+  isDone,
+  sortProgressionChronologicaly
+} from '../../../utils/progressions';
 
 export const SYNCHRONIZE_REQUEST = '@@progression/SYNCHRONIZE_REQUEST';
 export const SYNCHRONIZE_SUCCESS = '@@progression/SYNCHRONIZE_SUCCESS';
@@ -42,7 +46,9 @@ export const synchronizeProgression = (progressionId: string): StoreAction<Actio
       if (brand === null) throw new TypeError('Brand not defined');
 
       const progression = await services.Progressions.findById(progressionId);
-      if (progression) await services.Progressions.synchronize(token, brand.host, progression);
+      if (progression) {
+        await services.Progressions.synchronize(token, brand.host, progression);
+      }
 
       return dispatch({
         type: SYNCHRONIZE_SUCCESS,
@@ -63,17 +69,24 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
   const {services} = options;
 
   const progressions = await services.Progressions.getAll();
+  const synchronizedProgressionsIds = await services.Progressions.getSynchronizedProgressionIds();
+
   await pMap(
-    sortProgressionChronologicaly(progressions).filter(isDone),
+    sortProgressionChronologicaly(progressions).filter(
+      p => isDone(p) && !isAlreadySynchronized(p, synchronizedProgressionsIds)
+    ),
     (progression): Promise<Action | void> => {
       const {_id} = progression;
       if (_id) {
+        synchronizedProgressionsIds.push(_id);
         return dispatch(synchronizeProgression(_id));
       }
       return Promise.resolve();
     },
     {concurrency: 1}
   );
+
+  await services.Progressions.updateSynchronizedProgressionIds(synchronizedProgressionsIds);
 
   return;
 };

@@ -1,5 +1,7 @@
 // @flow strict
 
+import type {LevelAPI} from '@coorpacademy/player-services';
+import {createLevelAPI} from '../../__fixtures__/levels';
 import {mapToLevelAPIExpectedResult} from './mappers.test';
 
 jest.mock('./core', () => {
@@ -75,6 +77,69 @@ describe('levels', () => {
       };
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('fetchLevel', () => {
+    const host = 'https://domain.tld';
+    const ref = 'tourte';
+    const fakeLevelApi = createLevelAPI({
+      ref,
+      chapterIds: [],
+      bestScore: 666,
+      level: 'base'
+    });
+
+    beforeEach(() => {
+      jest.resetModules();
+      jest.mock('cross-fetch');
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<LevelAPI>
+        }> => {
+          expect(url).toBe(`${host}/api/v2/levels/${ref}`);
+          return Promise.resolve({
+            json: () => Promise.resolve(fakeLevelApi)
+          });
+        }
+      );
+
+      jest.mock('../../utils/local-token', () => {
+        const {createToken} = require('../../__fixtures__/tokens');
+        return {
+          get: jest.fn(() => Promise.resolve(createToken({})))
+        };
+      });
+    });
+    it('should return a levelApi', async () => {
+      const {fetchLevel} = require('./levels');
+      const result = await fetchLevel(ref);
+      expect(result.disciplineRef).toEqual(fakeLevelApi.disciplineRef);
+    });
+
+    it('should return throw error', async () => {
+      const localToken = require('../../utils/local-token');
+      // $FlowFixMe this function is mocked;
+      localToken.get.mockImplementationOnce(() => Promise.resolve(null));
+
+      const {fetchLevel} = require('./levels');
+      const fetching = fetchLevel(ref);
+      await expect(fetching).rejects.toThrow(new Error('Invalid token'));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
     });
   });
 });

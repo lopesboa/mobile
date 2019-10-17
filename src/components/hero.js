@@ -80,6 +80,10 @@ class Hero extends React.PureComponent<Props> {
                 (!isLoading && ((content && content.image) || (brandTheme && brandTheme.hero))) ||
                 undefined;
 
+              const testContentSuffix =
+                (content && content.universalRef && content.universalRef.replace(/_/g, '-')) ||
+                'placeholder';
+
               return (
                 <ImageBackground
                   height={HEIGHT}
@@ -110,7 +114,7 @@ class Hero extends React.PureComponent<Props> {
                       <CatalogItemContent
                         item={(content !== null && content) || undefined}
                         size="hero"
-                        testID="catalog-hero"
+                        testID={`catalog-hero-${testContentSuffix}`}
                       />
                       <Space type="base" />
                       <Button

@@ -9,11 +9,21 @@ import Home from './home';
 storiesOf('Home', module)
   .add('Default', () => (
     <TestContextProvider>
-      <Home onCardPress={handleFakePress} onLogoLongPress={handleFakePress} isFetching={false} />
+      <Home
+        onCardPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        isFetching={false}
+        isFocused={false}
+      />
     </TestContextProvider>
   ))
   .add('Fetching', () => (
     <TestContextProvider>
-      <Home onCardPress={handleFakePress} onLogoLongPress={handleFakePress} isFetching />
+      <Home
+        onCardPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        isFetching
+        isFocused={false}
+      />
     </TestContextProvider>
   ));

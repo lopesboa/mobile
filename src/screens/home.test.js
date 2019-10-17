@@ -46,7 +46,8 @@ describe('Home', () => {
 
     const result = mapStateToProps(store);
     const expected: ConnectedStateProps = {
-      isFetching: false
+      isFetching: false,
+      isFocused: false
     };
     expect(expected).toEqual(result);
   });
@@ -57,7 +58,7 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching />
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
     );
 
     const home = component.root.find(el => el.props.testID === 'home');
@@ -79,7 +80,13 @@ describe('Home', () => {
     const signOut = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} signOut={signOut} isFetching />
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        signOut={signOut}
+        isFetching
+        isFocused={false}
+      />
     );
 
     alert.mockImplementationOnce((title, message, buttons) => {

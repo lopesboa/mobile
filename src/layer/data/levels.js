@@ -1,8 +1,12 @@
 // @flow strict
 
+import decode from 'jwt-decode';
 import type {LevelAPI} from '@coorpacademy/player-services';
 
+import fetch from '../../modules/fetch';
+import {get as getToken} from '../../utils/local-token';
 import translations from '../../translations';
+import type {JWT} from '../../types';
 import {getItem} from './core';
 import {CONTENT_TYPE} from './_const';
 import type {Level, Discipline} from './_types';
@@ -31,4 +35,19 @@ export const getNextLevel = async (ref: string): Promise<LevelAPI | void> => {
   }
 
   return findById(nextLevel.ref);
+};
+
+export const fetchLevel = async (ref: string): Promise<LevelAPI> => {
+  const token = await getToken();
+
+  if (!token) {
+    throw new Error('Invalid token');
+  }
+
+  const jwt: JWT = decode(token);
+  const response = await fetch(`${jwt.host}/api/v2/levels/${ref}`, {
+    headers: {authorization: token}
+  });
+
+  return response.json();
 };

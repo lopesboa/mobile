@@ -37,34 +37,30 @@ const chapterCard = createChapterCard({
 
 describe('Catalog', () => {
   it('should fetch at mount', () => {
-    const fetchHero = jest.fn();
     const fetchSections = jest.fn();
-    const component = renderer.create(
+    const fetchHero = jest.fn();
+    renderer.create(
       <TestContextProvider>
         <Catalog
           sections={[]}
           onCardPress={handleFakePress}
           layout={fakeLayout}
-          fetchHero={fetchHero}
           fetchSections={fetchSections}
+          fetchHero={fetchHero}
+          isFocused={false}
         />
       </TestContextProvider>
     );
 
-    const navigationEvents = component.root.find(
-      el => el.props.testID === 'catalog-navigation-events'
-    );
-    navigationEvents.props.onDidFocus();
-
-    expect(fetchHero).toHaveBeenCalledTimes(1);
     expect(fetchSections).toHaveBeenCalledTimes(1);
     expect(fetchSections).toHaveBeenCalledWith(0, DEFAULT_LIMIT, false);
+    expect(fetchHero).toHaveBeenCalledTimes(1);
   });
 
   describe('onScroll', () => {
     it('should fetch sections on scroll', () => {
-      const fetchHero = jest.fn();
       const fetchSections = jest.fn();
+      const fetchHero = jest.fn();
       const _sections: Array<Section | void> = sectionsWithCardsRef.concat([undefined]);
       const component = renderer.create(
         <TestContextProvider>
@@ -74,6 +70,7 @@ describe('Catalog', () => {
             layout={fakeLayout}
             fetchSections={fetchSections}
             fetchHero={fetchHero}
+            isFocused={false}
           />
         </TestContextProvider>
       );
@@ -97,6 +94,7 @@ describe('Catalog', () => {
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
+      expect(fetchHero).toHaveBeenCalledTimes(1);
       expect(fetchSections).toHaveBeenCalledTimes(3);
       expect(fetchSections.mock.calls[0]).toEqual([0, 3, false]);
       expect(fetchSections.mock.calls[1]).toEqual([0, 3, false]);
@@ -115,6 +113,7 @@ describe('Catalog', () => {
             layout={fakeLayout}
             fetchSections={fetchSections}
             fetchHero={fetchHero}
+            isFocused={false}
           />
         </TestContextProvider>
       );
@@ -128,6 +127,7 @@ describe('Catalog', () => {
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
+      expect(fetchHero).toHaveBeenCalledTimes(1);
       expect(fetchSections).toHaveBeenCalledTimes(1);
       expect(fetchSections.mock.calls[0]).toEqual([0, 2, false]);
     });
@@ -135,8 +135,8 @@ describe('Catalog', () => {
 
   describe('onRefresh', () => {
     it('should handle refresh', () => {
-      const fetchHero = jest.fn();
       const fetchSections = jest.fn();
+      const fetchHero = jest.fn();
       const _sections: Array<Section | void> = sectionsWithCardsRef;
       const component = renderer.create(
         <TestContextProvider>
@@ -146,15 +146,49 @@ describe('Catalog', () => {
             layout={fakeLayout}
             fetchSections={fetchSections}
             fetchHero={fetchHero}
+            isFocused={false}
           />
         </TestContextProvider>
       );
       const catalog = component.root.find(el => el.props.testID === 'catalog');
       catalog.props.onRefresh();
-      expect(fetchSections).toHaveBeenCalledTimes(2);
+      expect(fetchHero).toHaveBeenCalledTimes(1);
       expect(fetchSections).toHaveBeenCalledTimes(2);
       expect(fetchSections.mock.calls[0]).toEqual([0, 2, false]);
       expect(fetchSections.mock.calls[1]).toEqual([0, 2, true]);
+    });
+  });
+
+  describe('onUpdate', () => {
+    it('should fetchHero at componentDidUpdate', () => {
+      const fetchSections = jest.fn();
+      const fetchHero = jest.fn();
+      const _sections: Array<Section | void> = sectionsWithCardsRef;
+      const component = renderer.create(
+        <TestContextProvider>
+          <Catalog
+            sections={_sections}
+            onCardPress={handleFakePress}
+            layout={fakeLayout}
+            fetchSections={fetchSections}
+            fetchHero={fetchHero}
+            isFocused={false}
+          />
+        </TestContextProvider>
+      );
+      component.update(
+        <TestContextProvider>
+          <Catalog
+            sections={_sections}
+            onCardPress={handleFakePress}
+            layout={fakeLayout}
+            fetchSections={fetchSections}
+            fetchHero={fetchHero}
+            isFocused
+          />
+        </TestContextProvider>
+      );
+      expect(fetchHero).toHaveBeenCalledTimes(2);
     });
   });
 

@@ -1,8 +1,8 @@
 // @flow
 
-import AsyncStorage from '@react-native-community/async-storage';
-
+import type {LevelAPI} from '@coorpacademy/player-services';
 import {fakeError} from '../../utils/tests';
+import {createLevelAPI} from '../../__fixtures__/levels';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import chaptersBundle from '../../__fixtures__/chapter-bundle';
 import {
@@ -17,11 +17,9 @@ import {createSections} from '../../__fixtures__/sections';
 import {
   cardsToKeys,
   updateDisciplineCardDependingOnCompletion,
-  updateChapterCardAccordingToCompletion,
-  refreshCard,
-  getCardFromLocalStorage
+  updateChapterCardAccordingToCompletion
 } from './cards';
-import type {Card} from './_types';
+import type {Completion, DisciplineCard, ChapterCard, Card} from './_types';
 
 const host = 'https://host.coorpacademy.com';
 const token = '__token__';
@@ -39,6 +37,10 @@ describe('cards', () => {
   describe('fetchCards', () => {
     beforeEach(() => {
       jest.resetModules();
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
     });
 
     it('should create card to keys', () => {
@@ -69,9 +71,6 @@ describe('cards', () => {
     });
 
     it('should fetch cards', async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
@@ -118,9 +117,6 @@ describe('cards', () => {
     });
 
     it('should reject error', async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
@@ -133,9 +129,6 @@ describe('cards', () => {
     });
 
     it("should returns empty array if apis doesn't have results", async () => {
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: false
-      }));
       jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
@@ -161,7 +154,342 @@ describe('cards', () => {
       await expect(result).resolves.toEqual(expected);
     });
 
-    afterAll(() => {
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+  });
+
+  describe('fetchCard', () => {
+    beforeEach(() => {
+      jest.resetModules();
+      jest.mock('cross-fetch');
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+
+      jest.mock('../../utils/local-token', () => {
+        const {createToken} = require('../../__fixtures__/tokens');
+        return {
+          get: jest.fn(() => Promise.resolve(createToken({})))
+        };
+      });
+    });
+
+    it('should fetch e2e fixtures', async () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+
+      const {fetchCard} = require('./cards');
+
+      const discipline = disciplinesBundle.disciplines.with_slider_dis_1;
+      // $FlowFixMe union type
+      const result = await fetchCard({ref: discipline.modules[0].universalRef, type: 'level'});
+
+      return expect(result.universalRef).toEqual(discipline.universalRef);
+    });
+
+    it('should fetch a card with completion update', async () => {
+      const microLearningSlideToComplete = 4;
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+      const mockCard = createChapterCard({
+        ref: 'foo',
+        status: 'isStarted',
+        title: 'plop',
+        stars: 20,
+        completion: 0.3
+      });
+      const completion: Completion = {
+        current: 3,
+        stars: 10
+      };
+
+      AsyncStorage.getItem.mockImplementation(key =>
+        Promise.resolve(
+          key === 'completion_microlearning_foo' ? JSON.stringify(completion) : undefined
+        )
+      );
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({hits: [mockCard]})
+          });
+        }
+      );
+
+      const {fetchCard} = require('./cards');
+      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      expect(card).toEqual({
+        ...mockCard,
+        completion: completion.current / microLearningSlideToComplete
+      });
+    });
+
+    it('should fetch a card without completion in async storage', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+      const mockCard = createChapterCard({
+        ref: 'foo',
+        status: 'isStarted',
+        title: 'plop',
+        completion: 0.5,
+        stars: 20
+      });
+
+      AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({hits: [mockCard]})
+          });
+        }
+      );
+
+      const {fetchCard} = require('./cards');
+      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      expect(card).toEqual(mockCard);
+    });
+
+    it('should fetch a level on api contents', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+
+      const discipline = disciplinesCards[0];
+      const levelAPI = createLevelAPI({
+        chapterIds: [],
+        // $FlowFixMe module is defined
+        ref: discipline.modules[0].universalRef
+      });
+      const level = {
+        ...levelAPI,
+        disciplineRef: discipline.universalRef
+      };
+
+      AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<LevelAPI>
+        }> => {
+          expect(url).toBe(`https://domain.tld/api/v2/levels/${level.universalRef}`);
+
+          return Promise.resolve({
+            json: () => Promise.resolve(level)
+          });
+        }
+      );
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            `https://domain.tld/api/v2/contents?type=course&universalRef=${
+              level.disciplineRef
+            }&lang=en`
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({hits: [discipline]})
+          });
+        }
+      );
+
+      const {fetchCard} = require('./cards');
+      const card = await fetchCard({ref: level.universalRef, type: 'level'});
+
+      expect(card).toEqual(discipline);
+    });
+
+    it('should return undefined if no card is found', async () => {
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({hits: []})
+          });
+        }
+      );
+
+      const {fetchCard} = require('./cards');
+      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      return expect(card).toEqual(undefined);
+    });
+
+    it('should return throw error', async () => {
+      const localToken = require('../../utils/local-token');
+      // $FlowFixMe this function is mocked;
+      localToken.get.mockImplementationOnce(() => Promise.resolve(null));
+
+      const {fetchCard} = require('./cards');
+      const fetching = fetchCard({ref: 'foo', type: 'chapter'});
+      await expect(fetching).rejects.toThrow(new Error('Invalid token'));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+  });
+
+  describe('fetchCards', () => {
+    beforeEach(() => {
+      jest.resetModules();
+      jest.mock('cross-fetch');
+
+      jest.mock('../../utils/local-token', () => {
+        const {createToken} = require('../../__fixtures__/tokens');
+        return {
+          get: jest.fn(() => Promise.resolve(createToken({})))
+        };
+      });
+    });
+
+    it('should fetch many cards with completion update', async () => {
+      const microLearningSlideToComplete = 4;
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+      const mockCard1 = createChapterCard({
+        ref: 'foo',
+        status: 'isStarted',
+        title: 'plop',
+        stars: 20,
+        completion: 0.3
+      });
+
+      const mockCard2 = createChapterCard({
+        ref: 'bar',
+        status: 'isStarted',
+        title: 'plop',
+        stars: 66,
+        completion: 0.3
+      });
+      const completion1: Completion = {
+        current: 3,
+        stars: 10
+      };
+      const completion2: Completion = {
+        current: 3,
+        stars: 10
+      };
+
+      AsyncStorage.getItem.mockImplementation(key => {
+        if (key === 'completion_microlearning_foo') {
+          return Promise.resolve(JSON.stringify(completion1));
+        }
+        if (key === 'completion_microlearning_bar') {
+          return Promise.resolve(JSON.stringify(completion2));
+        }
+
+        return Promise.resolve(undefined);
+      });
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            'https://host.coorpacademy.com/api/v2/recommendations?contentType=all&offset=1&limit=3&lang=en&withoutAdaptive=true'
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
+          });
+        }
+      );
+
+      const {fetchCards} = require('./cards');
+      const {cards: _cards} = await fetchCards(token, host, section, 1, 3);
+      expect(_cards[0]).toEqual({
+        ...mockCard1,
+        completion: completion1.current / microLearningSlideToComplete
+      });
+      expect(_cards[1]).toEqual({
+        ...mockCard2,
+        completion: completion2.current / microLearningSlideToComplete
+      });
+    });
+
+    it('should fetch many cards without completion in async storage', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const fetch = require('cross-fetch');
+      const mockCard1 = createChapterCard({
+        ref: 'foo',
+        status: 'isStarted',
+        title: 'plop',
+        stars: 20,
+        completion: 0.3
+      });
+
+      const mockCard2 = createChapterCard({
+        ref: 'bar',
+        status: 'isStarted',
+        title: 'plop',
+        stars: 66,
+        completion: 0.3
+      });
+
+      AsyncStorage.getItem.mockImplementation(key => {
+        return Promise.resolve(undefined);
+      });
+
+      fetch.mockImplementationOnce(
+        (
+          url
+        ): Promise<{
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+        }> => {
+          expect(url).toBe(
+            'https://host.coorpacademy.com/api/v2/recommendations?contentType=all&offset=1&limit=3&lang=en&withoutAdaptive=true'
+          );
+
+          return Promise.resolve({
+            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
+          });
+        }
+      );
+
+      const {fetchCards} = require('./cards');
+      const {cards: _cards} = await fetchCards(token, host, section, 1, 3);
+      expect(_cards[0]).toEqual(mockCard1);
+      expect(_cards[1]).toEqual(mockCard2);
+    });
+
+    afterEach(() => {
       jest.resetAllMocks();
     });
   });
@@ -466,6 +794,8 @@ describe('cards', () => {
   describe('getCardFromLocalStorage', () => {
     it('should get card card', async () => {
       const _card = cards[1];
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {getCardFromLocalStorage} = require('./cards');
       AsyncStorage.getItem = jest.fn().mockImplementation(key => {
         if (key === '@@lang') {
           return 'en';
@@ -482,6 +812,9 @@ describe('cards', () => {
 
   describe('refresh card', () => {
     it('should refresh the discipline card', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {refreshCard} = require('./cards');
+
       const minStar = 0;
       const maxStars = 666;
       const fakeRef = 'yolo';
@@ -531,6 +864,9 @@ describe('cards', () => {
     });
 
     it('should refresh the discipline card -- without stored completion found', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {refreshCard} = require('./cards');
+
       const minStar = 0;
       const fakeRef = 'yolo';
       const level1 = createCardLevel({
@@ -560,6 +896,9 @@ describe('cards', () => {
     });
 
     it('should refresh the chapter Card', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {refreshCard} = require('./cards');
+
       const maxStars = 666;
       const nbChapters = 1;
       const slidesToComplete = 4;
@@ -590,6 +929,9 @@ describe('cards', () => {
     });
 
     it('should refresh the chapter Card -- without stored completion', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {refreshCard} = require('./cards');
+
       const nbChapters = 1;
       const chapterCard = createChapterCard({
         ref: 'lol',
@@ -605,6 +947,71 @@ describe('cards', () => {
       const result = await refreshCard(chapterCard);
 
       expect(result).toEqual(chapterCard);
+    });
+  });
+
+  describe('saveDashboardCardsInAsyncStorage', () => {
+    beforeEach(() => {
+      jest.resetModules();
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+    });
+
+    it('should save cards in async storage', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.multiSet.mockImplementation(values => {
+        // we don't want to test all fixtures, only the keys
+        expect(values.map(value => value[0])).toEqual([
+          'card:en:adaptive_dis_1',
+          'card:en:adaptive_mod_1',
+          'card:en:basic_dis_1',
+          'card:en:basic_mod_1',
+          'card:en:basic_mod_2',
+          'card:en:with_image_context_dis_1',
+          'card:en:with_image_context_mod_1',
+          'card:en:with_video_context_dis_2',
+          'card:en:with_video_context_mod_2',
+          'card:en:with_pdf_context_dis_2',
+          'card:en:with_pdf_context_mod_2',
+          'card:en:no_clue_dis_1',
+          'card:en:no_clue_mod_1',
+          'card:en:template_dis_1',
+          'card:en:template_mod_1',
+          'card:en:qcm_drag_dis_1',
+          'card:en:qcm_drag_mod_1',
+          'card:en:with_slider_dis_1',
+          'card:en:with_slider_mod_2',
+          'card:en:question_basic_dis_1',
+          'card:en:question_basic_mod_1'
+        ]);
+
+        return Promise.resolve();
+      });
+
+      const {saveDashboardCardsInAsyncStorage} = require('./cards');
+
+      await saveDashboardCardsInAsyncStorage(disciplinesCards, 'en');
+
+      expect(AsyncStorage.multiSet).toHaveBeenCalledTimes(1);
+    });
+
+    it('should throw an error', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.multiSet.mockImplementationOnce(() => Promise.reject(fakeError));
+
+      const {saveDashboardCardsInAsyncStorage} = require('./cards');
+
+      const result = saveDashboardCardsInAsyncStorage(disciplinesCards, 'en');
+
+      await expect(result).rejects.toThrow('could not store the dashboard cards');
+
+      expect(AsyncStorage.multiSet).toHaveBeenCalledTimes(1);
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
     });
   });
 });

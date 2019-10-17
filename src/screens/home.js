@@ -10,12 +10,13 @@ import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {signOut} from '../redux/actions/authentication';
-import {getToken} from '../redux/utils/state-extract';
+import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import translations from '../translations';
 import theme from '../modules/theme';
 
 export type ConnectedStateProps = {|
-  isFetching: boolean
+  isFetching: boolean,
+  isFocused: boolean
 |};
 
 type ConnectedDispatchProps = {|
@@ -49,7 +50,7 @@ class HomeScreen extends React.PureComponent<Props> {
     ]);
 
   render() {
-    const {isFetching} = this.props;
+    const {isFetching, isFocused} = this.props;
 
     return (
       <Screen testID="home-screen" noScroll>
@@ -58,6 +59,7 @@ class HomeScreen extends React.PureComponent<Props> {
           onCardPress={this.handleCardPress}
           onLogoLongPress={this.handleLogoLongPress}
           isFetching={isFetching}
+          isFocused={isFocused}
           testID="home"
         />
       </Screen>
@@ -70,8 +72,14 @@ const getIsFetchingState: StoreState => boolean = createSelector(
   token => !token
 );
 
+const getIsFocusedState: StoreState => boolean = createSelector(
+  [getCurrentScreenName],
+  name => name === 'Home'
+);
+
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  isFetching: getIsFetchingState(state)
+  isFetching: getIsFetchingState(state),
+  isFocused: getIsFocusedState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

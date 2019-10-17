@@ -9,6 +9,7 @@ import {
 } from './utils';
 
 const answerQuestion = async () => {
+  await waitForExist('question-screen');
   await element(by.id('question-screen')).swipe('up');
   await element(by.id('question-choice-2')).tap();
   await element(by.id('button-validate')).tap();
@@ -20,13 +21,15 @@ describe('Hero: display card for uncomplete level', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
-    await waitForExist('catalog-section-recommended-item-basic-dis-1');
-    await tapCardOnSection('catalog-section-recommended-items', 2);
-    await waitForExist('question');
   });
 
-  it('answer successfully 4 questions', async () => {
-    await answerQuestion();
+  it('should see the hero on dashboard with recommendation', async () => {
+    await waitForVisible('catalog-hero-adaptive-dis-1-footer');
+    await waitForVisible('catalog-hero-button');
+  });
+
+  it('answer successfully 3 questions', async () => {
+    await tapCardOnSection('catalog-section-recommended-items', 2);
     await answerQuestion();
     await answerQuestion();
     await answerQuestion();
@@ -38,11 +41,11 @@ describe('Hero: display card for uncomplete level', () => {
   });
 
   it('should see the hero on dashboard', async () => {
-    await waitForVisible('catalog-hero-footer');
+    await waitForVisible('catalog-hero-basic-dis-1-footer');
     await waitForVisible('catalog-hero-button');
   });
 
-  it('should be redirected to question', async () => {
+  it('should be on the context of the course resumed from hero', async () => {
     await element(by.id('catalog-hero-button')).tap();
     await waitForExist('question');
   });

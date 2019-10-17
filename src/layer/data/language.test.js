@@ -1,10 +1,8 @@
 // @flow strict
-import {NativeModules} from 'react-native';
-
-import translations from '../../translations';
 import type {Config} from './brand';
 
 jest.mock('cross-fetch');
+
 jest.mock('../../utils/local-token', () => {
   const {createToken} = require('../../__fixtures__/tokens');
   const token = createToken({});
@@ -17,6 +15,10 @@ describe('Language', () => {
   describe('fetchLanguage', () => {
     beforeEach(() => {
       jest.resetModules();
+      jest.mock('../../translations', () => ({
+        getLanguage: jest.fn(() => 'en'),
+        getInterfaceLanguage: jest.fn(() => 'en')
+      }));
     });
 
     it('should handle invalid token', async () => {
@@ -31,6 +33,8 @@ describe('Language', () => {
     });
 
     it('should fetch config and keep phone language', async () => {
+      const translations = require('../../translations');
+      // $FlowFixMe _translations.getLanguage is defined
       const phoneLanguage = translations.getLanguage();
       const fetch = require('cross-fetch');
 
@@ -115,16 +119,14 @@ describe('Language', () => {
 
   describe('getPlatformMatchingLanguage', () => {
     beforeEach(() => {
-      NativeModules.ReactLocalization = {
-        language: 'zh-TW'
-      };
+      jest.mock('../../translations', () => ({
+        getLanguage: jest.fn(() => 'en'),
+        getInterfaceLanguage: jest.fn(() => 'zh-TW')
+      }));
       jest.resetModules();
     });
 
     afterAll(() => {
-      NativeModules.ReactLocalization = {
-        language: 'en-US'
-      };
       jest.resetAllMocks();
     });
     it('should return exact matching', () => {
@@ -171,6 +173,29 @@ describe('Language', () => {
       const expected = 'de';
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('setLanguage', () => {
+    beforeEach(() => {
+      jest.mock('../../translations', () => ({
+        setLanguage: jest.fn(lang => Promise.resolve(undefined))
+      }));
+      jest.resetModules();
+    });
+
+    it('should set language', () => {
+      const _translations = require('../../translations');
+      const {setLanguage} = require('./language');
+
+      setLanguage('vi');
+      // $FlowFixMe _translations.setLanguage is defined
+      expect(_translations.setLanguage).toHaveBeenCalledTimes(1);
+      // $FlowFixMe _translations.setLanguage is defined
+      expect(_translations.setLanguage).toHaveBeenCalledWith('vi');
+    });
+    afterAll(() => {
+      jest.resetAllMocks();
     });
   });
 });

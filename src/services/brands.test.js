@@ -22,7 +22,7 @@ describe('Brand service', () => {
 
     return expect(service.find(TOKEN)).resolves.toEqual(BRAND);
   });
-  it('find', () => {
+  it('find with error', () => {
     const TOKEN = '__TOKEN__';
 
     const fetchBrand = jest.fn();

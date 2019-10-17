@@ -36,7 +36,9 @@ describe('Level end', () => {
       await waitForNotVisible('level-end-unlock');
       await waitForVisible('button-retry-level');
       await element(by.id('level-end-screen')).swipe('up');
-      await waitForVisible('recommend-item-with-image-context-dis-1');
+      await waitForVisible('recommend-item');
+      // @todo uncomment this once we got real recommendations
+      // await waitForVisible('recommend-item-adaptive-dis-1');
     });
 
     it('should be able to retry', async () => {
@@ -60,7 +62,7 @@ describe('Level end', () => {
     //   await wrongAnswer();
     //   await waitForVisible('correction-error');
     //   await element(by.id('button-quit')).tap();
-    //   await element(by.id('recommend-item-with-image-context-dis-1')).tap();
+    //   await element(by.id('recommend-item-adaptive-dis-1')).tap();
     //   await waitForNotVisible('level-end-success');
     //   await waitForNotVisible('level-end-error');
     //   await waitForExist('question');
@@ -87,7 +89,9 @@ describe('Level end', () => {
       await waitForVisible('level-end-unlock');
       await waitForVisible('button-next-level');
       await element(by.id('level-end-screen')).swipe('up');
-      await waitForVisible('recommend-item-with-image-context-dis-1');
+      await waitForVisible('recommend-item');
+      // @todo uncomment this once we got real recommendations
+      // await waitForVisible('recommend-item-adaptive-dis-1');
     });
 
     it('should be able to back to home', async () => {
@@ -117,7 +121,7 @@ describe('Level end', () => {
     //   await waitForVisible('correction-success');
     //   await element(by.id('button-next-question')).tap();
     //   await waitForNotVisible('level-end-highscore');
-    //   await element(by.id('recommend-item-with-image-context-dis-1')).tap();
+    //   await element(by.id('recommend-item-adaptive-dis-1')).tap();
     //   await waitForNotVisible('level-end-success');
     //   await waitForNotVisible('level-end-error');
     //   await waitForExist('question');

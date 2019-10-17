@@ -56,6 +56,7 @@ export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
 export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
   _id: rawLevel._id,
   universalRef: rawLevel.universalRef,
+  disciplineRef: rawLevel.disciplineRef,
   ref: rawLevel.ref,
   name: rawLevel.name,
   level: rawLevel.level,

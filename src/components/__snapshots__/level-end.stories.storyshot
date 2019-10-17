@@ -861,6 +861,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={
@@ -2375,6 +2376,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={
@@ -4171,6 +4173,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={
@@ -6075,6 +6078,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={
@@ -8843,6 +8847,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={
@@ -11323,6 +11328,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                 "flex": 1,
               }
             }
+            testID="recommend-item"
           >
             <Text
               style={

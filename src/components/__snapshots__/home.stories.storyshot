@@ -6104,10 +6104,6 @@ Pol P.!
       <View
         onLayout={[Function]}
       >
-        <Mock$ReactNavigation$NavigationEvents
-          onDidFocus={[Function]}
-          testID="catalog-navigation-events"
-        />
         <Text
           style={
             Array [

@@ -43,8 +43,8 @@ export const fetchSections = async (
 
   const {
     search_meta: {total},
-    hits = []
-  }: {search_meta: {total: number}, hits?: Array<Section>} = await response.json();
+    hits
+  }: {search_meta: {total: number}, hits: Array<Section>} = await response.json();
 
   return {
     sections: hits,

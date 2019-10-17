@@ -81,9 +81,12 @@ describe('Progressions synchronization', () => {
 
       const services = {
         Progressions: {
-          getAll: jest.fn()
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn()
         }
       };
+
       store.dispatch.mockImplementation(action => {
         expect(action).toBeInstanceOf(Function);
         return Promise.resolve(action);
@@ -101,9 +104,51 @@ describe('Progressions synchronization', () => {
       // $FlowFixMe
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
 
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
+        failureProgression._id,
+        successProgression._id
+      ]);
       expect(store.dispatch).toHaveBeenCalledTimes(2);
       expect(actual).toBeUndefined();
     });
+
+    it('should skip progression already synchronized', async () => {
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => [successProgression._id]),
+          updateSynchronizedProgressionIds: jest.fn()
+        }
+      };
+
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.dispatch.mockImplementation(action => {
+        expect(action).toBeInstanceOf(Function);
+        return Promise.resolve(action);
+      });
+
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([successProgression])
+      );
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+
+      expect(store.dispatch).toHaveBeenCalledTimes(0);
+
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
+        successProgression._id
+      ]);
+
+      expect(actual).toBeUndefined();
+    });
+
     it('should skip inProgress progression', async () => {
       const store = {
         getState: jest.fn(),
@@ -112,7 +157,9 @@ describe('Progressions synchronization', () => {
 
       const services = {
         Progressions: {
-          getAll: jest.fn()
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn()
         }
       };
 
@@ -131,6 +178,7 @@ describe('Progressions synchronization', () => {
       expect(store.dispatch).toHaveBeenCalledTimes(0);
       expect(actual).toBeUndefined();
     });
+
     it('should skip progression without _id', async () => {
       const store = {
         getState: jest.fn(),
@@ -139,7 +187,9 @@ describe('Progressions synchronization', () => {
 
       const services = {
         Progressions: {
-          getAll: jest.fn()
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn()
         }
       };
 
@@ -158,6 +208,7 @@ describe('Progressions synchronization', () => {
       expect(store.dispatch).toHaveBeenCalledTimes(0);
       expect(actual).toBeUndefined();
     });
+
     it('should synchronize successed progression', async () => {
       const store = {
         getState: jest.fn(),
@@ -166,7 +217,9 @@ describe('Progressions synchronization', () => {
 
       const services = {
         Progressions: {
-          getAll: jest.fn()
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn()
         }
       };
 
@@ -183,8 +236,15 @@ describe('Progressions synchronization', () => {
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
 
       expect(store.dispatch).toHaveBeenCalledTimes(1);
+
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
+        successProgression._id
+      ]);
+
       expect(actual).toBeUndefined();
     });
+
     it('should synchronize failed progression', async () => {
       const store = {
         getState: jest.fn(),
@@ -193,7 +253,9 @@ describe('Progressions synchronization', () => {
 
       const services = {
         Progressions: {
-          getAll: jest.fn()
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn()
         }
       };
 
@@ -210,9 +272,16 @@ describe('Progressions synchronization', () => {
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
 
       expect(store.dispatch).toHaveBeenCalledTimes(1);
+
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
+        failureProgression._id
+      ]);
+
       expect(actual).toBeUndefined();
     });
   });
+
   describe('synchronizeProgression', () => {
     it('should synchronize progression', async () => {
       const store = {

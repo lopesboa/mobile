@@ -1,5 +1,5 @@
 // @flow
-import type {GenericContent, Progression, State, Action} from '@coorpacademy/progression-engine';
+import type {Progression, GenericContent, State, Action} from '@coorpacademy/progression-engine';
 import type {Engine} from '../types';
 
 export type StateExtension = $Shape<State>;
@@ -71,7 +71,7 @@ export const createProgression = ({
   actions?: Array<Action>
 }): Progression => {
   return {
-    _id: _id || undefined,
+    _id,
     engine: {
       ref: engine,
       version: '2'
@@ -80,8 +80,8 @@ export const createProgression = ({
     engineOptions: {
       version: '2'
     },
-    actions: actions ? actions : [],
-    state: state ? createState(state) : undefined
+    actions,
+    state: state && createState(state)
   };
 };
 

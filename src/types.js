@@ -54,7 +54,7 @@ export type GenericContent = $Exact<{|
   type: ContentType
 |}>;
 
-export type Progression = {|
+export type ProgressionCount = {|
   current: number,
   count: number
 |};

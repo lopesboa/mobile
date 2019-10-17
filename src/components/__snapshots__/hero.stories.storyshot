@@ -91,7 +91,7 @@ exports[`Storyshots Hero Default 1`] = `
             "justifyContent": "flex-end",
           }
         }
-        testID="catalog-hero-footer-placeholder"
+        testID="catalog-hero-placeholder-footer-placeholder"
       >
         <View
           style={
@@ -519,7 +519,7 @@ exports[`Storyshots Hero With content 1`] = `
             ],
           ]
         }
-        testID="author-catalog-hero-author"
+        testID="author-catalog-hero-foo-author"
       >
         COORP 
         <Text
@@ -542,7 +542,7 @@ exports[`Storyshots Hero With content 1`] = `
             "justifyContent": "flex-end",
           }
         }
-        testID="catalog-hero-footer"
+        testID="catalog-hero-foo-footer"
       >
         <View
           style={
@@ -577,7 +577,7 @@ exports[`Storyshots Hero With content 1`] = `
               ],
             ]
           }
-          testID="title-catalog-hero-footer"
+          testID="title-catalog-hero-foo-footer"
         >
           Discipline card
         </Text>
@@ -616,7 +616,7 @@ exports[`Storyshots Hero With content 1`] = `
                 ],
               ]
             }
-            testID="subtitle-catalog-hero-footer"
+            testID="subtitle-catalog-hero-foo-footer"
           >
             A good guy with blue eyes
           </Text>
@@ -642,7 +642,7 @@ exports[`Storyshots Hero With content 1`] = `
               },
             ]
           }
-          testID="progress-bar-catalog-hero-footer"
+          testID="progress-bar-catalog-hero-foo-footer"
         >
           <View
             style={

@@ -10,7 +10,7 @@ const createStore = () => ({
   dispatch: jest.fn()
 });
 
-describe("Progression's synchronization middleware", () => {
+describe('UpdateCard on ProgressionUpdate middleware', () => {
   const options: Options = {
     // $FlowFixMe we dont want to mock the entire services object
     services: {
@@ -31,7 +31,7 @@ describe("Progression's synchronization middleware", () => {
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('should dispatch synchronizeProgression on move action', async () => {
+  it('should dispatch PROGRESSION_UPDATED_ON_MOVE on move action', async () => {
     const updateProgressionAction = {
       type: PROGRESSION_UPDATED_ON_MOVE,
       meta: {
@@ -48,7 +48,7 @@ describe("Progression's synchronization middleware", () => {
     expect(next).toHaveBeenCalledWith(updateProgressionAction);
   });
 
-  it('should dispatch synchronizeProgression on node action', async () => {
+  it('should dispatch PROGRESSION_UPDATED_ON_NODE on node action', async () => {
     const updateProgressionAction = {
       type: PROGRESSION_UPDATED_ON_NODE,
       meta: {

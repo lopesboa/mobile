@@ -1,6 +1,7 @@
 // @flow strict
-
+import type {LevelAPI} from '@coorpacademy/player-services';
 import type {Level, LevelType} from '../layer/data/_types';
+import {mapToLevelAPI} from '../layer/data/mappers';
 
 export const createLevelName = ({level = 'base'}: {level?: LevelType}): string => {
   if (level === 'base') {
@@ -52,6 +53,18 @@ export const createLevel = ({
   external_refs: [],
   bestScore
 });
+
+export const createLevelAPI = ({
+  ref,
+  chapterIds,
+  bestScore,
+  level = 'base'
+}: {
+  ref: string,
+  chapterIds: Array<string>,
+  bestScore?: number,
+  level?: LevelType
+}): LevelAPI => mapToLevelAPI(createLevel({ref, chapterIds, bestScore, level}));
 
 export default {
   createLevel

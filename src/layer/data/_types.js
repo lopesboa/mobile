@@ -8,9 +8,11 @@ import type {
   ChapterRule
 } from '@coorpacademy/player-services';
 import type {
-  ContentType,
+  Content,
   Context,
   Lesson,
+  Progression,
+  ProgressionId,
   ResourceMimeType
 } from '@coorpacademy/progression-engine';
 import type {Discipline as DisciplineStore} from '@coorpacademy/player-store';
@@ -219,14 +221,21 @@ export type Completion = {|
   stars: number
 |};
 
-export type ProgressionAggregationByContent = {|
-  stars: number,
-  success: boolean,
+export type Record = {|
   content: {
-    ref: string,
-    type: ContentType,
-    version: string
-  },
-  latestNbQuestions: number,
-  updatedAt: string
+    ...Progression,
+    _id: ProgressionId,
+    meta: {
+      updatedAt: string,
+      createdAt: string
+    }
+  }
+|};
+
+export type HeroRecommendation = {|
+  success: boolean,
+  content: Content,
+  nbSlides: number,
+  updatedAt: string,
+  progressionId: string
 |};

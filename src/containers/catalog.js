@@ -4,13 +4,11 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {createArraySelector} from 'reselect-map';
-import {NavigationEvents} from 'react-navigation';
 
 import CatalogComponent, {SEPARATOR_HEIGHT, HERO_HEIGHT} from '../components/catalog';
 import type {Props as ComponentProps} from '../components/catalog';
 import {HEIGHT as SECTION_HEIGHT} from '../components/catalog-section';
 import {fetchSections} from '../redux/actions/catalog/sections';
-import {fetchHero} from '../redux/actions/catalog/hero';
 import type {StoreState} from '../redux/store';
 import {getSections, getSectionsRef, getHero} from '../redux/utils/state-extract';
 import translations from '../translations';
@@ -18,6 +16,7 @@ import isEqual from '../modules/equal';
 import {getOffsetWithoutCards, getLimitWithoutCards, isEmptySection} from '../modules/sections';
 import type {Section} from '../types';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
+import {fetchHero} from '../redux/actions/catalog/hero';
 import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
@@ -33,7 +32,8 @@ type ConnectedDispatchProps = {|
 
 export type OwnProps = {|
   onCardPress: $PropertyType<ComponentProps, 'onCardPress'>,
-  children?: $PropertyType<ComponentProps, 'children'>
+  children?: $PropertyType<ComponentProps, 'children'>,
+  isFocused: boolean
 |};
 
 type Props = {|
@@ -62,6 +62,7 @@ class Catalog extends React.Component<Props, State> {
   offsetY: number = 0;
 
   componentDidMount() {
+    this.fetchHero();
     this.fetchSections(0, this.getLimit(0));
   }
 
@@ -83,7 +84,7 @@ class Catalog extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const {sections} = this.props;
+    const {isFocused, sections} = this.props;
     const emptySections = sections.filter(section => section && isEmptySection(section));
     const previousEmptySections = prevProps.sections.filter(
       section => section && isEmptySection(section)
@@ -98,7 +99,15 @@ class Catalog extends React.Component<Props, State> {
         this.fetchSections(offset, limit);
       }
     }
+
+    if (!prevProps.isFocused && isFocused) {
+      this.fetchHero();
+    }
   }
+
+  fetchHero = () => {
+    this.props.fetchHero();
+  };
 
   fetchSections = async (offset: number, limit: number, forceRefresh?: boolean = false) => {
     await this.props.fetchSections(offset, limit, forceRefresh);
@@ -106,7 +115,7 @@ class Catalog extends React.Component<Props, State> {
 
   handleRefresh = () => {
     this.setState({isRefreshing: true});
-    Promise.all([this.fetchSections(0, this.getLimit(0), true), this.props.fetchHero()])
+    Promise.all([this.fetchSections(0, this.getLimit(0), true)])
       .then(() => this.setState({isRefreshing: false}))
       .catch(e => {
         this.setState({isRefreshing: false});
@@ -166,10 +175,6 @@ class Catalog extends React.Component<Props, State> {
     }
   };
 
-  handleDidFocus = () => {
-    this.props.fetchHero();
-  };
-
   render() {
     const {hero, sections, onCardPress, children} = this.props;
     const {isRefreshing} = this.state;
@@ -183,7 +188,6 @@ class Catalog extends React.Component<Props, State> {
         isRefreshing={isRefreshing}
         onScroll={this.handleScroll}
       >
-        <NavigationEvents onDidFocus={this.handleDidFocus} testID="catalog-navigation-events" />
         {children}
       </CatalogComponent>
     );

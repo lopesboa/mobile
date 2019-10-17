@@ -258,7 +258,7 @@ class LevelEnd extends React.PureComponent<Props> {
                   )}
                   {/* @todo refactor to use CatalogSection there and not reinvent the wheel */}
                   {recommendation && (
-                    <View style={styles.recommendation}>
+                    <View style={styles.recommendation} testID="recommend-item">
                       <Text style={styles.title}>{translations.relatedSubjects}</Text>
                       <Card type={CARD_LAYOUT.CONTAIN} style={styles.card}>
                         <CatalogItem

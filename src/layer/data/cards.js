@@ -2,7 +2,10 @@
 
 import AsyncStorage from '@react-native-community/async-storage';
 import {getConfig} from '@coorpacademy/progression-engine';
+import type {Content} from '@coorpacademy/progression-engine';
+import decode from 'jwt-decode';
 
+import {get as getToken} from '../../utils/local-token';
 import fetch from '../../modules/fetch';
 import {__E2E__} from '../../modules/environment';
 import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/cards';
@@ -12,12 +15,12 @@ import type {SupportedLanguage} from '../../translations/_types';
 import translations from '../../translations';
 import {buildUrlQueryParams} from '../../modules/uri';
 import type {QueryParams} from '../../modules/uri';
-
 import {ENGINE} from '../../const';
-import type {Section} from '../../types';
+import type {JWT, Section} from '../../types';
 import {getItem} from './core';
+import {fetchLevel} from './levels';
 import type {Cards, DisciplineCard, ChapterCard, Card, CardLevel, Completion} from './_types';
-import {CARD_TYPE} from './_const';
+import {CARD_TYPE, CONTENT_TYPE} from './_const';
 import {buildCompletionKey, mergeCompletion} from './progressions';
 
 // @TODO; Adaptive support
@@ -189,7 +192,7 @@ export const cardsToKeys = (
   }, {});
 };
 
-const saveDashboardCardsInAsyncStorage = async (
+export const saveDashboardCardsInAsyncStorage = async (
   cards: Array<DisciplineCard | ChapterCard>,
   language: SupportedLanguage
 ): Promise<void> => {
@@ -201,6 +204,69 @@ const saveDashboardCardsInAsyncStorage = async (
       throw new Error('could not store the dashboard cards');
     }
   }
+};
+
+export const saveAndRefreshCards = async (
+  cards: Array<DisciplineCard | ChapterCard>,
+  language: SupportedLanguage
+) => {
+  await saveDashboardCardsInAsyncStorage(cards, language);
+  return Promise.all(cards.map(refreshCard));
+};
+
+export const fetchCard = async (content: Content): Promise<DisciplineCard | ChapterCard | void> => {
+  const language = translations.getLanguage();
+  const token = await getToken();
+
+  if (!token) {
+    throw new Error('Invalid token');
+  }
+
+  const jwt: JWT = decode(token);
+
+  let cards;
+
+  if (__E2E__) {
+    const disciplines = Object.keys(disciplinesBundle.disciplines).map(
+      key => disciplinesBundle.disciplines[key]
+    );
+    const chapters = Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key]);
+
+    cards = createDisciplinesCards(disciplines)
+      .concat(createChaptersCards(chapters))
+      .filter(card => {
+        return (
+          card.universalRef === content.ref ||
+          (card.modules && card.modules.find(mod => mod.universalRef === content.ref))
+        );
+      });
+  } else {
+    let universalRef = content.ref;
+
+    if (content.type === CONTENT_TYPE.LEVEL) {
+      const level = await fetchLevel(content.ref);
+      if (!level.disciplineRef) {
+        throw new Error('Unable to find discipline ref from level');
+      }
+      universalRef = level.disciplineRef;
+    }
+
+    const query: QueryParams = {
+      type: content.type === CONTENT_TYPE.LEVEL ? 'course' : content.type,
+      universalRef,
+      lang: language
+    };
+
+    const response = await fetch(`${jwt.host}/api/v2/contents?${buildUrlQueryParams(query)}`, {
+      headers: {authorization: token}
+    });
+    const {hits}: {hits: Cards} = await response.json();
+
+    cards = hits;
+  }
+
+  const _cards = await saveAndRefreshCards(cards, language);
+  return _cards[0];
 };
 
 export const fetchCards = async (
@@ -240,15 +306,14 @@ export const fetchCards = async (
     });
     const {
       search_meta: {total: _total},
-      hits = []
-    }: {search_meta: {total: number}, hits?: Cards} = await response.json();
+      hits
+    }: {search_meta: {total: number}, hits: Cards} = await response.json();
 
     cards = hits;
     total = _total;
   }
 
-  await saveDashboardCardsInAsyncStorage(cards, language);
-  const refreshedCards = await Promise.all(cards.map(refreshCard));
+  const refreshedCards = await saveAndRefreshCards(cards, language);
 
   return {
     cards: refreshedCards,
@@ -259,5 +324,6 @@ export const fetchCards = async (
 export default {
   fetchCards,
   getCardFromLocalStorage,
-  cardsToKeys
+  cardsToKeys,
+  saveAndRefreshCards
 };

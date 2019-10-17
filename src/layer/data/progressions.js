@@ -4,12 +4,17 @@ import AsyncStorage from '@react-native-community/async-storage';
 import type {Progression, Action, ContentType} from '@coorpacademy/progression-engine';
 import decode from 'jwt-decode';
 
+import {groupBy} from 'lodash/fp';
+
+import {heroRecommendation} from '@coorpacademy/progression-aggregations';
 import fetch from '../../modules/fetch';
-import {isDone, isFailure} from '../../utils/progressions';
+import {getCreatedAt, getUpdatedAt, isDone, isFailure} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 import type {JWT} from '../../types';
 import {get as getToken} from '../../utils/local-token';
-import type {Completion} from './_types';
+import type {Record, Completion, HeroRecommendation} from './_types';
+
+export const SYNCHRONIZED_PROGRESSIONS = 'synchronized_progressions';
 
 export const buildCompletionKey = (engineRef: string, contentRef: string) =>
   `completion_${engineRef}_${contentRef}`;
@@ -66,12 +71,21 @@ const findById = async (id: string) => {
   return JSON.parse(progression);
 };
 
-const getAll = async () => {
+const getAll = async (): Promise<Array<Progression>> => {
   const keys = await AsyncStorage.getAllKeys();
   const filteredKeys = keys.filter(key => key.startsWith('progression'));
   const items = await AsyncStorage.multiGet(filteredKeys);
 
   return items.map(([key, value]) => JSON.parse(value));
+};
+
+const getSynchronizedProgressionIds = async (): Promise<Array<string>> => {
+  const _synchronizedProgressions: string = await AsyncStorage.getItem(SYNCHRONIZED_PROGRESSIONS);
+  return _synchronizedProgressions ? JSON.parse(_synchronizedProgressions) : [];
+};
+
+const updateSynchronizedProgressionIds = (synchronizedProgressions: Array<string>): void => {
+  AsyncStorage.setItem(SYNCHRONIZED_PROGRESSIONS, JSON.stringify(synchronizedProgressions));
 };
 
 const META = {source: 'mobile'};
@@ -103,13 +117,12 @@ const synchronize = async (
 
   if (response.status >= 400) throw new Error(response.statusText);
 
-  await AsyncStorage.removeItem(buildProgressionKey(_id));
-
   return;
 };
 
 const addCreatedAtToAction = (progression: Progression): Progression => {
   const now = new Date().toISOString();
+
   return {
     ...progression,
     actions:
@@ -133,7 +146,7 @@ const persist = async (progression: Progression): Promise<Progression> => {
   await AsyncStorage.setItem(buildProgressionKey(_id), JSON.stringify(progression));
   await AsyncStorage.setItem(
     buildLastProgressionKey(progression.engine.ref, progression.content.ref),
-    progression._id || ''
+    _id
   );
 
   storeOrReplaceCompletion(progression);
@@ -220,4 +233,39 @@ const findBestOf = async (
   };
 };
 
-export {save, getAll, findById, findLast, findBestOf, synchronize};
+const getAggregationsByContent = async (): Promise<Array<HeroRecommendation>> => {
+  const progressions: Array<Progression> = await getAll();
+  const allRecords: Array<Record> = progressions.map(p => ({
+    content: {
+      ...p,
+      meta: {
+        createdAt: getCreatedAt(p.actions),
+        updatedAt: getUpdatedAt(p.actions)
+      }
+    }
+  }));
+  const recordsByContent: {[string]: Array<Record>} = groupBy(heroRecommendation.mapId, allRecords);
+
+  // $FlowFixMe values are Array<Record> and not 'mixed'
+  const _records: Array<[string, Array<Record>]> = Object.entries(recordsByContent);
+  const aggregations = _records.reduce((acc, [id: string, records: Array<Record>]) => {
+    // $FlowFixMe records is Array<Record> and no 'mixed'
+    const values: Array<HeroRecommendation> = records.map(heroRecommendation.mapValue);
+    acc.push(values.reduce(heroRecommendation.reduce, undefined));
+    return acc;
+  }, []);
+
+  return aggregations;
+};
+
+export {
+  getAggregationsByContent,
+  save,
+  getAll,
+  getSynchronizedProgressionIds,
+  findById,
+  findLast,
+  findBestOf,
+  synchronize,
+  updateSynchronizedProgressionIds
+};

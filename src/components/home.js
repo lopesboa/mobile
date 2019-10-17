@@ -17,6 +17,7 @@ type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onLogoLongPress: () => void,
   isFetching: boolean,
+  isFocused: boolean,
   testID?: string
 |};
 
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, onLogoLongPress, isFetching, testID}: Props) => {
+const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
 
   if (isFetching) {
@@ -82,7 +83,7 @@ const Home = ({onCardPress, onLogoLongPress, isFetching, testID}: Props) => {
         transparencyPosition="bottom"
         style={styles.gradient}
       />
-      <Catalog onCardPress={onCardPress} containerStyle={styles.catalog}>
+      <Catalog onCardPress={onCardPress} containerStyle={styles.catalog} isFocused={isFocused}>
         <Version style={styles.version} />
       </Catalog>
       <View style={styles.header}>

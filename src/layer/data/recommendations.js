@@ -1,25 +1,65 @@
-// @flow
+// @flow strict
 
-import type {ChapterAPI, RecommendationAPI} from '@coorpacademy/player-services';
+import decode from 'jwt-decode';
 
-import {CONTENT_TYPE} from './_const';
-import {find as findChapters} from './chapters';
+import fetch from '../../modules/fetch';
+import {get as getToken} from '../../utils/local-token';
+import type {JWT} from '../../types';
+import translations from '../../translations';
+import {__E2E__} from '../../modules/environment';
+import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/cards';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
+import chaptersBundle from '../../__fixtures__/chapter-bundle';
+import {buildUrlQueryParams} from '../../modules/uri';
+import type {QueryParams} from '../../modules/uri';
+import {saveAndRefreshCards} from './cards';
+import type {DisciplineCard, ChapterCard} from './_types';
 
-const find = async (type: string, ref: string): Promise<Array<RecommendationAPI>> => {
-  const chapters: Array<ChapterAPI> = await findChapters();
+const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCard>> => {
+  const language = translations.getLanguage();
+  const token = await getToken();
 
-  // $FlowFixMe this type is totally fucked up
-  const recommendations: Array<RecommendationAPI> = chapters.map(chapter => ({
-    view: 'grid',
-    image: chapter && chapter.poster && chapter.poster.mediaUrl,
-    time: '8m',
-    type: CONTENT_TYPE.CHAPTER,
-    progress: 1,
-    title: chapter.name,
-    ref: chapter._id
-  }));
+  if (!token) {
+    throw new Error('Invalid token');
+  }
 
-  return Promise.resolve(recommendations);
+  let cards;
+
+  if (__E2E__) {
+    const disciplines = Object.keys(disciplinesBundle.disciplines).map(
+      key => disciplinesBundle.disciplines[key]
+    );
+    const chapters = Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key]);
+
+    cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
+  } else {
+    const jwt: JWT = decode(token);
+
+    const query: QueryParams = {
+      contentType: 'all',
+      withoutAdaptive: true,
+      lang: language
+    };
+
+    const response = await fetch(
+      `${jwt.host}/api/v2/recommendations?${buildUrlQueryParams(query)}`,
+      {
+        headers: {authorization: token}
+      }
+    );
+
+    const {hits}: {hits: Array<DisciplineCard | ChapterCard>} = await response.json();
+
+    cards = hits;
+  }
+
+  return saveAndRefreshCards(cards, language);
 };
 
-export {find};
+// @todo replace fetchRecommendation() by find(type: string, ref: string)
+const fetchRecommendation = async (): Promise<DisciplineCard | ChapterCard | void> => {
+  const cards = await fetchRecommendations();
+  return cards[0];
+};
+
+export {fetchRecommendation, fetchRecommendations};
