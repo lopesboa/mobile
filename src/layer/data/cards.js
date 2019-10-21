@@ -245,10 +245,10 @@ export const fetchCard = async (content: Content): Promise<DisciplineCard | Chap
 
     if (content.type === CONTENT_TYPE.LEVEL) {
       const level = await fetchLevel(content.ref);
-      if (!level.disciplineRef) {
+      if (!level.disciplineUniversalRef) {
         throw new Error('Unable to find discipline ref from level');
       }
-      universalRef = level.disciplineRef;
+      universalRef = level.disciplineUniversalRef;
     }
 
     const query: QueryParams = {

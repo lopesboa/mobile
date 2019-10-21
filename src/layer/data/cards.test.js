@@ -19,6 +19,7 @@ import {
   updateDisciplineCardDependingOnCompletion,
   updateChapterCardAccordingToCompletion
 } from './cards';
+import {CONTENT_TYPE} from './_const';
 import type {Completion, DisciplineCard, ChapterCard, Card} from './_types';
 
 const host = 'https://host.coorpacademy.com';
@@ -185,7 +186,10 @@ describe('cards', () => {
 
       const discipline = disciplinesBundle.disciplines.with_slider_dis_1;
       // $FlowFixMe union type
-      const result = await fetchCard({ref: discipline.modules[0].universalRef, type: 'level'});
+      const result = await fetchCard({
+        ref: discipline.modules[0].universalRef,
+        type: CONTENT_TYPE.LEVEL
+      });
 
       return expect(result.universalRef).toEqual(discipline.universalRef);
     });
@@ -229,7 +233,7 @@ describe('cards', () => {
       );
 
       const {fetchCard} = require('./cards');
-      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      const card = await fetchCard({ref: 'foo', type: CONTENT_TYPE.CHAPTER});
       expect(card).toEqual({
         ...mockCard,
         completion: completion.current / microLearningSlideToComplete
@@ -266,7 +270,7 @@ describe('cards', () => {
       );
 
       const {fetchCard} = require('./cards');
-      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      const card = await fetchCard({ref: 'foo', type: CONTENT_TYPE.CHAPTER});
       expect(card).toEqual(mockCard);
     });
 
@@ -275,15 +279,17 @@ describe('cards', () => {
       const fetch = require('cross-fetch');
 
       const discipline = disciplinesCards[0];
-      const levelAPI = createLevelAPI({
+      const level = createLevelAPI({
         chapterIds: [],
         // $FlowFixMe module is defined
-        ref: discipline.modules[0].universalRef
+        ref: discipline.modules[0].universalRef,
+        disciplineRef: 'foo',
+        disciplineUniversalRef: discipline.universalRef
       });
-      const level = {
-        ...levelAPI,
-        disciplineRef: discipline.universalRef
-      };
+      // $FlowFixMe its defined
+      const levelUniversalRef: string = level.universalRef;
+      // $FlowFixMe its defined
+      const disciplineUniversalRef: string = level.disciplineUniversalRef;
 
       AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
 
@@ -293,7 +299,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<LevelAPI>
         }> => {
-          expect(url).toBe(`https://domain.tld/api/v2/levels/${level.universalRef}`);
+          expect(url).toBe(`https://domain.tld/api/v2/levels/${levelUniversalRef}`);
 
           return Promise.resolve({
             json: () => Promise.resolve(level)
@@ -308,9 +314,7 @@ describe('cards', () => {
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
           expect(url).toBe(
-            `https://domain.tld/api/v2/contents?type=course&universalRef=${
-              level.disciplineRef
-            }&lang=en`
+            `https://domain.tld/api/v2/contents?type=course&universalRef=${disciplineUniversalRef}&lang=en`
           );
 
           return Promise.resolve({
@@ -320,7 +324,7 @@ describe('cards', () => {
       );
 
       const {fetchCard} = require('./cards');
-      const card = await fetchCard({ref: level.universalRef, type: 'level'});
+      const card = await fetchCard({ref: levelUniversalRef, type: CONTENT_TYPE.LEVEL});
 
       expect(card).toEqual(discipline);
     });
@@ -345,7 +349,7 @@ describe('cards', () => {
       );
 
       const {fetchCard} = require('./cards');
-      const card = await fetchCard({ref: 'foo', type: 'chapter'});
+      const card = await fetchCard({ref: 'foo', type: CONTENT_TYPE.CHAPTER});
       return expect(card).toEqual(undefined);
     });
 
@@ -355,7 +359,7 @@ describe('cards', () => {
       localToken.get.mockImplementationOnce(() => Promise.resolve(null));
 
       const {fetchCard} = require('./cards');
-      const fetching = fetchCard({ref: 'foo', type: 'chapter'});
+      const fetching = fetchCard({ref: 'foo', type: CONTENT_TYPE.CHAPTER});
       await expect(fetching).rejects.toThrow(new Error('Invalid token'));
     });
 

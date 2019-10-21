@@ -57,6 +57,7 @@ export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
   _id: rawLevel._id,
   universalRef: rawLevel.universalRef,
   disciplineRef: rawLevel.disciplineRef,
+  disciplineUniversalRef: rawLevel.disciplineUniversalRef,
   ref: rawLevel.ref,
   name: rawLevel.name,
   level: rawLevel.level,
