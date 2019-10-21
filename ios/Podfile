@@ -65,6 +65,8 @@ target 'Coorpacademy' do
   # Lottie
   pod 'lottie-ios', :path => '../node_modules/lottie-ios'
   pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+  pod 'react-native-appearance', :path => '../node_modules/react-native-appearance'
+
 end
 
 # The following is needed to ensure the "archive" step works in XCode.

@@ -59,16 +59,16 @@ const theme: Theme = {
   colors: {
     border: 'rgba(0, 0, 0, 0.1)',
     gray: {
-      extra: '#FAFAFA',
-      light: '#ECEFF1',
+      extra: '#212121',
+      light: '#424242',
       lightMedium: '#CFD8DC',
       medium: '#90A4AE',
-      dark: '#546E7A'
+      dark: '#f5f5f5'
     },
     negative: '#F73F52',
     positive: '#3EC483',
-    white: '#FFFFFF',
-    black: '#14171A',
+    white: '#121212',
+    black: '#FFFFFF',
     battle: '#FFE100',
     notification: '#FF7043',
     salmon: '#FDE2E5'

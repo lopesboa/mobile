@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {useColorScheme} from 'react-native-appearance';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
@@ -66,7 +67,13 @@ const styles = StyleSheet.create({
 
 const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
-
+  let colorScheme = useColorScheme();
+  if (colorScheme === 'dark') {
+    console.log('dark');
+  } else {
+    console.log('light');
+    // render some light thing
+  }
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID={testID}>

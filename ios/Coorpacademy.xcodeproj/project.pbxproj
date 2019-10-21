@@ -769,7 +769,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 46NRKZL52N;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
 								enabled = 1;
@@ -1394,10 +1394,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 46NRKZL52N;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/gems";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Coorpacademy/Info.plist;
@@ -1409,7 +1409,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.coorpacademy.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1421,10 +1421,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46NRKZL52N;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/gems";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Coorpacademy/Info.plist;
@@ -1437,7 +1437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
 				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1638,10 +1638,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Coorpacademy/Coorpacademy.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46NRKZL52N;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/gems";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1684,7 +1684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coorpacademy.app;
 				PRODUCT_NAME = Coorpacademy;
 				PROVISIONING_PROFILE = "fc7ac9a9-f6bb-46eb-8c69-13f5278f482a";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.coorpacademy.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

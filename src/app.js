@@ -4,6 +4,7 @@ import * as React from 'react';
 import {StyleSheet, View, Platform} from 'react-native';
 import {Provider} from 'react-redux';
 import {PortalProvider} from 'react-native-portal';
+import {AppearanceProvider} from 'react-native-appearance';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
 import orientation from 'react-native-orientation-locker';
@@ -68,18 +69,20 @@ class App extends React.PureComponent<Props> {
     return (
       <Provider store={store}>
         <ReduxNetworkProvider pingInterval={30000} pingOnlyIfOffline>
-          <PortalProvider>
-            <VersionListener />
-            <UserProvider>
-              <BrandThemeProvider>
-                <View style={styles.container}>
-                  <Navigator />
-                </View>
-              </BrandThemeProvider>
-            </UserProvider>
-            <ConnectionListener />
-            {Platform.OS === 'android' && <VideoFullscreenListener />}
-          </PortalProvider>
+          <AppearanceProvider>
+            <PortalProvider>
+              <VersionListener />
+              <UserProvider>
+                <BrandThemeProvider>
+                  <View style={styles.container}>
+                    <Navigator />
+                  </View>
+                </BrandThemeProvider>
+              </UserProvider>
+              <ConnectionListener />
+              {Platform.OS === 'android' && <VideoFullscreenListener />}
+            </PortalProvider>
+          </AppearanceProvider>
         </ReduxNetworkProvider>
       </Provider>
     );
