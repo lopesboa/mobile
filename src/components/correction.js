@@ -158,9 +158,18 @@ class Correction extends React.PureComponent<Props> {
   };
 
   getCards(isCorrect: boolean): Array<Card> {
-    const {isResourceViewed, resources, offeringExtraLife, hasConsumedExtraLife} = this.props;
+    const {
+      answers,
+      userAnswers,
+      isResourceViewed,
+      resources,
+      offeringExtraLife,
+      hasConsumedExtraLife
+    } = this.props;
 
     const correctionCard: Card = {
+      answers,
+      userAnswers,
       type: CARD_TYPE.CORRECTION,
       title: translations.correction,
       isCorrect
@@ -216,11 +225,11 @@ class Correction extends React.PureComponent<Props> {
   getCardsHeight = (): number => CARDS_HEIGHT;
 
   renderCard = (
-    {type, title: cardTitle, resource, offeringExtraLife}: Card,
+    {answers, userAnswers, type, title: cardTitle, resource, offeringExtraLife}: Card,
     index: number,
     animationStyle: AnimationStyleProp
   ) => {
-    const {answers, userAnswers, question, tip, keyPoint, isCorrect} = this.props;
+    const {question, tip, keyPoint, isCorrect} = this.props;
     // This is the offset added by the deck swiper
     const testIDSuffix = resource ? resource.ref.toLowerCase() : '';
     const testID =
@@ -253,7 +262,7 @@ class Correction extends React.PureComponent<Props> {
                   {tip}
                 </Html>
               )}
-              {type === CARD_TYPE.CORRECTION && (
+              {type === CARD_TYPE.CORRECTION && answers && userAnswers && (
                 <CardCorrection
                   question={question}
                   answers={answers}

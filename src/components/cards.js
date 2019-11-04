@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
+import type {Answer} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import type {CardType, Resource} from '../types';
@@ -9,6 +10,8 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
 export type Card = {|
+  answers?: Answer,
+  userAnswers?: Answer,
   isCorrect: boolean,
   title: string,
   type: CardType,
