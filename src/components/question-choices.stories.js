@@ -43,16 +43,18 @@ storiesOf('QuestionChoices', module)
     </TestContextProvider>
   ))
   .add('Template', () => (
-    <QuestionChoices
-      type={QUESTION_TYPE.TEMPLATE}
-      template={template}
-      onInputValueChange={handleFakePress}
-      items={templateItems}
-      userChoices={templateUserChoices}
-      onItemPress={handleFakePress}
-      onSliderChange={handleFakePress}
-      onItemInputChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <QuestionChoices
+        type={QUESTION_TYPE.TEMPLATE}
+        template={template}
+        onInputValueChange={handleFakePress}
+        items={templateItems}
+        userChoices={templateUserChoices}
+        onItemPress={handleFakePress}
+        onSliderChange={handleFakePress}
+        onItemInputChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Template (empty)', () => (
     <QuestionChoices
@@ -159,16 +161,18 @@ if (__TEST__) {
     it('should handle onItemInputChange callback', () => {
       const handleItemInputChange = jest.fn();
       const component = renderer.create(
-        <QuestionChoices
-          type={QUESTION_TYPE.TEMPLATE}
-          onInputValueChange={handleFakePress}
-          template={template}
-          items={templateItems}
-          userChoices={templateUserChoices}
-          onItemPress={handleFakePress}
-          onItemInputChange={handleItemInputChange}
-          onSliderChange={handleFakePress}
-        />
+        <TestContextProvider>
+          <QuestionChoices
+            type={QUESTION_TYPE.TEMPLATE}
+            onInputValueChange={handleFakePress}
+            template={template}
+            items={templateItems}
+            userChoices={templateUserChoices}
+            onItemPress={handleFakePress}
+            onItemInputChange={handleItemInputChange}
+            onSliderChange={handleFakePress}
+          />
+        </TestContextProvider>
       );
       const questionInput = component.root.find(el => el.props.testID === 'question-part-2');
       questionInput.props.onChange('Foobarbaz');

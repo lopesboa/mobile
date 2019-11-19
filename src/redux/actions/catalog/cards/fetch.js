@@ -3,9 +3,9 @@
 import type {DisciplineCard, ChapterCard} from '../../../../layer/data/_types';
 import translations from '../../../../translations';
 import type {SupportedLanguage} from '../../../../translations/_types';
-import type {StoreAction, ErrorAction} from '../../../_types';
+import type {StoreAction, StoreErrorAction} from '../../../_types';
 import {getToken, getBrand, getSection} from '../../../utils/state-extract';
-import type {Action as ModalAction} from '../../ui/modal';
+import type {Action as ErrorAction} from '../../ui/errors';
 
 export const FETCH_REQUEST = '@@cards/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@cards/FETCH_SUCCESS';
@@ -35,7 +35,7 @@ export type FetchSuccessAction = {|
   }
 |};
 
-export type FetchErrorAction = ErrorAction<{|
+export type FetchErrorAction = StoreErrorAction<{|
   type: '@@cards/FETCH_ERROR'
 |}>;
 
@@ -85,7 +85,7 @@ export const fetchCards = (
   sectionKey: string,
   offset: number,
   limit: number
-): StoreAction<Action | ModalAction<StoreAction<Action>>> => async (
+): StoreAction<Action | ErrorAction<StoreAction<Action>>> => async (
   dispatch,
   getState,
   options

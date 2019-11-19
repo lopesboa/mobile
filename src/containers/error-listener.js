@@ -1,26 +1,26 @@
 // @flow
 
 import React from 'react';
-import Modal from 'react-native-modal';
 import {Linking} from 'react-native';
 import {connect} from 'react-redux';
 
-import ErrorModal from '../components/error-modal';
+import ModalError from '../components/modal-error';
 import type {ErrorType} from '../types';
 import {ERROR_TYPE} from '../const';
-import {hideModal, refresh} from '../redux/actions/ui/modal';
+import {hideError, refresh} from '../redux/actions/ui/errors';
 import {signOut} from '../redux/actions/authentication';
+import {isErrorVisible, getErrorType} from '../redux/utils/state-extract';
 import {assistanceEmail} from '../../app';
+import ModalAnimated from './modal-animated';
 
 type ConnectedStateToProps = {|
   ...ReactNavigation$WithNavigationProps,
   isVisible: boolean,
-  errorType: ErrorType,
-  lastAction?: () => void
+  type: ErrorType
 |};
 
 type ConnectedDispatchProps = {|
-  hideModal: typeof hideModal,
+  hideError: typeof hideError,
   refresh: typeof refresh,
   signOut: typeof signOut
 |};
@@ -39,51 +39,48 @@ class ErrorListener extends React.PureComponent<Props> {
   };
 
   handleClose = () => {
-    this.props.hideModal();
+    this.props.hideError();
     this.props.signOut();
     this.props.onClose();
   };
 
   handlePress = () => {
-    if (this.props.errorType === ERROR_TYPE.PLATFORM_NOT_ACTIVATED) {
-      this.handleAssistancePress();
-    } else {
-      this.props.refresh();
+    if (this.props.type === ERROR_TYPE.PLATFORM_NOT_ACTIVATED) {
+      return this.handleAssistancePress();
     }
+
+    return this.props.refresh();
   };
 
   render() {
-    const {errorType} = this.props;
+    const {type, isVisible} = this.props;
 
     return (
-      <Modal
-        isVisible={this.props.isVisible}
-        onSwipeComplete={this.handleClose}
-        onBackdropPress={this.handleClose}
-      >
-        <ErrorModal
+      <ModalAnimated isVisible={isVisible} onClose={this.handleClose} testID="modal-animated">
+        <ModalError
           onClose={this.handleClose}
           onPress={this.handlePress}
           onAssistancePress={this.handleAssistancePress}
-          type={errorType}
+          type={type}
+          testID="modal-error"
         />
-      </Modal>
+      </ModalAnimated>
     );
   }
 }
 
-const mapStateToProps = ({error}: StoreState): ConnectedStateToProps => ({
-  isVisible: error.isVisible,
-  errorType: error.errorType,
-  lastAction: error.lastAction
+const mapStateToProps = (state: StoreState): ConnectedStateToProps => ({
+  isVisible: isErrorVisible(state),
+  type: getErrorType(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  hideModal,
+  hideError,
   refresh,
   signOut
 };
 
+export {ErrorListener as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

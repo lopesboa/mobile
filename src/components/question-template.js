@@ -72,6 +72,7 @@ class QuestionTemplate extends React.PureComponent<Props> {
                 value={value}
                 testID={testID}
                 key={testID}
+                id={testID}
               />
             );
           }

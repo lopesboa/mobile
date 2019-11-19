@@ -4,7 +4,7 @@ import decode from 'jwt-decode';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import fetch from '../../modules/fetch';
-import type {StoreAction, ErrorAction} from '../_types';
+import type {StoreAction, StoreErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
 import {set as setToken} from '../../utils/local-token';
@@ -31,7 +31,7 @@ export type Action =
       type: '@@authentication/SIGN_IN_SUCCESS',
       payload: string
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: '@@authentication/SIGN_IN_ERROR'
     |}>
   | {|

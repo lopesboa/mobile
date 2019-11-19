@@ -3,50 +3,54 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {NovaCompositionNavigationArrowDown as ArrowDown} from '@coorpacademy/nova-icons';
-import type {Choice, QuestionType} from '@coorpacademy/progression-engine';
-import SelectBase from 'react-native-picker-select';
+import type {QuestionType} from '@coorpacademy/progression-engine';
+
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {AnalyticsEventType} from '../types';
 import theme from '../modules/theme';
 import withAnalytics from '../containers/with-analytics';
 import type {WithAnalyticsProps} from '../containers/with-analytics';
+import ModalAnimated from '../containers/modal-animated';
+import ModalSelect from './modal-select';
+import type {Props as ModalSelectProps} from './modal-select';
+import Space from './space';
+import Touchable from './touchable';
+import Text from './text';
 
-type Props = {|
+export type Props = {|
   ...WithAnalyticsProps,
   analyticsID: string,
   questionType: QuestionType,
   isDisabled?: boolean,
-  values: $NonMaybeType<$PropertyType<Choice, 'items'>>,
-  value?: string,
+  isFocused?: boolean,
+  values: $PropertyType<ModalSelectProps, 'values'>,
+  value?: $PropertyType<ModalSelectProps, 'value'>,
   placeholder?: string,
   color?: string,
-  onChange: (value: string) => void,
-  style?: TextStyleProp,
+  onChange: $PropertyType<ModalSelectProps, 'onChange'>,
+  onFocus: () => void,
+  onBlur: () => void,
+  style?: ViewStyleProp,
+  textStyle?: TextStyleProp,
   testID?: string
 |};
 
 const ICON_WIDTH = 15;
 
 const styles = StyleSheet.create({
-  text: {
-    color: theme.colors.gray.medium,
-    paddingRight: theme.spacing.tiny + ICON_WIDTH + theme.spacing.small
+  container: {
+    alignItems: 'center',
+    flexDirection: 'row'
   },
-  icon: {
-    top: '50%',
-    marginTop: -ICON_WIDTH / 2,
-    right: theme.spacing.small
+  text: {
+    flex: 1,
+    color: theme.colors.gray.medium,
+    textAlign: 'center'
   }
 });
 
 class Select extends React.PureComponent<Props> {
   props: Props;
-
-  renderIcon = () => {
-    const {color = theme.colors.gray.dark} = this.props;
-
-    return <ArrowDown color={color} height={ICON_WIDTH} width={ICON_WIDTH} />;
-  };
 
   logEvent = (event: AnalyticsEventType) => {
     const {analytics, analyticsID, questionType} = this.props;
@@ -57,12 +61,19 @@ class Select extends React.PureComponent<Props> {
       });
   };
 
-  handleOpen = () => {
+  handleFocus = () => {
+    this.props.onFocus();
     this.logEvent(ANALYTICS_EVENT_TYPE.OPEN_SELECT);
   };
 
-  handleClose = () => {
+  handleBlur = () => {
+    this.props.onBlur();
     this.logEvent(ANALYTICS_EVENT_TYPE.CLOSE_SELECT);
+  };
+
+  handleChange = (value: string) => {
+    this.props.onChange(value);
+    this.handleBlur();
   };
 
   render() {
@@ -70,40 +81,43 @@ class Select extends React.PureComponent<Props> {
       values,
       placeholder,
       value,
-      onChange,
       style,
+      textStyle,
       color,
+      isFocused = false,
       isDisabled = false,
-      testID
+      testID = 'select'
     } = this.props;
     const selectedItem = values.find(item => item.text === value);
-    const items = values.map(item => ({value: item.text, label: item.text}));
+    const text = (selectedItem && selectedItem.text) || placeholder || null;
 
     return (
-      <View testID={testID}>
-        <SelectBase
-          testID={testID && `${testID}-select-base`}
-          disabled={isDisabled}
-          placeholder={{label: placeholder, value: ''}}
-          items={items}
-          onValueChange={onChange}
-          value={selectedItem ? selectedItem.text : null}
-          style={{
-            iconContainer: styles.icon
-          }}
-          // This prop let us add border & more styling to Android Input
-          useNativeAndroidPickerStyle={false}
-          onOpen={this.handleOpen}
-          onClose={this.handleClose}
-          Icon={this.renderIcon}
-          pickerProps={{
-            testID: testID && `${testID}-picker`
-          }}
-          textInputProps={{
-            style: [styles.text, style, color && {color}]
-          }}
-        />
-      </View>
+      <React.Fragment>
+        <Touchable disabled={isDisabled} onPress={this.handleFocus} testID={`${testID}-input`}>
+          <View style={[styles.container, style]}>
+            <Text style={[styles.text, textStyle, color && {color}]}>{text}</Text>
+            <Space type="tiny" />
+            <ArrowDown
+              color={color || theme.colors.gray.dark}
+              height={ICON_WIDTH}
+              width={ICON_WIDTH}
+            />
+          </View>
+        </Touchable>
+        <ModalAnimated
+          isVisible={isFocused}
+          onClose={this.handleBlur}
+          testID={`${testID}-modal-animated`}
+        >
+          <ModalSelect
+            value={value}
+            values={values}
+            onChange={this.handleChange}
+            onClose={this.handleBlur}
+            testID={`${testID}-modal`}
+          />
+        </ModalAnimated>
+      </React.Fragment>
     );
   }
 }

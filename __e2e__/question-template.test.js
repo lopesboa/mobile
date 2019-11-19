@@ -1,13 +1,12 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
-
-const selectAppStoreItem = async () => {
-  // to simulate tap on picker item
-  await element(by.text('Select an answer'))
-    .atIndex(0)
-    .tapAtPoint({x: 200, y: 80});
-};
+import {
+  reloadApp,
+  bypassAuthentication,
+  tapCardOnSection,
+  waitForExist,
+  waitForNotVisible
+} from './utils';
 
 describe('Template', () => {
   beforeAll(async () => {
@@ -28,7 +27,7 @@ describe('Template', () => {
     await weExpect(element(by.id('question-part-1'))).toBeVisible();
     await weExpect(element(by.id('question-part-2-text'))).toBeVisible();
     await weExpect(element(by.id('question-part-3'))).toBeVisible();
-    await weExpect(element(by.id('question-part-4-select'))).toBeVisible();
+    await weExpect(element(by.id('question-part-4-select-input'))).toBeVisible();
     await weExpect(element(by.id('question-part-5'))).toBeVisible();
     await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
   });
@@ -38,14 +37,14 @@ describe('Template', () => {
     await weExpect(element(by.id('question-part-2-text-selected'))).toBeVisible();
   });
 
-  it('should open select picker', async () => {
-    await element(by.id('ios_touchable_wrapper')).tap();
-    await waitForExist('question-part-4-select');
+  it('should open modal', async () => {
+    await element(by.id('question-part-4-select-input')).tap();
+    await waitForExist('question-part-4-select-modal-animated');
   });
 
   it('should select item in picker', async () => {
-    await selectAppStoreItem();
-    await element(by.id('done_button')).tap();
+    await element(by.id('question-part-4-select-modal-item-1')).tap();
+    await waitForNotVisible('question-part-4-select-modal-animated');
   });
 
   it('should be able to validate', async () => {
@@ -69,9 +68,10 @@ describe('Template', () => {
   describe('Positive correction', () => {
     beforeAll(async () => {
       await element(by.id('question-part-2-text')).replaceText('Coorpacademy');
-      await element(by.id('question-part-4-select')).tap();
-      await selectAppStoreItem();
-      await element(by.id('done_button')).tap();
+      await element(by.id('question-part-4-select-input')).tap();
+      await waitForExist('question-part-4-select-modal-animated');
+      await element(by.id('question-part-4-select-modal-item-2')).tap();
+      await waitForNotVisible('question-part-4-select-modal-animated');
       await element(by.id('button-validate')).tap();
     });
 

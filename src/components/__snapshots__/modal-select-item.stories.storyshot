@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ModalSelectItem Default 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "opacity": 1,
+      "padding": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#14171A",
+            "fontWeight": "700",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Foo
+  </Text>
+</View>
+`;
+
+exports[`Storyshots ModalSelectItem Selected 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "opacity": 1,
+      "padding": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#14171A",
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#00B0FF",
+          },
+        ],
+      ]
+    }
+  >
+    Foo
+  </Text>
+</View>
+`;

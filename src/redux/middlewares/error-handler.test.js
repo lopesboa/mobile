@@ -1,7 +1,7 @@
 // @flow strict
 
 import {ForbiddenError} from '../../models/error';
-import {showModal} from '../actions/ui/modal';
+import {showError} from '../actions/ui/errors';
 
 import {ERROR_TYPE} from '../../const';
 import createMiddleware from './error-handler';
@@ -27,8 +27,8 @@ describe('Error handler', () => {
 
   it('shoud handle an error with payload of type Forbidden Error', () => {
     const forbiddenError = new ForbiddenError('foo');
-    const showModalAction = showModal({
-      errorType: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
+    const showErrorAction = showError({
+      type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
     });
     const action = {
       payload: forbiddenError
@@ -38,7 +38,7 @@ describe('Error handler', () => {
     const next = jest.fn();
     // $FlowFixMe this si to test only
     middleware(store)(next)(action);
-    expect(store.dispatch).toHaveBeenCalledWith(showModalAction);
+    expect(store.dispatch).toHaveBeenCalledWith(showErrorAction);
     expect(next).toHaveBeenCalledWith(action);
   });
 });

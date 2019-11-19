@@ -4,7 +4,7 @@ import {selectProgression, fetchBestProgression} from '@coorpacademy/player-stor
 import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
 
-import type {StoreAction, ErrorAction} from '../../_types';
+import type {StoreAction, StoreErrorAction} from '../../_types';
 import {ENGINE, CONTENT_TYPE} from '../../../const';
 import type {RestrictedResourceType} from '../../../layer/data/_types';
 import {RESTRICTED_RESOURCE_TYPE} from '../../../layer/data/_const';
@@ -25,7 +25,7 @@ export type NextProgressionAction =
       type: typeof CREATE_NEXT_SUCCESS,
       meta: {|type: RestrictedResourceType, ref: string|}
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: typeof CREATE_NEXT_FAILURE,
       meta: {|type: RestrictedResourceType, ref: string|}
     |}>;

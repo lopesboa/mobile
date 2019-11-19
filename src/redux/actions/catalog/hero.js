@@ -3,7 +3,7 @@
 import type {DisciplineCard, ChapterCard} from '../../../layer/data/_types';
 import translations from '../../../translations';
 import type {SupportedLanguage} from '../../../translations/_types';
-import type {StoreAction, ErrorAction} from '../../_types';
+import type {StoreAction, StoreErrorAction} from '../../_types';
 
 export const FETCH_REQUEST = '@@hero/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@hero/FETCH_SUCCESS';
@@ -24,7 +24,7 @@ export type FetchSuccessAction = {|
   }
 |};
 
-export type FetchErrorAction = ErrorAction<{|
+export type FetchErrorAction = StoreErrorAction<{|
   type: '@@hero/FETCH_ERROR'
 |}>;
 

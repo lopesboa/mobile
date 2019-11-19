@@ -2,19 +2,19 @@
 
 import type {Middleware, MiddlewareAPI, Dispatch} from 'redux';
 
-import type {ErrorAction} from '../_types';
+import type {StoreErrorAction} from '../_types';
 import type {StoreState} from '../store';
 
 import {ForbiddenError} from '../../models/error';
-import {showModal} from '../actions/ui/modal';
+import {showError} from '../actions/ui/errors';
 import {ERROR_TYPE} from '../../const';
-import type {Action as ModalAction} from '../actions/ui/modal';
+import type {Action as ErrorAction} from '../actions/ui/errors';
 
 type Action =
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: string
     |}>
-  | ModalAction<void>;
+  | ErrorAction<void>;
 type State = StoreState;
 
 const createMiddleware = (): Middleware<State, Action, Dispatch<Action>> => ({
@@ -25,8 +25,8 @@ const createMiddleware = (): Middleware<State, Action, Dispatch<Action>> => ({
 ): Dispatch<Action> => (action: Action) => {
   if (action.payload && action.payload instanceof ForbiddenError) {
     dispatch(
-      showModal({
-        errorType: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
+      showError({
+        type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
       })
     );
   }

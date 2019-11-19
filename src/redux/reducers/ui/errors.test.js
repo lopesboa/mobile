@@ -1,17 +1,17 @@
 // @flow strict
 
 import {ERROR_TYPE} from '../../../const';
-import {SHOW, HIDE} from '../../actions/ui/modal';
-import type {Action} from '../../actions/ui/modal';
-import reducer from './error';
-import type {State} from './error';
+import {SHOW, HIDE} from '../../actions/ui/errors';
+import type {Action} from '../../actions/ui/errors';
+import reducer from './errors';
+import type {State} from './errors';
 
 const fakeAction = {
   type: 'FAKE_ACTION'
 };
 type FakeAction = typeof fakeAction;
 
-describe('Modal', () => {
+describe('Errors', () => {
   const expectedInitialState: State<FakeAction> = {
     isVisible: false
   };
@@ -28,14 +28,14 @@ describe('Modal', () => {
       const action: Action<FakeAction> = {
         type: SHOW,
         payload: {
-          errorType: ERROR_TYPE.NO_CONTENT_FOUND,
+          type: ERROR_TYPE.NO_CONTENT_FOUND,
           lastAction
         }
       };
       const result = reducer(expectedInitialState, action);
       const expected = {
         isVisible: true,
-        errorType: ERROR_TYPE.NO_CONTENT_FOUND,
+        type: ERROR_TYPE.NO_CONTENT_FOUND,
         lastAction
       };
       expect(result).toEqual(expected);

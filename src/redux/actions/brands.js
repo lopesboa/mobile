@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {Brand} from '../../types';
-import type {StoreAction, ErrorAction} from '../_types';
+import type {StoreAction, StoreErrorAction} from '../_types';
 
 export const FETCH_REQUEST = `@@brands/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@brands/FETCH_SUCCESS`;
@@ -17,7 +17,7 @@ export type Action =
         item: Brand
       |}
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: '@@brands/FETCH_ERROR'
     |}>;
 

@@ -2,7 +2,7 @@
 
 import pMap from 'p-map';
 
-import type {StoreAction, ErrorAction} from '../../_types';
+import type {StoreAction, StoreErrorAction} from '../../_types';
 import {getToken, getBrand} from '../../utils/state-extract';
 import {
   isAlreadySynchronized,
@@ -23,7 +23,7 @@ export type Action =
       type: typeof SYNCHRONIZE_SUCCESS,
       meta: {|id: string|}
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: typeof SYNCHRONIZE_FAILURE,
       meta: {|id: string|}
     |}>;

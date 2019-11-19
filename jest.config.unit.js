@@ -33,13 +33,13 @@ module.exports = {
     },
     'src/containers': {
       // @todo increase this value
-      branches: 38,
+      branches: 41,
       // @todo increase this value
-      functions: 41,
+      functions: 47,
       // @todo increase this value
-      lines: 46,
+      lines: 52,
       // @todo increase this value
-      statements: 46
+      statements: 52
     },
     'src/screens': {
       branches: 100,

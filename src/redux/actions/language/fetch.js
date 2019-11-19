@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {Options, ErrorAction, StoreAction} from '../../_types';
+import type {Options, StoreErrorAction, StoreAction} from '../../_types';
 import type {SupportedLanguage} from '../../../translations/_types';
 
 import {setLanguage} from './set';
@@ -20,7 +20,7 @@ export type Action =
         lang: SupportedLanguage
       |}
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: '@@language/FETCH_ERROR'
     |}>;
 

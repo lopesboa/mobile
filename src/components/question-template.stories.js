@@ -4,7 +4,7 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
 import {createSelectChoice, createInputChoice} from '../__fixtures__/question-choices';
-import {handleFakePress} from '../utils/tests';
+import {handleFakePress, TestContextProvider} from '../utils/tests';
 import QuestionTemplate from './question-template';
 
 const field1 = createInputChoice({name: 'inp1'});
@@ -24,33 +24,39 @@ export const userChoices = [
 
 storiesOf('QuestionTemplate', module)
   .add('Default', () => (
-    <QuestionTemplate
-      template={template}
-      items={items}
-      userChoices={userChoices}
-      onInputChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <QuestionTemplate
+        template={template}
+        items={items}
+        userChoices={userChoices}
+        onInputChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Disabled', () => (
-    <QuestionTemplate
-      isDisabled
-      template={template}
-      items={items}
-      userChoices={userChoices}
-      onInputChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <QuestionTemplate
+        isDisabled
+        template={template}
+        items={items}
+        userChoices={userChoices}
+        onInputChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Incorrect items', () => (
-    <QuestionTemplate
-      template={template}
-      items={[
-        {...field1, name: 'inp123456789'},
-        {...field2, type: undefined},
-        {...field3, name: undefined}
-      ]}
-      userChoices={[]}
-      onInputChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <QuestionTemplate
+        template={template}
+        items={[
+          {...field1, name: 'inp123456789'},
+          {...field2, type: undefined},
+          {...field3, name: undefined}
+        ]}
+        userChoices={[]}
+        onInputChange={handleFakePress}
+      />
+    </TestContextProvider>
   ));
 
 export default {

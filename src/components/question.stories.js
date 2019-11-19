@@ -51,19 +51,21 @@ storiesOf('Question', module)
     />
   ))
   .add('Template', () => (
-    <Question
-      type={QUESTION_TYPE.TEMPLATE}
-      header="What is the online Apple application store called?"
-      explanation="Select the correct answers"
-      template={template}
-      choices={items}
-      userChoices={userChoices}
-      onChoicePress={handleFakePress}
-      onInputValueChange={handleFakePress}
-      onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
-      onSliderChange={handleFakePress}
-    />
+    <TestContextProvider>
+      <Question
+        type={QUESTION_TYPE.TEMPLATE}
+        header="What is the online Apple application store called?"
+        explanation="Select the correct answers"
+        template={template}
+        choices={items}
+        userChoices={userChoices}
+        onChoicePress={handleFakePress}
+        onInputValueChange={handleFakePress}
+        onChoiceInputChange={handleFakePress}
+        onButtonPress={handleFakePress}
+        onSliderChange={handleFakePress}
+      />
+    </TestContextProvider>
   ))
   .add('Option selected', () => (
     <Question

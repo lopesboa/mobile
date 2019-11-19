@@ -13,11 +13,12 @@ import {ROLES, SCOPES, hasRole} from '@coorpacademy/acl';
 import decode from 'jwt-decode';
 
 import {CONTENT_TYPE} from '../../const';
-import type {Section, ProgressionEngineVersions, PermissionStatus} from '../../types';
+import type {Section, ProgressionEngineVersions, PermissionStatus, ErrorType} from '../../types';
 import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
 import type {State as UserState} from '../reducers/authentication/user';
 import type {State as TokenState} from '../reducers/authentication/token';
+import type {State as SelectState} from '../reducers/ui/select';
 import type {PermissionType} from '../actions/permissions';
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
@@ -153,3 +154,9 @@ export const getHero = (state: StoreState): DisciplineCard | ChapterCard | void 
 
   return typeof ref === 'string' ? getCard(state, ref) : ref;
 };
+
+export const isErrorVisible = (state: StoreState): boolean => state.errors.isVisible;
+
+export const getErrorType = (state: StoreState): ErrorType | void => state.errors.type;
+
+export const getFocusedSelect = (state: StoreState): SelectState => state.select;

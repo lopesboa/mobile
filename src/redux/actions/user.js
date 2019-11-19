@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {User} from '../../types';
-import type {StoreAction, ErrorAction} from '../_types';
+import type {StoreAction, StoreErrorAction} from '../_types';
 
 export const FETCH_REQUEST = `@@users/FETCH_REQUEST`;
 export const FETCH_SUCCESS = `@@users/FETCH_SUCCESS`;
@@ -15,7 +15,7 @@ export type Action =
       type: '@@users/FETCH_SUCCESS',
       payload: User
     |}
-  | ErrorAction<{|
+  | StoreErrorAction<{|
       type: '@@users/FETCH_ERROR'
     |}>;
 

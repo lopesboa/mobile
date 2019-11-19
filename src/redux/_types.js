@@ -17,7 +17,7 @@ type ThunkAction<S, A, O> =
 
 export type StoreAction<A> = ThunkAction<StoreState, A, Options>;
 
-export type ErrorAction<T> = {|
+export type StoreErrorAction<T> = {|
   ...T,
   payload: Error,
   error: boolean

@@ -10,11 +10,12 @@ import type {AnalyticsEventType, QuestionChoiceInputType} from '../types';
 import {ANALYTICS_EVENT_TYPE, QUESTION_CHOICE_INPUT_TYPE} from '../const';
 import withAnalytics from '../containers/with-analytics';
 import type {WithAnalyticsProps} from '../containers/with-analytics';
+import Select from '../containers/select';
 import {BrandThemeContext} from './brand-theme-provider';
-import Select from './select';
 
-type Props = {|
+type Props = $Exact<{|
   ...WithAnalyticsProps,
+  id: string,
   isDisabled?: boolean,
   questionType: QuestionType,
   type: QuestionChoiceInputType,
@@ -23,7 +24,7 @@ type Props = {|
   onChange: (value: string) => void,
   testID?: string,
   fullWitdh?: boolean
-|};
+|}>;
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 export const ROW_SPACE = theme.spacing.tiny;
@@ -35,10 +36,12 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.gray.lightMedium,
     borderRadius: theme.radius.common,
     backgroundColor: theme.colors.white,
+    minWidth: 175
+  },
+  text: {
     color: PLACEHOLDER_COLOR,
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.regular,
-    minWidth: 175,
     textAlign: 'center'
   },
   spaced: {
@@ -73,6 +76,7 @@ class QuestionInput extends React.PureComponent<Props> {
 
   render() {
     const {
+      id,
       isDisabled = false,
       type,
       questionType,
@@ -99,7 +103,7 @@ class QuestionInput extends React.PureComponent<Props> {
             return (
               <View style={[styles.spaced, fullWitdh && styles.fullWitdh]} testID={testID}>
                 <TextInput
-                  style={[styles.input, value && selectedStyle]}
+                  style={[styles.input, styles.text, value && selectedStyle]}
                   onFocus={this.handleFocus}
                   onBlur={this.handleBlur}
                   onChangeText={onChange}
@@ -118,6 +122,7 @@ class QuestionInput extends React.PureComponent<Props> {
             return (
               <View style={[styles.spaced, fullWitdh && styles.fullWitdh]} testID={testID}>
                 <Select
+                  id={id}
                   analyticsID={analyticsID}
                   isDisabled={isDisabled}
                   questionType={questionType}
@@ -126,6 +131,7 @@ class QuestionInput extends React.PureComponent<Props> {
                   placeholder={translations.selectAnAnswer}
                   onChange={onChange}
                   style={[styles.input, value && selectedStyle]}
+                  textStyle={styles.text}
                   color={value && brandTheme.colors.primary}
                   testID={`${testID}-select${selectedSuffix}${disabledSuffix}`}
                 />
