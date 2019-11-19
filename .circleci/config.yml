@@ -1,3 +1,13 @@
+anchors:
+- &install-nvm
+  name: Install NVM
+  command: |
+    curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
+    echo 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --install' >> $BASH_ENV
+- &install-yarn
+  name: Install Yarn
+  command: npm install -g yarn
+
 version: 2
 jobs:
   dependencies:
@@ -226,11 +236,13 @@ jobs:
   prepare_android:
     working_directory: ~/app
     docker:
-      - image: circleci/android:api-28-node
+      - image: circleci/android:api-28
     steps:
       - checkout
       - attach_workspace:
           at: ~/app
+
+      - run: *install-nvm
 
       - restore_cache:
           key: gems-v3-android-{{ arch }}
@@ -266,7 +278,7 @@ jobs:
       - run:
           name: Pull certificate and service account
           command: |
-            yarn pull:certificate:android
+            npm run pull:certificate:android
             echo "${ANDROID_SERVICE_ACCOUNT}" > android/service-account.json
 
       - persist_to_workspace:
@@ -281,17 +293,18 @@ jobs:
   build_android:
     working_directory: ~/app
     docker:
-      - image: circleci/android:api-28-node
+      - image: circleci/android:api-28
     steps:
       - checkout
       - attach_workspace:
           at: ~/app
 
+      - run: *install-nvm
+      - run: *install-yarn
+
       - run:
           name: Build
-          command: |
-            cd android
-            bundle exec fastlane adhoc
+          command: cd android && bundle exec fastlane adhoc
           environment:
             RCT_NO_LAUNCH_PACKAGER: 1
             GRADLE_OPTS: '-Xmx1024m -Dorg.gradle.daemon=false'
@@ -369,12 +382,15 @@ jobs:
   publish_android:
     working_directory: ~/app
     docker:
-      - image: circleci/android:api-28-node
+      - image: circleci/android:api-28
     steps:
       - checkout
 
       - attach_workspace:
           at: ~/app
+
+      - run: *install-nvm
+      - run: *install-yarn
 
       - run:
           name: Build and publish
