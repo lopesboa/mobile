@@ -42,19 +42,17 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
   const progressions = await services.Progressions.getAll();
   const synchronizedProgressionsIds: Array<string> = await services.Progressions.getSynchronizedProgressionIds();
 
-  const syncProgression = async (progression: Progression, countNumberOfRetries?: number = 0) => {
+  const syncProgression = async (progression: Progression, numberOfRetries?: number = 5) => {
     try {
       await services.Progressions.synchronize(token, brand.host, progression);
       // $FlowFixMe here the progression will always have an id cause we check before calling the function
       synchronizedProgressionsIds.push(progression._id);
-
-      return Promise.resolve();
     } catch (error) {
       if (error instanceof ForbiddenError) throw new Error(error);
-      if (countNumberOfRetries < 5) {
-        return syncProgression(progression, countNumberOfRetries + 1);
+      if (numberOfRetries > 0) {
+        return syncProgression(progression, numberOfRetries - 1);
       }
-      return Promise.reject(error);
+      throw error;
     }
   };
 

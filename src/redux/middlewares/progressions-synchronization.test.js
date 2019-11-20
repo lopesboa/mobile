@@ -6,6 +6,7 @@ import {createAuthenticationState} from '../../__fixtures__/store';
 import type {Options} from '../_types';
 import {sleep} from '../../utils/tests';
 import {synchronizeProgressions} from '../actions/progressions/synchronize';
+import {FETCH_SUCCESS as FETCH_SECTIONS_SUCCESS} from '../actions/catalog/sections';
 import createMiddleware from './progressions-synchronization';
 
 const brand = createBrand();
@@ -13,6 +14,13 @@ const createStore = () => ({
   getState: jest.fn(),
   dispatch: jest.fn()
 });
+
+type ReduxTestAction = {
+  type: string,
+  payload?: {
+    currentScreenName: string
+  }
+};
 
 describe("Progression's synchronization middleware", () => {
   const options: Options = {
@@ -39,44 +47,36 @@ describe("Progression's synchronization middleware", () => {
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('should dispatch syncrhonizeProgression  on Screen Change', async () => {
-    const gotoHomeAction = {
+  const testRunner = (action: ReduxTestAction) => {
+    it(`should dispatch syncrhonizeProgression ${action.type}`, async () => {
+      const middleware = createMiddleware(options);
+      const store = createStore();
+      store.getState.mockImplementation(() => ({
+        authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
+      }));
+      const next = jest.fn();
+      // $FlowFixMe this si to test only
+      middleware(store)(next)(action);
+      await sleep();
+
+      const expectedAction = synchronizeProgressions;
+      expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(next).toHaveBeenCalledWith(action);
+    });
+  };
+
+  [
+    {
       type: NAVIGATION_SCREEN_CHANGE,
       payload: {
         currentScreenName: 'Home'
       }
-    };
-    const middleware = createMiddleware(options);
-    const store = createStore();
-    store.getState.mockImplementation(() => ({
-      authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
-    }));
-    const next = jest.fn();
-    // $FlowFixMe this si to test only
-    middleware(store)(next)(gotoHomeAction);
-    await sleep();
-
-    const expectedAction = synchronizeProgressions;
-    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
-    expect(next).toHaveBeenCalledWith(gotoHomeAction);
-  });
-
-  it('should dispatch syncrhonizeProgression on CREATE_PROGRESSION_SUCCESS', async () => {
-    const validateAnswer = {
+    },
+    {
       type: PROGRESSION_CREATE_SUCCESS
-    };
-    const middleware = createMiddleware(options);
-    const store = createStore();
-    store.getState.mockImplementation(() => ({
-      authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
-    }));
-    const next = jest.fn();
-    // $FlowFixMe this si to test only
-    middleware(store)(next)(validateAnswer);
-    await sleep();
-
-    const expectedAction = synchronizeProgressions;
-    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
-    expect(next).toHaveBeenCalledWith(validateAnswer);
-  });
+    },
+    {
+      type: FETCH_SECTIONS_SUCCESS
+    }
+  ].forEach(testRunner);
 });
