@@ -4,7 +4,8 @@ import {ENGINE, CONTENT_TYPE} from '../../../const';
 import {createBrand} from '../../../__fixtures__/brands';
 import {createAuthenticationState} from '../../../__fixtures__/store';
 import {createProgression} from '../../../__fixtures__/progression';
-import {synchronizeProgressions, synchronizeProgression} from './synchronize';
+import {ForbiddenError} from '../../../models/error';
+import {synchronizeProgressions, SYNCHRONIZE_SUCCESS, SYNCHRONIZE_FAILURE} from './synchronize';
 
 const brand = createBrand();
 
@@ -79,16 +80,22 @@ describe('Progressions synchronization', () => {
         dispatch: jest.fn()
       };
 
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
+        brand
+      });
+
       const services = {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
 
       store.dispatch.mockImplementation(action => {
-        expect(action).toBeInstanceOf(Function);
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
         return Promise.resolve(action);
       });
 
@@ -101,10 +108,13 @@ describe('Progressions synchronization', () => {
         ])
       );
 
+      services.Progressions.synchronize.mockImplementationOnce(() => Promise.resolve(undefined));
+
       // $FlowFixMe
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
 
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
         failureProgression._id,
         successProgression._id
@@ -118,7 +128,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => [successProgression._id]),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
 
@@ -126,6 +137,10 @@ describe('Progressions synchronization', () => {
         getState: jest.fn(),
         dispatch: jest.fn()
       };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
 
       store.dispatch.mockImplementation(action => {
         expect(action).toBeInstanceOf(Function);
@@ -159,9 +174,14 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
 
       store.dispatch.mockImplementation(action => {
         expect(action).toBeInstanceOf(Function);
@@ -189,9 +209,14 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
 
       store.dispatch.mockImplementation(action => {
         expect(action).toBeInstanceOf(Function);
@@ -215,16 +240,21 @@ describe('Progressions synchronization', () => {
         dispatch: jest.fn()
       };
 
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
       const services = {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
 
       store.dispatch.mockImplementation(action => {
-        expect(action).toBeInstanceOf(Function);
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
         return Promise.resolve(action);
       });
 
@@ -251,16 +281,21 @@ describe('Progressions synchronization', () => {
         dispatch: jest.fn()
       };
 
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
       const services = {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
-          updateSynchronizedProgressionIds: jest.fn()
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
         }
       };
 
       store.dispatch.mockImplementation(action => {
-        expect(action).toBeInstanceOf(Function);
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
         return Promise.resolve(action);
       });
 
@@ -280,283 +315,105 @@ describe('Progressions synchronization', () => {
 
       expect(actual).toBeUndefined();
     });
+
+    it('Token is undefined', async () => {
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: null, brand})
+      });
+      // $FlowFixMe
+      const result = synchronizeProgressions(store.dispatch, store.getState, {services: {}});
+      await expect(result).rejects.toThrow('Token not defined');
+    });
+
+    it('Brand is undefined', async () => {
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand: null})
+      });
+      // $FlowFixMe
+      const result = synchronizeProgressions(store.dispatch, store.getState, {services: {}});
+
+      await expect(result).rejects.toThrow('Brand not defined');
+    });
   });
-
-  describe('synchronizeProgression', () => {
-    it('should synchronize progression', async () => {
+  describe('Synchronization fail', () => {
+    it('should fail to synchronize after 5 tries ', async () => {
       const store = {
         getState: jest.fn(),
         dispatch: jest.fn()
-      };
-
-      const services = {
-        Progressions: {
-          findById: jest.fn(),
-          synchronize: jest.fn()
-        }
-      };
-
-      store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_'})
-      });
-
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_REQUEST',
-          meta: {id: successProgression._id}
-        });
-        return Promise.resolve(action);
-      });
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_SUCCESS',
-          meta: {id: successProgression._id}
-        });
-        return Promise.resolve(action);
-      });
-
-      services.Progressions.findById.mockImplementationOnce(id => {
-        expect(id).toBe(successProgression._id);
-        return Promise.resolve(successProgression);
-      });
-
-      services.Progressions.synchronize.mockImplementationOnce((token, host, progression) => {
-        expect(progression).toBe(successProgression);
-        return Promise.resolve(progression);
-      });
-
-      // $FlowFixMe
-      const actual = await synchronizeProgression(successProgression._id)(
-        // $FlowFixMe
-        store.dispatch,
-        store.getState,
-        // $FlowFixMe
-        {services}
-      );
-
-      expect(store.dispatch).toHaveBeenCalledTimes(2);
-      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(1);
-      expect(actual).toEqual({
-        type: '@@progression/SYNCHRONIZE_SUCCESS',
-        meta: {id: successProgression._id}
-      });
-    });
-    it("should fail if progression doesn't exist", async () => {
-      const store = {
-        getState: jest.fn(),
-        dispatch: jest.fn()
-      };
-
-      const services = {
-        Progressions: {
-          findById: jest.fn(),
-          synchronize: jest.fn()
-        }
-      };
-
-      store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_'}),
-        brand
-      });
-
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_REQUEST',
-          meta: {id: successProgression._id}
-        });
-        return Promise.resolve(action);
-      });
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_SUCCESS',
-          meta: {id: successProgression._id}
-        });
-        return Promise.resolve(action);
-      });
-
-      services.Progressions.findById.mockImplementationOnce(id => {
-        expect(id).toBe(successProgression._id);
-        return Promise.resolve();
-      });
-
-      services.Progressions.synchronize.mockImplementationOnce((toke, host, progression) => {
-        expect(progression).toBe(successProgression);
-        return Promise.resolve(progression);
-      });
-
-      // $FlowFixMe
-      const actual = await synchronizeProgression(successProgression._id)(
-        // $FlowFixMe
-        store.dispatch,
-        store.getState,
-        // $FlowFixMe
-        {services}
-      );
-      expect(store.dispatch).toHaveBeenCalledTimes(2);
-      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(0);
-      expect(actual).toEqual({
-        type: '@@progression/SYNCHRONIZE_SUCCESS',
-        meta: {id: successProgression._id}
-      });
-    });
-    it('should fail if synchronization failed', async () => {
-      const store = {
-        getState: jest.fn(),
-        dispatch: jest.fn()
-      };
-
-      const services = {
-        Progressions: {
-          findById: jest.fn(),
-          synchronize: jest.fn()
-        }
       };
 
       store.getState.mockReturnValue({
         authentication: createAuthenticationState({token: '_TOKEN_', brand})
       });
 
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_REQUEST',
-          meta: {id: successProgression._id}
-        });
-        return Promise.resolve(action);
-      });
-      store.dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_FAILURE',
-          error: true,
-          payload: new Error('Synchronization failed'),
-          meta: {id: successProgression._id}
-        });
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn(() => Promise.reject(new Error('Something bad happened')))
+        }
+      };
+
+      store.dispatch.mockImplementation(action => {
+        expect(action.type).toEqual(SYNCHRONIZE_FAILURE);
         return Promise.resolve(action);
       });
 
-      services.Progressions.findById.mockImplementationOnce(id => {
-        expect(id).toBe(successProgression._id);
-        return Promise.resolve(successProgression);
-      });
-
-      services.Progressions.synchronize.mockImplementationOnce((token, host, progression) => {
-        expect(progression).toBe(successProgression);
-        return Promise.reject(new Error('Synchronization failed'));
-      });
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([failureProgression])
+      );
 
       // $FlowFixMe
-      const actual = await synchronizeProgression(successProgression._id)(
-        // $FlowFixMe
-        store.dispatch,
-        store.getState,
-        // $FlowFixMe
-        {services}
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+      expect(store.dispatch).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(6);
+      expect(actual).toBeUndefined();
+    });
+
+    it('should fail to synchronize if ForbiddenError occured ', async () => {
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened')))
+        }
+      };
+
+      store.dispatch.mockImplementation(action => {
+        expect(action.type).toEqual(SYNCHRONIZE_FAILURE);
+        return Promise.resolve(action);
+      });
+
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([failureProgression])
       );
-      expect(store.dispatch).toHaveBeenCalledTimes(2);
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+      expect(store.dispatch).toHaveBeenCalledTimes(1);
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(1);
-      expect(actual).toEqual({
-        type: '@@progression/SYNCHRONIZE_FAILURE',
-        error: true,
-        payload: new Error('Synchronization failed'),
-        meta: {id: successProgression._id}
-      });
-    });
-    it('token is missing', async () => {
-      const dispatch = jest.fn();
-      const getState = jest.fn();
-      const options = {
-        services: {
-          Cards: {
-            find: jest.fn()
-          }
-        }
-      };
-
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_REQUEST',
-          meta: {id: successProgression._id}
-        });
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_FAILURE',
-          error: true,
-          payload: new Error('Token not defined'),
-          meta: {id: successProgression._id}
-        });
-        return action;
-      });
-      getState.mockReturnValue({
-        authentication: {token: null, brand: null}
-      });
-
-      // $FlowFixMe
-      const actual = await synchronizeProgression(successProgression._id)(
-        // $FlowFixMe
-        dispatch,
-        getState,
-        // $FlowFixMe
-        options
-      );
-
-      expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual({
-        type: '@@progression/SYNCHRONIZE_FAILURE',
-        error: true,
-        payload: new Error('Token not defined'),
-        meta: {id: successProgression._id}
-      });
-    });
-    it('brand is missing', async () => {
-      const dispatch = jest.fn();
-      const getState = jest.fn();
-      const options = {
-        services: {
-          Cards: {
-            find: jest.fn()
-          }
-        }
-      };
-
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_REQUEST',
-          meta: {id: successProgression._id}
-        });
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual({
-          type: '@@progression/SYNCHRONIZE_FAILURE',
-          error: true,
-          payload: new TypeError('Brand not defined'),
-          meta: {id: successProgression._id}
-        });
-        return action;
-      });
-      getState.mockReturnValue({
-        authentication: createAuthenticationState({
-          brand: null
-        })
-      });
-
-      // $FlowFixMe
-      const actual = await synchronizeProgression(successProgression._id)(
-        // $FlowFixMe
-        dispatch,
-        getState,
-        // $FlowFixMe
-        options
-      );
-
-      expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual({
-        type: '@@progression/SYNCHRONIZE_FAILURE',
-        error: true,
-        payload: new Error('Brand not defined'),
-        meta: {id: successProgression._id}
-      });
+      expect(actual).toBeUndefined();
     });
   });
 });

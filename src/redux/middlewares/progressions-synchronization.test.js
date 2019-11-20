@@ -1,5 +1,5 @@
 // @flow strict
-
+import {PROGRESSION_CREATE_SUCCESS} from '@coorpacademy/player-store';
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import {createBrand} from '../../__fixtures__/brands';
 import {createAuthenticationState} from '../../__fixtures__/store';
@@ -29,13 +29,17 @@ describe("Progression's synchronization middleware", () => {
     const middleware = createMiddleware(options);
     const store = createStore();
     const next = jest.fn();
+
+    store.getState.mockImplementation(() => ({
+      authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
+    }));
     // $FlowFixMe this si to test only
     middleware(store)(next)(action);
     expect(store.dispatch).not.toHaveBeenCalled();
     expect(next).toHaveBeenCalledWith(action);
   });
 
-  it('should dispatch syncrhonizeProgression', async () => {
+  it('should dispatch syncrhonizeProgression  on Screen Change', async () => {
     const gotoHomeAction = {
       type: NAVIGATION_SCREEN_CHANGE,
       payload: {
@@ -45,7 +49,7 @@ describe("Progression's synchronization middleware", () => {
     const middleware = createMiddleware(options);
     const store = createStore();
     store.getState.mockImplementation(() => ({
-      authentication: createAuthenticationState({brand})
+      authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
     }));
     const next = jest.fn();
     // $FlowFixMe this si to test only
@@ -55,5 +59,24 @@ describe("Progression's synchronization middleware", () => {
     const expectedAction = synchronizeProgressions;
     expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
     expect(next).toHaveBeenCalledWith(gotoHomeAction);
+  });
+
+  it('should dispatch syncrhonizeProgression on CREATE_PROGRESSION_SUCCESS', async () => {
+    const validateAnswer = {
+      type: PROGRESSION_CREATE_SUCCESS
+    };
+    const middleware = createMiddleware(options);
+    const store = createStore();
+    store.getState.mockImplementation(() => ({
+      authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand})
+    }));
+    const next = jest.fn();
+    // $FlowFixMe this si to test only
+    middleware(store)(next)(validateAnswer);
+    await sleep();
+
+    const expectedAction = synchronizeProgressions;
+    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
+    expect(next).toHaveBeenCalledWith(validateAnswer);
   });
 });

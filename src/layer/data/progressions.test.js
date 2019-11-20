@@ -421,9 +421,47 @@ describe('Progressions', () => {
       });
 
       fetch.mockImplementationOnce((url, options) => {
+        throw new ForbiddenError('Fetch Forbidden');
+      });
+
+      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+        expect(keys).toEqual(`progression_${progressionId}`);
+        return Promise.resolve();
+      });
+
+      const {synchronize} = require('./progressions');
+      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
+        new ForbiddenError('Fetch Forbidden')
+      );
+    });
+
+    it('should throw error if status code >= 400', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = ENGINE.LEARNER;
+      const progressionContent = {
+        ref: 'foo',
+        type: CONTENT_TYPE.CHAPTER
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 403,
-          statusText: 'Fetch Forbidden',
+          statusText: 'Foo bar baz',
           json: () => Promise.resolve({})
         });
       });
@@ -435,7 +473,7 @@ describe('Progressions', () => {
 
       const {synchronize} = require('./progressions');
       await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
-        new ForbiddenError('Fetch Forbidden')
+        new ForbiddenError('Foo bar baz')
       );
     });
 
