@@ -1,8 +1,6 @@
 package com.coorpacademy.app;
 
-import android.support.multidex.MultiDexApplication;
-
-import android.app.Application;
+import androidx.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
 import com.mkuczera.RNReactNativeHapticFeedbackPackage;
