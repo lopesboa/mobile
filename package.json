@@ -66,8 +66,8 @@
   "dependencies": {
     "@coorpacademy/acl": "^1.0.1",
     "@coorpacademy/nova-icons": "3.1.9",
-    "@coorpacademy/player-services": "5.0.20",
-    "@coorpacademy/player-store": "4.0.20",
+    "@coorpacademy/player-services": "^5.1.4",
+    "@coorpacademy/player-store": "^4.1.4",
     "@coorpacademy/progression-aggregations": "^2.168.1",
     "@coorpacademy/progression-engine": "11.0.7",
     "@coorpacademy/react-native-confetti-cannon": "^1.1.3",
