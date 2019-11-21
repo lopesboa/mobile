@@ -1,6 +1,7 @@
 // @flow
 
 import pMap from 'p-map';
+import delay from 'delay';
 import type {Progression} from '@coorpacademy/progression-engine';
 import type {StoreAction, StoreErrorAction} from '../../_types';
 import {getToken, getBrand} from '../../utils/state-extract';
@@ -50,6 +51,7 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
     } catch (error) {
       if (error instanceof ForbiddenError) throw new Error(error);
       if (numberOfRetries > 0) {
+        await delay(2000);
         return syncProgression(progression, numberOfRetries - 1);
       }
       throw error;

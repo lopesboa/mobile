@@ -17,6 +17,11 @@ jest.mock('@coorpacademy/player-store', () => ({
   CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
 }));
 
+jest.mock('delay', () => ({
+  __esModule: true,
+  default: () => Promise.resolve()
+}));
+
 describe('Progressions synchronization', () => {
   const inProgressProgression = createProgression({
     _id: 'inProgressProgressionId',
