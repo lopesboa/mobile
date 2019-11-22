@@ -3,6 +3,7 @@ package com.coorpacademy.app;
 import androidx.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.mkuczera.RNReactNativeHapticFeedbackPackage;
 import com.facebook.react.modules.email.EmailPackage;
 import com.zmxv.RNSound.RNSoundPackage;
@@ -43,6 +44,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new NetInfoPackage(),
             new RNReactNativeHapticFeedbackPackage(),
             new EmailPackage(),
             new RNSoundPackage(),

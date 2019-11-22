@@ -7,6 +7,7 @@ import {PortalProvider} from 'react-native-portal';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
 import orientation from 'react-native-orientation-locker';
+import {ReduxNetworkProvider} from 'react-native-offline';
 
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
@@ -49,17 +50,19 @@ class App extends React.PureComponent<Props> {
   render() {
     return (
       <Provider store={store}>
-        <PortalProvider>
-          <VersionListener />
-          <UserProvider>
-            <BrandThemeProvider>
-              <View style={styles.container}>
-                <Navigator />
-              </View>
-            </BrandThemeProvider>
-          </UserProvider>
-          {Platform.OS === 'android' && <VideoFullscreenListener />}
-        </PortalProvider>
+        <ReduxNetworkProvider>
+          <PortalProvider>
+            <VersionListener />
+            <UserProvider>
+              <BrandThemeProvider>
+                <View style={styles.container}>
+                  <Navigator />
+                </View>
+              </BrandThemeProvider>
+            </UserProvider>
+            {Platform.OS === 'android' && <VideoFullscreenListener />}
+          </PortalProvider>
+        </ReduxNetworkProvider>
       </Provider>
     );
   }

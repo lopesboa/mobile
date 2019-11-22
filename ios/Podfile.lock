@@ -88,6 +88,8 @@ PODS:
     - React
   - react-native-camera/RN (2.9.0):
     - React
+  - react-native-netinfo (4.6.1):
+    - React
   - react-native-orientation-locker (1.1.6):
     - React
   - react-native-pdf (5.1.0):
@@ -183,6 +185,7 @@ DEPENDENCIES:
   - lottie-ios (from `../node_modules/lottie-ios`)
   - lottie-react-native (from `../node_modules/lottie-react-native`)
   - react-native-camera (from `../node_modules/react-native-camera`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
   - react-native-pdf (from `../node_modules/react-native-pdf`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -243,6 +246,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native"
   react-native-camera:
     :path: "../node_modules/react-native-camera"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-orientation-locker:
     :path: "../node_modules/react-native-orientation-locker"
   react-native-pdf:
@@ -299,6 +304,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   React: a86b92f00edbe1873a63e4a212c29b7a7ad5224f
   react-native-camera: 571e4cfe70e7021e9077c1699a53e659db971f96
+  react-native-netinfo: a59d8426a8484f739fe3a95dd6ad5af1435db05f
   react-native-orientation-locker: 23918c400376a7043e752c639c122fcf6bce8f1c
   react-native-pdf: 8cc276fd8ab7dff6b602eb65fcf0f6c145c0f524
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
@@ -316,6 +322,6 @@ SPEC CHECKSUMS:
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: 008a8fcaf126ded4da01c100ba8d681bb5f4338c
+PODFILE CHECKSUM: b0255f149a8e6e87643dbd7f7ba84301cdb55a0a
 
 COCOAPODS: 1.6.1

@@ -55,6 +55,7 @@ target 'Coorpacademy' do
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
   pod 'RNSound', :path => '../node_modules/react-native-sound'
   pod 'RNReactNativeHapticFeedback', :path => '../node_modules/react-native-haptic-feedback'
+  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
 
   # Lottie
   pod 'lottie-ios', :path => '../node_modules/lottie-ios'

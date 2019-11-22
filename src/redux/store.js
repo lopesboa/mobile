@@ -3,6 +3,8 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
 import type {ReduxState} from '@coorpacademy/player-store';
+import {reducer as network} from 'react-native-offline';
+import type {NetworkState} from 'react-native-offline/src/types';
 
 import type {State as NavigationState} from './reducers/navigation';
 import navigation from './reducers/navigation';
@@ -41,7 +43,8 @@ export type StoreState = $Exact<{|
   errors: ErrorsState<void>,
   select: SelectState,
   godMode: GodModeState,
-  fastSlide: FastSlideState
+  fastSlide: FastSlideState,
+  network: NetworkState
 |}>;
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
@@ -58,7 +61,8 @@ const reducers = combineReducers({
   permissions,
   video,
   godMode,
-  fastSlide
+  fastSlide,
+  network
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {

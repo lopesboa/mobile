@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import type {
   Level as LevelStore,
@@ -12,6 +12,7 @@ import type {
   EngineConfig
 } from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
+import type {NetworkState} from 'react-native-offline/src/types';
 
 import type {Section, Brand, PermissionStatus, User, ErrorType} from '../types';
 import type {
@@ -271,8 +272,18 @@ export const createPermissionsState = ({
   camera
 });
 
-export const createVideoState = (): VideoState => ({
-  isFullScreen: false
+export const createVideoState = ({isFullScreen = false}: {isFullScreen?: boolean}): VideoState => ({
+  isFullScreen
+});
+
+export const createNetworkState = ({
+  isConnected = true
+}: {
+  isConnected?: boolean
+}): NetworkState => ({
+  isConnected,
+  actionQueue: [],
+  isQueuePaused: false
 });
 
 export const createStoreState = ({
@@ -292,7 +303,8 @@ export const createStoreState = ({
   select,
   navigation,
   permissions,
-  video
+  video,
+  network
 }: {
   levels: Array<Level>,
   slides: Array<Slide>,
@@ -310,7 +322,8 @@ export const createStoreState = ({
   select?: SelectState,
   navigation?: NavigationState,
   permissions?: PermissionsState,
-  video?: VideoState
+  video?: VideoState,
+  network?: NetworkState
 }): StoreState => ({
   data:
     data ||
@@ -331,5 +344,6 @@ export const createStoreState = ({
   authentication: authentication || createAuthenticationState({}),
   godMode,
   fastSlide,
-  video: video || createVideoState()
+  video: video || createVideoState({}),
+  network: network || createNetworkState({})
 });

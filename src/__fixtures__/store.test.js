@@ -194,6 +194,12 @@ describe('storeFixture', () => {
       isFullScreen: false
     };
 
+    const networkState = {
+      isConnected: true,
+      actionQueue: [],
+      isQueuePaused: false
+    };
+
     const progression = createProgression({
       engine: 'microlearning',
       progressionContent: {
@@ -285,7 +291,8 @@ describe('storeFixture', () => {
       authentication: authenticationState,
       godMode: false,
       fastSlide: false,
-      video: videoState
+      video: videoState,
+      network: networkState
     };
 
     const result = createStoreState({

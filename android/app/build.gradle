@@ -138,6 +138,7 @@ dependencies {
     // For 64 Bits support
     implementation "org.webkit:android-jsc:r241213"
 
+    implementation project(':react-native-community-netinfo')
     implementation project(':react-native-haptic-feedback')
     implementation project(':react-native-sound')
     implementation project(':react-native-webview')
