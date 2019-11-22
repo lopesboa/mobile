@@ -25,7 +25,7 @@ const translations: Translations = {
   cancel: 'İptal et',
   clue: 'İpucu',
   clueStarsToLoose:
-    'İpucunu açmanız halinde bu sorudan {{count}} daha az yıldız kazanırsınız (eğer doğru yanıtlarsanız)',
+    'İpucunu açmanız ve soruyu doğru cevaplamanız halinde bu sorudan {{count}} yıldız eksik kazanırsınız.',
   congratulations: 'Tebrikler!',
   context: 'İçerik',
   correction: 'Düzeltme',

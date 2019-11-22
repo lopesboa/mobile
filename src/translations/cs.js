@@ -66,11 +66,11 @@ const translations: Translations = {
   question: 'Otázka',
   quit: 'Opustit',
   reactivatePlatform:
-    'pokud ji chcete znovu aktivovat, kontaktujte prosím svého správce nebo klikněte na odkaz níže a my předáme zprávu dále ',
+    'pokud ji chcete znovu aktivovat, kontaktujte prosím svého správce nebo klikněte na odkaz níže a my předáme zprávu dále',
   refresh: 'Obnovit',
   refreshEnjoyLearning:
     'v síti mezi Saturnem a Zemí. Abyste si mohli vychutnat učení, proveďte prosím obnovení',
-  refreshNotWorking: 'Obnovení nefunguje? ',
+  refreshNotWorking: 'Obnovení nefunguje?',
   relatedSubjects: 'Doporučeno pro vás:',
   resumeLearning: 'Pokračovat v učení',
   retryChapter: 'Zkuste kapitolu znovu',
