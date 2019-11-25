@@ -7,6 +7,7 @@ import {TextTrackType} from 'react-native-video';
 import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
 import RNFetchBlob from 'rn-fetch-blob';
 import {BlackPortal, WhitePortal} from 'react-native-portal';
+import {WebView} from 'react-native-webview';
 
 import theme from '../modules/theme';
 import {RESOURCE_TYPE} from '../const';
@@ -190,6 +191,10 @@ const Video = ({
               textTracks={(subtitlesUri && subtitles) || undefined}
               selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
               isCC={hasSubtitles}
+            />
+            <WebView
+              source={{uri: 'https://test-adways.herokuapp.com/'}}
+              style={{backgroundColor: 'transparent'}}
             />
           </BlackPortal>
           {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
