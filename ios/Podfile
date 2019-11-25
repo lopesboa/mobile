@@ -1,6 +1,6 @@
 install! 'cocoapods', :deterministic_uuids => false
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'Coorpacademy' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks

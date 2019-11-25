@@ -213,7 +213,7 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - boost-for-react-native
     - Firebase
     - FirebaseAnalytics
@@ -322,6 +322,6 @@ SPEC CHECKSUMS:
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: b0255f149a8e6e87643dbd7f7ba84301cdb55a0a
+PODFILE CHECKSUM: 1e5a8333ecbbbe59a49f85b54e57758f4dc758a4
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

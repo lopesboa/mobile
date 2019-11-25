@@ -145,7 +145,7 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "detox": "^12.10.3",
+    "detox": "14.8.2",
     "eslint": "^5.5.0",
     "eslint-import-resolver-babel-module": "^5.0.0-beta.1",
     "eslint-plugin-flowtype": "^2.50.0",
@@ -178,25 +178,35 @@
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Coorpacademy.app",
         "build": "npm run build:iphonesimulator:debug",
         "type": "ios.simulator",
-        "name": "iPhone 6"
+        "device": {
+          "type": "iPhone 8",
+          "os": "iOS 13.2"
+        }
       },
       "ios.simulator.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/Coorpacademy.app",
         "build": "npm run build:iphonesimulator:release",
         "type": "ios.simulator",
-        "name": "iPhone 6"
+        "device": {
+          "type": "iPhone 8",
+          "os": "iOS 13.2"
+        }
       },
       "android.emulator.debug": {
         "binaryPath": "android/app/build/outputs/apk/debug/Coorpacademy-debug.apk",
         "build": "npm run build:androidemulator:debug",
         "type": "android.emulator",
-        "name": "Nexus_5X_API_19"
+        "device": {
+          "avdName": "Nexus_5X_API_19"
+        }
       },
       "android.emulator.release": {
         "binaryPath": "android/app/build/outputs/apk/release/Coorpacademy-release.apk",
         "build": "npm run build:androidemulator:release",
         "type": "android.emulator",
-        "name": "Nexus_5X_API_19"
+        "device": {
+          "avdName": "Nexus_5X_API_19"
+        }
       }
     }
   }

@@ -6,7 +6,7 @@
 brew install watchman
 ```
 
-- [Android Studio (SDK Included) ](https://developer.android.com/studio/)
+- [Android Studio (SDK Included)](https://developer.android.com/studio/)
 
   Please refer to the specific [Android Section](#android-studio) to know more about.
 
@@ -16,7 +16,7 @@ brew install watchman
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
 
-* XCode, the mac OS builder
+- XCode, the mac OS builder
 
   First check your XCode version
 
@@ -26,13 +26,19 @@ brew install watchman
 
   If your current version is `>= 10.1.0` your good to continue. Else, follow the instruction process [here](https://developer.apple.com/download/more/)
 
-* Xcode Command Line Tools
+- Xcode Command Line Tools
 
   ```bash
   xcode-select --install
   ```
 
-* [Bundler](https://bundler.io/)
+- [Ruby (2.4 min required)](https://rvm.io/rvm/install)
+
+  ```bash
+  brew install ruby
+  ```
+
+- [Bundler (2.0 min required)](https://bundler.io/)
 
   It provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.
 
@@ -50,7 +56,7 @@ brew install watchman
   brew install applesimutils
   ```
 
-  and [xcpretty](https://github.com/xcpretty/xcpretty)
+- Xcpretty [xcpretty](https://github.com/xcpretty/xcpretty)
 
   ```sh
   gem install xcpretty

@@ -7,19 +7,24 @@ anchors:
 - &install-yarn
   name: Install Yarn
   command: npm install -g yarn
+- &set-ruby-version
+  name: Set ruby version
+  command: echo "ruby-$RUBY_VERSION" > ~/.ruby-version
+- &macos-image
+  xcode: 11.2.1
 
 version: 2
 jobs:
   dependencies:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - restore_cache:
-          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
       - restore_cache:
-          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v1-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
       - run:
           name: Node dependencies
           command: |
@@ -28,11 +33,11 @@ jobs:
             yarn config set registry https://registry.npmjs.org/
             yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
             - ~/.cache/yarn
       - save_cache:
-          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v1-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -46,7 +51,7 @@ jobs:
   linting:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - attach_workspace:
@@ -61,7 +66,7 @@ jobs:
   unit_tests:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - attach_workspace:
@@ -76,8 +81,7 @@ jobs:
           path: ./coverage/results
 
   end2end_tests_ios_build:
-    macos:
-      xcode: '10.2.1'
+    macos: *macos-image
     working_directory: ~/app
 
     steps:
@@ -87,7 +91,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v12-{{ arch }}
+          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - run:
           name: Detox framework
@@ -96,7 +100,7 @@ jobs:
             detox clean-framework-cache && detox build-framework-cache
 
       - save_cache:
-          key: detox-v12-{{ arch }}
+          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
@@ -115,8 +119,7 @@ jobs:
             - ios/build/Build/Products/Release-iphonesimulator/Coorpacademy.app
 
   end2end_tests_ios_run:
-    macos:
-      xcode: '10.2.1'
+    macos: *macos-image
     working_directory: ~/app
     parallelism: 8
 
@@ -127,10 +130,10 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v12-{{ arch }}
+          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - restore_cache:
-          key: brew-e2e-v5-ios-{{ arch }}
+          key: brew-e2e-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -145,7 +148,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-e2e-v5-ios-{{ arch }}
+          key: brew-e2e-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -163,8 +166,7 @@ jobs:
           path: ./__e2e__/results
 
   prepare_ios:
-    macos:
-      xcode: '10.2.1'
+    macos: *macos-image
     working_directory: ~/app
 
     steps:
@@ -173,27 +175,29 @@ jobs:
       - attach_workspace:
           at: ~/app
 
+      - run: *set-ruby-version
+
       - restore_cache:
-          key: gems-v3-ios-{{ arch }}
+          key: gems-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd ios && bundle install
 
       - save_cache:
-          key: gems-v3-ios-{{ arch }}
+          key: gems-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ios/gems
 
       - restore_cache:
-          key: pods-v5-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v5-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
             - ios/Pods
 
@@ -204,8 +208,7 @@ jobs:
             - ios/Pods
 
   build_ios:
-    macos:
-      xcode: '10.2.1'
+    macos: *macos-image
     working_directory: ~/app
 
     steps:
@@ -213,6 +216,8 @@ jobs:
 
       - attach_workspace:
           at: ~/app
+
+      - run: *set-ruby-version
 
       - run:
           name: Brew dependencies
@@ -245,19 +250,19 @@ jobs:
       - run: *install-nvm
 
       - restore_cache:
-          key: gems-v3-android-{{ arch }}
+          key: gems-v1-{{ checksum ".nvmrc" }}-android-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd android && bundle install
 
       - save_cache:
-          key: gems-v3-android-{{ arch }}
+          key: gems-v1-{{ checksum ".nvmrc" }}-android-{{ arch }}
           paths:
             - android/gems
 
       - restore_cache:
-          key: gradle-v3-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v1-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
           name: SDK licenses
@@ -271,7 +276,7 @@ jobs:
             ANDROID_HOME: /opt/android/sdk
 
       - save_cache:
-          key: gradle-v3-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v1-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
           paths:
             - ~/.gradle/caches
 
@@ -322,7 +327,7 @@ jobs:
   deploy_android:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - attach_workspace:
@@ -350,7 +355,7 @@ jobs:
   deploy_ios:
     working_directory: ~/app
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - attach_workspace:
@@ -401,14 +406,15 @@ jobs:
             _JAVA_OPTIONS: '-Xmx1024m'
 
   publish_ios:
-    macos:
-      xcode: '10.2.1'
+    macos: *macos-image
     working_directory: ~/app
     steps:
       - checkout
 
       - attach_workspace:
           at: ~/app
+
+      - run: *set-ruby-version
 
       - run:
           name: Brew dependencies
