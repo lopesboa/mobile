@@ -90,3 +90,12 @@ export const createFakeAudio = (): Audio => ({
   },
   play: __TEST__ ? jest.fn() : () => {}
 });
+
+export const extractErrorName = async (promise: Promise<void>): Promise<string | void> => {
+  try {
+    await promise;
+  } catch (error) {
+    return error.name;
+  }
+  return;
+};

@@ -6,7 +6,7 @@ import type {Progression} from '@coorpacademy/progression-engine';
 import type {StoreAction, StoreErrorAction} from '../../_types';
 import {getToken, getBrand} from '../../utils/state-extract';
 
-import {ForbiddenError} from '../../../models/error';
+import {ForbiddenError, ConflictError} from '../../../models/error';
 import {
   isAlreadySynchronized,
   isDone,
@@ -46,14 +46,12 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
   const syncProgression = async (progression: Progression, numberOfRetries?: number = 5) => {
     try {
       await services.Progressions.synchronize(token, brand.host, progression);
-      // $FlowFixMe here the progression will always have an id cause we check before calling the function
-      synchronizedProgressionsIds.push(progression._id);
     } catch (error) {
-      if (error instanceof ForbiddenError) throw new Error(error);
-      if (numberOfRetries > 0) {
+      if (error instanceof ForbiddenError && numberOfRetries > 0) {
         await delay(2000);
         return syncProgression(progression, numberOfRetries - 1);
       }
+      if (error instanceof ConflictError) return;
       throw error;
     }
   };
@@ -68,6 +66,7 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
       if (_id) {
         try {
           await syncProgression(progression);
+          synchronizedProgressionsIds.push(_id);
           return dispatch({
             type: SYNCHRONIZE_SUCCESS,
             meta: {id: _id}

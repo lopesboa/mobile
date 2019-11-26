@@ -20,3 +20,14 @@ export class NoContentFoundError extends Error {
     Error.captureStackTrace && Error.captureStackTrace(this, NoContentFoundError);
   }
 }
+export class ConflictError extends Error {
+  constructor(message: string) {
+    super(message);
+
+    this.name = 'ConflictError';
+    this.description =
+      'The request could not be completed due to a conflict with the current state of the target resource.';
+
+    Error.captureStackTrace && Error.captureStackTrace(this, ConflictError);
+  }
+}

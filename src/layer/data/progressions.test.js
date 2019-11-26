@@ -8,6 +8,7 @@ import {createToken} from '../../__fixtures__/tokens';
 import {ForbiddenError} from '../../models/error';
 import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../../const';
 import {OLDEST_DATE} from '../../utils/progressions';
+import {extractErrorName} from '../../utils/tests';
 import type {HeroRecommendation} from './_types';
 import type {FindBestOfResult} from './progressions';
 
@@ -430,14 +431,12 @@ describe('Progressions', () => {
       });
 
       const {synchronize} = require('./progressions');
-      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
-        new ForbiddenError('Fetch Forbidden')
+      await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
+        'ForbiddenError'
       );
     });
 
-    it('should throw error if status code >= 400', async () => {
-      const AsyncStorage = require('@react-native-community/async-storage');
-
+    it('should throw error 403', async () => {
       const fetch = require('cross-fetch');
 
       const progressionId = 'fakeProgressionId';
@@ -466,14 +465,44 @@ describe('Progressions', () => {
         });
       });
 
-      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
-        expect(keys).toEqual(`progression_${progressionId}`);
-        return Promise.resolve();
+      const {synchronize} = require('./progressions');
+      await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
+        'ForbiddenError'
+      );
+    });
+
+    it('should throw error 409', async () => {
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = ENGINE.LEARNER;
+      const progressionContent = {
+        ref: 'foo',
+        type: CONTENT_TYPE.CHAPTER
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          status: 409,
+          statusText: 'Foo bar baz',
+          json: () => Promise.resolve({})
+        });
       });
 
       const {synchronize} = require('./progressions');
-      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
-        new ForbiddenError('Foo bar baz')
+      await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
+        'ConflictError'
       );
     });
 
@@ -514,8 +543,8 @@ describe('Progressions', () => {
       });
 
       const {synchronize} = require('./progressions');
-      await expect(synchronize(TOKEN, HOST, fakeProgression)).rejects.toThrow(
-        new Error('Foo bar baz')
+      await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
+        'Error'
       );
     });
 

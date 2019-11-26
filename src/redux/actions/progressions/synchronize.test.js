@@ -1,10 +1,10 @@
-// @flow strict
+// @flow
 
 import {ENGINE, CONTENT_TYPE} from '../../../const';
 import {createBrand} from '../../../__fixtures__/brands';
 import {createAuthenticationState} from '../../../__fixtures__/store';
 import {createProgression} from '../../../__fixtures__/progression';
-import {ForbiddenError} from '../../../models/error';
+import {ForbiddenError, ConflictError} from '../../../models/error';
 import {synchronizeProgressions, SYNCHRONIZE_SUCCESS, SYNCHRONIZE_FAILURE} from './synchronize';
 
 const brand = createBrand();
@@ -366,7 +366,7 @@ describe('Progressions synchronization', () => {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn(() => Promise.reject(new Error('Something bad happened')))
+          synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened')))
         }
       };
 
@@ -386,7 +386,7 @@ describe('Progressions synchronization', () => {
       expect(actual).toBeUndefined();
     });
 
-    it('should fail to synchronize if ForbiddenError occured ', async () => {
+    it('should fail to synchronize if an error has occured ', async () => {
       const store = {
         getState: jest.fn(),
         dispatch: jest.fn()
@@ -401,7 +401,7 @@ describe('Progressions synchronization', () => {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened')))
+          synchronize: jest.fn(() => Promise.reject(new Error('Network error')))
         }
       };
 
@@ -418,6 +418,69 @@ describe('Progressions synchronization', () => {
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
       expect(store.dispatch).toHaveBeenCalledTimes(1);
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(1);
+      expect(actual).toBeUndefined();
+    });
+
+    it('should handle conflict error and consider progression as synchronized', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      const barProgression = {
+        ...failureProgression,
+        _id: 'bar'
+      };
+      const bazProgression = {
+        ...successProgression,
+        _id: 'baz'
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
+      const services = {
+        Progressions: {
+          getAll: jest
+            .fn()
+            .mockImplementation(() => Promise.resolve([bazProgression, barProgression])),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve(['foo'])),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn().mockImplementation((token, host, progrssion) => {
+            expect(token).toBeDefined();
+            expect(host).toBeDefined();
+            if (progrssion._id === 'baz') {
+              return Promise.reject(new ConflictError('Duplicated resource'));
+            }
+            return Promise.reject(new Error('Network error'));
+          })
+        }
+      };
+
+      store.dispatch
+        .mockImplementationOnce(action => {
+          expect(action.type).toEqual(SYNCHRONIZE_FAILURE);
+          return Promise.resolve(action);
+        })
+        .mockImplementationOnce(action => {
+          expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
+          return Promise.resolve(action);
+        });
+      AsyncStorage.setItem = jest.fn().mockImplementation((key, value) => {
+        expect(key).toBe('synchronized_progressions');
+        expect(JSON.parse(value)).toEqual(['foo', 'baz']);
+      });
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+      expect(store.dispatch).toHaveBeenCalledTimes(2);
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(2);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
+        'foo',
+        'baz'
+      ]);
       expect(actual).toBeUndefined();
     });
   });
