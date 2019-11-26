@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Utilizarea indiciului va lua {{count}} din numărul maxim de stele pe care le puteți obține răspunzând la această întrebare (dacă răspunsul este corect)',
   congratulations: 'Felicitări!',
+  connectionLost: 'Nu există conexiune la Internet',
+  connectionRestored: 'Acum sunteți conectat la Internet',
   context: 'Context',
   correction: 'Corectură',
   dataLost: 'Se pare că datele tale s-au pierdut.',

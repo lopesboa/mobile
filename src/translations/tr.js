@@ -27,6 +27,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'İpucunu açmanız ve soruyu doğru cevaplamanız halinde bu sorudan {{count}} yıldız eksik kazanırsınız.',
   congratulations: 'Tebrikler!',
+  connectionLost: 'İnternet bağlantısı yok',
+  connectionRestored: 'Artık İnternete bağlısınız',
   context: 'İçerik',
   correction: 'Düzeltme',
   dataLost: 'Verileriniz kaybolmuş gibi görünüyor',

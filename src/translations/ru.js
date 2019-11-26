@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Разблокировав подсказку, вы уменьшите количество звезд, которые вы можете выиграть в этом вопросе, на {{count}} (если ответите правильно)',
   congratulations: 'Поздравляем!',
+  connectionLost: 'Отсутствует интернет соединение',
+  connectionRestored: 'Сейчас вы подключены к сети интернет',
   context: 'Контекст',
   correction: 'Исправление',
   dataLost: 'Кажется, ваши данные потеряны',

@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Відкриття підказки зменшує кількість зірок за це питання на {{count}} (за умови правильної відповіді)',
   congratulations: 'Вітаємо!',
+  connectionLost: 'No Internet connection',
+  connectionRestored: 'You are now connected to the Internet',
   context: 'Контекст',
   correction: 'Виправлення',
   dataLost: 'Схоже, що ваші дані втрачено',

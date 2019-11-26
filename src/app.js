@@ -14,6 +14,7 @@ import BrandThemeProvider from './components/brand-theme-provider';
 import UserProvider from './components/user-provider';
 import VersionListener from './containers/version-listener';
 import VideoFullscreenListener from './containers/video-fullscreen-listener';
+import ConnectionListener from './containers/connection-listener';
 import createDataLayer from './layer/data';
 import createServices from './services';
 import createStore from './redux';
@@ -50,7 +51,7 @@ class App extends React.PureComponent<Props> {
   render() {
     return (
       <Provider store={store}>
-        <ReduxNetworkProvider>
+        <ReduxNetworkProvider pingInterval={30000} pingOnlyIfOffline>
           <PortalProvider>
             <VersionListener />
             <UserProvider>
@@ -60,6 +61,7 @@ class App extends React.PureComponent<Props> {
                 </View>
               </BrandThemeProvider>
             </UserProvider>
+            <ConnectionListener />
             {Platform.OS === 'android' && <VideoFullscreenListener />}
           </PortalProvider>
         </ReduxNetworkProvider>

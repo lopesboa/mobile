@@ -103,6 +103,12 @@ const generate = async (locale: string) => {
     'core/locales',
     'dashboard.json'
   );
+  const moocNotificationsTranslations = await fetchTranslations(
+    locale,
+    'coorpacademy',
+    'core/locales',
+    'notifications.json'
+  );
 
   const translations: Translations = {
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
@@ -135,6 +141,8 @@ const generate = async (locale: string) => {
     clue: formatTranslation(playerTranslations.Clue),
     clueStarsToLoose: formatTranslation(componentsTranslations.clue_stars_to_loose),
     congratulations: formatTranslation(playerTranslations['Congratulations!']),
+    connectionLost: formatTranslation(moocNotificationsTranslations.connectionLost || ''),
+    connectionRestored: formatTranslation(moocNotificationsTranslations.connectionRestored || ''),
     context: formatTranslation(playerTranslations.Context),
     correction: formatTranslation(playerTranslations.Correction),
     dataLost: formatTranslation(moocErrorTranslations.modal.mobile.data_lost),

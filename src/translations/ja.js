@@ -26,6 +26,8 @@ const translations: Translations = {
   clue: 'ヒント',
   clueStarsToLoose: 'ヒントを参照すると通常より獲得ができるスターの数が{{count}}つ減ります。',
   congratulations: 'おめでとうございます!',
+  connectionLost: 'インターネット接続がありません',
+  connectionRestored: 'インターネットに接続されています',
   context: 'コンテキスト',
   correction: '解答',
   dataLost: 'データが失われたようです。',

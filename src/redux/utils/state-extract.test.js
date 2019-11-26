@@ -29,7 +29,8 @@ import {
   createPermissionsState,
   createStoreState,
   createErrorsState,
-  createSelectState
+  createSelectState,
+  createNetworkState
 } from '../../__fixtures__/store';
 import {
   isExitNode,
@@ -58,7 +59,8 @@ import {
   getHero,
   isErrorVisible,
   getErrorType,
-  getFocusedSelect
+  getFocusedSelect,
+  isNetworkConnected
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -930,6 +932,25 @@ describe('State-extract', () => {
       const expected = id;
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('isNetworkConnected', () => {
+    it('should return false', () => {
+      const state = createState({});
+      const result = isNetworkConnected(state);
+
+      expect(result).toBeFalsy;
+    });
+
+    it('should return true', () => {
+      const state = createState({
+        network: createNetworkState({isConnected: true})
+      });
+
+      const result = isNetworkConnected(state);
+
+      expect(result).toBeTruthy;
     });
   });
 });

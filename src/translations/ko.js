@@ -26,6 +26,8 @@ const translations: Translations = {
   clueStarsToLoose:
     '단서의 잠금 해제는 귀하가 이 질문에서 얻을 수 있는 스타를 {{count}}개까지 감소시킵니다(귀하가 그것을 올바로 얻는 경우)',
   congratulations: '축하합니다!',
+  connectionLost: '인터넷이 연결되어 있지 않습니다',
+  connectionRestored: '지금 인터넷에 연결되어 있습니다',
   context: '문맥',
   correction: '수정',
   dataLost: '데이터가 유실된 것 같습니다',

@@ -35,7 +35,7 @@ module.exports = {
       // @todo increase this value
       branches: 41,
       // @todo increase this value
-      functions: 47,
+      functions: 48,
       // @todo increase this value
       lines: 52,
       // @todo increase this value
@@ -61,7 +61,7 @@ module.exports = {
     },
     'src/layer': {
       // @todo increase this value
-      branches: 91,
+      branches: 94,
       function: 100,
       lines: 99,
       statements: 99

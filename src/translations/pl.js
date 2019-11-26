@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Odblokowanie wskazówki zmniejsza liczbę gwiazdek, jakie możesz zdobyć w tym pytaniu o {{count}} (jeżeli odpowiesz prawidłowo)',
   congratulations: 'Gratulacje!',
+  connectionLost: 'Brak połączenia z Internetem',
+  connectionRestored: 'Teraz masz połączenie z Internetem',
   context: 'Kontekst',
   correction: 'Korekta',
   dataLost: 'Wygląda na to, że Twoje dane zgubiły się',

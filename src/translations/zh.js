@@ -22,6 +22,8 @@ const translations: Translations = {
   clueStarsToLoose:
     '解锁提示意味着你从本问题获得的星星数量会被减少 {{count}} （如果你回答正确的话）',
   congratulations: '恭喜！',
+  connectionLost: '没有互联网连接',
+  connectionRestored: '您现在已经连接到互联网。',
   context: '背景知识',
   correction: '修改',
   dataLost: '您的数据似乎丢失了',

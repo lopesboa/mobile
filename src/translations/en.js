@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Unlocking the clue reduces the stars you can gain on this question by {{count}} (if you get it right)',
   congratulations: 'Congratulations!',
+  connectionLost: 'No Internet connection',
+  connectionRestored: 'You are now connected to the Internet',
   context: 'Context',
   correction: 'Correction',
   dataLost: 'Your data seems to be lost',

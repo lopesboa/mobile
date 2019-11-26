@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     "Sbloccare l'indizio riduce di {{count}} le stelle che puoi guadagnare per questa domanda (se rispondi correttamente)",
   congratulations: 'Congratulazioni!',
+  connectionLost: 'Nessuna connessione a Internet',
+  connectionRestored: 'Ora sei connesso a Internet',
   context: 'Contesto',
   correction: 'Correzione',
   dataLost: 'Sembra che i tuoi dati siano andati perduti',

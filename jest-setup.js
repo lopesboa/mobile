@@ -172,3 +172,12 @@ jest.mock('react-native-sound', () => ({
 jest.mock('react-native-haptic-feedback', () => ({
   trigger: jest.fn()
 }));
+
+// react-native-flash-message
+
+jest.mock('react-native-flash-message', () => ({
+  __esModule: true,
+  default: 'Mock$ReactNativeFlashMessage',
+  showMessage: jest.fn(),
+  hideMessage: jest.fn()
+}));

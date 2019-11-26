@@ -40,6 +40,8 @@ export type Translations = {|
   clue: string,
   clueStarsToLoose: string,
   congratulations: string,
+  connectionLost: string,
+  connectionRestored: string,
   context: string,
   correction: string,
   dataLost: string,

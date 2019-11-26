@@ -21,6 +21,8 @@ const translations: Translations = {
   clue: '線索',
   clueStarsToLoose: '解開線索所減少的星星，您可以在此問題上贏回{{count}}顆星星（如果您答對的話）',
   congratulations: '恭喜！',
+  connectionLost: '沒有網際網路連線',
+  connectionRestored: '您現在已連線到網際網路',
   context: '背景',
   correction: '正確解答',
   dataLost: '您的資料似乎已迷失',

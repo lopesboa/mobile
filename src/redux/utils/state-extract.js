@@ -160,3 +160,5 @@ export const isErrorVisible = (state: StoreState): boolean => state.errors.isVis
 export const getErrorType = (state: StoreState): ErrorType | void => state.errors.type;
 
 export const getFocusedSelect = (state: StoreState): SelectState => state.select;
+
+export const isNetworkConnected = (state: StoreState): boolean => state.network.isConnected;

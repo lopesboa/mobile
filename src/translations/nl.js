@@ -28,6 +28,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Het gebruiken van een tip vermindert het aantal sterren dat je met deze vraag kan winnen met {{count}} (als je goed antwoordt)',
   congratulations: 'Proficiat!',
+  connectionLost: 'Geen internetverbinding',
+  connectionRestored: 'U bent nu verbonden met internet',
   context: 'Context',
   correction: 'Correctie',
   dataLost: 'Je gegevens lijken verloren te zijn',

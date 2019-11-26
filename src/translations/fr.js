@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     "En regardant l'indice, cette question vous rapportera {{count}} étoile en moins (si vous y répondez correctement)",
   congratulations: 'Félicitations !',
+  connectionLost: 'Pas de connexion Internet',
+  connectionRestored: 'Vous êtes maintenant connecté à Internet',
   context: 'Contexte',
   correction: 'Correction',
   dataLost: 'Vos données semblent perdues',

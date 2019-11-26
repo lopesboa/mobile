@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Desbloquear la pista reduce en {{count}} las estrellas que puedes ganar por esta pregunta (si la aciertas)',
   congratulations: '¡Felicidades!',
+  connectionLost: 'Sin conexión a Internet',
+  connectionRestored: 'Ahora está conectado a Internet',
   context: 'Contexto',
   correction: 'Corrección',
   dataLost: 'Parece que se han perdido tus datos',

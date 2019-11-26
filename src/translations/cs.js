@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Odemknutí nápovědy sníží počet hvězd, které můžete získat na této otázce o {{count}} (pokud ji zodpovíte správně)',
   congratulations: 'Blahopřejeme!',
+  connectionLost: 'Nelze se připojit k internetu',
+  connectionRestored: 'Nyní jste připojení k internetu',
   context: 'Kontext',
   correction: 'Oprava',
   dataLost: 'Zdá se, že se vaše údaje ztratily',

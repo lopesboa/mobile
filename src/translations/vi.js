@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Mở khóa gợi ý làm giảm số sao bạn có thể đạt được cho câu hỏi này đi {{count}} sao (nếu bạn đáp đúng)',
   congratulations: 'Chúc mừng bạn!',
+  connectionLost: 'No Internet connection',
+  connectionRestored: 'You are now connected to the Internet',
   context: 'Bối cảnh',
   correction: 'Chỉnh sửa',
   dataLost: 'Có vẻ dữ liệu của bạn đã thất lạc',

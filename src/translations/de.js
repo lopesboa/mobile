@@ -30,6 +30,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'Wenn Sie den Hinweis benutzen, reduziert sich die Anzahl Sterne, die Sie bei dieser Frage gewinnen können um {{count}}  (wenn Sie richtig antworten)',
   congratulations: 'Herzlichen Glückwunsch!',
+  connectionLost: 'Keine Internetverbindung',
+  connectionRestored: 'Sie sind jetzt mit dem Internet verbunden',
   context: 'Kontext',
   correction: 'Verbesserung',
   dataLost: 'Ihre Daten scheinen verloren gegangen zu sein',

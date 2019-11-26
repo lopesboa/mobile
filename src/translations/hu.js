@@ -29,6 +29,8 @@ const translations: Translations = {
   clueStarsToLoose:
     'A tipp feloldása {{count}} csillaggal csökkentheti a nyereményét ennél a kérdésnél (ha jól válaszol)',
   congratulations: 'Gratulálunk!',
+  connectionLost: 'Nincs internetkapcsolat',
+  connectionRestored: 'Mostantól csatlakozik az internethez.',
   context: 'Kontextus',
   correction: 'Javítás',
   dataLost: 'Úgy tűnik, hogy az adataid elvesztek',
