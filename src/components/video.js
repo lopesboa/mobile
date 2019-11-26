@@ -15,6 +15,7 @@ import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
 import Touchable from './touchable';
 import Space from './space';
+import VideoHotspots from './video-hotspots';
 
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
@@ -191,6 +192,7 @@ const Video = ({
               selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
               isCC={hasSubtitles}
             />
+            <VideoHotspots publicationId="mpNHyTH" />
           </BlackPortal>
           {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
         </React.Fragment>
