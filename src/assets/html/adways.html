@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        background-color: transparent;
+      }
+    </style>
+    <script type="text/javascript" src="//dj5ag5n6bpdxo.cloudfront.net/libs/interactive/loader.js"></script>
+  </head>
+  <body id="webview-div">
+    <script type="text/javascript">
+      const init = ({publicationId}) => {
+        var experience = new adways.interactive.Experience();
+        experience.setPublicationID(publicationId);
+        experience.setPlayerAPI(document.getElementById('webview-div'));
+        experience.setPlayerClass('coorpwebview');
+        experience.load();
+      };
+
+      const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+      const guid = () => `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+
+      var queue = Promise.resolve();
+    	var callbacks = {};
+
+      // Message sender (RN bridge)
+      const send = (targetFunc, data, onSuccess, onError) => {
+        const message = {
+          id: onSuccess || onError ? guid() : null,
+          targetFunc: targetFunc,
+          data: data || {}
+        };
+        const string = JSON.stringify(object);
+        queue = queue.then(
+          () => new Promise((resolve, reject) => {
+            if (message.id) {
+              callbacks[message.id] = {
+                onSuccess,
+                onError
+              };
+            }
+            window.ReactNativeWebView.postMessage(string);
+            resolve();
+          })
+        ).catch(e => {
+          console.error(`RNBridge send failed: ${e.message}`);
+        });
+      };
+
+      // Message listener (RN bridge)
+      const handleMessage = ({data}) => {
+        try {
+          const message = JSON.parse(data);
+
+          if (message.type) {
+            switch (message.type) {
+              case 'init':
+                init(message.args);
+              default:
+                console.error(`Message type not supported: ${message.type}`);
+            }
+          } else if (message.args && callbacks[message.id]) {
+            if (message.isSuccessfull) {
+              callbacks[message.id].onSuccess(message.args);
+            } else {
+              callbacks[message.id].onError(message.args);
+            }
+
+            delete callbacks[message.id];
+          }
+        } catch(e) {
+          console.error(`Error in webview: ${e.message}`);
+          return;
+        }
+      };
+      window.addEventListener('message', handleMessage);
+    </script>
+  </body>
+</html>
