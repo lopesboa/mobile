@@ -75,7 +75,7 @@ class QuestionScreen extends React.PureComponent<Props> {
   };
 
   handleInputValueChange = (value: string) => {
-    this.props.editAnswer([value]);
+    this.props.editAnswer(value);
   };
 
   handleChoiceInputChange = (item: Choice, value: string) => {

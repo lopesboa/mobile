@@ -437,7 +437,7 @@ describe('Question', () => {
     question.props.onInputValueChange('foo');
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
-    expect(editAnswer).toHaveBeenCalledWith(['foo']);
+    expect(editAnswer).toHaveBeenCalledWith('foo');
   });
 
   it('should handle choice input change', () => {

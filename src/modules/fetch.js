@@ -2,13 +2,21 @@
 
 import _fetch from 'cross-fetch';
 
-import set from 'lodash/fp/set';
+import get from 'lodash/fp/get';
 import {ForbiddenError} from '../models/error';
 
 export const ERROR_MESSAGE = 'PLATFORM_DISABLED';
 
 const fetch: typeof _fetch = async (url, options) => {
-  const response = await _fetch(url, set('headers.X-Requested-With', 'XMLHttpRequest', options));
+  const _options = {
+    ...options,
+    headers: {
+      ...get('headers', options),
+      'X-Requested-With': 'XMLHttpRequest'
+    }
+  };
+
+  const response = await _fetch(url, _options);
   if (response && response.status === 403) {
     try {
       const result = await response.json();
