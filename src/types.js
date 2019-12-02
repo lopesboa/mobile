@@ -6,6 +6,8 @@ import type {
   Lesson
 } from '@coorpacademy/progression-engine';
 
+import {VIDEO_HOTSPOT_EVENT_NAME, VIDEO_HOTSPOT_EVENT_CALLBACK_NAME} from './const';
+
 export type JWT = {|
   exp: number,
   iat: number,
@@ -139,3 +141,66 @@ export type AnalyticsEventParams = {
 };
 
 export type AuthenticationType = 'qr-code' | 'magic-link' | 'demo' | 'reconnection';
+
+export type VideoHotspotEventName = 'play' | 'pause' | 'seek' | 'volume' | 'muted';
+
+export type VideoHotspotEvent =
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_NAME.PLAY
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_NAME.PAUSE
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_NAME.SEEK,
+      value: number
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_NAME.VOLUME,
+      value: number
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_NAME.MUTED,
+      value: number
+    |};
+
+export type VideoHotspotEventCallbackName =
+  | 'init'
+  | 'play'
+  | 'pause'
+  | 'apiready'
+  | 'loadedmetadata'
+  | 'timeupdate'
+  | 'volumechange'
+  | 'seeked';
+
+export type VideoHotspotEventCallback =
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.INIT,
+      value: {publicationId: string}
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.PLAY
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.PAUSE
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.API_READY
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.LOADED_METADATA,
+      value: {duration: number, time: number, width: number, height: number}
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.TIME_UPDATE,
+      value: number
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.VOLUME_CHANGE,
+      value: number
+    |}
+  | {|
+      name: typeof VIDEO_HOTSPOT_EVENT_CALLBACK_NAME.SEEKED,
+      value: number
+    |};

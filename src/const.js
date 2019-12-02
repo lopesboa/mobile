@@ -17,7 +17,9 @@ import type {
   QuestionChoiceInputType,
   SpaceType,
   TooltipType,
-  VideoProviderMimeType
+  VideoProviderMimeType,
+  VideoHotspotEventName,
+  VideoHotspotEventCallbackName
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -215,3 +217,45 @@ export const AUTHENTICATION_TYPE: {
 };
 // FlowAssert
 (Object.keys(AUTHENTICATION_TYPE).map(k => AUTHENTICATION_TYPE[k]): Array<AuthenticationType>);
+
+export const VIDEO_HOTSPOT_EVENT_NAME: {
+  PLAY: 'play',
+  PAUSE: 'pause',
+  SEEK: 'seek',
+  VOLUME: 'volume',
+  MUTED: 'muted'
+} = {
+  PLAY: 'play',
+  PAUSE: 'pause',
+  SEEK: 'seek',
+  VOLUME: 'volume',
+  MUTED: 'muted'
+};
+// FlowAssert
+(Object.keys(VIDEO_HOTSPOT_EVENT_NAME).map(
+  k => VIDEO_HOTSPOT_EVENT_NAME[k]
+): Array<VideoHotspotEventName>);
+
+export const VIDEO_HOTSPOT_EVENT_CALLBACK_NAME: {
+  INIT: 'init',
+  PLAY: 'play',
+  PAUSE: 'pause',
+  API_READY: 'apiready',
+  LOADED_METADATA: 'loadedmetadata',
+  TIME_UPDATE: 'timeupdate',
+  VOLUME_CHANGE: 'volumechange',
+  SEEKED: 'seeked'
+} = {
+  INIT: 'init',
+  PLAY: 'play',
+  PAUSE: 'pause',
+  API_READY: 'apiready',
+  LOADED_METADATA: 'loadedmetadata',
+  TIME_UPDATE: 'timeupdate',
+  VOLUME_CHANGE: 'volumechange',
+  SEEKED: 'seeked'
+};
+// FlowAssert
+(Object.keys(VIDEO_HOTSPOT_EVENT_CALLBACK_NAME).map(
+  k => VIDEO_HOTSPOT_EVENT_CALLBACK_NAME[k]
+): Array<VideoHotspotEventCallbackName>);
