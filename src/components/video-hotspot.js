@@ -37,8 +37,7 @@ class VideoHotspot extends React.PureComponent<Props> {
     // eslint-disable-next-line no-console
     console.debug('VideoHotspot', 'postMessage', message);
 
-    this.webViewRef &&
-      this.webViewRef.injectJavaScript(`window.postMessage('${message}', "*"); void(0);`);
+    this.webViewRef && this.webViewRef.injectJavaScript(`window.postMessage('${message}', "*");`);
   };
 
   /**
