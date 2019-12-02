@@ -376,7 +376,8 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: TOKEN,
           'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
         });
         expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
           ...fakeProgression,
@@ -830,7 +831,8 @@ describe('Progressions', () => {
         );
         expect(options.headers).toEqual({
           Authorization: token,
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
         });
 
         return Promise.resolve({
@@ -871,7 +873,8 @@ describe('Progressions', () => {
         );
         expect(options.headers).toEqual({
           Authorization: token,
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
         });
 
         return Promise.resolve({
@@ -922,7 +925,8 @@ describe('Progressions', () => {
         );
         expect(options.headers).toEqual({
           Authorization: token,
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
         });
 
         return Promise.resolve({

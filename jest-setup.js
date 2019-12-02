@@ -1,6 +1,6 @@
 // @flow
 
-import {NativeModules, ScrollView, Vibration} from 'react-native';
+import {NativeModules, Platform, ScrollView, Vibration} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 
 // AsyncStorage
@@ -40,6 +40,12 @@ NativeModules.Linking = {
 NativeModules.ReactLocalization = {
   language: 'en-US'
 };
+
+// react-native Platform
+NativeModules.PlatformConstants = {
+  osVersion: '13.1'
+};
+Platform.OS = 'ios';
 
 // react-native-video-controls
 jest.mock('react-native-video', () => ({

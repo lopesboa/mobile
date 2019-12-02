@@ -77,7 +77,8 @@ describe('Fetch', () => {
     const _fetch = require('cross-fetch');
 
     const expectedHeader = {
-      'X-Requested-With': 'XMLHttpRequest'
+      'X-Requested-With': 'XMLHttpRequest',
+      'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
     };
 
     const response = new Response();
