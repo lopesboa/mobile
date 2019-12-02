@@ -12,6 +12,7 @@ import orientation from 'react-native-orientation-locker';
 // import DeviceInfo from 'react-native-device-info';
 
 import Video, {STEP} from '../components/video';
+import VideoHotspot from '../components/video-hotspot';
 import type {Step} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
 import {__STORYBOOK__} from '../modules/environment';
@@ -39,13 +40,12 @@ type Props = {|
   subtitles?: string,
   testID?: string,
   extralifeOverlay?: boolean,
-  onPlay?: () => void
+  onStart?: () => void
 |};
 
 type State = {|
   step: Step,
-  hasSubtitles: boolean,
-  currentTime?: number
+  hasSubtitles: boolean
 |};
 
 class VideoControlable extends React.PureComponent<Props, State> {
@@ -56,51 +56,74 @@ class VideoControlable extends React.PureComponent<Props, State> {
     hasSubtitles: true
   };
 
-  videoPlayer: VideoPlayer;
+  videoPlayer: VideoPlayer | null;
+
+  videoHotspot: VideoHotspot | null;
+
+  currentTime: number = 0;
 
   isReady: boolean = false;
 
-  play = async () => {
-    const {videoId, videoProvider} = this.props;
+  toggleStart = async () => {
+    const {videoId, videoProvider, onStart} = this.props;
+
+    this.isReady = false;
 
     if (videoProvider === VIDEO_PROVIDER.KONTIKI) {
-      this.setState({
-        step: STEP.LOADING
-      });
+      await this.updateStep(STEP.LOADING);
       await this.props.fetchVideoUri(videoId, videoProvider);
     }
 
+    onStart && onStart();
+
+    this.handleSeekChange(0);
+    this.togglePlayPause(true);
+  };
+
+  togglePlayPause = (isPlaying?: boolean) => {
+    if (isPlaying) {
+      this.videoHotspot && this.videoHotspot.play();
+    } else {
+      this.videoHotspot && this.videoHotspot.pause();
+    }
+
+    return this.updateStep(isPlaying ? STEP.PLAY : STEP.PAUSE);
+  };
+
+  updateStep = (step: Step) =>
     this.setState({
-      step: STEP.PLAY
+      step
     });
 
-    this.props.onPlay && this.props.onPlay();
+  toggleEnd = async () => {
+    await this.handleFullscreenToggle(false);
+    await this.handlePlayPauseToggle(false);
+    await this.updateStep(STEP.END);
   };
 
-  handleExpand = async () => {
-    if (this.videoPlayer) {
-      const {currentTime} = this.state;
-      await this.props.toggleFullscreen(true);
+  handleRef = (ref: VideoPlayer | null) => {
+    this.videoPlayer = ref;
+  };
 
-      this.videoPlayer.player.ref.presentFullscreenPlayer();
-      if (Platform.OS === 'android' && currentTime) {
-        this.videoPlayer.seekTo(currentTime);
-      }
+  handleHotspotRef = (ref: VideoHotspot | null) => {
+    this.videoHotspot = ref;
+  };
 
-      orientation.unlockAllOrientations();
+  handleFullscreenToggle = (isEnabled: boolean) => async () => {
+    await this.props.toggleFullscreen(isEnabled);
+
+    if (isEnabled) {
+      this.videoPlayer && this.videoPlayer.player.ref.presentFullscreenPlayer();
+    } else {
+      this.videoPlayer && this.videoPlayer.player.ref.dismissFullscreenPlayer();
     }
-  };
+    if (Platform.OS === 'android' && this.currentTime) {
+      this.handleSeekChange(this.currentTime);
+    }
 
-  handleShrink = async () => {
-    if (this.videoPlayer) {
-      const {currentTime} = this.state;
-      await this.props.toggleFullscreen(false);
-
-      this.videoPlayer.player.ref.dismissFullscreenPlayer();
-      if (Platform.OS === 'android' && currentTime) {
-        this.videoPlayer.seekTo(currentTime);
-      }
-
+    if (isEnabled) {
+      orientation.unlockAllOrientations();
+    } else {
       // @@todo wait for support tablet landscape orientation
       // if (!DeviceInfo.isTablet()) {
       orientation.lockToPortrait();
@@ -108,33 +131,31 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
   };
 
-  handleProgress = (data: {currentTime: number} | void) =>
-    this.setState({
-      currentTime: data && data.currentTime
-    });
+  handlePlayPauseToggle = (isPlaying?: boolean) => () => this.togglePlayPause(isPlaying);
 
-  handlePlay = () => {
-    this.isReady = false;
+  handleProgress = (data?: {currentTime: number}) => {
+    const {currentTime} = data || {};
 
-    if (this.videoPlayer) {
-      this.videoPlayer.seekTo(0);
+    if (currentTime !== undefined) {
+      this.currentTime = currentTime;
+      this.videoHotspot && this.videoHotspot.updateTime({value: currentTime});
     }
+  };
 
-    this.play();
+  handleStart = () => {
+    this.toggleStart();
   };
 
   handleEnd = () => {
-    this.handleShrink();
-    this.setState({
-      step: STEP.END
-    });
+    this.toggleEnd();
   };
 
   handleReady = () => {
     // This is a hack to launch the video
     if (Platform.OS === 'android' && this.videoPlayer && !this.isReady) {
       this.isReady = true;
-      this.videoPlayer.seekTo(0);
+      this.handleSeekChange(0);
+      this.videoHotspot && this.videoHotspot.setApiReady();
     }
   };
 
@@ -143,16 +164,21 @@ class VideoControlable extends React.PureComponent<Props, State> {
       hasSubtitles: !hasSubtitles
     }));
 
-  handleRef = (videoPlayer: VideoPlayer | null) => {
-    this.videoPlayer = videoPlayer;
+  handleError = () => {
+    this.togglePlayPause(false);
+    this.updateStep(STEP.ERROR);
   };
 
-  handleBlur = () => this.videoPlayer && this.videoPlayer.methods.pause();
+  handleSeekChange = (value: number) => {
+    this.videoPlayer && this.videoPlayer.seekTo(value);
+    this.videoHotspot && this.videoHotspot.seekTo({value});
+  };
 
-  handleError = () =>
-    this.setState({
-      step: STEP.ERROR
-    });
+  // @todo
+  handleVolumeChange = (volume: number) => {};
+
+  // @todo
+  handleMutedChange = (isMuted: boolean) => {};
 
   render() {
     return (
@@ -160,7 +186,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
         {/*
         Should disable NavigationEvents when running  Storybook because of rn navigation incompatibility
          */}
-        {!__STORYBOOK__ ? <NavigationEvents onWillBlur={this.handleBlur} /> : null}
+        {!__STORYBOOK__ ? (
+          <NavigationEvents onWillBlur={this.handlePlayPauseToggle(false)} />
+        ) : null}
         <Video
           source={this.props.source}
           preview={this.props.preview}
@@ -169,14 +197,20 @@ class VideoControlable extends React.PureComponent<Props, State> {
           subtitles={this.props.subtitles}
           hasSubtitles={this.state.hasSubtitles}
           isFullScreen={this.props.isFullScreen}
-          onPlay={this.handlePlay}
+          onStart={this.handleStart}
+          onPlay={this.handlePlayPauseToggle(true)}
+          onPause={this.handlePlayPauseToggle(false)}
+          onSeekChange={this.handleSeekChange}
+          onVolumeChange={this.handleVolumeChange}
+          onMutedChange={this.handleMutedChange}
           onEnd={this.handleEnd}
           onReady={this.handleReady}
-          onExpand={this.handleExpand}
-          onShrink={this.handleShrink}
+          onExpand={this.handleFullscreenToggle(true)}
+          onShrink={this.handleFullscreenToggle(false)}
           onProgress={this.handleProgress}
           onSubtitlesToggle={this.handleSubtitlesToggle}
           onRef={this.handleRef}
+          onHotspotRef={this.handleHotspotRef}
           onError={this.handleError}
           testID={this.props.testID}
           extralifeOverlay={this.props.extralifeOverlay}

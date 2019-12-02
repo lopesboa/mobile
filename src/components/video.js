@@ -15,9 +15,9 @@ import Preview, {EXTRALIFE} from './preview';
 import ResourceOverlay from './resource-overlay';
 import Touchable from './touchable';
 import Space from './space';
-import VideoHotspots from './video-hotspots';
+import VideoHotspot from './video-hotspot';
 
-export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
+export type Step = 'preview' | 'loading' | 'error' | 'play' | 'pause' | 'end';
 
 export type Subtitles = {|
   title: string,
@@ -34,7 +34,12 @@ type Props = {|
   subtitles?: string,
   hasSubtitles?: boolean,
   isFullScreen?: boolean,
+  onStart: () => void,
   onPlay: () => void,
+  onPause: () => void,
+  onSeekChange: number => void,
+  onVolumeChange: number => void,
+  onMutedChange: boolean => void,
   onEnd: () => void,
   onReady: () => void,
   onExpand?: () => Promise<void> | void,
@@ -42,6 +47,7 @@ type Props = {|
   onSubtitlesToggle?: () => void,
   onProgress?: () => void,
   onRef?: (VideoPlayer | null) => void,
+  onHotspotRef?: (VideoHotspot | null) => void,
   onError?: () => void,
   testID?: string,
   extralifeOverlay?: boolean
@@ -52,6 +58,7 @@ export const STEP: {[key: string]: Step} = {
   LOADING: 'loading',
   ERROR: 'error',
   PLAY: 'play',
+  PAUSE: 'pause',
   END: 'end'
 };
 
@@ -112,13 +119,19 @@ const Video = ({
   subtitles: subtitlesUri,
   hasSubtitles,
   isFullScreen,
+  onStart,
   onPlay,
+  onPause,
+  onSeekChange,
+  onVolumeChange,
+  onMutedChange,
   onReady,
   onEnd,
   onExpand,
   onShrink,
   onSubtitlesToggle,
   onRef,
+  onHotspotRef,
   onError,
   onProgress,
   testID,
@@ -160,11 +173,11 @@ const Video = ({
           type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.VIDEO}
           source={preview}
           isLoading={step === STEP.LOADING}
-          onPress={onPlay}
+          onPress={onStart}
           testID={testID}
         />
       )}
-      {[STEP.PLAY, STEP.END].includes(step) && (
+      {[STEP.PLAY, STEP.PAUSE, STEP.END].includes(step) && (
         <React.Fragment>
           <BlackPortal name="video">
             <VideoPlayer
@@ -175,6 +188,7 @@ const Video = ({
               resizeMode="contain"
               disableVolume
               disableBack
+              paused={step === STEP.PAUSE}
               ignoreSilentSwitch="ignore"
               disableFullscreen={Boolean(!onExpand && !onShrink)}
               toggleResizeModeOnFullscreen={false}
@@ -187,12 +201,23 @@ const Video = ({
               onError={onError}
               onProgress={onProgress}
               onCC={onSubtitlesToggle}
+              onPlay={onPlay}
+              onPause={onPause}
+              onSeek={onSeekChange}
               disableCC={!subtitlesUri}
               textTracks={(subtitlesUri && subtitles) || undefined}
               selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
               isCC={hasSubtitles}
             />
-            <VideoHotspots publicationId="mpNHyTH" />
+            <VideoHotspot
+              ref={onHotspotRef}
+              publicationId="mpNHyTH"
+              onPlay={onPlay}
+              onPause={onPause}
+              onSeekChange={onSeekChange}
+              onVolumeChange={onVolumeChange}
+              onMutedChange={onMutedChange}
+            />
           </BlackPortal>
           {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
         </React.Fragment>

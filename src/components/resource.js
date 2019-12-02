@@ -73,7 +73,7 @@ class Resource extends React.PureComponent<Props> {
             height={height}
             extralifeOverlay={extralifeOverlay}
             style={style}
-            onPlay={this.handlePress}
+            onStart={this.handlePress}
           />
         );
       }
