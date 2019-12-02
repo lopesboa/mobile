@@ -5,6 +5,7 @@
     <style type="text/css">
       body {
         background-color: transparent;
+        display: flex;
       }
     </style>
     <script type="text/javascript" src="//dj5ag5n6bpdxo.cloudfront.net/libs/interactive/loader.js"></script>
@@ -13,18 +14,16 @@
         const experience = new adways.interactive.Experience();
         experience.setPublicationID(publicationId);
         experience.setPlayerAPI(document.getElementById('container'));
-        experience.setPlayerClass('coorpwebview');
+        experience.setPlayerClass('reactnativeadways');
         experience.load();
       };
 
       const handleMessage = ({data}) => {
         const {isFromReactNative, ...message} = JSON.parse(data);
 
-        if (message.type === 'init') {
-          return init(message);
+        if (message.name === 'init') {
+          return init(message.value);
         }
-
-        window.alert(data)
 
         if (isFromReactNative) {
           return;
