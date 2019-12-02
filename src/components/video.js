@@ -26,6 +26,17 @@ export type Subtitles = {|
   uri: string
 |};
 
+// @todo move it in a definition file
+export type Metadata = {|
+  naturalSize: {
+    width: number,
+    height: number,
+    orientation: 'landscape' | 'portrait'
+  },
+  currentTime: number,
+  duration: number
+|};
+
 type Props = {|
   source: File | {uri?: string},
   preview: File | {uri: string},
@@ -49,6 +60,7 @@ type Props = {|
   onRef?: (VideoPlayer | null) => void,
   onHotspotRef?: (VideoHotspot | null) => void,
   onError?: () => void,
+  onLoad?: Metadata => void,
   testID?: string,
   extralifeOverlay?: boolean
 |};
@@ -134,6 +146,7 @@ const Video = ({
   onHotspotRef,
   onError,
   onProgress,
+  onLoad,
   testID,
   extralifeOverlay = false
 }: Props) => {
@@ -204,6 +217,7 @@ const Video = ({
               onPlay={onPlay}
               onPause={onPause}
               onSeek={onSeekChange}
+              onLoad={onLoad}
               disableCC={!subtitlesUri}
               textTracks={(subtitlesUri && subtitles) || undefined}
               selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}

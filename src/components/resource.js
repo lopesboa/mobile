@@ -54,7 +54,8 @@ class Resource extends React.PureComponent<Props> {
       style
     } = this.props;
 
-    const height = layout && layout.width / (16 / 9);
+    const width = layout && layout.width;
+    const height = width && width / (16 / 9);
 
     if (!layout) {
       return null;
@@ -99,7 +100,7 @@ class Resource extends React.PureComponent<Props> {
             style={{
               ...style,
               height: (style && style.height) || height, // it was too risky to refactor this so here we cover every possible case
-              width: layout && layout.width
+              width
             }}
           />
         );

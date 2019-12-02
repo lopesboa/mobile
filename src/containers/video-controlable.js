@@ -12,8 +12,8 @@ import orientation from 'react-native-orientation-locker';
 // import DeviceInfo from 'react-native-device-info';
 
 import Video, {STEP} from '../components/video';
+import type {Metadata, Step} from '../components/video';
 import VideoHotspot from '../components/video-hotspot';
-import type {Step} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
 import {__STORYBOOK__} from '../modules/environment';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
@@ -159,6 +159,16 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
   };
 
+  handleLoad = ({naturalSize: {width, height}, duration, currentTime}: Metadata) => {
+    this.videoHotspot &&
+      this.videoHotspot.loadMetadata({
+        duration,
+        time: currentTime,
+        width,
+        height
+      });
+  };
+
   handleSubtitlesToggle = () =>
     this.setState(({hasSubtitles}: State) => ({
       hasSubtitles: !hasSubtitles
@@ -212,6 +222,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
           onRef={this.handleRef}
           onHotspotRef={this.handleHotspotRef}
           onError={this.handleError}
+          onLoad={this.handleLoad}
           testID={this.props.testID}
           extralifeOverlay={this.props.extralifeOverlay}
         />
