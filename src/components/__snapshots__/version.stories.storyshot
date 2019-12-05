@@ -15,6 +15,6 @@ exports[`Storyshots Version Default 1`] = `
     ]
   }
 >
-  Version: 0.0.0.test
+  Version: v0.0.0.test
 </Text>
 `;

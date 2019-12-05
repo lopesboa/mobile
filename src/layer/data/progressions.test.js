@@ -377,7 +377,7 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
         });
         expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
           ...fakeProgression,
@@ -832,7 +832,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
         });
 
         return Promise.resolve({
@@ -874,7 +874,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
         });
 
         return Promise.resolve({
@@ -926,7 +926,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0.test ios/13.1'
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
         });
 
         return Promise.resolve({

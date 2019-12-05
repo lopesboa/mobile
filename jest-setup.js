@@ -41,10 +41,14 @@ NativeModules.ReactLocalization = {
   language: 'en-US'
 };
 
+// react-native-device-info
+jest.mock('react-native-device-info', () => ({
+  getBrand: jest.fn(() => Promise.resolve('Apple')),
+  getModel: jest.fn(() => Promise.resolve('iPhone')),
+  getSystemVersion: jest.fn(() => Promise.resolve('12.2'))
+}));
+
 // react-native Platform
-NativeModules.PlatformConstants = {
-  osVersion: '13.1'
-};
 Platform.OS = 'ios';
 
 // react-native-video-controls
