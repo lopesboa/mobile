@@ -77,6 +77,7 @@
     "@react-native-community/async-storage": "^1.4.0",
     "app-store-link": "^1.0.2",
     "apsl-react-native-button": "^3.1.1",
+    "bluebird": "^3.7.2",
     "bson": "^4.0.2",
     "color": "^3.1.0",
     "cross-fetch": "^3.0.1",

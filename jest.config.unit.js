@@ -89,6 +89,12 @@ module.exports = {
       function: 100,
       lines: 100,
       statements: 100
+    },
+    'src/migrations': {
+      branches: 100,
+      function: 100,
+      lines: 100,
+      statements: 100
     }
   },
   verbose: true
