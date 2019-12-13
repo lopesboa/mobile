@@ -16,6 +16,7 @@ import {signIn} from '../redux/actions/authentication';
 
 import {get as getToken} from '../utils/local-token';
 import {getToken as _getToken} from '../redux/utils/state-extract';
+import {migrationsRunner} from '../migrations';
 import ErrorListener from '../containers/error-listener';
 import type {Params as AuthenticationDetailsParams} from './authentication-details';
 
@@ -56,8 +57,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     if (token) {
       await this.handleSignIn(AUTHENTICATION_TYPE.RECONNECTION, token);
     }
-
-    return this.hideSplashScreen();
+    await this.runMigrations();
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -96,6 +96,15 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
   handleMobileButtonPress = () => {
     this.handleDetailsNavigation(AUTHENTICATION_TYPE.MAGIC_LINK);
+  };
+
+  runMigrations = async () => {
+    try {
+      await migrationsRunner();
+      return this.hideSplashScreen();
+    } catch (error) {
+      return this.hideSplashScreen();
+    }
   };
 
   handleDetailsNavigation = (type: $PropertyType<AuthenticationDetailsParams, 'type'>) => {

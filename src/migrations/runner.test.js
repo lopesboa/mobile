@@ -1,24 +1,14 @@
 // @flow
-import {createProgression} from '../../__fixtures__/progression';
-import {ENGINE, CONTENT_TYPE} from '../../const';
+import {createProgression} from '../__fixtures__/progression';
+import {ENGINE, CONTENT_TYPE} from '../const';
+import type {Migrations} from './types';
 
-describe('Migration', () => {
-  afterEach(() => {
-    jest.resetModules();
-  });
+describe('Migrations runner', () => {
   it('should run one migration script and bump async storage version from default to script version even if the value did not change', async () => {
-    const {runMigrations} = require('..');
+    const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
-    const migrations = {
-      '2': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
-        (value, key) => {
-          return Promise.resolve(value);
-        }
-      ]
+    const migrations: Migrations = {
+      '2': [key => key.startsWith('@@token'), (value, key) => Promise.resolve(value)]
     };
 
     AsyncStorage.getAllKeys = jest.fn(() =>
@@ -35,25 +25,52 @@ describe('Migration', () => {
     );
     AsyncStorage.setItem = jest.fn().mockImplementationOnce((key, value) => {
       expect(key).toBe('async_storage_version');
-      expect(value).toEqual(2);
+      expect(value).toEqual('2');
     });
 
     const result = await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
     expect(result).toBeUndefined();
   });
-  it('should run one migration script and bump async storage version from default to script version', async () => {
-    const {runMigrations} = require('..');
+  it('should run one migration script and bump async storage version even if the value is empty', async () => {
+    const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations = {
       '2': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
+        key => key.startsWith('@@token'),
         (value, key) => {
-          return Promise.resolve(`${value}_@coorpacademy`);
+          return Promise.resolve(value);
         }
+      ]
+    };
+
+    AsyncStorage.getAllKeys = jest.fn(() =>
+      Promise.resolve([
+        'card:en:dis_NJ9KIQ0F~j',
+        'card:en:mod_Vkb8j0-nP',
+        '@@token',
+        'card:en:mod_4JotIQRFWj',
+        'synchronized_progressions'
+      ])
+    );
+    AsyncStorage.getItem = jest.fn(key => key.startsWith('@@token') && Promise.resolve(undefined));
+    AsyncStorage.setItem = jest.fn().mockImplementationOnce((key, value) => {
+      expect(key).toBe('async_storage_version');
+      expect(value).toEqual('2');
+    });
+
+    const result = await runMigrations(migrations);
+    expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
+    expect(result).toBeUndefined();
+  });
+
+  it('should run one migration script and bump async storage version from default to script version', async () => {
+    const {runMigrations} = require('./runner');
+    const AsyncStorage = require('@react-native-community/async-storage');
+    const migrations: Migrations = {
+      '2': [
+        key => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
       ]
     };
 
@@ -77,25 +94,21 @@ describe('Migration', () => {
       })
       .mockImplementationOnce((key, value) => {
         expect(key).toBe('async_storage_version');
-        expect(value).toEqual(2);
+        expect(value).toEqual('2');
       });
 
     const result = await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(2);
     expect(result).toBeUndefined();
   });
+
   it('should not run the migration script if the async storage version is greater or equal than the provided migration version', async () => {
-    const {runMigrations} = require('..');
+    const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
-    const migrations = {
+    const migrations: Migrations = {
       '2': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
-        (value, key) => {
-          return Promise.resolve(`${value}_@coorpacademy`);
-        }
+        key => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
       ]
     };
 
@@ -116,24 +129,17 @@ describe('Migration', () => {
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(0);
     expect(result).toBeUndefined();
   });
+
   it('should run multiple migration scripts and bump async storage version for each', async () => {
-    const {runMigrations} = require('..');
+    const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
-    const migrations = {
+    const migrations: Migrations = {
       '3': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
-        (value, key) => {
-          return Promise.resolve(`${value}_@coorpacademy`);
-        }
+        key => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
       ],
       '4': [
-        key => {
-          if (key.startsWith('progression')) return true;
-          return false;
-        },
+        key => key.startsWith('progression'),
         (value, key) => {
           const progression = JSON.parse(value);
           progression._id = 'newProgressionId';
@@ -180,7 +186,7 @@ describe('Migration', () => {
       })
       .mockImplementationOnce((key, value) => {
         expect(key).toBe('async_storage_version');
-        expect(value).toEqual(3);
+        expect(value).toEqual('3');
       })
       .mockImplementationOnce((key, value) => {
         expect(key).toBe('progression_5dee52c8a7da3a8443ed7a3a');
@@ -188,31 +194,24 @@ describe('Migration', () => {
       })
       .mockImplementationOnce((key, value) => {
         expect(key).toBe('async_storage_version');
-        expect(value).toEqual(4);
+        expect(value).toEqual('4');
       });
 
     const result = await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(4);
     expect(result).toBeUndefined();
   });
+
   it('should run multiple migration scripts and catch and stop migration if a script fails', () => {
-    const {runMigrations} = require('..');
+    const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
-    const migrations = {
+    const migrations: Migrations = {
       '3': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
-        (value, key) => {
-          return Promise.resolve(`${value}_@coorpacademy`);
-        }
+        key => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
       ],
       '4': [
-        key => {
-          if (key.startsWith('progression')) return true;
-          return false;
-        },
+        key => key.startsWith('progression'),
         (value, key) => {
           const progression = JSON.parse(value);
           progression._id = 'badProgressionId';
@@ -220,10 +219,7 @@ describe('Migration', () => {
         }
       ],
       '5': [
-        key => {
-          if (key.startsWith('@@token')) return true;
-          return false;
-        },
+        key => key.startsWith('@@token'),
         (value, key) => Promise.resolve(`${value}_@coorpacademy@learner`)
       ]
     };
@@ -257,9 +253,13 @@ describe('Migration', () => {
       })
       .mockImplementationOnce((key, value) => {
         expect(key).toBe('async_storage_version');
-        expect(value).toEqual(3);
+        expect(value).toEqual('3');
       });
 
     return expect(runMigrations(migrations)).rejects.toThrow(new Error('Something bad happened'));
+  });
+
+  afterEach(() => {
+    jest.resetModules();
   });
 });

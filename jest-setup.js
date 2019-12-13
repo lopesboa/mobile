@@ -60,6 +60,14 @@ jest.mock('react-native-video', () => ({
   }
 }));
 
+// react-native-splash-screen
+jest.mock('react-native-splash-screen', () => ({
+  __esModule: true,
+  default: {
+    hide: jest.fn(() => Promise.resolve())
+  }
+}));
+
 // react-native-pdf
 jest.mock('rn-fetch-blob', () => ({
   DocumentDir: () => {},
