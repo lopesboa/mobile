@@ -163,6 +163,7 @@ class VideoHotspot extends React.PureComponent<Props> {
         // https://github.com/react-native-community/react-native-webview/blob/master/docs/Guide.md#loading-local-html-files
         // $FlowFixMe bad type
         source={require('../assets/html/adways.html')}
+        originWhitelist={['*']}
         scrollEnabled={false}
         onMessage={this.handleMessage}
         onLoadEnd={this.handleLoadEnd}
