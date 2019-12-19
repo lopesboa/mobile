@@ -131,7 +131,12 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   const iconCertifiedSize = subtitleFontSize * 1.1;
 
   const author = getAuthor(item);
-  const subtitle = item.authors && item.authors.map(({label}) => label).join(', ');
+  const subtitle =
+    item.authors &&
+    item.authors
+      .filter(({label}) => label)
+      .map(({label}) => label)
+      .join(', ');
   const titleStyle = {fontSize: titleFontSize};
   const subtitleStyle = {fontSize: subtitleFontSize};
 
@@ -165,7 +170,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
       >
         {item.title}
       </Text>
-      {subtitle && (
+      {subtitle ? (
         <React.Fragment>
           <Space type="tiny" />
           <View style={styles.subtitleContainer}>
@@ -188,7 +193,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
             )}
           </View>
         </React.Fragment>
-      )}
+      ) : null}
       <Space type="small" />
       <View
         style={[styles.progressionBar, isHero && styles.progressionBarCentered]}

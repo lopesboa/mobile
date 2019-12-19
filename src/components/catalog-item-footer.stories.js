@@ -21,6 +21,13 @@ const disciplineCardAdaptive = createDisciplineCard({
   title: 'Discipline card',
   isAdaptive: true
 });
+const disciplineCardWithoutAuthor = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard],
+  title: 'Discipline card',
+  authors: []
+});
 const chapterCard = createChapterCard({
   ref: 'bar',
   completion: 0.8,
@@ -33,6 +40,13 @@ const chapterCardAdaptive = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isAdaptive: true
+});
+const chapterCardWithoutAuthor = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE,
+  authors: []
 });
 
 storiesOf('CatalogItemFooter', module)
@@ -48,6 +62,9 @@ storiesOf('CatalogItemFooter', module)
   .add('Chapter (hero)', () => (
     <CatalogItemFooter size="hero" item={chapterCard} testID="catalog-item-footer" />
   ))
+  .add('Chapter (without author)', () => (
+    <CatalogItemFooter item={chapterCardWithoutAuthor} testID="catalog-item-footer" />
+  ))
   .add('Discipline', () => <CatalogItemFooter item={disciplineCard} testID="catalog-item-footer" />)
   .add('Discipline (adaptive)', () => (
     <CatalogItemFooter item={disciplineCardAdaptive} testID="catalog-item-footer" />
@@ -57,4 +74,7 @@ storiesOf('CatalogItemFooter', module)
   ))
   .add('Discipline (hero)', () => (
     <CatalogItemFooter size="hero" item={disciplineCard} testID="catalog-item-footer" />
+  ))
+  .add('Discipline (without author)', () => (
+    <CatalogItemFooter item={disciplineCardWithoutAuthor} testID="catalog-item-footer" />
   ));
