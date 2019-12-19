@@ -138,4 +138,8 @@ export type AnalyticsEventParams = {
   [key: string]: string | number
 };
 
+export type LoggerProperties = {
+  [key: string]: string | null
+};
+
 export type AuthenticationType = 'qr-code' | 'magic-link' | 'demo' | 'reconnection';

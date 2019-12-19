@@ -4,15 +4,13 @@ import {createBrand} from '../../__fixtures__/brands';
 import {createToken} from '../../__fixtures__/tokens';
 import {createUser} from '../../__fixtures__/user';
 import {createAuthenticationState} from '../../__fixtures__/store';
-
-import {createFakeAnalytics, fakeError} from '../../utils/tests';
+import {createFakeAnalytics, createFakeLogger, fakeError} from '../../utils/tests';
 import {ANALYTICS_EVENT_TYPE, AUTHENTICATION_TYPE} from '../../const';
 import {fetchRequest as fetchBrandRequest, fetchSuccess as fetchBrandSuccess} from './brands';
 import {
   fetchRequest as fetchLanguageRequest,
   fetchSuccess as fetchLanguageSuccess
 } from './language/fetch';
-
 import {fetchRequest as fetchUserRequest, fetchSuccess as fetchUserSuccess} from './user';
 import {setRequest as setLanguageRequest, setSuccess as setLanguageSuccess} from './language/set';
 
@@ -77,6 +75,7 @@ describe('Authentication', () => {
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
           },
@@ -136,6 +135,7 @@ describe('Authentication', () => {
 
       // $FlowFixMe
       const current = await signIn(authenticationType, token)(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledTimes(1);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
@@ -144,6 +144,11 @@ describe('Authentication', () => {
           authenticationType
         }
       );
+      expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
+      expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
+        userId: 'foobar',
+        brand: brand.name
+      });
       expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -176,6 +181,7 @@ describe('Authentication', () => {
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
           },
@@ -235,6 +241,7 @@ describe('Authentication', () => {
 
       // $FlowFixMe
       const current = await signIn(authenticationType)(dispatch, getState, options);
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledTimes(1);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_IN,
         {
@@ -243,6 +250,11 @@ describe('Authentication', () => {
           authenticationType
         }
       );
+      expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
+      expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
+        userId: 'foobar',
+        brand: brand.name
+      });
       expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -273,6 +285,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -300,6 +313,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signIn(authenticationType)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Logger.setProperties).not.toHaveBeenCalled();
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -320,6 +334,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -349,6 +364,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Logger.setProperties).not.toHaveBeenCalled();
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -369,6 +385,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -400,6 +417,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Logger.setProperties).not.toHaveBeenCalled();
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -421,6 +439,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Brands: {
             find: jest.fn(() => Promise.reject(fakeError))
           },
@@ -461,6 +480,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Logger.setProperties).not.toHaveBeenCalled();
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -489,6 +509,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Brands: {
             find: jest.fn(() => Promise.resolve(brand))
           },
@@ -529,6 +550,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signIn(authenticationType, token)(dispatch, getState, options);
       expect(options.services.Analytics.logEvent).not.toHaveBeenCalled();
+      expect(options.services.Logger.setProperties).not.toHaveBeenCalled();
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -557,6 +579,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -582,6 +605,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledTimes(1);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
@@ -589,6 +613,11 @@ describe('Authentication', () => {
           brand: brand.name
         }
       );
+      expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
+      expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
+        userId: null,
+        brand: null
+      });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -615,6 +644,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -640,6 +670,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledTimes(1);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
@@ -647,6 +678,11 @@ describe('Authentication', () => {
           brand: brand.name
         }
       );
+      expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
+      expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
+        userId: null,
+        brand: null
+      });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
@@ -666,6 +702,7 @@ describe('Authentication', () => {
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
+          Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn().mockImplementation(() => language),
             set: jest.fn()
@@ -691,6 +728,7 @@ describe('Authentication', () => {
       // $FlowFixMe
       const current = await signOut()(dispatch, getState, options);
       const expected = {type: SIGN_OUT};
+      expect(options.services.Analytics.logEvent).toHaveBeenCalledTimes(1);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
@@ -698,6 +736,11 @@ describe('Authentication', () => {
           brand: undefined
         }
       );
+      expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
+      expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
+        userId: null,
+        brand: null
+      });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);

@@ -1,7 +1,6 @@
 // @flow
 
 import {Answers, Clues, Content, LeaderBoard, Videos} from '@coorpacademy/player-services';
-
 import type {
   AnswersService,
   CluesService,
@@ -31,6 +30,8 @@ import type {SectionsService} from './sections';
 import Sections from './sections';
 import type {HeroService} from './hero';
 import Hero from './hero';
+import type {LoggerService} from './logger';
+import Logger from './logger';
 
 export type Services = {|
   Analytics: AnalyticsService,
@@ -48,7 +49,8 @@ export type Services = {|
   Recommendations: typeof Recommendations,
   Sections: SectionsService,
   Videos: VideosService,
-  Hero: HeroService
+  Hero: HeroService,
+  Logger: LoggerService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -71,7 +73,8 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Sections: Sections(dataLayer),
   // $FlowFixMe datalayer definition error
   Videos: Videos(dataLayer),
-  Hero: Hero(dataLayer)
+  Hero: Hero(dataLayer),
+  Logger: Logger(dataLayer)
 });
 
 export default createServices;

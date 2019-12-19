@@ -8,6 +8,8 @@ import {PortalProvider} from 'react-native-portal';
 // import DeviceInfo from 'react-native-device-info';
 import orientation from 'react-native-orientation-locker';
 import {ReduxNetworkProvider} from 'react-native-offline';
+// @todo remove this lib once on react-native-firebase 6.x
+import {setJSExceptionHandler, getJSExceptionHandler} from 'react-native-exception-handler';
 
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
@@ -39,6 +41,20 @@ const styles = StyleSheet.create({
 
 class App extends React.PureComponent<Props> {
   props: Props;
+
+  constructor(props: Props) {
+    super(props);
+
+    const currentHandler = getJSExceptionHandler();
+    setJSExceptionHandler((error, isFatal) => {
+      if (!error) {
+        return;
+      }
+
+      services.Logger.error(error);
+      currentHandler(error, isFatal);
+    });
+  }
 
   componentDidMount() {
     orientation.lockToPortrait();

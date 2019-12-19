@@ -1,14 +1,14 @@
 # This is a Gradle generated file for dependency locking.
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
-androidx.annotation:annotation:1.0.0
+androidx.annotation:annotation:1.1.0
 androidx.appcompat:appcompat:1.0.0
 androidx.arch.core:core-common:2.0.0
 androidx.arch.core:core-runtime:2.0.0
 androidx.asynclayoutinflater:asynclayoutinflater:1.0.0
 androidx.collection:collection:1.0.0
 androidx.coordinatorlayout:coordinatorlayout:1.0.0
-androidx.core:core:1.0.0
+androidx.core:core:1.2.0-rc01
 androidx.cursoradapter:cursoradapter:1.0.0
 androidx.customview:customview:1.0.0
 androidx.documentfile:documentfile:1.0.0
@@ -33,8 +33,12 @@ androidx.slidingpanelayout:slidingpanelayout:1.0.0
 androidx.swiperefreshlayout:swiperefreshlayout:1.0.0
 androidx.vectordrawable:vectordrawable-animated:1.0.0
 androidx.vectordrawable:vectordrawable:1.0.0
-androidx.versionedparcelable:versionedparcelable:1.0.0
+androidx.versionedparcelable:versionedparcelable:1.1.0
 androidx.viewpager:viewpager:1.0.0
+com.crashlytics.sdk.android:answers:1.4.7
+com.crashlytics.sdk.android:beta:1.2.10
+com.crashlytics.sdk.android:crashlytics-core:2.6.8
+com.crashlytics.sdk.android:crashlytics:2.9.9
 com.facebook.fresco:drawee:1.10.0
 com.facebook.fresco:fbcore:1.10.0
 com.facebook.fresco:fresco:1.10.0
@@ -69,5 +73,6 @@ com.google.firebase:firebase-measurement-connector:17.0.1
 com.squareup.okhttp3:okhttp-urlconnection:3.12.1
 com.squareup.okhttp3:okhttp:3.12.1
 com.squareup.okio:okio:1.15.0
+io.fabric.sdk.android:fabric:1.4.8
 javax.inject:javax.inject:1
 org.webkit:android-jsc:r241213

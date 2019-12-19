@@ -7,10 +7,8 @@ import type {Services} from '../services';
 import createServices from '../services';
 import createDataLayer from '../layer/data';
 
-export type AnalyticsState = $PropertyType<Services, 'Analytics'>;
-
 export type WithAnalyticsProps = {|
-  analytics?: AnalyticsState
+  analytics?: $PropertyType<Services, 'Analytics'>
 |};
 
 const dataLayer = createDataLayer();

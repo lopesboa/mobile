@@ -2,7 +2,10 @@ PODS:
   - boost-for-react-native (1.63.0)
   - BVLinearGradient (2.5.4):
     - React
+  - Crashlytics (3.13.2):
+    - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
+  - Fabric (1.10.2)
   - Firebase/Core (5.20.2):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.1)
@@ -148,6 +151,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - ReactNativeExceptionHandler (2.10.8):
+    - React
   - ReactNativeLocalization (2.1.0):
     - React
   - ReactNativePermissions (1.1.1):
@@ -158,7 +163,13 @@ PODS:
     - React
   - RNDeviceInfo (2.1.0):
     - React
-  - RNFirebase (5.4.2):
+  - RNFirebase (5.5.6):
+    - Firebase/Core
+    - React
+    - RNFirebase/Crashlytics (= 5.5.6)
+  - RNFirebase/Crashlytics (5.5.6):
+    - Crashlytics
+    - Fabric
     - Firebase/Core
     - React
   - RNGestureHandler (1.3.0):
@@ -176,9 +187,11 @@ PODS:
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - Crashlytics
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs`)
-  - Firebase/Core (~> 5.20.1)
-  - Firebase/DynamicLinks (~> 5.20.1)
+  - Fabric
+  - Firebase/Core
+  - Firebase/DynamicLinks
   - Folly (from `../node_modules/react-native/third-party-podspecs`)
   - glog (from `../node_modules/react-native/third-party-podspecs`)
   - GoogleTagManager
@@ -200,6 +213,7 @@ DEPENDENCIES:
   - React/RCTNetwork (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - ReactNativeExceptionHandler (from `../node_modules/react-native-exception-handler`)
   - ReactNativeLocalization (from `../node_modules/react-native-localization`)
   - ReactNativePermissions (from `../node_modules/react-native-permissions`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
@@ -215,6 +229,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -258,6 +274,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-video"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
+  ReactNativeExceptionHandler:
+    :path: "../node_modules/react-native-exception-handler"
   ReactNativeLocalization:
     :path: "../node_modules/react-native-localization"
   ReactNativePermissions:
@@ -284,7 +302,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 8cbc5155c978f2e43098818c91d206d07aae6d30
+  Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
@@ -310,18 +330,19 @@ SPEC CHECKSUMS:
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: 9aecbfc4628128838187df9d9c9f630670cfb1d1
   react-native-webview: d388bd8c7f3499640feb60f776b4c89f9c069961
+  ReactNativeExceptionHandler: 8025d98049c25f186835a3af732dd7c9974d6dce
   ReactNativeLocalization: 0ef9ccdb2800fe7974c255ae2b9d4e5496dea509
   ReactNativePermissions: b64e084dff6a5cad51587d38c306f09246246384
   rn-fetch-blob: 766f85cabd2992300dfa1be2bc9e4e258abc6f04
   RNCAsyncStorage: 0d2b0cf659d2def90d8ed7de76f502d335268156
   RNDeviceInfo: 2b4f76adc479657bf37bfc927bbfb027b17515d4
-  RNFirebase: 891477280514b0cef3225cc48709cabedd192d5e
+  RNFirebase: ac0de8b24c6f91ae9459575491ed6a77327619c6
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
   RNReactNativeHapticFeedback: e11a4da0ce174e9f88b03cbaf5d76d94633cdee2
   RNSound: a1d01988e043aed5dbb476c2152b5ffb02446750
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: 1e5a8333ecbbbe59a49f85b54e57758f4dc758a4
+PODFILE CHECKSUM: 57c084f3c9064d3de709bf46ae9520ce9b4db643
 
 COCOAPODS: 1.8.4

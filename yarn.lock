@@ -11421,13 +11421,18 @@ react-native-email-link@^1.4.0:
   resolved "https://registry.npmjs.org/react-native-email-link/-/react-native-email-link-1.4.0.tgz#cee0a03b0f6bccf1446bbf1fe5a90e0704f1da45"
   integrity sha512-kCckvSrtZqkIaxZFel2W7ecT/yOVDIdnQfukV+/CpUZNorRu1Hf1Oe4w2h30lhZoMS1G/QOii6hocEgkSADagw==
 
-react-native-firebase@^5.4.2:
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/react-native-firebase/-/react-native-firebase-5.4.2.tgz#6a66fea38724a7e76d9486b87e02129fda266290"
-  integrity sha512-xeluQo/dDYGKPvPLL0CH51T+rPVkKmEoR/aYDTDgJXXgiDwqSGAq9v414uF4p6SALLCDcNeb4IA6HA8TcFKcrQ==
+react-native-exception-handler@^2.10.8:
+  version "2.10.8"
+  resolved "https://registry.npmjs.org/react-native-exception-handler/-/react-native-exception-handler-2.10.8.tgz#1a7f846592d888d23adaf797e31802585f1d9ff0"
+  integrity sha512-ZN+jwpADRkCUNdad/50k0mZdMoICGrGdtaxgvRU+pNcWRRBAXJhuo4+jY0eQaoVpx1ghycGE6tBu9ka8gL2NOQ==
+
+react-native-firebase@5.5.6:
+  version "5.5.6"
+  resolved "https://registry.npmjs.org/react-native-firebase/-/react-native-firebase-5.5.6.tgz#17b34ec0d5dc39afaaf0e159fd160f6339e0f707"
+  integrity sha512-AdbpGwKEEiMFgaRar9WOPc8Li4sfxR//WOyNQzxYsQ1fpARC908j7feqy2gu73SLqk4wzIrnlfJWakOe0/Bclg==
   dependencies:
     opencollective-postinstall "^2.0.0"
-    prop-types "^15.6.2"
+    prop-types "^15.7.2"
 
 react-native-flash-message@^0.1.15:
   version "0.1.15"

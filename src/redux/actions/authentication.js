@@ -107,6 +107,10 @@ export const signIn = (
       brand: brand.name,
       authenticationType
     });
+    services.Logger.setProperties({
+      userId: jwt.user,
+      brand: brand.name
+    });
 
     return dispatch(signInSuccess(token));
   } catch (e) {
@@ -135,6 +139,10 @@ export const signOut = (): StoreAction<Action | SetLanguageAction> => async (
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
     ...(brand ? {brand: brand.name} : {}),
     userId: jwt && jwt.user
+  });
+  services.Logger.setProperties({
+    userId: null,
+    brand: null
   });
 
   return dispatch({

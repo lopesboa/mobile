@@ -36,6 +36,8 @@ describe('Data layer', () => {
       getNextLevel: expect.any(Function),
       getSynchronizedProgressionIds: expect.any(Function),
       logEvent: expect.any(Function),
+      logError: expect.any(Function),
+      setLoggerProperties: expect.any(Function),
       refreshCard: expect.any(Function),
       saveProgression: expect.any(Function),
       storeBundle: expect.any(Function),

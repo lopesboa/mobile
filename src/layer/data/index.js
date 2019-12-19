@@ -2,6 +2,7 @@
 
 import type {ChapterAPI, DataLayer as DataLayerBase, LevelAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
+
 import {
   findById as findProgressionById,
   getAll as getAllProgressions,
@@ -12,7 +13,6 @@ import {
   findBestOf,
   updateSynchronizedProgressionIds
 } from './progressions';
-
 import {find as findContent} from './content';
 import {findById as findChapterById, getNextChapter} from './chapters';
 import {getExitNode} from './exit-nodes';
@@ -26,6 +26,7 @@ import {findById as findLevelById, getNextLevel} from './levels';
 import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
+import {logError, setProperties as setLoggerProperties} from './logger';
 import {fetchLanguage, setLanguage, getInterfaceLanguage} from './language';
 import {fetchSections} from './sections';
 import {findUriById as findVideoUriById} from './videos';
@@ -52,6 +53,8 @@ export type DataLayer = {
   getNextChapter: (ref: string) => Promise<ChapterAPI | void>,
   getNextLevel: (ref: string) => Promise<LevelAPI | void>,
   logEvent: typeof logEvent,
+  logError: typeof logError,
+  setLoggerProperties: typeof setLoggerProperties,
   fetchUser: typeof fetchUser,
   saveProgression: Progression => Promise<Progression>,
   updateSynchronizedProgressionIds: typeof updateSynchronizedProgressionIds
@@ -94,6 +97,8 @@ const createDataLayer = (): DataLayer => ({
   fetchBundle,
   storeBundle,
   logEvent,
+  logError,
+  setLoggerProperties,
   updateSynchronizedProgressionIds
 });
 

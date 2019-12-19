@@ -7,6 +7,7 @@ import {createProgression} from '../__fixtures__/progression';
 import {createStoreState} from '../__fixtures__/store';
 import createDataLayer from '../layer/data';
 import createServices from '../services';
+import type {Services} from '../services';
 import createStore from '../redux';
 import {__TEST__} from '../modules/environment';
 import BrandThemeProvider from '../components/brand-theme-provider';
@@ -15,7 +16,6 @@ import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Layout} from '../containers/with-layout';
 import type {Vibration} from '../containers/with-vibration';
 import type {Audio} from '../containers/with-audio';
-import type {AnalyticsState} from '../containers/with-analytics';
 
 export const createFakeStore = <S>(state?: S) => ({
   ...createStore(createServices(createDataLayer())),
@@ -64,8 +64,13 @@ export const sleep = (duration: number = 10): Promise<void> =>
 
 export const fakeLayout: Layout = {width: 320, height: 768};
 
-export const createFakeAnalytics = (): AnalyticsState => ({
+export const createFakeAnalytics = (): $PropertyType<Services, 'Analytics'> => ({
   logEvent: __TEST__ ? jest.fn() : () => {}
+});
+
+export const createFakeLogger = (): $PropertyType<Services, 'Logger'> => ({
+  error: jest.fn(),
+  setProperties: jest.fn()
 });
 
 export const createFakeVibration = (): Vibration => ({
