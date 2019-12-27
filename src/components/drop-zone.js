@@ -4,13 +4,16 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 
-import {QUESTION_TYPE} from '../const';
+import {QUESTION_TYPE, THEME_PREFERENCE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
+import withColorScheme from '../containers/with-color-scheme';
+import type {WithColorSchemeProps} from '../containers/with-color-scheme';
 import QuestionChoice from './question-choice';
 import Text from './text';
 
 export type Props = {|
+  ...WithColorSchemeProps,
   choices: Array<Choice>,
   onPress: (item: Choice) => void
 |};
@@ -30,6 +33,10 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.common,
     marginBottom: theme.spacing.tiny
   },
+  dropZoneDarMode: {
+    borderColor: theme.colors.gray.dark,
+    backgroundColor: '#373737'
+  },
   emptyContent: {
     justifyContent: 'center',
     alignContent: 'center',
@@ -38,6 +45,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.gray.medium
+  },
+  textDarkMode: {
+    color: theme.colors.white
   }
 });
 
@@ -47,7 +57,8 @@ class DropZone extends React.PureComponent<Props> {
   handlePress = (item: Choice) => () => this.props.onPress(item);
 
   render() {
-    const {choices} = this.props;
+    const {choices, colorScheme} = this.props;
+    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
     const mappedSortedChoices = choices.map(item => (
       <QuestionChoice
         style={styles.choice}
@@ -65,9 +76,17 @@ class DropZone extends React.PureComponent<Props> {
     const hasNoSelectedChoices = mappedSortedChoices.length === 0;
 
     return (
-      <View style={[styles.dropZone, hasNoSelectedChoices && styles.emptyContent]}>
+      <View
+        style={[
+          styles.dropZone,
+          hasNoSelectedChoices && styles.emptyContent,
+          isDarkModeActivated && styles.dropZoneDarMode
+        ]}
+      >
         {hasNoSelectedChoices && (
-          <Text style={styles.text}>{translations.selectSomethingBelow}</Text>
+          <Text style={[styles.text, isDarkModeActivated && styles.textDarkMode]}>
+            {translations.selectSomethingBelow}
+          </Text>
         )}
 
         {!hasNoSelectedChoices && mappedSortedChoices}
@@ -76,4 +95,4 @@ class DropZone extends React.PureComponent<Props> {
   }
 }
 
-export default DropZone;
+export default withColorScheme(DropZone);

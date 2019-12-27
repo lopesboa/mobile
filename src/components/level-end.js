@@ -7,7 +7,7 @@ import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
-import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
+import {CONTENT_TYPE, TOOLTIP_TYPE, THEME_PREFERENCE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
@@ -15,6 +15,8 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import withAudio from '../containers/with-audio';
 import type {WithAudioProps} from '../containers/with-audio';
+import withColorScheme from '../containers/with-color-scheme';
+import type {WithColorSchemeProps} from '../containers/with-color-scheme';
 import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
 import Card, {LAYOUT as CARD_LAYOUT} from './card';
@@ -51,6 +53,9 @@ const styles = StyleSheet.create({
   },
   starburstSpiral: {
     top: '-10%'
+  },
+  darkModeBackground: {
+    backgroundColor: '#292929'
   },
   positive: {
     backgroundColor: theme.colors.positive
@@ -142,6 +147,7 @@ const {width: screenWidth} = Dimensions.get('window');
 type Props = {|
   ...WithVibrationProps,
   ...WithAudioProps,
+  ...WithColorSchemeProps,
   contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,
@@ -183,10 +189,16 @@ class LevelEnd extends React.PureComponent<Props> {
       recommendation,
       isFocused,
       testID = 'level-end',
+      colorScheme,
       onCardPress
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
-    const backgroundColor = (isSuccess && styles.positive) || styles.negative;
+    console.log({colorScheme});
+    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+    const backgroundColor =
+      (isDarkModeActivated && styles.darkModeBackground) ||
+      (isSuccess && styles.positive) ||
+      styles.negative;
 
     const nextLabel =
       contentType === CONTENT_TYPE.LEVEL ? translations.nextLevel : translations.nextChapter;
@@ -216,6 +228,7 @@ class LevelEnd extends React.PureComponent<Props> {
                   style={styles.starburst}
                   spiralStyle={styles.starburstSpiral}
                   spiralColor="rgba(0,0,0,0.06)"
+                  isDarkModeActivated={isDarkModeActivated}
                   backgroundColor={isSuccess ? theme.colors.positive : theme.colors.negative}
                 />
                 <View style={styles.header}>
@@ -303,4 +316,4 @@ class LevelEnd extends React.PureComponent<Props> {
 }
 
 export {LevelEnd as Component};
-export default withVibration(withAudio(LevelEnd));
+export default withColorScheme(withVibration(withAudio(LevelEnd)));

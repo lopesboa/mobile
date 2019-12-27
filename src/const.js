@@ -76,6 +76,11 @@ export const CARD_TYPE: {
   CORRECTION: 'correction'
 };
 
+export const THEME_PREFERENCE: {[string]: 'dark' | 'light'} = {
+  DARK: 'dark',
+  LIGHT: 'light'
+};
+
 export const SECTION_CONTENT_TYPE: {
   [string]: SectionContentType
 } = {

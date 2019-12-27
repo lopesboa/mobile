@@ -10,7 +10,9 @@ import type {WithAnalyticsProps} from '../containers/with-analytics';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import type {AnalyticsEventParams} from '../types';
-import {ANALYTICS_EVENT_TYPE} from '../const';
+import {ANALYTICS_EVENT_TYPE, THEME_PREFERENCE} from '../const';
+import withColorScheme from '../containers/with-color-scheme';
+import type {WithColorSchemeProps} from '../containers/with-color-scheme';
 import {BrandThemeContext} from './brand-theme-provider';
 import {DEFAULT_STYLE as DEFAULT_TEXT_TYPE} from './text';
 
@@ -80,6 +82,7 @@ export type OwnProps = {|
 |};
 
 export type Props = $Exact<{|
+  ...WithColorSchemeProps,
   ...WithAnalyticsProps,
   ...WithVibrationProps,
   ...OwnProps
@@ -114,9 +117,12 @@ class Button extends React.PureComponent<Props> {
       isSmall,
       placeholderColor = theme.colors.gray.light,
       testID: prefixTestID,
+      colorScheme,
       children,
       style
     } = this.props;
+
+    const isDarkModeActived = colorScheme === THEME_PREFERENCE.DARK;
 
     return (
       <BrandThemeContext.Consumer>
@@ -143,7 +149,8 @@ class Button extends React.PureComponent<Props> {
             isSmall && styles.textSmall,
             isSecondary && secondaryTextStyle,
             isTextSecondary && secondaryTextStyle,
-            isPlaceholder && placeholderTextStyle
+            isPlaceholder && placeholderTextStyle,
+            isDarkModeActived && styles.text
           ];
 
           return (
@@ -160,7 +167,9 @@ class Button extends React.PureComponent<Props> {
                   isSmall && styles.small,
                   isSecondary && secondaryButtonStyle,
                   isInverted && isSecondary && secondaryButtonStyle,
-                  style
+                  style,
+                  isDarkModeActived && styles.button,
+                  isDarkModeActived && buttonStyle
                 ]}
                 textStyle={textStyles}
                 disabledStyle={(isPlaceholder && placeholderButtonStyle) || styles.disabled}
@@ -183,4 +192,5 @@ class Button extends React.PureComponent<Props> {
 }
 
 export {Button as Component};
-export default withVibration(withAnalytics(Button));
+
+export default withColorScheme(withVibration(withAnalytics(Button)));

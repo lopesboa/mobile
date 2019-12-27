@@ -32,8 +32,12 @@ export type FontSizeType =
   | 'xxlarge'
   | 'xxxlarge';
 
+export type ColorScheme = 'dark' | 'light';
+
 export type Theme = {|
-  colors: Colors,
+  colors: {
+    [ColorScheme]: Colors
+  },
   spacing: {
     [SpaceType]: number
   },
@@ -59,19 +63,53 @@ const theme: Theme = {
   colors: {
     border: 'rgba(0, 0, 0, 0.1)',
     gray: {
-      extra: '#212121',
-      light: '#424242',
+      extra: '#FAFAFA',
+      light: '#ECEFF1',
       lightMedium: '#CFD8DC',
       medium: '#90A4AE',
-      dark: '#f5f5f5'
+      dark: '#546E7A'
     },
     negative: '#F73F52',
     positive: '#3EC483',
-    white: '#121212',
-    black: '#FFFFFF',
+    white: '#FFFFFF',
+    black: '#14171A',
     battle: '#FFE100',
     notification: '#FF7043',
-    salmon: '#FDE2E5'
+    salmon: '#FDE2E5',
+    light: {
+      border: 'rgba(0, 0, 0, 0.1)',
+      gray: {
+        extra: '#FAFAFA',
+        light: '#ECEFF1',
+        lightMedium: '#CFD8DC',
+        medium: '#90A4AE',
+        dark: '#546E7A'
+      },
+      negative: '#F73F52',
+      positive: '#3EC483',
+      white: '#FFFFFF',
+      black: '#14171A',
+      battle: '#FFE100',
+      notification: '#FF7043',
+      salmon: '#FDE2E5'
+    },
+    dark: {
+      border: 'rgba(0, 0, 0, 0.1)',
+      gray: {
+        extra: '#212121',
+        light: '#424242',
+        lightMedium: '#CFD8DC',
+        medium: '#90A4AE',
+        dark: '#f5f5f5'
+      },
+      negative: '#F73F52',
+      positive: '#3EC483',
+      white: '#121212',
+      black: '#FFFFFF',
+      battle: '#FFE100',
+      notification: '#FF7043',
+      salmon: '#FDE2E5'
+    }
   },
   spacing: {
     micro: 4,

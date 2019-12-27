@@ -8,6 +8,8 @@ import theme from '../modules/theme';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
+import withColorScheme from '../containers/with-color-scheme';
+import {THEME_PREFERENCE} from '../const';
 import Html from './html';
 import Space from './space';
 import Title from './question-title';
@@ -36,6 +38,9 @@ const styles = StyleSheet.create({
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.large,
     textAlign: 'left'
+  },
+  textDarkMode: {
+    color: theme.colors.white
   },
   image: {
     width: 200,
@@ -66,8 +71,8 @@ class Context extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, description, onPress, media, onLinkPress, testID} = this.props;
-
+    const {header, description, onPress, media, onLinkPress, colorScheme, testID} = this.props;
+    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
     return (
       <View style={styles.container} testID={testID}>
         <View>
@@ -93,7 +98,7 @@ class Context extends React.PureComponent<Props> {
         <View style={styles.content}>
           <Html
             fontSize={theme.fontSize.small}
-            style={styles.text}
+            style={[styles.text, isDarkModeActivated && styles.textDarkMode]}
             imageStyle={styles.image}
             onLinkPress={onLinkPress}
             isTextCentered
@@ -117,4 +122,4 @@ class Context extends React.PureComponent<Props> {
   }
 }
 
-export default Context;
+export default withColorScheme(Context);

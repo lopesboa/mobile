@@ -10,11 +10,14 @@ import type {Props as CardHeaderProps} from '../components/card-header';
 import theme from '../modules/theme';
 import Gradient from '../components/gradient';
 import Touchable from '../components/touchable';
-import {CARD_TYPE} from '../const';
+import {CARD_TYPE, THEME_PREFERENCE} from '../const';
+import withColorScheme from './with-color-scheme';
+import type {WithColorSchemeProps} from './with-color-scheme';
 
 type Props = $Exact<{|
   ...CardProps,
   ...CardHeaderProps,
+  ...WithColorSchemeProps,
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
@@ -39,6 +42,9 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: theme.radius.card,
     borderBottomRightRadius: theme.radius.card,
     backgroundColor: theme.colors.white
+  },
+  contentDarkMode: {
+    backgroundColor: '#202020'
   },
   noPadding: {paddingTop: 0, paddingHorizontal: 0},
   gradient: {
@@ -94,7 +100,17 @@ class CardScalable extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const {type, title, isCorrect, children, style, testID, animationStyle} = this.props;
+    const {
+      type,
+      title,
+      isCorrect,
+      children,
+      style,
+      testID,
+      animationStyle,
+      colorScheme
+    } = this.props;
+    const isDarkModeActivad = colorScheme === THEME_PREFERENCE.DARK;
     const _style = {
       ...style,
       ...((!this.state.isExpanded && animationStyle) || {}),
@@ -113,13 +129,21 @@ class CardScalable extends React.PureComponent<Props, State> {
         >
           <Card testID={testID} type={CARD_LAYOUT.DECK_SWIPE}>
             <CardHeader type={type} title={title} isCorrect={isCorrect} />
-            <View style={[styles.content, type === CARD_TYPE.RESOURCE && styles.noPadding]}>
+            <View
+              style={[
+                styles.content,
+                type === CARD_TYPE.RESOURCE && styles.noPadding,
+                isDarkModeActivad && styles.contentDarkMode
+              ]}
+            >
               {children}
-              <Gradient
-                height={theme.spacing.large}
-                colors={[theme.colors.white]}
-                style={styles.gradient}
-              />
+              {!isDarkModeActivad && (
+                <Gradient
+                  height={theme.spacing.large}
+                  colors={[theme.colors.white]}
+                  style={styles.gradient}
+                />
+              )}
             </View>
           </Card>
         </Touchable>
@@ -128,4 +152,4 @@ class CardScalable extends React.PureComponent<Props, State> {
   }
 }
 
-export default CardScalable;
+export default withColorScheme(CardScalable);

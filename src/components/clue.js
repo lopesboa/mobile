@@ -3,8 +3,10 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
+import {useColorScheme} from 'react-native-appearance';
 import theme from '../modules/theme';
 import FlippableCard from '../containers/card-flippable';
+import {THEME_PREFERENCE} from '../const';
 import ClueFrontItem from './clue-front-item';
 import Html from './html';
 import QuestionTitle from './question-title';
@@ -39,25 +41,32 @@ const styles = StyleSheet.create({
   },
   questionContainer: {
     paddingHorizontal: theme.spacing.base
+  },
+  headerDarkMode: {
+    color: theme.colors.white
   }
 });
 
-const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
-  <View style={styles.container} testID={testID}>
-    <View style={styles.questionContainer}>
-      <QuestionTitle isTextCentered>{header}</QuestionTitle>
+const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => {
+  const colorScheme = useColorScheme();
+  const isDarkModeActived = colorScheme === THEME_PREFERENCE.DARK;
+  return (
+    <View style={styles.container} testID={testID}>
+      <View style={styles.questionContainer}>
+        <QuestionTitle isTextCentered>{header}</QuestionTitle>
+      </View>
+      <FlippableCard
+        frontItem={ClueFrontItem}
+        starsDiff={starsDiff}
+        slideId={slideId}
+        onPress={onPress}
+      >
+        <Html fontSize={theme.fontSize.xlarge} style={styles.text} isTextCentered>
+          {clue}
+        </Html>
+      </FlippableCard>
     </View>
-    <FlippableCard
-      frontItem={ClueFrontItem}
-      starsDiff={starsDiff}
-      slideId={slideId}
-      onPress={onPress}
-    >
-      <Html fontSize={theme.fontSize.xlarge} style={styles.text} isTextCentered>
-        {clue}
-      </Html>
-    </FlippableCard>
-  </View>
-);
+  );
+};
 
 export default Clue;

@@ -7,10 +7,14 @@ import HtmlBase from 'react-native-render-html';
 import theme from '../modules/theme';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
+import withColorScheme from '../containers/with-color-scheme';
+import type {WithColorSchemeProps} from '../containers/with-color-scheme';
+import {THEME_PREFERENCE} from '../const';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
 type Props = {|
   ...WithVibrationProps,
+  ...WithColorSchemeProps,
   children: string,
   fontSize: number,
   onLinkPress?: (url: string) => void,
@@ -63,7 +67,8 @@ class Html extends React.PureComponent<Props> {
       style,
       testID,
       anchorTextColor,
-      isTextCentered
+      isTextCentered,
+      colorScheme
     } = this.props;
 
     const tagsStyles = {
@@ -78,7 +83,9 @@ class Html extends React.PureComponent<Props> {
       img: imageStyle
     };
 
-    let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: theme.colors.black};
+    let textBaseColor =
+      (colorScheme === THEME_PREFERENCE.DARK && theme.colors.white) || theme.colors.black;
+    let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: textBaseColor};
     if (style) {
       if (Array.isArray(style)) {
         const styleObject = style.reduce((result, child) => ({
@@ -137,4 +144,4 @@ class Html extends React.PureComponent<Props> {
 }
 
 export {Html as Component};
-export default withVibration(Html);
+export default withColorScheme(withVibration(Html));

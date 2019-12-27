@@ -9,7 +9,9 @@ import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
-import {RESOURCE_TYPE} from '../const';
+import {RESOURCE_TYPE, THEME_PREFERENCE} from '../const';
+import withColorScheme from '../containers/with-color-scheme';
+import type {WithColorSchemeProps} from '../containers/with-color-scheme';
 import Html from './html';
 import QuestionTitle from './question-title';
 import Resource from './resource';
@@ -19,6 +21,7 @@ import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = $Exact<{|
   ...WithLayoutProps,
+  ...WithColorSchemeProps,
   header: string,
   starsGranted: number,
   testID?: string,
@@ -34,6 +37,9 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     flexGrow: 1
   },
+  containerDarkMode: {
+    backgroundColor: '#111111'
+  },
   browser: {
     flex: 1
   },
@@ -46,8 +52,14 @@ const styles = StyleSheet.create({
     paddingVertical: theme.spacing.small,
     paddingHorizontal: theme.spacing.base
   },
+  bottomTextWrapperDarkMode: {
+    backgroundColor: '#292929'
+  },
   bottomText: {
     color: theme.colors.gray.dark
+  },
+  bottomTextDarkMode: {
+    color: theme.colors.white
   }
 });
 
@@ -65,7 +77,8 @@ class Lesson extends React.Component<Props> {
   };
 
   render() {
-    const {header, onChange, resources, selected, starsGranted, testID} = this.props;
+    const {header, onChange, resources, selected, starsGranted, colorScheme, testID} = this.props;
+    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
     const openedResource = resources.find(resource => resource._id === selected);
 
     if (!selected || !openedResource) {
@@ -85,7 +98,10 @@ class Lesson extends React.Component<Props> {
             getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
 
           return (
-            <View testID={testID} style={styles.container}>
+            <View
+              testID={testID}
+              style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}
+            >
               <View style={styles.questionContainer}>
                 <QuestionTitle isTextCentered>{header}</QuestionTitle>
               </View>
@@ -110,11 +126,16 @@ class Lesson extends React.Component<Props> {
               >
                 <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
               </ScrollView>
-              <View style={styles.bottomTextWrapper}>
+              <View
+                style={[
+                  styles.bottomTextWrapper,
+                  isDarkModeActivated && styles.bottomTextWrapperDarkMode
+                ]}
+              >
                 <Html
                   testID="additional-stars-note"
                   fontSize={theme.fontSize.small}
-                  style={styles.bottomText}
+                  style={[styles.bottomText, isDarkModeActivated && styles.bottomTextDarkMode]}
                   isTextCentered
                 >
                   {winAdditionalStars}
@@ -128,4 +149,4 @@ class Lesson extends React.Component<Props> {
   }
 }
 
-export default Lesson;
+export default withColorScheme(Lesson);

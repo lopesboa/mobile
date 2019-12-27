@@ -5,6 +5,9 @@ import {StyleSheet, View} from 'react-native';
 import CardFlip from 'react-native-card-flip';
 import theme from '../modules/theme';
 import {BrandThemeContext} from '../components/brand-theme-provider';
+import {THEME_PREFERENCE} from '../const';
+import withColorTheme from './with-color-scheme';
+import type {WithColorSchemeProps} from './with-color-scheme';
 
 const HEIGHT = 270;
 const styles = StyleSheet.create({
@@ -28,6 +31,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.gray.dark
   },
+  fronItemDarkMode: {
+    backgroundColor: '#202020'
+  },
   backItem: {
     justifyContent: 'center'
   }
@@ -38,6 +44,7 @@ type State = {|
 |};
 
 type Props = {|
+  ...WithColorSchemeProps,
   flipDirection?: string,
   perspective?: number,
   duration?: number,
@@ -85,8 +92,10 @@ class FlippableCard extends React.Component<Props, State> {
       duration = 1000,
       starsDiff,
       frontItem,
+      colorScheme,
       children: backItem
     } = this.props;
+    const isDarkModeActived = colorScheme === THEME_PREFERENCE.DARK;
     return (
       <BrandThemeContext.Consumer>
         {brandTheme => (
@@ -98,7 +107,14 @@ class FlippableCard extends React.Component<Props, State> {
               perspective={perspective}
               duration={duration}
             >
-              <View style={[styles.cards, styles.frontItem]} testID="clue-front">
+              <View
+                style={[
+                  styles.cards,
+                  styles.frontItem,
+                  isDarkModeActived && styles.fronItemDarkMode
+                ]}
+                testID="clue-front"
+              >
                 {frontItem({onPress: this.handleFlipCard, starsDiff})}
               </View>
               <View
@@ -119,4 +135,4 @@ class FlippableCard extends React.Component<Props, State> {
   }
 }
 
-export default FlippableCard;
+export default withColorTheme(FlippableCard);

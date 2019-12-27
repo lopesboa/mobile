@@ -83,7 +83,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - React (0.59.9):
     - React/Core (= 0.59.9)
-  - react-native-appearance (0.1.0):
+  - react-native-appearance (0.3.1):
     - React
   - react-native-camera (2.9.0):
     - React
@@ -328,7 +328,7 @@ SPEC CHECKSUMS:
   lottie-react-native: 3d8181d43619b1fe804c828bd5a09d20fe8bdea7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   React: a86b92f00edbe1873a63e4a212c29b7a7ad5224f
-  react-native-appearance: 309901290a0aab9ec4bc60ff2c3f94e6aae0267a
+  react-native-appearance: 368f9d1160e3f1d7ecb5945e704affe018deef46
   react-native-camera: 571e4cfe70e7021e9077c1699a53e659db971f96
   react-native-netinfo: a59d8426a8484f739fe3a95dd6ad5af1435db05f
   react-native-orientation-locker: 23918c400376a7043e752c639c122fcf6bce8f1c
@@ -349,6 +349,6 @@ SPEC CHECKSUMS:
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
 
-PODFILE CHECKSUM: d43220c416f50a93a6146d837ea9ddeb4f729d5e
+PODFILE CHECKSUM: b7f25cb4f587ade90b653b91767f8890f142ea0a
 
 COCOAPODS: 1.8.4

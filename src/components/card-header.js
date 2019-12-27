@@ -10,9 +10,10 @@ import {
   NovaLineStatusCloseCircle as CloseIcon
 } from '@coorpacademy/nova-icons';
 
+import {useColorScheme} from 'react-native-appearance';
 import theme from '../modules/theme';
 import type {CardType} from '../types';
-import {CARD_TYPE} from '../const';
+import {CARD_TYPE, THEME_PREFERENCE} from '../const';
 import Text from './text';
 
 export type Props = {|
@@ -62,10 +63,18 @@ const styles = StyleSheet.create({
   },
   headerCorrectionBGColorIsNotCorrect: {
     backgroundColor: '#FDD9DC'
+  },
+  headerDarkMode: {
+    backgroundColor: '#373737'
+  },
+  headerTextDarkMode: {
+    color: theme.colors.white
   }
 });
 
 const CardHeader = ({type, isCorrect, title}: Props) => {
+  const colorScheme = useColorScheme();
+  const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
   const correctionBackgroundColor =
     (isCorrect && styles.headerCorrectionBGColorIsCorrect) ||
     styles.headerCorrectionBGColorIsNotCorrect;
@@ -76,7 +85,8 @@ const CardHeader = ({type, isCorrect, title}: Props) => {
         type === CARD_TYPE.TIP && styles.headerTip,
         type === CARD_TYPE.KEY_POINT && styles.headerKeyPoint,
         type === CARD_TYPE.CORRECTION && correctionBackgroundColor,
-        type === CARD_TYPE.RESOURCE && styles.headerResource
+        type === CARD_TYPE.RESOURCE && styles.headerResource,
+        isDarkModeActivated && styles.headerDarkMode
       ]}
     >
       {type === CARD_TYPE.TIP && <TipIcon color="#ffc035" style={styles.headerTipIcon} />}
@@ -93,7 +103,10 @@ const CardHeader = ({type, isCorrect, title}: Props) => {
       {type === CARD_TYPE.RESOURCE && (
         <ResourceIcon color="#16affc" style={styles.headerCorrectionIcon} />
       )}
-      <Text style={styles.headerText} numberOfLines={1}>
+      <Text
+        style={[styles.headerText, isDarkModeActivated && styles.headerTextDarkMode]}
+        numberOfLines={1}
+      >
         {title}
       </Text>
     </View>

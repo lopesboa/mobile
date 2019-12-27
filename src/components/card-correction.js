@@ -3,8 +3,10 @@
 import {StyleSheet, View} from 'react-native';
 import * as React from 'react';
 
+import {useColorScheme} from 'react-native-appearance';
 import theme from '../modules/theme';
 import translations from '../translations';
+import {THEME_PREFERENCE} from '../const';
 import Text from './text';
 import Html from './html';
 import Space from './space';
@@ -32,35 +34,49 @@ const styles = StyleSheet.create({
   },
   userAnswer: {
     fontWeight: theme.fontWeight.bold
+  },
+  textDarkMode: {
+    color: theme.colors.white
   }
 });
 
-const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
-  <View style={styles.container}>
-    <Html fontSize={theme.fontSize.regular} style={styles.text}>
-      {question}
-    </Html>
-    <Space type="tiny" />
-    {answers.map((answer, index) => (
+const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => {
+  const colorScheme = useColorScheme();
+  const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+  return (
+    <View style={styles.container}>
       <Html
         fontSize={theme.fontSize.regular}
-        style={[styles.text, styles.correctAnswer]}
-        key={`answer-${index}`}
+        style={[styles.text, isDarkModeActivated && styles.textDarkMode]}
       >
-        {answer}
+        {question}
       </Html>
-    ))}
-    <Space type="base" />
-    <Text style={[styles.text, styles.userAnswer]}>
-      {userAnswers.length > 1 ? translations.yourAnswers : translations.yourAnswer}
-    </Text>
-    <Space type="tiny" />
-    {userAnswers.map((userAnswer, index) => (
-      <Html fontSize={theme.fontSize.regular} style={styles.text} key={`user-answer-${index}`}>
-        {userAnswer}
-      </Html>
-    ))}
-  </View>
-);
+      <Space type="tiny" />
+      {answers.map((answer, index) => (
+        <Html
+          fontSize={theme.fontSize.regular}
+          style={[styles.text, styles.correctAnswer]}
+          key={`answer-${index}`}
+        >
+          {answer}
+        </Html>
+      ))}
+      <Space type="base" />
+      <Text style={[styles.text, isDarkModeActivated && styles.textDarkMode, styles.userAnswer]}>
+        {userAnswers.length > 1 ? translations.yourAnswers : translations.yourAnswer}
+      </Text>
+      <Space type="tiny" />
+      {userAnswers.map((userAnswer, index) => (
+        <Html
+          fontSize={theme.fontSize.regular}
+          style={[styles.text, isDarkModeActivated && styles.textDarkMode]}
+          key={`user-answer-${index}`}
+        >
+          {userAnswer}
+        </Html>
+      ))}
+    </View>
+  );
+};
 
 export default CardCorrection;

@@ -10,7 +10,8 @@ export type Props = {|
   style?: ViewStyleProp,
   spiralStyle?: ViewStyleProp,
   testID?: string,
-  backgroundColor: string
+  backgroundColor: string,
+  isDarkModeActivated: boolean
 |};
 
 const styles = StyleSheet.create({
@@ -27,18 +28,28 @@ const styles = StyleSheet.create({
   }
 });
 
-const Starburst = ({spiralColor, testID, style, spiralStyle, backgroundColor}: Props) => {
+const Starburst = ({
+  spiralColor,
+  testID,
+  style,
+  spiralStyle,
+  backgroundColor,
+  isDarkModeActivated = false
+}: Props) => {
   const screenSize: number = Dimensions.get('window').height;
 
   return (
     <View style={[styles.container, style]} testID={testID}>
       <View style={spiralStyle}>
         <Spiral color={spiralColor} width={screenSize} height={screenSize} />
-        <Gradient
-          style={[styles.gradient, {width: screenSize}]}
-          colors={[backgroundColor]}
-          testID={testID && testID + '-gradient'}
-        />
+        {(!isDarkModeActivated && (
+          <Gradient
+            style={[styles.gradient, {width: screenSize}]}
+            colors={[backgroundColor]}
+            testID={testID && testID + '-gradient'}
+          />
+        )) ||
+          null}
       </View>
     </View>
   );

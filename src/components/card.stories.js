@@ -8,7 +8,7 @@ import theme from '../modules/theme';
 import Card, {LAYOUT} from './card';
 
 const children = (
-  <View style={{padding: theme.spacing.base, backgroundColor: theme.colors.white}}>
+  <View style={{padding: theme.spacing.base, backgroundColor: theme.colors.light.white}}>
     <Text>A sponsored post is a small advertising insert appearing in users’ timelines.</Text>
   </View>
 );

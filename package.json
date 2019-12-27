@@ -90,7 +90,7 @@
     "p-map": "^2.1.0",
     "react": "16.8.3",
     "react-native": "0.59.9",
-    "react-native-appearance": "^0.1.0",
+    "react-native-appearance": "^0.3.1",
     "react-native-camera": "2.9.0",
     "react-native-card-flip": "^1.0.4",
     "react-native-device-info": "^2.1.0",
