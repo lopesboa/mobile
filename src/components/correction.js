@@ -102,6 +102,12 @@ const styles = StyleSheet.create({
   resource: {
     flex: 0
   },
+  correctionStatusBanner: {
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    height: theme.spacing.micro
+  },
   footer: {
     paddingHorizontal: PADDING_WIDTH,
     paddingBottom: PADDING_WIDTH
@@ -399,6 +405,14 @@ class Correction extends React.PureComponent<Props> {
                 {offeringExtraLife ? translations.quit : translations.next}
               </Button>
             </View>
+            {isDarkModeActivated ? (
+              <View
+                style={[
+                  styles.correctionStatusBanner,
+                  {backgroundColor: isCorrect ? theme.colors.positive : theme.colors.negative}
+                ]}
+              />
+            ) : null}
           </React.Fragment>
         )}
       </View>

@@ -8,8 +8,8 @@ import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
 import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
-import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
+import theme from '../modules/theme';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
@@ -139,6 +139,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%'
+  },
+  levelStatusBanner: {
+    width: '100%',
+    position: 'absolute',
+    top: getStatusBarHeight(),
+    height: theme.spacing.micro
   }
 });
 
@@ -306,6 +312,14 @@ class LevelEnd extends React.PureComponent<Props> {
               {buttonTranslation}
             </ButtonSticky>
             <HeaderBackButton onPress={onClose} type="home" testID={`${testID}-button-close`} />
+            {isDarkModeActivated ? (
+              <View
+                style={[
+                  styles.levelStatusBanner,
+                  {backgroundColor: (isSuccess && theme.colors.positive) || theme.colors.negative}
+                ]}
+              />
+            ) : null}
           </View>
         )}
       </BrandThemeContext.Consumer>
