@@ -5,8 +5,11 @@ import {StyleSheet, View, SafeAreaView} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 import theme from '../modules/theme';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 
 type Props = {|
+  ...WithDarkModeProps,
   style?: ViewStyleProp,
   noScroll?: boolean,
   children: React.Node,
@@ -22,6 +25,9 @@ const styles = StyleSheet.create({
   screen: {
     backgroundColor: BACKGROUND_COLOR,
     flex: 1
+  },
+  screenDarkMode: {
+    backgroundColor: '#121212'
   },
   screenScroll: {
     flexGrow: 1
@@ -42,12 +48,20 @@ class Screen extends React.PureComponent<Props> {
   };
 
   render() {
-    const {style, noScroll, children, testID, noSafeArea, refreshControl} = this.props;
+    const {
+      style,
+      noScroll,
+      children,
+      testID,
+      noSafeArea,
+      refreshControl,
+      isDarkModeActivated
+    } = this.props;
 
     const CustomView = noSafeArea ? View : SafeAreaView;
 
     return (
-      <CustomView style={[styles.screen, style]}>
+      <CustomView style={[styles.screen, style, isDarkModeActivated && styles.screenDarkMode]}>
         {noScroll ? (
           <View style={styles.screenScroll} testID={testID}>
             {children}
@@ -71,4 +85,4 @@ class Screen extends React.PureComponent<Props> {
   }
 }
 
-export default Screen;
+export default withDarkMode(Screen);

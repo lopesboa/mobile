@@ -4,16 +4,16 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import type {Choice} from '@coorpacademy/progression-engine';
 
-import {QUESTION_TYPE, THEME_PREFERENCE} from '../const';
+import {QUESTION_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
-import withColorScheme from '../containers/with-color-scheme';
-import type {WithColorSchemeProps} from '../containers/with-color-scheme';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import QuestionChoice from './question-choice';
 import Text from './text';
 
 export type Props = {|
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   choices: Array<Choice>,
   onPress: (item: Choice) => void
 |};
@@ -57,8 +57,7 @@ class DropZone extends React.PureComponent<Props> {
   handlePress = (item: Choice) => () => this.props.onPress(item);
 
   render() {
-    const {choices, colorScheme} = this.props;
-    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+    const {choices, isDarkModeActivated} = this.props;
     const mappedSortedChoices = choices.map(item => (
       <QuestionChoice
         style={styles.choice}
@@ -95,4 +94,4 @@ class DropZone extends React.PureComponent<Props> {
   }
 }
 
-export default withColorScheme(DropZone);
+export default withDarkMode(DropZone);

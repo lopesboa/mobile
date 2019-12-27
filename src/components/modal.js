@@ -4,6 +4,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import theme from '../modules/theme';
+import {useDarkMode} from '../containers/with-dark-mode';
 import HeaderBackButton from './header-back-button';
 
 export type Props = {|
@@ -24,12 +25,18 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: theme.colors.white
   },
+  containerDarkMode: {
+    backgroundColor: '#202020'
+  },
   header: {
     backgroundColor: theme.colors.white,
     alignItems: 'flex-end',
     justifyContent: 'center',
     paddingHorizontal: theme.spacing.medium,
     height: HEADER_HEIGHT
+  },
+  headerDarkMode: {
+    backgroundColor: '#373737'
   },
   content: {
     paddingHorizontal: theme.spacing.medium,
@@ -66,35 +73,47 @@ const Modal = ({
   contentStyle,
   onClose,
   testID
-}: Props) => (
-  <View style={styles.container} testID={testID}>
-    <View style={[styles.header, {backgroundColor: headerBackgroundColor}]}>
-      <HeaderBackButton
-        color={theme.colors.gray.dark}
-        isFloating={false}
-        testID="close-modal"
-        onPress={onClose}
-        type="close"
-      />
-    </View>
-    {renderIcon && (
-      <View style={styles.icon}>
-        <View style={[styles.iconContent, {backgroundColor: iconBackgroundColor}]}>
-          {renderIcon()}
-        </View>
-      </View>
-    )}
+}: Props) => {
+  const isDarkModeActivated = useDarkMode();
+  return (
     <View
-      style={[
-        styles.content,
-        headerBackgroundColor && styles.contentWithHeader,
-        renderIcon && styles.contentWithIcon,
-        contentStyle
-      ]}
+      style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}
+      testID={testID}
     >
-      {children}
+      <View
+        style={[
+          styles.header,
+          {backgroundColor: headerBackgroundColor},
+          isDarkModeActivated && styles.headerDarkMode
+        ]}
+      >
+        <HeaderBackButton
+          color={theme.colors.gray.dark}
+          isFloating={false}
+          testID="close-modal"
+          onPress={onClose}
+          type="close"
+        />
+      </View>
+      {renderIcon && (
+        <View style={styles.icon}>
+          <View style={[styles.iconContent, {backgroundColor: iconBackgroundColor}]}>
+            {renderIcon()}
+          </View>
+        </View>
+      )}
+      <View
+        style={[
+          styles.content,
+          headerBackgroundColor && styles.contentWithHeader,
+          renderIcon && styles.contentWithIcon,
+          contentStyle
+        ]}
+      >
+        {children}
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default Modal;

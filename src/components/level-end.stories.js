@@ -58,7 +58,7 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNew}
       vibration={createFakeVibration()}
-      colorScheme="dark"
+      isDarkModeActivated="dark"
       audio={createFakeAudio()}
     />
   ))
@@ -75,7 +75,7 @@ storiesOf('LevelEnd', module)
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
       vibration={createFakeVibration()}
-      colorScheme="dark"
+      isDarkModeActivated="dark"
       audio={createFakeAudio()}
     />
   ))
@@ -89,7 +89,7 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={disciplineNewCoorp}
       vibration={createFakeVibration()}
-      colorScheme="light"
+      isDarkModeActivated="light"
       audio={createFakeAudio()}
     />
   ))
@@ -105,7 +105,7 @@ storiesOf('LevelEnd', module)
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
       vibration={createFakeVibration()}
-      colorScheme="dark"
+      isDarkModeActivated="dark"
       audio={createFakeAudio()}
     />
   ))
@@ -119,7 +119,7 @@ storiesOf('LevelEnd', module)
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
       vibration={createFakeVibration()}
-      colorScheme="dark"
+      isDarkModeActivated="dark"
       audio={createFakeAudio()}
     />
   ))
@@ -135,7 +135,7 @@ storiesOf('LevelEnd', module)
       nextContentType={CONTENT_TYPE.CHAPTER}
       nextContentLabel="foobar"
       vibration={createFakeVibration()}
-      colorScheme="dark"
+      isDarkModeActivated="dark"
       audio={createFakeAudio()}
     />
   ));
@@ -154,7 +154,7 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={createFakeVibration()}
-          colorScheme="dark"
+          isDarkModeActivated="dark"
           audio={createFakeAudio()}
         />
       );
@@ -180,7 +180,7 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNew}
           vibration={createFakeVibration()}
-          colorScheme="dark"
+          isDarkModeActivated="dark"
           audio={createFakeAudio()}
         />
       );
@@ -205,7 +205,7 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={vibration}
-          colorScheme="dark"
+          isDarkModeActivated="dark"
           audio={audio}
         />
       );
@@ -230,7 +230,7 @@ if (__TEST__) {
           onClose={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={vibration}
-          colorScheme="dark"
+          isDarkModeActivated="dark"
           audio={audio}
         />
       );

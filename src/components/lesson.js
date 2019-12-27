@@ -9,9 +9,9 @@ import theme from '../modules/theme';
 import {getSubtitlesUri} from '../modules/subtitles';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
-import {RESOURCE_TYPE, THEME_PREFERENCE} from '../const';
-import withColorScheme from '../containers/with-color-scheme';
-import type {WithColorSchemeProps} from '../containers/with-color-scheme';
+import {RESOURCE_TYPE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Html from './html';
 import QuestionTitle from './question-title';
 import Resource from './resource';
@@ -21,7 +21,7 @@ import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = $Exact<{|
   ...WithLayoutProps,
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   header: string,
   starsGranted: number,
   testID?: string,
@@ -36,9 +36,6 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     flexGrow: 1
-  },
-  containerDarkMode: {
-    backgroundColor: '#111111'
   },
   browser: {
     flex: 1
@@ -77,8 +74,15 @@ class Lesson extends React.Component<Props> {
   };
 
   render() {
-    const {header, onChange, resources, selected, starsGranted, colorScheme, testID} = this.props;
-    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+    const {
+      header,
+      onChange,
+      resources,
+      selected,
+      starsGranted,
+      isDarkModeActivated,
+      testID
+    } = this.props;
     const openedResource = resources.find(resource => resource._id === selected);
 
     if (!selected || !openedResource) {
@@ -149,4 +153,4 @@ class Lesson extends React.Component<Props> {
   }
 }
 
-export default withColorScheme(Lesson);
+export default withDarkMode(Lesson);

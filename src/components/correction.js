@@ -19,6 +19,8 @@ import Cards from '../containers/cards-swipable';
 import translations from '../translations';
 import {getSubtitlesUri} from '../modules/subtitles';
 import {RESOURCE_TYPE, CARD_TYPE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Resource from './resource';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
   },
   negative: {
     backgroundColor: theme.colors.negative
+  },
+  darkModeBackground: {
+    backgroundColor: '#121212'
   },
   title: {
     color: theme.colors.white,
@@ -107,6 +112,7 @@ type Props = $Exact<{|
   ...WithLayoutProps,
   ...WithVibrationProps,
   ...WithAudioProps,
+  ...WithDarkModeProps,
   question: string,
   answers: Array<string>,
   userAnswers: Array<string>,
@@ -319,6 +325,7 @@ class Correction extends React.PureComponent<Props> {
       isFastSlideEnabled,
       offeringExtraLife,
       hasConsumedExtraLife,
+      isDarkModeActivated,
       testID = 'correction'
     } = this.props;
     const lives = hasConsumedExtraLife && _lives !== undefined ? _lives + 1 : _lives;
@@ -334,13 +341,16 @@ class Correction extends React.PureComponent<Props> {
     }
 
     const isLoading = isCorrect === undefined;
+    const backgroundColor =
+      (isDarkModeActivated && styles.darkModeBackground) ||
+      (isCorrect ? styles.positive : styles.negative);
 
     return (
       <View
         style={[
           styles.container,
           isLoading && styles.loaderContainer,
-          !isLoading && (isCorrect ? styles.positive : styles.negative)
+          !isLoading && backgroundColor
         ]}
         testID={`${testID}-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
       >
@@ -397,4 +407,4 @@ class Correction extends React.PureComponent<Props> {
 }
 
 export {Correction as Component};
-export default withVibration(withAudio(withLayout(Correction)));
+export default withDarkMode(withVibration(withAudio(withLayout(Correction))));

@@ -11,13 +11,13 @@ import theme from '../modules/theme';
 import Gradient from '../components/gradient';
 import Touchable from '../components/touchable';
 import {CARD_TYPE, THEME_PREFERENCE} from '../const';
-import withColorScheme from './with-color-scheme';
-import type {WithColorSchemeProps} from './with-color-scheme';
+import withDarkMode from './with-dark-mode';
+import type {WithDarkModeProps} from './with-dark-mode';
 
 type Props = $Exact<{|
   ...CardProps,
   ...CardHeaderProps,
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
@@ -108,9 +108,8 @@ class CardScalable extends React.PureComponent<Props, State> {
       style,
       testID,
       animationStyle,
-      colorScheme
+      isDarkModeActivated
     } = this.props;
-    const isDarkModeActivad = colorScheme === THEME_PREFERENCE.DARK;
     const _style = {
       ...style,
       ...((!this.state.isExpanded && animationStyle) || {}),
@@ -133,11 +132,11 @@ class CardScalable extends React.PureComponent<Props, State> {
               style={[
                 styles.content,
                 type === CARD_TYPE.RESOURCE && styles.noPadding,
-                isDarkModeActivad && styles.contentDarkMode
+                isDarkModeActivated && styles.contentDarkMode
               ]}
             >
               {children}
-              {!isDarkModeActivad && (
+              {!isDarkModeActivated && (
                 <Gradient
                   height={theme.spacing.large}
                   colors={[theme.colors.white]}
@@ -152,4 +151,4 @@ class CardScalable extends React.PureComponent<Props, State> {
   }
 }
 
-export default withColorScheme(CardScalable);
+export default withDarkMode(CardScalable);

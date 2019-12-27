@@ -8,8 +8,8 @@ import theme from '../modules/theme';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
-import withColorScheme from '../containers/with-color-scheme';
-import {THEME_PREFERENCE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Html from './html';
 import Space from './space';
 import Title from './question-title';
@@ -18,6 +18,7 @@ import Resource from './resource';
 
 export type Props = $Exact<{|
   ...WithLayoutProps,
+  ...WithDarkModeProps,
   header: string,
   description: string,
   onPress: () => void,
@@ -71,8 +72,15 @@ class Context extends React.PureComponent<Props> {
   };
 
   render() {
-    const {header, description, onPress, media, onLinkPress, colorScheme, testID} = this.props;
-    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+    const {
+      header,
+      description,
+      onPress,
+      media,
+      onLinkPress,
+      isDarkModeActivated,
+      testID
+    } = this.props;
     return (
       <View style={styles.container} testID={testID}>
         <View>
@@ -122,4 +130,4 @@ class Context extends React.PureComponent<Props> {
   }
 }
 
-export default withColorScheme(Context);
+export default withDarkMode(Context);

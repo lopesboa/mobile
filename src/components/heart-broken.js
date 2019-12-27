@@ -7,9 +7,9 @@ import {
   NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon
 } from '@coorpacademy/nova-icons';
 
-import {useColorScheme} from 'react-native-appearance';
+import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
-import {THEME_PREFERENCE} from '../const';
+ 
 
 export type Props = {|
   style?: ViewStyleProp,
@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
 });
 
 const HeartBroken = ({testID, style}: Props) => {
-  const isDarModeActivated = useColorScheme() === THEME_PREFERENCE.DARK;
+  const isDarkModeActivated = useDarkMode();
   return (
     <View style={[styles.container, style]} testID={testID}>
       <HeartOutlineIcon
-        color={(isDarModeActivated && '#202020') || theme.colors.white}
+        color={(isDarkModeActivated && '#212121') || theme.colors.white}
         style={styles.heart}
       />
       <HeartBrokenIcon color={theme.colors.negative} style={styles.brokenHeart} />

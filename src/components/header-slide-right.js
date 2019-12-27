@@ -5,6 +5,7 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
+import {useDarkMode} from '../containers/with-dark-mode';
 import Lives from './lives';
 
 type Props = {|
@@ -23,6 +24,9 @@ const styles = StyleSheet.create({
     paddingVertical: LIVES_VERTICAL_PADDING,
     paddingHorizontal: theme.spacing.small,
     backgroundColor: theme.colors.gray.light
+  },
+  containerDarkMode: {
+    backgroundColor: '#373737'
   }
 });
 
@@ -34,6 +38,7 @@ const HeaderSlideRight = ({
   onPress,
   onLongPress
 }: Props) => {
+  const isDarkModeActivated = useDarkMode();
   let testID = 'header-slide-right';
 
   if (isGodModeEnabled) {
@@ -44,7 +49,7 @@ const HeaderSlideRight = ({
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}>
       <TouchableOpacity
         onPress={onPress}
         onLongPress={onLongPress}

@@ -2,11 +2,11 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {useColorScheme} from 'react-native-appearance';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
 import theme from '../modules/theme';
+import {useDarkMode} from '../containers/with-dark-mode';
 import {BrandThemeContext} from './brand-theme-provider';
 import ImageBackground from './image-background';
 import Version from './version';
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
     right: 0,
     height: HEADER_HEIGHT
   },
+  headerDarkMode: {
+    backgroundColor: '#121212'
+  },
   logo: {
     height: LOGO_HEIGHT,
     width: '100%'
@@ -67,13 +70,7 @@ const styles = StyleSheet.create({
 
 const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
-  let colorScheme = useColorScheme();
-  if (colorScheme === 'dark') {
-    console.log('dark');
-  } else {
-    console.log('light');
-    // render some light thing
-  }
+  const isDarkModeActivated = useDarkMode();
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID={testID}>
@@ -93,7 +90,7 @@ const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Pro
       <Catalog onCardPress={onCardPress} containerStyle={styles.catalog} isFocused={isFocused}>
         <Version style={styles.version} />
       </Catalog>
-      <View style={styles.header}>
+      <View style={[styles.header, isDarkModeActivated && styles.headerDarkMode]}>
         <Touchable
           testID="home-logo"
           onLongPress={onLogoLongPress}

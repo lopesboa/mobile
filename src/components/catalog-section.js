@@ -5,6 +5,8 @@ import {View, StyleSheet, FlatList} from 'react-native';
 
 import theme from '../modules/theme';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Card from './card';
 import CatalogItem, {
   WIDTH as CATALOG_ITEM_WIDTH,
@@ -30,6 +32,9 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.black
   },
+  titleDarkMode: {
+    color: theme.colors.white
+  },
   list: {
     paddingHorizontal: LIST_HORIZONTAL_OFFSET,
     height: ITEM_HEIGHT
@@ -44,6 +49,7 @@ const styles = StyleSheet.create({
 });
 
 export type Props = {|
+  ...WithDarkModeProps,
   sectionRef?: string,
   title?: string,
   cards?: Array<DisciplineCard | ChapterCard | void>,
@@ -83,7 +89,7 @@ class CatalogSection extends React.Component<Props> {
   };
 
   renderTitle = (): React.Node => {
-    const {title} = this.props;
+    const {title, isDarkModeActivated} = this.props;
 
     if (!title) {
       return (
@@ -95,7 +101,7 @@ class CatalogSection extends React.Component<Props> {
       );
     }
 
-    return <Text style={styles.title}>{title}</Text>;
+    return <Text style={[styles.title, isDarkModeActivated && styles.titleDarkMode]}>{title}</Text>;
   };
 
   render() {
@@ -121,4 +127,4 @@ class CatalogSection extends React.Component<Props> {
   }
 }
 
-export default CatalogSection;
+export default withDarkMode(CatalogSection);

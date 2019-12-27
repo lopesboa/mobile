@@ -7,14 +7,13 @@ import HtmlBase from 'react-native-render-html';
 import theme from '../modules/theme';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
-import withColorScheme from '../containers/with-color-scheme';
-import type {WithColorSchemeProps} from '../containers/with-color-scheme';
-import {THEME_PREFERENCE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
 type Props = {|
   ...WithVibrationProps,
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   children: string,
   fontSize: number,
   onLinkPress?: (url: string) => void,
@@ -68,7 +67,7 @@ class Html extends React.PureComponent<Props> {
       testID,
       anchorTextColor,
       isTextCentered,
-      colorScheme
+      isDarkModeActivated
     } = this.props;
 
     const tagsStyles = {
@@ -83,8 +82,7 @@ class Html extends React.PureComponent<Props> {
       img: imageStyle
     };
 
-    let textBaseColor =
-      (colorScheme === THEME_PREFERENCE.DARK && theme.colors.white) || theme.colors.black;
+    let textBaseColor = (isDarkModeActivated && theme.colors.white) || theme.colors.black;
     let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: textBaseColor};
     if (style) {
       if (Array.isArray(style)) {
@@ -144,4 +142,4 @@ class Html extends React.PureComponent<Props> {
 }
 
 export {Html as Component};
-export default withColorScheme(withVibration(Html));
+export default withDarkMode(withVibration(Html));

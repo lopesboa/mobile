@@ -5,6 +5,8 @@ import {FlatList, View, StyleSheet} from 'react-native';
 
 import type {Resource} from '../types';
 import theme from '../modules/theme';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import {BrandThemeContext} from './brand-theme-provider';
 import Html from './html';
 import Space from './space';
@@ -12,6 +14,7 @@ import Touchable from './touchable';
 import Preview from './preview';
 
 type Props = {|
+  ...WithDarkModeProps,
   onChange: (id: string) => void,
   selected?: string,
   resources: Array<Resource>
@@ -58,6 +61,9 @@ const styles = StyleSheet.create({
   description: {
     color: theme.colors.gray.dark
   },
+  descriptionDarkMode: {
+    color: theme.colors.white
+  },
   descriptionSelected: {
     fontWeight: theme.fontWeight.bold
   }
@@ -73,7 +79,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
   renderSeparator = () => <Space />;
 
   renderItem = ({item: resource}: {item: Resource}) => {
-    const {selected} = this.props;
+    const {selected, isDarkModeActivated} = this.props;
     const isSelected = selected === resource._id;
     const selectedSuffix = (isSelected && '-selected') || '';
     const testID = `resource-${resource.ref.replace(/_/g, '-')}`;
@@ -122,7 +128,8 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                   style={[
                     styles.description,
                     isSelected && selectedTextStyle,
-                    isSelected && styles.descriptionSelected
+                    isSelected && styles.descriptionSelected,
+                    isDarkModeActivated && styles.descriptionDarkMode
                   ]}
                 >
                   {resource.description}
@@ -156,4 +163,4 @@ class ResourcesBrowser extends React.PureComponent<Props> {
   }
 }
 
-export default ResourcesBrowser;
+export default withDarkMode(ResourcesBrowser);

@@ -10,7 +10,7 @@ import {
   NovaLineStatusCloseCircle as CloseIcon
 } from '@coorpacademy/nova-icons';
 
-import {useColorScheme} from 'react-native-appearance';
+import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
 import type {CardType} from '../types';
 import {CARD_TYPE, THEME_PREFERENCE} from '../const';
@@ -73,8 +73,7 @@ const styles = StyleSheet.create({
 });
 
 const CardHeader = ({type, isCorrect, title}: Props) => {
-  const colorScheme = useColorScheme();
-  const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+  const isDarkModeActivated = useDarkMode();
   const correctionBackgroundColor =
     (isCorrect && styles.headerCorrectionBGColorIsCorrect) ||
     styles.headerCorrectionBGColorIsNotCorrect;

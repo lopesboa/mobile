@@ -10,6 +10,8 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Text from './text';
 
 const GOD_MODE_TEXT = '∞';
@@ -32,6 +34,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden'
+  },
+  livesDarkMode: {
+    backgroundColor: '#212121'
   },
   livesPlaceholder: {
     backgroundColor: PLACEHOLDER_COLOR
@@ -67,6 +72,7 @@ const styles = StyleSheet.create({
 export type AnimationDirection = 'top' | 'bottom';
 
 export type Props = {|
+  ...WithDarkModeProps,
   count?: number,
   height: number,
   animationDirection?: AnimationDirection,
@@ -182,7 +188,8 @@ class Lives extends React.PureComponent<Props> {
       maxScaleX = 0,
       isGodModeEnabled,
       isFastSlideEnabled,
-      animationDirection
+      animationDirection,
+      isDarkModeActivated
     } = this.props;
 
     const heartHeight = height * 0.6;
@@ -207,7 +214,8 @@ class Lives extends React.PureComponent<Props> {
       height
     };
     const textStyle = {
-      fontSize: height / 3
+      fontSize: height / 3,
+      color: (isDarkModeActivated && theme.colors.white) || theme.colors.gray.dark
     };
 
     const translateX = this.shake.interpolate({
@@ -249,7 +257,12 @@ class Lives extends React.PureComponent<Props> {
     return (
       <View style={[styles.container, containerStyle]} testID={testID}>
         <View
-          style={[styles.lives, count === undefined && styles.livesPlaceholder, livesStyle]}
+          style={[
+            styles.lives,
+            count === undefined && styles.livesPlaceholder,
+            livesStyle,
+            isDarkModeActivated && styles.livesDarkMode
+          ]}
           testID={`${testID}${countSuffix}${brokenSuffix}`}
         >
           {count !== undefined && (
@@ -279,7 +292,7 @@ class Lives extends React.PureComponent<Props> {
         </View>
         <Animated.View style={[styles.heart, heartStyle]}>
           <HeartOutlineIcon
-            color={theme.colors.white}
+            color={isDarkModeActivated && '#212121' || theme.colors.white}
             style={{height: heartHeight, width: heartHeight}}
           />
           <Animated.View
@@ -313,4 +326,4 @@ class Lives extends React.PureComponent<Props> {
   }
 }
 
-export default Lives;
+export default withDarkMode(Lives);

@@ -7,6 +7,7 @@ import type {Media, QuestionType} from '@coorpacademy/progression-engine';
 import {MEDIA_TYPE, RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getCleanUri} from '../modules/uri';
+import {useDarkMode} from '../containers/with-dark-mode';
 import Html from './html';
 import {BrandThemeContext} from './brand-theme-provider';
 import Touchable from './touchable';
@@ -35,6 +36,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'stretch'
   },
+  containerDarkMode: {
+    backgroundColor: '#373737',
+    borderWidth: 0
+  },
   layoutContainer: {
     flex: 1
   },
@@ -54,6 +59,9 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.black
+  },
+  textDarkMode: {
+    color: theme.colors.white
   },
   textSelected: {
     color: theme.colors.white
@@ -85,6 +93,7 @@ const QuestionChoice = ({
   questionType
 }: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
+  const isDarkModeActivated = useDarkMode();
   const selectedStyle = {
     backgroundColor: brandTheme.colors.primary,
     borderColor: brandTheme.colors.primary
@@ -108,7 +117,10 @@ const QuestionChoice = ({
       analyticsID="question-choice"
       analyticsParams={{questionType}}
     >
-      <View style={[styles.container]} testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}>
+      <View
+        style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}
+        testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}
+      >
         {mediaUri && (
           <View style={[styles.imageContainer]}>
             <Resource
@@ -130,7 +142,11 @@ const QuestionChoice = ({
         >
           <Html
             fontSize={squeezed ? theme.fontSize.medium : theme.fontSize.regular}
-            style={[styles.text, isSelected && styles.textSelected]}
+            style={[
+              styles.text,
+              isSelected && styles.textSelected,
+              isDarkModeActivated && styles.textDarkMode
+            ]}
           >
             {children}
           </Html>

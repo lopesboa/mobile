@@ -3,10 +3,10 @@
 import {StyleSheet, View} from 'react-native';
 import * as React from 'react';
 
-import {useColorScheme} from 'react-native-appearance';
+import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
 import translations from '../translations';
-import {THEME_PREFERENCE} from '../const';
+
 import Text from './text';
 import Html from './html';
 import Space from './space';
@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
 });
 
 const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => {
-  const colorScheme = useColorScheme();
-  const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
+  const isDarkModeActivated = useDarkMode();
+
   return (
     <View style={styles.container}>
       <Html

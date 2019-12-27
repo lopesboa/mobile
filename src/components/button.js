@@ -10,9 +10,9 @@ import type {WithAnalyticsProps} from '../containers/with-analytics';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import type {AnalyticsEventParams} from '../types';
-import {ANALYTICS_EVENT_TYPE, THEME_PREFERENCE} from '../const';
-import withColorScheme from '../containers/with-color-scheme';
-import type {WithColorSchemeProps} from '../containers/with-color-scheme';
+import {ANALYTICS_EVENT_TYPE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import {BrandThemeContext} from './brand-theme-provider';
 import {DEFAULT_STYLE as DEFAULT_TEXT_TYPE} from './text';
 
@@ -44,8 +44,14 @@ const styles = StyleSheet.create({
   disabled: {
     backgroundColor: theme.colors.gray.light
   },
+  disabledDarkMode: {
+    backgroundColor: '#212121'
+  },
   textDisabled: {
     color: theme.colors.gray.medium
+  },
+  textDisabledDarkMode: {
+    color: theme.colors.gray.dark
   },
   inverted: {
     backgroundColor: theme.colors.white
@@ -82,7 +88,7 @@ export type OwnProps = {|
 |};
 
 export type Props = $Exact<{|
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   ...WithAnalyticsProps,
   ...WithVibrationProps,
   ...OwnProps
@@ -117,12 +123,10 @@ class Button extends React.PureComponent<Props> {
       isSmall,
       placeholderColor = theme.colors.gray.light,
       testID: prefixTestID,
-      colorScheme,
+      isDarkModeActivated,
       children,
       style
     } = this.props;
-
-    const isDarkModeActived = colorScheme === THEME_PREFERENCE.DARK;
 
     return (
       <BrandThemeContext.Consumer>
@@ -150,7 +154,8 @@ class Button extends React.PureComponent<Props> {
             isSecondary && secondaryTextStyle,
             isTextSecondary && secondaryTextStyle,
             isPlaceholder && placeholderTextStyle,
-            isDarkModeActived && styles.text
+            isDarkModeActivated && styles.text,
+            isDisabled && isDarkModeActivated && styles.textDisabledDarkMode
           ];
 
           return (
@@ -168,11 +173,15 @@ class Button extends React.PureComponent<Props> {
                   isSecondary && secondaryButtonStyle,
                   isInverted && isSecondary && secondaryButtonStyle,
                   style,
-                  isDarkModeActived && styles.button,
-                  isDarkModeActived && buttonStyle
+                  isDarkModeActivated && styles.button,
+                  isDarkModeActivated && buttonStyle
                 ]}
                 textStyle={textStyles}
-                disabledStyle={(isPlaceholder && placeholderButtonStyle) || styles.disabled}
+                disabledStyle={
+                  (isPlaceholder && placeholderButtonStyle) ||
+                  (isDarkModeActivated && styles.disabledDarkMode) ||
+                  styles.disabled
+                }
                 activityIndicatorColor={theme.colors.gray.medium}
                 testID={prefixTestID && `${prefixTestID}-native`}
               >
@@ -193,4 +202,4 @@ class Button extends React.PureComponent<Props> {
 
 export {Button as Component};
 
-export default withColorScheme(withVibration(withAnalytics(Button)));
+export default withDarkMode(withVibration(withAnalytics(Button)));

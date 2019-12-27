@@ -7,7 +7,7 @@ import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
 
 import translations from '../translations';
-import {CONTENT_TYPE, TOOLTIP_TYPE, THEME_PREFERENCE} from '../const';
+import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
@@ -15,8 +15,8 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import withAudio from '../containers/with-audio';
 import type {WithAudioProps} from '../containers/with-audio';
-import withColorScheme from '../containers/with-color-scheme';
-import type {WithColorSchemeProps} from '../containers/with-color-scheme';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
 import Card, {LAYOUT as CARD_LAYOUT} from './card';
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     top: '-10%'
   },
   darkModeBackground: {
-    backgroundColor: '#292929'
+    backgroundColor: '#121212'
   },
   positive: {
     backgroundColor: theme.colors.positive
@@ -147,7 +147,7 @@ const {width: screenWidth} = Dimensions.get('window');
 type Props = {|
   ...WithVibrationProps,
   ...WithAudioProps,
-  ...WithColorSchemeProps,
+  ...withDarkModeProps,
   contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,
@@ -189,12 +189,10 @@ class LevelEnd extends React.PureComponent<Props> {
       recommendation,
       isFocused,
       testID = 'level-end',
-      colorScheme,
+      isDarkModeActivated,
       onCardPress
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
-    console.log({colorScheme});
-    const isDarkModeActivated = colorScheme === THEME_PREFERENCE.DARK;
     const backgroundColor =
       (isDarkModeActivated && styles.darkModeBackground) ||
       (isSuccess && styles.positive) ||
@@ -316,4 +314,4 @@ class LevelEnd extends React.PureComponent<Props> {
 }
 
 export {LevelEnd as Component};
-export default withColorScheme(withVibration(withAudio(LevelEnd)));
+export default withDarkMode(withVibration(withAudio(LevelEnd)));

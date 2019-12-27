@@ -3,9 +3,9 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 
-import {useColorScheme} from 'react-native-appearance';
+import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
-import {THEME_PREFERENCE} from '../const';
+
 import Html from './html';
 
 type Props = {|
@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
 });
 
 const QuestionTitle = ({children, isTextCentered}: Props) => {
-  const isDarkModeActived = useColorScheme() === THEME_PREFERENCE.DARK;
+  const isDarkModeActivated = useDarkMode();
   return (
     <Html
       fontSize={theme.fontSize.large}
-      style={[styles.text, isDarkModeActived && styles.textDarkMode]}
+      style={[styles.text, isDarkModeActivated && styles.textDarkMode]}
       isTextCentered
       testID="question-title"
     >

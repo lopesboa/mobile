@@ -2,16 +2,26 @@
 
 import * as React from 'react';
 import {BottomTabBar} from 'react-navigation';
+import {StyleSheet} from 'react-native';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 
 import {BrandThemeContext} from '../components/brand-theme-provider';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
+import withDarkMode from './with-dark-mode';
+import type {WithDarkModeProps} from './with-dark-mode';
 
 type Props = {|
   ...WithVibrationProps,
-  ...$Exact<_BottomTabBarProps>
+  ...$Exact<_BottomTabBarProps>,
+  ...WithDarkModeProps
 |};
+
+const styles = StyleSheet.create({
+  containerDarkMode: {
+    backgroundColor: '#212121'
+  }
+});
 
 class TabBar extends React.Component<Props> {
   props: Props;
@@ -29,6 +39,7 @@ class TabBar extends React.Component<Props> {
       /* eslint-disable no-unused-vars */
       vibration,
       /* eslint-enable no-unused-vars */
+      isDarkModeActivated,
       ...props
     } = this.props;
 
@@ -37,6 +48,7 @@ class TabBar extends React.Component<Props> {
         {brandTheme => (
           <BottomTabBar
             {...props}
+            style={[props.style, isDarkModeActivated && styles.containerDarkMode]}
             onTabPress={this.handleTabPress}
             activeTintColor={brandTheme.colors.primary}
           />
@@ -47,4 +59,4 @@ class TabBar extends React.Component<Props> {
 }
 
 export {TabBar as Component};
-export default withVibration(TabBar);
+export default withDarkMode(withVibration(TabBar));

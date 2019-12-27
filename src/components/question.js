@@ -8,6 +8,7 @@ import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
 import theme from '../modules/theme';
 import translations from '../translations';
 import {QUESTION_TYPE, RESOURCE_TYPE} from '../const';
+import {useDarkMode} from '../containers/with-dark-mode';
 import Resource from './resource';
 import Html from './html';
 import QuestionChoices from './question-choices';
@@ -64,6 +65,9 @@ const styles = StyleSheet.create({
   explanation: {
     color: theme.colors.gray.medium
   },
+  explanationDarkMode: {
+    color: theme.colors.white
+  },
   questionContainer: {
     paddingHorizontal: theme.spacing.base
   },
@@ -109,6 +113,7 @@ const Question = ({
     );
   }
 
+  const isDarkModeActivated = useDarkMode();
   const oneChoiceSelected =
     type === QUESTION_TYPE.TEMPLATE
       ? choices.length === userChoices.filter(choice => choice).length
@@ -131,7 +136,7 @@ const Question = ({
           <Space type="small" />
           <Html
             fontSize={theme.fontSize.regular}
-            style={styles.explanation}
+            style={[styles.explanation, isDarkModeActivated && styles.explanationDarkMode]}
             isTextCentered
             testID="explanation"
           >

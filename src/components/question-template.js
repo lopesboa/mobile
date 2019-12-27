@@ -7,10 +7,13 @@ import type {Choice} from '@coorpacademy/progression-engine';
 import theme from '../modules/theme';
 import {QUESTION_TYPE} from '../const';
 import {parseTemplate, TEMPLATE_PART_TYPE} from '../modules/template';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Html from './html';
 import QuestionInput, {ROW_SPACE} from './question-input';
 
 type Props = {|
+  ...WithDarkModeProps,
   isDisabled?: boolean,
   template: string,
   items: Array<Choice>,
@@ -30,6 +33,9 @@ const styles = StyleSheet.create({
     color: theme.colors.black,
     fontWeight: theme.fontWeight.bold,
     lineHeight: 30
+  },
+  textDarkMode: {
+    color: theme.colors.white
   }
 });
 
@@ -39,7 +45,7 @@ class QuestionTemplate extends React.PureComponent<Props> {
   handleInputChange = (item: Choice) => (value: string) => this.props.onInputChange(item, value);
 
   render() {
-    const {isDisabled, template, items, userChoices} = this.props;
+    const {isDisabled, template, items, userChoices, isDarkModeActivated} = this.props;
 
     if (!template) {
       return null;
@@ -82,7 +88,7 @@ class QuestionTemplate extends React.PureComponent<Props> {
               key={testID}
               fontSize={theme.fontSize.regular}
               testID={testID}
-              style={styles.text}
+              style={[styles.text, isDarkModeActivated && styles.textDarkMode]}
             >
               {part.value}
             </Html>
@@ -93,4 +99,4 @@ class QuestionTemplate extends React.PureComponent<Props> {
   }
 }
 
-export default QuestionTemplate;
+export default withDarkMode(QuestionTemplate);
