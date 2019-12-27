@@ -5,8 +5,7 @@ import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
 
-import HeaderSlideTitle from '../containers/header-slide-title';
-import HeaderSlideRight from '../containers/header-slide-right';
+import Header from '../components/header';
 import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
@@ -46,15 +45,16 @@ const appNavigator = createStackNavigator(
     },
     Slide: {
       screen: slideNavigator,
-      navigationOptions: {
-        ...navigationOptions,
-        headerStyle: {
-          ...navigationOptions.headerStyle,
-          backgroundColor: HEADER_BACKGROUND_COLOR
-        },
-        headerTitle: HeaderSlideTitle,
-        headerRight: <HeaderSlideRight />,
-        gesturesEnabled: true
+      navigationOptions: ({navigation}) => {
+        return {
+          ...navigationOptions,
+          headerStyle: {
+            ...navigationOptions.headerStyle,
+            backgroundColor: HEADER_BACKGROUND_COLOR
+          },
+          header: <Header navigation={navigation} />,
+          gesturesEnabled: true
+        };
       }
     }
   },
