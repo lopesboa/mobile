@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {useColorScheme} from 'react-native-appearance';
 import hoistNonReactStatic from 'hoist-non-react-statics';
@@ -9,9 +11,9 @@ function useDarkMode() {
   return isDarkModeActivated;
 }
 
-type WithDarkModeProps = {
+export type WithDarkModeProps = {|
   isDarkModeActivated: boolean
-};
+|};
 
 function withDarkMode<P>(
   WrappedComponent: React$ComponentType<P>

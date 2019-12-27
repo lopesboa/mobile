@@ -17,6 +17,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -29,6 +30,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -41,6 +43,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -53,6 +56,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -65,6 +69,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -78,6 +83,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -90,6 +96,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -102,6 +109,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -115,6 +123,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -127,6 +136,7 @@ storiesOf('Button', module)
       vibration={createFakeVibration()}
       analytics={createFakeAnalytics()}
       analyticsID="fake-button"
+      isDarkModeActivated={false}
     >
       Here we go!
     </Button>
@@ -147,6 +157,7 @@ if (__TEST__) {
           vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
+          isDarkModeActivated
         >
           Here we go!
         </Button>
@@ -177,6 +188,7 @@ if (__TEST__) {
           vibration={vibration}
           analytics={analytics}
           analyticsID={analyticsID}
+          isDarkModeActivated
           analyticsParams={analyticsParams}
         >
           Here we go!

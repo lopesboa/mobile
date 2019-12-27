@@ -17,7 +17,7 @@ import type {WithDarkModeProps} from './with-dark-mode';
 type Props = $Exact<{|
   ...CardProps,
   ...CardHeaderProps,
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,

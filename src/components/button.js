@@ -88,7 +88,7 @@ export type OwnProps = {|
 |};
 
 export type Props = $Exact<{|
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   ...WithAnalyticsProps,
   ...WithVibrationProps,
   ...OwnProps

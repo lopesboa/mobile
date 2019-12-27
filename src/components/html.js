@@ -13,7 +13,7 @@ import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
 type Props = {|
   ...WithVibrationProps,
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   children: string,
   fontSize: number,
   onLinkPress?: (url: string) => void,

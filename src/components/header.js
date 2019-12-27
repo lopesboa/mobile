@@ -8,11 +8,13 @@ import HeaderSlideTitle from '../containers/header-slide-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import theme from '../modules/theme';
 import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import HeaderBackIcon from './header-back-icon';
 import Touchable from './touchable';
 
 type Props = {|
-  ...ReactNavigation$WithNavigationProps
+  ...ReactNavigation$WithNavigationProps,
+  ...WithDarkModeProps
 |};
 
 const styles = StyleSheet.create({

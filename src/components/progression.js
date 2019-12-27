@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 const Progression = ({current, count}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
   const isDarkModeActivated = useDarkMode();
-  const progressBarBackgroundColor = (isDarkModeActivated && '#373737') || null;
+  const progressBarBackgroundColor = (isDarkModeActivated && '#373737') || theme.colors.white;
   return (
     <View testID="progression">
       <ProgressionBar

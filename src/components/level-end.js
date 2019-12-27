@@ -147,7 +147,7 @@ const {width: screenWidth} = Dimensions.get('window');
 type Props = {|
   ...WithVibrationProps,
   ...WithAudioProps,
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,

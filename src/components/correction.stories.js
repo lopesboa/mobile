@@ -40,6 +40,7 @@ storiesOf('Correction', module)
         answers={[]}
         userAnswers={[]}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -60,6 +61,7 @@ storiesOf('Correction', module)
         lives={3}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -81,6 +83,7 @@ storiesOf('Correction', module)
         lives={3}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -101,6 +104,7 @@ storiesOf('Correction', module)
         lives={2}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -122,6 +126,7 @@ storiesOf('Correction', module)
         lives={2}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -141,6 +146,7 @@ storiesOf('Correction', module)
         lives={2}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -162,6 +168,7 @@ storiesOf('Correction', module)
         lives={0}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -183,6 +190,7 @@ storiesOf('Correction', module)
         lives={0}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -203,6 +211,7 @@ storiesOf('Correction', module)
         lives={0}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
+        isDarkModeActivated={false}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
@@ -229,6 +238,7 @@ if (__TEST__) {
             lives={2}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleVideoPlay}
             vibration={createFakeVibration()}
@@ -259,6 +269,7 @@ if (__TEST__) {
             lives={2}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handlePDFButtonPress}
             onVideoPlay={handleFakePress}
             vibration={createFakeVibration()}
@@ -292,6 +303,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}
@@ -316,6 +328,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}
@@ -346,6 +359,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}
@@ -370,6 +384,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}
@@ -401,6 +416,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}
@@ -424,6 +440,7 @@ if (__TEST__) {
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
+            isDarkModeActivated={false}
             onPDFButtonPress={handleFakePress}
             onVideoPlay={handleFakePress}
             vibration={vibration}

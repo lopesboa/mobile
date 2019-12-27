@@ -43,7 +43,7 @@ type State = {|
 |};
 
 type Props = {|
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   flipDirection?: string,
   perspective?: number,
   duration?: number,

@@ -13,7 +13,7 @@ import QuestionChoice from './question-choice';
 import Text from './text';
 
 export type Props = {|
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   choices: Array<Choice>,
   onPress: (item: Choice) => void
 |};

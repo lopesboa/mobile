@@ -21,7 +21,7 @@ import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = $Exact<{|
   ...WithLayoutProps,
-  ...withDarkModeProps,
+  ...WithDarkModeProps,
   header: string,
   starsGranted: number,
   testID?: string,
@@ -102,10 +102,7 @@ class Lesson extends React.Component<Props> {
             getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
 
           return (
-            <View
-              testID={testID}
-              style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}
-            >
+            <View testID={testID} style={[styles.container]}>
               <View style={styles.questionContainer}>
                 <QuestionTitle isTextCentered>{header}</QuestionTitle>
               </View>

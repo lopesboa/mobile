@@ -39,6 +39,7 @@ describe('CatalogSectionRefreshable', () => {
         .concat([undefined, undefined, undefined, undefined]);
       const component = renderer.create(
         <CatalogSectionRefreshable
+          isDarkModeActivated={false}
           sectionRef={sectionRef}
           cards={_cards}
           onCardPress={handleFakePress}
@@ -69,6 +70,7 @@ describe('CatalogSectionRefreshable', () => {
       const _cards: Array<DisciplineCard | ChapterCard | void> = cards.concat([undefined]);
       const component = renderer.create(
         <CatalogSectionRefreshable
+          isDarkModeActivated
           sectionRef={sectionRef}
           cards={_cards}
           onCardPress={handleFakePress}
@@ -125,7 +127,7 @@ describe('CatalogSectionRefreshable', () => {
         catalog
       });
 
-      const props: OwnProps = {sectionRef, testID: 'foobar'};
+      const props: OwnProps = {sectionRef, testID: 'foobar', isDarkModeActivated: false};
       const result = mapStateToProps(mockedStore, props);
       const expected: ConnectedStateProps = {
         cards: cards.slice(0, 2).concat([undefined])

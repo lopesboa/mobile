@@ -10,7 +10,7 @@ import {Component as Html} from './html';
 
 storiesOf('Html', module)
   .add('Default', () => (
-    <Html fontSize={20} vibration={createFakeVibration()}>
+    <Html fontSize={20} vibration={createFakeVibration()} isDarkModeActivated={false}>
       {`
     Les deux adverbes ont<s>une terminaison</s> qui se <u>prononce "ament"</u>, mais leur orthographe diffère. On écrit ainsi :
     <br/>– <i>vaill<font color="blue">a</font>mment</i>, parce que l'adverbe est formé à partir d’un <b>adjectif en <i>-ant</i></b> (<i>vaill<font color="blue">a</font>nt</i>) ;
@@ -19,7 +19,7 @@ storiesOf('Html', module)
     </Html>
   ))
   .add('WithImage', () => (
-    <Html fontSize={20} vibration={createFakeVibration()}>
+    <Html fontSize={20} vibration={createFakeVibration()} isDarkModeActivated>
       {`
       <center>
           <img src="https://static.coorpacademy.com/content/enjoytesting/raw/Anim_Etoile_1.gif"/>
@@ -37,7 +37,12 @@ if (__TEST__) {
       const handleLinkPress = jest.fn();
       const vibration = createFakeVibration();
       const component = renderer.create(
-        <Html fontSize={20} onLinkPress={handleLinkPress} vibration={vibration}>
+        <Html
+          fontSize={20}
+          onLinkPress={handleLinkPress}
+          vibration={vibration}
+          isDarkModeActivated={false}
+        >
           {`<a href="https://domain.tld"></a>`}
         </Html>
       );
