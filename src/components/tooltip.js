@@ -9,6 +9,7 @@ import {
 import theme from '../modules/theme';
 import {TOOLTIP_TYPE} from '../const';
 import type {TooltipType} from '../types';
+import {useDarkMode} from '../containers/with-dark-mode';
 import Html from './html';
 import {STYLE as BOX_STYLE} from './box';
 
@@ -26,6 +27,9 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 1
   },
+  containerDarkMode: {
+    backgroundColor: theme.colors.black.lightMedium
+  },
   iconContainer: {
     width: 38,
     height: 38,
@@ -34,12 +38,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  iconContainerDarkMode: {
+    backgroundColor: theme.colors.black.medium
+  },
   icon: {
     width: 21,
     height: 21
   },
   text: {
     paddingHorizontal: theme.spacing.base
+  },
+  textDarkMode: {
+    color: theme.colors.white
   },
   corner: {
     position: 'absolute',
@@ -52,6 +62,10 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRightColor: theme.colors.white,
     borderBottomColor: theme.colors.white
+  },
+  cornerDarkMode: {
+    borderRightColor: theme.colors.black.lightMedium,
+    borderBottomColor: theme.colors.black.lightMedium
   }
 });
 
@@ -62,19 +76,26 @@ type Props = {|
 |};
 
 const Tooltip = ({type, children, testID}: Props) => {
+  const isDarkModeActivated = useDarkMode();
   return (
     <View testID={testID}>
-      <View style={styles.container}>
-        <View style={styles.iconContainer}>
+      <View style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}>
+        <View style={[styles.iconContainer, isDarkModeActivated && styles.iconContainerDarkMode]}>
           {type === TOOLTIP_TYPE.HIGHSCORE && <Star color="#fca833" style={styles.icon} />}
           {type === TOOLTIP_TYPE.UNLOCK && <Lock style={styles.icon} />}
         </View>
         <View style={styles.text}>
-          <Html fontSize={theme.fontSize.regular}>{children}</Html>
+          <Html
+            fontSize={theme.fontSize.regular}
+            style={[isDarkModeActivated && styles.textDarkMode]}
+          >
+            {children}
+          </Html>
         </View>
       </View>
-      <View style={styles.corner} />
+      <View style={[styles.corner, isDarkModeActivated && styles.cornerDarkMode]} />
     </View>
   );
 };
+
 export default Tooltip;

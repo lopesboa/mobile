@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.gray.dark
   },
   fronItemDarkMode: {
-    backgroundColor: '#202020'
+    backgroundColor: theme.colors.black.lightMedium
   },
   backItem: {
     justifyContent: 'center'

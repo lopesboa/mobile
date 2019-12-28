@@ -63,7 +63,7 @@ const EMPTY_SUBTITLES: Subtitles = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.black,
+    backgroundColor: theme.colors.black.dark,
     overflow: 'hidden'
   },
   video: {

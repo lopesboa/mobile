@@ -101,6 +101,7 @@ const Question = ({
   value,
   testID
 }: Props) => {
+  const isDarkModeActivated = useDarkMode();
   if (!type || !header || !explanation) {
     return (
       <View style={styles.containerPlaceholder}>
@@ -113,7 +114,6 @@ const Question = ({
     );
   }
 
-  const isDarkModeActivated = useDarkMode();
   const oneChoiceSelected =
     type === QUESTION_TYPE.TEMPLATE
       ? choices.length === userChoices.filter(choice => choice).length

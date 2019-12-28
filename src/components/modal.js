@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white
   },
   containerDarkMode: {
-    backgroundColor: '#202020'
+    backgroundColor: theme.colors.black.lightMedium
   },
   header: {
     backgroundColor: theme.colors.white,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     height: HEADER_HEIGHT
   },
   headerDarkMode: {
-    backgroundColor: '#373737'
+    backgroundColor: theme.colors.black.extraLight
   },
   content: {
     paddingHorizontal: theme.spacing.medium,

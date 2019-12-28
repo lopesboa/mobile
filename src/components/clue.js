@@ -5,7 +5,7 @@ import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
 import FlippableCard from '../containers/card-flippable';
- 
+
 import ClueFrontItem from './clue-front-item';
 import Html from './html';
 import QuestionTitle from './question-title';
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSize.large
   },
   header: {
-    color: theme.colors.black,
+    color: theme.colors.black.dark,
     textAlign: 'center',
     fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold

@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.gray.light
   },
   disabledDarkMode: {
-    backgroundColor: '#212121'
+    backgroundColor: theme.colors.black.lightMedium
   },
   textDisabled: {
     color: theme.colors.gray.medium
   },
   textDisabledDarkMode: {
-    color: theme.colors.gray.dark
+    color: '#757575'
   },
   inverted: {
     backgroundColor: theme.colors.white
@@ -201,5 +201,4 @@ class Button extends React.PureComponent<Props> {
 }
 
 export {Button as Component};
-
 export default withDarkMode(withVibration(withAnalytics(Button)));

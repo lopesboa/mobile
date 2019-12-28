@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingHorizontal: theme.spacing.tiny,
-    color: theme.colors.black,
+    color: theme.colors.black.dark,
     fontWeight: theme.fontWeight.bold
   }
 });

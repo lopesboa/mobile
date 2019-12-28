@@ -13,7 +13,7 @@ import {
 import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
 import type {CardType} from '../types';
-import {CARD_TYPE, THEME_PREFERENCE} from '../const';
+import {CARD_TYPE} from '../const';
 import Text from './text';
 
 export type Props = {|
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDD9DC'
   },
   headerDarkMode: {
-    backgroundColor: '#373737'
+    backgroundColor: theme.colors.black.extraLight
   },
   headerTextDarkMode: {
     color: theme.colors.white

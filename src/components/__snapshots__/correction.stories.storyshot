@@ -10,7 +10,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
       },
       false,
       Object {
-        "backgroundColor": "#121212",
+        "backgroundColor": "#111111",
       },
     ]
   }
@@ -92,7 +92,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -203,7 +203,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -225,7 +225,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -315,7 +315,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -348,7 +348,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -1713,7 +1713,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                         allowFontScaling={true}
                         style={
                           Object {
-                            "color": "#546E7A",
+                            "color": "#FFFFFF",
                             "fontSize": 15,
                           }
                         }
@@ -2384,7 +2384,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -3168,7 +3168,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -3847,7 +3847,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -4296,7 +4296,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                         allowFontScaling={true}
                         style={
                           Object {
-                            "color": "#546E7A",
+                            "color": "#FFFFFF",
                             "fontSize": 15,
                           }
                         }
@@ -4502,7 +4502,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -4613,7 +4613,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -4635,7 +4635,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -4725,7 +4725,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -4758,7 +4758,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -9016,7 +9016,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -9127,7 +9127,7 @@ exports[`Storyshots Correction Extralife 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -9149,7 +9149,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -9239,7 +9239,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -9272,7 +9272,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -14587,7 +14587,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -14698,7 +14698,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -14720,7 +14720,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -14810,7 +14810,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -14843,7 +14843,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -18971,7 +18971,7 @@ exports[`Storyshots Correction Game over 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -19082,7 +19082,7 @@ exports[`Storyshots Correction Game over 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -19104,7 +19104,7 @@ exports[`Storyshots Correction Game over 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -19194,7 +19194,7 @@ exports[`Storyshots Correction Game over 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -19227,7 +19227,7 @@ exports[`Storyshots Correction Game over 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -23284,7 +23284,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
       },
       false,
       Object {
-        "backgroundColor": "#121212",
+        "backgroundColor": "#111111",
       },
     ]
   }
@@ -23366,7 +23366,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -23477,7 +23477,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -23499,7 +23499,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -23589,7 +23589,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -23622,7 +23622,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -24426,7 +24426,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                         allowFontScaling={true}
                         style={
                           Object {
-                            "color": "#546E7A",
+                            "color": "#FFFFFF",
                             "fontSize": 15,
                           }
                         }
@@ -24775,7 +24775,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                         allowFontScaling={true}
                         style={
                           Object {
-                            "color": "#546E7A",
+                            "color": "#FFFFFF",
                             "fontSize": 15,
                           }
                         }
@@ -26070,7 +26070,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -26854,7 +26854,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -27533,7 +27533,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#556e79",
+                                "color": "#FFFFFF",
                                 "flex": 1,
                                 "fontSize": 15,
                                 "fontWeight": "700",
@@ -27747,7 +27747,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -27858,7 +27858,7 @@ exports[`Storyshots Correction Right answer 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -27880,7 +27880,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -27970,7 +27970,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -28003,7 +28003,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -32113,7 +32113,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               "width": 67,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -32224,7 +32224,7 @@ exports[`Storyshots Correction Without resource 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -32246,7 +32246,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -32336,7 +32336,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -32369,7 +32369,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}

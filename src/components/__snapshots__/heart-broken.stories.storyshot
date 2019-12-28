@@ -17,7 +17,7 @@ exports[`Storyshots Heart Broken Default Dark 1`] = `
     align="xMidYMid"
     bbHeight="50%"
     bbWidth="50%"
-    color="#212121"
+    color="#202020"
     meetOrSlice={0}
     minX={0}
     minY={0}
@@ -40,7 +40,7 @@ exports[`Storyshots Heart Broken Default Dark 1`] = `
         },
       ]
     }
-    tintColor="#212121"
+    tintColor="#202020"
     vbHeight={24}
     vbWidth={24}
   >
@@ -130,7 +130,7 @@ exports[`Storyshots Heart Broken Default Dark 1`] = `
         fill={
           Array [
             0,
-            4280361249,
+            4280295456,
           ]
         }
         fillOpacity={1}
@@ -163,7 +163,7 @@ exports[`Storyshots Heart Broken Default Dark 1`] = `
         stroke={
           Array [
             0,
-            4280361249,
+            4280295456,
           ]
         }
         strokeDasharray={null}

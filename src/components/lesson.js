@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.base
   },
   bottomTextWrapperDarkMode: {
-    backgroundColor: '#292929'
+    backgroundColor: theme.colors.black.light
   },
   bottomText: {
     color: theme.colors.gray.dark

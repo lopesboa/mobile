@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   containerDarkMode: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   thumbnail: {
     backgroundColor: PLACEHOLDER_COLOR,

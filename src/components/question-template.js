@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: ROW_SPACE,
-    color: theme.colors.black,
+    color: theme.colors.black.dark,
     fontWeight: theme.fontWeight.bold,
     lineHeight: 30
   },

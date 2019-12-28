@@ -12,6 +12,8 @@ import theme from '../modules/theme';
 import translations from '../translations';
 import type {ErrorType} from '../types';
 import {ERROR_TYPE} from '../const';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import Button from './button';
 import Space from './space';
 import Touchable from './touchable';
@@ -19,6 +21,7 @@ import Modal from './modal';
 import Text from './text';
 
 export type Props = {|
+  ...WithDarkModeProps,
   type: ErrorType,
   onPress: () => void,
   onAssistancePress: () => void,
@@ -44,6 +47,9 @@ const styles = StyleSheet.create({
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.large,
     textAlign: 'center'
+  },
+  textDarkMode: {
+    color: theme.colors.white
   },
   buttonText: {
     color: theme.colors.white,
@@ -82,7 +88,7 @@ class ModalError extends React.PureComponent<Props> {
   };
 
   render() {
-    const {type, onAssistancePress, onPress, onClose, testID} = this.props;
+    const {type, onAssistancePress, onPress, onClose, isDarkModeActivated, testID} = this.props;
 
     return (
       <Modal
@@ -93,13 +99,13 @@ class ModalError extends React.PureComponent<Props> {
         testID={testID}
       >
         <React.Fragment>
-          <Text style={[styles.heading, styles.text]}>
+          <Text style={[styles.heading, styles.text, isDarkModeActivated && styles.textDarkMode]}>
             {type === ERROR_TYPE.NO_CONTENT_FOUND
               ? translations.dataLost
               : translations.platformHasBeenDisabled}
           </Text>
           <Space type="base" />
-          <Text style={styles.text}>
+          <Text style={[styles.text, isDarkModeActivated && styles.textDarkMode]}>
             {type === ERROR_TYPE.NO_CONTENT_FOUND
               ? translations.refreshEnjoyLearning
               : translations.reactivatePlatform}
@@ -127,7 +133,13 @@ class ModalError extends React.PureComponent<Props> {
             <React.Fragment>
               <Space type="base" />
               <View style={styles.contentFooter}>
-                <Text style={[styles.text, styles.smallText]}>
+                <Text
+                  style={[
+                    styles.text,
+                    styles.smallText,
+                    isDarkModeActivated && styles.textDarkMode
+                  ]}
+                >
                   {translations.refreshNotWorking}
                 </Text>
                 <Space type="tiny" />
@@ -136,7 +148,14 @@ class ModalError extends React.PureComponent<Props> {
                   analyticsID="ask-for-help"
                   testID="ask-for-help"
                 >
-                  <Text style={[styles.text, styles.smallText, styles.underlineText]}>
+                  <Text
+                    style={[
+                      styles.text,
+                      styles.smallText,
+                      styles.underlineText,
+                      isDarkModeActivated && styles.textDarkMode
+                    ]}
+                  >
                     {translations.askForHelp}
                   </Text>
                 </Touchable>
@@ -149,4 +168,5 @@ class ModalError extends React.PureComponent<Props> {
   }
 }
 
-export default ModalError;
+export {ModalError as Component};
+export default withDarkMode(ModalError);

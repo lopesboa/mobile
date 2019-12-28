@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   screenDarkMode: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   screenScroll: {
     flexGrow: 1

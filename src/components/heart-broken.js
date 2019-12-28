@@ -38,7 +38,7 @@ const HeartBroken = ({testID, style, isDarkModeActivated}: Props) => {
   return (
     <View style={[styles.container, style]} testID={testID}>
       <HeartOutlineIcon
-        color={isDarkModeActivated ? '#212121' : theme.colors.white}
+        color={isDarkModeActivated ? theme.colors.black.lightMedium : theme.colors.white}
         style={styles.heart}
       />
       <HeartBrokenIcon color={theme.colors.negative} style={styles.brokenHeart} />

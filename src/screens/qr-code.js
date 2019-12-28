@@ -64,7 +64,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
 
     return (
       <Screen testID="qr-code-screen" noSafeArea noScroll>
-        <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
+        <StatusBar barStyle="light-content" backgroundColor={theme.colors.black.dark} translucent />
         <NavigationEvents onDidFocus={this.handleDidFocus} testID="qr-code-navigation-events" />
         <QRCodeScanner onScan={onScan} hasPermission={hasPermission} testID="qr-code-scanner" />
         {(__DEV__ || __E2E__ || __TEST__) && (

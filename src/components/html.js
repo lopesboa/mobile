@@ -78,11 +78,11 @@ class Html extends React.PureComponent<Props> {
       h4: {fontSize},
       h5: {fontSize},
       h6: {fontSize},
-      a: {color: anchorTextColor},
+      a: {color: isDarkModeActivated ? theme.colors.white : anchorTextColor},
       img: imageStyle
     };
 
-    let textBaseColor = (isDarkModeActivated && theme.colors.white) || theme.colors.black;
+    let textBaseColor = isDarkModeActivated ? theme.colors.white : theme.colors.black.dark;
     let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: textBaseColor};
     if (style) {
       if (Array.isArray(style)) {

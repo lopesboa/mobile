@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white
   },
   containerDarkMode: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   headerLeft: {
     flexGrow: 0,

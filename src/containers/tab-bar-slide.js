@@ -15,6 +15,8 @@ import PlaceholderLine from '../components/placeholder-line';
 import translations from '../translations';
 import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
+import withDarkMode from './with-dark-mode';
+import type {WithDarkModeProps} from './with-dark-mode';
 
 type ConnectedStateToProps = {|
   isFocused: boolean,
@@ -28,16 +30,21 @@ type ConnectedStateToProps = {|
 
 type Props = {|
   ...ConnectedStateToProps,
+  ...WithDarkModeProps,
   ...$Exact<_BottomTabBarProps>
 |};
 
 const INACTIVE_COLOR = theme.colors.gray.lightMedium;
+const DARK_MODE_INACTIVE_COLOR = '#757575';
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
 
 const styles = StyleSheet.create({
   inactiveText: {
     color: INACTIVE_COLOR,
     textAlign: 'center'
+  },
+  inactiveTextDarkMode: {
+    color: DARK_MODE_INACTIVE_COLOR
   },
   notification: {
     position: 'absolute',
@@ -95,7 +102,7 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasClue, hasLesson, isLoading} = this.props;
+    const {renderIcon, hasClue, hasLesson, isLoading, isDarkModeActivated} = this.props;
 
     if (isLoading) {
       return <PlaceholderCircle width={20} color={PLACEHOLDER_COLOR} />;
@@ -104,7 +111,7 @@ class TabBarSlide extends React.Component<Props> {
     if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
       return renderIcon({
         ...scene,
-        tintColor: INACTIVE_COLOR
+        tintColor: isDarkModeActivated ? DARK_MODE_INACTIVE_COLOR : INACTIVE_COLOR
       });
     }
 
@@ -124,7 +131,15 @@ class TabBarSlide extends React.Component<Props> {
   };
 
   getLabelText = (scene: TabScene) => ({tintColor}) => {
-    const {getLabelText, labelStyle, hasClue, hasLesson, hasNewLesson, isLoading} = this.props;
+    const {
+      getLabelText,
+      labelStyle,
+      hasClue,
+      hasLesson,
+      hasNewLesson,
+      isLoading,
+      isDarkModeActivated
+    } = this.props;
 
     if (isLoading) {
       return <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />;
@@ -140,7 +155,17 @@ class TabBarSlide extends React.Component<Props> {
     const labelText = translations[labelKey];
 
     if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
-      return <Text style={[labelStyle, styles.inactiveText]}>{labelText}</Text>;
+      return (
+        <Text
+          style={[
+            labelStyle,
+            styles.inactiveText,
+            isDarkModeActivated && styles.inactiveTextDarkMode
+          ]}
+        >
+          {labelText}
+        </Text>
+      );
     }
 
     // hack: we have to render it next to label to handle Android overflow
@@ -204,4 +229,4 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   };
 };
 
-export default connect(mapStateToProps)(TabBarSlide);
+export default connect(mapStateToProps)(withDarkMode(TabBarSlide));

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   livesDarkMode: {
-    backgroundColor: '#212121'
+    backgroundColor: theme.colors.black.lightMedium
   },
   livesPlaceholder: {
     backgroundColor: PLACEHOLDER_COLOR
@@ -292,7 +292,7 @@ class Lives extends React.PureComponent<Props> {
         </View>
         <Animated.View style={[styles.heart, heartStyle]}>
           <HeartOutlineIcon
-            color={isDarkModeActivated ? '#212121' : theme.colors.white}
+            color={isDarkModeActivated ? theme.colors.black.lightMedium : theme.colors.white}
             style={{height: heartHeight, width: heartHeight}}
           />
           <Animated.View

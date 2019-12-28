@@ -15,7 +15,7 @@ type Props = {|
 
 const styles = StyleSheet.create({
   text: {
-    color: theme.colors.black,
+    color: theme.colors.black.dark,
     fontWeight: theme.fontWeight.bold
   },
   textDarkMode: {

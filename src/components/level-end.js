@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     top: '-10%'
   },
   darkModeBackground: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   positive: {
     backgroundColor: theme.colors.positive

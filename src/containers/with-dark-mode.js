@@ -23,9 +23,9 @@ function withDarkMode<P>(
     ...WithDarkModeProps
   |}>;
 
-  const ComponentWithDarkMode = props => {
+  const ComponentWithDarkMode = (props: Props) => {
     const isDarkModeActivated = useDarkMode();
-    return <WrappedComponent isDarkModeActivated={isDarkModeActivated} {...props} />;
+    return <WrappedComponent {...props} isDarkModeActivated={isDarkModeActivated} />;
   };
 
   return hoistNonReactStatic(ComponentWithDarkMode, WrappedComponent);

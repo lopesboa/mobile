@@ -33,7 +33,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           "width": 360,
         },
         Object {
-          "backgroundColor": "#212121",
+          "backgroundColor": "#202020",
         },
       ]
     }
@@ -144,7 +144,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
       align="xMidYMid"
       bbHeight={216}
       bbWidth={216}
-      color="#212121"
+      color="#202020"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -166,7 +166,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           },
         ]
       }
-      tintColor="#212121"
+      tintColor="#202020"
       vbHeight={24}
       vbWidth={24}
     >
@@ -256,7 +256,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           fill={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           fillOpacity={1}
@@ -289,7 +289,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           stroke={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           strokeDasharray={null}
@@ -1948,7 +1948,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           "width": 180,
         },
         Object {
-          "backgroundColor": "#212121",
+          "backgroundColor": "#202020",
         },
       ]
     }
@@ -2011,7 +2011,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
       align="xMidYMid"
       bbHeight={108}
       bbWidth={108}
-      color="#212121"
+      color="#202020"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -2033,7 +2033,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           },
         ]
       }
-      tintColor="#212121"
+      tintColor="#202020"
       vbHeight={24}
       vbWidth={24}
     >
@@ -2123,7 +2123,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           fill={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           fillOpacity={1}
@@ -2156,7 +2156,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           stroke={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           strokeDasharray={null}
@@ -4451,7 +4451,7 @@ exports[`Storyshots Lives With value 1`] = `
           "width": 180,
         },
         Object {
-          "backgroundColor": "#212121",
+          "backgroundColor": "#202020",
         },
       ]
     }
@@ -4562,7 +4562,7 @@ exports[`Storyshots Lives With value 1`] = `
       align="xMidYMid"
       bbHeight={108}
       bbWidth={108}
-      color="#212121"
+      color="#202020"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -4584,7 +4584,7 @@ exports[`Storyshots Lives With value 1`] = `
           },
         ]
       }
-      tintColor="#212121"
+      tintColor="#202020"
       vbHeight={24}
       vbWidth={24}
     >
@@ -4674,7 +4674,7 @@ exports[`Storyshots Lives With value 1`] = `
           fill={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           fillOpacity={1}
@@ -4707,7 +4707,7 @@ exports[`Storyshots Lives With value 1`] = `
           stroke={
             Array [
               0,
-              4280361249,
+              4280295456,
             ]
           }
           strokeDasharray={null}

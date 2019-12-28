@@ -20,7 +20,7 @@ type Props = {|
 
 const styles = StyleSheet.create({
   containerDarkMode: {
-    backgroundColor: '#212121'
+    backgroundColor: theme.colors.black.lightMedium
   }
 });
 
@@ -51,6 +51,9 @@ class TabBar extends React.Component<Props> {
             {...props}
             style={[props.style, isDarkModeActivated && styles.containerDarkMode]}
             onTabPress={this.handleTabPress}
+            inactiveTintColor={
+              isDarkModeActivated ? theme.colors.gray.medium : theme.colors.gray.dark
+            }
             activeTintColor={isDarkModeActivated ? theme.colors.white : brandTheme.colors.primary}
           />
         )}

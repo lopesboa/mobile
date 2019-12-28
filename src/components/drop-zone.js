@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   dropZoneDarMode: {
     borderColor: theme.colors.gray.dark,
-    backgroundColor: '#373737'
+    backgroundColor: theme.colors.black.extraLight
   },
   emptyContent: {
     justifyContent: 'center',

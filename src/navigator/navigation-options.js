@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 const navigationOptions: NavigationScreenConfig<*> = {
   headerBackTitle: null,
-  headerTintColor: theme.colors.black,
+  headerTintColor: theme.colors.black.dark,
   headerTitleStyle: {
     flex: 1,
     fontWeight: theme.fontWeight.bold,

@@ -10,7 +10,7 @@ import type {Props as CardHeaderProps} from '../components/card-header';
 import theme from '../modules/theme';
 import Gradient from '../components/gradient';
 import Touchable from '../components/touchable';
-import {CARD_TYPE, THEME_PREFERENCE} from '../const';
+import {CARD_TYPE} from '../const';
 import withDarkMode from './with-dark-mode';
 import type {WithDarkModeProps} from './with-dark-mode';
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white
   },
   contentDarkMode: {
-    backgroundColor: '#202020'
+    backgroundColor: theme.colors.black.lightMedium
   },
   noPadding: {paddingTop: 0, paddingHorizontal: 0},
   gradient: {

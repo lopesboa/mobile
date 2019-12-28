@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: theme.fontWeight.bold,
-    color: theme.colors.black
+    color: theme.colors.black.dark
   },
   textDarkMode: {
     color: theme.colors.white

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   textValue: {
     fontSize: 15,
-    color: theme.colors.black,
+    color: theme.colors.black.dark,
     fontWeight: theme.fontWeight.bold,
     textAlign: 'center'
   },

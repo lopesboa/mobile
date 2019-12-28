@@ -16,7 +16,7 @@ export const STYLE: ViewStyleProp = {
       backgroundColor: 'rgba(0,0,0,0.015)' // fix shadow not visible bug on android
     }
   }),
-  shadowColor: theme.colors.black,
+  shadowColor: theme.colors.black.dark,
   shadowOpacity: 0.15,
   shadowOffset: {width: 0, height: 0},
   shadowRadius: 8,

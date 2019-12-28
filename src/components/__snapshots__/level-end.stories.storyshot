@@ -557,7 +557,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
             align="xMidYMid"
             bbHeight="50%"
             bbWidth="50%"
-            color="#212121"
+            color="#202020"
             meetOrSlice={0}
             minX={0}
             minY={0}
@@ -580,7 +580,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                 },
               ]
             }
-            tintColor="#212121"
+            tintColor="#202020"
             vbHeight={24}
             vbWidth={24}
           >
@@ -670,7 +670,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                 fill={
                   Array [
                     0,
-                    4280361249,
+                    4280295456,
                   ]
                 }
                 fillOpacity={1}
@@ -703,7 +703,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                 stroke={
                   Array [
                     0,
-                    4280361249,
+                    4280295456,
                   ]
                 }
                 strokeDasharray={null}
@@ -1542,7 +1542,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
               "paddingBottom": 102,
             },
             Object {
-              "backgroundColor": "#121212",
+              "backgroundColor": "#111111",
             },
           ]
         }
@@ -2042,7 +2042,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
             align="xMidYMid"
             bbHeight="50%"
             bbWidth="50%"
-            color="#212121"
+            color="#202020"
             meetOrSlice={0}
             minX={0}
             minY={0}
@@ -2065,7 +2065,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                 },
               ]
             }
-            tintColor="#212121"
+            tintColor="#202020"
             vbHeight={24}
             vbWidth={24}
           >
@@ -2155,7 +2155,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                 fill={
                   Array [
                     0,
-                    4280361249,
+                    4280295456,
                   ]
                 }
                 fillOpacity={1}
@@ -2188,7 +2188,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                 stroke={
                   Array [
                     0,
-                    4280361249,
+                    4280295456,
                   ]
                 }
                 strokeDasharray={null}
@@ -6879,7 +6879,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
               "paddingBottom": 102,
             },
             Object {
-              "backgroundColor": "#121212",
+              "backgroundColor": "#111111",
             },
           ]
         }
@@ -7952,38 +7952,48 @@ exports[`Storyshots LevelEnd Success 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderBottomRightRadius": 5,
-                    "borderTopLeftRadius": 5,
-                    "borderTopRightRadius": 5,
-                    "elevation": 4,
-                    "flexDirection": "row",
-                    "marginLeft": 5,
-                    "marginRight": 1,
-                    "padding": 16,
-                    "paddingRight": 32,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderBottomRightRadius": 5,
+                      "borderTopLeftRadius": 5,
+                      "borderTopRightRadius": 5,
+                      "elevation": 4,
+                      "flexDirection": "row",
+                      "marginLeft": 5,
+                      "marginRight": 1,
+                      "padding": 16,
+                      "paddingRight": 32,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
                     },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  }
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
+                  ]
                 }
               >
                 <View
                   style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ECEFF1",
-                      "borderRadius": 19,
-                      "height": 38,
-                      "justifyContent": "center",
-                      "width": 38,
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ECEFF1",
+                        "borderRadius": 19,
+                        "height": 38,
+                        "justifyContent": "center",
+                        "width": 38,
+                      },
+                      Object {
+                        "backgroundColor": "#111111",
+                      },
+                    ]
                   }
                 >
                   <RNSVGSvgView
@@ -8199,18 +8209,24 @@ exports[`Storyshots LevelEnd Success 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
+                  Array [
+                    Object {
+                      "borderBottomColor": "#FFFFFF",
+                      "borderColor": "transparent",
+                      "borderRightColor": "#FFFFFF",
+                      "borderStyle": "solid",
+                      "borderWidth": 10,
+                      "bottom": 0,
+                      "height": 14,
+                      "left": 0,
+                      "position": "absolute",
+                      "width": 16,
+                    },
+                    Object {
+                      "borderBottomColor": "#202020",
+                      "borderRightColor": "#202020",
+                    },
+                  ]
                 }
               />
             </View>
@@ -8227,38 +8243,48 @@ exports[`Storyshots LevelEnd Success 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderBottomRightRadius": 5,
-                    "borderTopLeftRadius": 5,
-                    "borderTopRightRadius": 5,
-                    "elevation": 4,
-                    "flexDirection": "row",
-                    "marginLeft": 5,
-                    "marginRight": 1,
-                    "padding": 16,
-                    "paddingRight": 32,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderBottomRightRadius": 5,
+                      "borderTopLeftRadius": 5,
+                      "borderTopRightRadius": 5,
+                      "elevation": 4,
+                      "flexDirection": "row",
+                      "marginLeft": 5,
+                      "marginRight": 1,
+                      "padding": 16,
+                      "paddingRight": 32,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
                     },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  }
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
+                  ]
                 }
               >
                 <View
                   style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ECEFF1",
-                      "borderRadius": 19,
-                      "height": 38,
-                      "justifyContent": "center",
-                      "width": 38,
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ECEFF1",
+                        "borderRadius": 19,
+                        "height": 38,
+                        "justifyContent": "center",
+                        "width": 38,
+                      },
+                      Object {
+                        "backgroundColor": "#111111",
+                      },
+                    ]
                   }
                 >
                   <RNSVGSvgView
@@ -8786,18 +8812,24 @@ exports[`Storyshots LevelEnd Success 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
+                  Array [
+                    Object {
+                      "borderBottomColor": "#FFFFFF",
+                      "borderColor": "transparent",
+                      "borderRightColor": "#FFFFFF",
+                      "borderStyle": "solid",
+                      "borderWidth": 10,
+                      "bottom": 0,
+                      "height": 14,
+                      "left": 0,
+                      "position": "absolute",
+                      "width": 16,
+                    },
+                    Object {
+                      "borderBottomColor": "#202020",
+                      "borderRightColor": "#202020",
+                    },
+                  ]
                 }
               />
             </View>
@@ -10730,38 +10762,48 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderBottomRightRadius": 5,
-                    "borderTopLeftRadius": 5,
-                    "borderTopRightRadius": 5,
-                    "elevation": 4,
-                    "flexDirection": "row",
-                    "marginLeft": 5,
-                    "marginRight": 1,
-                    "padding": 16,
-                    "paddingRight": 32,
-                    "shadowColor": "#14171A",
-                    "shadowOffset": Object {
-                      "height": 0,
-                      "width": 0,
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderBottomRightRadius": 5,
+                      "borderTopLeftRadius": 5,
+                      "borderTopRightRadius": 5,
+                      "elevation": 4,
+                      "flexDirection": "row",
+                      "marginLeft": 5,
+                      "marginRight": 1,
+                      "padding": 16,
+                      "paddingRight": 32,
+                      "shadowColor": "#14171A",
+                      "shadowOffset": Object {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0.15,
+                      "shadowRadius": 8,
                     },
-                    "shadowOpacity": 0.15,
-                    "shadowRadius": 8,
-                  }
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
+                  ]
                 }
               >
                 <View
                   style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ECEFF1",
-                      "borderRadius": 19,
-                      "height": 38,
-                      "justifyContent": "center",
-                      "width": 38,
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ECEFF1",
+                        "borderRadius": 19,
+                        "height": 38,
+                        "justifyContent": "center",
+                        "width": 38,
+                      },
+                      Object {
+                        "backgroundColor": "#111111",
+                      },
+                    ]
                   }
                 >
                   <RNSVGSvgView
@@ -11289,18 +11331,24 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
               </View>
               <View
                 style={
-                  Object {
-                    "borderBottomColor": "#FFFFFF",
-                    "borderColor": "transparent",
-                    "borderRightColor": "#FFFFFF",
-                    "borderStyle": "solid",
-                    "borderWidth": 10,
-                    "bottom": 0,
-                    "height": 14,
-                    "left": 0,
-                    "position": "absolute",
-                    "width": 16,
-                  }
+                  Array [
+                    Object {
+                      "borderBottomColor": "#FFFFFF",
+                      "borderColor": "transparent",
+                      "borderRightColor": "#FFFFFF",
+                      "borderStyle": "solid",
+                      "borderWidth": 10,
+                      "bottom": 0,
+                      "height": 14,
+                      "left": 0,
+                      "position": "absolute",
+                      "width": 16,
+                    },
+                    Object {
+                      "borderBottomColor": "#202020",
+                      "borderRightColor": "#202020",
+                    },
+                  ]
                 }
               />
             </View>

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.negative
   },
   darkModeBackground: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   title: {
     color: theme.colors.white,
@@ -79,6 +79,9 @@ const styles = StyleSheet.create({
   cardText: {
     color: theme.colors.gray.dark
   },
+  cardTextDarkMode: {
+    color: theme.colors.white
+  },
   header: {
     width: '100%',
     flexDirection: 'row',
@@ -98,6 +101,9 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSize.regular,
     color: '#556e79',
     fontWeight: theme.fontWeight.bold
+  },
+  resourceTitleDarkMode: {
+    color: theme.colors.white
   },
   resource: {
     flex: 0
@@ -241,7 +247,7 @@ class Correction extends React.PureComponent<Props> {
     index: number,
     animationStyle: AnimationStyleProp
   ) => {
-    const {question, tip, keyPoint, isCorrect} = this.props;
+    const {question, tip, keyPoint, isCorrect, isDarkModeActivated} = this.props;
     // This is the offset added by the deck swiper
     const testIDSuffix = resource ? resource.ref.toLowerCase() : '';
     const testID =
@@ -270,7 +276,10 @@ class Correction extends React.PureComponent<Props> {
               testID={testID}
             >
               {type === CARD_TYPE.TIP && (
-                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+                <Html
+                  fontSize={theme.fontSize.regular}
+                  style={[styles.cardText, isDarkModeActivated && styles.cardTextDarkMode]}
+                >
                   {tip}
                 </Html>
               )}
@@ -283,7 +292,10 @@ class Correction extends React.PureComponent<Props> {
                 />
               )}
               {type === CARD_TYPE.KEY_POINT && (
-                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+                <Html
+                  fontSize={theme.fontSize.regular}
+                  style={[styles.cardText, isDarkModeActivated && styles.cardTextDarkMode]}
+                >
                   {keyPoint}
                 </Html>
               )}
@@ -306,7 +318,10 @@ class Correction extends React.PureComponent<Props> {
                     <Html
                       fontSize={theme.fontSize.regular}
                       testID={`${testID}-resource-description`}
-                      style={styles.resourceTitle}
+                      style={[
+                        styles.resourceTitle,
+                        isDarkModeActivated && styles.resourceTitleDarkMode
+                      ]}
                       isTextCentered
                     >
                       {resource.description}

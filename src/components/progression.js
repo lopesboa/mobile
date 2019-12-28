@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: theme.radius.medium
   },
   labelDarkMode: {
-    backgroundColor: '#373737'
+    backgroundColor: theme.colors.black.extraLight
   },
   current: {
     fontWeight: theme.fontWeight.bold,
@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
 
 const Progression = ({current, count, isDarkModeActivated}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
-  const progressBarBackgroundColor = isDarkModeActivated ? '#373737' : theme.colors.white;
+  const progressBarBackgroundColor = isDarkModeActivated
+    ? theme.colors.black.extraLight
+    : theme.colors.white;
   return (
     <View testID="progression">
       <ProgressionBar

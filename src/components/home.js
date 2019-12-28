@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     height: HEADER_HEIGHT
   },
   headerDarkMode: {
-    backgroundColor: '#121212'
+    backgroundColor: theme.colors.black.medium
   },
   logo: {
     height: LOGO_HEIGHT,

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.gray.light
   },
   containerDarkMode: {
-    backgroundColor: '#373737'
+    backgroundColor: theme.colors.black.extraLight
   }
 });
 

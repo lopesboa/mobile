@@ -11,10 +11,18 @@ export type Colors = {
     medium: string,
     dark: string
   },
+  black: {
+    extra: string,
+    extraLight: string,
+    light: string,
+    lightMedium: string,
+    medium: string,
+    lightDark: string,
+    dark: string
+  },
   negative: string,
   positive: string,
   white: string,
-  black: string,
   battle: string,
   notification: string,
   salmon: string
@@ -70,7 +78,15 @@ const theme: Theme = {
     negative: '#F73F52',
     positive: '#3EC483',
     white: '#FFFFFF',
-    black: '#14171A',
+    black: {
+      extra: '#424242',
+      extraLight: '#373737',
+      light: '#292929',
+      lightMedium: '#202020',
+      medium: '#111111',
+      lightDark: '#151515',
+      dark: '#14171A'
+    },
     battle: '#FFE100',
     notification: '#FF7043',
     salmon: '#FDE2E5'

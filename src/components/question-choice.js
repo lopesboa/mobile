@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch'
   },
   containerDarkMode: {
-    backgroundColor: '#373737',
+    backgroundColor: theme.colors.black.extraLight,
     borderWidth: 0
   },
   layoutContainer: {
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: theme.fontWeight.bold,
-    color: theme.colors.black
+    color: theme.colors.black.dark
   },
   textDarkMode: {
     color: theme.colors.white

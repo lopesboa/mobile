@@ -63,7 +63,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               "width": 44,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -174,7 +174,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -196,7 +196,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -286,7 +286,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -319,7 +319,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -703,7 +703,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               "width": 44,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -814,7 +814,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -836,7 +836,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -926,7 +926,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -959,7 +959,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -1516,7 +1516,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               "width": 44,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -1579,7 +1579,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -1601,7 +1601,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -1691,7 +1691,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -1724,7 +1724,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}
@@ -2281,7 +2281,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               "width": 44,
             },
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -2344,7 +2344,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#212121"
+          color="#202020"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -2366,7 +2366,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               },
             ]
           }
-          tintColor="#212121"
+          tintColor="#202020"
           vbHeight={24}
           vbWidth={24}
         >
@@ -2456,7 +2456,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               fill={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               fillOpacity={1}
@@ -2489,7 +2489,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               stroke={
                 Array [
                   0,
-                  4280361249,
+                  4280295456,
                 ]
               }
               strokeDasharray={null}

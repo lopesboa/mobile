@@ -260,7 +260,7 @@ exports[`Storyshots Question BasicQuestion 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -291,7 +291,7 @@ exports[`Storyshots Question BasicQuestion 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -1585,7 +1585,7 @@ exports[`Storyshots Question QCM 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -1616,7 +1616,7 @@ exports[`Storyshots Question QCM 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -2261,7 +2261,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -2292,7 +2292,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -3801,7 +3801,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -3832,7 +3832,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -5995,7 +5995,7 @@ exports[`Storyshots Question Template 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -6026,7 +6026,7 @@ exports[`Storyshots Question Template 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -6877,7 +6877,7 @@ exports[`Storyshots Question With Video 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -6908,7 +6908,7 @@ exports[`Storyshots Question With Video 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }
@@ -7550,7 +7550,7 @@ exports[`Storyshots Question With image 1`] = `
               },
             ],
             Object {
-              "backgroundColor": "#212121",
+              "backgroundColor": "#202020",
             },
           ]
         }
@@ -7581,7 +7581,7 @@ exports[`Storyshots Question With image 1`] = `
                 "textAlign": "center",
               },
               Object {
-                "color": "#546E7A",
+                "color": "#757575",
               },
             ]
           }

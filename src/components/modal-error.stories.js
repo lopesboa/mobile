@@ -16,6 +16,7 @@ storiesOf('ModalError', module)
       onPress={handleFakePress}
       onAssistancePress={handleFakePress}
       onClose={handleFakePress}
+      isDarkModeActivated={false}
     />
   ))
   .add('Platform not activated', () => (
@@ -23,6 +24,7 @@ storiesOf('ModalError', module)
       type={ERROR_TYPE.PLATFORM_NOT_ACTIVATED}
       onPress={handleFakePress}
       onClose={handleFakePress}
+      isDarkModeActivated
       onAssistancePress={handleFakePress}
     />
   ));
@@ -37,6 +39,7 @@ if (__TEST__) {
           onPress={handleFakePress}
           onAssistancePress={handleFakePress}
           onClose={handleClose}
+          isDarkModeActivated={false}
         />
       );
 
@@ -53,6 +56,7 @@ if (__TEST__) {
           onPress={handlePress}
           onAssistancePress={handleFakePress}
           onClose={handleFakePress}
+          isDarkModeActivated={false}
         />
       );
 
@@ -69,6 +73,7 @@ if (__TEST__) {
           onPress={handleFakePress}
           onAssistancePress={handleAssistancePress}
           onClose={handleFakePress}
+          isDarkModeActivated
         />
       );
 

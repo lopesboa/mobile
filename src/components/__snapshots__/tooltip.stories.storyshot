@@ -4,38 +4,48 @@ exports[`Storyshots Tooltip Highscore 1`] = `
 <View>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#FFFFFF",
-        "borderBottomRightRadius": 5,
-        "borderTopLeftRadius": 5,
-        "borderTopRightRadius": 5,
-        "elevation": 4,
-        "flexDirection": "row",
-        "marginLeft": 5,
-        "marginRight": 1,
-        "padding": 16,
-        "paddingRight": 32,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomRightRadius": 5,
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "elevation": 4,
+          "flexDirection": "row",
+          "marginLeft": 5,
+          "marginRight": 1,
+          "padding": 16,
+          "paddingRight": 32,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      }
+        Object {
+          "backgroundColor": "#202020",
+        },
+      ]
     }
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ECEFF1",
-          "borderRadius": 19,
-          "height": 38,
-          "justifyContent": "center",
-          "width": 38,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 19,
+            "height": 38,
+            "justifyContent": "center",
+            "width": 38,
+          },
+          Object {
+            "backgroundColor": "#111111",
+          },
+        ]
       }
     >
       <RNSVGSvgView
@@ -197,18 +207,24 @@ exports[`Storyshots Tooltip Highscore 1`] = `
   </View>
   <View
     style={
-      Object {
-        "borderBottomColor": "#FFFFFF",
-        "borderColor": "transparent",
-        "borderRightColor": "#FFFFFF",
-        "borderStyle": "solid",
-        "borderWidth": 10,
-        "bottom": 0,
-        "height": 14,
-        "left": 0,
-        "position": "absolute",
-        "width": 16,
-      }
+      Array [
+        Object {
+          "borderBottomColor": "#FFFFFF",
+          "borderColor": "transparent",
+          "borderRightColor": "#FFFFFF",
+          "borderStyle": "solid",
+          "borderWidth": 10,
+          "bottom": 0,
+          "height": 14,
+          "left": 0,
+          "position": "absolute",
+          "width": 16,
+        },
+        Object {
+          "borderBottomColor": "#202020",
+          "borderRightColor": "#202020",
+        },
+      ]
     }
   />
 </View>
@@ -218,38 +234,48 @@ exports[`Storyshots Tooltip Unlock 1`] = `
 <View>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#FFFFFF",
-        "borderBottomRightRadius": 5,
-        "borderTopLeftRadius": 5,
-        "borderTopRightRadius": 5,
-        "elevation": 4,
-        "flexDirection": "row",
-        "marginLeft": 5,
-        "marginRight": 1,
-        "padding": 16,
-        "paddingRight": 32,
-        "shadowColor": "#14171A",
-        "shadowOffset": Object {
-          "height": 0,
-          "width": 0,
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomRightRadius": 5,
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "elevation": 4,
+          "flexDirection": "row",
+          "marginLeft": 5,
+          "marginRight": 1,
+          "padding": 16,
+          "paddingRight": 32,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
         },
-        "shadowOpacity": 0.15,
-        "shadowRadius": 8,
-      }
+        Object {
+          "backgroundColor": "#202020",
+        },
+      ]
     }
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ECEFF1",
-          "borderRadius": 19,
-          "height": 38,
-          "justifyContent": "center",
-          "width": 38,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ECEFF1",
+            "borderRadius": 19,
+            "height": 38,
+            "justifyContent": "center",
+            "width": 38,
+          },
+          Object {
+            "backgroundColor": "#111111",
+          },
+        ]
       }
     >
       <RNSVGSvgView
@@ -723,18 +749,24 @@ exports[`Storyshots Tooltip Unlock 1`] = `
   </View>
   <View
     style={
-      Object {
-        "borderBottomColor": "#FFFFFF",
-        "borderColor": "transparent",
-        "borderRightColor": "#FFFFFF",
-        "borderStyle": "solid",
-        "borderWidth": 10,
-        "bottom": 0,
-        "height": 14,
-        "left": 0,
-        "position": "absolute",
-        "width": 16,
-      }
+      Array [
+        Object {
+          "borderBottomColor": "#FFFFFF",
+          "borderColor": "transparent",
+          "borderRightColor": "#FFFFFF",
+          "borderStyle": "solid",
+          "borderWidth": 10,
+          "bottom": 0,
+          "height": 14,
+          "left": 0,
+          "position": "absolute",
+          "width": 16,
+        },
+        Object {
+          "borderBottomColor": "#202020",
+          "borderRightColor": "#202020",
+        },
+      ]
     }
   />
 </View>

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: LIST_HORIZONTAL_OFFSET + ITEM_HORIZONTAL_OFFSET,
     fontSize: TITLE_HEIGHT,
     fontWeight: theme.fontWeight.bold,
-    color: theme.colors.black
+    color: theme.colors.black.dark
   },
   titleDarkMode: {
     color: theme.colors.white

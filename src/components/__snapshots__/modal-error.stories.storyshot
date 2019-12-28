@@ -529,6 +529,9 @@ exports[`Storyshots ModalError No content found 1`] = `
               "fontSize": 17,
               "textAlign": "center",
             },
+            Object {
+              "color": "#FFFFFF",
+            },
           ],
         ]
       }
@@ -547,11 +550,16 @@ exports[`Storyshots ModalError No content found 1`] = `
       style={
         Array [
           Object {},
-          Object {
-            "color": "#546E7A",
-            "fontSize": 17,
-            "textAlign": "center",
-          },
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontSize": 17,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ],
         ]
       }
     >
@@ -854,6 +862,9 @@ exports[`Storyshots ModalError No content found 1`] = `
               Object {
                 "fontSize": 15,
               },
+              Object {
+                "color": "#FFFFFF",
+              },
             ],
           ]
         }
@@ -900,6 +911,9 @@ exports[`Storyshots ModalError No content found 1`] = `
                 Object {
                   "fontWeight": "700",
                   "textDecorationLine": "underline",
+                },
+                Object {
+                  "color": "#FFFFFF",
                 },
               ],
             ]
@@ -1444,6 +1458,9 @@ exports[`Storyshots ModalError Platform not activated 1`] = `
               "fontSize": 17,
               "textAlign": "center",
             },
+            Object {
+              "color": "#FFFFFF",
+            },
           ],
         ]
       }
@@ -1462,11 +1479,16 @@ exports[`Storyshots ModalError Platform not activated 1`] = `
       style={
         Array [
           Object {},
-          Object {
-            "color": "#546E7A",
-            "fontSize": 17,
-            "textAlign": "center",
-          },
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontSize": 17,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ],
         ]
       }
     >
