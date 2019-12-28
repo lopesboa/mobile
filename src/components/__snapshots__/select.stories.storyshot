@@ -304,11 +304,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -324,6 +329,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -611,7 +619,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -628,6 +636,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -659,7 +670,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -676,6 +687,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -707,7 +721,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -724,6 +738,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -755,7 +772,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -772,6 +789,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -1093,11 +1113,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -1113,6 +1138,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -1400,7 +1428,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -1417,6 +1445,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -1448,7 +1479,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -1466,6 +1497,9 @@ Array [
                           },
                           Object {
                             "color": "#00B0FF",
+                          },
+                          Object {
+                            "color": "#FFFFFF",
                           },
                         ],
                       ]
@@ -1498,7 +1532,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -1515,6 +1549,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -1546,7 +1583,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -1563,6 +1600,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -1880,11 +1920,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -1900,6 +1945,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -2187,7 +2235,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -2204,6 +2252,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -2235,7 +2286,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -2252,6 +2303,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -2283,7 +2337,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -2300,6 +2354,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -2331,7 +2388,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -2348,6 +2405,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -2667,11 +2727,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -2687,6 +2752,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -2974,7 +3042,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -2991,6 +3059,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3022,7 +3093,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3039,6 +3110,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3070,7 +3144,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3087,6 +3161,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3118,7 +3195,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3135,6 +3212,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3454,11 +3534,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -3474,6 +3559,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -3761,7 +3849,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3778,6 +3866,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3809,7 +3900,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3826,6 +3917,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3857,7 +3951,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3874,6 +3968,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -3905,7 +4002,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -3922,6 +4019,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -4241,11 +4341,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -4261,6 +4366,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -4548,7 +4656,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -4565,6 +4673,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -4596,7 +4707,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -4613,6 +4724,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -4644,7 +4758,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -4661,6 +4775,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -4692,7 +4809,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -4709,6 +4826,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -5028,11 +5148,16 @@ Array [
     >
       <View
         style={
-          Object {
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 5,
-            "overflow": "hidden",
-          }
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#202020",
+            },
+          ]
         }
         testID="select-modal"
       >
@@ -5048,6 +5173,9 @@ Array [
               },
               Object {
                 "backgroundColor": undefined,
+              },
+              Object {
+                "backgroundColor": "#373737",
               },
             ]
           }
@@ -5335,7 +5463,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -5352,6 +5480,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -5383,7 +5514,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -5401,6 +5532,9 @@ Array [
                           },
                           Object {
                             "color": "#00B0FF",
+                          },
+                          Object {
+                            "color": "#FFFFFF",
                           },
                         ],
                       ]
@@ -5433,7 +5567,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -5450,6 +5584,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }
@@ -5481,7 +5618,7 @@ Array [
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "backgroundColor": "#FFFFFF",
+                      "backgroundColor": null,
                       "opacity": 1,
                       "padding": 16,
                     }
@@ -5498,6 +5635,9 @@ Array [
                             "fontWeight": "700",
                           },
                           false,
+                          Object {
+                            "color": "#FFFFFF",
+                          },
                         ],
                       ]
                     }

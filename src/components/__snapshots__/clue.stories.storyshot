@@ -51,7 +51,7 @@ exports[`Storyshots Clue Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": "#FFFFFF",
                   "fontSize": 17,
                   "fontWeight": "700",
                   "marginBottom": 17,
@@ -127,6 +127,9 @@ exports[`Storyshots Clue Default 1`] = `
                 "backgroundColor": "#546E7A",
                 "flex": 1,
               },
+              Object {
+                "backgroundColor": "#202020",
+              },
             ]
           }
           testID="clue-front"
@@ -180,7 +183,7 @@ exports[`Storyshots Clue Default 1`] = `
                 Object {
                   "alignItems": "center",
                   "alignSelf": "stretch",
-                  "backgroundColor": "#FFFFFF",
+                  "backgroundColor": "#00B0FF",
                   "borderRadius": 32,
                   "borderWidth": 0,
                   "flexDirection": "row",
@@ -211,6 +214,13 @@ exports[`Storyshots Clue Default 1`] = `
                     undefined,
                     undefined,
                     undefined,
+                    undefined,
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
                     undefined,
                   ]
                 }

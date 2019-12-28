@@ -94,4 +94,5 @@ class DropZone extends React.PureComponent<Props> {
   }
 }
 
+export {DropZone as Component};
 export default withDarkMode(DropZone);

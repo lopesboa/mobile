@@ -3,11 +3,16 @@
 exports[`Storyshots HeaderSlideRight Default 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#ECEFF1",
-      "paddingHorizontal": 16,
-      "paddingVertical": 8,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      Object {
+        "backgroundColor": "#373737",
+      },
+    ]
   }
 >
   <View
@@ -57,6 +62,9 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               "height": 44,
               "width": 44,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="lives-3"
@@ -96,6 +104,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 14.666666666666666,
                     },
                   ],
@@ -127,6 +136,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 14.666666666666666,
                     },
                   ],
@@ -164,7 +174,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -186,7 +196,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -276,7 +286,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -309,7 +319,7 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -633,11 +643,16 @@ exports[`Storyshots HeaderSlideRight Default 1`] = `
 exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#ECEFF1",
-      "paddingHorizontal": 16,
-      "paddingVertical": 8,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      Object {
+        "backgroundColor": "#373737",
+      },
+    ]
   }
 >
   <View
@@ -687,6 +702,9 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               "height": 44,
               "width": 44,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="lives-3"
@@ -726,6 +744,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 14.666666666666666,
                     },
                   ],
@@ -757,6 +776,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 14.666666666666666,
                     },
                   ],
@@ -794,7 +814,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -816,7 +836,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -906,7 +926,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -939,7 +959,7 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -1436,11 +1456,16 @@ exports[`Storyshots HeaderSlideRight Fast slide 1`] = `
 exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#ECEFF1",
-      "paddingHorizontal": 16,
-      "paddingVertical": 8,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      Object {
+        "backgroundColor": "#373737",
+      },
+    ]
   }
 >
   <View
@@ -1490,6 +1515,9 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               "height": 44,
               "width": 44,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="lives-3"
@@ -1515,6 +1543,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
                     "textAlign": "center",
                   },
                   Object {
+                    "color": "#FFFFFF",
                     "fontSize": 14.666666666666666,
                   },
                 ],
@@ -1550,7 +1579,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -1572,7 +1601,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -1662,7 +1691,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -1695,7 +1724,7 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -2192,11 +2221,16 @@ exports[`Storyshots HeaderSlideRight God mode + fast slide 1`] = `
 exports[`Storyshots HeaderSlideRight God mode 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#ECEFF1",
-      "paddingHorizontal": 16,
-      "paddingVertical": 8,
-    }
+    Array [
+      Object {
+        "backgroundColor": "#ECEFF1",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      Object {
+        "backgroundColor": "#373737",
+      },
+    ]
   }
 >
   <View
@@ -2246,6 +2280,9 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               "height": 44,
               "width": 44,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="lives-3"
@@ -2271,6 +2308,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
                     "textAlign": "center",
                   },
                   Object {
+                    "color": "#FFFFFF",
                     "fontSize": 14.666666666666666,
                   },
                 ],
@@ -2306,7 +2344,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
           align="xMidYMid"
           bbHeight={26.4}
           bbWidth={26.4}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -2328,7 +2366,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -2418,7 +2456,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -2451,7 +2489,7 @@ exports[`Storyshots HeaderSlideRight God mode 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}

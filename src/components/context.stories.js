@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 import {handleFakePress, TestContextProvider} from '../utils/tests';
 import {mediaContextImage, mediaContextVideo, mediaContextPDF} from '../__fixtures__/context';
 import {__TEST__} from '../modules/environment';
-import Context from './context';
+import {Component as Context} from './context';
 
 storiesOf('Context', module)
   .add('Default', () => (
@@ -19,6 +19,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -32,6 +33,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -44,6 +46,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -56,6 +59,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -68,6 +72,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -80,6 +85,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -92,6 +98,7 @@ storiesOf('Context', module)
         onPress={handleFakePress}
         onPDFButtonPress={handleFakePress}
         onLinkPress={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ));
@@ -111,6 +118,7 @@ if (__TEST__) {
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
             onLinkPress={handleFakePress}
+            isDarkModeActivated={false}
           />
         </TestContextProvider>
       );
@@ -136,6 +144,7 @@ if (__TEST__) {
             onPress={handleFakePress}
             onPDFButtonPress={handlePress}
             onLinkPress={handleFakePress}
+            isDarkModeActivated={false}
           />
         </TestContextProvider>
       );
@@ -158,6 +167,7 @@ if (__TEST__) {
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
             onLinkPress={handleFakePress}
+            isDarkModeActivated={false}
           />
         </TestContextProvider>
       );
@@ -175,6 +185,7 @@ if (__TEST__) {
             onPress={handleFakePress}
             onPDFButtonPress={handleFakePress}
             onLinkPress={handleFakePress}
+            isDarkModeActivated
           />
         </TestContextProvider>
       );

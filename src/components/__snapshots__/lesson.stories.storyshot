@@ -5,10 +5,12 @@ exports[`Storyshots Lesson Default 1`] = `null`;
 exports[`Storyshots Lesson PDF selected 1`] = `
 <View
   style={
-    Object {
-      "flexGrow": 1,
-      "paddingTop": 32,
-    }
+    Array [
+      Object {
+        "flexGrow": 1,
+        "paddingTop": 32,
+      },
+    ]
   }
 >
   <View
@@ -52,7 +54,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": "#FFFFFF",
                   "fontSize": 17,
                   "fontWeight": "700",
                   "marginBottom": 17,
@@ -379,10 +381,10 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                 Object {
                   "alignItems": "center",
                   "alignSelf": "stretch",
-                  "backgroundColor": "transparent",
+                  "backgroundColor": "#00B0FF",
                   "borderColor": "#FFFFFF",
                   "borderRadius": 32,
-                  "borderWidth": 2,
+                  "borderWidth": 0,
                   "flexDirection": "row",
                   "height": 54,
                   "justifyContent": "center",
@@ -413,6 +415,13 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                     undefined,
                     undefined,
                     undefined,
+                    undefined,
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
                     undefined,
                   ]
                 }
@@ -825,7 +834,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -1154,7 +1163,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -1304,7 +1313,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#00B0FF",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                           "fontWeight": "700",
                         }
@@ -1323,12 +1332,15 @@ exports[`Storyshots Lesson PDF selected 1`] = `
   </RCTScrollView>
   <View
     style={
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 24,
-        "paddingVertical": 16,
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+          "width": "100%",
+        },
+        false,
+      ]
     }
   >
     <View
@@ -1387,10 +1399,12 @@ exports[`Storyshots Lesson PDF selected 1`] = `
 exports[`Storyshots Lesson Video selected 1`] = `
 <View
   style={
-    Object {
-      "flexGrow": 1,
-      "paddingTop": 32,
-    }
+    Array [
+      Object {
+        "flexGrow": 1,
+        "paddingTop": 32,
+      },
+    ]
   }
 >
   <View
@@ -1434,7 +1448,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": "#FFFFFF",
                   "fontSize": 17,
                   "fontWeight": "700",
                   "marginBottom": 17,
@@ -1938,7 +1952,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#00B0FF",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                           "fontWeight": "700",
                         }
@@ -2268,7 +2282,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -2640,7 +2654,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -2658,12 +2672,15 @@ exports[`Storyshots Lesson Video selected 1`] = `
   </RCTScrollView>
   <View
     style={
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 24,
-        "paddingVertical": 16,
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+          "width": "100%",
+        },
+        false,
+      ]
     }
   >
     <View
@@ -2722,10 +2739,12 @@ exports[`Storyshots Lesson Video selected 1`] = `
 exports[`Storyshots Lesson Video subtitles 1`] = `
 <View
   style={
-    Object {
-      "flexGrow": 1,
-      "paddingTop": 32,
-    }
+    Array [
+      Object {
+        "flexGrow": 1,
+        "paddingTop": 32,
+      },
+    ]
   }
 >
   <View
@@ -2769,7 +2788,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": "#FFFFFF",
                   "fontSize": 17,
                   "fontWeight": "700",
                   "marginBottom": 17,
@@ -3444,7 +3463,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -3602,7 +3621,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#00B0FF",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                           "fontWeight": "700",
                         }
@@ -3975,7 +3994,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "color": "#546E7A",
+                          "color": "#FFFFFF",
                           "fontSize": 15,
                         }
                       }
@@ -3993,12 +4012,15 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
   </RCTScrollView>
   <View
     style={
-      Object {
-        "backgroundColor": "#ECEFF1",
-        "paddingHorizontal": 24,
-        "paddingVertical": 16,
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "#ECEFF1",
+          "paddingHorizontal": 24,
+          "paddingVertical": 16,
+          "width": "100%",
+        },
+        false,
+      ]
     }
   >
     <View

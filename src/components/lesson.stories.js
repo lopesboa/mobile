@@ -9,7 +9,7 @@ import {__TEST__} from '../modules/environment';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
 import {mapToResource} from '../layer/data/mappers';
-import Lesson from './lesson';
+import {Component as Lesson} from './lesson';
 
 const video = createVideo({ref: 'les_1', description: 'Foo bar baz - Video'});
 const pdf = createPdf({ref: 'les_2', description: 'Foo bar baz - PDF'});
@@ -32,6 +32,7 @@ storiesOf('Lesson', module)
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -46,6 +47,7 @@ storiesOf('Lesson', module)
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -60,6 +62,7 @@ storiesOf('Lesson', module)
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -74,6 +77,7 @@ storiesOf('Lesson', module)
         layout={fakeLayout}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -86,6 +90,7 @@ storiesOf('Lesson', module)
         starsGranted={4}
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ));
@@ -107,6 +112,7 @@ if (__TEST__) {
             layout={fakeLayout}
             onPDFButtonPress={handlePress}
             onVideoPlay={handleVideoPlay}
+            isDarkModeActivated
           />
         </TestContextProvider>
       );
@@ -137,6 +143,7 @@ if (__TEST__) {
             layout={fakeLayout}
             onPDFButtonPress={handlePress}
             onVideoPlay={handleVideoPlay}
+            isDarkModeActivated
           />
         </TestContextProvider>
       );

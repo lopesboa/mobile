@@ -32,6 +32,9 @@ exports[`Storyshots Lives Bigger height 1`] = `
           "height": 360,
           "width": 360,
         },
+        Object {
+          "backgroundColor": "#212121",
+        },
       ]
     }
     testID="lives-3"
@@ -71,6 +74,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#FFFFFF",
                   "fontSize": 120,
                 },
               ],
@@ -102,6 +106,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#FFFFFF",
                   "fontSize": 120,
                 },
               ],
@@ -139,7 +144,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
       align="xMidYMid"
       bbHeight={216}
       bbWidth={216}
-      color="#FFFFFF"
+      color="#212121"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -161,7 +166,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           },
         ]
       }
-      tintColor="#FFFFFF"
+      tintColor="#212121"
       vbHeight={24}
       vbWidth={24}
     >
@@ -251,7 +256,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           fill={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           fillOpacity={1}
@@ -284,7 +289,7 @@ exports[`Storyshots Lives Bigger height 1`] = `
           stroke={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           strokeDasharray={null}
@@ -637,6 +642,7 @@ exports[`Storyshots Lives Default 1`] = `
           "height": 180,
           "width": 180,
         },
+        false,
       ]
     }
     testID="lives"
@@ -1162,6 +1168,7 @@ exports[`Storyshots Lives Fast slide 1`] = `
           "height": 180,
           "width": 180,
         },
+        false,
       ]
     }
     testID="lives-3"
@@ -1201,6 +1208,7 @@ exports[`Storyshots Lives Fast slide 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -1232,6 +1240,7 @@ exports[`Storyshots Lives Fast slide 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -1938,6 +1947,9 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           "height": 180,
           "width": 180,
         },
+        Object {
+          "backgroundColor": "#212121",
+        },
       ]
     }
     testID="lives-3"
@@ -1963,6 +1975,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
                 "textAlign": "center",
               },
               Object {
+                "color": "#FFFFFF",
                 "fontSize": 60,
               },
             ],
@@ -1998,7 +2011,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
       align="xMidYMid"
       bbHeight={108}
       bbWidth={108}
-      color="#FFFFFF"
+      color="#212121"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -2020,7 +2033,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           },
         ]
       }
-      tintColor="#FFFFFF"
+      tintColor="#212121"
       vbHeight={24}
       vbWidth={24}
     >
@@ -2110,7 +2123,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           fill={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           fillOpacity={1}
@@ -2143,7 +2156,7 @@ exports[`Storyshots Lives God mode + fast slide 1`] = `
           stroke={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           strokeDasharray={null}
@@ -2667,6 +2680,7 @@ exports[`Storyshots Lives God mode 1`] = `
           "height": 180,
           "width": 180,
         },
+        false,
       ]
     }
     testID="lives-3"
@@ -2692,6 +2706,7 @@ exports[`Storyshots Lives God mode 1`] = `
                 "textAlign": "center",
               },
               Object {
+                "color": "#546E7A",
                 "fontSize": 60,
               },
             ],
@@ -3223,6 +3238,7 @@ exports[`Storyshots Lives Losing life 1`] = `
           "height": 180,
           "width": 180,
         },
+        false,
       ]
     }
     testID="lives-3-broken"
@@ -3262,6 +3278,7 @@ exports[`Storyshots Lives Losing life 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -3293,6 +3310,7 @@ exports[`Storyshots Lives Losing life 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -3826,6 +3844,7 @@ exports[`Storyshots Lives Winning life 1`] = `
           "height": 180,
           "width": 180,
         },
+        false,
       ]
     }
     testID="lives-3"
@@ -3865,6 +3884,7 @@ exports[`Storyshots Lives Winning life 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -3896,6 +3916,7 @@ exports[`Storyshots Lives Winning life 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#546E7A",
                   "fontSize": 60,
                 },
               ],
@@ -4429,6 +4450,9 @@ exports[`Storyshots Lives With value 1`] = `
           "height": 180,
           "width": 180,
         },
+        Object {
+          "backgroundColor": "#212121",
+        },
       ]
     }
     testID="lives-3"
@@ -4468,6 +4492,7 @@ exports[`Storyshots Lives With value 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#FFFFFF",
                   "fontSize": 60,
                 },
               ],
@@ -4499,6 +4524,7 @@ exports[`Storyshots Lives With value 1`] = `
                   "textAlign": "center",
                 },
                 Object {
+                  "color": "#FFFFFF",
                   "fontSize": 60,
                 },
               ],
@@ -4536,7 +4562,7 @@ exports[`Storyshots Lives With value 1`] = `
       align="xMidYMid"
       bbHeight={108}
       bbWidth={108}
-      color="#FFFFFF"
+      color="#212121"
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -4558,7 +4584,7 @@ exports[`Storyshots Lives With value 1`] = `
           },
         ]
       }
-      tintColor="#FFFFFF"
+      tintColor="#212121"
       vbHeight={24}
       vbWidth={24}
     >
@@ -4648,7 +4674,7 @@ exports[`Storyshots Lives With value 1`] = `
           fill={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           fillOpacity={1}
@@ -4681,7 +4707,7 @@ exports[`Storyshots Lives With value 1`] = `
           stroke={
             Array [
               0,
-              4294967295,
+              4280361249,
             ]
           }
           strokeDasharray={null}

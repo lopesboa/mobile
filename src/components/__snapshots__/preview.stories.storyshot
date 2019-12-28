@@ -964,10 +964,10 @@ exports[`Storyshots Preview PDF Remote 1`] = `
             Object {
               "alignItems": "center",
               "alignSelf": "stretch",
-              "backgroundColor": "transparent",
+              "backgroundColor": "#00B0FF",
               "borderColor": "#FFFFFF",
               "borderRadius": 32,
-              "borderWidth": 2,
+              "borderWidth": 0,
               "flexDirection": "row",
               "height": 54,
               "justifyContent": "center",
@@ -998,6 +998,13 @@ exports[`Storyshots Preview PDF Remote 1`] = `
                 undefined,
                 undefined,
                 undefined,
+                undefined,
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
                 undefined,
               ]
             }

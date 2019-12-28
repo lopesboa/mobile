@@ -464,11 +464,16 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
       >
         <View
           style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "borderRadius": 5,
-              "overflow": "hidden",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 5,
+                "overflow": "hidden",
+              },
+              Object {
+                "backgroundColor": "#202020",
+              },
+            ]
           }
           testID="question-part-4-select-modal"
         >
@@ -484,6 +489,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                 },
                 Object {
                   "backgroundColor": undefined,
+                },
+                Object {
+                  "backgroundColor": "#373737",
                 },
               ]
             }
@@ -771,7 +779,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -788,6 +796,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -819,7 +830,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -836,6 +847,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -867,7 +881,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -884,6 +898,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -915,7 +932,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -932,6 +949,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -1407,11 +1427,16 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
       >
         <View
           style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "borderRadius": 5,
-              "overflow": "hidden",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 5,
+                "overflow": "hidden",
+              },
+              Object {
+                "backgroundColor": "#202020",
+              },
+            ]
           }
           testID="question-part-8-select-selected-modal"
         >
@@ -1427,6 +1452,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                 },
                 Object {
                   "backgroundColor": undefined,
+                },
+                Object {
+                  "backgroundColor": "#373737",
                 },
               ]
             }
@@ -1714,7 +1742,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -1731,6 +1759,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -1762,7 +1793,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -1780,6 +1811,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                             },
                             Object {
                               "color": "#00B0FF",
+                            },
+                            Object {
+                              "color": "#FFFFFF",
                             },
                           ],
                         ]
@@ -1812,7 +1846,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -1829,6 +1863,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -1860,7 +1897,7 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -1877,6 +1914,9 @@ exports[`Storyshots QuestionTemplate Default 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -2359,11 +2399,16 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
       >
         <View
           style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "borderRadius": 5,
-              "overflow": "hidden",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 5,
+                "overflow": "hidden",
+              },
+              Object {
+                "backgroundColor": "#202020",
+              },
+            ]
           }
           testID="question-part-4-select-disabled-modal"
         >
@@ -2379,6 +2424,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                 },
                 Object {
                   "backgroundColor": undefined,
+                },
+                Object {
+                  "backgroundColor": "#373737",
                 },
               ]
             }
@@ -2666,7 +2714,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -2683,6 +2731,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -2714,7 +2765,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -2731,6 +2782,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -2762,7 +2816,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -2779,6 +2833,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -2810,7 +2867,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -2827,6 +2884,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -3302,11 +3362,16 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
       >
         <View
           style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "borderRadius": 5,
-              "overflow": "hidden",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 5,
+                "overflow": "hidden",
+              },
+              Object {
+                "backgroundColor": "#202020",
+              },
+            ]
           }
           testID="question-part-8-select-selected-disabled-modal"
         >
@@ -3322,6 +3387,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                 },
                 Object {
                   "backgroundColor": undefined,
+                },
+                Object {
+                  "backgroundColor": "#373737",
                 },
               ]
             }
@@ -3609,7 +3677,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -3626,6 +3694,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -3657,7 +3728,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -3675,6 +3746,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                             },
                             Object {
                               "color": "#00B0FF",
+                            },
+                            Object {
+                              "color": "#FFFFFF",
                             },
                           ],
                         ]
@@ -3707,7 +3781,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -3724,6 +3798,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -3755,7 +3832,7 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "backgroundColor": "#FFFFFF",
+                        "backgroundColor": null,
                         "opacity": 1,
                         "padding": 16,
                       }
@@ -3772,6 +3849,9 @@ exports[`Storyshots QuestionTemplate Disabled 1`] = `
                               "fontWeight": "700",
                             },
                             false,
+                            Object {
+                              "color": "#FFFFFF",
+                            },
                           ],
                         ]
                       }
@@ -3822,7 +3902,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "700",
               "lineHeight": 30,
@@ -3855,7 +3935,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "700",
               "lineHeight": 30,
@@ -3901,7 +3981,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
             allowFontScaling={true}
             style={
               Object {
-                "color": "#14171A",
+                "color": "#FFFFFF",
                 "fontSize": 15,
                 "fontWeight": "700",
                 "lineHeight": 30,
@@ -3936,7 +4016,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "700",
               "lineHeight": 30,
@@ -3969,7 +4049,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "700",
               "lineHeight": 30,
@@ -4015,7 +4095,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
             allowFontScaling={true}
             style={
               Object {
-                "color": "#14171A",
+                "color": "#FFFFFF",
                 "fontSize": 15,
                 "fontStyle": "italic",
                 "fontWeight": "700",
@@ -4050,7 +4130,7 @@ exports[`Storyshots QuestionTemplate Incorrect items 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "700",
               "lineHeight": 30,

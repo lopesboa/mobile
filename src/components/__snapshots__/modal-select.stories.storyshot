@@ -3,11 +3,16 @@
 exports[`Storyshots ModalSelect Default 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
   testID="modal-select"
 >
@@ -23,6 +28,9 @@ exports[`Storyshots ModalSelect Default 1`] = `
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }
@@ -310,7 +318,7 @@ exports[`Storyshots ModalSelect Default 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -327,6 +335,9 @@ exports[`Storyshots ModalSelect Default 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -358,7 +369,7 @@ exports[`Storyshots ModalSelect Default 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -375,6 +386,9 @@ exports[`Storyshots ModalSelect Default 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -406,7 +420,7 @@ exports[`Storyshots ModalSelect Default 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -423,6 +437,9 @@ exports[`Storyshots ModalSelect Default 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -454,7 +471,7 @@ exports[`Storyshots ModalSelect Default 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -471,6 +488,9 @@ exports[`Storyshots ModalSelect Default 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -488,11 +508,16 @@ exports[`Storyshots ModalSelect Default 1`] = `
 exports[`Storyshots ModalSelect With value 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
   testID="modal-select"
 >
@@ -508,6 +533,9 @@ exports[`Storyshots ModalSelect With value 1`] = `
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }
@@ -795,7 +823,7 @@ exports[`Storyshots ModalSelect With value 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -812,6 +840,9 @@ exports[`Storyshots ModalSelect With value 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -843,7 +874,7 @@ exports[`Storyshots ModalSelect With value 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -862,6 +893,9 @@ exports[`Storyshots ModalSelect With value 1`] = `
                     Object {
                       "color": "#00B0FF",
                     },
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -893,7 +927,7 @@ exports[`Storyshots ModalSelect With value 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -910,6 +944,9 @@ exports[`Storyshots ModalSelect With value 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }
@@ -941,7 +978,7 @@ exports[`Storyshots ModalSelect With value 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "backgroundColor": "#FFFFFF",
+                "backgroundColor": null,
                 "opacity": 1,
                 "padding": 16,
               }
@@ -958,6 +995,9 @@ exports[`Storyshots ModalSelect With value 1`] = `
                       "fontWeight": "700",
                     },
                     false,
+                    Object {
+                      "color": "#FFFFFF",
+                    },
                   ],
                 ]
               }

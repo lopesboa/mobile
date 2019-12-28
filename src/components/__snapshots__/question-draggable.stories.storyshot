@@ -19,6 +19,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
           "padding": 4,
         },
         false,
+        Object {
+          "backgroundColor": "#373737",
+          "borderColor": "#546E7A",
+        },
       ]
     }
   >
@@ -50,6 +54,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -138,6 +146,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -236,6 +248,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
+            },
           ]
         }
         testID="choice-3-unselected"
@@ -278,7 +294,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -320,6 +336,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -363,7 +383,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -405,6 +425,10 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -448,7 +472,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -485,6 +509,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
           "padding": 4,
         },
         false,
+        Object {
+          "backgroundColor": "#373737",
+          "borderColor": "#546E7A",
+        },
       ]
     }
   >
@@ -516,6 +544,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -604,6 +636,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -702,6 +738,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
+            },
           ]
         }
         testID="choice-3-unselected"
@@ -744,7 +784,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -786,6 +826,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -829,7 +873,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -871,6 +915,10 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -914,7 +962,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -951,6 +999,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
           "padding": 4,
         },
         false,
+        Object {
+          "backgroundColor": "#373737",
+          "borderColor": "#546E7A",
+        },
       ]
     }
   >
@@ -982,6 +1034,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -1070,6 +1126,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -1168,6 +1228,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "flexDirection": "row",
               "overflow": "hidden",
             },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
+            },
           ]
         }
         testID="choice-3-unselected"
@@ -1210,7 +1274,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -1252,6 +1316,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -1295,7 +1363,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }
@@ -1337,6 +1405,10 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               "borderWidth": 1,
               "flexDirection": "row",
               "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#373737",
+              "borderWidth": 0,
             },
           ]
         }
@@ -1380,7 +1452,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": "#FFFFFF",
                       "fontSize": 13,
                       "fontWeight": "700",
                     }

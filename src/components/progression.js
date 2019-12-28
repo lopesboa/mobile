@@ -4,12 +4,14 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
-import {useDarkMode} from '../containers/with-dark-mode';
+import withDarkMode from '../containers/with-dark-mode';
+import type {WithDarkModeProps} from '../containers/with-dark-mode';
 import ProgressionBar from './progression-bar';
 import {BrandThemeContext} from './brand-theme-provider';
 import Text from './text';
 
 type Props = {|
+  ...WithDarkModeProps,
   current: number,
   count: number
 |};
@@ -40,10 +42,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const Progression = ({current, count}: Props) => {
+const Progression = ({current, count, isDarkModeActivated}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
-  const isDarkModeActivated = useDarkMode();
-  const progressBarBackgroundColor = (isDarkModeActivated && '#373737') || theme.colors.white;
+  const progressBarBackgroundColor = isDarkModeActivated ? '#373737' : theme.colors.white;
   return (
     <View testID="progression">
       <ProgressionBar
@@ -74,4 +75,5 @@ const Progression = ({current, count}: Props) => {
   );
 };
 
-export default Progression;
+export {Progression as Component};
+export default withDarkMode(Progression);

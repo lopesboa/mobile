@@ -215,7 +215,7 @@ class Lives extends React.PureComponent<Props> {
     };
     const textStyle = {
       fontSize: height / 3,
-      color: (isDarkModeActivated && theme.colors.white) || theme.colors.gray.dark
+      color: isDarkModeActivated ? theme.colors.white : theme.colors.gray.dark
     };
 
     const translateX = this.shake.interpolate({
@@ -292,7 +292,7 @@ class Lives extends React.PureComponent<Props> {
         </View>
         <Animated.View style={[styles.heart, heartStyle]}>
           <HeartOutlineIcon
-            color={isDarkModeActivated && '#212121' || theme.colors.white}
+            color={isDarkModeActivated ? '#212121' : theme.colors.white}
             style={{height: heartHeight, width: heartHeight}}
           />
           <Animated.View
@@ -326,4 +326,5 @@ class Lives extends React.PureComponent<Props> {
   }
 }
 
+export {Lives as Component};
 export default withDarkMode(Lives);

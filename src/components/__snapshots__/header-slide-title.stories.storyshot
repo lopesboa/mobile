@@ -14,6 +14,9 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       Object {
         "height": 60,
       },
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
   testID="header-slide-title"
@@ -94,6 +97,9 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
             Object {
               "color": "#00B0FF",
             },
+            Object {
+              "color": "#FFFFFF",
+            },
           ],
         ]
       }
@@ -105,11 +111,16 @@ exports[`Storyshots HeaderSlideTitle Advanced 1`] = `
       style={
         Array [
           Object {},
-          Object {
-            "color": "#546E7A",
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ],
         ]
       }
       testID="header-slide-title-title"
@@ -134,6 +145,9 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       Object {
         "height": 60,
       },
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
   testID="header-slide-title"
@@ -214,6 +228,9 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
             Object {
               "color": "#00B0FF",
             },
+            Object {
+              "color": "#FFFFFF",
+            },
           ],
         ]
       }
@@ -225,11 +242,16 @@ exports[`Storyshots HeaderSlideTitle Basic 1`] = `
       style={
         Array [
           Object {},
-          Object {
-            "color": "#546E7A",
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ],
         ]
       }
       testID="header-slide-title-title"
@@ -254,6 +276,9 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       Object {
         "height": 60,
       },
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
   testID="header-slide-title"
@@ -334,6 +359,9 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
             Object {
               "color": "#00B0FF",
             },
+            Object {
+              "color": "#FFFFFF",
+            },
           ],
         ]
       }
@@ -345,11 +373,16 @@ exports[`Storyshots HeaderSlideTitle Coach 1`] = `
       style={
         Array [
           Object {},
-          Object {
-            "color": "#546E7A",
-            "fontSize": 12,
-            "fontWeight": "700",
-          },
+          Array [
+            Object {
+              "color": "#546E7A",
+              "fontSize": 12,
+              "fontWeight": "700",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ],
         ]
       }
       testID="header-slide-title-title"
@@ -373,6 +406,9 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
       },
       Object {
         "height": 60,
+      },
+      Object {
+        "backgroundColor": "#121212",
       },
     ]
   }

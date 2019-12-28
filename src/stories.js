@@ -33,7 +33,6 @@ require('./components/header-back-button.stories.js');
 require('./components/header-back-icon.stories.js');
 require('./components/header-slide-right.stories.js');
 require('./components/header-slide-title.stories.js');
-require('./components/header.stories.js');
 require('./components/heart-broken.stories.js');
 require('./components/heart.stories.js');
 require('./components/hero.stories.js');

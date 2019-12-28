@@ -127,4 +127,5 @@ class CatalogSection extends React.Component<Props> {
   }
 }
 
+export {CatalogSection as Component};
 export default withDarkMode(CatalogSection);

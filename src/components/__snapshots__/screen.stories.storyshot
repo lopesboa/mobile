@@ -10,6 +10,9 @@ exports[`Storyshots Screen Default 1`] = `
         "flex": 1,
       },
       undefined,
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
 >
@@ -70,6 +73,9 @@ exports[`Storyshots Screen Not scrollable 1`] = `
         "flex": 1,
       },
       undefined,
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
 >
@@ -97,6 +103,9 @@ exports[`Storyshots Screen Not scrollable without safeArea 1`] = `
         "flex": 1,
       },
       undefined,
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
 >
@@ -126,6 +135,9 @@ exports[`Storyshots Screen With custom style 1`] = `
       },
       Object {
         "backgroundColor": "red",
+      },
+      Object {
+        "backgroundColor": "#121212",
       },
     ]
   }
@@ -188,6 +200,9 @@ exports[`Storyshots Screen With refresh control 1`] = `
       },
       Object {
         "backgroundColor": "red",
+      },
+      Object {
+        "backgroundColor": "#121212",
       },
     ]
   }
@@ -255,6 +270,9 @@ exports[`Storyshots Screen Without safeArea 1`] = `
         "flex": 1,
       },
       undefined,
+      Object {
+        "backgroundColor": "#121212",
+      },
     ]
   }
 >

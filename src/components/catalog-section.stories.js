@@ -14,7 +14,7 @@ import {
 import {__TEST__} from '../modules/environment';
 import {AUTHOR_TYPE} from '../const';
 import {CARD_STATUS} from '../layer/data/_const';
-import CatalogSection from './catalog-section';
+import {Component as CatalogSection} from './catalog-section';
 
 const authorCard = createCardAuthor({authorType: AUTHOR_TYPE.CUSTOM});
 const levelCard = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
@@ -35,7 +35,10 @@ const chapterCard = createChapterCard({
 const cards = new Array(30).fill();
 
 storiesOf('CatalogSection', module)
-  .add('Default', () => <CatalogSection testID="fake-catalog-section" />)
+  .add('Default Light', () => (
+    <CatalogSection testID="fake-catalog-section" isDarkModeActivated={false} />
+  ))
+  .add('Default Dark', () => <CatalogSection testID="fake-catalog-section" isDarkModeActivated />)
   .add('Empty cards', () => (
     <CatalogSection
       sectionRef="default"
@@ -43,6 +46,7 @@ storiesOf('CatalogSection', module)
       onCardPress={handleFakePress}
       onScroll={handleFakePress}
       testID="fake-catalog-section"
+      isDarkModeActivated={false}
     />
   ))
   .add('With content', () => (
@@ -53,6 +57,7 @@ storiesOf('CatalogSection', module)
       onCardPress={handleFakePress}
       onScroll={handleFakePress}
       testID="fake-catalog-section"
+      isDarkModeActivated={false}
     />
   ));
 
@@ -68,6 +73,7 @@ if (__TEST__) {
           onCardPress={handleCardPress}
           onScroll={handleFakePress}
           testID="fake-catalog-section"
+          isDarkModeActivated
         />
       );
 

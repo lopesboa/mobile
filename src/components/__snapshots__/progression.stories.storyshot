@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Progression Default 1`] = `
+exports[`Storyshots Progression Default Dark 1`] = `
 <View
   testID="progression"
 >
   <View
     style={
       Object {
-        "backgroundColor": "#ECEFF1",
+        "backgroundColor": "#373737",
       }
     }
     testID="progression-bar"
@@ -35,13 +35,18 @@ exports[`Storyshots Progression Default 1`] = `
   >
     <View
       style={
-        Object {
-          "backgroundColor": "#ECEFF1",
-          "borderBottomLeftRadius": 12,
-          "flexDirection": "row",
-          "paddingHorizontal": 8,
-          "paddingVertical": 4,
-        }
+        Array [
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderBottomLeftRadius": 12,
+            "flexDirection": "row",
+            "paddingHorizontal": 8,
+            "paddingVertical": 4,
+          },
+          Object {
+            "backgroundColor": "#373737",
+          },
+        ]
       }
       testID="progression-label"
     >
@@ -57,6 +62,9 @@ exports[`Storyshots Progression Default 1`] = `
               Object {
                 "color": "#00B0FF",
               },
+              Object {
+                "color": "#FFFFFF",
+              },
             ],
           ]
         }
@@ -67,11 +75,106 @@ exports[`Storyshots Progression Default 1`] = `
         style={
           Array [
             Object {},
-            Object {
-              "color": "#90A4AE",
-              "fontSize": 13,
-              "fontWeight": "700",
-            },
+            Array [
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 13,
+                "fontWeight": "700",
+              },
+              Object {
+                "color": "#90A4AE",
+              },
+            ],
+          ]
+        }
+      >
+        /
+        10
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Progression Default Light 1`] = `
+<View
+  testID="progression"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
+    testID="progression-bar"
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#00B0FF",
+          "borderBottomRightRadius": 0,
+          "borderTopRightRadius": 0,
+          "height": 3,
+          "width": "10%",
+        }
+      }
+      testID="progression-bar-1"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#ECEFF1",
+            "borderBottomLeftRadius": 12,
+            "flexDirection": "row",
+            "paddingHorizontal": 8,
+            "paddingVertical": 4,
+          },
+          false,
+        ]
+      }
+      testID="progression-label"
+    >
+      <Text
+        style={
+          Array [
+            Object {},
+            Array [
+              Object {
+                "fontSize": 13,
+                "fontWeight": "700",
+              },
+              Object {
+                "color": "#00B0FF",
+              },
+              false,
+            ],
+          ]
+        }
+      >
+        1
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {},
+            Array [
+              Object {
+                "color": "#90A4AE",
+                "fontSize": 13,
+                "fontWeight": "700",
+              },
+              false,
+            ],
           ]
         }
       >

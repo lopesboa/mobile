@@ -163,4 +163,5 @@ class ResourcesBrowser extends React.PureComponent<Props> {
   }
 }
 
+export {ResourcesBrowser as Component};
 export default withDarkMode(ResourcesBrowser);

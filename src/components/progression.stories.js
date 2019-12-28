@@ -3,6 +3,8 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
-import Progression from './progression';
+import {Component as Progression} from './progression';
 
-storiesOf('Progression', module).add('Default', () => <Progression current={1} count={10} />);
+storiesOf('Progression', module)
+  .add('Default Dark', () => <Progression current={1} count={10} isDarkModeActivated />)
+  .add('Default Light', () => <Progression current={1} count={10} isDarkModeActivated={false} />);

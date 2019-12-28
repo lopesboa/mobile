@@ -3,11 +3,16 @@
 exports[`Storyshots ModalError No content found 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
 >
   <View
@@ -22,6 +27,9 @@ exports[`Storyshots ModalError No content found 1`] = `
         },
         Object {
           "backgroundColor": "#FDE2E5",
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }
@@ -908,11 +916,16 @@ exports[`Storyshots ModalError No content found 1`] = `
 exports[`Storyshots ModalError Platform not activated 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
 >
   <View
@@ -927,6 +940,9 @@ exports[`Storyshots ModalError Platform not activated 1`] = `
         },
         Object {
           "backgroundColor": "#FDE2E5",
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }

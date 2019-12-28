@@ -85,4 +85,5 @@ class Screen extends React.PureComponent<Props> {
   }
 }
 
+export {Screen as Component};
 export default withDarkMode(Screen);

@@ -6129,15 +6129,20 @@ Pol P.!
   </RCTScrollView>
   <View
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "height": 67,
-        "left": 0,
-        "paddingVertical": 16,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "height": 67,
+          "left": 0,
+          "paddingVertical": 16,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "backgroundColor": "#121212",
+        },
+      ]
     }
   >
     <View

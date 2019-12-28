@@ -47,6 +47,8 @@ exports[`Storyshots Button Default 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          undefined,
         ]
       }
     >
@@ -91,6 +93,8 @@ exports[`Storyshots Button Disabled 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          false,
         ],
         Object {
           "backgroundColor": "#ECEFF1",
@@ -117,6 +121,8 @@ exports[`Storyshots Button Disabled 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          false,
         ]
       }
     >
@@ -175,6 +181,8 @@ exports[`Storyshots Button Inverted 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          undefined,
         ]
       }
     >
@@ -219,6 +227,8 @@ exports[`Storyshots Button Loading 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          false,
         ],
         Object {
           "backgroundColor": "#ECEFF1",
@@ -276,6 +286,8 @@ exports[`Storyshots Button Placeholder 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          false,
         ],
         Object {
           "backgroundColor": "#ECEFF1",
@@ -302,6 +314,8 @@ exports[`Storyshots Button Placeholder 1`] = `
           Object {
             "color": "#ECEFF1",
           },
+          false,
+          undefined,
         ]
       }
     >
@@ -346,6 +360,8 @@ exports[`Storyshots Button Placeholder with custom color 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          false,
         ],
         Object {
           "backgroundColor": "red",
@@ -372,6 +388,8 @@ exports[`Storyshots Button Placeholder with custom color 1`] = `
           Object {
             "color": "red",
           },
+          false,
+          undefined,
         ]
       }
     >
@@ -430,6 +448,8 @@ exports[`Storyshots Button Secondary 1`] = `
             "color": "#00B0FF",
           },
           undefined,
+          undefined,
+          false,
           undefined,
         ]
       }
@@ -492,6 +512,8 @@ exports[`Storyshots Button Secondary Inverted 1`] = `
           },
           undefined,
           undefined,
+          false,
+          undefined,
         ]
       }
     >
@@ -550,6 +572,8 @@ exports[`Storyshots Button Small 1`] = `
           undefined,
           undefined,
           undefined,
+          false,
+          undefined,
         ]
       }
     >
@@ -607,6 +631,8 @@ exports[`Storyshots Button TextSecondary 1`] = `
           Object {
             "color": "#00B0FF",
           },
+          undefined,
+          false,
           undefined,
         ]
       }

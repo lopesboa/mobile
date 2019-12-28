@@ -34,7 +34,7 @@ const Starburst = ({
   style,
   spiralStyle,
   backgroundColor,
-  isDarkModeActivated = false
+  isDarkModeActivated
 }: Props) => {
   const screenSize: number = Dimensions.get('window').height;
 
@@ -42,14 +42,13 @@ const Starburst = ({
     <View style={[styles.container, style]} testID={testID}>
       <View style={spiralStyle}>
         <Spiral color={spiralColor} width={screenSize} height={screenSize} />
-        {(!isDarkModeActivated && (
+        {!isDarkModeActivated ? (
           <Gradient
             style={[styles.gradient, {width: screenSize}]}
             colors={[backgroundColor]}
             testID={testID && testID + '-gradient'}
           />
-        )) ||
-          null}
+        ) : null}
       </View>
     </View>
   );

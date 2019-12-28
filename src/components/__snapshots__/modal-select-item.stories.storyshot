@@ -12,7 +12,7 @@ exports[`Storyshots ModalSelectItem Default 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": null,
       "opacity": 1,
       "padding": 16,
     }
@@ -28,6 +28,9 @@ exports[`Storyshots ModalSelectItem Default 1`] = `
             "fontWeight": "700",
           },
           undefined,
+          Object {
+            "color": "#FFFFFF",
+          },
         ],
       ]
     }
@@ -49,7 +52,7 @@ exports[`Storyshots ModalSelectItem Selected 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": null,
       "opacity": 1,
       "padding": 16,
     }
@@ -66,6 +69,9 @@ exports[`Storyshots ModalSelectItem Selected 1`] = `
           },
           Object {
             "color": "#00B0FF",
+          },
+          Object {
+            "color": "#FFFFFF",
           },
         ],
       ]

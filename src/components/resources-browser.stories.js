@@ -8,7 +8,7 @@ import {__TEST__} from '../modules/environment';
 import {createVideo, createPdf} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress} from '../utils/tests';
 import {mapToResource} from '../layer/data/mappers';
-import ResourcesBrowser from './resources-browser';
+import {Component as ResourcesBrowser} from './resources-browser';
 
 const lessons = [
   createVideo({ref: 'les_1'}),
@@ -22,18 +22,26 @@ const lessons = [
 const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
 
 storiesOf('ResourcesBrowser', module)
-  .add('Default', () => <ResourcesBrowser resources={resources} onChange={handleFakePress} />)
+  .add('Default', () => (
+    <ResourcesBrowser
+      resources={resources}
+      onChange={handleFakePress}
+      isDarkModeActivated={false}
+    />
+  ))
   .add('Selected', () => (
     <ResourcesBrowser
       resources={resources}
       selected={resources[1]._id}
       onChange={handleFakePress}
+      isDarkModeActivated={false}
     />
   ))
   .add('Only one resource', () => (
     <ResourcesBrowser
       resources={resources.filter(resource => resource.ref === 'les_1')}
       onChange={handleFakePress}
+      isDarkModeActivated
     />
   ));
 
@@ -47,6 +55,7 @@ if (__TEST__) {
             onChange={handlePress}
             selected={resources[0]._id}
             resources={resources}
+            isDarkModeActivated={false}
           />
         </TestContextProvider>
       );

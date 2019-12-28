@@ -150,4 +150,5 @@ class Lesson extends React.Component<Props> {
   }
 }
 
+export {Lesson as Component};
 export default withDarkMode(Lesson);

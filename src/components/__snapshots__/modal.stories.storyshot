@@ -3,11 +3,16 @@
 exports[`Storyshots Modal Custom header and icon background color 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
 >
   <View
@@ -22,6 +27,9 @@ exports[`Storyshots Modal Custom header and icon background color 1`] = `
         },
         Object {
           "backgroundColor": "rgba(0, 128, 0, 0.2)",
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }
@@ -525,11 +533,16 @@ exports[`Storyshots Modal Custom header and icon background color 1`] = `
 exports[`Storyshots Modal Default 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 5,
-      "overflow": "hidden",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 5,
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "#202020",
+      },
+    ]
   }
 >
   <View
@@ -544,6 +557,9 @@ exports[`Storyshots Modal Default 1`] = `
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "backgroundColor": "#373737",
         },
       ]
     }

@@ -27,7 +27,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -152,6 +152,9 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
             "fontWeight": "400",
           },
           Object {
+            "color": "#FFFFFF",
+          },
+          Object {
             "fontWeight": "700",
           },
         ],
@@ -186,7 +189,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -215,7 +218,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -244,7 +247,7 @@ exports[`Storyshots CardCorrection Correct answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -285,7 +288,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -410,6 +413,9 @@ exports[`Storyshots CardCorrection Default 1`] = `
             "fontWeight": "400",
           },
           Object {
+            "color": "#FFFFFF",
+          },
+          Object {
             "fontWeight": "700",
           },
         ],
@@ -444,7 +450,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -473,7 +479,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -502,7 +508,7 @@ exports[`Storyshots CardCorrection Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -543,7 +549,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -610,6 +616,9 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
             "fontWeight": "400",
           },
           Object {
+            "color": "#FFFFFF",
+          },
+          Object {
             "fontWeight": "700",
           },
         ],
@@ -644,7 +653,7 @@ exports[`Storyshots CardCorrection With one expected answer 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -685,7 +694,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -810,6 +819,9 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
             "fontWeight": "400",
           },
           Object {
+            "color": "#FFFFFF",
+          },
+          Object {
             "fontWeight": "700",
           },
         ],
@@ -844,7 +856,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -873,7 +885,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -902,7 +914,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -931,7 +943,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -960,7 +972,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }
@@ -989,7 +1001,7 @@ exports[`Storyshots CardCorrection With plenty of users answers  1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#546E7A",
+              "color": "#FFFFFF",
               "fontSize": 15,
               "fontWeight": "400",
             }

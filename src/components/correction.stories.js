@@ -126,7 +126,7 @@ storiesOf('Correction', module)
         lives={2}
         layout={fakeLayout}
         onButtonPress={handleFakePress}
-        isDarkModeActivated={false}
+        isDarkModeActivated
         onPDFButtonPress={handleFakePress}
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}

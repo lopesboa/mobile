@@ -130,4 +130,5 @@ class Context extends React.PureComponent<Props> {
   }
 }
 
+export {Context as Component};
 export default withDarkMode(Context);

@@ -114,6 +114,7 @@ const AuthenticationDetails = ({type, onButtonPress, onHelpPress, onDemoPress, o
             isInverted
             isTextSecondary
             onPress={onButtonPress}
+            isDarkModeActivated={false}
             testID={`authentication-details-${type}-button`}
             analyticsID={`authentication-details-${type}-button`}
           >

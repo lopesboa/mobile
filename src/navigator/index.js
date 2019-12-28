@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
 
-import Header from '../components/header';
+import HeaderSlide from '../containers/header-slide';
 import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
@@ -52,7 +52,7 @@ const appNavigator = createStackNavigator(
             ...navigationOptions.headerStyle,
             backgroundColor: HEADER_BACKGROUND_COLOR
           },
-          header: <Header navigation={navigation} />,
+          header: <HeaderSlide navigation={navigation} />,
           gesturesEnabled: true
         };
       }

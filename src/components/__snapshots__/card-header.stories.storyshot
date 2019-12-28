@@ -17,6 +17,9 @@ exports[`Storyshots Card Header Correction good 1`] = `
         "backgroundColor": "#d3f1e2",
       },
       false,
+      Object {
+        "backgroundColor": "#373737",
+      },
     ]
   }
 >
@@ -228,13 +231,18 @@ exports[`Storyshots Card Header Correction good 1`] = `
     style={
       Array [
         Object {},
-        Object {
-          "color": "#546E7A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "paddingLeft": 8,
-          "textAlign": "center",
-        },
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "paddingLeft": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ],
       ]
     }
   >
@@ -260,6 +268,9 @@ exports[`Storyshots Card Header Correction wrong 1`] = `
         "backgroundColor": "#FDD9DC",
       },
       false,
+      Object {
+        "backgroundColor": "#373737",
+      },
     ]
   }
 >
@@ -471,13 +482,18 @@ exports[`Storyshots Card Header Correction wrong 1`] = `
     style={
       Array [
         Object {},
-        Object {
-          "color": "#546E7A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "paddingLeft": 8,
-          "textAlign": "center",
-        },
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "paddingLeft": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ],
       ]
     }
   >
@@ -503,6 +519,9 @@ exports[`Storyshots Card Header Key point 1`] = `
       },
       false,
       false,
+      Object {
+        "backgroundColor": "#373737",
+      },
     ]
   }
 >
@@ -669,13 +688,18 @@ exports[`Storyshots Card Header Key point 1`] = `
     style={
       Array [
         Object {},
-        Object {
-          "color": "#546E7A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "paddingLeft": 8,
-          "textAlign": "center",
-        },
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "paddingLeft": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ],
       ]
     }
   >
@@ -700,6 +724,9 @@ exports[`Storyshots Card Header Resource 1`] = `
       false,
       Object {
         "backgroundColor": "#cdeffe",
+      },
+      Object {
+        "backgroundColor": "#373737",
       },
     ]
   }
@@ -912,13 +939,18 @@ exports[`Storyshots Card Header Resource 1`] = `
     style={
       Array [
         Object {},
-        Object {
-          "color": "#546E7A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "paddingLeft": 8,
-          "textAlign": "center",
-        },
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "paddingLeft": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ],
       ]
     }
   >
@@ -944,6 +976,9 @@ exports[`Storyshots Card Header Tip 1`] = `
       false,
       false,
       false,
+      Object {
+        "backgroundColor": "#373737",
+      },
     ]
   }
 >
@@ -1202,13 +1237,18 @@ exports[`Storyshots Card Header Tip 1`] = `
     style={
       Array [
         Object {},
-        Object {
-          "color": "#546E7A",
-          "fontSize": 17,
-          "fontWeight": "700",
-          "paddingLeft": 8,
-          "textAlign": "center",
-        },
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 17,
+            "fontWeight": "700",
+            "paddingLeft": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ],
       ]
     }
   >

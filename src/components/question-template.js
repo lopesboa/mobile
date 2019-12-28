@@ -99,4 +99,5 @@ class QuestionTemplate extends React.PureComponent<Props> {
   }
 }
 
+export {QuestionTemplate as Component};
 export default withDarkMode(QuestionTemplate);

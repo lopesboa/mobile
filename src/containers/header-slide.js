@@ -4,13 +4,13 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {getStatusBarHeight} from '../modules/status-bar';
 
-import HeaderSlideTitle from '../containers/header-slide-title';
-import HeaderSlideRight from '../containers/header-slide-right';
 import theme from '../modules/theme';
-import withDarkMode from '../containers/with-dark-mode';
-import type {WithDarkModeProps} from '../containers/with-dark-mode';
-import HeaderBackIcon from './header-back-icon';
-import Touchable from './touchable';
+import HeaderBackIcon from '../components/header-back-icon';
+import Touchable from '../components/touchable';
+import HeaderSlideTitle from './header-slide-title';
+import HeaderSlideRight from './header-slide-right';
+import withDarkMode from './with-dark-mode';
+import type {WithDarkModeProps} from './with-dark-mode';
 
 type Props = {|
   ...ReactNavigation$WithNavigationProps,
@@ -33,9 +33,10 @@ const styles = StyleSheet.create({
     marginRight: theme.spacing.base
   },
   headerCenter: {
-    flexGrow: 2
+    flexGrow: 1
   },
   headerRight: {
+    alignSelf: 'center',
     flexGrow: 0
   },
   headerBackIcon: {
@@ -53,17 +54,21 @@ class Header extends React.Component<Props> {
 
   render() {
     const {isDarkModeActivated} = this.props;
+    const testID = 'header-slide';
     return (
-      <View style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}>
-        <View style={styles.headerLeft}>
-          <Touchable onPress={this.handleBackPress}>
+      <View
+        style={[styles.container, isDarkModeActivated && styles.containerDarkMode]}
+        testID={testID}
+      >
+        <View style={styles.headerLeft} testID={`${testID}-left`}>
+          <Touchable onPress={this.handleBackPress} testID={`${testID}-back-button`}>
             <HeaderBackIcon style={styles.headerBackIcon} />
           </Touchable>
         </View>
-        <View style={styles.headerCenter}>
+        <View style={styles.headerCenter} testID={`${testID}-center`}>
           <HeaderSlideTitle />
         </View>
-        <View style={styles.headerRight}>
+        <View style={styles.headerRight} testID={`${testID}-right`}>
           <HeaderSlideRight />
         </View>
       </View>
@@ -71,5 +76,4 @@ class Header extends React.Component<Props> {
   }
 }
 
-export {Header};
 export default withDarkMode(Header);

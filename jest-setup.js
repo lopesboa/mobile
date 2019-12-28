@@ -14,6 +14,11 @@ ScrollView.propTypes = {
   decelerationRate: () => {}
 };
 
+// React-Native Appearance
+jest.mock('react-native-appearance', () => ({
+  useColorScheme: () => 'dark'
+}));
+
 Vibration.vibrate = () => {};
 Vibration.cancel = () => {};
 

@@ -6,6 +6,7 @@ import {StyleSheet} from 'react-native';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 
 import {BrandThemeContext} from '../components/brand-theme-provider';
+import theme from '../modules/theme';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 import withDarkMode from './with-dark-mode';
@@ -50,7 +51,7 @@ class TabBar extends React.Component<Props> {
             {...props}
             style={[props.style, isDarkModeActivated && styles.containerDarkMode]}
             onTabPress={this.handleTabPress}
-            activeTintColor={brandTheme.colors.primary}
+            activeTintColor={isDarkModeActivated ? theme.colors.white : brandTheme.colors.primary}
           />
         )}
       </BrandThemeContext.Consumer>

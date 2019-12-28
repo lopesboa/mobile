@@ -35,7 +35,7 @@ exports[`Storyshots QuestionTitle Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": "#FFFFFF",
               "fontSize": 17,
               "fontWeight": "700",
               "marginBottom": 17,

@@ -109,6 +109,7 @@ const Authentication = ({
           <Button
             isInverted
             isTextSecondary
+            isDarkModeActivated={false}
             onPress={onMobileButtonPress}
             testID="button-sign-in-mobile"
             analyticsID="button-sign-in-mobile"
@@ -119,6 +120,7 @@ const Authentication = ({
           <Button
             isInlined
             onPress={onDesktopButtonPress}
+            isDarkModeActivated={false}
             testID="button-sign-in-desktop"
             analyticsID="button-sign-in-desktop"
           >

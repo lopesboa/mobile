@@ -10,7 +10,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
       },
       false,
       Object {
-        "backgroundColor": "#F73F52",
+        "backgroundColor": "#121212",
       },
     ]
   }
@@ -91,6 +91,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-2-broken"
@@ -130,6 +133,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -161,6 +165,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -198,7 +203,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -220,7 +225,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -310,7 +315,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -343,7 +348,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -832,6 +837,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -1043,13 +1051,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -1068,6 +1081,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -1097,7 +1113,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -1222,6 +1238,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -1256,7 +1275,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -1285,7 +1304,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -1314,7 +1333,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -1343,7 +1362,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -1355,41 +1374,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -1506,6 +1490,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -1672,13 +1659,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -1697,6 +1689,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -1728,41 +1723,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -1878,6 +1838,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -2090,13 +2053,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -2117,6 +2085,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -2431,41 +2402,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -2581,6 +2517,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -2793,13 +2732,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -2820,6 +2764,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -3126,10 +3073,10 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -3160,6 +3107,13 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -3232,41 +3186,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -3382,6 +3301,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -3594,13 +3516,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -3621,6 +3548,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -3935,41 +3865,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -4086,6 +3981,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -4344,13 +4242,18 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -4369,6 +4272,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -4400,41 +4306,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -4474,7 +4345,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -4506,6 +4377,13 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               undefined,
               undefined,
               undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              undefined,
             ]
           }
         >
@@ -4514,6 +4392,21 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
       </View>
     </View>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 4,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        },
+        Object {
+          "backgroundColor": "#F73F52",
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -4608,6 +4501,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-2-broken"
@@ -4647,6 +4543,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -4678,6 +4575,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -4715,7 +4613,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -4737,7 +4635,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -4827,7 +4725,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -4860,7 +4758,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -5349,6 +5247,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -5560,13 +5461,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -5585,6 +5491,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -5614,7 +5523,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -5739,6 +5648,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -5773,7 +5685,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -5802,7 +5714,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -5831,7 +5743,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -5860,7 +5772,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -5872,41 +5784,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -6022,6 +5899,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -6234,13 +6114,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -6261,6 +6146,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -6575,41 +6463,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -6725,6 +6578,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -6937,13 +6793,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -6964,6 +6825,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -7270,10 +7134,10 @@ exports[`Storyshots Correction Bad answer 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -7304,6 +7168,13 @@ exports[`Storyshots Correction Bad answer 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -7376,41 +7247,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -7526,6 +7362,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -7738,13 +7577,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -7765,6 +7609,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -8079,41 +7926,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -8230,6 +8042,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -8396,13 +8211,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -8421,6 +8241,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -8452,41 +8275,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -8603,6 +8391,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -8861,13 +8652,18 @@ exports[`Storyshots Correction Bad answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -8886,6 +8682,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -8917,41 +8716,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -8991,7 +8755,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -9022,6 +8786,13 @@ exports[`Storyshots Correction Bad answer 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -9244,6 +9015,9 @@ exports[`Storyshots Correction Extralife 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-0-broken"
@@ -9283,6 +9057,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -9314,6 +9089,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -9351,7 +9127,7 @@ exports[`Storyshots Correction Extralife 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -9373,7 +9149,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -9463,7 +9239,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -9496,7 +9272,7 @@ exports[`Storyshots Correction Extralife 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -9974,6 +9750,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     Object {
                       "backgroundColor": "#cdeffe",
                     },
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -10185,13 +9964,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -10212,6 +9996,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -10960,41 +10747,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -11110,6 +10862,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -11322,13 +11077,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -11349,6 +11109,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -12086,41 +11849,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -12236,6 +11964,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -12448,13 +12179,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -12475,6 +12211,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -13223,41 +12962,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -13374,6 +13078,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -13585,13 +13292,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -13610,6 +13322,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -13639,7 +13354,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -13764,6 +13479,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -13798,7 +13516,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -13827,7 +13545,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -13856,7 +13574,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -13885,7 +13603,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -13897,41 +13615,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -14048,6 +13731,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -14214,13 +13900,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -14239,6 +13930,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -14270,41 +13964,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -14421,6 +14080,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -14679,13 +14341,18 @@ exports[`Storyshots Correction Extralife 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -14704,6 +14371,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -14735,41 +14405,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -14809,10 +14444,10 @@ exports[`Storyshots Correction Extralife 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#FFFFFF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -14841,6 +14476,13 @@ exports[`Storyshots Correction Extralife 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -14944,6 +14586,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-1"
@@ -14983,6 +14628,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -15014,6 +14660,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -15051,7 +14698,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -15073,7 +14720,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -15163,7 +14810,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -15196,7 +14843,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -15674,6 +15321,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     Object {
                       "backgroundColor": "#cdeffe",
                     },
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -15885,13 +15535,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -15912,6 +15567,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -16226,41 +15884,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -16376,6 +15999,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -16588,13 +16214,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -16615,6 +16246,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -16921,10 +16555,10 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -16955,6 +16589,13 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -17027,41 +16668,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -17177,6 +16783,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -17389,13 +16998,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -17416,6 +17030,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -17730,41 +17347,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -17881,6 +17463,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -18092,13 +17677,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -18117,6 +17707,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -18146,7 +17739,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -18271,6 +17864,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -18305,7 +17901,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -18334,7 +17930,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -18363,7 +17959,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -18392,7 +17988,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -18404,41 +18000,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -18555,6 +18116,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -18721,13 +18285,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -18746,6 +18315,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -18777,41 +18349,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -18928,6 +18465,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -19186,13 +18726,18 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -19211,6 +18756,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -19242,41 +18790,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -19316,7 +18829,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -19347,6 +18860,13 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -19450,6 +18970,9 @@ exports[`Storyshots Correction Game over 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-0-broken"
@@ -19489,6 +19012,7 @@ exports[`Storyshots Correction Game over 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -19520,6 +19044,7 @@ exports[`Storyshots Correction Game over 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -19557,7 +19082,7 @@ exports[`Storyshots Correction Game over 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -19579,7 +19104,7 @@ exports[`Storyshots Correction Game over 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -19669,7 +19194,7 @@ exports[`Storyshots Correction Game over 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -19702,7 +19227,7 @@ exports[`Storyshots Correction Game over 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -20191,6 +19716,9 @@ exports[`Storyshots Correction Game over 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -20402,13 +19930,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -20427,6 +19960,9 @@ exports[`Storyshots Correction Game over 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -20456,7 +19992,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -20581,6 +20117,9 @@ exports[`Storyshots Correction Game over 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -20615,7 +20154,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -20644,7 +20183,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -20673,7 +20212,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -20702,7 +20241,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -20714,41 +20253,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -20864,6 +20368,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -21076,13 +20583,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -21103,6 +20615,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -21417,41 +20932,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -21567,6 +21047,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -21779,13 +21262,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -21806,6 +21294,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -22112,10 +21603,10 @@ exports[`Storyshots Correction Game over 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -22146,6 +21637,13 @@ exports[`Storyshots Correction Game over 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -22218,41 +21716,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -22368,6 +21831,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -22580,13 +22046,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -22607,6 +22078,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -22921,41 +22395,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -23072,6 +22511,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -23238,13 +22680,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -23263,6 +22710,9 @@ exports[`Storyshots Correction Game over 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -23294,41 +22744,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -23445,6 +22860,9 @@ exports[`Storyshots Correction Game over 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -23703,13 +23121,18 @@ exports[`Storyshots Correction Game over 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -23728,6 +23151,9 @@ exports[`Storyshots Correction Game over 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -23759,41 +23185,6 @@ exports[`Storyshots Correction Game over 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -23833,7 +23224,7 @@ exports[`Storyshots Correction Game over 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -23865,6 +23256,13 @@ exports[`Storyshots Correction Game over 1`] = `
               undefined,
               undefined,
               undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              undefined,
             ]
           }
         >
@@ -23886,7 +23284,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
       },
       false,
       Object {
-        "backgroundColor": "#3EC483",
+        "backgroundColor": "#121212",
       },
     ]
   }
@@ -23967,6 +23365,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-3"
@@ -24006,6 +23407,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -24037,6 +23439,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -24074,7 +23477,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -24096,7 +23499,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -24186,7 +23589,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -24219,7 +23622,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -24708,6 +24111,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -24966,13 +24372,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -24991,6 +24402,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -25022,41 +24436,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -25173,6 +24552,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -25339,13 +24721,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -25364,6 +24751,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -25395,41 +24785,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -25546,6 +24901,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "backgroundColor": "#d3f1e2",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -25757,13 +25115,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -25782,6 +25145,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -25811,7 +25177,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -25936,6 +25302,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -25970,7 +25339,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -25999,7 +25368,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -26028,7 +25397,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -26040,41 +25409,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -26190,6 +25524,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -26402,13 +25739,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -26429,6 +25771,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -26743,41 +26088,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -26893,6 +26203,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -27105,13 +26418,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -27132,6 +26450,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -27438,10 +26759,10 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -27472,6 +26793,13 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -27544,41 +26872,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -27694,6 +26987,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -27906,13 +27202,18 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -27933,6 +27234,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -28247,41 +27551,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -28321,7 +27590,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -28353,6 +27622,13 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               undefined,
               undefined,
               undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              undefined,
             ]
           }
         >
@@ -28361,6 +27637,21 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
       </View>
     </View>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "height": 4,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        },
+        Object {
+          "backgroundColor": "#3EC483",
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -28455,6 +27746,9 @@ exports[`Storyshots Correction Right answer 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-3"
@@ -28494,6 +27788,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -28525,6 +27820,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -28562,7 +27858,7 @@ exports[`Storyshots Correction Right answer 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -28584,7 +27880,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -28674,7 +27970,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -28707,7 +28003,7 @@ exports[`Storyshots Correction Right answer 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -29196,6 +28492,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -29454,13 +28753,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -29479,6 +28783,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -29510,41 +28817,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -29660,6 +28932,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -29872,13 +29147,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -29899,6 +29179,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -30213,41 +29496,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -30363,6 +29611,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -30575,13 +29826,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -30602,6 +29858,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -30908,10 +30167,10 @@ exports[`Storyshots Correction Right answer 1`] = `
                               Object {
                                 "alignItems": "center",
                                 "alignSelf": "stretch",
-                                "backgroundColor": "transparent",
+                                "backgroundColor": "#00B0FF",
                                 "borderColor": "#FFFFFF",
                                 "borderRadius": 32,
-                                "borderWidth": 2,
+                                "borderWidth": 0,
                                 "flexDirection": "row",
                                 "height": 54,
                                 "justifyContent": "center",
@@ -30942,6 +30201,13 @@ exports[`Storyshots Correction Right answer 1`] = `
                                   undefined,
                                   undefined,
                                   undefined,
+                                  undefined,
+                                  Object {
+                                    "color": "#FFFFFF",
+                                    "fontSize": 17,
+                                    "fontWeight": "700",
+                                    "textAlign": "center",
+                                  },
                                   undefined,
                                 ]
                               }
@@ -31014,41 +30280,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -31164,6 +30395,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     false,
                     Object {
                       "backgroundColor": "#cdeffe",
+                    },
+                    Object {
+                      "backgroundColor": "#373737",
                     },
                   ]
                 }
@@ -31376,13 +30610,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -31403,6 +30642,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     Object {
                       "paddingHorizontal": 0,
                       "paddingTop": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#202020",
                     },
                   ]
                 }
@@ -31717,41 +30959,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -31868,6 +31075,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -32034,13 +31244,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -32059,6 +31274,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -32090,41 +31308,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -32241,6 +31424,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "backgroundColor": "#d3f1e2",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -32452,13 +31638,18 @@ exports[`Storyshots Correction Right answer 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -32477,6 +31668,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -32506,7 +31700,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -32631,6 +31825,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -32665,7 +31862,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -32694,7 +31891,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -32723,7 +31920,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -32735,41 +31932,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -32809,7 +31971,7 @@ exports[`Storyshots Correction Right answer 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -32840,6 +32002,13 @@ exports[`Storyshots Correction Right answer 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -32943,6 +32112,9 @@ exports[`Storyshots Correction Without resource 1`] = `
               "height": 67,
               "width": 67,
             },
+            Object {
+              "backgroundColor": "#212121",
+            },
           ]
         }
         testID="correction-lives-2-broken"
@@ -32982,6 +32154,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -33013,6 +32186,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "textAlign": "center",
                     },
                     Object {
+                      "color": "#FFFFFF",
                       "fontSize": 22.333333333333332,
                     },
                   ],
@@ -33050,7 +32224,7 @@ exports[`Storyshots Correction Without resource 1`] = `
           align="xMidYMid"
           bbHeight={40.199999999999996}
           bbWidth={40.199999999999996}
-          color="#FFFFFF"
+          color="#212121"
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -33072,7 +32246,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               },
             ]
           }
-          tintColor="#FFFFFF"
+          tintColor="#212121"
           vbHeight={24}
           vbWidth={24}
         >
@@ -33162,7 +32336,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               fill={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               fillOpacity={1}
@@ -33195,7 +32369,7 @@ exports[`Storyshots Correction Without resource 1`] = `
               stroke={
                 Array [
                   0,
-                  4294967295,
+                  4280361249,
                 ]
               }
               strokeDasharray={null}
@@ -33684,6 +32858,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "backgroundColor": "#FDD9DC",
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -33895,13 +33072,18 @@ exports[`Storyshots Correction Without resource 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -33920,6 +33102,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -33949,7 +33134,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -34074,6 +33259,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                             "fontWeight": "400",
                           },
                           Object {
+                            "color": "#FFFFFF",
+                          },
+                          Object {
                             "fontWeight": "700",
                           },
                         ],
@@ -34108,7 +33296,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -34137,7 +33325,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -34166,7 +33354,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -34195,7 +33383,7 @@ exports[`Storyshots Correction Without resource 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#546E7A",
+                              "color": "#FFFFFF",
                               "fontSize": 15,
                               "fontWeight": "400",
                             }
@@ -34207,41 +33395,6 @@ exports[`Storyshots Correction Without resource 1`] = `
                     </View>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -34358,6 +33511,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                     },
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -34524,13 +33680,18 @@ exports[`Storyshots Correction Without resource 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -34549,6 +33710,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -34580,41 +33744,6 @@ exports[`Storyshots Correction Without resource 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -34731,6 +33860,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                     false,
                     false,
                     false,
+                    Object {
+                      "backgroundColor": "#373737",
+                    },
                   ]
                 }
               >
@@ -34989,13 +34121,18 @@ exports[`Storyshots Correction Without resource 1`] = `
                   style={
                     Array [
                       Object {},
-                      Object {
-                        "color": "#546E7A",
-                        "fontSize": 17,
-                        "fontWeight": "700",
-                        "paddingLeft": 8,
-                        "textAlign": "center",
-                      },
+                      Array [
+                        Object {
+                          "color": "#546E7A",
+                          "fontSize": 17,
+                          "fontWeight": "700",
+                          "paddingLeft": 8,
+                          "textAlign": "center",
+                        },
+                        Object {
+                          "color": "#FFFFFF",
+                        },
+                      ],
                     ]
                   }
                 >
@@ -35014,6 +34151,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                       "paddingTop": 24,
                     },
                     false,
+                    Object {
+                      "backgroundColor": "#202020",
+                    },
                   ]
                 }
               >
@@ -35045,41 +34185,6 @@ exports[`Storyshots Correction Without resource 1`] = `
                     </Text>
                   </View>
                 </View>
-                <BVLinearGradient
-                  colors={
-                    Array [
-                      16777215,
-                      4294967295,
-                      4294967295,
-                    ]
-                  }
-                  endPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 1,
-                    }
-                  }
-                  locations={null}
-                  startPoint={
-                    Object {
-                      "x": 0.5,
-                      "y": 0,
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                      },
-                      Object {
-                        "height": 48,
-                      },
-                    ]
-                  }
-                />
               </View>
             </View>
           </View>
@@ -35119,7 +34224,7 @@ exports[`Storyshots Correction Without resource 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -35150,6 +34255,13 @@ exports[`Storyshots Correction Without resource 1`] = `
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }

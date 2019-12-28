@@ -12297,12 +12297,17 @@ Pol P.!
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >
@@ -14218,12 +14223,17 @@ Pol P.!
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >
@@ -16327,12 +16337,17 @@ Pol P.!
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >
@@ -17571,12 +17586,17 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >
@@ -25217,7 +25237,7 @@ exports[`Storyshots Catalog With hero 1`] = `
                     "borderRadius": 32,
                     "borderWidth": 0,
                     "flexDirection": "row",
-                    "height": 45,
+                    "height": 54,
                     "justifyContent": "center",
                     "marginBottom": 0,
                     "minWidth": "40%",
@@ -25246,6 +25266,13 @@ exports[`Storyshots Catalog With hero 1`] = `
                       undefined,
                       undefined,
                       false,
+                      Object {
+                        "color": "#FFFFFF",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                      undefined,
                     ]
                   }
                 >
@@ -25274,12 +25301,17 @@ exports[`Storyshots Catalog With hero 1`] = `
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >
@@ -26518,12 +26550,17 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
           style={
             Array [
               Object {},
-              Object {
-                "color": "#14171A",
-                "fontSize": 17,
-                "fontWeight": "700",
-                "paddingHorizontal": 8,
-              },
+              Array [
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "paddingHorizontal": 8,
+                },
+                Object {
+                  "color": "#FFFFFF",
+                },
+              ],
             ]
           }
         >

@@ -370,6 +370,17 @@ exports[`Storyshots Hero Default 1`] = `
                   "alignSelf": "center",
                   "minWidth": "40%",
                 },
+                Object {
+                  "borderRadius": 32,
+                  "borderWidth": 0,
+                  "flexDirection": "row",
+                  "height": 54,
+                  "marginBottom": 0,
+                  "paddingHorizontal": 24,
+                },
+                Object {
+                  "backgroundColor": "#00B0FF",
+                },
               ],
               Object {
                 "backgroundColor": "#CFD8DC",
@@ -398,6 +409,13 @@ exports[`Storyshots Hero Default 1`] = `
                 Object {
                   "color": "#CFD8DC",
                 },
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
               ]
             }
           >
@@ -695,7 +713,7 @@ exports[`Storyshots Hero With content 1`] = `
               "borderRadius": 32,
               "borderWidth": 0,
               "flexDirection": "row",
-              "height": 45,
+              "height": 54,
               "justifyContent": "center",
               "marginBottom": 0,
               "minWidth": "40%",
@@ -724,6 +742,13 @@ exports[`Storyshots Hero With content 1`] = `
                 undefined,
                 undefined,
                 false,
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+                undefined,
               ]
             }
           >

@@ -53,7 +53,7 @@ exports[`Storyshots Context Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -200,10 +200,10 @@ exports[`Storyshots Context Default 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -232,6 +232,13 @@ exports[`Storyshots Context Default 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -297,7 +304,7 @@ exports[`Storyshots Context With Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -485,10 +492,10 @@ exports[`Storyshots Context With Image 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -517,6 +524,13 @@ exports[`Storyshots Context With Image 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -582,7 +596,7 @@ exports[`Storyshots Context With PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -909,10 +923,10 @@ exports[`Storyshots Context With PDF 1`] = `
                   Object {
                     "alignItems": "center",
                     "alignSelf": "stretch",
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#00B0FF",
                     "borderColor": "#FFFFFF",
                     "borderRadius": 32,
-                    "borderWidth": 2,
+                    "borderWidth": 0,
                     "flexDirection": "row",
                     "height": 54,
                     "justifyContent": "center",
@@ -943,6 +957,13 @@ exports[`Storyshots Context With PDF 1`] = `
                       undefined,
                       undefined,
                       undefined,
+                      undefined,
+                      Object {
+                        "color": "#FFFFFF",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
                       undefined,
                     ]
                   }
@@ -1077,10 +1098,10 @@ exports[`Storyshots Context With PDF 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -1109,6 +1130,13 @@ exports[`Storyshots Context With PDF 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -1174,7 +1202,7 @@ exports[`Storyshots Context With Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -1571,10 +1599,10 @@ exports[`Storyshots Context With Video 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -1603,6 +1631,13 @@ exports[`Storyshots Context With Video 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -1668,7 +1703,7 @@ exports[`Storyshots Context With badly formatted video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -2065,10 +2100,10 @@ exports[`Storyshots Context With badly formatted video 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -2097,6 +2132,13 @@ exports[`Storyshots Context With badly formatted video 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -2162,7 +2204,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -2489,10 +2531,10 @@ exports[`Storyshots Context Without Layout 1`] = `
                   Object {
                     "alignItems": "center",
                     "alignSelf": "stretch",
-                    "backgroundColor": "transparent",
+                    "backgroundColor": "#00B0FF",
                     "borderColor": "#FFFFFF",
                     "borderRadius": 32,
-                    "borderWidth": 2,
+                    "borderWidth": 0,
                     "flexDirection": "row",
                     "height": 54,
                     "justifyContent": "center",
@@ -2523,6 +2565,13 @@ exports[`Storyshots Context Without Layout 1`] = `
                       undefined,
                       undefined,
                       undefined,
+                      undefined,
+                      Object {
+                        "color": "#FFFFFF",
+                        "fontSize": 17,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
                       undefined,
                     ]
                   }
@@ -2657,10 +2706,10 @@ exports[`Storyshots Context Without Layout 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -2689,6 +2738,13 @@ exports[`Storyshots Context Without Layout 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }
@@ -2754,7 +2810,7 @@ exports[`Storyshots Context Without Layout 2 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": "#FFFFFF",
                     "fontSize": 17,
                     "fontWeight": "700",
                     "marginBottom": 17,
@@ -2901,10 +2957,10 @@ exports[`Storyshots Context Without Layout 2 1`] = `
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "transparent",
+            "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
             "borderRadius": 32,
-            "borderWidth": 2,
+            "borderWidth": 0,
             "flexDirection": "row",
             "height": 54,
             "justifyContent": "center",
@@ -2933,6 +2989,13 @@ exports[`Storyshots Context Without Layout 2 1`] = `
                 "color": "#00B0FF",
               },
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }

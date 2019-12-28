@@ -5,7 +5,7 @@ import {storiesOf} from '@storybook/react-native';
 
 import {createSelectChoice, createInputChoice} from '../__fixtures__/question-choices';
 import {handleFakePress, TestContextProvider} from '../utils/tests';
-import QuestionTemplate from './question-template';
+import {Component as QuestionTemplate} from './question-template';
 
 const field1 = createInputChoice({name: 'inp1'});
 const field2 = createSelectChoice({name: 'sel1'});
@@ -30,6 +30,7 @@ storiesOf('QuestionTemplate', module)
         items={items}
         userChoices={userChoices}
         onInputChange={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -41,6 +42,7 @@ storiesOf('QuestionTemplate', module)
         items={items}
         userChoices={userChoices}
         onInputChange={handleFakePress}
+        isDarkModeActivated={false}
       />
     </TestContextProvider>
   ))
@@ -55,6 +57,7 @@ storiesOf('QuestionTemplate', module)
         ]}
         userChoices={[]}
         onInputChange={handleFakePress}
+        isDarkModeActivated
       />
     </TestContextProvider>
   ));

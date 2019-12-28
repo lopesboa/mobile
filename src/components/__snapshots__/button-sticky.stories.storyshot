@@ -125,7 +125,7 @@ Array [
           Object {
             "alignItems": "center",
             "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#00B0FF",
             "borderRadius": 32,
             "borderWidth": 0,
             "flexDirection": "row",
@@ -156,6 +156,13 @@ Array [
               undefined,
               undefined,
               undefined,
+              undefined,
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
               undefined,
             ]
           }

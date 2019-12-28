@@ -3,7 +3,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import {useDarkMode} from '../containers/with-dark-mode';
 import theme from '../modules/theme';
 import FlippableCard from '../containers/card-flippable';
  
@@ -48,7 +47,6 @@ const styles = StyleSheet.create({
 });
 
 const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => {
-  const isDarkModeActivated = useDarkMode();
   return (
     <View style={styles.container} testID={testID}>
       <View style={styles.questionContainer}>
