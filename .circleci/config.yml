@@ -12,6 +12,12 @@ anchors:
   command: echo "ruby-$RUBY_VERSION" > ~/.ruby-version
 - &macos-image
   xcode: 11.2.1
+- &install-watchman
+  name: Install watchman
+  # https://github.com/oondeo/watchman/pull/71/commits/e9ab4acba23109add581494055248b519523f174
+  command: |
+    brew unlink python@2
+    brew install watchman
 
 version: 2
 jobs:
@@ -22,9 +28,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: yarn-v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v3-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
       - restore_cache:
-          key: node-v1-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v3-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
       - run:
           name: Node dependencies
           command: |
@@ -33,11 +39,11 @@ jobs:
             yarn config set registry https://registry.npmjs.org/
             yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v3-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
             - ~/.cache/yarn
       - save_cache:
-          key: node-v1-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v3-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -91,7 +97,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - run:
           name: Detox framework
@@ -100,14 +106,12 @@ jobs:
             detox clean-framework-cache && detox build-framework-cache
 
       - save_cache:
-          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
 
-      - run:
-          name: Brew dependencies
-          command: brew install watchman
+      - run: *install-watchman
 
       - run:
           name: Build
@@ -130,10 +134,10 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - restore_cache:
-          key: brew-e2e-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: brew-e2e-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -148,7 +152,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-e2e-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: brew-e2e-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -178,26 +182,26 @@ jobs:
       - run: *set-ruby-version
 
       - restore_cache:
-          key: gems-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: gems-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd ios && bundle install
 
       - save_cache:
-          key: gems-v1-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: gems-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ios/gems
 
       - restore_cache:
-          key: pods-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v1-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
             - ios/Pods
 
@@ -218,10 +222,7 @@ jobs:
           at: ~/app
 
       - run: *set-ruby-version
-
-      - run:
-          name: Brew dependencies
-          command: brew install watchman
+      - run: *install-watchman
 
       - run:
           name: Build
@@ -250,19 +251,19 @@ jobs:
       - run: *install-nvm
 
       - restore_cache:
-          key: gems-v1-{{ checksum ".nvmrc" }}-android-{{ arch }}
+          key: gems-v3-{{ checksum ".nvmrc" }}-android-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd android && bundle install
 
       - save_cache:
-          key: gems-v1-{{ checksum ".nvmrc" }}-android-{{ arch }}
+          key: gems-v3-{{ checksum ".nvmrc" }}-android-{{ arch }}
           paths:
             - android/gems
 
       - restore_cache:
-          key: gradle-v1-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v3-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
           name: SDK licenses
@@ -276,7 +277,7 @@ jobs:
             ANDROID_HOME: /opt/android/sdk
 
       - save_cache:
-          key: gradle-v1-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v3-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
           paths:
             - ~/.gradle/caches
 
@@ -415,10 +416,7 @@ jobs:
           at: ~/app
 
       - run: *set-ruby-version
-
-      - run:
-          name: Brew dependencies
-          command: brew install watchman
+      - run: *install-watchman
 
       - run:
           name: Build and publish
