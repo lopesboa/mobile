@@ -7,12 +7,7 @@ import {createAuthenticationState} from '../../__fixtures__/store';
 import {createFakeAnalytics, createFakeLogger, fakeError} from '../../utils/tests';
 import {ANALYTICS_EVENT_TYPE, AUTHENTICATION_TYPE} from '../../const';
 import {fetchRequest as fetchBrandRequest, fetchSuccess as fetchBrandSuccess} from './brands';
-import {
-  fetchRequest as fetchLanguageRequest,
-  fetchSuccess as fetchLanguageSuccess
-} from './language/fetch';
 import {fetchRequest as fetchUserRequest, fetchSuccess as fetchUserSuccess} from './user';
-import {setRequest as setLanguageRequest, setSuccess as setLanguageSuccess} from './language/set';
 
 jest.mock('../../utils/local-token');
 jest.mock('cross-fetch');
@@ -59,6 +54,7 @@ describe('Authentication', () => {
 
   describe('signIn', () => {
     const authenticationType = AUTHENTICATION_TYPE.QR_CODE;
+
     it('should sign in the user', async () => {
       const {signIn, signInRequest, signInSuccess} = require('./authentication');
 
@@ -72,6 +68,7 @@ describe('Authentication', () => {
       getState.mockReturnValue({
         authentication: createAuthenticationState({brand})
       });
+
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
@@ -83,8 +80,8 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Language: {
-            fetch: jest.fn(() => Promise.resolve(language)),
-            set: jest.fn()
+            set: jest.fn(),
+            getFromInterface: jest.fn(() => language)
           }
         }
       };
@@ -99,22 +96,6 @@ describe('Authentication', () => {
       });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(fetchBrandSuccess(brand));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchLanguageSuccess(language));
         return action;
       });
 
@@ -149,7 +130,7 @@ describe('Authentication', () => {
         userId: 'foobar',
         brand: brand.name
       });
-      expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
@@ -189,7 +170,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(user))
           },
           Language: {
-            fetch: jest.fn(() => Promise.resolve(language)),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -205,22 +186,6 @@ describe('Authentication', () => {
       });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(fetchBrandSuccess(brand));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(fetchLanguageSuccess(language));
         return action;
       });
 
@@ -255,7 +220,7 @@ describe('Authentication', () => {
         userId: 'foobar',
         brand: brand.name
       });
-      expect(options.services.Language.fetch).toHaveBeenCalledTimes(1);
+      expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledWith(language);
 
@@ -287,7 +252,7 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -295,14 +260,6 @@ describe('Authentication', () => {
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -336,7 +293,7 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -346,14 +303,6 @@ describe('Authentication', () => {
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -387,7 +336,7 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -399,14 +348,6 @@ describe('Authentication', () => {
 
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(signInRequest(token));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -444,7 +385,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.reject(fakeError))
           },
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -462,14 +403,6 @@ describe('Authentication', () => {
       });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(fetchError(fakeError));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -514,7 +447,7 @@ describe('Authentication', () => {
             find: jest.fn(() => Promise.resolve(brand))
           },
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
@@ -532,14 +465,6 @@ describe('Authentication', () => {
       });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual(fetchSuccess(brand));
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
         return action;
       });
       dispatch.mockImplementationOnce(action => {
@@ -581,20 +506,12 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
       };
 
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
-        return action;
-      });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: SIGN_OUT
@@ -646,20 +563,12 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
       };
 
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
-        return action;
-      });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: SIGN_OUT
@@ -704,20 +613,12 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
-            getFromInterface: jest.fn().mockImplementation(() => language),
+            getFromInterface: jest.fn(() => language),
             set: jest.fn()
           }
         }
       };
 
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageRequest());
-        return action;
-      });
-      dispatch.mockImplementationOnce(action => {
-        expect(action).toEqual(setLanguageSuccess(language));
-        return action;
-      });
       dispatch.mockImplementationOnce(action => {
         expect(action).toEqual({
           type: SIGN_OUT

@@ -675,7 +675,7 @@ exports[`Storyshots Context With PDF 1`] = `
                 "width": "45%",
               }
             }
-            testID="context-resource-pdf-preview-pdf"
+            testID="context-resource-pdf-pdf"
           >
             <View
               style={
@@ -683,7 +683,7 @@ exports[`Storyshots Context With PDF 1`] = `
                   "alignSelf": "center",
                 }
               }
-              testID="context-resource-pdf-preview-pdf-icon"
+              testID="context-resource-pdf-pdf-icon"
             >
               <RNSVGSvgView
                 align="xMidYMid"
@@ -894,7 +894,7 @@ exports[`Storyshots Context With PDF 1`] = `
               }
             />
             <View
-              testID="context-resource-pdf-preview-pdf-button"
+              testID="context-resource-pdf-pdf-button"
             >
               <View
                 accessible={true}
@@ -921,7 +921,7 @@ exports[`Storyshots Context With PDF 1`] = `
                     "paddingHorizontal": 24,
                   }
                 }
-                testID="context-resource-pdf-preview-pdf-button-native"
+                testID="context-resource-pdf-pdf-button-native"
               >
                 <Text
                   numberOfLines={1}
@@ -1215,7 +1215,7 @@ exports[`Storyshots Context With Video 1`] = `
           },
         ]
       }
-      testID="video-container-context-resource-video"
+      testID="context-resource-video-container"
     >
       <View
         accessibilityIgnoresInvertColors={true}
@@ -1256,7 +1256,7 @@ exports[`Storyshots Context With Video 1`] = `
               undefined,
             ]
           }
-          testID="context-resource-video-container"
+          testID="context-resource-video-preview-container"
         />
         <View
           style={
@@ -1709,7 +1709,7 @@ exports[`Storyshots Context With badly formatted video 1`] = `
           },
         ]
       }
-      testID="video-container-context-resource-video"
+      testID="context-resource-video-container"
     >
       <View
         accessibilityIgnoresInvertColors={true}
@@ -1750,7 +1750,7 @@ exports[`Storyshots Context With badly formatted video 1`] = `
               undefined,
             ]
           }
-          testID="context-resource-video-container"
+          testID="context-resource-video-preview-container"
         />
         <View
           style={
@@ -2255,7 +2255,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                 "width": "45%",
               }
             }
-            testID="context-resource-pdf-preview-pdf"
+            testID="context-resource-pdf-pdf"
           >
             <View
               style={
@@ -2263,7 +2263,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                   "alignSelf": "center",
                 }
               }
-              testID="context-resource-pdf-preview-pdf-icon"
+              testID="context-resource-pdf-pdf-icon"
             >
               <RNSVGSvgView
                 align="xMidYMid"
@@ -2474,7 +2474,7 @@ exports[`Storyshots Context Without Layout 1`] = `
               }
             />
             <View
-              testID="context-resource-pdf-preview-pdf-button"
+              testID="context-resource-pdf-pdf-button"
             >
               <View
                 accessible={true}
@@ -2501,7 +2501,7 @@ exports[`Storyshots Context Without Layout 1`] = `
                     "paddingHorizontal": 24,
                   }
                 }
-                testID="context-resource-pdf-preview-pdf-button-native"
+                testID="context-resource-pdf-pdf-button-native"
               >
                 <Text
                   numberOfLines={1}

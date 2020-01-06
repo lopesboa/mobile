@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Video Disabled subtitles (Android) 1`] = `
+exports[`Storyshots Video Disabled tracks (Android) 1`] = `
 <View
   style={
     Array [
@@ -18,7 +18,7 @@ exports[`Storyshots Video Disabled subtitles (Android) 1`] = `
 />
 `;
 
-exports[`Storyshots Video Disabled subtitles 1`] = `
+exports[`Storyshots Video Disabled tracks 1`] = `
 <View
   style={
     Array [
@@ -85,7 +85,7 @@ exports[`Storyshots Video Error 1`] = `
           "width": "100%",
         }
       }
-      testID="video-error-replay-"
+      testID="video-error-replay"
     >
       <RNSVGSvgView
         align="xMidYMid"
@@ -323,7 +323,7 @@ exports[`Storyshots Video Fullscreen with testID 1`] = `
       },
     ]
   }
-  testID="video-container-fullscreen-1234"
+  testID="1234-fullscreen-container"
 />
 `;
 
@@ -341,7 +341,7 @@ exports[`Storyshots Video Fullscreen without testID 1`] = `
       },
     ]
   }
-  testID="video-container-fullscreen"
+  testID="video-fullscreen-container"
 />
 `;
 
@@ -400,7 +400,7 @@ exports[`Storyshots Video Loading 1`] = `
           undefined,
         ]
       }
-      testID="container"
+      testID="video-preview-container"
     />
     <View
       style={
@@ -430,7 +430,7 @@ exports[`Storyshots Video Loading 1`] = `
             "opacity": 1,
           }
         }
-        testID="preview-video"
+        testID="video-preview-video"
       >
         <View
           style={
@@ -591,7 +591,7 @@ exports[`Storyshots Video Local preview 1`] = `
           undefined,
         ]
       }
-      testID="container"
+      testID="video-preview-container"
     />
     <View
       style={
@@ -621,7 +621,7 @@ exports[`Storyshots Video Local preview 1`] = `
             "opacity": 1,
           }
         }
-        testID="preview-video"
+        testID="video-preview-video"
       >
         <RNSVGSvgView
           align="xMidYMid"
@@ -859,7 +859,7 @@ exports[`Storyshots Video Remote preview 1`] = `
           undefined,
         ]
       }
-      testID="container"
+      testID="video-preview-container"
     />
     <View
       style={
@@ -889,7 +889,7 @@ exports[`Storyshots Video Remote preview 1`] = `
             "opacity": 1,
           }
         }
-        testID="preview-video"
+        testID="video-preview-video"
       >
         <RNSVGSvgView
           align="xMidYMid"
@@ -1121,7 +1121,7 @@ exports[`Storyshots Video Replay 1`] = `
           "width": "100%",
         }
       }
-      testID="video-end-replay-"
+      testID="video-end-replay"
     >
       <RNSVGSvgView
         align="xMidYMid"
@@ -1327,7 +1327,7 @@ exports[`Storyshots Video Replay 1`] = `
 </View>
 `;
 
-exports[`Storyshots Video Subtitles (Android) 1`] = `
+exports[`Storyshots Video Tracks (Android) 1`] = `
 <View
   style={
     Array [
@@ -1345,7 +1345,7 @@ exports[`Storyshots Video Subtitles (Android) 1`] = `
 />
 `;
 
-exports[`Storyshots Video Subtitles 1`] = `
+exports[`Storyshots Video Tracks 1`] = `
 <View
   style={
     Array [

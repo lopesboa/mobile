@@ -7,13 +7,11 @@ import {RESOURCE_TYPE} from '../const';
 export const createVideo = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-  subtitleRef
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
 }: {
   ref: string,
   description?: string,
-  poster?: string,
-  subtitleRef?: string
+  poster?: string
 }): Lesson => ({
   _id: ref,
   poster,
@@ -23,7 +21,6 @@ export const createVideo = ({
   mimeType: 'application/jwplayer',
   ref,
   type: RESOURCE_TYPE.VIDEO,
-  subtitleRef,
   subtitles: [],
   posters: [],
   src: []
@@ -32,13 +29,11 @@ export const createVideo = ({
 export const createVimeoVideo = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-  subtitleRef
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
 }: {
   ref: string,
   description?: string,
-  poster?: string,
-  subtitleRef?: string
+  poster?: string
 }): Lesson => ({
   _id: ref,
   poster,
@@ -49,7 +44,6 @@ export const createVimeoVideo = ({
   ref,
   // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.VIDEO,
-  subtitleRef,
   subtitles: [],
   posters: [],
   src: []

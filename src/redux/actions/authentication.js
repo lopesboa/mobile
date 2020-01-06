@@ -4,18 +4,16 @@ import decode from 'jwt-decode';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import fetch from '../../modules/fetch';
+import {getMatchingLanguage} from '../../modules/language';
 import type {StoreAction, StoreErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
+// @todo add Authentication service
 import {set as setToken} from '../../utils/local-token';
 import {getBrand, getToken} from '../utils/state-extract';
 import {fetchBrand} from './brands';
 import {fetchUser} from './user';
 import type {Action as BrandsAction} from './brands';
-import {fetchLanguage} from './language/fetch';
-import type {Action as FetchLanguageAction} from './language/fetch';
-import {setLanguage} from './language/set';
-import type {Action as SetLanguageAction} from './language/set';
 
 export const SIGN_IN_REQUEST = `@@authentication/SIGN_IN_REQUEST`;
 export const SIGN_IN_SUCCESS = `@@authentication/SIGN_IN_SUCCESS`;
@@ -66,13 +64,12 @@ export const getAnonymousToken = async (): Promise<string> => {
 export const signIn = (
   authenticationType: AuthenticationType,
   _token?: string
-): StoreAction<Action | BrandsAction | FetchLanguageAction | SetLanguageAction> => async (
-  dispatch,
-  getState,
-  options
-) => {
-  await dispatch(signInRequest(_token));
+): StoreAction<Action | BrandsAction> => async (dispatch, getState, options) => {
+  const {services} = options;
+
   try {
+    await dispatch(signInRequest(_token));
+
     const token = _token || (await getAnonymousToken());
     await setToken(token);
 
@@ -96,12 +93,13 @@ export const signIn = (
     }
 
     // $FlowFixMe wrong StoreAction type
-    await fetchLanguage(dispatch, getState, options);
-    // $FlowFixMe wrong StoreAction type
     await fetchUser(token)(dispatch, getState, options);
 
-    const {services} = options;
+    const {supportedLanguages, defaultLanguage} = brand;
+    const deviceLanguage = services.Language.getFromInterface();
+    const language = getMatchingLanguage(supportedLanguages, defaultLanguage, deviceLanguage);
 
+    services.Language.set(language);
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
       userId: jwt.user,
       brand: brand.name,
@@ -115,27 +113,22 @@ export const signIn = (
     return dispatch(signInSuccess(token));
   } catch (e) {
     setToken(null);
-    // $FlowFixMe wrong StoreAction type
-    await setLanguage(null)(dispatch, getState, options);
+    services.Language.set(services.Language.getFromInterface());
     return dispatch(signInError(e));
   }
 };
 
-export const signOut = (): StoreAction<Action | SetLanguageAction> => async (
-  dispatch,
-  getState,
-  options
-) => {
+export const signOut = (): StoreAction<Action> => async (dispatch, getState, options) => {
+  const {services} = options;
+
   await AsyncStorage.clear();
 
-  // $FlowFixMe wrong StoreAction type
-  await setLanguage(null)(dispatch, getState, options);
+  services.Language.set(services.Language.getFromInterface());
 
   const brand = getBrand(getState());
   const token = getToken(getState());
   const jwt: JWT | void = token ? decode(token) : undefined;
 
-  const {services} = options;
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
     ...(brand ? {brand: brand.name} : {}),
     userId: jwt && jwt.user

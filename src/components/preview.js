@@ -30,7 +30,7 @@ type Props = {|
   iconWidth?: number,
   iconHeight?: number,
   isIconVisible?: boolean,
-  onPress?: () => void,
+  onPress?: () => Promise<void> | void,
   testID?: string,
   style?: ImageStyleProp
 |};
@@ -67,25 +67,16 @@ const Preview = ({
   iconHeight,
   isIconVisible = true,
   onPress,
-  testID,
+  testID = 'preview',
   style
 }: Props) => {
-  const testIDPrefix = testID ? `${testID}-` : '';
   const Overlay = hasOverlay ? ResourceOverlay : React.Fragment;
 
   return (
-    <ImageBackground
-      source={source}
-      style={[styles.image, style]}
-      testID={`${testIDPrefix}container`}
-    >
+    <ImageBackground source={source} style={[styles.image, style]} testID={`${testID}-container`}>
       <Overlay>
         {type === RESOURCE_TYPE.VIDEO && (
-          <Touchable
-            onPress={onPress}
-            testID={`${testIDPrefix}preview-video`}
-            analyticsID="preview-video"
-          >
+          <Touchable onPress={onPress} testID={`${testID}-video`} analyticsID="preview-video">
             {isIconVisible && !isLoading && (
               <PlayIcon
                 color={theme.colors.white}
@@ -97,9 +88,9 @@ const Preview = ({
           </Touchable>
         )}
         {type === RESOURCE_TYPE.PDF && (
-          <View style={styles.pdf} testID={`${testIDPrefix}preview-pdf`}>
+          <View style={styles.pdf} testID={`${testID}-pdf`}>
             {isIconVisible && (
-              <View testID={`${testIDPrefix}preview-pdf-icon`} style={styles.pdfIcon}>
+              <View testID={`${testID}-pdf-icon`} style={styles.pdfIcon}>
                 <PDFIcon
                   color={theme.colors.white}
                   height={iconHeight || 45}
@@ -113,7 +104,7 @@ const Preview = ({
                 <Button
                   isInverted
                   isInlined
-                  testID={`${testIDPrefix}preview-pdf-button`}
+                  testID={`${testID}-pdf-button`}
                   onPress={onPress}
                   analyticsID="button-open-pdf"
                 >
@@ -126,10 +117,10 @@ const Preview = ({
         {type === EXTRALIFE && (
           <Touchable
             onPress={onPress}
-            testID={`${testIDPrefix}preview-extralife`}
+            testID={`${testID}-extralife`}
             analyticsID="preview-extralife"
           >
-            <View testID={`${testIDPrefix}preview-extralife-icon`}>
+            <View testID={`${testID}-extralife-icon`}>
               <ExtraLife count={1} />
               <View style={styles.extralifeTxtContainer}>
                 <Text style={styles.extralifeTxt}>Bonus!</Text>

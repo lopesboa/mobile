@@ -63,7 +63,7 @@ describe('Lesson', () => {
       await weExpect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
       await weExpect(element(by.id('resource-les-4-thumbnail-preview-container'))).toBeVisible();
       await weExpect(element(by.id('resource-les-4-description'))).toBeVisible();
-      await weExpect(element(by.id('lesson-resource-preview-pdf'))).toBeVisible();
+      await weExpect(element(by.id('lesson-resource-pdf'))).toBeVisible();
     });
   });
 

@@ -14,7 +14,6 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
         "posters": Array [],
         "ref": "les_1",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -43,7 +42,6 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
         "posters": Array [],
         "ref": "les_3",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -58,7 +56,6 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
         "posters": Array [],
         "ref": "les_4",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -73,7 +70,6 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
         "posters": Array [],
         "ref": "les_5",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -88,7 +84,6 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
         "posters": Array [],
         "ref": "les_6",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -239,7 +234,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-1-thumbnail-preview-preview-video"
+                testID="resource-les-1-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -560,7 +555,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "width": "45%",
                   }
                 }
-                testID="resource-les-2-thumbnail-preview-preview-pdf"
+                testID="resource-les-2-thumbnail-preview-pdf"
               >
                 <View
                   style={
@@ -568,7 +563,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                       "alignSelf": "center",
                     }
                   }
-                  testID="resource-les-2-thumbnail-preview-preview-pdf-icon"
+                  testID="resource-les-2-thumbnail-preview-pdf-icon"
                 >
                   <RNSVGSvgView
                     align="xMidYMid"
@@ -940,7 +935,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-3-thumbnail-preview-preview-video"
+                testID="resource-les-3-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -1269,7 +1264,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-4-thumbnail-preview-preview-video"
+                testID="resource-les-4-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -1598,7 +1593,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-5-thumbnail-preview-preview-video"
+                testID="resource-les-5-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -1927,7 +1922,7 @@ exports[`Storyshots ResourcesBrowser Default 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-6-thumbnail-preview-preview-video"
+                testID="resource-les-6-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -2155,7 +2150,6 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
         "posters": Array [],
         "ref": "les_1",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -2184,7 +2178,6 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
         "posters": Array [],
         "ref": "les_3",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -2199,7 +2192,6 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
         "posters": Array [],
         "ref": "les_4",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -2214,7 +2206,6 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
         "posters": Array [],
         "ref": "les_5",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -2229,7 +2220,6 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
         "posters": Array [],
         "ref": "les_6",
         "src": Array [],
-        "subtitleRef": undefined,
         "subtitles": Array [],
         "type": "video",
         "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -2381,7 +2371,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-1-thumbnail-preview-preview-video"
+                testID="resource-les-1-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -2690,7 +2680,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                   "width": "45%",
                 }
               }
-              testID="resource-les-2-thumbnail-preview-preview-pdf"
+              testID="resource-les-2-thumbnail-preview-pdf"
             />
           </View>
         </View>
@@ -2861,7 +2851,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-3-thumbnail-preview-preview-video"
+                testID="resource-les-3-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -3190,7 +3180,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-4-thumbnail-preview-preview-video"
+                testID="resource-les-4-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -3519,7 +3509,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-5-thumbnail-preview-preview-video"
+                testID="resource-les-5-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"
@@ -3848,7 +3838,7 @@ exports[`Storyshots ResourcesBrowser Selected 1`] = `
                     "opacity": 1,
                   }
                 }
-                testID="resource-les-6-thumbnail-preview-preview-video"
+                testID="resource-les-6-thumbnail-preview-video"
               >
                 <RNSVGSvgView
                   align="xMidYMid"

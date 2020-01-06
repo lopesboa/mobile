@@ -46,11 +46,18 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     }
   });
 
-  const {brand, themes, progressionEngine, slider}: Config = await response.json();
+  const {
+    brand,
+    themes,
+    progressionEngine,
+    slider,
+    supportedLngs: supportedLanguages,
+    defaultLanguage
+  }: Config = await response.json();
 
   return {
     name: brand.name,
-    host: brand.baseUrl || 'https://mobile-staging.coorpacademy.com',
+    host: brand.baseUrl,
     contentCategoryName: brand.contentCategoryName,
     colors: {
       primary: themes[0].common.primary
@@ -59,7 +66,9 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
       'logo-mobile': themes[0].images['logo-mobile']
     },
     hero: slider.start.image,
-    progressionEngine
+    progressionEngine,
+    supportedLanguages,
+    defaultLanguage
   };
 };
 

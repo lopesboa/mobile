@@ -1,16 +1,13 @@
 // @flow strict
 
 import type {DataLayer} from '../layer/data';
-import type {SupportedLanguage} from '../translations/_types';
 
 export type LanguageService = {|
-  fetch: () => Promise<SupportedLanguage>,
-  set: SupportedLanguage => void,
-  getFromInterface: () => SupportedLanguage
+  set: $PropertyType<DataLayer, 'setLanguage'>,
+  getFromInterface: $PropertyType<DataLayer, 'getInterfaceLanguage'>
 |};
 
 const service = (dataLayer: DataLayer): LanguageService => ({
-  fetch: dataLayer.fetchLanguage,
   set: dataLayer.setLanguage,
   getFromInterface: dataLayer.getInterfaceLanguage
 });

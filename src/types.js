@@ -97,7 +97,9 @@ export type Brand = {|
   images: {
     'logo-mobile': string
   },
-  progressionEngine: ProgressionEngineVersions
+  progressionEngine: ProgressionEngineVersions,
+  supportedLanguages: Array<string>,
+  defaultLanguage: string
 |};
 
 export type User = {|

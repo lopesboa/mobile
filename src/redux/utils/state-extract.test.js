@@ -30,7 +30,8 @@ import {
   createStoreState,
   createErrorsState,
   createSelectState,
-  createNetworkState
+  createNetworkState,
+  createVideoState
 } from '../../__fixtures__/store';
 import {
   isExitNode,
@@ -44,6 +45,7 @@ import {
   getSection,
   getToken,
   getBrand,
+  getBrandDefaultLanguage,
   getEngineVersions,
   isGodModeEnabled,
   isFastSlideEnabled,
@@ -60,7 +62,8 @@ import {
   isErrorVisible,
   getErrorType,
   getFocusedSelect,
-  isNetworkConnected
+  isNetworkConnected,
+  isVideoFullScreen
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -607,6 +610,31 @@ describe('State-extract', () => {
     });
   });
 
+  describe('getBrand', () => {
+    it('should get brand default language', () => {
+      const defaultLanguage = 'de';
+      const brand = createBrand({defaultLanguage});
+      const state = createState({
+        brand
+      });
+
+      const result = getBrandDefaultLanguage(state);
+      const expected = defaultLanguage;
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should not get brand default language', () => {
+      const state = createState({
+        brand: null
+      });
+
+      const result = getBrandDefaultLanguage(state);
+
+      expect(result).toBeUndefined();
+    });
+  });
+
   describe('getEngineVersions', () => {
     it('should get engine versions if brand is defined', () => {
       const state = createState({});
@@ -949,6 +977,25 @@ describe('State-extract', () => {
       });
 
       const result = isNetworkConnected(state);
+
+      expect(result).toBeTruthy;
+    });
+  });
+
+  describe('isVideoFullScreen', () => {
+    it('should return false', () => {
+      const state = createState({});
+      const result = isVideoFullScreen(state);
+
+      expect(result).toBeFalsy;
+    });
+
+    it('should return true', () => {
+      const state = createState({
+        video: createVideoState({isFullScreen: true})
+      });
+
+      const result = isVideoFullScreen(state);
 
       expect(result).toBeTruthy;
     });

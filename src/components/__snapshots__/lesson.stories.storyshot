@@ -145,7 +145,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
               "width": "45%",
             }
           }
-          testID="lesson-resource-preview-pdf"
+          testID="lesson-resource-pdf"
         >
           <View
             style={
@@ -153,7 +153,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                 "alignSelf": "center",
               }
             }
-            testID="lesson-resource-preview-pdf-icon"
+            testID="lesson-resource-pdf-icon"
           >
             <RNSVGSvgView
               align="xMidYMid"
@@ -364,7 +364,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
             }
           />
           <View
-            testID="lesson-resource-preview-pdf-button"
+            testID="lesson-resource-pdf-button"
           >
             <View
               accessible={true}
@@ -391,7 +391,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                   "paddingHorizontal": 24,
                 }
               }
-              testID="lesson-resource-preview-pdf-button-native"
+              testID="lesson-resource-pdf-button-native"
             >
               <Text
                 numberOfLines={1}
@@ -448,7 +448,6 @@ exports[`Storyshots Lesson PDF selected 1`] = `
               "posters": Array [],
               "ref": "les_1",
               "src": Array [],
-              "subtitleRef": undefined,
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -456,14 +455,13 @@ exports[`Storyshots Lesson PDF selected 1`] = `
             },
             Object {
               "_id": "les_3",
-              "description": "Foo bar baz - Video subtitles",
+              "description": "Foo bar baz - Video tracks",
               "mediaRef": "med_jwp_Vy4JQKFhN",
               "mimeType": "application/jwplayer",
               "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
               "posters": Array [],
               "ref": "les_3",
               "src": Array [],
-              "subtitleRef": "foobarbaz",
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -629,7 +627,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                           "opacity": 1,
                         }
                       }
-                      testID="resource-les-1-thumbnail-preview-preview-video"
+                      testID="resource-les-1-thumbnail-preview-video"
                     >
                       <RNSVGSvgView
                         align="xMidYMid"
@@ -958,7 +956,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                           "opacity": 1,
                         }
                       }
-                      testID="resource-les-3-thumbnail-preview-preview-video"
+                      testID="resource-les-3-thumbnail-preview-video"
                     >
                       <RNSVGSvgView
                         align="xMidYMid"
@@ -1159,7 +1157,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                         }
                       }
                     >
-                      Foo bar baz - Video subtitles
+                      Foo bar baz - Video tracks
                     </Text>
                   </Text>
                 </View>
@@ -1267,7 +1265,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                         "width": "45%",
                       }
                     }
-                    testID="resource-les-2-thumbnail-preview-preview-pdf"
+                    testID="resource-les-2-thumbnail-preview-pdf"
                   />
                 </View>
               </View>
@@ -1475,7 +1473,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
         },
       ]
     }
-    testID="video-container-lesson-resource"
+    testID="lesson-resource-container"
   >
     <View
       accessibilityIgnoresInvertColors={true}
@@ -1516,7 +1514,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
             undefined,
           ]
         }
-        testID="lesson-resource-container"
+        testID="lesson-resource-preview-container"
       />
       <View
         style={
@@ -1732,7 +1730,6 @@ exports[`Storyshots Lesson Video selected 1`] = `
               "posters": Array [],
               "ref": "les_1",
               "src": Array [],
-              "subtitleRef": undefined,
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -1740,14 +1737,13 @@ exports[`Storyshots Lesson Video selected 1`] = `
             },
             Object {
               "_id": "les_3",
-              "description": "Foo bar baz - Video subtitles",
+              "description": "Foo bar baz - Video tracks",
               "mediaRef": "med_jwp_Vy4JQKFhN",
               "mimeType": "application/jwplayer",
               "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
               "posters": Array [],
               "ref": "les_3",
               "src": Array [],
-              "subtitleRef": "foobarbaz",
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -1901,7 +1897,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                         "opacity": 1,
                       }
                     }
-                    testID="resource-les-1-thumbnail-preview-preview-video"
+                    testID="resource-les-1-thumbnail-preview-video"
                   />
                 </View>
               </View>
@@ -2072,7 +2068,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                           "opacity": 1,
                         }
                       }
-                      testID="resource-les-3-thumbnail-preview-preview-video"
+                      testID="resource-les-3-thumbnail-preview-video"
                     >
                       <RNSVGSvgView
                         align="xMidYMid"
@@ -2273,7 +2269,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                         }
                       }
                     >
-                      Foo bar baz - Video subtitles
+                      Foo bar baz - Video tracks
                     </Text>
                   </Text>
                 </View>
@@ -2393,7 +2389,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                           "width": "45%",
                         }
                       }
-                      testID="resource-les-2-thumbnail-preview-preview-pdf"
+                      testID="resource-les-2-thumbnail-preview-pdf"
                     >
                       <View
                         style={
@@ -2401,7 +2397,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                             "alignSelf": "center",
                           }
                         }
-                        testID="resource-les-2-thumbnail-preview-preview-pdf-icon"
+                        testID="resource-les-2-thumbnail-preview-pdf-icon"
                       >
                         <RNSVGSvgView
                           align="xMidYMid"
@@ -2719,7 +2715,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
 </View>
 `;
 
-exports[`Storyshots Lesson Video subtitles 1`] = `
+exports[`Storyshots Lesson Video tracks 1`] = `
 <View
   style={
     Object {
@@ -2810,7 +2806,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
         },
       ]
     }
-    testID="video-container-lesson-resource"
+    testID="lesson-resource-container"
   >
     <View
       accessibilityIgnoresInvertColors={true}
@@ -2851,7 +2847,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
             undefined,
           ]
         }
-        testID="lesson-resource-container"
+        testID="lesson-resource-preview-container"
       />
       <View
         style={
@@ -3067,7 +3063,6 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
               "posters": Array [],
               "ref": "les_1",
               "src": Array [],
-              "subtitleRef": undefined,
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -3075,14 +3070,13 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
             },
             Object {
               "_id": "les_3",
-              "description": "Foo bar baz - Video subtitles",
+              "description": "Foo bar baz - Video tracks",
               "mediaRef": "med_jwp_Vy4JQKFhN",
               "mimeType": "application/jwplayer",
               "poster": "//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png",
               "posters": Array [],
               "ref": "les_3",
               "src": Array [],
-              "subtitleRef": "foobarbaz",
               "subtitles": Array [],
               "type": "video",
               "url": "https://content.jwplatform.com/videos/KovTu3zU.mp4",
@@ -3248,7 +3242,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                           "opacity": 1,
                         }
                       }
-                      testID="resource-les-1-thumbnail-preview-preview-video"
+                      testID="resource-les-1-thumbnail-preview-video"
                     >
                       <RNSVGSvgView
                         align="xMidYMid"
@@ -3565,7 +3559,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                         "opacity": 1,
                       }
                     }
-                    testID="resource-les-3-thumbnail-preview-preview-video"
+                    testID="resource-les-3-thumbnail-preview-video"
                   />
                 </View>
               </View>
@@ -3608,7 +3602,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                         }
                       }
                     >
-                      Foo bar baz - Video subtitles
+                      Foo bar baz - Video tracks
                     </Text>
                   </Text>
                 </View>
@@ -3728,7 +3722,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                           "width": "45%",
                         }
                       }
-                      testID="resource-les-2-thumbnail-preview-preview-pdf"
+                      testID="resource-les-2-thumbnail-preview-pdf"
                     >
                       <View
                         style={
@@ -3736,7 +3730,7 @@ exports[`Storyshots Lesson Video subtitles 1`] = `
                             "alignSelf": "center",
                           }
                         }
-                        testID="resource-les-2-thumbnail-preview-preview-pdf-icon"
+                        testID="resource-les-2-thumbnail-preview-pdf-icon"
                       >
                         <RNSVGSvgView
                           align="xMidYMid"

@@ -3,7 +3,8 @@
 import type {
   Level as LevelStore,
   Chapter as ChapterStore,
-  Discipline as DisciplineStore
+  Discipline as DisciplineStore,
+  VideoTrack
 } from '@coorpacademy/player-store';
 import type {
   Slide as SlideEngine,
@@ -144,25 +145,27 @@ export const createUiState = ({
 });
 
 export const createDataState = ({
-  answers,
-  levels,
-  slides,
-  chapters,
+  answers = [],
+  levels = [],
+  slides = [],
+  chapters = [],
   clue,
-  disciplines,
+  disciplines = [],
   progression,
   nextContent,
-  configs = {}
+  configs = {},
+  videos = {}
 }: {
   answers?: Answer,
-  levels: Array<Level>,
-  slides: Array<Slide>,
-  chapters: Array<Chapter>,
-  disciplines: Array<Discipline>,
+  levels?: Array<Level>,
+  slides?: Array<Slide>,
+  chapters?: Array<Chapter>,
+  disciplines?: Array<Discipline>,
   clue?: string,
   progression: Progression,
   nextContent?: SlideAPI | ChapterAPI | LevelAPI,
-  configs?: {[key: string]: EngineConfig}
+  configs?: {[key: string]: EngineConfig},
+  videos?: {[key: string]: {uri: string, tracks?: Array<VideoTrack>}}
 }): DataState => {
   const _levels: {[key: string]: LevelStore} = createMapObject(levels.map(mapToLevel));
   const _slides: {[key: string]: SlideEngine} = createMapObject(slides.map(mapToSlide));
@@ -218,7 +221,7 @@ export const createDataState = ({
       }
     },
     videos: {
-      entities: {}
+      entities: videos
     },
     clues: {
       entities: _clues
@@ -291,6 +294,7 @@ export const createStoreState = ({
   slides,
   chapters,
   disciplines,
+  videos,
   progression,
   catalog,
   data,
@@ -306,10 +310,11 @@ export const createStoreState = ({
   video,
   network
 }: {
-  levels: Array<Level>,
-  slides: Array<Slide>,
-  chapters: Array<Chapter>,
-  disciplines: Array<Discipline>,
+  levels?: Array<Level>,
+  slides?: Array<Slide>,
+  chapters?: Array<Chapter>,
+  disciplines?: Array<Discipline>,
+  videos?: {[key: string]: {uri: string, tracks?: Array<VideoTrack>}},
   progression: Progression,
   data?: DataState,
   ui?: UiState,
@@ -333,7 +338,8 @@ export const createStoreState = ({
       chapters,
       disciplines,
       progression,
-      nextContent
+      nextContent,
+      videos
     }),
   ui: ui || createUiState({}),
   errors: errors || createErrorsState({}),

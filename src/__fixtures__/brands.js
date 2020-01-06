@@ -4,10 +4,12 @@ import type {Brand, ProgressionEngineVersions} from '../types';
 
 export const createBrand = ({
   progressionEngine,
-  host
+  host,
+  defaultLanguage = 'en'
 }: {
   progressionEngine?: ProgressionEngineVersions,
-  host?: string
+  host?: string,
+  defaultLanguage?: string
 } = {}): Brand => ({
   name: 'mobile',
   host: host || 'https://mobile-staging.coorpacademy.com',
@@ -25,5 +27,8 @@ export const createBrand = ({
       learner: '2',
       microlearning: '2'
     }
-  }
+  },
+  // $FlowFixMe don't understand whats the problem
+  supportedLanguages: ['fr', 'de', 'it', 'zh'],
+  defaultLanguage
 });

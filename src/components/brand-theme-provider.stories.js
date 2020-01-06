@@ -21,15 +21,7 @@ const brand = createBrand({});
 storiesOf('BrandThemeProvider', module).add('Default', () => (
   <BrandThemeProvider brand={brand}>
     <BrandThemeContext.Consumer>
-      {brandTheme => (
-        <React.Fragment>
-          <Text>Host: {brandTheme.host}</Text>
-          <Text style={{color: brandTheme.colors.primary}}>Primary color</Text>
-          <Text>Content category name: {brandTheme.contentCategoryName}</Text>
-          <Text>Name: {brandTheme.name}</Text>
-          <Text>Logo: {brandTheme.images['logo-mobile']}</Text>
-        </React.Fragment>
-      )}
+      {brandTheme => <Text>{JSON.stringify(brandTheme, null, '\t')}</Text>}
     </BrandThemeContext.Consumer>
   </BrandThemeProvider>
 ));

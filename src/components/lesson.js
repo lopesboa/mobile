@@ -6,7 +6,6 @@ import type {LessonType} from '@coorpacademy/progression-engine';
 
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
-import {getSubtitlesUri} from '../modules/subtitles';
 import translations from '../translations';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {RESOURCE_TYPE} from '../const';
@@ -15,7 +14,6 @@ import QuestionTitle from './question-title';
 import Resource from './resource';
 import ResourcesBrowser from './resources-browser';
 import Space from './space';
-import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = $Exact<{|
   ...WithLayoutProps,
@@ -77,53 +75,41 @@ class Lesson extends React.Component<Props> {
     );
 
     return (
-      <BrandThemeContext.Consumer>
-        {brandTheme => {
-          const subtitles =
-            openedResource &&
-            openedResource.subtitleRef &&
-            getSubtitlesUri(brandTheme.host, openedResource.subtitleRef);
-
-          return (
-            <View testID={testID} style={styles.container}>
-              <View style={styles.questionContainer}>
-                <QuestionTitle isTextCentered>{header}</QuestionTitle>
-              </View>
-              <Space type="base" />
-              {openedResource && (
-                <Resource
-                  testID="lesson-resource"
-                  type={openedResource.type}
-                  url={openedResource.url}
-                  videoId={openedResource.videoId}
-                  mimeType={openedResource.mimeType}
-                  description={openedResource.description}
-                  thumbnail={openedResource.poster}
-                  subtitles={subtitles}
-                  onPress={this.handlePress(openedResource.type)}
-                />
-              )}
-              <ScrollView
-                style={styles.browser}
-                showsHorizontalScrollIndicator={false}
-                testID="resources"
-              >
-                <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
-              </ScrollView>
-              <View style={styles.bottomTextWrapper}>
-                <Html
-                  testID="additional-stars-note"
-                  fontSize={theme.fontSize.small}
-                  style={styles.bottomText}
-                  isTextCentered
-                >
-                  {winAdditionalStars}
-                </Html>
-              </View>
-            </View>
-          );
-        }}
-      </BrandThemeContext.Consumer>
+      <View testID={testID} style={styles.container}>
+        <View style={styles.questionContainer}>
+          <QuestionTitle isTextCentered>{header}</QuestionTitle>
+        </View>
+        <Space type="base" />
+        {openedResource && (
+          <Resource
+            testID="lesson-resource"
+            type={openedResource.type}
+            url={openedResource.url}
+            videoId={openedResource.videoId}
+            mimeType={openedResource.mimeType}
+            description={openedResource.description}
+            thumbnail={openedResource.poster}
+            onPress={this.handlePress(openedResource.type)}
+          />
+        )}
+        <ScrollView
+          style={styles.browser}
+          showsHorizontalScrollIndicator={false}
+          testID="resources"
+        >
+          <ResourcesBrowser resources={resources} onChange={onChange} selected={selected} />
+        </ScrollView>
+        <View style={styles.bottomTextWrapper}>
+          <Html
+            testID="additional-stars-note"
+            fontSize={theme.fontSize.small}
+            style={styles.bottomText}
+            isTextCentered
+          >
+            {winAdditionalStars}
+          </Html>
+        </View>
+      </View>
     );
   }
 }

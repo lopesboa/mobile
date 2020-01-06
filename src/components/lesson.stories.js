@@ -2,8 +2,10 @@
 
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-
 import renderer from 'react-test-renderer';
+import {VIDEO_TRACK_TYPE} from '@coorpacademy/player-store';
+
+import {createVideoTracks} from '../__fixtures__/videos';
 import {__TEST__} from '../modules/environment';
 
 import {createVideo, createPdf} from '../__fixtures__/lessons';
@@ -13,12 +15,12 @@ import Lesson from './lesson';
 
 const video = createVideo({ref: 'les_1', description: 'Foo bar baz - Video'});
 const pdf = createPdf({ref: 'les_2', description: 'Foo bar baz - PDF'});
-const videoSubtitles = createVideo({
+const videoWithTracks = createVideo({
   ref: 'les_3',
-  description: 'Foo bar baz - Video subtitles',
-  subtitleRef: 'foobarbaz'
+  description: 'Foo bar baz - Video tracks',
+  tracks: createVideoTracks('foo', VIDEO_TRACK_TYPE.VTT)
 });
-const lessons = [video, videoSubtitles, pdf];
+const lessons = [video, videoWithTracks, pdf];
 const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
 
 storiesOf('Lesson', module)
@@ -49,12 +51,12 @@ storiesOf('Lesson', module)
       />
     </TestContextProvider>
   ))
-  .add('Video subtitles', () => (
+  .add('Video tracks', () => (
     <TestContextProvider>
       <Lesson
         header="What was the nationality of Steve Jobs?"
         resources={resources}
-        selected={videoSubtitles._id}
+        selected={videoWithTracks._id}
         onChange={handleFakePress}
         starsGranted={4}
         layout={fakeLayout}

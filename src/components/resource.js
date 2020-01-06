@@ -8,7 +8,7 @@ import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {RESOURCE_TYPE} from '../const';
 import type {MimeType} from '../types';
-import Video from '../containers/video-controlable';
+import VideoControlable from '../containers/video-controlable';
 import {getCleanUri} from '../modules/uri';
 import {getVideoProvider} from '../modules/media';
 import Preview, {EXTRALIFE} from './preview';
@@ -24,7 +24,6 @@ type Props = {|
   thumbnail?: string,
   description?: string,
   onPress?: (url?: string, description?: string) => void,
-  subtitles?: string,
   style?: ViewStyleProp,
   resizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch',
   extralifeOverlay?: boolean
@@ -45,7 +44,6 @@ class Resource extends React.PureComponent<Props> {
       url,
       videoId,
       mimeType,
-      subtitles,
       layout,
       testID,
       thumbnail = '',
@@ -63,11 +61,10 @@ class Resource extends React.PureComponent<Props> {
     switch (type) {
       case RESOURCE_TYPE.VIDEO: {
         return (
-          <Video
+          <VideoControlable
             source={{uri: url && getCleanUri(url)}}
-            videoId={videoId}
-            videoProvider={mimeType && getVideoProvider(mimeType)}
-            subtitles={subtitles}
+            id={videoId}
+            provider={mimeType && getVideoProvider(mimeType)}
             testID={testID}
             preview={{uri: thumbnail && getCleanUri(thumbnail)}}
             height={height}

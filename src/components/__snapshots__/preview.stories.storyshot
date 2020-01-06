@@ -40,7 +40,7 @@ exports[`Storyshots Preview Extra Life 1`] = `
         undefined,
       ]
     }
-    testID="container"
+    testID="preview-container"
   />
   <View
     style={
@@ -708,7 +708,7 @@ exports[`Storyshots Preview PDF Remote 1`] = `
         undefined,
       ]
     }
-    testID="container"
+    testID="preview-container"
   />
   <View
     style={
@@ -1051,7 +1051,7 @@ exports[`Storyshots Preview Video Remote 1`] = `
         undefined,
       ]
     }
-    testID="container"
+    testID="preview-container"
   />
   <View
     style={

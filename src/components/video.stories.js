@@ -3,14 +3,19 @@
 import * as React from 'react';
 import {Platform} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
+import {TextTrackType} from 'react-native-video';
 
 import video from '../__fixtures__/assets/video.mp4';
 import image from '../__fixtures__/assets/landscape-1.jpg';
 import {handleFakePress} from '../utils/tests';
 import Video, {STEP} from './video';
+import type {Track} from './video';
 
-const subtitlesUri =
-  'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en';
+const uri = 'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en';
+const trackLanguage = 'en';
+const tracks: Array<Track> = [
+  {title: 'English', language: trackLanguage, type: TextTrackType.VTT, uri}
+];
 
 storiesOf('Video', module)
   .add('Local preview', () => (
@@ -60,20 +65,20 @@ storiesOf('Video', module)
       onReady={handleFakePress}
     />
   ))
-  .add('Subtitles', () => (
+  .add('Tracks', () => (
     <Video
       source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles={subtitlesUri}
-      hasSubtitles
+      tracks={tracks}
+      selectedTrack={trackLanguage}
       onPlay={handleFakePress}
       onEnd={handleFakePress}
       onReady={handleFakePress}
     />
   ))
-  .add('Subtitles (Android)', () => {
+  .add('Tracks (Android)', () => {
     Platform.OS = 'android';
 
     return (
@@ -82,40 +87,42 @@ storiesOf('Video', module)
         preview={image}
         height={180}
         step={STEP.PLAY}
-        subtitles={subtitlesUri}
-        hasSubtitles
+        tracks={tracks}
+        selectedTrack={trackLanguage}
         onPlay={handleFakePress}
         onEnd={handleFakePress}
         onReady={handleFakePress}
       />
     );
   })
-  .add('Disabled subtitles', () => (
+  .add('Disabled tracks', () => (
     <Video
       source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
       preview={image}
       height={180}
       step={STEP.PLAY}
-      subtitles={subtitlesUri}
-      hasSubtitles={false}
+      tracks={tracks}
       onPlay={handleFakePress}
       onEnd={handleFakePress}
       onReady={handleFakePress}
     />
   ))
-  .add('Disabled subtitles (Android)', () => (
-    <Video
-      source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
-      preview={image}
-      height={180}
-      step={STEP.PLAY}
-      subtitles={subtitlesUri}
-      hasSubtitles={false}
-      onPlay={handleFakePress}
-      onEnd={handleFakePress}
-      onReady={handleFakePress}
-    />
-  ))
+  .add('Disabled tracks (Android)', () => {
+    Platform.OS = 'android';
+
+    return (
+      <Video
+        source={{uri: 'https://content.jwplatform.com/videos/Piqz1Sdy.mp4'}}
+        preview={image}
+        height={180}
+        step={STEP.PLAY}
+        tracks={tracks}
+        onPlay={handleFakePress}
+        onEnd={handleFakePress}
+        onReady={handleFakePress}
+      />
+    );
+  })
   .add('Fullscreen with testID', () => (
     <Video
       source={video}

@@ -7,6 +7,7 @@ import {createSelector} from 'reselect';
 import type {Brand} from '../types';
 import type {StoreState} from '../redux/store';
 import {getBrand} from '../redux/utils/state-extract';
+import {DEFAULT_LANGUAGE} from '../translations';
 
 type ConnectedStateProps = {|
   brand: Brand
@@ -36,7 +37,9 @@ export const initialState: State = {
       learner: '2',
       microlearning: '2'
     }
-  }
+  },
+  supportedLanguages: [DEFAULT_LANGUAGE],
+  defaultLanguage: DEFAULT_LANGUAGE
 };
 
 export const BrandThemeContext: React.Context<State> = React.createContext(initialState);

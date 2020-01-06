@@ -124,14 +124,14 @@ if (__TEST__) {
           />
         </TestContextProvider>
       );
-      const button = component.root.find(el => el.props.testID === `${testID}-preview-pdf-button`);
+      const button = component.root.find(el => el.props.testID === `${testID}-pdf-button`);
 
       button.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([getCleanUri(pdf.url), pdf.description]);
     });
 
-    it('should handle onVideoPlay callback', () => {
+    it('should handle onPress callback on video onPlay', () => {
       const handlePress = jest.fn();
       const testID = 'resource-2';
       const component = renderer.create(
@@ -148,30 +148,9 @@ if (__TEST__) {
         </TestContextProvider>
       );
 
-      const preview = component.root.find(el => el.props.testID === `${testID}-preview-video`);
-      preview.props.onPress();
-      expect(handlePress.mock.calls.length).toBe(1);
-    });
-
-    it('should not call on Press if not provided', () => {
-      const testID = 'resource-3';
-      const component = renderer.create(
-        <TestContextProvider>
-          <Resource
-            type={video.type}
-            url={video.url}
-            description={video.description}
-            thumbnail={video.poster}
-            layout={fakeLayout}
-            testID={testID}
-            onPress={undefined}
-          />
-        </TestContextProvider>
-      );
-
-      const preview = component.root.find(el => el.props.testID === `${testID}-preview-video`);
-      const result = preview.props.onPress();
-      expect(result).toBe(undefined);
+      const preview = component.root.find(el => el.props.testID === testID && el.props.onPlay);
+      preview.props.onPlay();
+      expect(handlePress).toHaveBeenCalledTimes(1);
     });
 
     it('should also render if a default style height is provide', () => {

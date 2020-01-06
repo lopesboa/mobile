@@ -91,7 +91,7 @@ exports[`Storyshots Resource PDF (with extra life) 1`] = `
           undefined,
         ]
       }
-      testID="container"
+      testID="preview-container"
     />
     <View
       style={
@@ -767,7 +767,7 @@ exports[`Storyshots Resource PDF 1`] = `
           undefined,
         ]
       }
-      testID="container"
+      testID="preview-container"
     />
     <View
       style={
@@ -1132,7 +1132,7 @@ Array [
             undefined,
           ]
         }
-        testID="container"
+        testID="video-preview-container"
       />
       <View
         style={
@@ -1162,10 +1162,10 @@ Array [
               "opacity": 1,
             }
           }
-          testID="preview-extralife"
+          testID="video-preview-extralife"
         >
           <View
-            testID="preview-extralife-icon"
+            testID="video-preview-extralife-icon"
           >
             <View
               style={
@@ -1821,7 +1821,7 @@ Array [
             undefined,
           ]
         }
-        testID="container"
+        testID="video-preview-container"
       />
       <View
         style={
@@ -1851,7 +1851,7 @@ Array [
               "opacity": 1,
             }
           }
-          testID="preview-video"
+          testID="video-preview-video"
         >
           <RNSVGSvgView
             align="xMidYMid"

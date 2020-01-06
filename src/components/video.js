@@ -18,30 +18,30 @@ import Space from './space';
 
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
-export type Subtitles = {|
+export type Track = {|
   title: string,
   language: string,
   type: $Values<TextTrackType>,
   uri: string
 |};
 
-type Props = {|
+export type Props = {|
   source: File | {uri?: string},
   preview: File | {uri: string},
   height: number,
   step: Step,
-  subtitles?: string,
-  hasSubtitles?: boolean,
+  tracks?: Array<Track>,
+  selectedTrack?: string,
   isFullScreen?: boolean,
-  onPlay: () => void,
-  onEnd: () => void,
-  onReady: () => void,
+  onPlay: () => Promise<void> | void,
+  onEnd: () => Promise<void> | void,
+  onReady: () => Promise<void> | void,
   onExpand?: () => Promise<void> | void,
   onShrink?: () => Promise<void> | void,
-  onSubtitlesToggle?: () => void,
-  onProgress?: () => void,
-  onRef?: (VideoPlayer | null) => void,
-  onError?: () => void,
+  onTracksToggle?: () => Promise<void> | void,
+  onProgress?: ({currentTime: number}) => Promise<void> | void,
+  onRef?: (VideoPlayer | null) => Promise<void> | void,
+  onError?: () => Promise<void> | void,
   testID?: string,
   extralifeOverlay?: boolean
 |};
@@ -54,11 +54,11 @@ export const STEP: {[key: string]: Step} = {
   END: 'end'
 };
 
-const EMPTY_SUBTITLES: Subtitles = {
+const EMPTY_TRACK: Track = {
   title: 'nocc',
   language: 'nc',
   type: TextTrackType.VTT,
-  uri: 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/assets/empty.vtt'
+  uri: `file://${RNFetchBlob.fs.dirs.MainBundleDir}/assets/empty.vtt`
 };
 
 const styles = StyleSheet.create({
@@ -108,51 +108,31 @@ const Video = ({
   preview,
   height,
   step,
-  subtitles: subtitlesUri,
-  hasSubtitles,
+  tracks = [],
+  selectedTrack,
   isFullScreen,
   onPlay,
   onReady,
   onEnd,
   onExpand,
   onShrink,
-  onSubtitlesToggle,
+  onTracksToggle,
   onRef,
   onError,
   onProgress,
-  testID,
+  testID = 'video',
   extralifeOverlay = false
 }: Props) => {
-  const testIDSuffix = testID ? '-' + testID : '';
-  const testIDFullscreenSuffix =
-    (testID && (isFullScreen ? '-fullscreen' + testIDSuffix : testIDSuffix)) ||
-    (isFullScreen ? '-fullscreen' : '');
-
+  const testIDSuffix = isFullScreen ? '-fullscreen' : '';
   const containerHeight = (!isFullScreen && height) || undefined;
-  const subtitles: Array<Subtitles> = Platform.OS === 'ios' ? [EMPTY_SUBTITLES] : [];
-  if (subtitlesUri) {
-    subtitles.push({
-      title: 'Subtitles',
-      language: translations.getLanguage(),
-      type: TextTrackType.VTT,
-      uri: subtitlesUri
-    });
-  }
-  const disabledSubtitles =
-    Platform.OS === 'ios'
-      ? {type: 'language', value: EMPTY_SUBTITLES.language}
-      : {type: 'disabled'};
-  const selectedSubtitles = hasSubtitles
-    ? {
-        type: 'language',
-        value: translations.getLanguage()
-      }
-    : disabledSubtitles;
+  const defaultTracks: Array<Track> = Platform.OS === 'ios' ? [EMPTY_TRACK] : [];
+  const disabledTrack =
+    Platform.OS === 'ios' ? {type: 'language', value: EMPTY_TRACK.language} : {type: 'disabled'};
 
   return (
     <View
       style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
-      testID={`video-container${testIDFullscreenSuffix}`}
+      testID={`${testID}${testIDSuffix}-container`}
     >
       {[STEP.PREVIEW, STEP.LOADING].includes(step) && (
         <Preview
@@ -160,14 +140,14 @@ const Video = ({
           source={preview}
           isLoading={step === STEP.LOADING}
           onPress={onPlay}
-          testID={testID}
+          testID={`${testID}-preview`}
         />
       )}
       {[STEP.PLAY, STEP.END].includes(step) && (
         <React.Fragment>
           <BlackPortal name="video">
             <VideoPlayer
-              testID={`video${testIDFullscreenSuffix}`}
+              testID={`${testID}${testIDSuffix}-player`}
               source={source}
               ref={onRef}
               style={styles.video}
@@ -185,11 +165,13 @@ const Video = ({
               onReadyForDisplay={onReady}
               onError={onError}
               onProgress={onProgress}
-              onCC={onSubtitlesToggle}
-              disableCC={!subtitlesUri}
-              textTracks={(subtitlesUri && subtitles) || undefined}
-              selectedTextTrack={(subtitlesUri && selectedSubtitles) || undefined}
-              isCC={hasSubtitles}
+              onCC={onTracksToggle}
+              disableCC={tracks.length === 0}
+              textTracks={defaultTracks.concat(tracks)}
+              selectedTextTrack={
+                selectedTrack ? {type: 'language', value: selectedTrack} : disabledTrack
+              }
+              isCC={Boolean(selectedTrack)}
             />
           </BlackPortal>
           {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
@@ -200,7 +182,7 @@ const Video = ({
           <Touchable
             onPress={onPlay}
             style={styles.replay}
-            testID={`video-${step}-replay-${testIDSuffix}`}
+            testID={`${testID}${testIDSuffix}-${step}-replay`}
             analyticsID={`video-${step}-replay`}
           >
             <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />

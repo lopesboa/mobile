@@ -15,8 +15,7 @@ const qcm = createQCM({media: image});
 const lessons = [
   createVideo({
     ref: 'les_1',
-    description: 'First video',
-    subtitleRef: 'ref_subtitle_01'
+    description: 'First video'
   })
 ];
 

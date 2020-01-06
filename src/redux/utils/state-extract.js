@@ -62,6 +62,12 @@ export const getToken = (state: StoreState): TokenState =>
 export const getBrand = (state: StoreState): BrandState =>
   state.authentication && state.authentication.brand;
 
+export const getBrandDefaultLanguage = (state: StoreState): string | void => {
+  const brand = getBrand(state);
+
+  return (brand && brand.defaultLanguage) || undefined;
+};
+
 export const getPermissionStatus = (type: PermissionType) => (
   state: StoreState
 ): PermissionStatus | void => state.permissions[type];
@@ -162,3 +168,5 @@ export const getErrorType = (state: StoreState): ErrorType | void => state.error
 export const getFocusedSelect = (state: StoreState): SelectState => state.select;
 
 export const isNetworkConnected = (state: StoreState): boolean => state.network.isConnected;
+
+export const isVideoFullScreen = (state: StoreState): boolean => state.video.isFullScreen;

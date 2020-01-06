@@ -199,3 +199,10 @@ jest.mock('react-native-flash-message', () => ({
   showMessage: jest.fn(),
   hideMessage: jest.fn()
 }));
+
+// react-native-orientation-locker
+
+jest.mock('react-native-orientation-locker', () => ({
+  unlockAllOrientations: jest.fn(),
+  lockToPortrait: jest.fn()
+}));

@@ -17,7 +17,6 @@ import withAudio from '../containers/with-audio';
 import type {WithAudioProps} from '../containers/with-audio';
 import Cards from '../containers/cards-swipable';
 import translations from '../translations';
-import {getSubtitlesUri} from '../modules/subtitles';
 import {RESOURCE_TYPE, CARD_TYPE} from '../const';
 import Resource from './resource';
 import {STYLE as BOX_STYLE} from './box';
@@ -29,7 +28,6 @@ import Space from './space';
 import Lives from './lives';
 import type {Card} from './cards';
 import CardCorrection from './card-correction';
-import {BrandThemeContext} from './brand-theme-provider';
 
 const CARDS_HEIGHT = 360;
 const CARDS_LENGTH = 3;
@@ -238,74 +236,63 @@ class Correction extends React.PureComponent<Props> {
         : `card-${type.toLowerCase()}-` + testIDSuffix;
 
     return (
-      <BrandThemeContext.Consumer>
-        {brandTheme => {
-          const {host} = brandTheme;
-          const subtitleRef = resource && resource.subtitleRef;
-          const subtitleUri = host && subtitleRef && getSubtitlesUri(host, subtitleRef);
-
-          return (
-            <CardComponent
-              title={cardTitle}
-              isCorrect={isCorrect}
-              type={type}
-              animationStyle={type !== CARD_TYPE.RESOURCE && animationStyle}
-              height={this.getCardsHeight()}
-              expandedHeight={this.getCardsExpandedHeight()}
-              offsetBottom={this.getOffsetBottom()}
-              expandedOffsetBottom={this.getExpandedOffsetBottom()}
-              style={styles.card}
-              testID={testID}
-            >
-              {type === CARD_TYPE.TIP && (
-                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
-                  {tip}
-                </Html>
-              )}
-              {type === CARD_TYPE.CORRECTION && answers && userAnswers && (
-                <CardCorrection
-                  question={question}
-                  answers={answers}
-                  userAnswers={userAnswers}
-                  isCorrect={Boolean(isCorrect)}
-                />
-              )}
-              {type === CARD_TYPE.KEY_POINT && (
-                <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
-                  {keyPoint}
-                </Html>
-              )}
-              {type === CARD_TYPE.RESOURCE && resource && (
-                <React.Fragment>
-                  <Resource
-                    type={resource.type}
-                    url={resource.url}
-                    videoId={resource.videoId}
-                    mimeType={resource.mimeType}
-                    description={resource.description}
-                    thumbnail={resource.poster}
-                    subtitles={subtitleUri}
-                    onPress={this.handleResourcePress(resource.type)}
-                    testID={`${testID}-resource`}
-                    extralifeOverlay={offeringExtraLife}
-                    containerStyle={styles.resource}
-                  />
-                  <View style={styles.resourceTitleContainer}>
-                    <Html
-                      fontSize={theme.fontSize.regular}
-                      testID={`${testID}-resource-description`}
-                      style={styles.resourceTitle}
-                      isTextCentered
-                    >
-                      {resource.description}
-                    </Html>
-                  </View>
-                </React.Fragment>
-              )}
-            </CardComponent>
-          );
-        }}
-      </BrandThemeContext.Consumer>
+      <CardComponent
+        title={cardTitle}
+        isCorrect={isCorrect}
+        type={type}
+        animationStyle={type !== CARD_TYPE.RESOURCE && animationStyle}
+        height={this.getCardsHeight()}
+        expandedHeight={this.getCardsExpandedHeight()}
+        offsetBottom={this.getOffsetBottom()}
+        expandedOffsetBottom={this.getExpandedOffsetBottom()}
+        style={styles.card}
+        testID={testID}
+      >
+        {type === CARD_TYPE.TIP && (
+          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+            {tip}
+          </Html>
+        )}
+        {type === CARD_TYPE.CORRECTION && answers && userAnswers && (
+          <CardCorrection
+            question={question}
+            answers={answers}
+            userAnswers={userAnswers}
+            isCorrect={Boolean(isCorrect)}
+          />
+        )}
+        {type === CARD_TYPE.KEY_POINT && (
+          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+            {keyPoint}
+          </Html>
+        )}
+        {type === CARD_TYPE.RESOURCE && resource && (
+          <React.Fragment>
+            <Resource
+              type={resource.type}
+              url={resource.url}
+              videoId={resource.videoId}
+              mimeType={resource.mimeType}
+              description={resource.description}
+              thumbnail={resource.poster}
+              onPress={this.handleResourcePress(resource.type)}
+              testID={`${testID}-resource`}
+              extralifeOverlay={offeringExtraLife}
+              containerStyle={styles.resource}
+            />
+            <View style={styles.resourceTitleContainer}>
+              <Html
+                fontSize={theme.fontSize.regular}
+                testID={`${testID}-resource-description`}
+                style={styles.resourceTitle}
+                isTextCentered
+              >
+                {resource.description}
+              </Html>
+            </View>
+          </React.Fragment>
+        )}
+      </CardComponent>
     );
   };
 

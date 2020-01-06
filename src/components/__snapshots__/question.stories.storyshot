@@ -5944,7 +5944,7 @@ exports[`Storyshots Question With Video 1`] = `
             },
           ]
         }
-        testID="video-container-question-resource"
+        testID="question-resource-container"
       >
         <View
           accessibilityIgnoresInvertColors={true}
@@ -5985,7 +5985,7 @@ exports[`Storyshots Question With Video 1`] = `
                 undefined,
               ]
             }
-            testID="question-resource-container"
+            testID="question-resource-preview-container"
           />
           <View
             style={

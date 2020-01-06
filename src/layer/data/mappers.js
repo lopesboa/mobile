@@ -47,7 +47,6 @@ export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
   posters: rawLesson.posters,
   ref: rawLesson.ref,
   src: rawLesson.src,
-  subtitleRef: rawLesson.subtitleRef,
   subtitles: rawLesson.subtitles,
   type: rawLesson.type,
   videoId: rawLesson.videoId

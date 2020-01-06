@@ -1,11 +1,16 @@
 // @flow
 
+import {VIDEO_TRACK_TYPE} from '@coorpacademy/player-store';
+import type {VideoTrack} from '@coorpacademy/player-store';
+
 import {fakeError} from '../../utils/tests';
 import {createToken} from '../../__fixtures__/tokens';
-import {createVideoUrl} from '../../__fixtures__/videos';
+import {createVideoUri, createVideoTracks} from '../../__fixtures__/videos';
 import {VIDEO_PROVIDER} from './_const';
 
-const videoUrl = createVideoUrl('1234', VIDEO_PROVIDER.JWPLAYER);
+const videoId = '1234';
+const videoUrl = createVideoUri(videoId, VIDEO_PROVIDER.JWPLAYER);
+const videoTracks = createVideoTracks(videoId, VIDEO_TRACK_TYPE.VTT);
 
 jest.mock('../../utils/local-token', () => {
   const {createToken: _createToken} = require('../../__fixtures__/tokens');
@@ -28,9 +33,7 @@ describe('videos', () => {
 
       const {findUriById} = require('./videos');
 
-      const id = '1234';
-
-      const result = findUriById(id, VIDEO_PROVIDER.JWPLAYER);
+      const result = findUriById(videoId, VIDEO_PROVIDER.JWPLAYER);
 
       await expect(result).rejects.toThrow(new Error('Invalid token'));
     });
@@ -41,10 +44,8 @@ describe('videos', () => {
       }));
       const {findUriById} = require('./videos');
 
-      const id = '1234';
-
-      const result = await findUriById(id, VIDEO_PROVIDER.JWPLAYER);
-      const expected = `https://content.jwplatform.com/videos/${id}.mp4`;
+      const result = await findUriById(videoId, VIDEO_PROVIDER.JWPLAYER);
+      const expected = `https://content.jwplatform.com/videos/${videoId}.mp4`;
 
       return expect(result).toEqual(expected);
     });
@@ -67,7 +68,7 @@ describe('videos', () => {
             url: string
           |}>
         }> => {
-          expect(url).toBe(`https://domain.tld/api/v2/videos/1234/provider/${provider}`);
+          expect(url).toBe(`https://domain.tld/api/v2/videos/${videoId}/provider/${provider}`);
           expect(options).toHaveProperty('headers.authorization', createToken({}));
 
           return Promise.resolve({
@@ -78,7 +79,7 @@ describe('videos', () => {
 
       const {findUriById} = require('./videos');
 
-      const result = await findUriById('1234', provider);
+      const result = await findUriById(videoId, provider);
       const expected = videoUrl;
 
       return expect(result).toEqual(expected);
@@ -95,7 +96,82 @@ describe('videos', () => {
 
       const {findUriById} = require('./videos');
 
-      const result = findUriById('1234', VIDEO_PROVIDER.JWPLAYER);
+      const result = findUriById(videoId, VIDEO_PROVIDER.JWPLAYER);
+
+      return expect(result).rejects.toThrow(fakeError);
+    });
+  });
+
+  describe('findTracksById', () => {
+    it('should handle invalid token', async () => {
+      const localToken = require('../../utils/local-token');
+      // $FlowFixMe this function is mocked
+      localToken.get.mockImplementationOnce(() => Promise.resolve(null));
+
+      const {findTracksById} = require('./videos');
+
+      const result = findTracksById(videoId, VIDEO_TRACK_TYPE.VTT);
+
+      await expect(result).rejects.toThrow(new Error('Invalid token'));
+    });
+
+    it('should fetch e2e fixtures', async () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {findTracksById} = require('./videos');
+
+      const result = await findTracksById(videoId, VIDEO_TRACK_TYPE.VTT);
+      const expected = videoTracks;
+
+      return expect(result).toEqual(expected);
+    });
+
+    it('should fetch from host', async () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      const trackType = VIDEO_TRACK_TYPE.VTT;
+
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<Array<VideoTrack>>
+        }> => {
+          expect(url).toBe(`https://domain.tld/api/v2/subtitles/video/${videoId}/${trackType}`);
+          expect(options).toHaveProperty('headers.authorization', createToken({}));
+
+          return Promise.resolve({
+            json: () => Promise.resolve(videoTracks)
+          });
+        }
+      );
+
+      const {findTracksById} = require('./videos');
+
+      const result = await findTracksById(videoId, trackType);
+      const expected = videoTracks;
+
+      return expect(result).toEqual(expected);
+    });
+
+    it('should reject error', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+
+      const {findTracksById} = require('./videos');
+
+      const result = findTracksById(videoId, VIDEO_TRACK_TYPE.VTT);
 
       return expect(result).rejects.toThrow(fakeError);
     });

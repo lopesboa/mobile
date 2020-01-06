@@ -14,18 +14,15 @@ const qcmGraphic = createQCMGraphic({});
 const lessons = [
   createVideo({
     ref: 'les_1',
-    description: 'First video',
-    subtitleRef: 'ref_subtitle_01'
+    description: 'First video'
   }),
   createVideo({
     ref: 'les_2',
-    description: 'Second video',
-    subtitleRef: 'ref_subtitle_01'
+    description: 'Second video'
   }),
   createVideo({
     ref: 'les_3',
-    description: 'Third video',
-    subtitleRef: 'ref_subtitle_01'
+    description: 'Third video'
   }),
   createPdf({ref: 'les_4', description: 'First PDF'})
 ];

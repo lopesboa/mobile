@@ -20,7 +20,7 @@ import {Component as Correction} from './correction';
 const lessons = [
   createVideo({ref: 'les_1'}),
   createPdf({ref: 'les_2'}),
-  createVideo({ref: 'les_3', subtitleRef: 'foobarbaz'})
+  createVideo({ref: 'les_3'})
 ];
 const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
 

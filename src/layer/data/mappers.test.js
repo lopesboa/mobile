@@ -25,7 +25,7 @@ import {
 } from './mappers';
 
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
-const lesson = createVideo({ref: 'les_1', subtitleRef: 'foobarbaz'});
+const lesson = createVideo({ref: 'les_1'});
 const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
 const question = createQCM({});
 const slide = createSlide({ref: 'sli_1', chapterId: 'cha_1', question, lessons: [lesson]});
@@ -87,7 +87,6 @@ export const mapToLessonAPIExpectedResult: LessonAPI = {
   posters: lesson.posters,
   ref: lesson.ref,
   src: lesson.src,
-  subtitleRef: lesson.subtitleRef,
   subtitles: lesson.subtitles,
   type: lesson.type,
   videoId: lesson.videoId

@@ -27,9 +27,9 @@ import {getCorrectAnswer} from './answers';
 import {getClue} from './clues';
 import {logEvent} from './analytics';
 import {logError, setProperties as setLoggerProperties} from './logger';
-import {fetchLanguage, setLanguage, getInterfaceLanguage} from './language';
+import {setLanguage, getInterfaceLanguage} from './language';
 import {fetchSections} from './sections';
-import {findUriById as findVideoUriById} from './videos';
+import {findUriById as findVideoUriById, findTracksById as findVideoTracksById} from './videos';
 
 export type DataLayer = {
   ...DataLayerBase,
@@ -38,7 +38,6 @@ export type DataLayer = {
   fetchCard: typeof fetchCard,
   fetchCards: typeof fetchCards,
   fetchBrand: typeof fetchBrand,
-  fetchLanguage: typeof fetchLanguage,
   setLanguage: typeof setLanguage,
   getInterfaceLanguage: typeof getInterfaceLanguage,
   fetchSections: typeof fetchSections,
@@ -82,11 +81,11 @@ const createDataLayer = (): DataLayer => ({
   fetchCard,
   fetchCards,
   fetchBrand,
-  fetchLanguage,
   setLanguage,
   getInterfaceLanguage,
   fetchRecommendation,
   findVideoUriById,
+  findVideoTracksById,
   findBestOf,
   findLast: findLastProgression,
   fetchSections,

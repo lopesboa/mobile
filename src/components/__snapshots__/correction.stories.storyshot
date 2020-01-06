@@ -2137,7 +2137,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -2178,7 +2178,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -2892,7 +2892,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -2900,7 +2900,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -3111,7 +3111,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -3138,7 +3138,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -3641,7 +3641,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -3682,7 +3682,7 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -6281,7 +6281,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -6322,7 +6322,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -7036,7 +7036,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -7044,7 +7044,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -7255,7 +7255,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -7282,7 +7282,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -7785,7 +7785,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -7826,7 +7826,7 @@ exports[`Storyshots Correction Bad answer 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -10232,7 +10232,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -10273,7 +10273,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -11429,10 +11429,10 @@ exports[`Storyshots Correction Extralife 1`] = `
                             "opacity": 1,
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-extralife"
+                        testID="card-resource-les_2-resource-extralife"
                       >
                         <View
-                          testID="card-resource-les_2-resource-preview-extralife-icon"
+                          testID="card-resource-les_2-resource-extralife-icon"
                         >
                           <View
                             style={
@@ -12495,7 +12495,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -12536,7 +12536,7 @@ exports[`Storyshots Correction Extralife 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -15932,7 +15932,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -15973,7 +15973,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -16687,7 +16687,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -16695,7 +16695,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -16906,7 +16906,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -16933,7 +16933,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -17436,7 +17436,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -17477,7 +17477,7 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -21123,7 +21123,7 @@ exports[`Storyshots Correction Game over 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -21164,7 +21164,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -21878,7 +21878,7 @@ exports[`Storyshots Correction Game over 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -21886,7 +21886,7 @@ exports[`Storyshots Correction Game over 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -22097,7 +22097,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -22124,7 +22124,7 @@ exports[`Storyshots Correction Game over 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -22627,7 +22627,7 @@ exports[`Storyshots Correction Game over 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -22668,7 +22668,7 @@ exports[`Storyshots Correction Game over 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -26449,7 +26449,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -26490,7 +26490,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -27204,7 +27204,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -27212,7 +27212,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -27423,7 +27423,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -27450,7 +27450,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -27953,7 +27953,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -27994,7 +27994,7 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={
@@ -29919,7 +29919,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_1-resource"
+                  testID="card-resource-les_1-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -29960,7 +29960,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_1-resource-container"
+                      testID="card-resource-les_1-resource-preview-container"
                     />
                     <View
                       style={
@@ -30674,7 +30674,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                             "width": "45%",
                           }
                         }
-                        testID="card-resource-les_2-resource-preview-pdf"
+                        testID="card-resource-les_2-resource-pdf"
                       >
                         <View
                           style={
@@ -30682,7 +30682,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                               "alignSelf": "center",
                             }
                           }
-                          testID="card-resource-les_2-resource-preview-pdf-icon"
+                          testID="card-resource-les_2-resource-pdf-icon"
                         >
                           <RNSVGSvgView
                             align="xMidYMid"
@@ -30893,7 +30893,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           }
                         />
                         <View
-                          testID="card-resource-les_2-resource-preview-pdf-button"
+                          testID="card-resource-les_2-resource-pdf-button"
                         >
                           <View
                             accessible={true}
@@ -30920,7 +30920,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                                 "paddingHorizontal": 24,
                               }
                             }
-                            testID="card-resource-les_2-resource-preview-pdf-button-native"
+                            testID="card-resource-les_2-resource-pdf-button-native"
                           >
                             <Text
                               numberOfLines={1}
@@ -31423,7 +31423,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                       },
                     ]
                   }
-                  testID="video-container-card-resource-les_3-resource"
+                  testID="card-resource-les_3-resource-container"
                 >
                   <View
                     accessibilityIgnoresInvertColors={true}
@@ -31464,7 +31464,7 @@ exports[`Storyshots Correction Right answer 1`] = `
                           undefined,
                         ]
                       }
-                      testID="card-resource-les_3-resource-container"
+                      testID="card-resource-les_3-resource-preview-container"
                     />
                     <View
                       style={

@@ -3,49 +3,62 @@
 import * as React from 'react';
 import {Platform} from 'react-native';
 import {connect} from 'react-redux';
+import {createSelector} from 'reselect';
 import {NavigationEvents} from 'react-navigation';
+import {TextTrackType} from 'react-native-video';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
-import {fetchVideoUri} from '@coorpacademy/player-store';
+import {
+  fetchVideoUri,
+  fetchVideoTracks,
+  getVideoUri,
+  getVideoTracks,
+  VIDEO_TRACK_TYPE,
+  VIDEO_TRACK_KIND
+} from '@coorpacademy/player-store';
 import type {VideoProvider} from '@coorpacademy/player-store';
 import orientation from 'react-native-orientation-locker';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
 
 import Video, {STEP} from '../components/video';
-import type {Step} from '../components/video';
+import type {Props as ComponentProps, Step, Track} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
 import {__STORYBOOK__} from '../modules/environment';
+import {getMatchingLanguage} from '../modules/language';
+import translations from '../translations';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
+import {isVideoFullScreen, getBrandDefaultLanguage} from '../redux/utils/state-extract';
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   isFullScreen: boolean,
-  source?: {uri: string}
+  source?: {uri: string},
+  tracks?: Array<Track>,
+  selectedTrack?: string
 |};
 
 type ConnectedDispatchToProps = {|
   toggleFullscreen: typeof toggleFullscreen,
-  fetchVideoUri: typeof fetchVideoUri
+  fetchVideoUri: typeof fetchVideoUri,
+  fetchVideoTracks: typeof fetchVideoTracks
+|};
+
+type OwnProps = {|
+  id: string,
+  provider: VideoProvider,
+  source?: {uri: string}
 |};
 
 type Props = {|
   ...ReactNavigation$ScreenProps,
   ...ConnectedStateProps,
   ...ConnectedDispatchToProps,
-  source: File | {uri?: string},
-  videoId: string,
-  videoProvider: VideoProvider,
-  preview: File | {uri: string},
-  height: number,
-  subtitles?: string,
-  testID?: string,
-  extralifeOverlay?: boolean,
-  onPlay?: () => void
+  ...ComponentProps,
+  ...OwnProps
 |};
 
 type State = {|
   step: Step,
-  hasSubtitles: boolean,
-  currentTime?: number
+  hasTracks: boolean
 |};
 
 class VideoControlable extends React.PureComponent<Props, State> {
@@ -53,38 +66,22 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   state: State = {
     step: STEP.PREVIEW,
-    hasSubtitles: true
+    hasTracks: true
   };
 
   videoPlayer: VideoPlayer;
 
+  currentTime: number | void;
+
   isReady: boolean = false;
-
-  play = async () => {
-    const {videoId, videoProvider} = this.props;
-
-    if (videoProvider === VIDEO_PROVIDER.KONTIKI) {
-      this.setState({
-        step: STEP.LOADING
-      });
-      await this.props.fetchVideoUri(videoId, videoProvider);
-    }
-
-    this.setState({
-      step: STEP.PLAY
-    });
-
-    this.props.onPlay && this.props.onPlay();
-  };
 
   handleExpand = async () => {
     if (this.videoPlayer) {
-      const {currentTime} = this.state;
       await this.props.toggleFullscreen(true);
 
       this.videoPlayer.player.ref.presentFullscreenPlayer();
-      if (Platform.OS === 'android' && currentTime) {
-        this.videoPlayer.seekTo(currentTime);
+      if (Platform.OS === 'android' && this.currentTime) {
+        this.videoPlayer.seekTo(this.currentTime);
       }
 
       orientation.unlockAllOrientations();
@@ -93,12 +90,11 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   handleShrink = async () => {
     if (this.videoPlayer) {
-      const {currentTime} = this.state;
       await this.props.toggleFullscreen(false);
 
       this.videoPlayer.player.ref.dismissFullscreenPlayer();
-      if (Platform.OS === 'android' && currentTime) {
-        this.videoPlayer.seekTo(currentTime);
+      if (Platform.OS === 'android' && this.currentTime) {
+        this.videoPlayer.seekTo(this.currentTime);
       }
 
       // @@todo wait for support tablet landscape orientation
@@ -108,19 +104,35 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
   };
 
-  handleProgress = (data: {currentTime: number} | void) =>
-    this.setState({
-      currentTime: data && data.currentTime
-    });
+  handleProgress = ({currentTime}: {currentTime: number}) => {
+    this.currentTime = currentTime;
+  };
 
-  handlePlay = () => {
+  handlePlay = async () => {
+    const {id, provider} = this.props;
+
     this.isReady = false;
 
     if (this.videoPlayer) {
       this.videoPlayer.seekTo(0);
     }
 
-    this.play();
+    if (provider === VIDEO_PROVIDER.KONTIKI) {
+      this.setState({
+        step: STEP.LOADING
+      });
+      await this.props.fetchVideoUri(id, provider);
+    }
+
+    if (provider === VIDEO_PROVIDER.JWPLAYER) {
+      await this.props.fetchVideoTracks(id, VIDEO_TRACK_TYPE.VTT);
+    }
+
+    this.setState({
+      step: STEP.PLAY
+    });
+
+    this.props.onPlay && this.props.onPlay();
   };
 
   handleEnd = () => {
@@ -138,9 +150,9 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
   };
 
-  handleSubtitlesToggle = () =>
-    this.setState(({hasSubtitles}: State) => ({
-      hasSubtitles: !hasSubtitles
+  handleTracksToggle = () =>
+    this.setState(({hasTracks}: State) => ({
+      hasTracks: !hasTracks
     }));
 
   handleRef = (videoPlayer: VideoPlayer | null) => {
@@ -155,27 +167,30 @@ class VideoControlable extends React.PureComponent<Props, State> {
     });
 
   render() {
+    const {source, preview, height, tracks, selectedTrack, isFullScreen} = this.props;
+    const {step, hasTracks} = this.state;
+
     return (
       <React.Fragment>
         {/*
-        Should disable NavigationEvents when running  Storybook because of rn navigation incompatibility
+        Should disable NavigationEvents when running Storybook because of rn navigation incompatibility
          */}
         {!__STORYBOOK__ ? <NavigationEvents onWillBlur={this.handleBlur} /> : null}
         <Video
-          source={this.props.source}
-          preview={this.props.preview}
-          height={this.props.height}
-          step={this.state.step}
-          subtitles={this.props.subtitles}
-          hasSubtitles={this.state.hasSubtitles}
-          isFullScreen={this.props.isFullScreen}
+          source={source}
+          preview={preview}
+          height={height}
+          step={step}
+          tracks={tracks}
+          selectedTrack={hasTracks ? selectedTrack : undefined}
+          isFullScreen={isFullScreen}
           onPlay={this.handlePlay}
           onEnd={this.handleEnd}
           onReady={this.handleReady}
           onExpand={this.handleExpand}
           onShrink={this.handleShrink}
           onProgress={this.handleProgress}
-          onSubtitlesToggle={this.handleSubtitlesToggle}
+          onTracksToggle={this.handleTracksToggle}
           onRef={this.handleRef}
           onError={this.handleError}
           testID={this.props.testID}
@@ -186,21 +201,72 @@ class VideoControlable extends React.PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = (state: StoreState, {videoId}: Props): ConnectedStateProps => {
-  const {video, data} = state;
-  const videoUrl = data.videos.entities[videoId];
+const _getVideoSource = (
+  state: StoreState,
+  {id, provider, source}: OwnProps
+): {uri: string} | void => {
+  const uri = getVideoUri(id)(state);
 
-  return {
-    ...(videoUrl ? {source: {uri: videoUrl}} : {}),
-    isFullScreen: video.isFullScreen
-  };
+  return uri ? {uri} : source;
 };
+
+const _getVideoTracks = (state: StoreState, {id}: OwnProps): Array<Track> => {
+  const tracks = getVideoTracks(id)(state) || [];
+
+  return tracks
+    .filter(({kind, label}) => kind === VIDEO_TRACK_KIND.CAPTIONS && label)
+    .map(({label, file}) => ({
+      // $FlowFixMe this is filtered above
+      title: label,
+      // $FlowFixMe this is filtered above
+      language: label,
+      type: TextTrackType.VTT,
+      uri: file
+    }));
+};
+
+const getIsFullScreenState: StoreState => boolean = createSelector(
+  [isVideoFullScreen],
+  isFullScreen => isFullScreen
+);
+
+const getVideoSourceState: (StoreState, OwnProps) => {uri: string} | void = createSelector(
+  [_getVideoSource],
+  source => source
+);
+
+const getVideoTracksState: (StoreState, OwnProps) => Array<Track> | void = createSelector(
+  [_getVideoTracks],
+  tracks => tracks
+);
+
+const getVideoSelectedTrackState: (StoreState, OwnProps) => string | void = createSelector(
+  [_getVideoTracks, getBrandDefaultLanguage],
+  (tracks, defaultLanguage) => {
+    const languages = tracks.map(({language}) => language);
+    const matchingLanguage =
+      defaultLanguage &&
+      getMatchingLanguage(languages, defaultLanguage, translations.getLanguage());
+    const matchingTrack = tracks.find(({language}) => language === matchingLanguage);
+
+    return matchingTrack ? matchingLanguage : undefined;
+  }
+);
+
+export const mapStateToProps = (state: StoreState, props: OwnProps): ConnectedStateProps => ({
+  source: getVideoSourceState(state, props),
+  tracks: getVideoTracksState(state, props),
+  selectedTrack: getVideoSelectedTrackState(state, props),
+  isFullScreen: getIsFullScreenState(state)
+});
 
 const mapDispatchToProps: ConnectedDispatchToProps = {
   toggleFullscreen,
-  fetchVideoUri
+  fetchVideoUri,
+  fetchVideoTracks
 };
 
+export {VideoControlable as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
