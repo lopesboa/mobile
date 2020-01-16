@@ -9,6 +9,57 @@ exports[`Storyshots Carousel Default 1`] = `
   }
   testID="carousel"
 >
+  <Mock$ReactNativeSnapCarousel$Pagination
+    activeDotIndex={1}
+    containerStyle={
+      Object {
+        "paddingHorizontal": 16,
+        "paddingVertical": 0,
+      }
+    }
+    dotColor="#FFFFFF"
+    dotContainerStyle={
+      Object {
+        "borderColor": "#FFFFFF",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "marginHorizontal": 4,
+        "padding": 2,
+      }
+    }
+    dotStyle={
+      Object {
+        "borderRadius": 8,
+        "height": 8,
+        "padding": 2,
+        "width": 8,
+      }
+    }
+    dotsLength={4}
+    inactiveDotColor="#FFFFFF"
+    inactiveDotOpacity={0}
+    inactiveDotScale={0.6}
+    inactiveDotStyle={
+      Object {
+        "borderRadius": 8,
+        "height": 8,
+        "padding": 2,
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Storyshots Carousel With layout 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  testID="carousel"
+>
   <View
     onMoveShouldSetResponder={[Function]}
     onMoveShouldSetResponderCapture={[Function]}

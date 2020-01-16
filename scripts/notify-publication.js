@@ -26,5 +26,5 @@ const web = new WebClient(token);
       }
     ]
   });
-  console.log('Message sent: ', res.ts);
+  console.log('Message sent:', res.ts);
 })();

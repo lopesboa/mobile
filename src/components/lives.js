@@ -252,30 +252,27 @@ class Lives extends React.PureComponent<Props> {
           style={[styles.lives, count === undefined && styles.livesPlaceholder, livesStyle]}
           testID={`${testID}${countSuffix}${brokenSuffix}`}
         >
-          {count !== undefined && (
-            <React.Fragment>
-              {isGodModeEnabled ? (
-                <View style={styles.textContainer}>
-                  <Text style={[styles.text, textStyle]}>{GOD_MODE_TEXT}</Text>
-                </View>
-              ) : (
-                <Animated.View
-                  style={[styles.textAnimated, {transform: [{translateY: textTranslateY}]}]}
-                >
-                  <View style={styles.textContainer}>
-                    <Text style={[styles.text, textStyle]}>
-                      x{animationDirection === 'bottom' ? count + 1 : count}
-                    </Text>
-                  </View>
-                  <View style={styles.textContainer}>
-                    <Text style={[styles.text, textStyle]}>
-                      x{animationDirection === 'bottom' ? count : count - 1}
-                    </Text>
-                  </View>
-                </Animated.View>
-              )}
-            </React.Fragment>
-          )}
+          {count !== undefined && isGodModeEnabled ? (
+            <View style={styles.textContainer}>
+              <Text style={[styles.text, textStyle]}>{GOD_MODE_TEXT}</Text>
+            </View>
+          ) : null}
+          {count !== undefined && !isGodModeEnabled ? (
+            <Animated.View
+              style={[styles.textAnimated, {transform: [{translateY: textTranslateY}]}]}
+            >
+              <View style={styles.textContainer}>
+                <Text style={[styles.text, textStyle]}>
+                  x{animationDirection === 'bottom' ? count + 1 : count}
+                </Text>
+              </View>
+              <View style={styles.textContainer}>
+                <Text style={[styles.text, textStyle]}>
+                  x{animationDirection === 'bottom' ? count : count - 1}
+                </Text>
+              </View>
+            </Animated.View>
+          ) : null}
         </View>
         <Animated.View style={[styles.heart, heartStyle]}>
           <HeartOutlineIcon
@@ -303,11 +300,11 @@ class Lives extends React.PureComponent<Props> {
             <HeartBrokenIcon color={heartColor} style={heartIconStyle} />
           </Animated.View>
         </Animated.View>
-        {isFastSlideEnabled && (
+        {isFastSlideEnabled ? (
           <View style={[styles.fastSlide, fastSlideStyle]}>
             <FastForward color={theme.colors.gray.dark} style={fastSlideIconStyle} />
           </View>
-        )}
+        ) : null}
       </View>
     );
   }

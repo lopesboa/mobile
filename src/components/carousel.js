@@ -91,7 +91,7 @@ class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
 
     return (
       <View style={styles.container} testID={testID} onLayout={onLayout}>
-        {width && (
+        {width ? (
           <CarouselBase
             index={currentIndex}
             itemWidth={width}
@@ -104,7 +104,7 @@ class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
             useVelocityForIndex={false}
             contentContainerStyle={styles.carousel}
           />
-        )}
+        ) : null}
         <Pagination
           dotsLength={data.length}
           activeDotIndex={currentIndex}

@@ -30,9 +30,8 @@ describe('Migrate Progressions', () => {
       expect(value).toEqual('2');
     });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(result).toBeUndefined();
   });
 
   it('should only migrate bad progressions', async () => {
@@ -222,8 +221,7 @@ describe('Migrate Progressions', () => {
         expect(value).toEqual('2');
       });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(2);
-    expect(result).toBeUndefined();
   });
 });

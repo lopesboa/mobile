@@ -109,7 +109,7 @@ const QuestionChoice = ({
       analyticsParams={{questionType}}
     >
       <View style={[styles.container]} testID={prefixTestID && `${prefixTestID}${selectedSuffix}`}>
-        {mediaUri && (
+        {mediaUri ? (
           <View style={[styles.imageContainer]}>
             <Resource
               testID={prefixTestID && `${prefixTestID}${mediaSuffix}`}
@@ -120,7 +120,7 @@ const QuestionChoice = ({
               containerStyle={styles.layoutContainer}
             />
           </View>
-        )}
+        ) : null}
         <View
           style={[
             styles.textContainer,

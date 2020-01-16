@@ -80,18 +80,16 @@ class Lesson extends React.Component<Props> {
           <QuestionTitle isTextCentered>{header}</QuestionTitle>
         </View>
         <Space type="base" />
-        {openedResource && (
-          <Resource
-            testID="lesson-resource"
-            type={openedResource.type}
-            url={openedResource.url}
-            videoId={openedResource.videoId}
-            mimeType={openedResource.mimeType}
-            description={openedResource.description}
-            thumbnail={openedResource.poster}
-            onPress={this.handlePress(openedResource.type)}
-          />
-        )}
+        <Resource
+          testID="lesson-resource"
+          type={openedResource.type}
+          url={openedResource.url}
+          videoId={openedResource.videoId}
+          mimeType={openedResource.mimeType}
+          description={openedResource.description}
+          thumbnail={openedResource.poster}
+          onPress={this.handlePress(openedResource.type)}
+        />
         <ScrollView
           style={styles.browser}
           showsHorizontalScrollIndicator={false}

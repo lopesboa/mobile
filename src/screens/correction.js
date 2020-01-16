@@ -151,7 +151,9 @@ class CorrectionScreen extends React.PureComponent<Props> {
         noScroll
         style={{backgroundColor: !isValidating && backgroundColor}}
       >
-        {!isValidating && <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />}
+        {!isValidating ? (
+          <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
+        ) : null}
         <Correction
           containerStyle={styles.layoutContainer}
           tip={tip}

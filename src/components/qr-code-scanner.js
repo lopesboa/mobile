@@ -33,13 +33,13 @@ class QRCodeScanner extends React.PureComponent<Props> {
 
     return (
       <Animated.View style={[styles.container, styles.camera]} testID={testID}>
-        {hasPermission && (
+        {hasPermission ? (
           <QRCodeScannerBase
             onRead={this.handleRead}
             cameraStyle={styles.camera}
             cameraProps={{captureAudio: false}}
           />
-        )}
+        ) : null}
       </Animated.View>
     );
   }

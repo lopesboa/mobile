@@ -101,15 +101,15 @@ class Hero extends React.PureComponent<Props> {
                     ]) || ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)']
                   }
                 >
-                  {!isLoading && !content && user && (
+                  {!isLoading && !content && user ? (
                     <Text style={styles.text} testID="catalog-hero-welcome-message">
                       {translations.welcomeUser.replace(
                         /{{displayname}}/g,
                         `\n${user.displayName}`
                       )}
                     </Text>
-                  )}
-                  {(isLoading || content) && (
+                  ) : null}
+                  {isLoading || content ? (
                     <View style={styles.content}>
                       <CatalogItemContent
                         item={(content !== null && content) || undefined}
@@ -130,7 +130,7 @@ class Hero extends React.PureComponent<Props> {
                         {translations.resumeLearning}
                       </Button>
                     </View>
-                  )}
+                  ) : null}
                 </ImageBackground>
               );
             }}

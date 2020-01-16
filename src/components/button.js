@@ -167,11 +167,11 @@ class Button extends React.PureComponent<Props> {
                 activityIndicatorColor={theme.colors.gray.medium}
                 testID={prefixTestID && `${prefixTestID}-native`}
               >
-                {typeof children === 'string' && (
+                {typeof children === 'string' ? (
                   <Text style={textStyles} numberOfLines={1}>
                     {children}
                   </Text>
-                )}
+                ) : null}
                 {typeof children !== 'string' && children}
               </ButtonBase>
             </View>

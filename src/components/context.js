@@ -75,7 +75,7 @@ class Context extends React.PureComponent<Props> {
             <Title isTextCentered>{header}</Title>
           </View>
           <Space type="base" />
-          {media && (
+          {media ? (
             <Resource
               testID={`context-resource-${getMediaType(media) || ''}`}
               url={getMediaUrl(media)}
@@ -87,7 +87,7 @@ class Context extends React.PureComponent<Props> {
               description={media.description}
               type={getMediaType(media)}
             />
-          )}
+          ) : null}
         </View>
         <Space type="base" />
         <View style={styles.content}>

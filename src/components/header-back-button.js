@@ -55,15 +55,15 @@ const HeaderBackButton = ({
     ]}
   >
     <Touchable testID={testID} onPress={onPress} hitSlop={getHitSlop()} analyticsID="button-close">
-      {type === 'home' && (
+      {type === 'home' ? (
         <HomeIcon height={HOME_ICON_HEIGHT} width={HOME_ICON_HEIGHT} color={color} />
-      )}
-      {type === 'close' && (
+      ) : null}
+      {type === 'close' ? (
         <CloseIcon height={CLOSE_ICON_HEIGHT} width={CLOSE_ICON_HEIGHT} color={color} />
-      )}
-      {type === 'back' && (
+      ) : null}
+      {type === 'back' ? (
         <HeaderBackIcon height={BACK_ICON_HEIGHT} width={BACK_ICON_HEIGHT} color={color} />
-      )}
+      ) : null}
     </Touchable>
   </View>
 );

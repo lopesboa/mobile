@@ -63,23 +63,23 @@ const HeaderSlide = ({image, subtitle, title}: Props) => {
         />
       </View>
       <View style={styles.text}>
-        {subtitle && (
+        {subtitle ? (
           <Text style={[styles.subtitle, {color: brandTheme.colors.primary}]} numberOfLines={1}>
             {subtitle}
           </Text>
-        )}
-        {title && (
+        ) : null}
+        {title ? (
           <Text testID="header-slide-title-title" style={styles.discipline} numberOfLines={1}>
             {title}
           </Text>
-        )}
-        {!title && (
+        ) : null}
+        {!title ? (
           <React.Fragment>
             <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="15%" />
             <Space />
             <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="50%" />
           </React.Fragment>
-        )}
+        ) : null}
       </View>
     </View>
   );

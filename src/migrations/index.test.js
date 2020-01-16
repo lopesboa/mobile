@@ -41,9 +41,8 @@ describe('Migrations', () => {
       expect(value).toEqual('2');
     });
 
-    const result = await migrationsRunner();
+    await migrationsRunner();
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(result).toBeUndefined();
   });
 
   afterEach(() => {

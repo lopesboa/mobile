@@ -75,21 +75,21 @@ const Preview = ({
   return (
     <ImageBackground source={source} style={[styles.image, style]} testID={`${testID}-container`}>
       <Overlay>
-        {type === RESOURCE_TYPE.VIDEO && (
+        {type === RESOURCE_TYPE.VIDEO ? (
           <Touchable onPress={onPress} testID={`${testID}-video`} analyticsID="preview-video">
-            {isIconVisible && !isLoading && (
+            {isIconVisible && !isLoading ? (
               <PlayIcon
                 color={theme.colors.white}
                 height={iconHeight || 70}
                 width={iconWidth || 70}
               />
-            )}
-            {isLoading && <Loader height={36} />}
+            ) : null}
+            {isLoading ? <Loader height={36} /> : null}
           </Touchable>
-        )}
-        {type === RESOURCE_TYPE.PDF && (
+        ) : null}
+        {type === RESOURCE_TYPE.PDF ? (
           <View style={styles.pdf} testID={`${testID}-pdf`}>
-            {isIconVisible && (
+            {isIconVisible ? (
               <View testID={`${testID}-pdf-icon`} style={styles.pdfIcon}>
                 <PDFIcon
                   color={theme.colors.white}
@@ -97,8 +97,8 @@ const Preview = ({
                   width={iconWidth || 45}
                 />
               </View>
-            )}
-            {onPress && (
+            ) : null}
+            {onPress ? (
               <React.Fragment>
                 <Space type="base" />
                 <Button
@@ -111,10 +111,10 @@ const Preview = ({
                   {translations.open}
                 </Button>
               </React.Fragment>
-            )}
+            ) : null}
           </View>
-        )}
-        {type === EXTRALIFE && (
+        ) : null}
+        {type === EXTRALIFE ? (
           <Touchable
             onPress={onPress}
             testID={`${testID}-extralife`}
@@ -130,7 +130,7 @@ const Preview = ({
               </View>
             </View>
           </Touchable>
-        )}
+        ) : null}
       </Overlay>
     </ImageBackground>
   );

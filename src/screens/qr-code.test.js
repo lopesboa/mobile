@@ -16,6 +16,10 @@ const createParams = (): Params => ({
 });
 
 describe('QR Code', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
   describe('props', () => {
     it('should return the accurate props', () => {
       const {mapStateToProps} = require('./qr-code');
@@ -80,6 +84,23 @@ describe('QR Code', () => {
     expect(params.onScan).toHaveBeenCalledWith(devToken);
   });
 
+  it('should not be able to fake scan in production', () => {
+    jest.mock('../modules/environment', () => ({
+      __DEV__: false,
+      __E2E__: false,
+      __TEST__: false
+    }));
+    const {Component: QRCode} = require('./qr-code');
+
+    const params = createParams();
+    const navigation = createNavigation({
+      params
+    });
+    const component = renderer.create(<QRCode navigation={navigation} />);
+
+    expect(() => component.root.find(el => el.props.testID === 'qr-code-area')).toThrow();
+  });
+
   it('should handle scan', () => {
     const {Component: QRCode} = require('./qr-code');
 
@@ -120,5 +141,9 @@ describe('QR Code', () => {
       translations.permissionCamera,
       expect.any(Function)
     );
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
   });
 });

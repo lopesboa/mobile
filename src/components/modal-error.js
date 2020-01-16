@@ -111,19 +111,19 @@ class ModalError extends React.PureComponent<Props> {
               analyticsID="button-retry-action"
               testID="button-retry-action"
             >
-              {type === ERROR_TYPE.NO_CONTENT_FOUND && (
+              {type === ERROR_TYPE.NO_CONTENT_FOUND ? (
                 <React.Fragment>
                   <RedoIcon color={theme.colors.white} height={25} width={25} />
                   <Space />
                   <Text style={styles.buttonText}>{translations.refresh}</Text>
                 </React.Fragment>
-              )}
-              {type === ERROR_TYPE.PLATFORM_NOT_ACTIVATED && (
+              ) : null}
+              {type === ERROR_TYPE.PLATFORM_NOT_ACTIVATED ? (
                 <Text style={styles.buttonText}>{translations.iWantIt}</Text>
-              )}
+              ) : null}
             </Button>
           </View>
-          {type === ERROR_TYPE.NO_CONTENT_FOUND && (
+          {type === ERROR_TYPE.NO_CONTENT_FOUND ? (
             <React.Fragment>
               <Space type="base" />
               <View style={styles.contentFooter}>
@@ -142,7 +142,7 @@ class ModalError extends React.PureComponent<Props> {
                 </Touchable>
               </View>
             </React.Fragment>
-          )}
+          ) : null}
         </React.Fragment>
       </Modal>
     );

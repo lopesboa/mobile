@@ -139,7 +139,7 @@ const Question = ({
           </Html>
         </View>
         <Space type="base" />
-        {mediaUrl && mediaType && (
+        {mediaUrl && mediaType ? (
           <View>
             <Resource
               type={mediaType}
@@ -154,7 +154,7 @@ const Question = ({
             />
             <Space type="base" />
           </View>
-        )}
+        ) : null}
       </View>
 
       <Space type="base" />

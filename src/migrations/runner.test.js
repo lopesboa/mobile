@@ -1,4 +1,5 @@
 // @flow
+
 import {createProgression} from '../__fixtures__/progression';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import type {Migrations} from './types';
@@ -28,10 +29,10 @@ describe('Migrations runner', () => {
       expect(value).toEqual('2');
     });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(result).toBeUndefined();
   });
+
   it('should run one migration script and bump async storage version even if the value is empty', async () => {
     const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
@@ -59,9 +60,8 @@ describe('Migrations runner', () => {
       expect(value).toEqual('2');
     });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(result).toBeUndefined();
   });
 
   it('should run one migration script and bump async storage version from default to script version', async () => {
@@ -97,9 +97,8 @@ describe('Migrations runner', () => {
         expect(value).toEqual('2');
       });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(2);
-    expect(result).toBeUndefined();
   });
 
   it('should not run the migration script if the async storage version is greater or equal than the provided migration version', async () => {
@@ -125,9 +124,8 @@ describe('Migrations runner', () => {
     AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(2));
     AsyncStorage.setItem = jest.fn();
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(0);
-    expect(result).toBeUndefined();
   });
 
   it('should run multiple migration scripts and bump async storage version for each', async () => {
@@ -197,9 +195,8 @@ describe('Migrations runner', () => {
         expect(value).toEqual('4');
       });
 
-    const result = await runMigrations(migrations);
+    await runMigrations(migrations);
     expect(AsyncStorage.setItem).toHaveBeenCalledTimes(4);
-    expect(result).toBeUndefined();
   });
 
   it('should run multiple migration scripts and catch and stop migration if a script fails', () => {

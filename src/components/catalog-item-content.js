@@ -21,14 +21,14 @@ const CatalogItemContent = ({item, size, testID = 'catalog-item-content'}: Props
 
       return (
         <React.Fragment>
-          {author && (
+          {author ? (
             <CatalogItemAuthor
               type={author.authorType}
               name={author.label}
               size={size}
               testID={`${testID}-author`}
             />
-          )}
+          ) : null}
           <CatalogItemFooter item={item} size={size} testID={`${testID}-footer`} />
         </React.Fragment>
       );

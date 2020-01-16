@@ -74,7 +74,7 @@ describe('Data Layer Core', () => {
   it('should filtred the given array item according to a regex', () => {
     const valueToRetrive = 'chapter:fr:cha_1';
     const keys = ['chapter:en:cha_1', 'discipline:fr:cha_1', valueToRetrive];
-    const regex = new RegExp('^chapter:fr:(.+)+', 'gm');
+    const regex = /^chapter:fr:(.+)+/gm;
     const result = filterKeys(regex, keys);
     expect(result).toEqual([valueToRetrive]);
   });

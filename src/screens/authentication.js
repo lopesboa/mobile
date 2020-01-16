@@ -127,7 +127,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
           barStyle="light-content"
           backgroundColor={isSplashScreenHidden ? TOP_COLOR : BLUE_COORP_DARK}
         />
-        {isSplashScreenHidden && (
+        {isSplashScreenHidden ? (
           <Authentication
             onDemoPress={this.handleDemoPress}
             onHelpPress={this.handleHelpPress}
@@ -135,7 +135,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
             onMobileButtonPress={this.handleMobileButtonPress}
             testID="authentication"
           />
-        )}
+        ) : null}
         <ErrorListener onClose={this.handleSignOut} />
       </Screen>
     );

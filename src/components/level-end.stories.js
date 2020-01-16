@@ -127,6 +127,7 @@ storiesOf('LevelEnd', module)
       onCardPress={handleFakePress}
       onClose={handleFakePress}
       recommendation={chapterNewCoorp}
+      bestScore={20}
       nextContentType={CONTENT_TYPE.CHAPTER}
       nextContentLabel="foobar"
       vibration={createFakeVibration()}

@@ -43,10 +43,5 @@ const applyMigrations = (asyncStorageVersionKey, migrations) => async (
   )(migrations);
 };
 
-export const runMigrations = async (migrations: Migrations): Promise<void> => {
-  try {
-    await applyMigrations(ASYNC_STORAGE_VERSION_KEY, migrations)(AsyncStorage);
-  } catch (error) {
-    throw error;
-  }
-};
+export const runMigrations = (migrations: Migrations): Promise<void> =>
+  applyMigrations(ASYNC_STORAGE_VERSION_KEY, migrations)(AsyncStorage);

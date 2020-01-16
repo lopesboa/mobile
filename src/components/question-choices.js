@@ -99,7 +99,7 @@ class QuestionChoices extends React.PureComponent<Props> {
           <View testID="question-choices">
             {items.map((item, index) => (
               <View key={`question-choice-${item._id}`}>
-                {index > 0 && <Space />}
+                {index > 0 ? <Space /> : null}
                 <QuestionChoice
                   onPress={this.handleItemPress(item)}
                   isDisabled={isDisabled}
@@ -119,7 +119,7 @@ class QuestionChoices extends React.PureComponent<Props> {
             {items.map((item, index) => {
               return (
                 <View key={`question-choice-row-${item._id}`}>
-                  {index > 0 && <Space />}
+                  {index > 0 ? <Space /> : null}
                   <View style={styles.cards}>
                     <QuestionChoice
                       onPress={this.handleItemPress(item)}

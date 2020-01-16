@@ -248,25 +248,25 @@ class Correction extends React.PureComponent<Props> {
         style={styles.card}
         testID={testID}
       >
-        {type === CARD_TYPE.TIP && (
+        {type === CARD_TYPE.TIP ? (
           <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {tip}
           </Html>
-        )}
-        {type === CARD_TYPE.CORRECTION && answers && userAnswers && (
+        ) : null}
+        {type === CARD_TYPE.CORRECTION && answers && userAnswers ? (
           <CardCorrection
             question={question}
             answers={answers}
             userAnswers={userAnswers}
             isCorrect={Boolean(isCorrect)}
           />
-        )}
-        {type === CARD_TYPE.KEY_POINT && (
+        ) : null}
+        {type === CARD_TYPE.KEY_POINT ? (
           <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {keyPoint}
           </Html>
-        )}
-        {type === CARD_TYPE.RESOURCE && resource && (
+        ) : null}
+        {type === CARD_TYPE.RESOURCE && resource ? (
           <React.Fragment>
             <Resource
               type={resource.type}
@@ -291,7 +291,7 @@ class Correction extends React.PureComponent<Props> {
               </Html>
             </View>
           </React.Fragment>
-        )}
+        ) : null}
       </CardComponent>
     );
   };
@@ -320,7 +320,7 @@ class Correction extends React.PureComponent<Props> {
       analyticsID = 'button-game-over';
     }
 
-    const isLoading = isCorrect === undefined;
+    const isLoading = isCorrect === undefined || !layout;
 
     return (
       <View
@@ -331,8 +331,8 @@ class Correction extends React.PureComponent<Props> {
         ]}
         testID={`${testID}-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
       >
-        {isLoading && <Loader />}
-        {!isLoading && (
+        {isLoading ? <Loader /> : null}
+        {!isLoading ? (
           <React.Fragment>
             <View style={styles.header}>
               <View>
@@ -343,7 +343,7 @@ class Correction extends React.PureComponent<Props> {
                   {(isCorrect && translations.goodAnswer) || translations.wrongAnswer}
                 </Text>
               </View>
-              {lives !== undefined && (
+              {lives !== undefined ? (
                 <Lives
                   count={lives}
                   animationDirection={
@@ -354,16 +354,15 @@ class Correction extends React.PureComponent<Props> {
                   height={67}
                   testID="correction-lives"
                 />
-              )}
+              ) : null}
             </View>
             <Space type="base" />
-            {layout && (
-              <Cards
-                items={this.getCards(Boolean(isCorrect))}
-                renderItem={this.renderCard}
-                cardStyle={{paddingTop: (layout.height - this.getCardsHeight()) / 2}}
-              />
-            )}
+            <Cards
+              items={this.getCards(Boolean(isCorrect))}
+              renderItem={this.renderCard}
+              // $FlowFixMe layout has already been checked
+              cardStyle={{paddingTop: (layout.height - this.getCardsHeight()) / 2}}
+            />
             <Space type="base" />
             <View style={styles.footer}>
               <Button
@@ -377,7 +376,7 @@ class Correction extends React.PureComponent<Props> {
               </Button>
             </View>
           </React.Fragment>
-        )}
+        ) : null}
       </View>
     );
   }

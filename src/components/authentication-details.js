@@ -118,12 +118,12 @@ const AuthenticationDetails = ({type, onButtonPress, onHelpPress, onDemoPress, o
             analyticsID={`authentication-details-${type}-button`}
           >
             <React.Fragment>
-              {type === AUTHENTICATION_TYPE.QR_CODE && (
+              {type === AUTHENTICATION_TYPE.QR_CODE ? (
                 <React.Fragment>
                   <TargetIcon color={BLUE_COORP_LIGHT} height={30} width={30} />
                   <Space />
                 </React.Fragment>
-              )}
+              ) : null}
               <Html fontSize={theme.fontSize.large} style={styles.button}>
                 {(type === AUTHENTICATION_TYPE.QR_CODE && translations.scanQRCode) ||
                   translations.openBrowser}

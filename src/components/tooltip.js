@@ -66,8 +66,8 @@ const Tooltip = ({type, children, testID}: Props) => {
     <View testID={testID}>
       <View style={styles.container}>
         <View style={styles.iconContainer}>
-          {type === TOOLTIP_TYPE.HIGHSCORE && <Star color="#fca833" style={styles.icon} />}
-          {type === TOOLTIP_TYPE.UNLOCK && <Lock style={styles.icon} />}
+          {type === TOOLTIP_TYPE.HIGHSCORE ? <Star color="#fca833" style={styles.icon} /> : null}
+          {type === TOOLTIP_TYPE.UNLOCK ? <Lock style={styles.icon} /> : null}
         </View>
         <View style={styles.text}>
           <Html fontSize={theme.fontSize.regular}>{children}</Html>

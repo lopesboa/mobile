@@ -101,7 +101,7 @@ class CatalogItem extends React.PureComponent<Props> {
           style={[styles.content, (size === 'cover' && styles.imageCover) || styles.image]}
           gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
         >
-          {item && item.isNew && (
+          {item && item.isNew ? (
             <View style={styles.badge}>
               <CatalogItemBadge
                 label={translations.formatString(
@@ -113,7 +113,7 @@ class CatalogItem extends React.PureComponent<Props> {
                 testID={`${testID}-badge`}
               />
             </View>
-          )}
+          ) : null}
           <CatalogItemContent item={item} size={size} testID={`${testID}-content`} />
         </ImageBackground>
       </Touchable>

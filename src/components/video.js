@@ -134,7 +134,7 @@ const Video = ({
       style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
       testID={`${testID}${testIDSuffix}-container`}
     >
-      {[STEP.PREVIEW, STEP.LOADING].includes(step) && (
+      {[STEP.PREVIEW, STEP.LOADING].includes(step) ? (
         <Preview
           type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.VIDEO}
           source={preview}
@@ -142,8 +142,8 @@ const Video = ({
           onPress={onPlay}
           testID={`${testID}-preview`}
         />
-      )}
-      {[STEP.PLAY, STEP.END].includes(step) && (
+      ) : null}
+      {[STEP.PLAY, STEP.END].includes(step) ? (
         <React.Fragment>
           <BlackPortal name="video">
             <VideoPlayer
@@ -174,10 +174,10 @@ const Video = ({
               isCC={Boolean(selectedTrack)}
             />
           </BlackPortal>
-          {(Platform.OS !== 'android' || !isFullScreen) && <WhitePortal name="video" />}
+          {Platform.OS !== 'android' || !isFullScreen ? <WhitePortal name="video" /> : null}
         </React.Fragment>
-      )}
-      {[STEP.END, STEP.ERROR].includes(step) && (
+      ) : null}
+      {[STEP.END, STEP.ERROR].includes(step) ? (
         <ResourceOverlay>
           <Touchable
             onPress={onPlay}
@@ -186,15 +186,15 @@ const Video = ({
             analyticsID={`video-${step}-replay`}
           >
             <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
-            {step === STEP.ERROR && (
+            {step === STEP.ERROR ? (
               <React.Fragment>
                 <Space />
                 <Text style={styles.error}>{translations.videoLoadingError}</Text>
               </React.Fragment>
-            )}
+            ) : null}
           </Touchable>
         </ResourceOverlay>
-      )}
+      ) : null}
     </View>
   );
 };

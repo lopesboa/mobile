@@ -40,11 +40,11 @@ const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: Props) => (
         pointerEvents="none"
       />
     </View>
-    {layout && (
+    {layout ? (
       <View style={[styles.cta, {width: layout.width - theme.spacing.base * 2}]}>
         <Button {...props} isInverted />
       </View>
-    )}
+    ) : null}
   </React.Fragment>
 );
 

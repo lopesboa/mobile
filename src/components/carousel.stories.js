@@ -25,12 +25,16 @@ const renderItem = ({item: {title, color}, index}) => (
   </Text>
 );
 
-storiesOf('Carousel', module).add('Default', () => (
-  <Carousel
-    data={data}
-    renderItem={renderItem}
-    currentIndex={1}
-    onChange={handleFakePress}
-    layout={fakeLayout}
-  />
-));
+storiesOf('Carousel', module)
+  .add('Default', () => (
+    <Carousel data={data} renderItem={renderItem} currentIndex={1} onChange={handleFakePress} />
+  ))
+  .add('With layout', () => (
+    <Carousel
+      data={data}
+      renderItem={renderItem}
+      currentIndex={1}
+      onChange={handleFakePress}
+      layout={fakeLayout}
+    />
+  ));

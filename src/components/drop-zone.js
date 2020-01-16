@@ -66,9 +66,9 @@ class DropZone extends React.PureComponent<Props> {
 
     return (
       <View style={[styles.dropZone, hasNoSelectedChoices && styles.emptyContent]}>
-        {hasNoSelectedChoices && (
+        {hasNoSelectedChoices ? (
           <Text style={styles.text}>{translations.selectSomethingBelow}</Text>
-        )}
+        ) : null}
 
         {!hasNoSelectedChoices && mappedSortedChoices}
       </View>

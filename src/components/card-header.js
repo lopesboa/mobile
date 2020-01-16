@@ -79,20 +79,20 @@ const CardHeader = ({type, isCorrect, title}: Props) => {
         type === CARD_TYPE.RESOURCE && styles.headerResource
       ]}
     >
-      {type === CARD_TYPE.TIP && <TipIcon color="#ffc035" style={styles.headerTipIcon} />}
-      {type === CARD_TYPE.KEY_POINT && (
+      {type === CARD_TYPE.TIP ? <TipIcon color="#ffc035" style={styles.headerTipIcon} /> : null}
+      {type === CARD_TYPE.KEY_POINT ? (
         <KeyPointIcon color="#ff7043" style={styles.headerKeyPointIcon} />
-      )}
+      ) : null}
 
-      {type === CARD_TYPE.CORRECTION && isCorrect && (
+      {type === CARD_TYPE.CORRECTION && isCorrect ? (
         <CorrectionIcon color="#3ec483" style={styles.headerCorrectionIcon} />
-      )}
-      {type === CARD_TYPE.CORRECTION && !isCorrect && (
+      ) : null}
+      {type === CARD_TYPE.CORRECTION && !isCorrect ? (
         <CloseIcon color={theme.colors.negative} style={styles.headerCorrectionIcon} />
-      )}
-      {type === CARD_TYPE.RESOURCE && (
+      ) : null}
+      {type === CARD_TYPE.RESOURCE ? (
         <ResourceIcon color="#16affc" style={styles.headerCorrectionIcon} />
-      )}
+      ) : null}
       <Text style={styles.headerText} numberOfLines={1}>
         {title}
       </Text>

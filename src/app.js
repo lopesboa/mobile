@@ -78,7 +78,7 @@ class App extends React.PureComponent<Props> {
               </BrandThemeProvider>
             </UserProvider>
             <ConnectionListener />
-            {Platform.OS === 'android' && <VideoFullscreenListener />}
+            {Platform.OS === 'android' ? <VideoFullscreenListener /> : null}
           </PortalProvider>
         </ReduxNetworkProvider>
       </Provider>

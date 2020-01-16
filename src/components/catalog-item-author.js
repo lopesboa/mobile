@@ -43,15 +43,15 @@ const CatalogItemAuthor = ({type, name = '', size, testID}: Props) => {
       testID={`author-${testID}`}
       style={[styles.text, type === AUTHOR_TYPE.COORP && letterSpacingStyle, textStyle]}
     >
-      {type === AUTHOR_TYPE.COORP && (
+      {type === AUTHOR_TYPE.COORP ? (
         <React.Fragment>
           COORP <Text style={styles.bold}>ORIGINAL</Text>
         </React.Fragment>
-      )}
+      ) : null}
       {type === AUTHOR_TYPE.MARKETPLACE && name && name.toUpperCase()}
-      {type === AUTHOR_TYPE.CUSTOM && (
+      {type === AUTHOR_TYPE.CUSTOM ? (
         <React.Fragment>{name && name.toUpperCase()} CREATION</React.Fragment>
-      )}
+      ) : null}
     </Text>
   );
 };

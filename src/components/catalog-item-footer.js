@@ -143,7 +143,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   return (
     <View style={styles.container} testID={testID}>
       <View style={styles.icons}>
-        {!isHero && item.type === CONTENT_TYPE.CHAPTER && (
+        {!isHero && item.type === CONTENT_TYPE.CHAPTER ? (
           <React.Fragment>
             <NovaCompositionCoorpacademyTimer
               testID={`infinite-${testID}`}
@@ -153,15 +153,15 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
             />
             <Space />
           </React.Fragment>
-        )}
-        {!isHero && item.adaptiv && (
+        ) : null}
+        {!isHero && item.adaptiv ? (
           <NovaCompositionCoorpacademyAdaptive
             testID={`infinite-${testID}`}
             color={theme.colors.white}
             height={topIconSize}
             width={topIconSize}
           />
-        )}
+        ) : null}
       </View>
       <Space type="tiny" />
       <Text
@@ -180,7 +180,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
             >
               {subtitle}
             </Text>
-            {author && author.authorType === AUTHOR_TYPE.VERIFIED && size !== 'hero' && (
+            {author && author.authorType === AUTHOR_TYPE.VERIFIED && size !== 'hero' ? (
               <React.Fragment>
                 <Space type="tiny" />
                 <NovaSolidStatusCheckCircle2
@@ -190,7 +190,7 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
                   width={iconCertifiedSize}
                 />
               </React.Fragment>
-            )}
+            ) : null}
           </View>
         </React.Fragment>
       ) : null}

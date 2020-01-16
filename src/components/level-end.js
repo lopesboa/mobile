@@ -222,11 +222,11 @@ class LevelEnd extends React.PureComponent<Props> {
                   <Text style={styles.mainHeader} testID={`${testID}-header`}>
                     {header}
                   </Text>
-                  {!isSuccess && (
+                  {!isSuccess ? (
                     <Text style={styles.subHeader} testID={`${testID}-subtitle`}>
                       {translations.outOfLives}
                     </Text>
-                  )}
+                  ) : null}
                 </View>
                 {isSuccess ? (
                   <Trophy style={[styles.icon, {height: screenWidth}]} />
@@ -235,16 +235,16 @@ class LevelEnd extends React.PureComponent<Props> {
                 )}
                 <Space />
                 <View style={styles.content}>
-                  {isSuccess && (bestScore > 0 || nextContentType === CONTENT_TYPE.LEVEL) && (
+                  {isSuccess && (bestScore > 0 || nextContentType === CONTENT_TYPE.LEVEL) ? (
                     <View>
-                      {bestScore > 0 && (
+                      {bestScore > 0 ? (
                         <Tooltip type={TOOLTIP_TYPE.HIGHSCORE} testID={`${testID}-highscore`}>
                           {translations.highscore.replace(/{{score}}/g, `+${bestScore}`)}
                         </Tooltip>
-                      )}
-                      {nextContentType === CONTENT_TYPE.LEVEL && (
+                      ) : null}
+                      {nextContentType === CONTENT_TYPE.LEVEL ? (
                         <React.Fragment>
-                          {bestScore > 0 && <Space type="tiny" />}
+                          {bestScore > 0 ? <Space type="tiny" /> : null}
                           <Tooltip type={TOOLTIP_TYPE.UNLOCK} testID={`${testID}-unlock`}>
                             {translations.unlockNextLevel.replace(
                               /{{levelName}}/g,
@@ -252,12 +252,12 @@ class LevelEnd extends React.PureComponent<Props> {
                             )}
                           </Tooltip>
                         </React.Fragment>
-                      )}
+                      ) : null}
                       <Space type="base" />
                     </View>
-                  )}
+                  ) : null}
                   {/* @todo refactor to use CatalogSection there and not reinvent the wheel */}
-                  {recommendation && (
+                  {recommendation ? (
                     <View style={styles.recommendation} testID="recommend-item">
                       <Text style={styles.title}>{translations.relatedSubjects}</Text>
                       <Card type={CARD_LAYOUT.CONTAIN} style={styles.card}>
@@ -273,11 +273,11 @@ class LevelEnd extends React.PureComponent<Props> {
                         />
                       </Card>
                     </View>
-                  )}
+                  ) : null}
                 </View>
               </View>
             </ScrollView>
-            {isFocused && isSuccess && (
+            {isFocused && isSuccess ? (
               <View pointerEvents="none" style={styles.confettisContainer}>
                 <ConfettiCannon
                   count={100}
@@ -286,7 +286,7 @@ class LevelEnd extends React.PureComponent<Props> {
                   explosionSpeed={900}
                 />
               </View>
-            )}
+            ) : null}
             <ButtonSticky
               onPress={this.handleButtonPress}
               testID={`button-${isSuccess ? 'next' : 'retry'}-level`}

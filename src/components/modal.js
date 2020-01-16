@@ -77,13 +77,13 @@ const Modal = ({
         type="close"
       />
     </View>
-    {renderIcon && (
+    {renderIcon ? (
       <View style={styles.icon}>
         <View style={[styles.iconContent, {backgroundColor: iconBackgroundColor}]}>
           {renderIcon()}
         </View>
       </View>
-    )}
+    ) : null}
     <View
       style={[
         styles.content,
