@@ -26,7 +26,7 @@ type Props = {|
   testID?: string
 |};
 
-const ModalSelectItem = ({isSelected, children, onPress, testID}: Props) => {
+const ModalSelectItem = ({isSelected, children, onPress, testID}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   const selectedTextStyle = {
     color: brandTheme.colors.primary

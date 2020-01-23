@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Trophy = ({testID, style}: Props) => {
+const Trophy = ({testID, style}: $ReadOnly<Props>) => {
   return (
     <View style={[styles.container, style]} testID={testID}>
       <TrophyIcon style={styles.trophy} />

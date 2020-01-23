@@ -96,7 +96,7 @@ const Question = ({
   step,
   value,
   testID
-}: Props) => {
+}: $ReadOnly<Props>) => {
   if (!type || !header || !explanation) {
     return (
       <View style={styles.containerPlaceholder}>

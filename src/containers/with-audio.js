@@ -24,14 +24,9 @@ export type WithAudioProps = {|
   audio: Audio
 |};
 
-function withAudio<P>(
-  WrappedComponent: React$ComponentType<P>
-): React$ComponentType<$Exact<{|...WithAudioProps, ...P|}>> {
-  type Props = $Exact<{|
-    ...P,
-    ...WithAudioProps
-  |}>;
+type Props<P> = P & WithAudioProps;
 
+function withAudio<P>(WrappedComponent: React$ComponentType<P>): React$ComponentType<Props<P>> {
   const audio: Audio = {
     AUDIO_FILE,
     play: (soundFile: File) => {
@@ -49,7 +44,9 @@ function withAudio<P>(
     }
   };
 
-  const ComponentWithAudio = (props: Props) => <WrappedComponent {...props} audio={audio} />;
+  const ComponentWithAudio = (props: $ReadOnly<Props<P>>) => (
+    <WrappedComponent {...props} audio={audio} />
+  );
 
   return hoistNonReactStatic(ComponentWithAudio, WrappedComponent);
 }

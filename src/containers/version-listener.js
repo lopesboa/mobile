@@ -14,8 +14,8 @@ type State = {|
   appState?: ?AppState
 |};
 
-class VersionListener extends React.PureComponent<Props, State> {
-  props: Props;
+class VersionListener extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     // $FlowFixMe the base type is weak

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
+const CardCorrection = ({question, userAnswers, answers, isCorrect}: $ReadOnly<Props>) => (
   <View style={styles.container}>
     <Html fontSize={theme.fontSize.regular} style={styles.text}>
       {question}

@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class Browser extends React.PureComponent<Props> {
-  props: Props;
+class Browser extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   static navigationOptions = (screenProps: ReactNavigation$ScreenProps) => {
     const {navigationOptions, navigation} = screenProps;

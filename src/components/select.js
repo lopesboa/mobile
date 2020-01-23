@@ -17,8 +17,7 @@ import Space from './space';
 import Touchable from './touchable';
 import Text from './text';
 
-export type Props = {|
-  ...WithAnalyticsProps,
+type OwnProps = {|
   analyticsID: string,
   questionType: QuestionType,
   isDisabled?: boolean,
@@ -35,6 +34,8 @@ export type Props = {|
   testID?: string
 |};
 
+export type Props = WithAnalyticsProps & OwnProps;
+
 const ICON_WIDTH = 15;
 
 const styles = StyleSheet.create({
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class Select extends React.PureComponent<Props> {
-  props: Props;
+class Select extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   logEvent = (event: AnalyticsEventType) => {
     const {analytics, analyticsID, questionType} = this.props;
@@ -123,4 +124,4 @@ class Select extends React.PureComponent<Props> {
 }
 
 export {Select as Component};
-export default withAnalytics(Select);
+export default withAnalytics<OwnProps>(Select);

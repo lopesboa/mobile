@@ -33,7 +33,7 @@ describe('Browser', () => {
     const navigation = createNavigation({
       params
     });
-    const props: Props = {
+    const props: $ReadOnly<Props> = {
       navigation,
       navigationOptions: {}
     };

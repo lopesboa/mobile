@@ -44,15 +44,13 @@ export type Engine = 'learner' | 'microlearning';
 
 export type ContentType = ContentTypeBase | 'discipline' | 'success' | 'failure' | 'node';
 
-export type Resource = {|
-  ...Lesson,
+export type Resource = Lesson & {|
   url: string
 |};
 
-export type GenericContent = $Exact<{|
-  ...GenericContentBase,
+export type GenericContent = GenericContentBase & {|
   type: ContentType
-|}>;
+|};
 
 export type ProgressionCount = {|
   current: number,

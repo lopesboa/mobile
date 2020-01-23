@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Props) => {
+const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
 
   if (isFetching) {

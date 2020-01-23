@@ -122,7 +122,7 @@ const Video = ({
   onProgress,
   testID = 'video',
   extralifeOverlay = false
-}: Props) => {
+}: $ReadOnly<Props>) => {
   const testIDSuffix = isFullScreen ? '-fullscreen' : '';
   const containerHeight = (!isFullScreen && height) || undefined;
   const defaultTracks: Array<Track> = Platform.OS === 'ios' ? [EMPTY_TRACK] : [];

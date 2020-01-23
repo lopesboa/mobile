@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Progression = ({current, count}: Props) => {
+const Progression = ({current, count}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   return (
     <View testID="progression">

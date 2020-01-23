@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const AuthenticationStep = ({icon: Icon, step, description}: Props) => {
+const AuthenticationStep = ({icon: Icon, step, description}: $ReadOnly<Props>) => {
   const title = translations.formatString(
     '{0} <b>{1}</b>',
     translations.step.toUpperCase(),

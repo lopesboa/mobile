@@ -13,8 +13,7 @@ import type {WithAnalyticsProps} from '../containers/with-analytics';
 import Select from '../containers/select';
 import {BrandThemeContext} from './brand-theme-provider';
 
-type Props = $Exact<{|
-  ...WithAnalyticsProps,
+type OwnProps = {|
   id: string,
   isDisabled?: boolean,
   questionType: QuestionType,
@@ -24,7 +23,9 @@ type Props = $Exact<{|
   onChange: (value: string) => void,
   testID?: string,
   fullWitdh?: boolean
-|}>;
+|};
+
+type Props = WithAnalyticsProps & OwnProps;
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 export const ROW_SPACE = theme.spacing.tiny;
@@ -52,8 +53,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class QuestionInput extends React.PureComponent<Props> {
-  props: Props;
+class QuestionInput extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   logEvent = (event: AnalyticsEventType) => {
     const {analytics, type, questionType} = this.props;
@@ -147,4 +148,4 @@ class QuestionInput extends React.PureComponent<Props> {
 }
 
 export {QuestionInput as Component};
-export default withAnalytics(QuestionInput);
+export default withAnalytics<OwnProps>(QuestionInput);

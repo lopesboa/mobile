@@ -13,8 +13,8 @@ type Props = {|
   style?: ViewStyleProp
 |};
 
-class NotificationAnimated extends React.PureComponent<Props> {
-  props: Props;
+class NotificationAnimated extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   bounce: Animated.Value = new Animated.Value(0);
 

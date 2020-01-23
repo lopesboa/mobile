@@ -51,12 +51,12 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class QuestionScreen extends React.PureComponent<Props> {
-  props: Props;
+class QuestionScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   scrollView: KeyboardAwareScrollView | void;
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     if (this.scrollView && this.props.slideId && prevProps.slideId !== this.props.slideId) {
       this.scrollView.props.scrollToPosition(0, 0, true);
     }

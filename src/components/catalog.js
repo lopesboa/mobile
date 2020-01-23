@@ -31,8 +31,8 @@ export const SEPARATOR_HEIGHT = theme.spacing[SEPARATOR_SIZE];
 export const HERO_HEIGHT = _HERO_HEIGHT;
 const PLACEHOLDER_LENGTH = 3;
 
-class Catalog extends React.Component<Props> {
-  props: Props;
+class Catalog extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   keyExtractor = (item: Section | void, index: number) => {
     const suffix = (item && item.key) || `${index}-placeholder`;

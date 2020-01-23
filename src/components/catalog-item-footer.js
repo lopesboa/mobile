@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CatalogItemFooter = ({item, testID, size}: Props) => {
+const CatalogItemFooter = ({item, testID, size}: $ReadOnly<Props>) => {
   const isHero = size === 'hero';
 
   if (!item) {

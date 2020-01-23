@@ -17,8 +17,8 @@ type Props = {|
 
 const BAR_HEIGHT = 3;
 
-class ProgressionBar extends React.PureComponent<Props> {
-  props: Props;
+class ProgressionBar extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   percentage: Animated.Value = new Animated.Value(this.props.current / this.props.count);
 

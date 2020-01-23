@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ClueFrontItem = ({onPress, starsDiff}: Props) => (
+const ClueFrontItem = ({onPress, starsDiff}: $ReadOnly<Props>) => (
   <React.Fragment>
     <View style={styles.container}>
       <Text style={styles.text} testID="clue-advice">

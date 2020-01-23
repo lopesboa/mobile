@@ -79,14 +79,10 @@ export type OwnProps = {|
   style?: ViewStyleProp
 |};
 
-export type Props = $Exact<{|
-  ...WithAnalyticsProps,
-  ...WithVibrationProps,
-  ...OwnProps
-|}>;
+export type Props = WithAnalyticsProps & WithVibrationProps & OwnProps;
 
-class Button extends React.PureComponent<Props> {
-  props: Props;
+class Button extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     const {onPress, vibration, analytics, analyticsID, analyticsParams} = this.props;
@@ -183,4 +179,4 @@ class Button extends React.PureComponent<Props> {
 }
 
 export {Button as Component};
-export default withVibration(withAnalytics(Button));
+export default withVibration<OwnProps & WithAnalyticsProps>(withAnalytics<OwnProps>(Button));

@@ -23,7 +23,7 @@ export const initialState: State = null;
 
 export const UserContext: React.Context<State> = React.createContext(initialState);
 
-const UserProvider = ({children, user}: Props) => (
+const UserProvider = ({children, user}: $ReadOnly<Props>) => (
   <UserContext.Provider value={user}>{children}</UserContext.Provider>
 );
 

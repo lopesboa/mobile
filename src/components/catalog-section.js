@@ -52,8 +52,8 @@ export type Props = {|
   testID: string
 |};
 
-class CatalogSection extends React.Component<Props> {
-  props: Props;
+class CatalogSection extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   offsetX: number = 0;
 

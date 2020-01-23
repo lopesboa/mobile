@@ -10,10 +10,9 @@ import Button from './button';
 import type {OwnProps as ButtonProps} from './button';
 import Gradient from './gradient';
 
-export type Props = $Exact<{|
-  ...WithLayoutProps,
-  ...ButtonProps
-|}>;
+type OwnProps = ButtonProps
+
+export type Props = WithLayoutProps & OwnProps;
 
 export const HEIGHT = 140;
 
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: Props) => (
+const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: $ReadOnly<Props>) => (
   <React.Fragment>
     <View style={styles.gradient} pointerEvents="none" onLayout={onLayout}>
       <Gradient
@@ -49,6 +48,6 @@ const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: Props) => (
 );
 
 export {ButtonSticky as Component};
-export default withLayout(ButtonSticky, {
+export default withLayout<OwnProps>(ButtonSticky, {
   withoutContainer: true
 });

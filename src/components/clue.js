@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (
+const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: $ReadOnly<Props>) => (
   <View style={styles.container} testID={testID}>
     <View style={styles.questionContainer}>
       <QuestionTitle isTextCentered>{header}</QuestionTitle>

@@ -33,7 +33,7 @@ const HeaderSlideRight = ({
   isFastSlideEnabled,
   onPress,
   onLongPress
-}: Props) => {
+}: $ReadOnly<Props>) => {
   let testID = 'header-slide-right';
 
   if (isGodModeEnabled) {

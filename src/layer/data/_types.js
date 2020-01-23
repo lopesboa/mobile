@@ -42,20 +42,18 @@ type Poster = {|
   src?: Array<Source>
 |};
 
-export type Level = $Exact<{|
-  ...LevelAPI,
+export type Level = LevelAPI & {|
   _id: string,
   deliverCoachStatus: boolean,
   taggedNewUntil: string,
   name: string,
   levelTranslation: string,
   bestScore?: number
-|}>;
+|};
 
 export type LevelType = 'base' | 'advanced' | 'coach';
 
-export type Chapter = $Exact<{|
-  ...ChapterAPI,
+export type Chapter = ChapterAPI & {|
   universalRef: string,
   version: string,
   time: number,
@@ -70,23 +68,21 @@ export type Chapter = $Exact<{|
   name: string,
   partners: Array<Partner>,
   bestScore?: number
-|}>;
+|};
 
 type Author = string;
 
-export type Slide = $Exact<{|
-  ...SlideAPI,
+export type Slide = SlideAPI & {|
   lessons: Array<Lesson>,
   universalRef: string,
   authors: Array<Author>,
   context: Context
-|}>;
+|};
 
-export type ExitNode = $Exact<{
-  ...ExitNodeAPI,
+export type ExitNode = ExitNodeAPI & {|
   ref: string,
   _id: string
-}>;
+|};
 
 export type RestrictedResourceType = 'level' | 'chapter' | 'slide' | 'discipline';
 export type ResourceType = 'chapterRule' | 'exitNode' | 'card' | RestrictedResourceType;
@@ -100,10 +96,9 @@ export type ExtentedMedia = {|
   src: Array<string>
 |};
 
-export type Discipline = $Exact<{|
-  ...DisciplineStore,
+export type Discipline = DisciplineStore & {|
   modules: Array<Level>
-|}>;
+|};
 
 export type BundledChapter = {|
   // $FlowFixMe dont understand "looks promising" from Flow

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Notification = ({height = DEFAULT_HEIGHT, testID}: Props) => {
+const Notification = ({height = DEFAULT_HEIGHT, testID}: $ReadOnly<Props>) => {
   const style: ViewStyleProp = {
     height,
     width: height,

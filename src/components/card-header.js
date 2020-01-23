@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CardHeader = ({type, isCorrect, title}: Props) => {
+const CardHeader = ({type, isCorrect, title}: $ReadOnly<Props>) => {
   const correctionBackgroundColor =
     (isCorrect && styles.headerCorrectionBGColorIsCorrect) ||
     styles.headerCorrectionBGColorIsNotCorrect;

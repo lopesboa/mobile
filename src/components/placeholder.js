@@ -8,7 +8,7 @@ type Props = {|
   style?: ViewStyleProp
 |};
 
-const Placeholder = ({children, style}: Props) => (
+const Placeholder = ({children, style}: $ReadOnly<Props>) => (
   <PlaceholderBase style={style}>{children}</PlaceholderBase>
 );
 

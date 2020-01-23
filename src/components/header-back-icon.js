@@ -18,7 +18,7 @@ const HeaderBackIcon = ({
   height = 16,
   width = 16,
   style
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <View style={style}>
     <BackIcon color={color} height={height} width={width} />
   </View>

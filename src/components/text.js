@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Text = ({testID, children, style, numberOfLines}: Props) => (
+const Text = ({testID, children, style, numberOfLines}: $ReadOnly<Props>) => (
   <TextBase style={[styles.text, style]} testID={testID} numberOfLines={numberOfLines}>
     {children}
   </TextBase>

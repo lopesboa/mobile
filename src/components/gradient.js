@@ -22,7 +22,7 @@ const Gradient = ({
   style,
   testID,
   pointerEvents
-}: Props) => {
+}: $ReadOnly<Props>) => {
   let calculatedColors = colors;
   if (colors.length === 1) {
     const {r, g, b} = Color(colors[0]).object();

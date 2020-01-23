@@ -52,7 +52,7 @@ const PlaceholderLine = ({
   width,
   isCentered,
   style
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <View
     style={[
       styles.container,

@@ -41,14 +41,9 @@ export type WithVibrationProps = {|
   vibration: Vibration
 |};
 
-function withVibration<P>(
-  WrappedComponent: React$ComponentType<P>
-): React$ComponentType<$Exact<{|...WithVibrationProps, ...P|}>> {
-  type Props = $Exact<{|
-    ...P,
-    ...WithVibrationProps
-  |}>;
+type Props<P> = P & WithVibrationProps;
 
+function withVibration<P>(WrappedComponent: React$ComponentType<P>): React$ComponentType<Props<P>> {
   const vibration: Vibration = {
     VIBRATION_TYPE,
     vibrate: (vibrationType?: VibrationType = VIBRATION_TYPE.IMPACT_LIGHT) =>
@@ -58,7 +53,7 @@ function withVibration<P>(
       })
   };
 
-  const ComponentWithVibration = (props: Props) => (
+  const ComponentWithVibration = (props: $ReadOnly<Props<P>>) => (
     <WrappedComponent {...props} vibration={vibration} />
   );
 

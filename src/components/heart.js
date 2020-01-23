@@ -16,7 +16,7 @@ type Props = {|
   height: number
 |};
 
-const Heart = ({height}: Props) => (
+const Heart = ({height}: $ReadOnly<Props>) => (
   <View style={styles.container}>
     <LottieView source={animation} autoPlay loop style={{height, width: height}} />
   </View>

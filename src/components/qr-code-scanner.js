@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class QRCodeScanner extends React.PureComponent<Props> {
-  props: Props;
+class QRCodeScanner extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleRead = ({data}: Event) => {
     this.props.onScan(typeof data === 'string' ? data : undefined);

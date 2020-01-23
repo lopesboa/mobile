@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class DropZone extends React.PureComponent<Props> {
-  props: Props;
+class DropZone extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = (item: Choice) => () => this.props.onPress(item);
 

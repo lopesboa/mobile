@@ -66,7 +66,7 @@ const Modal = ({
   contentStyle,
   onClose,
   testID
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <View style={styles.container} testID={testID}>
     <View style={[styles.header, {backgroundColor: headerBackgroundColor}]}>
       <HeaderBackButton

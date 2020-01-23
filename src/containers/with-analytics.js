@@ -15,15 +15,10 @@ const dataLayer = createDataLayer();
 const services = createServices(dataLayer);
 const analytics = services.Analytics;
 
-function withAnalytics<P>(
-  WrappedComponent: React$ComponentType<P>
-): React$ComponentType<$Exact<{|...WithAnalyticsProps, ...P|}>> {
-  type Props = $Exact<{|
-    ...P,
-    ...WithAnalyticsProps
-  |}>;
+type Props<P> = P & WithAnalyticsProps;
 
-  const ComponentWithAnalytics = (props: Props) => (
+function withAnalytics<P>(WrappedComponent: React$ComponentType<P>): React$ComponentType<Props<P>> {
+  const ComponentWithAnalytics = (props: $ReadOnly<Props<P>>) => (
     <WrappedComponent {...props} analytics={analytics} />
   );
 

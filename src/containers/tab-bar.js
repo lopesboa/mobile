@@ -8,13 +8,12 @@ import {BrandThemeContext} from '../components/brand-theme-provider';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
-type Props = {|
-  ...WithVibrationProps,
-  ...$Exact<_BottomTabBarProps>
-|};
+type OwnProps = _BottomTabBarProps;
 
-class TabBar extends React.Component<Props> {
-  props: Props;
+type Props = WithVibrationProps & OwnProps;
+
+class TabBar extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleTabPress = (scene: TabScene) => {
     const {onTabPress, vibration} = this.props;
@@ -47,4 +46,4 @@ class TabBar extends React.Component<Props> {
 }
 
 export {TabBar as Component};
-export default withVibration(TabBar);
+export default withVibration<OwnProps>(TabBar);

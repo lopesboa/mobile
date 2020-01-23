@@ -18,7 +18,7 @@ type Props = {|
   ...ConnectedStateProps
 |};
 
-const Progression = ({isHidden, current, count}: Props) => {
+const Progression = ({isHidden, current, count}: $ReadOnly<Props>) => {
   if (isHidden || !current || !count) {
     return null;
   }

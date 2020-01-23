@@ -37,17 +37,14 @@ export type Params = {|
   progressionId: string
 |};
 
-type Props = $Exact<{|
-  ...ReactNavigation$ScreenPropsWithParams<Params>,
-  ...ConnectedStateProps
-|}>;
+type Props = ReactNavigation$ScreenPropsWithParams<Params> & ConnectedStateProps;
 
 type State = {|
   isFocused: boolean
 |};
 
-class LevelEndScreen extends React.PureComponent<Props, State> {
-  props: Props;
+class LevelEndScreen extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State;
 

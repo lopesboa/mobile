@@ -9,20 +9,19 @@ type State = {|
   currentIndex: number
 |};
 
-export type Props<ItemT> = {|
-  ...$Rest<
-    CarouselProps<ItemT>,
-    {|
-      currentIndex: $PropertyType<CarouselProps<ItemT>, 'currentIndex'>,
-      onChange: $PropertyType<CarouselProps<ItemT>, 'onChange'>
-    |}
-  >,
+export type Props<ItemT> = $Rest<
+  CarouselProps<ItemT>,
+  {|
+    currentIndex: $PropertyType<CarouselProps<ItemT>, 'currentIndex'>,
+    onChange: $PropertyType<CarouselProps<ItemT>, 'onChange'>
+  |}
+> & {|
   currentIndex?: $PropertyType<CarouselProps<ItemT>, 'currentIndex'>,
   onChange?: $PropertyType<CarouselProps<ItemT>, 'onChange'>
 |};
 
-class Carousel<ItemT> extends React.PureComponent<Props<ItemT>, State> {
-  props: Props<ItemT>;
+class Carousel<ItemT> extends React.PureComponent<$ReadOnly<Props<ItemT>>, State> {
+  props: $ReadOnly<Props<ItemT>>;
 
   state: State = {
     currentIndex: this.props.currentIndex || 0

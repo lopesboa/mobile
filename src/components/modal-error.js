@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
 
 const ICON_SIZE = 50;
 
-class ModalError extends React.PureComponent<Props> {
-  props: Props;
+class ModalError extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   renderIcon = () => {
     const {type} = this.props;

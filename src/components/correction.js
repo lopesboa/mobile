@@ -101,10 +101,7 @@ const styles = StyleSheet.create({
   }
 });
 
-type Props = $Exact<{|
-  ...WithLayoutProps,
-  ...WithVibrationProps,
-  ...WithAudioProps,
+type OwnProps = {|
   question: string,
   answers: Array<string>,
   userAnswers: Array<string>,
@@ -122,12 +119,14 @@ type Props = $Exact<{|
   onPDFButtonPress: (url: string, description: string) => void,
   onVideoPlay: () => void,
   testID?: string
-|}>;
+|};
 
-class Correction extends React.PureComponent<Props> {
-  props: Props;
+type Props = WithLayoutProps & WithVibrationProps & WithAudioProps & OwnProps;
 
-  componentDidUpdate(prevProps: Props) {
+class Correction extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
+
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     const {isCorrect, vibration, audio} = this.props;
 
     if (prevProps.isCorrect === undefined && isCorrect !== undefined) {
@@ -383,4 +382,6 @@ class Correction extends React.PureComponent<Props> {
 }
 
 export {Correction as Component};
-export default withVibration(withAudio(withLayout(Correction)));
+export default withVibration<OwnProps & WithAudioProps & WithLayoutProps>(
+  withAudio<OwnProps & WithLayoutProps>(withLayout<OwnProps>(Correction))
+);

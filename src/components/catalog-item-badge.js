@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Badge = ({label, size, testID}: Props) => {
+const Badge = ({label, size, testID}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   const fontSize = size === 'cover' ? theme.fontSize.small : theme.fontSize.extraSmall;
   const labelStyle = {

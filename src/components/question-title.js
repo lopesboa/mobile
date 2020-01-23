@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const QuestionTitle = ({children, isTextCentered}: Props) => {
+const QuestionTitle = ({children, isTextCentered}: $ReadOnly<Props>) => {
   return (
     <Html
       fontSize={theme.fontSize.large}

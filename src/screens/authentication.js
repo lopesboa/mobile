@@ -28,11 +28,7 @@ type ConnectedDispatchProps = {|
   signIn: typeof signIn
 |};
 
-type Props = {|
-  ...ReactNavigation$ScreenProps,
-  ...ConnectedStateProps,
-  ...ConnectedDispatchProps
-|};
+type Props = ReactNavigation$ScreenProps & ConnectedStateProps & ConnectedDispatchProps;
 
 type State = {|
   isSplashScreenHidden: boolean
@@ -44,8 +40,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class AuthenticationScreen extends React.PureComponent<Props, State> {
-  props: Props;
+class AuthenticationScreen extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     isSplashScreenHidden: false
@@ -60,7 +56,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     await this.runMigrations();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     if (prevProps.isAuthenticated && !this.props.isAuthenticated) {
       this.handleSignOut();
     }

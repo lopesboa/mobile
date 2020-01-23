@@ -78,7 +78,7 @@ const Authentication = ({
   onDesktopButtonPress,
   onMobileButtonPress,
   testID
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <React.Fragment>
     <ImageBackground
       source={background}

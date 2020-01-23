@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
   }
 });
 
-const Box = ({style, children}: Props) => <View style={[styles.box, style]}>{children}</View>;
+const Box = ({style, children}: $ReadOnly<Props>) => (
+  <View style={[styles.box, style]}>{children}</View>
+);
 
 export default Box;

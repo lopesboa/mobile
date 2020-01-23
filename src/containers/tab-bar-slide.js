@@ -26,10 +26,7 @@ type ConnectedStateToProps = {|
   hasNewLesson: boolean
 |};
 
-type Props = {|
-  ...ConnectedStateToProps,
-  ...$Exact<_BottomTabBarProps>
-|};
+type Props = ConnectedStateToProps & _BottomTabBarProps;
 
 const INACTIVE_COLOR = theme.colors.gray.lightMedium;
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
@@ -53,14 +50,14 @@ const styles = StyleSheet.create({
   }
 });
 
-class TabBarSlide extends React.Component<Props> {
-  props: Props;
+class TabBarSlide extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   componentDidMount() {
     this.switchTab();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     const {hasContext, isFocused, isSwitchDisabled} = this.props;
 
     const hasContextChanged = prevProps.hasContext !== hasContext;

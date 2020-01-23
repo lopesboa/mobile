@@ -24,8 +24,8 @@ type Props = {|
   ...ConnectedStateProps
 |};
 
-class VideoFullscreenListener extends React.PureComponent<Props> {
-  props: Props;
+class VideoFullscreenListener extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);

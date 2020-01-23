@@ -30,8 +30,8 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class HomeScreen extends React.PureComponent<Props> {
-  props: Props;
+class HomeScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
     this.props.navigation.navigate('Slide');

@@ -46,7 +46,7 @@ const HeaderBackButton = ({
   isFloating = true,
   noSafeArea = false,
   testID
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <View
     style={[
       styles.container,

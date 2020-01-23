@@ -5,14 +5,13 @@ import * as React from 'react';
 import AuthenticationStepsComponent from '../components/authentication-steps';
 import type {Props as AuthenticationStepsProps} from '../components/authentication-steps';
 
-export type Props = {|
-  ...$Rest<
-    AuthenticationStepsProps,
-    {|
-      currentIndex: $PropertyType<AuthenticationStepsProps, 'currentIndex'>,
-      onChange: $PropertyType<AuthenticationStepsProps, 'onChange'>
-    |}
-  >,
+export type Props = $Rest<
+  AuthenticationStepsProps,
+  {|
+    currentIndex: $PropertyType<AuthenticationStepsProps, 'currentIndex'>,
+    onChange: $PropertyType<AuthenticationStepsProps, 'onChange'>
+  |}
+> & {|
   currentIndex?: $PropertyType<AuthenticationStepsProps, 'currentIndex'>,
   onChange?: $PropertyType<AuthenticationStepsProps, 'onChange'>
 |};
@@ -21,8 +20,8 @@ type State = {|
   currentIndex: number
 |};
 
-class AuthenticationSteps extends React.PureComponent<Props, State> {
-  props: Props;
+class AuthenticationSteps extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     currentIndex: this.props.currentIndex || 0

@@ -9,7 +9,7 @@ type Props = {|
   type?: SpaceType
 |};
 
-const Space = ({type = 'tiny'}: Props) => (
+const Space = ({type = 'tiny'}: $ReadOnly<Props>) => (
   <View style={{width: theme.spacing[type], height: theme.spacing[type]}} />
 );
 

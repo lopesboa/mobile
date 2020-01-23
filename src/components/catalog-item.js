@@ -50,16 +50,15 @@ type AnalyticsParams = {|
   section?: string
 |};
 
-type Props = $Exact<{|
-  ...AnalyticsParams,
+type Props = AnalyticsParams & {|
   item?: DisciplineCard | ChapterCard,
   onPress?: (DisciplineCard | ChapterCard) => void,
   size?: 'cover',
   testID?: string
-|}>;
+|};
 
-class CatalogItem extends React.PureComponent<Props> {
-  props: Props;
+class CatalogItem extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     const {onPress, item} = this.props;
@@ -76,6 +75,9 @@ class CatalogItem extends React.PureComponent<Props> {
       section
     };
 
+    const gradient = ['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)'];
+    const defaultGradient = ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)'];
+
     return (
       <Touchable
         testID={testID}
@@ -89,14 +91,7 @@ class CatalogItem extends React.PureComponent<Props> {
         <ImageBackground
           testID={`${testID}-image`}
           source={item && {uri: item.image}}
-          gradient={
-            (item && ['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)']) || [
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)'
-            ]
-          }
+          gradient={(item && gradient) || defaultGradient}
           resizeMode="cover"
           style={[styles.content, (size === 'cover' && styles.imageCover) || styles.image]}
           gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}

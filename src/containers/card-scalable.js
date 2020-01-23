@@ -12,9 +12,7 @@ import Gradient from '../components/gradient';
 import Touchable from '../components/touchable';
 import {CARD_TYPE} from '../const';
 
-type Props = $Exact<{|
-  ...CardProps,
-  ...CardHeaderProps,
+type Props = CardProps & CardHeaderProps & {|
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
@@ -22,7 +20,7 @@ type Props = $Exact<{|
   offsetBottom: number,
   expandedOffsetBottom: number,
   testID?: string
-|}>;
+|};
 
 type State = {|
   isExpanded: boolean
@@ -51,8 +49,8 @@ const styles = StyleSheet.create({
 
 const ANIMATION_DURATION = 200;
 
-class CardScalable extends React.PureComponent<Props, State> {
-  props: Props;
+class CardScalable extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     isExpanded: Boolean(this.props.isExpanded)
@@ -62,12 +60,12 @@ class CardScalable extends React.PureComponent<Props, State> {
 
   height: Animated.Value = new Animated.Value(this.props.height - this.props.offsetBottom);
 
-  componentWillReceiveProps = (props: Props) =>
+  componentWillReceiveProps = (props: $ReadOnly<Props>) =>
     this.setState({
       isExpanded: Boolean(props.isExpanded)
     });
 
-  componentWillUpdate = (nextProps: Props, nextState: State) => {
+  componentWillUpdate = (nextProps: $ReadOnly<Props>, nextState: State) => {
     const {offsetBottom, expandedOffsetBottom} = this.props;
     const {isExpanded} = nextState;
 

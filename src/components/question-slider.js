@@ -76,7 +76,7 @@ const QuestionSlider = ({
   onSlidingComplete,
   testID,
   onChange
-}: Props) => {
+}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   return (
     <View style={[styles.container, style]} testID={testID}>

@@ -13,10 +13,9 @@ import {isErrorVisible, getErrorType} from '../redux/utils/state-extract';
 import {assistanceEmail} from '../../app';
 import ModalAnimated from './modal-animated';
 
-type ConnectedStateToProps = {|
-  ...ReactNavigation$WithNavigationProps,
+type ConnectedStateToProps = ReactNavigation$WithNavigationProps & {|
   isVisible: boolean,
-  type: ErrorType
+  type: ErrorType | void
 |};
 
 type ConnectedDispatchProps = {|
@@ -25,14 +24,14 @@ type ConnectedDispatchProps = {|
   signOut: typeof signOut
 |};
 
-export type Props = {|
-  ...ConnectedStateToProps,
-  ...ConnectedDispatchProps,
+type OwnProps = {|
   onClose: () => void
 |};
 
-class ErrorListener extends React.PureComponent<Props> {
-  props: Props;
+export type Props = ConnectedStateToProps & ConnectedDispatchProps & OwnProps;
+
+class ErrorListener extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleAssistancePress = () => {
     Linking.openURL(`mailto:${assistanceEmail}`);

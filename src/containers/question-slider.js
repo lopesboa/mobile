@@ -8,24 +8,24 @@ import {QUESTION_TYPE, ANALYTICS_EVENT_TYPE} from '../const';
 import withAnalytics from './with-analytics';
 import type {WithAnalyticsProps} from './with-analytics';
 
-export type Props = $Exact<{|
-  ...WithAnalyticsProps,
-  ...$Rest<
-    QuestionSliderProps,
-    {|
-      onSlidingComplete: () => void,
-      value: number
-    |}
-  >,
+type OwnProps = $Rest<
+  QuestionSliderProps,
+  {|
+    onSlidingComplete: () => void,
+    value: number
+  |}
+> & {|
   value?: number
-|}>;
+|};
+
+export type Props = WithAnalyticsProps & OwnProps;
 
 type State = {|
   value: number
 |};
 
-class QuestionSlider extends React.PureComponent<Props, State> {
-  props: Props;
+class QuestionSlider extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     value: 0
@@ -36,7 +36,7 @@ class QuestionSlider extends React.PureComponent<Props, State> {
     this.resetState(value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     const {min, max, value} = this.props;
 
     if (prevProps.min !== min || prevProps.max !== max || prevProps.value !== value) {
@@ -90,4 +90,4 @@ class QuestionSlider extends React.PureComponent<Props, State> {
 }
 
 export {QuestionSlider as Component};
-export default withAnalytics(QuestionSlider);
+export default withAnalytics<OwnProps>(QuestionSlider);

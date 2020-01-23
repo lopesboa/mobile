@@ -32,8 +32,8 @@ type Props = {|
 
 const CYCLE_DURATION = 3000;
 
-class Loader extends React.PureComponent<Props> {
-  props: Props;
+class Loader extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   animation: CompositeAnimation;
 

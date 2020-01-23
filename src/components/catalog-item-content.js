@@ -14,7 +14,7 @@ type Props = {|
   testID?: string
 |};
 
-const CatalogItemContent = ({item, size, testID = 'catalog-item-content'}: Props) => (
+const CatalogItemContent = ({item, size, testID = 'catalog-item-content'}: $ReadOnly<Props>) => (
   <BrandThemeContext.Consumer>
     {brandTheme => {
       const author = item && getAuthor(item);

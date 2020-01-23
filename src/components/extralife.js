@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Extralife = ({testID, count}: Props) => (
+const Extralife = ({testID, count}: $ReadOnly<Props>) => (
   <View style={styles.container} testID={testID}>
     <PlayIcon color={theme.colors.white} style={styles.play} />
     <View style={styles.countCircle}>

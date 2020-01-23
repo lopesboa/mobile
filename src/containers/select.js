@@ -35,8 +35,8 @@ export type Props = {|
   ...OwnProps
 |};
 
-class Select extends React.PureComponent<Props> {
-  props: Props;
+class Select extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleFocus = () => this.props.focus(this.props.id);
 

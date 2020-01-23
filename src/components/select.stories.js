@@ -15,8 +15,8 @@ type State = {|
   isFocused: boolean
 |};
 
-class SelectWithModal extends React.PureComponent<Props, State> {
-  props: Props;
+class SelectWithModal extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     isFocused: false

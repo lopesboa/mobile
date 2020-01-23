@@ -48,8 +48,8 @@ type Props = {|
   onPress: () => void
 |};
 
-class FlippableCard extends React.Component<Props, State> {
-  props: Props;
+class FlippableCard extends React.Component<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   ref: CardFlip;
 
@@ -57,7 +57,7 @@ class FlippableCard extends React.Component<Props, State> {
     isFlipped: false
   };
 
-  componentDidUpdate(prevProps: Props, prevState: State) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>, prevState: State) {
     if (this.ref && this.props.slideId !== prevProps.slideId && this.state.isFlipped) {
       this.ref.flip();
       this.handleFlipped();

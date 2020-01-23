@@ -10,7 +10,7 @@ export type Props = {|
   testID?: string
 |};
 
-const ModalAnimated = ({isVisible, children, onClose, testID}: Props) => (
+const ModalAnimated = ({isVisible, children, onClose, testID}: $ReadOnly<Props>) => (
   <Modal
     isVisible={Boolean(isVisible)}
     onSwipeComplete={onClose}

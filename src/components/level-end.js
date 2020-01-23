@@ -139,9 +139,7 @@ const styles = StyleSheet.create({
 
 const {width: screenWidth} = Dimensions.get('window');
 
-type Props = {|
-  ...WithVibrationProps,
-  ...WithAudioProps,
+type OwnProps = {|
   contentType: ContentType,
   isSuccess: boolean,
   onButtonPress: () => void,
@@ -155,8 +153,10 @@ type Props = {|
   testID?: string
 |};
 
-class LevelEnd extends React.PureComponent<Props> {
-  props: Props;
+type Props = WithVibrationProps & WithAudioProps & OwnProps;
+
+class LevelEnd extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   componentDidMount() {
     const {isSuccess, vibration, audio} = this.props;
@@ -303,4 +303,4 @@ class LevelEnd extends React.PureComponent<Props> {
 }
 
 export {LevelEnd as Component};
-export default withVibration(withAudio(LevelEnd));
+export default withVibration<OwnProps & WithAudioProps>(withAudio<OwnProps>(LevelEnd));

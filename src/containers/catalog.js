@@ -36,12 +36,7 @@ export type OwnProps = {|
   isFocused: boolean
 |};
 
-type Props = {|
-  ...ConnectedStateProps,
-  ...ConnectedDispatchProps,
-  ...WithLayoutProps,
-  ...OwnProps
-|};
+type Props = ConnectedStateProps & ConnectedDispatchProps & WithLayoutProps & OwnProps;
 
 type State = {|
   isRefreshing: boolean
@@ -50,8 +45,8 @@ type State = {|
 export const DEFAULT_LIMIT = 4;
 export const DEBOUNCE_DURATION = 100;
 
-class Catalog extends React.Component<Props, State> {
-  props: Props;
+class Catalog extends React.Component<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     isRefreshing: false
@@ -66,7 +61,10 @@ class Catalog extends React.Component<Props, State> {
     this.fetchSections(0, this.getLimit(0));
   }
 
-  shouldComponentUpdate({sections: nextSections, ...nextProps}: Props, nextState: State) {
+  shouldComponentUpdate(
+    {sections: nextSections, ...nextProps}: $ReadOnly<Props>,
+    nextState: State
+  ) {
     const {sections, ...props} = this.props;
     const emptySections = sections.filter(s => s && isEmptySection(s));
     const nextEmptySections = nextSections.filter(s => s && isEmptySection(s));
@@ -83,7 +81,7 @@ class Catalog extends React.Component<Props, State> {
     );
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     const {isFocused, sections} = this.props;
     const emptySections = sections.filter(section => section && isEmptySection(section));
     const previousEmptySections = prevProps.sections.filter(
@@ -219,4 +217,4 @@ export {Catalog as Component};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withLayout(Catalog));
+)(withLayout<OwnProps>(Catalog));

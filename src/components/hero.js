@@ -46,14 +46,15 @@ const styles = StyleSheet.create({
   }
 });
 
-type Props = {|
-  ...WithLayoutProps,
+type OwnProps = {|
   content?: DisciplineCard | ChapterCard | null,
   onPress: (DisciplineCard | ChapterCard) => void
 |};
 
-class Hero extends React.PureComponent<Props> {
-  props: Props;
+type Props = WithLayoutProps & OwnProps;
+
+class Hero extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     const {content, onPress} = this.props;
@@ -142,4 +143,4 @@ class Hero extends React.PureComponent<Props> {
 }
 
 export {Hero as Component};
-export default withLayout(Hero);
+export default withLayout<OwnProps>(Hero);

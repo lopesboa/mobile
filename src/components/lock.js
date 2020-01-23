@@ -16,7 +16,7 @@ type Props = {|
   height: number
 |};
 
-const Lock = ({height}: Props) => (
+const Lock = ({height}: $ReadOnly<Props>) => (
   <View style={styles.container}>
     <LottieView source={animation} autoPlay loop style={{height, width: height}} />
   </View>

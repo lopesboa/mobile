@@ -14,8 +14,7 @@ import {getVideoProvider} from '../modules/media';
 import Preview, {EXTRALIFE} from './preview';
 import ImageBackground from './image-background';
 
-type Props = {|
-  ...WithLayoutProps,
+type OwnProps = {|
   type: LessonType,
   url?: string,
   videoId?: string,
@@ -29,8 +28,10 @@ type Props = {|
   extralifeOverlay?: boolean
 |};
 
-class Resource extends React.PureComponent<Props> {
-  props: Props;
+type Props = WithLayoutProps & OwnProps;
+
+class Resource extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     const {url, description, onPress} = this.props;
@@ -107,4 +108,4 @@ class Resource extends React.PureComponent<Props> {
   }
 }
 export {Resource as Component};
-export default withLayout(Resource);
+export default withLayout<OwnProps>(Resource);

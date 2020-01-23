@@ -49,8 +49,8 @@ export const extractSelectedChoices = (
   return [selectedChoices, notSelectedChoices];
 };
 
-class QuestionDraggable extends React.PureComponent<Props> {
-  props: Props;
+class QuestionDraggable extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = (item: Choice) => () => this.props.onPress(item);
 

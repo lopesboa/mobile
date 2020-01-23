@@ -32,8 +32,8 @@ type Props = {|
 |};
 
 // react-navigation needs this to be a class
-class HeaderSlideRight extends React.Component<Props> {
-  props: Props;
+class HeaderSlideRight extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     this.props.toggleGodMode();

@@ -67,6 +67,8 @@
     "flowtype/require-return-type": "off",
     "flowtype-errors/show-warnings": "off",
     "flowtype-errors/show-errors": "off",
+    "flowtype/spread-exact-type": "error",
+    "flowtype/require-readonly-react-props": "error",
     "promise/no-native": "off",
     "class-methods-use-this": "off",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks

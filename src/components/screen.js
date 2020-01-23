@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class Screen extends React.PureComponent<Props> {
-  props: Props;
+class Screen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   scrollView: KeyboardAwareScrollView | null;
 

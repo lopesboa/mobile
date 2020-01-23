@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
   }
 });
 
-class App extends React.PureComponent<Props> {
-  props: Props;
+class App extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
-  constructor(props: Props) {
+  constructor(props: $ReadOnly<Props>) {
     super(props);
 
     const currentHandler = getJSExceptionHandler();

@@ -77,8 +77,8 @@ export type Props = {|
   testID?: string
 |};
 
-class Lives extends React.PureComponent<Props> {
-  props: Props;
+class Lives extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   shake: Animated.Value = new Animated.Value(0);
 
@@ -92,7 +92,7 @@ class Lives extends React.PureComponent<Props> {
     this.animate();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: $ReadOnly<Props>) {
     this.animate();
   }
 

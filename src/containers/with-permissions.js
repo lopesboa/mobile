@@ -19,28 +19,18 @@ type ConnectedDispatchProps = {|
   requestPermission: typeof requestPermission
 |};
 
+type Props<P> = P & WithPermissionsProps & ConnectedDispatchProps;
+
 function withPermissions<P>(
   WrappedComponent: React$ComponentType<P>,
   types: Array<PermissionType>
-): React$ComponentType<
-  $Exact<{|
-    ...WithPermissionsProps,
-    ...P,
-    requestPermission: $PropertyType<ConnectedDispatchProps, 'requestPermission'>
-  |}>
-> {
-  type Props = $Exact<{|
-    ...P,
-    ...WithPermissionsProps,
-    ...ConnectedDispatchProps
-  |}>;
-
+): React$ComponentType<Props<P>> {
   type State = {|
     appState?: ?AppState
   |};
 
-  class ComponentWithPermissions extends React.PureComponent<Props, State> {
-    props: Props;
+  class ComponentWithPermissions extends React.PureComponent<$ReadOnly<Props<P>>, State> {
+    props: $ReadOnly<Props<P>>;
 
     state: State = {
       // $FlowFixMe the base type is weak

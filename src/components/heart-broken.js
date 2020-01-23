@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const HeartBroken = ({testID, style}: Props) => {
+const HeartBroken = ({testID, style}: $ReadOnly<Props>) => {
   return (
     <View style={[styles.container, style]} testID={testID}>
       <HeartOutlineIcon color={theme.colors.white} style={styles.heart} />

@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class ModalSelect extends React.PureComponent<Props> {
-  props: Props;
+class ModalSelect extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   keyExtractor = (item: ChoiceItem, index: number) => `modal-select-item-${index + 1}`;
 

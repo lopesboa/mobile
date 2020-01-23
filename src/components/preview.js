@@ -69,7 +69,7 @@ const Preview = ({
   onPress,
   testID = 'preview',
   style
-}: Props) => {
+}: $ReadOnly<Props>) => {
   const Overlay = hasOverlay ? ResourceOverlay : React.Fragment;
 
   return (

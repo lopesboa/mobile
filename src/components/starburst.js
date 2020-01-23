@@ -27,7 +27,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const Starburst = ({spiralColor, testID, style, spiralStyle, backgroundColor}: Props) => {
+const Starburst = ({
+  spiralColor,
+  testID,
+  style,
+  spiralStyle,
+  backgroundColor
+}: $ReadOnly<Props>) => {
   const screenSize: number = Dimensions.get('window').height;
 
   return (

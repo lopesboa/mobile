@@ -61,7 +61,7 @@ type Props = {|
   testID?: string
 |};
 
-const Tooltip = ({type, children, testID}: Props) => {
+const Tooltip = ({type, children, testID}: $ReadOnly<Props>) => {
   return (
     <View testID={testID}>
       <View style={styles.container}>

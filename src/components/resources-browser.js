@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class ResourcesBrowser extends React.PureComponent<Props> {
-  props: Props;
+class ResourcesBrowser extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = (resource: Resource) => () => this.props.onChange(resource._id);
 

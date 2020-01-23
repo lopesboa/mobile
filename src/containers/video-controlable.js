@@ -61,8 +61,8 @@ type State = {|
   hasTracks: boolean
 |};
 
-class VideoControlable extends React.PureComponent<Props, State> {
-  props: Props;
+class VideoControlable extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     step: STEP.PREVIEW,

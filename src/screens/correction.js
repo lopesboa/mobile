@@ -79,8 +79,8 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class CorrectionScreen extends React.PureComponent<Props> {
-  props: Props;
+class CorrectionScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePDFButtonPress = (url: string, description: string) => {
     const pdfParams: PdfScreenParams = {

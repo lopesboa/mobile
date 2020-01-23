@@ -25,8 +25,8 @@ type Props = {|
 
 // react-navigation needs this to be a class
 // eslint-disable-next-line react/prefer-stateless-function
-class HeaderSlideTitle extends React.Component<Props> {
-  props: Props;
+class HeaderSlideTitle extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   render() {
     const {image = '', subtitle, title} = this.props;

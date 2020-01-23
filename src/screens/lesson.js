@@ -32,14 +32,10 @@ type ConnectedDispatchProps = {|
   selectResource: typeof selectResource
 |};
 
-type Props = $Exact<{|
-  ...ReactNavigation$ScreenProps,
-  ...ConnectedDispatchProps,
-  ...ConnectedStateProps
-|}>;
+type Props = ReactNavigation$ScreenProps & ConnectedDispatchProps & ConnectedStateProps;
 
-class LessonScreen extends React.PureComponent<Props> {
-  props: Props;
+class LessonScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePDFButtonPress = (url: string, description: string) => {
     const pdfParams: PdfScreenParams = {

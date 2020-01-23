@@ -28,11 +28,9 @@ export type ConnectedStateProps = {|
   hasPermission: boolean
 |};
 
-type Props = $Exact<{|
-  ...ReactNavigation$ScreenPropsWithParams<Params>,
-  ...WithPermissionsProps,
-  ...ConnectedStateProps
-|}>;
+type OwnProps = ReactNavigation$ScreenPropsWithParams<Params>;
+
+type Props = ConnectedStateProps & WithPermissionsProps & OwnProps;
 
 const styles = StyleSheet.create({
   fakeScanArea: {
@@ -42,8 +40,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class QRCodeScreen extends React.PureComponent<Props> {
-  props: Props;
+class QRCodeScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleClose = () => {
     const {navigation} = this.props;
@@ -91,4 +89,4 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 });
 
 export {QRCodeScreen as Component};
-export default connect(mapStateToProps)(withPermissions(QRCodeScreen, ['camera']));
+export default connect(mapStateToProps)(withPermissions<OwnProps>(QRCodeScreen, ['camera']));

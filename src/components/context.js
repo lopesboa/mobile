@@ -14,8 +14,7 @@ import Title from './question-title';
 import Button from './button';
 import Resource from './resource';
 
-export type Props = $Exact<{|
-  ...WithLayoutProps,
+export type Props = WithLayoutProps & {|
   header: string,
   description: string,
   onPress: () => void,
@@ -23,7 +22,7 @@ export type Props = $Exact<{|
   onPDFButtonPress: (url: string, description: string) => void,
   testID?: string,
   media?: Media
-|}>;
+|};
 
 const styles = StyleSheet.create({
   container: {
@@ -54,8 +53,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class Context extends React.PureComponent<Props> {
-  props: Props;
+class Context extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePDFButtonPress = (url?: string, description?: string) => {
     const {onPDFButtonPress} = this.props;

@@ -23,8 +23,8 @@ export type Props = {|
   ...ConnectedStateProps
 |};
 
-class ConnectionListener extends React.PureComponent<Props> {
-  props: Props;
+class ConnectionListener extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   componentDidUpdate() {
     const {isConnected} = this.props;

@@ -11,10 +11,7 @@ import type {WithAnalyticsProps} from '../containers/with-analytics';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
-type Props = $Exact<{|
-  ...TouchableGenericProps,
-  ...WithAnalyticsProps,
-  ...WithVibrationProps,
+type OwnProps = {|
   isHighlight?: boolean,
   isWithoutFeedback?: boolean,
   // for TouchableOpacity
@@ -23,10 +20,12 @@ type Props = $Exact<{|
   // Analytics
   analyticsID: string,
   analyticsParams?: AnalyticsEventParams
-|}>;
+|};
 
-class Touchable extends React.PureComponent<Props> {
-  props: Props;
+type Props = TouchableGenericProps & WithAnalyticsProps & WithVibrationProps & OwnProps;
+
+class Touchable extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress: $PropertyType<Props, 'onPress'> = event => {
     const {vibration, analytics, analyticsID, analyticsParams, onPress} = this.props;
@@ -105,4 +104,4 @@ class Touchable extends React.PureComponent<Props> {
 }
 
 export {Touchable as Component};
-export default withVibration(withAnalytics(Touchable));
+export default withVibration<OwnProps & WithAnalyticsProps>(withAnalytics<OwnProps>(Touchable));

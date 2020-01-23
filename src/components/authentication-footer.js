@@ -42,7 +42,7 @@ const AuthenticationFooter = ({
   onDemoPress,
   onHelpPress,
   testID: prefixTestID = 'authentication-footer'
-}: Props) => (
+}: $ReadOnly<Props>) => (
   <View style={styles.container}>
     <Html
       fontSize={theme.fontSize.large}

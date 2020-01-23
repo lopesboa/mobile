@@ -33,8 +33,7 @@ import type {Options, ReduxDevTools} from './_types';
 
 export type UiState = $PropertyType<ReduxState, 'ui'>;
 export type DataState = $PropertyType<ReduxState, 'data'>;
-export type StoreState = $Exact<{|
-  ...$Exact<ReduxState>,
+export type StoreState = ReduxState & {|
   navigation: NavigationState,
   catalog: CatalogState,
   authentication: AuthenticationState,
@@ -45,7 +44,7 @@ export type StoreState = $Exact<{|
   godMode: GodModeState,
   fastSlide: FastSlideState,
   network: NetworkState
-|}>;
+|};
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
 const {data, ui} = storeReducers;

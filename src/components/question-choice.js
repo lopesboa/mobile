@@ -83,7 +83,7 @@ const QuestionChoice = ({
   testID: prefixTestID,
   style,
   questionType
-}: Props) => {
+}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   const selectedStyle = {
     backgroundColor: brandTheme.colors.primary,

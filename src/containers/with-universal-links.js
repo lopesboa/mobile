@@ -6,6 +6,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {withNavigation} from 'react-navigation';
+import type {WithNavigationProps} from 'react-navigation';
 import firebase from 'react-native-firebase';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import {getToken} from '../redux/utils/state-extract';
@@ -22,18 +23,15 @@ type ConnectedDispatchProps = {|
   signOut: typeof signOut
 |};
 
+type Props<P> = P & ConnectedStateProps & ConnectedDispatchProps & WithNavigationProps;
+
 const UNIVERSAL_LINKS_PATTERN = /(.*)\/open-app/;
 
-function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): T {
-  type Props = $Exact<{|
-    ...P,
-    ...ReactNavigation$WithNavigationProps,
-    ...ConnectedStateProps,
-    ...ConnectedDispatchProps
-  |}>;
-
-  class ComponentWithUniversalLinks extends React.PureComponent<Props> {
-    props: Props;
+function withUniversalLinks<P>(
+  WrappedComponent: React$ComponentType<Props<P>>
+): React$ComponentType<Props<P>> {
+  class ComponentWithUniversalLinks extends React.PureComponent<$ReadOnly<Props<P>>> {
+    props: $ReadOnly<Props<P>>;
 
     subscriber: (() => void) | void;
 

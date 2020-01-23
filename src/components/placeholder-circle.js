@@ -11,7 +11,7 @@ type Props = {|
   color?: string
 |};
 
-const PlaceholderCircle = ({testID, color = theme.colors.gray.light, width}: Props) => (
+const PlaceholderCircle = ({testID, color = theme.colors.gray.light, width}: $ReadOnly<Props>) => (
   <View
     style={[{borderRadius: width, height: width, width, backgroundColor: color}]}
     testID={testID}

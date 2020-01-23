@@ -15,8 +15,7 @@ import Resource from './resource';
 import ResourcesBrowser from './resources-browser';
 import Space from './space';
 
-type Props = $Exact<{|
-  ...WithLayoutProps,
+type Props = WithLayoutProps & {|
   header: string,
   starsGranted: number,
   testID?: string,
@@ -25,7 +24,7 @@ type Props = $Exact<{|
   onChange: (id: string) => void,
   onPDFButtonPress: (url: string, description: string) => void,
   onVideoPlay: () => void
-|}>;
+|};
 
 const styles = StyleSheet.create({
   container: {
@@ -49,8 +48,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class Lesson extends React.Component<Props> {
-  props: Props;
+class Lesson extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = (lessonType: LessonType) => (url?: string, description?: string) => {
     const {onPDFButtonPress, onVideoPlay} = this.props;

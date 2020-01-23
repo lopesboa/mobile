@@ -31,23 +31,18 @@ export type OwnProps = $Diff<
   |}
 >;
 
-type Props = {|
-  ...ConnectedStateProps,
-  ...ConnectedDispatchProps,
-  ...WithLayoutProps,
-  ...OwnProps
-|};
+type Props = ConnectedStateProps & ConnectedDispatchProps & WithLayoutProps & OwnProps;
 
 export const DEBOUNCE_DURATION = 100;
 
-class CatalogSectionRefreshable extends React.Component<Props> {
-  props: Props;
+class CatalogSectionRefreshable extends React.Component<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   timeout: TimeoutID;
 
   offsetX: number = 0;
 
-  shouldComponentUpdate = ({cards: nextCards, ...nextProps}: Props) => {
+  shouldComponentUpdate = ({cards: nextCards, ...nextProps}: $ReadOnly<Props>) => {
     const {cards, ...props} = this.props;
     const cardsCount = cards && cards.filter(Boolean).length;
     const nextCardsCount = nextCards && nextCards.filter(Boolean).length;
@@ -138,7 +133,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 };
 
 export {CatalogSectionRefreshable as Component};
-export default withLayout(
+export default withLayout<OwnProps>(
   connect(
     mapStateToProps,
     mapDispatchToProps

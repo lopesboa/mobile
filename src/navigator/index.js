@@ -10,6 +10,7 @@ import HeaderSlideRight from '../containers/header-slide-right';
 import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
+import type {Props as AuthenticationProps} from '../screens/authentication';
 import AuthenticationDetailsScreen from '../screens/authentication-details';
 import QRCodeScreen from '../screens/qr-code';
 import {changeScreen} from '../redux/actions/navigation';
@@ -133,8 +134,8 @@ const extractScreens = (state: NavigationState): ExtractScreensResult => {
   return {currentNavigatorName, currentAppScreenName, currentScreenName, currentTabName};
 };
 
-class NavigatorWithState extends React.PureComponent<Props> {
-  props: Props;
+class NavigatorWithState extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   componentDidMount() {
     this.props.onScreenChange(INITIAL_APP_ROUTE_NAME, INITIAL_ROUTE_NAME, INITIAL_ROUTE_NAME);

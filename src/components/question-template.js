@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class QuestionTemplate extends React.PureComponent<Props> {
-  props: Props;
+class QuestionTemplate extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleInputChange = (item: Choice) => (value: string) => this.props.onInputChange(item, value);
 

@@ -6,7 +6,7 @@ import {Animated, Easing} from 'react-native';
 import {selectResource} from '@coorpacademy/player-store';
 
 import Cards from '../components/cards';
-import type {Props as CardsProps, Card as CardType} from '../components/cards';
+import type {Card as CardType} from '../components/cards';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 
 import withAnalytics from './with-analytics';
@@ -16,21 +16,20 @@ type ConnectedDispatchProps = {|
   selectResource: typeof selectResource
 |};
 
-type Props = $Exact<{|
-  ...WithAnalyticsProps,
-  ...ConnectedDispatchProps,
+type OwnProps = {|
   items: Array<CardType>,
   renderItem: (CardType, number, AnimationStyleProp | void) => React.Node,
-  cardStyle?: ViewStyleProp,
-  onRef?: $PropertyType<CardsProps, 'onRef'>
-|}>;
+  cardStyle?: ViewStyleProp
+|};
+
+type Props = WithAnalyticsProps & ConnectedDispatchProps & OwnProps;
 
 type State = {|
   cardIndexShown: number
 |};
 
-class CardsSwipable extends React.PureComponent<Props, State> {
-  props: Props;
+class CardsSwipable extends React.PureComponent<$ReadOnly<Props>, State> {
+  props: $ReadOnly<Props>;
 
   state: State = {
     cardIndexShown: 0
@@ -74,7 +73,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     }
   };
 
-  componentWillUpdate = (nextProps: Props) => {
+  componentWillUpdate = (nextProps: $ReadOnly<Props>) => {
     if (JSON.stringify(this.props.cardStyle) !== JSON.stringify(nextProps.cardStyle)) {
       // Force update when cardStyle prop changes
       // $FlowFixMe HOC type is not perfect
@@ -178,4 +177,4 @@ export {CardsSwipable as Component};
 export default connect(
   null,
   mapDispatchToProps
-)(withAnalytics(CardsSwipable));
+)(withAnalytics<OwnProps>(CardsSwipable));

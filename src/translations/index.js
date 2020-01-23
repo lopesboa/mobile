@@ -55,13 +55,12 @@ const localizedTranslations: {[key: SupportedLanguage]: Translations} = {
 export const SUPPORTED_LANGUAGES: Array<SupportedLanguage> = Object.keys(localizedTranslations);
 export const DEFAULT_LANGUAGE: SupportedLanguage = SUPPORTED_LANGUAGES[0];
 
-type CustomLocalizedStrings = $Exact<{|
-  ...Translations,
+type CustomLocalizedStrings = Translations & {|
   formatString: (...args: Array<string>) => string,
   getLanguage: void => SupportedLanguage,
   setLanguage: (SupportedLanguage | string) => void,
   getInterfaceLanguage: void => string | SupportedLanguage
-|}>;
+|};
 
 const translations: CustomLocalizedStrings = new LocalizedStrings(localizedTranslations);
 

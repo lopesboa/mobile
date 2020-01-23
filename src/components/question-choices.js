@@ -14,7 +14,7 @@ import QuestionTemplate from './question-template';
 import Space from './space';
 import QuestionDraggable from './question-draggable';
 
-export type Props = $Exact<{|
+export type Props = {|
   type: QuestionType,
   isDisabled?: boolean,
   template?: string,
@@ -29,7 +29,7 @@ export type Props = $Exact<{|
   value?: $PropertyType<QuestionSliderProps, 'value'>,
   onItemInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void
-|}>;
+|};
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
   }
 });
 
-class QuestionChoices extends React.PureComponent<Props> {
-  props: Props;
+class QuestionChoices extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleItemPress = (item: Choice) => () => this.props.onItemPress(item);
 

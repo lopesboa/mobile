@@ -15,21 +15,19 @@ export type WithLayoutProps = {|
   containerStyle?: ViewStyleProp
 |};
 
+type Props<P> = P & WithLayoutProps;
+
 function withLayout<P>(
   WrappedComponent: React$ComponentType<P>,
   options?: {
     withoutContainer?: boolean
   }
-): React$ComponentType<$Exact<{|...WithLayoutProps, ...P|}>> {
-  type Props = $Exact<{|
-    ...P,
-    ...WithLayoutProps
-  |}>;
+): React$ComponentType<Props<P>> {
   type State = {|
     layout?: Layout
   |};
-  class ComponentWithLayout extends React.PureComponent<Props, State> {
-    props: Props;
+  class ComponentWithLayout extends React.PureComponent<$ReadOnly<Props<P>>, State> {
+    props: $ReadOnly<Props<P>>;
 
     state: State = {
       layout: undefined

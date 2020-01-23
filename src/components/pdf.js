@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Pdf = ({source}: Props) => (
+const Pdf = ({source}: $ReadOnly<Props>) => (
   <PdfBase
     // $FlowFixMe - unknown 'body' property
     source={source}

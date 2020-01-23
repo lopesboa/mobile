@@ -19,8 +19,7 @@ export type Card = {|
   offeringExtraLife?: boolean
 |};
 
-export type Props = {|
-  ...WithVibrationProps,
+type OwnProps = {|
   testID: string,
   items: Array<Card>,
   renderItem: (Card, number) => React.Node,
@@ -30,8 +29,10 @@ export type Props = {|
   cardIndexShown?: number
 |};
 
-class Cards extends React.PureComponent<Props> {
-  props: Props;
+export type Props = WithVibrationProps & OwnProps;
+
+class Cards extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   swiper: DeckSwiper;
 
@@ -78,4 +79,4 @@ class Cards extends React.PureComponent<Props> {
 }
 
 export {Cards as Component};
-export default withVibration(Cards);
+export default withVibration<OwnProps>(Cards);

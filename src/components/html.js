@@ -9,8 +9,7 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
-type Props = {|
-  ...WithVibrationProps,
+type OwnProps = {|
   children: string,
   fontSize: number,
   onLinkPress?: (url: string) => void,
@@ -21,6 +20,8 @@ type Props = {|
   testID?: string,
   isTextCentered?: boolean
 |};
+
+type Props = WithVibrationProps & OwnProps;
 
 // Don't use StyleSheet there, it's not a react style
 const styles = {
@@ -42,8 +43,8 @@ const styles = {
   }
 };
 
-class Html extends React.PureComponent<Props> {
-  props: Props;
+class Html extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   // eslint-disable-next-line flowtype/no-weak-types
   handleLinkPress = (_: any, url: string) => {
@@ -137,4 +138,4 @@ class Html extends React.PureComponent<Props> {
 }
 
 export {Html as Component};
-export default withVibration(Html);
+export default withVibration<OwnProps>(Html);

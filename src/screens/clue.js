@@ -22,14 +22,10 @@ export type ConnectedDispatchProps = {|
   fetchClue: typeof fetchClue
 |};
 
-type Props = $Exact<{|
-  ...ReactNavigation$ScreenProps,
-  ...ConnectedStateProps,
-  ...ConnectedDispatchProps
-|}>;
+type Props = ReactNavigation$ScreenProps & ConnectedStateProps & ConnectedDispatchProps;
 
-class ClueScreen extends React.PureComponent<Props> {
-  props: Props;
+class ClueScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => this.props.fetchClue();
 

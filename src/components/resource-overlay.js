@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
   }
 });
 
-const ResourceOverlay = ({children}: Props) => <View style={styles.container}>{children}</View>;
+const ResourceOverlay = ({children}: $ReadOnly<Props>) => (
+  <View style={styles.container}>{children}</View>
+);
 
 export default ResourceOverlay;

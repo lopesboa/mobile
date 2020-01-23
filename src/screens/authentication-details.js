@@ -23,8 +23,8 @@ type Props = {|
   ...ReactNavigation$ScreenPropsWithParams<Params>
 |};
 
-class AuthenticationDetailsScreen extends React.PureComponent<Props> {
-  props: Props;
+class AuthenticationDetailsScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleScan = (token?: string) => {
     const {navigation} = this.props;

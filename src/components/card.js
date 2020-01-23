@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Card = ({children, style, testID, type}: Props) => {
+const Card = ({children, style, testID, type}: $ReadOnly<Props>) => {
   switch (type) {
     case LAYOUT.DECK_SWIPE:
       /* istanbul ignore next */

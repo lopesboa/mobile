@@ -24,16 +24,17 @@ export type Step = {|
   description: $PropertyType<AuthenticationStepProps, 'description'>
 |};
 
-export type Props = {|
-  ...WithAnalyticsProps,
+type OwnProps = {|
   type: AuthenticationType,
   currentIndex: number,
   onChange: number => void,
   style?: ViewStyleProp
 |};
 
-class AuthenticationSteps extends React.PureComponent<Props> {
-  props: Props;
+export type Props = WithAnalyticsProps & OwnProps;
+
+class AuthenticationSteps extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   renderItem = ({item: {icon, description}, index}: {item: Step, index: number}) => (
     <AuthenticationStep icon={icon} step={index + 1} description={description} />
@@ -104,4 +105,4 @@ class AuthenticationSteps extends React.PureComponent<Props> {
 }
 
 export {AuthenticationSteps as Component};
-export default withAnalytics(AuthenticationSteps);
+export default withAnalytics<OwnProps>(AuthenticationSteps);

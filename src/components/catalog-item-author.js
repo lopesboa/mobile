@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CatalogItemAuthor = ({type, name = '', size, testID}: Props) => {
+const CatalogItemAuthor = ({type, name = '', size, testID}: $ReadOnly<Props>) => {
   const fontSize =
     (size && (size === 'hero' ? theme.fontSize.medium : theme.fontSize.small)) ||
     theme.fontSize.extraSmall;

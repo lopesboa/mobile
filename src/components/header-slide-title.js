@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const HeaderSlide = ({image, subtitle, title}: Props) => {
+const HeaderSlide = ({image, subtitle, title}: $ReadOnly<Props>) => {
   const brandTheme = React.useContext(BrandThemeContext);
   return (
     <View testID="header-slide-title" style={[styles.container, {height: HEADER_HEIGHT}]}>

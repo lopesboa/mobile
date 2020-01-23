@@ -11,20 +11,6 @@ import type {WithLayoutProps} from '../containers/with-layout';
 import theme from '../modules/theme';
 import Box from './box';
 
-export type Props<ItemT> = {|
-  ...WithLayoutProps,
-  data: $NonMaybeType<$PropertyType<FlatListProps<ItemT>, 'data'>>,
-  // Copy paste from FlatList without separators property
-  renderItem: ({
-    item: ItemT,
-    index: number
-  }) => ?React.Node,
-  currentIndex: number,
-  onChange: number => void,
-  testID?: string,
-  style?: ViewStyleProp
-|};
-
 const PAGINATION_DOT_WIDTH = 8;
 
 const styles = StyleSheet.create({
@@ -68,8 +54,23 @@ const styles = StyleSheet.create({
   }
 });
 
-class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
-  props: Props<ItemT>;
+type OwnProps<ItemT> = {|
+  data: $NonMaybeType<$PropertyType<FlatListProps<ItemT>, 'data'>>,
+  // Copy paste from FlatList without separators property
+  renderItem: ({
+    item: ItemT,
+    index: number
+  }) => ?React.Node,
+  currentIndex: number,
+  onChange: number => void,
+  testID?: string,
+  style?: ViewStyleProp
+|};
+
+export type Props<ItemT> = WithLayoutProps & OwnProps<ItemT>;
+
+class Carousel<ItemT> extends React.PureComponent<$ReadOnly<Props<ItemT>>> {
+  props: $ReadOnly<Props<ItemT>>;
 
   renderItem = (width: number) => ({item, itemIndex}: {item: ItemT, itemIndex: number}) => (
     <View
@@ -123,6 +124,6 @@ class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
 }
 
 export {Carousel as Component};
-export default withLayout(Carousel, {
+export default withLayout<OwnProps<*>>(Carousel, {
   withoutContainer: true
 });

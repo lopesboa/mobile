@@ -38,7 +38,7 @@ const ImageBackground = ({
   style,
   testID = 'image-background',
   ...props
-}: Props) => {
+}: $ReadOnly<Props>) => {
   // $FlowFixMe this statement is enough but type is too weak
   let uri: string | void = source && source.uri;
 

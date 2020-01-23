@@ -19,13 +19,10 @@ export type ConnectedStateProps = {|
   media?: Media
 |};
 
-type Props = $Exact<{|
-  ...ReactNavigation$ScreenProps,
-  ...ConnectedStateProps
-|}>;
+type Props = ReactNavigation$ScreenProps & ConnectedStateProps;
 
-class ContextScreen extends React.PureComponent<Props> {
-  props: Props;
+class ContextScreen extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handleButtonPress = () => {
     this.props.navigation.navigate('Question');

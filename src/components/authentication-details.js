@@ -73,7 +73,13 @@ const styles = StyleSheet.create({
 export const TOP_COLOR = BLUE_COORP_DARK;
 export const BOTTOM_COLOR = BLUE_COORP_LIGHT;
 
-const AuthenticationDetails = ({type, onButtonPress, onHelpPress, onDemoPress, onBack}: Props) => (
+const AuthenticationDetails = ({
+  type,
+  onButtonPress,
+  onHelpPress,
+  onDemoPress,
+  onBack
+}: $ReadOnly<Props>) => (
   <React.Fragment>
     <Gradient colors={[TOP_COLOR, BOTTOM_COLOR]} style={styles.gradient} />
     <SafeAreaView style={styles.container}>

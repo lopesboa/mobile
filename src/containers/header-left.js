@@ -7,13 +7,12 @@ import type {_HeaderBackButtonProps} from 'react-navigation';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
-type Props = {|
-  ...WithVibrationProps,
-  ...$Exact<_HeaderBackButtonProps>
-|};
+type OwnProps = _HeaderBackButtonProps;
 
-class HeaderLeft extends React.PureComponent<Props> {
-  props: Props;
+type Props = WithVibrationProps & OwnProps;
+
+class HeaderLeft extends React.PureComponent<$ReadOnly<Props>> {
+  props: $ReadOnly<Props>;
 
   handlePress = () => {
     const {onPress, vibration} = this.props;
@@ -35,4 +34,4 @@ class HeaderLeft extends React.PureComponent<Props> {
   }
 }
 
-export default withVibration(HeaderLeft);
+export default withVibration<OwnProps>(HeaderLeft);

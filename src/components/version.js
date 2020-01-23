@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Version = ({style}: Props) => (
+const Version = ({style}: $ReadOnly<Props>) => (
   <Text style={[styles.version, style]}>
     {translations.formatString('{0}: {1}', 'Version', `${version.tag}.${version.commit}`)}
   </Text>

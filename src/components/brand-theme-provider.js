@@ -44,7 +44,7 @@ export const initialState: State = {
 
 export const BrandThemeContext: React.Context<State> = React.createContext(initialState);
 
-const BrandThemeProvider = ({children, brand}: Props) => (
+const BrandThemeProvider = ({children, brand}: $ReadOnly<Props>) => (
   <BrandThemeContext.Provider value={brand}>{children}</BrandThemeContext.Provider>
 );
 
