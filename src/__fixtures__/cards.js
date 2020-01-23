@@ -34,7 +34,8 @@ export const createCardLevel = ({
   status,
   label,
   stars = 0,
-  nbChapters = 3
+  nbChapters = 3,
+  accessible = true
 }: {
   ref: string,
   completion?: number,
@@ -43,7 +44,8 @@ export const createCardLevel = ({
   status: CardStatus,
   label: string,
   stars?: number,
-  nbChapters?: number
+  nbChapters?: number,
+  accessible?: boolean
 }): CardLevel => ({
   nbChapters,
   ref,
@@ -57,7 +59,7 @@ export const createCardLevel = ({
   inProgress: completion !== 0,
   isDone,
   completion,
-  accessible: true,
+  accessible,
   status,
   label: createLevelName({level})
 });
@@ -72,7 +74,8 @@ export const createDisciplineCard = ({
   isFavorite = false,
   stars = 0,
   nbChapters = 8,
-  authors = [createCardAuthor({})]
+  authors = [createCardAuthor({})],
+  accessible = true
 }: {
   ref: string,
   completion: number,
@@ -83,7 +86,8 @@ export const createDisciplineCard = ({
   isFavorite?: boolean,
   nbChapters?: number,
   stars?: number,
-  authors?: Array<CardAuthor>
+  authors?: Array<CardAuthor>,
+  accessible?: boolean
 }): DisciplineCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
@@ -133,7 +137,8 @@ export const createDisciplineCard = ({
   completion,
   defaultModuleLevel: 'base',
   isNew,
-  favorite: isFavorite
+  favorite: isFavorite,
+  accessible
 });
 
 export const createChapterCard = ({
@@ -146,7 +151,8 @@ export const createChapterCard = ({
   isDone = false,
   status,
   stars = 0,
-  authors = [createCardAuthor({})]
+  authors = [createCardAuthor({})],
+  accessible = true
 }: {
   ref: string,
   completion: number,
@@ -157,7 +163,8 @@ export const createChapterCard = ({
   isDone?: boolean,
   status: CardStatus,
   stars?: number,
-  authors?: Array<CardAuthor>
+  authors?: Array<CardAuthor>,
+  accessible?: boolean
 }): ChapterCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg',
@@ -203,10 +210,10 @@ export const createChapterCard = ({
   inProgress: completion !== 0,
   isDone,
   completion,
-  accessible: true,
   status,
   isNew,
-  favorite: isFavorite
+  favorite: isFavorite,
+  accessible
 });
 
 export const createDisciplinesCards = (disciplines: Array<Discipline>): Cards => {
@@ -221,9 +228,11 @@ export const createDisciplinesCards = (disciplines: Array<Discipline>): Cards =>
           completion: 0,
           stars: 0,
           status: CARD_STATUS.ACTIVE,
-          label: level.name
+          label: level.name,
+          accessible: level.accessible
         })
-      )
+      ),
+      accessible: discipline.accessible
     })
   );
 
@@ -236,7 +245,8 @@ export const createChaptersCards = (chapters: Array<Chapter>): Cards => {
       ref: chapter.universalRef,
       title: chapter.name,
       completion: 0,
-      status: CARD_STATUS.ACTIVE
+      status: CARD_STATUS.ACTIVE,
+      accessible: chapter.accessible
     })
   );
 

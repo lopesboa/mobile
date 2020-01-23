@@ -12,7 +12,8 @@ exports[`Storyshots CatalogItem Default (cover) 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -29,6 +30,7 @@ exports[`Storyshots CatalogItem Default (cover) 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          undefined,
           Object {
             "height": 264,
           },
@@ -337,7 +339,8 @@ exports[`Storyshots CatalogItem Default 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -354,6 +357,7 @@ exports[`Storyshots CatalogItem Default 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          undefined,
           Object {
             "height": 205,
             "width": 168,
@@ -663,7 +667,8 @@ exports[`Storyshots CatalogItem With chapter (cover) 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -680,6 +685,7 @@ exports[`Storyshots CatalogItem With chapter (cover) 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          false,
           Object {
             "height": 264,
           },
@@ -1355,7 +1361,7 @@ exports[`Storyshots CatalogItem With chapter (cover) 1`] = `
 </View>
 `;
 
-exports[`Storyshots CatalogItem With chapter 1`] = `
+exports[`Storyshots CatalogItem With chapter (locked) 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -1367,7 +1373,8 @@ exports[`Storyshots CatalogItem With chapter 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -1384,6 +1391,888 @@ exports[`Storyshots CatalogItem With chapter 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          Object {
+            "opacity": 0.4,
+          },
+          Object {
+            "height": 205,
+            "width": 168,
+          },
+        ],
+      ]
+    }
+  >
+    <Image
+      resizeMode="cover"
+      source={
+        Object {
+          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=336&h=410",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+      testID="catalog-item-image"
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          0,
+          0,
+          0,
+          0,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "padding": 16,
+              "paddingTop": 24,
+            },
+          ],
+          undefined,
+        ]
+      }
+      testID="catalog-item-image-gradient"
+    >
+      <View
+        style={
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "backgroundColor": "#FFFFFF",
+              "borderBottomEndRadius": 12,
+              "paddingHorizontal": 8,
+              "paddingVertical": 4,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "fontWeight": "700",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#00B0FF",
+                    "fontSize": 10,
+                  },
+                ],
+              ]
+            }
+            testID="catalog-item-badge"
+          >
+            New
+          </Text>
+        </View>
+      </View>
+      <Text
+        style={
+          Array [
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              false,
+              Object {
+                "fontSize": 10,
+              },
+            ],
+          ]
+        }
+        testID="author-catalog-item-content-author"
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+        testID="catalog-item-content-footer"
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={15}
+            bbWidth={15}
+            color="#FFFFFF"
+            height={15}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 15,
+                  "width": 15,
+                },
+              ]
+            }
+            testID="infinite-catalog-item-content-footer"
+            tintColor="#FFFFFF"
+            vbHeight={26}
+            vbWidth={26}
+            width={15}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M13 26C5.8 26 0 20.2 0 13S5.8 0 13 0s13 5.8 13 13-5.8 13-13 13zm6.2-16.8c.1-.1.2-.3.3-.5.1-.5-.4-1-.9-.9-.2 0-.4.1-.5.3l-.7.7c-.9-.7-2-1.1-3.2-1.3v-.6h.6c.4 0 .8-.3.9-.7 0-.5-.3-.9-.8-.9h-3c-.4 0-.8.3-.9.7 0 .5.3.9.8.9h.7v.6c-1.1.1-2.1.5-3 1.2-.8.6.1 1.9 1 1.3 1.5-1 3.4-1.2 5-.4 1.6.8 2.7 2.3 2.8 4 .1 1.7-.9 3.4-2.4 4.2-1.6.9-3.5.8-5-.1-.4-.2-.8-.2-1.1.2-.3.4-.2.9.2 1.2 1.3.8 2.9 1.1 4.5.9 3.2-.5 5.5-3.1 5.6-6.2 0-1.4-.5-2.8-1.3-3.9l.4-.7zm-4.6 4.3l1.5-1.8c.4-.5-.3-1.1-.7-.7l-1.9 1.4c-.6-.1-1.1.2-1.4.7-.3.5-.2 1.1.2 1.5.4.4 1 .5 1.5.2.6-.2.9-.8.8-1.3zm-3.9 2.6c0-.4-.3-.6-.7-.6H7.2c-.9 0-.9 1.3 0 1.3H10c.4 0 .7-.3.7-.7zm-.7-2.9H6.1c-.9 0-.9 1.3 0 1.3H10c.9 0 .9-1.3 0-1.3zm0-1c.9 0 .9-1.3 0-1.3H4.8c-.9 0-.9 1.3 0 1.3H10z"
+                fill={
+                  Array [
+                    0,
+                    4294967295,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={0}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={15}
+            bbWidth={15}
+            color="#FFFFFF"
+            height={15}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 15,
+                  "width": 15,
+                },
+              ]
+            }
+            testID="infinite-catalog-item-content-footer"
+            tintColor="#FFFFFF"
+            vbHeight={46}
+            vbWidth={46}
+            width={15}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M10.6 15.3h2.5V11l9.2 6.4-9.2 6.5v-4.4h-2.8-.1c-3.3.2-5.8 2.9-5.8 6.1 0 3.5 2.5 6.1 5.9 6.1 3.9 0 7.1-3.4 9.8-6.1l2.8-2.8c3.5-3.5 7.2-7.4 12.8-7.4 5.9 0 10 4.3 10 10.3 0 5.5-4.4 10.3-10.5 10.3-2.8 0-5.2-1.2-7.3-2.8-.1-.1-.3-.2-.4-.3-.4-.4-.6-.9-.6-1.4 0-1.1.9-2 2-2 .4 0 .8.1 1.1.3.1 0 .1.1.2.1 1.5 1.1 3.1 1.9 5 1.9 3.5 0 6.1-2.8 6.1-6.1 0-3.5-2.5-6.1-5.9-6.1-3.9 0-7.1 3.4-9.8 6.1l-2.8 2.8c-3.5 3.5-7.2 7.4-12.8 7.4-5.8 0-10-4.3-10-10.3 0-2.6 1-5 2.7-6.9 1-1.1 2.2-1.9 3.6-2.5.1 0 .1-.1.2-.1 1.1-.5 2.4-.7 3.7-.8h.4z"
+                fill={
+                  Array [
+                    0,
+                    4294967295,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {},
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "fontSize": 15,
+                },
+                false,
+              ],
+            ]
+          }
+          testID="title-catalog-item-content-footer"
+        >
+          Chapter card
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "flex": 1,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "fontSize": 12,
+                  },
+                  false,
+                ],
+              ]
+            }
+            testID="subtitle-catalog-item-content-footer"
+          >
+            A good guy with blue eyes
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={13.200000000000001}
+            bbWidth={13.200000000000001}
+            color="#FFFFFF"
+            height={13.200000000000001}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 13,
+                  "width": 13,
+                },
+              ]
+            }
+            testID="certified-catalog-item-content-footer"
+            tintColor="#FFFFFF"
+            vbHeight={24}
+            vbWidth={24}
+            width={13.200000000000001}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M0 .001h24v24H0z"
+                fill={null}
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+              <RNSVGPath
+                d="M12.042 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.478-10-10-10zm-.75 15.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9z"
+                fill={
+                  Array [
+                    0,
+                    4294967295,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 16,
+              "width": 16,
+            }
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 3,
+                "overflow": "hidden",
+              },
+              false,
+            ]
+          }
+          testID="progress-bar-catalog-item-content-footer"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FFFFFF",
+              }
+            }
+            testID="progression-bar"
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#00B0FF",
+                  "borderBottomRightRadius": 1,
+                  "borderTopRightRadius": 1,
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+              testID="progression-bar-0.8"
+            />
+          </View>
+        </View>
+      </View>
+    </BVLinearGradient>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "bottom": 0,
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={40}
+      bbWidth={40}
+      color="#FFFFFF"
+      height={40}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          undefined,
+          null,
+          Object {
+            "flex": 0,
+            "height": 40,
+            "width": 40,
+          },
+        ]
+      }
+      tintColor="#FFFFFF"
+      vbHeight={24}
+      vbWidth={24}
+      width={40}
+    >
+      <RNSVGGroup
+        fill={
+          Array [
+            0,
+            4278190080,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        font={Object {}}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={Array []}
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth={1}
+        vectorEffect={0}
+        x={0}
+        y={0}
+      >
+        <RNSVGPath
+          d="M0 0h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth={1}
+          vectorEffect={0}
+          x={0}
+          y={0}
+        />
+        <RNSVGPath
+          d="M17 11V7c0-2.757-2.244-5-5-5-2.758 0-5 2.243-5 5v4c-1.103 0-2 .896-2 2v7c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-7c0-1.104-.897-2-2-2zm-5 7a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 12 18zm3-7H9V7c0-1.654 1.346-3 3-3s3 1.346 3 3v4z"
+          fill={
+            Array [
+              0,
+              4294967295,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth={1}
+          vectorEffect={0}
+          x={0}
+          y={0}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots CatalogItem With chapter 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 205,
+      "width": 168,
+    }
+  }
+  testID="catalog-item"
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Array [
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+          false,
           Object {
             "height": 205,
             "width": 168,
@@ -2072,7 +2961,8 @@ exports[`Storyshots CatalogItem With discipline (cover) 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -2089,6 +2979,7 @@ exports[`Storyshots CatalogItem With discipline (cover) 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          false,
           Object {
             "height": 264,
           },
@@ -2637,7 +3528,7 @@ exports[`Storyshots CatalogItem With discipline (cover) 1`] = `
 </View>
 `;
 
-exports[`Storyshots CatalogItem With discipline 1`] = `
+exports[`Storyshots CatalogItem With discipline (locked) 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -2649,7 +3540,8 @@ exports[`Storyshots CatalogItem With discipline 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "flex": 1,
+      "height": 205,
+      "width": 168,
     }
   }
   testID="catalog-item"
@@ -2666,6 +3558,761 @@ exports[`Storyshots CatalogItem With discipline 1`] = `
           Object {
             "backgroundColor": "#ECEFF1",
           },
+          Object {
+            "opacity": 0.4,
+          },
+          Object {
+            "height": 205,
+            "width": 168,
+          },
+        ],
+      ]
+    }
+  >
+    <Image
+      resizeMode="cover"
+      source={
+        Object {
+          "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&w=336&h=410",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+      testID="catalog-item-image"
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          0,
+          0,
+          0,
+          0,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "padding": 16,
+              "paddingTop": 24,
+            },
+          ],
+          undefined,
+        ]
+      }
+      testID="catalog-item-image-gradient"
+    >
+      <View
+        style={
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "backgroundColor": "#FFFFFF",
+              "borderBottomEndRadius": 12,
+              "paddingHorizontal": 8,
+              "paddingVertical": 4,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "fontWeight": "700",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#00B0FF",
+                    "fontSize": 10,
+                  },
+                ],
+              ]
+            }
+            testID="catalog-item-badge"
+          >
+            New
+          </Text>
+        </View>
+      </View>
+      <Text
+        style={
+          Array [
+            Object {},
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "textAlign": "center",
+                "textShadowColor": "rgba(0, 0, 0, 1)",
+                "textShadowRadius": 2,
+              },
+              false,
+              Object {
+                "fontSize": 10,
+              },
+            ],
+          ]
+        }
+        testID="author-catalog-item-content-author"
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+        testID="catalog-item-content-footer"
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={15}
+            bbWidth={15}
+            color="#FFFFFF"
+            height={15}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 15,
+                  "width": 15,
+                },
+              ]
+            }
+            testID="infinite-catalog-item-content-footer"
+            tintColor="#FFFFFF"
+            vbHeight={46}
+            vbWidth={46}
+            width={15}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M10.6 15.3h2.5V11l9.2 6.4-9.2 6.5v-4.4h-2.8-.1c-3.3.2-5.8 2.9-5.8 6.1 0 3.5 2.5 6.1 5.9 6.1 3.9 0 7.1-3.4 9.8-6.1l2.8-2.8c3.5-3.5 7.2-7.4 12.8-7.4 5.9 0 10 4.3 10 10.3 0 5.5-4.4 10.3-10.5 10.3-2.8 0-5.2-1.2-7.3-2.8-.1-.1-.3-.2-.4-.3-.4-.4-.6-.9-.6-1.4 0-1.1.9-2 2-2 .4 0 .8.1 1.1.3.1 0 .1.1.2.1 1.5 1.1 3.1 1.9 5 1.9 3.5 0 6.1-2.8 6.1-6.1 0-3.5-2.5-6.1-5.9-6.1-3.9 0-7.1 3.4-9.8 6.1l-2.8 2.8c-3.5 3.5-7.2 7.4-12.8 7.4-5.8 0-10-4.3-10-10.3 0-2.6 1-5 2.7-6.9 1-1.1 2.2-1.9 3.6-2.5.1 0 .1-.1.2-.1 1.1-.5 2.4-.7 3.7-.8h.4z"
+                fill={
+                  Array [
+                    0,
+                    4294967295,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {},
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontWeight": "700",
+                },
+                Object {
+                  "fontSize": 15,
+                },
+                false,
+              ],
+            ]
+          }
+          testID="title-catalog-item-content-footer"
+        >
+          Discipline card
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 8,
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "flex": 1,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "fontSize": 12,
+                  },
+                  false,
+                ],
+              ]
+            }
+            testID="subtitle-catalog-item-content-footer"
+          >
+            A good guy with blue eyes
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 8,
+                "width": 8,
+              }
+            }
+          />
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={13.200000000000001}
+            bbWidth={13.200000000000001}
+            color="#FFFFFF"
+            height={13.200000000000001}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 13,
+                  "width": 13,
+                },
+              ]
+            }
+            testID="certified-catalog-item-content-footer"
+            tintColor="#FFFFFF"
+            vbHeight={24}
+            vbWidth={24}
+            width={13.200000000000001}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M0 .001h24v24H0z"
+                fill={null}
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+              <RNSVGPath
+                d="M12.042 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.478-10-10-10zm-.75 15.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9z"
+                fill={
+                  Array [
+                    0,
+                    4294967295,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 16,
+              "width": 16,
+            }
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 3,
+                "overflow": "hidden",
+              },
+              false,
+            ]
+          }
+          testID="progress-bar-catalog-item-content-footer"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FFFFFF",
+              }
+            }
+            testID="progression-bar"
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#00B0FF",
+                  "borderBottomRightRadius": 1,
+                  "borderTopRightRadius": 1,
+                  "height": 2,
+                  "width": "30%",
+                }
+              }
+              testID="progression-bar-0.3"
+            />
+          </View>
+        </View>
+      </View>
+    </BVLinearGradient>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "bottom": 0,
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={40}
+      bbWidth={40}
+      color="#FFFFFF"
+      height={40}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          undefined,
+          null,
+          Object {
+            "flex": 0,
+            "height": 40,
+            "width": 40,
+          },
+        ]
+      }
+      tintColor="#FFFFFF"
+      vbHeight={24}
+      vbWidth={24}
+      width={40}
+    >
+      <RNSVGGroup
+        fill={
+          Array [
+            0,
+            4278190080,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        font={Object {}}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={Array []}
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth={1}
+        vectorEffect={0}
+        x={0}
+        y={0}
+      >
+        <RNSVGPath
+          d="M0 0h24v24H0z"
+          fill={null}
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth={1}
+          vectorEffect={0}
+          x={0}
+          y={0}
+        />
+        <RNSVGPath
+          d="M17 11V7c0-2.757-2.244-5-5-5-2.758 0-5 2.243-5 5v4c-1.103 0-2 .896-2 2v7c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-7c0-1.104-.897-2-2-2zm-5 7a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 12 18zm3-7H9V7c0-1.654 1.346-3 3-3s3 1.346 3 3v4z"
+          fill={
+            Array [
+              0,
+              4294967295,
+            ]
+          }
+          fillOpacity={1}
+          fillRule={1}
+          matrix={
+            Array [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+            ]
+          }
+          opacity={1}
+          originX={0}
+          originY={0}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          rotation={0}
+          scaleX={1}
+          scaleY={1}
+          skewX={0}
+          skewY={0}
+          stroke={null}
+          strokeDasharray={null}
+          strokeDashoffset={null}
+          strokeLinecap={0}
+          strokeLinejoin={0}
+          strokeMiterlimit={4}
+          strokeOpacity={1}
+          strokeWidth={1}
+          vectorEffect={0}
+          x={0}
+          y={0}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots CatalogItem With discipline 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 205,
+      "width": 168,
+    }
+  }
+  testID="catalog-item"
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Array [
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        Array [
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+          false,
           Object {
             "height": 205,
             "width": 168,

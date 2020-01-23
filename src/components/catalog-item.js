@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {NovaSolidLocksLock11 as LockIcon} from '@coorpacademy/nova-icons';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {CARD_TYPE} from '../layer/data/_const';
@@ -12,18 +13,22 @@ import CatalogItemContent from './catalog-item-content';
 import CatalogItemBadge from './catalog-item-badge';
 import ImageBackground from './image-background';
 import Touchable from './touchable';
+import Overlay from './overlay';
 
 export const HEIGHT = 205;
 export const WIDTH = 168;
 export const COVER_HEIGHT = 264;
 
 const styles = StyleSheet.create({
-  content: {
-    backgroundColor: theme.colors.gray.light
-  },
-  image: {
+  container: {
     height: HEIGHT,
     width: WIDTH
+  },
+  image: {
+    backgroundColor: theme.colors.gray.light
+  },
+  imageLocked: {
+    opacity: 0.4
   },
   imageGradient: {
     paddingTop: theme.spacing.base,
@@ -35,9 +40,6 @@ const styles = StyleSheet.create({
   imageCoverGradient: {
     padding: theme.spacing.base,
     justifyContent: 'flex-end'
-  },
-  touchable: {
-    flex: 1
   },
   badge: {
     position: 'absolute',
@@ -76,46 +78,60 @@ class CatalogItem extends React.PureComponent<Props> {
       section
     };
 
+    const isLocked = item && item.accessible === false;
+
     return (
       <Touchable
         testID={testID}
         onPress={this.handlePress}
-        disabled={!item}
+        disabled={!item || isLocked}
         isHighlight
-        style={styles.touchable}
+        style={styles.container}
         analyticsID="card"
         analyticsParams={analyticsParams}
       >
-        <ImageBackground
-          testID={`${testID}-image`}
-          source={item && {uri: item.image}}
-          gradient={
-            (item && ['rgba(0,0,0,0)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,1)']) || [
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)',
-              'rgba(0,0,0,0)'
-            ]
-          }
-          resizeMode="cover"
-          style={[styles.content, (size === 'cover' && styles.imageCover) || styles.image]}
-          gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
-        >
-          {item && item.isNew ? (
-            <View style={styles.badge}>
-              <CatalogItemBadge
-                label={translations.formatString(
-                  '{0}{1}',
-                  translations.new.charAt(0).toUpperCase(),
-                  translations.new.slice(1)
-                )}
-                size={size}
-                testID={`${testID}-badge`}
-              />
-            </View>
+        <React.Fragment>
+          <ImageBackground
+            testID={`${testID}-image`}
+            source={item && {uri: item.image}}
+            gradient={
+              (item &&
+                !isLocked && [
+                  'rgba(0,0,0,0)',
+                  'rgba(0,0,0,0.4)',
+                  'rgba(0,0,0,0.7)',
+                  'rgba(0,0,0,1)'
+                ]) || ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)']
+            }
+            resizeMode="cover"
+            style={[
+              styles.image,
+              isLocked && styles.imageLocked,
+              (size === 'cover' && styles.imageCover) || styles.container
+            ]}
+            gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
+          >
+            {item && item.isNew ? (
+              <View style={styles.badge}>
+                <CatalogItemBadge
+                  label={translations.formatString(
+                    '{0}{1}',
+                    translations.new.charAt(0).toUpperCase(),
+                    translations.new.slice(1)
+                  )}
+                  size={size}
+                  testID={`${testID}-badge`}
+                />
+              </View>
+            ) : null}
+            <CatalogItemContent item={item} size={size} testID={`${testID}-content`} />
+          </ImageBackground>
+          {isLocked ? (
+            <Overlay>
+              <LockIcon width={40} height={40} color={theme.colors.white} />
+            </Overlay>
           ) : null}
-          <CatalogItemContent item={item} size={size} testID={`${testID}-content`} />
-        </ImageBackground>
+        </React.Fragment>
       </Touchable>
     );
   }

@@ -12,7 +12,7 @@ import theme from '../modules/theme';
 import {RESOURCE_TYPE} from '../const';
 import translations from '../translations';
 import Preview, {EXTRALIFE} from './preview';
-import ResourceOverlay from './resource-overlay';
+import Overlay from './overlay';
 import Touchable from './touchable';
 import Space from './space';
 
@@ -178,7 +178,7 @@ const Video = ({
         </React.Fragment>
       ) : null}
       {[STEP.END, STEP.ERROR].includes(step) ? (
-        <ResourceOverlay>
+        <Overlay>
           <Touchable
             onPress={onPlay}
             style={styles.replay}
@@ -193,7 +193,7 @@ const Video = ({
               </React.Fragment>
             ) : null}
           </Touchable>
-        </ResourceOverlay>
+        </Overlay>
       ) : null}
     </View>
   );

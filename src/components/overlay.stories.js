@@ -4,10 +4,10 @@ import * as React from 'react';
 import {Text} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
-import ResourceOverlay from './resource-overlay';
+import Overlay from './overlay';
 
-storiesOf('ResourceOverlay', module).add('Default', () => (
-  <ResourceOverlay>
+storiesOf('Overlay', module).add('Default', () => (
+  <Overlay>
     <Text>Foo bar baz</Text>
-  </ResourceOverlay>
+  </Overlay>
 ));

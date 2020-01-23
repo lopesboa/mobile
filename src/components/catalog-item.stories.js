@@ -26,14 +26,34 @@ const chapterCard = createChapterCard({
   isNew: true,
   isAdaptive: true
 });
+const lockedDisciplineCard = createDisciplineCard({
+  ref: 'foo',
+  completion: 0.3,
+  levels: [levelCard],
+  title: 'Discipline card',
+  isAdaptive: true,
+  isNew: true,
+  accessible: false
+});
+const lockedChapterCard = createChapterCard({
+  ref: 'bar',
+  completion: 0.8,
+  title: 'Chapter card',
+  status: CARD_STATUS.ACTIVE,
+  isNew: true,
+  isAdaptive: true,
+  accessible: false
+});
 
 storiesOf('CatalogItem', module)
   .add('Default', () => <CatalogItem />)
   .add('Default (cover)', () => <CatalogItem size="cover" />)
   .add('With chapter', () => <CatalogItem item={chapterCard} />)
   .add('With chapter (cover)', () => <CatalogItem size="cover" item={chapterCard} />)
+  .add('With chapter (locked)', () => <CatalogItem item={lockedChapterCard} />)
   .add('With discipline', () => <CatalogItem item={disciplineCard} />)
-  .add('With discipline (cover)', () => <CatalogItem size="cover" item={disciplineCard} />);
+  .add('With discipline (cover)', () => <CatalogItem size="cover" item={disciplineCard} />)
+  .add('With discipline (locked)', () => <CatalogItem item={lockedDisciplineCard} />);
 
 if (__TEST__) {
   describe('CatalogItem', () => {

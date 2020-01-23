@@ -11,6 +11,7 @@ import noClue from './no-clue';
 import template from './template';
 import qcmDrag from './with-qcm-drag';
 import slider from './slider';
+import locked from './locked';
 
 const items = [
   adaptive,
@@ -22,7 +23,8 @@ const items = [
   template,
   qcmDrag,
   slider,
-  withBasicQuestion
+  withBasicQuestion,
+  locked
 ];
 
 const initialDisciplinesBundle: BundledDiscipline = {

@@ -12,7 +12,7 @@ import {getCreatedAt, getUpdatedAt, isDone, isFailure} from '../../utils/progres
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 import type {JWT} from '../../types';
 import {get as getToken} from '../../utils/local-token';
-import {ForbiddenError, ConflictError} from '../../models/error';
+import {ForbiddenError, ConflictError, NotAcceptableError} from '../../models/error';
 import type {Record, Completion, HeroRecommendation} from './_types';
 
 export const SYNCHRONIZED_PROGRESSIONS = 'synchronized_progressions';
@@ -117,6 +117,7 @@ const synchronize = async (
   });
 
   if (response.status === 403) throw new ForbiddenError(response.statusText);
+  if (response.status === 406) throw new NotAcceptableError(response.statusText);
   if (response.status === 409) throw new ConflictError(response.statusText);
   if (response.status >= 400) throw new Error(response.statusText);
 

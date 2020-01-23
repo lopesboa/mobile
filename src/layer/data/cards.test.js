@@ -966,8 +966,8 @@ describe('cards', () => {
     it('should save cards in async storage', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.multiSet.mockImplementation(values => {
-        // we don't want to test all fixtures, only the keys
-        expect(values.map(value => value[0])).toEqual([
+        const result = values.map(value => value[0]);
+        const expected = [
           'card:en:adaptive_dis_1',
           'card:en:adaptive_mod_1',
           'card:en:basic_dis_1',
@@ -988,8 +988,12 @@ describe('cards', () => {
           'card:en:with_slider_dis_1',
           'card:en:with_slider_mod_2',
           'card:en:question_basic_dis_1',
-          'card:en:question_basic_mod_1'
-        ]);
+          'card:en:question_basic_mod_1',
+          'card:en:locked_dis_1',
+          'card:en:locked_mod_1'
+        ];
+        // we don't want to test all fixtures, only the keys
+        expect(result).toEqual(expected);
 
         return Promise.resolve();
       });

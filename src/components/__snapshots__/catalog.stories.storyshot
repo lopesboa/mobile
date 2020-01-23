@@ -305,7 +305,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder"
@@ -322,6 +323,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -674,7 +676,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder"
@@ -691,6 +694,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -1043,7 +1047,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder"
@@ -1060,6 +1065,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -1412,7 +1418,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder"
@@ -1429,6 +1436,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -1781,7 +1789,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder"
@@ -1798,6 +1807,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -2272,7 +2282,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder"
@@ -2289,6 +2300,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -2641,7 +2653,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder"
@@ -2658,6 +2671,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -3010,7 +3024,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder"
@@ -3027,6 +3042,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -3379,7 +3395,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder"
@@ -3396,6 +3413,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -3748,7 +3766,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder"
@@ -3765,6 +3784,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -4239,7 +4259,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder"
@@ -4256,6 +4277,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -4608,7 +4630,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder"
@@ -4625,6 +4648,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -4977,7 +5001,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder"
@@ -4994,6 +5019,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -5346,7 +5372,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder"
@@ -5363,6 +5390,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -5715,7 +5743,8 @@ exports[`Storyshots Catalog Default 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder"
@@ -5732,6 +5761,7 @@ exports[`Storyshots Catalog Default 1`] = `
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -6369,7 +6399,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder"
@@ -6386,6 +6417,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -6738,7 +6770,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder"
@@ -6755,6 +6788,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -7107,7 +7141,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder"
@@ -7124,6 +7159,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -7476,7 +7512,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder"
@@ -7493,6 +7530,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -7845,7 +7883,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder"
@@ -7862,6 +7901,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -8336,7 +8376,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder"
@@ -8353,6 +8394,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -8705,7 +8747,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder"
@@ -8722,6 +8765,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -9074,7 +9118,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder"
@@ -9091,6 +9136,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -9443,7 +9489,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder"
@@ -9460,6 +9507,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -9812,7 +9860,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder"
@@ -9829,6 +9878,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -10303,7 +10353,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder"
@@ -10320,6 +10371,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -10672,7 +10724,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder"
@@ -10689,6 +10742,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -11041,7 +11095,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder"
@@ -11058,6 +11113,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -11410,7 +11466,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder"
@@ -11427,6 +11484,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -11779,7 +11837,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder"
@@ -11796,6 +11855,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -12406,7 +12466,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-0-placeholder"
@@ -12423,6 +12484,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -12775,7 +12837,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-1-placeholder"
@@ -12792,6 +12855,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -13144,7 +13208,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-2-placeholder"
@@ -13161,6 +13226,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -13513,7 +13579,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-3-placeholder"
@@ -13530,6 +13597,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -13882,7 +13950,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-4-placeholder"
@@ -13899,6 +13968,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -14327,7 +14397,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-0-placeholder"
@@ -14344,6 +14415,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -14696,7 +14768,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-1-placeholder"
@@ -14713,6 +14786,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -15065,7 +15139,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-2-placeholder"
@@ -15082,6 +15157,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -15434,7 +15510,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-3-placeholder"
@@ -15451,6 +15528,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -15803,7 +15881,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-4-placeholder"
@@ -15820,6 +15899,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -16349,6 +16429,7 @@ Pol P.!
             Array [
               Object {
                 "_score": null,
+                "accessible": true,
                 "adaptiv": false,
                 "authors": Array [
                   Object {
@@ -16558,7 +16639,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-foo"
@@ -16575,6 +16657,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -17017,7 +17100,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-bar"
@@ -17034,6 +17118,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -17648,6 +17733,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               },
               Object {
                 "_score": null,
+                "accessible": true,
                 "adaptiv": false,
                 "authors": Array [
                   Object {
@@ -17802,7 +17888,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-bar"
@@ -17819,6 +17906,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -18389,7 +18477,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-foo"
@@ -18406,6 +18495,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -19133,7 +19223,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder"
@@ -19150,6 +19241,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -19502,7 +19594,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder"
@@ -19519,6 +19612,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -19871,7 +19965,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder"
@@ -19888,6 +19983,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -20240,7 +20336,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder"
@@ -20257,6 +20354,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -20609,7 +20707,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder"
@@ -20626,6 +20725,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -21100,7 +21200,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder"
@@ -21117,6 +21218,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -21469,7 +21571,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder"
@@ -21486,6 +21589,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -21838,7 +21942,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder"
@@ -21855,6 +21960,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -22207,7 +22313,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder"
@@ -22224,6 +22331,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -22576,7 +22684,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder"
@@ -22593,6 +22702,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -23067,7 +23177,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder"
@@ -23084,6 +23195,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -23436,7 +23548,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder"
@@ -23453,6 +23566,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -23805,7 +23919,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder"
@@ -23822,6 +23937,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -24174,7 +24290,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder"
@@ -24191,6 +24308,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -24543,7 +24661,8 @@ Pol P.!
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder"
@@ -24560,6 +24679,7 @@ Pol P.!
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            undefined,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -25296,6 +25416,7 @@ exports[`Storyshots Catalog With hero 1`] = `
             Array [
               Object {
                 "_score": null,
+                "accessible": true,
                 "adaptiv": false,
                 "authors": Array [
                   Object {
@@ -25505,7 +25626,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-foo"
@@ -25522,6 +25644,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -25964,7 +26087,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-recommended-item-bar"
@@ -25981,6 +26105,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -26595,6 +26720,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               },
               Object {
                 "_score": null,
+                "accessible": true,
                 "adaptiv": false,
                 "authors": Array [
                   Object {
@@ -26749,7 +26875,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-bar"
@@ -26766,6 +26893,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,
@@ -27336,7 +27464,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "flex": 1,
+                        "height": 205,
+                        "width": 168,
                       }
                     }
                     testID="catalog-section-most-popular-item-foo"
@@ -27353,6 +27482,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                             Object {
                               "backgroundColor": "#ECEFF1",
                             },
+                            false,
                             Object {
                               "height": 205,
                               "width": 168,

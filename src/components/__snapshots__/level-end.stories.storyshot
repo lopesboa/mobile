@@ -912,7 +912,8 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-dis-2"
@@ -929,6 +930,7 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },
@@ -2427,7 +2429,8 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-dis-2"
@@ -2444,6 +2447,7 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },
@@ -4224,7 +4228,8 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-cha-2"
@@ -4241,6 +4246,7 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },
@@ -6406,7 +6412,8 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-cha-2"
@@ -6423,6 +6430,7 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },
@@ -9175,7 +9183,8 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-cha-2"
@@ -9192,6 +9201,7 @@ exports[`Storyshots LevelEnd Success 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },
@@ -11656,7 +11666,8 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "flex": 1,
+                      "height": 205,
+                      "width": 168,
                     }
                   }
                   testID="recommend-item-cha-2"
@@ -11673,6 +11684,7 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                           Object {
                             "backgroundColor": "#ECEFF1",
                           },
+                          false,
                           Object {
                             "height": 264,
                           },

@@ -49,7 +49,8 @@ export type Level = $Exact<{|
   taggedNewUntil: string,
   name: string,
   levelTranslation: string,
-  bestScore?: number
+  bestScore?: number,
+  accessible?: boolean
 |}>;
 
 export type LevelType = 'base' | 'advanced' | 'coach';
@@ -69,7 +70,8 @@ export type Chapter = $Exact<{|
   isStandalone: boolean,
   name: string,
   partners: Array<Partner>,
-  bestScore?: number
+  bestScore?: number,
+  accessible?: boolean
 |}>;
 
 type Author = string;
@@ -102,7 +104,8 @@ export type ExtentedMedia = {|
 
 export type Discipline = $Exact<{|
   ...DisciplineStore,
-  modules: Array<Level>
+  modules: Array<Level>,
+  accessible?: boolean
 |}>;
 
 export type BundledChapter = {|
@@ -181,7 +184,8 @@ export type ICard = {|
   stars: number,
   completion: number,
   isNew: boolean,
-  favorite: boolean
+  favorite: boolean,
+  accessible?: boolean
 |};
 
 export type DisciplineCard = {|

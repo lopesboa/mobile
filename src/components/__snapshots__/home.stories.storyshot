@@ -372,7 +372,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder"
@@ -389,6 +390,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -741,7 +743,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder"
@@ -758,6 +761,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -1110,7 +1114,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder"
@@ -1127,6 +1132,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -1479,7 +1485,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder"
@@ -1496,6 +1503,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -1848,7 +1856,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder"
@@ -1865,6 +1874,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -2339,7 +2349,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder"
@@ -2356,6 +2367,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -2708,7 +2720,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder"
@@ -2725,6 +2738,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -3077,7 +3091,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder"
@@ -3094,6 +3109,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -3446,7 +3462,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder"
@@ -3463,6 +3480,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -3815,7 +3833,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder"
@@ -3832,6 +3851,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -4306,7 +4326,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder"
@@ -4323,6 +4344,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -4675,7 +4697,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder"
@@ -4692,6 +4715,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -5044,7 +5068,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder"
@@ -5061,6 +5086,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -5413,7 +5439,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder"
@@ -5430,6 +5457,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,
@@ -5782,7 +5810,8 @@ Pol P.!
                       onStartShouldSetResponder={[Function]}
                       style={
                         Object {
-                          "flex": 1,
+                          "height": 205,
+                          "width": 168,
                         }
                       }
                       testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder"
@@ -5799,6 +5828,7 @@ Pol P.!
                               Object {
                                 "backgroundColor": "#ECEFF1",
                               },
+                              undefined,
                               Object {
                                 "height": 205,
                                 "width": 168,

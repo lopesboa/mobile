@@ -6,12 +6,14 @@ export const createChapter = ({
   ref,
   name,
   isConditional = false,
-  bestScore
+  bestScore,
+  accessible = true
 }: {
   ref: string,
   name: string,
   isConditional?: boolean,
-  bestScore?: number
+  bestScore?: number,
+  accessible?: boolean
 }): Chapter => ({
   _id: ref,
   universalRef: ref,
@@ -40,7 +42,8 @@ export const createChapter = ({
   isConditional,
   time: 8,
   version: '9',
-  bestScore
+  bestScore,
+  accessible
 });
 
 export default {

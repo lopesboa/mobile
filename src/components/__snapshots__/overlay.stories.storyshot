@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ResourceOverlay Default 1`] = `
+exports[`Storyshots Overlay Default 1`] = `
 <View
   style={
     Object {

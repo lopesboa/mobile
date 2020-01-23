@@ -11,7 +11,7 @@ import {createAuthenticationState} from '../../../../__fixtures__/store';
 import {CARD_TYPE, CARD_STATUS} from '../../../../layer/data/_const';
 import {SHOW} from '../../ui/errors';
 import {CONTENT_TYPE, ERROR_TYPE} from '../../../../const';
-import {NoContentFoundError} from '../../../../models/error';
+import {NotFoundError} from '../../../../models/error';
 import {selectRequest, selectSuccess, selectError, selectCard} from './select';
 
 const chapter = createChapter({
@@ -305,7 +305,7 @@ describe('Cards', () => {
       title: 'Discipline'
     });
 
-    const error = new NoContentFoundError(
+    const error = new NotFoundError(
       `No Content Found for card with universalRef ${card.universalRef}`
     );
     const modal = {
@@ -398,7 +398,7 @@ describe('Cards', () => {
       }
     };
 
-    const error = new NoContentFoundError(
+    const error = new NotFoundError(
       `No Content Found for card with universalRef ${disciplineCard.universalRef}`
     );
 

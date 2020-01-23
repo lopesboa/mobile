@@ -161,7 +161,8 @@ exports[`Storyshots CatalogSection Default 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-fake-catalog-section-item-0-placeholder"
@@ -178,6 +179,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -530,7 +532,8 @@ exports[`Storyshots CatalogSection Default 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-fake-catalog-section-item-1-placeholder"
@@ -547,6 +550,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -899,7 +903,8 @@ exports[`Storyshots CatalogSection Default 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-fake-catalog-section-item-2-placeholder"
@@ -916,6 +921,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -1268,7 +1274,8 @@ exports[`Storyshots CatalogSection Default 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-fake-catalog-section-item-3-placeholder"
@@ -1285,6 +1292,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -1637,7 +1645,8 @@ exports[`Storyshots CatalogSection Default 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-fake-catalog-section-item-4-placeholder"
@@ -1654,6 +1663,7 @@ exports[`Storyshots CatalogSection Default 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -2143,7 +2153,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-0-placeholder"
@@ -2160,6 +2171,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -2512,7 +2524,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-1-placeholder"
@@ -2529,6 +2542,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -2881,7 +2895,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-2-placeholder"
@@ -2898,6 +2913,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -3250,7 +3266,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-3-placeholder"
@@ -3267,6 +3284,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -3619,7 +3637,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-4-placeholder"
@@ -3636,6 +3655,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -3988,7 +4008,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-5-placeholder"
@@ -4005,6 +4026,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -4357,7 +4379,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-6-placeholder"
@@ -4374,6 +4397,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -4726,7 +4750,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-7-placeholder"
@@ -4743,6 +4768,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -5095,7 +5121,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-8-placeholder"
@@ -5112,6 +5139,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -5464,7 +5492,8 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-default-item-9-placeholder"
@@ -5481,6 +5510,7 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -5819,6 +5849,7 @@ exports[`Storyshots CatalogSection With content 1`] = `
       Array [
         Object {
           "_score": null,
+          "accessible": true,
           "adaptiv": false,
           "authors": Array [
             Object {
@@ -6056,7 +6087,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-foo"
@@ -6073,6 +6105,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      false,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -6515,7 +6548,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-bar"
@@ -6532,6 +6566,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      false,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -6981,7 +7016,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-2-placeholder"
@@ -6998,6 +7034,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -7350,7 +7387,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-3-placeholder"
@@ -7367,6 +7405,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -7719,7 +7758,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-4-placeholder"
@@ -7736,6 +7776,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -8088,7 +8129,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-5-placeholder"
@@ -8105,6 +8147,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -8457,7 +8500,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-6-placeholder"
@@ -8474,6 +8518,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -8826,7 +8871,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-7-placeholder"
@@ -8843,6 +8889,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -9195,7 +9242,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-8-placeholder"
@@ -9212,6 +9260,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,
@@ -9564,7 +9613,8 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "flex": 1,
+                  "height": 205,
+                  "width": 168,
                 }
               }
               testID="catalog-section-withsomecards-item-9-placeholder"
@@ -9581,6 +9631,7 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                       Object {
                         "backgroundColor": "#ECEFF1",
                       },
+                      undefined,
                       Object {
                         "height": 205,
                         "width": 168,

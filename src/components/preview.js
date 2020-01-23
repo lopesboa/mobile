@@ -13,7 +13,7 @@ import theme from '../modules/theme';
 import translations from '../translations';
 import Button from './button';
 import Space from './space';
-import ResourceOverlay from './resource-overlay';
+import Overlay from './overlay';
 import ExtraLife from './extralife';
 import Text from './text';
 import Touchable from './touchable';
@@ -70,11 +70,11 @@ const Preview = ({
   testID = 'preview',
   style
 }: Props) => {
-  const Overlay = hasOverlay ? ResourceOverlay : React.Fragment;
+  const Wrapper = hasOverlay ? Overlay : React.Fragment;
 
   return (
     <ImageBackground source={source} style={[styles.image, style]} testID={`${testID}-container`}>
-      <Overlay>
+      <Wrapper>
         {type === RESOURCE_TYPE.VIDEO ? (
           <Touchable onPress={onPress} testID={`${testID}-video`} analyticsID="preview-video">
             {isIconVisible && !isLoading ? (
@@ -131,7 +131,7 @@ const Preview = ({
             </View>
           </Touchable>
         ) : null}
-      </Overlay>
+      </Wrapper>
     </ImageBackground>
   );
 };

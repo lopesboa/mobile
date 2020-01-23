@@ -11,7 +11,7 @@ import type {Action as ErrorAction} from '../../ui/errors';
 import {showError} from '../../ui/errors';
 import type {StoreState} from '../../../store';
 import type {Services} from '../../../../services';
-import {NoContentFoundError} from '../../../../models/error';
+import {NotFoundError} from '../../../../models/error';
 
 export const SELECT_REQUEST = '@@cards/SELECT_REQUEST';
 export const SELECT_SUCCESS = '@@cards/SELECT_SUCCESS';
@@ -60,9 +60,7 @@ const attemptToRetrieveContent = async (
   const brand = getBrand(state);
 
   if (card.type === CARD_TYPE.COURSE && !levelRef) {
-    throw new NoContentFoundError(
-      `No Content Found for card with universalRef ${card.universalRef}`
-    );
+    throw new NotFoundError(`No Content Found for card with universalRef ${card.universalRef}`);
   }
   if (!token || !brand) {
     throw new Error('Chapter progression not created - no token or brand provided');
@@ -86,9 +84,7 @@ const attemptToRetrieveContent = async (
   const content = await services.Content.find(contentType, contentId);
 
   if (!content) {
-    throw new NoContentFoundError(
-      `No Content Found for card with universalRef ${card.universalRef}`
-    );
+    throw new NotFoundError(`No Content Found for card with universalRef ${card.universalRef}`);
   }
 
   return content;
@@ -151,7 +147,7 @@ export const selectCard = (
 
     return dispatch(selectSuccess(item));
   } catch (e) {
-    if (e instanceof NoContentFoundError) {
+    if (e instanceof NotFoundError) {
       dispatch(
         showError({
           type: ERROR_TYPE.NO_CONTENT_FOUND,

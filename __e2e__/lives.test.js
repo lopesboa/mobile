@@ -50,7 +50,7 @@ describe('Lives', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
       await element(by.id('home-screen')).swipe('up');
-      await tapCardOnSection('catalog-section-recommended-items', 11);
+      await tapCardOnSection('catalog-section-recommended-items', 12);
     });
 
     it('should not see lives', async () => {

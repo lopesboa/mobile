@@ -507,6 +507,41 @@ describe('Progressions', () => {
       );
     });
 
+    it('should throw error 406', async () => {
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = ENGINE.LEARNER;
+      const progressionContent = {
+        ref: 'foo',
+        type: CONTENT_TYPE.CHAPTER
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          status: 406,
+          statusText: 'Foo bar baz',
+          json: () => Promise.resolve({})
+        });
+      });
+
+      const {synchronize} = require('./progressions');
+      await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
+        'NotAcceptableError'
+      );
+    });
+
     it('should throw error if status code >= 400', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
 

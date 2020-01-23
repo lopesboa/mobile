@@ -1,6 +1,6 @@
 // @flow strict
 
-import {ForbiddenError, NoContentFoundError, ConflictError} from './error';
+import {ForbiddenError, NotFoundError, ConflictError, NotAcceptableError} from './error';
 
 describe('Error', () => {
   describe('ForbiddenError', () => {
@@ -15,12 +15,12 @@ describe('Error', () => {
       expect(error.stack).toBeDefined();
     });
   });
-  describe('NoContentFoundError', () => {
+  describe('NotFoundError', () => {
     it('should instanciate above described error type', () => {
-      const error = new NoContentFoundError('foo bar baz');
+      const error = new NotFoundError('foo bar baz');
 
       expect(error.message).toEqual('foo bar baz');
-      expect(error.name).toEqual('NoContentFoundError');
+      expect(error.name).toEqual('NotFoundError');
       expect(error.description).toEqual(
         'Error encountered fetching an API having a response with 404 status code.'
       );
@@ -34,7 +34,19 @@ describe('Error', () => {
       expect(error.message).toEqual('foo bar baz');
       expect(error.name).toEqual('ConflictError');
       expect(error.description).toEqual(
-        'The request could not be completed due to a conflict with the current state of the target resource.'
+        'Error encountered fetching an API having a response with 409 status code.'
+      );
+      expect(error.stack).toBeDefined();
+    });
+  });
+  describe('NotAcceptableError', () => {
+    it('should instanciate above described error type', () => {
+      const error = new NotAcceptableError('foo bar baz');
+
+      expect(error.message).toEqual('foo bar baz');
+      expect(error.name).toEqual('NotAcceptableError');
+      expect(error.description).toEqual(
+        'Error encountered fetching an API having a response with 406 status code.'
       );
       expect(error.stack).toBeDefined();
     });

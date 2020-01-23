@@ -47,11 +47,16 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
     try {
       await services.Progressions.synchronize(token, brand.host, progression);
     } catch (error) {
-      if (error instanceof ForbiddenError && numberOfRetries > 0) {
-        await delay(2000);
-        return syncProgression(progression, numberOfRetries - 1);
+      if (error instanceof ConflictError) {
+        return;
       }
-      if (error instanceof ConflictError) return;
+      if (error instanceof ForbiddenError) {
+        if (numberOfRetries > 0) {
+          await delay(2000);
+          return syncProgression(progression, numberOfRetries - 1);
+        }
+        throw new Error('Progression post failed after 5 retries');
+      }
       throw error;
     }
   };

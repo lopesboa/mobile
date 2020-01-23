@@ -5,11 +5,13 @@ import type {Discipline, Level} from '../layer/data/_types';
 export const createDiscipline = ({
   ref,
   levels,
-  name
+  name,
+  accessible = true
 }: {
   ref: string,
   levels: Array<Level>,
-  name: string
+  name: string,
+  accessible?: boolean
 }): Discipline => ({
   _id: 'foobarbaz',
   ref,
@@ -45,7 +47,8 @@ export const createDiscipline = ({
       src: []
     }
   },
-  version: '2'
+  version: '2',
+  accessible
 });
 
 export default {
