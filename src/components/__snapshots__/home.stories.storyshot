@@ -330,10 +330,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -344,16 +356,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -701,10 +703,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -715,16 +729,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -1072,10 +1076,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -1086,16 +1102,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -1443,10 +1449,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -1457,16 +1475,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -1814,10 +1822,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -1828,16 +1848,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -2307,10 +2317,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -2321,16 +2343,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -2678,10 +2690,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -2692,16 +2716,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -3049,10 +3063,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -3063,16 +3089,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -3420,10 +3436,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -3434,16 +3462,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -3791,10 +3809,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -3805,16 +3835,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -4284,10 +4304,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -4298,16 +4330,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -4655,10 +4677,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -4669,16 +4703,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -5026,10 +5050,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -5040,16 +5076,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -5397,10 +5423,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -5411,16 +5449,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",
@@ -5768,10 +5796,22 @@ Pol P.!
               >
                 <View
                   style={
-                    Object {
-                      "borderRadius": 5,
-                      "flex": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 5,
+                        "flex": 1,
+                      },
+                      Object {
+                        "elevation": 4,
+                        "shadowColor": "#14171A",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.15,
+                        "shadowRadius": 8,
+                      },
+                    ]
                   }
                 >
                   <View
@@ -5782,16 +5822,6 @@ Pol P.!
                           "flex": 1,
                           "marginHorizontal": 4,
                           "marginVertical": 16,
-                        },
-                        Object {
-                          "elevation": 4,
-                          "shadowColor": "#14171A",
-                          "shadowOffset": Object {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0.15,
-                          "shadowRadius": 8,
                         },
                         Object {
                           "overflow": "hidden",

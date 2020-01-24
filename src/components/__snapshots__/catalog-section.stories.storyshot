@@ -119,10 +119,22 @@ exports[`Storyshots CatalogSection Default 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -133,16 +145,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -490,10 +492,22 @@ exports[`Storyshots CatalogSection Default 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -504,16 +518,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -861,10 +865,22 @@ exports[`Storyshots CatalogSection Default 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -875,16 +891,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -1232,10 +1238,22 @@ exports[`Storyshots CatalogSection Default 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -1246,16 +1264,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -1603,10 +1611,22 @@ exports[`Storyshots CatalogSection Default 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -1617,16 +1637,6 @@ exports[`Storyshots CatalogSection Default 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -2111,10 +2121,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -2125,16 +2147,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -2482,10 +2494,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -2496,16 +2520,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -2853,10 +2867,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -2867,16 +2893,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -3224,10 +3240,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -3238,16 +3266,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -3595,10 +3613,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -3609,16 +3639,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -3966,10 +3986,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -3980,16 +4012,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -4337,10 +4359,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -4351,16 +4385,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -4708,10 +4732,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -4722,16 +4758,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -5079,10 +5105,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -5093,16 +5131,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -5450,10 +5478,22 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -5464,16 +5504,6 @@ exports[`Storyshots CatalogSection Empty cards 1`] = `
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -6045,10 +6075,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -6059,16 +6101,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -6506,10 +6538,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -6520,16 +6564,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -6974,10 +7008,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -6988,16 +7034,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -7345,10 +7381,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -7359,16 +7407,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -7716,10 +7754,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -7730,16 +7780,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -8087,10 +8127,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -8101,16 +8153,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -8458,10 +8500,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -8472,16 +8526,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -8829,10 +8873,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -8843,16 +8899,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -9200,10 +9246,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -9214,16 +9272,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
@@ -9571,10 +9619,22 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
       >
         <View
           style={
-            Object {
-              "borderRadius": 5,
-              "flex": 1,
-            }
+            Array [
+              Object {
+                "borderRadius": 5,
+                "flex": 1,
+              },
+              Object {
+                "elevation": 4,
+                "shadowColor": "#14171A",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.15,
+                "shadowRadius": 8,
+              },
+            ]
           }
         >
           <View
@@ -9585,16 +9645,6 @@ Vous rédigez un mail de la plus haute importante et bloquez – encore ! – su
                   "flex": 1,
                   "marginHorizontal": 4,
                   "marginVertical": 16,
-                },
-                Object {
-                  "elevation": 4,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 0,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.15,
-                  "shadowRadius": 8,
                 },
                 Object {
                   "overflow": "hidden",
