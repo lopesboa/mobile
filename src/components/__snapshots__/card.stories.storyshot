@@ -41,20 +41,34 @@ exports[`Storyshots Card Deck swipe 1`] = `
         "borderRadius": 5,
         "flex": 1,
       },
+      Object {
+        "overflow": "hidden",
+      },
     ]
   }
 >
   <View
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "padding": 24,
-      }
+      Array [
+        Object {
+          "borderRadius": 5,
+          "flex": 1,
+        },
+      ]
     }
   >
-    <Text>
-      A sponsored post is a small advertising insert appearing in users’ timelines.
-    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "padding": 24,
+        }
+      }
+    >
+      <Text>
+        A sponsored post is a small advertising insert appearing in users’ timelines.
+      </Text>
+    </View>
   </View>
 </View>
 `;

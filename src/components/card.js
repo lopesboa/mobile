@@ -34,17 +34,17 @@ const Card = ({children, style, testID, type}: Props) => {
   switch (type) {
     case LAYOUT.DECK_SWIPE:
       /* istanbul ignore next */
-      return (Platform.OS === 'ios' ? (
+      return Platform.OS === 'ios' ? (
         <View style={[style, styles.container, styles.overflowHidden]}>
           <View style={[styles.container]} testID={testID}>
             {children}
           </View>
         </View>
-      ) : null) ? (
+      ) : (
         <View style={[style, styles.container]} testID={testID}>
           {children}
         </View>
-      ) : null;
+      );
     case LAYOUT.CONTAIN:
       return (
         <View style={BOX_STYLE} testID={testID}>
