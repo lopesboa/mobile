@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    borderRadius: theme.radius.card,
     // to see the shadow
     marginHorizontal: ITEM_HORIZONTAL_OFFSET,
     marginVertical: ITEM_VERTICAL_OFFSET
@@ -76,9 +75,11 @@ class CatalogSection extends React.Component<Props> {
     const testID = this.keyExtractor(item, index);
 
     return (
-      <Card style={styles.card}>
-        <CatalogItem item={item} onPress={onCardPress} testID={testID} section={sectionRef} />
-      </Card>
+      <View style={styles.card}>
+        <Card>
+          <CatalogItem item={item} onPress={onCardPress} testID={testID} section={sectionRef} />
+        </Card>
+      </View>
     );
   };
 

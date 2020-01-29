@@ -54,7 +54,7 @@ const Card = ({children, style, testID, type}: Props) => {
     default:
       return (
         <View style={[styles.container, BOX_STYLE]} testID={testID}>
-          <View style={[style, styles.overflowHidden]}>{children}</View>
+          <View style={[styles.container, style, styles.overflowHidden]}>{children}</View>
         </View>
       );
   }

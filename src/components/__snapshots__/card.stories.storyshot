@@ -97,6 +97,10 @@ exports[`Storyshots Card Default 1`] = `
   <View
     style={
       Array [
+        Object {
+          "borderRadius": 5,
+          "flex": 1,
+        },
         undefined,
         Object {
           "overflow": "hidden",
