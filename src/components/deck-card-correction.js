@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
+const DeckCardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
   <View style={styles.container}>
     <Html fontSize={theme.fontSize.regular} style={styles.text}>
       {question}
@@ -63,4 +63,4 @@ const CardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (
   </View>
 );
 
-export default CardCorrection;
+export default DeckCardCorrection;

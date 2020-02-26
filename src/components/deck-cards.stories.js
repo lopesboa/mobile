@@ -8,25 +8,25 @@ import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 
 import {handleFakePress, createFakeVibration} from '../utils/tests';
 import {__TEST__} from '../modules/environment';
-import {CARD_TYPE} from '../const';
-import {Component as Cards} from './cards';
-import type {Card} from './cards';
+import {DECK_CARD_TYPE} from '../const';
+import {Component as DeckCards} from './deck-cards';
+import type {DeckCard} from './deck-cards';
 
-const items: Array<Card> = [
-  {title: 'First card', type: CARD_TYPE.TIP, isCorrect: true},
-  {title: 'Second card', type: CARD_TYPE.KEY_POINT, isCorrect: true},
-  {title: 'Third card', type: CARD_TYPE.CORRECTION, isCorrect: true}
+const items: Array<DeckCard> = [
+  {title: 'First card', type: DECK_CARD_TYPE.TIP, isCorrect: true},
+  {title: 'Second card', type: DECK_CARD_TYPE.KEY_POINT, isCorrect: true},
+  {title: 'Third card', type: DECK_CARD_TYPE.CORRECTION, isCorrect: true}
 ];
 
-const renderCard = ({type, title}: Card) => (
+const renderCard = ({type, title}: DeckCard) => (
   <View style={{backgroundColor: '#fff', borderWidth: 1, borderColor: '#000'}}>
     <Text>{title}</Text>
     <Text>Foo bar baz</Text>
   </View>
 );
 
-storiesOf('Cards', module).add('Default', () => (
-  <Cards
+storiesOf('DeckCards', module).add('Default', () => (
+  <DeckCards
     testID="cards-story"
     onSwiped={handleFakePress}
     onSwipedAll={handleFakePress}
@@ -37,14 +37,14 @@ storiesOf('Cards', module).add('Default', () => (
 ));
 
 if (__TEST__) {
-  describe('Cards', () => {
+  describe('DeckCards', () => {
     it('should handle callbacks (onSwiped and forceUpdate)', () => {
       const handleSwiped = jest.fn();
       const handleSwipedAll = jest.fn();
       const vibration = createFakeVibration();
 
       const component = renderer.create(
-        <Cards
+        <DeckCards
           testID="cards-story"
           onSwiped={handleSwiped}
           onSwipedAll={handleSwipedAll}

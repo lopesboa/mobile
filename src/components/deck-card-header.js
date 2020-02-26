@@ -11,12 +11,12 @@ import {
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
-import type {CardType} from '../types';
-import {CARD_TYPE} from '../const';
+import type {DeckCardType} from '../types';
+import {DECK_CARD_TYPE} from '../const';
 import Text from './text';
 
 export type Props = {|
-  type: CardType,
+  type: DeckCardType,
   isCorrect?: boolean,
   title: string
 |};
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const CardHeader = ({type, isCorrect, title}: Props) => {
+const DeckCardHeader = ({type, isCorrect, title}: Props) => {
   const correctionBackgroundColor =
     (isCorrect && styles.headerCorrectionBGColorIsCorrect) ||
     styles.headerCorrectionBGColorIsNotCorrect;
@@ -73,24 +73,26 @@ const CardHeader = ({type, isCorrect, title}: Props) => {
     <View
       style={[
         styles.header,
-        type === CARD_TYPE.TIP && styles.headerTip,
-        type === CARD_TYPE.KEY_POINT && styles.headerKeyPoint,
-        type === CARD_TYPE.CORRECTION && correctionBackgroundColor,
-        type === CARD_TYPE.RESOURCE && styles.headerResource
+        type === DECK_CARD_TYPE.TIP && styles.headerTip,
+        type === DECK_CARD_TYPE.KEY_POINT && styles.headerKeyPoint,
+        type === DECK_CARD_TYPE.CORRECTION && correctionBackgroundColor,
+        type === DECK_CARD_TYPE.RESOURCE && styles.headerResource
       ]}
     >
-      {type === CARD_TYPE.TIP ? <TipIcon color="#ffc035" style={styles.headerTipIcon} /> : null}
-      {type === CARD_TYPE.KEY_POINT ? (
+      {type === DECK_CARD_TYPE.TIP ? (
+        <TipIcon color="#ffc035" style={styles.headerTipIcon} />
+      ) : null}
+      {type === DECK_CARD_TYPE.KEY_POINT ? (
         <KeyPointIcon color="#ff7043" style={styles.headerKeyPointIcon} />
       ) : null}
 
-      {type === CARD_TYPE.CORRECTION && isCorrect ? (
+      {type === DECK_CARD_TYPE.CORRECTION && isCorrect ? (
         <CorrectionIcon color="#3ec483" style={styles.headerCorrectionIcon} />
       ) : null}
-      {type === CARD_TYPE.CORRECTION && !isCorrect ? (
+      {type === DECK_CARD_TYPE.CORRECTION && !isCorrect ? (
         <CloseIcon color={theme.colors.negative} style={styles.headerCorrectionIcon} />
       ) : null}
-      {type === CARD_TYPE.RESOURCE ? (
+      {type === DECK_CARD_TYPE.RESOURCE ? (
         <ResourceIcon color="#16affc" style={styles.headerCorrectionIcon} />
       ) : null}
       <Text style={styles.headerText} numberOfLines={1}>
@@ -100,4 +102,4 @@ const CardHeader = ({type, isCorrect, title}: Props) => {
   );
 };
 
-export default CardHeader;
+export default DeckCardHeader;

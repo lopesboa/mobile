@@ -15,7 +15,7 @@ import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../const';
 import type {ConnectedStateProps, OwnProps, Params} from './correction';
 
 // @todo understand why this container triggers hooks error
-jest.mock('../containers/cards-swipable', () => 'Mock$Cards');
+jest.mock('../containers/deck-cards-swipable', () => 'Mock$DeckCardsSwipable');
 
 describe('Correction', () => {
   beforeEach(() => {

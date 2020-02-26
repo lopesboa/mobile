@@ -25,7 +25,6 @@ describe('Correction: resources', () => {
     await element(by.id('card-correction')).swipe('up');
     await weExpect(element(by.id('card-correction'))).toBeNotVisible();
     await weExpect(element(by.id('card-resource-les_1'))).toBeVisible();
-    await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
     await weExpect(element(by.id('card-resource-les_2'))).toExist();
     await weExpect(element(by.id('card-resource-les_3'))).toExist();
     await weExpect(element(by.id('card-resource-les_4'))).toExist();

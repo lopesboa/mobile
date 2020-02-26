@@ -17,7 +17,7 @@ import withAudio from '../containers/with-audio';
 import type {WithAudioProps} from '../containers/with-audio';
 import ButtonSticky from './button-sticky';
 import {STYLE as BOX_STYLE} from './box';
-import Card, {LAYOUT as CARD_LAYOUT} from './card';
+import Card from './card';
 import CatalogItem from './catalog-item';
 import Starburst from './starburst';
 import HeartBroken from './heart-broken';
@@ -75,11 +75,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: PADDING_WIDTH,
     // @todo quick fix, we have to rework the component
     paddingTop: getStatusBarHeight() + 18
-  },
-  card: {
-    borderRadius: theme.radius.card,
-    minHeight: 1,
-    overflow: 'hidden'
   },
   text: {
     fontSize: theme.fontSize.large,
@@ -260,7 +255,7 @@ class LevelEnd extends React.PureComponent<Props> {
                   {recommendation ? (
                     <View style={styles.recommendation} testID="recommend-item">
                       <Text style={styles.title}>{translations.relatedSubjects}</Text>
-                      <Card type={CARD_LAYOUT.CONTAIN} style={styles.card}>
+                      <Card>
                         <CatalogItem
                           item={recommendation}
                           onPress={onCardPress}

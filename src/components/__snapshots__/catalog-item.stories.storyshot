@@ -10,12 +10,7 @@ exports[`Storyshots CatalogItem Default (cover) 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "height": 205,
-      "width": 168,
-    }
-  }
+  style={false}
   testID="catalog-item"
 >
   <View
@@ -665,12 +660,7 @@ exports[`Storyshots CatalogItem With chapter (cover) 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "height": 205,
-      "width": 168,
-    }
-  }
+  style={false}
   testID="catalog-item"
 >
   <View
@@ -2959,12 +2949,7 @@ exports[`Storyshots CatalogItem With discipline (cover) 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "height": 205,
-      "width": 168,
-    }
-  }
+  style={false}
   testID="catalog-item"
 >
   <View

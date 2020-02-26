@@ -7,7 +7,7 @@ import type {
   AppState,
   AuthenticationType,
   AuthorType,
-  CardType,
+  DeckCardType,
   ContentType,
   SectionContentType,
   SectionType,
@@ -67,8 +67,8 @@ export const MEDIA_TYPE: {
   IMAGE: 'img'
 };
 
-export const CARD_TYPE: {
-  [string]: CardType
+export const DECK_CARD_TYPE: {
+  [string]: DeckCardType
 } = {
   RESOURCE: 'resource',
   TIP: 'tip',

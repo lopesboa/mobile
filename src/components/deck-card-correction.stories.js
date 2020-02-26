@@ -4,23 +4,28 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 
 import {createAnswer} from '../__fixtures__/answers';
-import CardCorrection from './card-correction';
+import DeckCardCorrection from './deck-card-correction';
 
 const question = 'Where is Waldo ?';
 const answers = createAnswer({});
 
-storiesOf('CardCorrection', module)
+storiesOf('DeckCardCorrection', module)
   .add('Default', () => (
-    <CardCorrection question={question} answers={answers} userAnswers={answers} isCorrect={false} />
+    <DeckCardCorrection
+      question={question}
+      answers={answers}
+      userAnswers={answers}
+      isCorrect={false}
+    />
   ))
   .add('Correct answer', () => (
-    <CardCorrection question={question} answers={answers} userAnswers={answers} isCorrect />
+    <DeckCardCorrection question={question} answers={answers} userAnswers={answers} isCorrect />
   ))
   .add('With plenty of users answers ', () => {
     const plentyOfUserAnswers = answers.concat(answers);
 
     return (
-      <CardCorrection
+      <DeckCardCorrection
         question={question}
         answers={answers}
         userAnswers={plentyOfUserAnswers}
@@ -29,7 +34,7 @@ storiesOf('CardCorrection', module)
     );
   })
   .add('With one expected answer', () => (
-    <CardCorrection
+    <DeckCardCorrection
       question={question}
       answers={[answers[0]]}
       userAnswers={[answers[0]]}

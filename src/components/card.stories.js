@@ -5,7 +5,7 @@ import {Text, View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 
 import theme from '../modules/theme';
-import Card, {LAYOUT} from './card';
+import Card from './card';
 
 const children = (
   <View style={{padding: theme.spacing.base, backgroundColor: theme.colors.white}}>
@@ -13,7 +13,4 @@ const children = (
   </View>
 );
 
-storiesOf('Card', module)
-  .add('Default', () => <Card>{children}</Card>)
-  .add('Deck swipe', () => <Card type={LAYOUT.DECK_SWIPE}>{children}</Card>)
-  .add('Contain', () => <Card type={LAYOUT.CONTAIN}>{children}</Card>);
+storiesOf('Card', module).add('Default', () => <Card>{children}</Card>);

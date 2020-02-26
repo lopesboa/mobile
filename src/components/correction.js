@@ -8,16 +8,16 @@ import type {LessonType} from '@coorpacademy/progression-engine';
 
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
-import CardComponent from '../containers/card-scalable';
+import DeckCardScalable from '../containers/deck-card-scalable';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import withAudio from '../containers/with-audio';
 import type {WithAudioProps} from '../containers/with-audio';
-import Cards from '../containers/cards-swipable';
+import DeckCardsSwipable from '../containers/deck-cards-swipable';
 import translations from '../translations';
-import {RESOURCE_TYPE, CARD_TYPE} from '../const';
+import {RESOURCE_TYPE, DECK_CARD_TYPE} from '../const';
 import Resource from './resource';
 import {STYLE as BOX_STYLE} from './box';
 import Button, {HEIGHT as BUTTON_HEIGHT} from './button';
@@ -26,8 +26,8 @@ import Text from './text';
 import Html from './html';
 import Space from './space';
 import Lives from './lives';
-import type {Card} from './cards';
-import CardCorrection from './card-correction';
+import type {DeckCard} from './deck-cards';
+import DeckCardCorrection from './deck-card-correction';
 
 const CARDS_HEIGHT = 360;
 const CARDS_LENGTH = 3;
@@ -155,7 +155,7 @@ class Correction extends React.PureComponent<Props> {
     return onVideoPlay();
   };
 
-  getCards(isCorrect: boolean): Array<Card> {
+  getCards(isCorrect: boolean): Array<DeckCard> {
     const {
       answers,
       userAnswers,
@@ -165,28 +165,28 @@ class Correction extends React.PureComponent<Props> {
       hasConsumedExtraLife
     } = this.props;
 
-    const correctionCard: Card = {
+    const correctionCard: DeckCard = {
       answers,
       userAnswers,
-      type: CARD_TYPE.CORRECTION,
+      type: DECK_CARD_TYPE.CORRECTION,
       title: translations.correction,
       isCorrect
     };
     const tipCard = {
-      type: CARD_TYPE.TIP,
+      type: DECK_CARD_TYPE.TIP,
       title: translations.didYouKnowThat,
       isCorrect
     };
 
     const keyPointCard = {
-      type: CARD_TYPE.KEY_POINT,
+      type: DECK_CARD_TYPE.KEY_POINT,
       title: translations.keyPoint,
       isCorrect
     };
     const lessonCards =
       (resources &&
         resources.map(resource => ({
-          type: CARD_TYPE.RESOURCE,
+          type: DECK_CARD_TYPE.RESOURCE,
           title: translations.accessTheLesson,
           resource,
           isCorrect,
@@ -194,7 +194,7 @@ class Correction extends React.PureComponent<Props> {
         }))) ||
       [];
 
-    let cards: Array<Card> = [];
+    let cards: Array<DeckCard> = [];
 
     if (isCorrect && isResourceViewed) {
       cards = [tipCard, keyPointCard, correctionCard, ...lessonCards];
@@ -223,7 +223,7 @@ class Correction extends React.PureComponent<Props> {
   getCardsHeight = (): number => CARDS_HEIGHT;
 
   renderCard = (
-    {answers, userAnswers, type, title: cardTitle, resource, offeringExtraLife}: Card,
+    {answers, userAnswers, type, title: cardTitle, resource, offeringExtraLife}: DeckCard,
     index: number,
     animationStyle: AnimationStyleProp
   ) => {
@@ -231,16 +231,16 @@ class Correction extends React.PureComponent<Props> {
     // This is the offset added by the deck swiper
     const testIDSuffix = resource ? resource.ref.toLowerCase() : '';
     const testID =
-      type !== CARD_TYPE.RESOURCE
+      type !== DECK_CARD_TYPE.RESOURCE
         ? `card-${type.toLowerCase()}`
         : `card-${type.toLowerCase()}-` + testIDSuffix;
 
     return (
-      <CardComponent
+      <DeckCardScalable
         title={cardTitle}
         isCorrect={isCorrect}
         type={type}
-        animationStyle={type !== CARD_TYPE.RESOURCE && animationStyle}
+        animationStyle={type !== DECK_CARD_TYPE.RESOURCE && animationStyle}
         height={this.getCardsHeight()}
         expandedHeight={this.getCardsExpandedHeight()}
         offsetBottom={this.getOffsetBottom()}
@@ -248,25 +248,25 @@ class Correction extends React.PureComponent<Props> {
         style={styles.card}
         testID={testID}
       >
-        {type === CARD_TYPE.TIP ? (
+        {type === DECK_CARD_TYPE.TIP ? (
           <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {tip}
           </Html>
         ) : null}
-        {type === CARD_TYPE.CORRECTION && answers && userAnswers ? (
-          <CardCorrection
+        {type === DECK_CARD_TYPE.CORRECTION && answers && userAnswers ? (
+          <DeckCardCorrection
             question={question}
             answers={answers}
             userAnswers={userAnswers}
             isCorrect={Boolean(isCorrect)}
           />
         ) : null}
-        {type === CARD_TYPE.KEY_POINT ? (
+        {type === DECK_CARD_TYPE.KEY_POINT ? (
           <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
             {keyPoint}
           </Html>
         ) : null}
-        {type === CARD_TYPE.RESOURCE && resource ? (
+        {type === DECK_CARD_TYPE.RESOURCE && resource ? (
           <React.Fragment>
             <Resource
               type={resource.type}
@@ -292,7 +292,7 @@ class Correction extends React.PureComponent<Props> {
             </View>
           </React.Fragment>
         ) : null}
-      </CardComponent>
+      </DeckCardScalable>
     );
   };
 
@@ -357,7 +357,7 @@ class Correction extends React.PureComponent<Props> {
               ) : null}
             </View>
             <Space type="base" />
-            <Cards
+            <DeckCardsSwipable
               items={this.getCards(Boolean(isCorrect))}
               renderItem={this.renderCard}
               // $FlowFixMe layout has already been checked

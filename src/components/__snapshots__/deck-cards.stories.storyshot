@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DeckCards Default 1`] = `
+<View
+  pointerEvents="auto"
+  style={
+    Array [
+      Object {
+        "alignItems": "stretch",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "marginBottom": 0,
+        "marginTop": 0,
+      },
+      Object {},
+    ]
+  }
+>
+  <View
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "zIndex": -3,
+        },
+      ]
+    }
+  />
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "height": 1334,
+        "left": 24,
+        "opacity": 1,
+        "position": "absolute",
+        "top": 0,
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+          Object {
+            "rotate": "0deg",
+          },
+        ],
+        "width": 702,
+        "zIndex": 3,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "#000",
+          "borderWidth": 1,
+        }
+      }
+    >
+      <Text>
+        First card
+      </Text>
+      <Text>
+        Foo bar baz
+      </Text>
+    </View>
+  </View>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "height": 1334,
+        "left": 24,
+        "position": "absolute",
+        "top": 0,
+        "transform": Array [
+          Object {
+            "scale": 0.9500000000000001,
+          },
+          Object {
+            "translateY": 15,
+          },
+        ],
+        "width": 702,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "#000",
+          "borderWidth": 1,
+        }
+      }
+    >
+      <Text>
+        Second card
+      </Text>
+      <Text>
+        Foo bar baz
+      </Text>
+    </View>
+  </View>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "height": 1334,
+        "left": 24,
+        "position": "absolute",
+        "top": 0,
+        "transform": Array [
+          Object {
+            "scale": 0.9,
+          },
+          Object {
+            "translateY": 30,
+          },
+        ],
+        "width": 702,
+        "zIndex": -2,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "#000",
+          "borderWidth": 1,
+        }
+      }
+    >
+      <Text>
+        Third card
+      </Text>
+      <Text>
+        Foo bar baz
+      </Text>
+    </View>
+  </View>
+</View>
+`;

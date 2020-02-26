@@ -3,24 +3,25 @@
 import * as React from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 
-import Card, {LAYOUT as CARD_LAYOUT} from '../components/card';
-import CardHeader from '../components/card-header';
-import type {Props as CardProps} from '../components/card';
-import type {Props as CardHeaderProps} from '../components/card-header';
+import DeckCard from '../components/deck-card';
+import DeckCardHeader from '../components/deck-card-header';
+import type {Props as DeckCardProps} from '../components/deck-card';
+import type {Props as DeckCardHeaderProps} from '../components/deck-card-header';
 import theme from '../modules/theme';
 import Gradient from '../components/gradient';
 import Touchable from '../components/touchable';
-import {CARD_TYPE} from '../const';
+import {DECK_CARD_TYPE} from '../const';
 
 type Props = $Exact<{|
-  ...CardProps,
-  ...CardHeaderProps,
+  ...DeckCardProps,
+  ...DeckCardHeaderProps,
   height: number,
   expandedHeight: number,
   isExpanded?: boolean,
   animationStyle?: AnimationStyleProp,
   offsetBottom: number,
   expandedOffsetBottom: number,
+  style?: ViewStyleProp,
   testID?: string
 |}>;
 
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
 
 const ANIMATION_DURATION = 200;
 
-class CardScalable extends React.PureComponent<Props, State> {
+class DeckCardScalable extends React.PureComponent<Props, State> {
   props: Props;
 
   state: State = {
@@ -111,9 +112,9 @@ class CardScalable extends React.PureComponent<Props, State> {
           analyticsID="deck-card"
           analyticsParams={{type}}
         >
-          <Card testID={testID} type={CARD_LAYOUT.DECK_SWIPE}>
-            <CardHeader type={type} title={title} isCorrect={isCorrect} />
-            <View style={[styles.content, type === CARD_TYPE.RESOURCE && styles.noPadding]}>
+          <DeckCard testID={testID}>
+            <DeckCardHeader type={type} title={title} isCorrect={isCorrect} />
+            <View style={[styles.content, type === DECK_CARD_TYPE.RESOURCE && styles.noPadding]}>
               {children}
               <Gradient
                 height={theme.spacing.large}
@@ -121,11 +122,11 @@ class CardScalable extends React.PureComponent<Props, State> {
                 style={styles.gradient}
               />
             </View>
-          </Card>
+          </DeckCard>
         </Touchable>
       </Animated.View>
     );
   }
 }
 
-export default CardScalable;
+export default DeckCardScalable;

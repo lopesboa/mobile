@@ -1,0 +1,1004 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DeckCardCorrection Correct answer 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Where is Waldo ?
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "700",
+          },
+        ],
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DeckCardCorrection Default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Where is Waldo ?
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "700",
+          },
+        ],
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DeckCardCorrection With one expected answer 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Where is Waldo ?
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "700",
+          },
+        ],
+      ]
+    }
+  >
+    Your answer:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DeckCardCorrection With plenty of users answers  1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Where is Waldo ?
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#3EC483",
+              "fontSize": 15,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "color": "#546E7A",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "700",
+          },
+        ],
+      ]
+    }
+  >
+    Your answers:
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+        "width": 8,
+      }
+    }
+  />
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Lorem Elsass ipsum
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Chulia Roberstau
+        </Text>
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={Object {}}
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {},
+            Object {},
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Object {
+              "color": "#546E7A",
+              "fontSize": 15,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Miss Dahlias vulputate salu barapli schnaps blottkopf
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;

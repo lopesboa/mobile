@@ -75,20 +75,14 @@ describe('Questions', () => {
 
       it('should see key-point card', async () => {
         await weExpect(element(by.id('card-keypoint'))).toBeVisible();
-        await weExpect(element(by.id('card-tip'))).toBeNotVisible();
-        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
       });
       it('should be able to swipe to tip card', async () => {
         await element(by.id('card-keypoint')).swipe('left');
-        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
-        await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
         await weExpect(element(by.id('card-tip'))).toBeVisible();
       });
       it('should back to the first card', async () => {
         await element(by.id('card-tip')).swipe('right');
         await weExpect(element(by.id('card-correction'))).toBeVisible();
-        await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
-        await weExpect(element(by.id('card-tip'))).toBeNotVisible();
       });
       it('should back to the question', async () => {
         await weExpect(element(by.id('button-next-question'))).toBeVisible();
@@ -134,19 +128,14 @@ describe('Questions', () => {
         await element(by.id('card-resource-les_4')).swipe('left');
         await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
         await weExpect(element(by.id('card-keypoint'))).toBeVisible();
-        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
       });
       it('should be able to swipe to tip card', async () => {
         await element(by.id('card-keypoint')).swipe('left');
-        await weExpect(element(by.id('card-tip'))).toBeNotVisible();
-        await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
         await weExpect(element(by.id('card-correction'))).toBeVisible();
       });
       it('should back to the first card', async () => {
         await element(by.id('card-correction')).swipe('right');
         await weExpect(element(by.id('card-tip'))).toBeVisible();
-        await weExpect(element(by.id('card-keypoint'))).toBeNotVisible();
-        await weExpect(element(by.id('card-correction'))).toBeNotVisible();
       });
       it('should be able to close the modal', async () => {
         await weExpect(element(by.id('button-next-question'))).toBeVisible();

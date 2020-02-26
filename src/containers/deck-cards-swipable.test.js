@@ -3,15 +3,15 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 
-import {ANALYTICS_EVENT_TYPE, CARD_TYPE, RESOURCE_TYPE} from '../const';
+import {ANALYTICS_EVENT_TYPE, DECK_CARD_TYPE, RESOURCE_TYPE} from '../const';
 import {createFakeAnalytics} from '../utils/tests';
-import type {Card} from '../components/cards';
-import {Component as CardsSwipable} from './cards-swipable';
+import type {DeckCard} from '../components/deck-cards';
+import {Component as DeckCardsSwipable} from './deck-cards-swipable';
 
-describe('CardsSwipable', () => {
+describe('DeckCardsSwipable', () => {
   it('should handle onSwipe on resource card and forward analytics data', () => {
-    const dummyResourceCard: Card = {
-      type: CARD_TYPE.RESOURCE,
+    const dummyResourceCard: DeckCard = {
+      type: DECK_CARD_TYPE.RESOURCE,
       title: 'correction',
       isCorrect: true,
       resource: {
@@ -35,7 +35,7 @@ describe('CardsSwipable', () => {
     const analytics = createFakeAnalytics();
 
     const component = renderer.create(
-      <CardsSwipable
+      <DeckCardsSwipable
         analytics={analytics}
         items={[dummyResourceCard]}
         renderItem={renderItem}
@@ -58,8 +58,8 @@ describe('CardsSwipable', () => {
   });
 
   it('should handle onSwipe on tip card card and forward analytics data', () => {
-    const dummyResourceCard: Card = {
-      type: CARD_TYPE.RESOURCE,
+    const dummyResourceCard: DeckCard = {
+      type: DECK_CARD_TYPE.RESOURCE,
       title: 'correction',
       isCorrect: true,
       resource: {
@@ -79,8 +79,8 @@ describe('CardsSwipable', () => {
       offeringExtraLife: false
     };
 
-    const dummyTipCard: Card = {
-      type: CARD_TYPE.TIP,
+    const dummyTipCard: DeckCard = {
+      type: DECK_CARD_TYPE.TIP,
       title: 'fooz',
       isCorrect: false
     };
@@ -90,7 +90,7 @@ describe('CardsSwipable', () => {
     const analytics = createFakeAnalytics();
 
     const component = renderer.create(
-      <CardsSwipable
+      <DeckCardsSwipable
         analytics={analytics}
         items={[dummyTipCard, dummyResourceCard]}
         renderItem={renderItem}
@@ -107,7 +107,7 @@ describe('CardsSwipable', () => {
     expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SWIPE, {
       id: 'deck-card',
       isCorrect: 0,
-      type: CARD_TYPE.TIP
+      type: DECK_CARD_TYPE.TIP
     });
   });
 });

@@ -34,7 +34,7 @@ export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large'
 
 export type TooltipType = 'highscore' | 'unlock';
 
-export type CardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
+export type DeckCardType = 'tip' | 'keyPoint' | 'correction' | 'resource';
 
 export type AuthorType = 'coorp' | 'verified' | 'custom' | 'marketplace';
 

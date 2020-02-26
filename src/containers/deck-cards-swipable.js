@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {Animated, Easing} from 'react-native';
 import {selectResource} from '@coorpacademy/player-store';
 
-import Cards from '../components/cards';
-import type {Props as CardsProps, Card as CardType} from '../components/cards';
+import DeckCards from '../components/deck-cards';
+import type {Props as DeckCardsProps, DeckCard} from '../components/deck-cards';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 
 import withAnalytics from './with-analytics';
@@ -19,24 +19,24 @@ type ConnectedDispatchProps = {|
 type Props = $Exact<{|
   ...WithAnalyticsProps,
   ...ConnectedDispatchProps,
-  items: Array<CardType>,
-  renderItem: (CardType, number, AnimationStyleProp | void) => React.Node,
+  items: Array<DeckCard>,
+  renderItem: (DeckCard, number, AnimationStyleProp | void) => React.Node,
   cardStyle?: ViewStyleProp,
-  onRef?: $PropertyType<CardsProps, 'onRef'>
+  onRef?: $PropertyType<DeckCardsProps, 'onRef'>
 |}>;
 
 type State = {|
   cardIndexShown: number
 |};
 
-class CardsSwipable extends React.PureComponent<Props, State> {
+class DeckCardsSwipable extends React.PureComponent<Props, State> {
   props: Props;
 
   state: State = {
     cardIndexShown: 0
   };
 
-  cards: typeof Cards;
+  cards: typeof DeckCards;
 
   // to simulate the swipe
   animation: Animated.Value = new Animated.Value(0);
@@ -82,7 +82,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     }
   };
 
-  handleRef = (element: typeof Cards | null) => {
+  handleRef = (element: typeof DeckCards | null) => {
     if (element) {
       this.cards = element;
     }
@@ -146,7 +146,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     return animationStyle;
   };
 
-  renderCard = (card: CardType, index: number) => {
+  renderCard = (card: DeckCard, index: number) => {
     const {renderItem} = this.props;
     return renderItem(card, index, index === 0 && this.getAnimationStyle());
   };
@@ -155,7 +155,7 @@ class CardsSwipable extends React.PureComponent<Props, State> {
     const {items, cardStyle} = this.props;
 
     return (
-      <Cards
+      <DeckCards
         testID="cards"
         items={items}
         renderItem={this.renderCard}
@@ -173,9 +173,9 @@ const mapDispatchToProps: ConnectedDispatchProps = {
   selectResource
 };
 
-export {CardsSwipable as Component};
+export {DeckCardsSwipable as Component};
 
 export default connect(
   null,
   mapDispatchToProps
-)(withAnalytics(CardsSwipable));
+)(withAnalytics(DeckCardsSwipable));

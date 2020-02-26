@@ -5,16 +5,16 @@ import DeckSwiper from '@coorpacademy/react-native-deck-swiper';
 import type {Answer} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
-import type {CardType, Resource} from '../types';
+import type {DeckCardType, Resource} from '../types';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
-export type Card = {|
+export type DeckCard = {|
   answers?: Answer,
   userAnswers?: Answer,
   isCorrect: boolean,
   title: string,
-  type: CardType,
+  type: DeckCardType,
   resource?: Resource,
   offeringExtraLife?: boolean
 |};
@@ -22,15 +22,15 @@ export type Card = {|
 export type Props = {|
   ...WithVibrationProps,
   testID: string,
-  items: Array<Card>,
-  renderItem: (Card, number) => React.Node,
+  items: Array<DeckCard>,
+  renderItem: (DeckCard, number) => React.Node,
   cardStyle?: ViewStyleProp,
   onSwiped: (cardIndexSwiped: number) => void,
   onSwipedAll: () => void,
   cardIndexShown?: number
 |};
 
-class Cards extends React.PureComponent<Props> {
+class DeckCards extends React.PureComponent<Props> {
   props: Props;
 
   swiper: DeckSwiper;
@@ -77,5 +77,5 @@ class Cards extends React.PureComponent<Props> {
   }
 }
 
-export {Cards as Component};
-export default withVibration(Cards);
+export {DeckCards as Component};
+export default withVibration(DeckCards);
