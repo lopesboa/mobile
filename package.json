@@ -1,6 +1,6 @@
 {
   "name": "coorpacademy-mobile",
-  "version": "2.0.50",
+  "version": "2.0.51",
   "private": true,
   "scripts": {
     "postinstall": "npx jetify && npm run update:version && npm run -s pull:firebase:config",
