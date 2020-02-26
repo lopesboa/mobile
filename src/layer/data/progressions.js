@@ -16,6 +16,7 @@ import {ForbiddenError, ConflictError, NotAcceptableError} from '../../models/er
 import type {Record, Completion, HeroRecommendation} from './_types';
 
 export const SYNCHRONIZED_PROGRESSIONS = 'synchronized_progressions';
+export const PENDING_PROGRESSION = 'pending_progression';
 
 export const buildCompletionKey = (engineRef: string, contentRef: string) =>
   `completion_${engineRef}_${contentRef}`;
@@ -85,8 +86,17 @@ const getSynchronizedProgressionIds = async (): Promise<Array<string>> => {
   return _synchronizedProgressions ? JSON.parse(_synchronizedProgressions) : [];
 };
 
+const getPendingProgressionId = async (): Promise<string> => {
+  const pendingProgressionId: string = await AsyncStorage.getItem(PENDING_PROGRESSION);
+  return pendingProgressionId || '';
+};
+
 const updateSynchronizedProgressionIds = (synchronizedProgressions: Array<string>): void => {
   AsyncStorage.setItem(SYNCHRONIZED_PROGRESSIONS, JSON.stringify(synchronizedProgressions));
+};
+
+const updatePendingProgressionId = (pendingProgressionId: string): void => {
+  AsyncStorage.setItem(PENDING_PROGRESSION, pendingProgressionId);
 };
 
 const META = {source: 'mobile'};
@@ -122,6 +132,30 @@ const synchronize = async (
   if (response.status >= 400) throw new Error(response.statusText);
 
   return;
+};
+
+const findRemoteProgressionById = async (
+  token: string,
+  host: string,
+  progressionId: string
+): Promise<Progression | null> => {
+  if (!progressionId) throw new TypeError('Must provide a progressionId');
+  const response = await fetch(`${host}/api/v2/progressions/${progressionId}`, {
+    method: 'GET',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+      'Content-Type': 'application/json',
+      Authorization: token
+    }
+  });
+
+  if (response.status === 404) return null;
+  if (response.status >= 400) throw new Error(response.statusText);
+  if (response.status === 200) {
+    const progression: Progression = await response.json();
+    return progression;
+  }
+  return null;
 };
 
 const addCreatedAtToAction = (progression: Progression): Progression => {
@@ -267,9 +301,12 @@ export {
   save,
   getAll,
   getSynchronizedProgressionIds,
+  getPendingProgressionId,
   findById,
   findLast,
   findBestOf,
   synchronize,
-  updateSynchronizedProgressionIds
+  findRemoteProgressionById,
+  updateSynchronizedProgressionIds,
+  updatePendingProgressionId
 };

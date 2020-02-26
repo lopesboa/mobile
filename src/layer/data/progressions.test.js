@@ -1320,4 +1320,145 @@ describe('aggregation by content', () => {
       );
     });
   });
+  describe('pending progressions id', () => {
+    it('getPendingProgressionId to return stored id', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve('foo'));
+
+      const {getPendingProgressionId} = require('./progressions');
+      const res: string = await getPendingProgressionId();
+      const expected: string = 'foo';
+
+      expect(res).toEqual(expected);
+    });
+
+    it('getPendingProgressionId to return empty string if there is no pendind progression', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(null));
+
+      const {getPendingProgressionId} = require('./progressions');
+      const res: string = await getPendingProgressionId();
+      const expected: string = '';
+
+      expect(res).toEqual(expected);
+    });
+
+    it('updatePendingProgressionId', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      AsyncStorage.setItem = jest.fn();
+
+      const pendingProgressionId = 'bar';
+      const {PENDING_PROGRESSION, updatePendingProgressionId} = require('./progressions');
+      await updatePendingProgressionId(pendingProgressionId);
+
+      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
+      expect(AsyncStorage.setItem).toHaveBeenCalledWith(PENDING_PROGRESSION, pendingProgressionId);
+    });
+  });
+
+  describe('findRemoteProgressionById', () => {
+    beforeEach(() => {
+      jest.resetModules();
+      jest.resetAllMocks();
+    });
+
+    const TOKEN = '__TOKEN__';
+    const HOST = 'https://coorp.mobile.com';
+
+    it('should throw an error if progressionId is empty', async () => {
+      const {findRemoteProgressionById} = require('./progressions');
+      await expect(findRemoteProgressionById(TOKEN, HOST, '')).rejects.toThrowError();
+    });
+
+    it('should return false if progression has not been successfully posted already (404 from server)', async () => {
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(`${HOST}/api/v2/progressions/${progressionId}`);
+        expect(options.method).toBe('GET');
+        expect(options.headers).toEqual({
+          Authorization: TOKEN,
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+        });
+        return Promise.resolve({
+          status: 404,
+          statusText: 'Not found'
+        });
+      });
+
+      const {findRemoteProgressionById} = require('./progressions');
+      await expect(findRemoteProgressionById(TOKEN, HOST, progressionId)).resolves.toBe(null);
+    });
+
+    it('should return throw an error if we get a bad request from the server (statusCode > 400 & !404)', async () => {
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(`${HOST}/api/v2/progressions/${progressionId}`);
+        expect(options.method).toBe('GET');
+        expect(options.headers).toEqual({
+          Authorization: TOKEN,
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+        });
+        return Promise.resolve({
+          status: 400,
+          statusText: 'Not found'
+        });
+      });
+
+      const {findRemoteProgressionById} = require('./progressions');
+      await expect(findRemoteProgressionById(TOKEN, HOST, progressionId)).rejects.toThrowError();
+    });
+
+    it('should return true if progression has been already successfully posted', async () => {
+      const fetch = require('cross-fetch');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = ENGINE.LEARNER;
+      const progressionContent = {
+        ref: 'foo',
+        type: CONTENT_TYPE.CHAPTER
+      };
+      const nextContent = {
+        ref: 'bar',
+        type: 'discipline'
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent,
+        nextContent
+      });
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(`${HOST}/api/v2/progressions/${progressionId}`);
+        expect(options.method).toBe('GET');
+        expect(options.headers).toEqual({
+          Authorization: TOKEN,
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+        });
+        return Promise.resolve({
+          status: 200,
+          statusText: 'OK',
+          json: () => Promise.resolve(fakeProgression)
+        });
+      });
+
+      const {findRemoteProgressionById} = require('./progressions');
+      await expect(findRemoteProgressionById(TOKEN, HOST, progressionId)).resolves.toBe(
+        fakeProgression
+      );
+    });
+  });
 });

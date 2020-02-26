@@ -94,7 +94,9 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
           updateSynchronizedProgressionIds: jest.fn(),
+          updatePendingProgressionId: jest.fn(),
           synchronize: jest.fn()
         }
       };
@@ -118,7 +120,7 @@ describe('Progressions synchronization', () => {
       // $FlowFixMe
       const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
 
-      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(2);
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
         failureProgression._id,
@@ -133,6 +135,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => [successProgression._id]),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn()
         }
@@ -161,11 +165,7 @@ describe('Progressions synchronization', () => {
 
       expect(store.dispatch).toHaveBeenCalledTimes(0);
 
-      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
-      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
-        successProgression._id
-      ]);
-
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(0);
       expect(actual).toBeUndefined();
     });
 
@@ -179,6 +179,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn()
         }
@@ -214,6 +216,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn()
         }
@@ -253,6 +257,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn()
         }
@@ -294,6 +300,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn()
         }
@@ -365,6 +373,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened')))
         }
@@ -400,6 +410,8 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn(() => Promise.reject(new Error('Network error')))
         }
@@ -447,6 +459,8 @@ describe('Progressions synchronization', () => {
             .fn()
             .mockImplementation(() => Promise.resolve([bazProgression, barProgression])),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve(['foo'])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          updatePendingProgressionId: jest.fn(),
           updateSynchronizedProgressionIds: jest.fn(),
           synchronize: jest.fn().mockImplementation((token, host, progrssion) => {
             expect(token).toBeDefined();
@@ -481,6 +495,145 @@ describe('Progressions synchronization', () => {
         'foo',
         'baz'
       ]);
+      expect(actual).toBeUndefined();
+    });
+  });
+
+  describe('Synchronize pending', () => {
+    it('should sync progression if it is not pending', async () => {
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve('')),
+          findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
+          updatePendingProgressionId: jest.fn(),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
+        }
+      };
+
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
+      store.dispatch.mockImplementation(action => {
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
+        return Promise.resolve(action);
+      });
+
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([successProgression])
+      );
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+
+      expect(store.dispatch).toHaveBeenCalledTimes(1);
+
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(actual).toBeUndefined();
+    });
+
+    it('should treat progression as synced if it is pending and has been already posted', async () => {
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve(successProgression._id)),
+          findRemoteProgressionById: jest.fn(() => Promise.resolve(successProgression)),
+          updatePendingProgressionId: jest.fn(),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
+        }
+      };
+
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
+      store.dispatch.mockImplementation(action => {
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
+        return Promise.resolve(action);
+      });
+
+      services.Progressions.updatePendingProgressionId.mockImplementation(value => {
+        expect(value).toBe('');
+      });
+
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([successProgression])
+      );
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+
+      expect(store.dispatch).toHaveBeenCalledTimes(1);
+
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(0);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updatePendingProgressionId).toHaveBeenCalledTimes(1);
+      expect(actual).toBeUndefined();
+    });
+
+    it('should treat progression as not synced if it is pending and has not been already posted', async () => {
+      const services = {
+        Progressions: {
+          getAll: jest.fn(),
+          getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
+          getPendingProgressionId: jest.fn(() => Promise.resolve(successProgression._id)),
+          findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
+          updatePendingProgressionId: jest.fn(),
+          updateSynchronizedProgressionIds: jest.fn(),
+          synchronize: jest.fn()
+        }
+      };
+
+      const store = {
+        getState: jest.fn(),
+        dispatch: jest.fn()
+      };
+
+      store.getState.mockReturnValue({
+        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+      });
+
+      store.dispatch.mockImplementation(action => {
+        expect(action.type).toEqual(SYNCHRONIZE_SUCCESS);
+        return Promise.resolve(action);
+      });
+
+      services.Progressions.updatePendingProgressionId
+        .mockImplementationOnce(value => {
+          expect(value).toBe(successProgression._id);
+        })
+        .mockImplementationOnce(value => {
+          expect(value).toBe('');
+        });
+
+      services.Progressions.getAll.mockImplementationOnce(() =>
+        Promise.resolve([successProgression])
+      );
+
+      // $FlowFixMe
+      const actual = await synchronizeProgressions(store.dispatch, store.getState, {services});
+
+      expect(store.dispatch).toHaveBeenCalledTimes(1);
+
+      expect(services.Progressions.synchronize).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
+      expect(services.Progressions.updatePendingProgressionId).toHaveBeenCalledTimes(2);
       expect(actual).toBeUndefined();
     });
   });
