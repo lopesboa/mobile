@@ -52,7 +52,7 @@ class ProgressionBar extends React.PureComponent<Props> {
             <Animated.View
               style={[
                 barStyle,
-                {backgroundColor: topBarColor ? topBarColor : brandTheme.colors.primary, width}
+                {backgroundColor: topBarColor ? topBarColor : theme.colors.positive, width}
               ]}
               testID={`progression-bar-${current}`}
             />

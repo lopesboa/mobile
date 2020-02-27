@@ -1334,7 +1334,7 @@ exports[`Storyshots CatalogItem With chapter (cover) 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,
@@ -2043,7 +2043,7 @@ exports[`Storyshots CatalogItem With chapter (locked) 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,
@@ -2922,7 +2922,7 @@ exports[`Storyshots CatalogItem With chapter 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,
@@ -3496,7 +3496,7 @@ exports[`Storyshots CatalogItem With discipline (cover) 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,
@@ -4078,7 +4078,7 @@ exports[`Storyshots CatalogItem With discipline (locked) 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,
@@ -4830,7 +4830,7 @@ exports[`Storyshots CatalogItem With discipline 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1,
                   "borderTopRightRadius": 1,
                   "height": 2,

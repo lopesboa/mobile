@@ -655,7 +655,7 @@ exports[`Storyshots Hero With content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#00B0FF",
+                  "backgroundColor": "#3EC483",
                   "borderBottomRightRadius": 1.5,
                   "borderTopRightRadius": 1.5,
                   "height": 3,

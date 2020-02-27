@@ -1248,7 +1248,7 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "#00B0FF",
+              "backgroundColor": "#3EC483",
               "borderBottomRightRadius": 1,
               "borderTopRightRadius": 1,
               "height": 2,
@@ -1405,7 +1405,7 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "#00B0FF",
+              "backgroundColor": "#3EC483",
               "borderBottomRightRadius": 1.5,
               "borderTopRightRadius": 1.5,
               "height": 3,
@@ -1968,7 +1968,7 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "#00B0FF",
+              "backgroundColor": "#3EC483",
               "borderBottomRightRadius": 1,
               "borderTopRightRadius": 1,
               "height": 2,

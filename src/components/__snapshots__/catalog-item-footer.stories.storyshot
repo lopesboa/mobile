@@ -527,7 +527,7 @@ exports[`Storyshots CatalogItemFooter Chapter (adaptive) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -949,7 +949,7 @@ exports[`Storyshots CatalogItemFooter Chapter (cover) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -1084,7 +1084,7 @@ exports[`Storyshots CatalogItemFooter Chapter (hero) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1.5,
             "borderTopRightRadius": 1.5,
             "height": 3,
@@ -1302,7 +1302,7 @@ exports[`Storyshots CatalogItemFooter Chapter (without author) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -1724,7 +1724,7 @@ exports[`Storyshots CatalogItemFooter Chapter 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -2609,7 +2609,7 @@ exports[`Storyshots CatalogItemFooter Discipline (adaptive) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -2903,7 +2903,7 @@ exports[`Storyshots CatalogItemFooter Discipline (cover) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -3038,7 +3038,7 @@ exports[`Storyshots CatalogItemFooter Discipline (hero) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1.5,
             "borderTopRightRadius": 1.5,
             "height": 3,
@@ -3128,7 +3128,7 @@ exports[`Storyshots CatalogItemFooter Discipline (without author) 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
@@ -3422,7 +3422,7 @@ exports[`Storyshots CatalogItemFooter Discipline 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#00B0FF",
+            "backgroundColor": "#3EC483",
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,

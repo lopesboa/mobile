@@ -15,7 +15,7 @@ exports[`Storyshots Progression Default 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#00B0FF",
+          "backgroundColor": "#3EC483",
           "borderBottomRightRadius": 0,
           "borderTopRightRadius": 0,
           "height": 3,
