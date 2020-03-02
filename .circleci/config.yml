@@ -375,7 +375,7 @@ jobs:
             echo "{\"date\": \"$(TZ=Europe/Paris date '+%d/%m/%Y %H:%M:%S')\", \"commit\": \"$(git log -n 1 --pretty=format:'%h')\"}" > build-ios.json
             cp ../ios/release/Coorpacademy.ipa Coorpacademy.ipa
             cp ../.circleci/adhoc-template.plist Coorpacademy.plist
-            sed -i -e "s@{DOMAIN}@${AWS_DOMAIN}@g" Coorpacademy.plist
+            sed -i -e "s@{DOMAIN}@${DOMAIN}@g" Coorpacademy.plist
             sed -i -e "s@{PATH}@${BRANCH_NAME}@g" Coorpacademy.plist
       - run:
           name: Deploy to internal store
