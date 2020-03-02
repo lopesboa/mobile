@@ -1005,6 +1005,34 @@ describe('Progressions', () => {
       expect(result).toEqual(expected);
     });
   });
+
+  describe('findApiBestOf', () => {
+    const engineRef = ENGINE.LEARNER;
+    const contentType: ContentType = CONTENT_TYPE.CHAPTER;
+    const contentRef = 'fakeContentRef';
+
+    beforeAll(() => {
+      jest.resetModules();
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+    });
+
+    it('should return default value', async () => {
+      const {findApiBestOf} = require('./progressions');
+
+      const result = await findApiBestOf(engineRef, contentType, contentRef);
+      const expected: FindBestOfResult = {
+        stars: 0
+      };
+
+      expect(result).toEqual(expected);
+    });
+
+    afterAll(() => {
+      jest.resetAllMocks();
+    });
+  });
 });
 
 const mockProgressionsStorage = (progressions: Array<Progression>) => {

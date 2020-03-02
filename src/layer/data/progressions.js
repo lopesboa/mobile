@@ -3,10 +3,10 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import type {Progression, Action, ContentType} from '@coorpacademy/progression-engine';
 import decode from 'jwt-decode';
-
 import {groupBy} from 'lodash/fp';
-
 import {heroRecommendation} from '@coorpacademy/progression-aggregations';
+
+import {__E2E__} from '../../modules/environment';
 import fetch from '../../modules/fetch';
 import {getCreatedAt, getUpdatedAt, isDone, isFailure} from '../../utils/progressions';
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
@@ -225,12 +225,15 @@ export type FindBestOfResult = {|
   stars: number
 |};
 
-const findBestOf = async (
+export const findApiBestOf = async (
   engineRef: string,
   contentType: ContentType,
-  contentRef: string,
-  progressionId: string
+  contentRef: string
 ): Promise<FindBestOfResult> => {
+  if (__E2E__) {
+    return {stars: 0};
+  }
+
   const token = await getToken();
 
   if (!token) {
@@ -248,7 +251,16 @@ const findBestOf = async (
     }
   );
 
-  const {stars: apiStars = 0} = await response.json();
+  return response.json();
+};
+
+const findBestOf = async (
+  engineRef: string,
+  contentType: ContentType,
+  contentRef: string,
+  progressionId: string
+): Promise<FindBestOfResult> => {
+  const {stars: apiStars = 0} = await findApiBestOf(engineRef, contentType, contentRef);
 
   const progressions = await getAll();
   const sortedProgressions = progressions
