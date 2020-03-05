@@ -8,7 +8,8 @@ import translations from '../translations';
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import CatalogItems, {ITEM_OFFSET, ITEM_WIDTH} from './catalog-items';
+import CatalogItems from '../containers/catalog-items';
+import {ITEM_OFFSET, ITEM_WIDTH} from './catalog-items';
 import Space from './space';
 import Text from './text';
 
@@ -19,6 +20,9 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: theme.colors.white
+  },
+  contentContainer: {
+    flex: 1
   },
   content: {
     alignItems: 'center',
@@ -39,8 +43,7 @@ const styles = StyleSheet.create({
 export type OwnProps = {|
   cards?: Array<DisciplineCard | ChapterCard | void>,
   onCardPress: (DisciplineCard | ChapterCard) => void,
-  onScroll?: ScrollEvent => void,
-  onScrollBeginDrag?: ScrollEvent => void,
+  onScroll?: (offset: number, limit: number) => void,
   testID?: string
 |};
 
@@ -54,7 +57,6 @@ const CatalogSearch = ({
   cards,
   onCardPress,
   onScroll,
-  onScrollBeginDrag,
   testID = 'catalog-search'
 }: Props) => {
   const numColumns = layout
@@ -76,9 +78,9 @@ const CatalogSearch = ({
           cards={cards}
           onCardPress={onCardPress}
           onScroll={onScroll}
-          onScrollBeginDrag={onScrollBeginDrag}
           numColumns={numColumns}
           style={styles.content}
+          containerStyle={styles.contentContainer}
           testID={`${testID}-items`}
         />
       ) : null}

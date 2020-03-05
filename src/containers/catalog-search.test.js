@@ -10,6 +10,7 @@ import {createProgression} from '../__fixtures__/progression';
 import {CARD_STATUS} from '../layer/data/_const';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {ENGINE, CONTENT_TYPE} from '../const';
+import {Component as CatalogSearch} from './catalog-search';
 import type {ConnectedStateProps} from './catalog-search';
 
 jest.useFakeTimers();
@@ -27,8 +28,25 @@ const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
 );
 
 describe('CatalogSearch', () => {
-  beforeEach(() => {
-    jest.resetModules();
+  describe('onScroll', () => {
+    it('should fetch cards on scroll', () => {
+      const searchValue = 'foo';
+      const offset = 2;
+      const limit = 6;
+      const fetchCards = jest.fn();
+      const component = renderer.create(
+        <CatalogSearch
+          searchValue={searchValue}
+          cards={cards}
+          onCardPress={handleFakePress}
+          fetchCards={fetchCards}
+        />
+      );
+      const items = component.root.find(el => el.props.testID === 'catalog-search-items');
+      items.props.onScroll(offset, limit);
+      expect(fetchCards).toHaveBeenCalledTimes(1);
+      expect(fetchCards).toHaveBeenCalledWith(searchValue, offset, limit);
+    });
   });
 
   describe('mapStateToProps', () => {
@@ -62,24 +80,5 @@ describe('CatalogSearch', () => {
 
       expect(result).toEqual(expected);
     });
-  });
-
-  it('should handle onScrollBeginDrag', () => {
-    const {Keyboard} = require('react-native');
-
-    Keyboard.dismiss = jest.fn();
-
-    const {Component: CatalogSearch} = require('./catalog-search');
-
-    const component = renderer.create(<CatalogSearch onCardPress={handleFakePress} />);
-
-    const list = component.root.find(el => el.props.testID === 'catalog-search');
-    list.props.onScrollBeginDrag();
-
-    expect(Keyboard.dismiss).toHaveBeenCalledTimes(1);
-  });
-
-  afterEach(() => {
-    jest.resetAllMocks();
   });
 });

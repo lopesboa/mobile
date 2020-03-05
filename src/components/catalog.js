@@ -5,7 +5,7 @@ import {StyleSheet, FlatList} from 'react-native';
 
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import type {Section} from '../types';
-import CatalogSection from '../containers/catalog-section-refreshable';
+import CatalogSection from '../containers/catalog-section';
 import theme from '../modules/theme';
 import Hero, {HEIGHT as _HERO_HEIGHT} from './hero';
 import Space from './space';

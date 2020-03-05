@@ -3,20 +3,16 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 
+import {handleFakePress} from '../utils/tests';
 import {createSections} from '../__fixtures__/sections';
 import {createChapterCard} from '../__fixtures__/cards';
 import {createCatalogState, createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
-import {fakeLayout, handleFakePress} from '../utils/tests';
 import {CARD_STATUS} from '../layer/data/_const';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {ENGINE, CONTENT_TYPE} from '../const';
-import {
-  Component as CatalogSectionRefreshable,
-  mapStateToProps,
-  DEBOUNCE_DURATION
-} from './catalog-section-refreshable';
-import type {ConnectedStateProps, OwnProps} from './catalog-section-refreshable';
+import {Component as CatalogSection, mapStateToProps} from './catalog-section';
+import type {ConnectedStateProps, OwnProps} from './catalog-section';
 
 jest.useFakeTimers();
 
@@ -32,67 +28,28 @@ const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
     })
 );
 
-describe('CatalogSectionRefreshable', () => {
+describe('CatalogSection', () => {
   describe('onScroll', () => {
     it('should fetch cards on scroll', () => {
       const sectionRef = 'foo';
+      const offset = 2;
+      const limit = 3;
       const fetchCards = jest.fn();
-      const _cards: Array<DisciplineCard | ChapterCard | void> = cards
-        .slice(0, 2)
-        .concat([undefined, undefined, undefined, undefined]);
       const component = renderer.create(
-        <CatalogSectionRefreshable
+        <CatalogSection
           sectionRef={sectionRef}
-          cards={_cards}
+          cards={[]}
           onCardPress={handleFakePress}
-          layout={fakeLayout}
           fetchCards={fetchCards}
           testID={`catalog-section-${sectionRef}`}
         />
       );
-      const catalogSection = component.root.find(
+      const items = component.root.find(
         el => el.props.testID === `catalog-section-${sectionRef}-items`
       );
-      const scrollEvent: ScrollEvent = {
-        nativeEvent: {
-          contentOffset: {
-            x: 453
-          }
-        }
-      };
-      catalogSection.props.onScroll(scrollEvent);
-      jest.advanceTimersByTime(DEBOUNCE_DURATION);
+      items.props.onScroll(offset, limit);
       expect(fetchCards).toHaveBeenCalledTimes(1);
-      expect(fetchCards).toHaveBeenCalledWith(sectionRef, 2, 3);
-    });
-
-    it('should handle scroll on cards already fetched', () => {
-      const sectionRef = 'baz';
-      const fetchCards = jest.fn();
-      const _cards: Array<DisciplineCard | ChapterCard | void> = cards.concat([undefined]);
-      const component = renderer.create(
-        <CatalogSectionRefreshable
-          sectionRef={sectionRef}
-          cards={_cards}
-          onCardPress={handleFakePress}
-          layout={fakeLayout}
-          fetchCards={fetchCards}
-          testID={`catalog-section-${sectionRef}`}
-        />
-      );
-      const catalogSection = component.root.find(
-        el => el.props.testID === `catalog-section-${sectionRef}-items`
-      );
-      const scrollEvent: ScrollEvent = {
-        nativeEvent: {
-          contentOffset: {
-            x: 453
-          }
-        }
-      };
-      catalogSection.props.onScroll(scrollEvent);
-      jest.advanceTimersByTime(DEBOUNCE_DURATION);
-      expect(fetchCards).toHaveBeenCalledTimes(0);
+      expect(fetchCards).toHaveBeenCalledWith(sectionRef, offset, limit);
     });
   });
 

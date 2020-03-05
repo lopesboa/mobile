@@ -1,84 +1,53 @@
 // @flow
 
 import * as React from 'react';
-import {Keyboard} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 
+import {fetchCards} from '../redux/actions/catalog/cards/fetch/search';
 import type {StoreState} from '../redux/store';
-import {getSearchRef, getCards} from '../redux/utils/state-extract';
+import {getSearchRef, getCards, getSearchValue} from '../redux/utils/state-extract';
 import CatalogSearchComponent from '../components/catalog-search';
 import type {OwnProps as CatalogSearchProps} from '../components/catalog-search';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import isEqual from '../modules/equal';
 import translations from '../translations';
-import withLayout from './with-layout';
-import type {WithLayoutProps} from './with-layout';
 
 export type ConnectedStateProps = {|
-  cards?: Array<DisciplineCard | ChapterCard | void>
+  cards?: Array<DisciplineCard | ChapterCard | void>,
+  searchValue?: string
+|};
+
+type ConnectedDispatchProps = {|
+  fetchCards: typeof fetchCards
 |};
 
 export type OwnProps = $Diff<
   CatalogSearchProps,
   {|
     cards: $PropertyType<CatalogSearchProps, 'cards'>,
-    onScroll: $PropertyType<CatalogSearchProps, 'onScroll'>,
-    onScrollBeginDrag: $PropertyType<CatalogSearchProps, 'onScrollBeginDrag'>
+    onScroll: $PropertyType<CatalogSearchProps, 'onScroll'>
   |}
 >;
 
 type Props = {|
   ...ConnectedStateProps,
-  ...WithLayoutProps,
+  ...ConnectedDispatchProps,
   ...OwnProps
 |};
 
 class CatalogSearch extends React.Component<Props> {
   props: Props;
 
-  shouldComponentUpdate = ({cards: nextCards, ...nextProps}: Props) => {
-    const {cards, ...props} = this.props;
-    const cardsRef = cards && cards.filter(Boolean).map(card => card.universalRef);
-    const nextCardsRef = nextCards && nextCards.filter(Boolean).map(card => card.universalRef);
-    const completion =
-      cards && cards.reduce((total, card) => total + ((card && card.completion) || 0), 0);
-    const nextCompletion =
-      nextCards && nextCards.reduce((total, card) => total + ((card && card.completion) || 0), 0);
+  handleScroll = (offset: number, limit: number) => {
+    const {searchValue} = this.props;
 
-    return (
-      typeof cards !== typeof nextCards ||
-      completion !== nextCompletion ||
-      // For performance purpose only (prevent useless render)
-      !isEqual(cardsRef, nextCardsRef) ||
-      !isEqual(props, nextProps)
-    );
+    if (searchValue) {
+      this.props.fetchCards(searchValue, offset, limit);
+    }
   };
-
-  handleScroll = ({nativeEvent}: ScrollEvent) => {
-    // @todo infinite scroll
-  };
-
-  // to remove the keyboard when scrolling
-  handleScrollBeginDrag = () => Keyboard.dismiss();
 
   render() {
-    const {
-      /* eslint-disable no-unused-vars */
-      containerStyle,
-      layout,
-      onLayout,
-      /* eslint-enable no-unused-vars */
-      ...remainingProps
-    } = this.props;
-    return (
-      <CatalogSearchComponent
-        {...remainingProps}
-        onScroll={this.handleScroll}
-        onScrollBeginDrag={this.handleScrollBeginDrag}
-        testID="catalog-search"
-      />
-    );
+    return <CatalogSearchComponent {...this.props} onScroll={this.handleScroll} />;
   }
 }
 
@@ -93,8 +62,16 @@ const getCardsState = createSelector(
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  cards: getCardsState(state)
+  cards: getCardsState(state),
+  searchValue: getSearchValue(state)
 });
 
+const mapDispatchToProps: ConnectedDispatchProps = {
+  fetchCards
+};
+
 export {CatalogSearch as Component};
-export default withLayout(connect(mapStateToProps)(CatalogSearch));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CatalogSearch);

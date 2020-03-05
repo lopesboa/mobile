@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
 type EmptyCard = {};
 
-type Props = {|
+export type Props = {|
   cards?: Array<DisciplineCard | ChapterCard | void>,
   onCardPress?: (DisciplineCard | ChapterCard) => void,
   onScroll?: ScrollEvent => void,

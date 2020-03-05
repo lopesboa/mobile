@@ -106,8 +106,8 @@ export const tapCardOnList = async (testID: string, index: number, isVertical?: 
   }
 
   await element(by.id(testID)).tapAtPoint({
-    x: x + (isVertical ? ITEM_WIDTH : ITEM_HEIGHT) / 2,
-    y: y + (isVertical ? ITEM_HEIGHT : ITEM_WIDTH) / 2
+    x: x + ITEM_WIDTH / 2,
+    y: y + ITEM_HEIGHT / 2
   });
 };
 

@@ -5,7 +5,8 @@ import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import CatalogItems, {ITEM_OFFSET, ITEM_HEIGHT} from './catalog-items';
+import CatalogItems from '../containers/catalog-items';
+import {ITEM_OFFSET, ITEM_HEIGHT} from './catalog-items';
 import Placeholder from './placeholder';
 import PlaceholderLine from './placeholder-line';
 import Text from './text';
@@ -37,7 +38,7 @@ export type Props = {|
   title?: string,
   cards?: Array<DisciplineCard | ChapterCard | void>,
   onCardPress?: (DisciplineCard | ChapterCard) => void,
-  onScroll?: ScrollEvent => void,
+  onScroll?: (offset: number, limit: number) => void,
   testID: string
 |};
 
