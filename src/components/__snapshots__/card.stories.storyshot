@@ -6,7 +6,6 @@ exports[`Storyshots Card Default 1`] = `
     Array [
       Object {
         "borderRadius": 5,
-        "flex": 1,
       },
       Object {
         "elevation": 4,
@@ -26,7 +25,6 @@ exports[`Storyshots Card Default 1`] = `
       Array [
         Object {
           "borderRadius": 5,
-          "flex": 1,
         },
         undefined,
         Object {

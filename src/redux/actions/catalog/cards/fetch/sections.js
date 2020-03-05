@@ -1,20 +1,20 @@
 // @flow strict
 
-import type {DisciplineCard, ChapterCard} from '../../../../layer/data/_types';
-import translations from '../../../../translations';
-import type {SupportedLanguage} from '../../../../translations/_types';
-import type {StoreAction, StoreErrorAction} from '../../../_types';
-import {getToken, getBrand, getSection} from '../../../utils/state-extract';
-import type {Action as ErrorAction} from '../../ui/errors';
+import type {DisciplineCard, ChapterCard} from '../../../../../layer/data/_types';
+import translations from '../../../../../translations';
+import type {SupportedLanguage} from '../../../../../translations/_types';
+import type {StoreAction, StoreErrorAction} from '../../../../_types';
+import {getToken, getBrand, getSection} from '../../../../utils/state-extract';
+import type {Action as ErrorAction} from '../../../ui/errors';
 
-export const FETCH_REQUEST = '@@cards/FETCH_REQUEST';
-export const FETCH_SUCCESS = '@@cards/FETCH_SUCCESS';
-export const FETCH_ERROR = '@@cards/FETCH_ERROR';
+export const FETCH_REQUEST = '@@cards/FETCH_SECTIONS_REQUEST';
+export const FETCH_SUCCESS = '@@cards/FETCH_SECTIONS_SUCCESS';
+export const FETCH_ERROR = '@@cards/FETCH_SECTIONS_ERROR';
 
 export const DEFAULT_LIMIT = 5;
 
 export type FetchRequestAction = {|
-  type: '@@cards/FETCH_REQUEST',
+  type: '@@cards/FETCH_SECTIONS_REQUEST',
   payload: {
     sectionKey: string,
     offset: number,
@@ -24,7 +24,7 @@ export type FetchRequestAction = {|
 |};
 
 export type FetchSuccessAction = {|
-  type: '@@cards/FETCH_SUCCESS',
+  type: '@@cards/FETCH_SECTIONS_SUCCESS',
   payload: {
     sectionKey: string,
     offset: number,
@@ -36,7 +36,7 @@ export type FetchSuccessAction = {|
 |};
 
 export type FetchErrorAction = StoreErrorAction<{|
-  type: '@@cards/FETCH_ERROR'
+  type: '@@cards/FETCH_SECTIONS_ERROR'
 |}>;
 
 export type Action = FetchRequestAction | FetchSuccessAction | FetchErrorAction;
@@ -105,7 +105,13 @@ export const fetchCards = (
     if (brand === null) throw new TypeError('Brand not defined');
     if (!section) throw new Error('Section not found');
 
-    const {cards, total} = await services.Cards.find(token, brand.host, section, offset, limit);
+    const {cards, total} = await services.Cards.findBySection(
+      token,
+      brand.host,
+      section,
+      offset,
+      limit
+    );
 
     return dispatch(fetchSuccess(sectionKey, offset, limit, total, cards, language));
   } catch (e) {

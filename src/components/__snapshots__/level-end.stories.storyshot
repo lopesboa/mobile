@@ -883,7 +883,6 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -903,7 +902,6 @@ exports[`Storyshots LevelEnd Failure 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {
@@ -2406,7 +2404,6 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -2426,7 +2423,6 @@ exports[`Storyshots LevelEnd Failure Author Coorp 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {
@@ -4211,7 +4207,6 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -4231,7 +4226,6 @@ exports[`Storyshots LevelEnd Finished 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {
@@ -6401,7 +6395,6 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -6421,7 +6414,6 @@ exports[`Storyshots LevelEnd Microlearning 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {
@@ -9178,7 +9170,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -9198,7 +9189,6 @@ exports[`Storyshots LevelEnd Success 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {
@@ -11667,7 +11657,6 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                 Array [
                   Object {
                     "borderRadius": 5,
-                    "flex": 1,
                   },
                   Object {
                     "elevation": 4,
@@ -11687,7 +11676,6 @@ exports[`Storyshots LevelEnd Success Author Coorp 1`] = `
                   Array [
                     Object {
                       "borderRadius": 5,
-                      "flex": 1,
                     },
                     undefined,
                     Object {

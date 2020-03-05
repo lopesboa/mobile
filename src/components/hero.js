@@ -1,7 +1,8 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
+import kebabCase from 'lodash/fp/kebabCase';
 
 import theme from '../modules/theme';
 import withLayout from '../containers/with-layout';
@@ -81,7 +82,7 @@ class Hero extends React.PureComponent<Props> {
                 undefined;
 
               const testContentSuffix =
-                (content && content.universalRef && content.universalRef.replace(/_/g, '-')) ||
+                (content && content.universalRef && kebabCase(content.universalRef)) ||
                 'placeholder';
 
               return (

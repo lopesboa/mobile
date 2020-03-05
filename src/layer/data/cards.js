@@ -272,9 +272,10 @@ export const fetchCard = async (content: Content): Promise<DisciplineCard | Chap
 export const fetchCards = async (
   token: string,
   host: string,
-  section: Section,
+  endpoint: string,
   offset: number,
-  limit: number
+  limit: number,
+  queryParams?: QueryParams = {}
 ): Promise<{|
   cards: Cards,
   total: number
@@ -294,14 +295,14 @@ export const fetchCards = async (
     total = _cards.length;
   } else {
     const query: QueryParams = {
-      ...section.query,
+      ...queryParams,
       offset,
       limit,
       lang: language,
       withoutAdaptive: true
     };
 
-    const response = await fetch(`${host}${section.endpoint}?${buildUrlQueryParams(query)}`, {
+    const response = await fetch(`${host}${endpoint}?${buildUrlQueryParams(query)}`, {
       headers: {authorization: token}
     });
     const {
@@ -320,6 +321,22 @@ export const fetchCards = async (
     total
   };
 };
+
+export const fetchSectionCards = (
+  token: string,
+  host: string,
+  section: Section,
+  offset: number,
+  limit: number
+) => fetchCards(token, host, section.endpoint, offset, limit, {...section.query});
+
+export const fetchSearchCards = (
+  token: string,
+  host: string,
+  search: string,
+  offset: number,
+  limit: number
+) => fetchCards(token, host, '/api/v2/contents', offset, limit, {fullText: search});
 
 export default {
   fetchCards,

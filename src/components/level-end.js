@@ -1,10 +1,11 @@
-// @flow strict
+// @flow
 /* eslint import/max-dependencies: 0 */
 
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
 import type {ContentType} from '@coorpacademy/progression-engine';
+import kebabCase from 'lodash/fp/kebabCase';
 
 import translations from '../translations';
 import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
@@ -260,10 +261,7 @@ class LevelEnd extends React.PureComponent<Props> {
                           item={recommendation}
                           onPress={onCardPress}
                           size="cover"
-                          testID={`recommend-item-${recommendation.universalRef.replace(
-                            /_/g,
-                            '-'
-                          )}`}
+                          testID={`recommend-item-${kebabCase(recommendation.universalRef)}`}
                           section="recommendation"
                         />
                       </Card>

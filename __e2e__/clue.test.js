@@ -1,7 +1,7 @@
 // @flow strict
 
 // import {sleep} from '../src/utils/tests';
-import {reloadApp, bypassAuthentication, getClueTab, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, getClueTab, tapCardOnList, waitForExist} from './utils';
 
 describe('Clue', () => {
   beforeAll(async () => {
@@ -11,7 +11,7 @@ describe('Clue', () => {
 
   describe('With clue', () => {
     it('should open the player', async () => {
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await tapCardOnList('catalog-section-recommended-items', 2);
     });
 
     it('should be able to open the clue tab', async () => {
@@ -34,7 +34,7 @@ describe('Clue', () => {
   describe('Without clue', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await tapCardOnSection('catalog-section-recommended-items', 6);
+      await tapCardOnList('catalog-section-recommended-items', 6);
     });
 
     it('should not be able to open the clue tab', async () => {

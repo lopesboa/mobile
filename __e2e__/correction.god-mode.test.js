@@ -1,12 +1,12 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, waitForVisible, tapCardOnSection} from './utils';
+import {reloadApp, bypassAuthentication, waitForVisible, tapCardOnList} from './utils';
 
 describe('Correction: god mode', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await tapCardOnList('catalog-section-recommended-items', 2);
   });
 
   it('should be able to enable god mode', async () => {

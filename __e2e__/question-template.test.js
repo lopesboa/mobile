@@ -3,7 +3,7 @@
 import {
   reloadApp,
   bypassAuthentication,
-  tapCardOnSection,
+  tapCardOnList,
   waitForExist,
   waitForNotVisible
 } from './utils';
@@ -15,7 +15,7 @@ describe('Template', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 7);
+    await tapCardOnList('catalog-section-recommended-items', 7);
   });
 
   it('should see template elements', async () => {

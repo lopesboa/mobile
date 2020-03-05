@@ -1,0 +1,4538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CatalogSearch Default 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexGrow": 1,
+    }
+  }
+  testID="catalog-search"
+/>
+`;
+
+exports[`Storyshots CatalogSearch No results 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexGrow": 1,
+    }
+  }
+  testID="catalog-search-no-results"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "paddingHorizontal": 4,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 64,
+          "width": 64,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {},
+          Object {
+            "fontSize": 28,
+            "fontWeight": "700",
+          },
+        ]
+      }
+    >
+      No results
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 8,
+          "width": 8,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {},
+          Object {
+            "color": "#546E7A",
+            "fontSize": 15,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Your search did not have any results.
+Try searching other keywords.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots CatalogSearch With cards 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexGrow": 1,
+    }
+  }
+  testID="catalog-search-with-cards"
+>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "alignItems": "center",
+        "paddingHorizontal": 4,
+        "paddingVertical": 20,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "_score": null,
+          "accessible": true,
+          "adaptiv": false,
+          "authors": Array [
+            Object {
+              "authorType": "verified",
+              "label": "A good guy with blue eyes",
+              "ref": "part_VyFl5hZ3V",
+            },
+          ],
+          "authorsListHidden": "A good guy",
+          "certification": false,
+          "completion": 0.3,
+          "conditions": Array [],
+          "course": null,
+          "createdAt": "2018-04-26T07:38:44.780Z",
+          "defaultModuleLevel": "base",
+          "descriptionHidden": "<b> THIS COURSE IS ONLY AVAILABLE IN FRENCH </b> <br/>
+Vous rédigez un mail de la plus haute importante et bloquez – encore ! – sur l’accord du participe passé ? Vous écrivez une lettre à l’attention de votre PDG et avez un trou de mémoire au moment d'écrire « je soussigné » ? On pense tous maîtriser – plus ou moins – les bases de la langue française. Pourtant, pas toujours évident de se souvenir de toutes les règles et subtilités d’accord ! Vous pensez faire un sans-faute ? Testez vos connaissances en suivant ce cours !",
+          "favorite": false,
+          "groupsHidden": "All courses, Flawless French",
+          "image": "//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg",
+          "isNew": false,
+          "lang": "en",
+          "modules": Array [
+            Object {
+              "accessible": true,
+              "completion": 0,
+              "creditsToAccess": 0,
+              "inProgress": false,
+              "isConditional": false,
+              "isDone": false,
+              "label": "Basic",
+              "level": "base",
+              "nbChapters": 3,
+              "ref": "mod_1",
+              "stars": 0,
+              "status": "isActive",
+              "taggedNewUntil": "2018-02-22T13:49:05.835Z",
+              "universalRef": "mod_1",
+              "version": "1",
+            },
+          ],
+          "nbChapters": 8,
+          "position": 0,
+          "ref": "foo",
+          "relatedContentHidden": "Accorder un verbe avec son sujet (1), Accorder un déterminant, Accorder un pronom avec le nom qu'il représente, Accorder un verbe avec son sujet (2), Accorder un adjectif quelle que soit sa fonction, Accorder un participe passé avec le sujet, quand il convient, Accorder une forme verbale en -ant quand il convient, Accorder le participe passé d'un verbe pronominal",
+          "skills": Array [
+            Object {
+              "name": "Written expression",
+              "ref": "skill_EkRYdKYjB",
+            },
+          ],
+          "skillsHidden": "Maîtriser les différentes natures du sujet Identifier le nom noyau dans un groupe nominal, reconnaître les déterminants indéfinis et maîtriser l’accord de « tout » Comprendre la nature du pronom et connaître les différentes catégories Maîtriser l’accord du verbe avec le sujet quelle que soit sa place Accorder un adjectif quelle que soit sa nature (épithète, attribut du sujet,...) Comprendre dans quel cas le participe passé s’accorde ou non Distinguer l’adjectif verbal en -ant du participe présent afin d’accorder convenablement Faire la différence entre les verbes essentiellement pronominaux et les verbes occasionnellement pronominaux",
+          "stars": 0,
+          "taggedNewUntil": "2018-04-22T12:49:05.833Z",
+          "thematiques": Array [
+            Object {
+              "label": "All courses",
+              "ref": "ALL",
+            },
+            Object {
+              "label": "Flawless French",
+              "ref": "them_EJEGNqKn4",
+            },
+          ],
+          "time": 40,
+          "title": "Discipline card",
+          "type": "course",
+          "universalRef": "foo",
+          "version": "1",
+        },
+        Object {
+          "_score": null,
+          "accessible": true,
+          "adaptiv": false,
+          "authors": Array [
+            Object {
+              "authorType": "custom",
+              "label": "A good guy with blue eyes",
+              "ref": "part_VyFl5hZ3V",
+            },
+          ],
+          "authorsListHidden": "A good guy",
+          "certification": false,
+          "completion": 0.8,
+          "course": null,
+          "createdAt": "2018-04-26T07:38:44.779Z",
+          "creditsToAccess": 0,
+          "favorite": false,
+          "groupsHidden": "All courses, Flawless French",
+          "image": "//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+          "inProgress": true,
+          "isDone": false,
+          "isFirst": false,
+          "isNew": true,
+          "isStandalone": false,
+          "lang": "en",
+          "moduleRef": "mod_NyEfthPvE",
+          "position": -1,
+          "ref": "bar",
+          "relatedContentHidden": "Mastering the rules of agreement in French",
+          "skills": Array [
+            Object {
+              "name": "Written expression",
+              "ref": "skill_EkRYdKYjB",
+            },
+          ],
+          "stars": 0,
+          "status": "isActive",
+          "taggedNewUntil": "2018-04-22T12:49:05.836Z",
+          "thematiques": Array [
+            Object {
+              "label": "All courses",
+              "ref": "ALL",
+            },
+            Object {
+              "label": "Flawless French",
+              "ref": "them_EJEGNqKn4",
+            },
+          ],
+          "time": 8,
+          "title": "Chapter card",
+          "type": "chapter",
+          "universalRef": "bar",
+          "version": "1",
+        },
+        Object {
+          "_score": null,
+          "accessible": true,
+          "adaptiv": false,
+          "authors": Array [
+            Object {
+              "authorType": "custom",
+              "label": "A good guy with blue eyes",
+              "ref": "part_VyFl5hZ3V",
+            },
+          ],
+          "authorsListHidden": "A good guy",
+          "certification": false,
+          "completion": 0,
+          "course": null,
+          "createdAt": "2018-04-26T07:38:44.779Z",
+          "creditsToAccess": 0,
+          "favorite": false,
+          "groupsHidden": "All courses, Flawless French",
+          "image": "//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+          "inProgress": false,
+          "isDone": false,
+          "isFirst": false,
+          "isNew": true,
+          "isStandalone": false,
+          "lang": "en",
+          "moduleRef": "mod_NyEfthPvE",
+          "position": -1,
+          "ref": "baz",
+          "relatedContentHidden": "Mastering the rules of agreement in French",
+          "skills": Array [
+            Object {
+              "name": "Written expression",
+              "ref": "skill_EkRYdKYjB",
+            },
+          ],
+          "stars": 0,
+          "status": "isActive",
+          "taggedNewUntil": "2018-04-22T12:49:05.836Z",
+          "thematiques": Array [
+            Object {
+              "label": "All courses",
+              "ref": "ALL",
+            },
+            Object {
+              "label": "Flawless French",
+              "ref": "them_EJEGNqKn4",
+            },
+          ],
+          "time": 8,
+          "title": "Chapter card",
+          "type": "chapter",
+          "universalRef": "baz",
+          "version": "1",
+        },
+        Object {
+          "_score": null,
+          "accessible": true,
+          "adaptiv": false,
+          "authors": Array [
+            Object {
+              "authorType": "custom",
+              "label": "A good guy with blue eyes",
+              "ref": "part_VyFl5hZ3V",
+            },
+          ],
+          "authorsListHidden": "A good guy",
+          "certification": false,
+          "completion": 0.5,
+          "course": null,
+          "createdAt": "2018-04-26T07:38:44.779Z",
+          "creditsToAccess": 0,
+          "favorite": false,
+          "groupsHidden": "All courses, Flawless French",
+          "image": "//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg",
+          "inProgress": true,
+          "isDone": false,
+          "isFirst": false,
+          "isNew": true,
+          "isStandalone": false,
+          "lang": "en",
+          "moduleRef": "mod_NyEfthPvE",
+          "position": -1,
+          "ref": "qux",
+          "relatedContentHidden": "Mastering the rules of agreement in French",
+          "skills": Array [
+            Object {
+              "name": "Written expression",
+              "ref": "skill_EkRYdKYjB",
+            },
+          ],
+          "stars": 0,
+          "status": "isActive",
+          "taggedNewUntil": "2018-04-22T12:49:05.836Z",
+          "thematiques": Array [
+            Object {
+              "label": "All courses",
+              "ref": "ALL",
+            },
+            Object {
+              "label": "Flawless French",
+              "ref": "them_EJEGNqKn4",
+            },
+          ],
+          "time": 8,
+          "title": "Chapter card",
+          "type": "chapter",
+          "universalRef": "qux",
+          "version": "1",
+        },
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+        Object {},
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemLayout={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    testID="catalog-search-with-cards-items"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-foo"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        false,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_cours_hatier_accords-1527071992067.jpg&m=crop&q=90&w=336&h=410",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-foo-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        1711276032,
+                        3003121664,
+                        4278190080,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-foo-image-gradient"
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#FFFFFF",
+                              "textAlign": "center",
+                              "textShadowColor": "rgba(0, 0, 0, 1)",
+                              "textShadowRadius": 2,
+                            },
+                            false,
+                            Object {
+                              "fontSize": 10,
+                            },
+                          ],
+                        ]
+                      }
+                      testID="author-catalog-search-with-cards-items-item-foo-content-author"
+                    />
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-foo-content-footer"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flexDirection": "row",
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <Text
+                        style={
+                          Array [
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "fontWeight": "700",
+                              },
+                              Object {
+                                "fontSize": 15,
+                              },
+                              false,
+                            ],
+                          ]
+                        }
+                        testID="title-catalog-search-with-cards-items-item-foo-content-footer"
+                      >
+                        Discipline card
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "flex-start",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "flex": 1,
+                                  "fontWeight": "400",
+                                },
+                                Object {
+                                  "fontSize": 12,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="subtitle-catalog-search-with-cards-items-item-foo-content-footer"
+                        >
+                          A good guy with blue eyes
+                        </Text>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                        <RNSVGSvgView
+                          align="xMidYMid"
+                          bbHeight={13.200000000000001}
+                          bbWidth={13.200000000000001}
+                          color="#FFFFFF"
+                          height={13.200000000000001}
+                          meetOrSlice={0}
+                          minX={0}
+                          minY={0}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "borderWidth": 0,
+                              },
+                              undefined,
+                              null,
+                              Object {
+                                "flex": 0,
+                                "height": 13,
+                                "width": 13,
+                              },
+                            ]
+                          }
+                          testID="certified-catalog-search-with-cards-items-item-foo-content-footer"
+                          tintColor="#FFFFFF"
+                          vbHeight={24}
+                          vbWidth={24}
+                          width={13.200000000000001}
+                        >
+                          <RNSVGGroup
+                            fill={
+                              Array [
+                                0,
+                                4278190080,
+                              ]
+                            }
+                            fillOpacity={1}
+                            fillRule={1}
+                            font={Object {}}
+                            matrix={
+                              Array [
+                                1,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                              ]
+                            }
+                            opacity={1}
+                            originX={0}
+                            originY={0}
+                            propList={Array []}
+                            rotation={0}
+                            scaleX={1}
+                            scaleY={1}
+                            skewX={0}
+                            skewY={0}
+                            stroke={null}
+                            strokeDasharray={null}
+                            strokeDashoffset={null}
+                            strokeLinecap={0}
+                            strokeLinejoin={0}
+                            strokeMiterlimit={4}
+                            strokeOpacity={1}
+                            strokeWidth={1}
+                            vectorEffect={0}
+                            x={0}
+                            y={0}
+                          >
+                            <RNSVGPath
+                              d="M0 .001h24v24H0z"
+                              fill={null}
+                              fillOpacity={1}
+                              fillRule={1}
+                              matrix={
+                                Array [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                ]
+                              }
+                              opacity={1}
+                              originX={0}
+                              originY={0}
+                              propList={
+                                Array [
+                                  "fill",
+                                ]
+                              }
+                              rotation={0}
+                              scaleX={1}
+                              scaleY={1}
+                              skewX={0}
+                              skewY={0}
+                              stroke={null}
+                              strokeDasharray={null}
+                              strokeDashoffset={null}
+                              strokeLinecap={0}
+                              strokeLinejoin={0}
+                              strokeMiterlimit={4}
+                              strokeOpacity={1}
+                              strokeWidth={1}
+                              vectorEffect={0}
+                              x={0}
+                              y={0}
+                            />
+                            <RNSVGPath
+                              d="M12.042 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.478-10-10-10zm-.75 15.75l-5-3.75 1.5-2 3 2.25 5.25-7 2 1.5-6.75 9z"
+                              fill={
+                                Array [
+                                  0,
+                                  4294967295,
+                                ]
+                              }
+                              fillOpacity={1}
+                              fillRule={1}
+                              matrix={
+                                Array [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                ]
+                              }
+                              opacity={1}
+                              originX={0}
+                              originY={0}
+                              propList={
+                                Array [
+                                  "fill",
+                                ]
+                              }
+                              rotation={0}
+                              scaleX={1}
+                              scaleY={1}
+                              skewX={0}
+                              skewY={0}
+                              stroke={null}
+                              strokeDasharray={null}
+                              strokeDashoffset={null}
+                              strokeLinecap={0}
+                              strokeLinejoin={0}
+                              strokeMiterlimit={4}
+                              strokeOpacity={1}
+                              strokeWidth={1}
+                              vectorEffect={0}
+                              x={0}
+                              y={0}
+                            />
+                          </RNSVGGroup>
+                        </RNSVGSvgView>
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 16,
+                            "width": 16,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 3,
+                              "overflow": "hidden",
+                            },
+                            false,
+                          ]
+                        }
+                        testID="progress-bar-catalog-search-with-cards-items-item-foo-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                            }
+                          }
+                          testID="progression-bar"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#3EC483",
+                                "borderBottomRightRadius": 1,
+                                "borderTopRightRadius": 1,
+                                "height": 2,
+                                "width": "30%",
+                              }
+                            }
+                            testID="progression-bar-0.3"
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-bar"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        false,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=336&h=410",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-bar-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        1711276032,
+                        3003121664,
+                        4278190080,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-bar-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "alignSelf": "flex-start",
+                            "backgroundColor": "#FFFFFF",
+                            "borderBottomEndRadius": 12,
+                            "paddingHorizontal": 8,
+                            "paddingVertical": 4,
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "fontWeight": "700",
+                                  "textAlign": "center",
+                                },
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 10,
+                                },
+                              ],
+                            ]
+                          }
+                          testID="catalog-search-with-cards-items-item-bar-badge"
+                        >
+                          New
+                        </Text>
+                      </View>
+                    </View>
+                    <Text
+                      style={
+                        Array [
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#FFFFFF",
+                              "textAlign": "center",
+                              "textShadowColor": "rgba(0, 0, 0, 1)",
+                              "textShadowRadius": 2,
+                            },
+                            false,
+                            Object {
+                              "fontSize": 10,
+                            },
+                          ],
+                        ]
+                      }
+                      testID="author-catalog-search-with-cards-items-item-bar-content-author"
+                    >
+                      A GOOD GUY WITH BLUE EYES
+                       CREATION
+                    </Text>
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-bar-content-footer"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <RNSVGSvgView
+                          align="xMidYMid"
+                          bbHeight={15}
+                          bbWidth={15}
+                          color="#FFFFFF"
+                          height={15}
+                          meetOrSlice={0}
+                          minX={0}
+                          minY={0}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "borderWidth": 0,
+                              },
+                              undefined,
+                              null,
+                              Object {
+                                "flex": 0,
+                                "height": 15,
+                                "width": 15,
+                              },
+                            ]
+                          }
+                          testID="infinite-catalog-search-with-cards-items-item-bar-content-footer"
+                          tintColor="#FFFFFF"
+                          vbHeight={26}
+                          vbWidth={26}
+                          width={15}
+                        >
+                          <RNSVGGroup
+                            fill={
+                              Array [
+                                0,
+                                4278190080,
+                              ]
+                            }
+                            fillOpacity={1}
+                            fillRule={1}
+                            font={Object {}}
+                            matrix={
+                              Array [
+                                1,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                              ]
+                            }
+                            opacity={1}
+                            originX={0}
+                            originY={0}
+                            propList={Array []}
+                            rotation={0}
+                            scaleX={1}
+                            scaleY={1}
+                            skewX={0}
+                            skewY={0}
+                            stroke={null}
+                            strokeDasharray={null}
+                            strokeDashoffset={null}
+                            strokeLinecap={0}
+                            strokeLinejoin={0}
+                            strokeMiterlimit={4}
+                            strokeOpacity={1}
+                            strokeWidth={1}
+                            vectorEffect={0}
+                            x={0}
+                            y={0}
+                          >
+                            <RNSVGPath
+                              d="M13 26C5.8 26 0 20.2 0 13S5.8 0 13 0s13 5.8 13 13-5.8 13-13 13zm6.2-16.8c.1-.1.2-.3.3-.5.1-.5-.4-1-.9-.9-.2 0-.4.1-.5.3l-.7.7c-.9-.7-2-1.1-3.2-1.3v-.6h.6c.4 0 .8-.3.9-.7 0-.5-.3-.9-.8-.9h-3c-.4 0-.8.3-.9.7 0 .5.3.9.8.9h.7v.6c-1.1.1-2.1.5-3 1.2-.8.6.1 1.9 1 1.3 1.5-1 3.4-1.2 5-.4 1.6.8 2.7 2.3 2.8 4 .1 1.7-.9 3.4-2.4 4.2-1.6.9-3.5.8-5-.1-.4-.2-.8-.2-1.1.2-.3.4-.2.9.2 1.2 1.3.8 2.9 1.1 4.5.9 3.2-.5 5.5-3.1 5.6-6.2 0-1.4-.5-2.8-1.3-3.9l.4-.7zm-4.6 4.3l1.5-1.8c.4-.5-.3-1.1-.7-.7l-1.9 1.4c-.6-.1-1.1.2-1.4.7-.3.5-.2 1.1.2 1.5.4.4 1 .5 1.5.2.6-.2.9-.8.8-1.3zm-3.9 2.6c0-.4-.3-.6-.7-.6H7.2c-.9 0-.9 1.3 0 1.3H10c.4 0 .7-.3.7-.7zm-.7-2.9H6.1c-.9 0-.9 1.3 0 1.3H10c.9 0 .9-1.3 0-1.3zm0-1c.9 0 .9-1.3 0-1.3H4.8c-.9 0-.9 1.3 0 1.3H10z"
+                              fill={
+                                Array [
+                                  0,
+                                  4294967295,
+                                ]
+                              }
+                              fillOpacity={1}
+                              fillRule={0}
+                              matrix={
+                                Array [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                ]
+                              }
+                              opacity={1}
+                              originX={0}
+                              originY={0}
+                              propList={
+                                Array [
+                                  "fill",
+                                  "fillRule",
+                                ]
+                              }
+                              rotation={0}
+                              scaleX={1}
+                              scaleY={1}
+                              skewX={0}
+                              skewY={0}
+                              stroke={null}
+                              strokeDasharray={null}
+                              strokeDashoffset={null}
+                              strokeLinecap={0}
+                              strokeLinejoin={0}
+                              strokeMiterlimit={4}
+                              strokeOpacity={1}
+                              strokeWidth={1}
+                              vectorEffect={0}
+                              x={0}
+                              y={0}
+                            />
+                          </RNSVGGroup>
+                        </RNSVGSvgView>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <Text
+                        style={
+                          Array [
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "fontWeight": "700",
+                              },
+                              Object {
+                                "fontSize": 15,
+                              },
+                              false,
+                            ],
+                          ]
+                        }
+                        testID="title-catalog-search-with-cards-items-item-bar-content-footer"
+                      >
+                        Chapter card
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "flex-start",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "flex": 1,
+                                  "fontWeight": "400",
+                                },
+                                Object {
+                                  "fontSize": 12,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="subtitle-catalog-search-with-cards-items-item-bar-content-footer"
+                        >
+                          A good guy with blue eyes
+                        </Text>
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 16,
+                            "width": 16,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 3,
+                              "overflow": "hidden",
+                            },
+                            false,
+                          ]
+                        }
+                        testID="progress-bar-catalog-search-with-cards-items-item-bar-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                            }
+                          }
+                          testID="progression-bar"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#3EC483",
+                                "borderBottomRightRadius": 1,
+                                "borderTopRightRadius": 1,
+                                "height": 2,
+                                "width": "80%",
+                              }
+                            }
+                            testID="progression-bar-0.8"
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-baz"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        false,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=336&h=410",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-baz-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        1711276032,
+                        3003121664,
+                        4278190080,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-baz-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "alignSelf": "flex-start",
+                            "backgroundColor": "#FFFFFF",
+                            "borderBottomEndRadius": 12,
+                            "paddingHorizontal": 8,
+                            "paddingVertical": 4,
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "fontWeight": "700",
+                                  "textAlign": "center",
+                                },
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 10,
+                                },
+                              ],
+                            ]
+                          }
+                          testID="catalog-search-with-cards-items-item-baz-badge"
+                        >
+                          New
+                        </Text>
+                      </View>
+                    </View>
+                    <Text
+                      style={
+                        Array [
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#FFFFFF",
+                              "textAlign": "center",
+                              "textShadowColor": "rgba(0, 0, 0, 1)",
+                              "textShadowRadius": 2,
+                            },
+                            false,
+                            Object {
+                              "fontSize": 10,
+                            },
+                          ],
+                        ]
+                      }
+                      testID="author-catalog-search-with-cards-items-item-baz-content-author"
+                    >
+                      A GOOD GUY WITH BLUE EYES
+                       CREATION
+                    </Text>
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-baz-content-footer"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <RNSVGSvgView
+                          align="xMidYMid"
+                          bbHeight={15}
+                          bbWidth={15}
+                          color="#FFFFFF"
+                          height={15}
+                          meetOrSlice={0}
+                          minX={0}
+                          minY={0}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "borderWidth": 0,
+                              },
+                              undefined,
+                              null,
+                              Object {
+                                "flex": 0,
+                                "height": 15,
+                                "width": 15,
+                              },
+                            ]
+                          }
+                          testID="infinite-catalog-search-with-cards-items-item-baz-content-footer"
+                          tintColor="#FFFFFF"
+                          vbHeight={26}
+                          vbWidth={26}
+                          width={15}
+                        >
+                          <RNSVGGroup
+                            fill={
+                              Array [
+                                0,
+                                4278190080,
+                              ]
+                            }
+                            fillOpacity={1}
+                            fillRule={1}
+                            font={Object {}}
+                            matrix={
+                              Array [
+                                1,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                              ]
+                            }
+                            opacity={1}
+                            originX={0}
+                            originY={0}
+                            propList={Array []}
+                            rotation={0}
+                            scaleX={1}
+                            scaleY={1}
+                            skewX={0}
+                            skewY={0}
+                            stroke={null}
+                            strokeDasharray={null}
+                            strokeDashoffset={null}
+                            strokeLinecap={0}
+                            strokeLinejoin={0}
+                            strokeMiterlimit={4}
+                            strokeOpacity={1}
+                            strokeWidth={1}
+                            vectorEffect={0}
+                            x={0}
+                            y={0}
+                          >
+                            <RNSVGPath
+                              d="M13 26C5.8 26 0 20.2 0 13S5.8 0 13 0s13 5.8 13 13-5.8 13-13 13zm6.2-16.8c.1-.1.2-.3.3-.5.1-.5-.4-1-.9-.9-.2 0-.4.1-.5.3l-.7.7c-.9-.7-2-1.1-3.2-1.3v-.6h.6c.4 0 .8-.3.9-.7 0-.5-.3-.9-.8-.9h-3c-.4 0-.8.3-.9.7 0 .5.3.9.8.9h.7v.6c-1.1.1-2.1.5-3 1.2-.8.6.1 1.9 1 1.3 1.5-1 3.4-1.2 5-.4 1.6.8 2.7 2.3 2.8 4 .1 1.7-.9 3.4-2.4 4.2-1.6.9-3.5.8-5-.1-.4-.2-.8-.2-1.1.2-.3.4-.2.9.2 1.2 1.3.8 2.9 1.1 4.5.9 3.2-.5 5.5-3.1 5.6-6.2 0-1.4-.5-2.8-1.3-3.9l.4-.7zm-4.6 4.3l1.5-1.8c.4-.5-.3-1.1-.7-.7l-1.9 1.4c-.6-.1-1.1.2-1.4.7-.3.5-.2 1.1.2 1.5.4.4 1 .5 1.5.2.6-.2.9-.8.8-1.3zm-3.9 2.6c0-.4-.3-.6-.7-.6H7.2c-.9 0-.9 1.3 0 1.3H10c.4 0 .7-.3.7-.7zm-.7-2.9H6.1c-.9 0-.9 1.3 0 1.3H10c.9 0 .9-1.3 0-1.3zm0-1c.9 0 .9-1.3 0-1.3H4.8c-.9 0-.9 1.3 0 1.3H10z"
+                              fill={
+                                Array [
+                                  0,
+                                  4294967295,
+                                ]
+                              }
+                              fillOpacity={1}
+                              fillRule={0}
+                              matrix={
+                                Array [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                ]
+                              }
+                              opacity={1}
+                              originX={0}
+                              originY={0}
+                              propList={
+                                Array [
+                                  "fill",
+                                  "fillRule",
+                                ]
+                              }
+                              rotation={0}
+                              scaleX={1}
+                              scaleY={1}
+                              skewX={0}
+                              skewY={0}
+                              stroke={null}
+                              strokeDasharray={null}
+                              strokeDashoffset={null}
+                              strokeLinecap={0}
+                              strokeLinejoin={0}
+                              strokeMiterlimit={4}
+                              strokeOpacity={1}
+                              strokeWidth={1}
+                              vectorEffect={0}
+                              x={0}
+                              y={0}
+                            />
+                          </RNSVGGroup>
+                        </RNSVGSvgView>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <Text
+                        style={
+                          Array [
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "fontWeight": "700",
+                              },
+                              Object {
+                                "fontSize": 15,
+                              },
+                              false,
+                            ],
+                          ]
+                        }
+                        testID="title-catalog-search-with-cards-items-item-baz-content-footer"
+                      >
+                        Chapter card
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "flex-start",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "flex": 1,
+                                  "fontWeight": "400",
+                                },
+                                Object {
+                                  "fontSize": 12,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="subtitle-catalog-search-with-cards-items-item-baz-content-footer"
+                        >
+                          A good guy with blue eyes
+                        </Text>
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 16,
+                            "width": 16,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 3,
+                              "overflow": "hidden",
+                            },
+                            false,
+                          ]
+                        }
+                        testID="progress-bar-catalog-search-with-cards-items-item-baz-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                            }
+                          }
+                          testID="progression-bar"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#3EC483",
+                                "borderBottomRightRadius": 1,
+                                "borderTopRightRadius": 1,
+                                "height": 2,
+                                "width": "0%",
+                              }
+                            }
+                            testID="progression-bar-0"
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-qux"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        false,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    source={
+                      Object {
+                        "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2FCoorpAcademy%2Fcontent-bescherelle%2Fcockpit-bescherelle%2Fdefault%2Fimage_chapitre_hatier_accords-1524216190534.jpg&m=crop&q=90&w=336&h=410",
+                      }
+                    }
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-qux-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        1711276032,
+                        3003121664,
+                        4278190080,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-qux-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "alignSelf": "flex-start",
+                            "backgroundColor": "#FFFFFF",
+                            "borderBottomEndRadius": 12,
+                            "paddingHorizontal": 8,
+                            "paddingVertical": 4,
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "fontWeight": "700",
+                                  "textAlign": "center",
+                                },
+                                Object {
+                                  "color": "#00B0FF",
+                                  "fontSize": 10,
+                                },
+                              ],
+                            ]
+                          }
+                          testID="catalog-search-with-cards-items-item-qux-badge"
+                        >
+                          New
+                        </Text>
+                      </View>
+                    </View>
+                    <Text
+                      style={
+                        Array [
+                          Object {},
+                          Array [
+                            Object {
+                              "color": "#FFFFFF",
+                              "textAlign": "center",
+                              "textShadowColor": "rgba(0, 0, 0, 1)",
+                              "textShadowRadius": 2,
+                            },
+                            false,
+                            Object {
+                              "fontSize": 10,
+                            },
+                          ],
+                        ]
+                      }
+                      testID="author-catalog-search-with-cards-items-item-qux-content-author"
+                    >
+                      A GOOD GUY WITH BLUE EYES
+                       CREATION
+                    </Text>
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-qux-content-footer"
+                    >
+                      <View
+                        style={
+                          Object {
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <RNSVGSvgView
+                          align="xMidYMid"
+                          bbHeight={15}
+                          bbWidth={15}
+                          color="#FFFFFF"
+                          height={15}
+                          meetOrSlice={0}
+                          minX={0}
+                          minY={0}
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "borderWidth": 0,
+                              },
+                              undefined,
+                              null,
+                              Object {
+                                "flex": 0,
+                                "height": 15,
+                                "width": 15,
+                              },
+                            ]
+                          }
+                          testID="infinite-catalog-search-with-cards-items-item-qux-content-footer"
+                          tintColor="#FFFFFF"
+                          vbHeight={26}
+                          vbWidth={26}
+                          width={15}
+                        >
+                          <RNSVGGroup
+                            fill={
+                              Array [
+                                0,
+                                4278190080,
+                              ]
+                            }
+                            fillOpacity={1}
+                            fillRule={1}
+                            font={Object {}}
+                            matrix={
+                              Array [
+                                1,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                              ]
+                            }
+                            opacity={1}
+                            originX={0}
+                            originY={0}
+                            propList={Array []}
+                            rotation={0}
+                            scaleX={1}
+                            scaleY={1}
+                            skewX={0}
+                            skewY={0}
+                            stroke={null}
+                            strokeDasharray={null}
+                            strokeDashoffset={null}
+                            strokeLinecap={0}
+                            strokeLinejoin={0}
+                            strokeMiterlimit={4}
+                            strokeOpacity={1}
+                            strokeWidth={1}
+                            vectorEffect={0}
+                            x={0}
+                            y={0}
+                          >
+                            <RNSVGPath
+                              d="M13 26C5.8 26 0 20.2 0 13S5.8 0 13 0s13 5.8 13 13-5.8 13-13 13zm6.2-16.8c.1-.1.2-.3.3-.5.1-.5-.4-1-.9-.9-.2 0-.4.1-.5.3l-.7.7c-.9-.7-2-1.1-3.2-1.3v-.6h.6c.4 0 .8-.3.9-.7 0-.5-.3-.9-.8-.9h-3c-.4 0-.8.3-.9.7 0 .5.3.9.8.9h.7v.6c-1.1.1-2.1.5-3 1.2-.8.6.1 1.9 1 1.3 1.5-1 3.4-1.2 5-.4 1.6.8 2.7 2.3 2.8 4 .1 1.7-.9 3.4-2.4 4.2-1.6.9-3.5.8-5-.1-.4-.2-.8-.2-1.1.2-.3.4-.2.9.2 1.2 1.3.8 2.9 1.1 4.5.9 3.2-.5 5.5-3.1 5.6-6.2 0-1.4-.5-2.8-1.3-3.9l.4-.7zm-4.6 4.3l1.5-1.8c.4-.5-.3-1.1-.7-.7l-1.9 1.4c-.6-.1-1.1.2-1.4.7-.3.5-.2 1.1.2 1.5.4.4 1 .5 1.5.2.6-.2.9-.8.8-1.3zm-3.9 2.6c0-.4-.3-.6-.7-.6H7.2c-.9 0-.9 1.3 0 1.3H10c.4 0 .7-.3.7-.7zm-.7-2.9H6.1c-.9 0-.9 1.3 0 1.3H10c.9 0 .9-1.3 0-1.3zm0-1c.9 0 .9-1.3 0-1.3H4.8c-.9 0-.9 1.3 0 1.3H10z"
+                              fill={
+                                Array [
+                                  0,
+                                  4294967295,
+                                ]
+                              }
+                              fillOpacity={1}
+                              fillRule={0}
+                              matrix={
+                                Array [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                ]
+                              }
+                              opacity={1}
+                              originX={0}
+                              originY={0}
+                              propList={
+                                Array [
+                                  "fill",
+                                  "fillRule",
+                                ]
+                              }
+                              rotation={0}
+                              scaleX={1}
+                              scaleY={1}
+                              skewX={0}
+                              skewY={0}
+                              stroke={null}
+                              strokeDasharray={null}
+                              strokeDashoffset={null}
+                              strokeLinecap={0}
+                              strokeLinejoin={0}
+                              strokeMiterlimit={4}
+                              strokeOpacity={1}
+                              strokeWidth={1}
+                              vectorEffect={0}
+                              x={0}
+                              y={0}
+                            />
+                          </RNSVGGroup>
+                        </RNSVGSvgView>
+                        <View
+                          style={
+                            Object {
+                              "height": 8,
+                              "width": 8,
+                            }
+                          }
+                        />
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <Text
+                        style={
+                          Array [
+                            Object {},
+                            Array [
+                              Object {
+                                "color": "#FFFFFF",
+                                "fontWeight": "700",
+                              },
+                              Object {
+                                "fontSize": 15,
+                              },
+                              false,
+                            ],
+                          ]
+                        }
+                        testID="title-catalog-search-with-cards-items-item-qux-content-footer"
+                      >
+                        Chapter card
+                      </Text>
+                      <View
+                        style={
+                          Object {
+                            "height": 8,
+                            "width": 8,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "flex-start",
+                            "flexDirection": "row",
+                          }
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {},
+                              Array [
+                                Object {
+                                  "color": "#FFFFFF",
+                                  "flex": 1,
+                                  "fontWeight": "400",
+                                },
+                                Object {
+                                  "fontSize": 12,
+                                },
+                                false,
+                              ],
+                            ]
+                          }
+                          testID="subtitle-catalog-search-with-cards-items-item-qux-content-footer"
+                        >
+                          A good guy with blue eyes
+                        </Text>
+                      </View>
+                      <View
+                        style={
+                          Object {
+                            "height": 16,
+                            "width": 16,
+                          }
+                        }
+                      />
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 3,
+                              "overflow": "hidden",
+                            },
+                            false,
+                          ]
+                        }
+                        testID="progress-bar-catalog-search-with-cards-items-item-qux-content-footer"
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                            }
+                          }
+                          testID="progression-bar"
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#3EC483",
+                                "borderBottomRightRadius": 1,
+                                "borderTopRightRadius": 1,
+                                "height": 2,
+                                "width": "50%",
+                              }
+                            }
+                            testID="progression-bar-0.5"
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-4-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-4-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-4-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-4-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-5-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-5-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-5-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-5-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-6-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-6-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-6-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-6-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-7-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-7-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-7-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-7-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-8-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-8-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-8-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-8-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "margin": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5,
+                },
+                Object {
+                  "elevation": 4,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.15,
+                  "shadowRadius": 8,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 5,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 205,
+                    "width": 168,
+                  },
+                  Object {
+                    "overflow": "hidden",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "height": 205,
+                    "width": 168,
+                  }
+                }
+                testID="catalog-search-with-cards-items-item-9-placeholder"
+              >
+                <View
+                  accessibilityIgnoresInvertColors={true}
+                  style={
+                    Array [
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      },
+                      Array [
+                        Object {
+                          "backgroundColor": "#ECEFF1",
+                        },
+                        undefined,
+                        Object {
+                          "height": 205,
+                          "width": 168,
+                        },
+                      ],
+                    ]
+                  }
+                >
+                  <Image
+                    resizeMode="cover"
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                        },
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        },
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-9-placeholder-image"
+                  />
+                  <BVLinearGradient
+                    colors={
+                      Array [
+                        0,
+                        0,
+                        0,
+                        0,
+                      ]
+                    }
+                    endPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 1,
+                      }
+                    }
+                    locations={null}
+                    startPoint={
+                      Object {
+                        "x": 0.5,
+                        "y": 0,
+                      }
+                    }
+                    style={
+                      Array [
+                        Array [
+                          Object {
+                            "flex": 1,
+                          },
+                          Object {
+                            "padding": 16,
+                            "paddingTop": 24,
+                          },
+                        ],
+                        undefined,
+                      ]
+                    }
+                    testID="catalog-search-with-cards-items-item-9-placeholder-image-gradient"
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "flex-end",
+                        }
+                      }
+                      testID="catalog-search-with-cards-items-item-9-placeholder-content-footer-placeholder"
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "height": 75,
+                            },
+                            false,
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "flex": 1,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="65%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 8,
+                                "width": 8,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 10,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="90%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 24,
+                                "width": 24,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "justifyContent": "center",
+                                },
+                                false,
+                                Object {
+                                  "height": undefined,
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                            <View
+                              noMargin={true}
+                              style={
+                                Array [
+                                  Object {
+                                    "borderRadius": 0,
+                                  },
+                                  Object {
+                                    "height": 5,
+                                  },
+                                  Object {
+                                    "backgroundColor": "#CFD8DC",
+                                  },
+                                ]
+                              }
+                              width="50%"
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "flex": 1,
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "height": 16,
+                                "width": 16,
+                              }
+                            }
+                          />
+                          <View
+                            noMargin={true}
+                            style={
+                              Array [
+                                Object {
+                                  "borderRadius": 3,
+                                  "overflow": "hidden",
+                                },
+                                false,
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "justifyContent": "center",
+                                  },
+                                  false,
+                                  Object {
+                                    "height": undefined,
+                                  },
+                                  undefined,
+                                ]
+                              }
+                            >
+                              <View
+                                noMargin={true}
+                                style={
+                                  Array [
+                                    Object {
+                                      "borderRadius": 0,
+                                    },
+                                    Object {
+                                      "height": 2,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#CFD8DC",
+                                    },
+                                  ]
+                                }
+                                width="100%"
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </BVLinearGradient>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 3520,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;

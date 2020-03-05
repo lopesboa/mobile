@@ -1,16 +1,16 @@
 // @flow strict
 
-import {fakeError} from '../../../../utils/tests';
-import {createSections} from '../../../../__fixtures__/sections';
-import {createBrand} from '../../../../__fixtures__/brands';
-import {createAuthenticationState} from '../../../../__fixtures__/store';
+import {fakeError} from '../../../../../utils/tests';
+import {createSections} from '../../../../../__fixtures__/sections';
+import {createBrand} from '../../../../../__fixtures__/brands';
+import {createAuthenticationState} from '../../../../../__fixtures__/store';
 import {
   createDisciplineCard,
   createChapterCard,
   createCardLevel
-} from '../../../../__fixtures__/cards';
-import {CARD_STATUS} from '../../../../layer/data/_const';
-import {fetchRequest, fetchSuccess, fetchError, fetchCards} from './fetch';
+} from '../../../../../__fixtures__/cards';
+import {CARD_STATUS} from '../../../../../layer/data/_const';
+import {fetchRequest, fetchSuccess, fetchError, fetchCards} from './sections';
 
 const brand = createBrand();
 const language = 'en';
@@ -44,7 +44,7 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            find: jest.fn()
+            findBySection: jest.fn()
           }
         }
       };
@@ -62,7 +62,7 @@ describe('Cards', () => {
         authentication: createAuthenticationState({token: '_TOKEN_', brand}),
         catalog: {entities: {sections: {foo: {[language]: section}}}}
       });
-      options.services.Cards.find.mockReturnValueOnce(
+      options.services.Cards.findBySection.mockReturnValueOnce(
         Promise.resolve({
           cards: items,
           total: 8
@@ -70,8 +70,10 @@ describe('Cards', () => {
       );
 
       // $FlowFixMe
-      const actual = await fetchCards('foo', 0, 3)(dispatch, getState, options);
-      return expect(actual).toEqual(fetchSuccess('foo', 0, 3, 8, items, language));
+      const result = await fetchCards('foo', 0, 3)(dispatch, getState, options);
+      const expected = fetchSuccess('foo', 0, 3, 8, items, language);
+
+      return expect(result).toEqual(expected);
     });
 
     it('should handle missing token', async () => {
@@ -80,7 +82,7 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            find: jest.fn()
+            findBySection: jest.fn()
           }
         }
       };
@@ -100,10 +102,11 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchCards('bar', 2, 5)(dispatch, getState, options);
+      const result = await fetchCards('bar', 2, 5)(dispatch, getState, options);
+      const expected = fetchError(new TypeError('Token not defined'));
 
-      expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError(new TypeError('Token not defined')));
+      expect(options.services.Cards.findBySection).not.toHaveBeenCalled();
+      return expect(result).toEqual(expected);
     });
 
     it('should handle missing brand', async () => {
@@ -112,7 +115,7 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            find: jest.fn()
+            findBySection: jest.fn()
           }
         }
       };
@@ -134,10 +137,11 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchCards('baz', 3, 6, language)(dispatch, getState, options);
+      const result = await fetchCards('baz', 3, 6, language)(dispatch, getState, options);
+      const expected = fetchError(new TypeError('Brand not defined'));
 
-      expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError(new TypeError('Brand not defined')));
+      expect(options.services.Cards.findBySection).not.toHaveBeenCalled();
+      return expect(result).toEqual(expected);
     });
 
     it('should handle missing section', async () => {
@@ -146,7 +150,7 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            find: jest.fn()
+            findBySection: jest.fn()
           }
         }
       };
@@ -169,10 +173,11 @@ describe('Cards', () => {
       });
 
       // $FlowFixMe
-      const actual = await fetchCards('qux', 0, 3)(dispatch, getState, options);
+      const result = await fetchCards('qux', 0, 3)(dispatch, getState, options);
+      const expected = fetchError(new TypeError('Section not found'));
 
-      expect(options.services.Cards.find).not.toHaveBeenCalled();
-      return expect(actual).toEqual(fetchError(new TypeError('Section not found')));
+      expect(options.services.Cards.findBySection).not.toHaveBeenCalled();
+      return expect(result).toEqual(expected);
     });
 
     it('should handle error', async () => {
@@ -181,7 +186,7 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            find: jest.fn()
+            findBySection: jest.fn()
           }
         }
       };
@@ -203,12 +208,13 @@ describe('Cards', () => {
         }),
         catalog: {entities: {sections: {quux: {[language]: section}}}}
       });
-      options.services.Cards.find.mockReturnValueOnce(Promise.reject(fakeError));
+      options.services.Cards.findBySection.mockReturnValueOnce(Promise.reject(fakeError));
 
       // $FlowFixMe
-      const actual = await fetchCards('quux', 1, 3)(dispatch, getState, options);
+      const result = await fetchCards('quux', 1, 3)(dispatch, getState, options);
+      const expected = fetchError(fakeError);
 
-      return expect(actual).toEqual(fetchError(fakeError));
+      return expect(result).toEqual(expected);
     });
   });
 });

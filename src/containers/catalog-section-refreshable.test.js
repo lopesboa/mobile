@@ -20,13 +20,16 @@ import type {ConnectedStateProps, OwnProps} from './catalog-section-refreshable'
 
 jest.useFakeTimers();
 
-const cards: Array<DisciplineCard | ChapterCard> = ['foo', 'bar', 'baz', 'qux', 'quux'].map(ref =>
-  createChapterCard({
-    ref,
-    completion: 0,
-    title: 'Fake chapter',
-    status: CARD_STATUS.ACTIVE
-  })
+const cardsRef = ['foo', 'bar', 'baz', 'qux', 'quux'];
+const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
+  ref =>
+    ref &&
+    createChapterCard({
+      ref,
+      completion: 0,
+      title: 'Fake chapter',
+      status: CARD_STATUS.ACTIVE
+    })
 );
 
 describe('CatalogSectionRefreshable', () => {

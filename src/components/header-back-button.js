@@ -15,6 +15,7 @@ import Touchable from './touchable';
 export const HOME_ICON_HEIGHT = 20;
 export const CLOSE_ICON_HEIGHT = 16;
 export const BACK_ICON_HEIGHT = 20;
+export const SPACING = theme.spacing.base;
 
 type Props = {|
   type: 'close' | 'back' | 'home',
@@ -27,10 +28,10 @@ type Props = {|
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: theme.spacing.base
+    paddingLeft: SPACING
   },
   floating: {
-    paddingTop: theme.spacing.base,
+    paddingTop: SPACING,
     position: 'absolute',
     top: getStatusBarHeight()
   },

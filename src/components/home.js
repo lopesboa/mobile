@@ -3,26 +3,25 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 
+import theme from '../modules/theme';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
-import theme from '../modules/theme';
-import {BrandThemeContext} from './brand-theme-provider';
-import ImageBackground from './image-background';
+import CatalogSearch from '../containers/catalog-search';
+import Header from '../containers/header';
+import Box from './box';
 import Version from './version';
 import Gradient from './gradient';
-import Touchable from './touchable';
 import Loader from './loader';
 
 type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
-  onLogoLongPress: () => void,
   isFetching: boolean,
   isFocused: boolean,
+  isSearchVisible: boolean,
   testID?: string
 |};
 
-const LOGO_HEIGHT = 35;
-const HEADER_HEIGHT = LOGO_HEIGHT + theme.spacing.small * 2;
+const HEADER_HEIGHT = 67;
 
 const styles = StyleSheet.create({
   loaderContainer: {
@@ -32,20 +31,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: HEADER_HEIGHT
+    paddingTop: HEADER_HEIGHT,
+    overflow: 'hidden'
   },
   header: {
     position: 'absolute',
-    paddingVertical: theme.spacing.small,
-    backgroundColor: theme.colors.white,
     top: 0,
     left: 0,
-    right: 0,
-    height: HEADER_HEIGHT
-  },
-  logo: {
-    height: LOGO_HEIGHT,
-    width: '100%'
+    right: 0
   },
   gradient: {
     position: 'absolute',
@@ -55,7 +48,7 @@ const styles = StyleSheet.create({
     right: 0
   },
   catalog: {
-    flexGrow: 1
+    flex: 1
   },
   version: {
     color: theme.colors.gray.medium,
@@ -64,9 +57,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Props) => {
-  const brandTheme = React.useContext(BrandThemeContext);
-
+const Home = ({onCardPress, isFetching, isFocused, isSearchVisible, testID}: Props) => {
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID={testID}>
@@ -83,26 +74,25 @@ const Home = ({onCardPress, onLogoLongPress, isFetching, isFocused, testID}: Pro
         transparencyPosition="bottom"
         style={styles.gradient}
       />
-      <Catalog onCardPress={onCardPress} containerStyle={styles.catalog} isFocused={isFocused}>
-        <Version style={styles.version} />
-      </Catalog>
-      <View style={styles.header}>
-        <Touchable
-          testID="home-logo"
-          onLongPress={onLogoLongPress}
-          analyticsID="sign-out"
-          isWithoutFeedback
+      {isSearchVisible ? (
+        <CatalogSearch
+          onCardPress={onCardPress}
+          containerStyle={styles.catalog}
+          testID="catalog-search"
+        />
+      ) : (
+        <Catalog
+          onCardPress={onCardPress}
+          containerStyle={styles.catalog}
+          isFocused={isFocused}
+          testID="catalog"
         >
-          <ImageBackground
-            style={styles.logo}
-            testID="brand-logo"
-            source={{
-              uri: brandTheme.images['logo-mobile']
-            }}
-            resizeMode="contain"
-          />
-        </Touchable>
-      </View>
+          <Version style={styles.version} />
+        </Catalog>
+      )}
+      <Box style={styles.header}>
+        <Header height={HEADER_HEIGHT} />
+      </Box>
     </View>
   );
 };

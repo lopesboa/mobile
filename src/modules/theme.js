@@ -41,6 +41,7 @@ export type Theme = {|
     common: number,
     card: number,
     medium: number,
+    search: number,
     button: number,
     thumbnail: number
   },
@@ -86,6 +87,7 @@ const theme: Theme = {
     common: 3,
     card: 5,
     medium: 12,
+    search: 24,
     button: 32,
     thumbnail: 1000
   },

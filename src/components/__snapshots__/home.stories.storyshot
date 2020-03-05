@@ -5,6 +5,7 @@ exports[`Storyshots Home Default 1`] = `
   style={
     Object {
       "flex": 1,
+      "overflow": "hidden",
       "paddingTop": 67,
     }
   }
@@ -202,8 +203,8 @@ Pol P.!
         <View
           style={
             Object {
-              "height": 16,
-              "width": 16,
+              "height": 24,
+              "width": 24,
             }
           }
         />
@@ -274,20 +275,28 @@ Pol P.!
               </View>
             </View>
           </View>
+          <View
+            style={
+              Object {
+                "height": 12,
+                "width": 12,
+              }
+            }
+          />
           <RCTScrollView
             contentContainerStyle={
               Object {
-                "height": 237,
+                "height": 213,
                 "paddingHorizontal": 4,
               }
             }
             data={
               Array [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
+                Object {},
+                Object {},
+                Object {},
+                Object {},
+                Object {},
               ]
             }
             disableVirtualization={false}
@@ -311,6 +320,7 @@ Pol P.!
             scrollEnabled={true}
             scrollEventThrottle={50}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             stickyHeaderIndices={Array []}
             testID="catalog-section-catalog-section-0-placeholder-items"
             updateCellsBatchingPeriod={50}
@@ -331,9 +341,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -342,7 +350,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -362,9 +369,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -386,7 +396,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder"
+                        testID="catalog-section-catalog-section-0-placeholder-items-item-0-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -427,7 +437,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder-image"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-0-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -465,7 +475,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-0-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -474,7 +484,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-0-placeholder-item-0-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-0-placeholder-items-item-0-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -713,9 +723,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -724,7 +732,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -744,9 +751,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -768,7 +778,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder"
+                        testID="catalog-section-catalog-section-0-placeholder-items-item-1-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -809,7 +819,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder-image"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-1-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -847,7 +857,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-1-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -856,7 +866,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-0-placeholder-item-1-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-0-placeholder-items-item-1-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -1095,9 +1105,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -1106,7 +1114,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -1126,9 +1133,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -1150,7 +1160,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder"
+                        testID="catalog-section-catalog-section-0-placeholder-items-item-2-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -1191,7 +1201,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder-image"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-2-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -1229,7 +1239,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-2-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -1238,7 +1248,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-0-placeholder-item-2-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-0-placeholder-items-item-2-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -1477,9 +1487,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -1488,7 +1496,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -1508,9 +1515,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -1532,7 +1542,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder"
+                        testID="catalog-section-catalog-section-0-placeholder-items-item-3-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -1573,7 +1583,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder-image"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-3-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -1611,7 +1621,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-3-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -1620,7 +1630,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-0-placeholder-item-3-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-0-placeholder-items-item-3-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -1859,9 +1869,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -1870,7 +1878,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -1890,9 +1897,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -1914,7 +1924,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder"
+                        testID="catalog-section-catalog-section-0-placeholder-items-item-4-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -1955,7 +1965,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder-image"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-4-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -1993,7 +2003,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-0-placeholder-items-item-4-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -2002,7 +2012,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-0-placeholder-item-4-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-0-placeholder-items-item-4-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -2234,8 +2244,8 @@ Pol P.!
         <View
           style={
             Object {
-              "height": 16,
-              "width": 16,
+              "height": 24,
+              "width": 24,
             }
           }
         />
@@ -2306,20 +2316,28 @@ Pol P.!
               </View>
             </View>
           </View>
+          <View
+            style={
+              Object {
+                "height": 12,
+                "width": 12,
+              }
+            }
+          />
           <RCTScrollView
             contentContainerStyle={
               Object {
-                "height": 237,
+                "height": 213,
                 "paddingHorizontal": 4,
               }
             }
             data={
               Array [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
+                Object {},
+                Object {},
+                Object {},
+                Object {},
+                Object {},
               ]
             }
             disableVirtualization={false}
@@ -2343,6 +2361,7 @@ Pol P.!
             scrollEnabled={true}
             scrollEventThrottle={50}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             stickyHeaderIndices={Array []}
             testID="catalog-section-catalog-section-1-placeholder-items"
             updateCellsBatchingPeriod={50}
@@ -2363,9 +2382,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -2374,7 +2391,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -2394,9 +2410,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -2418,7 +2437,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder"
+                        testID="catalog-section-catalog-section-1-placeholder-items-item-0-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -2459,7 +2478,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder-image"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-0-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -2497,7 +2516,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-0-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -2506,7 +2525,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-1-placeholder-item-0-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-1-placeholder-items-item-0-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -2745,9 +2764,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -2756,7 +2773,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -2776,9 +2792,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -2800,7 +2819,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder"
+                        testID="catalog-section-catalog-section-1-placeholder-items-item-1-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -2841,7 +2860,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder-image"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-1-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -2879,7 +2898,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-1-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -2888,7 +2907,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-1-placeholder-item-1-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-1-placeholder-items-item-1-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -3127,9 +3146,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -3138,7 +3155,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -3158,9 +3174,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -3182,7 +3201,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder"
+                        testID="catalog-section-catalog-section-1-placeholder-items-item-2-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -3223,7 +3242,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder-image"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-2-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -3261,7 +3280,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-2-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -3270,7 +3289,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-1-placeholder-item-2-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-1-placeholder-items-item-2-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -3509,9 +3528,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -3520,7 +3537,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -3540,9 +3556,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -3564,7 +3583,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder"
+                        testID="catalog-section-catalog-section-1-placeholder-items-item-3-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -3605,7 +3624,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder-image"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-3-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -3643,7 +3662,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-3-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -3652,7 +3671,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-1-placeholder-item-3-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-1-placeholder-items-item-3-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -3891,9 +3910,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -3902,7 +3919,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -3922,9 +3938,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -3946,7 +3965,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder"
+                        testID="catalog-section-catalog-section-1-placeholder-items-item-4-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -3987,7 +4006,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder-image"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-4-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -4025,7 +4044,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-1-placeholder-items-item-4-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -4034,7 +4053,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-1-placeholder-item-4-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-1-placeholder-items-item-4-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -4266,8 +4285,8 @@ Pol P.!
         <View
           style={
             Object {
-              "height": 16,
-              "width": 16,
+              "height": 24,
+              "width": 24,
             }
           }
         />
@@ -4338,20 +4357,28 @@ Pol P.!
               </View>
             </View>
           </View>
+          <View
+            style={
+              Object {
+                "height": 12,
+                "width": 12,
+              }
+            }
+          />
           <RCTScrollView
             contentContainerStyle={
               Object {
-                "height": 237,
+                "height": 213,
                 "paddingHorizontal": 4,
               }
             }
             data={
               Array [
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
+                Object {},
+                Object {},
+                Object {},
+                Object {},
+                Object {},
               ]
             }
             disableVirtualization={false}
@@ -4375,6 +4402,7 @@ Pol P.!
             scrollEnabled={true}
             scrollEventThrottle={50}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             stickyHeaderIndices={Array []}
             testID="catalog-section-catalog-section-2-placeholder-items"
             updateCellsBatchingPeriod={50}
@@ -4395,9 +4423,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -4406,7 +4432,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -4426,9 +4451,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -4450,7 +4478,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder"
+                        testID="catalog-section-catalog-section-2-placeholder-items-item-0-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -4491,7 +4519,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder-image"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-0-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -4529,7 +4557,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-0-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -4538,7 +4566,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-2-placeholder-item-0-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-2-placeholder-items-item-0-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -4777,9 +4805,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -4788,7 +4814,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -4808,9 +4833,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -4832,7 +4860,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder"
+                        testID="catalog-section-catalog-section-2-placeholder-items-item-1-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -4873,7 +4901,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder-image"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-1-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -4911,7 +4939,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-1-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -4920,7 +4948,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-2-placeholder-item-1-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-2-placeholder-items-item-1-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -5159,9 +5187,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -5170,7 +5196,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -5190,9 +5215,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -5214,7 +5242,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder"
+                        testID="catalog-section-catalog-section-2-placeholder-items-item-2-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -5255,7 +5283,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder-image"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-2-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -5293,7 +5321,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-2-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -5302,7 +5330,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-2-placeholder-item-2-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-2-placeholder-items-item-2-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -5541,9 +5569,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -5552,7 +5578,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -5572,9 +5597,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -5596,7 +5624,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder"
+                        testID="catalog-section-catalog-section-2-placeholder-items-item-3-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -5637,7 +5665,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder-image"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-3-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -5675,7 +5703,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-3-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -5684,7 +5712,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-2-placeholder-item-3-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-2-placeholder-items-item-3-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -5923,9 +5951,7 @@ Pol P.!
                 <View
                   style={
                     Object {
-                      "flex": 1,
-                      "marginHorizontal": 4,
-                      "marginVertical": 16,
+                      "margin": 4,
                     }
                   }
                 >
@@ -5934,7 +5960,6 @@ Pol P.!
                       Array [
                         Object {
                           "borderRadius": 5,
-                          "flex": 1,
                         },
                         Object {
                           "elevation": 4,
@@ -5954,9 +5979,12 @@ Pol P.!
                         Array [
                           Object {
                             "borderRadius": 5,
-                            "flex": 1,
                           },
-                          undefined,
+                          Object {
+                            "flex": 0,
+                            "height": 205,
+                            "width": 168,
+                          },
                           Object {
                             "overflow": "hidden",
                           },
@@ -5978,7 +6006,7 @@ Pol P.!
                             "width": 168,
                           }
                         }
-                        testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder"
+                        testID="catalog-section-catalog-section-2-placeholder-items-item-4-placeholder"
                       >
                         <View
                           accessibilityIgnoresInvertColors={true}
@@ -6019,7 +6047,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder-image"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-4-placeholder-image"
                           />
                           <BVLinearGradient
                             colors={
@@ -6057,7 +6085,7 @@ Pol P.!
                                 undefined,
                               ]
                             }
-                            testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder-image-gradient"
+                            testID="catalog-section-catalog-section-2-placeholder-items-item-4-placeholder-image-gradient"
                           >
                             <View
                               style={
@@ -6066,7 +6094,7 @@ Pol P.!
                                   "justifyContent": "flex-end",
                                 }
                               }
-                              testID="catalog-section-catalog-section-2-placeholder-item-4-placeholder-content-footer-placeholder"
+                              testID="catalog-section-catalog-section-2-placeholder-items-item-4-placeholder-content-footer-placeholder"
                             >
                               <View
                                 style={
@@ -6324,73 +6352,277 @@ Pol P.!
   </RCTScrollView>
   <View
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "height": 67,
-        "left": 0,
-        "paddingVertical": 16,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "elevation": 4,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   >
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "opacity": 1,
-        }
+        Array [
+          Object {
+            "alignItems": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": 67,
+          },
+        ]
       }
-      testID="home-logo"
+      testID="header"
     >
       <View
-        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "justifyContent": "center",
+            "width": 44,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="header-logo"
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "height": "100%",
+                  "width": "100%",
+                },
+                Array [
+                  Object {
+                    "width": "100%",
+                  },
+                  Object {
+                    "height": 35,
+                  },
+                ],
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=70",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  undefined,
+                ]
+              }
+              testID="brand-logo"
+            />
+          </View>
+        </View>
+      </View>
+      <View
         style={
           Array [
             Object {
-              "height": "100%",
-              "width": "100%",
+              "justifyContent": "center",
+              "width": 44,
             },
             Object {
-              "height": 35,
-              "width": "100%",
+              "alignItems": "flex-end",
+              "paddingRight": 24,
             },
           ]
         }
       >
-        <Image
-          resizeMode="contain"
-          source={
+        <View
+          accessible={true}
+          hitSlop={
             Object {
-              "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=70",
+              "bottom": 16,
+              "left": 16,
+              "right": 16,
+              "top": 16,
             }
           }
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              Object {
-                "height": undefined,
-                "width": undefined,
-              },
-              undefined,
-            ]
+            Object {
+              "opacity": 1,
+            }
           }
-          testID="brand-logo"
-        />
+          testID="search-icon"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={20}
+            bbWidth={20}
+            color="#546E7A"
+            height={20}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 20,
+                  "width": 20,
+                },
+              ]
+            }
+            tintColor="#546E7A"
+            vbHeight={13}
+            vbWidth={13}
+            width={20}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
+                fill={
+                  Array [
+                    0,
+                    4283723386,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
       </View>
     </View>
   </View>
@@ -6504,6 +6736,340 @@ exports[`Storyshots Home Fetching 1`] = `
         }
       }
     />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Home Search visible 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "overflow": "hidden",
+      "paddingTop": 67,
+    }
+  }
+>
+  <BVLinearGradient
+    colors={
+      Array [
+        4294967295,
+        4294967295,
+        16777215,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      Object {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      Array [
+        Object {
+          "left": 0,
+          "paddingTop": 67,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": 83,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flexGrow": 1,
+      }
+    }
+    testID="catalog-search"
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "elevation": 4,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 8,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": 67,
+          },
+        ]
+      }
+      testID="header"
+    >
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+            "width": 44,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="header-logo"
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "height": "100%",
+                  "width": "100%",
+                },
+                Array [
+                  Object {
+                    "width": "100%",
+                  },
+                  Object {
+                    "height": 35,
+                  },
+                ],
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "https://api.coorpacademy.com/api-service/medias?url=https%3A%2F%2Fstatic.coorpacademy.com%2Fcontent%2Fmobile%2Fraw%2Fcoorp_logo_infinite-1552063832916.png&m=contain&q=90&h=70",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  undefined,
+                ]
+              }
+              testID="brand-logo"
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "justifyContent": "center",
+              "width": 44,
+            },
+            Object {
+              "alignItems": "flex-end",
+              "paddingRight": 24,
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          hitSlop={
+            Object {
+              "bottom": 16,
+              "left": 16,
+              "right": 16,
+              "top": 16,
+            }
+          }
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="search-icon"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={20}
+            bbWidth={20}
+            color="#546E7A"
+            height={20}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                null,
+                Object {
+                  "flex": 0,
+                  "height": 20,
+                  "width": 20,
+                },
+              ]
+            }
+            tintColor="#546E7A"
+            vbHeight={13}
+            vbWidth={13}
+            width={20}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
+                fill={
+                  Array [
+                    0,
+                    4283723386,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;

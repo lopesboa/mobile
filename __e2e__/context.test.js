@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tap, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, tap, tapCardOnList, waitForExist} from './utils';
 
 describe('Context', () => {
   beforeAll(async () => {
@@ -11,7 +11,7 @@ describe('Context', () => {
   describe('With image', () => {
     beforeAll(async () => {
       await reloadApp();
-      await tapCardOnSection('catalog-section-recommended-items', 3);
+      await tapCardOnList('catalog-section-recommended-items', 3);
     });
 
     it('should see elements', async () => {
@@ -37,7 +37,7 @@ describe('Context', () => {
   describe('With video', () => {
     beforeAll(async () => {
       await reloadApp();
-      await tapCardOnSection('catalog-section-recommended-items', 4);
+      await tapCardOnList('catalog-section-recommended-items', 4);
     });
 
     it('should see elements', async () => {
@@ -60,7 +60,7 @@ describe('Context', () => {
 
   describe('Without', () => {
     beforeAll(async () => {
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await tapCardOnList('catalog-section-recommended-items', 2);
     });
 
     it('should not see elements', async () => {

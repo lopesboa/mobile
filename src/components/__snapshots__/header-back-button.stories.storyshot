@@ -249,7 +249,7 @@ exports[`Storyshots HeaderBackButton Close 1`] = `
         "opacity": 1,
       }
     }
-    testID="header-back-button"
+    testID="header-close-button"
   >
     <RNSVGSvgView
       align="xMidYMid"
@@ -450,7 +450,7 @@ exports[`Storyshots HeaderBackButton Custom color 1`] = `
         "opacity": 1,
       }
     }
-    testID="header-back-button"
+    testID="header-close-button"
   >
     <RNSVGSvgView
       align="xMidYMid"
@@ -854,7 +854,7 @@ exports[`Storyshots HeaderBackButton No safe area 1`] = `
         "opacity": 1,
       }
     }
-    testID="header-back-button"
+    testID="header-close-button"
   >
     <RNSVGSvgView
       align="xMidYMid"
@@ -1051,7 +1051,7 @@ exports[`Storyshots HeaderBackButton Not floating 1`] = `
         "opacity": 1,
       }
     }
-    testID="header-back-button"
+    testID="header-close-button"
   >
     <RNSVGSvgView
       align="xMidYMid"

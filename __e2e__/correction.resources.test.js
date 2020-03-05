@@ -3,7 +3,7 @@
 import {
   reloadApp,
   bypassAuthentication,
-  tapCardOnSection,
+  tapCardOnList,
   waitForExist
   // waitForNotVisible
 } from './utils';
@@ -12,8 +12,8 @@ describe('Correction: resources', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
-    await waitForExist('catalog-section-recommended-item-basic-dis-1');
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
+    await tapCardOnList('catalog-section-recommended-items', 2);
     await waitForExist('question');
   });
 

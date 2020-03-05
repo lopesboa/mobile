@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 describe('QCM Slider', () => {
   beforeAll(async () => {
@@ -9,7 +9,7 @@ describe('QCM Slider', () => {
   });
 
   it('should see catalog, choose a discipline and see a question slider', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 9);
+    await tapCardOnList('catalog-section-recommended-items', 9);
     await waitForExist('question-slider');
   });
 

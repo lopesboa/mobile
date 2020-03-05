@@ -90,7 +90,7 @@ type DetoxElementType = {
   longPress(): void,
   multiTap(): void,
   tapAtPoint({x: number, y: number}): void,
-  typeText(): void,
+  typeText(string): void,
   replaceText(string): void,
   clearText(): void,
   scroll(

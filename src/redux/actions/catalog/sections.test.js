@@ -10,7 +10,7 @@ import {
   fetchRequest as fetchCardsRequest,
   fetchSuccess as fetchCardsSuccess,
   DEFAULT_LIMIT
-} from './cards/fetch';
+} from './cards/fetch/sections';
 import type {Action} from './sections';
 
 const sections = createSections().slice(0, 1);
@@ -39,7 +39,7 @@ describe('Sections', () => {
           })
         },
         Cards: {
-          find: () => ({
+          findBySection: () => ({
             cards: [],
             total: 42
           })

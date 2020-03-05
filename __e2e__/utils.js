@@ -1,7 +1,7 @@
 // @flow strict
 
 import {HEIGHT as HERO_HEIGHT} from '../src/components/hero';
-import {ITEM_WIDTH, ITEM_HEIGHT} from '../src/components/catalog-section';
+import {ITEM_WIDTH, ITEM_HEIGHT} from '../src/components/catalog-items';
 
 let alreadyLaunched = false;
 
@@ -9,6 +9,13 @@ const defaultPermissions: DetoxDevicePermissionsType = {
   camera: 'YES',
   microphone: 'YES'
 };
+
+const getDevicePixelPerPoint = (): number => 2;
+
+const getDeviceDimensions = (): {width: number, height: number} => ({
+  width: 750 / getDevicePixelPerPoint(),
+  height: 1334 / getDevicePixelPerPoint()
+});
 
 export const reloadApp = async (
   additionalPermissions?: DetoxDevicePermissionsType = defaultPermissions,
@@ -65,20 +72,43 @@ export const tap = async (testID: string) => {
   await element(by.id(testID)).tap();
 };
 
-// export const wait = (time: number) => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve();
-//     }, time);
-//   });
-// };
+const getCardOffset = (index: number, numColumns?: number): {x: number, y: number} => {
+  const {width} = getDeviceDimensions();
 
-export const tapCardOnSection = async (testID: string, index: number) => {
-  const offsetX = ITEM_WIDTH * (index - 1) + 1; // Scroll amount must be positive and greater than zero
+  if (numColumns) {
+    const paddingLeft = (width - numColumns * ITEM_WIDTH) / 2;
+
+    return {
+      x: paddingLeft + ITEM_WIDTH * ((index - 1) % numColumns),
+      y: ITEM_HEIGHT * parseInt((index - 1) / numColumns, 10) + 1 // Scroll amount must be positive and greater than zero
+    };
+  }
+
+  return {
+    x: ITEM_WIDTH * (index - 1) + 1, // Scroll amount must be positive and greater than zero
+    y: 0
+  };
+};
+
+export const tapCardOnList = async (testID: string, index: number, isVertical?: boolean) => {
+  const {width} = getDeviceDimensions();
+  const numColumns = isVertical ? parseInt(width / ITEM_WIDTH, 10) : undefined;
+  const {x, y} = getCardOffset(index, numColumns);
+
   await waitForExist(testID);
-  await element(by.id(testID)).scrollTo('left');
-  await element(by.id(testID)).scroll(offsetX, 'right');
-  await element(by.id(testID)).tapAtPoint({x: offsetX + ITEM_HEIGHT / 2, y: ITEM_WIDTH / 2});
+
+  if (isVertical) {
+    await element(by.id(testID)).scrollTo('top');
+    await element(by.id(testID)).scroll(y, 'down');
+  } else {
+    await element(by.id(testID)).scrollTo('left');
+    await element(by.id(testID)).scroll(x, 'right');
+  }
+
+  await element(by.id(testID)).tapAtPoint({
+    x: x + (isVertical ? ITEM_WIDTH : ITEM_HEIGHT) / 2,
+    y: y + (isVertical ? ITEM_HEIGHT : ITEM_WIDTH) / 2
+  });
 };
 
 export const longPress = async (testID: string) => {

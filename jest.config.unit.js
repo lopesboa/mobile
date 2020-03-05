@@ -37,9 +37,9 @@ module.exports = {
       // @todo increase this value
       functions: 56,
       // @todo increase this value
-      lines: 58,
+      lines: 59,
       // @todo increase this value
-      statements: 58
+      statements: 60
     },
     'src/screens': {
       branches: 100,

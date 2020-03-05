@@ -1,26 +1,17 @@
 // @flow strict
 
 import type {DataLayer} from '../layer/data';
-import type {Cards, DisciplineCard, ChapterCard} from '../layer/data/_types';
-import type {Section} from '../types';
 
 export type CardsService = {|
-  find: (
-    token: string,
-    host: string,
-    section: Section,
-    offset: number,
-    limit: number
-  ) => Promise<{|
-    cards: Cards,
-    total: number
-  |}>,
-  refreshCard: (card: DisciplineCard | ChapterCard) => Promise<DisciplineCard | ChapterCard>,
-  getCardFromLocalStorage: (levelRef: string) => Promise<DisciplineCard | ChapterCard>
+  findBySection: $PropertyType<DataLayer, 'fetchSectionCards'>,
+  findBySearch: $PropertyType<DataLayer, 'fetchSearchCards'>,
+  refreshCard: $PropertyType<DataLayer, 'refreshCard'>,
+  getCardFromLocalStorage: $PropertyType<DataLayer, 'getCardFromLocalStorage'>
 |};
 
 const service = (dataLayer: DataLayer): CardsService => ({
-  find: dataLayer.fetchCards,
+  findBySection: dataLayer.fetchSectionCards,
+  findBySearch: dataLayer.fetchSearchCards,
   refreshCard: dataLayer.refreshCard,
   getCardFromLocalStorage: dataLayer.getCardFromLocalStorage
 });

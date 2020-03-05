@@ -8,7 +8,7 @@ import {getToken, getSection} from '../../utils/state-extract';
 import {ERROR_TYPE} from '../../../const';
 import {showError} from '../ui/errors';
 import type {Action as ErrorAction} from '../ui/errors';
-import {fetchCards, DEFAULT_LIMIT} from './cards/fetch';
+import {fetchCards, DEFAULT_LIMIT} from './cards/fetch/sections';
 
 export const FETCH_REQUEST = '@@sections/FETCH_REQUEST';
 export const FETCH_SUCCESS = '@@sections/FETCH_SUCCESS';

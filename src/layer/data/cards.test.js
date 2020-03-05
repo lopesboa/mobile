@@ -23,8 +23,8 @@ import {CONTENT_TYPE} from './_const';
 import type {Completion, DisciplineCard, ChapterCard, Card} from './_types';
 
 const host = 'https://host.coorpacademy.com';
+const endpoint = '/api/v1/fake';
 const token = '__token__';
-const section = createSections()[0];
 
 const disciplinesCards = createDisciplinesCards(
   Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
@@ -44,25 +44,122 @@ describe('cards', () => {
       }));
     });
 
-    it('should create card to keys', () => {
-      const chapterCard = createChapterCard({
-        ref: 'test',
-        title: 'title',
-        completion: 0,
-        status: 'isActive'
+    it('should fetch e2e fixtures', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {fetchCards} = require('./cards');
+      const result = fetchCards(token, host, endpoint, 1, 3);
+      const expected = {
+        cards: cards.slice(1, 4),
+        total: cards.length
+      };
+
+      return expect(result).resolves.toEqual(expected);
+    });
+
+    it('should fetch cards', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<{|
+            search_meta: {
+              total: number
+            },
+            hits: Array<Card>
+          |}>
+        }> => {
+          expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en&withoutAdaptive=true`);
+
+          expect(options).toHaveProperty('headers.authorization', token);
+
+          return Promise.resolve({
+            json: () =>
+              Promise.resolve({
+                search_meta: {
+                  total: cards.length
+                },
+                hits: cards.slice(0, 2)
+              })
+          });
+        }
+      );
+
+      const {fetchCards} = require('./cards');
+      const result = fetchCards(token, host, endpoint, 0, 2);
+      const expected = {
+        cards: cards.slice(0, 2),
+        total: cards.length
+      };
+
+      await expect(result).resolves.toEqual(expected);
+    });
+
+    it('should reject error', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+
+      const {fetchCards} = require('./cards');
+      const result = fetchCards(token, host, endpoint, 0, 3);
+
+      await expect(result).rejects.toThrow();
+    });
+
+    it("should returns empty array if apis doesn't have results", async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              search_meta: {
+                total: 0
+              },
+              hits: []
+            })
+        });
       });
 
-      const keyedChapterCard = cardsToKeys([chapterCard], 'en');
+      const {fetchCards} = require('./cards');
+      const result = fetchCards(token, host, endpoint, 0, 3);
 
-      expect(Object.keys(keyedChapterCard)).toEqual(['card:en:test']);
+      const expected = {
+        cards: [],
+        total: 0
+      };
+      await expect(result).resolves.toEqual(expected);
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+  });
+
+  describe('fetchSectionCards', () => {
+    const section = createSections()[0];
+
+    beforeEach(() => {
+      jest.resetModules();
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
     });
 
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: true
       }));
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 1, 3);
+      const {fetchSectionCards} = require('./cards');
+      const result = fetchSectionCards(token, host, section, 1, 3);
       const expected = {
         cards: cards.slice(1, 4),
         total: cards.length
@@ -107,8 +204,8 @@ describe('cards', () => {
         }
       );
 
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 2);
+      const {fetchSectionCards} = require('./cards');
+      const result = fetchSectionCards(token, host, section, 0, 2);
       const expected = {
         cards: cards.slice(0, 2),
         total: cards.length
@@ -123,8 +220,8 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
 
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 3);
+      const {fetchSectionCards} = require('./cards');
+      const result = fetchSectionCards(token, host, section, 0, 3);
 
       await expect(result).rejects.toThrow();
     });
@@ -145,8 +242,120 @@ describe('cards', () => {
         });
       });
 
-      const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, section, 0, 3);
+      const {fetchSectionCards} = require('./cards');
+      const result = fetchSectionCards(token, host, section, 0, 3);
+
+      const expected = {
+        cards: [],
+        total: 0
+      };
+      await expect(result).resolves.toEqual(expected);
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+  });
+
+  describe('fetchSearchCards', () => {
+    const search = 'foo bar baz';
+
+    beforeEach(() => {
+      jest.resetModules();
+
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: false
+      }));
+    });
+
+    it('should fetch e2e fixtures', () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+      const {fetchSearchCards} = require('./cards');
+      const result = fetchSearchCards(token, host, search, 1, 3);
+      const expected = {
+        cards: cards.slice(1, 4),
+        total: cards.length
+      };
+
+      return expect(result).resolves.toEqual(expected);
+    });
+
+    it('should fetch cards', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce(
+        (
+          url,
+          options
+        ): Promise<{
+          json: () => Promise<{|
+            search_meta: {
+              total: number
+            },
+            hits: Array<Card>
+          |}>
+        }> => {
+          expect(url).toBe(
+            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en&withoutAdaptive=true`
+          );
+
+          expect(options).toHaveProperty('headers.authorization', token);
+
+          return Promise.resolve({
+            json: () =>
+              Promise.resolve({
+                search_meta: {
+                  total: cards.length
+                },
+                hits: cards.slice(0, 2)
+              })
+          });
+        }
+      );
+
+      const {fetchSearchCards} = require('./cards');
+      const result = fetchSearchCards(token, host, search, 0, 2);
+      const expected = {
+        cards: cards.slice(0, 2),
+        total: cards.length
+      };
+
+      await expect(result).resolves.toEqual(expected);
+    });
+
+    it('should reject error', async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+
+      const {fetchSearchCards} = require('./cards');
+      const result = fetchSearchCards(token, host, search, 0, 3);
+
+      await expect(result).rejects.toThrow();
+    });
+
+    it("should returns empty array if apis doesn't have results", async () => {
+      jest.mock('cross-fetch');
+      const fetch = require('cross-fetch');
+
+      fetch.mockImplementationOnce((url, options) => {
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              search_meta: {
+                total: 0
+              },
+              hits: []
+            })
+        });
+      });
+
+      const {fetchSearchCards} = require('./cards');
+      const result = fetchSearchCards(token, host, search, 0, 3);
 
       const expected = {
         cards: [],
@@ -368,7 +577,7 @@ describe('cards', () => {
     });
   });
 
-  describe('fetchCards', () => {
+  describe('completion', () => {
     beforeEach(() => {
       jest.resetModules();
       jest.mock('cross-fetch');
@@ -426,9 +635,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(
-            'https://host.coorpacademy.com/api/v2/recommendations?contentType=all&offset=1&limit=3&lang=en&withoutAdaptive=true'
-          );
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&withoutAdaptive=true`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
@@ -437,7 +644,7 @@ describe('cards', () => {
       );
 
       const {fetchCards} = require('./cards');
-      const {cards: _cards} = await fetchCards(token, host, section, 1, 3);
+      const {cards: _cards} = await fetchCards(token, host, endpoint, 1, 3);
       expect(_cards[0]).toEqual({
         ...mockCard1,
         completion: completion1.current / microLearningSlideToComplete
@@ -477,9 +684,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(
-            'https://host.coorpacademy.com/api/v2/recommendations?contentType=all&offset=1&limit=3&lang=en&withoutAdaptive=true'
-          );
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&withoutAdaptive=true`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
@@ -488,7 +693,7 @@ describe('cards', () => {
       );
 
       const {fetchCards} = require('./cards');
-      const {cards: _cards} = await fetchCards(token, host, section, 1, 3);
+      const {cards: _cards} = await fetchCards(token, host, endpoint, 1, 3);
       expect(_cards[0]).toEqual(mockCard1);
       expect(_cards[1]).toEqual(mockCard2);
     });
@@ -1020,6 +1225,21 @@ describe('cards', () => {
 
     afterEach(() => {
       jest.resetAllMocks();
+    });
+  });
+
+  describe('cardsToKeys', () => {
+    it('should create card to keys', () => {
+      const chapterCard = createChapterCard({
+        ref: 'test',
+        title: 'title',
+        completion: 0,
+        status: 'isActive'
+      });
+
+      const keyedChapterCard = cardsToKeys([chapterCard], 'en');
+
+      expect(Object.keys(keyedChapterCard)).toEqual(['card:en:test']);
     });
   });
 });

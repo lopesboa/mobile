@@ -53,6 +53,8 @@ const translations: Translations = {
   next: 'Далі',
   nextChapter: 'Наступний розділ:',
   nextLevel: 'Наступний рівень',
+  noResults: 'No results',
+  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
   ok: 'Гаразд',
   ooops: 'Упс...',
   open: 'Відкрити',
@@ -77,6 +79,7 @@ const translations: Translations = {
   retryChapter: 'Пройти розділ ще раз',
   retryLevel: 'Пройти рівень ще раз',
   scanQRCode: 'Відскануйте свій <b>QR-код</b>',
+  search: 'Search',
   seeClue: 'Переглянути підказку',
   selectSomethingBelow: 'Оберіть положення нижче',
   startDemo:

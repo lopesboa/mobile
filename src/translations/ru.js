@@ -54,6 +54,8 @@ const translations: Translations = {
   next: 'Далее',
   nextChapter: 'Следующая глава',
   nextLevel: 'Следующий уровень',
+  noResults: 'No results',
+  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
   ok: 'Хорошо',
   ooops: 'Ой...',
   open: 'Открыть',
@@ -77,6 +79,7 @@ const translations: Translations = {
   retryChapter: 'Повторить главу',
   retryLevel: 'Повторить уровень',
   scanQRCode: 'Сканируйте свой <b>QR-код</b>',
+  search: 'Search',
   seeClue: 'Смотреть подсказку',
   selectSomethingBelow: 'Выберите что-либо ниже',
   startDemo:

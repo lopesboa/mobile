@@ -6,7 +6,7 @@ import {
   waitForExist,
   waitForVisible,
   waitForNotVisible,
-  tapCardOnSection,
+  tapCardOnList,
   wrongAnswer
 } from './utils';
 
@@ -18,7 +18,7 @@ describe('Level end', () => {
 
   describe('Failure', () => {
     beforeAll(async () => {
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await tapCardOnList('catalog-section-recommended-items', 2);
       await waitForVisible('header-slide-right');
       // fast slide enabled to have faster scenarios
       await element(by.id('header-slide-right')).longPress();
@@ -71,7 +71,7 @@ describe('Level end', () => {
 
   describe('Success', () => {
     beforeAll(async () => {
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await tapCardOnList('catalog-section-recommended-items', 2);
       await waitForVisible('header-slide-right-fast-slide');
       // god mode enabled to have success level end
       await element(by.id('header-slide-right-fast-slide')).tap();
@@ -100,7 +100,7 @@ describe('Level end', () => {
     });
 
     it('should not see the highscore if not higher than before', async () => {
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await tapCardOnList('catalog-section-recommended-items', 2);
       await wrongAnswer();
       await waitForVisible('correction-success');
       await element(by.id('button-next-question')).tap();

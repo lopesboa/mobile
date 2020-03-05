@@ -4,7 +4,7 @@ import {
   reloadApp,
   bypassAuthentication,
   getLessonTab,
-  tapCardOnSection,
+  tapCardOnList,
   waitForExist,
   waitForVisible
   // waitForNotVisible
@@ -18,8 +18,8 @@ describe('Lesson', () => {
 
   describe('More than 1 resource', () => {
     it('should see catalog and choose a discipline', async () => {
-      await waitForExist('catalog-section-recommended-item-basic-dis-1');
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
+      await tapCardOnList('catalog-section-recommended-items', 2);
     });
 
     // it('should see lesson tab icon with notification', async () => {
@@ -70,7 +70,7 @@ describe('Lesson', () => {
   describe('1 resource only', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await tapCardOnSection('catalog-section-recommended-items', 1);
+      await tapCardOnList('catalog-section-recommended-items', 1);
       await getLessonTab(element).tap();
     });
 
@@ -87,7 +87,7 @@ describe('Lesson', () => {
   describe('Without resource', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await tapCardOnSection('catalog-section-recommended-items', 5);
+      await tapCardOnList('catalog-section-recommended-items', 5);
     });
 
     it('should not be redirected to lesson tab', async () => {

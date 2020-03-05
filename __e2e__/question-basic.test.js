@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 describe('Basic Question', () => {
   beforeAll(async () => {
@@ -9,7 +9,7 @@ describe('Basic Question', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 10);
+    await tapCardOnList('catalog-section-recommended-items', 10);
   });
 
   it('should see the question elements', async () => {

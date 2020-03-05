@@ -4,11 +4,12 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createArraySelector} from 'reselect-map';
 
-import {fetchCards, DEFAULT_LIMIT} from '../redux/actions/catalog/cards/fetch';
+import {fetchCards, DEFAULT_LIMIT} from '../redux/actions/catalog/cards/fetch/sections';
 import type {StoreState} from '../redux/store';
 import {getCards} from '../redux/utils/state-extract';
-import CatalogSection, {ITEM_WIDTH} from '../components/catalog-section';
+import CatalogSection from '../components/catalog-section';
 import type {Props as CatalogSectionProps} from '../components/catalog-section';
+import {ITEM_WIDTH} from '../components/catalog-items';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import isEqual from '../modules/equal';
 import translations from '../translations';
@@ -49,8 +50,8 @@ class CatalogSectionRefreshable extends React.Component<Props> {
 
   shouldComponentUpdate = ({cards: nextCards, ...nextProps}: Props) => {
     const {cards, ...props} = this.props;
-    const cardsCount = cards && cards.filter(Boolean).length;
-    const nextCardsCount = nextCards && nextCards.filter(Boolean).length;
+    const cardsRef = cards && cards.filter(Boolean).map(card => card.universalRef);
+    const nextCardsRef = nextCards && nextCards.filter(Boolean).map(card => card.universalRef);
     const completion = cards.reduce((total, card) => total + ((card && card.completion) || 0), 0);
     const nextCompletion = nextCards.reduce(
       (total, card) => total + ((card && card.completion) || 0),
@@ -59,9 +60,9 @@ class CatalogSectionRefreshable extends React.Component<Props> {
 
     return (
       typeof cards !== typeof nextCards ||
-      // For performance purpose only (prevent useless render)
-      cardsCount !== nextCardsCount ||
       completion !== nextCompletion ||
+      // For performance purpose only (prevent useless render)
+      !isEqual(cardsRef, nextCardsRef) ||
       !isEqual(props, nextProps)
     );
   };

@@ -151,6 +151,8 @@ export const getSections = (state: StoreState) => state.catalog.entities.section
 
 export const getSectionsRef = (state: StoreState) => state.catalog.sectionsRef || [];
 
+export const getSearchRef = (state: StoreState) => state.catalog.searchRef;
+
 export const getCards = (state: StoreState) => state.catalog.entities.cards;
 
 export const getHeroRef = (state: StoreState): string | void | null => state.catalog.heroRef;
@@ -162,6 +164,12 @@ export const getHero = (state: StoreState): DisciplineCard | ChapterCard | void 
 };
 
 export const isErrorVisible = (state: StoreState): boolean => state.errors.isVisible;
+
+export const isSearchVisible = (state: StoreState): boolean => state.search.isVisible;
+
+export const isSearchFetching = (state: StoreState): boolean => state.search.isFetching;
+
+export const getSearchValue = (state: StoreState): string | void => state.search.value;
 
 export const getErrorType = (state: StoreState): ErrorType | void => state.errors.type;
 

@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 const wrongAnswer = async (el: DetoxElement, {clickOnNext = true}: {clickOnNext: boolean}) => {
   await el(by.id('question-screen')).swipe('up');
@@ -17,8 +17,8 @@ describe('Correction: extra-life', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
-    await waitForExist('catalog-section-recommended-item-basic-dis-1');
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
+    await tapCardOnList('catalog-section-recommended-items', 2);
     await waitForExist('question');
   });
 

@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForVisible} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnList, waitForVisible} from './utils';
 
 const selectQCMRightDragItem = async (el: DetoxElement) => {
   await el(by.id(`choice-1-unselected`)).tap();
@@ -22,7 +22,7 @@ describe('QCM Drag', () => {
   });
 
   it('should see catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 8);
+    await tapCardOnList('catalog-section-recommended-items', 8);
   });
 
   it('should see only choice item', async () => {

@@ -29,6 +29,7 @@ import {
   createPermissionsState,
   createStoreState,
   createErrorsState,
+  createSearchState,
   createSelectState,
   createNetworkState,
   createVideoState
@@ -57,9 +58,13 @@ import {
   getSections,
   getSectionsRef,
   getCards,
+  getSearchRef,
   getHeroRef,
   getHero,
   isErrorVisible,
+  isSearchVisible,
+  isSearchFetching,
+  getSearchValue,
   getErrorType,
   getFocusedSelect,
   isNetworkConnected,
@@ -109,6 +114,7 @@ const createState = ({
   user,
   heroRef,
   errors,
+  search,
   select
 }: {
   engine?: Engine,
@@ -124,6 +130,7 @@ const createState = ({
   user?: User | null,
   heroRef?: string,
   errors?: $ExtractReturn<typeof createErrorsState>,
+  search?: $ExtractReturn<typeof createSearchState>,
   select?: $ExtractReturn<typeof createSelectState>
 }): StoreState =>
   createStoreState({
@@ -142,6 +149,7 @@ const createState = ({
     catalog: createCatalogState({sections, cards, heroRef}),
     permissions,
     errors,
+    search,
     select
   });
 
@@ -855,6 +863,45 @@ describe('State-extract', () => {
     });
   });
 
+  describe('getSearchRef', () => {
+    it('should get search ref', () => {
+      const levelCard = createCardLevel({
+        ref: 'mod_10B',
+        status: 'isActive',
+        label: 'Fake level',
+        level: 'advanced'
+      });
+      const disciplineCard = createDisciplineCard({
+        ref: 'dis1',
+        completion: 0,
+        levels: [levelCard],
+        title: 'First discipline'
+      });
+      const chapterCard = createChapterCard({
+        ref: 'cha1',
+        completion: 0,
+        status: CARD_STATUS.ACTIVE,
+        title: 'First chapter'
+      });
+      const state = createState({
+        cards: [disciplineCard, chapterCard].concat([undefined])
+      });
+
+      const result = getSearchRef(state);
+      const expected = ['dis1', 'cha1', undefined];
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should get undefined', () => {
+      const state = createState({});
+
+      const result = getSearchRef(state);
+
+      expect(result).toBeUndefined;
+    });
+  });
+
   describe('getHeroRef', () => {
     it('should get ref', () => {
       const heroRef = 'foo';
@@ -917,6 +964,68 @@ describe('State-extract', () => {
       const result = isErrorVisible(state);
 
       expect(result).toBeTruthy;
+    });
+  });
+
+  describe('isSearchVisible', () => {
+    it('should return false', () => {
+      const state = createState({});
+
+      const result = isSearchVisible(state);
+
+      expect(result).toBeFalsy;
+    });
+
+    it('should return true', () => {
+      const state = createState({
+        search: createSearchState({isVisible: true})
+      });
+
+      const result = isSearchVisible(state);
+
+      expect(result).toBeTruthy;
+    });
+  });
+
+  describe('isSearchFetching', () => {
+    it('should return false', () => {
+      const state = createState({});
+
+      const result = isSearchFetching(state);
+
+      expect(result).toBeFalsy;
+    });
+
+    it('should return true', () => {
+      const state = createState({
+        search: createSearchState({isFetching: true})
+      });
+
+      const result = isSearchFetching(state);
+
+      expect(result).toBeTruthy;
+    });
+  });
+
+  describe('getSearchValue', () => {
+    it('should return undefined', () => {
+      const state = createState({});
+
+      const result = getSearchValue(state);
+
+      expect(result).toBeUndefined;
+    });
+
+    it('should return the value', () => {
+      const value = 'foo';
+      const state = createState({
+        search: createSearchState({value})
+      });
+
+      const result = getSearchValue(state);
+      const expected = value;
+
+      expect(result).toEqual(expected);
     });
   });
 

@@ -29,6 +29,7 @@ import type {State as AuthenticationState} from '../redux/reducers/authenticatio
 import type {State as CatalogState} from '../redux/reducers/catalog';
 import type {State as ErrorsState} from '../redux/reducers/ui/errors';
 import type {State as SelectState} from '../redux/reducers/ui/select';
+import type {State as SearchState} from '../redux/reducers/ui/search';
 import type {State as GodModeState} from '../redux/reducers/god-mode';
 import type {State as NavigationState} from '../redux/reducers/navigation';
 import type {State as FastSlideState} from '../redux/reducers/fast-slide';
@@ -84,13 +85,18 @@ export const createCatalogState = ({
   cards = []
 }: {
   heroRef?: string,
+  searchRef?: Array<string | void>,
   sections?: Array<Section | void>,
-  cards?: Array<DisciplineCard | ChapterCard>
+  cards?: Array<DisciplineCard | ChapterCard | void>
 }): CatalogState => ({
   heroRef,
   sectionsRef:
     sections && sections.length > 1
       ? sections.map(section => (section ? section.key : undefined))
+      : undefined,
+  searchRef:
+    cards && cards.length > 1
+      ? cards.map(card => (card ? card.universalRef : undefined))
       : undefined,
   entities: {
     sections: sections.reduce((result, section) => {
@@ -260,6 +266,20 @@ export const createErrorsState = ({
 export const createSelectState = ({id}: {id?: string}): SelectState =>
   id !== undefined ? id : null;
 
+export const createSearchState = ({
+  isVisible = false,
+  isFetching = false,
+  value
+}: {
+  isVisible?: boolean,
+  isFetching?: boolean,
+  value?: string
+}): SearchState => ({
+  isVisible,
+  isFetching,
+  value
+});
+
 export const createNavigationState = (): NavigationState => ({
   currentNavigatorName: 'dummyNavigatorName',
   currentAppScreenName: 'dummycurrentAppScreenName',
@@ -305,6 +325,7 @@ export const createStoreState = ({
   fastSlide = false,
   errors,
   select,
+  search,
   navigation,
   permissions,
   video,
@@ -325,6 +346,7 @@ export const createStoreState = ({
   fastSlide?: FastSlideState,
   errors?: ErrorsState<void>,
   select?: SelectState,
+  search?: SearchState,
   navigation?: NavigationState,
   permissions?: PermissionsState,
   video?: VideoState,
@@ -344,6 +366,7 @@ export const createStoreState = ({
   ui: ui || createUiState({}),
   errors: errors || createErrorsState({}),
   select: select || createSelectState({}),
+  search: search || createSearchState({}),
   navigation: navigation || createNavigationState(),
   catalog: catalog || createCatalogState({}),
   permissions: permissions || createPermissionsState({}),

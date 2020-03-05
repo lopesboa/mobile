@@ -1,31 +1,23 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import theme from '../modules/theme';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import Card from './card';
-import CatalogItem, {
-  WIDTH as CATALOG_ITEM_WIDTH,
-  HEIGHT as CATALOG_ITEM_HEIGHT
-} from './catalog-item';
+import CatalogItems, {ITEM_OFFSET, ITEM_HEIGHT} from './catalog-items';
 import Placeholder from './placeholder';
 import PlaceholderLine from './placeholder-line';
 import Text from './text';
 
 const LIST_HORIZONTAL_OFFSET = theme.spacing.micro;
-const ITEM_VERTICAL_OFFSET = theme.spacing.small;
-const ITEM_HORIZONTAL_OFFSET = theme.spacing.micro;
-export const ITEM_WIDTH = CATALOG_ITEM_WIDTH + ITEM_HORIZONTAL_OFFSET * 2;
-export const ITEM_HEIGHT = CATALOG_ITEM_HEIGHT + ITEM_VERTICAL_OFFSET * 2;
 const TITLE_HEIGHT = theme.fontSize.large;
-export const HEIGHT = ITEM_HEIGHT + TITLE_HEIGHT;
-const PLACEHOLDER_LENGTH = 5;
+const SEPARATOR_HEIGHT = theme.spacing.small - ITEM_OFFSET;
+export const HEIGHT = ITEM_HEIGHT + SEPARATOR_HEIGHT + TITLE_HEIGHT;
 
 const styles = StyleSheet.create({
   title: {
-    paddingHorizontal: LIST_HORIZONTAL_OFFSET + ITEM_HORIZONTAL_OFFSET,
+    paddingHorizontal: LIST_HORIZONTAL_OFFSET + ITEM_OFFSET,
     fontSize: TITLE_HEIGHT,
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.black
@@ -34,11 +26,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: LIST_HORIZONTAL_OFFSET,
     height: ITEM_HEIGHT
   },
-  card: {
-    flex: 1,
-    // to see the shadow
-    marginHorizontal: ITEM_HORIZONTAL_OFFSET,
-    marginVertical: ITEM_VERTICAL_OFFSET
+  separator: {
+    width: SEPARATOR_HEIGHT,
+    height: SEPARATOR_HEIGHT
   }
 });
 
@@ -53,35 +43,6 @@ export type Props = {|
 
 class CatalogSection extends React.Component<Props> {
   props: Props;
-
-  offsetX: number = 0;
-
-  keyExtractor = (item: DisciplineCard | ChapterCard | void, index: number) => {
-    const {sectionRef, testID} = this.props;
-    const suffix =
-      (item && item.universalRef && item.universalRef.replace(/_/g, '-')) || `${index}-placeholder`;
-
-    return `catalog-section-${sectionRef || testID}-item-${suffix}`;
-  };
-
-  getItemLayout = (data?: Array<DisciplineCard | ChapterCard | void> | null, index: number) => ({
-    length: ITEM_WIDTH,
-    offset: ITEM_WIDTH * index,
-    index
-  });
-
-  renderItem = ({item, index}: {item: DisciplineCard | ChapterCard | void, index: number}) => {
-    const {sectionRef = '', onCardPress} = this.props;
-    const testID = this.keyExtractor(item, index);
-
-    return (
-      <View style={styles.card}>
-        <Card>
-          <CatalogItem item={item} onPress={onCardPress} testID={testID} section={sectionRef} />
-        </Card>
-      </View>
-    );
-  };
 
   renderTitle = (): React.Node => {
     const {title} = this.props;
@@ -100,21 +61,18 @@ class CatalogSection extends React.Component<Props> {
   };
 
   render() {
-    const {sectionRef, cards, onScroll, testID} = this.props;
+    const {sectionRef, cards, onCardPress, onScroll, testID} = this.props;
 
     return (
       <View>
         {this.renderTitle()}
-        <FlatList
-          data={cards && cards.length > 0 ? cards : new Array(PLACEHOLDER_LENGTH).fill()}
-          renderItem={this.renderItem}
-          keyExtractor={this.keyExtractor}
-          getItemLayout={this.getItemLayout}
-          contentContainerStyle={styles.list}
-          showsHorizontalScrollIndicator={false}
+        <View style={styles.separator} />
+        <CatalogItems
+          cards={cards}
+          onCardPress={onCardPress}
           onScroll={onScroll}
-          scrollEnabled={Boolean(onScroll)}
-          horizontal
+          placeholderLength={5}
+          style={styles.list}
           testID={`catalog-section-${sectionRef || testID}-items`}
         />
       </View>

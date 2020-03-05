@@ -192,7 +192,7 @@ if (__TEST__) {
 
       const button = component.root.find(
         el =>
-          el.props.testID === 'catalog-section-most-popular-item-bar' &&
+          el.props.testID === 'catalog-section-most-popular-items-item-bar' &&
           el.props.analyticsID === 'card'
       );
       button.props.onPress();

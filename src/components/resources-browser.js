@@ -1,7 +1,8 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {FlatList, View, StyleSheet} from 'react-native';
+import kebabCase from 'lodash/fp/kebabCase';
 
 import type {Resource} from '../types';
 import theme from '../modules/theme';
@@ -76,7 +77,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
     const {selected} = this.props;
     const isSelected = selected === resource._id;
     const selectedSuffix = (isSelected && '-selected') || '';
-    const testID = `resource-${resource.ref.replace(/_/g, '-')}`;
+    const testID = `resource-${kebabCase(resource.ref)}`;
 
     return (
       <Touchable

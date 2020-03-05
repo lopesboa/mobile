@@ -6,14 +6,14 @@ import {
   waitForVisible,
   waitForNotVisible,
   waitForExist,
-  tapCardOnSection
+  tapCardOnList
 } from './utils';
 
 describe('Correction: fast slide', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await tapCardOnList('catalog-section-recommended-items', 2);
   });
 
   it('should be able to enable fast slide', async () => {

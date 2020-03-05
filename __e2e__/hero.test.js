@@ -1,7 +1,7 @@
 // @flow strict
 
 import {
-  tapCardOnSection,
+  tapCardOnList,
   waitForExist,
   waitForVisible,
   reloadApp,
@@ -29,7 +29,7 @@ describe('Hero: display card for uncomplete level', () => {
   });
 
   it('answer successfully 3 questions', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await tapCardOnList('catalog-section-recommended-items', 2);
     await answerQuestion();
     await answerQuestion();
     await answerQuestion();

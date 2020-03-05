@@ -4,7 +4,7 @@ import translations from '../src/translations/en';
 import {reloadApp, waitForExist} from './utils';
 
 const signOut = async (el: DetoxElement) => {
-  await el(by.id('home-logo')).longPress();
+  await el(by.id('header-logo')).longPress();
   await el(by.text('OK')).tap();
   await waitForExist('authentication');
 };

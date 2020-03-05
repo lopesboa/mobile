@@ -8,7 +8,7 @@ import HeaderBackButton from './header-back-button';
 
 storiesOf('HeaderBackButton', module)
   .add('Close', () => (
-    <HeaderBackButton type="close" onPress={handleFakePress} testID="header-back-button" />
+    <HeaderBackButton type="close" onPress={handleFakePress} testID="header-close-button" />
   ))
   .add('Back', () => (
     <HeaderBackButton type="back" onPress={handleFakePress} testID="header-back-button" />
@@ -21,7 +21,7 @@ storiesOf('HeaderBackButton', module)
       type="close"
       onPress={handleFakePress}
       color="#000"
-      testID="header-back-button"
+      testID="header-close-button"
     />
   ))
   .add('No safe area', () => (
@@ -30,7 +30,7 @@ storiesOf('HeaderBackButton', module)
       onPress={handleFakePress}
       color="#000"
       noSafeArea
-      testID="header-back-button"
+      testID="header-close-button"
     />
   ))
   .add('Not floating', () => (
@@ -39,6 +39,6 @@ storiesOf('HeaderBackButton', module)
       onPress={handleFakePress}
       color="#000"
       isFloating={false}
-      testID="header-back-button"
+      testID="header-close-button"
     />
   ));

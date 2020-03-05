@@ -14,7 +14,6 @@ export type Props = {|
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     borderRadius: theme.radius.card
   },
   overflowHidden: {

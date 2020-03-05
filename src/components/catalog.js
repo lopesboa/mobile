@@ -17,7 +17,8 @@ export type Props = {|
   onRefresh: () => void,
   isRefreshing?: boolean,
   onScroll: ScrollEvent => void,
-  children?: React.Node
+  children?: React.Node,
+  testID?: string
 |};
 
 const styles = StyleSheet.create({
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const SEPARATOR_SIZE = 'small';
+const SEPARATOR_SIZE = 'base';
 export const SEPARATOR_HEIGHT = theme.spacing[SEPARATOR_SIZE];
 export const HERO_HEIGHT = _HERO_HEIGHT;
 const PLACEHOLDER_LENGTH = 3;
@@ -66,7 +67,7 @@ class Catalog extends React.Component<Props> {
   };
 
   render() {
-    const {sections, onRefresh, isRefreshing = false, onScroll} = this.props;
+    const {sections, onRefresh, isRefreshing = false, onScroll, testID = 'catalog'} = this.props;
 
     return (
       <FlatList
@@ -80,7 +81,7 @@ class Catalog extends React.Component<Props> {
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={this.renderSeparator}
         ListFooterComponent={this.renderFooter}
-        testID="catalog"
+        testID={testID}
         onScroll={onScroll}
       />
     );

@@ -1,6 +1,6 @@
 // @flow strict
 
-import {reloadApp, bypassAuthentication, tapCardOnSection, waitForExist} from './utils';
+import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 const rightAnswer = async (el: DetoxElement) => {
   await el(by.id('question-screen')).swipe('up');
@@ -17,7 +17,7 @@ describe('Questions', () => {
   });
 
   it('should see the catalog and choose a discipline', async () => {
-    await tapCardOnSection('catalog-section-recommended-items', 2);
+    await tapCardOnList('catalog-section-recommended-items', 2);
   });
 
   it('should see QCM elements', async () => {

@@ -3,21 +3,23 @@
 import {
   reloadApp,
   bypassAuthentication,
-  tapCardOnSection,
+  tapCardOnList,
   waitForExist,
-  wrongAnswer
+  wrongAnswer,
+  scrollHero
 } from './utils';
 
 describe('Lives', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await scrollHero();
   });
 
   describe('Learner', () => {
     beforeAll(async () => {
-      await waitForExist('catalog-section-recommended-item-basic-dis-1');
-      await tapCardOnSection('catalog-section-recommended-items', 2);
+      await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
+      await tapCardOnList('catalog-section-recommended-items', 2);
     });
 
     it('should see 4 lives', async () => {
@@ -38,7 +40,7 @@ describe('Lives', () => {
   describe('Adaptive', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
-      await tapCardOnSection('catalog-section-recommended-items', 1);
+      await tapCardOnList('catalog-section-recommended-items', 1);
     });
 
     it('should not see lives', async () => {
@@ -50,7 +52,7 @@ describe('Lives', () => {
     beforeAll(async () => {
       await element(by.id('header-back')).tap();
       await element(by.id('home-screen')).swipe('up');
-      await tapCardOnSection('catalog-section-recommended-items', 12);
+      await tapCardOnList('catalog-section-recommended-items', 12);
     });
 
     it('should not see lives', async () => {
