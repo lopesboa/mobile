@@ -19,11 +19,16 @@ type Props = {|
 export const BACKGROUND_COLOR = theme.colors.white;
 
 const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: BACKGROUND_COLOR,
+  container: {
     flex: 1
   },
-  screenScroll: {
+  statusBar: {
+    flex: 0
+  },
+  background: {
+    backgroundColor: BACKGROUND_COLOR
+  },
+  content: {
     flexGrow: 1
   }
 });
@@ -41,32 +46,47 @@ class Screen extends React.PureComponent<Props> {
     }
   };
 
-  render() {
-    const {style, noScroll, children, testID, noSafeArea, refreshControl} = this.props;
+  renderContent = (): React.Node => {
+    const {noScroll, children, testID, refreshControl} = this.props;
 
-    const CustomView = noSafeArea ? View : SafeAreaView;
+    if (noScroll) {
+      return (
+        <View style={styles.content} testID={testID}>
+          {children}
+        </View>
+      );
+    }
 
     return (
-      <CustomView style={[styles.screen, style]}>
-        {noScroll ? (
-          <View style={styles.screenScroll} testID={testID}>
-            {children}
-          </View>
-        ) : (
-          <KeyboardAwareScrollView
-            contentContainerStyle={styles.screenScroll}
-            showsHorizontalScrollIndicator={false}
-            refreshControl={refreshControl}
-            testID={testID}
-            nestedScrollEnabled
-            enableOnAndroid
-            // eslint-disable-next-line react/jsx-handler-names
-            innerRef={this.handleRef}
-          >
-            {children}
-          </KeyboardAwareScrollView>
-        )}
-      </CustomView>
+      <KeyboardAwareScrollView
+        contentContainerStyle={styles.content}
+        showsHorizontalScrollIndicator={false}
+        refreshControl={refreshControl}
+        testID={testID}
+        nestedScrollEnabled
+        enableOnAndroid
+        // eslint-disable-next-line react/jsx-handler-names
+        innerRef={this.handleRef}
+      >
+        {children}
+      </KeyboardAwareScrollView>
+    );
+  };
+
+  render() {
+    const {style, noSafeArea} = this.props;
+
+    if (noSafeArea) {
+      return (
+        <View style={[styles.container, styles.background, style]}>{this.renderContent()}</View>
+      );
+    }
+
+    return (
+      <React.Fragment>
+        <SafeAreaView style={[styles.statusBar, styles.background]} />
+        <View style={[styles.container, styles.background, style]}>{this.renderContent()}</View>
+      </React.Fragment>
     );
   }
 }
