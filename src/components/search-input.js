@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import {View, StyleSheet, TextInput, ActivityIndicator} from 'react-native';
+import {View, StyleSheet, TextInput, ActivityIndicator, Platform} from 'react-native';
 import {
   NovaCompositionCoorpacademySearch as SearchIcon,
   NovaSolidStatusClose as ClearIcon
@@ -27,7 +27,14 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     color: theme.colors.black,
-    fontSize: theme.fontSize.large
+    fontSize: theme.fontSize.large,
+    // When we don't set any height, the text doesn't appear on Android
+    // Which is really weird, see https://github.com/facebook/react-native/issues/24067
+    ...Platform.select({
+      android: {
+        height: 40
+      }
+    })
   }
 });
 
