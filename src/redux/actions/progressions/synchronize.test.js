@@ -123,8 +123,8 @@ describe('Progressions synchronization', () => {
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(2);
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
-        failureProgression._id,
-        successProgression._id
+        successProgression._id,
+        failureProgression._id
       ]);
       expect(store.dispatch).toHaveBeenCalledTimes(2);
       expect(actual).toBeUndefined();
@@ -457,7 +457,7 @@ describe('Progressions synchronization', () => {
         Progressions: {
           getAll: jest
             .fn()
-            .mockImplementation(() => Promise.resolve([bazProgression, barProgression])),
+            .mockImplementation(() => Promise.resolve([barProgression, bazProgression])),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve(['foo'])),
           getPendingProgressionId: jest.fn(() => Promise.resolve('')),
           updatePendingProgressionId: jest.fn(),

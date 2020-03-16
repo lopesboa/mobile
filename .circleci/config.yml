@@ -24,7 +24,7 @@ jobs:
   dependencies:
     working_directory: ~/app
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - restore_cache:
@@ -57,7 +57,7 @@ jobs:
   linting:
     working_directory: ~/app
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - attach_workspace:
@@ -72,7 +72,7 @@ jobs:
   unit_tests:
     working_directory: ~/app
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - attach_workspace:
@@ -328,7 +328,7 @@ jobs:
   deploy_android:
     working_directory: ~/app
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - attach_workspace:
@@ -356,7 +356,7 @@ jobs:
   deploy_ios:
     working_directory: ~/app
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - attach_workspace:
