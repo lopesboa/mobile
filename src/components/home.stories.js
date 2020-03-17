@@ -13,20 +13,30 @@ storiesOf('Home', module)
     <TestContextProvider>
       <Home
         onCardPress={handleFakePress}
+        onSearchPress={handleFakePress}
         isFetching={false}
         isFocused={false}
-        isSearchVisible={false}
       />
     </TestContextProvider>
   ))
   .add('Fetching', () => (
     <TestContextProvider>
-      <Home onCardPress={handleFakePress} isFetching isFocused={false} isSearchVisible={false} />
+      <Home
+        onCardPress={handleFakePress}
+        isFetching
+        isFocused={false}
+        onSearchPress={handleFakePress}
+      />
     </TestContextProvider>
   ))
   .add('Search visible', () => (
     <TestContextProvider>
-      <Home onCardPress={handleFakePress} isFetching={false} isFocused={false} isSearchVisible />
+      <Home
+        onCardPress={handleFakePress}
+        isFetching={false}
+        isFocused={false}
+        onSearchPress={handleFakePress}
+      />
     </TestContextProvider>
   ));
 
@@ -40,31 +50,12 @@ if (__TEST__) {
             onCardPress={handleCardPress}
             isFetching={false}
             isFocused={false}
-            isSearchVisible={false}
+            onSearchPress={handleFakePress}
           />
         </TestContextProvider>
       );
 
       const icon = component.root.find(el => el.props.testID === 'catalog');
-      icon.props.onCardPress();
-
-      expect(handleCardPress).toHaveBeenCalledTimes(1);
-    });
-
-    it('should handle onCardPress on CatalogSearch', () => {
-      const handleCardPress = jest.fn();
-      const component = renderer.create(
-        <TestContextProvider>
-          <Home
-            onCardPress={handleCardPress}
-            isFetching={false}
-            isFocused={false}
-            isSearchVisible
-          />
-        </TestContextProvider>
-      );
-
-      const icon = component.root.find(el => el.props.testID === 'catalog-search');
       icon.props.onCardPress();
 
       expect(handleCardPress).toHaveBeenCalledTimes(1);

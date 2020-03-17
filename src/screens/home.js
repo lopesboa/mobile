@@ -9,17 +9,12 @@ import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import {
-  getToken,
-  getCurrentScreenName,
-  isSearchVisible as _isSearchVisible
-} from '../redux/utils/state-extract';
+import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
 
 export type ConnectedStateProps = {|
   isFetching: boolean,
-  isFocused: boolean,
-  isSearchVisible: boolean
+  isFocused: boolean
 |};
 
 type ConnectedDispatchProps = {|
@@ -40,17 +35,21 @@ class HomeScreen extends React.PureComponent<Props> {
     this.props.selectCard(item);
   };
 
+  handleSearchPress = () => {
+    this.props.navigation.navigate('Search');
+  };
+
   render() {
-    const {isFetching, isFocused, isSearchVisible} = this.props;
+    const {isFetching, isFocused} = this.props;
 
     return (
       <Screen testID="home-screen" noScroll>
         <StatusBar barStyle="dark-content" backgroundColor={theme.colors.white} />
         <Home
           onCardPress={this.handleCardPress}
+          onSearchPress={this.handleSearchPress}
           isFetching={isFetching}
           isFocused={isFocused}
-          isSearchVisible={isSearchVisible}
           testID="home"
         />
       </Screen>
@@ -68,15 +67,9 @@ const getIsFocusedState: StoreState => boolean = createSelector(
   name => name === 'Home'
 );
 
-const getIsSearchVisible: StoreState => boolean = createSelector(
-  [_isSearchVisible],
-  isVisible => isVisible
-);
-
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   isFetching: getIsFetchingState(state),
-  isFocused: getIsFocusedState(state),
-  isSearchVisible: getIsSearchVisible(state)
+  isFocused: getIsFocusedState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

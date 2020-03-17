@@ -10,6 +10,7 @@ export const createNavigation = <T>({
     params
   },
   navigate: jest.fn(),
+  goBack: jest.fn(),
   dispatch: jest.fn(),
   getParam: jest.fn(() => 'Mock$ReactNavigation$GetParam'),
   popToTop: jest.fn()

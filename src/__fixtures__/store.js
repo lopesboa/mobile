@@ -267,15 +267,12 @@ export const createSelectState = ({id}: {id?: string}): SelectState =>
   id !== undefined ? id : null;
 
 export const createSearchState = ({
-  isVisible = false,
   isFetching = false,
   value
 }: {
-  isVisible?: boolean,
   isFetching?: boolean,
   value?: string
 }): SearchState => ({
-  isVisible,
   isFetching,
   value
 });

@@ -13,6 +13,7 @@ import AuthenticationScreen from '../screens/authentication';
 import AuthenticationDetailsScreen from '../screens/authentication-details';
 import QRCodeScreen from '../screens/qr-code';
 import {changeScreen} from '../redux/actions/navigation';
+import SearchScreen from '../screens/search';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
 import browserNavigator from './browser';
@@ -55,6 +56,13 @@ const appNavigator = createStackNavigator(
         headerTitle: HeaderSlideTitle,
         headerRight: <HeaderSlideRight />,
         gesturesEnabled: true
+      }
+    },
+    Search: {
+      screen: SearchScreen,
+      navigationOptions: {
+        ...navigationOptionsWithoutHeader,
+        gesturesEnabled: false
       }
     }
   },

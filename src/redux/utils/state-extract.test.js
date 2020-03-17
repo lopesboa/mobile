@@ -62,7 +62,6 @@ import {
   getHeroRef,
   getHero,
   isErrorVisible,
-  isSearchVisible,
   isSearchFetching,
   getSearchValue,
   getErrorType,
@@ -962,26 +961,6 @@ describe('State-extract', () => {
       });
 
       const result = isErrorVisible(state);
-
-      expect(result).toBeTruthy;
-    });
-  });
-
-  describe('isSearchVisible', () => {
-    it('should return false', () => {
-      const state = createState({});
-
-      const result = isSearchVisible(state);
-
-      expect(result).toBeFalsy;
-    });
-
-    it('should return true', () => {
-      const state = createState({
-        search: createSearchState({isVisible: true})
-      });
-
-      const result = isSearchVisible(state);
 
       expect(result).toBeTruthy;
     });

@@ -6,7 +6,6 @@ import {View, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Catalog from '../containers/catalog';
-import CatalogSearch from '../containers/catalog-search';
 import Header from '../containers/header';
 import Box from './box';
 import Version from './version';
@@ -15,9 +14,9 @@ import Loader from './loader';
 
 type Props = {|
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
+  onSearchPress: () => void,
   isFetching: boolean,
   isFocused: boolean,
-  isSearchVisible: boolean,
   testID?: string
 |};
 
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, isFetching, isFocused, isSearchVisible, testID}: Props) => {
+const Home = ({onCardPress, onSearchPress, isFetching, isFocused, testID}: Props) => {
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID={testID}>
@@ -74,24 +73,16 @@ const Home = ({onCardPress, isFetching, isFocused, isSearchVisible, testID}: Pro
         transparencyPosition="bottom"
         style={styles.gradient}
       />
-      {isSearchVisible ? (
-        <CatalogSearch
-          onCardPress={onCardPress}
-          containerStyle={styles.catalog}
-          testID="catalog-search"
-        />
-      ) : (
-        <Catalog
-          onCardPress={onCardPress}
-          containerStyle={styles.catalog}
-          isFocused={isFocused}
-          testID="catalog"
-        >
-          <Version style={styles.version} />
-        </Catalog>
-      )}
+      <Catalog
+        onCardPress={onCardPress}
+        containerStyle={styles.catalog}
+        isFocused={isFocused}
+        testID="catalog"
+      >
+        <Version style={styles.version} />
+      </Catalog>
       <Box style={styles.header}>
-        <Header height={HEADER_HEIGHT} />
+        <Header onSearchPress={onSearchPress} height={HEADER_HEIGHT} />
       </Box>
     </View>
   );

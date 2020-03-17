@@ -46,8 +46,7 @@ describe('Home', () => {
     const result = mapStateToProps(store);
     const expected: ConnectedStateProps = {
       isFetching: false,
-      isFocused: false,
-      isSearchVisible: false
+      isFocused: false
     };
     expect(expected).toEqual(result);
   });
@@ -68,5 +67,21 @@ describe('Home', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Slide');
     expect(selectCard).toHaveBeenCalledTimes(1);
     expect(selectCard).toHaveBeenCalledWith(card);
+  });
+
+  it('should handle search press', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+    );
+
+    const home = component.root.find(el => el.props.testID === 'home');
+    home.props.onSearchPress();
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Search');
   });
 });
