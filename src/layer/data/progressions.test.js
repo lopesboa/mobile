@@ -12,9 +12,22 @@ import {extractErrorName} from '../../utils/tests';
 import type {HeroRecommendation} from './_types';
 import type {FindBestOfResult} from './progressions';
 
-jest.mock('cross-fetch');
-
 describe('Progressions', () => {
+  beforeEach(() => {
+    jest.resetModules();
+
+    jest.mock('../../utils/local-token', () => ({
+      get: jest.fn(() => Promise.resolve(null))
+    }));
+    jest.mock('../../modules/environment', () => ({
+      __E2E__: false
+    }));
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe('buildLastProgressionKey', () => {
     it('should build the lastProgression Key ', () => {
       const {buildLastProgressionKey} = require('./progressions');
@@ -59,6 +72,7 @@ describe('Progressions', () => {
       await expect(findById(progressionId)).rejects.toThrowError();
     });
   });
+
   describe('getAll', () => {
     it('shoud get all the progression items', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
@@ -88,6 +102,7 @@ describe('Progressions', () => {
       expect(result).toEqual([fakeProgression]);
     });
   });
+
   describe('save', () => {
     it('should the progression and the last progression id simultaneously', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
@@ -336,14 +351,38 @@ describe('Progressions', () => {
       const result = await findLast(engine, progressionContent.ref);
       expect(result).toEqual(null);
     });
+
+    it('should not find last progression if state is empty', async () => {
+      const AsyncStorage = require('@react-native-community/async-storage');
+      const {findLast} = require('./progressions');
+
+      const progressionId = 'fakeProgressionId';
+      const engine = ENGINE.LEARNER;
+      const progressionContent = {
+        ref: 'foo',
+        type: CONTENT_TYPE.CHAPTER
+      };
+
+      const fakeProgression = createProgression({
+        _id: progressionId,
+        engine,
+        progressionContent
+      });
+
+      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+        if (key === `progression_${progressionId}`) {
+          return Promise.resolve(progressionId);
+        }
+        return Promise.resolve(JSON.stringify(fakeProgression));
+      });
+
+      const result = await findLast(engine, progressionContent.ref);
+
+      expect(result).toBeNil;
+    });
   });
 
   describe('synchronize', () => {
-    beforeEach(() => {
-      jest.resetModules();
-      jest.resetAllMocks();
-    });
-
     const TOKEN = '__TOKEN__';
     const HOST = 'https://coorp.mobile.com';
 
@@ -845,7 +884,7 @@ describe('Progressions', () => {
       'baaaaz'
     ];
 
-    it('should trigger error if no token is defined', () => {
+    it('should trigger error if no token is defined', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.getItem.mockImplementationOnce(() => Promise.resolve(null));
 
@@ -853,12 +892,16 @@ describe('Progressions', () => {
 
       const result = findBestOf(engineRef, contentType, contentRef, 'foo');
 
-      expect(result).rejects.toThrow(Error);
+      await expect(result).rejects.toThrowError('Invalid token');
     });
 
     it('should return default value', async () => {
+      const {get} = require('../../utils/local-token');
       const AsyncStorage = require('@react-native-community/async-storage');
       const fetch = require('cross-fetch');
+
+      // $FlowFixMe file is mocked
+      get.mockImplementationOnce(() => Promise.resolve(token));
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
@@ -873,12 +916,6 @@ describe('Progressions', () => {
         return Promise.resolve({
           json: () => Promise.resolve({})
         });
-      });
-
-      AsyncStorage.getItem.mockImplementationOnce(key => {
-        expect(key).toEqual('@@token');
-
-        return Promise.resolve(token);
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
@@ -901,6 +938,10 @@ describe('Progressions', () => {
     it('should return stars from local progressions', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       const fetch = require('cross-fetch');
+      const {get} = require('../../utils/local-token');
+
+      // $FlowFixMe file is mocked
+      get.mockImplementationOnce(() => Promise.resolve(token));
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
@@ -915,12 +956,6 @@ describe('Progressions', () => {
         return Promise.resolve({
           json: () => Promise.resolve({})
         });
-      });
-
-      AsyncStorage.getItem.mockImplementationOnce(key => {
-        expect(key).toEqual('@@token');
-
-        return Promise.resolve(token);
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
@@ -953,6 +988,10 @@ describe('Progressions', () => {
     it('should return stars from api', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       const fetch = require('cross-fetch');
+      const {get} = require('../../utils/local-token');
+
+      // $FlowFixMe file is mocked
+      get.mockImplementationOnce(() => Promise.resolve(token));
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
@@ -970,12 +1009,6 @@ describe('Progressions', () => {
               stars: 1337
             })
         });
-      });
-
-      AsyncStorage.getItem.mockImplementationOnce(key => {
-        expect(key).toEqual('@@token');
-
-        return Promise.resolve(token);
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
@@ -1011,15 +1044,25 @@ describe('Progressions', () => {
     const contentType: ContentType = CONTENT_TYPE.CHAPTER;
     const contentRef = 'fakeContentRef';
 
-    beforeAll(() => {
-      jest.resetModules();
-      jest.mock('../../modules/environment', () => ({
-        __E2E__: true
-      }));
-    });
-
     it('should return default value', async () => {
+      const fetch = require('cross-fetch');
+      const {get} = require('../../utils/local-token');
       const {findApiBestOf} = require('./progressions');
+
+      // $FlowFixMe file is mocked
+      get.mockImplementationOnce(() => Promise.resolve(createToken({})));
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef'
+        );
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              stars: 0
+            })
+        });
+      });
 
       const result = await findApiBestOf(engineRef, contentType, contentRef);
       const expected: FindBestOfResult = {
@@ -1029,284 +1072,314 @@ describe('Progressions', () => {
       expect(result).toEqual(expected);
     });
 
-    afterAll(() => {
-      jest.resetAllMocks();
+    it('should return e2e value', async () => {
+      jest.mock('../../modules/environment', () => ({
+        __E2E__: true
+      }));
+
+      const fetch = require('cross-fetch');
+      const {get} = require('../../utils/local-token');
+      const {findApiBestOf} = require('./progressions');
+
+      // $FlowFixMe file is mocked
+      get.mockImplementationOnce(() => Promise.resolve(createToken({})));
+
+      fetch.mockImplementationOnce((url, options) => {
+        expect(url).toBe(
+          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef'
+        );
+        return Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              stars: 0
+            })
+        });
+      });
+
+      const result = await findApiBestOf(engineRef, contentType, contentRef);
+      const expected: FindBestOfResult = {
+        stars: 0
+      };
+
+      expect(result).toEqual(expected);
     });
   });
-});
 
-const mockProgressionsStorage = (progressions: Array<Progression>) => {
-  const AsyncStorage = require('@react-native-community/async-storage');
+  describe('getAggregationByContent', () => {
+    const mockProgressionsStorage = (progressions: Array<Progression>) => {
+      const AsyncStorage = require('@react-native-community/async-storage');
 
-  AsyncStorage.getAllKeys = jest
-    .fn()
-    .mockImplementation(() => Promise.resolve(progressions.map(p => `progression_${p._id || ''}`)));
+      AsyncStorage.getAllKeys = jest
+        .fn()
+        .mockImplementation(() =>
+          Promise.resolve(progressions.map(p => `progression_${p._id || ''}`))
+        );
 
-  AsyncStorage.multiGet = jest
-    .fn()
-    .mockImplementation(keys =>
-      Promise.resolve(progressions.map(p => [`progression_${p._id || ''}`, JSON.stringify(p)]))
-    );
-};
+      AsyncStorage.multiGet = jest
+        .fn()
+        .mockImplementation(keys =>
+          Promise.resolve(progressions.map(p => [`progression_${p._id || ''}`, JSON.stringify(p)]))
+        );
+    };
 
-describe('aggregation by content', () => {
-  it('should get aggregate 2 progressions with same content, and set an old date when no actions', async () => {
-    const progression1 = createProgression({
-      _id: 'progression1',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      }
-    });
-
-    const progression2 = createProgression({
-      _id: 'progression2',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 12
+    it('should get aggregate 2 progressions with same content, and set an old date when no actions', async () => {
+      const progression1 = createProgression({
+        _id: 'progression1',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
         }
-      }
+      });
+
+      const progression2 = createProgression({
+        _id: 'progression2',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 12
+          }
+        }
+      });
+
+      const progressions = [progression1, progression2];
+      mockProgressionsStorage(progressions);
+
+      const {getAggregationsByContent} = require('./progressions');
+      const result = await getAggregationsByContent();
+      const expected: Array<HeroRecommendation> = [
+        {
+          progressionId: 'progression2',
+          content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
+          // $FlowFixMe state.step IS defined
+          nbSlides: progression2.state.step.current - 1,
+          success: true,
+          updatedAt: OLDEST_DATE
+        }
+      ];
+
+      expect(result).toEqual(expected);
     });
 
-    const progressions = [progression1, progression2];
-    mockProgressionsStorage(progressions);
+    it('should aggregate many progressions with different contents', async () => {
+      const progression1 = createProgression({
+        _id: 'progression1',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 12
+          }
+        },
+        actions: [
+          createAction({createdAt: '2003-01-18T08:41:37.004Z'}),
+          createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2001-09-18T08:41:37.004Z'})
+        ]
+      });
 
-    const {getAggregationsByContent} = require('./progressions');
-    const result = await getAggregationsByContent();
-    const expected: Array<HeroRecommendation> = [
-      {
-        progressionId: 'progression2',
-        content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
-        // $FlowFixMe state.step IS defined
-        nbSlides: progression2.state.step.current - 1,
-        success: true,
-        updatedAt: OLDEST_DATE
-      }
-    ];
+      const progression2 = createProgression({
+        _id: 'progression2',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 13
+          }
+        },
+        actions: [
+          createAction({createdAt: '2004-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2005-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2006-01-18T08:41:37.004Z'})
+        ]
+      });
 
-    expect(result).toEqual(expected);
+      const progression3 = createProgression({
+        _id: 'progression3',
+        engine: ENGINE.MICROLEARNING,
+        progressionContent: {
+          ref: 'bar',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: 'slide1',
+            type: CONTENT_TYPE.SLIDE
+          },
+          step: {
+            current: 13
+          }
+        },
+        actions: [
+          createAction({createdAt: '1994-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2007-01-18T08:41:37.004Z'})
+        ]
+      });
+
+      const progression4 = createProgression({
+        _id: 'progression2',
+        engine: ENGINE.MICROLEARNING,
+        progressionContent: {
+          ref: 'bar',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: 'slide4',
+            type: CONTENT_TYPE.SLIDE
+          },
+          step: {
+            current: 5
+          }
+        },
+        actions: [
+          createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2004-01-18T08:41:37.004Z'})
+        ]
+      });
+
+      const progressions = [progression1, progression2, progression3, progression4];
+      mockProgressionsStorage(progressions);
+
+      const {getAggregationsByContent} = require('./progressions');
+      const result = await getAggregationsByContent();
+      const expected: Array<HeroRecommendation> = [
+        {
+          progressionId: 'progression2',
+          content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
+          // $FlowFixMe state.step IS defined
+          nbSlides: progression2.state.step.current - 1,
+          success: true,
+          // $FlowFixMe actions[2] IS defined
+          updatedAt: progression2.actions[2].createdAt
+        },
+        {
+          progressionId: 'progression3',
+          content: {version: '1', ref: 'bar', type: CONTENT_TYPE.CHAPTER},
+          // $FlowFixMe state.step IS defined
+          nbSlides: progression3.state.step.current - 1,
+          success: false,
+          // $FlowFixMe actions[2] IS defined
+          updatedAt: progression3.actions[2].createdAt
+        }
+      ];
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should set progressions with no actions as older than others', async () => {
+      const progression0 = createProgression({
+        _id: 'progression0',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 17
+          }
+        }
+      });
+
+      const progression1 = createProgression({
+        _id: 'progression1',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 10
+          }
+        },
+        actions: [
+          createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2004-01-18T08:41:37.004Z'})
+        ]
+      });
+
+      const progression2 = createProgression({
+        _id: 'progression2',
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          ref: 'foo',
+          type: CONTENT_TYPE.CHAPTER
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 12
+          }
+        },
+        actions: [
+          createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2001-09-18T08:41:37.004Z'}),
+          createAction({createdAt: '2002-01-18T08:41:37.004Z'})
+        ]
+      });
+
+      const progressions = [progression0, progression1, progression2];
+      // $FlowFixMe _id IS defined
+      mockProgressionsStorage(progressions);
+
+      const {getAggregationsByContent} = require('./progressions');
+      const result = await getAggregationsByContent();
+      const expected: Array<HeroRecommendation> = [
+        {
+          progressionId: 'progression1',
+          content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
+          // $FlowFixMe state.step IS defined
+          nbSlides: progression1.state.step.current - 1,
+          success: true,
+          // $FlowFixMe actions[2] IS defined
+          updatedAt: progression1.actions[2].createdAt
+        }
+      ];
+
+      expect(result).toEqual(expected);
+    });
   });
 
-  it('should aggregate many progressions with different contents', async () => {
-    const progression1 = createProgression({
-      _id: 'progression1',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 12
-        }
-      },
-      actions: [
-        createAction({createdAt: '2003-01-18T08:41:37.004Z'}),
-        createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2001-09-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progression2 = createProgression({
-      _id: 'progression2',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 13
-        }
-      },
-      actions: [
-        createAction({createdAt: '2004-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2005-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2006-01-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progression3 = createProgression({
-      _id: 'progression3',
-      engine: ENGINE.MICROLEARNING,
-      progressionContent: {
-        ref: 'bar',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: 'slide1',
-          type: CONTENT_TYPE.SLIDE
-        },
-        step: {
-          current: 13
-        }
-      },
-      actions: [
-        createAction({createdAt: '1994-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2007-01-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progression4 = createProgression({
-      _id: 'progression2',
-      engine: ENGINE.MICROLEARNING,
-      progressionContent: {
-        ref: 'bar',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: 'slide4',
-          type: CONTENT_TYPE.SLIDE
-        },
-        step: {
-          current: 5
-        }
-      },
-      actions: [
-        createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2004-01-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progressions = [progression1, progression2, progression3, progression4];
-    mockProgressionsStorage(progressions);
-
-    const {getAggregationsByContent} = require('./progressions');
-    const result = await getAggregationsByContent();
-    const expected: Array<HeroRecommendation> = [
-      {
-        progressionId: 'progression2',
-        content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
-        // $FlowFixMe state.step IS defined
-        nbSlides: progression2.state.step.current - 1,
-        success: true,
-        // $FlowFixMe actions[2] IS defined
-        updatedAt: progression2.actions[2].createdAt
-      },
-      {
-        progressionId: 'progression3',
-        content: {version: '1', ref: 'bar', type: CONTENT_TYPE.CHAPTER},
-        // $FlowFixMe state.step IS defined
-        nbSlides: progression3.state.step.current - 1,
-        success: false,
-        // $FlowFixMe actions[2] IS defined
-        updatedAt: progression3.actions[2].createdAt
-      }
-    ];
-
-    expect(result).toEqual(expected);
-  });
-
-  it('should set progressions with no actions as older than others', async () => {
-    const progression0 = createProgression({
-      _id: 'progression0',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 17
-        }
-      }
-    });
-
-    const progression1 = createProgression({
-      _id: 'progression1',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 10
-        }
-      },
-      actions: [
-        createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2004-01-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progression2 = createProgression({
-      _id: 'progression2',
-      engine: ENGINE.LEARNER,
-      progressionContent: {
-        ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
-      },
-      state: {
-        nextContent: {
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-          type: CONTENT_TYPE.SUCCESS
-        },
-        step: {
-          current: 12
-        }
-      },
-      actions: [
-        createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2001-09-18T08:41:37.004Z'}),
-        createAction({createdAt: '2002-01-18T08:41:37.004Z'})
-      ]
-    });
-
-    const progressions = [progression0, progression1, progression2];
-    // $FlowFixMe _id IS defined
-    mockProgressionsStorage(progressions);
-
-    const {getAggregationsByContent} = require('./progressions');
-    const result = await getAggregationsByContent();
-    const expected: Array<HeroRecommendation> = [
-      {
-        progressionId: 'progression1',
-        content: {version: '1', ref: 'foo', type: CONTENT_TYPE.CHAPTER},
-        // $FlowFixMe state.step IS defined
-        nbSlides: progression1.state.step.current - 1,
-        success: true,
-        // $FlowFixMe actions[2] IS defined
-        updatedAt: progression1.actions[2].createdAt
-      }
-    ];
-
-    expect(result).toEqual(expected);
-  });
-
-  describe('synchronized progressions ids', () => {
-    it('getSynchronizedProgressionIds to return stored list', async () => {
+  describe('getSynchronizedProgressionsId', () => {
+    it('should return stored list', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.getItem = jest
         .fn()
@@ -1319,7 +1392,7 @@ describe('aggregation by content', () => {
       expect(res).toEqual(expected);
     });
 
-    it('getSynchronizedProgressionIds to return default = []', async () => {
+    it('should return default = []', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(null));
 
@@ -1329,8 +1402,10 @@ describe('aggregation by content', () => {
 
       expect(res).toEqual(expected);
     });
+  });
 
-    it('updateSynchronizedProgressionIds', async () => {
+  describe('updateSynchronizedProgressionIds', () => {
+    it('should update synchronized ids', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.setItem = jest.fn();
 
@@ -1348,8 +1423,9 @@ describe('aggregation by content', () => {
       );
     });
   });
-  describe('pending progressions id', () => {
-    it('getPendingProgressionId to return stored id', async () => {
+
+  describe('getPendingProgressionId', () => {
+    it('should return stored id', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve('foo'));
 
@@ -1360,7 +1436,7 @@ describe('aggregation by content', () => {
       expect(res).toEqual(expected);
     });
 
-    it('getPendingProgressionId to return empty string if there is no pendind progression', async () => {
+    it('should return empty string if there is no pendind progression', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(null));
 
@@ -1370,8 +1446,10 @@ describe('aggregation by content', () => {
 
       expect(res).toEqual(expected);
     });
+  });
 
-    it('updatePendingProgressionId', async () => {
+  describe('updateProgressionId', () => {
+    it('should update progression id', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       AsyncStorage.setItem = jest.fn();
 
@@ -1385,17 +1463,14 @@ describe('aggregation by content', () => {
   });
 
   describe('findRemoteProgressionById', () => {
-    beforeEach(() => {
-      jest.resetModules();
-      jest.resetAllMocks();
-    });
-
     const TOKEN = '__TOKEN__';
     const HOST = 'https://coorp.mobile.com';
 
     it('should throw an error if progressionId is empty', async () => {
       const {findRemoteProgressionById} = require('./progressions');
-      await expect(findRemoteProgressionById(TOKEN, HOST, '')).rejects.toThrowError();
+      await expect(findRemoteProgressionById(TOKEN, HOST, '')).rejects.toThrowError(
+        'Must provide a progressionId'
+      );
     });
 
     it('should return false if progression has not been successfully posted already (404 from server)', async () => {

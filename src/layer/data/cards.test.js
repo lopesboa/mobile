@@ -59,7 +59,6 @@ describe('cards', () => {
     });
 
     it('should fetch cards', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
@@ -101,7 +100,6 @@ describe('cards', () => {
     });
 
     it('should reject error', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
@@ -113,7 +111,6 @@ describe('cards', () => {
     });
 
     it("should returns empty array if apis doesn't have results", async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => {
@@ -169,7 +166,6 @@ describe('cards', () => {
     });
 
     it('should fetch cards', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
@@ -215,7 +211,6 @@ describe('cards', () => {
     });
 
     it('should reject error', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
@@ -227,7 +222,6 @@ describe('cards', () => {
     });
 
     it("should returns empty array if apis doesn't have results", async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => {
@@ -283,7 +277,6 @@ describe('cards', () => {
     });
 
     it('should fetch cards', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
@@ -327,7 +320,6 @@ describe('cards', () => {
     });
 
     it('should reject error', async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
@@ -339,7 +331,6 @@ describe('cards', () => {
     });
 
     it("should returns empty array if apis doesn't have results", async () => {
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => {
@@ -372,7 +363,6 @@ describe('cards', () => {
   describe('fetchCard', () => {
     beforeEach(() => {
       jest.resetModules();
-      jest.mock('cross-fetch');
 
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
@@ -580,7 +570,6 @@ describe('cards', () => {
   describe('completion', () => {
     beforeEach(() => {
       jest.resetModules();
-      jest.mock('cross-fetch');
 
       jest.mock('../../utils/local-token', () => {
         const {createToken} = require('../../__fixtures__/tokens');

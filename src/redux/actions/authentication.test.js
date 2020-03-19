@@ -10,7 +10,6 @@ import {fetchRequest as fetchBrandRequest, fetchSuccess as fetchBrandSuccess} fr
 import {fetchRequest as fetchUserRequest, fetchSuccess as fetchUserSuccess} from './user';
 
 jest.mock('../../utils/local-token');
-jest.mock('cross-fetch');
 
 const language = 'fr';
 

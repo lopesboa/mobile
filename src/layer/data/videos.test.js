@@ -54,7 +54,6 @@ describe('videos', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       const provider = VIDEO_PROVIDER.KONTIKI;
@@ -89,7 +88,6 @@ describe('videos', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
@@ -131,7 +129,6 @@ describe('videos', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       const trackType = VIDEO_TRACK_TYPE.VTT;
@@ -164,7 +161,6 @@ describe('videos', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));

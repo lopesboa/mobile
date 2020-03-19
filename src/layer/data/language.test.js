@@ -2,8 +2,6 @@
 
 import type {SupportedLanguage} from '../../translations/_types';
 
-jest.mock('cross-fetch');
-
 jest.mock('../../utils/local-token', () => {
   const {createToken} = require('../../__fixtures__/tokens');
   const token = createToken({});

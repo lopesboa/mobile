@@ -39,7 +39,6 @@ describe('brand', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
@@ -69,7 +68,6 @@ describe('brand', () => {
       jest.mock('../../modules/environment', () => ({
         __E2E__: false
       }));
-      jest.mock('cross-fetch');
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));

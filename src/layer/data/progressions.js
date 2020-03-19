@@ -149,8 +149,9 @@ const findRemoteProgressionById = async (
     }
   });
 
-  if (response.status === 404) return null;
-  if (response.status >= 400) throw new Error(response.statusText);
+  if (response.status >= 400 && response.status !== 404) {
+    throw new Error(response.statusText);
+  }
   if (response.status === 200) {
     const progression: Progression = await response.json();
     return progression;

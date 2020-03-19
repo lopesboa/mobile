@@ -4,8 +4,6 @@ import {createChapterCard} from '../../__fixtures__/cards';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
 import type {Completion, DisciplineCard, ChapterCard} from './_types';
 
-jest.mock('cross-fetch');
-
 describe('Recommendation data layer', () => {
   describe('fetchRecommendation', () => {
     beforeEach(() => {

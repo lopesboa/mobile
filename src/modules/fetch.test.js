@@ -13,8 +13,8 @@ describe('Fetch', () => {
   afterAll(async () => {
     await jest.resetAllMocks();
   });
+
   it('should return response if succeed', async () => {
-    jest.mock('cross-fetch');
     const _fetch = require('cross-fetch');
     const response = new Response();
 
@@ -32,7 +32,6 @@ describe('Fetch', () => {
   });
 
   it('should throw a regular error if 403 status ', () => {
-    jest.mock('cross-fetch');
     const _fetch = require('cross-fetch');
 
     _fetch.mockImplementationOnce(url => {
@@ -49,18 +48,15 @@ describe('Fetch', () => {
   });
 
   it('should throw a ForbiddenError if 403 status code and error message match ', () => {
-    jest.mock('cross-fetch');
     const _fetch = require('cross-fetch');
 
     _fetch.mockImplementationOnce(url => {
       expect(url).toBe('https://domain.tld?foo=qux');
       const response = {
         status: 403,
-        json: () => {
-          return {
-            err: ERROR_MESSAGE
-          };
-        }
+        json: () => ({
+          err: ERROR_MESSAGE
+        })
       };
       return Promise.resolve(response);
     });
@@ -72,8 +68,28 @@ describe('Fetch', () => {
     expect(result).rejects.toThrow(ForbiddenError);
   });
 
+  it('should not throw a ForbiddenError if 403 status code and error message doesnt match ', () => {
+    const _fetch = require('cross-fetch');
+
+    _fetch.mockImplementationOnce(url => {
+      expect(url).toBe('https://domain.tld?foo=qux');
+      const response = {
+        status: 403,
+        json: () => ({
+          err: 'foo'
+        })
+      };
+      return Promise.resolve(response);
+    });
+
+    const fetch = require('./fetch').default;
+
+    const result = fetch('https://domain.tld?foo=qux');
+
+    expect(result).rejects.toThrow('Action not allowed');
+  });
+
   it('headers should have X-Requested-With by default', async () => {
-    jest.mock('cross-fetch');
     const _fetch = require('cross-fetch');
 
     const expectedHeader = {
@@ -93,8 +109,8 @@ describe('Fetch', () => {
     const result = await fetch('https://domain.tld?foo=qux', {method: 'POST'});
     expect(result).toEqual(response);
   });
+
   it('headers should have Android User-Agent', async () => {
-    jest.mock('cross-fetch');
     jest.mock('react-native-device-info', () => ({
       getBrand: jest.fn(() => Promise.resolve('Samsung')),
       getModel: jest.fn(() => Promise.resolve('SM-9000')),
@@ -124,5 +140,18 @@ describe('Fetch', () => {
     const fetch = require('./fetch').default;
     const result = await fetch('https://domain.tld?foo=qux', {method: 'POST'});
     expect(result).toEqual(response);
+  });
+
+  it('should throw an error if called in end to end', async () => {
+    jest.mock('./environment', () => ({
+      __E2E__: true
+    }));
+    const _fetch = require('cross-fetch');
+    const fetch = require('./fetch').default;
+
+    const result = fetch('https://domain.tld?foo=bar');
+
+    await expect(result).rejects.toThrow('Fetch must be mocked in e2e mode');
+    expect(_fetch).toHaveBeenCalledTimes(0);
   });
 });

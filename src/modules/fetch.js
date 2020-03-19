@@ -3,10 +3,11 @@
 import _fetch from 'cross-fetch';
 import {Platform} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-
 import get from 'lodash/fp/get';
+
 import {ForbiddenError} from '../models/error';
 import version from './version';
+import {__E2E__} from './environment';
 
 export const ERROR_MESSAGE = 'PLATFORM_DISABLED';
 
@@ -24,6 +25,10 @@ const getUserAgent = async () => {
 };
 
 const fetch: typeof _fetch = async (url, options) => {
+  if (__E2E__) {
+    throw new Error('Fetch must be mocked in e2e mode');
+  }
+
   const userAgent = await getUserAgent();
 
   const _options = {

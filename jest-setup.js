@@ -6,8 +6,8 @@ import mockAsyncStorage from '@react-native-community/async-storage/jest/async-s
 // AsyncStorage
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
-// global mocks
-global.fetch = jest.fn().mockImplementation(() => Promise.resolve());
+// Fetch
+jest.mock('cross-fetch');
 
 // react-native mocks
 ScrollView.propTypes = {

@@ -1,7 +1,5 @@
 // @flow strict
 
-jest.mock('cross-fetch');
-
 describe('store', () => {
   beforeEach(() => {
     jest.resetModules();

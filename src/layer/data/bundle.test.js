@@ -246,7 +246,6 @@ describe('Data Layer Bundle', () => {
         __E2E__: false
       }));
       const {fetchBundle} = require('./bundle');
-      jest.mock('cross-fetch');
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, options) => {
@@ -264,10 +263,9 @@ describe('Data Layer Bundle', () => {
 
     it('should try to fetch chapter bundle', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: false
       }));
       const {fetchBundle} = require('./bundle');
-      jest.mock('cross-fetch');
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, options) => {
