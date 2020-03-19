@@ -13,10 +13,8 @@ export type ProgressionService = {|
   synchronize: $PropertyType<DataLayer, 'synchronizeProgression'>,
   getAll: $PropertyType<DataLayer, 'getAllProgressions'>,
   getSynchronizedProgressionIds: $PropertyType<DataLayer, 'getSynchronizedProgressionIds'>,
-  getPendingProgressionId: $PropertyType<DataLayer, 'getPendingProgressionId'>,
   findRemoteProgressionById: $PropertyType<DataLayer, 'findRemoteProgressionById'>,
   updateSynchronizedProgressionIds: $PropertyType<DataLayer, 'updateSynchronizedProgressionIds'>,
-  updatePendingProgressionId: $PropertyType<DataLayer, 'updatePendingProgressionId'>,
   findBestOf: $PropertyType<DataLayer, 'findBestOf'>
 |};
 
@@ -43,11 +41,9 @@ const service = (dataLayer: DataLayer): ProgressionService => ({
   synchronize: dataLayer.synchronizeProgression,
   getAll: dataLayer.getAllProgressions,
   getSynchronizedProgressionIds: dataLayer.getSynchronizedProgressionIds,
-  getPendingProgressionId: dataLayer.getPendingProgressionId,
   findRemoteProgressionById: dataLayer.findRemoteProgressionById,
   findBestOf: dataLayer.findBestOf,
-  updateSynchronizedProgressionIds: dataLayer.updateSynchronizedProgressionIds,
-  updatePendingProgressionId: dataLayer.updatePendingProgressionId
+  updateSynchronizedProgressionIds: dataLayer.updateSynchronizedProgressionIds
 });
 
 export default service;

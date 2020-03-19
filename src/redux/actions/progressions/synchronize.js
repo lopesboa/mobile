@@ -67,23 +67,19 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
     ),
     async (progression): Promise<Action | void> => {
       const {_id} = progression;
+
       if (_id) {
         try {
-          const pendingProgressionId: string = await services.Progressions.getPendingProgressionId();
-          const remotePogression: Progression | null = pendingProgressionId
-            ? await services.Progressions.findRemoteProgressionById(
-                token,
-                brand.host,
-                pendingProgressionId
-              )
-            : null;
-          if (!remotePogression) {
-            await services.Progressions.updatePendingProgressionId(_id);
-            await syncProgression(progression);
-          }
+          const remoteProgressionExists = await services.Progressions.findRemoteProgressionById(
+            token,
+            brand.host,
+            _id
+          );
+
+          if (!remoteProgressionExists) await syncProgression(progression);
+
           synchronizedProgressionsIds.push(_id);
           await services.Progressions.updateSynchronizedProgressionIds(synchronizedProgressionsIds);
-          await services.Progressions.updatePendingProgressionId('');
           return dispatch({
             type: SYNCHRONIZE_SUCCESS,
             meta: {id: _id}

@@ -36,7 +36,6 @@ describe('Data layer', () => {
       getNextChapter: expect.any(Function),
       getNextLevel: expect.any(Function),
       getSynchronizedProgressionIds: expect.any(Function),
-      getPendingProgressionId: expect.any(Function),
       findRemoteProgressionById: expect.any(Function),
       logEvent: expect.any(Function),
       logError: expect.any(Function),
@@ -46,8 +45,7 @@ describe('Data layer', () => {
       storeBundle: expect.any(Function),
       synchronizeProgression: expect.any(Function),
       fetchUser: expect.any(Function),
-      updateSynchronizedProgressionIds: expect.any(Function),
-      updatePendingProgressionId: expect.any(Function)
+      updateSynchronizedProgressionIds: expect.any(Function)
     };
     expect(expected).toEqual(result);
   });

@@ -7,14 +7,12 @@ import {
   findById as findProgressionById,
   getAll as getAllProgressions,
   getSynchronizedProgressionIds,
-  getPendingProgressionId,
   findRemoteProgressionById,
   save as saveProgression,
   findLast as findLastProgression,
   synchronize as synchronizeProgression,
   findBestOf,
-  updateSynchronizedProgressionIds,
-  updatePendingProgressionId
+  updateSynchronizedProgressionIds
 } from './progressions';
 import {find as findContent} from './content';
 import {findById as findChapterById, getNextChapter} from './chapters';
@@ -57,7 +55,6 @@ export type DataLayer = {
   synchronizeProgression: typeof synchronizeProgression,
   getAllProgressions: typeof getAllProgressions,
   getSynchronizedProgressionIds: typeof getSynchronizedProgressionIds,
-  getPendingProgressionId: typeof getPendingProgressionId,
   findRemoteProgressionById: typeof findRemoteProgressionById,
   fetchRecommendation: typeof fetchRecommendation,
   findBestOf: typeof findBestOf,
@@ -68,8 +65,7 @@ export type DataLayer = {
   setLoggerProperties: typeof setLoggerProperties,
   fetchUser: typeof fetchUser,
   saveProgression: Progression => Promise<Progression>,
-  updateSynchronizedProgressionIds: typeof updateSynchronizedProgressionIds,
-  updatePendingProgressionId: typeof updatePendingProgressionId
+  updateSynchronizedProgressionIds: typeof updateSynchronizedProgressionIds
 };
 
 const createDataLayer = (): DataLayer => ({
@@ -83,7 +79,6 @@ const createDataLayer = (): DataLayer => ({
   findProgressionById,
   getAllProgressions,
   getSynchronizedProgressionIds,
-  getPendingProgressionId,
   findRemoteProgressionById,
   saveProgression,
   synchronizeProgression,
@@ -114,8 +109,7 @@ const createDataLayer = (): DataLayer => ({
   logEvent,
   logError,
   setLoggerProperties,
-  updateSynchronizedProgressionIds,
-  updatePendingProgressionId
+  updateSynchronizedProgressionIds
 });
 
 export default createDataLayer;

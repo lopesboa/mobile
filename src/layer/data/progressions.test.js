@@ -1424,44 +1424,6 @@ describe('Progressions', () => {
     });
   });
 
-  describe('getPendingProgressionId', () => {
-    it('should return stored id', async () => {
-      const AsyncStorage = require('@react-native-community/async-storage');
-      AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve('foo'));
-
-      const {getPendingProgressionId} = require('./progressions');
-      const res: string = await getPendingProgressionId();
-      const expected: string = 'foo';
-
-      expect(res).toEqual(expected);
-    });
-
-    it('should return empty string if there is no pendind progression', async () => {
-      const AsyncStorage = require('@react-native-community/async-storage');
-      AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(null));
-
-      const {getPendingProgressionId} = require('./progressions');
-      const res: string = await getPendingProgressionId();
-      const expected: string = '';
-
-      expect(res).toEqual(expected);
-    });
-  });
-
-  describe('updateProgressionId', () => {
-    it('should update progression id', async () => {
-      const AsyncStorage = require('@react-native-community/async-storage');
-      AsyncStorage.setItem = jest.fn();
-
-      const pendingProgressionId = 'bar';
-      const {PENDING_PROGRESSION, updatePendingProgressionId} = require('./progressions');
-      await updatePendingProgressionId(pendingProgressionId);
-
-      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-      expect(AsyncStorage.setItem).toHaveBeenCalledWith(PENDING_PROGRESSION, pendingProgressionId);
-    });
-  });
-
   describe('findRemoteProgressionById', () => {
     const TOKEN = '__TOKEN__';
     const HOST = 'https://coorp.mobile.com';

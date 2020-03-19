@@ -86,17 +86,8 @@ const getSynchronizedProgressionIds = async (): Promise<Array<string>> => {
   return _synchronizedProgressions ? JSON.parse(_synchronizedProgressions) : [];
 };
 
-const getPendingProgressionId = async (): Promise<string> => {
-  const pendingProgressionId: string = await AsyncStorage.getItem(PENDING_PROGRESSION);
-  return pendingProgressionId || '';
-};
-
 const updateSynchronizedProgressionIds = (synchronizedProgressions: Array<string>): void => {
   AsyncStorage.setItem(SYNCHRONIZED_PROGRESSIONS, JSON.stringify(synchronizedProgressions));
-};
-
-const updatePendingProgressionId = (pendingProgressionId: string): void => {
-  AsyncStorage.setItem(PENDING_PROGRESSION, pendingProgressionId);
 };
 
 const META = {source: 'mobile'};
@@ -314,12 +305,10 @@ export {
   save,
   getAll,
   getSynchronizedProgressionIds,
-  getPendingProgressionId,
   findById,
   findLast,
   findBestOf,
   synchronize,
   findRemoteProgressionById,
-  updateSynchronizedProgressionIds,
-  updatePendingProgressionId
+  updateSynchronizedProgressionIds
 };
