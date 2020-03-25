@@ -2765,9 +2765,12 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -6831,9 +6834,12 @@ exports[`Storyshots Correction Bad answer 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -11140,9 +11146,12 @@ exports[`Storyshots Correction Extralife 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -16314,9 +16323,12 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -21397,9 +21409,12 @@ exports[`Storyshots Correction Game over 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -26603,9 +26618,12 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View
@@ -30011,9 +30029,12 @@ exports[`Storyshots Correction Right answer 1`] = `
             >
               <View
                 style={
-                  Object {
-                    "height": 180,
-                  }
+                  Array [
+                    undefined,
+                    Object {
+                      "height": 180,
+                    },
+                  ]
                 }
               >
                 <View

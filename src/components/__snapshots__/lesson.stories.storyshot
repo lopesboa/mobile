@@ -79,9 +79,12 @@ exports[`Storyshots Lesson PDF selected 1`] = `
   />
   <View
     style={
-      Object {
-        "height": 180,
-      }
+      Array [
+        undefined,
+        Object {
+          "height": 180,
+        },
+      ]
     }
   >
     <View

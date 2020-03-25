@@ -61,10 +61,14 @@ const EMPTY_TRACK: Track = {
   uri: `file://${RNFetchBlob.fs.dirs.MainBundleDir}/assets/empty.vtt`
 };
 
+export const CONTAINER_STYLE = {
+  backgroundColor: theme.colors.black,
+  overflow: 'hidden'
+};
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.black,
-    overflow: 'hidden'
+    ...CONTAINER_STYLE
   },
   video: {
     position: 'absolute',

@@ -5,7 +5,7 @@ import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import type {Media} from '@coorpacademy/progression-engine';
-import {getCurrentSlide} from '@coorpacademy/player-store';
+import {getCurrentSlide, getContextMedia} from '@coorpacademy/player-store';
 
 import Screen from '../components/screen';
 import Context from '../components/context';
@@ -78,8 +78,8 @@ const getContextHeaderState: StoreState => string | void = createSelector(
 );
 
 const getContextMediaState: StoreState => Media | void = createSelector(
-  [getCurrentSlide],
-  slide => slide && slide.context && slide.context.media
+  [getContextMedia],
+  media => media
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({

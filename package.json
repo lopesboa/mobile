@@ -67,7 +67,7 @@
     "@coorpacademy/acl": "^1.0.1",
     "@coorpacademy/nova-icons": "3.1.9",
     "@coorpacademy/player-services": "5.1.5",
-    "@coorpacademy/player-store": "4.1.6",
+    "@coorpacademy/player-store": "4.1.10",
     "@coorpacademy/progression-aggregations": "^2.168.1",
     "@coorpacademy/progression-engine": "11.1.1",
     "@coorpacademy/react-native-confetti-cannon": "^1.1.3",

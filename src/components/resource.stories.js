@@ -9,12 +9,21 @@ import {createVideo, createPdf, createImage} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
 import {getCleanUri} from '../modules/uri';
 import {mapToResource} from '../layer/data/mappers';
+import {VIDEO_PROVIDER_MIME_TYPE} from '../const';
 import {Component as Resource} from './resource';
 
 const _video = createVideo({ref: 'les_1', description: 'Foo bar baz'});
 const _pdf = createPdf({ref: 'les_2', description: 'Foo bar baz'});
-const _img = createImage({ref: 'les_2', description: 'Foo bar baz'});
-const [video, pdf, image] = [_video, _pdf, _img].map(mapToResource).filter(lesson => lesson.url);
+const _img = createImage({ref: 'les_3', description: 'Foo bar baz'});
+const _videoOmniPlayer = createVideo({
+  ref: 'les_4',
+  description: 'Foo bar baz',
+  mimeType: VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER,
+  videoId: '5e6126fdbe444d66709afab1'
+});
+const [video, pdf, image, videoOmniPlayer] = [_video, _pdf, _img, _videoOmniPlayer]
+  .map(mapToResource)
+  .filter(lesson => lesson.url);
 
 storiesOf('Resource', module)
   .add('Video', () => (
@@ -25,6 +34,7 @@ storiesOf('Resource', module)
         layout={fakeLayout}
         description={video.description}
         thumbnail={video.poster}
+        mimeType={video.mimeType}
         onPress={handleFakePress}
       />
     </TestContextProvider>
@@ -37,7 +47,33 @@ storiesOf('Resource', module)
         layout={fakeLayout}
         description={video.description}
         thumbnail={video.poster}
+        mimeType={video.mimeType}
         extralifeOverlay
+        onPress={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Video (omniPlayer)', () => (
+    <TestContextProvider>
+      <Resource
+        type={videoOmniPlayer.type}
+        url={videoOmniPlayer.url}
+        layout={fakeLayout}
+        description={videoOmniPlayer.description}
+        thumbnail={videoOmniPlayer.poster}
+        mimeType={videoOmniPlayer.mimeType}
+        onPress={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Video (omniPlayer without thumbnail)', () => (
+    <TestContextProvider>
+      <Resource
+        type={videoOmniPlayer.type}
+        url={videoOmniPlayer.url}
+        layout={fakeLayout}
+        description={videoOmniPlayer.description}
+        mimeType={videoOmniPlayer.mimeType}
         onPress={handleFakePress}
       />
     </TestContextProvider>
@@ -50,6 +86,7 @@ storiesOf('Resource', module)
         layout={fakeLayout}
         description={pdf.description}
         thumbnail={pdf.poster}
+        mimeType={pdf.mimeType}
         onPress={handleFakePress}
       />
     </TestContextProvider>
@@ -62,6 +99,7 @@ storiesOf('Resource', module)
         layout={fakeLayout}
         description={pdf.description}
         thumbnail={pdf.poster}
+        mimeType={pdf.mimeType}
         extralifeOverlay
         onPress={handleFakePress}
       />
@@ -72,6 +110,7 @@ storiesOf('Resource', module)
       <Resource
         type={image.type}
         url={image.poster}
+        mimeType={image.mimeType}
         layout={fakeLayout}
         description="some description"
       />
@@ -89,6 +128,7 @@ storiesOf('Resource', module)
         url="not really a url"
         description="some description"
         thumbnail={video.poster}
+        mimeType={video.mimeType}
         layout={fakeLayout}
         onPress={handleFakePress}
       />
@@ -101,6 +141,7 @@ storiesOf('Resource', module)
         url={video.url}
         description={video.description}
         thumbnail={video.poster}
+        mimeType={video.mimeType}
         onPress={handleFakePress}
       />
     </TestContextProvider>
@@ -119,6 +160,7 @@ if (__TEST__) {
             layout={fakeLayout}
             description={pdf.description}
             thumbnail={pdf.poster}
+            mimeType={pdf.mimeType}
             testID={testID}
             onPress={handlePress}
           />
@@ -141,6 +183,7 @@ if (__TEST__) {
             url={video.url}
             description={video.description}
             thumbnail={video.poster}
+            mimeType={video.mimeType}
             layout={fakeLayout}
             testID={testID}
             onPress={handlePress}

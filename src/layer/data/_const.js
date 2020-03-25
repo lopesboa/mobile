@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {VideoProvider} from '@coorpacademy/player-services';
+import type {VideoProvider as PlayerVideoProvider} from '@coorpacademy/player-services';
 
 import type {CardStatus, CardType, RestrictedResourceType} from './_types';
 
@@ -62,14 +62,19 @@ export const RESTRICTED_RESOURCE_TYPE: {|
   k => RESTRICTED_RESOURCE_TYPE[k]
 ): Array<RestrictedResourceType>);
 
+// @todo change it in player services
+type VideoProvider = PlayerVideoProvider | 'omniPlayer';
+
 export const VIDEO_PROVIDER: {|
   KONTIKI: 'kontiki',
   JWPLAYER: 'jwplayer',
-  VIMEO: 'vimeo'
+  VIMEO: 'vimeo',
+  OMNIPLAYER: 'omniPlayer'
 |} = {
   KONTIKI: 'kontiki',
   JWPLAYER: 'jwplayer',
-  VIMEO: 'vimeo'
+  VIMEO: 'vimeo',
+  OMNIPLAYER: 'omniPlayer'
 };
 // FlowAssert
 (Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<VideoProvider>);

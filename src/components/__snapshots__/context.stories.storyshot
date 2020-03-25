@@ -609,9 +609,12 @@ exports[`Storyshots Context With PDF 1`] = `
     />
     <View
       style={
-        Object {
-          "height": 180,
-        }
+        Array [
+          undefined,
+          Object {
+            "height": 180,
+          },
+        ]
       }
     >
       <View
@@ -2189,9 +2192,12 @@ exports[`Storyshots Context Without Layout 1`] = `
     />
     <View
       style={
-        Object {
-          "height": 180,
-        }
+        Array [
+          undefined,
+          Object {
+            "height": 180,
+          },
+        ]
       }
     >
       <View

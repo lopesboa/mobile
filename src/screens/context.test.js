@@ -55,7 +55,11 @@ describe('Context', () => {
     const expected: ConnectedStateProps = {
       description: context.description,
       header: context.title,
-      media: context.media
+      media: {
+        // $FlowFixMe optional property
+        ...context.media.src[0],
+        type: 'img'
+      }
     };
     expect(result).toEqual(expected);
   });

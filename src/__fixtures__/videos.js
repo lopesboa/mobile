@@ -9,6 +9,8 @@ export const createVideoUri = (id: string, provider: VideoProvider): string => {
   switch (provider) {
     case VIDEO_PROVIDER.JWPLAYER:
       return `https://content.jwplatform.com/videos/${id}.mp4`;
+    case VIDEO_PROVIDER.OMNIPLAYER:
+      return `https://mms.myomni.live/${id}`;
     default:
       throw new Error('Unsupported provider for fixtures');
   }

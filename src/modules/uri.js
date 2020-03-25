@@ -8,6 +8,12 @@ export const getCleanUri = (originalUri: string): string =>
 
 export const getResourceUrl = (resource: Lesson): string | void => {
   const videoId = resource && resource.videoId;
+
+  if (resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER) {
+    // $FlowFixMe - interpolation
+    return `https://mms.myomni.live/${videoId}`;
+  }
+
   const mediaUrl = resource && resource.mediaUrl;
   const downloadUrl = resource && resource.downloadUrl;
   const url = (resource.type === RESOURCE_TYPE.VIDEO && downloadUrl) || mediaUrl;
@@ -22,6 +28,7 @@ export const getResourceUrl = (resource: Lesson): string | void => {
     // $FlowFixMe - interpolation
     return `https://content.jwplatform.com/videos/${videoId}.mp4`;
   }
+
   return url;
 };
 

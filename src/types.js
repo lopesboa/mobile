@@ -21,7 +21,8 @@ export type QuestionChoiceInputType = 'text' | 'select';
 export type VideoProviderMimeType =
   | 'application/jwplayer'
   | 'application/kontiki'
-  | 'application/vimeo';
+  | 'application/vimeo'
+  | 'application/omniPlayer';
 
 export type MimeType =
   | VideoProviderMimeType
