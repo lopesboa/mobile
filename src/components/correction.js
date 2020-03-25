@@ -121,7 +121,8 @@ type Props = $Exact<{|
   isFastSlideEnabled?: boolean,
   onPDFButtonPress: (url: string, description: string) => void,
   onVideoPlay: () => void,
-  testID?: string
+  testID?: string,
+  onLinkPress: () => void
 |}>;
 
 class Correction extends React.PureComponent<Props> {
@@ -227,7 +228,7 @@ class Correction extends React.PureComponent<Props> {
     index: number,
     animationStyle: AnimationStyleProp
   ) => {
-    const {question, tip, keyPoint, isCorrect} = this.props;
+    const {question, tip, keyPoint, isCorrect, onLinkPress} = this.props;
     // This is the offset added by the deck swiper
     const testIDSuffix = resource ? resource.ref.toLowerCase() : '';
     const testID =
@@ -249,7 +250,12 @@ class Correction extends React.PureComponent<Props> {
         testID={testID}
       >
         {type === DECK_CARD_TYPE.TIP ? (
-          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+          <Html
+            onLinkPress={onLinkPress}
+            fontSize={theme.fontSize.regular}
+            style={styles.cardText}
+            testID={`${testID}-html`}
+          >
             {tip}
           </Html>
         ) : null}
@@ -262,7 +268,12 @@ class Correction extends React.PureComponent<Props> {
           />
         ) : null}
         {type === DECK_CARD_TYPE.KEY_POINT ? (
-          <Html fontSize={theme.fontSize.regular} style={styles.cardText}>
+          <Html
+            onLinkPress={onLinkPress}
+            fontSize={theme.fontSize.regular}
+            style={styles.cardText}
+            testID={`${testID}-html`}
+          >
             {keyPoint}
           </Html>
         ) : null}
@@ -282,6 +293,7 @@ class Correction extends React.PureComponent<Props> {
             />
             <View style={styles.resourceTitleContainer}>
               <Html
+                onLinkPress={onLinkPress}
                 fontSize={theme.fontSize.regular}
                 testID={`${testID}-resource-description`}
                 style={styles.resourceTitle}

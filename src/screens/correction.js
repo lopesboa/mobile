@@ -32,6 +32,7 @@ import {
 import {mapToResource} from '../layer/data/mappers';
 import type {Params as LevelEndScreenParams} from './level-end';
 import type {Params as PdfScreenParams} from './pdf';
+import type {Params as BrowserScreenParams} from './browser';
 
 const styles = StyleSheet.create({
   layoutContainer: {
@@ -93,6 +94,16 @@ class CorrectionScreen extends React.PureComponent<Props> {
   };
 
   handleVideoPlay = () => this.props.play();
+
+  handleLinkPress = (url: string): void => {
+    const {
+      navigation: {navigate}
+    } = this.props;
+    const params: BrowserScreenParams = {
+      url
+    };
+    navigate('BrowserModal', params);
+  };
 
   handleButtonPress = () => {
     const {
@@ -172,6 +183,7 @@ class CorrectionScreen extends React.PureComponent<Props> {
           isFastSlideEnabled={isFastSlideEnabled}
           onPDFButtonPress={this.handlePDFButtonPress}
           onVideoPlay={this.handleVideoPlay}
+          onLinkPress={this.handleLinkPress}
           testID="correction"
         />
       </Screen>

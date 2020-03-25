@@ -15,6 +15,7 @@ import {
   createFakeAudio
 } from '../utils/tests';
 import {mapToResource} from '../layer/data/mappers';
+import {DECK_CARD_TYPE} from '../const';
 import {Component as Correction} from './correction';
 
 const lessons = [
@@ -44,6 +45,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -64,6 +66,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -85,6 +88,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -105,6 +109,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -126,6 +131,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -145,6 +151,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -166,6 +173,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -187,6 +195,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -207,6 +216,7 @@ storiesOf('Correction', module)
         onVideoPlay={handleFakePress}
         vibration={createFakeVibration()}
         audio={createFakeAudio()}
+        onLinkPress={handleFakePress}
       />
     </TestContextProvider>
   ));
@@ -233,6 +243,7 @@ if (__TEST__) {
             onVideoPlay={handleVideoPlay}
             vibration={createFakeVibration()}
             audio={createFakeAudio()}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -263,6 +274,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={createFakeVibration()}
             audio={createFakeAudio()}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -296,6 +308,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -320,6 +333,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -350,6 +364,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -374,6 +389,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -405,6 +421,7 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
@@ -428,12 +445,114 @@ if (__TEST__) {
             onVideoPlay={handleFakePress}
             vibration={vibration}
             audio={audio}
+            onLinkPress={handleFakePress}
           />
         </TestContextProvider>
       );
 
       expect(vibration.vibrate).toHaveBeenCalledTimes(0);
       expect(audio.play).toHaveBeenCalledTimes(0);
+    });
+
+    it('should handle onLinkPress on tip', () => {
+      const handleLinkPress = jest.fn();
+      const vibration = createFakeVibration();
+      const component = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers.concat(['Anything else'])}
+            resources={[resources[0]]}
+            isCorrect={false}
+            lives={2}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={createFakeAudio()}
+            onLinkPress={handleLinkPress}
+          />
+        </TestContextProvider>
+      );
+      const testID = `card-${DECK_CARD_TYPE.TIP}-html`;
+      const resource = component.root.find(el => el.props.testID === testID);
+      const url = 'https://domain.tld';
+      resource.props.onLinkPress(url);
+
+      expect(handleLinkPress).toHaveBeenCalledTimes(1);
+      expect(handleLinkPress).toHaveBeenCalledWith(url);
+    });
+
+    it('should handle onLinkPress on keypoint', () => {
+      const handleLinkPress = jest.fn();
+      const vibration = createFakeVibration();
+      const component = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers.concat(['Anything else'])}
+            resources={[resources[0]]}
+            isCorrect={false}
+            lives={2}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={createFakeAudio()}
+            onLinkPress={handleLinkPress}
+          />
+        </TestContextProvider>
+      );
+      const testID = `card-${DECK_CARD_TYPE.KEY_POINT.toLowerCase()}-html`;
+      const resource = component.root.find(el => el.props.testID === testID);
+      const url = 'https://domain.tld';
+      resource.props.onLinkPress(url);
+
+      expect(handleLinkPress).toHaveBeenCalledTimes(1);
+      expect(handleLinkPress).toHaveBeenCalledWith(url);
+    });
+
+    it('should handle onLinkPress on resource description', () => {
+      const handleLinkPress = jest.fn();
+      const vibration = createFakeVibration();
+      const component = renderer.create(
+        <TestContextProvider>
+          <Correction
+            question={fakeQuestion}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers.concat(['Anything else'])}
+            resources={[resources[2]]}
+            isCorrect={false}
+            lives={2}
+            layout={fakeLayout}
+            onButtonPress={handleFakePress}
+            onPDFButtonPress={handleFakePress}
+            onVideoPlay={handleFakePress}
+            vibration={vibration}
+            audio={createFakeAudio()}
+            onLinkPress={handleLinkPress}
+          />
+        </TestContextProvider>
+      );
+      const testID = `card-${
+        DECK_CARD_TYPE.RESOURCE
+      }-${resources[2].ref.toLowerCase()}-resource-description`;
+      const resource = component.root.find(el => el.props.testID === testID);
+      const url = 'https://domain.tld';
+      resource.props.onLinkPress(url);
+
+      expect(handleLinkPress).toHaveBeenCalledTimes(1);
+      expect(handleLinkPress).toHaveBeenCalledWith(url);
     });
   });
 }

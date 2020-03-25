@@ -13,6 +13,7 @@ import {createNavigation} from '../__fixtures__/navigation';
 import {createUiState, createDataState, createStoreState} from '../__fixtures__/store';
 import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../const';
 import type {ConnectedStateProps, OwnProps, Params} from './correction';
+import type {Params as BrowserScreenParams} from './browser';
 
 // @todo understand why this container triggers hooks error
 jest.mock('../containers/deck-cards-swipable', () => 'Mock$DeckCardsSwipable');
@@ -727,6 +728,23 @@ describe('Correction', () => {
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('Question');
+  });
+
+  it('should handle link press', () => {
+    const {Component: Correction} = require('./correction');
+
+    const url = 'https://domain.tld';
+    const navigation = createNavigation({});
+    const component = renderer.create(<Correction navigation={navigation} />);
+
+    const correction = component.root.find(el => el.props.testID === 'correction');
+    correction.props.onLinkPress(url);
+
+    const params: BrowserScreenParams = {
+      url
+    };
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('BrowserModal', params);
   });
 
   it('should handle button press (oferring extra life)', () => {

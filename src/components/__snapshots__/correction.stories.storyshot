@@ -1669,7 +1669,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -4277,7 +4279,9 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -8249,7 +8253,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -8698,7 +8704,9 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -13971,7 +13979,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -14420,7 +14430,9 @@ exports[`Storyshots Correction Extralife 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -18382,7 +18394,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -18831,7 +18845,9 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -22803,7 +22819,9 @@ exports[`Storyshots Correction Game over 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -23252,7 +23270,9 @@ exports[`Storyshots Correction Game over 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -24499,7 +24519,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -24856,7 +24878,9 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -28891,7 +28915,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -31407,7 +31433,9 @@ exports[`Storyshots Correction Right answer 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -33849,7 +33877,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-keypoint-html"
+              >
                 <View
                   style={Object {}}
                 >
@@ -34298,7 +34328,9 @@ exports[`Storyshots Correction Without resource 1`] = `
                 ]
               }
             >
-              <View>
+              <View
+                testID="card-tip-html"
+              >
                 <View
                   style={Object {}}
                 >
