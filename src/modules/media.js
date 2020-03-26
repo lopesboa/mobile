@@ -21,6 +21,11 @@ export const getMediaUrl = (mediaItem: Media | Lesson): string | void => {
       const lesson: Lesson = mediaItem;
       return getResourceUrl(lesson);
     }
+
+    if (!mediaItem.src) {
+      const url = mediaItem.url && getCleanUri(mediaItem.url);
+      return url;
+    }
     const resourceItem = mediaItem.src && mediaItem.src[0];
     return resourceItem && getCleanUri(resourceItem.url);
   }
@@ -51,5 +56,9 @@ export const getVideoProvider = (mimeType: MimeType): VideoProvider | void => {
       return VIDEO_PROVIDER.KONTIKI;
     case VIDEO_PROVIDER_MIME_TYPE.VIMEO:
       return VIDEO_PROVIDER.VIMEO;
+    case VIDEO_PROVIDER_MIME_TYPE.YOUTUBE:
+      return VIDEO_PROVIDER.YOUTUBE;
+    case VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER:
+      return VIDEO_PROVIDER.OMNIPLAYER;
   }
 };

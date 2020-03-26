@@ -157,12 +157,13 @@ export const APP_STATE: {
 };
 
 export const VIDEO_PROVIDER_MIME_TYPE: {
-  ['KONTIKI' | 'JWPLAYER' | 'VIMEO' | 'OMNIPLAYER']: VideoProviderMimeType
+  ['KONTIKI' | 'JWPLAYER' | 'VIMEO' | 'OMNIPLAYER' | 'YOUTUBE']: VideoProviderMimeType
 } = {
   KONTIKI: 'application/kontiki',
   JWPLAYER: 'application/jwplayer',
   VIMEO: 'application/vimeo',
-  OMNIPLAYER: 'application/omniPlayer'
+  OMNIPLAYER: 'application/omniPlayer',
+  YOUTUBE: 'application/youtube'
 };
 
 export const ANALYTICS_EVENT_TYPE: {

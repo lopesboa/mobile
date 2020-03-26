@@ -1,20 +1,12 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, View, Text, Platform} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {TextTrackType} from 'react-native-video';
-import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
 import RNFetchBlob from 'rn-fetch-blob';
 import {BlackPortal, WhitePortal} from 'react-native-portal';
-
-import theme from '../modules/theme';
-import {RESOURCE_TYPE} from '../const';
-import translations from '../translations';
-import Preview, {EXTRALIFE} from './preview';
-import Overlay from './overlay';
-import Touchable from './touchable';
-import Space from './space';
+import VideoOverlay from './video-overlay';
 
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
@@ -61,49 +53,13 @@ const EMPTY_TRACK: Track = {
   uri: `file://${RNFetchBlob.fs.dirs.MainBundleDir}/assets/empty.vtt`
 };
 
-export const CONTAINER_STYLE = {
-  backgroundColor: theme.colors.black,
-  overflow: 'hidden'
-};
-
 const styles = StyleSheet.create({
-  container: {
-    ...CONTAINER_STYLE
-  },
   video: {
     position: 'absolute',
     top: 0,
     right: 0,
     bottom: 0,
     left: 0
-  },
-  fullScreenButton: {
-    alignSelf: 'flex-end',
-    padding: theme.spacing.small,
-    margin: theme.spacing.small
-  },
-  fullScreen: {
-    ...Platform.select({
-      android: {
-        zIndex: 10000,
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0
-      }
-    })
-  },
-  replay: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing.small
-  },
-  error: {
-    textAlign: 'center',
-    color: theme.colors.white
   }
 });
 
@@ -128,78 +84,53 @@ const Video = ({
   extralifeOverlay = false
 }: Props) => {
   const testIDSuffix = isFullScreen ? '-fullscreen' : '';
-  const containerHeight = (!isFullScreen && height) || undefined;
   const defaultTracks: Array<Track> = Platform.OS === 'ios' ? [EMPTY_TRACK] : [];
   const disabledTrack =
     Platform.OS === 'ios' ? {type: 'language', value: EMPTY_TRACK.language} : {type: 'disabled'};
 
   return (
-    <View
-      style={[styles.container, isFullScreen && styles.fullScreen, {height: containerHeight}]}
-      testID={`${testID}${testIDSuffix}-container`}
+    <VideoOverlay
+      preview={preview}
+      height={height}
+      step={step}
+      isFullScreen={isFullScreen}
+      onPlay={onPlay}
+      extralifeOverlay={extralifeOverlay}
+      testID={testID}
     >
-      {[STEP.PREVIEW, STEP.LOADING].includes(step) ? (
-        <Preview
-          type={extralifeOverlay ? EXTRALIFE : RESOURCE_TYPE.VIDEO}
-          source={preview}
-          isLoading={step === STEP.LOADING}
-          onPress={onPlay}
-          testID={`${testID}-preview`}
-        />
-      ) : null}
-      {[STEP.PLAY, STEP.END].includes(step) ? (
-        <React.Fragment>
-          <BlackPortal name="video">
-            <VideoPlayer
-              testID={`${testID}${testIDSuffix}-player`}
-              source={source}
-              ref={onRef}
-              style={styles.video}
-              resizeMode="contain"
-              disableVolume
-              disableBack
-              ignoreSilentSwitch="ignore"
-              disableFullscreen={Boolean(!onExpand && !onShrink)}
-              toggleResizeModeOnFullscreen={false}
-              isFullscreen={isFullScreen}
-              onEnterFullscreen={onExpand}
-              onExitFullscreen={onShrink}
-              onFullscreenPlayerWillDismiss={onShrink}
-              onEnd={onEnd}
-              onReadyForDisplay={onReady}
-              onError={onError}
-              onProgress={onProgress}
-              onCC={onTracksToggle}
-              disableCC={tracks.length === 0}
-              textTracks={defaultTracks.concat(tracks)}
-              selectedTextTrack={
-                selectedTrack ? {type: 'language', value: selectedTrack} : disabledTrack
-              }
-              isCC={Boolean(selectedTrack)}
-            />
-          </BlackPortal>
-          {Platform.OS !== 'android' || !isFullScreen ? <WhitePortal name="video" /> : null}
-        </React.Fragment>
-      ) : null}
-      {[STEP.END, STEP.ERROR].includes(step) ? (
-        <Overlay>
-          <Touchable
-            onPress={onPlay}
-            style={styles.replay}
-            testID={`${testID}${testIDSuffix}-${step}-replay`}
-            analyticsID={`video-${step}-replay`}
-          >
-            <NovaSolidDesignActionsRedo color={theme.colors.white} height={40} width={40} />
-            {step === STEP.ERROR ? (
-              <React.Fragment>
-                <Space />
-                <Text style={styles.error}>{translations.videoLoadingError}</Text>
-              </React.Fragment>
-            ) : null}
-          </Touchable>
-        </Overlay>
-      ) : null}
-    </View>
+      <React.Fragment>
+        <BlackPortal name="video">
+          <VideoPlayer
+            testID={`${testID}${testIDSuffix}-player`}
+            source={source}
+            ref={onRef}
+            style={styles.video}
+            resizeMode="contain"
+            disableVolume
+            disableBack
+            ignoreSilentSwitch="ignore"
+            disableFullscreen={Boolean(!onExpand && !onShrink)}
+            toggleResizeModeOnFullscreen={false}
+            isFullscreen={isFullScreen}
+            onEnterFullscreen={onExpand}
+            onExitFullscreen={onShrink}
+            onFullscreenPlayerWillDismiss={onShrink}
+            onEnd={onEnd}
+            onReadyForDisplay={onReady}
+            onError={onError}
+            onProgress={onProgress}
+            onCC={onTracksToggle}
+            disableCC={tracks.length === 0}
+            textTracks={defaultTracks.concat(tracks)}
+            selectedTextTrack={
+              selectedTrack ? {type: 'language', value: selectedTrack} : disabledTrack
+            }
+            isCC={Boolean(selectedTrack)}
+          />
+        </BlackPortal>
+        {Platform.OS !== 'android' || !isFullScreen ? <WhitePortal name="video" /> : null}
+      </React.Fragment>
+    </VideoOverlay>
   );
 };
 

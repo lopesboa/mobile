@@ -44,6 +44,19 @@ describe('media', () => {
       );
     });
 
+    it('should return the URL -- VIDEO case without src ', () => {
+      const result = getMediaUrl({
+        type: 'video',
+        mimeType: 'application/vimeo',
+        url: '//player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4',
+        src: undefined
+      });
+
+      expect(result).toBe(
+        'https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4'
+      );
+    });
+
     it('should return the URL -- VIDEO case jwplayer', () => {
       const videoId = 'foo';
       const _video = {
@@ -100,6 +113,20 @@ describe('media', () => {
     it('should return kontiki', () => {
       const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.KONTIKI);
       const expected = VIDEO_PROVIDER.KONTIKI;
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should return youtube', () => {
+      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.YOUTUBE);
+      const expected = VIDEO_PROVIDER.YOUTUBE;
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should return omniPlayer', () => {
+      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER);
+      const expected = VIDEO_PROVIDER.OMNIPLAYER;
 
       expect(result).toEqual(expected);
     });

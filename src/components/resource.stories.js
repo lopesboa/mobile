@@ -5,23 +5,31 @@ import {storiesOf} from '@storybook/react-native';
 import renderer from 'react-test-renderer';
 
 import {__TEST__} from '../modules/environment';
-import {createVideo, createPdf, createImage} from '../__fixtures__/lessons';
+import {
+  createVideo,
+  createVideoYoutube,
+  createVideoOmniPlayer,
+  createPdf,
+  createImage
+} from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
 import {getCleanUri} from '../modules/uri';
 import {mapToResource} from '../layer/data/mappers';
-import {VIDEO_PROVIDER_MIME_TYPE} from '../const';
 import {Component as Resource} from './resource';
 
 const _video = createVideo({ref: 'les_1', description: 'Foo bar baz'});
-const _pdf = createPdf({ref: 'les_2', description: 'Foo bar baz'});
-const _img = createImage({ref: 'les_3', description: 'Foo bar baz'});
-const _videoOmniPlayer = createVideo({
-  ref: 'les_4',
-  description: 'Foo bar baz',
-  mimeType: VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER,
-  videoId: '5e6126fdbe444d66709afab1'
-});
-const [video, pdf, image, videoOmniPlayer] = [_video, _pdf, _img, _videoOmniPlayer]
+const _videoYoutube = createVideoYoutube({ref: 'les_2', description: 'Foo bar baz'});
+const _videoOmniPlayer = createVideoOmniPlayer({ref: 'les_3', description: 'Foo bar baz'});
+
+const _pdf = createPdf({ref: 'les_4', description: 'Foo bar baz'});
+const _img = createImage({ref: 'les_5', description: 'Foo bar baz'});
+const [video, pdf, image, videoOmniPlayer, videoYoutube] = [
+  _video,
+  _pdf,
+  _img,
+  _videoOmniPlayer,
+  _videoYoutube
+]
   .map(mapToResource)
   .filter(lesson => lesson.url);
 
@@ -35,6 +43,19 @@ storiesOf('Resource', module)
         description={video.description}
         thumbnail={video.poster}
         mimeType={video.mimeType}
+        onPress={handleFakePress}
+      />
+    </TestContextProvider>
+  ))
+  .add('Video Youtube', () => (
+    <TestContextProvider>
+      <Resource
+        type={videoYoutube.type}
+        url={videoYoutube.url}
+        layout={fakeLayout}
+        mimeType={videoYoutube.mimeType}
+        description={videoYoutube.description}
+        thumbnail={videoYoutube.poster}
         onPress={handleFakePress}
       />
     </TestContextProvider>

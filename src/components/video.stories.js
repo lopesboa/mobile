@@ -147,37 +147,4 @@ storiesOf('Video', module)
       onEnd={handleFakePress}
       onReady={handleFakePress}
     />
-  ))
-  .add('Replay', () => (
-    <Video
-      source={video}
-      preview={image}
-      height={180}
-      step={STEP.END}
-      onPlay={handleFakePress}
-      onEnd={handleFakePress}
-      onReady={handleFakePress}
-    />
-  ))
-  .add('Error', () => (
-    <Video
-      source={video}
-      preview={image}
-      height={180}
-      step={STEP.ERROR}
-      onPlay={handleFakePress}
-      onEnd={handleFakePress}
-      onReady={handleFakePress}
-    />
-  ))
-  .add('Loading', () => (
-    <Video
-      source={video}
-      preview={image}
-      height={180}
-      step={STEP.LOADING}
-      onPlay={handleFakePress}
-      onEnd={handleFakePress}
-      onReady={handleFakePress}
-    />
   ));

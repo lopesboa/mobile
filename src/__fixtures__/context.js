@@ -20,12 +20,11 @@ export const mediaContextImage: Media = {
 
 export const mediaContextVideo: Media = {
   type: 'video',
-  mimeType: 'video/mp4',
+  mimeType: 'application/vimeo',
   src: [
     {
-      mimeType: 'video/mp4',
-      url:
-        '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
+      mimeType: 'application/vimeo',
+      url: '//player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4',
       _id: 'some_randoMId'
     }
   ]

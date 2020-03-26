@@ -81,6 +81,9 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - RCTYouTube (2.0.0):
+    - React
+    - YoutubePlayer-in-WKWebView (~> 0.3.1)
   - React (0.59.9):
     - React/Core (= 0.59.9)
   - react-native-camera (2.9.0):
@@ -184,6 +187,7 @@ PODS:
   - RNSVG (9.4.0):
     - React
   - yoga (0.59.9.React)
+  - YoutubePlayer-in-WKWebView (0.3.4)
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
@@ -197,6 +201,7 @@ DEPENDENCIES:
   - GoogleTagManager
   - lottie-ios (from `../node_modules/lottie-ios`)
   - lottie-react-native (from `../node_modules/lottie-react-native`)
+  - RCTYouTube (from `../node_modules/react-native-youtube`)
   - react-native-camera (from `../node_modules/react-native-camera`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
@@ -244,6 +249,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GoogleUtilitiesLegacy
     - nanopb
+    - YoutubePlayer-in-WKWebView
 
 EXTERNAL SOURCES:
   BVLinearGradient:
@@ -258,6 +264,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/lottie-ios"
   lottie-react-native:
     :path: "../node_modules/lottie-react-native"
+  RCTYouTube:
+    :path: "../node_modules/react-native-youtube"
   React:
     :path: "../node_modules/react-native"
   react-native-camera:
@@ -322,6 +330,7 @@ SPEC CHECKSUMS:
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   lottie-react-native: 3d8181d43619b1fe804c828bd5a09d20fe8bdea7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  RCTYouTube: 57458fe8653bb696b7d7585326d735d01b871af8
   React: a86b92f00edbe1873a63e4a212c29b7a7ad5224f
   react-native-camera: 571e4cfe70e7021e9077c1699a53e659db971f96
   react-native-netinfo: a59d8426a8484f739fe3a95dd6ad5af1435db05f
@@ -342,7 +351,8 @@ SPEC CHECKSUMS:
   RNSound: a1d01988e043aed5dbb476c2152b5ffb02446750
   RNSVG: 9cb6e958c4b6a1f58185ac72a350b148947d6fed
   yoga: 03ff42a6f223fb88deeaed60249020d80c3091ee
+  YoutubePlayer-in-WKWebView: af2f5929fc78882d94bfdfeea999b661b78d9717
 
-PODFILE CHECKSUM: 57c084f3c9064d3de709bf46ae9520ce9b4db643
+PODFILE CHECKSUM: 7c86aca54dc4085febf7ab96c7fad648eedd87e4
 
 COCOAPODS: 1.8.4

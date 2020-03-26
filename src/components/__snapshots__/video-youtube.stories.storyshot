@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Video Youtube Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "overflow": "hidden",
+      },
+      undefined,
+      Object {
+        "height": 180,
+      },
+    ]
+  }
+  testID="video-youtube-container"
+>
+  <RCTYouTube
+    onChangeFullscreen={[Function]}
+    onChangeQuality={[Function]}
+    onChangeState={[Function]}
+    onError={[Function]}
+    onProgress={[Function]}
+    onReady={[Function]}
+    play={true}
+    playerParams={
+      Object {
+        "playerVars": Object {
+          "controls": undefined,
+          "fs": undefined,
+          "loop": undefined,
+          "modestbranding": undefined,
+          "origin": undefined,
+          "playlist": undefined,
+          "playsinline": 1,
+          "rel": undefined,
+          "showinfo": undefined,
+        },
+        "playlistId": undefined,
+        "videoId": "K7g4WKoS_6U",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+    videoId="K7g4WKoS_6U"
+  />
+</View>
+`;

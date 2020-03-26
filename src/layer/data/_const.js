@@ -62,19 +62,19 @@ export const RESTRICTED_RESOURCE_TYPE: {|
   k => RESTRICTED_RESOURCE_TYPE[k]
 ): Array<RestrictedResourceType>);
 
-// @todo change it in player services
-type VideoProvider = PlayerVideoProvider | 'omniPlayer';
-
 export const VIDEO_PROVIDER: {|
   KONTIKI: 'kontiki',
   JWPLAYER: 'jwplayer',
   VIMEO: 'vimeo',
+  YOUTUBE: 'youtube',
   OMNIPLAYER: 'omniPlayer'
 |} = {
   KONTIKI: 'kontiki',
   JWPLAYER: 'jwplayer',
   VIMEO: 'vimeo',
+  YOUTUBE: 'youtube',
   OMNIPLAYER: 'omniPlayer'
 };
+
 // FlowAssert
-(Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<VideoProvider>);
+(Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<PlayerVideoProvider>);

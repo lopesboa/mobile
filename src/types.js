@@ -22,6 +22,7 @@ export type VideoProviderMimeType =
   | 'application/jwplayer'
   | 'application/kontiki'
   | 'application/vimeo'
+  | 'application/youtube'
   | 'application/omniPlayer';
 
 export type MimeType =

@@ -2,14 +2,13 @@
 
 import type {Lesson} from '@coorpacademy/progression-engine';
 
-import {RESOURCE_TYPE, VIDEO_PROVIDER_MIME_TYPE} from '../const';
+import {RESOURCE_TYPE} from '../const';
 import type {VideoProviderMimeType} from '../types';
 
 export const createVideo = ({
   ref,
   description = 'Des données au service de tous',
   poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-  mimeType = VIDEO_PROVIDER_MIME_TYPE.JWPLAYER,
   videoId = 'KovTu3zU'
 }: {
   ref: string,
@@ -23,8 +22,51 @@ export const createVideo = ({
   description,
   videoId,
   mediaRef: 'med_jwp_Vy4JQKFhN',
-  // $FlowFixMe @todo change Lesson type in progression engine
-  mimeType,
+  mimeType: 'application/jwplayer',
+  ref,
+  type: RESOURCE_TYPE.VIDEO,
+  subtitles: [],
+  posters: [],
+  src: []
+});
+
+export const createVideoYoutube = ({
+  ref,
+  description = 'Des données au service de tous',
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+}: {
+  ref: string,
+  description?: string,
+  poster?: string
+}): Lesson => ({
+  _id: ref,
+  poster,
+  description,
+  videoId: '5qap5aO4i9A',
+  mediaRef: 'med_youtube_Vy4JQKFhN',
+  mimeType: 'application/youtube',
+  ref,
+  type: RESOURCE_TYPE.VIDEO,
+  subtitles: [],
+  posters: [],
+  src: []
+});
+
+export const createVideoOmniPlayer = ({
+  ref,
+  description = 'Des données au service de tous',
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+}: {
+  ref: string,
+  description?: string,
+  poster?: string
+}): Lesson => ({
+  _id: ref,
+  poster,
+  description,
+  videoId: '5e6126fdbe444d66709afab1',
+  mediaRef: 'med_omniPlayer_Vy4JQKFhN',
+  mimeType: 'application/omniPlayer',
   ref,
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
