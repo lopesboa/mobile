@@ -1,11 +1,10 @@
 // @flow
 
-import type {Media, LessonType, Lesson} from '@coorpacademy/progression-engine';
+import type {Media, LessonType, Lesson, ResourceMimeType} from '@coorpacademy/progression-engine';
 import type {VideoProvider} from '@coorpacademy/player-store';
 
 import {VIDEO_PROVIDER} from '../layer/data/_const';
-import {RESOURCE_TYPE, VIDEO_PROVIDER_MIME_TYPE} from '../const';
-import type {MimeType} from '../types';
+import {RESOURCE_TYPE, VIDEO_MIME_TYPE} from '../const';
 import {getCleanUri, getResourceUrl} from './uri';
 
 export const getMediaType = (mediaItem: Media | Lesson): LessonType | void => {
@@ -48,17 +47,17 @@ export const getMediaPoster = (mediaItem: Media): string | void => {
   }
 };
 
-export const getVideoProvider = (mimeType: MimeType): VideoProvider | void => {
+export const getVideoProvider = (mimeType: ResourceMimeType): VideoProvider | void => {
   switch (mimeType) {
-    case VIDEO_PROVIDER_MIME_TYPE.JWPLAYER:
+    case VIDEO_MIME_TYPE.JWPLAYER:
       return VIDEO_PROVIDER.JWPLAYER;
-    case VIDEO_PROVIDER_MIME_TYPE.KONTIKI:
+    case VIDEO_MIME_TYPE.KONTIKI:
       return VIDEO_PROVIDER.KONTIKI;
-    case VIDEO_PROVIDER_MIME_TYPE.VIMEO:
+    case VIDEO_MIME_TYPE.VIMEO:
       return VIDEO_PROVIDER.VIMEO;
-    case VIDEO_PROVIDER_MIME_TYPE.YOUTUBE:
+    case VIDEO_MIME_TYPE.YOUTUBE:
       return VIDEO_PROVIDER.YOUTUBE;
-    case VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER:
+    case VIDEO_MIME_TYPE.OMNIPLAYER:
       return VIDEO_PROVIDER.OMNIPLAYER;
   }
 };

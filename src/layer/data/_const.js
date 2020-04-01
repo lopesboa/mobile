@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {VideoProvider as PlayerVideoProvider} from '@coorpacademy/player-services';
+import type {VideoProvider} from '@coorpacademy/player-services';
 
 import type {CardStatus, CardType, RestrictedResourceType} from './_types';
 
@@ -77,4 +77,4 @@ export const VIDEO_PROVIDER: {|
 };
 
 // FlowAssert
-(Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<PlayerVideoProvider>);
+(Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<VideoProvider>);

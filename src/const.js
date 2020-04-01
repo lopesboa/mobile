@@ -1,6 +1,12 @@
 // @flow strict
 
-import type {LessonType, QuestionType, MediaType} from '@coorpacademy/progression-engine';
+import type {
+  LessonType,
+  QuestionType,
+  MediaType,
+  VideoMimeType,
+  ResourceMimeType
+} from '@coorpacademy/progression-engine';
 
 import type {
   AnalyticsEventType,
@@ -16,8 +22,7 @@ import type {
   PermissionStatus,
   QuestionChoiceInputType,
   SpaceType,
-  TooltipType,
-  VideoProviderMimeType
+  TooltipType
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -156,14 +161,24 @@ export const APP_STATE: {
   INACTIVE: 'inactive'
 };
 
-export const VIDEO_PROVIDER_MIME_TYPE: {
-  ['KONTIKI' | 'JWPLAYER' | 'VIMEO' | 'OMNIPLAYER' | 'YOUTUBE']: VideoProviderMimeType
+export const VIDEO_MIME_TYPE: {
+  ['KONTIKI' | 'JWPLAYER' | 'VIMEO' | 'OMNIPLAYER' | 'YOUTUBE']: VideoMimeType
 } = {
   KONTIKI: 'application/kontiki',
   JWPLAYER: 'application/jwplayer',
   VIMEO: 'application/vimeo',
   OMNIPLAYER: 'application/omniPlayer',
   YOUTUBE: 'application/youtube'
+};
+
+export const RESOURCE_MIME_TYPE: {
+  [$Keys<typeof VIDEO_MIME_TYPE> | 'PDF' | 'PNG' | 'MP4' | 'JPEG']: ResourceMimeType
+} = {
+  ...VIDEO_MIME_TYPE,
+  PDF: 'application/pdf',
+  PNG: 'image/png',
+  MP4: 'video/mp4',
+  JPEG: 'image/jpeg'
 };
 
 export const ANALYTICS_EVENT_TYPE: {

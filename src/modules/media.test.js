@@ -1,6 +1,6 @@
 // @flow strict
 
-import {VIDEO_PROVIDER_MIME_TYPE} from '../const';
+import {VIDEO_MIME_TYPE} from '../const';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 import {image, video, emptyMedia, pdf} from '../__fixtures__/medias';
 import {getMediaUrl, getMediaPoster, getMediaType, getVideoProvider} from './media';
@@ -97,35 +97,35 @@ describe('media', () => {
 
   describe('getVideoProvider', () => {
     it('should return jwplayer', () => {
-      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.JWPLAYER);
+      const result = getVideoProvider(VIDEO_MIME_TYPE.JWPLAYER);
       const expected = VIDEO_PROVIDER.JWPLAYER;
 
       expect(result).toEqual(expected);
     });
 
     it('should return vimeo', () => {
-      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.VIMEO);
+      const result = getVideoProvider(VIDEO_MIME_TYPE.VIMEO);
       const expected = VIDEO_PROVIDER.VIMEO;
 
       expect(result).toEqual(expected);
     });
 
     it('should return kontiki', () => {
-      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.KONTIKI);
+      const result = getVideoProvider(VIDEO_MIME_TYPE.KONTIKI);
       const expected = VIDEO_PROVIDER.KONTIKI;
 
       expect(result).toEqual(expected);
     });
 
     it('should return youtube', () => {
-      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.YOUTUBE);
+      const result = getVideoProvider(VIDEO_MIME_TYPE.YOUTUBE);
       const expected = VIDEO_PROVIDER.YOUTUBE;
 
       expect(result).toEqual(expected);
     });
 
     it('should return omniPlayer', () => {
-      const result = getVideoProvider(VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER);
+      const result = getVideoProvider(VIDEO_MIME_TYPE.OMNIPLAYER);
       const expected = VIDEO_PROVIDER.OMNIPLAYER;
 
       expect(result).toEqual(expected);

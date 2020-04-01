@@ -1,7 +1,7 @@
 // @flow strict
 
 import type {Lesson} from '@coorpacademy/progression-engine';
-import {RESOURCE_TYPE, VIDEO_PROVIDER_MIME_TYPE} from '../const';
+import {RESOURCE_TYPE, VIDEO_MIME_TYPE} from '../const';
 
 export const getCleanUri = (originalUri: string): string =>
   originalUri && originalUri.replace(/(http:|https:|)\/\//g, 'https://');
@@ -9,7 +9,7 @@ export const getCleanUri = (originalUri: string): string =>
 export const getResourceUrl = (resource: Lesson): string | void => {
   const videoId = resource && resource.videoId;
 
-  if (resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER) {
+  if (resource.mimeType === VIDEO_MIME_TYPE.OMNIPLAYER) {
     // $FlowFixMe - interpolation
     return `https://mms.myomni.live/${videoId}`;
   }
@@ -22,8 +22,8 @@ export const getResourceUrl = (resource: Lesson): string | void => {
   if (
     !url ||
     // $FlowFixMe - must be fixed in progression/engine package
-    resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.KONTIKI ||
-    resource.mimeType === VIDEO_PROVIDER_MIME_TYPE.JWPLAYER
+    resource.mimeType === VIDEO_MIME_TYPE.KONTIKI ||
+    resource.mimeType === VIDEO_MIME_TYPE.JWPLAYER
   ) {
     // $FlowFixMe - interpolation
     return `https://content.jwplatform.com/videos/${videoId}.mp4`;

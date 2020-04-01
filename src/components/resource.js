@@ -2,12 +2,11 @@
 
 import * as React from 'react';
 import {View} from 'react-native';
-import type {LessonType} from '@coorpacademy/progression-engine';
+import type {LessonType, ResourceMimeType} from '@coorpacademy/progression-engine';
 
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
 import {RESOURCE_TYPE} from '../const';
-import type {MimeType} from '../types';
 import {getCleanUri} from '../modules/uri';
 import {getVideoProvider} from '../modules/media';
 import ResourceVideo from './resource-video';
@@ -19,7 +18,7 @@ type Props = {|
   type: LessonType,
   url?: string,
   videoId?: string,
-  mimeType?: MimeType,
+  mimeType?: ResourceMimeType,
   testID?: string,
   thumbnail?: string,
   description?: string,

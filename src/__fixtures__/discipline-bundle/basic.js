@@ -9,7 +9,7 @@ import {createVideo, createPdf} from '../lessons';
 import {createQCM, createQCMGraphic} from '../questions';
 import {failureExitNode, successExitNode} from '../exit-nodes';
 import {image} from '../medias';
-import {VIDEO_PROVIDER_MIME_TYPE} from '../../const';
+import {VIDEO_MIME_TYPE} from '../../const';
 
 const firstLevel = createLevel({
   ref: 'basic_mod_1',
@@ -35,7 +35,7 @@ const lessons = [
   createVideo({
     ref: 'les_3',
     description: 'Third video (omniplayer)',
-    mimeType: VIDEO_PROVIDER_MIME_TYPE.OMNIPLAYER,
+    mimeType: VIDEO_MIME_TYPE.OMNIPLAYER,
     videoId: '5e6126fdbe444d66709afab1'
   }),
   createPdf({ref: 'les_4', description: 'First PDF'})

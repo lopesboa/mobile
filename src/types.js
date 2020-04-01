@@ -18,20 +18,6 @@ export type JWT = {|
 
 export type QuestionChoiceInputType = 'text' | 'select';
 
-export type VideoProviderMimeType =
-  | 'application/jwplayer'
-  | 'application/kontiki'
-  | 'application/vimeo'
-  | 'application/youtube'
-  | 'application/omniPlayer';
-
-export type MimeType =
-  | VideoProviderMimeType
-  | 'video/mp4'
-  | 'image/jpeg'
-  | 'image/png'
-  | 'application/pdf';
-
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xlarge';
 
 export type TooltipType = 'highscore' | 'unlock';

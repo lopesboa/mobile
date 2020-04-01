@@ -1,9 +1,8 @@
 // @flow strict
 
-import type {Lesson} from '@coorpacademy/progression-engine';
+import type {Lesson, VideoMimeType} from '@coorpacademy/progression-engine';
 
-import {RESOURCE_TYPE} from '../const';
-import type {VideoProviderMimeType} from '../types';
+import {RESOURCE_TYPE, RESOURCE_MIME_TYPE, VIDEO_MIME_TYPE} from '../const';
 
 export const createVideo = ({
   ref,
@@ -14,7 +13,7 @@ export const createVideo = ({
   ref: string,
   description?: string,
   poster?: string,
-  mimeType?: VideoProviderMimeType,
+  mimeType?: VideoMimeType,
   videoId?: string
 }): Lesson => ({
   _id: ref,
@@ -22,7 +21,7 @@ export const createVideo = ({
   description,
   videoId,
   mediaRef: 'med_jwp_Vy4JQKFhN',
-  mimeType: 'application/jwplayer',
+  mimeType: VIDEO_MIME_TYPE.JWPLAYER,
   ref,
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
@@ -44,7 +43,7 @@ export const createVideoYoutube = ({
   description,
   videoId: '5qap5aO4i9A',
   mediaRef: 'med_youtube_Vy4JQKFhN',
-  mimeType: 'application/youtube',
+  mimeType: VIDEO_MIME_TYPE.YOUTUBE,
   ref,
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
@@ -66,7 +65,7 @@ export const createVideoOmniPlayer = ({
   description,
   videoId: '5e6126fdbe444d66709afab1',
   mediaRef: 'med_omniPlayer_Vy4JQKFhN',
-  mimeType: 'application/omniPlayer',
+  mimeType: VIDEO_MIME_TYPE.OMNIPLAYER,
   ref,
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
@@ -88,9 +87,8 @@ export const createVimeoVideo = ({
   description,
   videoId: '303449523',
   mediaRef: 'med_vimeo_Vy4JQKFhN',
-  mimeType: 'application/vimeo',
+  mimeType: VIDEO_MIME_TYPE.VIMEO,
   ref,
-  // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
   posters: [],
@@ -112,9 +110,8 @@ export const createPdf = ({
   mediaRef: 'med_Vy4JQKFhN',
   mediaUrl:
     '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
-  mimeType: 'application/pdf',
+  mimeType: RESOURCE_MIME_TYPE.PDF,
   ref,
-  // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.PDF,
   subtitles: [],
   posters: [],
@@ -136,9 +133,8 @@ export const createImage = ({
   mediaRef: 'med_Vy4JQKFhN',
   mediaUrl:
     '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/raw/fabernovel_data_fr_4a4_des-donnees-au-service-de-tous_vdef-1543484261461.pdf',
-  mimeType: 'application/pdf',
+  mimeType: RESOURCE_MIME_TYPE.PDF,
   ref,
-  // $FlowFixMe img is not defined in progression-engine
   type: RESOURCE_TYPE.IMG,
   subtitles: [],
   posters: [],
