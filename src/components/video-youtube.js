@@ -3,7 +3,6 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import YouTube from 'react-native-youtube';
-import {youtubePlayerApiKey} from '../../app';
 import VideoOverlay from './video-overlay';
 
 import type {Step} from './video-overlay';
@@ -26,6 +25,7 @@ export type Props = {|
   id: string,
   preview: File | {uri: string},
   isFullScreen?: boolean,
+  apiKey: string,
   onPlay: () => Promise<void> | void,
   onChangeFullscreen: () => Promise<void> | void,
   onChangeState?: (e: StateChange) => Promise<void> | void,
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
 const YoutubePlayer = ({
   id,
   isFullScreen,
+  apiKey,
   onPlay,
   onError,
   onChangeState,
@@ -76,7 +77,7 @@ const YoutubePlayer = ({
         videoId={id} // The YouTube video ID
         play // control playback of video with true/false
         fullScreen={isFullScreen}
-        apiKey={youtubePlayerApiKey}
+        apiKey={apiKey}
         onChangeState={onChangeState}
         onChangeFullscreen={onChangeFullscreen}
         onError={onError}

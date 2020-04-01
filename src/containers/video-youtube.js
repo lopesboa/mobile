@@ -10,10 +10,11 @@ import type {Step} from '../components/video-overlay';
 import PlayerComponent, {STATE} from '../components/video-youtube';
 import {STEP} from '../components/video-overlay';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
-import {isVideoFullScreen} from '../redux/utils/state-extract';
+import {isVideoFullScreen, getYoutubeAPIKey} from '../redux/utils/state-extract';
 
 export type ConnectedStateProps = {|
-  isFullScreen: boolean
+  isFullScreen: boolean,
+  apiKey?: string
 |};
 
 type ConnectedDispatchToProps = {|
@@ -88,11 +89,12 @@ class YoutubePlayer extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const {id, preview, height, isFullScreen, extralifeOverlay, testID} = this.props;
+    const {id, preview, height, apiKey = '', isFullScreen, extralifeOverlay, testID} = this.props;
     const {step} = this.state;
     return (
       <PlayerComponent
         id={id}
+        apiKey={apiKey}
         preview={preview}
         height={height}
         step={step}
@@ -114,8 +116,14 @@ const getIsFullScreenState: StoreState => boolean = createSelector(
   isFullScreen => isFullScreen
 );
 
+const getYoutubeAPIKeyState: StoreState => string | void = createSelector(
+  [getYoutubeAPIKey],
+  apiKey => apiKey
+);
+
 export const mapStateToProps = (state: StoreState, props: OwnProps): ConnectedStateProps => ({
-  isFullScreen: getIsFullScreenState(state)
+  isFullScreen: getIsFullScreenState(state),
+  apiKey: getYoutubeAPIKeyState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchToProps = {

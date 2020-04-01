@@ -67,7 +67,8 @@ import {
   getErrorType,
   getFocusedSelect,
   isNetworkConnected,
-  isVideoFullScreen
+  isVideoFullScreen,
+  getYoutubeAPIKey
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -666,6 +667,23 @@ describe('State-extract', () => {
       const expected = undefined;
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getYoutubeAPIKey', () => {
+    it('should return undefined if brand is undefined', () => {
+      const state = createState({});
+      delete state.authentication.brand;
+
+      const result = getYoutubeAPIKey(state);
+      expect(result).toEqual(undefined);
+    });
+    it('should get the youtube apiKey if brand is defined', () => {
+      const state = createState({});
+
+      const result = getYoutubeAPIKey(state);
+
+      expect(result).toEqual('7Hi5iS4f4k34P1K3Y');
     });
   });
 

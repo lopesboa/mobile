@@ -14,6 +14,7 @@ storiesOf('Video Youtube', module).add('Default', () => (
   <VideoYoutube
     id={videoId}
     preview={image}
+    apiKey="7Hi5iS4f4k34P1K3Y"
     extralifeOverlay={false}
     height={180}
     step={STEP.PLAY}

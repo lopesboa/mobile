@@ -30,7 +30,10 @@ export type Config = {|
       }
     }
   ],
-  progressionEngine: ProgressionEngineVersions
+  progressionEngine: ProgressionEngineVersions,
+  youtube: {
+    apiKey: string
+  }
 |};
 
 export const fetchBrand = async (token: string): Promise<Brand> => {
@@ -50,6 +53,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     brand,
     themes,
     progressionEngine,
+    youtube,
     slider,
     supportedLngs: supportedLanguages,
     defaultLanguage
@@ -67,6 +71,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     },
     hero: slider.start.image,
     progressionEngine,
+    youtube,
     supportedLanguages,
     defaultLanguage
   };

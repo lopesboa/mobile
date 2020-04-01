@@ -168,6 +168,9 @@ describe('storeFixture', () => {
             'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
         },
         name: 'mobile',
+        youtube: {
+          apiKey: '7Hi5iS4f4k34P1K3Y'
+        },
         progressionEngine: {
           versions: {
             learner: '2',

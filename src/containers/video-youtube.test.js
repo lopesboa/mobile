@@ -28,6 +28,7 @@ describe('VideoYoutube', () => {
     it('should get default props', () => {
       const id = 'foo';
       const isFullScreen = true;
+      const apiKey = '7Hi5iS4f4k34P1K3Y';
       const levelRef = 'dummyRef';
       const onPlay = handleFakePress;
       const height = 200;
@@ -54,7 +55,8 @@ describe('VideoYoutube', () => {
         height
       });
       const expected: ConnectedStateProps = {
-        isFullScreen
+        isFullScreen,
+        apiKey
       };
 
       expect(result).toEqual(expected);
@@ -66,6 +68,7 @@ describe('VideoYoutube', () => {
     const onPlay = handleFakePress;
     const height = 200;
     const isFullScreen = false;
+    const apiKey = '7Hi5iS4f4k34P1K3Y';
     const toggleFullscreen = jest.fn();
     const preview = {uri: 'https://foo.bar'};
 
@@ -73,6 +76,7 @@ describe('VideoYoutube', () => {
       <YoutubePlayer
         id={id}
         height={height}
+        apiKey={apiKey}
         preview={preview}
         onPlay={onPlay}
         isFullScreen={isFullScreen}
@@ -93,10 +97,12 @@ describe('VideoYoutube', () => {
       const onPlay = handleFakePress;
       const height = 200;
       const isFullScreen = false;
+      const apiKey = '7Hi5iS4f4k34P1K3Y';
       const preview = {uri: 'https://foo.bar'};
       const component = renderer.create(
         <YoutubePlayer
           id={id}
+          apiKey={apiKey}
           height={height}
           preview={preview}
           onPlay={onPlay}

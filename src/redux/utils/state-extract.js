@@ -62,6 +62,11 @@ export const getToken = (state: StoreState): TokenState =>
 export const getBrand = (state: StoreState): BrandState =>
   state.authentication && state.authentication.brand;
 
+export const getYoutubeAPIKey = (state: StoreState): string | void => {
+  const brand = getBrand(state);
+  return (brand && brand.youtube && brand.youtube.apiKey) || undefined;
+};
+
 export const getBrandDefaultLanguage = (state: StoreState): string | void => {
   const brand = getBrand(state);
 

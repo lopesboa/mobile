@@ -22,6 +22,9 @@ export const createBrand = ({
     'logo-mobile':
       'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
   },
+  youtube: {
+    apiKey: '7Hi5iS4f4k34P1K3Y'
+  },
   progressionEngine: progressionEngine || {
     versions: {
       learner: '2',

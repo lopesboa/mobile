@@ -99,6 +99,9 @@ export type Brand = {|
   images: {
     'logo-mobile': string
   },
+  youtube: {
+    apiKey: string
+  },
   progressionEngine: ProgressionEngineVersions,
   supportedLanguages: Array<string>,
   defaultLanguage: string

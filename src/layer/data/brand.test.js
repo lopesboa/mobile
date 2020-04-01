@@ -67,6 +67,9 @@ describe('brand', () => {
                 }
               }
             ],
+            youtube: {
+              apiKey: '7Hi5iS4f4k34P1K3Y'
+            },
             progressionEngine: {
               versions: {
                 learner: '2',
