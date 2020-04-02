@@ -4,7 +4,7 @@ import {Platform} from 'react-native';
 import {gt as isGreeterVersion} from 'semver';
 import storeLink from 'app-store-link';
 
-import {__DEV__} from './environment';
+import {__PRODUCTION__, __E2E__} from './environment';
 import fetch from './fetch';
 import version from './version';
 
@@ -25,7 +25,7 @@ export const getMinimalVersion = async (): Promise<string | void> => {
 };
 
 export const needUpgrade = async (): Promise<boolean> => {
-  if (__DEV__) {
+  if (!__PRODUCTION__ || __E2E__) {
     return false;
   }
 

@@ -33,5 +33,6 @@ export const createBrand = ({
   },
   // $FlowFixMe don't understand whats the problem
   supportedLanguages: ['fr', 'de', 'it', 'zh'],
-  defaultLanguage
+  defaultLanguage,
+  env: 'staging'
 });

@@ -1,19 +1,27 @@
 // @flow strict
 
-const {REACT_NATIVE_FLAVOR} = process.env;
+import version from './version';
 
-export const __E2E__ = REACT_NATIVE_FLAVOR === 'E2E';
-export const __STORYBOOK__ = REACT_NATIVE_FLAVOR === 'STORYBOOK';
+const {NODE_ENV} = process.env;
 
-const env = process.env;
-export const __ENV__ = env.NODE_ENV;
-export const __TEST__ = __ENV__ === 'test';
-export const __DEV__ = __ENV__ === 'development';
+// Flavors
+export const __E2E__ = version.buildFlavor === 'e2e';
+export const __STORYBOOK__ = version.buildFlavor === 'storybook';
+
+// Types
+export const __ADHOC__ = version.buildType === 'adhoc';
+export const __DISTRIBUTION__ = version.buildType === 'distribution';
+
+export const __TEST__ = NODE_ENV === 'test';
+export const __DEV__ = NODE_ENV === 'development';
+export const __PRODUCTION__ = NODE_ENV === 'production';
 
 export default {
   __E2E__,
   __STORYBOOK__,
-  __ENV__,
+  __ADHOC__,
+  __DISTRIBUTION__,
   __TEST__,
-  __DEV__
+  __DEV__,
+  __PRODUCTION__
 };

@@ -1,8 +1,8 @@
 // @flow strict
 
 describe('store', () => {
-  beforeEach(() => {
-    jest.resetModules();
+  beforeEach(async () => {
+    await jest.resetModules();
   });
 
   describe('getMinimalVersion', () => {
@@ -16,6 +16,7 @@ describe('store', () => {
       const result = await getMinimalVersion();
 
       expect(result).toEqual('1.0.0');
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
 
     it('should handle reject', async () => {
@@ -26,11 +27,19 @@ describe('store', () => {
       const result = await getMinimalVersion();
 
       expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('needUpgrade', () => {
+    beforeEach(async () => {
+      await jest.resetModules();
+    });
+
     it('should return false on undefined version', async () => {
+      jest.mock('./environment', () => ({
+        __PRODUCTION__: true
+      }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve(undefined)
@@ -40,9 +49,13 @@ describe('store', () => {
       const result = await needUpgrade();
 
       expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
 
     it('should return false on same version', async () => {
+      jest.mock('./environment', () => ({
+        __PRODUCTION__: true
+      }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve('0.0.0')
@@ -52,9 +65,13 @@ describe('store', () => {
       const result = await needUpgrade();
 
       expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
 
     it('should return true on anterior version', async () => {
+      jest.mock('./environment', () => ({
+        __PRODUCTION__: true
+      }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
         text: () => Promise.resolve('0.0.1')
@@ -64,24 +81,40 @@ describe('store', () => {
       const result = await needUpgrade();
 
       expect(result).toBeTruthy();
+      expect(fetch).toHaveBeenCalledTimes(1);
     });
 
-    it('should return false on dev mode', async () => {
+    it('should return false on non production mode', async () => {
       jest.mock('./environment', () => ({
-        __DEV__: true
+        __PRODUCTION__: false
       }));
       const fetch = require('cross-fetch');
-      fetch.mockImplementation(() => ({
-        text: () => Promise.resolve('0.0.1')
-      }));
       const {needUpgrade} = require('./store');
 
       const result = await needUpgrade();
 
       expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(0);
+    });
+
+    it('should return false on e2e mode', async () => {
+      jest.mock('./environment', () => ({
+        __PRODUCTION__: true,
+        __E2E__: true
+      }));
+      const fetch = require('cross-fetch');
+      const {needUpgrade} = require('./store');
+
+      const result = await needUpgrade();
+
+      expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(0);
     });
 
     it('should handle reject', async () => {
+      jest.mock('./environment', () => ({
+        __PRODUCTION__: true
+      }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => Promise.reject(new Error('Fake error')));
       const {needUpgrade} = require('./store');
@@ -89,6 +122,11 @@ describe('store', () => {
       const result = await needUpgrade();
 
       expect(result).toBeFalsy();
+      expect(fetch).toHaveBeenCalledTimes(1);
+    });
+
+    afterEach(async () => {
+      await jest.resetAllMocks();
     });
   });
 
@@ -116,7 +154,7 @@ describe('store', () => {
     });
   });
 
-  afterAll(() => {
-    jest.resetAllMocks();
+  afterEach(async () => {
+    await jest.resetAllMocks();
   });
 });

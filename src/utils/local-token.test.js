@@ -2,55 +2,51 @@
 
 import AsyncStorage from '@react-native-community/async-storage';
 
+import {createToken} from '../__fixtures__/tokens';
+
 describe('Local token', () => {
+  const token = createToken({});
+
   describe('set', () => {
-    it('should not store the token if undefined', async () => {
-      const {set} = require('./local-token').default;
-
-      await set(null);
-
-      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(0);
-    });
-
-    it('should successfully set a token', async () => {
-      AsyncStorage.setItem.mockImplementation((key, value) => {
+    it('should set token', async () => {
+      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
         expect(key).toEqual('@@token');
-        expect(value).toEqual('mytoken');
+        expect(value).toEqual(token);
       });
 
-      const {set} = require('./local-token').default;
+      const {set} = require('./local-token');
 
-      await set('mytoken');
+      await set(token);
 
       expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('get', () => {
-    it('should return token', async () => {
-      AsyncStorage.getItem.mockImplementation(key => {
+    it('should get token', async () => {
+      AsyncStorage.getItem.mockImplementationOnce(key => {
         expect(key).toEqual('@@token');
 
-        return 'foobar';
+        return token;
       });
 
-      const {get} = require('./local-token').default;
+      const {get} = require('./local-token');
 
       const result = await get();
 
-      expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-      expect(result).toEqual('foobar');
+      expect(AsyncStorage.getItem).toHaveBeenCalledTimes(1);
+      expect(result).toEqual(token);
     });
   });
 
   describe('remove', () => {
     it('should remove a token', async () => {
-      AsyncStorage.setItem.mockImplementation((key, value) => {
+      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
         expect(key).toEqual('@@token');
         expect(value).toEqual(null);
       });
 
-      const {remove} = require('./local-token').default;
+      const {remove} = require('./local-token');
 
       await remove();
 

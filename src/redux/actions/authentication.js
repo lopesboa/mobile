@@ -9,7 +9,8 @@ import type {StoreAction, StoreErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
 // @todo add Authentication service
-import {set as setToken} from '../../utils/local-token';
+import {set as setToken, remove as removeToken} from '../../utils/local-token';
+import {set as setBrand, remove as removeBrand} from '../../utils/local-brand';
 import {getBrand, getToken} from '../utils/state-extract';
 import {fetchBrand} from './brands';
 import {fetchUser} from './user';
@@ -92,6 +93,8 @@ export const signIn = (
       throw new Error('Incorrect brand');
     }
 
+    setBrand(brand);
+
     // $FlowFixMe wrong StoreAction type
     await fetchUser(token)(dispatch, getState, options);
 
@@ -112,7 +115,8 @@ export const signIn = (
 
     return dispatch(signInSuccess(token));
   } catch (e) {
-    setToken(null);
+    removeToken();
+    removeBrand();
     services.Language.set(services.Language.getFromInterface());
     return dispatch(signInError(e));
   }

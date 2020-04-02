@@ -33,7 +33,8 @@ export type Config = {|
   progressionEngine: ProgressionEngineVersions,
   youtube: {
     apiKey: string
-  }
+  },
+  env: string
 |};
 
 export const fetchBrand = async (token: string): Promise<Brand> => {
@@ -56,7 +57,8 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     youtube,
     slider,
     supportedLngs: supportedLanguages,
-    defaultLanguage
+    defaultLanguage,
+    env
   }: Config = await response.json();
 
   return {
@@ -73,7 +75,8 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     progressionEngine,
     youtube,
     supportedLanguages,
-    defaultLanguage
+    defaultLanguage,
+    env
   };
 };
 

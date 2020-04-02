@@ -28,7 +28,8 @@ exports[`Storyshots BrandThemeProvider Default 1`] = `
 		"it",
 		"zh"
 	],
-	"defaultLanguage": "en"
+	"defaultLanguage": "en",
+	"env": "staging"
 }
 </Text>
 `;

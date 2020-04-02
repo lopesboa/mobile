@@ -90,7 +90,8 @@ export type Brand = {|
   },
   progressionEngine: ProgressionEngineVersions,
   supportedLanguages: Array<string>,
-  defaultLanguage: string
+  defaultLanguage: string,
+  env: string
 |};
 
 export type User = {|

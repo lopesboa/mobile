@@ -178,7 +178,8 @@ describe('storeFixture', () => {
           }
         },
         supportedLanguages: ['fr', 'de', 'it', 'zh'],
-        defaultLanguage: 'en'
+        defaultLanguage: 'en',
+        env: 'staging'
       }
     };
 

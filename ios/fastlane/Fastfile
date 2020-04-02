@@ -5,17 +5,25 @@ fastlane_version "2.122.0"
 default_platform :ios
 
 platform :ios do
-  before_all do
+  before_all do |lane|
     ENV["XCODEPROJ"] = "Coorpacademy.xcodeproj"
     ENV["PLIST_PATH"] = "Coorpacademy/Info.plist"
     ENV["CURRENT_USER"] = `whoami`.chomp
+
+    if "#{lane}" == "adhoc"
+      ENV["REACT_NATIVE_BUILD_TYPE"] = "adhoc"
+    elsif "#{lane}" == "beta"
+      ENV["REACT_NATIVE_BUILD_TYPE"] = "distribution"
+    end
+
+    puts "Build type: #{ENV["REACT_NATIVE_BUILD_TYPE"]}"
+
     skip_docs
     setup_circle_ci
     yarn(step_name: 'xcode_check', command: 'xcode:check', project_root: '..')
     yarn(step_name: 'update_version', command: 'update:version', project_root: '..')
     yarn(step_name: 'generate_ios_bundle', command: 'generate:bundle:ios', project_root: '..')
   end
-
 
   lane :version do
     fetch_version_code platform: :ios

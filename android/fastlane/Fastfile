@@ -5,7 +5,15 @@ fastlane_version "2.122.0"
 default_platform :android
 
 platform :android do
-  before_all do
+  before_all do |lane|
+    if "#{lane}" == "adhoc"
+      ENV["REACT_NATIVE_BUILD_TYPE"] = "adhoc"
+    elsif "#{lane}" == "beta"
+      ENV["REACT_NATIVE_BUILD_TYPE"] = "distribution"
+    end
+
+    puts "Build type: #{ENV["REACT_NATIVE_BUILD_TYPE"]}"
+
     yarn(step_name: 'update_version', command: 'update:version', project_root: '..')
     yarn(step_name: 'generate_android_bundle', command: 'generate:bundle:android', project_root: '..')
   end

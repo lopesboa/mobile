@@ -75,7 +75,8 @@ describe('brand', () => {
                 learner: '2',
                 microlearning: '2'
               }
-            }
+            },
+            env: 'staging'
           };
 
           return Promise.resolve({

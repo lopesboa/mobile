@@ -42,7 +42,8 @@ export const initialState: State = {
     }
   },
   supportedLanguages: [DEFAULT_LANGUAGE],
-  defaultLanguage: DEFAULT_LANGUAGE
+  defaultLanguage: DEFAULT_LANGUAGE,
+  env: ''
 };
 
 export const BrandThemeContext: React.Context<State> = React.createContext(initialState);
