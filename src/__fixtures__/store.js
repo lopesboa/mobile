@@ -1,4 +1,5 @@
 // @flow strict
+/* eslint-disable import/max-dependencies*/
 
 import type {
   Level as LevelStore,
@@ -34,6 +35,7 @@ import type {State as GodModeState} from '../redux/reducers/god-mode';
 import type {State as NavigationState} from '../redux/reducers/navigation';
 import type {State as FastSlideState} from '../redux/reducers/fast-slide';
 import type {State as PermissionsState} from '../redux/reducers/permissions';
+import type {State as ProgressionsState} from '../redux/reducers/progressions/synchronize';
 import type {State as VideoState} from '../redux/reducers/video';
 import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
 import {createBrand} from './brands';
@@ -126,6 +128,14 @@ export const createAuthenticationState = ({
   token: token !== undefined ? token : '__TOKEN__',
   user: user !== undefined ? user : createUser(),
   brand: brand !== undefined ? brand : createBrand({})
+});
+
+export const createProgressionsState = ({
+  isSynchronizing = false
+}: {
+  isSynchronizing: boolean
+}): ProgressionsState => ({
+  isSynchronizing: false
 });
 
 export const createUiState = ({
@@ -325,6 +335,7 @@ export const createStoreState = ({
   search,
   navigation,
   permissions,
+  progressions,
   video,
   network
 }: {
@@ -346,6 +357,7 @@ export const createStoreState = ({
   search?: SearchState,
   navigation?: NavigationState,
   permissions?: PermissionsState,
+  progressions?: ProgressionsState,
   video?: VideoState,
   network?: NetworkState
 }): StoreState => ({
@@ -368,6 +380,7 @@ export const createStoreState = ({
   catalog: catalog || createCatalogState({}),
   permissions: permissions || createPermissionsState({}),
   authentication: authentication || createAuthenticationState({}),
+  progressions: progressions || createProgressionsState({}),
   godMode,
   fastSlide,
   video: video || createVideoState({}),

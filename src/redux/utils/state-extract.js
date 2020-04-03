@@ -62,6 +62,9 @@ export const getToken = (state: StoreState): TokenState =>
 export const getBrand = (state: StoreState): BrandState =>
   state.authentication && state.authentication.brand;
 
+export const isProgressionsSynchronizing = (state: StoreState): boolean =>
+  state.progressions && state.progressions.isSynchronizing;
+
 export const getYoutubeAPIKey = (state: StoreState): string | void => {
   const brand = getBrand(state);
   return (brand && brand.youtube && brand.youtube.apiKey) || undefined;

@@ -187,6 +187,10 @@ describe('storeFixture', () => {
       camera: undefined
     };
 
+    const progressionsState = {
+      isSynchronizing: false
+    };
+
     const videoState = {
       isFullScreen: false
     };
@@ -289,6 +293,7 @@ describe('storeFixture', () => {
       catalog: catalogState,
       permissions: permissionsState,
       authentication: authenticationState,
+      progressions: progressionsState,
       godMode: false,
       fastSlide: false,
       video: videoState,

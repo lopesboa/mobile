@@ -139,7 +139,6 @@ const findRemoteProgressionById = async (
       Authorization: token
     }
   });
-
   if (response.status >= 400 && response.status !== 404) {
     throw new Error(response.statusText);
   }

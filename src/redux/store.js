@@ -1,4 +1,5 @@
 // @flow strict
+/* eslint-disable import/max-dependencies*/
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
@@ -18,9 +19,11 @@ import type {State as FastSlideState} from './reducers/fast-slide';
 import type {State as ErrorsState} from './reducers/ui/errors';
 import type {State as SelectState} from './reducers/ui/select';
 import type {State as SearchState} from './reducers/ui/search';
+import type {State as ProgressionsState} from './reducers/progressions/synchronize';
 import catalog from './reducers/catalog';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
+import progressions from './reducers/progressions/synchronize';
 import video from './reducers/video';
 import godMode from './reducers/god-mode';
 import fastSlide from './reducers/fast-slide';
@@ -41,6 +44,7 @@ export type StoreState = $Exact<{|
   catalog: CatalogState,
   authentication: AuthenticationState,
   permissions: PermissionsState,
+  progressions: ProgressionsState,
   video: VideoState,
   errors: ErrorsState<void>,
   select: SelectState,
@@ -63,6 +67,7 @@ const reducers = combineReducers({
   catalog: resetOnLogout(catalog),
   authentication: resetOnLogout(authentication),
   permissions,
+  progressions,
   video,
   godMode,
   fastSlide,
