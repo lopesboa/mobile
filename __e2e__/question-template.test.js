@@ -24,27 +24,28 @@ describe('Template', () => {
     await weExpect(element(by.id('explanation'))).toBeVisible();
     await weExpect(element(by.id('question-choices'))).toBeVisible();
     await weExpect(element(by.id('question-template'))).toBeVisible();
-    await weExpect(element(by.id('question-part-1'))).toBeVisible();
-    await weExpect(element(by.id('question-part-2-text'))).toBeVisible();
-    await weExpect(element(by.id('question-part-3'))).toBeVisible();
-    await weExpect(element(by.id('question-part-4-select-input'))).toBeVisible();
-    await weExpect(element(by.id('question-part-5'))).toBeVisible();
+    await weExpect(element(by.id('question-section-1-part-1'))).toBeVisible();
+    await weExpect(element(by.id('question-section-1-part-2-text'))).toBeVisible();
+    await weExpect(element(by.id('question-section-1-part-3'))).toBeVisible();
+    await weExpect(element(by.id('question-section-2-part-1'))).toBeVisible();
+    await weExpect(element(by.id('question-section-2-part-2-select-input'))).toBeVisible();
+    await weExpect(element(by.id('question-section-2-part-3'))).toBeVisible();
     await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
   });
 
   it('should fill text input', async () => {
-    await element(by.id('question-part-2-text')).replaceText('Foobarbaz');
-    await weExpect(element(by.id('question-part-2-text-selected'))).toBeVisible();
+    await element(by.id('question-section-1-part-2-text')).replaceText('Foobarbaz');
+    await weExpect(element(by.id('question-section-1-part-2-text-selected'))).toBeVisible();
   });
 
   it('should open modal', async () => {
-    await element(by.id('question-part-4-select-input')).tap();
-    await waitForExist('question-part-4-select-modal-animated');
+    await element(by.id('question-section-2-part-2-select-input')).tap();
+    await waitForExist('question-section-2-part-2-select-modal-animated');
   });
 
   it('should select item in picker', async () => {
-    await element(by.id('question-part-4-select-modal-item-1')).tap();
-    await waitForNotVisible('question-part-4-select-modal-animated');
+    await element(by.id('question-section-2-part-2-select-modal-item-1')).tap();
+    await waitForNotVisible('question-section-2-part-2-select-modal-animated');
   });
 
   it('should be able to validate', async () => {
@@ -67,11 +68,11 @@ describe('Template', () => {
 
   describe('Positive correction', () => {
     beforeAll(async () => {
-      await element(by.id('question-part-2-text')).replaceText('Coorpacademy');
-      await element(by.id('question-part-4-select-input')).tap();
-      await waitForExist('question-part-4-select-modal-animated');
-      await element(by.id('question-part-4-select-modal-item-2')).tap();
-      await waitForNotVisible('question-part-4-select-modal-animated');
+      await element(by.id('question-section-1-part-2-text')).replaceText('Coorpacademy');
+      await element(by.id('question-section-2-part-2-select-input')).tap();
+      await waitForExist('question-section-2-part-2-select-modal-animated');
+      await element(by.id('question-section-2-part-2-select-modal-item-2')).tap();
+      await waitForNotVisible('question-section-2-part-2-select-modal-animated');
       await element(by.id('button-validate')).tap();
     });
 

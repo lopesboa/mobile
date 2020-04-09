@@ -73,7 +73,7 @@ export const createTemplate = ({media}: {media?: Media}): TemplateQuestion => ({
     'Saisissez votre réponse ou sélectionnez la bonne réponse dans le(s) menu(s) déroulant(s).',
   type: 'template',
   content: {
-    template: "L'app de {{inp123456}} est sur {{sel123456}}.",
+    template: "L'app de {{inp123456}} est<br>sur {{sel123456}}.",
     matchOrder: true,
     answers: [['Coorpacademy', 'App Store']],
     choices: [createInputChoice({name: 'inp123456'}), createSelectChoice({name: 'sel123456'})]

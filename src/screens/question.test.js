@@ -232,7 +232,7 @@ describe('Question', () => {
         type: question.type,
         header: question.header,
         explanation: question.explanation,
-        template: "L'app de {{inp123456}} est sur {{sel123456}}.",
+        template: question.content.template,
         choices: question.content.choices,
         userChoices: answer,
         value: 0

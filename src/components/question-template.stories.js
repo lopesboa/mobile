@@ -13,7 +13,7 @@ const field3 = createInputChoice({name: 'inp2'});
 const field4 = createSelectChoice({name: 'sel2'});
 
 export const template =
-  'My app {{inp1}} <s> NOT on</s> {{sel1}}, but {{inp2}}   <i>is on</i> {{sel2}}';
+  'My app {{inp1}}<br><s> NOT on</s> {{sel1}}, <br/>but {{inp2}} <br /><i>is on</i> {{sel2}}';
 export const items = [field1, field2, field3, field4];
 export const userChoices = [
   '',

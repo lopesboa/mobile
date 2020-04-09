@@ -174,7 +174,9 @@ if (__TEST__) {
           />
         </TestContextProvider>
       );
-      const questionInput = component.root.find(el => el.props.testID === 'question-part-2');
+      const questionInput = component.root.find(
+        el => el.props.testID === 'question-section-1-part-2'
+      );
       questionInput.props.onChange('Foobarbaz');
       expect(handleItemInputChange.mock.calls.length).toBe(1);
       expect(handleItemInputChange.mock.calls[0]).toEqual([templateItems[0], 'Foobarbaz']);

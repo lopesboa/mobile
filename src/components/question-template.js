@@ -1,7 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
+import trim from 'lodash/fp/trim';
+import last from 'lodash/fp/last';
 import type {Choice} from '@coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
@@ -9,6 +11,7 @@ import {QUESTION_TYPE} from '../const';
 import {parseTemplate, TEMPLATE_PART_TYPE} from '../modules/template';
 import Html from './html';
 import QuestionInput, {ROW_SPACE} from './question-input';
+import Space from './space';
 
 type Props = {|
   isDisabled?: boolean,
@@ -19,7 +22,8 @@ type Props = {|
 |};
 
 const styles = StyleSheet.create({
-  template: {
+  section: {
+    width: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -38,57 +42,94 @@ class QuestionTemplate extends React.PureComponent<Props> {
 
   handleInputChange = (item: Choice) => (value: string) => this.props.onInputChange(item, value);
 
+  sectionKeyExtractor = (items: Array<Choice>, index: number) => `question-section-${index + 1}`;
+
+  keyExtractor = (prefix: string) => (item: Choice, index: number) => `${prefix}-part-${index + 1}`;
+
+  renderSection = ({item: items, index}: {item: Array<Choice>, index: number}) => {
+    const prefix = this.sectionKeyExtractor(items, index);
+
+    return (
+      <FlatList
+        data={items}
+        keyExtractor={this.keyExtractor(prefix)}
+        renderItem={this.renderItem(prefix)}
+        horizontal
+        centerContent
+        scrollEnabled={false}
+        contentContainerStyle={styles.section}
+        ItemSeparatorComponent={this.renderSeparator}
+      />
+    );
+  };
+
+  renderItem = (prefix: string) => ({item: part, index}: {item: Choice, index: number}) => {
+    const {isDisabled, items, userChoices} = this.props;
+
+    const inputNames = items.map(item => item.name);
+    const testID = this.keyExtractor(prefix)(part, index);
+
+    if (part.type === TEMPLATE_PART_TYPE.INPUT && inputNames.includes(part.value)) {
+      const itemIndex = items.findIndex(_item => _item.name === part.value);
+      const item = items[itemIndex];
+      const value = userChoices[itemIndex];
+
+      if (!item || !item.type || !item.name) {
+        return null;
+      }
+
+      return (
+        <QuestionInput
+          questionType={QUESTION_TYPE.TEMPLATE}
+          isDisabled={isDisabled}
+          type={item.type}
+          onChange={this.handleInputChange(item)}
+          items={item.items}
+          value={value}
+          testID={testID}
+          key={testID}
+          id={testID}
+        />
+      );
+    }
+
+    return (
+      <Html key={testID} fontSize={theme.fontSize.regular} testID={testID} style={styles.text}>
+        {trim(part.value)}
+      </Html>
+    );
+  };
+
+  renderSeparator = () => <Space type="micro" />;
+
   render() {
-    const {isDisabled, template, items, userChoices} = this.props;
+    const {template} = this.props;
 
     if (!template) {
       return null;
     }
 
     const parts = parseTemplate(template);
-    const inputNames = items.map(item => item.name);
+
+    const sections: Array<Array<Choice>> = parts.reduce((result, item) => {
+      if (item.type === TEMPLATE_PART_TYPE.CARRIAGE_RETURN) {
+        return result.concat([[]]);
+      }
+
+      const section = last(result) || [];
+
+      return result.slice(0, -1).concat([section.concat([item])]);
+    }, []);
 
     return (
-      <View testID="question-template" style={styles.template}>
-        {parts.map((part, index) => {
-          const testID = `question-part-${index + 1}`;
-
-          if (part.type === TEMPLATE_PART_TYPE.INPUT && inputNames.includes(part.value)) {
-            const itemIndex = items.findIndex(_item => _item.name === part.value);
-            const item = items[itemIndex];
-            const value = userChoices[itemIndex];
-
-            if (!item || !item.type || !item.name) {
-              return null;
-            }
-
-            return (
-              <QuestionInput
-                questionType={QUESTION_TYPE.TEMPLATE}
-                isDisabled={isDisabled}
-                type={item.type}
-                onChange={this.handleInputChange(item)}
-                items={item.items}
-                value={value}
-                testID={testID}
-                key={testID}
-                id={testID}
-              />
-            );
-          }
-
-          return (
-            <Html
-              key={testID}
-              fontSize={theme.fontSize.regular}
-              testID={testID}
-              style={styles.text}
-            >
-              {part.value}
-            </Html>
-          );
-        })}
-      </View>
+      <FlatList
+        data={sections}
+        keyExtractor={this.sectionKeyExtractor}
+        renderItem={this.renderSection}
+        centerContent
+        scrollEnabled={false}
+        testID="question-template"
+      />
     );
   }
 }
