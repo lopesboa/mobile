@@ -677,6 +677,7 @@ exports[`Storyshots Question Option selected 1`] = `
                   Object {
                     "backgroundColor": "#00B0FF",
                     "borderColor": "#00B0FF",
+                    "borderRadius": 3,
                   },
                 ]
               }
@@ -2408,6 +2409,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                     Object {
                       "backgroundColor": "#00B0FF",
                       "borderColor": "#00B0FF",
+                      "borderRadius": 3,
                     },
                   ]
                 }

@@ -138,6 +138,7 @@ exports[`Storyshots QuestionChoices QCM 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -480,6 +481,7 @@ exports[`Storyshots QuestionChoices QCM Drag 1`] = `
                 Object {
                   "backgroundColor": "#00B0FF",
                   "borderColor": "#00B0FF",
+                  "borderRadius": 3,
                 },
               ]
             }
@@ -1058,6 +1060,7 @@ exports[`Storyshots QuestionChoices QCM Graphic 1`] = `
                 Object {
                   "backgroundColor": "#00B0FF",
                   "borderColor": "#00B0FF",
+                  "borderRadius": 3,
                 },
               ]
             }

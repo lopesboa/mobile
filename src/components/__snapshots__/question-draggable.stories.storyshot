@@ -74,6 +74,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -162,6 +163,7 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -540,6 +542,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -628,6 +631,7 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -1006,6 +1010,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }
@@ -1094,6 +1099,7 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
               Object {
                 "backgroundColor": "#00B0FF",
                 "borderColor": "#00B0FF",
+                "borderRadius": 3,
               },
             ]
           }

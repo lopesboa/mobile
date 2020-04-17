@@ -1368,6 +1368,7 @@ exports[`Storyshots Lesson PDF selected 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 12,
+                  "fontWeight": "700",
                   "marginBottom": 12,
                   "marginTop": 12,
                   "marginVertical": 0,
@@ -2701,6 +2702,7 @@ exports[`Storyshots Lesson Video selected 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 12,
+                  "fontWeight": "700",
                   "marginBottom": 12,
                   "marginTop": 12,
                   "marginVertical": 0,
@@ -4034,6 +4036,7 @@ exports[`Storyshots Lesson Video tracks 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 12,
+                  "fontWeight": "700",
                   "marginBottom": 12,
                   "marginTop": 12,
                   "marginVertical": 0,

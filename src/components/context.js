@@ -96,7 +96,6 @@ class Context extends React.PureComponent<Props> {
             style={styles.text}
             imageStyle={styles.image}
             onLinkPress={onLinkPress}
-            isTextCentered
           >
             {description}
           </Html>

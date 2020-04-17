@@ -297,6 +297,7 @@ exports[`Storyshots Clue Default 1`] = `
                       Object {
                         "color": "#FFFFFF",
                         "fontSize": 17,
+                        "fontWeight": "700",
                         "marginBottom": 17,
                         "marginTop": 17,
                         "marginVertical": 0,

@@ -87,7 +87,8 @@ const QuestionChoice = ({
   const brandTheme = React.useContext(BrandThemeContext);
   const selectedStyle = {
     backgroundColor: brandTheme.colors.primary,
-    borderColor: brandTheme.colors.primary
+    borderColor: brandTheme.colors.primary,
+    borderRadius: theme.radius.common
   };
 
   const selectedSuffix = prefixTestID && isSelected ? '-selected' : '';

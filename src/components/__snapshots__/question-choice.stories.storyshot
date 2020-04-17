@@ -181,6 +181,7 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
+            "borderRadius": 3,
           },
         ]
       }
@@ -265,6 +266,7 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
+            "borderRadius": 3,
           },
         ]
       }
@@ -403,6 +405,7 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
           Object {
             "backgroundColor": "#00B0FF",
             "borderColor": "#00B0FF",
+            "borderRadius": 3,
           },
         ]
       }

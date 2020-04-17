@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.base
   },
   bottomText: {
-    color: theme.colors.gray.dark
+    color: theme.colors.gray.dark,
+    fontWeight: theme.fontWeight.bold
   }
 });
 

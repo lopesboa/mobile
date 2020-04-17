@@ -71,6 +71,7 @@ exports[`Storyshots DropZone Default 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -159,6 +160,7 @@ exports[`Storyshots DropZone Default 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -247,6 +249,7 @@ exports[`Storyshots DropZone Default 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -335,6 +338,7 @@ exports[`Storyshots DropZone Default 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -484,6 +488,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -572,6 +577,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -660,6 +666,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }
@@ -748,6 +755,7 @@ exports[`Storyshots DropZone with choice without value 1`] = `
             Object {
               "backgroundColor": "#00B0FF",
               "borderColor": "#00B0FF",
+              "borderRadius": 3,
             },
           ]
         }

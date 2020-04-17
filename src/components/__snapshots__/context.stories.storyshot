@@ -98,19 +98,9 @@ exports[`Storyshots Context Default 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -118,9 +108,7 @@ exports[`Storyshots Context Default 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -130,42 +118,39 @@ exports[`Storyshots Context Default 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -383,19 +368,9 @@ exports[`Storyshots Context With Image 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -403,9 +378,7 @@ exports[`Storyshots Context With Image 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -415,42 +388,39 @@ exports[`Storyshots Context With Image 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -978,19 +948,9 @@ exports[`Storyshots Context With PDF 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -998,9 +958,7 @@ exports[`Storyshots Context With PDF 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -1010,42 +968,39 @@ exports[`Storyshots Context With PDF 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -1472,19 +1427,9 @@ exports[`Storyshots Context With Video 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -1492,9 +1437,7 @@ exports[`Storyshots Context With Video 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -1504,42 +1447,39 @@ exports[`Storyshots Context With Video 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -1716,19 +1656,9 @@ exports[`Storyshots Context With badly formatted video 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -1736,9 +1666,7 @@ exports[`Storyshots Context With badly formatted video 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -1748,42 +1676,39 @@ exports[`Storyshots Context With badly formatted video 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -2311,19 +2236,9 @@ exports[`Storyshots Context Without Layout 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -2331,9 +2246,7 @@ exports[`Storyshots Context Without Layout 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -2343,42 +2256,39 @@ exports[`Storyshots Context Without Layout 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
@@ -2555,19 +2465,9 @@ exports[`Storyshots Context Without Layout 2 1`] = `
       <View
         style={Object {}}
       >
-        <View
-          style={
-            Array [
-              Object {
-                "marginVertical": 0,
-                "textAlign": "center",
-              },
-              Object {},
-              Object {
-                "marginVertical": 0,
-              },
-            ]
-          }
+        <Text
+          allowFontScaling={true}
+          style={Object {}}
         >
           <Text
             allowFontScaling={true}
@@ -2575,9 +2475,7 @@ exports[`Storyshots Context Without Layout 2 1`] = `
             style={
               Array [
                 Object {},
-                Object {
-                  "textAlign": "center",
-                },
+                Object {},
               ]
             }
           >
@@ -2587,42 +2485,39 @@ exports[`Storyshots Context Without Layout 2 1`] = `
                 Object {
                   "color": "#546E7A",
                   "fontSize": 17,
-                  "marginBottom": 17,
-                  "marginTop": 17,
-                  "marginVertical": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                 }
               }
             >
               You probably think that you are better now 
             </Text>
           </Text>
-          <Image
-            source={
-              Object {
-                "uri": "gr\\\\",
-              }
+        </Text>
+        <Image
+          source={
+            Object {
+              "uri": "gr\\\\",
             }
-            style={
+          }
+          style={
+            Array [
               Array [
-                Array [
-                  Object {
-                    "height": 200,
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "width": 200,
-                  },
-                  Object {},
-                ],
                 Object {
-                  "height": 100,
-                  "resizeMode": "cover",
-                  "width": 100,
+                  "height": 200,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 200,
                 },
-              ]
-            }
-          />
-        </View>
+                Object {},
+              ],
+              Object {
+                "height": 100,
+                "resizeMode": "cover",
+                "width": 100,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
