@@ -1,11 +1,19 @@
 // @flow
 
-import {Answers, Clues, Content, LeaderBoard, Videos} from '@coorpacademy/player-services';
+import {
+  Answers,
+  Clues,
+  Content,
+  LeaderBoard,
+  Videos,
+  ExitNodes
+} from '@coorpacademy/player-services';
 import type {
   AnswersService,
   CluesService,
   ContentService,
-  VideosService
+  VideosService,
+  ExitNodesService
 } from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
@@ -50,7 +58,8 @@ export type Services = {|
   Sections: SectionsService,
   Videos: VideosService,
   Hero: HeroService,
-  Logger: LoggerService
+  Logger: LoggerService,
+  ExitNodes: ExitNodesService
 |};
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -74,7 +83,9 @@ const createServices = (dataLayer: DataLayer): Services => ({
   // $FlowFixMe datalayer definition error
   Videos: Videos(dataLayer),
   Hero: Hero(dataLayer),
-  Logger: Logger(dataLayer)
+  Logger: Logger(dataLayer),
+  // $FlowFixMe datalayer definition error
+  ExitNodes: ExitNodes(dataLayer)
 });
 
 export default createServices;
