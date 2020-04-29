@@ -119,7 +119,7 @@ type Props = $Exact<{|
   lives?: number,
   isGodModeEnabled?: boolean,
   isFastSlideEnabled?: boolean,
-  onPDFButtonPress: (url: string, description: string) => void,
+  onPDFButtonPress: (url: string, description?: string) => void,
   onVideoPlay: () => void,
   testID?: string,
   onLinkPress: () => void
@@ -149,7 +149,7 @@ class Correction extends React.PureComponent<Props> {
     // if we should use onPDFButtonPress or videoPlay
     // so we need to check also the lessonType
 
-    if (lessonType === RESOURCE_TYPE.PDF && url && description) {
+    if (lessonType === RESOURCE_TYPE.PDF && url) {
       return onPDFButtonPress(url, description);
     }
 

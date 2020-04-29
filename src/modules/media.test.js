@@ -3,7 +3,13 @@
 import {VIDEO_MIME_TYPE} from '../const';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 import {image, video, emptyMedia, pdf} from '../__fixtures__/medias';
-import {getMediaUrl, getMediaPoster, getMediaType, getVideoProvider} from './media';
+import {
+  getMediaUrl,
+  getMediaPoster,
+  getMediaType,
+  getVideoProvider,
+  isMediaSupported
+} from './media';
 
 describe('media', () => {
   describe('getMediaType', () => {
@@ -136,6 +142,30 @@ describe('media', () => {
       const result = getVideoProvider('foobar');
 
       expect(result).not.toBeDefined();
+    });
+  });
+
+  describe('isMediaSupported', () => {
+    it('should return true', () => {
+      const result = isMediaSupported(video);
+
+      expect(result).toBeTruthy;
+    });
+
+    it('should return false on unsupported type', () => {
+      // $FlowFixMe volontary wrong media
+      const result = isMediaSupported({
+        ...video,
+        type: 'foo'
+      });
+
+      expect(result).toBeFalsy;
+    });
+
+    it('should return false without media url', () => {
+      const result = isMediaSupported(emptyMedia);
+
+      expect(result).toBeFalsy;
     });
   });
 });

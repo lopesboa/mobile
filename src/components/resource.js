@@ -106,8 +106,9 @@ class Resource extends React.PureComponent<Props> {
           />
         );
       }
-      default:
+      default: {
         return null;
+      }
     }
   }
 }

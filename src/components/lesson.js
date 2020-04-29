@@ -23,7 +23,7 @@ type Props = $Exact<{|
   selected?: string,
   resources: Array<ResourceType>,
   onChange: (id: string) => void,
-  onPDFButtonPress: (url: string, description: string) => void,
+  onPDFButtonPress: (url: string, description?: string) => void,
   onVideoPlay: () => void
 |}>;
 
@@ -56,7 +56,7 @@ class Lesson extends React.Component<Props> {
   handlePress = (lessonType: LessonType) => (url?: string, description?: string) => {
     const {onPDFButtonPress, onVideoPlay} = this.props;
 
-    if (lessonType === RESOURCE_TYPE.PDF && url && description) {
+    if (lessonType === RESOURCE_TYPE.PDF && url) {
       return onPDFButtonPress(url, description);
     }
 

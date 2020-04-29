@@ -6,6 +6,7 @@ import {StyleSheet, View} from 'react-native';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import theme from '../modules/theme';
 import CatalogSearch from '../containers/catalog-search';
+import type {QueryParams} from '../modules/uri';
 import HeaderBackButton, {SPACING as ICON_SPACING} from './header-back-button';
 import SearchInput from './search-input';
 
@@ -15,6 +16,7 @@ export type Props = {|
   onSearchInputChange: (value: string) => void,
   isSearchFetching: boolean,
   searchValue?: string,
+  queryParams?: QueryParams,
   testID?: string
 |};
 
@@ -54,6 +56,7 @@ const Search = ({
   isSearchFetching,
   onCardPress,
   onBackPress,
+  queryParams,
   testID = 'search'
 }: Props) => {
   return (
@@ -81,6 +84,7 @@ const Search = ({
         onCardPress={onCardPress}
         containerStyle={styles.catalog}
         testID="catalog-search"
+        queryParams={queryParams}
       />
     </View>
   );

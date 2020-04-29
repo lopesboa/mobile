@@ -4,13 +4,14 @@
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import ConfettiCannon from '@coorpacademy/react-native-confetti-cannon';
-import type {ContentType} from '@coorpacademy/progression-engine';
+import type {ContentType, Media} from '@coorpacademy/progression-engine';
 import kebabCase from 'lodash/fp/kebabCase';
 
 import translations from '../translations';
 import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
 import theme from '../modules/theme';
 import {getStatusBarHeight} from '../modules/status-bar';
+import {isMediaSupported} from '../modules/media';
 import type {ChapterCard, DisciplineCard} from '../layer/data/_types';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
@@ -29,6 +30,7 @@ import Space from './space';
 import {BrandThemeContext} from './brand-theme-provider';
 import Tooltip from './tooltip';
 import HeaderBackButton from './header-back-button';
+import Feedback from './feedback';
 
 const PADDING_WIDTH = theme.spacing.base;
 export const POSITIVE_COLOR = theme.colors.positive;
@@ -142,12 +144,17 @@ type Props = {|
   isSuccess: boolean,
   onButtonPress: () => void,
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
+  onFeedbackLinkPress: (url: string) => void,
   onClose: () => void,
   isFocused: boolean,
   bestScore?: number,
   nextContentType?: ContentType,
   nextContentLabel?: string,
+  feedbackTitle?: string,
+  feedbackDescription?: string,
+  feedbackMedia?: Media,
   recommendation: DisciplineCard | ChapterCard,
+  onPDFButtonPress: (url: string, description?: string) => void,
   testID?: string
 |};
 
@@ -178,8 +185,13 @@ class LevelEnd extends React.PureComponent<Props> {
       nextContentLabel = '',
       recommendation,
       isFocused,
+      feedbackTitle,
+      feedbackDescription,
+      feedbackMedia,
       testID = 'level-end',
-      onCardPress
+      onCardPress,
+      onPDFButtonPress,
+      onFeedbackLinkPress
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
     const backgroundColor = (isSuccess && styles.positive) || styles.negative;
@@ -198,6 +210,9 @@ class LevelEnd extends React.PureComponent<Props> {
       (isSuccess && !nextContentType && `button-end-${contentType}-back-to-home`) ||
       (isSuccess && `button-end-next-${contentType}`) ||
       `button-end-retry-${contentType}`;
+
+    const hasFeedback =
+      feedbackTitle || feedbackDescription || (feedbackMedia && isMediaSupported(feedbackMedia));
 
     return (
       <BrandThemeContext.Consumer>
@@ -232,7 +247,7 @@ class LevelEnd extends React.PureComponent<Props> {
                 <Space />
                 <View style={styles.content}>
                   {isSuccess && (bestScore > 0 || nextContentType === CONTENT_TYPE.LEVEL) ? (
-                    <View>
+                    <React.Fragment>
                       {bestScore > 0 ? (
                         <Tooltip type={TOOLTIP_TYPE.HIGHSCORE} testID={`${testID}-highscore`}>
                           {translations.highscore.replace(/{{score}}/g, `+${bestScore}`)}
@@ -250,7 +265,20 @@ class LevelEnd extends React.PureComponent<Props> {
                         </React.Fragment>
                       ) : null}
                       <Space type="base" />
-                    </View>
+                    </React.Fragment>
+                  ) : null}
+                  {hasFeedback ? (
+                    <React.Fragment>
+                      <Feedback
+                        title={feedbackTitle}
+                        description={feedbackDescription}
+                        media={feedbackMedia}
+                        onPDFButtonPress={onPDFButtonPress}
+                        onLinkPress={onFeedbackLinkPress}
+                        testID={`${testID}-feedback`}
+                      />
+                      <Space type="base" />
+                    </React.Fragment>
                   ) : null}
                   {/* @todo refactor to use CatalogSection there and not reinvent the wheel */}
                   {recommendation ? (

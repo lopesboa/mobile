@@ -3,14 +3,15 @@
 import type {
   Level as LevelStore,
   Chapter as ChapterStore,
-  Discipline as DisciplineStore
+  Discipline as DisciplineStore,
+  ExitNode as ExitNodeStore
 } from '@coorpacademy/player-store';
 import type {
   Lesson,
   Slide as SlideEngine,
   Lesson as LessonEngine
 } from '@coorpacademy/progression-engine';
-import type {Level, Slide, Chapter, Discipline} from '../../layer/data/_types';
+import type {Level, Slide, Chapter, Discipline, ExitNode} from '../../layer/data/_types';
 
 export const mapToLevel = (rawLevel: Level): LevelStore => ({
   _id: rawLevel._id,
@@ -95,4 +96,14 @@ export const mapToDiscipline = (rawDiscipline: Discipline): DisciplineStore => (
   modules: rawDiscipline.modules.map(mapToLevel),
   cover: rawDiscipline.cover,
   version: rawDiscipline.version
+});
+
+// $FlowFixMe union type
+export const mapToExitNode = (rawExitNode: ExitNode): ExitNodeStore => ({
+  ref: rawExitNode.ref,
+  type: rawExitNode.type,
+  meta: rawExitNode.meta,
+  title: rawExitNode.title,
+  description: rawExitNode.description,
+  media: rawExitNode.media
 });

@@ -26,12 +26,16 @@ import type {
 } from './types';
 
 export const RESOURCE_TYPE: {
-  [string]: LessonType
+  VIDEO: 'video',
+  PDF: 'pdf',
+  IMG: 'img'
 } = {
   VIDEO: 'video',
   PDF: 'pdf',
   IMG: 'img'
 };
+// FlowAssert
+(Object.keys(RESOURCE_TYPE).map(k => RESOURCE_TYPE[k]): Array<LessonType>);
 
 export const ERROR_TYPE: {[string]: ErrorType} = {
   PLATFORM_NOT_ACTIVATED: 'PLATFORM_NOT_ACTIVATED',
@@ -67,10 +71,12 @@ export const SPACE: {
 };
 
 export const MEDIA_TYPE: {
-  [string]: MediaType
+  IMAGE: 'img'
 } = {
   IMAGE: 'img'
 };
+// FlowAssert
+(Object.keys(MEDIA_TYPE).map(k => MEDIA_TYPE[k]): Array<MediaType>);
 
 export const DECK_CARD_TYPE: {
   [string]: DeckCardType

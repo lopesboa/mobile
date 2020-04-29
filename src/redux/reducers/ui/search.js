@@ -2,10 +2,12 @@
 
 import {EDIT, FETCH} from '../../actions/ui/search';
 import type {Action} from '../../actions/ui/search';
+import type {QueryParams} from '../../../modules/uri';
 
 export type State = {|
   isFetching: boolean,
-  value?: string
+  value?: string,
+  params?: QueryParams
 |};
 
 export const initialState: State = {
@@ -17,7 +19,8 @@ const reducer = (state: State = initialState, action: Action): State => {
     case EDIT: {
       return {
         ...state,
-        value: action.payload
+        value: action && action.payload.text,
+        params: action && action.payload.params
       };
     }
     case FETCH: {

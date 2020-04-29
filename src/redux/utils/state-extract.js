@@ -6,13 +6,16 @@ import {
   getStartRank,
   getEndRank,
   getBestScore as _getBestScore,
-  getCurrentSlide
+  getCurrentSlide,
+  getLives,
+  hasViewedAResourceAtThisStep as _hasViewedAResourceAtThisStep,
+  getCurrentProgressionId
 } from '@coorpacademy/player-store';
 import type {Context} from '@coorpacademy/progression-engine';
 import {ROLES, SCOPES, hasRole} from '@coorpacademy/acl';
 import decode from 'jwt-decode';
 
-import {CONTENT_TYPE} from '../../const';
+import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 import type {Section, ProgressionEngineVersions, PermissionStatus, ErrorType} from '../../types';
 import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
@@ -22,6 +25,7 @@ import type {State as SelectState} from '../reducers/ui/select';
 import type {PermissionType} from '../actions/permissions';
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
+import type {QueryParams} from '../../modules/uri';
 
 export const isExitNode = (state: StoreState): boolean => {
   const nextContent = getStepContent(state);
@@ -42,12 +46,6 @@ export const isCorrect = (state: StoreState): boolean | void => {
       : undefined;
 
   return _isCorrect;
-};
-
-export const getCurrentStep = (state: StoreState): number | void => {
-  const progression = getCurrentProgression(state);
-
-  return progression && progression.state && progression.state.step.current;
 };
 
 export const getNextContentRef = (state: StoreState): string | void => {
@@ -177,6 +175,8 @@ export const isSearchFetching = (state: StoreState): boolean => state.search.isF
 
 export const getSearchValue = (state: StoreState): string | void => state.search.value;
 
+export const getSearchParams = (state: StoreState): QueryParams | void => state.search.params;
+
 export const getErrorType = (state: StoreState): ErrorType | void => state.errors.type;
 
 export const getFocusedSelect = (state: StoreState): SelectState => state.select;
@@ -184,3 +184,62 @@ export const getFocusedSelect = (state: StoreState): SelectState => state.select
 export const isNetworkConnected = (state: StoreState): boolean => state.network.isConnected;
 
 export const isVideoFullScreen = (state: StoreState): boolean => state.video.isFullScreen;
+
+export const getLivesCount = (state: StoreState): number | void => {
+  const {hide: hideLives, count: livesCount} = getLives(state);
+  const lives = hideLives ? undefined : livesCount;
+  return lives;
+};
+
+export const isContentFinished = (state: StoreState): boolean => {
+  const lives = getLivesCount(state);
+  const _isExitNode = isExitNode(state);
+  const nextContentRef = getNextContentRef(state);
+  const hasViewedAResourceAtThisStep = _hasViewedAResourceAtThisStep(state);
+  const stateExtraLife = nextContentRef === SPECIFIC_CONTENT_REF.EXTRA_LIFE;
+  const offeringExtraLife = stateExtraLife && !hasViewedAResourceAtThisStep;
+  const isOfferingExtraLife = lives === 0 && offeringExtraLife;
+
+  const isFinished = _isExitNode || isOfferingExtraLife;
+  return isFinished;
+};
+
+export const hasSuccessfullyFinished = (state: StoreState): boolean => {
+  const nextContent = getStepContent(state);
+  if (!nextContent) {
+    return false;
+  }
+  if (isExitNode(state)) {
+    return nextContent.type === CONTENT_TYPE.SUCCESS;
+  }
+  return false;
+};
+
+type ContentCorrectionInfo = {|
+  isAdaptive: boolean,
+  progressionId: string,
+  hasContext: boolean,
+  isContentFinished: boolean,
+  isCorrect: boolean
+|};
+
+export const getContentCorrectionInfo = (state: StoreState): ContentCorrectionInfo => {
+  const lives = getLivesCount(state);
+  const _isContentFinished = isContentFinished(state);
+  const isContentFinishedSuccessfully = lives === undefined || lives > 0;
+  const _isCorrect = isCorrect(state);
+  const hasContext = getContext(state) !== undefined;
+  const currentProgressionId = getCurrentProgressionId(state);
+  const isAdaptive = typeof _isCorrect !== 'boolean';
+
+  return {
+    isAdaptive,
+    progressionId: currentProgressionId,
+    hasContext,
+    isContentFinished: _isContentFinished,
+    isCorrect:
+      !isAdaptive && _isContentFinished
+        ? isContentFinishedSuccessfully
+        : hasSuccessfullyFinished(state)
+  };
+};

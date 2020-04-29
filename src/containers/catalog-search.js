@@ -6,15 +6,22 @@ import {createSelector} from 'reselect';
 
 import {fetchCards} from '../redux/actions/catalog/cards/fetch/search';
 import type {StoreState} from '../redux/store';
-import {getSearchRef, getCards, getSearchValue} from '../redux/utils/state-extract';
+import {
+  getSearchRef,
+  getCards,
+  getSearchValue,
+  getSearchParams
+} from '../redux/utils/state-extract';
 import CatalogSearchComponent from '../components/catalog-search';
 import type {OwnProps as CatalogSearchProps} from '../components/catalog-search';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import translations from '../translations';
+import type {QueryParams} from '../modules/uri';
 
 export type ConnectedStateProps = {|
   cards?: Array<DisciplineCard | ChapterCard | void>,
-  searchValue?: string
+  searchValue?: string,
+  searchParams?: QueryParams
 |};
 
 type ConnectedDispatchProps = {|
@@ -39,10 +46,9 @@ class CatalogSearch extends React.Component<Props> {
   props: Props;
 
   handleScroll = (offset: number, limit: number) => {
-    const {searchValue} = this.props;
-
-    if (searchValue) {
-      this.props.fetchCards(searchValue, offset, limit);
+    const {searchValue, searchParams} = this.props;
+    if (searchValue || searchParams) {
+      this.props.fetchCards(searchValue ? searchValue : '', offset, limit, searchParams);
     }
   };
 
@@ -63,7 +69,8 @@ const getCardsState = createSelector(
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   cards: getCardsState(state),
-  searchValue: getSearchValue(state)
+  searchValue: getSearchValue(state),
+  searchParams: getSearchParams(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

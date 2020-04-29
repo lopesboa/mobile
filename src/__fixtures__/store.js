@@ -5,6 +5,7 @@ import type {
   Level as LevelStore,
   Chapter as ChapterStore,
   Discipline as DisciplineStore,
+  ExitNode as ExitNodeStore,
   VideoTrack
 } from '@coorpacademy/player-store';
 import type {
@@ -13,7 +14,7 @@ import type {
   Answer,
   EngineConfig
 } from '@coorpacademy/progression-engine';
-import type {SlideAPI, ChapterAPI, LevelAPI} from '@coorpacademy/player-services';
+import type {SlideAPI, ChapterAPI, LevelAPI, ExitNodeAPI} from '@coorpacademy/player-services';
 import type {NetworkState} from 'react-native-offline/src/types';
 
 import type {Section, Brand, PermissionStatus, User, ErrorType} from '../types';
@@ -23,7 +24,8 @@ import type {
   Chapter,
   Discipline,
   DisciplineCard,
-  ChapterCard
+  ChapterCard,
+  ExitNode
 } from '../layer/data/_types';
 import type {StoreState, DataState, UiState} from '../redux/store';
 import type {State as AuthenticationState} from '../redux/reducers/authentication';
@@ -37,7 +39,13 @@ import type {State as FastSlideState} from '../redux/reducers/fast-slide';
 import type {State as PermissionsState} from '../redux/reducers/permissions';
 import type {State as ProgressionsState} from '../redux/reducers/progressions/synchronize';
 import type {State as VideoState} from '../redux/reducers/video';
-import {mapToLevel, mapToSlide, mapToChapter, mapToDiscipline} from './utils/mappers';
+import {
+  mapToLevel,
+  mapToSlide,
+  mapToChapter,
+  mapToDiscipline,
+  mapToExitNode
+} from './utils/mappers';
 import {createBrand} from './brands';
 import {createUser} from './user';
 
@@ -167,6 +175,7 @@ export const createDataState = ({
   chapters = [],
   clue,
   disciplines = [],
+  exitNodes = [],
   progression,
   nextContent,
   configs = {},
@@ -177,9 +186,10 @@ export const createDataState = ({
   slides?: Array<Slide>,
   chapters?: Array<Chapter>,
   disciplines?: Array<Discipline>,
+  exitNodes?: Array<ExitNode>,
   clue?: string,
   progression: Progression,
-  nextContent?: SlideAPI | ChapterAPI | LevelAPI,
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI,
   configs?: {[key: string]: EngineConfig},
   videos?: {[key: string]: {uri: string, tracks?: Array<VideoTrack>}}
 }): DataState => {
@@ -189,6 +199,8 @@ export const createDataState = ({
   const _disciplines: {[key: string]: DisciplineStore} = createMapObject(
     disciplines.map(mapToDiscipline)
   );
+  // $FlowFixMe union type successExitNode and failureExitNode
+  const _exitNodes: {[key: string]: ExitNodeStore} = createMapObject(exitNodes.map(mapToExitNode));
   const _answers =
     answers && progression._id && slides[0]
       ? {
@@ -243,7 +255,7 @@ export const createDataState = ({
       entities: _clues
     },
     exitNodes: {
-      entities: {}
+      entities: _exitNodes
     },
     progressions: {
       entities: {
@@ -321,6 +333,7 @@ export const createStoreState = ({
   slides,
   chapters,
   disciplines,
+  exitNodes,
   videos,
   progression,
   catalog,
@@ -343,13 +356,14 @@ export const createStoreState = ({
   slides?: Array<Slide>,
   chapters?: Array<Chapter>,
   disciplines?: Array<Discipline>,
+  exitNodes?: Array<ExitNode>,
   videos?: {[key: string]: {uri: string, tracks?: Array<VideoTrack>}},
   progression: Progression,
   data?: DataState,
   ui?: UiState,
   authentication?: AuthenticationState,
   catalog?: CatalogState,
-  nextContent?: SlideAPI | ChapterAPI | LevelAPI,
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI,
   godMode?: GodModeState,
   fastSlide?: FastSlideState,
   errors?: ErrorsState<void>,
@@ -368,6 +382,7 @@ export const createStoreState = ({
       slides,
       chapters,
       disciplines,
+      exitNodes,
       progression,
       nextContent,
       videos

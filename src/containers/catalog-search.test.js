@@ -33,10 +33,12 @@ describe('CatalogSearch', () => {
       const searchValue = 'foo';
       const offset = 2;
       const limit = 6;
+      const queryParams = {};
       const fetchCards = jest.fn();
       const component = renderer.create(
         <CatalogSearch
           searchValue={searchValue}
+          searchParams={queryParams}
           cards={cards}
           onCardPress={handleFakePress}
           fetchCards={fetchCards}
@@ -45,7 +47,7 @@ describe('CatalogSearch', () => {
       const items = component.root.find(el => el.props.testID === 'catalog-search-items');
       items.props.onScroll(offset, limit);
       expect(fetchCards).toHaveBeenCalledTimes(1);
-      expect(fetchCards).toHaveBeenCalledWith(searchValue, offset, limit);
+      expect(fetchCards).toHaveBeenCalledWith(searchValue, offset, limit, queryParams);
     });
   });
 

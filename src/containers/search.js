@@ -4,7 +4,11 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
-import {isSearchFetching as _isSearchFetching, getSearchValue} from '../redux/utils/state-extract';
+import {
+  isSearchFetching as _isSearchFetching,
+  getSearchValue,
+  getSearchParams
+} from '../redux/utils/state-extract';
 import {edit as _editSearch} from '../redux/actions/ui/search';
 import {
   fetchCards as _fetchCards,
@@ -13,14 +17,12 @@ import {
 import {clearSearch as _clearSearch} from '../redux/actions/catalog/cards/clear';
 
 import SearchComponent from '../components/search';
-
-export type Params = {|
-  url: string
-|};
+import type {QueryParams} from '../modules/uri';
 
 export type ConnectedStateProps = {|
   isSearchFetching: boolean,
-  searchValue?: string
+  searchValue?: string,
+  searchParams?: QueryParams
 |};
 
 type ConnectedDispatchProps = {|
@@ -32,7 +34,7 @@ type ConnectedDispatchProps = {|
 export type Props = {|
   ...ConnectedStateProps,
   ...ConnectedDispatchProps,
-  ...ReactNavigation$ScreenPropsWithParams<Params>,
+  ...ReactNavigation$ScreenProps,
   onCardPress: (item: DisciplineCard | ChapterCard) => void,
   onBackPress: () => void
 |};
@@ -47,20 +49,27 @@ class Search extends React.PureComponent<Props> {
 
   searchValue: string | void;
 
+  componentDidMount() {
+    const {searchParams} = this.props;
+    if (searchParams) {
+      this.props.fetchCards('', 0, DEFAULT_LIMIT, searchParams, true);
+    }
+  }
+
   componentWillUnmount() {
     this.props.clearSearch();
-    this.props.editSearch('');
+    this.props.editSearch({text: ''});
   }
 
   handleSearchInputChange = (value: string) => {
     this.searchValue = value;
-    this.props.editSearch(value);
+    this.props.editSearch({text: value});
 
     if (value.length >= SEARCH_MIN_LENGTH) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         if (this.searchValue === value) {
-          this.props.fetchCards(value, 0, DEFAULT_LIMIT, true);
+          this.props.fetchCards(value, 0, DEFAULT_LIMIT, {}, true);
         }
       }, SEARCH_DEBOUNCE_DURATION);
     }
@@ -87,7 +96,8 @@ class Search extends React.PureComponent<Props> {
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   isSearchFetching: _isSearchFetching(state),
-  searchValue: getSearchValue(state)
+  searchValue: getSearchValue(state),
+  searchParams: getSearchParams(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

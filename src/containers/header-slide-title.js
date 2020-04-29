@@ -13,7 +13,7 @@ import type {StoreState} from '../redux/store';
 import {getCleanUri} from '../modules/uri';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   image?: string,
   subtitle?: string,
   title?: string

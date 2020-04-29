@@ -38,7 +38,7 @@ class ContextScreen extends React.PureComponent<Props> {
     this.props.navigation.navigate('BrowserModal', params);
   };
 
-  handlePDFButtonPress = (url: string, description: string) => {
+  handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
       source: {uri: url}

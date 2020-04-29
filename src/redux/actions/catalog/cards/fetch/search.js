@@ -8,6 +8,7 @@ import {getToken, getBrand} from '../../../../utils/state-extract';
 import type {Action as ErrorAction} from '../../../ui/errors';
 import {fetch as toggleFetch} from '../../../ui/search';
 import type {Action as SearchAction} from '../../../ui/search';
+import type {QueryParams} from '../../../../../modules/uri';
 
 export const FETCH_REQUEST = '@@cards/FETCH_SEARCH_REQUEST';
 export const FETCH_SUCCESS = '@@cards/FETCH_SEARCH_SUCCESS';
@@ -50,11 +51,13 @@ export const fetchRequest = (
   offset: number,
   limit: number,
   language: SupportedLanguage,
-  forceRefresh?: boolean = false
+  forceRefresh?: boolean = false,
+  queryParams?: QueryParams
 ): FetchRequestAction => ({
   type: FETCH_REQUEST,
   payload: {
     search,
+    queryParams,
     offset,
     limit,
     language,
@@ -93,6 +96,7 @@ export const fetchCards = (
   search: string,
   offset: number,
   limit: number,
+  queryParams?: QueryParams,
   forceRefresh?: boolean = false
 ): StoreAction<Action | ErrorAction<StoreAction<Action>> | SearchAction> => async (
   dispatch,
@@ -100,7 +104,7 @@ export const fetchCards = (
   options
 ) => {
   const language = translations.getLanguage();
-  await dispatch(fetchRequest(search, offset, limit, language, forceRefresh));
+  await dispatch(fetchRequest(search, offset, limit, language, forceRefresh, queryParams));
   await dispatch(toggleFetch(true));
 
   const state = getState();
@@ -117,6 +121,7 @@ export const fetchCards = (
       token,
       brand.host,
       search,
+      queryParams,
       offset,
       limit
     );

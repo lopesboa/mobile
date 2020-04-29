@@ -32,6 +32,7 @@ require('./components/deck-card.stories.js');
 require('./components/deck-cards.stories.js');
 require('./components/drop-zone.stories.js');
 require('./components/extralife.stories.js');
+require('./components/feedback.stories.js');
 require('./components/gradient.stories.js');
 require('./components/header-back-button.stories.js');
 require('./components/header-back-icon.stories.js');

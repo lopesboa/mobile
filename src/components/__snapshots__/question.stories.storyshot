@@ -948,7 +948,7 @@ exports[`Storyshots Question Option selected 1`] = `
                 "textAlign": "center",
               },
               undefined,
-              false,
+              undefined,
               undefined,
               undefined,
               undefined,
@@ -2769,7 +2769,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
                 "textAlign": "center",
               },
               undefined,
-              false,
+              undefined,
               undefined,
               undefined,
               undefined,
@@ -6230,45 +6230,33 @@ exports[`Storyshots Question Template 1`] = `
     }
   >
     <View
-      testID="button-validate-disabled"
+      testID="button-validate"
     >
       <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "alignSelf": "stretch",
-              "borderRadius": 8,
-              "borderWidth": 1,
-              "flexDirection": "row",
-              "height": 44,
-              "justifyContent": "center",
-              "marginBottom": 10,
-            },
-            Array [
-              Object {
-                "borderRadius": 32,
-                "borderWidth": 0,
-                "flexDirection": "row",
-                "height": 54,
-                "marginBottom": 0,
-                "paddingHorizontal": 24,
-              },
-              Object {
-                "backgroundColor": "#00B0FF",
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-            ],
-            Object {
-              "backgroundColor": "#ECEFF1",
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#00B0FF",
+            "borderRadius": 32,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 54,
+            "justifyContent": "center",
+            "marginBottom": 0,
+            "opacity": 1,
+            "paddingHorizontal": 24,
+          }
         }
+        testID="button-validate-native"
       >
         <Text
           numberOfLines={1}
@@ -6281,9 +6269,7 @@ exports[`Storyshots Question Template 1`] = `
                 "textAlign": "center",
               },
               undefined,
-              Object {
-                "color": "#90A4AE",
-              },
+              undefined,
               undefined,
               undefined,
               undefined,

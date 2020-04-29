@@ -140,6 +140,8 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
   const titleStyle = {fontSize: titleFontSize};
   const subtitleStyle = {fontSize: subtitleFontSize};
 
+  const itemCompletion = item.adaptiv && item.completion < 1 ? 0 : item.completion;
+
   return (
     <View style={styles.container} testID={testID}>
       <View style={styles.icons}>
@@ -200,8 +202,8 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
         testID={`progress-bar-${testID}`}
       >
         <ProgressionBar
-          current={item.completion}
-          count={1}
+          current={itemCompletion}
+          total={1}
           height={isHero ? 3 : 2}
           backgroundColor={theme.colors.white}
           isInnerRounded

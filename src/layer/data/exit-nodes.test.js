@@ -1,12 +1,13 @@
 // @flow strict
 
-import {failureExitNode} from '../../__fixtures__/exit-nodes';
 import {getExitNode} from './exit-nodes';
 
 import {mapToExitNodeAPIExpectedResult} from './mappers.test';
 
 jest.mock('./core', () => {
-  const {failureExitNode: exitNode} = require('../../__fixtures__/exit-nodes');
+  const {EXIT_NODE_TYPE} = require('../../layer/data/_const');
+  const {createExitNode} = require('../../__fixtures__/exit-nodes');
+  const exitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
 
   return {
     getItem: () => Promise.resolve(exitNode),
@@ -16,7 +17,7 @@ jest.mock('./core', () => {
 
 describe('exitNode', () => {
   it('should find the exit node given his ref', async () => {
-    const result = await getExitNode(failureExitNode.ref);
+    const result = await getExitNode('foo');
     expect(result).toEqual(mapToExitNodeAPIExpectedResult);
   });
 });

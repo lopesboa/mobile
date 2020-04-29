@@ -1,12 +1,15 @@
 // @flow strict
 
+import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledChapter} from '../../layer/data/_types';
 import {createChapter} from '../chapters';
 import {createSlide} from '../slides';
 import {createVideo, createPdf} from '../lessons';
 import {createTemplate} from '../questions';
-import {failureExitNode, successExitNode} from '../exit-nodes';
+import {createExitNode} from '../exit-nodes';
 
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const template = createTemplate({});
 
 const lessons = [

@@ -10,7 +10,7 @@ import Text from './text';
 
 type Props = {|
   current: number,
-  count: number
+  total: number
 |};
 
 const styles = StyleSheet.create({
@@ -29,22 +29,22 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.medium
   },
-  count: {
+  total: {
     color: theme.colors.gray.medium,
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.medium
   }
 });
 
-const Progression = ({current, count}: Props) => {
+const Progression = ({current, total}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
   return (
     <View testID="progression">
-      <ProgressionBar current={current} count={count} />
+      <ProgressionBar current={current} total={total} />
       <View style={styles.labelContainer}>
         <View style={styles.label} testID="progression-label">
           <Text style={[styles.current, {color: brandTheme.colors.primary}]}>{current}</Text>
-          <Text style={styles.count}>/{count}</Text>
+          <Text style={styles.total}>/{total}</Text>
         </View>
       </View>
     </View>

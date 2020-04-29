@@ -4,10 +4,10 @@ import type {
   QCMQuestion,
   QCMGraphicQuestion,
   SliderQuestion,
-  Media,
   TemplateQuestion,
   QCMDragQuestion,
-  BasicQuestion
+  BasicQuestion,
+  Media
 } from '@coorpacademy/progression-engine';
 
 import {choices, choicesWithImage, createInputChoice, createSelectChoice} from './question-choices';

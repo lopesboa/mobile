@@ -8,7 +8,7 @@ import {BrandThemeContext} from './brand-theme-provider';
 
 type Props = {|
   current: number,
-  count: number,
+  total: number,
   isInnerRounded?: boolean,
   height?: number,
   backgroundColor?: string,
@@ -20,10 +20,10 @@ const BAR_HEIGHT = 3;
 class ProgressionBar extends React.PureComponent<Props> {
   props: Props;
 
-  percentage: Animated.Value = new Animated.Value(this.props.current / this.props.count);
+  percentage: Animated.Value = new Animated.Value(this.props.current / this.props.total);
 
   render() {
-    const {current, count, height, isInnerRounded, backgroundColor, topBarColor} = this.props;
+    const {current, total, height, isInnerRounded, backgroundColor, topBarColor} = this.props;
     const barHeight = height ? height : BAR_HEIGHT;
     const barRadius = isInnerRounded ? barHeight / 2 : 0;
     const barStyle = {
@@ -37,7 +37,7 @@ class ProgressionBar extends React.PureComponent<Props> {
     };
 
     Animated.timing(this.percentage, {
-      toValue: current / count
+      toValue: current / total
     }).start();
 
     const width = this.percentage.interpolate({

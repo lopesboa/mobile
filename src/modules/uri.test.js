@@ -1,6 +1,6 @@
 // @flow strict
 
-import {getCleanUri, buildUrlQueryParams} from './uri';
+import {getCleanUri, buildUrlQueryParams, getQueryParamsFromURL} from './uri';
 
 describe('Uri', () => {
   const expected = 'https://domain.tld';
@@ -20,7 +20,7 @@ describe('Uri', () => {
     expect(result).toEqual(expected);
   });
 
-  describe('build query params', () => {
+  describe('buildUrlQueryParams', () => {
     it('should return the given params in a query params format', () => {
       const params = {
         type: 'cards',
@@ -29,6 +29,26 @@ describe('Uri', () => {
       };
       const expectedResult = `type=${params.type}&offset=${params.offset}&disabled=true`;
       expect(buildUrlQueryParams(params)).toBe(expectedResult);
+    });
+  });
+
+  describe('getQueryParamsFromURL', () => {
+    it('should return an empty object if there are no querystring params in the string', () => {
+      expect(getQueryParamsFromURL('https://batman-staging.coorpacademy.com/')).toEqual({});
+    });
+    it('should return an object with the query params parsed from a link', () => {
+      const expectedResult = {
+        theme: 'them_VkFqE1FII',
+        author: 'coorpacademy',
+        type: 'course',
+        foo: 'bar',
+        hello: 'world'
+      };
+      expect(
+        getQueryParamsFromURL(
+          'https://batman-staging.coorpacademy.com/catalog?theme=them_VkFqE1FII&foo=bar&type=course&author=coorpacademy&hello=world'
+        )
+      ).toEqual(expectedResult);
     });
   });
 });

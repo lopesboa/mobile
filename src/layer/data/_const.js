@@ -2,7 +2,7 @@
 
 import type {VideoProvider} from '@coorpacademy/player-services';
 
-import type {CardStatus, CardType, RestrictedResourceType} from './_types';
+import type {CardStatus, CardType, RestrictedResourceType, ExitNodeType} from './_types';
 
 export type ContentType = 'chapter' | 'slide' | 'level' | 'exitNode' | 'discipline' | 'chapterRule';
 
@@ -75,6 +75,15 @@ export const VIDEO_PROVIDER: {|
   YOUTUBE: 'youtube',
   OMNIPLAYER: 'omniPlayer'
 };
-
 // FlowAssert
 (Object.keys(VIDEO_PROVIDER).map(k => VIDEO_PROVIDER[k]): Array<VideoProvider>);
+
+export const EXIT_NODE_TYPE: {|
+  SUCCESS: 'success',
+  FAILURE: 'failure'
+|} = {
+  SUCCESS: 'success',
+  FAILURE: 'failure'
+};
+// FlowAssert
+(Object.keys(EXIT_NODE_TYPE).map(k => EXIT_NODE_TYPE[k]): Array<ExitNodeType>);

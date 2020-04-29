@@ -1,13 +1,19 @@
 // @flow
+/* eslint-disable import/max-dependencies*/
 
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {NavigationEvents} from 'react-navigation';
-import type {ContentType} from '@coorpacademy/progression-engine';
-import {getCurrentContent, getNextContent, getCurrentProgression} from '@coorpacademy/player-store';
-import type {LevelAPI, ChapterAPI} from '@coorpacademy/player-services';
+import type {ContentType, Media} from '@coorpacademy/progression-engine';
+import {
+  getCurrentContent,
+  getNextContent,
+  getCurrentProgression,
+  getCurrentExitNode
+} from '@coorpacademy/player-store';
+import type {LevelAPI, ChapterAPI, ExitNodeAPI} from '@coorpacademy/player-services';
 
 import Screen from '../components/screen';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
@@ -18,10 +24,15 @@ import translations from '../translations';
 import {createNextProgression} from '../redux/actions/progressions/create-next-progression';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import {getBestScore, getCards} from '../redux/utils/state-extract';
+import {edit as editSearch} from '../redux/actions/ui/search';
+import {getAllowedParamsForSearch} from '../utils/search';
+import {getQueryParamsFromURL} from '../modules/uri';
+import type {Params as PdfScreenParams} from './pdf';
 
 type ConnectedDispatchProps = {|
   createNextProgression: typeof createNextProgression,
-  selectCard: typeof selectCard
+  selectCard: typeof selectCard,
+  editSearch: typeof editSearch
 |};
 
 export type ConnectedStateProps = {|
@@ -29,7 +40,10 @@ export type ConnectedStateProps = {|
   recommendation: DisciplineCard | ChapterCard,
   bestScore?: number,
   currentContent?: LevelAPI | ChapterAPI,
-  nextContent?: LevelAPI | ChapterAPI
+  nextContent?: LevelAPI | ChapterAPI | ExitNodeAPI,
+  feedbackTitle?: string,
+  feedbackDescription?: string,
+  feedbackMedia?: Media
 |};
 
 export type Params = {|
@@ -82,6 +96,22 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
     return navigation.navigate('Home');
   };
 
+  handlePDFButtonPress = (url: string, description?: string) => {
+    const pdfParams: PdfScreenParams = {
+      title: description,
+      source: {uri: url}
+    };
+
+    this.props.navigation.navigate('PdfModal', pdfParams);
+  };
+
+  handleFeedbackLinkPress = (url: string) => {
+    const params = getQueryParamsFromURL(url);
+    const allowedSearchParams = getAllowedParamsForSearch(params);
+    this.props.editSearch({params: allowedSearchParams});
+    this.props.navigation.navigate('Search');
+  };
+
   handleDidFocus = () => this.setState({isFocused: true});
 
   getContentType = (content: LevelAPI | ChapterAPI): ContentType =>
@@ -91,7 +121,16 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
     content.chapterIds ? content.levelTranslation : undefined;
 
   render() {
-    const {contentType, navigation, recommendation, bestScore, nextContent} = this.props;
+    const {
+      contentType,
+      navigation,
+      recommendation,
+      bestScore,
+      nextContent,
+      feedbackTitle,
+      feedbackDescription,
+      feedbackMedia
+    } = this.props;
     const {isCorrect} = navigation.state.params;
 
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
@@ -111,9 +150,14 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
           bestScore={bestScore}
           nextContentType={nextContentType}
           nextContentLabel={nextContentLabel}
+          feedbackTitle={feedbackTitle}
+          feedbackDescription={feedbackDescription}
+          feedbackMedia={feedbackMedia}
           onClose={this.handleClose}
           onCardPress={this.handleCardPress}
           onButtonPress={this.handleButtonPress}
+          onPDFButtonPress={this.handlePDFButtonPress}
+          onFeedbackLinkPress={this.handleFeedbackLinkPress}
           testID="level-end"
         />
       </Screen>
@@ -174,17 +218,36 @@ const getContextTypeState: StoreState => void | ContentType = createSelector(
   progression => progression && progression.content.type
 );
 
+const getFeedbackTitleState = createSelector(
+  [getCurrentExitNode],
+  exitNode => exitNode && exitNode.title
+);
+
+const getFeedbackDescriptionState = createSelector(
+  [getCurrentExitNode],
+  exitNode => exitNode && exitNode.description
+);
+
+const getFeedbackMediaState = createSelector(
+  [getCurrentExitNode],
+  exitNode => exitNode && exitNode.media
+);
+
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   contentType: getContextTypeState(state),
   nextContent: getNextContentState(state),
   currentContent: getCurrentContentState(state),
   bestScore: getBestScoreState(state),
-  recommendation: getRecommendationState(state)
+  recommendation: getRecommendationState(state),
+  feedbackTitle: getFeedbackTitleState(state),
+  feedbackDescription: getFeedbackDescriptionState(state),
+  feedbackMedia: getFeedbackMediaState(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   createNextProgression,
-  selectCard
+  selectCard,
+  editSearch
 };
 
 export {LevelEndScreen as Component};

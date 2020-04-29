@@ -37,7 +37,6 @@ const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCar
 
     const query: QueryParams = {
       contentType: 'all',
-      withoutAdaptive: true,
       lang: language
     };
 

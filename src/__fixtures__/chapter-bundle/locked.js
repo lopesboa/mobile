@@ -1,15 +1,18 @@
 // @flow strict
 
+import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledChapter} from '../../layer/data/_types';
 import {createChapter} from '../chapters';
 import {createSlide} from '../slides';
 import {createQCM} from '../questions';
-import {failureExitNode, successExitNode} from '../exit-nodes';
+import {createExitNode} from '../exit-nodes';
 import {image} from '../medias';
 
 const accessible = false;
 const qcm = createQCM({media: image});
 const lessons = [];
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 
 const bundledChapter: BundledChapter = {
   chapters: {

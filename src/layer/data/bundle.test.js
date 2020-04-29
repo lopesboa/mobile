@@ -9,10 +9,10 @@ import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
 import {createQCM, createQCMGraphic} from '../../__fixtures__/questions';
-import {failureExitNode, successExitNode} from '../../__fixtures__/exit-nodes';
+import {createExitNode} from '../../__fixtures__/exit-nodes';
 import {fakeError} from '../../utils/tests';
 import type {Discipline, BundledDiscipline, BundledChapter} from './_types';
-import {CONTENT_TYPE} from './_const';
+import {CONTENT_TYPE, EXIT_NODE_TYPE} from './_const';
 import {
   buildKeyValuePair,
   normalizeBundle,
@@ -24,6 +24,8 @@ import {
 
 const token = '__TOKEN__';
 const host = '__HOST__';
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const qcm = createQCM({});
 const qcmGraphic = createQCMGraphic({});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
@@ -114,7 +116,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
-      ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
+      ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
@@ -142,7 +144,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
-      ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
+      ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 
@@ -165,7 +167,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_2', JSON.stringify(slides.sli_2)],
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
-      ['exitNode:en:failExitNode', JSON.stringify(exitNodes.failExitNode)],
+      ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
       ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
     ];
 

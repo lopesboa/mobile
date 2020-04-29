@@ -17,17 +17,22 @@ import {createBrand} from '../../__fixtures__/brands';
 import {createUser} from '../../__fixtures__/user';
 import {createToken} from '../../__fixtures__/tokens';
 import {createLevel} from '../../__fixtures__/levels';
-import {createProgression} from '../../__fixtures__/progression';
+import {
+  createProgression,
+  createState as createProgressionState
+} from '../../__fixtures__/progression';
+import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
 import {createSections} from '../../__fixtures__/sections';
 import {createTemplate} from '../../__fixtures__/questions';
-import {createContextWithPDF} from '../../__fixtures__/context';
+import {createContextWithPDF, createContextWithImage} from '../../__fixtures__/context';
 import {createDisciplineCard, createChapterCard, createCardLevel} from '../../__fixtures__/cards';
 import {
   createAuthenticationState,
   createCatalogState,
   createPermissionsState,
   createStoreState,
+  createDataState,
   createErrorsState,
   createSearchState,
   createSelectState,
@@ -37,7 +42,6 @@ import {
 import {
   isExitNode,
   isCorrect,
-  getCurrentStep,
   getNextContentRef,
   getPermissionStatus,
   getBestRank,
@@ -68,7 +72,11 @@ import {
   getFocusedSelect,
   isNetworkConnected,
   isVideoFullScreen,
-  getYoutubeAPIKey
+  getYoutubeAPIKey,
+  getLivesCount,
+  isContentFinished,
+  hasSuccessfullyFinished,
+  getContentCorrectionInfo
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -205,6 +213,48 @@ describe('State-extract', () => {
     });
   });
 
+  describe('hasSuccessfullyFinished', () => {
+    it('should return false if nextContent is falsy', () => {
+      const state: StoreState = createState({});
+      delete state.data.progressions.entities.progression1.state.nextContent;
+      const result = hasSuccessfullyFinished(state);
+      expect(result).toEqual(false);
+    });
+
+    it('should return true if nextContent is success', () => {
+      const state: StoreState = createState({
+        nextContent: {
+          type: CONTENT_TYPE.SUCCESS,
+          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
+        }
+      });
+      const result = hasSuccessfullyFinished(state);
+      expect(result).toEqual(true);
+    });
+
+    it('should return false if nextContent is failure', () => {
+      const state: StoreState = createState({
+        nextContent: {
+          type: CONTENT_TYPE.FAILURE,
+          ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
+        }
+      });
+      const result = hasSuccessfullyFinished(state);
+      expect(result).toEqual(false);
+    });
+
+    it('should return false if nextContent is not exitNode', () => {
+      const state: StoreState = createState({
+        nextContent: {
+          type: CONTENT_TYPE.NODE,
+          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+        }
+      });
+      const result = hasSuccessfullyFinished(state);
+      expect(result).toEqual(false);
+    });
+  });
+
   describe('isCorrect', () => {
     it('should return undefined if progression.state.isCorrect is null or not defined', () => {
       const state: StoreState = createState({});
@@ -222,17 +272,6 @@ describe('State-extract', () => {
     it('should return progression.state.isCorrect if defined properly', () => {
       const state: StoreState = createState({});
       expect(isCorrect(state)).toEqual(true);
-    });
-  });
-
-  describe('getCurrentStep', () => {
-    it('should return current step', () => {
-      const state: StoreState = createState({});
-
-      const current = getCurrentStep(state);
-      const expected = 1;
-
-      expect(current).toEqual(expected);
     });
   });
 
@@ -1104,6 +1143,400 @@ describe('State-extract', () => {
       const result = isVideoFullScreen(state);
 
       expect(result).toBeTruthy;
+    });
+  });
+
+  describe('getLivesCount', () => {
+    it('should return the default number of lives', () => {
+      const fakeState = createProgressionState({
+        stars: 22,
+        step: {
+          current: 20
+        }
+      });
+
+      const chapter = createChapter({
+        ref: 'cha_foo',
+        name: 'chapter'
+      });
+
+      const progression = createProgression({
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'level_foo'
+        },
+        state: fakeState
+      });
+
+      const state: StoreState = createStoreState({
+        progression,
+        data: createDataState({
+          chapters: [chapter],
+          slides: [slide],
+          progression
+        })
+      });
+
+      const lives = getLivesCount(state);
+      expect(lives).toEqual(4);
+    });
+
+    it('should return undefined if current chapter is adaptive', () => {
+      const fakeState = createProgressionState({
+        stars: 22,
+        step: {
+          current: 20
+        }
+      });
+
+      const chapter = createChapter({
+        ref: 'cha_foo',
+        name: 'chapter',
+        isConditional: true
+      });
+
+      const progression = createProgression({
+        engine: ENGINE.MICROLEARNING,
+        progressionContent: {
+          type: CONTENT_TYPE.SLIDE,
+          ref: 'sli_foo'
+        },
+        state: fakeState
+      });
+
+      const state: StoreState = createStoreState({
+        progression,
+        data: createDataState({
+          chapters: [chapter],
+          slides: [slide],
+          progression
+        })
+      });
+
+      const lives = getLivesCount(state);
+      expect(lives).toEqual(undefined);
+    });
+  });
+
+  describe('isContentFinished', () => {
+    it('should return true if nextContent is an exit node', () => {
+      const progression = createProgression({
+        engine: ENGINE.MICROLEARNING,
+        progressionContent: {
+          type: CONTENT_TYPE.SLIDE,
+          ref: 'sli_foo'
+        },
+        state: {
+          nextContent: {
+            ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+            type: CONTENT_TYPE.SUCCESS
+          },
+          step: {
+            current: 4
+          }
+        }
+      });
+
+      const state: StoreState = createStoreState({
+        progression
+      });
+      const isFinished = isContentFinished(state);
+      expect(isFinished).toEqual(true);
+    });
+    it('should return true if nextContent is an exit node', () => {
+      const progression = createProgression({
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: 'level_foo'
+        },
+        state: createProgressionState({
+          nextContent: {
+            type: CONTENT_TYPE.NODE,
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+          },
+          lives: 0
+        })
+      });
+
+      const state: StoreState = createStoreState({
+        progression
+      });
+      const isFinished = isContentFinished(state);
+      expect(isFinished).toEqual(true);
+    });
+  });
+
+  describe('getContentCorrectionInfo', () => {
+    beforeEach(() => {
+      jest.resetModules();
+    });
+
+    const _template = createTemplate({});
+    const _slide = createSlide({
+      ref: 'sli_foo',
+      chapterId: 'cha_foo',
+      question: _template
+    });
+
+    describe('getContentCorrectionInfo', () => {
+      it('should navigate to correction screen if content is not finished and is not an adaptive and progression isCorrect is a boolean', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: true,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter'
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: false,
+          isAdaptive: false,
+          isContentFinished: false,
+          isCorrect: false,
+          progressionId: 'progression1'
+        });
+      });
+
+      it('should navigate to question screen if content is not finished and is an adaptive', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: false,
+          isAdaptive: true,
+          isContentFinished: false,
+          isCorrect: false,
+          progressionId: 'progression1'
+        });
+      });
+
+      it('should navigate to context screen if content is not finished and is an adaptive with context', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        _slide.context = createContextWithImage({title: 'Juste a context'});
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: true,
+          isAdaptive: true,
+          isContentFinished: false,
+          isCorrect: false,
+          progressionId: 'progression1'
+        });
+      });
+
+      it('should navigate to level-end screen if content is finished in success and is not an adaptive', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: true,
+            nextContent: {
+              ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+              type: CONTENT_TYPE.SUCCESS
+            },
+            step: {
+              current: 4
+            },
+            lives: 4
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter'
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: false,
+          isAdaptive: false,
+          isContentFinished: true,
+          isCorrect: true,
+          progressionId: 'progression1'
+        });
+      });
+      it('should navigate to level-end screen if content is finished in failure and is not an adaptive', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: true,
+            nextContent: {
+              ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+              type: CONTENT_TYPE.SUCCESS
+            },
+            step: {
+              current: 4
+            },
+            lives: 0
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter'
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: false,
+          isAdaptive: false,
+          isContentFinished: true,
+          isCorrect: false,
+          progressionId: 'progression1'
+        });
+      });
+      it('should navigate to level-end screen if content is finished', () => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            nextContent: {
+              ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+              type: CONTENT_TYPE.SUCCESS
+            },
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+
+        const result = getContentCorrectionInfo(state);
+
+        expect(result).toEqual({
+          hasContext: false,
+          isAdaptive: true,
+          isContentFinished: true,
+          isCorrect: true,
+          progressionId: 'progression1'
+        });
+      });
     });
   });
 });

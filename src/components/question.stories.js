@@ -10,15 +10,20 @@ import {image, video} from '../__fixtures__/medias';
 import Question from './question';
 import {template, items, userChoices} from './question-template.stories';
 
+const handleFakePressP = async () => {
+  await handleFakePress;
+};
+
 storiesOf('Question', module)
   .add('Default', () => (
     <Question
       choices={choices}
       userChoices={[]}
+      isValidationDisabled
       onInputValueChange={handleFakePress}
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -29,10 +34,11 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       userChoices={[]}
+      isValidationDisabled
       onInputValueChange={handleFakePress}
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -44,9 +50,10 @@ storiesOf('Question', module)
       choices={choicesWithImage}
       onInputValueChange={handleFakePress}
       userChoices={[]}
+      isValidationDisabled
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -62,7 +69,7 @@ storiesOf('Question', module)
         onChoicePress={handleFakePress}
         onInputValueChange={handleFakePress}
         onChoiceInputChange={handleFakePress}
-        onButtonPress={handleFakePress}
+        onButtonPress={handleFakePressP}
         onSliderChange={handleFakePress}
       />
     </TestContextProvider>
@@ -77,7 +84,7 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -89,10 +96,11 @@ storiesOf('Question', module)
       choices={choices}
       userChoices={[]}
       media={image}
+      isValidationDisabled
       onChoicePress={handleFakePress}
       onInputValueChange={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -105,10 +113,11 @@ storiesOf('Question', module)
         choices={choices}
         userChoices={[]}
         media={video}
+        isValidationDisabled
         onChoicePress={handleFakePress}
         onInputValueChange={handleFakePress}
         onChoiceInputChange={handleFakePress}
-        onButtonPress={handleFakePress}
+        onButtonPress={handleFakePressP}
         onSliderChange={handleFakePress}
       />
     </TestContextProvider>
@@ -123,7 +132,7 @@ storiesOf('Question', module)
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
       onInputValueChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onSliderChange={handleFakePress}
     />
   ))
@@ -134,9 +143,10 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       userChoices={[]}
+      isValidationDisabled
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onInputValueChange={handleFakePress}
       onSliderChange={handleFakePress}
     />
@@ -148,9 +158,10 @@ storiesOf('Question', module)
       explanation="Select the correct answers"
       choices={choices}
       userChoices={[]}
+      isValidationDisabled
       onChoicePress={handleFakePress}
       onChoiceInputChange={handleFakePress}
-      onButtonPress={handleFakePress}
+      onButtonPress={handleFakePressP}
       onInputValueChange={handleFakePress}
       onSliderChange={handleFakePress}
     />

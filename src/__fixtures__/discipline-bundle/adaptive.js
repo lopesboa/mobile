@@ -1,15 +1,18 @@
 // @flow strict
 
-import {createVideo} from '../lessons';
+import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledDiscipline} from '../../layer/data/_types';
+import {createVideo} from '../lessons';
 import {createDiscipline} from '../disciplines';
 import {createLevel} from '../levels';
 import {createChapter} from '../chapters';
 import {createSlide} from '../slides';
 import {createQCM} from '../questions';
-import {failureExitNode, successExitNode} from '../exit-nodes';
+import {createExitNode} from '../exit-nodes';
 import {image} from '../medias';
 
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const level = createLevel({ref: 'adaptive_mod_1', chapterIds: ['adaptive_cha_1']});
 const qcm = createQCM({media: image});
 const lessons = [

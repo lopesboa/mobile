@@ -531,10 +531,10 @@ exports[`Storyshots CatalogItemFooter Chapter (adaptive) 1`] = `
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
-            "width": "80%",
+            "width": "0%",
           }
         }
-        testID="progression-bar-0.8"
+        testID="progression-bar-0"
       />
     </View>
   </View>
@@ -2613,10 +2613,10 @@ exports[`Storyshots CatalogItemFooter Discipline (adaptive) 1`] = `
             "borderBottomRightRadius": 1,
             "borderTopRightRadius": 1,
             "height": 2,
-            "width": "30%",
+            "width": "0%",
           }
         }
-        testID="progression-bar-0.3"
+        testID="progression-bar-0"
       />
     </View>
   </View>

@@ -1252,10 +1252,10 @@ Array [
               "borderBottomRightRadius": 1,
               "borderTopRightRadius": 1,
               "height": 2,
-              "width": "80%",
+              "width": "0%",
             }
           }
-          testID="progression-bar-0.8"
+          testID="progression-bar-0"
         />
       </View>
     </View>
@@ -1409,10 +1409,10 @@ Array [
               "borderBottomRightRadius": 1.5,
               "borderTopRightRadius": 1.5,
               "height": 3,
-              "width": "80%",
+              "width": "0%",
             }
           }
-          testID="progression-bar-0.8"
+          testID="progression-bar-0"
         />
       </View>
     </View>
@@ -1972,10 +1972,10 @@ Array [
               "borderBottomRightRadius": 1,
               "borderTopRightRadius": 1,
               "height": 2,
-              "width": "80%",
+              "width": "0%",
             }
           }
-          testID="progression-bar-0.8"
+          testID="progression-bar-0"
         />
       </View>
     </View>

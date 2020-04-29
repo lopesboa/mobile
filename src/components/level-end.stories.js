@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer';
 
 import {__TEST__} from '../modules/environment';
 import {createCardLevel, createDisciplineCard, createChapterCard} from '../__fixtures__/cards';
+import {video, image, pdf, emptyMedia} from '../__fixtures__/medias';
 import {CARD_STATUS} from '../layer/data/_const';
 import {handleFakePress, createFakeVibration, createFakeAudio} from '../utils/tests';
 import {AUTHOR_TYPE, CONTENT_TYPE} from '../const';
@@ -47,6 +48,10 @@ const chapterNewCoorp = createChapterCard({
   authors: [{authorType: AUTHOR_TYPE.COORP, label: 'custom', ref: 'part_VyFl5hZ3V'}]
 });
 
+const feedbackTitle = 'Foo';
+const feedbackDescription =
+  '<font color="red">⬤</font> FOO :<br>Follow this <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_foo" target="_self">link</a>.<br><br><font color="red">⬤</font> BAR :<br>For more informations, <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_bar" target="_self">here</a>.';
+
 storiesOf('LevelEnd', module)
   .add('Failure', () => (
     <LevelEnd
@@ -55,7 +60,9 @@ storiesOf('LevelEnd', module)
       isFocused={false}
       onButtonPress={handleFakePress}
       onCardPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={disciplineNew}
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
@@ -67,8 +74,10 @@ storiesOf('LevelEnd', module)
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={chapterNew}
       bestScore={20}
       nextContentType={CONTENT_TYPE.LEVEL}
@@ -83,8 +92,10 @@ storiesOf('LevelEnd', module)
       isSuccess={false}
       isFocused
       onButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={disciplineNewCoorp}
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
@@ -96,8 +107,10 @@ storiesOf('LevelEnd', module)
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={chapterNewCoorp}
       nextContentType={CONTENT_TYPE.LEVEL}
       nextContentLabel="Advanced"
@@ -111,8 +124,10 @@ storiesOf('LevelEnd', module)
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={chapterNewCoorp}
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
@@ -124,12 +139,101 @@ storiesOf('LevelEnd', module)
       isSuccess
       isFocused
       onButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
       onCardPress={handleFakePress}
       onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
       recommendation={chapterNewCoorp}
       bestScore={20}
       nextContentType={CONTENT_TYPE.CHAPTER}
       nextContentLabel="foobar"
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
+    />
+  ))
+  .add('Adaptive (image)', () => (
+    <LevelEnd
+      contentType={CONTENT_TYPE.LEVEL}
+      isSuccess={false}
+      isFocused={false}
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
+      recommendation={disciplineNew}
+      feedbackTitle={feedbackTitle}
+      feedbackDescription={feedbackDescription}
+      feedbackMedia={image}
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
+    />
+  ))
+  .add('Adaptive (PDF)', () => (
+    <LevelEnd
+      contentType={CONTENT_TYPE.LEVEL}
+      isSuccess={false}
+      isFocused={false}
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
+      recommendation={disciplineNew}
+      feedbackTitle={feedbackTitle}
+      feedbackDescription={feedbackDescription}
+      feedbackMedia={pdf}
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
+    />
+  ))
+  .add('Adaptive (video)', () => (
+    <LevelEnd
+      contentType={CONTENT_TYPE.LEVEL}
+      isSuccess={false}
+      isFocused={false}
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
+      recommendation={disciplineNew}
+      feedbackTitle={feedbackTitle}
+      feedbackDescription={feedbackDescription}
+      feedbackMedia={video}
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
+    />
+  ))
+  .add('Adaptive (no media)', () => (
+    <LevelEnd
+      contentType={CONTENT_TYPE.LEVEL}
+      isSuccess={false}
+      isFocused={false}
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
+      recommendation={disciplineNew}
+      feedbackTitle={feedbackTitle}
+      feedbackDescription={feedbackDescription}
+      vibration={createFakeVibration()}
+      audio={createFakeAudio()}
+    />
+  ))
+  .add('Adaptive (unsupported media)', () => (
+    <LevelEnd
+      contentType={CONTENT_TYPE.LEVEL}
+      isSuccess={false}
+      isFocused={false}
+      onButtonPress={handleFakePress}
+      onCardPress={handleFakePress}
+      onClose={handleFakePress}
+      onPDFButtonPress={handleFakePress}
+      onFeedbackLinkPress={handleFakePress}
+      recommendation={disciplineNew}
+      feedbackMedia={emptyMedia}
       vibration={createFakeVibration()}
       audio={createFakeAudio()}
     />
@@ -145,8 +249,10 @@ if (__TEST__) {
           isSuccess={false}
           isFocused
           onButtonPress={handleFakePress}
+          onFeedbackLinkPress={handleFakePress}
           onCardPress={handleCardPress}
           onClose={handleFakePress}
+          onPDFButtonPress={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
@@ -170,8 +276,10 @@ if (__TEST__) {
           isSuccess={false}
           isFocused
           onButtonPress={handlePress}
-          onCardPress={handlePress}
+          onFeedbackLinkPress={handleFakePress}
+          onCardPress={handleFakePress}
           onClose={handleFakePress}
+          onPDFButtonPress={handleFakePress}
           recommendation={disciplineNew}
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
@@ -181,7 +289,38 @@ if (__TEST__) {
       item.props.onPress();
 
       expect(item.props.analyticsID).toBe('button-end-retry-level');
-      expect(handlePress.mock.calls.length).toBe(1);
+      expect(handlePress).toHaveBeenCalledTimes(1);
+    });
+
+    it('should handle onPDFButtonPress callback', () => {
+      const handlePDFButtonPress = jest.fn();
+      const pdfUrl = 'https://domain.tld';
+      const pdfDescription = 'foo bar baz';
+
+      const component = renderer.create(
+        <LevelEnd
+          contentType={CONTENT_TYPE.LEVEL}
+          isSuccess={false}
+          isFocused
+          onButtonPress={handleFakePress}
+          onCardPress={handleFakePress}
+          onFeedbackLinkPress={handleFakePress}
+          onClose={handleFakePress}
+          onPDFButtonPress={handlePDFButtonPress}
+          recommendation={disciplineNew}
+          feedbackTitle={feedbackTitle}
+          feedbackDescription={feedbackDescription}
+          feedbackMedia={image}
+          vibration={createFakeVibration()}
+          audio={createFakeAudio()}
+        />
+      );
+
+      const button = component.root.find(el => el.props.testID === 'level-end-feedback');
+      button.props.onPDFButtonPress(pdfUrl, pdfDescription);
+
+      expect(handlePDFButtonPress).toHaveBeenCalledTimes(1);
+      expect(handlePDFButtonPress).toHaveBeenCalledWith(pdfUrl, pdfDescription);
     });
 
     it('should trigger sound and vibration on success', () => {
@@ -194,8 +333,10 @@ if (__TEST__) {
           isSuccess
           isFocused
           onButtonPress={handleFakePress}
+          onFeedbackLinkPress={handleFakePress}
           onCardPress={handleFakePress}
           onClose={handleFakePress}
+          onPDFButtonPress={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={vibration}
           audio={audio}
@@ -218,8 +359,10 @@ if (__TEST__) {
           isSuccess={false}
           isFocused
           onButtonPress={handleFakePress}
+          onFeedbackLinkPress={handleFakePress}
           onCardPress={handleFakePress}
           onClose={handleFakePress}
+          onPDFButtonPress={handleFakePress}
           recommendation={disciplineNewCoorp}
           vibration={vibration}
           audio={audio}

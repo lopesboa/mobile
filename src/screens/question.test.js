@@ -3,6 +3,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 
+import {createContextWithImage} from '../__fixtures__/context';
 import {createNavigation} from '../__fixtures__/navigation';
 import {createAnswer} from '../__fixtures__/answers';
 import {
@@ -16,8 +17,9 @@ import {
 import {choices} from '../__fixtures__/question-choices';
 import {createSlide} from '../__fixtures__/slides';
 import {createProgression} from '../__fixtures__/progression';
-import {createUiState, createStoreState} from '../__fixtures__/store';
-import {CONTENT_TYPE, ENGINE} from '../const';
+import {createUiState, createStoreState, createDataState} from '../__fixtures__/store';
+import {CONTENT_TYPE, ENGINE, SPECIFIC_CONTENT_REF} from '../const';
+import {createChapter} from '../__fixtures__/chapters';
 import type {ConnectedStateProps} from './question';
 
 describe('Question', () => {
@@ -35,7 +37,8 @@ describe('Question', () => {
       slideId: undefined,
       max: undefined,
       step: undefined,
-      value: 0
+      value: 0,
+      isValidationDisabled: true
     };
 
     describe('Loading', () => {
@@ -134,7 +137,8 @@ describe('Question', () => {
         template: undefined,
         choices: question.content.choices,
         userChoices: answer,
-        value: 0
+        value: 0,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -185,7 +189,8 @@ describe('Question', () => {
         // $FlowFixMe wrong type
         choices: question.content.choices,
         userChoices: answer,
-        value: 0
+        value: 0,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -235,7 +240,8 @@ describe('Question', () => {
         template: question.content.template,
         choices: question.content.choices,
         userChoices: answer,
-        value: 0
+        value: 0,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -289,7 +295,8 @@ describe('Question', () => {
         unit: '°C',
         step: 3,
         userChoices: answer,
-        value: 42
+        value: 42,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -340,7 +347,8 @@ describe('Question', () => {
         // $FlowFixMe wrong type
         choices: question.content.choices,
         userChoices: answer,
-        value: 0
+        value: 0,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -391,7 +399,8 @@ describe('Question', () => {
         // $FlowFixMe wrong type
         choices: question.content.choices,
         userChoices: answer,
-        value: 0
+        value: 0,
+        isValidationDisabled: false
       };
 
       expect(result).toEqual(expected);
@@ -475,48 +484,6 @@ describe('Question', () => {
     expect(editAnswer).toHaveBeenCalledWith([]);
   });
 
-  it('should handle button press', () => {
-    const {Component: Question} = require('./question');
-
-    const slideId = 'sli_foo';
-    const validateAnswer = jest.fn();
-    const navigation = createNavigation({});
-    const component = renderer.create(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
-    );
-
-    const question = component.root.find(el => el.props.testID === 'question');
-    question.props.onButtonPress();
-
-    expect(validateAnswer).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('Correction', {
-      slideId
-    });
-  });
-
-  it('should handle button press (without ref)', () => {
-    const {Component: Question} = require('./question');
-
-    const slideId = 'sli_foo';
-    const validateAnswer = jest.fn();
-    const navigation = createNavigation({});
-    const component = renderer.create(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
-    );
-
-    const screen = component.root.find(el => el.props.testID === 'question-screen');
-    screen.props.onRef(null);
-    const question = component.root.find(el => el.props.testID === 'question');
-    question.props.onButtonPress();
-
-    expect(validateAnswer).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('Correction', {
-      slideId
-    });
-  });
-
   it('should handle scroll reset when slide ID changes', () => {
     const {Component: Question} = require('./question');
 
@@ -565,5 +532,323 @@ describe('Question', () => {
     );
 
     expect(scrollToPosition).toHaveBeenCalledTimes(0);
+  });
+
+  describe('ButtonPress & Navigation', () => {
+    const _template = createTemplate({});
+    const _slide = createSlide({
+      ref: 'sli_foo',
+      chapterId: 'cha_foo',
+      question: _template
+    });
+
+    it('should handle button press', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const _question = createQCMGraphic({title: 'Foo bar'});
+        const slide = createSlide({
+          title: 'Foo bar',
+          ref: 'foo',
+          chapterId: 'bar',
+          question: _question
+        });
+        const answer = createAnswer({});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          ui: createUiState({
+            answers: {
+              progression1: {
+                value: answer
+              }
+            }
+          }),
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: slide.universalRef
+              }
+            }
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    });
+    it('should handle button press and navigate to correction screen', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: true,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter'
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledWith('Correction', {slideId: 'sli_foo'});
+    });
+
+    it('should handle button press and navigate to question screen', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledWith('Question');
+    });
+
+    it('should handle button press and navigate to context screen', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        _slide.context = createContextWithImage({title: 'Juste a context'});
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledWith('Context');
+    });
+
+    it('should handle button press and navigate to level-end screen for adaptive content', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const progression = createProgression({
+          engine: ENGINE.MICROLEARNING,
+          progressionContent: {
+            type: CONTENT_TYPE.SLIDE,
+            ref: 'sli_foo'
+          },
+          state: {
+            isCorrect: null,
+            nextContent: {
+              ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+              type: CONTENT_TYPE.SUCCESS
+            },
+            step: {
+              current: 4
+            }
+          }
+        });
+
+        const chapter = createChapter({
+          ref: 'cha_foo',
+          name: 'chapter',
+          isConditional: true
+        });
+
+        const state: StoreState = createStoreState({
+          progression,
+          data: createDataState({
+            chapters: [chapter],
+            slides: [_slide],
+            progression
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
+        isCorrect: true,
+        progressionId: 'progression1'
+      });
+    });
+
+    it('should handle button press (without ref)', async () => {
+      const {Component: Question} = require('./question');
+
+      const slideId = 'sli_foo';
+      const validateAnswer = jest.fn(() => {
+        const _question = createQCMGraphic({title: 'Foo bar'});
+        const slide = createSlide({
+          title: 'Foo bar',
+          ref: 'foo',
+          chapterId: 'bar',
+          question: _question
+        });
+        const answer = createAnswer({});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          ui: createUiState({
+            answers: {
+              progression1: {
+                value: answer
+              }
+            }
+          }),
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'foo'
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: slide.universalRef
+              }
+            }
+          })
+        });
+        return Promise.resolve(state);
+      });
+      const navigation = createNavigation({});
+      const component = renderer.create(
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      );
+
+      const screen = component.root.find(el => el.props.testID === 'question-screen');
+      screen.props.onRef(null);
+      const question = component.root.find(el => el.props.testID === 'question');
+      await question.props.onButtonPress();
+
+      expect(validateAnswer).toHaveBeenCalledTimes(1);
+      expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    });
   });
 });

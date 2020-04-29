@@ -83,7 +83,7 @@ type Props = {|
 class CorrectionScreen extends React.PureComponent<Props> {
   props: Props;
 
-  handlePDFButtonPress = (url: string, description: string) => {
+  handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
       source: {uri: url}

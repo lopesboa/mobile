@@ -13,10 +13,12 @@ import {createChapter} from '../__fixtures__/chapters';
 import {createProgression} from '../__fixtures__/progression';
 import {createContextWithImage} from '../__fixtures__/context';
 import {createDisciplineCard, createCardLevel} from '../__fixtures__/cards';
+import {createExitNode} from '../__fixtures__/exit-nodes';
 import {CONTENT_TYPE, ENGINE} from '../const';
-import {CARD_STATUS} from '../layer/data/_const';
-import {mapToLevelAPI, mapToChapterAPI} from '../layer/data/mappers';
+import {CARD_STATUS, EXIT_NODE_TYPE} from '../layer/data/_const';
+import {mapToLevelAPI, mapToChapterAPI, mapToExitNodeAPI} from '../layer/data/mappers';
 import type {ConnectedStateProps, Params} from './level-end';
+import type {Params as PdfScreenParams} from './pdf';
 
 const question = createQCMGraphic({});
 const context = createContextWithImage({title: 'A beautifull rainy day'});
@@ -60,6 +62,7 @@ const disciplineCardTwo = createDisciplineCard({
   ),
   title: disciplineTwo.name
 });
+const exitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 
 const createParams = ({isCorrect = false}: {isCorrect?: boolean}): Params => ({
   isCorrect,
@@ -149,6 +152,51 @@ describe('LevelEnd', () => {
 
       expect(result).toEqual(expected);
     });
+
+    it('should have feedback props', () => {
+      const {mapStateToProps} = require('./level-end');
+
+      const progression = createProgression({
+        engine: ENGINE.LEARNER,
+        progressionContent: {
+          type: CONTENT_TYPE.LEVEL,
+          ref: levelOne.ref
+        },
+        state: {
+          nextContent: {
+            type: CONTENT_TYPE.EXIT_NODE,
+            ref: exitNode.ref
+          },
+          stars: 20
+        }
+      });
+
+      const state = createStoreState({
+        levels: [levelOne, levelTwo, levelThree, levelFour, levelFive],
+        disciplines: [disciplineOne, disciplineTwo],
+        chapters: [chapter],
+        slides: [slide, slide],
+        exitNodes: [exitNode],
+        progression,
+        catalog,
+        nextContent: mapToExitNodeAPI(exitNode)
+      });
+
+      const result = mapStateToProps(state);
+      const expected: ConnectedStateProps = {
+        contentType: CONTENT_TYPE.LEVEL,
+        nextContent: mapToExitNodeAPI(exitNode),
+        currentContent: mapToLevelAPI(levelOne),
+        bestScore: 20,
+        recommendation: disciplineCardTwo,
+        feedbackTitle: exitNode.title,
+        feedbackDescription: exitNode.description,
+        // $FlowFixMe wrong packages definition
+        feedbackMedia: exitNode.media
+      };
+
+      expect(result).toEqual(expected);
+    });
   });
 
   it('should handle focus', () => {
@@ -199,6 +247,49 @@ describe('LevelEnd', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Slide');
     expect(selectCard).toHaveBeenCalledTimes(1);
     expect(selectCard).toHaveBeenCalledWith(disciplineCardOne);
+  });
+
+  it('should handle feedback link press', () => {
+    const {Component: LevelEnd} = require('./level-end');
+
+    const selectCard = jest.fn();
+    const editSearch = jest.fn();
+    const params = createParams({});
+    const navigation = createNavigation({params});
+    const component = renderer.create(
+      <LevelEnd navigation={navigation} selectCard={selectCard} editSearch={editSearch} />
+    );
+
+    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const searchLink =
+      'https://batman-staging.coorpacademy.com/catalog?theme=them_VkFqE1FII&type=course&foo=bar';
+    levelEnd.props.onFeedbackLinkPress(searchLink);
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Search');
+    expect(editSearch).toHaveBeenCalledTimes(1);
+    expect(editSearch).toHaveBeenCalledWith({params: {theme: 'them_VkFqE1FII', type: 'course'}});
+  });
+
+  it('should handle pdf button press', () => {
+    const {Component: LevelEnd} = require('./level-end');
+
+    const params = createParams({});
+    const url = 'https://domain.tld';
+    const description = 'foo';
+    const navigation = createNavigation({params});
+    const component = renderer.create(<LevelEnd navigation={navigation} />);
+
+    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    levelEnd.props.onPDFButtonPress(url, description);
+
+    const expectedParams: PdfScreenParams = {
+      title: description,
+      source: {uri: url}
+    };
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', expectedParams);
   });
 
   it('should handle button press', () => {

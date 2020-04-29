@@ -73,18 +73,18 @@ describe('Search', () => {
     searchInput.props.onChange('');
 
     expect(editSearch).toHaveBeenCalledTimes(7);
-    expect(editSearch).toHaveBeenCalledWith('f');
-    expect(editSearch).toHaveBeenCalledWith('fo');
-    expect(editSearch).toHaveBeenCalledWith('foo');
-    expect(editSearch).toHaveBeenCalledWith('foob');
-    expect(editSearch).toHaveBeenCalledWith('fooba');
-    expect(editSearch).toHaveBeenCalledWith('foobar');
-    expect(editSearch).toHaveBeenCalledWith('');
+    expect(editSearch).toHaveBeenCalledWith({text: 'f'});
+    expect(editSearch).toHaveBeenCalledWith({text: 'fo'});
+    expect(editSearch).toHaveBeenCalledWith({text: 'foo'});
+    expect(editSearch).toHaveBeenCalledWith({text: 'foob'});
+    expect(editSearch).toHaveBeenCalledWith({text: 'fooba'});
+    expect(editSearch).toHaveBeenCalledWith({text: 'foobar'});
+    expect(editSearch).toHaveBeenCalledWith({text: ''});
 
     expect(fetchCards).toHaveBeenCalledTimes(3);
-    expect(fetchCards).toHaveBeenCalledWith('foo', 0, DEFAULT_LIMIT, true);
-    expect(fetchCards).toHaveBeenCalledWith('fooba', 0, DEFAULT_LIMIT, true);
-    expect(fetchCards).toHaveBeenCalledWith('foobar', 0, DEFAULT_LIMIT, true);
+    expect(fetchCards).toHaveBeenCalledWith('foo', 0, DEFAULT_LIMIT, {}, true);
+    expect(fetchCards).toHaveBeenCalledWith('fooba', 0, DEFAULT_LIMIT, {}, true);
+    expect(fetchCards).toHaveBeenCalledWith('foobar', 0, DEFAULT_LIMIT, {}, true);
 
     expect(clearSearch).toHaveBeenCalledTimes(1);
   });

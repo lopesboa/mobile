@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable import/max-dependencies*/
 
 import type {ChapterAPI, DataLayer as DataLayerBase, LevelAPI} from '@coorpacademy/player-services';
 import type {Progression} from '@coorpacademy/progression-engine';
@@ -37,6 +38,7 @@ import {logError, setProperties as setLoggerProperties} from './logger';
 import {setLanguage, getInterfaceLanguage} from './language';
 import {fetchSections} from './sections';
 import {findUriById as findVideoUriById, findTracksById as findVideoTracksById} from './videos';
+import {getChapterRulesByContent} from './chapter-rules';
 
 export type DataLayer = {
   ...DataLayerBase,
@@ -65,7 +67,8 @@ export type DataLayer = {
   setLoggerProperties: typeof setLoggerProperties,
   fetchUser: typeof fetchUser,
   saveProgression: Progression => Promise<Progression>,
-  updateSynchronizedProgressionIds: typeof updateSynchronizedProgressionIds
+  updateSynchronizedProgressionIds: typeof updateSynchronizedProgressionIds,
+  getChapterRulesByContent: typeof getChapterRulesByContent
 };
 
 const createDataLayer = (): DataLayer => ({
@@ -102,8 +105,7 @@ const createDataLayer = (): DataLayer => ({
   fetchSections,
   refreshCard,
   getCardFromLocalStorage,
-  // @todo implement it
-  getChapterRulesByContent: () => [],
+  getChapterRulesByContent,
   fetchBundle,
   storeBundle,
   logEvent,

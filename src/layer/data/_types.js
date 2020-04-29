@@ -74,6 +74,17 @@ export type Chapter = $Exact<{|
   accessible?: boolean
 |}>;
 
+export type ChapterRules = $Exact<{|
+  _id: string,
+  chapterRef: string,
+  ref: string,
+  meta: {
+    updatedAt: string,
+    createdAt: string
+  },
+  rules: Array<ChapterRule>
+|}>;
+
 type Author = string;
 
 export type Slide = $Exact<{|
@@ -92,15 +103,6 @@ export type ExitNode = $Exact<{
 
 export type RestrictedResourceType = 'level' | 'chapter' | 'slide' | 'discipline';
 export type ResourceType = 'chapterRule' | 'exitNode' | 'card' | RestrictedResourceType;
-
-export type ExtentedMedia = {|
-  type?: string,
-  mimeType?: MimeType,
-  mediaUrl?: Url,
-  subtitles: Array<string>,
-  posters: Array<string>,
-  src: Array<string>
-|};
 
 export type Discipline = $Exact<{|
   ...DisciplineStore,
@@ -214,7 +216,14 @@ export type ChapterCard = {|
 
 export type CardType = $PropertyType<DisciplineCard, 'type'> | $PropertyType<ChapterCard, 'type'>;
 
-export type Resource = Slide | Discipline | Chapter | ExitNode | ChapterCard | DisciplineCard;
+export type Resource =
+  | ChapterRules
+  | Slide
+  | Discipline
+  | Chapter
+  | ExitNode
+  | ChapterCard
+  | DisciplineCard;
 
 export type Card = DisciplineCard | ChapterCard;
 
@@ -243,3 +252,5 @@ export type HeroRecommendation = {|
   updatedAt: string,
   progressionId: string
 |};
+
+export type ExitNodeType = 'success' | 'failure';

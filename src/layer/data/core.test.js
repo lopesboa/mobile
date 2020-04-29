@@ -7,12 +7,14 @@ import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
 import {createQCM, createQCMGraphic} from '../../__fixtures__/questions';
-import {failureExitNode, successExitNode} from '../../__fixtures__/exit-nodes';
+import {createExitNode} from '../../__fixtures__/exit-nodes';
 import {fakeError} from '../../utils/tests';
 import type {BundledDiscipline} from './_types';
-import {CONTENT_TYPE} from './_const';
+import {CONTENT_TYPE, EXIT_NODE_TYPE} from './_const';
 import {buildKey, getItem, getItemsPerResourceType, filterKeys} from './core';
 
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const qcm = createQCM({});
 const qcmGraphic = createQCMGraphic({});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});

@@ -20,16 +20,35 @@ describe('Select', () => {
   });
 
   describe(EDIT, () => {
-    it('Default', () => {
-      const payload = 'foo';
+    it('search value', () => {
+      const value = 'foo';
       const action: Action = {
         type: EDIT,
-        payload
+        payload: {
+          text: value
+        }
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        value: payload
+        value: value
+      };
+
+      expect(result).toEqual(expected);
+    });
+
+    it('search params', () => {
+      const params = {theme: 'bar'};
+      const action: Action = {
+        type: EDIT,
+        payload: {
+          params
+        }
+      };
+      const result = reducer(expectedInitialState, action);
+      const expected: State = {
+        ...expectedInitialState,
+        params: params
       };
 
       expect(result).toEqual(expected);

@@ -10,7 +10,8 @@ import {
   getAnswerValues,
   getQuestionMedia,
   getQuestionType,
-  getCurrentSlide
+  getCurrentSlide,
+  isQuestionCtaDisabled
 } from '@coorpacademy/player-store';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
@@ -18,11 +19,12 @@ import Question from '../components/question';
 import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
 import type {StoreState} from '../redux/store';
-import {getQuestion} from '../redux/utils/state-extract';
+import {getQuestion, getContentCorrectionInfo} from '../redux/utils/state-extract';
 import {validateAnswer} from '../redux/actions/ui/answers';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {QUESTION_TYPE} from '../const';
 import type {Params as CorrectionParams} from './correction';
+import type {Params as LevelEndParams} from './level-end';
 
 export type ConnectedStateProps = {|
   type?: QuestionType,
@@ -37,6 +39,7 @@ export type ConnectedStateProps = {|
   unit?: $PropertyType<QuestionProps, 'unit'>,
   step?: $PropertyType<QuestionProps, 'step'>,
   value?: $PropertyType<QuestionProps, 'value'>,
+  isValidationDisabled?: $PropertyType<QuestionProps, 'isValidationDisabled'>,
   slideId?: string
 |};
 
@@ -89,15 +92,34 @@ class QuestionScreen extends React.PureComponent<Props> {
     this.props.editAnswer(values);
   };
 
-  handleButtonPress = () => {
-    const {slideId} = this.props;
+  handleButtonPress = async () => {
+    const {
+      navigation: {navigate},
+      slideId
+    } = this.props;
+    const state = await this.props.validateAnswer();
+    const {
+      isCorrect,
+      isAdaptive,
+      hasContext,
+      isContentFinished,
+      progressionId
+    } = getContentCorrectionInfo(state);
 
-    const params: CorrectionParams = {
+    if (isAdaptive) {
+      if (!isContentFinished) {
+        return navigate(hasContext ? 'Context' : 'Question');
+      }
+      const levelEndParams: LevelEndParams = {
+        isCorrect,
+        progressionId
+      };
+      return navigate('LevelEnd', levelEndParams);
+    }
+    const correctionParams: CorrectionParams = {
       slideId
     };
-
-    this.props.validateAnswer();
-    this.props.navigation.navigate('Correction', params);
+    return navigate('Correction', correctionParams);
   };
 
   render() {
@@ -113,7 +135,8 @@ class QuestionScreen extends React.PureComponent<Props> {
       step,
       value,
       template,
-      userChoices = []
+      userChoices = [],
+      isValidationDisabled
     } = this.props;
 
     return (
@@ -137,6 +160,7 @@ class QuestionScreen extends React.PureComponent<Props> {
           unit={unit}
           step={step}
           value={value}
+          isValidationDisabled={isValidationDisabled}
           testID="question"
         />
       </Screen>
@@ -222,6 +246,11 @@ const getSliderDefaultValueState = (state: StoreState) =>
     }
   )(state);
 
+const getIsValidationDisabled = createSelector(
+  [isQuestionCtaDisabled],
+  result => result
+);
+
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   slideId: getSlideIdState(state),
   type: getQuestionTypeState(state),
@@ -235,7 +264,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   max: getSliderMaxState(state),
   unit: getSliderUnitState(state),
   step: getSliderStepValueState(state),
-  value: getSliderDefaultValueState(state)
+  value: getSliderDefaultValueState(state),
+  isValidationDisabled: getIsValidationDisabled(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

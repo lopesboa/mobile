@@ -50,6 +50,7 @@ describe('Search', () => {
     const search = component.root.find(el => el.props.testID === 'search');
     search.props.onBackPress();
 
-    expect(navigation.goBack).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Home');
   });
 });

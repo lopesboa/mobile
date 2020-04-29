@@ -20,7 +20,7 @@ export type Props = $Exact<{|
   description: string,
   onPress: () => void,
   onLinkPress: (url: string) => void,
-  onPDFButtonPress: (url: string, description: string) => void,
+  onPDFButtonPress: (url: string, description?: string) => void,
   testID?: string,
   media?: Media
 |}>;
@@ -60,7 +60,7 @@ class Context extends React.PureComponent<Props> {
   handlePDFButtonPress = (url?: string, description?: string) => {
     const {onPDFButtonPress} = this.props;
 
-    if (url && description) {
+    if (url) {
       onPDFButtonPress(url, description);
     }
   };

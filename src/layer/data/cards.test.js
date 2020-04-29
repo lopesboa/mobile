@@ -49,7 +49,7 @@ describe('cards', () => {
         __E2E__: true
       }));
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, endpoint, 1, 3);
+      const result = fetchCards(token, host, endpoint, 1, 3, {});
       const expected = {
         cards: cards.slice(1, 4),
         total: cards.length
@@ -73,7 +73,7 @@ describe('cards', () => {
             hits: Array<Card>
           |}>
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en&withoutAdaptive=true`);
+          expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en`);
 
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -90,7 +90,7 @@ describe('cards', () => {
       );
 
       const {fetchCards} = require('./cards');
-      const result = fetchCards(token, host, endpoint, 0, 2);
+      const result = fetchCards(token, host, endpoint, 0, 2, {});
       const expected = {
         cards: cards.slice(0, 2),
         total: cards.length
@@ -180,11 +180,7 @@ describe('cards', () => {
             hits: Array<Card>
           |}>
         }> => {
-          expect(url).toBe(
-            `${host}${
-              section.endpoint
-            }?contentType=all&offset=0&limit=2&lang=en&withoutAdaptive=true`
-          );
+          expect(url).toBe(`${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en`);
 
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -267,7 +263,7 @@ describe('cards', () => {
         __E2E__: true
       }));
       const {fetchSearchCards} = require('./cards');
-      const result = fetchSearchCards(token, host, search, 1, 3);
+      const result = fetchSearchCards(token, host, search, {}, 1, 3);
       const expected = {
         cards: cards.slice(1, 4),
         total: cards.length
@@ -292,9 +288,8 @@ describe('cards', () => {
           |}>
         }> => {
           expect(url).toBe(
-            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en&withoutAdaptive=true`
+            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en`
           );
-
           expect(options).toHaveProperty('headers.authorization', token);
 
           return Promise.resolve({
@@ -310,7 +305,7 @@ describe('cards', () => {
       );
 
       const {fetchSearchCards} = require('./cards');
-      const result = fetchSearchCards(token, host, search, 0, 2);
+      const result = fetchSearchCards(token, host, search, {}, 0, 2);
       const expected = {
         cards: cards.slice(0, 2),
         total: cards.length
@@ -325,7 +320,7 @@ describe('cards', () => {
       fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
 
       const {fetchSearchCards} = require('./cards');
-      const result = fetchSearchCards(token, host, search, 0, 3);
+      const result = fetchSearchCards(token, host, search, {}, 0, 3);
 
       await expect(result).rejects.toThrow();
     });
@@ -346,7 +341,7 @@ describe('cards', () => {
       });
 
       const {fetchSearchCards} = require('./cards');
-      const result = fetchSearchCards(token, host, search, 0, 3);
+      const result = fetchSearchCards(token, host, search, {}, 0, 3);
 
       const expected = {
         cards: [],
@@ -624,7 +619,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&withoutAdaptive=true`);
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
@@ -673,7 +668,7 @@ describe('cards', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en&withoutAdaptive=true`);
+          expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
 
           return Promise.resolve({
             json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})

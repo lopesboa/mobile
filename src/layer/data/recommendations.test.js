@@ -44,9 +44,7 @@ describe('Recommendation data layer', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(
-            'https://domain.tld/api/v2/recommendations?contentType=all&withoutAdaptive=true&lang=en'
-          );
+          expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
             json: () => Promise.resolve({hits: [mockCard]})
@@ -81,9 +79,7 @@ describe('Recommendation data layer', () => {
         ): Promise<{
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
-          expect(url).toBe(
-            'https://domain.tld/api/v2/recommendations?contentType=all&withoutAdaptive=true&lang=en'
-          );
+          expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
             json: () => Promise.resolve({hits: [mockCard]})
@@ -113,9 +109,7 @@ describe('Recommendation data layer', () => {
           json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
         }> => {
           expect(params.headers.authorization).toEqual(token);
-          expect(url).toBe(
-            'https://domain.tld/api/v2/recommendations?contentType=all&withoutAdaptive=true&lang=en'
-          );
+          expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
             json: () => Promise.resolve({hits: []})

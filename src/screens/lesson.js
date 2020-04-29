@@ -41,7 +41,7 @@ type Props = $Exact<{|
 class LessonScreen extends React.PureComponent<Props> {
   props: Props;
 
-  handlePDFButtonPress = (url: string, description: string) => {
+  handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
       source: {uri: url}

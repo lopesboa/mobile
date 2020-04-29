@@ -1055,20 +1055,20 @@
     globby "^9.1.0"
     mkdirp-promise "^5.0.1"
 
-"@coorpacademy/player-services@5.1.9":
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/@coorpacademy/player-services/-/player-services-5.1.9.tgz#1bd1cb64ba954ca4b0ded1c68db8ce6803f1a327"
-  integrity sha512-I0HZ7WJvas0ZmkiUbXl1KgBro7cAFO+nAamS8WUCF2ys8/iM/LNV85UsjNMnsxiaOjngHFmcSBhM2q+appJv7A==
+"@coorpacademy/player-services@5.1.10":
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/@coorpacademy/player-services/-/player-services-5.1.10.tgz#646574daabf8605a98d137bd6706ce5d29ffab91"
+  integrity sha512-ei66CkEViUs/T8ZW8li3KEpVa2EpXVe/U8tj/lr/bi1sA1ueqf/8eSNlHf8Dlzv78nrGJaiVPiQvDGkxXWCZDA==
   dependencies:
-    "@coorpacademy/progression-engine" "11.1.4"
+    "@coorpacademy/progression-engine" "11.1.5"
     lodash "^4.17.15"
 
-"@coorpacademy/player-store@4.1.14":
-  version "4.1.14"
-  resolved "https://registry.yarnpkg.com/@coorpacademy/player-store/-/player-store-4.1.14.tgz#e1274d7c05a55dd0f88c2eb12439c5df1e096b8b"
-  integrity sha512-IxXU61+RuD5WpiNs5dSDRJdW0JDIaRyS0jj/GD62XW4bHXVOSd9MPm9brW0whY3IgufPtPe0NCPezt1Lsk3W1w==
+"@coorpacademy/player-store@4.1.16":
+  version "4.1.16"
+  resolved "https://registry.yarnpkg.com/@coorpacademy/player-store/-/player-store-4.1.16.tgz#e21e861f6ce1dc00bc6946f68a0d7cc7cea38219"
+  integrity sha512-hkEXsJ98Z3CMmXTp3ZEI1Q7O5Jqnu0RoYwbdx2vyBvUdj83ySNjKTwJ8tzeH9etUypHnv0u6/EbavCtYJ871SQ==
   dependencies:
-    "@coorpacademy/progression-engine" "11.1.4"
+    "@coorpacademy/progression-engine" "11.1.5"
     "@coorpacademy/redux-task" "1.1.0"
     lodash "^4.17.15"
     redux "^4.0.4"
@@ -1082,10 +1082,10 @@
     lodash "^4.17.15"
     moment "^2.24.0"
 
-"@coorpacademy/progression-engine@11.1.4":
-  version "11.1.4"
-  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-11.1.4.tgz#6929e12e346a4a22149361738fed28ccaef4e6a1"
-  integrity sha512-bzcDNTJtSa6Q3A7v00kgGXm4OEvhbRPgyXBZ5b72OPJoLjypwCK6FJ2a+T39bLZMlF+ZjU10Z9MLdcsPiuoA8A==
+"@coorpacademy/progression-engine@11.1.5":
+  version "11.1.5"
+  resolved "https://registry.yarnpkg.com/@coorpacademy/progression-engine/-/progression-engine-11.1.5.tgz#76d8007c5bb51f4a0bbe0829b11e286d8e99d652"
+  integrity sha512-m5b1kLkJEd7M2Xgs78a1J+Yw0T4sIrgUG9DOWSwwkf3WJ/5adWTwuyOznYHYw5bMNIFwFRWiCxfZdN1qI0ynEA==
   dependencies:
     fuzzy-matching "^0.4.3"
     lodash "^4.17.15"
@@ -6789,14 +6789,14 @@ fuse.js@^3.0.1, fuse.js@^3.3.0:
 
 fuzzy-matching@^0.4.3:
   version "0.4.3"
-  resolved "https://registry.npmjs.org/fuzzy-matching/-/fuzzy-matching-0.4.3.tgz#341a9cfe22c6e8167237c0e40eef2ed4d7b61fcf"
+  resolved "https://registry.yarnpkg.com/fuzzy-matching/-/fuzzy-matching-0.4.3.tgz#341a9cfe22c6e8167237c0e40eef2ed4d7b61fcf"
   integrity sha1-NBqc/iLG6BZyN8DkDu8u1Ne2H88=
   dependencies:
     fuzzyset.js "0.0.1"
 
 fuzzyset.js@0.0.1:
   version "0.0.1"
-  resolved "https://registry.npmjs.org/fuzzyset.js/-/fuzzyset.js-0.0.1.tgz#979e22f9451b4b38f051f7937c919dbacc692958"
+  resolved "https://registry.yarnpkg.com/fuzzyset.js/-/fuzzyset.js-0.0.1.tgz#979e22f9451b4b38f051f7937c919dbacc692958"
   integrity sha1-l54i+UUbSzjwUfeTfJGdusxpKVg=
 
 gauge@~1.2.5:

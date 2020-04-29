@@ -1,4 +1,5 @@
 // @flow
+
 import type {Context, Media} from '@coorpacademy/progression-engine';
 
 type Params = {|

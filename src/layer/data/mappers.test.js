@@ -14,7 +14,7 @@ import {createLevel} from '../../__fixtures__/levels';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
 import {createVideo} from '../../__fixtures__/lessons';
-import {failureExitNode} from '../../__fixtures__/exit-nodes';
+import {createExitNode} from '../../__fixtures__/exit-nodes';
 import {
   mapToChapterAPI,
   mapToSlideAPI,
@@ -23,7 +23,9 @@ import {
   mapToLevelAPI,
   mapToResource
 } from './mappers';
+import {EXIT_NODE_TYPE} from './_const';
 
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1']});
 const lesson = createVideo({ref: 'les_1'});
 const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});

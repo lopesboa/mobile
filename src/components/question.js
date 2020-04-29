@@ -7,7 +7,7 @@ import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
 import theme from '../modules/theme';
 import translations from '../translations';
-import {QUESTION_TYPE, RESOURCE_TYPE} from '../const';
+import {RESOURCE_TYPE} from '../const';
 import Resource from './resource';
 import Html from './html';
 import QuestionChoices from './question-choices';
@@ -30,12 +30,13 @@ export type Props = {|
   onSliderChange: $PropertyType<QuestionChoicesProps, 'onSliderChange'>,
   onChoiceInputChange: (item: Choice, value: string) => void,
   onInputValueChange: (value: string) => void,
-  onButtonPress: () => void,
+  onButtonPress: () => Promise<void>,
   min?: $PropertyType<QuestionChoicesProps, 'min'>,
   max?: $PropertyType<QuestionChoicesProps, 'max'>,
   unit?: $PropertyType<QuestionChoicesProps, 'unit'>,
   value?: $PropertyType<QuestionChoicesProps, 'value'>,
   step?: $PropertyType<QuestionChoicesProps, 'step'>,
+  isValidationDisabled?: boolean,
   testID?: string
 |};
 
@@ -95,6 +96,7 @@ const Question = ({
   unit,
   step,
   value,
+  isValidationDisabled,
   testID
 }: Props) => {
   if (!type || !header || !explanation) {
@@ -108,11 +110,6 @@ const Question = ({
       </View>
     );
   }
-
-  const oneChoiceSelected =
-    type === QUESTION_TYPE.TEMPLATE
-      ? choices.length === userChoices.filter(choice => choice).length
-      : userChoices.length > 0;
 
   let mediaUrl;
   let mediaType = media && getMediaType(media);
@@ -180,7 +177,7 @@ const Question = ({
       <View style={styles.footer}>
         <Button
           onPress={onButtonPress}
-          isDisabled={!oneChoiceSelected}
+          isDisabled={isValidationDisabled}
           testID="button-validate"
           analyticsID="button-validate"
           analyticsParams={{questionType: type}}

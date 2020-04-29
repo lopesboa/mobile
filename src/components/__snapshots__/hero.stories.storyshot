@@ -659,10 +659,10 @@ exports[`Storyshots Hero With content 1`] = `
                   "borderBottomRightRadius": 1.5,
                   "borderTopRightRadius": 1.5,
                   "height": 3,
-                  "width": "30%",
+                  "width": "0%",
                 }
               }
-              testID="progression-bar-0.3"
+              testID="progression-bar-0"
             />
           </View>
         </View>

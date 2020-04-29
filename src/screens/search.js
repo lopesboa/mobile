@@ -10,23 +10,23 @@ import {selectCard} from '../redux/actions/catalog/cards/select';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import Search from '../containers/search';
 
-export type Params = {|
-  url: string
-|};
-
 type ConnectedDispatchProps = {|
   selectCard: typeof selectCard
 |};
 
 export type Props = {|
   ...ConnectedDispatchProps,
-  ...ReactNavigation$ScreenPropsWithParams<Params>
+  ...ReactNavigation$ScreenProps
 |};
 
 class SearchScreen extends React.PureComponent<Props> {
   props: Props;
 
-  handleBackPress = () => this.props.navigation.goBack();
+  // TODO:
+  // Correctly manage the navigation in order to make it
+  // go back to the Slide if we're coming from LevelEnd
+  // or Make it just go back if we're coming from Home
+  handleBackPress = () => this.props.navigation.navigate('Home');
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
     this.props.navigation.navigate('Slide');

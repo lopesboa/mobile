@@ -34,10 +34,11 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.VALIDATE_ANSWER, {
     questionType,
-    isCorrect: Number(isCorrect)
+    isCorrect: typeof isCorrect === 'boolean' && Number(isCorrect)
   });
-
-  return dispatch(result);
+  await dispatch(result);
+  // $FlowFixMe getState definition conflict
+  return getState();
 };
 
 export default {

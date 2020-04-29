@@ -1,15 +1,18 @@
 // @flow strict
 
+import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledChapter} from '../../layer/data/_types';
 import {createChapter} from '../chapters';
 import {createSlide} from '../slides';
 import {createVideo, createPdf} from '../lessons';
 import {createQCM, createQCMGraphic} from '../questions';
-import {failureExitNode, successExitNode} from '../exit-nodes';
+import {createExitNode} from '../exit-nodes';
 import {image} from '../medias';
 
 const qcm = createQCM({media: image});
 const qcmGraphic = createQCMGraphic({});
+const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
+const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 
 const lessons = [
   createVideo({

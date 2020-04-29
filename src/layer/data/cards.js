@@ -298,10 +298,8 @@ export const fetchCards = async (
       ...queryParams,
       offset,
       limit,
-      lang: language,
-      withoutAdaptive: true
+      lang: language
     };
-
     const response = await fetch(`${host}${endpoint}?${buildUrlQueryParams(query)}`, {
       headers: {authorization: token}
     });
@@ -334,9 +332,10 @@ export const fetchSearchCards = (
   token: string,
   host: string,
   search: string,
+  queryParams?: QueryParams = {},
   offset: number,
   limit: number
-) => fetchCards(token, host, '/api/v2/contents', offset, limit, {fullText: search});
+) => fetchCards(token, host, '/api/v2/contents', offset, limit, {fullText: search, ...queryParams});
 
 export default {
   fetchCards,

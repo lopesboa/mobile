@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {getCurrentProgression, getLives} from '@coorpacademy/player-store';
+import {getCurrentProgression, getLives, getCurrentChapter} from '@coorpacademy/player-store';
 
 import HeaderSlideRightComponent from '../components/header-slide-right';
 import type {StoreState} from '../redux/store';
@@ -14,7 +14,7 @@ import {
 import {toggle as toggleGodMode} from '../redux/actions/god-mode';
 import {toggle as toggleFastSlide} from '../redux/actions/fast-slide';
 
-type ConnectedStateProps = {|
+export type ConnectedStateProps = {|
   count?: number,
   isGodModeUser?: boolean,
   isGodModeEnabled?: boolean,
@@ -63,12 +63,13 @@ class HeaderSlideRight extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = (state: StoreState): ConnectedStateProps => {
+export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progression = getCurrentProgression(state);
+  const chapter = getCurrentChapter(state);
   const {hide, count} = getLives(state);
 
   return {
-    count: (progression && !hide && count) || undefined,
+    count: progression && chapter && !hide ? count : undefined,
     isGodModeUser: _isGodModeUser(state),
     isGodModeEnabled: _isGodModeEnabled(state),
     isFastSlideEnabled: _isFastSlideEnabled(state)

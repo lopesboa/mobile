@@ -11,7 +11,7 @@ import theme from '../modules/theme';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 
 export type Params = {|
-  title: string,
+  title?: string,
   source: File | {uri: string}
 |};
 

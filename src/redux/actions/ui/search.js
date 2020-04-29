@@ -1,7 +1,14 @@
 // @flow strict
 
+import type {QueryParams} from '../../../modules/uri';
+
 export const EDIT = '@@search/EDIT';
 export const FETCH = '@@search/FETCH';
+
+type Payload = {|
+  text?: string,
+  params?: QueryParams
+|};
 
 export type Action =
   | {|
@@ -10,14 +17,14 @@ export type Action =
     |}
   | {|
       type: '@@search/EDIT',
-      payload: string
+      payload: Payload
     |}
   | {|
       type: '@@search/FETCH',
       payload: boolean
     |};
 
-export const edit = (payload: string): Action => ({
+export const edit = (payload: Payload): Action => ({
   type: EDIT,
   payload
 });

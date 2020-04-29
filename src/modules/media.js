@@ -61,3 +61,10 @@ export const getVideoProvider = (mimeType: ResourceMimeType): VideoProvider | vo
       return VIDEO_PROVIDER.OMNIPLAYER;
   }
 };
+
+export const isMediaSupported = (media: Media): boolean => {
+  const type = getMediaType(media);
+  const url = getMediaUrl(media);
+
+  return [RESOURCE_TYPE.PDF, RESOURCE_TYPE.VIDEO, RESOURCE_TYPE.IMG].includes(type) && Boolean(url);
+};
