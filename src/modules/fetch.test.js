@@ -94,39 +94,8 @@ describe('Fetch', () => {
 
     const expectedHeader = {
       'X-Requested-With': 'XMLHttpRequest',
-      'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
-    };
-
-    const response = new Response();
-
-    _fetch.mockImplementationOnce((url, options) => {
-      expect(url).toBe('https://domain.tld?foo=qux');
-      expect(options).toEqual({headers: expectedHeader, method: 'POST'});
-
-      return Promise.resolve(response);
-    });
-    const fetch = require('./fetch').default;
-    const result = await fetch('https://domain.tld?foo=qux', {method: 'POST'});
-    expect(result).toEqual(response);
-  });
-
-  it('headers should have Android User-Agent', async () => {
-    jest.mock('react-native-device-info', () => ({
-      getBrand: jest.fn(() => Promise.resolve('Samsung')),
-      getModel: jest.fn(() => Promise.resolve('SM-9000')),
-      getSystemVersion: jest.fn(() => Promise.resolve('5.1.1'))
-    }));
-    jest.mock('react-native', () => ({
-      Platform: {
-        OS: 'android'
-      }
-    }));
-
-    const _fetch = require('cross-fetch');
-    const expectedHeader = {
-      'X-Requested-With': 'XMLHttpRequest',
       'User-Agent':
-        'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Dalvik/2.1.0 (Linux; Samsung SM-9000; Android 5.1.1)'
+        'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2; BuildEnvironment test)'
     };
 
     const response = new Response();

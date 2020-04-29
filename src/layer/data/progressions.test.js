@@ -12,6 +12,9 @@ import {extractErrorName} from '../../utils/tests';
 import type {HeroRecommendation} from './_types';
 import type {FindBestOfResult} from './progressions';
 
+const expectedUserAgent =
+  'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2; BuildEnvironment production)';
+
 describe('Progressions', () => {
   beforeEach(() => {
     jest.resetModules();
@@ -416,7 +419,7 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
         expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
           ...fakeProgression,
@@ -910,7 +913,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
 
         return Promise.resolve({
@@ -950,7 +953,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
 
         return Promise.resolve({
@@ -1000,7 +1003,7 @@ describe('Progressions', () => {
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
 
         return Promise.resolve({
@@ -1447,7 +1450,7 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
         return Promise.resolve({
           status: 404,
@@ -1471,7 +1474,7 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
         return Promise.resolve({
           status: 400,
@@ -1511,7 +1514,7 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': 'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2)'
+          'User-Agent': expectedUserAgent
         });
         return Promise.resolve({
           status: 200,

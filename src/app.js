@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
   }
 });
 
+const ENABLE_ERROR_DEBUG = false;
+
 class App extends React.PureComponent<Props> {
   props: Props;
 
@@ -53,7 +55,7 @@ class App extends React.PureComponent<Props> {
 
       services.Logger.error(error);
       currentHandler(error, isFatal);
-    });
+    }, ENABLE_ERROR_DEBUG);
   }
 
   componentDidMount() {

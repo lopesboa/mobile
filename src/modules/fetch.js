@@ -1,28 +1,14 @@
 // @flow
 
 import _fetch from 'cross-fetch';
-import {Platform} from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+
 import get from 'lodash/fp/get';
 
 import {ForbiddenError} from '../models/error';
-import version from './version';
 import {__E2E__} from './environment';
+import {getUserAgent} from './build';
 
 export const ERROR_MESSAGE = 'PLATFORM_DISABLED';
-
-const getUserAgent = async () => {
-  const deviceBrand = await DeviceInfo.getBrand();
-  const deviceModel = await DeviceInfo.getModel();
-  const deviceVersion = await DeviceInfo.getSystemVersion();
-  const appVersion = `${version.tag}`.slice(1);
-  const baseUserAgent = `Coorpacademy Mobile/${appVersion} CFNetwork/897.15`;
-
-  if (Platform.OS === 'android') {
-    return `${baseUserAgent} Dalvik/2.1.0 (Linux; ${deviceBrand} ${deviceModel}; Android ${deviceVersion})`;
-  }
-  return `${baseUserAgent} Darwin/17.5.0 (${deviceModel} iOS/${deviceVersion})`;
-};
 
 const fetch: typeof _fetch = async (url, options) => {
   if (__E2E__) {
