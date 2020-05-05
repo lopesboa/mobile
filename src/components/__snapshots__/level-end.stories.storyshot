@@ -1655,7 +1655,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -1663,7 +1663,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -1719,7 +1719,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -2104,7 +2104,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -2112,7 +2112,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -2168,7 +2168,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -4225,7 +4225,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -4233,7 +4233,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -4289,7 +4289,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -4674,7 +4674,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -4682,7 +4682,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -4738,7 +4738,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -6712,7 +6712,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -6720,7 +6720,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -6776,7 +6776,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -7161,7 +7161,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -7169,7 +7169,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -7225,7 +7225,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -10761,7 +10761,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -10769,7 +10769,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -10825,7 +10825,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }
@@ -11210,7 +11210,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                               "textDecorationLine": "underline",
                             },
                             Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             Object {},
                           ]
@@ -11218,7 +11218,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                         tagsStyles={
                           Object {
                             "a": Object {
-                              "color": undefined,
+                              "color": "#002BDB",
                             },
                             "b": Object {
                               "fontWeight": "700",
@@ -11274,7 +11274,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": undefined,
+                                "color": "#002BDB",
                                 "fontSize": undefined,
                                 "textDecorationLine": "underline",
                               }

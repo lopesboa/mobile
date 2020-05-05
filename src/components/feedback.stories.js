@@ -10,7 +10,7 @@ import {video, image, pdf, emptyMedia} from '../__fixtures__/medias';
 import Feedback from './feedback';
 
 const description =
-  '<font color="red">⬤</font> FOO :<br>Follow this <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_foo" target="_self">link</a>.<br><br><font color="red">⬤</font> BAR :<br>For more informations, <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_bar" target="_self">here</a>.';
+  '<font color="blue">⬤</font> FOO :<br>Follow this <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_foo" target="_self">link</a>.<br><br><font color="red">⬤</font> BAR :<br>For more informations, <a href="https://onboarding.coorpacademy.com/catalog?skill=skill_bar" target="_self">here</a>.';
 
 storiesOf('Feedback', module)
   .add('Empty', () => <Feedback onPDFButtonPress={handleFakePress} onLinkPress={handleFakePress} />)

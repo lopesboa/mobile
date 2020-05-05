@@ -62,7 +62,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -159,7 +159,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -342,7 +342,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -386,7 +386,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -394,7 +394,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -450,7 +450,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -608,7 +608,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -775,7 +775,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -835,7 +835,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -843,7 +843,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -899,7 +899,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -1108,7 +1108,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -1205,7 +1205,7 @@ exports[`Storyshots Feedback Image 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -1388,7 +1388,7 @@ exports[`Storyshots Feedback Image 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -1432,7 +1432,7 @@ exports[`Storyshots Feedback Image 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -1440,7 +1440,7 @@ exports[`Storyshots Feedback Image 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -1496,7 +1496,7 @@ exports[`Storyshots Feedback Image 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -1654,7 +1654,7 @@ exports[`Storyshots Feedback Image 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -1821,7 +1821,7 @@ exports[`Storyshots Feedback Image 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -1881,7 +1881,7 @@ exports[`Storyshots Feedback Image 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -1889,7 +1889,7 @@ exports[`Storyshots Feedback Image 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -1945,7 +1945,7 @@ exports[`Storyshots Feedback Image 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -2194,7 +2194,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -2291,7 +2291,7 @@ exports[`Storyshots Feedback No media 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -2474,7 +2474,7 @@ exports[`Storyshots Feedback No media 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -2518,7 +2518,7 @@ exports[`Storyshots Feedback No media 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -2526,7 +2526,7 @@ exports[`Storyshots Feedback No media 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -2582,7 +2582,7 @@ exports[`Storyshots Feedback No media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -2740,7 +2740,7 @@ exports[`Storyshots Feedback No media 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -2907,7 +2907,7 @@ exports[`Storyshots Feedback No media 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -2967,7 +2967,7 @@ exports[`Storyshots Feedback No media 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -2975,7 +2975,7 @@ exports[`Storyshots Feedback No media 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -3031,7 +3031,7 @@ exports[`Storyshots Feedback No media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -3548,7 +3548,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -3645,7 +3645,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -3828,7 +3828,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -3872,7 +3872,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -3880,7 +3880,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -3936,7 +3936,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -4094,7 +4094,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -4261,7 +4261,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -4321,7 +4321,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -4329,7 +4329,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -4385,7 +4385,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -4616,7 +4616,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -4713,7 +4713,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -4896,7 +4896,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -4940,7 +4940,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -4948,7 +4948,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -5004,7 +5004,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -5162,7 +5162,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -5329,7 +5329,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -5389,7 +5389,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -5397,7 +5397,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -5453,7 +5453,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -5618,7 +5618,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 Array [
                   Object {},
                   Object {
-                    "color": "red",
+                    "color": "blue",
                     "fontSize": undefined,
                   },
                 ]
@@ -5715,7 +5715,7 @@ exports[`Storyshots Feedback Video 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -5898,7 +5898,7 @@ exports[`Storyshots Feedback Video 1`] = `
                             "parent": null,
                             "prev": Object {
                               "attribs": Object {
-                                "color": "red",
+                                "color": "blue",
                               },
                               "children": Array [
                                 Object {
@@ -5942,7 +5942,7 @@ exports[`Storyshots Feedback Video 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -5950,7 +5950,7 @@ exports[`Storyshots Feedback Video 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -6006,7 +6006,7 @@ exports[`Storyshots Feedback Video 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }
@@ -6164,7 +6164,7 @@ exports[`Storyshots Feedback Video 1`] = `
               debug={false}
               decodeEntities={true}
               emSize={14}
-              html="<font color=\\"red\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
+              html="<font color=\\"blue\\">⬤</font> FOO :<br>Follow this <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_foo\\" target=\\"_self\\">link</a>.<br><br><font color=\\"red\\">⬤</font> BAR :<br>For more informations, <a href=\\"https://onboarding.coorpacademy.com/catalog?skill=skill_bar\\" target=\\"_self\\">here</a>."
               ignoredStyles={
                 Array [
                   "width",
@@ -6331,7 +6331,7 @@ exports[`Storyshots Feedback Video 1`] = `
                                             "parent": null,
                                             "prev": Object {
                                               "attribs": Object {
-                                                "color": "red",
+                                                "color": "blue",
                                               },
                                               "children": Array [
                                                 Object {
@@ -6391,7 +6391,7 @@ exports[`Storyshots Feedback Video 1`] = `
                     "textDecorationLine": "underline",
                   },
                   Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   Object {},
                 ]
@@ -6399,7 +6399,7 @@ exports[`Storyshots Feedback Video 1`] = `
               tagsStyles={
                 Object {
                   "a": Object {
-                    "color": undefined,
+                    "color": "#002BDB",
                   },
                   "b": Object {
                     "fontWeight": "700",
@@ -6455,7 +6455,7 @@ exports[`Storyshots Feedback Video 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": undefined,
+                      "color": "#002BDB",
                       "fontSize": undefined,
                       "textDecorationLine": "underline",
                     }

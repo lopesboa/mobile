@@ -4,7 +4,7 @@ import * as React from 'react';
 import {View} from 'react-native';
 import HtmlBase from 'react-native-render-html';
 
-import theme from '../modules/theme';
+import theme, {HTML_ANCHOR_TEXT_COLOR} from '../modules/theme';
 import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
@@ -70,7 +70,7 @@ class Html extends React.PureComponent<Props, State> {
       imageStyle,
       style,
       testID,
-      anchorTextColor,
+      anchorTextColor = HTML_ANCHOR_TEXT_COLOR,
       isTextCentered
     } = this.props;
 
