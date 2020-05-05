@@ -23,7 +23,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -59,7 +59,7 @@ exports[`Storyshots Html Default 1`] = `
             allowFontScaling={true}
             style={
               Object {
-                "color": "#14171A",
+                "color": null,
                 "fontSize": 20,
                 "textDecorationLine": "line-through",
               }
@@ -83,7 +83,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -118,7 +118,7 @@ exports[`Storyshots Html Default 1`] = `
             allowFontScaling={true}
             style={
               Object {
-                "color": "#14171A",
+                "color": null,
                 "fontSize": 20,
                 "textDecorationLine": "underline",
               }
@@ -142,7 +142,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -177,7 +177,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -216,7 +216,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -250,7 +250,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                   }
@@ -274,7 +274,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -299,7 +299,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -338,7 +338,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontWeight": "700",
                 }
@@ -374,7 +374,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                     "fontWeight": "700",
@@ -401,7 +401,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -440,7 +440,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -474,7 +474,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                   }
@@ -498,7 +498,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -523,7 +523,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -558,7 +558,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -597,7 +597,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -631,7 +631,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                   }
@@ -655,7 +655,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -680,7 +680,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -719,7 +719,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontWeight": "700",
                 }
@@ -755,7 +755,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                     "fontWeight": "700",
@@ -782,7 +782,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -821,7 +821,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -855,7 +855,7 @@ exports[`Storyshots Html Default 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": 20,
                     "fontStyle": "italic",
                   }
@@ -879,7 +879,7 @@ exports[`Storyshots Html Default 1`] = `
               allowFontScaling={true}
               style={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": 20,
                   "fontStyle": "italic",
                 }
@@ -904,7 +904,7 @@ exports[`Storyshots Html Default 1`] = `
           allowFontScaling={true}
           style={
             Object {
-              "color": "#14171A",
+              "color": null,
               "fontSize": 20,
             }
           }
@@ -956,6 +956,40 @@ exports[`Storyshots Html WithImage 1`] = `
       style={Object {}}
     >
       <Text
+        style={
+          Array [
+            Object {},
+            Object {
+              "color": undefined,
+              "fontSize": 20,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            style={
+              Object {
+                "color": "#14171A",
+                "fontSize": 20,
+              }
+            }
+          >
+            On this platform
+          </Text>
+        </Text>
+      </Text>
+      <Text
         allowFontScaling={true}
         selectable={false}
         style={
@@ -974,8 +1008,7 @@ exports[`Storyshots Html WithImage 1`] = `
             }
           }
         >
-          
-        On this platform, you earn 4 stars per right answer.
+          , you earn 4 stars per right answer.
         If you successfully complete this level, the stars you’ve accumulated so far will be added to your score and you will rise in the ranks!
         Let’s do it! Good luck on your last question, this is a tough one!
       

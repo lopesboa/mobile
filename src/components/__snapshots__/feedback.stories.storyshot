@@ -82,7 +82,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -105,7 +105,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -139,7 +139,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -151,7 +151,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -474,7 +474,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -531,7 +531,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -554,7 +554,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -588,7 +588,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -600,7 +600,7 @@ exports[`Storyshots Feedback Description only 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -923,7 +923,7 @@ exports[`Storyshots Feedback Description only 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1128,7 +1128,7 @@ exports[`Storyshots Feedback Image 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -1151,7 +1151,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1185,7 +1185,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1197,7 +1197,7 @@ exports[`Storyshots Feedback Image 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -1520,7 +1520,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1577,7 +1577,7 @@ exports[`Storyshots Feedback Image 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -1600,7 +1600,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1634,7 +1634,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -1646,7 +1646,7 @@ exports[`Storyshots Feedback Image 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -1969,7 +1969,7 @@ exports[`Storyshots Feedback Image 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2214,7 +2214,7 @@ exports[`Storyshots Feedback No media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -2237,7 +2237,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2271,7 +2271,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2283,7 +2283,7 @@ exports[`Storyshots Feedback No media 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -2606,7 +2606,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2663,7 +2663,7 @@ exports[`Storyshots Feedback No media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -2686,7 +2686,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2720,7 +2720,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -2732,7 +2732,7 @@ exports[`Storyshots Feedback No media 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -3055,7 +3055,7 @@ exports[`Storyshots Feedback No media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -3568,7 +3568,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -3591,7 +3591,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -3625,7 +3625,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -3637,7 +3637,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -3960,7 +3960,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4017,7 +4017,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -4040,7 +4040,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4074,7 +4074,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4086,7 +4086,7 @@ exports[`Storyshots Feedback PDF 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -4409,7 +4409,7 @@ exports[`Storyshots Feedback PDF 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4636,7 +4636,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -4659,7 +4659,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4693,7 +4693,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -4705,7 +4705,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -5028,7 +5028,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5085,7 +5085,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -5108,7 +5108,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5142,7 +5142,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5154,7 +5154,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -5477,7 +5477,7 @@ exports[`Storyshots Feedback Unsupported media 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5638,7 +5638,7 @@ exports[`Storyshots Feedback Video 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -5661,7 +5661,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5695,7 +5695,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -5707,7 +5707,7 @@ exports[`Storyshots Feedback Video 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -6030,7 +6030,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -6087,7 +6087,7 @@ exports[`Storyshots Feedback Video 1`] = `
                   allowFontScaling={true}
                   style={
                     Object {
-                      "color": "#14171A",
+                      "color": null,
                       "fontSize": undefined,
                     }
                   }
@@ -6110,7 +6110,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -6144,7 +6144,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }
@@ -6156,7 +6156,7 @@ exports[`Storyshots Feedback Video 1`] = `
               allowFontScaling={true}
               baseFontStyle={
                 Object {
-                  "color": "#14171A",
+                  "color": null,
                   "fontSize": undefined,
                 }
               }
@@ -6479,7 +6479,7 @@ exports[`Storyshots Feedback Video 1`] = `
                 allowFontScaling={true}
                 style={
                   Object {
-                    "color": "#14171A",
+                    "color": null,
                     "fontSize": undefined,
                   }
                 }

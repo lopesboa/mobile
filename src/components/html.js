@@ -9,6 +9,10 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
+type State = {|
+  disableBaseFontStyleColor: boolean
+|};
+
 type Props = {|
   ...WithVibrationProps,
   children: string,
@@ -42,8 +46,12 @@ const styles = {
   }
 };
 
-class Html extends React.PureComponent<Props> {
+class Html extends React.PureComponent<Props, State> {
   props: Props;
+
+  state: State = {
+    disableBaseFontStyleColor: false
+  };
 
   // eslint-disable-next-line flowtype/no-weak-types
   handleLinkPress = (_: any, url: string) => {
@@ -65,6 +73,8 @@ class Html extends React.PureComponent<Props> {
       anchorTextColor,
       isTextCentered
     } = this.props;
+
+    const {disableBaseFontStyleColor} = this.state;
 
     const tagsStyles = {
       ...styles,
@@ -99,17 +109,22 @@ class Html extends React.PureComponent<Props> {
 
     const renderers = {
       // eslint-disable-next-line react/display-name
-      font: (htmlAttribs, componentChildren) => (
-        <Text
-          key={1}
-          style={{
-            ...baseFontStyle,
-            color: htmlAttribs.color
-          }}
-        >
-          {componentChildren}
-        </Text>
-      )
+      font: (htmlAttribs, componentChildren) => {
+        if (htmlAttribs.color) {
+          this.setState({disableBaseFontStyleColor: true});
+        }
+        return (
+          <Text
+            key={1}
+            style={{
+              ...baseFontStyle,
+              color: htmlAttribs.color
+            }}
+          >
+            {componentChildren}
+          </Text>
+        );
+      }
     };
 
     return (
@@ -121,7 +136,10 @@ class Html extends React.PureComponent<Props> {
           // definition in component style doesn't work
           html={isTextCentered ? `<p>${children}</p>` : `${children}`}
           tagsStyles={tagsStyles}
-          baseFontStyle={baseFontStyle}
+          baseFontStyle={{
+            ...baseFontStyle,
+            color: disableBaseFontStyleColor ? null : baseFontStyle.color
+          }}
           onLinkPress={this.handleLinkPress}
           renderers={renderers}
           // this is exceptionally for the onboarding course

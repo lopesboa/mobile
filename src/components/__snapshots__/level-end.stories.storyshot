@@ -1351,7 +1351,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -1374,7 +1374,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -1408,7 +1408,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -1420,7 +1420,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -1743,7 +1743,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -1800,7 +1800,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -1823,7 +1823,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -1857,7 +1857,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -1869,7 +1869,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -2192,7 +2192,7 @@ exports[`Storyshots LevelEnd Adaptive (PDF) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -3921,7 +3921,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -3944,7 +3944,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -3978,7 +3978,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -3990,7 +3990,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -4313,7 +4313,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -4370,7 +4370,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -4393,7 +4393,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -4427,7 +4427,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -4439,7 +4439,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -4762,7 +4762,7 @@ exports[`Storyshots LevelEnd Adaptive (image) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6408,7 +6408,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -6431,7 +6431,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6465,7 +6465,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6477,7 +6477,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -6800,7 +6800,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6857,7 +6857,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -6880,7 +6880,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6914,7 +6914,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -6926,7 +6926,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -7249,7 +7249,7 @@ exports[`Storyshots LevelEnd Adaptive (no media) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10457,7 +10457,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -10480,7 +10480,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10514,7 +10514,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10526,7 +10526,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -10849,7 +10849,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10906,7 +10906,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                             allowFontScaling={true}
                             style={
                               Object {
-                                "color": "#14171A",
+                                "color": null,
                                 "fontSize": undefined,
                               }
                             }
@@ -10929,7 +10929,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10963,7 +10963,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
@@ -10975,7 +10975,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                         allowFontScaling={true}
                         baseFontStyle={
                           Object {
-                            "color": "#14171A",
+                            "color": null,
                             "fontSize": undefined,
                           }
                         }
@@ -11298,7 +11298,7 @@ exports[`Storyshots LevelEnd Adaptive (video) 1`] = `
                           allowFontScaling={true}
                           style={
                             Object {
-                              "color": "#14171A",
+                              "color": null,
                               "fontSize": undefined,
                             }
                           }
