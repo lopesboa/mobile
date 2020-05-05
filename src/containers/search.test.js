@@ -88,6 +88,153 @@ describe('Search', () => {
 
     expect(clearSearch).toHaveBeenCalledTimes(1);
   });
+
+  it('should fire a search on componentDidMount', () => {
+    const {Component: Search} = require('./search');
+
+    const editSearch = jest.fn();
+    const fetchCards = jest.fn();
+    const clearSearch = jest.fn();
+    const searchParams = {
+      skill: 'skill_rnDe3sfRz'
+    };
+
+    renderer.create(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={searchParams}
+        />
+      </TestContextProvider>
+    );
+
+    expect(fetchCards).toHaveBeenCalledTimes(1);
+    expect(fetchCards).toHaveBeenCalledWith('', 0, DEFAULT_LIMIT, {skill: 'skill_rnDe3sfRz'}, true);
+  });
+
+  it('should fire a search on componentDidUpdate if previous search params was empty', () => {
+    const {Component: Search} = require('./search');
+
+    const editSearch = jest.fn();
+    const fetchCards = jest.fn();
+    const clearSearch = jest.fn();
+    const searchParams = {
+      skill: 'skill_rnDe3sfRz'
+    };
+
+    const component = renderer.create(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+        />
+      </TestContextProvider>
+    );
+
+    component.update(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={searchParams}
+        />
+      </TestContextProvider>
+    );
+
+    expect(clearSearch).toHaveBeenCalledTimes(1);
+    expect(editSearch).toHaveBeenCalledTimes(1);
+    expect(editSearch).toHaveBeenCalledWith({text: ''});
+    expect(fetchCards).toHaveBeenCalledTimes(1);
+    expect(fetchCards).toHaveBeenCalledWith('', 0, DEFAULT_LIMIT, {skill: 'skill_rnDe3sfRz'}, true);
+  });
+
+  it('should fire a search on componentDidUpdate if previous search params and next search params are different', () => {
+    const {Component: Search} = require('./search');
+
+    const editSearch = jest.fn();
+    const fetchCards = jest.fn();
+    const clearSearch = jest.fn();
+    const searchParams = {
+      skill: 'skill_rnDe3sfRz'
+    };
+
+    const component = renderer.create(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={{skill: 'skill_pnFe2seFz'}}
+        />
+      </TestContextProvider>
+    );
+
+    component.update(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={searchParams}
+        />
+      </TestContextProvider>
+    );
+
+    expect(clearSearch).toHaveBeenCalledTimes(1);
+    expect(editSearch).toHaveBeenCalledTimes(1);
+    expect(editSearch).toHaveBeenCalledWith({text: ''});
+    expect(fetchCards).toHaveBeenCalledTimes(2);
+    expect(fetchCards).toHaveBeenCalledWith('', 0, DEFAULT_LIMIT, {skill: 'skill_rnDe3sfRz'}, true);
+  });
+
+  it('should only fire a search once on componentDidMount and not fire it on componentDidUpdate if previous search params and next search params are equal', () => {
+    const {Component: Search} = require('./search');
+
+    const editSearch = jest.fn();
+    const fetchCards = jest.fn();
+    const clearSearch = jest.fn();
+    const searchParams = {
+      skill: 'skill_rnDe3sfRz'
+    };
+
+    const component = renderer.create(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={searchParams}
+        />
+      </TestContextProvider>
+    );
+
+    component.update(
+      <TestContextProvider>
+        <Search
+          isSearchFetching={false}
+          editSearch={editSearch}
+          fetchCards={fetchCards}
+          clearSearch={clearSearch}
+          searchParams={searchParams}
+        />
+      </TestContextProvider>
+    );
+
+    expect(clearSearch).toHaveBeenCalledTimes(0);
+    expect(editSearch).toHaveBeenCalledTimes(0);
+    expect(fetchCards).toHaveBeenCalledTimes(1);
+  });
+
   it('should clear search on component unmount', () => {
     const {Component: Search} = require('./search');
 

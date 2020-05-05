@@ -18,6 +18,7 @@ import {clearSearch as _clearSearch} from '../redux/actions/catalog/cards/clear'
 
 import SearchComponent from '../components/search';
 import type {QueryParams} from '../modules/uri';
+import isEqual from '../modules/equal';
 
 export type ConnectedStateProps = {|
   isSearchFetching: boolean,
@@ -56,10 +57,26 @@ class Search extends React.PureComponent<Props> {
     }
   }
 
+  componentDidUpdate(prevProps: Props) {
+    if (
+      (prevProps.searchParams === undefined && this.props.searchParams) ||
+      (prevProps.searchParams &&
+        this.props.searchParams &&
+        !isEqual(prevProps.searchParams, this.props.searchParams))
+    ) {
+      this.cleanUpSearch();
+      this.props.fetchCards('', 0, DEFAULT_LIMIT, this.props.searchParams, true);
+    }
+  }
+
   componentWillUnmount() {
+    this.cleanUpSearch();
+  }
+
+  cleanUpSearch = () => {
     this.props.clearSearch();
     this.props.editSearch({text: ''});
-  }
+  };
 
   handleSearchInputChange = (value: string) => {
     this.searchValue = value;
