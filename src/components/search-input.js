@@ -44,7 +44,8 @@ type Props = {|
   value?: string,
   isFetching?: boolean,
   onChange: string => void,
-  testID?: string
+  testID?: string,
+  autoFocus?: boolean
 |};
 
 class SearchInput extends React.PureComponent<Props> {
@@ -75,6 +76,7 @@ class SearchInput extends React.PureComponent<Props> {
           style={styles.input}
           autoCorrect={false}
           autoCapitalize="none"
+          autoFocus={this.props.autoFocus}
           onChangeText={onChange}
           placeholder={translations.search}
           placeholderTextColor={PLACEHOLDER_COLOR}

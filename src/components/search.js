@@ -77,6 +77,7 @@ const Search = ({
             isFetching={isSearchFetching}
             onChange={onSearchInputChange}
             testID="search-input"
+            autoFocus={!queryParams}
           />
         </View>
       </View>
