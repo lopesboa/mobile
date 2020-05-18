@@ -1,6 +1,6 @@
 {
   "name": "coorpacademy-mobile",
-  "version": "2.0.78",
+  "version": "2.0.79",
   "private": true,
   "scripts": {
     "postinstall": "npx jetify && npm run update:version && npm run -s pull:firebase:config",
@@ -16,9 +16,9 @@
     "generate:assets": "npm run -s check:imagemagick && babel-node scripts/generate-assets.js",
     "prestart": "npm run -s update:version",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:noprestart": "node node_modules/react-native/local-cli/cli.js start", 
-    "start:clean": "npm run cleanup && npm start -- --reset-cache",   
-    "start:clean:noprestart": "npm run cleanup && npm run -s start:noprestart -- --reset-cache", 
+    "start:noprestart": "node node_modules/react-native/local-cli/cli.js start",
+    "start:clean": "npm run cleanup && npm start -- --reset-cache",
+    "start:clean:noprestart": "npm run cleanup && npm run -s start:noprestart -- --reset-cache",
     "prestart:e2e": "REACT_NATIVE_FLAVOR=e2e npm run -s update:version",
     "start:e2e": "npm run -s start:clean:noprestart",
     "prestart:storybook": "REACT_NATIVE_FLAVOR=storybook npm run -s update:version",
