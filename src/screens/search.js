@@ -9,6 +9,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import Search from '../containers/search';
+import {BackHandler} from '../modules/back-handler';
 
 type ConnectedDispatchProps = {|
   selectCard: typeof selectCard
@@ -21,6 +22,19 @@ export type Props = {|
 
 class SearchScreen extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    this.props.navigation.navigate('Home');
+    return true;
+  };
 
   // TODO:
   // Correctly manage the navigation in order to make it

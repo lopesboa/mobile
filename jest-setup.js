@@ -123,6 +123,7 @@ jest.mock('react-native-snap-carousel', () => ({
 
 jest.mock('react-navigation', () => ({
   SafeAreaView: 'Mock$ReactNavigation$SafeAreaView',
+  HeaderBackButton: 'Mock$ReactNavigation$HeaderBackButton',
   NavigationEvents: 'Mock$ReactNavigation$NavigationEvents',
   NavigationActions: {
     back: () => 'Mock$ReactNavigation$NavigationActions$Back'

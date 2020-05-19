@@ -1,9 +1,10 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, StatusBar, BackHandler} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {WhitePortal} from 'react-native-portal';
+import {BackHandler} from '../modules/back-handler';
 
 const styles = StyleSheet.create({
   container: {

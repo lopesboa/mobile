@@ -52,5 +52,31 @@ describe('Search', () => {
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('Home');
+
+    component.unmount();
+  });
+
+  it('should handle Android BackHandler', () => {
+    const {Component: Search} = require('./search');
+    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <TestContextProvider>
+        <Search navigation={navigation} selectCard={selectCard} />
+      </TestContextProvider>
+    );
+    TestBackHandler.fireEvent('hardwareBackPress');
+    component.unmount();
+
+    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
+    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
   });
 });

@@ -11,6 +11,7 @@ import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
+import {BackHandler} from '../modules/back-handler';
 
 export type ConnectedStateProps = {|
   isFetching: boolean,
@@ -29,6 +30,19 @@ type Props = {|
 
 class HomeScreen extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    BackHandler.exitApp();
+    return true;
+  };
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
     this.props.navigation.navigate('Slide');

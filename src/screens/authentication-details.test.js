@@ -136,4 +136,27 @@ describe('AuthenticationDetails', () => {
     expect(navigation.dispatch).toHaveBeenCalledTimes(1);
     expect(navigation.dispatch).toHaveBeenCalledWith('Mock$ReactNavigation$NavigationActions$Back');
   });
+
+  it('should handle Android BackHandler', () => {
+    const AuthenticationDetails = require('./authentication-details').default;
+    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+
+    const params = createParams();
+    const navigation = createNavigation({
+      params
+    });
+    const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+
+    TestBackHandler.fireEvent('hardwareBackPress');
+    component.unmount();
+
+    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
+    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
+  });
 });

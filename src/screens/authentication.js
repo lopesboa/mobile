@@ -5,6 +5,7 @@ import {Linking, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import splashScreen from 'react-native-splash-screen';
+import {BackHandler} from '../modules/back-handler';
 
 import {assistanceEmail} from '../../app';
 import {BLUE_COORP_DARK} from '../modules/theme';
@@ -61,10 +62,21 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+
     if (prevProps.isAuthenticated && !this.props.isAuthenticated) {
       this.handleSignOut();
     }
   }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    BackHandler.exitApp();
+    return true;
+  };
 
   hideSplashScreen = () => {
     // Because iOS automatically hides the splash screen

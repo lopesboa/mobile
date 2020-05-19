@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+import {BackHandler} from '../modules/back-handler';
 
 import {openInbox} from '../modules/inbox';
 import {AUTHENTICATION_TYPE} from '../const';
@@ -25,6 +26,19 @@ type Props = {|
 
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    this.handleBack();
+    return true;
+  };
 
   handleScan = (token?: string) => {
     const {navigation} = this.props;

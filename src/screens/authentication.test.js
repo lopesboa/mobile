@@ -207,6 +207,27 @@ describe('Authentication', () => {
     });
   });
 
+  it('should handle Android BackHandler', async () => {
+    const {Component: Authentication} = require('./authentication');
+    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+
+    const navigation = createNavigation({});
+    const component = await renderer.create(<Authentication navigation={navigation} />);
+
+    await component.update(<Authentication navigation={navigation} />);
+    TestBackHandler.fireEvent('hardwareBackPress');
+    component.unmount();
+
+    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
+    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
+      'hardwareBackPress',
+      expect.any(Function)
+    );
+  });
+
   afterEach(() => {
     jest.resetAllMocks();
   });

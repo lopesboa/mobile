@@ -1,9 +1,10 @@
-// @flow strict
+// @flow
 
 import * as React from 'react';
 import {HeaderBackButton} from 'react-navigation';
 import type {_HeaderBackButtonProps} from 'react-navigation';
 
+import {BackHandler} from '../modules/back-handler';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
@@ -14,6 +15,19 @@ type Props = {|
 
 class HeaderLeft extends React.PureComponent<Props> {
   props: Props;
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    this.handlePress();
+    return true;
+  };
 
   handlePress = () => {
     const {onPress, vibration} = this.props;
@@ -35,4 +49,5 @@ class HeaderLeft extends React.PureComponent<Props> {
   }
 }
 
+export {HeaderLeft as Component};
 export default withVibration(HeaderLeft);
