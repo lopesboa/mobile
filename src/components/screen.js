@@ -75,7 +75,6 @@ class Screen extends React.PureComponent<Props> {
 
   render() {
     const {style, noSafeArea} = this.props;
-
     if (noSafeArea) {
       return (
         <View style={[styles.container, styles.background, style]}>{this.renderContent()}</View>
@@ -84,7 +83,7 @@ class Screen extends React.PureComponent<Props> {
 
     return (
       <React.Fragment>
-        <SafeAreaView style={[styles.statusBar, styles.background]} />
+        <SafeAreaView style={[styles.statusBar, styles.background, style]} />
         <View style={[styles.container, styles.background, style]}>{this.renderContent()}</View>
       </React.Fragment>
     );

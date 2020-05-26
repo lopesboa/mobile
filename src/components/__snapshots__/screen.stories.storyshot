@@ -12,6 +12,7 @@ Array [
         Object {
           "backgroundColor": "#FFFFFF",
         },
+        undefined,
       ]
     }
   />,
@@ -88,6 +89,7 @@ Array [
         Object {
           "backgroundColor": "#FFFFFF",
         },
+        undefined,
       ]
     }
   />,
@@ -160,6 +162,9 @@ Array [
         },
         Object {
           "backgroundColor": "#FFFFFF",
+        },
+        Object {
+          "backgroundColor": "red",
         },
       ]
     }
@@ -238,6 +243,9 @@ Array [
         },
         Object {
           "backgroundColor": "#FFFFFF",
+        },
+        Object {
+          "backgroundColor": "red",
         },
       ]
     }
