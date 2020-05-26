@@ -80,8 +80,21 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class CorrectionScreen extends React.PureComponent<Props> {
+type State = {|
+  needRerender: boolean
+|};
+
+class CorrectionScreen extends React.Component<Props, State> {
   props: Props;
+
+  state: State = {
+    needRerender: true
+  };
+
+  shouldComponentUpdate() {
+    if (this.state.needRerender) return true;
+    else return false;
+  }
 
   handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
@@ -89,11 +102,15 @@ class CorrectionScreen extends React.PureComponent<Props> {
       source: {uri: url}
     };
 
+    this.setState({needRerender: false});
     this.props.play();
     this.props.navigation.navigate('PdfModal', pdfParams);
   };
 
-  handleVideoPlay = () => this.props.play();
+  handleVideoPlay = () => {
+    this.setState({needRerender: false});
+    this.props.play();
+  };
 
   handleLinkPress = (url: string): void => {
     const {

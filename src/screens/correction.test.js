@@ -680,7 +680,7 @@ describe('Correction', () => {
     });
   });
 
-  it('should handle video play', () => {
+  it('should handle video play and not rerendering', () => {
     const {Component: Correction} = require('./correction');
 
     const play = jest.fn();
@@ -691,6 +691,8 @@ describe('Correction', () => {
     correction.props.onVideoPlay();
 
     expect(play).toHaveBeenCalledTimes(1);
+
+    component.getInstance().setState({needRerender: false});
   });
 
   it('should handle pdf button press', () => {
