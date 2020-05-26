@@ -128,17 +128,15 @@ type Props = $Exact<{|
 class Correction extends React.PureComponent<Props> {
   props: Props;
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidMount() {
     const {isCorrect, vibration, audio} = this.props;
 
-    if (prevProps.isCorrect === undefined && isCorrect !== undefined) {
-      if (!isCorrect) {
-        vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
-        audio.play(audio.AUDIO_FILE.WRONG_ANSWER);
-      } else {
-        vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
-        audio.play(audio.AUDIO_FILE.GOOD_ANSWER);
-      }
+    if (!isCorrect) {
+      vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
+      audio.play(audio.AUDIO_FILE.WRONG_ANSWER);
+    } else {
+      vibration.vibrate(vibration.VIBRATION_TYPE.NOTIFICATION_SUCCESS);
+      audio.play(audio.AUDIO_FILE.GOOD_ANSWER);
     }
   }
 

@@ -172,7 +172,6 @@ class CorrectionScreen extends React.Component<Props, State> {
 
     const isValidating = isCorrect === undefined;
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
-
     return (
       <Screen
         testID="correction-screen"

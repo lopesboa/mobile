@@ -292,40 +292,16 @@ if (__TEST__) {
       const vibration = createFakeVibration();
       const audio = createFakeAudio();
 
-      const correction = renderer.create(
+      renderer.create(
         <TestContextProvider>
           <Correction
             question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
-            lives={3}
-            layout={fakeLayout}
-            onButtonPress={handleFakePress}
-            onPDFButtonPress={handleFakePress}
-            onVideoPlay={handleFakePress}
-            vibration={vibration}
-            audio={audio}
-            onLinkPress={handleFakePress}
-          />
-        </TestContextProvider>
-      );
-
-      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
-      expect(audio.play).toHaveBeenCalledTimes(0);
-
-      correction.update(
-        <TestContextProvider>
-          <Correction
-            question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
             isCorrect
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
@@ -348,40 +324,16 @@ if (__TEST__) {
       const vibration = createFakeVibration();
       const audio = createFakeAudio();
 
-      const correction = renderer.create(
+      renderer.create(
         <TestContextProvider>
           <Correction
             question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
-            lives={3}
-            layout={fakeLayout}
-            onButtonPress={handleFakePress}
-            onPDFButtonPress={handleFakePress}
-            onVideoPlay={handleFakePress}
-            vibration={vibration}
-            audio={audio}
-            onLinkPress={handleFakePress}
-          />
-        </TestContextProvider>
-      );
-
-      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
-      expect(audio.play).toHaveBeenCalledTimes(0);
-
-      correction.update(
-        <TestContextProvider>
-          <Correction
-            question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
             isCorrect={false}
+            tip={fakeTip}
+            keyPoint={fakeKeyPoint}
+            answers={answers}
+            userAnswers={answers}
+            resources={resources}
             lives={3}
             layout={fakeLayout}
             onButtonPress={handleFakePress}
@@ -398,60 +350,6 @@ if (__TEST__) {
       expect(vibration.vibrate).toHaveBeenCalledWith(vibration.VIBRATION_TYPE.NOTIFICATION_ERROR);
       expect(audio.play).toHaveBeenCalledTimes(1);
       expect(audio.play).toHaveBeenCalledWith(audio.AUDIO_FILE.WRONG_ANSWER);
-    });
-
-    it('should not trigger any sound or vibration', () => {
-      const vibration = createFakeVibration();
-      const audio = createFakeAudio();
-
-      const correction = renderer.create(
-        <TestContextProvider>
-          <Correction
-            question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
-            isCorrect={false}
-            lives={3}
-            layout={fakeLayout}
-            onButtonPress={handleFakePress}
-            onPDFButtonPress={handleFakePress}
-            onVideoPlay={handleFakePress}
-            vibration={vibration}
-            audio={audio}
-            onLinkPress={handleFakePress}
-          />
-        </TestContextProvider>
-      );
-
-      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
-      expect(audio.play).toHaveBeenCalledTimes(0);
-
-      correction.update(
-        <TestContextProvider>
-          <Correction
-            question={fakeQuestion}
-            tip={fakeTip}
-            keyPoint={fakeKeyPoint}
-            answers={answers}
-            userAnswers={answers}
-            resources={resources}
-            lives={3}
-            layout={fakeLayout}
-            onButtonPress={handleFakePress}
-            onPDFButtonPress={handleFakePress}
-            onVideoPlay={handleFakePress}
-            vibration={vibration}
-            audio={audio}
-            onLinkPress={handleFakePress}
-          />
-        </TestContextProvider>
-      );
-
-      expect(vibration.vibrate).toHaveBeenCalledTimes(0);
-      expect(audio.play).toHaveBeenCalledTimes(0);
     });
 
     it('should handle onLinkPress on tip', () => {
