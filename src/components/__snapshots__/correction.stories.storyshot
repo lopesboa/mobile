@@ -1670,33 +1670,42 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -4283,33 +4292,42 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -8260,33 +8278,42 @@ exports[`Storyshots Correction Bad answer 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -8711,33 +8738,42 @@ exports[`Storyshots Correction Bad answer 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -13989,33 +14025,42 @@ exports[`Storyshots Correction Extralife 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -14440,33 +14485,42 @@ exports[`Storyshots Correction Extralife 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -18407,33 +18461,42 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -18858,33 +18921,42 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -22835,33 +22907,42 @@ exports[`Storyshots Correction Game over 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -23286,33 +23367,42 @@ exports[`Storyshots Correction Game over 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -24535,33 +24625,42 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -24894,33 +24993,42 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -28934,33 +29042,42 @@ exports[`Storyshots Correction Right answer 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -31455,33 +31572,42 @@ exports[`Storyshots Correction Right answer 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -33899,33 +34025,42 @@ exports[`Storyshots Correction Without resource 1`] = `
               }
             >
               <View
-                testID="card-keypoint-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-keypoint-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The KEY POINT
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The KEY POINT
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient
@@ -34350,33 +34485,42 @@ exports[`Storyshots Correction Without resource 1`] = `
               }
             >
               <View
-                testID="card-tip-html"
+                style={
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  }
+                }
               >
                 <View
-                  style={Object {}}
+                  testID="card-tip-html"
                 >
-                  <Text
-                    allowFontScaling={true}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {},
-                        Object {},
-                      ]
-                    }
+                  <View
+                    style={Object {}}
                   >
                     <Text
                       allowFontScaling={true}
+                      selectable={false}
                       style={
-                        Object {
-                          "color": "#546E7A",
-                          "fontSize": 15,
-                        }
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
                       }
                     >
-                      The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "color": "#546E7A",
+                            "fontSize": 15,
+                          }
+                        }
+                      >
+                        The greatest tip of your life after what daddy said yesterday : don't drink what a stranger has given to you
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
               </View>
               <BVLinearGradient

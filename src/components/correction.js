@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
   cards: {
     zIndex: 100
   },
+  overflowHidden: {
+    flex: 1,
+    overflow: 'hidden'
+  },
   cardText: {
     color: theme.colors.gray.dark
   },
@@ -248,14 +252,16 @@ class Correction extends React.PureComponent<Props> {
         testID={testID}
       >
         {type === DECK_CARD_TYPE.TIP ? (
-          <Html
-            onLinkPress={onLinkPress}
-            fontSize={theme.fontSize.regular}
-            style={styles.cardText}
-            testID={`${testID}-html`}
-          >
-            {tip}
-          </Html>
+          <View style={styles.overflowHidden}>
+            <Html
+              onLinkPress={onLinkPress}
+              fontSize={theme.fontSize.regular}
+              style={styles.cardText}
+              testID={`${testID}-html`}
+            >
+              {tip}
+            </Html>
+          </View>
         ) : null}
         {type === DECK_CARD_TYPE.CORRECTION && answers && userAnswers ? (
           <DeckCardCorrection
@@ -266,14 +272,16 @@ class Correction extends React.PureComponent<Props> {
           />
         ) : null}
         {type === DECK_CARD_TYPE.KEY_POINT ? (
-          <Html
-            onLinkPress={onLinkPress}
-            fontSize={theme.fontSize.regular}
-            style={styles.cardText}
-            testID={`${testID}-html`}
-          >
-            {keyPoint}
-          </Html>
+          <View style={styles.overflowHidden}>
+            <Html
+              onLinkPress={onLinkPress}
+              fontSize={theme.fontSize.regular}
+              style={styles.cardText}
+              testID={`${testID}-html`}
+            >
+              {keyPoint}
+            </Html>
+          </View>
         ) : null}
         {type === DECK_CARD_TYPE.RESOURCE && resource ? (
           <React.Fragment>
