@@ -93,6 +93,7 @@ class QuestionChoices extends React.PureComponent<Props> {
 
     const isSelected = (choice: Choice): boolean =>
       userChoices && userChoices.includes(choice.label);
+
     switch (type) {
       case QUESTION_TYPE.QCM:
         return (

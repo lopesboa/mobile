@@ -26,14 +26,11 @@ describe('Template', () => {
       const result = parseTemplate('{{inp123}}<br>is {{sel456}}<br />but {{inp789}}<br/>is good!');
       const expected: Array<TemplatePart> = [
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'inp123'},
-        {type: TEMPLATE_PART_TYPE.CARRIAGE_RETURN},
-        {type: TEMPLATE_PART_TYPE.STRING, value: 'is '},
+        {type: TEMPLATE_PART_TYPE.STRING, value: '<br>is '},
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'sel456'},
-        {type: TEMPLATE_PART_TYPE.CARRIAGE_RETURN},
-        {type: TEMPLATE_PART_TYPE.STRING, value: 'but '},
+        {type: TEMPLATE_PART_TYPE.STRING, value: '<br>but '},
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'inp789'},
-        {type: TEMPLATE_PART_TYPE.CARRIAGE_RETURN},
-        {type: TEMPLATE_PART_TYPE.STRING, value: 'is good!'}
+        {type: TEMPLATE_PART_TYPE.STRING, value: '<br>is good!'}
       ];
       expect(result).toEqual(expected);
     });

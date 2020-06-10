@@ -15,29 +15,25 @@ export const TEMPLATE_PART_TYPE: {[TemplatePartTypeKey]: TemplatePartType} = {
 };
 
 export const parseTemplate = (_template: string): Array<TemplatePart> => {
-  const template = _template.replace(/<br\s*\/*>/g, '<br>');
+  const template = _template.replace(/<br\s*\/*>/g, '<br>').replace(/\r?\n|\r/g, '<br>');
 
-  if (!template) {
-    return [];
-  }
+  var parts: Array<TemplatePart> = [];
 
-  const result = /({{\w+}}|<br>)/.exec(_template);
-  if (!result) {
-    return [{type: TEMPLATE_PART_TYPE.STRING, value: template}];
-  }
+  const splitedTemplate = template.split(/({{\w+}})/);
 
-  const parts: Array<TemplatePart> = [];
-  if (result.index !== 0) {
-    parts.push({type: TEMPLATE_PART_TYPE.STRING, value: template.slice(0, result.index)});
-  }
+  const regexInput = /({{\w+}})/;
 
-  if (result[1] === '<br>') {
-    parts.push({type: TEMPLATE_PART_TYPE.CARRIAGE_RETURN});
-  } else {
-    parts.push({type: TEMPLATE_PART_TYPE.INPUT, value: result[1].slice(2, -2)});
-  }
+  splitedTemplate.map(item => {
+    if (item.search(regexInput) !== -1) {
+      return parts.push({type: TEMPLATE_PART_TYPE.INPUT, value: item.slice(2, -2)});
+    } else if (item !== '') {
+      return parts.push({type: TEMPLATE_PART_TYPE.STRING, value: item});
+    } else {
+      return null;
+    }
+  });
 
-  return parts.concat(parseTemplate(template.slice(result.index + result[0].length)));
+  return parts;
 };
 
 export default {

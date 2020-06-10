@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import trim from 'lodash/fp/trim';
 import last from 'lodash/fp/last';
 import type {Choice} from '@coorpacademy/progression-engine';
@@ -48,24 +48,22 @@ class QuestionTemplate extends React.PureComponent<Props> {
 
   renderSection = ({item: items, index}: {item: Array<Choice>, index: number}) => {
     const prefix = this.sectionKeyExtractor(items, index);
-
     return (
-      <FlatList
-        data={items}
-        keyExtractor={this.keyExtractor(prefix)}
-        renderItem={this.renderItem(prefix)}
-        horizontal
-        centerContent
-        scrollEnabled={false}
-        contentContainerStyle={styles.section}
-        ItemSeparatorComponent={this.renderSeparator}
-      />
+      <View style={styles.section}>
+        {items.map((item, id) => {
+          return (
+            <View key={id} style={{flexDirection: 'row'}}>
+              {this.renderItem(prefix)({item: item, index: id})}
+              {this.renderSeparator()}
+            </View>
+          );
+        })}
+      </View>
     );
   };
 
   renderItem = (prefix: string) => ({item: part, index}: {item: Choice, index: number}) => {
     const {isDisabled, items, userChoices} = this.props;
-
     const inputNames = items.map(item => item.name);
     const testID = this.keyExtractor(prefix)(part, index);
 
@@ -77,7 +75,6 @@ class QuestionTemplate extends React.PureComponent<Props> {
       if (!item || !item.type || !item.name) {
         return null;
       }
-
       return (
         <QuestionInput
           questionType={QUESTION_TYPE.TEMPLATE}
@@ -112,24 +109,16 @@ class QuestionTemplate extends React.PureComponent<Props> {
     const parts = parseTemplate(template);
 
     const sections: Array<Array<Choice>> = parts.reduce((result, item) => {
-      if (item.type === TEMPLATE_PART_TYPE.CARRIAGE_RETURN) {
-        return result.concat([[]]);
-      }
-
       const section = last(result) || [];
-
       return result.slice(0, -1).concat([section.concat([item])]);
     }, []);
 
     return (
-      <FlatList
-        data={sections}
-        keyExtractor={this.sectionKeyExtractor}
-        renderItem={this.renderSection}
-        centerContent
-        scrollEnabled={false}
-        testID="question-template"
-      />
+      <View style={{flex: 1}} testID="question-template">
+        {sections.map((section, index) => {
+          return this.renderSection({item: section, index});
+        })}
+      </View>
     );
   }
 }
