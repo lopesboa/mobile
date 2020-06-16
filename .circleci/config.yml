@@ -125,7 +125,7 @@ jobs:
   end2end_tests_ios_run:
     macos: *macos-image
     working_directory: ~/app
-    parallelism: 15
+    parallelism: 8
 
     steps:
       - checkout
@@ -162,8 +162,8 @@ jobs:
           command: |
             yarn global add detox-cli
             detox clean-framework-cache && detox build-framework-cache
-            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=15
-          no_output_timeout: 30m
+            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
+          no_output_timeout: 50m
           environment:
             JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml
 
