@@ -153,7 +153,7 @@ describe('Permissions', () => {
     });
 
     describe('should handle alert after a deny', () => {
-      it('can open settings', async () => {
+      it('should try another request after denial', async () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
         const handleDeny = jest.fn();
         const services = {
@@ -174,17 +174,17 @@ describe('Permissions', () => {
           'foo bar baz',
           [
             {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
-            {onPress: expect.any(Function), text: translations.openSettings}
+            {onPress: expect.any(Function), text: translations.ok}
           ],
           {cancelable: false}
         ]);
         // $FlowFixMe
         const onPressResult = await services.Permissions.alert.mock.calls[0][2][1].onPress();
-        expect(services.Permissions.request.mock.calls.length).toBe(0);
-        expect(onPressResult).toEqual(undefined);
+        expect(services.Permissions.request.mock.calls.length).toBe(1);
+        expect(onPressResult).toEqual(PERMISSION_STATUS.DENIED);
       });
 
-      it('can not open settings', async () => {
+      it('should open settings', async () => {
         const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
         const handleDeny = jest.fn();
         const services = {
@@ -207,15 +207,49 @@ describe('Permissions', () => {
           translations.permission,
           'foo bar baz',
           [
-            {onPress: handleDeny, style: 'cancel', text: translations.quit},
-            {onPress: expect.any(Function), text: translations.ok}
+            {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
+            {onPress: expect.any(Function), text: translations.openSettings}
           ],
           {cancelable: false}
         ]);
         // $FlowFixMe
         const onPressResult = await services.Permissions.alert.mock.calls[1][2][1].onPress();
-        expect(services.Permissions.request.mock.calls.length).toBe(1);
-        expect(onPressResult).toEqual(PERMISSION_STATUS.DENIED);
+        expect(services.Permissions.request.mock.calls.length).toBe(0);
+        expect(onPressResult).toEqual(undefined);
+      });
+
+      it('should not open settings', async () => {
+        const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
+        const handleDeny = jest.fn();
+        const services = {
+          Analytics: createFakeAnalytics(),
+          Permissions: {
+            openSettings: jest.fn(() => Promise.resolve(undefined)),
+            alert: jest.fn((title, description, [quitOption, validateOption]) => {
+              // $FlowFixMe this simulates a press on the button
+              quitOption && quitOption.onPress();
+            }),
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
+          }
+        };
+        // $FlowFixMe we dont want to mock the entire services object
+        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        expect(dispatch.mock.calls.length).toBe(1);
+        expect(dispatch.mock.calls[0]).toEqual([expected]);
+        expect(services.Permissions.alert.mock.calls.length).toBe(2);
+        expect(services.Permissions.alert.mock.calls[1]).toEqual([
+          translations.permission,
+          'foo bar baz',
+          [
+            {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
+            {onPress: expect.any(Function), text: translations.openSettings}
+          ],
+          {cancelable: false}
+        ]);
+        // $FlowFixMe
+        const onPressResult = await services.Permissions.alert.mock.calls[1][2][0].onPress();
+        expect(services.Permissions.request.mock.calls.length).toBe(0);
+        expect(onPressResult).toEqual(undefined);
       });
     });
   });

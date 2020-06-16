@@ -107,8 +107,8 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
               [
                 {text: translations.quit, onPress: onDeny, style: 'cancel'},
                 {
-                  text: translations.ok,
-                  onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services})
+                  text: translations.openSettings,
+                  onPress: () => services.Permissions.openSettings().catch(onDeny)
                 }
               ],
               {cancelable: false}
@@ -117,8 +117,8 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
           style: 'cancel'
         },
         {
-          text: translations.openSettings,
-          onPress: () => services.Permissions.openSettings().catch(onDeny)
+          text: translations.ok,
+          onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services})
         }
       ],
       {cancelable: false}
