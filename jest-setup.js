@@ -1,6 +1,4 @@
-// @flow
-
-import {NativeModules, Platform, ScrollView, Vibration} from 'react-native';
+import {NativeModules, Platform, ScrollView} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 
 // AsyncStorage
@@ -14,10 +12,61 @@ ScrollView.propTypes = {
   decelerationRate: () => {}
 };
 
-Vibration.vibrate = () => {};
-Vibration.cancel = () => {};
+jest.mock('react-native-qrcode-scanner', () => ({
+  __esModule: true,
+  default: 'Mock$QRCodeScanner'
+}));
 
-jest.mock('NativeEventEmitter', () => {
+jest.mock('react-native-localization', () => {
+  // type Trads = {[key: SupportedLanguage]: Translations};
+  return class LocalizedStrings {
+    constructor(translations) {
+      Object.keys(translations.en).forEach(key => {
+        this[key] = translations.en[key];
+      });
+    }
+
+    setLanguage = jest.fn();
+
+    getLanguage = jest.fn(() => 'en');
+
+    getInterfaceLanguage = jest.fn(() => 'en');
+
+    formatString = jest.fn((str, ...replacers) => {
+      let result = str;
+      Object.keys(replacers).forEach(key => {
+        result = result.replace('{' + key + '}', replacers[key]);
+      });
+      return result;
+    });
+  };
+});
+
+jest.mock('@react-native-community/netinfo', () => ({
+  addEventListener: jest.fn(),
+  fetch: jest.fn(state => Promise.resolve(state))
+}));
+
+jest.mock('react-native-offline', () => ({
+  NetworkProvider: jest.fn(),
+  NetworkConsumer: jest.fn(),
+  reducer: null,
+  createNetworkMiddleware: jest.fn(),
+  checkInternetConnection: jest.fn(),
+  offlineActionTypes: {
+    CONNECTION_CHANGE: '@@network-connectivity/CONNECTION_CHANGE'
+  }
+}));
+
+jest.mock('react-native/Libraries/Vibration/NativeVibration.js', () => {
+  return class MockVibration {
+    vibrate = () => jest.fn();
+
+    cancel = () => jest.fn();
+  };
+});
+
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter.js', () => {
   return class MockNativeEventEmitter {
     addListener = () => ({remove: jest.fn()});
 
@@ -106,7 +155,6 @@ jest.mock('react-native-permissions', () => {
   const {PERMISSION_STATUS} = require('./src/const');
 
   return {
-    canOpenSettings: jest.fn(() => Promise.resolve(true)),
     openSettings: jest.fn(() => Promise.resolve(undefined)),
     request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
     check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
@@ -132,18 +180,23 @@ jest.mock('react-navigation', () => ({
 
 // react-native-confetti-cannon
 
-jest.mock('@coorpacademy/react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');
+jest.mock('react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');
 
 // react-native-firebase
 
-jest.mock('react-native-firebase', () => ({
-  analytics: () => ({
+jest.mock('@react-native-firebase/crashlytics', () => jest.fn());
+jest.mock('@react-native-firebase/analytics', () =>
+  jest.fn(() => ({
+    __esModule: true,
     setAnalyticsCollectionEnabled: jest.fn(),
     logEvent: jest.fn(),
     setCurrentScreen: jest.fn(),
     setUserProperty: jest.fn(),
     setUserProperties: jest.fn()
-  }),
+  }))
+);
+
+jest.mock('@react-native-firebase/app', () => ({
   utils: jest.fn(() => ({}))
 }));
 

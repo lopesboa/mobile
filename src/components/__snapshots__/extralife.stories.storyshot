@@ -15,7 +15,8 @@ exports[`Storyshots Extralife Default 1`] = `
     align="xMidYMid"
     bbHeight={45}
     bbWidth={45}
-    color="#FFFFFF"
+    color={4294967295}
+    focusable={false}
     meetOrSlice={0}
     minX={0}
     minY={0}
@@ -29,7 +30,6 @@ exports[`Storyshots Extralife Default 1`] = `
           "height": 45,
           "width": 45,
         },
-        null,
         Object {
           "flex": 0,
           "height": 45,
@@ -37,135 +37,28 @@ exports[`Storyshots Extralife Default 1`] = `
         },
       ]
     }
-    tintColor="#FFFFFF"
+    tintColor={4294967295}
     vbHeight={24}
     vbWidth={24}
   >
-    <RNSVGGroup
-      fill={
-        Array [
-          0,
-          4278190080,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      font={Object {}}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={Array []}
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth={1}
-      vectorEffect={0}
-      x={0}
-      y={0}
-    >
+    <RNSVGGroup>
       <RNSVGPath
         d="M0 0h24v24H0z"
         fill={null}
-        fillOpacity={1}
-        fillRule={1}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
-        opacity={1}
-        originX={0}
-        originY={0}
         propList={
           Array [
             "fill",
           ]
         }
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
       />
       <RNSVGPath
         d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
-        fill={
-          Array [
-            0,
-            4294967295,
-          ]
-        }
-        fillOpacity={1}
-        fillRule={1}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
-        opacity={1}
-        originX={0}
-        originY={0}
+        fill={4294967295}
         propList={
           Array [
             "fill",
           ]
         }
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
       />
     </RNSVGGroup>
   </RNSVGSvgView>
@@ -211,7 +104,8 @@ exports[`Storyshots Extralife Default 1`] = `
       align="xMidYMid"
       bbHeight={38}
       bbWidth={38}
-      color="#FFFFFF"
+      color={4294967295}
+      focusable={false}
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -232,7 +126,6 @@ exports[`Storyshots Extralife Default 1`] = `
               "width": 38,
             },
           ],
-          null,
           Object {
             "flex": 0,
             "height": 38,
@@ -240,114 +133,23 @@ exports[`Storyshots Extralife Default 1`] = `
           },
         ]
       }
-      tintColor="#FFFFFF"
+      tintColor={4294967295}
       vbHeight={24}
       vbWidth={24}
     >
-      <RNSVGGroup
-        fill={
-          Array [
-            0,
-            4278190080,
-          ]
-        }
-        fillOpacity={1}
-        fillRule={1}
-        font={Object {}}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
-        opacity={1}
-        originX={0}
-        originY={0}
-        propList={Array []}
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
-      >
+      <RNSVGGroup>
         <RNSVGPath
           d="M0 .001h24v24H0z"
           fill={null}
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
           propList={
             Array [
               "fill",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
         <RNSVGPath
           d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
-          fill={
-            Array [
-              0,
-              4294967295,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
+          fill={4294967295}
           propList={
             Array [
               "fill",
@@ -355,27 +157,8 @@ exports[`Storyshots Extralife Default 1`] = `
               "strokeWidth",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={
-            Array [
-              0,
-              4294967295,
-            ]
-          }
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
+          stroke={4294967295}
           strokeWidth={5}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
@@ -383,7 +166,8 @@ exports[`Storyshots Extralife Default 1`] = `
       align="xMidYMid"
       bbHeight={28}
       bbWidth={28}
-      color="#F73F52"
+      color={4294393682}
+      focusable={false}
       meetOrSlice={0}
       minX={0}
       minY={0}
@@ -398,7 +182,6 @@ exports[`Storyshots Extralife Default 1`] = `
             "position": "absolute",
             "width": 28,
           },
-          null,
           Object {
             "flex": 0,
             "height": 28,
@@ -406,114 +189,23 @@ exports[`Storyshots Extralife Default 1`] = `
           },
         ]
       }
-      tintColor="#F73F52"
+      tintColor={4294393682}
       vbHeight={24}
       vbWidth={24}
     >
-      <RNSVGGroup
-        fill={
-          Array [
-            0,
-            4278190080,
-          ]
-        }
-        fillOpacity={1}
-        fillRule={1}
-        font={Object {}}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
-        opacity={1}
-        originX={0}
-        originY={0}
-        propList={Array []}
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
-      >
+      <RNSVGGroup>
         <RNSVGPath
           d="M0 .001h24v24H0z"
           fill={null}
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
           propList={
             Array [
               "fill",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
         <RNSVGPath
           d="M16 4.001c-1.594 0-3.07.837-4 2.08-.93-1.243-2.406-2.08-4-2.08-2.757 0-5 2.243-5 5 0 5.491 8.124 10.632 8.471 10.848a1 1 0 0 0 1.058 0C12.876 19.633 21 14.492 21 9.001c0-2.757-2.243-5-5-5z"
-          fill={
-            Array [
-              0,
-              4294393682,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
+          fill={4294393682}
           propList={
             Array [
               "fill",
@@ -521,27 +213,8 @@ exports[`Storyshots Extralife Default 1`] = `
               "strokeWidth",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={
-            Array [
-              0,
-              4294393682,
-            ]
-          }
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
+          stroke={4294393682}
           strokeWidth={5}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>

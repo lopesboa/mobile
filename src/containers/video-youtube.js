@@ -11,6 +11,7 @@ import PlayerComponent, {STATE} from '../components/video-youtube';
 import {STEP} from '../components/video-overlay';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
 import {isVideoFullScreen, getYoutubeAPIKey} from '../redux/utils/state-extract';
+import type {SourceURI} from '../types';
 
 export type ConnectedStateProps = {|
   isFullScreen: boolean,
@@ -24,7 +25,7 @@ type ConnectedDispatchToProps = {|
 type OwnProps = {|
   id: string,
   onPlay: () => Promise<void> | void,
-  preview: File | {uri: string},
+  preview: File | SourceURI,
   height: number,
   testID?: string,
   extralifeOverlay?: boolean

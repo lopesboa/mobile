@@ -118,9 +118,9 @@ describe('Fetch', () => {
     const _fetch = require('cross-fetch');
     const fetch = require('./fetch').default;
 
-    const result = fetch('https://domain.tld?foo=bar');
+    const result = await fetch('https://domain.tld?foo=bar');
 
-    await expect(result).rejects.toThrow('Fetch must be mocked in e2e mode');
+    expect(result).toEqual('Cannot be called from e2e mode');
     expect(_fetch).toHaveBeenCalledTimes(0);
   });
 });

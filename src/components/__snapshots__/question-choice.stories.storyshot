@@ -3,7 +3,8 @@
 exports[`Storyshots QuestionChoice Default 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -84,7 +85,8 @@ exports[`Storyshots QuestionChoice Default 1`] = `
 exports[`Storyshots QuestionChoice Disabled 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -223,7 +225,8 @@ exports[`Storyshots QuestionChoice Disabled 1`] = `
 exports[`Storyshots QuestionChoice Selected 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -308,7 +311,8 @@ exports[`Storyshots QuestionChoice Selected 1`] = `
 exports[`Storyshots QuestionChoice Selected with image 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -447,7 +451,8 @@ exports[`Storyshots QuestionChoice Selected with image 1`] = `
 exports[`Storyshots QuestionChoice Squeezed 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -534,7 +539,8 @@ exports[`Storyshots QuestionChoice Squeezed 1`] = `
 exports[`Storyshots QuestionChoice With image 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -669,7 +675,8 @@ exports[`Storyshots QuestionChoice With image 1`] = `
 exports[`Storyshots QuestionChoice with html content 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

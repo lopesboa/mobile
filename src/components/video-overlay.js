@@ -7,6 +7,7 @@ import {NovaSolidDesignActionsRedo} from '@coorpacademy/nova-icons';
 import theme from '../modules/theme';
 import {RESOURCE_TYPE} from '../const';
 import translations from '../translations';
+import type {SourceURI} from '../types';
 import Preview, {EXTRALIFE} from './preview';
 import Overlay from './overlay';
 import Touchable from './touchable';
@@ -15,7 +16,7 @@ import Space from './space';
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
 export type Props = {|
-  preview: File | {uri: string},
+  preview: File | SourceURI,
   height: number,
   step: Step,
   isFullScreen?: boolean,

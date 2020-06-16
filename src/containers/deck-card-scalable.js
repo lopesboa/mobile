@@ -78,11 +78,13 @@ class DeckCardScalable extends React.PureComponent<Props, State> {
       Animated.parallel([
         Animated.timing(this.top, {
           toValue: isExpanded ? -((expandedHeight - height + expandedOffsetBottom) / 2) : 0,
-          duration: ANIMATION_DURATION
+          duration: ANIMATION_DURATION,
+          useNativeDriver: false
         }),
         Animated.timing(this.height, {
           toValue: isExpanded ? expandedHeight : height - offsetBottom,
-          duration: ANIMATION_DURATION
+          duration: ANIMATION_DURATION,
+          useNativeDriver: false
         })
       ]).start();
     }

@@ -96,24 +96,24 @@ const CatalogItemFooter = ({item, testID, size}: Props) => {
         <Placeholder style={[styles.placeholder, isHero && styles.placeholderHero]}>
           <PlaceholderLine
             size={(isHero && 'large') || 'base'}
-            width={(isHero && '85%') || '65%'}
+            width={(isHero && 85) || 65}
             color={PLACEHOLDER_COLOR}
             isCentered={isHero}
           />
           <Space type={SPACE.TINY} />
           <PlaceholderLine
             size={(isHero && 'large') || 'base'}
-            width={(isHero && '65%') || '90%'}
+            width={(isHero && 65) || 90}
             color={PLACEHOLDER_COLOR}
             isCentered={isHero}
           />
           <Space type={SPACE.BASE} />
-          <PlaceholderLine size="small" width="50%" color={PLACEHOLDER_COLOR} isCentered={isHero} />
+          <PlaceholderLine size="small" width={50} color={PLACEHOLDER_COLOR} isCentered={isHero} />
           <Space type={SPACE.SMALL} />
           <View style={[styles.progressionBar, isHero && styles.progressionBarCentered]}>
             <PlaceholderLine
               size="tiny"
-              width="100%"
+              width={100}
               color={PLACEHOLDER_COLOR}
               isCentered={isHero}
             />

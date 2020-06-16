@@ -22,62 +22,20 @@ exports[`Storyshots QRCodeScanner With permission 1`] = `
     }
   }
 >
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-        },
-        undefined,
-      ]
+  <Mock$QRCodeScanner
+    cameraProps={
+      Object {
+        "captureAudio": false,
+      }
     }
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 2,
-            "justifyContent": "center",
-            "width": 750,
-          },
-          undefined,
-        ]
+    cameraStyle={
+      Object {
+        "height": "100%",
+        "width": "100%",
       }
-    />
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 16,
-            "textAlign": "center",
-          }
-        }
-      >
-        ...
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 2,
-            "justifyContent": "center",
-            "width": 750,
-          },
-          undefined,
-        ]
-      }
-    />
-  </View>
+    }
+    fadeIn={false}
+    onRead={[Function]}
+  />
 </View>
 `;

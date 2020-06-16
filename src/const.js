@@ -151,9 +151,9 @@ export const ENGINE: {
 (Object.keys(ENGINE).map(k => ENGINE[k]): Array<Engine>);
 
 export const PERMISSION_STATUS: {
-  ['AUTHORIZED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED']: PermissionStatus
+  ['GRANTED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED']: PermissionStatus
 } = {
-  AUTHORIZED: 'authorized',
+  GRANTED: 'granted',
   DENIED: 'denied',
   RESTRICTED: 'restricted',
   UNDETERMINED: 'undetermined'

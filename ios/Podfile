@@ -1,80 +1,108 @@
 install! 'cocoapods', :deterministic_uuids => false
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '10.0'
+def add_flipper_pods!(versions = {})
+  versions['Flipper'] ||= '~> 0.33.1'
+  versions['DoubleConversion'] ||= '1.1.7'
+  versions['Flipper-Folly'] ||= '~> 2.1'
+  versions['Flipper-Glog'] ||= '0.3.6'
+  versions['Flipper-PeerTalk'] ||= '~> 0.0.4'
+  versions['Flipper-RSocket'] ||= '~> 1.0'
 
-target 'Coorpacademy' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  pod 'FlipperKit', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitLayoutPlugin', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/SKIOSNetworkPlugin', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitUserDefaultsPlugin', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitReactPlugin', versions['Flipper'], :configuration => 'Debug'
 
-  rn_path = '../node_modules/react-native'
-
-  # Your 'node_modules' directory is probably in the root of your project,
-  # but if not, adjust the `:path` accordingly
-  pod 'React', :path => rn_path, :subspecs => [
-    'Core',
-    'CxxBridge', # Include this for RN >= 0.47
-    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
-    'RCTText',
-    'RCTNetwork',
-    'RCTWebSocket', # Needed for debugging
-    'RCTAnimation', # Needed for FlatList and animations running on native UI thread
-    # Add any other subspecs you want to use in your project
-    'RCTImage', # Needed for react-native-svg
-    'RCTLinkingIOS', # Needed for react-navigation
-  ]
-  # Explicitly include Yoga if you are using RN >= 0.42.0
-  pod 'yoga', :path => "#{rn_path}/ReactCommon/yoga"
-
-  # Third party deps podspec link
-  pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs"
-  pod 'glog', :podspec => "#{rn_path}/third-party-podspecs"
-  pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs"
-
-  # Firebase
-  pod 'Firebase/Core'
-  pod 'Firebase/DynamicLinks'
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
-
-  # Monitoring
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
-
-  # Tracking
-  pod 'GoogleTagManager'
-
-  # Pods for the app
-  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
-  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
-  pod 'react-native-pdf', :path => '../node_modules/react-native-pdf'
-  pod 'react-native-orientation-locker', :path => '../node_modules/react-native-orientation-locker'
-  pod 'react-native-video', :path => '../node_modules/react-native-video'
-  pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
-  pod 'RNSVG', :path => '../node_modules/react-native-svg'
-  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
-  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
-  pod 'RNSound', :path => '../node_modules/react-native-sound'
-  pod 'RNReactNativeHapticFeedback', :path => '../node_modules/react-native-haptic-feedback'
-  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
-  pod 'RCTYouTube', :path => '../node_modules/react-native-youtube'
-
-
-  # Lottie
-  pod 'lottie-ios', :path => '../node_modules/lottie-ios'
-  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+  # List all transitive dependencies for FlipperKit pods
+  # to avoid them being linked in Release builds
+  pod 'Flipper', versions['Flipper'], :configuration => 'Debug'
+  pod 'Flipper-DoubleConversion', versions['DoubleConversion'], :configuration => 'Debug'
+  pod 'Flipper-Folly', versions['Flipper-Folly'], :configuration => 'Debug'
+  pod 'Flipper-Glog', versions['Flipper-Glog'], :configuration => 'Debug'
+  pod 'Flipper-PeerTalk', versions['Flipper-PeerTalk'], :configuration => 'Debug'
+  pod 'Flipper-RSocket', versions['Flipper-RSocket'], :configuration => 'Debug'
+  pod 'FlipperKit/Core', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/CppBridge', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FBCxxFollyDynamicConvert', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FBDefines', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FKPortForwarding', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitHighlightOverlay', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitLayoutTextSearchable', versions['Flipper'], :configuration => 'Debug'
+  pod 'FlipperKit/FlipperKitNetworkPlugin', versions['Flipper'], :configuration => 'Debug'
 end
 
-# The following is needed to ensure the "archive" step works in XCode.
-# It removes React from the Pods project, as it is already included in the main project.
-post_install do |installer|
+# Post Install processing for Flipper
+def flipper_post_install(installer)
   installer.pods_project.targets.each do |target|
-    if target.name == "React"
-      target.remove_from_project
+    if target.name == 'YogaKit'
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.1'
+      end
     end
+  end
+end
+
+target 'Coorpacademy' do
+  # Pods for Coorpacademy
+  
+pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
+pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
+pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
+pod 'RCTTypeSafety', :path => "../node_modules/react-native/Libraries/TypeSafety"
+pod 'React', :path => '../node_modules/react-native/'
+pod 'React-Core', :path => '../node_modules/react-native/'
+pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
+pod 'React-Core/DevSupport', :path => '../node_modules/react-native/'
+pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
+pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
+pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image'
+pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network'
+pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
+pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
+pod 'React-Core/RCTWebSocket', :path => '../node_modules/react-native/'
+
+pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
+pod 'ReactCommon/callinvoker', :path => "../node_modules/react-native/ReactCommon"
+pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
+pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga', :modular_headers => true
+
+pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+
+# # Monitoring
+# pod 'Fabric'
+# pod 'Crashlytics'
+# pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
+
+# # Tracking
+# pod 'GoogleTagManager'
+
+# # Pods for the app
+
+permissions_path = '../node_modules/react-native-permissions/ios'
+
+pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
+
+
+  use_native_modules!
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  add_flipper_pods!
+  post_install do |installer|
+    flipper_post_install(installer)
   end
 end

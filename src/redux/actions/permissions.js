@@ -1,5 +1,6 @@
 // @flow strict
 
+import {Platform} from 'react-native';
 import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {PermissionStatus} from '../../types';
 import translations from '../../translations';
@@ -10,6 +11,15 @@ export const CHECK = '@@permissions/CHECK';
 export const CHANGE = '@@permissions/CHANGE';
 
 export type PermissionType = 'camera';
+
+// Right now this is only dealing with camera
+// If you want to support more permissions, please switch on each type
+export const toOSPermissionType = (type: PermissionType) => {
+  const permission = type.toUpperCase();
+  return Platform.OS === 'ios'
+    ? `ios.permission.${permission}`
+    : `android.permission.${permission}`;
+};
 
 export type RequestPayload = {|
   type: PermissionType
@@ -51,8 +61,8 @@ const _requestPermission = (type: PermissionType, onDeny?: () => void) => async 
   getState: GetState,
   {services}: Options
 ): Promise<PermissionStatus> => {
-  const status = await services.Permissions.request(type);
-  const currentPermissionStatus = getState().permissions[type];
+  const status = await services.Permissions.request(toOSPermissionType(type));
+  const currentPermissionStatus = getState().permissions.camera;
 
   if (status === PERMISSION_STATUS.DENIED && onDeny) {
     onDeny();
@@ -84,18 +94,31 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
   const permissionStatus = getState().permissions[type];
 
   if (permissionStatus === PERMISSION_STATUS.DENIED) {
-    const canOpenSettings = await services.Permissions.canOpenSettings();
     services.Permissions.alert(
       translations.permission,
       description,
       [
-        {text: translations.quit, onPress: onDeny, style: 'cancel'},
         {
-          text: canOpenSettings ? translations.openSettings : translations.ok,
-          onPress: () =>
-            canOpenSettings
-              ? services.Permissions.openSettings().then(onDeny)
-              : _requestPermission(type, onDeny)(dispatch, getState, {services})
+          text: translations.quit,
+          onPress: () => {
+            services.Permissions.alert(
+              translations.permission,
+              description,
+              [
+                {text: translations.quit, onPress: onDeny, style: 'cancel'},
+                {
+                  text: translations.ok,
+                  onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services})
+                }
+              ],
+              {cancelable: false}
+            );
+          },
+          style: 'cancel'
+        },
+        {
+          text: translations.openSettings,
+          onPress: () => services.Permissions.openSettings().catch(onDeny)
         }
       ],
       {cancelable: false}
@@ -119,10 +142,10 @@ export const check = (type: PermissionType) => async (
     }
   });
 
-  const status = await services.Permissions.check(type);
+  const status = await services.Permissions.check(toOSPermissionType(type));
   const {permissions} = getState();
 
-  if (permissions[type] !== status) {
+  if (permissions.camera !== status) {
     dispatch(change(type, status));
   }
 

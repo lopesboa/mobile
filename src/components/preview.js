@@ -11,6 +11,7 @@ import type {LessonType} from '@coorpacademy/progression-engine';
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
 import translations from '../translations';
+import type {SourceURI} from '../types';
 import Button from './button';
 import Space from './space';
 import Overlay from './overlay';
@@ -24,7 +25,7 @@ export const EXTRALIFE: string = 'extralife';
 
 type Props = {|
   type: LessonType | typeof EXTRALIFE,
-  source: File | {uri: string},
+  source: File | SourceURI,
   isLoading?: boolean,
   hasOverlay?: boolean,
   iconWidth?: number,

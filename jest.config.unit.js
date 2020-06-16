@@ -4,7 +4,7 @@ module.exports = {
   preset: 'react-native',
   moduleFileExtensions: ['unit.js', 'unit.json', 'ios.js', 'android.js', 'js', 'json'],
   moduleNameMapper: {
-    '^[./a-zA-Z0-9$_-]+.png$': 'RelativeImageStub',
+    '^[./a-zA-Z0-9$_-]+.png$': '<rootDir>/assets-transformer.js',
     '^[./a-zA-Z0-9$_-]+.mp3': '<rootDir>/assets-transformer.js'
   },
   transformIgnorePatterns: [

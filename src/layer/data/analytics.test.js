@@ -12,14 +12,14 @@ const createAnalytics = () => ({
 describe('Analytics', () => {
   it('setAnalyticsCollectionEnabled', () => {
     const analytics = createAnalytics();
-    jest.mock('react-native-firebase', () => ({
-      analytics: jest.fn(),
+    jest.mock('@react-native-firebase/app', () => ({
       utils: jest.fn(() => ({}))
     }));
+    jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
-    const firebase = require('react-native-firebase');
+    const firebaseAnalytics = require('@react-native-firebase/analytics');
     // $FlowFixMe package is mocked
-    firebase.analytics.mockReturnValue(analytics);
+    firebaseAnalytics.mockReturnValue(analytics);
     require('./analytics');
     expect(analytics.setAnalyticsCollectionEnabled).toHaveBeenCalledWith(true);
   });
@@ -28,14 +28,14 @@ describe('Analytics', () => {
     describe(ANALYTICS_EVENT_TYPE.NAVIGATE, () => {
       it('should set current screen', () => {
         const analytics = createAnalytics();
-        jest.mock('react-native-firebase', () => ({
-          analytics: jest.fn(),
+        jest.mock('@react-native-firebase/app', () => ({
           utils: jest.fn(() => ({}))
         }));
+        jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
-        const firebase = require('react-native-firebase');
+        const firebaseAnalytics = require('@react-native-firebase/analytics');
         // $FlowFixMe package is mocked
-        firebase.analytics.mockReturnValue(analytics);
+        firebaseAnalytics.mockReturnValue(analytics);
         const {logEvent} = require('./analytics');
         // $FlowFixMe this is a fake event
         logEvent(ANALYTICS_EVENT_TYPE.NAVIGATE, {screenName: 'qux'});
@@ -48,14 +48,14 @@ describe('Analytics', () => {
     describe(ANALYTICS_EVENT_TYPE.SIGN_IN, () => {
       it('should set user properties', () => {
         const analytics = createAnalytics();
-        jest.mock('react-native-firebase', () => ({
-          analytics: jest.fn(),
+        jest.mock('@react-native-firebase/app', () => ({
           utils: jest.fn(() => ({}))
         }));
+        jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
-        const firebase = require('react-native-firebase');
+        const firebaseAnalytics = require('@react-native-firebase/analytics');
         // $FlowFixMe package is mocked
-        firebase.analytics.mockReturnValue(analytics);
+        firebaseAnalytics.mockReturnValue(analytics);
         const {logEvent} = require('./analytics');
         // $FlowFixMe this is a fake event
         logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {userId: 'foo', brand: 'bar'});
@@ -74,14 +74,14 @@ describe('Analytics', () => {
     describe(ANALYTICS_EVENT_TYPE.SIGN_OUT, () => {
       it('should unset user properties', () => {
         const analytics = createAnalytics();
-        jest.mock('react-native-firebase', () => ({
-          analytics: jest.fn(),
+        jest.mock('@react-native-firebase/app', () => ({
           utils: jest.fn(() => ({}))
         }));
+        jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
-        const firebase = require('react-native-firebase');
+        const firebaseAnalytics = require('@react-native-firebase/analytics');
         // $FlowFixMe package is mocked
-        firebase.analytics.mockReturnValue(analytics);
+        firebaseAnalytics.mockReturnValue(analytics);
         const {logEvent} = require('./analytics');
         // $FlowFixMe this is a fake event
         logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {userId: 'foo', brand: 'bar'});
@@ -99,14 +99,14 @@ describe('Analytics', () => {
 
     it('should handle common event', () => {
       const analytics = createAnalytics();
-      jest.mock('react-native-firebase', () => ({
-        analytics: jest.fn(),
+      jest.mock('@react-native-firebase/app', () => ({
         utils: jest.fn(() => ({}))
       }));
+      jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
-      const firebase = require('react-native-firebase');
+      const firebaseAnalytics = require('@react-native-firebase/analytics');
       // $FlowFixMe package is mocked
-      firebase.analytics.mockReturnValue(analytics);
+      firebaseAnalytics.mockReturnValue(analytics);
       const {logEvent} = require('./analytics');
       // $FlowFixMe this is a fake event
       logEvent('foo', {bar: 'baz'});

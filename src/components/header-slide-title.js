@@ -5,6 +5,7 @@ import {View, StyleSheet} from 'react-native';
 
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
 import theme from '../modules/theme';
+import type {SourceURI} from '../types';
 import {BrandThemeContext} from './brand-theme-provider';
 import Text from './text';
 import PlaceholderLine from './placeholder-line';
@@ -12,7 +13,7 @@ import Space from './space';
 import ImageBackground from './image-background';
 
 type Props = {|
-  image?: {uri: string},
+  image?: SourceURI,
   subtitle?: string,
   title?: string
 |};
@@ -75,9 +76,9 @@ const HeaderSlide = ({image, subtitle, title}: Props) => {
         ) : null}
         {!title ? (
           <React.Fragment>
-            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="15%" />
+            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width={15} />
             <Space />
-            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width="50%" />
+            <PlaceholderLine size="small" color={PLACEHOLDER_COLOR} width={50} />
           </React.Fragment>
         ) : null}
       </View>

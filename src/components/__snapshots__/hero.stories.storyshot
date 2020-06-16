@@ -96,11 +96,17 @@ exports[`Storyshots Hero Default 1`] = `
         <View
           style={
             Array [
+              Array [
+                Object {
+                  "height": 75,
+                },
+                Object {
+                  "height": 87,
+                },
+              ],
               Object {
-                "height": 75,
-              },
-              Object {
-                "height": 87,
+                "flexDirection": "row",
+                "width": "100%",
               },
             ]
           }
@@ -129,28 +135,34 @@ exports[`Storyshots Hero Default 1`] = `
               }
             >
               <View
-                noMargin={true}
                 style={
                   Array [
                     Object {
-                      "borderRadius": 0,
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 3,
+                      "height": 12,
+                      "marginBottom": 0,
+                      "width": "85%",
                     },
+                    Array [
+                      Object {
+                        "borderRadius": 0,
+                      },
+                      Object {
+                        "height": 16,
+                      },
+                      Object {
+                        "backgroundColor": "#CFD8DC",
+                      },
+                    ],
                     Object {
-                      "height": 16,
-                    },
-                    Object {
-                      "backgroundColor": "#CFD8DC",
+                      "overflow": "hidden",
                     },
                   ]
                 }
-                width="85%"
               >
                 <View
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
+                  style={null}
                 />
               </View>
             </View>
@@ -179,28 +191,34 @@ exports[`Storyshots Hero Default 1`] = `
               }
             >
               <View
-                noMargin={true}
                 style={
                   Array [
                     Object {
-                      "borderRadius": 0,
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 3,
+                      "height": 12,
+                      "marginBottom": 0,
+                      "width": "65%",
                     },
+                    Array [
+                      Object {
+                        "borderRadius": 0,
+                      },
+                      Object {
+                        "height": 16,
+                      },
+                      Object {
+                        "backgroundColor": "#CFD8DC",
+                      },
+                    ],
                     Object {
-                      "height": 16,
-                    },
-                    Object {
-                      "backgroundColor": "#CFD8DC",
+                      "overflow": "hidden",
                     },
                   ]
                 }
-                width="65%"
               >
                 <View
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
+                  style={null}
                 />
               </View>
             </View>
@@ -229,28 +247,34 @@ exports[`Storyshots Hero Default 1`] = `
               }
             >
               <View
-                noMargin={true}
                 style={
                   Array [
                     Object {
-                      "borderRadius": 0,
+                      "backgroundColor": "#efefef",
+                      "borderRadius": 3,
+                      "height": 12,
+                      "marginBottom": 0,
+                      "width": "50%",
                     },
+                    Array [
+                      Object {
+                        "borderRadius": 0,
+                      },
+                      Object {
+                        "height": 5,
+                      },
+                      Object {
+                        "backgroundColor": "#CFD8DC",
+                      },
+                    ],
                     Object {
-                      "height": 5,
-                    },
-                    Object {
-                      "backgroundColor": "#CFD8DC",
+                      "overflow": "hidden",
                     },
                   ]
                 }
-                width="50%"
               >
                 <View
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
+                  style={null}
                 />
               </View>
             </View>
@@ -263,7 +287,6 @@ exports[`Storyshots Hero Default 1`] = `
               }
             />
             <View
-              noMargin={true}
               style={
                 Array [
                   Object {
@@ -294,28 +317,34 @@ exports[`Storyshots Hero Default 1`] = `
                 }
               >
                 <View
-                  noMargin={true}
                   style={
                     Array [
                       Object {
-                        "borderRadius": 0,
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 3,
+                        "height": 12,
+                        "marginBottom": 0,
+                        "width": "100%",
                       },
+                      Array [
+                        Object {
+                          "borderRadius": 0,
+                        },
+                        Object {
+                          "height": 2,
+                        },
+                        Object {
+                          "backgroundColor": "#CFD8DC",
+                        },
+                      ],
                       Object {
-                        "height": 2,
-                      },
-                      Object {
-                        "backgroundColor": "#CFD8DC",
+                        "overflow": "hidden",
                       },
                     ]
                   }
-                  width="100%"
                 >
                   <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
+                    style={null}
                   />
                 </View>
               </View>
@@ -680,7 +709,8 @@ exports[`Storyshots Hero With content 1`] = `
       >
         <View
           accessible={true}
-          isTVSelectable={true}
+          focusable={true}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}

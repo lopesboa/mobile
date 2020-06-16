@@ -6,7 +6,8 @@ exports[`Storyshots HeaderBackIcon Custom props 1`] = `
     align="xMidYMid"
     bbHeight={20}
     bbWidth={20}
-    color="#0ff"
+    color={4278255615}
+    focusable={false}
     height={20}
     id="prefix__Calque_1"
     meetOrSlice={0}
@@ -18,8 +19,6 @@ exports[`Storyshots HeaderBackIcon Custom props 1`] = `
           "backgroundColor": "transparent",
           "borderWidth": 0,
         },
-        undefined,
-        null,
         Object {
           "flex": 0,
           "height": 20,
@@ -27,7 +26,7 @@ exports[`Storyshots HeaderBackIcon Custom props 1`] = `
         },
       ]
     }
-    tintColor="#0ff"
+    tintColor={4278255615}
     vbHeight={20}
     vbWidth={20}
     width={20}
@@ -35,134 +34,19 @@ exports[`Storyshots HeaderBackIcon Custom props 1`] = `
     xmlSpace="preserve"
     y={0}
   >
-    <RNSVGGroup
-      fill={
-        Array [
-          0,
-          4278190080,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      font={Object {}}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={Array []}
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth={1}
-      vectorEffect={0}
-      x={0}
-      y={0}
-    >
+    <RNSVGGroup>
       <RNSVGGroup
-        fill={
-          Array [
-            0,
-            4278190080,
-          ]
-        }
-        fillOpacity={1}
-        fillRule={1}
-        font={Object {}}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
         name="prefix__Page-1"
-        opacity={1}
-        originX={0}
-        originY={0}
-        propList={Array []}
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
       >
         <RNSVGPath
           d="M13.9 0l2.9 3-6.9 7 6.9 7-2.9 3L4 10z"
-          fill={
-            Array [
-              0,
-              4278255615,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
+          fill={4278255615}
           name="prefix__arrow_left"
-          opacity={1}
-          originX={0}
-          originY={0}
           propList={
             Array [
               "fill",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
       </RNSVGGroup>
     </RNSVGGroup>
@@ -176,7 +60,8 @@ exports[`Storyshots HeaderBackIcon Default 1`] = `
     align="xMidYMid"
     bbHeight={16}
     bbWidth={16}
-    color="#546E7A"
+    color={4283723386}
+    focusable={false}
     height={16}
     id="prefix__Calque_1"
     meetOrSlice={0}
@@ -188,8 +73,6 @@ exports[`Storyshots HeaderBackIcon Default 1`] = `
           "backgroundColor": "transparent",
           "borderWidth": 0,
         },
-        undefined,
-        null,
         Object {
           "flex": 0,
           "height": 16,
@@ -197,7 +80,7 @@ exports[`Storyshots HeaderBackIcon Default 1`] = `
         },
       ]
     }
-    tintColor="#546E7A"
+    tintColor={4283723386}
     vbHeight={20}
     vbWidth={20}
     width={16}
@@ -205,134 +88,19 @@ exports[`Storyshots HeaderBackIcon Default 1`] = `
     xmlSpace="preserve"
     y={0}
   >
-    <RNSVGGroup
-      fill={
-        Array [
-          0,
-          4278190080,
-        ]
-      }
-      fillOpacity={1}
-      fillRule={1}
-      font={Object {}}
-      matrix={
-        Array [
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-        ]
-      }
-      opacity={1}
-      originX={0}
-      originY={0}
-      propList={Array []}
-      rotation={0}
-      scaleX={1}
-      scaleY={1}
-      skewX={0}
-      skewY={0}
-      stroke={null}
-      strokeDasharray={null}
-      strokeDashoffset={null}
-      strokeLinecap={0}
-      strokeLinejoin={0}
-      strokeMiterlimit={4}
-      strokeOpacity={1}
-      strokeWidth={1}
-      vectorEffect={0}
-      x={0}
-      y={0}
-    >
+    <RNSVGGroup>
       <RNSVGGroup
-        fill={
-          Array [
-            0,
-            4278190080,
-          ]
-        }
-        fillOpacity={1}
-        fillRule={1}
-        font={Object {}}
-        matrix={
-          Array [
-            1,
-            0,
-            0,
-            1,
-            0,
-            0,
-          ]
-        }
         name="prefix__Page-1"
-        opacity={1}
-        originX={0}
-        originY={0}
-        propList={Array []}
-        rotation={0}
-        scaleX={1}
-        scaleY={1}
-        skewX={0}
-        skewY={0}
-        stroke={null}
-        strokeDasharray={null}
-        strokeDashoffset={null}
-        strokeLinecap={0}
-        strokeLinejoin={0}
-        strokeMiterlimit={4}
-        strokeOpacity={1}
-        strokeWidth={1}
-        vectorEffect={0}
-        x={0}
-        y={0}
       >
         <RNSVGPath
           d="M13.9 0l2.9 3-6.9 7 6.9 7-2.9 3L4 10z"
-          fill={
-            Array [
-              0,
-              4283723386,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
+          fill={4283723386}
           name="prefix__arrow_left"
-          opacity={1}
-          originX={0}
-          originY={0}
           propList={
             Array [
               "fill",
             ]
           }
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
         />
       </RNSVGGroup>
     </RNSVGGroup>

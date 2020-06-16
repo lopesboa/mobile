@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import LineBase from 'rn-placeholder';
+import {PlaceholderLine as PlaceholderLineBase} from 'rn-placeholder';
 
 import theme from '../modules/theme';
 import type {FontSizeType} from '../modules/theme';
@@ -61,7 +61,7 @@ const PlaceholderLine = ({
       style
     ]}
   >
-    <LineBase
+    <PlaceholderLineBase
       style={[styles.line, styles[size], {backgroundColor: color}]}
       width={width || '100%'}
       noMargin

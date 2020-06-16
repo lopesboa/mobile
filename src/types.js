@@ -16,6 +16,12 @@ export type JWT = {|
   host: string
 |};
 
+export type NetworkState = {|
+  isConnected: boolean,
+  actionQueue: Array<mixed>,
+  isQueuePaused: boolean
+|};
+
 export type QuestionChoiceInputType = 'text' | 'select';
 
 export type SpaceType = 'micro' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xlarge';
@@ -100,7 +106,7 @@ export type User = {|
   givenName: string
 |};
 
-export type PermissionStatus = 'authorized' | 'denied' | 'restricted' | 'undetermined';
+export type PermissionStatus = 'granted' | 'denied' | 'restricted' | 'undetermined';
 
 export type UnlockedLevelInfo = {|
   isUnlocked: boolean,
@@ -137,3 +143,15 @@ export type LoggerProperties = {
 };
 
 export type AuthenticationType = 'qr-code' | 'magic-link' | 'demo' | 'reconnection';
+
+export type SourceURI = {|
+  uri?: string,
+  bundle?: string,
+  method?: string,
+  headers?: mixed,
+  body?: string,
+  cache?: 'default' | 'reload' | 'force-cache' | 'only-if-cached',
+  width?: number,
+  height?: number,
+  scale?: number
+|};

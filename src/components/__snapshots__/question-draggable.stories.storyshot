@@ -24,7 +24,8 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -113,7 +114,8 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -211,7 +213,8 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -296,7 +299,8 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -381,7 +385,8 @@ exports[`Storyshots QuestionDraggable Default 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -492,7 +497,8 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -581,7 +587,8 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -679,7 +686,8 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -764,7 +772,8 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -849,7 +858,8 @@ exports[`Storyshots QuestionDraggable With No SelectedChoics 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -960,7 +970,8 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1049,7 +1060,8 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1147,7 +1159,8 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1232,7 +1245,8 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1317,7 +1331,8 @@ exports[`Storyshots QuestionDraggable With choice without value 1`] = `
     </View>
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}

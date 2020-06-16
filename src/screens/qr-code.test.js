@@ -39,7 +39,7 @@ describe('QR Code', () => {
         slides: [],
         progression,
         permissions: createPermissionsState({
-          camera: PERMISSION_STATUS.AUTHORIZED
+          camera: PERMISSION_STATUS.GRANTED
         })
       });
 

@@ -4,10 +4,10 @@ import {createProgression} from '../__fixtures__/progression';
 import {CONTENT_TYPE, ENGINE} from '../const';
 import createService from './analytics';
 
-jest.mock('react-native-firebase', () => ({
-  analytics: jest.fn(),
+jest.mock('@react-native-firebase/app', () => ({
   utils: jest.fn(() => ({}))
 }));
+jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
 describe('Analytics', () => {
   it('sendViewedMediaAnalytics', () => {

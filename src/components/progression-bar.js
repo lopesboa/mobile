@@ -37,7 +37,8 @@ class ProgressionBar extends React.PureComponent<Props> {
     };
 
     Animated.timing(this.percentage, {
-      toValue: current / total
+      toValue: current / total,
+      useNativeDriver: false
     }).start();
 
     const width = this.percentage.interpolate({

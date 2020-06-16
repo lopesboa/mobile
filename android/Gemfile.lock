@@ -174,5 +174,8 @@ DEPENDENCIES
   fastlane-plugin-increment_version_code
   fastlane-plugin-yarn
 
+RUBY VERSION
+   ruby 2.4.0p0
+
 BUNDLED WITH
    2.0.2

@@ -58,7 +58,6 @@ describe('Services', () => {
       },
       Permissions: {
         alert: expect.any(Function),
-        canOpenSettings: expect.any(Function),
         check: expect.any(Function),
         openSettings: expect.any(Function),
         request: expect.any(Function)

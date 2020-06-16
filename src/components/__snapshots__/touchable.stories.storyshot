@@ -3,7 +3,8 @@
 exports[`Storyshots Touchable Default (disabled) 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -25,7 +26,8 @@ exports[`Storyshots Touchable Default (disabled) 1`] = `
 exports[`Storyshots Touchable Default 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -47,18 +49,16 @@ exports[`Storyshots Touchable Default 1`] = `
 exports[`Storyshots Touchable Highlight (disabled) 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
 >
-  <Text
-    style={null}
-  >
+  <Text>
     Foo
   </Text>
 </View>
@@ -67,18 +67,16 @@ exports[`Storyshots Touchable Highlight (disabled) 1`] = `
 exports[`Storyshots Touchable Highlight 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
 >
-  <Text
-    style={null}
-  >
+  <Text>
     Foo
   </Text>
 </View>
@@ -87,7 +85,8 @@ exports[`Storyshots Touchable Highlight 1`] = `
 exports[`Storyshots Touchable Without feedback (disabled) 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -109,7 +108,8 @@ exports[`Storyshots Touchable Without feedback (disabled) 1`] = `
 exports[`Storyshots Touchable Without feedback 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

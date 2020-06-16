@@ -40,7 +40,8 @@ Array [
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}

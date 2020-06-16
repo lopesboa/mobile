@@ -6,7 +6,8 @@ exports[`Storyshots Button Default 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -132,7 +133,8 @@ exports[`Storyshots Button Inverted 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -387,7 +389,8 @@ exports[`Storyshots Button Secondary 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -446,7 +449,8 @@ exports[`Storyshots Button Secondary Inverted 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -507,7 +511,8 @@ exports[`Storyshots Button Small 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -565,7 +570,8 @@ exports[`Storyshots Button TextSecondary 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}

@@ -65,7 +65,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -135,7 +136,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
         align="xMidYMid"
         bbHeight={15}
         bbWidth={15}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={15}
         id="prefix__Calque_1"
         meetOrSlice={0}
@@ -147,8 +149,6 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 15,
@@ -156,7 +156,7 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={20}
         vbWidth={20}
         width={15}
@@ -164,134 +164,19 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
         xmlSpace="preserve"
         y={0}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGGroup
-            fill={
-              Array [
-                0,
-                4278190080,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            font={Object {}}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
             name="prefix__Page-1"
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={Array []}
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           >
             <RNSVGPath
               d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
-              fill={
-                Array [
-                  0,
-                  4283723386,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
+              fill={4283723386}
               name="prefix__arrow_down"
-              opacity={1}
-              originX={0}
-              originY={0}
               propList={
                 Array [
                   "fill",
                 ]
               }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
             />
           </RNSVGGroup>
         </RNSVGGroup>
@@ -324,6 +209,9 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
+      forwardedRef={[Function]}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -345,6 +233,7 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
       }
     />
     <View
+      forwardedRef={[Function]}
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
@@ -415,6 +304,7 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
           >
             <View
               accessible={true}
+              focusable={true}
               hitSlop={
                 Object {
                   "bottom": 16,
@@ -423,7 +313,7 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
                   "top": 16,
                 }
               }
-              isTVSelectable={true}
+              onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -441,7 +331,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
                 align="xMidYMid"
                 bbHeight={16}
                 bbWidth={16}
-                color="#546E7A"
+                color={4283723386}
+                focusable={false}
                 height={16}
                 meetOrSlice={0}
                 minX={0}
@@ -452,8 +343,6 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
                       "backgroundColor": "transparent",
                       "borderWidth": 0,
                     },
-                    undefined,
-                    null,
                     Object {
                       "flex": 0,
                       "height": 16,
@@ -461,136 +350,29 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
                     },
                   ]
                 }
-                tintColor="#546E7A"
+                tintColor={4283723386}
                 vbHeight={24}
                 vbWidth={24}
                 width={16}
               >
-                <RNSVGGroup
-                  fill={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  fillOpacity={1}
-                  fillRule={1}
-                  font={Object {}}
-                  matrix={
-                    Array [
-                      1,
-                      0,
-                      0,
-                      1,
-                      0,
-                      0,
-                    ]
-                  }
-                  opacity={1}
-                  originX={0}
-                  originY={0}
-                  propList={Array []}
-                  rotation={0}
-                  scaleX={1}
-                  scaleY={1}
-                  skewX={0}
-                  skewY={0}
-                  stroke={null}
-                  strokeDasharray={null}
-                  strokeDashoffset={null}
-                  strokeLinecap={0}
-                  strokeLinejoin={0}
-                  strokeMiterlimit={4}
-                  strokeOpacity={1}
-                  strokeWidth={1}
-                  vectorEffect={0}
-                  x={0}
-                  y={0}
-                >
+                <RNSVGGroup>
                   <RNSVGPath
                     d="M0 0h24v24H0z"
                     fill={null}
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                   <RNSVGPath
                     d="M21.456 5.414l-2.829-2.828-6.585 6.586-6.586-6.586-2.829 2.828L9.213 12l-6.586 6.586 2.829 2.828 6.586-6.586 6.585 6.586 2.829-2.828L14.87 12z"
-                    fill={
-                      Array [
-                        0,
-                        4283723386,
-                      ]
-                    }
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
+                    fill={4283723386}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                 </RNSVGGroup>
               </RNSVGSvgView>
@@ -646,7 +428,6 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
             initialNumToRender={10}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            numColumns={1}
             onContentSizeChange={[Function]}
             onEndReachedThreshold={2}
             onLayout={[Function]}
@@ -676,7 +457,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -724,7 +506,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -772,7 +555,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -820,7 +604,8 @@ exports[`Storyshots QuestionInput Select (disabled) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -879,7 +664,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -949,7 +735,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
         align="xMidYMid"
         bbHeight={15}
         bbWidth={15}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={15}
         id="prefix__Calque_1"
         meetOrSlice={0}
@@ -961,8 +748,6 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 15,
@@ -970,7 +755,7 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={20}
         vbWidth={20}
         width={15}
@@ -978,134 +763,19 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
         xmlSpace="preserve"
         y={0}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGGroup
-            fill={
-              Array [
-                0,
-                4278190080,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            font={Object {}}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
             name="prefix__Page-1"
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={Array []}
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           >
             <RNSVGPath
               d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
-              fill={
-                Array [
-                  0,
-                  4283723386,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
+              fill={4283723386}
               name="prefix__arrow_down"
-              opacity={1}
-              originX={0}
-              originY={0}
               propList={
                 Array [
                   "fill",
                 ]
               }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
             />
           </RNSVGGroup>
         </RNSVGGroup>
@@ -1138,6 +808,9 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
+      forwardedRef={[Function]}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1159,6 +832,7 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
       }
     />
     <View
+      forwardedRef={[Function]}
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
@@ -1229,6 +903,7 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
           >
             <View
               accessible={true}
+              focusable={true}
               hitSlop={
                 Object {
                   "bottom": 16,
@@ -1237,7 +912,7 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
                   "top": 16,
                 }
               }
-              isTVSelectable={true}
+              onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -1255,7 +930,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
                 align="xMidYMid"
                 bbHeight={16}
                 bbWidth={16}
-                color="#546E7A"
+                color={4283723386}
+                focusable={false}
                 height={16}
                 meetOrSlice={0}
                 minX={0}
@@ -1266,8 +942,6 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
                       "backgroundColor": "transparent",
                       "borderWidth": 0,
                     },
-                    undefined,
-                    null,
                     Object {
                       "flex": 0,
                       "height": 16,
@@ -1275,136 +949,29 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
                     },
                   ]
                 }
-                tintColor="#546E7A"
+                tintColor={4283723386}
                 vbHeight={24}
                 vbWidth={24}
                 width={16}
               >
-                <RNSVGGroup
-                  fill={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  fillOpacity={1}
-                  fillRule={1}
-                  font={Object {}}
-                  matrix={
-                    Array [
-                      1,
-                      0,
-                      0,
-                      1,
-                      0,
-                      0,
-                    ]
-                  }
-                  opacity={1}
-                  originX={0}
-                  originY={0}
-                  propList={Array []}
-                  rotation={0}
-                  scaleX={1}
-                  scaleY={1}
-                  skewX={0}
-                  skewY={0}
-                  stroke={null}
-                  strokeDasharray={null}
-                  strokeDashoffset={null}
-                  strokeLinecap={0}
-                  strokeLinejoin={0}
-                  strokeMiterlimit={4}
-                  strokeOpacity={1}
-                  strokeWidth={1}
-                  vectorEffect={0}
-                  x={0}
-                  y={0}
-                >
+                <RNSVGGroup>
                   <RNSVGPath
                     d="M0 0h24v24H0z"
                     fill={null}
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                   <RNSVGPath
                     d="M21.456 5.414l-2.829-2.828-6.585 6.586-6.586-6.586-2.829 2.828L9.213 12l-6.586 6.586 2.829 2.828 6.586-6.586 6.585 6.586 2.829-2.828L14.87 12z"
-                    fill={
-                      Array [
-                        0,
-                        4283723386,
-                      ]
-                    }
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
+                    fill={4283723386}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                 </RNSVGGroup>
               </RNSVGSvgView>
@@ -1460,7 +1027,6 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
             initialNumToRender={10}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            numColumns={1}
             onContentSizeChange={[Function]}
             onEndReachedThreshold={2}
             onLayout={[Function]}
@@ -1490,7 +1056,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -1538,7 +1105,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -1586,7 +1154,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -1634,7 +1203,8 @@ exports[`Storyshots QuestionInput Select (full width) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -1691,7 +1261,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -1766,7 +1337,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
         align="xMidYMid"
         bbHeight={15}
         bbWidth={15}
-        color="#00B0FF"
+        color={4278235391}
+        focusable={false}
         height={15}
         id="prefix__Calque_1"
         meetOrSlice={0}
@@ -1778,8 +1350,6 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 15,
@@ -1787,7 +1357,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
             },
           ]
         }
-        tintColor="#00B0FF"
+        tintColor={4278235391}
         vbHeight={20}
         vbWidth={20}
         width={15}
@@ -1795,134 +1365,19 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
         xmlSpace="preserve"
         y={0}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGGroup
-            fill={
-              Array [
-                0,
-                4278190080,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            font={Object {}}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
             name="prefix__Page-1"
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={Array []}
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           >
             <RNSVGPath
               d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
-              fill={
-                Array [
-                  0,
-                  4278235391,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
+              fill={4278235391}
               name="prefix__arrow_down"
-              opacity={1}
-              originX={0}
-              originY={0}
               propList={
                 Array [
                   "fill",
                 ]
               }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
             />
           </RNSVGGroup>
         </RNSVGGroup>
@@ -1955,6 +1410,9 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
+      forwardedRef={[Function]}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1976,6 +1434,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
       }
     />
     <View
+      forwardedRef={[Function]}
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
@@ -2046,6 +1505,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
           >
             <View
               accessible={true}
+              focusable={true}
               hitSlop={
                 Object {
                   "bottom": 16,
@@ -2054,7 +1514,7 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
                   "top": 16,
                 }
               }
-              isTVSelectable={true}
+              onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -2072,7 +1532,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
                 align="xMidYMid"
                 bbHeight={16}
                 bbWidth={16}
-                color="#546E7A"
+                color={4283723386}
+                focusable={false}
                 height={16}
                 meetOrSlice={0}
                 minX={0}
@@ -2083,8 +1544,6 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
                       "backgroundColor": "transparent",
                       "borderWidth": 0,
                     },
-                    undefined,
-                    null,
                     Object {
                       "flex": 0,
                       "height": 16,
@@ -2092,136 +1551,29 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
                     },
                   ]
                 }
-                tintColor="#546E7A"
+                tintColor={4283723386}
                 vbHeight={24}
                 vbWidth={24}
                 width={16}
               >
-                <RNSVGGroup
-                  fill={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  fillOpacity={1}
-                  fillRule={1}
-                  font={Object {}}
-                  matrix={
-                    Array [
-                      1,
-                      0,
-                      0,
-                      1,
-                      0,
-                      0,
-                    ]
-                  }
-                  opacity={1}
-                  originX={0}
-                  originY={0}
-                  propList={Array []}
-                  rotation={0}
-                  scaleX={1}
-                  scaleY={1}
-                  skewX={0}
-                  skewY={0}
-                  stroke={null}
-                  strokeDasharray={null}
-                  strokeDashoffset={null}
-                  strokeLinecap={0}
-                  strokeLinejoin={0}
-                  strokeMiterlimit={4}
-                  strokeOpacity={1}
-                  strokeWidth={1}
-                  vectorEffect={0}
-                  x={0}
-                  y={0}
-                >
+                <RNSVGGroup>
                   <RNSVGPath
                     d="M0 0h24v24H0z"
                     fill={null}
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                   <RNSVGPath
                     d="M21.456 5.414l-2.829-2.828-6.585 6.586-6.586-6.586-2.829 2.828L9.213 12l-6.586 6.586 2.829 2.828 6.586-6.586 6.585 6.586 2.829-2.828L14.87 12z"
-                    fill={
-                      Array [
-                        0,
-                        4283723386,
-                      ]
-                    }
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
+                    fill={4283723386}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                 </RNSVGGroup>
               </RNSVGSvgView>
@@ -2277,7 +1629,6 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
             initialNumToRender={10}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            numColumns={1}
             onContentSizeChange={[Function]}
             onEndReachedThreshold={2}
             onLayout={[Function]}
@@ -2307,7 +1658,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -2355,7 +1707,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -2405,7 +1758,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -2453,7 +1807,8 @@ exports[`Storyshots QuestionInput Select (not empty) 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -2510,7 +1865,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
 >
   <View
     accessible={true}
-    isTVSelectable={true}
+    focusable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -2580,7 +1936,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
         align="xMidYMid"
         bbHeight={15}
         bbWidth={15}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={15}
         id="prefix__Calque_1"
         meetOrSlice={0}
@@ -2592,8 +1949,6 @@ exports[`Storyshots QuestionInput Select 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 15,
@@ -2601,7 +1956,7 @@ exports[`Storyshots QuestionInput Select 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={20}
         vbWidth={20}
         width={15}
@@ -2609,134 +1964,19 @@ exports[`Storyshots QuestionInput Select 1`] = `
         xmlSpace="preserve"
         y={0}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGGroup
-            fill={
-              Array [
-                0,
-                4278190080,
-              ]
-            }
-            fillOpacity={1}
-            fillRule={1}
-            font={Object {}}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
             name="prefix__Page-1"
-            opacity={1}
-            originX={0}
-            originY={0}
-            propList={Array []}
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           >
             <RNSVGPath
               d="M0 6.5l3-2.9 7 6.9 7-6.9 3 2.9-10 9.9z"
-              fill={
-                Array [
-                  0,
-                  4283723386,
-                ]
-              }
-              fillOpacity={1}
-              fillRule={1}
-              matrix={
-                Array [
-                  1,
-                  0,
-                  0,
-                  1,
-                  0,
-                  0,
-                ]
-              }
+              fill={4283723386}
               name="prefix__arrow_down"
-              opacity={1}
-              originX={0}
-              originY={0}
               propList={
                 Array [
                   "fill",
                 ]
               }
-              rotation={0}
-              scaleX={1}
-              scaleY={1}
-              skewX={0}
-              skewY={0}
-              stroke={null}
-              strokeDasharray={null}
-              strokeDashoffset={null}
-              strokeLinecap={0}
-              strokeLinejoin={0}
-              strokeMiterlimit={4}
-              strokeOpacity={1}
-              strokeWidth={1}
-              vectorEffect={0}
-              x={0}
-              y={0}
             />
           </RNSVGGroup>
         </RNSVGGroup>
@@ -2769,6 +2009,9 @@ exports[`Storyshots QuestionInput Select 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
+      forwardedRef={[Function]}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -2790,6 +2033,7 @@ exports[`Storyshots QuestionInput Select 1`] = `
       }
     />
     <View
+      forwardedRef={[Function]}
       hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
@@ -2860,6 +2104,7 @@ exports[`Storyshots QuestionInput Select 1`] = `
           >
             <View
               accessible={true}
+              focusable={true}
               hitSlop={
                 Object {
                   "bottom": 16,
@@ -2868,7 +2113,7 @@ exports[`Storyshots QuestionInput Select 1`] = `
                   "top": 16,
                 }
               }
-              isTVSelectable={true}
+              onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -2886,7 +2131,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
                 align="xMidYMid"
                 bbHeight={16}
                 bbWidth={16}
-                color="#546E7A"
+                color={4283723386}
+                focusable={false}
                 height={16}
                 meetOrSlice={0}
                 minX={0}
@@ -2897,8 +2143,6 @@ exports[`Storyshots QuestionInput Select 1`] = `
                       "backgroundColor": "transparent",
                       "borderWidth": 0,
                     },
-                    undefined,
-                    null,
                     Object {
                       "flex": 0,
                       "height": 16,
@@ -2906,136 +2150,29 @@ exports[`Storyshots QuestionInput Select 1`] = `
                     },
                   ]
                 }
-                tintColor="#546E7A"
+                tintColor={4283723386}
                 vbHeight={24}
                 vbWidth={24}
                 width={16}
               >
-                <RNSVGGroup
-                  fill={
-                    Array [
-                      0,
-                      4278190080,
-                    ]
-                  }
-                  fillOpacity={1}
-                  fillRule={1}
-                  font={Object {}}
-                  matrix={
-                    Array [
-                      1,
-                      0,
-                      0,
-                      1,
-                      0,
-                      0,
-                    ]
-                  }
-                  opacity={1}
-                  originX={0}
-                  originY={0}
-                  propList={Array []}
-                  rotation={0}
-                  scaleX={1}
-                  scaleY={1}
-                  skewX={0}
-                  skewY={0}
-                  stroke={null}
-                  strokeDasharray={null}
-                  strokeDashoffset={null}
-                  strokeLinecap={0}
-                  strokeLinejoin={0}
-                  strokeMiterlimit={4}
-                  strokeOpacity={1}
-                  strokeWidth={1}
-                  vectorEffect={0}
-                  x={0}
-                  y={0}
-                >
+                <RNSVGGroup>
                   <RNSVGPath
                     d="M0 0h24v24H0z"
                     fill={null}
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                   <RNSVGPath
                     d="M21.456 5.414l-2.829-2.828-6.585 6.586-6.586-6.586-2.829 2.828L9.213 12l-6.586 6.586 2.829 2.828 6.586-6.586 6.585 6.586 2.829-2.828L14.87 12z"
-                    fill={
-                      Array [
-                        0,
-                        4283723386,
-                      ]
-                    }
-                    fillOpacity={1}
-                    fillRule={1}
-                    matrix={
-                      Array [
-                        1,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0,
-                      ]
-                    }
-                    opacity={1}
-                    originX={0}
-                    originY={0}
+                    fill={4283723386}
                     propList={
                       Array [
                         "fill",
                       ]
                     }
-                    rotation={0}
-                    scaleX={1}
-                    scaleY={1}
-                    skewX={0}
-                    skewY={0}
-                    stroke={null}
-                    strokeDasharray={null}
-                    strokeDashoffset={null}
-                    strokeLinecap={0}
-                    strokeLinejoin={0}
-                    strokeMiterlimit={4}
-                    strokeOpacity={1}
-                    strokeWidth={1}
-                    vectorEffect={0}
-                    x={0}
-                    y={0}
                   />
                 </RNSVGGroup>
               </RNSVGSvgView>
@@ -3091,7 +2228,6 @@ exports[`Storyshots QuestionInput Select 1`] = `
             initialNumToRender={10}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            numColumns={1}
             onContentSizeChange={[Function]}
             onEndReachedThreshold={2}
             onLayout={[Function]}
@@ -3121,7 +2257,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -3169,7 +2306,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -3217,7 +2355,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -3265,7 +2404,8 @@ exports[`Storyshots QuestionInput Select 1`] = `
               >
                 <View
                   accessible={true}
-                  isTVSelectable={true}
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}

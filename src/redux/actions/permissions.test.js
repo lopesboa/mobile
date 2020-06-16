@@ -1,11 +1,12 @@
 // @flow strict
 
+import {Platform} from 'react-native';
 import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
 import type {PermissionStatus} from '../../types';
 import translations from '../../translations';
 import {createFakeAnalytics} from '../../utils/tests';
 import type {Action} from './permissions';
-import {check, request, change, CHECK, REQUEST, CHANGE} from './permissions';
+import {check, request, change, toOSPermissionType, CHECK, REQUEST, CHANGE} from './permissions';
 
 const createStore = (status: PermissionStatus) => ({
   getState: jest.fn(() => ({permissions: {camera: status}})),
@@ -13,13 +14,28 @@ const createStore = (status: PermissionStatus) => ({
 });
 
 describe('Permissions', () => {
+  describe('Platform permission', () => {
+    it('should return android camera permission type', () => {
+      Platform.OS = 'android';
+      const result = toOSPermissionType('camera');
+      expect(result).toEqual('android.permission.CAMERA');
+    });
+    it('should return ios camera permission type', () => {
+      Platform.OS = 'ios';
+      const result = toOSPermissionType('camera');
+      expect(result).toEqual('ios.permission.CAMERA');
+    });
+    afterEach(() => {
+      Platform.OS = 'ios';
+    });
+  });
   it('change', () => {
-    const result = change('camera', PERMISSION_STATUS.AUTHORIZED);
+    const result = change('camera', PERMISSION_STATUS.GRANTED);
     const expected: Action = {
       type: CHANGE,
       payload: {
         type: 'camera',
-        status: PERMISSION_STATUS.AUTHORIZED
+        status: PERMISSION_STATUS.GRANTED
       }
     };
     expect(result).toEqual(expected);
@@ -53,14 +69,14 @@ describe('Permissions', () => {
       expect(dispatch.mock.calls[0]).toEqual([expected]);
       expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
       expect(services.Permissions.check.mock.calls.length).toBe(1);
-      expect(services.Permissions.check.mock.calls[0]).toEqual(['camera']);
+      expect(services.Permissions.check.mock.calls[0]).toEqual(['ios.permission.CAMERA']);
     });
 
     it('without change', async () => {
-      const {getState, dispatch} = createStore(PERMISSION_STATUS.AUTHORIZED);
+      const {getState, dispatch} = createStore(PERMISSION_STATUS.GRANTED);
       const services = {
         Permissions: {
-          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.AUTHORIZED))
+          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.GRANTED))
         }
       };
       // $FlowFixMe we dont want to mock the entire services object
@@ -68,7 +84,7 @@ describe('Permissions', () => {
       expect(dispatch.mock.calls.length).toBe(1);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
       expect(services.Permissions.check.mock.calls.length).toBe(1);
-      expect(services.Permissions.check.mock.calls[0]).toEqual(['camera']);
+      expect(services.Permissions.check.mock.calls[0]).toEqual(['ios.permission.CAMERA']);
     });
   });
 
@@ -104,7 +120,7 @@ describe('Permissions', () => {
         expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
         expect(handleDeny.mock.calls.length).toBe(1);
         expect(services.Permissions.request.mock.calls.length).toBe(1);
-        expect(services.Permissions.request.mock.calls[0]).toEqual(['camera']);
+        expect(services.Permissions.request.mock.calls[0]).toEqual(['ios.permission.CAMERA']);
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'camera',
@@ -127,7 +143,7 @@ describe('Permissions', () => {
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(handleDeny.mock.calls.length).toBe(0);
         expect(services.Permissions.request.mock.calls.length).toBe(1);
-        expect(services.Permissions.request.mock.calls[0]).toEqual(['camera']);
+        expect(services.Permissions.request.mock.calls[0]).toEqual(['ios.permission.CAMERA']);
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'camera',
@@ -143,7 +159,6 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            canOpenSettings: jest.fn(() => Promise.resolve(true)),
             openSettings: jest.fn(() => Promise.resolve(undefined)),
             alert: jest.fn(),
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
@@ -153,13 +168,12 @@ describe('Permissions', () => {
         await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
-        expect(services.Permissions.canOpenSettings.mock.calls.length).toBe(1);
         expect(services.Permissions.alert.mock.calls.length).toBe(1);
         expect(services.Permissions.alert.mock.calls[0]).toEqual([
           translations.permission,
           'foo bar baz',
           [
-            {onPress: handleDeny, style: 'cancel', text: translations.quit},
+            {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
             {onPress: expect.any(Function), text: translations.openSettings}
           ],
           {cancelable: false}
@@ -176,9 +190,11 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            canOpenSettings: jest.fn(() => Promise.resolve(false)),
             openSettings: jest.fn(() => Promise.resolve(undefined)),
-            alert: jest.fn(),
+            alert: jest.fn((title, description, [quitOption, validateOption]) => {
+              // $FlowFixMe this simulates a press on the button
+              quitOption && quitOption.onPress();
+            }),
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
           }
         };
@@ -186,9 +202,8 @@ describe('Permissions', () => {
         await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
-        expect(services.Permissions.canOpenSettings.mock.calls.length).toBe(1);
-        expect(services.Permissions.alert.mock.calls.length).toBe(1);
-        expect(services.Permissions.alert.mock.calls[0]).toEqual([
+        expect(services.Permissions.alert.mock.calls.length).toBe(2);
+        expect(services.Permissions.alert.mock.calls[1]).toEqual([
           translations.permission,
           'foo bar baz',
           [
@@ -198,7 +213,7 @@ describe('Permissions', () => {
           {cancelable: false}
         ]);
         // $FlowFixMe
-        const onPressResult = await services.Permissions.alert.mock.calls[0][2][1].onPress();
+        const onPressResult = await services.Permissions.alert.mock.calls[1][2][1].onPress();
         expect(services.Permissions.request.mock.calls.length).toBe(1);
         expect(onPressResult).toEqual(PERMISSION_STATUS.DENIED);
       });

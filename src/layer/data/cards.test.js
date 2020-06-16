@@ -985,6 +985,9 @@ describe('cards', () => {
   });
 
   describe('getCardFromLocalStorage', () => {
+    beforeEach(() => {
+      jest.resetModules();
+    });
     it('should get card card', async () => {
       const _card = cards[1];
       const AsyncStorage = require('@react-native-community/async-storage');

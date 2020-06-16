@@ -12,7 +12,7 @@ export const ERROR_MESSAGE = 'PLATFORM_DISABLED';
 
 const fetch: typeof _fetch = async (url, options) => {
   if (__E2E__) {
-    throw new Error('Fetch must be mocked in e2e mode');
+    return 'Cannot be called from e2e mode';
   }
 
   const userAgent = await getUserAgent();

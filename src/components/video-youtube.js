@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import YouTube from 'react-native-youtube';
+import type {SourceURI} from '../types';
 import VideoOverlay from './video-overlay';
 
 import type {Step} from './video-overlay';
@@ -23,7 +24,7 @@ export type StateChange = {|
 
 export type Props = {|
   id: string,
-  preview: File | {uri: string},
+  preview: File | SourceURI,
   isFullScreen?: boolean,
   apiKey: string,
   onPlay: () => Promise<void> | void,

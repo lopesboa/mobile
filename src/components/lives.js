@@ -112,16 +112,17 @@ class Lives extends React.PureComponent<Props> {
 
   resetAnimation = () =>
     Animated.sequence([
-      Animated.timing(this.textTranslate, {toValue: 0, duration: 0}),
-      Animated.timing(this.broken, {toValue: 0, duration: 0}),
-      Animated.timing(this.shake, {toValue: 0, duration: 0}),
-      Animated.timing(this.scale, {toValue: 0, duration: 0})
+      Animated.timing(this.textTranslate, {toValue: 0, duration: 0, useNativeDriver: false}),
+      Animated.timing(this.broken, {toValue: 0, duration: 0, useNativeDriver: false}),
+      Animated.timing(this.shake, {toValue: 0, duration: 0, useNativeDriver: false}),
+      Animated.timing(this.scale, {toValue: 0, duration: 0, useNativeDriver: false})
     ]);
 
   loseLife = () => {
     Animated.sequence([
       Animated.timing(this.shake, {
-        toValue: 1
+        toValue: 1,
+        useNativeDriver: false
       }),
       Animated.delay(350),
       Animated.parallel([
@@ -129,22 +130,26 @@ class Lives extends React.PureComponent<Props> {
         Animated.timing(this.textTranslate, {
           toValue: 1,
           duration: 1200,
+          useNativeDriver: false,
           easing: Easing.out(Easing.poly(3))
         }),
-        Animated.timing(this.shake, {toValue: 0, duration: 0}),
+        Animated.timing(this.shake, {toValue: 0, duration: 0, useNativeDriver: false}),
         Animated.timing(this.shake, {
           toValue: 1,
-          duration: 200
+          duration: 200,
+          useNativeDriver: false
         }),
         Animated.timing(this.scale, {
           toValue: 1,
-          duration: 200
+          duration: 200,
+          useNativeDriver: false
         }),
         Animated.sequence([
           Animated.delay(0.6 * 200),
           Animated.timing(this.broken, {
             toValue: 1,
-            duration: 0.2 * 200
+            duration: 0.2 * 200,
+            useNativeDriver: false
           })
         ])
       ])
@@ -159,16 +164,19 @@ class Lives extends React.PureComponent<Props> {
           Animated.timing(this.textTranslate, {
             toValue: 1,
             duration: 2200,
+            useNativeDriver: false,
             easing: Easing.out(Easing.poly(5))
           })
         ]),
         Animated.timing(this.scale, {
           toValue: 1,
-          duration: 1200
+          duration: 1200,
+          useNativeDriver: false
         }),
         Animated.timing(this.broken, {
           toValue: 1,
-          duration: 1200
+          duration: 1200,
+          useNativeDriver: false
         })
       ])
     ]).start();

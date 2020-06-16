@@ -6,6 +6,7 @@ import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {TextTrackType} from 'react-native-video';
 import RNFetchBlob from 'rn-fetch-blob';
 import {BlackPortal, WhitePortal} from 'react-native-portal';
+import type {SourceURI} from '../types';
 import VideoOverlay from './video-overlay';
 
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
@@ -18,8 +19,8 @@ export type Track = {|
 |};
 
 export type Props = {|
-  source: File | {uri?: string},
-  preview: File | {uri: string},
+  source: File | SourceURI,
+  preview: File | SourceURI,
   height: number,
   step: Step,
   tracks?: Array<Track>,

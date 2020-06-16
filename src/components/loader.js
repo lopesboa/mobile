@@ -45,30 +45,34 @@ class Loader extends React.PureComponent<Props> {
     this.animation = Animated.parallel([
       Animated.loop(
         Animated.sequence([
-          Animated.timing(this.scale, {toValue: 0, duration: 0}),
+          Animated.timing(this.scale, {toValue: 0, duration: 0, useNativeDriver: false}),
           Animated.timing(this.scale, {
             toValue: 1,
             duration: CYCLE_DURATION,
+            useNativeDriver: false,
             easing: Easing.inOut(Easing.sin)
           }),
           Animated.timing(this.scale, {
             toValue: 2,
             duration: CYCLE_DURATION,
+            useNativeDriver: false,
             easing: Easing.inOut(Easing.sin)
           }),
           Animated.timing(this.scale, {
             toValue: 3,
             duration: CYCLE_DURATION,
+            useNativeDriver: false,
             easing: Easing.inOut(Easing.sin)
           })
         ])
       ),
       Animated.loop(
         Animated.sequence([
-          Animated.timing(this.rotation, {toValue: 0, duration: 0}),
+          Animated.timing(this.rotation, {toValue: 0, duration: 0, useNativeDriver: false}),
           Animated.timing(this.rotation, {
             toValue: 1,
             duration: CYCLE_DURATION,
+            useNativeDriver: false,
             easing: Easing.inOut(Easing.sin)
           })
         ])

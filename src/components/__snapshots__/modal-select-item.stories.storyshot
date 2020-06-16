@@ -3,7 +3,8 @@
 exports[`Storyshots ModalSelectItem Default 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -40,7 +41,8 @@ exports[`Storyshots ModalSelectItem Default 1`] = `
 exports[`Storyshots ModalSelectItem Selected 1`] = `
 <View
   accessible={true}
-  isTVSelectable={true}
+  focusable={true}
+  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}

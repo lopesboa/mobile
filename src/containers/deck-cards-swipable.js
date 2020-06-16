@@ -47,18 +47,21 @@ class DeckCardsSwipable extends React.PureComponent<Props, State> {
       Animated.timing(this.animation, {
         toValue: 1,
         duration: 200,
+        useNativeDriver: false,
         easing: Easing.inOut(Easing.quad)
       }),
       Animated.delay(150),
       Animated.timing(this.animation, {
         toValue: 2,
         duration: 400,
+        useNativeDriver: false,
         easing: Easing.inOut(Easing.quad)
       }),
       Animated.delay(150),
       Animated.timing(this.animation, {
         toValue: 3,
         duration: 200,
+        useNativeDriver: false,
         easing: Easing.inOut(Easing.quad)
       }),
       Animated.delay(3000)

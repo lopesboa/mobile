@@ -21,10 +21,11 @@ class NotificationAnimated extends React.PureComponent<Props> {
   componentDidMount() {
     Animated.loop(
       Animated.sequence([
-        Animated.timing(this.bounce, {toValue: 0, duration: 0}),
+        Animated.timing(this.bounce, {toValue: 0, duration: 0, useNativeDriver: false}),
         Animated.timing(this.bounce, {
           toValue: 1,
-          duration: 1000
+          duration: 1000,
+          useNativeDriver: false
         }),
         Animated.delay(2000)
       ])

@@ -30,101 +30,107 @@ const createRef = (): VideoPlayer => ({
   }
 });
 
-describe('VideoControlable', () => {
-  const expectedTracks = [
-    {
-      language: 'fr',
-      title: 'fr',
-      type: TextTrackType.VTT,
-      uri: 'https://content.jwplatform.com/tracks/foo.srt'
-    },
-    {
-      language: 'en',
-      title: 'en',
-      type: TextTrackType.VTT,
-      uri: 'https://content.jwplatform.com/tracks/bar.srt'
-    },
-    {
-      language: 'de',
-      title: 'de',
-      type: TextTrackType.VTT,
-      uri: 'https://content.jwplatform.com/tracks/baz.srt'
-    }
-  ];
+const expectedTracks = [
+  {
+    language: 'fr',
+    title: 'fr',
+    type: TextTrackType.VTT,
+    uri: 'https://content.jwplatform.com/tracks/foo.srt'
+  },
+  {
+    language: 'en',
+    title: 'en',
+    type: TextTrackType.VTT,
+    uri: 'https://content.jwplatform.com/tracks/bar.srt'
+  },
+  {
+    language: 'de',
+    title: 'de',
+    type: TextTrackType.VTT,
+    uri: 'https://content.jwplatform.com/tracks/baz.srt'
+  }
+];
 
-  beforeEach(() => {
-    jest.resetModules();
+// Due to mocked functions messing up with global state mocks
+describe('VideoControlable -> mapStateToProps', () => {
+  it('should get default props', () => {
+    const id = 'foo';
+    const isFullScreen = true;
+    const levelRef = 'dummyRef';
+    const source = {uri: 'https://foo.bar'};
+
+    const progression = createProgression({
+      engine: ENGINE.MICROLEARNING,
+      progressionContent: {
+        type: CONTENT_TYPE.LEVEL,
+        ref: levelRef
+      }
+    });
+    const video = createVideoState({isFullScreen});
+
+    const mockedStore = createStoreState({
+      progression,
+      video
+    });
+
+    const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER, source});
+    const expected: ConnectedStateProps = {
+      isFullScreen,
+      source,
+      tracks: []
+    };
+
+    expect(result).toEqual(expected);
   });
 
-  describe('mapStateToProps', () => {
-    it('should get default props', () => {
-      const id = 'foo';
-      const isFullScreen = true;
-      const levelRef = 'dummyRef';
-      const source = {uri: 'https://foo.bar'};
+  it('should get all props', () => {
+    // jest.mock('../translations', () => ({
+    //   // getInterfaceLanguage: jest.fn(() => 'zh-TW'),
+    //   getLanguage: jest.fn(() => 'en-ENNNN')
+    // }));
 
-      const progression = createProgression({
-        engine: ENGINE.MICROLEARNING,
-        progressionContent: {
-          type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
-      });
-      const video = createVideoState({isFullScreen});
+    const id = 'foo';
+    const isFullScreen = true;
+    const uri = createVideoUri('foo', VIDEO_PROVIDER.JWPLAYER);
+    const tracks = createVideoTracks('foo', VIDEO_TRACK_TYPE.VTT);
+    const levelRef = 'dummyRef';
 
-      const mockedStore = createStoreState({
-        progression,
-        video
-      });
+    const progression = createProgression({
+      engine: ENGINE.MICROLEARNING,
+      progressionContent: {
+        type: CONTENT_TYPE.LEVEL,
+        ref: levelRef
+      }
+    });
+    const video = createVideoState({isFullScreen});
+    const videos = {
+      [id]: {
+        uri,
+        tracks
+      }
+    };
 
-      const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER, source});
-      const expected: ConnectedStateProps = {
-        isFullScreen,
-        source,
-        tracks: []
-      };
-
-      expect(result).toEqual(expected);
+    const mockedStore = createStoreState({
+      progression,
+      video,
+      videos
     });
 
-    it('should get all props', () => {
-      const id = 'foo';
-      const isFullScreen = true;
-      const uri = createVideoUri('foo', VIDEO_PROVIDER.JWPLAYER);
-      const tracks = createVideoTracks('foo', VIDEO_TRACK_TYPE.VTT);
-      const levelRef = 'dummyRef';
+    const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER});
+    const expected: ConnectedStateProps = {
+      isFullScreen,
+      source: {uri},
+      tracks: expectedTracks,
+      selectedTrack: expectedTracks[1].language
+    };
 
-      const progression = createProgression({
-        engine: ENGINE.MICROLEARNING,
-        progressionContent: {
-          type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
-      });
-      const video = createVideoState({isFullScreen});
-      const videos = {
-        [id]: {
-          uri,
-          tracks
-        }
-      };
+    expect(result).toEqual(expected);
+  });
+});
 
-      const mockedStore = createStoreState({
-        progression,
-        video,
-        videos
-      });
-
-      const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER});
-      const expected: ConnectedStateProps = {
-        isFullScreen,
-        source: {uri},
-        tracks: expectedTracks,
-        selectedTrack: expectedTracks[1].language
-      };
-
-      expect(result).toEqual(expected);
-    });
+describe('VideoControlable', () => {
+  beforeEach(() => {
+    jest.resetModules();
   });
 
   it('should handle onTracksToggle', () => {

@@ -34,7 +34,7 @@ declare module 'react-navigation' {
   };
 
   // This is copied from react-native/Libraries/Image/ImageSource.js
-  declare type ImageURISource = {
+  declare type SourceURI = {
     uri?: string,
     bundle?: string,
     method?: string,
@@ -45,7 +45,7 @@ declare module 'react-navigation' {
     height?: number,
     scale?: number,
   };
-  declare type ImageSource = ImageURISource | number | Array<ImageURISource>;
+  declare type ImageSource = SourceURI | number | Array<SourceURI>;
 
   // This is copied from
   // react-native/Libraries/Animated/src/nodes/AnimatedInterpolation.js

@@ -11,7 +11,7 @@ anchors:
   name: Set ruby version
   command: echo "ruby-$RUBY_VERSION" > ~/.ruby-version
 - &macos-image
-  xcode: 11.2.1
+  xcode: 11.4.1
 - &install-watchman
   name: Install watchman
   # https://github.com/oondeo/watchman/pull/71/commits/e9ab4acba23109add581494055248b519523f174
@@ -28,9 +28,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: yarn-v3-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v4-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
       - restore_cache:
-          key: node-v3-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v4-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
       - run:
           name: Node dependencies
           command: |
@@ -39,11 +39,11 @@ jobs:
             yarn config set registry https://registry.npmjs.org/
             yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-v3-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
+          key: yarn-v4-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
             - ~/.cache/yarn
       - save_cache:
-          key: node-v3-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
+          key: node-v4-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}-{{ arch }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -97,7 +97,7 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v4-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - run:
           name: Detox framework
@@ -106,7 +106,7 @@ jobs:
             detox clean-framework-cache && detox build-framework-cache
 
       - save_cache:
-          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v4-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
           paths:
             - ~/Library/Detox/ios
             - ~/.config/yarn/global
@@ -125,7 +125,7 @@ jobs:
   end2end_tests_ios_run:
     macos: *macos-image
     working_directory: ~/app
-    parallelism: 8
+    parallelism: 15
 
     steps:
       - checkout
@@ -134,10 +134,10 @@ jobs:
           at: ~/app
 
       - restore_cache:
-          key: detox-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
+          key: detox-v4-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ arch }}
 
       - restore_cache:
-          key: brew-e2e-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: brew-e2e-v4-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Brew dependencies
@@ -152,7 +152,7 @@ jobs:
             fi
 
       - save_cache:
-          key: brew-e2e-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: brew-e2e-v4-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ~/Library/Caches/Homebrew
             - /usr/local/Cellar
@@ -162,7 +162,8 @@ jobs:
           command: |
             yarn global add detox-cli
             detox clean-framework-cache && detox build-framework-cache
-            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
+            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=15
+          no_output_timeout: 30m
           environment:
             JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml
 
@@ -182,26 +183,26 @@ jobs:
       - run: *set-ruby-version
 
       - restore_cache:
-          key: gems-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: gems-v4-{{ checksum ".nvmrc" }}-ios-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd ios && bundle install
 
       - save_cache:
-          key: gems-v3-{{ checksum ".nvmrc" }}-ios-{{ arch }}
+          key: gems-v4-{{ checksum ".nvmrc" }}-ios-{{ arch }}
           paths:
             - ios/gems
 
       - restore_cache:
-          key: pods-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v4-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
 
       - run:
           name: Pods dependencies
           command: yarn cocoapods:install
 
       - save_cache:
-          key: pods-v3-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
+          key: pods-v4-{{ checksum ".nvmrc" }}-{{ checksum ".xcoderc" }}-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
           paths:
             - ios/Pods
 
@@ -251,19 +252,19 @@ jobs:
       - run: *install-nvm
 
       - restore_cache:
-          key: gems-v3-{{ checksum ".nvmrc" }}-android-{{ arch }}
+          key: gems-v4-{{ checksum ".nvmrc" }}-android-{{ arch }}
 
       - run:
           name: Gems dependencies
           command: cd android && bundle install
 
       - save_cache:
-          key: gems-v3-{{ checksum ".nvmrc" }}-android-{{ arch }}
+          key: gems-v4-{{ checksum ".nvmrc" }}-android-{{ arch }}
           paths:
             - android/gems
 
       - restore_cache:
-          key: gradle-v3-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v4-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
 
       - run:
           name: SDK licenses
@@ -277,7 +278,7 @@ jobs:
             ANDROID_HOME: /opt/android/sdk
 
       - save_cache:
-          key: gradle-v3-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
+          key: gradle-v4-{{ checksum ".nvmrc" }}-{{ checksum "android/app/gradle/dependency-locks/releaseCompileClasspath.lockfile" }}-{{ checksum "android/app/gradle/dependency-locks/debugAndroidTestCompileClasspath.lockfile" }}-{{ arch }}
           paths:
             - ~/.gradle/caches
 

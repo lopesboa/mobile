@@ -1,6 +1,6 @@
 // @flow strict
 
-import firebase from 'react-native-firebase';
+import crashlytics from '@react-native-firebase/crashlytics';
 import decode from 'jwt-decode';
 
 import {get as getToken} from '../../utils/local-token';
@@ -16,13 +16,12 @@ export const logError = async (error: Error) => {
   const {env: platform, name: brand} = _brand || {};
 
   await logDatadogError(error, {platform, brand, userId});
-  await firebase.crashlytics().recordError(0, error.stack || error.message);
+  await crashlytics().recordError(0, error.stack || error.message);
 };
 
 export const setProperties = (properties: LoggerProperties) => {
-  const crashlytics = firebase.crashlytics();
   Object.keys(properties).forEach(property =>
-    crashlytics.setStringValue(property, properties[property] || '')
+    crashlytics().setAttribute(property, properties[property] || '')
   );
 };
 

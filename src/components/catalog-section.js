@@ -52,7 +52,7 @@ class CatalogSection extends React.Component<Props> {
       return (
         <View style={styles.title}>
           <Placeholder>
-            <PlaceholderLine width="30%" fontSize="large" />
+            <PlaceholderLine width={30} fontSize="large" />
           </Placeholder>
         </View>
       );

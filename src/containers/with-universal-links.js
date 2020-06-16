@@ -6,7 +6,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {withNavigation} from 'react-navigation';
-import firebase from 'react-native-firebase';
+import dynamicLinks from '@react-native-firebase/dynamic-links';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import {getToken} from '../redux/utils/state-extract';
 import {AUTHENTICATION_TYPE} from '../const';
@@ -38,12 +38,11 @@ function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): 
     subscriber: (() => void) | void;
 
     async componentDidMount() {
-      this.subscriber = firebase.links().onLink(this.handleOpenURL);
+      this.subscriber = await dynamicLinks().onLink(l => this.handleOpenURL(l.url));
 
-      const url = await firebase.links().getInitialLink();
-
-      if (url) {
-        await this.handleOpenURL(url);
+      const link = await dynamicLinks().getInitialLink();
+      if (link) {
+        await this.handleOpenURL(link.url);
       }
     }
 
@@ -51,8 +50,8 @@ function withUniversalLinks<P, T: React$ComponentType<P>>(WrappedComponent: T): 
       this.subscriber && this.subscriber();
     }
 
-    handleOpenURL = async (url: string) => {
-      const {pathname, query} = _url.parse(url, true);
+    handleOpenURL = async (link: string) => {
+      const {pathname, query} = _url.parse(link, true);
 
       if (!query || !query.jwt || !pathname) {
         return;

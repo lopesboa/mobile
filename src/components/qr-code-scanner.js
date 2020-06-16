@@ -35,6 +35,7 @@ class QRCodeScanner extends React.PureComponent<Props> {
       <Animated.View style={[styles.container, styles.camera]} testID={testID}>
         {hasPermission ? (
           <QRCodeScannerBase
+            fadeIn={false}
             onRead={this.handleRead}
             cameraStyle={styles.camera}
             cameraProps={{captureAudio: false}}

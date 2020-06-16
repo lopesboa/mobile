@@ -451,28 +451,34 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
       }
     >
       <View
-        noMargin={true}
         style={
           Array [
             Object {
-              "borderRadius": 0,
+              "backgroundColor": "#efefef",
+              "borderRadius": 3,
+              "height": 12,
+              "marginBottom": 0,
+              "width": "15%",
             },
+            Array [
+              Object {
+                "borderRadius": 0,
+              },
+              Object {
+                "height": 5,
+              },
+              Object {
+                "backgroundColor": "#ECEFF1",
+              },
+            ],
             Object {
-              "height": 5,
-            },
-            Object {
-              "backgroundColor": "#ECEFF1",
+              "overflow": "hidden",
             },
           ]
         }
-        width="15%"
       >
         <View
-          style={
-            Object {
-              "flex": 1,
-            }
-          }
+          style={Object {}}
         />
       </View>
     </View>
@@ -499,28 +505,34 @@ exports[`Storyshots HeaderSlideTitle Default 1`] = `
       }
     >
       <View
-        noMargin={true}
         style={
           Array [
             Object {
-              "borderRadius": 0,
+              "backgroundColor": "#efefef",
+              "borderRadius": 3,
+              "height": 12,
+              "marginBottom": 0,
+              "width": "50%",
             },
+            Array [
+              Object {
+                "borderRadius": 0,
+              },
+              Object {
+                "height": 5,
+              },
+              Object {
+                "backgroundColor": "#ECEFF1",
+              },
+            ],
             Object {
-              "height": 5,
-            },
-            Object {
-              "backgroundColor": "#ECEFF1",
+              "overflow": "hidden",
             },
           ]
         }
-        width="50%"
       >
         <View
-          style={
-            Object {
-              "flex": 1,
-            }
-          }
+          style={Object {}}
         />
       </View>
     </View>

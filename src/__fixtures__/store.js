@@ -15,9 +15,8 @@ import type {
   EngineConfig
 } from '@coorpacademy/progression-engine';
 import type {SlideAPI, ChapterAPI, LevelAPI, ExitNodeAPI} from '@coorpacademy/player-services';
-import type {NetworkState} from 'react-native-offline/src/types';
 
-import type {Section, Brand, PermissionStatus, User, ErrorType} from '../types';
+import type {Section, Brand, PermissionStatus, User, ErrorType, NetworkState} from '../types';
 import type {
   Level,
   Slide,

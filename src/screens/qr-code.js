@@ -83,7 +83,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
 
 const getHasPermissionState: StoreState => boolean = createSelector(
   [getPermissionStatus('camera')],
-  permission => permission === PERMISSION_STATUS.AUTHORIZED
+  permission => permission === PERMISSION_STATUS.GRANTED
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({

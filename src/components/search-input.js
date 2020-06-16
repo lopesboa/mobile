@@ -55,7 +55,12 @@ class SearchInput extends React.PureComponent<Props> {
 
   handleClear = () => {
     this.props.onChange('');
-    this.textInput && this.textInput.clear();
+
+    // react-test-renderer doesn't provide refs for rendered components.
+    // By default, it returns null when the refs are referenced
+    // see: https://reactjs.org/blog/2016/11/16/react-v15.4.0.html#mocking-refs-for-snapshot-testing
+    /* istanbul ignore next */
+    this.textInput && this.textInput.clear && this.textInput.clear();
   };
 
   handleRef = (element: TextInput | null) => {

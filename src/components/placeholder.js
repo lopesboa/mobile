@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import PlaceholderBase from 'rn-placeholder';
+import {Placeholder as PlaceholderBase} from 'rn-placeholder';
 
 type Props = {|
   children: React.Node,

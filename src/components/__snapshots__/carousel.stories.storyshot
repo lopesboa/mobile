@@ -119,6 +119,7 @@ exports[`Storyshots Carousel With layout 1`] = `
         ]
       }
       disableVirtualization={false}
+      forwardedRef={[Function]}
       getItem={[Function]}
       getItemCount={[Function]}
       getItemLayout={[Function]}
@@ -127,7 +128,6 @@ exports[`Storyshots Carousel With layout 1`] = `
       initialScrollIndex={1}
       keyExtractor={[Function]}
       maxToRenderPerBatch={10}
-      numColumns={1}
       onContentSizeChange={[Function]}
       onEndReached={[Function]}
       onEndReachedThreshold={0.9}

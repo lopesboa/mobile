@@ -33,7 +33,8 @@ exports[`Storyshots Header Default 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -110,6 +111,7 @@ exports[`Storyshots Header Default 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
       hitSlop={
         Object {
           "bottom": 16,
@@ -118,7 +120,7 @@ exports[`Storyshots Header Default 1`] = `
           "top": 16,
         }
       }
-      isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -136,7 +138,8 @@ exports[`Storyshots Header Default 1`] = `
         align="xMidYMid"
         bbHeight={20}
         bbWidth={20}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={20}
         meetOrSlice={0}
         minX={0}
@@ -147,8 +150,6 @@ exports[`Storyshots Header Default 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 20,
@@ -156,97 +157,22 @@ exports[`Storyshots Header Default 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={13}
         vbWidth={13}
         width={20}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGPath
             d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
-            fill={
-              Array [
-                0,
-                4283723386,
-              ]
-            }
-            fillOpacity={1}
+            fill={4283723386}
             fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
             propList={
               Array [
                 "fill",
                 "fillRule",
               ]
             }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           />
         </RNSVGGroup>
       </RNSVGSvgView>
@@ -288,7 +214,8 @@ exports[`Storyshots Header Search visible 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -365,6 +292,7 @@ exports[`Storyshots Header Search visible 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
       hitSlop={
         Object {
           "bottom": 16,
@@ -373,7 +301,7 @@ exports[`Storyshots Header Search visible 1`] = `
           "top": 16,
         }
       }
-      isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -391,7 +319,8 @@ exports[`Storyshots Header Search visible 1`] = `
         align="xMidYMid"
         bbHeight={20}
         bbWidth={20}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={20}
         meetOrSlice={0}
         minX={0}
@@ -402,8 +331,6 @@ exports[`Storyshots Header Search visible 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 20,
@@ -411,97 +338,22 @@ exports[`Storyshots Header Search visible 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={13}
         vbWidth={13}
         width={20}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGPath
             d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
-            fill={
-              Array [
-                0,
-                4283723386,
-              ]
-            }
-            fillOpacity={1}
+            fill={4283723386}
             fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
             propList={
               Array [
                 "fill",
                 "fillRule",
               ]
             }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           />
         </RNSVGGroup>
       </RNSVGSvgView>
@@ -543,7 +395,8 @@ exports[`Storyshots Header Searching 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -620,6 +473,7 @@ exports[`Storyshots Header Searching 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
       hitSlop={
         Object {
           "bottom": 16,
@@ -628,7 +482,7 @@ exports[`Storyshots Header Searching 1`] = `
           "top": 16,
         }
       }
-      isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -646,7 +500,8 @@ exports[`Storyshots Header Searching 1`] = `
         align="xMidYMid"
         bbHeight={20}
         bbWidth={20}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={20}
         meetOrSlice={0}
         minX={0}
@@ -657,8 +512,6 @@ exports[`Storyshots Header Searching 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 20,
@@ -666,97 +519,22 @@ exports[`Storyshots Header Searching 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={13}
         vbWidth={13}
         width={20}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGPath
             d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
-            fill={
-              Array [
-                0,
-                4283723386,
-              ]
-            }
-            fillOpacity={1}
+            fill={4283723386}
             fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
             propList={
               Array [
                 "fill",
                 "fillRule",
               ]
             }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           />
         </RNSVGGroup>
       </RNSVGSvgView>
@@ -798,7 +576,8 @@ exports[`Storyshots Header With search value 1`] = `
   >
     <View
       accessible={true}
-      isTVSelectable={true}
+      focusable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -875,6 +654,7 @@ exports[`Storyshots Header With search value 1`] = `
   >
     <View
       accessible={true}
+      focusable={true}
       hitSlop={
         Object {
           "bottom": 16,
@@ -883,7 +663,7 @@ exports[`Storyshots Header With search value 1`] = `
           "top": 16,
         }
       }
-      isTVSelectable={true}
+      onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -901,7 +681,8 @@ exports[`Storyshots Header With search value 1`] = `
         align="xMidYMid"
         bbHeight={20}
         bbWidth={20}
-        color="#546E7A"
+        color={4283723386}
+        focusable={false}
         height={20}
         meetOrSlice={0}
         minX={0}
@@ -912,8 +693,6 @@ exports[`Storyshots Header With search value 1`] = `
               "backgroundColor": "transparent",
               "borderWidth": 0,
             },
-            undefined,
-            null,
             Object {
               "flex": 0,
               "height": 20,
@@ -921,97 +700,22 @@ exports[`Storyshots Header With search value 1`] = `
             },
           ]
         }
-        tintColor="#546E7A"
+        tintColor={4283723386}
         vbHeight={13}
         vbWidth={13}
         width={20}
       >
-        <RNSVGGroup
-          fill={
-            Array [
-              0,
-              4278190080,
-            ]
-          }
-          fillOpacity={1}
-          fillRule={1}
-          font={Object {}}
-          matrix={
-            Array [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-            ]
-          }
-          opacity={1}
-          originX={0}
-          originY={0}
-          propList={Array []}
-          rotation={0}
-          scaleX={1}
-          scaleY={1}
-          skewX={0}
-          skewY={0}
-          stroke={null}
-          strokeDasharray={null}
-          strokeDashoffset={null}
-          strokeLinecap={0}
-          strokeLinejoin={0}
-          strokeMiterlimit={4}
-          strokeOpacity={1}
-          strokeWidth={1}
-          vectorEffect={0}
-          x={0}
-          y={0}
-        >
+        <RNSVGGroup>
           <RNSVGPath
             d="M12.414 11L9.167 7.753C9.691 6.963 10 6.018 10 5c0-2.757-2.243-5-5-5S0 2.243 0 5s2.243 5 5 5a4.964 4.964 0 0 0 2.753-.833L11 12.414 12.414 11zM2 5c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3z"
-            fill={
-              Array [
-                0,
-                4283723386,
-              ]
-            }
-            fillOpacity={1}
+            fill={4283723386}
             fillRule={1}
-            matrix={
-              Array [
-                1,
-                0,
-                0,
-                1,
-                0,
-                0,
-              ]
-            }
-            opacity={1}
-            originX={0}
-            originY={0}
             propList={
               Array [
                 "fill",
                 "fillRule",
               ]
             }
-            rotation={0}
-            scaleX={1}
-            scaleY={1}
-            skewX={0}
-            skewY={0}
-            stroke={null}
-            strokeDasharray={null}
-            strokeDashoffset={null}
-            strokeLinecap={0}
-            strokeLinejoin={0}
-            strokeMiterlimit={4}
-            strokeOpacity={1}
-            strokeWidth={1}
-            vectorEffect={0}
-            x={0}
-            y={0}
           />
         </RNSVGGroup>
       </RNSVGSvgView>

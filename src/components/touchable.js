@@ -2,7 +2,12 @@
 
 import * as React from 'react';
 import {TouchableOpacity, TouchableHighlight} from 'react-native';
-import type {Props as TouchableGenericProps} from 'react-native/Libraries/Components/Touchable/TouchableWithoutFeedback';
+import type {
+  BlurEvent,
+  LayoutEvent,
+  FocusEvent,
+  PressEvent
+} from 'react-native/Libraries/Types/CoreEventTypes';
 
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {AnalyticsEventParams} from '../types';
@@ -12,7 +17,22 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
 type Props = $Exact<{|
-  ...TouchableGenericProps,
+  accessible?: boolean,
+  children?: React.Node,
+  delayLongPress?: number,
+  delayPressIn?: number,
+  delayPressOut?: number,
+  disabled?: boolean,
+  focusable?: boolean,
+  hitSlop?: EdgeInsetsProp,
+  onBlur?: (event: BlurEvent) => mixed,
+  onFocus?: (event: FocusEvent) => mixed,
+  onLayout?: (event: LayoutEvent) => mixed,
+  onLongPress?: (event: PressEvent) => mixed,
+  onPress?: (event: PressEvent) => mixed,
+  onPressIn?: (event: PressEvent) => mixed,
+  onPressOut?: (event: PressEvent) => mixed,
+  testID?: string,
   ...WithAnalyticsProps,
   ...WithVibrationProps,
   isHighlight?: boolean,

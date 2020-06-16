@@ -2,16 +2,14 @@
 
 const createCrashlytics = () => ({
   recordError: jest.fn(),
-  setStringValue: jest.fn()
+  setAttribute: jest.fn()
 });
 
 describe('Logger', () => {
   beforeEach(() => {
     jest.resetModules();
 
-    jest.mock('react-native-firebase', () => ({
-      crashlytics: jest.fn()
-    }));
+    jest.mock('@react-native-firebase/crashlytics', () => jest.fn());
 
     jest.mock('../../modules/datadog', () => ({
       log: jest.fn()
@@ -34,13 +32,13 @@ describe('Logger', () => {
 
   describe('logError', () => {
     it('should log error to firebase crashlytics and datadog', async () => {
-      const firebase = require('react-native-firebase');
+      const firebaseCrashlytics = require('@react-native-firebase/crashlytics');
       const {log: logDatadogError} = require('../../modules/datadog');
       const {logError} = require('./logger');
 
       const crashlytics = createCrashlytics();
       // $FlowFixMe package is mocked
-      firebase.crashlytics.mockReturnValue(crashlytics);
+      firebaseCrashlytics.mockReturnValue(crashlytics);
 
       const error = new Error('Foo bar');
       await logError(error);
@@ -56,13 +54,13 @@ describe('Logger', () => {
     });
 
     it('should log error message if stack is not available', async () => {
-      const firebase = require('react-native-firebase');
+      const firebaseCrashlytics = require('@react-native-firebase/crashlytics');
       const {log: logDatadogError} = require('../../modules/datadog');
       const {logError} = require('./logger');
 
       const crashlytics = createCrashlytics();
       // $FlowFixMe package is mocked
-      firebase.crashlytics.mockReturnValue(crashlytics);
+      firebaseCrashlytics.mockReturnValue(crashlytics);
 
       const error = new Error('Foo bar');
       error.stack = '';
@@ -79,7 +77,7 @@ describe('Logger', () => {
     });
 
     it('should log error even if user is anonymous', async () => {
-      const firebase = require('react-native-firebase');
+      const firebaseCrashlytics = require('@react-native-firebase/crashlytics');
       const {get: getBrand} = require('../../utils/local-brand');
       const {get: getToken} = require('../../utils/local-token');
       const {log: logDatadogError} = require('../../modules/datadog');
@@ -87,7 +85,7 @@ describe('Logger', () => {
 
       const crashlytics = createCrashlytics();
       // $FlowFixMe package is mocked
-      firebase.crashlytics.mockReturnValue(crashlytics);
+      firebaseCrashlytics.mockReturnValue(crashlytics);
 
       // $FlowFixMe mocked function
       getBrand.mockReturnValueOnce(null);
@@ -106,36 +104,36 @@ describe('Logger', () => {
 
   describe('setProperties', () => {
     it('should set properties', () => {
-      const firebase = require('react-native-firebase');
+      const firebaseCrashlytics = require('@react-native-firebase/crashlytics');
       const {setProperties} = require('./logger');
 
       const crashlytics = createCrashlytics();
       // $FlowFixMe package is mocked
-      firebase.crashlytics.mockReturnValue(crashlytics);
+      firebaseCrashlytics.mockReturnValue(crashlytics);
 
       setProperties({foo: 'bar', baz: 'qux'});
 
-      expect(crashlytics.setStringValue).toHaveBeenCalledTimes(2);
-      expect(crashlytics.setStringValue).toHaveBeenCalledWith('foo', 'bar');
-      expect(crashlytics.setStringValue).toHaveBeenCalledWith('baz', 'qux');
+      expect(crashlytics.setAttribute).toHaveBeenCalledTimes(2);
+      expect(crashlytics.setAttribute).toHaveBeenCalledWith('foo', 'bar');
+      expect(crashlytics.setAttribute).toHaveBeenCalledWith('baz', 'qux');
     });
 
     it('should reset properties', () => {
-      const firebase = require('react-native-firebase');
+      const firebaseCrashlytics = require('@react-native-firebase/crashlytics');
       const {setProperties} = require('./logger');
 
       const crashlytics = createCrashlytics();
       // $FlowFixMe package is mocked
-      firebase.crashlytics.mockReturnValue(crashlytics);
+      firebaseCrashlytics.mockReturnValue(crashlytics);
 
       setProperties({
         foo: null,
         baz: null
       });
 
-      expect(crashlytics.setStringValue).toHaveBeenCalledTimes(2);
-      expect(crashlytics.setStringValue).toHaveBeenCalledWith('foo', '');
-      expect(crashlytics.setStringValue).toHaveBeenCalledWith('baz', '');
+      expect(crashlytics.setAttribute).toHaveBeenCalledTimes(2);
+      expect(crashlytics.setAttribute).toHaveBeenCalledWith('foo', '');
+      expect(crashlytics.setAttribute).toHaveBeenCalledWith('baz', '');
     });
   });
 

@@ -18,28 +18,34 @@ exports[`Storyshots PlaceholderLine Centered 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "30%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
         Object {
-          "height": 10,
-        },
-        Object {
-          "backgroundColor": "#ECEFF1",
+          "overflow": "hidden",
         },
       ]
     }
-    width="30%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>
@@ -61,28 +67,34 @@ exports[`Storyshots PlaceholderLine Custom color 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#000000",
+          },
+        ],
         Object {
-          "height": 10,
-        },
-        Object {
-          "backgroundColor": "#000000",
+          "overflow": "hidden",
         },
       ]
     }
-    width="100%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>
@@ -104,28 +116,34 @@ exports[`Storyshots PlaceholderLine Custom width 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "30%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
         Object {
-          "height": 10,
-        },
-        Object {
-          "backgroundColor": "#ECEFF1",
+          "overflow": "hidden",
         },
       ]
     }
-    width="30%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>
@@ -147,28 +165,34 @@ exports[`Storyshots PlaceholderLine Default 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 10,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
         Object {
-          "height": 10,
-        },
-        Object {
-          "backgroundColor": "#ECEFF1",
+          "overflow": "hidden",
         },
       ]
     }
-    width="100%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>
@@ -190,28 +214,34 @@ exports[`Storyshots PlaceholderLine Small 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 5,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
         Object {
-          "height": 5,
-        },
-        Object {
-          "backgroundColor": "#ECEFF1",
+          "overflow": "hidden",
         },
       ]
     }
-    width="100%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>
@@ -233,28 +263,34 @@ exports[`Storyshots PlaceholderLine Tiny 1`] = `
   }
 >
   <View
-    noMargin={true}
     style={
       Array [
         Object {
-          "borderRadius": 0,
+          "backgroundColor": "#efefef",
+          "borderRadius": 3,
+          "height": 12,
+          "marginBottom": 0,
+          "width": "100%%",
         },
+        Array [
+          Object {
+            "borderRadius": 0,
+          },
+          Object {
+            "height": 2,
+          },
+          Object {
+            "backgroundColor": "#ECEFF1",
+          },
+        ],
         Object {
-          "height": 2,
-        },
-        Object {
-          "backgroundColor": "#ECEFF1",
+          "overflow": "hidden",
         },
       ]
     }
-    width="100%"
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     />
   </View>
 </View>

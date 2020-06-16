@@ -103,9 +103,9 @@ const Question = ({
     return (
       <View style={styles.containerPlaceholder}>
         <View>
-          <PlaceholderLine color={PLACEHOLDER_COLOR} width="45%" style={styles.placeholder} />
+          <PlaceholderLine color={PLACEHOLDER_COLOR} width={45} style={styles.placeholder} />
           <Space />
-          <PlaceholderLine color={PLACEHOLDER_COLOR} width="70%" style={styles.placeholder} />
+          <PlaceholderLine color={PLACEHOLDER_COLOR} width={70} style={styles.placeholder} />
         </View>
       </View>
     );
