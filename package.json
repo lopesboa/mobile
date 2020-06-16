@@ -139,6 +139,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "reselect-map": "^1.0.4",
+    "rn-async-storage-flipper": "^0.0.7",
     "rn-fetch-blob": "^0.12.0",
     "rn-placeholder": "^3.0.1",
     "semver": "^7.3.2",
