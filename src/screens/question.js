@@ -11,7 +11,8 @@ import {
   getQuestionMedia,
   getQuestionType,
   getCurrentSlide,
-  isQuestionCtaDisabled
+  isQuestionCtaDisabled,
+  getChoices
 } from '@coorpacademy/player-store';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
@@ -194,11 +195,12 @@ const getQuestionTemplateState = createSelector(
   question => question && question.content.template
 );
 
-const getQuestionChoicesState = createSelector(
-  [getQuestion],
-  // $FlowFixMe union type
-  question => question && question.content.choices
-);
+const getQuestionChoicesState = (state: StoreState) =>
+  createSelector(
+    [getCurrentSlide],
+    // $FlowFixMe union type
+    slide => slide && getChoices(slide, state)
+  )(state);
 
 const getQuestionUserChoicesState = (state: StoreState) =>
   createSelector(

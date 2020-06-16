@@ -78,7 +78,8 @@ export const createProgression = ({
     },
     content: progressionContent,
     engineOptions: {
-      version: '2'
+      version: '2',
+      shuffleChoices: false
     },
     actions,
     state: state && createState(state)

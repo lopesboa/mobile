@@ -1007,23 +1007,23 @@
     globby "^9.1.0"
     mkdirp-promise "^5.0.1"
 
-"@coorpacademy/player-services@5.1.10":
-  version "5.1.10"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.1.10.tgz#646574daabf8605a98d137bd6706ce5d29ffab91"
-  integrity sha512-ei66CkEViUs/T8ZW8li3KEpVa2EpXVe/U8tj/lr/bi1sA1ueqf/8eSNlHf8Dlzv78nrGJaiVPiQvDGkxXWCZDA==
+"@coorpacademy/player-services@5.1.14":
+  version "5.1.14"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-services/-/player-services-5.1.14.tgz#d4b5519f5a2b081c16c1285b4cb530f1b8b7b7bb"
+  integrity sha512-v0Ki4XSNlOCGpfQLtnR3PCt8WZmjfJ+Fk1Fdp73AgxP6SkRhRr9OiNKdL6Jh3KrbPytIFVGnmRE/xicoF+beJA==
   dependencies:
-    "@coorpacademy/progression-engine" "11.1.5"
+    "@coorpacademy/progression-engine" "11.1.9"
     lodash "^4.17.15"
 
-"@coorpacademy/player-store@4.1.16":
-  version "4.1.16"
-  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.1.16.tgz#e21e861f6ce1dc00bc6946f68a0d7cc7cea38219"
-  integrity sha512-hkEXsJ98Z3CMmXTp3ZEI1Q7O5Jqnu0RoYwbdx2vyBvUdj83ySNjKTwJ8tzeH9etUypHnv0u6/EbavCtYJ871SQ==
+"@coorpacademy/player-store@4.1.23":
+  version "4.1.23"
+  resolved "https://registry.npmjs.org/@coorpacademy/player-store/-/player-store-4.1.23.tgz#fd8c30ffe0f0c37de1b90daefd6dad88bb97f9f8"
+  integrity sha512-jPx174HDfIhIGIMsIsGJeeZF4LDMGERSe8d+irVI9PpioO1tt4xQA3qeyL+VaYYREQtvnR/pGbyCRfGgNoPYyg==
   dependencies:
-    "@coorpacademy/progression-engine" "11.1.5"
-    "@coorpacademy/redux-task" "1.1.0"
+    "@coorpacademy/progression-engine" "11.1.9"
+    "@coorpacademy/redux-task" "1.1.1"
     lodash "^4.17.15"
-    redux "^4.0.4"
+    redux "^4.0.5"
     redux-thunk "^2.3.0"
 
 "@coorpacademy/progression-aggregations@^2.168.1":
@@ -1034,10 +1034,10 @@
     lodash "^4.17.15"
     moment "^2.24.0"
 
-"@coorpacademy/progression-engine@11.1.5":
-  version "11.1.5"
-  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-11.1.5.tgz#76d8007c5bb51f4a0bbe0829b11e286d8e99d652"
-  integrity sha512-m5b1kLkJEd7M2Xgs78a1J+Yw0T4sIrgUG9DOWSwwkf3WJ/5adWTwuyOznYHYw5bMNIFwFRWiCxfZdN1qI0ynEA==
+"@coorpacademy/progression-engine@11.1.9":
+  version "11.1.9"
+  resolved "https://registry.npmjs.org/@coorpacademy/progression-engine/-/progression-engine-11.1.9.tgz#d6866d6cf45c73b3f4776eaef982a160375d920b"
+  integrity sha512-5hFLuj7sIqp3xzLwTeZjsahpFOO8nVTh4aM4Qgeq9NUvFQJcpT49f4GBNxE2usc0iyzj1rf0JPh/Jqr2uze3Ww==
   dependencies:
     fuzzy-matching "^0.4.3"
     lodash "^4.17.15"
@@ -1063,10 +1063,10 @@
   dependencies:
     lodash "^4.16.4"
 
-"@coorpacademy/redux-task@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@coorpacademy/redux-task/-/redux-task-1.1.0.tgz#a9028ca88b034a2dc640746f434e4c2352075da4"
-  integrity sha512-n/oOHKsmuh8KOsl7DVfOINZCGwLOWQ4cPRl378PmaXgjuGmYIjuz8i/93fVCgBqdaKWQMHRn+/QvBYBQ/zc2hg==
+"@coorpacademy/redux-task@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@coorpacademy/redux-task/-/redux-task-1.1.1.tgz#028d9c66f922b658108236f6ad5f033e45bdd73c"
+  integrity sha512-u4i1X81AUcRvI9Djux/Cis1Wglg2YRbv18U6gMekWp+Do0spFXOXQTzNlK9da6dmYWJhagk3T9d+oUB1A9B2vQ==
   dependencies:
     lodash "^4.17.15"
 
@@ -9981,7 +9981,14 @@ mkdirp@*, mkdirp@~1.0.3:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0.5.1:
+mkdirp@^0.5.1, mkdirp@~0.5.1:
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+  integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+  dependencies:
+    minimist "0.0.8"
+
+mkdirp@^0.5.3:
   version "0.5.5"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
@@ -12159,7 +12166,7 @@ redux-thunk@^2.3.0:
   resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
-redux@^4.0.1, redux@^4.0.4:
+redux@^4.0.1, redux@^4.0.4, redux@^4.0.5:
   version "4.0.5"
   resolved "https://registry.npmjs.org/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==

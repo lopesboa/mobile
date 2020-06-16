@@ -7,6 +7,7 @@ import {ObjectId} from 'bson';
 
 import {ENGINE} from '../../../const';
 import {getMostAccurateRef} from '../../../modules/reference';
+import {__TEST__} from '../../../modules/environment';
 
 export const createLevelProgression = (level: Level, engineVersion?: string) => {
   const ref = getMostAccurateRef(level);
@@ -17,6 +18,10 @@ export const createLevelProgression = (level: Level, engineVersion?: string) => 
     version: engineVersion || 'latest',
     livesDisabled: level.infiniteLives
   };
+
+  if (__TEST__ || level.shuffleChoices === false) {
+    engineConfig.shuffleChoices = false;
+  }
 
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);
 };

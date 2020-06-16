@@ -6,13 +6,18 @@ import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progressi
 import {ObjectId} from 'bson';
 
 import {getMostAccurateRef} from '../../../modules/reference';
+import {__TEST__} from '../../../modules/environment';
 import {ENGINE} from '../../../const';
 
 export const createChapterProgression = (chapter: Chapter, engineVersion?: string) => {
   const engine: Engine = {ref: ENGINE.MICROLEARNING, version: engineVersion || 'latest'};
   const ref = getMostAccurateRef(chapter);
   const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref};
-  const engineConfig: EngineConfig = {version: engineVersion || 'latest'};
-
+  const engineConfig: EngineConfig = {
+    version: engineVersion || 'latest'
+  };
+  if (__TEST__) {
+    engineConfig.shuffleChoices = false;
+  }
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);
 };

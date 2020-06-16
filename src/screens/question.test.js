@@ -97,7 +97,7 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createQCM({title: 'Foo bar'});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({title: 'Foo bar', ref: 'fooQCM', chapterId: 'bar', question});
       const answer = createAnswer({});
 
       const state = createStoreState({
@@ -148,7 +148,12 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createQCMGraphic({title: 'Foo bar'});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'fooQCMGraphic',
+        chapterId: 'bar',
+        question
+      });
       const answer = createAnswer({});
 
       const state = createStoreState({
@@ -200,7 +205,7 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createTemplate({title: 'Foo bar'});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({title: 'Foo bar', ref: 'fooTemplate', chapterId: 'bar', question});
       const answer = createAnswer({});
 
       const state = createStoreState({
@@ -251,7 +256,7 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createSlider({min: 13, max: 37, defaultValue: 15, answers: []});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({title: 'Foo bar', ref: 'fooSlider', chapterId: 'bar', question});
       const answer = createAnswer({values: ['42']});
 
       const state = createStoreState({
@@ -306,7 +311,7 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createQCMDrag({matchOrder: true});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({title: 'Foo bar', ref: 'fooQCMDrag', chapterId: 'bar', question});
       const answer = createAnswer({});
 
       const state = createStoreState({
@@ -358,7 +363,12 @@ describe('Question', () => {
       const {mapStateToProps} = require('./question');
 
       const question = createBasicQuestion({});
-      const slide = createSlide({title: 'Foo bar', ref: 'foo', chapterId: 'bar', question});
+      const slide = createSlide({
+        title: 'Foo bar',
+        ref: 'fooBasicQuestion',
+        chapterId: 'bar',
+        question
+      });
       const answer = createAnswer({});
 
       const state = createStoreState({

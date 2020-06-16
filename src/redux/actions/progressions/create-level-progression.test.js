@@ -14,56 +14,113 @@ describe('createLevelProgression', () => {
     jest.resetModules();
   });
 
-  it('should create level progression with specific engine version', async () => {
-    const playerStore = require('@coorpacademy/player-store');
-    const {createLevelProgression} = require('./create-level-progression');
+  [
+    {
+      production: true,
+      levelData: {ref: 'lev_1', chapterIds: []},
+      version: '2',
+      expectedEngineConfig: {livesDisabled: false, version: '2'}
+    },
+    {
+      production: true,
+      levelData: {ref: 'lev_1', chapterIds: []},
+      expectedEngineConfig: {livesDisabled: false, version: 'latest'}
+    },
+    {
+      production: true,
+      version: '2',
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
+      expectedEngineConfig: {livesDisabled: false, version: '2'}
+    },
+    {
+      production: true,
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
+      expectedEngineConfig: {livesDisabled: false, version: 'latest'}
+    },
+    {
+      production: true,
+      version: '2',
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+    },
+    {
+      production: true,
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+    },
+    {
+      production: false,
+      levelData: {ref: 'lev_1', chapterIds: []},
+      version: '2',
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+    },
+    {
+      production: false,
+      levelData: {ref: 'lev_1', chapterIds: []},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+    },
+    {
+      production: false,
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+    },
+    {
+      production: false,
+      version: '2',
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+    },
+    {
+      production: false,
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+    },
+    {
+      production: false,
+      version: '2',
+      levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+    }
+  ].forEach(data => {
+    it(`should create level progression with ${
+      data.version ? 'default' : 'specific'
+    } engine version (with shuffleChoices ${
+      data.levelData.shuffleChoices ? 'enabled' : 'disabled'
+    }) in ${data.production ? 'production' : 'test'}`, async () => {
+      if (data.production) {
+        jest.mock('../../../modules/environment', () => ({
+          __TEST__: false
+        }));
+      } else {
+        jest.mock('../../../modules/environment', () => ({
+          __TEST__: true
+        }));
+      }
+      const playerStore = require('@coorpacademy/player-store');
+      const {createLevelProgression} = require('./create-level-progression');
 
-    const level = createLevel({
-      ref: 'lev_1',
-      chapterIds: []
+      const level = createLevel(data.levelData);
+
+      const version = data.version || 'latest';
+
+      // $FlowFixMe
+      playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
+        expect(ObjectId.isValid(_id)).toBeTruthy();
+        expect(engine).toEqual({ref: ENGINE.LEARNER, version});
+        expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
+        expect(engineConfig).toEqual(data.expectedEngineConfig);
+        return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
+      });
+
+      const actual = data.version
+        ? // $FlowFixMe
+          await createLevelProgression(level, version)
+        : // $FlowFixMe
+          await createLevelProgression(level);
+
+      expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
+      expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});
     });
-
-    const version = '2';
-
-    // $FlowFixMe
-    playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
-      expect(ObjectId.isValid(_id)).toBeTruthy();
-      expect(engine).toEqual({ref: ENGINE.LEARNER, version});
-      expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
-      expect(engineConfig).toEqual({livesDisabled: false, version});
-      return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
-    });
-
-    // $FlowFixMe
-    const actual = await createLevelProgression(level, version);
-
-    expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
-    expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});
-  });
-
-  it('should create level progression with specific engine version', async () => {
-    const playerStore = require('@coorpacademy/player-store');
-    const {createLevelProgression} = require('./create-level-progression');
-
-    const level = createLevel({
-      ref: 'lev_1',
-      chapterIds: []
-    });
-
-    // $FlowFixMe
-    playerStore.createProgression.mockImplementationOnce((_id, engine, content, engineConfig) => {
-      expect(ObjectId.isValid(_id)).toBeTruthy();
-      expect(engine).toEqual({ref: ENGINE.LEARNER, version: 'latest'});
-      expect(content).toEqual({type: CONTENT_TYPE.LEVEL, ref: 'lev_1'});
-      expect(engineConfig).toEqual({livesDisabled: false, version: 'latest'});
-      return {type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}};
-    });
-
-    // $FlowFixMe
-    const actual = await createLevelProgression(level);
-
-    expect(playerStore.createProgression).toHaveBeenCalledTimes(1);
-    expect(actual).toEqual({type: '@@mock/CREATE_PROGRESSION', payload: {_id: '__ID__'}});
   });
 
   afterAll(() => {

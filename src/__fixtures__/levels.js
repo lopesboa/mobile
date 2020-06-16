@@ -18,12 +18,14 @@ export const createLevel = ({
   chapterIds,
   bestScore,
   level = 'base',
+  shuffleChoices,
   levelTranslation
 }: {
   ref: string,
   chapterIds: Array<string>,
   bestScore?: number,
-  level?: LevelType
+  level?: LevelType,
+  shuffleChoices?: boolean
 }): Level => ({
   _id: `id_${ref}`,
   taggedNewUntil: '2018-12-08T09:07:19.302Z',
@@ -39,6 +41,7 @@ export const createLevel = ({
   eligibleBattle: true,
   creditsToAccess: 0,
   infiniteLives: false,
+  shuffleChoices,
   isConditional: false,
   data: [],
   stats: {

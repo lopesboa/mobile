@@ -50,7 +50,8 @@ export type Level = $Exact<{|
   name: string,
   levelTranslation: string,
   bestScore?: number,
-  accessible?: boolean
+  accessible?: boolean,
+  shuffleChoices?: boolean
 |}>;
 
 export type LevelType = 'base' | 'advanced' | 'coach';
