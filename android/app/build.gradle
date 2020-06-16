@@ -7,7 +7,7 @@ project.ext.react = [
     entryFile: "index.js",
     // https://facebook.github.io/react-native/docs/performance#enable-the-ram-format
     bundleCommand: "ram-bundle",
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
