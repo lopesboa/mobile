@@ -6,7 +6,7 @@ import type {Engine, EngineConfig, GenericContent} from '@coorpacademy/progressi
 import {ObjectId} from 'bson';
 
 import {getMostAccurateRef} from '../../../modules/reference';
-import {__TEST__} from '../../../modules/environment';
+import {__TEST__, __E2E__} from '../../../modules/environment';
 import {ENGINE} from '../../../const';
 
 export const createChapterProgression = (chapter: Chapter, engineVersion?: string) => {
@@ -16,7 +16,7 @@ export const createChapterProgression = (chapter: Chapter, engineVersion?: strin
   const engineConfig: EngineConfig = {
     version: engineVersion || 'latest'
   };
-  if (__TEST__) {
+  if (__TEST__ || __E2E__) {
     engineConfig.shuffleChoices = false;
   }
   return createProgression(new ObjectId().toString(), engine, content, engineConfig);

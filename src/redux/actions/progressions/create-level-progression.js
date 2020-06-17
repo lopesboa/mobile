@@ -7,7 +7,7 @@ import {ObjectId} from 'bson';
 
 import {ENGINE} from '../../../const';
 import {getMostAccurateRef} from '../../../modules/reference';
-import {__TEST__} from '../../../modules/environment';
+import {__TEST__, __E2E__} from '../../../modules/environment';
 
 export const createLevelProgression = (level: Level, engineVersion?: string) => {
   const ref = getMostAccurateRef(level);
@@ -19,7 +19,7 @@ export const createLevelProgression = (level: Level, engineVersion?: string) => 
     livesDisabled: level.infiniteLives
   };
 
-  if (__TEST__ || level.shuffleChoices === false) {
+  if (__TEST__ || __E2E__ || level.shuffleChoices === false) {
     engineConfig.shuffleChoices = false;
   }
 
