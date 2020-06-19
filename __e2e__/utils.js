@@ -43,27 +43,27 @@ export const waitForExist = async (testID: string, useText: boolean = false) => 
   const el = element(getter(testID));
 
   // eslint-disable-next-line no-undef
-  await waitFor(el).toExist();
-  // TODO: to be fixed with reducing timeout
-  // .withTimeout(1000);
+  await waitFor(el)
+    .toExist()
+    .withTimeout(1000);
   await weExpect(el).toExist();
 };
 
 export const waitForVisible = async (testID: string) => {
   const el = element(by.id(testID));
   // eslint-disable-next-line no-undef
-  await waitFor(el).toBeVisible();
-  // TODO: to be fixed with reducing timeout
-  // .withTimeout(1000);
+  await waitFor(el)
+    .toBeVisible()
+    .withTimeout(1000);
   await weExpect(el).toBeVisible();
 };
 
 export const waitForNotVisible = async (testID: string) => {
   const el = element(by.id(testID));
   // eslint-disable-next-line no-undef
-  await waitFor(el).toBeNotVisible();
-  // TODO: to be fixed with reducing timeout
-  // .withTimeout(4000);
+  await waitFor(el)
+    .toBeNotVisible()
+    .withTimeout(4000);
   await weExpect(el).toBeNotVisible();
 };
 

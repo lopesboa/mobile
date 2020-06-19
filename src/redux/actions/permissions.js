@@ -93,7 +93,10 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
 
   const permissionStatus = getState().permissions[type];
 
-  if (permissionStatus === PERMISSION_STATUS.DENIED) {
+  if (
+    permissionStatus === PERMISSION_STATUS.DENIED ||
+    permissionStatus === PERMISSION_STATUS.BLOCKED
+  ) {
     services.Permissions.alert(
       translations.permission,
       description,

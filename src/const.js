@@ -151,12 +151,13 @@ export const ENGINE: {
 (Object.keys(ENGINE).map(k => ENGINE[k]): Array<Engine>);
 
 export const PERMISSION_STATUS: {
-  ['GRANTED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED']: PermissionStatus
+  ['GRANTED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED' | 'BLOCKED']: PermissionStatus
 } = {
   GRANTED: 'granted',
   DENIED: 'denied',
   RESTRICTED: 'restricted',
-  UNDETERMINED: 'undetermined'
+  UNDETERMINED: 'undetermined',
+  BLOCKED: 'blocked'
 };
 
 export const APP_STATE: {
