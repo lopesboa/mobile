@@ -84,11 +84,6 @@ describe('VideoControlable -> mapStateToProps', () => {
   });
 
   it('should get all props', () => {
-    // jest.mock('../translations', () => ({
-    //   // getInterfaceLanguage: jest.fn(() => 'zh-TW'),
-    //   getLanguage: jest.fn(() => 'en-ENNNN')
-    // }));
-
     const id = 'foo';
     const isFullScreen = true;
     const uri = createVideoUri('foo', VIDEO_PROVIDER.JWPLAYER);

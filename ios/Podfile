@@ -80,13 +80,8 @@ pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.
 pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
 
-# # Monitoring
-# pod 'Fabric'
-# pod 'Crashlytics'
-# pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
-
 # # Tracking
-# pod 'GoogleTagManager'
+pod 'GoogleTagManager'
 
 # # Pods for the app
 

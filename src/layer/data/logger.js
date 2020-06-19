@@ -16,7 +16,7 @@ export const logError = async (error: Error) => {
   const {env: platform, name: brand} = _brand || {};
 
   await logDatadogError(error, {platform, brand, userId});
-  await crashlytics().recordError(0, error.stack || error.message);
+  await crashlytics().recordError(error);
 };
 
 export const setProperties = (properties: LoggerProperties) => {

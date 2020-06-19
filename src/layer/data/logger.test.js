@@ -50,7 +50,7 @@ describe('Logger', () => {
         userId: 'foobar'
       });
       expect(crashlytics.recordError).toHaveBeenCalledTimes(1);
-      expect(crashlytics.recordError).toHaveBeenCalledWith(0, error.stack);
+      expect(crashlytics.recordError).toHaveBeenCalledWith(error);
     });
 
     it('should log error message if stack is not available', async () => {
@@ -73,7 +73,7 @@ describe('Logger', () => {
         userId: 'foobar'
       });
       expect(crashlytics.recordError).toHaveBeenCalledTimes(1);
-      expect(crashlytics.recordError).toHaveBeenCalledWith(0, error.message);
+      expect(crashlytics.recordError).toHaveBeenCalledWith(error);
     });
 
     it('should log error even if user is anonymous', async () => {
@@ -98,7 +98,7 @@ describe('Logger', () => {
       expect(logDatadogError).toHaveBeenCalledTimes(1);
       expect(logDatadogError).toHaveBeenCalledWith(error, {});
       expect(crashlytics.recordError).toHaveBeenCalledTimes(1);
-      expect(crashlytics.recordError).toHaveBeenCalledWith(0, error.stack);
+      expect(crashlytics.recordError).toHaveBeenCalledWith(error);
     });
   });
 
