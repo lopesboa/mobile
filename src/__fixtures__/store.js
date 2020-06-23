@@ -31,6 +31,7 @@ import type {State as AuthenticationState} from '../redux/reducers/authenticatio
 import type {State as CatalogState} from '../redux/reducers/catalog';
 import type {State as ErrorsState} from '../redux/reducers/ui/errors';
 import type {State as SelectState} from '../redux/reducers/ui/select';
+import type {State as AnswersState} from '../redux/reducers/ui/answers';
 import type {State as SearchState} from '../redux/reducers/ui/search';
 import type {State as GodModeState} from '../redux/reducers/god-mode';
 import type {State as NavigationState} from '../redux/reducers/navigation';
@@ -287,6 +288,9 @@ export const createErrorsState = ({
 export const createSelectState = ({id}: {id?: string}): SelectState =>
   id !== undefined ? id : null;
 
+export const createAnswersState = ({isValidating}: {isValidating?: boolean}): AnswersState =>
+  isValidating !== undefined ? isValidating : false;
+
 export const createSearchState = ({
   isFetching = false,
   value
@@ -344,6 +348,7 @@ export const createStoreState = ({
   fastSlide = false,
   errors,
   select,
+  isValidating,
   search,
   navigation,
   permissions,
@@ -367,6 +372,7 @@ export const createStoreState = ({
   fastSlide?: FastSlideState,
   errors?: ErrorsState<void>,
   select?: SelectState,
+  isValidating?: AnswersState,
   search?: SearchState,
   navigation?: NavigationState,
   permissions?: PermissionsState,
@@ -389,6 +395,7 @@ export const createStoreState = ({
   ui: ui || createUiState({}),
   errors: errors || createErrorsState({}),
   select: select || createSelectState({}),
+  isValidating: isValidating || createAnswersState({}),
   search: search || createSearchState({}),
   navigation: navigation || createNavigationState(),
   catalog: catalog || createCatalogState({}),

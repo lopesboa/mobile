@@ -6,7 +6,12 @@ import {connect} from 'react-redux';
 import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {hasSeenLesson, getCurrentSlide} from '@coorpacademy/player-store';
 
-import {getCurrentScreenName, getCurrentTabName, getContext} from '../redux/utils/state-extract';
+import {
+  getCurrentScreenName,
+  getCurrentTabName,
+  getContext,
+  getValidationStatus
+} from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
 import Text from '../components/text';
@@ -190,13 +195,14 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   const currentTabName = getCurrentTabName(state);
   const slide = getCurrentSlide(state);
   const context = getContext(state);
+  const isLoading = getValidationStatus(state);
   // $FlowFixMe overrided type
   const resources: Array<LessonType> = (slide && slide.lessons) || [];
 
   return {
     isFocused: currentScreenName === 'Slide',
     isSwitchDisabled: !['Context', 'Question'].includes(currentTabName),
-    isLoading: !slide,
+    isLoading: !slide || isLoading,
     hasClue: Boolean(slide && slide.clue),
     hasLesson: resources.length > 0,
     hasContext: context !== undefined,

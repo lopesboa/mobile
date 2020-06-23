@@ -12,6 +12,7 @@ import {
 import type {StoreState} from '../redux/store';
 import {getCleanUri} from '../modules/uri';
 import HeaderSlideTitleComponent from '../components/header-slide-title';
+import {getValidationStatus} from '../redux/utils/state-extract';
 
 export type ConnectedStateProps = {|
   image?: string,
@@ -38,8 +39,9 @@ class HeaderSlideTitle extends React.Component<Props> {
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const slide = getCurrentSlide(state);
   const content = getProgressionContent(state);
+  const isLoading = getValidationStatus(state);
 
-  if (!content || !slide) {
+  if (!content || !slide || isLoading) {
     return {
       image: undefined,
       subtitle: undefined,

@@ -695,6 +695,24 @@ describe('Correction', () => {
     component.getInstance().setState({needRerender: false});
   });
 
+  it('should handle changeAnswerValidationStatus', () => {
+    const {Component: Correction} = require('./correction');
+
+    const changeAnswerValidationStatus = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Correction
+        navigation={navigation}
+        isCorrect
+        changeAnswerValidationStatus={changeAnswerValidationStatus}
+      />
+    );
+
+    component.unmount();
+    expect(changeAnswerValidationStatus).toHaveBeenCalledTimes(1);
+    expect(changeAnswerValidationStatus).toHaveBeenCalledWith(false);
+  });
+
   it('should handle pdf button press', () => {
     const {Component: Correction} = require('./correction');
 

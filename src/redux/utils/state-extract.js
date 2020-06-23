@@ -136,6 +136,10 @@ export const getContext = (state: StoreState): Context | void => {
 
 export const getUser = (state: StoreState): UserState => state.authentication.user;
 
+export const getValidationStatus = (state: StoreState): boolean => {
+  return state.isValidating;
+};
+
 export const isGodModeUser = (state: StoreState): boolean => {
   const token = getToken(state);
   const brand = getBrand(state);

@@ -14,8 +14,22 @@ import {
 } from '../../utils/state-extract';
 import {ANALYTICS_EVENT_TYPE} from '../../../const';
 
+export const VALIDATE_ANSWER = '@@answer/VALIDATE_ANSWER';
+
+export type Action = {|
+  type: '@@answer/VALIDATE_ANSWER',
+  payload: boolean
+|};
+
+export const changeAnswerValidationStatus = (isValidating: boolean): Action => ({
+  type: VALIDATE_ANSWER,
+  payload: isValidating
+});
+
 export const validateAnswer: typeof _validateAnswer = () => async (dispatch, getState, options) => {
   const {services} = options;
+
+  dispatch(changeAnswerValidationStatus(true));
 
   // $FlowFixMe getState definition conflict
   let state: StoreState = getState();
@@ -37,6 +51,7 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
     isCorrect: typeof isCorrect === 'boolean' && Number(isCorrect)
   });
   await dispatch(result);
+
   // $FlowFixMe getState definition conflict
   return getState();
 };

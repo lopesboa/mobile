@@ -22,6 +22,7 @@ import {compareCards} from '../utils/content';
 import {CONTENT_TYPE} from '../const';
 import translations from '../translations';
 import {createNextProgression} from '../redux/actions/progressions/create-next-progression';
+import {changeAnswerValidationStatus} from '../redux/actions/ui/answers';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import {getBestScore, getCards} from '../redux/utils/state-extract';
 import {edit as editSearch} from '../redux/actions/ui/search';
@@ -32,7 +33,8 @@ import type {Params as PdfScreenParams} from './pdf';
 type ConnectedDispatchProps = {|
   createNextProgression: typeof createNextProgression,
   selectCard: typeof selectCard,
-  editSearch: typeof editSearch
+  editSearch: typeof editSearch,
+  changeAnswerValidationStatus: typeof changeAnswerValidationStatus
 |};
 
 export type ConnectedStateProps = {|
@@ -68,6 +70,10 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
   state = {
     isFocused: false
   };
+
+  componentWillUnmount() {
+    this.props.changeAnswerValidationStatus(false);
+  }
 
   handleClose = () => {
     const {navigation} = this.props;
@@ -247,7 +253,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 const mapDispatchToProps: ConnectedDispatchProps = {
   createNextProgression,
   selectCard,
-  editSearch
+  editSearch,
+  changeAnswerValidationStatus
 };
 
 export {LevelEndScreen as Component};

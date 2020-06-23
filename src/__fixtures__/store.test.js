@@ -264,6 +264,7 @@ describe('storeFixture', () => {
         isVisible: false
       },
       select: null,
+      isValidating: false,
       search: {
         isFetching: false
       },

@@ -38,7 +38,8 @@ describe('Question', () => {
       max: undefined,
       step: undefined,
       value: 0,
-      isValidationDisabled: true
+      isValidationDisabled: true,
+      isValidating: false
     };
 
     describe('Loading', () => {

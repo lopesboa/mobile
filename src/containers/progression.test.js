@@ -13,6 +13,7 @@ describe('Progression', () => {
   describe('mapStateToProps', () => {
     it('should return hidden true if video state has isFullScreen set to true', () => {
       const isFullScreen = true;
+      const isValidating = false;
       const video = createVideoState({isFullScreen});
 
       const fakeState = createState({
@@ -47,6 +48,7 @@ describe('Progression', () => {
       const mockedStore = createStoreState({
         progression,
         video,
+        isValidating,
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
@@ -58,7 +60,8 @@ describe('Progression', () => {
       const expected: ConnectedStateProps = {
         isHidden: true,
         total: 0,
-        current: 20
+        current: 20,
+        isLoading: false
       };
 
       expect(result).toEqual(expected);
@@ -66,6 +69,7 @@ describe('Progression', () => {
 
     it('should return hidden true if progressionSteps is null', () => {
       const isFullScreen = false;
+      const isValidating = false;
       const video = createVideoState({isFullScreen});
 
       const qcm = createQCM({});
@@ -95,6 +99,7 @@ describe('Progression', () => {
       const mockedStore = createStoreState({
         progression,
         video,
+        isValidating,
         data: createDataState({
           chapters: [],
           slides: [slide],
@@ -104,7 +109,10 @@ describe('Progression', () => {
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
-        isHidden: true
+        current: undefined,
+        isHidden: true,
+        isLoading: false,
+        total: undefined
       };
 
       expect(result).toEqual(expected);
@@ -112,6 +120,7 @@ describe('Progression', () => {
 
     it('should return hidden true if the content is an adaptive', () => {
       const isFullScreen = false;
+      const isValidating = false;
       const video = createVideoState({isFullScreen});
 
       const qcm = createQCM({});
@@ -147,6 +156,7 @@ describe('Progression', () => {
       const mockedStore = createStoreState({
         progression,
         video,
+        isValidating,
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
@@ -156,7 +166,10 @@ describe('Progression', () => {
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
-        isHidden: true
+        current: undefined,
+        isHidden: true,
+        isLoading: false,
+        total: undefined
       };
 
       expect(result).toEqual(expected);

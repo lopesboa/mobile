@@ -218,6 +218,24 @@ describe('LevelEnd', () => {
     expect(levelEnd.props.isFocused).toBeTruthy();
   });
 
+  it('should handle changeAnswerValidationStatus', () => {
+    const {Component: LevelEnd} = require('./level-end');
+
+    const params = createParams({});
+    const changeAnswerValidationStatus = jest.fn();
+    const navigation = createNavigation({params});
+    const component = renderer.create(
+      <LevelEnd
+        navigation={navigation}
+        changeAnswerValidationStatus={changeAnswerValidationStatus}
+      />
+    );
+
+    component.unmount();
+    expect(changeAnswerValidationStatus).toHaveBeenCalledTimes(1);
+    expect(changeAnswerValidationStatus).toHaveBeenCalledWith(false);
+  });
+
   it('should handle close', () => {
     const {Component: LevelEnd} = require('./level-end');
 

@@ -37,7 +37,8 @@ export type Props = {|
   value?: $PropertyType<QuestionChoicesProps, 'value'>,
   step?: $PropertyType<QuestionChoicesProps, 'step'>,
   isValidationDisabled?: boolean,
-  testID?: string
+  testID?: string,
+  isLoading?: boolean
 |};
 
 export type State = {|
@@ -97,9 +98,10 @@ const Question = ({
   step,
   value,
   isValidationDisabled,
+  isLoading,
   testID
 }: Props) => {
-  if (!type || !header || !explanation) {
+  if (!type || !header || !explanation || isLoading) {
     return (
       <View style={styles.containerPlaceholder}>
         <View>

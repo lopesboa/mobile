@@ -21,6 +21,7 @@ import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
 import Screen from '../components/screen';
 import {selectCurrentProgression} from '../redux/actions/progressions/select-progression';
+import {changeAnswerValidationStatus} from '../redux/actions/ui/answers';
 import {
   isCorrect as _isCorrect,
   isExitNode as _isExitNode,
@@ -67,7 +68,8 @@ type ConnectedDispatchProps = {|
   play: typeof play,
   selectCurrentProgression: typeof selectCurrentProgression,
   acceptExtraLife: typeof acceptExtraLife,
-  refuseExtraLife: typeof refuseExtraLife
+  refuseExtraLife: typeof refuseExtraLife,
+  changeAnswerValidationStatus: typeof changeAnswerValidationStatus
 |};
 
 export type OwnProps = {|
@@ -94,6 +96,10 @@ class CorrectionScreen extends React.Component<Props, State> {
   shouldComponentUpdate() {
     if (this.state.needRerender) return true;
     else return false;
+  }
+
+  componentWillUnmount() {
+    this.props.changeAnswerValidationStatus(false);
   }
 
   handlePDFButtonPress = (url: string, description?: string) => {
@@ -140,7 +146,6 @@ class CorrectionScreen extends React.Component<Props, State> {
     } else {
       this.props.selectCurrentProgression();
     }
-
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
         isCorrect: lives === undefined || lives > 0,
@@ -353,7 +358,8 @@ export const mapDispatchToProps: ConnectedDispatchProps = {
   play,
   selectCurrentProgression,
   acceptExtraLife,
-  refuseExtraLife
+  refuseExtraLife,
+  changeAnswerValidationStatus
 };
 
 export {CorrectionScreen as Component};

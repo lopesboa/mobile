@@ -20,7 +20,11 @@ import Question from '../components/question';
 import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
 import type {StoreState} from '../redux/store';
-import {getQuestion, getContentCorrectionInfo} from '../redux/utils/state-extract';
+import {
+  getQuestion,
+  getContentCorrectionInfo,
+  getValidationStatus
+} from '../redux/utils/state-extract';
 import {validateAnswer} from '../redux/actions/ui/answers';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {QUESTION_TYPE} from '../const';
@@ -41,7 +45,8 @@ export type ConnectedStateProps = {|
   step?: $PropertyType<QuestionProps, 'step'>,
   value?: $PropertyType<QuestionProps, 'value'>,
   isValidationDisabled?: $PropertyType<QuestionProps, 'isValidationDisabled'>,
-  slideId?: string
+  slideId?: string,
+  isValidating?: boolean
 |};
 
 type ConnectedDispatchProps = {|
@@ -55,7 +60,7 @@ type Props = {|
   ...ConnectedDispatchProps
 |};
 
-class QuestionScreen extends React.PureComponent<Props> {
+class QuestionScreen extends React.Component<Props> {
   props: Props;
 
   scrollView: KeyboardAwareScrollView | void;
@@ -99,6 +104,7 @@ class QuestionScreen extends React.PureComponent<Props> {
       slideId
     } = this.props;
     const state = await this.props.validateAnswer();
+
     const {
       isCorrect,
       isAdaptive,
@@ -137,7 +143,8 @@ class QuestionScreen extends React.PureComponent<Props> {
       value,
       template,
       userChoices = [],
-      isValidationDisabled
+      isValidationDisabled,
+      isValidating
     } = this.props;
 
     return (
@@ -163,6 +170,7 @@ class QuestionScreen extends React.PureComponent<Props> {
           value={value}
           isValidationDisabled={isValidationDisabled}
           testID="question"
+          isLoading={isValidating}
         />
       </Screen>
     );
@@ -267,7 +275,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   unit: getSliderUnitState(state),
   step: getSliderStepValueState(state),
   value: getSliderDefaultValueState(state),
-  isValidationDisabled: getIsValidationDisabled(state)
+  isValidationDisabled: getIsValidationDisabled(state),
+  isValidating: getValidationStatus(state)
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {

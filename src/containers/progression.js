@@ -6,25 +6,38 @@ import {isContentAdaptive, getProgressionSteps} from '@coorpacademy/player-store
 
 import ProgressionComponent from '../components/progression';
 import type {StoreState} from '../redux/store';
-import {isVideoFullScreen} from '../redux/utils/state-extract';
+import {isVideoFullScreen, getValidationStatus} from '../redux/utils/state-extract';
 
 export type ConnectedStateProps = {|
   isHidden: boolean,
   current?: number,
-  total?: number
+  total?: number,
+  isLoading?: boolean
 |};
 
 type Props = {|
   ...ConnectedStateProps
 |};
 
-const Progression = ({isHidden, current, total}: Props) => {
-  if (isHidden || !current || !total) {
-    return null;
+class Progression extends React.Component<Props> {
+  props: Props;
+
+  shouldComponentUpdate(nextProps: Props) {
+    const isLoading = nextProps.isLoading;
+    if (isLoading) return false;
+    else return true;
   }
 
-  return <ProgressionComponent current={current} total={total} />;
-};
+  render() {
+    const {isHidden, current, total} = this.props;
+
+    if (isHidden || !current || !total) {
+      return null;
+    }
+
+    return <ProgressionComponent current={current} total={total} />;
+  }
+}
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   const progressionSteps = getProgressionSteps(state);
@@ -33,7 +46,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
   return {
     isHidden: isContentAdaptive(state) || !progressionSteps || isVideoFullScreen(state),
     current,
-    total
+    total,
+    isLoading: getValidationStatus(state)
   };
 };
 

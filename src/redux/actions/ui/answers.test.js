@@ -29,29 +29,50 @@ const state = createStoreState({
   slides: [],
   progression,
   godMode,
-  fastSlide
+  fastSlide,
+  isValidating: false
 });
 
 describe('Answers', () => {
   describe('validateAnswer', () => {
-    jest.mock('@coorpacademy/player-store', () => {
-      const {createTemplate} = require('../../../__fixtures__/questions');
-      const {createSlide} = require('../../../__fixtures__/slides');
+    beforeEach(() => {
+      jest.resetModules();
+      jest.mock('@coorpacademy/player-store', () => {
+        const {createTemplate} = require('../../../__fixtures__/questions');
+        const {createSlide} = require('../../../__fixtures__/slides');
+        const {
+          createProgression: _createProgression
+        } = require('../../../__fixtures__/progression');
 
-      const _question = createTemplate({title: 'Foobar'});
-      const _slide = createSlide({ref: 'foo', chapterId: 'bar', question: _question});
+        const _question = createTemplate({title: 'Foobar'});
+        const _slide = createSlide({ref: 'foo', chapterId: 'bar', question: _question});
+        const _progression = _createProgression({
+          engine: 'learner',
+          progressionContent: {
+            type: 'slide',
+            ref: 'foobar'
+          },
+          state: {
+            nextContent: {
+              type: 'slide',
+              ref: 'dummySlideRef'
+            }
+          }
+        });
 
-      return {
-        validateAnswer: jest.fn(() => () => Promise.resolve({})),
-        getQuestionType: jest.fn(() => _question.type),
-        getPreviousSlide: jest.fn(() => _slide)
-      };
+        return {
+          validateAnswer: jest.fn(() => () => Promise.resolve({})),
+          getQuestionType: jest.fn(() => _question.type),
+          getPreviousSlide: jest.fn(() => _slide),
+          getCurrentProgression: jest.fn(() => _progression)
+        };
+      });
     });
 
     it('should log validation', async () => {
       const {validateAnswer: _validateAnswer} = require('@coorpacademy/player-store');
 
-      const {validateAnswer} = require('./answers');
+      const answers = require('./answers');
 
       const dispatch = jest.fn();
       const getState = jest.fn(() => state);
@@ -63,7 +84,7 @@ describe('Answers', () => {
       };
 
       // $FlowFixMe
-      await validateAnswer()(dispatch, getState, options);
+      await answers.validateAnswer()(dispatch, getState, options);
 
       expect(_validateAnswer).toHaveBeenCalledTimes(1);
       expect(_validateAnswer).toHaveBeenCalledWith({godMode, fastSlide});
@@ -75,5 +96,16 @@ describe('Answers', () => {
         }
       );
     });
+  });
+
+  describe('changeAnswerValidationStatus', () => {
+    it('should log validation', () => {
+      const {changeAnswerValidationStatus, VALIDATE_ANSWER} = require('./answers');
+      const result = changeAnswerValidationStatus(true);
+      expect(result).toEqual({type: VALIDATE_ANSWER, payload: true});
+    });
+  });
+  afterEach(() => {
+    jest.resetAllMocks();
   });
 });

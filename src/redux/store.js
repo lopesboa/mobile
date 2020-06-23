@@ -18,6 +18,7 @@ import type {State as GodModeState} from './reducers/god-mode';
 import type {State as FastSlideState} from './reducers/fast-slide';
 import type {State as ErrorsState} from './reducers/ui/errors';
 import type {State as SelectState} from './reducers/ui/select';
+import type {State as AnswersState} from './reducers/ui/answers';
 import type {State as SearchState} from './reducers/ui/search';
 import type {State as ProgressionsState} from './reducers/progressions/synchronize';
 import catalog from './reducers/catalog';
@@ -29,6 +30,7 @@ import godMode from './reducers/god-mode';
 import fastSlide from './reducers/fast-slide';
 import errors from './reducers/ui/errors';
 import select from './reducers/ui/select';
+import isValidating from './reducers/ui/answers';
 import search from './reducers/ui/search';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
@@ -48,6 +50,7 @@ export type StoreState = $Exact<{|
   video: VideoState,
   errors: ErrorsState<void>,
   select: SelectState,
+  isValidating: AnswersState,
   search: SearchState,
   godMode: GodModeState,
   fastSlide: FastSlideState,
@@ -62,6 +65,7 @@ const reducers = combineReducers({
   ui: resetOnLogout(ui),
   errors,
   select,
+  isValidating,
   search,
   navigation,
   catalog: resetOnLogout(catalog),
