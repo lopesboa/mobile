@@ -83,6 +83,22 @@ describe('Home', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Search');
   });
 
+  it('handles settings press', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+    );
+
+    const home = component.root.find(el => el.props.testID === 'home');
+    home.props.onSettingsPress();
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Settings');
+  });
+
   it('should handle Android BackHandler', () => {
     const {Component: Home} = require('./home');
     const {TestBackHandler, BackHandler} = require('../modules/back-handler');

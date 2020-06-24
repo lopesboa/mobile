@@ -11,6 +11,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
 import {BackHandler} from '../modules/back-handler';
+import { StoreState } from '../redux/store';
 
 export interface ConnectedStateProps {
   isFetching: boolean;
@@ -26,15 +27,15 @@ interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDis
 
 class HomeScreen extends React.PureComponent<Props> {
   componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    BackHandler?.addEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+    BackHandler?.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   handleBackButton = () => {
-    BackHandler.exitApp();
+    BackHandler?.exitApp();
     return true;
   };
 
@@ -47,6 +48,10 @@ class HomeScreen extends React.PureComponent<Props> {
     this.props.navigation.navigate('Search');
   };
 
+  handleSettingsPress = () => {
+    this.props.navigation.navigate('Settings');
+  };
+
   render() {
     const {isFetching, isFocused} = this.props;
 
@@ -56,6 +61,7 @@ class HomeScreen extends React.PureComponent<Props> {
         <Home
           onCardPress={this.handleCardPress}
           onSearchPress={this.handleSearchPress}
+          onSettingsPress={this.handleSettingsPress}
           isFetching={isFetching}
           isFocused={isFocused}
           testID="home"

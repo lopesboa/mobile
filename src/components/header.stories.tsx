@@ -10,34 +10,55 @@ import Header from './header';
 storiesOf('Header', module)
   .add('Default', () => (
     <TestContextProvider>
-      <Header height={67} onSearchPress={handleFakePress} onLogoLongPress={handleFakePress} />
+      <Header
+        height={67}
+        onSearchPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        onSettingsPress={handleFakePress}
+      />
     </TestContextProvider>
   ))
   .add('Search visible', () => (
     <TestContextProvider>
-      <Header height={67} onSearchPress={handleFakePress} onLogoLongPress={handleFakePress} />
+      <Header
+        height={67}
+        onSearchPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        onSettingsPress={handleFakePress}
+      />
     </TestContextProvider>
   ))
   .add('With search value', () => (
     <TestContextProvider>
-      <Header height={67} onSearchPress={handleFakePress} onLogoLongPress={handleFakePress} />
+      <Header
+        height={67}
+        onSearchPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        onSettingsPress={handleFakePress}
+      />
     </TestContextProvider>
   ))
   .add('Searching', () => (
     <TestContextProvider>
-      <Header height={67} onSearchPress={handleFakePress} onLogoLongPress={handleFakePress} />
+      <Header
+        height={67}
+        onSearchPress={handleFakePress}
+        onLogoLongPress={handleFakePress}
+        onSettingsPress={handleFakePress}
+      />
     </TestContextProvider>
   ));
 
 if (__TEST__) {
   describe('Header', () => {
-    it('should handle onSearchPress on magnifier icon', () => {
+    it('handles onSearchPress on magnifier icon', () => {
       const handleSearchToggle = jest.fn();
       const component = renderer.create(
         <TestContextProvider>
           <Header
             height={67}
             onSearchPress={handleSearchToggle}
+            onSettingsPress={handleFakePress}
             onLogoLongPress={handleFakePress}
           />
         </TestContextProvider>
@@ -47,6 +68,25 @@ if (__TEST__) {
       icon.props.onPress();
 
       expect(handleSearchToggle).toHaveBeenCalledTimes(1);
+    });
+
+    it('handles onSettingsPress on magnifier icon', () => {
+      const handleSettingsToggle = jest.fn();
+      const component = renderer.create(
+        <TestContextProvider>
+          <Header
+            height={67}
+            onSearchPress={handleFakePress}
+            onSettingsPress={handleSettingsToggle}
+            onLogoLongPress={handleFakePress}
+          />
+        </TestContextProvider>
+      );
+
+      const icon = component.root.find(el => el.props.testID === 'settings-icon');
+      icon.props.onPress();
+
+      expect(handleSettingsToggle).toHaveBeenCalledTimes(1);
     });
 
     it('should handle onLogoLongPress', () => {

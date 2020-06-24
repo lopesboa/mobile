@@ -11,11 +11,12 @@ import Gradient from './gradient';
 import Loader from './loader';
 
 interface Props {
-  onCardPress: (item: DisciplineCard | ChapterCard) => void,
-  onSearchPress: () => void,
-  isFetching: boolean,
-  isFocused: boolean,
-  testID?: string
+  onCardPress: (item: DisciplineCard | ChapterCard) => void;
+  onSearchPress: () => void;
+  onSettingsPress: () => void;
+  isFetching: boolean;
+  isFocused: boolean;
+  testID?: string;
 };
 
 const HEADER_HEIGHT = 67;
@@ -54,7 +55,14 @@ const styles = StyleSheet.create({
   }
 });
 
-const Home = ({onCardPress, onSearchPress, isFetching, isFocused, testID}: Props) => {
+const Home = ({
+  onCardPress,
+  onSearchPress,
+  onSettingsPress,
+  isFetching,
+  isFocused,
+  testID
+}: Props) => {
   if (isFetching) {
     return (
       <View style={styles.loaderContainer} testID={testID}>
@@ -80,7 +88,11 @@ const Home = ({onCardPress, onSearchPress, isFetching, isFocused, testID}: Props
         <Version style={styles.version} />
       </Catalog>
       <Box style={styles.header}>
-        <Header onSearchPress={onSearchPress} height={HEADER_HEIGHT} />
+        <Header
+          onSearchPress={onSearchPress}
+          onSettingsPress={onSettingsPress}
+          height={HEADER_HEIGHT}
+        />
       </Box>
     </View>
   );

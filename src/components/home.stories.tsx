@@ -12,6 +12,7 @@ storiesOf('Home', module)
       <Home
         onCardPress={handleFakePress}
         onSearchPress={handleFakePress}
+        onSettingsPress={handleFakePress}
         isFetching={false}
         isFocused={false}
       />
@@ -24,6 +25,7 @@ storiesOf('Home', module)
         isFetching
         isFocused={false}
         onSearchPress={handleFakePress}
+        onSettingsPress={handleFakePress}
       />
     </TestContextProvider>
   ))
@@ -34,6 +36,7 @@ storiesOf('Home', module)
         isFetching={false}
         isFocused={false}
         onSearchPress={handleFakePress}
+        onSettingsPress={handleFakePress}
       />
     </TestContextProvider>
   ));
@@ -49,6 +52,7 @@ if (__TEST__) {
             isFetching={false}
             isFocused={false}
             onSearchPress={handleFakePress}
+            onSettingsPress={handleFakePress}
           />
         </TestContextProvider>
       );
