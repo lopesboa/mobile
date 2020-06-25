@@ -12,20 +12,20 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		140ED2AC1D01E1AD002B40FF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		140ED2AC1D01E1AD002B40FF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		2D16E6881FA4F8E400B85C8A /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2D16E6881FA4F8E400B85C8A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		2DCD954D1E0B4F2C00145EB5 /* CoorpacademyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CoorpacademyTests.m */; };
-		2DF0FFEE2056DD460020B375 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2DF0FFEE2056DD460020B375 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		40367B672253CE6200B9DF4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40367B662253CE6200B9DF4E /* GoogleService-Info.plist */; };
 		40367B682253CE6200B9DF4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40367B662253CE6200B9DF4E /* GoogleService-Info.plist */; };
 		40367B692253CE6200B9DF4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40367B662253CE6200B9DF4E /* GoogleService-Info.plist */; };
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				140ED2AC1D01E1AD002B40FF /* (null) in Frameworks */,
+				140ED2AC1D01E1AD002B40FF /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,14 +115,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */,
-				2D16E6881FA4F8E400B85C8A /* (null) in Frameworks */,
-				2D02E4C21E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C31E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C41E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C51E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C61E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C71E0B4AEC006451C7 /* (null) in Frameworks */,
-				2D02E4C81E0B4AEC006451C7 /* (null) in Frameworks */,
+				2D16E6881FA4F8E400B85C8A /* BuildFile in Frameworks */,
+				2D02E4C21E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C31E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C41E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C51E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C61E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C71E0B4AEC006451C7 /* BuildFile in Frameworks */,
+				2D02E4C81E0B4AEC006451C7 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DF0FFEE2056DD460020B375 /* (null) in Frameworks */,
+				2DF0FFEE2056DD460020B375 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
