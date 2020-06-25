@@ -82,6 +82,7 @@
     "@coorpacademy/react-native-video-controls": "2.5.5",
     "@react-native-community/async-storage": "^1.4.0",
     "@react-native-community/netinfo": "^5.8.1",
+    "@react-native-community/push-notification-ios": "^1.2.2",
     "@react-native-firebase/analytics": "^7.1.4",
     "@react-native-firebase/app": "^7.2.1",
     "@react-native-firebase/crashlytics": "^7.1.5",
