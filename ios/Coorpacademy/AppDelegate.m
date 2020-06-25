@@ -30,6 +30,10 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 
+
+
+@implementation AppDelegate
+
 // Required to register for notifications
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
@@ -64,8 +68,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 {
  [RNCPushNotificationIOS didReceiveLocalNotification:notification];
 }
-
-@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
