@@ -11,4 +11,4 @@ addDecorator(CenterView);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('default')} />);
 
-require('../../src/stories.js');
+require('../../src/stories.ts');

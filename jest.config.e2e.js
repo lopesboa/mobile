@@ -10,7 +10,7 @@ module.exports = {
     'node_modules/core-js'
   ],
   setupFiles: ['./jest-setup.js'],
-  setupTestFrameworkScriptFile: './__e2e__/init.js',
+  setupTestFrameworkScriptFile: './__e2e__/init.ts',
   reporters: ['default', 'jest-junit'],
   bail: true,
   verbose: true

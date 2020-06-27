@@ -2,7 +2,19 @@
 
 module.exports = {
   preset: 'react-native',
-  moduleFileExtensions: ['unit.js', 'unit.json', 'ios.js', 'android.js', 'js', 'json'],
+  moduleFileExtensions: [
+    'unit.js',
+    'unit.json',
+    'ios.js',
+    'android.js',
+    'js',
+    'ts',
+    'tsx',
+    'js',
+    'jsx',
+    'json',
+    'node'
+  ],
   moduleNameMapper: {
     '^[./a-zA-Z0-9$_-]+.png$': '<rootDir>/assets-transformer.js',
     '^[./a-zA-Z0-9$_-]+.mp3': '<rootDir>/assets-transformer.js'
@@ -17,12 +29,21 @@ module.exports = {
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.js',
+    '<rootDir>/src/**/*.ts',
+    '<rootDir>/src/**/*.tsx',
     '!<rootDir>/src/**/*.e2e.js',
     '!<rootDir>/src/*.js',
+    '!<rootDir>/src/*.ts',
+    '!<rootDir>/src/*.tsx',
     '!<rootDir>/src/utils/tests.js',
+    '!<rootDir>/src/utils/tests.ts',
+    '!<rootDir>/src/utils/tests.tsx',
     '!<rootDir>/src/**/*.stories.js',
+    '!<rootDir>/src/**/*.stories.ts',
+    '!<rootDir>/src/**/*.stories.tsx',
     '!<rootDir>/src/navigator/*',
-    '!**/__fixtures__/**'
+    '!**/__fixtures__/**',
+    '!**/@types/**'
   ],
   coverageThreshold: {
     'src/components': {

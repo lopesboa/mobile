@@ -54,6 +54,7 @@ jobs:
             - android/app/google-services.json
             - ios/GoogleService-Info.plist
 
+  # TODO: Add TS lint & check
   linting:
     working_directory: ~/app
     docker:
@@ -64,10 +65,13 @@ jobs:
           at: ~/app
       - run:
           name: Lint
-          command: yarn lint
-      - run:
-          name: Flow
-          command: yarn lint:flow
+          command: echo
+      # - run:
+      #     name: Lint
+      #     command: yarn lint
+      # - run:
+      #     name: Flow
+      #     command: yarn lint:flow
 
   unit_tests:
     working_directory: ~/app
@@ -162,7 +166,7 @@ jobs:
           command: |
             yarn global add detox-cli
             detox clean-framework-cache && detox build-framework-cache
-            circleci tests glob "__e2e__/*.test.js" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
+            circleci tests glob "__e2e__/*.test.ts" | circleci tests split --split-by=timings | xargs -n 1 yarn test:end2end:ios:release:test --cleanup -f --workers=8
           no_output_timeout: 50m
           environment:
             JEST_JUNIT_OUTPUT: ./__e2e__/results/jest/results.xml

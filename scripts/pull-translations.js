@@ -219,7 +219,7 @@ const generate = async (locale: string) => {
     yourAnswers: formatTranslation(playerTranslations['Your answers_'])
   };
 
-  const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.js`);
+  const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.ts`);
   const properties = Object.keys(translations)
     .map(key => {
       const value = translations[key] !== undefined ? `"${translations[key]}"` : 'undefined';
@@ -244,11 +244,11 @@ const generate = async (locale: string) => {
 };
 
 globby
-  .sync(path.resolve(`${__dirname}/../src/translations/*.js`), {
+  .sync(path.resolve(`${__dirname}/../src/translations/*.ts`), {
     cwd: path.resolve(`${__dirname}/../src`),
     nodir: true
   })
   .map(filePath => path.basename(filePath))
-  .filter(file => file !== 'index.js' && file !== '_types.js')
-  .map(file => file.replace('.js', ''))
+  .filter(file => file !== 'index.ts' && file !== '_types.ts')
+  .map(file => file.replace('.ts', ''))
   .forEach(locale => generate(locale));
