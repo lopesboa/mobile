@@ -6,17 +6,20 @@ import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {BackHandler} from '../modules/back-handler';
+import { NavigationScreenProps } from 'react-navigation';
 
-const SettingsScreen = props => {
+interface Props extends NavigationScreenProps {}
+
+const SettingsScreen = (props: Props) => {
   function handleBackButton() {
     props.navigation.navigate('Home');
     return true;
   }
 
   React.useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+    BackHandler?.addEventListener('hardwareBackPress', handleBackButton);
     return () => {
-      BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
+      BackHandler?.removeEventListener('hardwareBackPress', handleBackButton);
     };
   });
 
