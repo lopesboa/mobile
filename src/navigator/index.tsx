@@ -14,6 +14,7 @@ import HomeScreen from "../screens/home";
 import AuthenticationScreen from "../screens/authentication";
 import AuthenticationDetailsScreen from "../screens/authentication-details";
 import QRCodeScreen from "../screens/qr-code";
+import NotifyMeScreen from '../screens/notifications';
 import {changeScreen} from "../redux/actions/navigation";
 import SearchScreen from "../screens/search";
 import {slideNavigator, slideModalsNavigator} from "./slide";
@@ -103,7 +104,8 @@ const navigator = createStackNavigator(
         SlideModal: {screen: slideModalsNavigator},
         PdfModal: {screen: pdfNavigator},
         BrowserModal: {screen: browserNavigator},
-        QRCodeModal: {screen: QRCodeScreen},
+        QRCodeModal: { screen: QRCodeScreen },
+        NotifyMeModal: {screen: NotifyMeScreen}
     },
     {
         initialRouteName: INITIAL_APP_ROUTE_NAME,

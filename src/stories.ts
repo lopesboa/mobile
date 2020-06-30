@@ -54,6 +54,7 @@ import './components/modal-select-item.stories.tsx';
 import './components/modal-select.stories.tsx';
 import './components/modal.stories.tsx';
 import './components/notification.stories.tsx';
+import './components/notify-me.stories.tsx';
 import './components/overlay.stories.tsx';
 import './components/pdf.stories.tsx';
 import './components/placeholder-circle.stories.tsx';

@@ -27,6 +27,9 @@ interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDis
 class HomeScreen extends React.PureComponent<Props> {
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    const {navigation} = this.props;
+    const params: QRCodeScreenParams = { };
+    navigation.navigate('NotifyMeModal', params);
   }
 
   componentWillUnmount() {
