@@ -97,7 +97,7 @@ export const check = () => async (
     }
   });
 
-  const {status} = await services.Permissions.checkNotifications()
+  const {status} = await services.Permissions.checkNotifications();
   const {permissions} = getState();
 
   if (permissions.notifications !== status) {
@@ -105,4 +105,28 @@ export const check = () => async (
   }
 
   return action;
+};
+
+export const toggle = () => async (
+  dispatch: Dispatch,
+  getState: GetState,
+  {services}: Options
+): Promise<void> => {
+  const action = dispatch({
+    type: CHECK,
+    payload: {
+      type: PERMISSION_TYPE.NOTIFICATIONS
+    }
+  });
+
+  const {status} = await services.Permissions.checkNotifications();
+  const {permissions} = getState();
+
+
+console.log({status, permissions});
+  if(permissions.notifications === PERMISSION_STATUS.GRANTED && status === PERMISSION_STATUS.GRANTED) {
+    dispatch(change(PERMISSION_STATUS.DENIED));
+  } else {
+    dispatch(change(PERMISSION_STATUS.GRANTED));
+  }
 };

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {View, TouchableWithoutFeedback, Animated, Easing, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
+import { BrandThemeContext } from './brand-theme-provider';
 
 const styles = StyleSheet.create({
   track: {
@@ -37,10 +38,17 @@ const styles = StyleSheet.create({
   }
 });
 
-function Switch({onPress, isActive}) {
+interface Props {
+  onPress: () => void;
+  isActive: boolean;
+  testID: string;
+}
+
+function Switch({onPress, isActive, testID}: Props) {
+  const brandTheme = React.useContext(BrandThemeContext);
   const animationValue = React.useRef(new Animated.Value(isActive ? 1 : 0)).current;
   const thumbPosition = isActive ? styles.alignRight : styles.alignLeft;
-  const trackBgColor = isActive ? theme.colors.positive : theme.colors.white;
+  const trackBgColor = isActive ? brandTheme.colors.primary : theme.colors.white;
 
   React.useEffect(() => {
     Animated.timing(animationValue, {
@@ -54,7 +62,7 @@ function Switch({onPress, isActive}) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={[styles.track, thumbPosition, {backgroundColor: trackBgColor}]}>
-        <TouchableWithoutFeedback onPress={onPress}>
+        <TouchableWithoutFeedback onPress={onPress} testID={testID}>
           <Animated.View style={[styles.thumb, {transform: [{translateX: animationValue}]}]} />
         </TouchableWithoutFeedback>
       </View>

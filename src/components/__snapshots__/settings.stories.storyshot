@@ -1,0 +1,520 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Settings default 1`] = `
+Array [
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    ListHeaderComponent={
+      <React.Fragment>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "elevation": 9,
+              "height": 1,
+              "shadowColor": "#14171A",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 1,
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "height": 110,
+              "justifyContent": "center",
+              "padding": 37,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 28,
+                "fontWeight": "700",
+              }
+            }
+          >
+            Notifications
+          </Text>
+        </View>
+        <React.Fragment>
+          <Separator />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "flexDirection": "row",
+                "height": 53,
+                "justifyContent": "space-between",
+                "paddingHorizontal": 32,
+              }
+            }
+          >
+            <Text>
+              Authorize notifications
+            </Text>
+            <Switch
+              isActive={true}
+              onPress={[Function]}
+              testID="undefined-switch-authorize-notifications"
+            />
+          </View>
+          <Separator />
+        </React.Fragment>
+        <Space
+          type="base"
+        />
+      </React.Fragment>
+    }
+    contentContainerStyle={
+      Object {
+        "backgroundColor": "#FAFAFA",
+        "flex": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "isActive": false,
+          "label": "New courses",
+          "onPress": [Function],
+          "type": "new-courses",
+        },
+        Object {
+          "isActive": true,
+          "label": "New battles",
+          "onPress": [Function],
+          "type": "new-battles",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="undefinedlist"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "elevation": 9,
+              "height": 1,
+              "shadowColor": "#14171A",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 1,
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "height": 110,
+              "justifyContent": "center",
+              "padding": 37,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "fontSize": 28,
+                  "fontWeight": "700",
+                },
+              ]
+            }
+          >
+            Notifications
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flexDirection": "row",
+              "height": 53,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                undefined,
+              ]
+            }
+          >
+            Authorize notifications
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "green",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 32,
+                  "justifyContent": "center",
+                  "width": 51,
+                },
+                Object {
+                  "alignItems": "flex-end",
+                },
+                Object {
+                  "backgroundColor": "#00B0FF",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 50,
+                  "borderWidth": 0.5,
+                  "elevation": 3,
+                  "height": 28,
+                  "marginHorizontal": 2,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.28,
+                  "shadowRadius": 2.22,
+                  "transform": Array [
+                    Object {
+                      "translateX": 1,
+                    },
+                  ],
+                  "width": 28,
+                }
+              }
+              testID="undefined-switch-authorize-notifications"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flexDirection": "row",
+              "height": 53,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                undefined,
+              ]
+            }
+          >
+            New courses
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "green",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 32,
+                  "justifyContent": "center",
+                  "width": 51,
+                },
+                Object {
+                  "alignItems": "flex-start",
+                },
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 50,
+                  "borderWidth": 0.5,
+                  "elevation": 3,
+                  "height": 28,
+                  "marginHorizontal": 2,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.28,
+                  "shadowRadius": 2.22,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                  "width": 28,
+                }
+              }
+              testID="undefined-switch-new-courses"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flexDirection": "row",
+              "height": 53,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                undefined,
+              ]
+            }
+          >
+            New battles
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "green",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 32,
+                  "justifyContent": "center",
+                  "width": 51,
+                },
+                Object {
+                  "alignItems": "flex-end",
+                },
+                Object {
+                  "backgroundColor": "#00B0FF",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 50,
+                  "borderWidth": 0.5,
+                  "elevation": 3,
+                  "height": 28,
+                  "marginHorizontal": 2,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.28,
+                  "shadowRadius": 2.22,
+                  "transform": Array [
+                    Object {
+                      "translateX": 1,
+                    },
+                  ],
+                  "width": 28,
+                }
+              }
+              testID="undefined-switch-new-battles"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>,
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "fontSize": 10,
+            "textAlign": "center",
+          },
+          Object {
+            "backgroundColor": "#FAFAFA",
+            "color": "#90A4AE",
+            "paddingBottom": 24,
+            "paddingTop": 16,
+          },
+        ],
+      ]
+    }
+  >
+    Version: v0.0.0.test
+  </Text>,
+]
+`;

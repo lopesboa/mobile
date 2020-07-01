@@ -63,9 +63,9 @@ function withPermissions(
       });
     };
 
-    checkCameraPermissions = () => types.forEach(type => this.props.checkCameraPermission());
+    checkCameraPermissions = () => this.props.checkCameraPermission();
     
-    checkNotificationsPermissions = () => types.forEach(type => this.props.checkNotificationsPermission());
+    checkNotificationsPermissions = () => this.props.checkNotificationsPermission();
 
     requestCameraPermission: Pick<WithPermissionsProps, 'requestCameraPermission'> = (
       description,

@@ -16,6 +16,7 @@ type SettingsItem = {
 
 interface Props {
   settings: Array<SettingsItem>;
+  testID: string;
 };
 
 const styles = StyleSheet.create({
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Settings = ({settings}: Props) => {
+const Settings = ({settings, testID}: Props) => {
   function renderItem({item, index}: {index: number, item: SettingsItem}) {
     function handleOnSettingsItemPress() {
       return item.onPress();
@@ -79,7 +80,7 @@ const Settings = ({settings}: Props) => {
         {index % settings.length !== 1 ? <Separator /> : null}
         <View style={styles.notificationItemContainer}>
           <Text>{item.label}</Text>
-          <Switch isActive={item.isActive} onPress={handleOnSettingsItemPress} />
+          <Switch isActive={item.isActive} onPress={handleOnSettingsItemPress} testID={testID + '-switch-' + item.type} />
         </View>
         {index % settings.length !== 0 ? <Separator /> : null}
       </React.Fragment>
@@ -97,6 +98,7 @@ const Settings = ({settings}: Props) => {
   return (
     <React.Fragment>
       <FlatList
+        testID={testID + 'list'}
         contentContainerStyle={styles.container}
         ListHeaderComponent={
           <React.Fragment>
