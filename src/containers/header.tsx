@@ -8,12 +8,13 @@ import type {Props as ComponentProps} from '../components/header';
 import {signOut as _signOut} from '../redux/actions/authentication';
 
 interface ConnectedDispatchProps {
-  signOut: typeof _signOut
+  signOut: typeof _signOut;
 };
 
 export interface Props extends ConnectedDispatchProps {
-  height: Pick<ComponentProps, 'height'>,
-  onSearchPress: () => void
+  height: Pick<ComponentProps, 'height'>;
+  onSearchPress: () => void;
+  onSettingsPress: () => void;
 };
 
 class Header extends React.PureComponent<Props> {
@@ -29,13 +30,14 @@ class Header extends React.PureComponent<Props> {
     ]);
 
   render() {
-    const {onSearchPress, height} = this.props;
+    const {onSearchPress, onSettingsPress, height} = this.props;
 
     return (
       <HeaderComponent
         height={height}
         onLogoLongPress={this.handleLogoLongPress}
         onSearchPress={onSearchPress}
+        onSettingsPress={onSettingsPress}
         testID="header"
       />
     );

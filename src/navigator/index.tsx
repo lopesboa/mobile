@@ -8,6 +8,7 @@ import {
 import type {NavigationAction, NavigationState} from "react-navigation";
 
 import HeaderSlideTitle from "../containers/header-slide-title";
+import HeaderSettingsTitle from '../components/header-settings-title';
 import HeaderSlideRight from "../containers/header-slide-right";
 import withUniversalLinks from "../containers/with-universal-links";
 import HomeScreen from "../screens/home";
@@ -17,12 +18,14 @@ import QRCodeScreen from "../screens/qr-code";
 import NotifyMeScreen from '../screens/notifications';
 import {changeScreen} from "../redux/actions/navigation";
 import SearchScreen from "../screens/search";
+import SettingsScreen from '../screens/settings';
 import {slideNavigator, slideModalsNavigator} from "./slide";
 import pdfNavigator from "./pdf";
 import browserNavigator from "./browser";
 import navigationOptions, {
     navigationOptionsWithoutHeader,
     HEADER_BACKGROUND_COLOR,
+    SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR,
     INITIAL_APP_ROUTE_NAME,
     INITIAL_ROUTE_NAME,
 } from "./navigation-options";
@@ -68,6 +71,18 @@ const appNavigator = createStackNavigator(
                 gesturesEnabled: false,
             },
         },
+        Settings: {
+            screen: SettingsScreen,
+            navigationOptions: {
+              ...navigationOptions,
+              headerStyle: {
+                ...navigationOptions.headerStyle,
+                backgroundColor: SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR
+              },
+              headerTitle: HeaderSettingsTitle,
+              gesturesEnabled: false
+            }
+          }
     },
     {
         initialRouteName: INITIAL_ROUTE_NAME,
