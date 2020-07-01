@@ -8,10 +8,10 @@ import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
 export interface OwnProps {
-  onScroll: (offset: number, limit: number) => void
-};
+  onScroll: (offset: number, limit: number) => void;
+}
 
-interface Props extends WithLayoutProps, OwnProps {};
+interface Props extends WithLayoutProps, OwnProps {}
 
 export const DEBOUNCE_DURATION = 100;
 export const DEFAULT_LIMIT = 5;
@@ -19,12 +19,9 @@ export const DEFAULT_LIMIT = 5;
 class CatalogItems extends React.Component<Props> {
   timeout: TimeoutID;
 
-  scrollOffset: number = 0;
+  scrollOffset = 0;
 
-  static getOffset = (
-    numColumns:  Pick<Props, 'numColumns'>,
-    scrollOffset: number
-  ): number => {
+  static getOffset = (numColumns: Pick<Props, 'numColumns'>, scrollOffset: number): number => {
     if (numColumns) {
       return Math.trunc(scrollOffset / ITEM_HEIGHT) * numColumns;
     }
@@ -33,8 +30,8 @@ class CatalogItems extends React.Component<Props> {
   };
 
   static getLimit = (
-    numColumns:  Pick<Props, 'numColumns'>,
-    layout:  Pick<Props, 'layout'>
+    numColumns: Pick<Props, 'numColumns'>,
+    layout: Pick<Props, 'layout'>,
   ): number => {
     if (!layout) {
       return DEFAULT_LIMIT * (numColumns || 1);
@@ -49,8 +46,8 @@ class CatalogItems extends React.Component<Props> {
 
   shouldComponentUpdate = ({cards: nextCards, ...nextProps}: Props) => {
     const {cards, ...props} = this.props;
-    const cardsRef = cards && cards.filter(Boolean).map(card => card.universalRef);
-    const nextCardsRef = nextCards && nextCards.filter(Boolean).map(card => card.universalRef);
+    const cardsRef = cards && cards.filter(Boolean).map((card) => card.universalRef);
+    const nextCardsRef = nextCards && nextCards.filter(Boolean).map((card) => card.universalRef);
     const completion =
       cards && cards.reduce((total, card) => total + ((card && card.completion) || 0), 0);
     const nextCompletion =
@@ -74,7 +71,7 @@ class CatalogItems extends React.Component<Props> {
       const offset = CatalogItems.getOffset(numColumns, scrollOffset);
       const limit = CatalogItems.getLimit(numColumns, layout);
       const hasUnfetchedCards =
-        cards && cards.slice(offset, offset + limit).findIndex(card => card === undefined) !== -1;
+        cards && cards.slice(offset, offset + limit).findIndex((card) => card === undefined) !== -1;
 
       if (hasUnfetchedCards) {
         clearTimeout(this.timeout);

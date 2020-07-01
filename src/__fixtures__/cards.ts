@@ -7,7 +7,7 @@ import type {
   LevelType,
   Discipline,
   Chapter,
-  CardAuthor
+  CardAuthor,
 } from '../layer/data/_types';
 import {CARD_STATUS} from '../layer/data/_const';
 import type {AuthorType} from '../types';
@@ -15,13 +15,13 @@ import {AUTHOR_TYPE} from '../const';
 import {createLevelName} from './levels';
 
 export const createCardAuthor = ({
-  authorType = AUTHOR_TYPE.VERIFIED
+  authorType = AUTHOR_TYPE.VERIFIED,
 }: {
-  authorType?: AuthorType
+  authorType?: AuthorType;
 }): CardAuthor => ({
   ref: 'part_VyFl5hZ3V',
   label: 'A good guy with blue eyes',
-  authorType
+  authorType,
 });
 
 export const createCardLevel = ({
@@ -33,17 +33,17 @@ export const createCardLevel = ({
   label,
   stars = 0,
   nbChapters = 3,
-  accessible = true
+  accessible = true,
 }: {
-  ref: string,
-  completion?: number,
-  isDone?: boolean,
-  level?: LevelType,
-  status: CardStatus,
-  label: string,
-  stars?: number,
-  nbChapters?: number,
-  accessible?: boolean
+  ref: string;
+  completion?: number;
+  isDone?: boolean;
+  level?: LevelType;
+  status: CardStatus;
+  label: string;
+  stars?: number;
+  nbChapters?: number;
+  accessible?: boolean;
 }): CardLevel => ({
   nbChapters,
   ref,
@@ -59,7 +59,7 @@ export const createCardLevel = ({
   completion,
   accessible,
   status,
-  label: createLevelName({level})
+  label: createLevelName({level}),
 });
 
 export const createDisciplineCard = ({
@@ -73,19 +73,19 @@ export const createDisciplineCard = ({
   stars = 0,
   nbChapters = 8,
   authors = [createCardAuthor({})],
-  accessible = true
+  accessible = true,
 }: {
-  ref: string,
-  completion: number,
-  levels: Array<CardLevel>,
-  title: string,
-  isAdaptive?: boolean,
-  isNew?: boolean,
-  isFavorite?: boolean,
-  nbChapters?: number,
-  stars?: number,
-  authors?: Array<CardAuthor>,
-  accessible?: boolean
+  ref: string;
+  completion: number;
+  levels: Array<CardLevel>;
+  title: string;
+  isAdaptive?: boolean;
+  isNew?: boolean;
+  isFavorite?: boolean;
+  nbChapters?: number;
+  stars?: number;
+  authors?: Array<CardAuthor>;
+  accessible?: boolean;
 }): DisciplineCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_cours_hatier_accords-1527071992067.jpg',
@@ -96,18 +96,18 @@ export const createDisciplineCard = ({
   thematiques: [
     {
       ref: 'ALL',
-      label: 'All courses'
+      label: 'All courses',
     },
     {
       ref: 'them_EJEGNqKn4',
-      label: 'Flawless French'
-    }
+      label: 'Flawless French',
+    },
   ],
   skills: [
     {
       ref: 'skill_EkRYdKYjB',
-      name: 'Written expression'
-    }
+      name: 'Written expression',
+    },
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
@@ -136,7 +136,7 @@ export const createDisciplineCard = ({
   defaultModuleLevel: 'base',
   isNew,
   favorite: isFavorite,
-  accessible
+  accessible,
 });
 
 export const createChapterCard = ({
@@ -150,19 +150,19 @@ export const createChapterCard = ({
   status,
   stars = 0,
   authors = [createCardAuthor({})],
-  accessible = true
+  accessible = true,
 }: {
-  ref: string,
-  completion: number,
-  title: string,
-  isAdaptive?: boolean,
-  isNew?: boolean,
-  isFavorite?: boolean,
-  isDone?: boolean,
-  status: CardStatus,
-  stars?: number,
-  authors?: Array<CardAuthor>,
-  accessible?: boolean
+  ref: string;
+  completion: number;
+  title: string;
+  isAdaptive?: boolean;
+  isNew?: boolean;
+  isFavorite?: boolean;
+  isDone?: boolean;
+  status: CardStatus;
+  stars?: number;
+  authors?: Array<CardAuthor>;
+  accessible?: boolean;
 }): ChapterCard => ({
   image:
     '//static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/default/image_chapitre_hatier_accords-1524216190534.jpg',
@@ -174,18 +174,18 @@ export const createChapterCard = ({
   skills: [
     {
       ref: 'skill_EkRYdKYjB',
-      name: 'Written expression'
-    }
+      name: 'Written expression',
+    },
   ],
   thematiques: [
     {
       ref: 'ALL',
-      label: 'All courses'
+      label: 'All courses',
     },
     {
       ref: 'them_EJEGNqKn4',
-      label: 'Flawless French'
-    }
+      label: 'Flawless French',
+    },
   ],
   groupsHidden: 'All courses, Flawless French',
   course: null,
@@ -211,41 +211,41 @@ export const createChapterCard = ({
   status,
   isNew,
   favorite: isFavorite,
-  accessible
+  accessible,
 });
 
 export const createDisciplinesCards = (disciplines: Array<Discipline>): Cards => {
-  const items: Cards = disciplines.map(discipline =>
+  const items: Cards = disciplines.map((discipline) =>
     createDisciplineCard({
       ref: discipline.universalRef,
       title: discipline.name,
       completion: 0,
-      levels: discipline.modules.map(level =>
+      levels: discipline.modules.map((level) =>
         createCardLevel({
           ref: level.ref,
           completion: 0,
           stars: 0,
           status: CARD_STATUS.ACTIVE,
-          label: level.name,
-          accessible: level.accessible
-        })
+          label: level.name ?? '',
+          accessible: level.accessible ?? false,
+        }),
       ),
-      accessible: discipline.accessible
-    })
+      accessible: discipline.accessible,
+    }),
   );
 
   return items;
 };
 
 export const createChaptersCards = (chapters: Array<Chapter>): Cards => {
-  const items: Cards = chapters.map(chapter =>
+  const items: Cards = chapters.map((chapter) =>
     createChapterCard({
       ref: chapter.universalRef,
       title: chapter.name,
       completion: 0,
       status: CARD_STATUS.ACTIVE,
-      accessible: chapter.accessible
-    })
+      accessible: chapter.accessible,
+    }),
   );
 
   return items;
@@ -256,5 +256,5 @@ export default {
   createChapterCard,
   createCardLevel,
   createDisciplinesCards,
-  createChaptersCards
+  createChaptersCards,
 };

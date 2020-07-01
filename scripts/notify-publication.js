@@ -22,9 +22,9 @@ const web = new WebClient(token);
           process.argv[2] ||
           'Someone want to tell us something, but he did not tell what! :postbox:',
         color: process.argv[3] || 'warning',
-        title: process.argv[4]
-      }
-    ]
+        title: process.argv[4],
+      },
+    ],
   });
   console.log('Message sent:', res.ts);
 })();

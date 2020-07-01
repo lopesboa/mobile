@@ -25,31 +25,31 @@ class ProgressionBar extends React.PureComponent<Props> {
     const barStyle = {
       height: barHeight,
       borderBottomRightRadius: barRadius,
-      borderTopRightRadius: barRadius
+      borderTopRightRadius: barRadius,
     };
 
     const barContainer = {
-      backgroundColor: backgroundColor || theme.colors.gray.light
+      backgroundColor: backgroundColor || theme.colors.gray.light,
     };
 
     Animated.timing(this.percentage, {
       toValue: current / total,
-      useNativeDriver: false
+      useNativeDriver: false,
     }).start();
 
     const width = this.percentage.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0%', '100%']
+      outputRange: ['0%', '100%'],
     });
 
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => (
+        {(brandTheme) => (
           <View style={barContainer} testID="progression-bar">
             <Animated.View
               style={[
                 barStyle,
-                {backgroundColor: topBarColor ? topBarColor : theme.colors.positive, width}
+                {backgroundColor: topBarColor ? topBarColor : theme.colors.positive, width},
               ]}
               testID={`progression-bar-${current}`}
             />

@@ -14,58 +14,58 @@ import Space from './space';
 import Button from './button';
 
 interface Props {
-  onHelpPress: Pick<AuthenticationFooterProps, 'onHelpPress'>,
-  onDemoPress: Pick<AuthenticationFooterProps, 'onDemoPress'>,
-  onDesktopButtonPress: () => void,
-  onMobileButtonPress: () => void,
-  testID?: string
-};
+  onHelpPress: Pick<AuthenticationFooterProps, 'onHelpPress'>;
+  onDemoPress: Pick<AuthenticationFooterProps, 'onDemoPress'>;
+  onDesktopButtonPress: () => void;
+  onMobileButtonPress: () => void;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   background: {
-    position: 'absolute'
+    position: 'absolute',
   },
   gradient: {
-    opacity: 0.8
+    opacity: 0.8,
   },
   container: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   scroll: {
     paddingTop: theme.spacing.base,
     paddingBottom: theme.spacing.base,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   header: {
     paddingTop: theme.spacing.base,
     paddingHorizontal: theme.spacing.base,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   image: {
     width: 192,
-    height: 35
+    height: 35,
   },
   footer: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   contentHeader: {
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.xxxlarge,
     color: theme.colors.white,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   contentDescription: {
     fontSize: theme.fontSize.large,
     color: theme.colors.white,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   contentFooter: {
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.large,
     color: theme.colors.white,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 export const TOP_COLOR = BLUE_COORP_DARK;
@@ -76,7 +76,7 @@ const Authentication = ({
   onDemoPress,
   onDesktopButtonPress,
   onMobileButtonPress,
-  testID
+  testID,
 }: Props) => (
   <React.Fragment>
     <ImageBackground

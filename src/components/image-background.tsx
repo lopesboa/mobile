@@ -1,6 +1,10 @@
 import * as React from 'react';
-import {ImageBackground as ImageBackgroundBase, StyleSheet} from 'react-native';
-import type {ImageProps} from 'react-native/Libraries/Image/ImageProps';
+import {
+  ImageBackground as ImageBackgroundBase,
+  StyleSheet,
+  ViewStyle,
+  ImageStyle,
+} from 'react-native';
 import flattenStyle from 'react-native/Libraries/StyleSheet/flattenStyle';
 
 import {getCleanUri} from '../modules/uri';
@@ -10,18 +14,18 @@ import Gradient from './gradient';
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   gradient: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
-interface Props {
-  gradient?: Array<string>,
-  gradientStyle?: ViewStyleProp,
-  testID?: string
-};
+interface Props extends ImageStyle {
+  gradient?: Array<string>;
+  gradientStyle?: ViewStyle;
+  testID?: string;
+}
 
 const ImageBackground = ({
   source,
@@ -44,11 +48,11 @@ const ImageBackground = ({
     uri = getResizedImage(getCleanUri(uri), {
       maxHeight,
       maxWidth,
-      resizeMode
+      resizeMode,
     });
   }
 
-  let resizedSource = (uri && {uri}) || source;
+  const resizedSource = (uri && {uri}) || source;
 
   if (gradient) {
     const {children, ...remainingProps} = props;

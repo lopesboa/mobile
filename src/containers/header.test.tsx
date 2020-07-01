@@ -14,10 +14,10 @@ describe('Header', () => {
       const onSearchPress = jest.fn();
 
       const component = renderer.create(
-        <Header onSearchPress={onSearchPress} signOut={fakeCallback} height={42} />
+        <Header onSearchPress={onSearchPress} signOut={fakeCallback} height={42} />,
       );
 
-      const header = component.root.find(el => el.props.testID === 'header');
+      const header = component.root.find((el) => el.props.testID === 'header');
       header.props.onSearchPress();
 
       expect(onSearchPress).toHaveBeenCalledTimes(1);
@@ -56,7 +56,7 @@ describe('Header', () => {
     const signOut = jest.fn();
 
     const component = renderer.create(
-      <Header signOut={signOut} onSearchPress={fakeCallback} height={42} />
+      <Header signOut={signOut} onSearchPress={fakeCallback} height={42} />,
     );
 
     alert.mockImplementationOnce((title, message, buttons) => {
@@ -64,12 +64,12 @@ describe('Header', () => {
       expect(message).toBeNil;
       expect(buttons).toEqual([
         {
-          text: translations.cancel
+          text: translations.cancel,
         },
         {
           text: translations.ok,
-          onPress: expect.any(Function)
-        }
+          onPress: expect.any(Function),
+        },
       ]);
 
       const {onPress} = buttons[1];
@@ -79,7 +79,7 @@ describe('Header', () => {
       expect(signOut).toHaveBeenCalledTimes(1);
     });
 
-    const header = component.root.find(el => el.props.testID === 'header');
+    const header = component.root.find((el) => el.props.testID === 'header');
     header.props.onLogoLongPress();
 
     expect(alert).toHaveBeenCalledTimes(1);

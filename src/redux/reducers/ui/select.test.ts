@@ -8,7 +8,7 @@ describe('Select', () => {
 
   it('Default', () => {
     const action = {
-      type: 'foo'
+      type: 'foo',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -20,7 +20,7 @@ describe('Select', () => {
       const payload = 'foo';
       const action: Action = {
         type: FOCUS,
-        payload
+        payload,
       };
       const result = reducer(expectedInitialState, action);
       const expected = payload;
@@ -32,7 +32,7 @@ describe('Select', () => {
   describe(BLUR, () => {
     it('Default', () => {
       const action: Action = {
-        type: BLUR
+        type: BLUR,
       };
       const result = reducer('foo', action);
       expect(result).toEqual(expectedInitialState);

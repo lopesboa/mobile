@@ -19,8 +19,8 @@ describe('Select', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
 
       const mockedStore = createStoreState({
@@ -29,12 +29,12 @@ describe('Select', () => {
         chapters: [],
         slides: [],
         progression,
-        select
+        select,
       });
 
       const result = mapStateToProps(mockedStore, {id});
       const expected: ConnectedStateProps = {
-        isFocused: true
+        isFocused: true,
       };
 
       expect(result).toEqual(expected);
@@ -57,10 +57,10 @@ describe('Select', () => {
         id={id}
         isFocused={false}
         testID="select"
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'select' && el.props.onFocus);
+    const modal = component.root.find((el) => el.props.testID === 'select' && el.props.onFocus);
     modal.props.onFocus();
 
     expect(focus).toHaveBeenCalledTimes(1);
@@ -83,10 +83,10 @@ describe('Select', () => {
         id={id}
         isFocused
         testID="select"
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'select' && el.props.onBlur);
+    const modal = component.root.find((el) => el.props.testID === 'select' && el.props.onBlur);
     modal.props.onBlur();
 
     expect(blur).toHaveBeenCalledTimes(1);

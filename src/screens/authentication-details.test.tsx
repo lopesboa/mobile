@@ -11,7 +11,7 @@ const createParams = (type?: AuthenticationType = AUTHENTICATION_TYPE.DEMO): Par
   type,
   onSignIn: jest.fn(),
   onHelpPress: jest.fn(),
-  onDemoPress: jest.fn()
+  onDemoPress: jest.fn(),
 });
 
 describe('AuthenticationDetails', () => {
@@ -20,12 +20,12 @@ describe('AuthenticationDetails', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const footer = component.root.find(
-      el => el.props.testID === 'authentication-details-demo-footer'
+      (el) => el.props.testID === 'authentication-details-demo-footer',
     );
     footer.props.onDemoPress();
 
@@ -37,12 +37,12 @@ describe('AuthenticationDetails', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const footer = component.root.find(
-      el => el.props.testID === 'authentication-details-demo-footer'
+      (el) => el.props.testID === 'authentication-details-demo-footer',
     );
     footer.props.onHelpPress();
 
@@ -53,7 +53,7 @@ describe('AuthenticationDetails', () => {
     beforeEach(() => {
       jest.resetModules();
       jest.mock('../modules/inbox', () => ({
-        openInbox: jest.fn()
+        openInbox: jest.fn(),
       }));
     });
 
@@ -63,18 +63,18 @@ describe('AuthenticationDetails', () => {
 
       const params = createParams(AUTHENTICATION_TYPE.QR_CODE);
       const navigation = createNavigation({
-        params
+        params,
       });
       const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
       const button = component.root.find(
-        el => el.props.testID === 'authentication-details-qr-code-button'
+        (el) => el.props.testID === 'authentication-details-qr-code-button',
       );
 
       navigation.navigate.mockImplementationOnce((screen: string, _params: QrCodeParams) => {
         expect(screen).toEqual('QRCodeModal');
         expect(_params).toEqual({
-          onScan: expect.any(Function)
+          onScan: expect.any(Function),
         });
 
         const {onScan} = _params;
@@ -99,12 +99,12 @@ describe('AuthenticationDetails', () => {
 
       const params = createParams(AUTHENTICATION_TYPE.MAGIC_LINK);
       const navigation = createNavigation({
-        params
+        params,
       });
       const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
       const button = component.root.find(
-        el => el.props.testID === 'authentication-details-magic-link-button'
+        (el) => el.props.testID === 'authentication-details-magic-link-button',
       );
       button.props.onPress();
 
@@ -122,12 +122,12 @@ describe('AuthenticationDetails', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const button = component.root.find(
-      el => el.props.testID === 'authentication-details-demo-button-close'
+      (el) => el.props.testID === 'authentication-details-demo-button-close',
     );
     button.props.onPress();
 
@@ -141,7 +141,7 @@ describe('AuthenticationDetails', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
@@ -150,11 +150,11 @@ describe('AuthenticationDetails', () => {
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 });

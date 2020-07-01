@@ -5,5 +5,5 @@ export const setLanguage = (language: string) => translations.setLanguage(langua
 
 export default {
   setLanguage,
-  getInterfaceLanguage
+  getInterfaceLanguage,
 };

@@ -12,29 +12,29 @@ export const STATE: {[key: string]: State} = {
   BUFFERING: 'buffering',
   PLAYING: 'playing',
   PAUSED: 'paused',
-  ENDED: 'ended'
+  ENDED: 'ended',
 };
 
 export type StateChange = {
-  state: State,
-  target: number
+  state: State;
+  target: number;
 };
 
 export interface Props {
-  id: string,
-  preview: File | SourceURI,
-  apiKey: string,
-  onPlay: () => Promise<void> | void,
-  onChangeFullscreen: () => Promise<void> | void,
-  onChangeState?: (e: StateChange) => Promise<void> | void,
-  onError?: () => Promise<void> | void,
-  onRef?: (player: YouTube | null) => Promise<void> | void,
-  height: number,
-  step: Step,
-  isFullScreen?: boolean,
-  extralifeOverlay?: boolean,
-  testID?: string
-};
+  id: string;
+  preview: File | SourceURI;
+  apiKey: string;
+  onPlay: () => Promise<void> | void;
+  onChangeFullscreen: () => Promise<void> | void;
+  onChangeState?: (e: StateChange) => Promise<void> | void;
+  onError?: () => Promise<void> | void;
+  onRef?: (player: YouTube | null) => Promise<void> | void;
+  height: number;
+  step: Step;
+  isFullScreen?: boolean;
+  extralifeOverlay?: boolean;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   video: {
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    left: 0
-  }
+    left: 0,
+  },
 });
 
 const YoutubePlayer = ({
@@ -59,7 +59,7 @@ const YoutubePlayer = ({
   preview,
   step,
   extralifeOverlay,
-  testID = 'video-youtube'
+  testID = 'video-youtube',
 }: Props) => {
   return (
     <VideoOverlay

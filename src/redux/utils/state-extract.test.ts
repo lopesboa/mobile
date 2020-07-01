@@ -9,7 +9,7 @@ import {
   CONTENT_TYPE,
   SPECIFIC_CONTENT_REF,
   PERMISSION_STATUS,
-  ERROR_TYPE
+  ERROR_TYPE,
 } from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
 import {createUser} from '../../__fixtures__/user';
@@ -17,7 +17,7 @@ import {createToken} from '../../__fixtures__/tokens';
 import {createLevel} from '../../__fixtures__/levels';
 import {
   createProgression,
-  createState as createProgressionState
+  createState as createProgressionState,
 } from '../../__fixtures__/progression';
 import {createChapter} from '../../__fixtures__/chapters';
 import {createSlide} from '../../__fixtures__/slides';
@@ -35,7 +35,7 @@ import {
   createSearchState,
   createSelectState,
   createNetworkState,
-  createVideoState
+  createVideoState,
 } from '../../__fixtures__/store';
 import {
   isExitNode,
@@ -74,7 +74,7 @@ import {
   getLivesCount,
   isContentFinished,
   hasSuccessfullyFinished,
-  getContentCorrectionInfo
+  getContentCorrectionInfo,
 } from './state-extract';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
@@ -83,18 +83,18 @@ const createDefaultProgression = (
   engine: Engine,
   levelRef: string,
   content: Content | void,
-  nextContent: Content | void
+  nextContent: Content | void,
 ) =>
   createProgression({
     engine,
     progressionContent: {
       type: CONTENT_TYPE.LEVEL,
-      ref: levelRef
+      ref: levelRef,
     },
     state: {
       content,
-      nextContent
-    }
+      nextContent,
+    },
   });
 
 const context = createContextWithPDF({title: 'Foo bar'});
@@ -103,7 +103,7 @@ const slide = createSlide({
   ref: 'sli_foo',
   chapterId: 'cha_foo',
   question: template,
-  context
+  context,
 });
 
 const createState = ({
@@ -121,23 +121,23 @@ const createState = ({
   heroRef,
   errors,
   search,
-  select
+  select,
 }: {
-  engine?: Engine,
-  levelRef?: string,
-  content?: Content | void,
-  nextContent?: Content | void,
-  slides?: Array<Slide>,
-  sections?: Array<Section | void>,
-  cards?: Array<DisciplineCard | ChapterCard>,
-  permissions?: $ExtractReturn<typeof createPermissionsState>,
-  token?: string | null,
-  brand?: Brand | null,
-  user?: User | null,
-  heroRef?: string,
-  errors?: $ExtractReturn<typeof createErrorsState>,
-  search?: $ExtractReturn<typeof createSearchState>,
-  select?: $ExtractReturn<typeof createSelectState>
+  engine?: Engine;
+  levelRef?: string;
+  content?: Content | void;
+  nextContent?: Content | void;
+  slides?: Array<Slide>;
+  sections?: Array<Section | void>;
+  cards?: Array<DisciplineCard | ChapterCard>;
+  permissions?: $ExtractReturn<typeof createPermissionsState>;
+  token?: string | null;
+  brand?: Brand | null;
+  user?: User | null;
+  heroRef?: string;
+  errors?: $ExtractReturn<typeof createErrorsState>;
+  search?: $ExtractReturn<typeof createSearchState>;
+  select?: $ExtractReturn<typeof createSelectState>;
 }): StoreState =>
   createStoreState({
     levels: [createDefaultLevel(levelRef)],
@@ -148,7 +148,7 @@ const createState = ({
     authentication: createAuthenticationState({
       user: user !== undefined ? user : createUser(),
       token: token !== undefined ? token : createToken({}),
-      brand: brand !== undefined ? brand : createBrand({})
+      brand: brand !== undefined ? brand : createBrand({}),
     }),
     godMode: true,
     fastSlide: true,
@@ -156,7 +156,7 @@ const createState = ({
     permissions,
     errors,
     search,
-    select
+    select,
   });
 
 describe('State-extract', () => {
@@ -172,8 +172,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.SUCCESS,
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
-        }
+          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+        },
       });
       const result = isExitNode(state);
       expect(result).toEqual(true);
@@ -183,8 +183,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.FAILURE,
-          ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
-        }
+          ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE,
+        },
       });
       const result = isExitNode(state);
       expect(result).toEqual(true);
@@ -193,7 +193,7 @@ describe('State-extract', () => {
     it('should return false if nextContent is a slide', () => {
       const state: StoreState = createState({
         type: CONTENT_TYPE.SLIDE,
-        ref: '1234567'
+        ref: '1234567',
       });
       const result = isExitNode(state);
       expect(result).toEqual(false);
@@ -203,8 +203,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.NODE,
-          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-        }
+          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+        },
       });
       const result = isExitNode(state);
       expect(result).toEqual(false);
@@ -223,8 +223,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.SUCCESS,
-          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE
-        }
+          ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
+        },
       });
       const result = hasSuccessfullyFinished(state);
       expect(result).toEqual(true);
@@ -234,8 +234,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.FAILURE,
-          ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE
-        }
+          ref: SPECIFIC_CONTENT_REF.FAILURE_EXIT_NODE,
+        },
       });
       const result = hasSuccessfullyFinished(state);
       expect(result).toEqual(false);
@@ -245,8 +245,8 @@ describe('State-extract', () => {
       const state: StoreState = createState({
         nextContent: {
           type: CONTENT_TYPE.NODE,
-          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-        }
+          ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+        },
       });
       const result = hasSuccessfullyFinished(state);
       expect(result).toEqual(false);
@@ -288,8 +288,8 @@ describe('State-extract', () => {
     it('should return permission status', () => {
       const state: StoreState = createState({
         permissions: createPermissionsState({
-          camera: PERMISSION_STATUS.DENIED
-        })
+          camera: PERMISSION_STATUS.DENIED,
+        }),
       });
 
       const result = getPermissionStatus('camera')(state);
@@ -306,58 +306,58 @@ describe('State-extract', () => {
         ref: 'mod_10B',
         status: 'isActive',
         label: 'Fake level',
-        level: 'advanced'
+        level: 'advanced',
       });
       const disciplineCard = createDisciplineCard({
         ref: 'dis1',
         completion: 0,
         levels: [levelCard],
-        title: 'First discipline'
+        title: 'First discipline',
       });
 
       const progression = createProgression({
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_10B'
-        }
+          ref: 'mod_10B',
+        },
       });
 
       const partialState = {
         cards: {
           entities: {
             dis1: {
-              en: disciplineCard
-            }
-          }
+              en: disciplineCard,
+            },
+          },
         },
         data: {
           contents: {
             level: {
               entities: {
-                mod_10B: {...level, bestScore: 30}
-              }
-            }
+                mod_10B: {...level, bestScore: 30},
+              },
+            },
           },
           progressions: {
             entities: {
               progression1: {
                 ...progression,
-                state: {...progression.state, stars: 40}
-              }
-            }
+                state: {...progression.state, stars: 40},
+              },
+            },
           },
-          nextContent: {}
+          nextContent: {},
         },
         ui: {
           current: {
-            progressionId: 'progression1'
-          }
-        }
+            progressionId: 'progression1',
+          },
+        },
       };
       const state: StoreState = createState({
         engine: ENGINE.LEARNER,
-        levelRef: 'mod_10B'
+        levelRef: 'mod_10B',
       });
 
       const bestScore = getBestScore({...state, ...partialState});
@@ -370,58 +370,58 @@ describe('State-extract', () => {
         ref: 'mod_10B',
         status: 'isActive',
         label: 'Fake level',
-        level: 'advanced'
+        level: 'advanced',
       });
       const disciplineCard = createDisciplineCard({
         ref: 'dis1',
         completion: 0,
         levels: [levelCard],
-        title: 'First discipline'
+        title: 'First discipline',
       });
 
       const progression = createProgression({
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_10B'
-        }
+          ref: 'mod_10B',
+        },
       });
 
       const partialState = {
         cards: {
           entities: {
             dis1: {
-              en: disciplineCard
-            }
-          }
+              en: disciplineCard,
+            },
+          },
         },
         data: {
           contents: {
             level: {
               entities: {
-                mod_10B: level
-              }
-            }
+                mod_10B: level,
+              },
+            },
           },
           progressions: {
             entities: {
               progression1: {
                 ...progression,
-                state: {...progression.state, stars: 40}
-              }
-            }
+                state: {...progression.state, stars: 40},
+              },
+            },
           },
-          nextContent: {}
+          nextContent: {},
         },
         ui: {
           current: {
-            progressionId: 'progression1'
-          }
-        }
+            progressionId: 'progression1',
+          },
+        },
       };
       const state: StoreState = createState({
         engine: ENGINE.LEARNER,
-        levelRef: 'mod_10B'
+        levelRef: 'mod_10B',
       });
 
       const bestScore = getBestScore({...state, ...partialState});
@@ -434,58 +434,58 @@ describe('State-extract', () => {
         ref: 'mod_10B',
         status: 'isActive',
         label: 'Fake level',
-        level: 'advanced'
+        level: 'advanced',
       });
       const disciplineCard = createDisciplineCard({
         ref: 'dis1',
         completion: 0,
         levels: [levelCard],
-        title: 'First discipline'
+        title: 'First discipline',
       });
 
       const progression = createProgression({
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_10B'
-        }
+          ref: 'mod_10B',
+        },
       });
 
       const partialState = {
         cards: {
           entities: {
             dis1: {
-              en: disciplineCard
-            }
-          }
+              en: disciplineCard,
+            },
+          },
         },
         data: {
           contents: {
             level: {
               entities: {
-                mod_10B: {...level, bestScore: 30}
-              }
-            }
+                mod_10B: {...level, bestScore: 30},
+              },
+            },
           },
           progressions: {
             entities: {
               progression1: {
                 ...progression,
-                state: {...progression.state, stars: 10}
-              }
-            }
+                state: {...progression.state, stars: 10},
+              },
+            },
           },
-          nextContent: {}
+          nextContent: {},
         },
         ui: {
           current: {
-            progressionId: 'progression1'
-          }
-        }
+            progressionId: 'progression1',
+          },
+        },
       };
       const state: StoreState = createState({
         engine: ENGINE.LEARNER,
-        levelRef: 'mod_10B'
+        levelRef: 'mod_10B',
       });
 
       const bestScore = getBestScore({...state, ...partialState});
@@ -497,27 +497,27 @@ describe('State-extract', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_10B'
-        }
+          ref: 'mod_10B',
+        },
       });
 
       const partialState = {
         data: {
           progressions: {
             entities: {
-              progression1: {...progression, state: {...progression.state}}
-            }
-          }
+              progression1: {...progression, state: {...progression.state}},
+            },
+          },
         },
         ui: {
           current: {
-            progressionId: 'progression1'
-          }
-        }
+            progressionId: 'progression1',
+          },
+        },
       };
       const state: StoreState = createState({
         engine: ENGINE.LEARNER,
-        levelRef: 'mod_10B'
+        levelRef: 'mod_10B',
       });
 
       const bestScore = getBestScore({...state, ...partialState});
@@ -531,9 +531,9 @@ describe('State-extract', () => {
         data: {
           rank: {
             start: 20,
-            end: 30
-          }
-        }
+            end: 30,
+          },
+        },
       };
 
       // @ts-ignore
@@ -545,9 +545,9 @@ describe('State-extract', () => {
         data: {
           rank: {
             start: 20,
-            end: 20
-          }
-        }
+            end: 20,
+          },
+        },
       };
 
       // @ts-ignore
@@ -559,9 +559,9 @@ describe('State-extract', () => {
         data: {
           rank: {
             start: 20,
-            end: 10
-          }
-        }
+            end: 10,
+          },
+        },
       };
 
       // @ts-ignore
@@ -576,10 +576,10 @@ describe('State-extract', () => {
         ref: 'cha1',
         completion: 0,
         status: CARD_STATUS.ACTIVE,
-        title: 'First chapter'
+        title: 'First chapter',
       });
       const state = createState({
-        cards: [card]
+        cards: [card],
       });
       // @ts-ignore
       const result = getCard(state, 'cha1');
@@ -591,17 +591,17 @@ describe('State-extract', () => {
     it('should get section', () => {
       const state = {
         authentication: {
-          language: 'en'
+          language: 'en',
         },
         catalog: {
           entities: {
             sections: {
               foo: {
-                en: 'section'
-              }
-            }
-          }
-        }
+                en: 'section',
+              },
+            },
+          },
+        },
       };
       // @ts-ignore
       const result = getSection(state, 'foo', 'en');
@@ -611,17 +611,17 @@ describe('State-extract', () => {
     it('should get section with default lang', () => {
       const state = {
         authentication: {
-          language: 'en'
+          language: 'en',
         },
         catalog: {
           entities: {
             sections: {
               foo: {
-                en: 'section'
-              }
-            }
-          }
-        }
+                en: 'section',
+              },
+            },
+          },
+        },
       };
       // @ts-ignore
       const result = getSection(state, 'foo');
@@ -633,7 +633,7 @@ describe('State-extract', () => {
     it('should get token', () => {
       const token = createToken({});
       const state = createState({
-        token
+        token,
       });
       // @ts-ignore
       const result = getToken(state);
@@ -645,7 +645,7 @@ describe('State-extract', () => {
     it('should get brand', () => {
       const brand = createBrand({});
       const state = createState({
-        brand
+        brand,
       });
 
       const result = getBrand(state);
@@ -660,7 +660,7 @@ describe('State-extract', () => {
       const defaultLanguage = 'de';
       const brand = createBrand({defaultLanguage});
       const state = createState({
-        brand
+        brand,
       });
 
       const result = getBrandDefaultLanguage(state);
@@ -671,7 +671,7 @@ describe('State-extract', () => {
 
     it('should not get brand default language', () => {
       const state = createState({
-        brand: null
+        brand: null,
       });
 
       const result = getBrandDefaultLanguage(state);
@@ -688,8 +688,8 @@ describe('State-extract', () => {
       const expected: ProgressionEngineVersions = {
         versions: {
           [ENGINE.LEARNER]: '2',
-          [ENGINE.MICROLEARNING]: '2'
-        }
+          [ENGINE.MICROLEARNING]: '2',
+        },
       };
 
       expect(result).toEqual(expected);
@@ -769,7 +769,7 @@ describe('State-extract', () => {
   describe('getContext', () => {
     it('should get context', () => {
       const state = createState({
-        slides: [slide]
+        slides: [slide],
       });
 
       const result = getContext(state);
@@ -783,7 +783,7 @@ describe('State-extract', () => {
     it('should return the user', () => {
       const user = createUser();
       const state = createState({
-        user
+        user,
       });
 
       const result = getUser(state);
@@ -798,11 +798,11 @@ describe('State-extract', () => {
       const brand = createBrand({});
       const token = createToken({
         brand: brand.name,
-        roles: [ROLES.USER, ROLES.GODMODE]
+        roles: [ROLES.USER, ROLES.GODMODE],
       });
       const state = createState({
         token,
-        brand
+        brand,
       });
 
       const result = isGodModeUser(state);
@@ -815,7 +815,7 @@ describe('State-extract', () => {
       const brand = createBrand({});
       const state = createState({
         token,
-        brand
+        brand,
       });
 
       const result = isGodModeUser(state);
@@ -826,7 +826,7 @@ describe('State-extract', () => {
     it('should return false if no token or brand are defined', () => {
       const state = createState({
         token: null,
-        brand: null
+        brand: null,
       });
 
       const result = isGodModeUser(state);
@@ -839,7 +839,7 @@ describe('State-extract', () => {
     it('should get sections', () => {
       const sections = createSections();
       const state = createState({
-        sections: sections.concat([undefined])
+        sections: sections.concat([undefined]),
       });
 
       const result = getSections(state);
@@ -847,10 +847,10 @@ describe('State-extract', () => {
         (_result, section) => ({
           ..._result,
           [section.key]: {
-            en: section
-          }
+            en: section,
+          },
         }),
-        {}
+        {},
       );
 
       expect(result).toEqual(expected);
@@ -860,7 +860,7 @@ describe('State-extract', () => {
   describe('getSectionsRef', () => {
     it('should get sections ref', () => {
       const state = createState({
-        sections: createSections().concat([undefined])
+        sections: createSections().concat([undefined]),
       });
 
       const result = getSectionsRef(state);
@@ -885,32 +885,32 @@ describe('State-extract', () => {
         ref: 'mod_10B',
         status: 'isActive',
         label: 'Fake level',
-        level: 'advanced'
+        level: 'advanced',
       });
       const disciplineCard = createDisciplineCard({
         ref: 'dis1',
         completion: 0,
         levels: [levelCard],
-        title: 'First discipline'
+        title: 'First discipline',
       });
       const chapterCard = createChapterCard({
         ref: 'cha1',
         completion: 0,
         status: CARD_STATUS.ACTIVE,
-        title: 'First chapter'
+        title: 'First chapter',
       });
       const state = createState({
-        cards: [disciplineCard, chapterCard]
+        cards: [disciplineCard, chapterCard],
       });
 
       const result = getCards(state);
       const expected = {
         [chapterCard.universalRef]: {
-          en: chapterCard
+          en: chapterCard,
         },
         [disciplineCard.universalRef]: {
-          en: disciplineCard
-        }
+          en: disciplineCard,
+        },
       };
 
       expect(result).toEqual(expected);
@@ -923,22 +923,22 @@ describe('State-extract', () => {
         ref: 'mod_10B',
         status: 'isActive',
         label: 'Fake level',
-        level: 'advanced'
+        level: 'advanced',
       });
       const disciplineCard = createDisciplineCard({
         ref: 'dis1',
         completion: 0,
         levels: [levelCard],
-        title: 'First discipline'
+        title: 'First discipline',
       });
       const chapterCard = createChapterCard({
         ref: 'cha1',
         completion: 0,
         status: CARD_STATUS.ACTIVE,
-        title: 'First chapter'
+        title: 'First chapter',
       });
       const state = createState({
-        cards: [disciplineCard, chapterCard].concat([undefined])
+        cards: [disciplineCard, chapterCard].concat([undefined]),
       });
 
       const result = getSearchRef(state);
@@ -960,7 +960,7 @@ describe('State-extract', () => {
     it('should get ref', () => {
       const heroRef = 'foo';
       const state = createState({
-        heroRef
+        heroRef,
       });
 
       const result = getHeroRef(state);
@@ -976,11 +976,11 @@ describe('State-extract', () => {
         ref: 'cha1',
         completion: 0,
         status: CARD_STATUS.ACTIVE,
-        title: 'First chapter'
+        title: 'First chapter',
       });
       const state = createState({
         cards: [card],
-        heroRef: 'cha1'
+        heroRef: 'cha1',
       });
 
       const result = getHero(state);
@@ -992,7 +992,7 @@ describe('State-extract', () => {
     it('should return undefined', () => {
       const state = createState({
         cards: [],
-        heroRef: 'cha1'
+        heroRef: 'cha1',
       });
 
       const result = getHero(state);
@@ -1012,7 +1012,7 @@ describe('State-extract', () => {
 
     it('should return true', () => {
       const state = createState({
-        errors: createErrorsState({isVisible: true})
+        errors: createErrorsState({isVisible: true}),
       });
 
       const result = isErrorVisible(state);
@@ -1032,7 +1032,7 @@ describe('State-extract', () => {
 
     it('should return true', () => {
       const state = createState({
-        search: createSearchState({isFetching: true})
+        search: createSearchState({isFetching: true}),
       });
 
       const result = isSearchFetching(state);
@@ -1053,7 +1053,7 @@ describe('State-extract', () => {
     it('should return the value', () => {
       const value = 'foo';
       const state = createState({
-        search: createSearchState({value})
+        search: createSearchState({value}),
       });
 
       const result = getSearchValue(state);
@@ -1075,7 +1075,7 @@ describe('State-extract', () => {
     it('should return the error type', () => {
       const type = ERROR_TYPE.PLATFORM_NOT_ACTIVATED;
       const state = createState({
-        errors: createErrorsState({type})
+        errors: createErrorsState({type}),
       });
 
       const result = getErrorType(state);
@@ -1096,7 +1096,7 @@ describe('State-extract', () => {
     it('should return the selected id', () => {
       const id = 'foo';
       const state = createState({
-        select: createSelectState({id})
+        select: createSelectState({id}),
       });
 
       const result = getFocusedSelect(state);
@@ -1116,7 +1116,7 @@ describe('State-extract', () => {
 
     it('should return true', () => {
       const state = createState({
-        network: createNetworkState({isConnected: true})
+        network: createNetworkState({isConnected: true}),
       });
 
       const result = isNetworkConnected(state);
@@ -1135,7 +1135,7 @@ describe('State-extract', () => {
 
     it('should return true', () => {
       const state = createState({
-        video: createVideoState({isFullScreen: true})
+        video: createVideoState({isFullScreen: true}),
       });
 
       const result = isVideoFullScreen(state);
@@ -1149,22 +1149,22 @@ describe('State-extract', () => {
       const fakeState = createProgressionState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
 
       const chapter = createChapter({
         ref: 'cha_foo',
-        name: 'chapter'
+        name: 'chapter',
       });
 
       const progression = createProgression({
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'level_foo'
+          ref: 'level_foo',
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const state: StoreState = createStoreState({
@@ -1172,8 +1172,8 @@ describe('State-extract', () => {
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
-          progression
-        })
+          progression,
+        }),
       });
 
       const lives = getLivesCount(state);
@@ -1184,23 +1184,23 @@ describe('State-extract', () => {
       const fakeState = createProgressionState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
 
       const chapter = createChapter({
         ref: 'cha_foo',
         name: 'chapter',
-        isConditional: true
+        isConditional: true,
       });
 
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'sli_foo'
+          ref: 'sli_foo',
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const state: StoreState = createStoreState({
@@ -1208,8 +1208,8 @@ describe('State-extract', () => {
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
-          progression
-        })
+          progression,
+        }),
       });
 
       const lives = getLivesCount(state);
@@ -1223,21 +1223,21 @@ describe('State-extract', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'sli_foo'
+          ref: 'sli_foo',
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 4
-          }
-        }
+            current: 4,
+          },
+        },
       });
 
       const state: StoreState = createStoreState({
-        progression
+        progression,
       });
       const isFinished = isContentFinished(state);
       expect(isFinished).toEqual(true);
@@ -1247,19 +1247,19 @@ describe('State-extract', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'level_foo'
+          ref: 'level_foo',
         },
         state: createProgressionState({
           nextContent: {
             type: CONTENT_TYPE.NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
           },
-          lives: 0
-        })
+          lives: 0,
+        }),
       });
 
       const state: StoreState = createStoreState({
-        progression
+        progression,
       });
       const isFinished = isContentFinished(state);
       expect(isFinished).toEqual(true);
@@ -1275,7 +1275,7 @@ describe('State-extract', () => {
     const _slide = createSlide({
       ref: 'sli_foo',
       chapterId: 'cha_foo',
-      question: _template
+      question: _template,
     });
 
     describe('getContentCorrectionInfo', () => {
@@ -1284,19 +1284,19 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: true,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
-          name: 'chapter'
+          name: 'chapter',
         });
 
         const state: StoreState = createStoreState({
@@ -1304,8 +1304,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1315,7 +1315,7 @@ describe('State-extract', () => {
           isAdaptive: false,
           isContentFinished: false,
           isCorrect: false,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
 
@@ -1324,20 +1324,20 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         const state: StoreState = createStoreState({
@@ -1345,8 +1345,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1356,7 +1356,7 @@ describe('State-extract', () => {
           isAdaptive: true,
           isContentFinished: false,
           isCorrect: false,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
 
@@ -1365,20 +1365,20 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         _slide.context = createContextWithImage({title: 'Juste a context'});
@@ -1388,8 +1388,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1399,7 +1399,7 @@ describe('State-extract', () => {
           isAdaptive: true,
           isContentFinished: false,
           isCorrect: false,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
 
@@ -1408,24 +1408,24 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: true,
             nextContent: {
               ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-              type: CONTENT_TYPE.SUCCESS
+              type: CONTENT_TYPE.SUCCESS,
             },
             step: {
-              current: 4
+              current: 4,
             },
-            lives: 4
-          }
+            lives: 4,
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
-          name: 'chapter'
+          name: 'chapter',
         });
 
         const state: StoreState = createStoreState({
@@ -1433,8 +1433,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1444,7 +1444,7 @@ describe('State-extract', () => {
           isAdaptive: false,
           isContentFinished: true,
           isCorrect: true,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
       it('should navigate to level-end screen if content is finished in failure and is not an adaptive', () => {
@@ -1452,24 +1452,24 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: true,
             nextContent: {
               ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-              type: CONTENT_TYPE.SUCCESS
+              type: CONTENT_TYPE.SUCCESS,
             },
             step: {
-              current: 4
+              current: 4,
             },
-            lives: 0
-          }
+            lives: 0,
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
-          name: 'chapter'
+          name: 'chapter',
         });
 
         const state: StoreState = createStoreState({
@@ -1477,8 +1477,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1488,7 +1488,7 @@ describe('State-extract', () => {
           isAdaptive: false,
           isContentFinished: true,
           isCorrect: false,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
       it('should navigate to level-end screen if content is finished', () => {
@@ -1496,24 +1496,24 @@ describe('State-extract', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             nextContent: {
               ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-              type: CONTENT_TYPE.SUCCESS
+              type: CONTENT_TYPE.SUCCESS,
             },
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         const state: StoreState = createStoreState({
@@ -1521,8 +1521,8 @@ describe('State-extract', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
 
         const result = getContentCorrectionInfo(state);
@@ -1532,7 +1532,7 @@ describe('State-extract', () => {
           isAdaptive: true,
           isContentFinished: true,
           isCorrect: true,
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         });
       });
     });

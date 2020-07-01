@@ -25,7 +25,7 @@ const slide = createSlide({
   chapterId: '666',
   chapterIds: ['666'],
   question,
-  context
+  context,
 });
 
 const levelOne = createLevel({ref: 'mod_foo', chapterIds: ['cha_foo']});
@@ -37,34 +37,34 @@ const chapter = createChapter({name: 'Fake chapter', ref: 'cha_foo'});
 const disciplineOne = createDiscipline({
   ref: 'dis1',
   levels: [levelOne, levelTwo, levelThree],
-  name: 'Fake discipline'
+  name: 'Fake discipline',
 });
 const disciplineTwo = createDiscipline({
   ref: 'dis2',
   levels: [levelFour, levelFive],
-  name: 'Fake discipline'
+  name: 'Fake discipline',
 });
 const disciplineCardOne = createDisciplineCard({
   ref: disciplineOne.ref,
   completion: 0,
   levels: disciplineOne.modules.map(({ref, name}) =>
-    createCardLevel({ref, label: name, status: CARD_STATUS.ACTIVE})
+    createCardLevel({ref, label: name, status: CARD_STATUS.ACTIVE}),
   ),
-  title: disciplineOne.name
+  title: disciplineOne.name,
 });
 const disciplineCardTwo = createDisciplineCard({
   ref: disciplineTwo.ref,
   completion: 0,
   levels: disciplineTwo.modules.map(({ref, name}) =>
-    createCardLevel({ref, label: name, status: CARD_STATUS.ACTIVE})
+    createCardLevel({ref, label: name, status: CARD_STATUS.ACTIVE}),
   ),
-  title: disciplineTwo.name
+  title: disciplineTwo.name,
 });
 const exitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 
 const createParams = ({isCorrect = false}: {isCorrect?: boolean}): Params => ({
   isCorrect,
-  progressionId: '42'
+  progressionId: '42',
 });
 
 describe('LevelEnd', () => {
@@ -78,15 +78,15 @@ describe('LevelEnd', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelOne.ref
+          ref: levelOne.ref,
         },
         state: {
           nextContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: levelTwo.ref
+            ref: levelTwo.ref,
           },
-          stars: 20
-        }
+          stars: 20,
+        },
       });
 
       const state = createStoreState({
@@ -96,7 +96,7 @@ describe('LevelEnd', () => {
         slides: [slide, slide],
         progression,
         catalog,
-        nextContent: mapToLevelAPI(levelTwo)
+        nextContent: mapToLevelAPI(levelTwo),
       });
 
       const result = mapStateToProps(state);
@@ -105,7 +105,7 @@ describe('LevelEnd', () => {
         nextContent: mapToLevelAPI(levelTwo),
         currentContent: mapToLevelAPI(levelOne),
         bestScore: 20,
-        recommendation: disciplineCardTwo
+        recommendation: disciplineCardTwo,
       };
 
       expect(result).toEqual(expected);
@@ -118,15 +118,15 @@ describe('LevelEnd', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.CHAPTER,
-          ref: chapter.universalRef
+          ref: chapter.universalRef,
         },
         state: {
           nextContent: {
             type: CONTENT_TYPE.CHAPTER,
-            ref: chapter.universalRef
+            ref: chapter.universalRef,
           },
-          stars: 7
-        }
+          stars: 7,
+        },
       });
 
       const state = createStoreState({
@@ -136,7 +136,7 @@ describe('LevelEnd', () => {
         slides: [slide, slide],
         progression,
         catalog,
-        nextContent: mapToChapterAPI(chapter)
+        nextContent: mapToChapterAPI(chapter),
       });
 
       const result = mapStateToProps(state);
@@ -145,7 +145,7 @@ describe('LevelEnd', () => {
         nextContent: mapToChapterAPI(chapter),
         currentContent: mapToChapterAPI(chapter),
         bestScore: 7,
-        recommendation: disciplineCardOne
+        recommendation: disciplineCardOne,
       };
 
       expect(result).toEqual(expected);
@@ -158,15 +158,15 @@ describe('LevelEnd', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelOne.ref
+          ref: levelOne.ref,
         },
         state: {
           nextContent: {
             type: CONTENT_TYPE.EXIT_NODE,
-            ref: exitNode.ref
+            ref: exitNode.ref,
           },
-          stars: 20
-        }
+          stars: 20,
+        },
       });
 
       const state = createStoreState({
@@ -177,7 +177,7 @@ describe('LevelEnd', () => {
         exitNodes: [exitNode],
         progression,
         catalog,
-        nextContent: mapToExitNodeAPI(exitNode)
+        nextContent: mapToExitNodeAPI(exitNode),
       });
 
       const result = mapStateToProps(state);
@@ -190,7 +190,7 @@ describe('LevelEnd', () => {
         feedbackTitle: exitNode.title,
         feedbackDescription: exitNode.description,
         // @ts-ignore wrong packages definition
-        feedbackMedia: exitNode.media
+        feedbackMedia: exitNode.media,
       };
 
       expect(result).toEqual(expected);
@@ -205,9 +205,9 @@ describe('LevelEnd', () => {
     const component = renderer.create(<LevelEnd navigation={navigation} />);
 
     const navigationEvents = component.root.find(
-      el => el.props.testID === 'level-end-navigation-events'
+      (el) => el.props.testID === 'level-end-navigation-events',
     );
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
 
     expect(levelEnd.props.isFocused).toBeFalsy();
 
@@ -226,7 +226,7 @@ describe('LevelEnd', () => {
       <LevelEnd
         navigation={navigation}
         changeAnswerValidationStatus={changeAnswerValidationStatus}
-      />
+      />,
     );
 
     component.unmount();
@@ -241,7 +241,7 @@ describe('LevelEnd', () => {
     const navigation = createNavigation({params});
     const component = renderer.create(<LevelEnd navigation={navigation} />);
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onClose();
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -256,7 +256,7 @@ describe('LevelEnd', () => {
     const navigation = createNavigation({params});
     const component = renderer.create(<LevelEnd navigation={navigation} selectCard={selectCard} />);
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onCardPress(disciplineCardOne);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -273,10 +273,10 @@ describe('LevelEnd', () => {
     const params = createParams({});
     const navigation = createNavigation({params});
     const component = renderer.create(
-      <LevelEnd navigation={navigation} selectCard={selectCard} editSearch={editSearch} />
+      <LevelEnd navigation={navigation} selectCard={selectCard} editSearch={editSearch} />,
     );
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     const searchLink =
       'https://batman-staging.coorpacademy.com/catalog?theme=them_VkFqE1FII&type=course&foo=bar';
     levelEnd.props.onFeedbackLinkPress(searchLink);
@@ -296,12 +296,12 @@ describe('LevelEnd', () => {
     const navigation = createNavigation({params});
     const component = renderer.create(<LevelEnd navigation={navigation} />);
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onPDFButtonPress(url, description);
 
     const expectedParams: PdfScreenParams = {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     };
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -315,10 +315,10 @@ describe('LevelEnd', () => {
     const params = createParams({});
     const navigation = createNavigation({params});
     const component = renderer.create(
-      <LevelEnd navigation={navigation} createNextProgression={createNextProgression} />
+      <LevelEnd navigation={navigation} createNextProgression={createNextProgression} />,
     );
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onButtonPress();
 
     expect(createNextProgression).toHaveBeenCalledTimes(0);
@@ -337,10 +337,10 @@ describe('LevelEnd', () => {
         navigation={navigation}
         createNextProgression={createNextProgression}
         nextContent={levelOne}
-      />
+      />,
     );
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onButtonPress();
 
     expect(createNextProgression).toHaveBeenCalledTimes(1);
@@ -360,10 +360,10 @@ describe('LevelEnd', () => {
         navigation={navigation}
         createNextProgression={createNextProgression}
         nextContent={chapter}
-      />
+      />,
     );
 
-    const levelEnd = component.root.find(el => el.props.testID === 'level-end');
+    const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onButtonPress();
 
     expect(createNextProgression).toHaveBeenCalledTimes(1);

@@ -1,7 +1,7 @@
 import {
   SYNCHRONIZE_ALL_REQUEST,
   SYNCHRONIZE_ALL_SUCCESS,
-  SYNCHRONIZE_ALL_FAILURE
+  SYNCHRONIZE_ALL_FAILURE,
 } from '../../actions/progressions/synchronize';
 import type {AllAction as Action} from '../../actions/progressions/synchronize';
 import reducer from './synchronize';
@@ -9,12 +9,12 @@ import type {State} from './synchronize';
 
 describe('Synchronizes', () => {
   const expectedInitialState: State = {
-    isSynchronizing: false
+    isSynchronizing: false,
   };
 
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -25,12 +25,12 @@ describe('Synchronizes', () => {
     it('Default', () => {
       const payload = true;
       const action: Action = {
-        type: SYNCHRONIZE_ALL_REQUEST
+        type: SYNCHRONIZE_ALL_REQUEST,
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        isSynchronizing: payload
+        isSynchronizing: payload,
       };
 
       expect(result).toEqual(expected);
@@ -41,12 +41,12 @@ describe('Synchronizes', () => {
     it('Default', () => {
       const payload = false;
       const action: Action = {
-        type: SYNCHRONIZE_ALL_SUCCESS
+        type: SYNCHRONIZE_ALL_SUCCESS,
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        isSynchronizing: payload
+        isSynchronizing: payload,
       };
 
       expect(result).toEqual(expected);
@@ -57,12 +57,12 @@ describe('Synchronizes', () => {
     it('Default', () => {
       const payload = false;
       const action: Action = {
-        type: SYNCHRONIZE_ALL_FAILURE
+        type: SYNCHRONIZE_ALL_FAILURE,
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        isSynchronizing: payload
+        isSynchronizing: payload,
       };
 
       expect(result).toEqual(expected);

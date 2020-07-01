@@ -7,12 +7,12 @@ describe('Navigation', () => {
   const expectedInitialState: State = {
     currentNavigatorName: 'App',
     currentAppScreenName: 'Authentication',
-    currentScreenName: 'Authentication'
+    currentScreenName: 'Authentication',
   };
 
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -27,8 +27,8 @@ describe('Navigation', () => {
           currentNavigatorName: 'Foo',
           currentAppScreenName: 'Bar',
           currentScreenName: 'Baz',
-          currentTabName: 'Qux'
-        }
+          currentTabName: 'Qux',
+        },
       };
       const result = reducer(undefined, action);
       const expected: State = {
@@ -36,7 +36,7 @@ describe('Navigation', () => {
         currentNavigatorName: 'Foo',
         currentAppScreenName: 'Bar',
         currentScreenName: 'Baz',
-        currentTabName: 'Qux'
+        currentTabName: 'Qux',
       };
       expect(result).toEqual(expected);
     });

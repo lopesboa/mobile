@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import type {Choice} from '@types/coorp/progression-engine';
+import type {Choice} from '../types/coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import Modal from './modal';
@@ -10,24 +10,24 @@ type ChoiceValue = Pick<Choice, 'value'>;
 type ChoiceItem = Pick<Choice, 'items'>;
 
 export interface Props {
-  value?: ChoiceValue,
-  values: Array<ChoiceItem>,
-  onChange: (value: ChoiceValue) => void,
-  onClose: () => void,
-  testID?: string
-};
+  value?: ChoiceValue;
+  values: Array<ChoiceItem>;
+  onChange: (value: ChoiceValue) => void;
+  onClose: () => void;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   content: {
-    paddingHorizontal: 0
+    paddingHorizontal: 0,
   },
   separator: {
     borderTopWidth: 1,
-    borderColor: theme.colors.border
+    borderColor: theme.colors.border,
   },
   list: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 class ModalSelect extends React.PureComponent<Props> {
@@ -35,7 +35,7 @@ class ModalSelect extends React.PureComponent<Props> {
 
   handleChange = (value: ChoiceValue) => () => this.props.onChange(value);
 
-  renderItem = ({item, index}: {item: ChoiceItem, index: number}) => {
+  renderItem = ({item, index}: {item: ChoiceItem; index: number}) => {
     const {value, testID = 'modal-select'} = this.props;
 
     return (

@@ -5,8 +5,8 @@ import type {
   TemplateQuestion,
   QCMDragQuestion,
   BasicQuestion,
-  Media
-} from '@types/coorp/progression-engine';
+  Media,
+} from '../types/coorpacademy/progression-engine';
 
 import {choices, choicesWithImage, createInputChoice, createSelectChoice} from './question-choices';
 
@@ -16,9 +16,9 @@ export const createQCM = ({media}: {media?: Media}): QCMQuestion => ({
   type: 'qcm',
   content: {
     answers: [[choices[1].label]],
-    choices
+    choices,
   },
-  medias: (media && [media]) || undefined
+  medias: (media && [media]) || undefined,
 });
 
 export const createQCMGraphic = ({media}: {media?: Media}): QCMGraphicQuestion => ({
@@ -27,21 +27,21 @@ export const createQCMGraphic = ({media}: {media?: Media}): QCMGraphicQuestion =
   type: 'qcmGraphic',
   content: {
     answers: [[choices[1].label]],
-    choices: choicesWithImage
+    choices: choicesWithImage,
   },
-  medias: (media && [media]) || undefined
+  medias: (media && [media]) || undefined,
 });
 
 export const createSlider = ({
   min,
   max,
   defaultValue,
-  answers
+  answers,
 }: {
-  min: number,
-  max: number,
-  defaultValue: number,
-  answers: Array<Array<string>>
+  min: number;
+  max: number;
+  defaultValue: number;
+  answers: Array<Array<string>>;
 }): SliderQuestion => ({
   type: 'slider',
   header:
@@ -60,9 +60,9 @@ export const createSlider = ({
     media: {
       subtitles: [],
       posters: [],
-      src: []
-    }
-  }
+      src: [],
+    },
+  },
 });
 
 export const createTemplate = ({media}: {media?: Media}): TemplateQuestion => ({
@@ -74,9 +74,9 @@ export const createTemplate = ({media}: {media?: Media}): TemplateQuestion => ({
     template: "L'app de {{inp123456}} est<br>sur {{sel123456}}.",
     matchOrder: true,
     answers: [['Coorpacademy', 'App Store']],
-    choices: [createInputChoice({name: 'inp123456'}), createSelectChoice({name: 'sel123456'})]
+    choices: [createInputChoice({name: 'inp123456'}), createSelectChoice({name: 'sel123456'})],
   },
-  medias: (media && [media]) || undefined
+  medias: (media && [media]) || undefined,
 });
 
 export const createQCMDrag = ({matchOrder}: {matchOrder: boolean}): QCMDragQuestion => {
@@ -88,8 +88,8 @@ export const createQCMDrag = ({matchOrder}: {matchOrder: boolean}): QCMDragQuest
       matchOrder,
       maxTypos: null,
       answers: [[choices[0].label, choices[1].label]],
-      choices
-    }
+      choices,
+    },
   };
 };
 
@@ -100,7 +100,7 @@ export const createBasicQuestion = ({maxTypos}: {maxTypos?: number}): BasicQuest
     explanation: 'Veuillez taper votre question',
     content: {
       maxTypos,
-      answers: [[choices[0].label]]
-    }
+      answers: [[choices[0].label]],
+    },
   };
 };

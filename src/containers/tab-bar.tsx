@@ -6,7 +6,7 @@ import {BrandThemeContext} from '../components/brand-theme-provider';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
-interface Props extends WithVibrationProps, _BottomTabBarProps {};
+interface Props extends WithVibrationProps, _BottomTabBarProps {}
 
 class TabBar extends React.Component<Props> {
   handleTabPress = (scene: TabScene) => {
@@ -27,7 +27,7 @@ class TabBar extends React.Component<Props> {
 
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => (
+        {(brandTheme) => (
           <BottomTabBar
             {...props}
             onTabPress={this.handleTabPress}

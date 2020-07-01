@@ -3,7 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {
   NovaSolidDesignActionsRedo as RedoIcon,
   NovaLineMobilephoneMobilePhoneClose1 as PhoneCloseIcon,
-  NovaSolidSpaceRingPlanet as RingPlanet
+  NovaSolidSpaceRingPlanet as RingPlanet,
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
@@ -17,44 +17,44 @@ import Modal from './modal';
 import Text from './text';
 
 export interface Props {
-  type: ErrorType,
-  onPress: () => void,
-  onAssistancePress: () => void,
-  onClose: () => void,
-  testID?: string
-};
+  type: ErrorType;
+  onPress: () => void;
+  onAssistancePress: () => void;
+  onClose: () => void;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   heading: {
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   contentFooter: {
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   button: {
-    width: '100%'
+    width: '100%',
   },
   iconClosePhone: {
-    marginLeft: 5
+    marginLeft: 5,
   },
   text: {
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.large,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   buttonText: {
     color: theme.colors.white,
     fontSize: theme.fontSize.large,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   smallText: {
-    fontSize: theme.fontSize.regular
+    fontSize: theme.fontSize.regular,
   },
   underlineText: {
     fontWeight: theme.fontWeight.bold,
-    textDecorationLine: 'underline'
-  }
+    textDecorationLine: 'underline',
+  },
 });
 
 const ICON_SIZE = 50;

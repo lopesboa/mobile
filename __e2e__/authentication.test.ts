@@ -1,3 +1,4 @@
+import {by, expect, element} from 'detox';
 import translations from '../src/translations/en';
 import {reloadApp, waitForExist} from './utils';
 
@@ -10,14 +11,14 @@ const signOut = async (el: Detox.Element) => {
 describe('Authentication', () => {
   it('should see the authentication elements', async () => {
     await waitForExist('authentication');
-    await weExpect(element(by.id('authentication-logo'))).toBeVisible();
-    await weExpect(element(by.id('authentication-content-header'))).toBeVisible();
-    await weExpect(element(by.id('authentication-content-description'))).toBeVisible();
-    await weExpect(element(by.id('authentication-content-footer'))).toBeVisible();
-    await weExpect(element(by.id('button-sign-in-desktop'))).toBeVisible();
-    await weExpect(element(by.id('button-sign-in-mobile'))).toBeVisible();
-    await weExpect(element(by.id('authentication-footer-start-demo'))).toBeVisible();
-    await weExpect(element(by.id('authentication-footer-need-help'))).toBeVisible();
+    await expect(element(by.id('authentication-logo'))).toBeVisible();
+    await expect(element(by.id('authentication-content-header'))).toBeVisible();
+    await expect(element(by.id('authentication-content-description'))).toBeVisible();
+    await expect(element(by.id('authentication-content-footer'))).toBeVisible();
+    await expect(element(by.id('button-sign-in-desktop'))).toBeVisible();
+    await expect(element(by.id('button-sign-in-mobile'))).toBeVisible();
+    await expect(element(by.id('authentication-footer-start-demo'))).toBeVisible();
+    await expect(element(by.id('authentication-footer-need-help'))).toBeVisible();
   });
   describe('Magic link', () => {
     beforeAll(async () => {
@@ -26,26 +27,26 @@ describe('Authentication', () => {
 
     it('should see magic link elements', async () => {
       await waitForExist('authentication-details-magic-link');
-      await weExpect(element(by.id('authentication-details-magic-link-header'))).toBeVisible();
-      await weExpect(element(by.id('authentication-details-magic-link-title'))).toBeVisible();
+      await expect(element(by.id('authentication-details-magic-link-header'))).toBeVisible();
+      await expect(element(by.id('authentication-details-magic-link-title'))).toBeVisible();
       await waitForExist('authentication-steps');
-      await weExpect(element(by.id('authentication-step-1'))).toBeVisible();
-      await weExpect(element(by.id('authentication-details-magic-link-button'))).toBeVisible();
-      await weExpect(
-        element(by.id('authentication-details-magic-link-footer-start-demo'))
+      await expect(element(by.id('authentication-step-1'))).toBeVisible();
+      await expect(element(by.id('authentication-details-magic-link-button'))).toBeVisible();
+      await expect(
+        element(by.id('authentication-details-magic-link-footer-start-demo')),
       ).toBeVisible();
-      await weExpect(
-        element(by.id('authentication-details-magic-link-footer-need-help'))
+      await expect(
+        element(by.id('authentication-details-magic-link-footer-need-help')),
       ).toBeVisible();
     });
 
     it('should be able to swipe between steps', async () => {
       await element(by.id('authentication-steps')).swipe('left');
-      await weExpect(element(by.id('authentication-step-2'))).toBeVisible();
-      await weExpect(element(by.id('authentication-step-1'))).toBeNotVisible();
+      await expect(element(by.id('authentication-step-2'))).toBeVisible();
+      await expect(element(by.id('authentication-step-1'))).toBeNotVisible();
       await element(by.id('authentication-steps')).swipe('left');
-      await weExpect(element(by.id('authentication-step-3'))).toBeVisible();
-      await weExpect(element(by.id('authentication-step-2'))).toBeNotVisible();
+      await expect(element(by.id('authentication-step-3'))).toBeVisible();
+      await expect(element(by.id('authentication-step-2'))).toBeNotVisible();
     });
 
     it('should be able to back', async () => {
@@ -62,36 +63,36 @@ describe('Authentication', () => {
 
       it('should see QR code elements', async () => {
         await waitForExist('authentication-details-qr-code');
-        await weExpect(element(by.id('authentication-details-qr-code-header'))).toBeVisible();
-        await weExpect(element(by.id('authentication-details-qr-code-title'))).toBeVisible();
+        await expect(element(by.id('authentication-details-qr-code-header'))).toBeVisible();
+        await expect(element(by.id('authentication-details-qr-code-title'))).toBeVisible();
         await waitForExist('authentication-steps');
-        await weExpect(element(by.id('authentication-step-1'))).toBeVisible();
-        await weExpect(element(by.id('authentication-details-qr-code-button'))).toBeVisible();
-        await weExpect(
-          element(by.id('authentication-details-qr-code-footer-start-demo'))
+        await expect(element(by.id('authentication-step-1'))).toBeVisible();
+        await expect(element(by.id('authentication-details-qr-code-button'))).toBeVisible();
+        await expect(
+          element(by.id('authentication-details-qr-code-footer-start-demo')),
         ).toBeVisible();
-        await weExpect(
-          element(by.id('authentication-details-qr-code-footer-need-help'))
+        await expect(
+          element(by.id('authentication-details-qr-code-footer-need-help')),
         ).toBeVisible();
       });
 
       it('should be able to swipe between steps', async () => {
         await element(by.id('authentication-steps')).swipe('left');
-        await weExpect(element(by.id('authentication-step-2'))).toBeVisible();
-        await weExpect(element(by.id('authentication-step-1'))).toBeNotVisible();
+        await expect(element(by.id('authentication-step-2'))).toBeVisible();
+        await expect(element(by.id('authentication-step-1'))).toBeNotVisible();
         await element(by.id('authentication-steps')).swipe('left');
-        await weExpect(element(by.id('authentication-step-3'))).toBeVisible();
-        await weExpect(element(by.id('authentication-step-2'))).toBeNotVisible();
+        await expect(element(by.id('authentication-step-3'))).toBeVisible();
+        await expect(element(by.id('authentication-step-2'))).toBeNotVisible();
       });
 
       it('should be able to cancel', async () => {
         await element(by.id('authentication-details-qr-code-button')).tap();
         await waitForExist('qr-code-scanner');
         await waitForExist(translations.permissionCamera, true);
-        await weExpect(element(by.text(translations.quit))).toBeVisible();
+        await expect(element(by.text(translations.quit))).toBeVisible();
         await element(by.text(translations.quit)).tap();
         await waitForExist(translations.openSettings, true);
-        await weExpect(element(by.text(translations.quit))).toBeVisible();
+        await expect(element(by.text(translations.quit))).toBeVisible();
         await element(by.text(translations.quit)).tap();
         await waitForExist('authentication-details-qr-code');
       });

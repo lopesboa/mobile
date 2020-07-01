@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import type {Choice} from '@types/coorp/progression-engine';
 import renderer from 'react-test-renderer';
+import type {Choice} from '../types/coorpacademy/progression-engine';
 
 import {__TEST__} from '../modules/environment';
 import {choices} from '../__fixtures__/question-choices';
@@ -14,16 +14,16 @@ const upgradedChoices = [
     _id: '6666',
     label:
       'Hodor hodor. Hodor? Hodor hodor. Hodor? Hodor, hodor. Hodor. Hodor. Hodor? Hodor? Hodor, hodor. Hodor. Hodor. Hodor hodor HODOR! Hodor. Hodor! Hodor hodor. Hodor? Hodor hodor! Hodor... Hodor hodor. Hodor, hodor. Hodor. Hodor hodor. Hodor? Hodor! Hodor hodor',
-    value: 'hodorHodr'
-  }
+    value: 'hodorHodr',
+  },
 ];
 
-const choicesWithoutValue = upgradedChoices.map(item => ({
+const choicesWithoutValue = upgradedChoices.map((item) => ({
   ...item,
-  value: undefined
+  value: undefined,
 }));
 
-const userChoices = upgradedChoices.slice(0, 2).map(item => item.label);
+const userChoices = upgradedChoices.slice(0, 2).map((item) => item.label);
 
 storiesOf('QuestionDraggable', module)
   .add('Default', () => (
@@ -53,9 +53,9 @@ if (__TEST__) {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();
       const component = renderer.create(
-        <QuestionDraggable userChoices={userChoices} choices={choices} onPress={handleItemPress} />
+        <QuestionDraggable userChoices={userChoices} choices={choices} onPress={handleItemPress} />,
       );
-      const questionItem = component.root.find(el => {
+      const questionItem = component.root.find((el) => {
         return el.props.testID === `choice-4-unselected`;
       });
       questionItem.props.onPress();
@@ -73,19 +73,19 @@ if (__TEST__) {
         const choice1: Choice = {
           _id: '1',
           label: label1,
-          value: 'barbaz'
+          value: 'barbaz',
         };
 
         const choice2: Choice = {
           _id: '2',
           label: label2,
-          value: 'foobar'
+          value: 'foobar',
         };
 
         const choice3: Choice = {
           _id: '3',
           label: label3,
-          value: 'tototata'
+          value: 'tototata',
         };
 
         const _userChoices = [label2, label1, label4];

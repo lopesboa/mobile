@@ -21,5 +21,5 @@ export default {
   __DISTRIBUTION__,
   __TEST__,
   __DEV__,
-  __PRODUCTION__
+  __PRODUCTION__,
 };

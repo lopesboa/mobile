@@ -11,8 +11,8 @@ describe('header-slide-title', () => {
       engine: ENGINE.MICROLEARNING,
       progressionContent: {
         type: CONTENT_TYPE.LEVEL,
-        ref: levelRef
-      }
+        ref: levelRef,
+      },
     });
 
     const mockedStore = createStoreState({
@@ -20,14 +20,14 @@ describe('header-slide-title', () => {
       disciplines: [],
       chapters: [],
       slides: [],
-      progression
+      progression,
     });
 
     const props = mapStateToProps(mockedStore);
     const expectedResult: ConnectedStateProps = {
       image: undefined,
       subtitle: undefined,
-      title: undefined
+      title: undefined,
     };
     expect(props).toEqual(expectedResult);
   });
@@ -37,21 +37,21 @@ describe('header-slide-title', () => {
       engine: ENGINE.MICROLEARNING,
       progressionContent: {
         type: CONTENT_TYPE.LEVEL,
-        ref: '666'
-      }
+        ref: '666',
+      },
     });
     const emptyStore = createStoreState({
       levels: [],
       disciplines: [],
       chapters: [],
       slides: [],
-      progression
+      progression,
     });
     const props = mapStateToProps(emptyStore);
     const expectedResult: ConnectedStateProps = {
       image: undefined,
       subtitle: undefined,
-      title: undefined
+      title: undefined,
     };
     expect(expectedResult).toEqual(props);
   });

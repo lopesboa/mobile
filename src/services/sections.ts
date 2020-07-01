@@ -5,15 +5,15 @@ export type SectionsService = {
   find: (
     token: string,
     offset: number,
-    limit: number
+    limit: number,
   ) => Promise<{
-    total: number,
-    sections: Array<Section>
-  }>
+    total: number;
+    sections: Array<Section>;
+  }>;
 };
 
 const service = (dataLayer: DataLayer): SectionsService => ({
-  find: dataLayer.fetchSections
+  find: dataLayer.fetchSections,
 });
 
 export default service;

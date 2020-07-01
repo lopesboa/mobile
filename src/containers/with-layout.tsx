@@ -18,20 +18,20 @@ function withLayout(
   WrappedComponent: React.ElementType<any>,
   options?: {
     withoutContainer?: boolean;
-  }
+  },
 ) {
-  interface Props extends WithLayoutProps {}
+  type Props = WithLayoutProps;
   type State = {
     layout?: Layout;
   };
   class ComponentWithLayout extends React.PureComponent<Props, State> {
     state: State = {
-      layout: undefined
+      layout: undefined,
     };
 
     handleLayout = ({nativeEvent: {layout}}: LayoutEvent) =>
       this.setState({
-        layout
+        layout,
       });
 
     render() {

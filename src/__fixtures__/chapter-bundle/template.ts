@@ -13,25 +13,25 @@ const template = createTemplate({});
 const lessons = [
   createVideo({
     ref: 'les_1',
-    description: 'First video'
+    description: 'First video',
   }),
   createVideo({
     ref: 'les_2',
-    description: 'Second video'
+    description: 'Second video',
   }),
   createVideo({
     ref: 'les_3',
-    description: 'Third video'
+    description: 'Third video',
   }),
-  createPdf({ref: 'les_4', description: 'First PDF'})
+  createPdf({ref: 'les_4', description: 'First PDF'}),
 ];
 
 const bundledChapter: BundledChapter = {
   chapters: {
     microlearning_template_cha_1: createChapter({
       ref: 'microlearning_template_cha_1',
-      name: 'Microlearning template: Template chapter'
-    })
+      name: 'Microlearning template: Template chapter',
+    }),
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
@@ -39,32 +39,32 @@ const bundledChapter: BundledChapter = {
       ref: 'microlearning_template_sli_1',
       chapterId: 'microlearning_template_cha_1',
       question: template,
-      lessons
+      lessons,
     }),
     microlearning_template_sli_2: createSlide({
       ref: 'microlearning_template_sli_2',
       chapterId: 'microlearning_template_cha_1',
       question: template,
-      lessons
+      lessons,
     }),
     microlearning_template_sli_3: createSlide({
       ref: 'microlearning_template_sli_3',
       chapterId: 'microlearning_template_cha_1',
       question: template,
-      lessons
+      lessons,
     }),
     microlearning_template_sli_4: createSlide({
       ref: 'microlearning_template_sli_4',
       chapterId: 'microlearning_template_cha_1',
       question: template,
-      lessons
-    })
+      lessons,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledChapter;

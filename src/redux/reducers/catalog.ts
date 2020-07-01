@@ -20,22 +20,22 @@ export type State = {
   sectionsRef?: Array<string | void>;
   searchRef?: Array<string | void>;
   entities: {
-      cards: {
-          [key: string]: {
-              [key in SupportedLanguage]?: DisciplineCard | ChapterCard
-          };
+    cards: {
+      [key: string]: {
+        [key in SupportedLanguage]?: DisciplineCard | ChapterCard;
       };
-      sections: {
-          [key: string]: {[key in SupportedLanguage]?: Section};
-      };
+    };
+    sections: {
+      [key: string]: {[key in SupportedLanguage]?: Section};
+    };
   };
 };
 
 export const initialState: State = {
   heroRef: null,
   entities: {
-      cards: {},
-      sections: {},
+    cards: {},
+    sections: {},
   },
 };
 
@@ -46,14 +46,14 @@ export const reduceCards = (
   [key: string]: {[key in SupportedLanguage]?: DisciplineCard | ChapterCard};
 } =>
   items.reduce(
-      (result, item) => ({
-          ...result,
-          [item.universalRef]: {
-              ...result[item.universalRef],
-              [language]: item,
-          },
-      }),
-      {},
+    (result, item) => ({
+      ...result,
+      [item.universalRef]: {
+        ...result[item.universalRef],
+        [language]: item,
+      },
+    }),
+    {},
   );
 
 export const reduceSections = (
@@ -64,17 +64,17 @@ export const reduceSections = (
   [key: string]: {[key in SupportedLanguage]?: Section};
 } =>
   items.reduce(
-      (result, item) => ({
-          ...result,
-          [item.key]: {
-              ...result[item.key],
-              [language]: {
-                  ...item,
-                  cardsRef,
-              },
-          },
-      }),
-      {},
+    (result, item) => ({
+      ...result,
+      [item.key]: {
+        ...result[item.key],
+        [language]: {
+          ...item,
+          cardsRef,
+        },
+      },
+    }),
+    {},
   );
 
 export const reduceCardsRef = (
@@ -83,10 +83,10 @@ export const reduceCardsRef = (
   total: number,
   state?: Array<string | void>,
 ): Array<string | void> => {
-  let cardsRef = state || new Array(total).fill();
+  const cardsRef = state || new Array(total).fill();
 
   items.forEach((item, index) => {
-      cardsRef[index + offset] = item.universalRef;
+    cardsRef[index + offset] = item.universalRef;
   });
 
   return cardsRef;
@@ -98,10 +98,10 @@ export const reduceSectionsRef = (
   total: number,
   state?: Array<string | void>,
 ): Array<string | void> => {
-  let sectionsRef = state || new Array(total).fill();
+  const sectionsRef = state || new Array(total).fill();
 
   items.forEach((item, index) => {
-      sectionsRef[index + offset] = item.key;
+    sectionsRef[index + offset] = item.key;
   });
 
   return sectionsRef;
@@ -110,148 +110,129 @@ export const reduceSectionsRef = (
 const reducer = (
   state: State = initialState,
   action:
-      | FetchSectionsCardsAction
-      | FetchSearchCardsAction
-      | RefreshCardAction
-      | ClearAction
-      | SelectCardAction
-      | SectionsAction
-      | HeroAction,
+    | FetchSectionsCardsAction
+    | FetchSearchCardsAction
+    | RefreshCardAction
+    | ClearAction
+    | SelectCardAction
+    | SectionsAction
+    | HeroAction,
 ): State => {
   switch (action.type) {
-      case FETCH_SECTIONS_SUCCESS: {
-          const {offset, total, items, language} = action.payload;
+    case FETCH_SECTIONS_SUCCESS: {
+      const {offset, total, items, language} = action.payload;
 
-          return {
-              ...state,
-              sectionsRef: reduceSectionsRef(
-                  items,
-                  offset,
-                  total,
-                  state.sectionsRef,
-              ),
-              entities: {
-                  ...state.entities,
-                  sections: {
-                      ...state.entities.sections,
-                      ...reduceSections(
-                          items.filter(item => {
-                              const section =
-                                  state.entities.sections[item.key];
-                              return !(section && section[language]);
-                          }),
-                          language,
-                      ),
-                  },
-              },
-          };
-      }
-
-      case FETCH_SECTIONS_CARDS_SUCCESS: {
-          const {sectionKey, offset, total, items, language} = action.payload;
-          const section = state.entities.sections[sectionKey];
-          const cardsRef = reduceCardsRef(
-              items,
-              offset,
-              total,
-              section[language].cardsRef,
-          );
-          const sectionWithCardsRef = reduceSections(
-              [section[language]],
+      return {
+        ...state,
+        sectionsRef: reduceSectionsRef(items, offset, total, state.sectionsRef),
+        entities: {
+          ...state.entities,
+          sections: {
+            ...state.entities.sections,
+            ...reduceSections(
+              items.filter((item) => {
+                const section = state.entities.sections[item.key];
+                return !(section && section[language]);
+              }),
               language,
-              cardsRef,
-          )[sectionKey];
-          const sections = {
-              ...state.entities.sections,
-              [sectionKey]: {
-                  ...section,
-                  ...sectionWithCardsRef,
-              },
-          };
+            ),
+          },
+        },
+      };
+    }
 
-          return {
-              ...state,
-              entities: {
-                  ...state.entities,
-                  cards: {
-                      ...state.entities.cards,
-                      ...reduceCards(items, language),
-                  },
-                  sections,
-              },
-          };
-      }
+    case FETCH_SECTIONS_CARDS_SUCCESS: {
+      const {sectionKey, offset, total, items, language} = action.payload;
+      const section = state.entities.sections[sectionKey];
+      const cardsRef = reduceCardsRef(items, offset, total, section[language].cardsRef);
+      const sectionWithCardsRef = reduceSections([section[language]], language, cardsRef)[
+        sectionKey
+      ];
+      const sections = {
+        ...state.entities.sections,
+        [sectionKey]: {
+          ...section,
+          ...sectionWithCardsRef,
+        },
+      };
 
-      case FETCH_SEARCH_CARDS_SUCCESS: {
-          const {
-              offset,
-              total,
-              items,
-              language,
-              forceRefresh,
-          } = action.payload;
-          const searchRef = reduceCardsRef(
-              items,
-              offset,
-              total,
-              forceRefresh ? undefined : state.searchRef,
-          );
+      return {
+        ...state,
+        entities: {
+          ...state.entities,
+          cards: {
+            ...state.entities.cards,
+            ...reduceCards(items, language),
+          },
+          sections,
+        },
+      };
+    }
 
-          return {
-              ...state,
-              searchRef,
-              entities: {
-                  ...state.entities,
-                  cards: {
-                      ...state.entities.cards,
-                      ...reduceCards(items, language),
-                  },
-              },
-          };
-      }
+    case FETCH_SEARCH_CARDS_SUCCESS: {
+      const {offset, total, items, language, forceRefresh} = action.payload;
+      const searchRef = reduceCardsRef(
+        items,
+        offset,
+        total,
+        forceRefresh ? undefined : state.searchRef,
+      );
 
-      case REFRESH_CARD: {
-          const {language, item} = action.payload;
-          return {
-              ...state,
-              entities: {
-                  ...state.entities,
-                  cards: {
-                      ...state.entities.cards,
-                      [item.universalRef]: {
-                          ...(state.entities.cards[item.universalRef] || {}),
-                          [language]: item,
-                      },
-                  },
-              },
-          };
-      }
+      return {
+        ...state,
+        searchRef,
+        entities: {
+          ...state.entities,
+          cards: {
+            ...state.entities.cards,
+            ...reduceCards(items, language),
+          },
+        },
+      };
+    }
 
-      case CLEAR_SEARCH: {
-          return {
-              ...state,
-              searchRef: undefined,
-          };
-      }
+    case REFRESH_CARD: {
+      const {language, item} = action.payload;
+      return {
+        ...state,
+        entities: {
+          ...state.entities,
+          cards: {
+            ...state.entities.cards,
+            [item.universalRef]: {
+              ...(state.entities.cards[item.universalRef] || {}),
+              [language]: item,
+            },
+          },
+        },
+      };
+    }
 
-      case FETCH_HERO_SUCCESS: {
-          const {language, item} = action.payload;
+    case CLEAR_SEARCH: {
+      return {
+        ...state,
+        searchRef: undefined,
+      };
+    }
 
-          return {
-              ...state,
-              heroRef: (item && item.universalRef) || undefined,
-              entities: {
-                  ...state.entities,
-                  cards: {
-                      ...state.entities.cards,
-                      ...(item ? reduceCards([item], language) : {}),
-                  },
-              },
-          };
-      }
+    case FETCH_HERO_SUCCESS: {
+      const {language, item} = action.payload;
 
-      default:
-          return state;
+      return {
+        ...state,
+        heroRef: (item && item.universalRef) || undefined,
+        entities: {
+          ...state.entities,
+          cards: {
+            ...state.entities.cards,
+            ...(item ? reduceCards([item], language) : {}),
+          },
+        },
+      };
+    }
+
+    default:
+      return state;
   }
 };
 

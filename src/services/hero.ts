@@ -13,7 +13,7 @@ export type HeroService = {
   get: () => Promise<DisciplineCard | ChapterCard | void>;
 };
 
-const get = (dataLayer: DataLayer): $PropertyType<HeroService, 'get'> => async (): Promise<
+const get = (dataLayer: DataLayer): Pick<HeroService, 'get'> => async (): Promise<
   DisciplineCard | ChapterCard | void
 > => {
   const {fetchRecommendation, fetchCard} = dataLayer;
@@ -30,7 +30,7 @@ const get = (dataLayer: DataLayer): $PropertyType<HeroService, 'get'> => async (
 };
 
 const service = (dataLayer: DataLayer): HeroService => ({
-  get: get(dataLayer)
+  get: get(dataLayer),
 });
 
 export default service;

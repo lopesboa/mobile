@@ -22,5 +22,5 @@ export const remove = () => AsyncStorage.removeItem(ASYNC_STORAGE_KEY);
 export default {
   get,
   set,
-  remove
+  remove,
 };

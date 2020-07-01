@@ -5,12 +5,12 @@ import {storiesOf} from '@storybook/react-native';
 import Box from './box';
 
 const wrapperStyle = {
-  padding: 12
+  padding: 12,
 };
 
 const textStyle = {
   backgroundColor: '#fff',
-  padding: 12
+  padding: 12,
 };
 
 storiesOf('Box', module).add('Default', () => (

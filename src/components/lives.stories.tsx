@@ -24,25 +24,25 @@ if (__TEST__) {
     it('should handle update', () => {
       const handleAnimate = jest.fn();
       const component = renderer.create(
-        <Lives animationDirection="bottom" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+        <Lives animationDirection="bottom" count={2} height={HEIGHT} onAnimate={handleAnimate} />,
       );
 
-      const broken = component.root.find(el => el.props.testID === 'lives-2-broken');
+      const broken = component.root.find((el) => el.props.testID === 'lives-2-broken');
       expect(broken).toBeDefined();
       expect(handleAnimate).toHaveBeenCalledTimes(1);
       expect(handleAnimate).toHaveBeenCalledWith('bottom');
 
       component.update(
-        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />,
       );
 
-      let notBroken = component.root.find(el => el.props.testID === 'lives-2');
+      const notBroken = component.root.find((el) => el.props.testID === 'lives-2');
       expect(notBroken).toBeDefined();
       expect(handleAnimate).toHaveBeenCalledTimes(2);
       expect(handleAnimate).toHaveBeenCalledWith('top');
 
       component.update(
-        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />
+        <Lives animationDirection="top" count={2} height={HEIGHT} onAnimate={handleAnimate} />,
       );
 
       expect(handleAnimate).toHaveBeenCalledTimes(2);

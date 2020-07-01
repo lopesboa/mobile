@@ -7,27 +7,27 @@ import {CONTENT_TYPE} from '../../../../const';
 export const REFRESH = '@@cards/REFRESH';
 
 export type Action = {
-  type: '@@cards/REFRESH',
+  type: '@@cards/REFRESH';
   payload: {
-    language: SupportedLanguage,
-    item: DisciplineCard | ChapterCard
-  }
+    language: SupportedLanguage;
+    item: DisciplineCard | ChapterCard;
+  };
 };
 
 export const refreshCard = (
   language: SupportedLanguage,
-  item: DisciplineCard | ChapterCard
+  item: DisciplineCard | ChapterCard,
 ): Action => ({
   type: REFRESH,
   payload: {
     language,
-    item
-  }
+    item,
+  },
 });
 
 export const updateCard = (
   language: SupportedLanguage,
-  card: DisciplineCard | ChapterCard
+  card: DisciplineCard | ChapterCard,
 ): StoreAction<Action> => {
   return async (dispatch, getState, options) => {
     const {services} = options;
@@ -39,7 +39,7 @@ export const updateCard = (
 export const getAndRefreshCard = (progressionId: string): StoreAction<Action> => async (
   dispatch,
   getState,
-  options
+  options,
 ) => {
   const {services} = options;
 

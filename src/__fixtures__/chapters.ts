@@ -5,13 +5,13 @@ export const createChapter = ({
   name,
   isConditional = false,
   bestScore,
-  accessible = true
+  accessible = true,
 }: {
-  ref: string,
-  name: string,
-  isConditional?: boolean,
-  bestScore?: number,
-  accessible?: boolean
+  ref: string;
+  name: string;
+  isConditional?: boolean;
+  bestScore?: number;
+  accessible?: boolean;
 }): Chapter => ({
   _id: ref,
   universalRef: ref,
@@ -22,7 +22,7 @@ export const createChapter = ({
   meta: {
     taggedNewUntil: '2018-12-08T09:11:54.894Z',
     updatedAt: '2019-01-15T15:19:43.244Z',
-    createdAt: '2018-11-29T11:38:40.205Z'
+    createdAt: '2018-11-29T11:38:40.205Z',
   },
   poster: {
     type: 'img',
@@ -31,7 +31,7 @@ export const createChapter = ({
       '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/dataculture1a4-1542378128060.jpg',
     subtitles: [],
     posters: [],
-    src: []
+    src: [],
   },
   skills: ['skill_NkOqattjS'],
   groups: ['ALL', 'digital', 'them_4kZQpfpgQ', 'them_EJFqsxi7m'],
@@ -41,9 +41,9 @@ export const createChapter = ({
   time: 8,
   version: '9',
   bestScore,
-  accessible
+  accessible,
 });
 
 export default {
-  createChapter
+  createChapter,
 };

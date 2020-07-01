@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
-import type {Media, QuestionType, Choice} from '@types/coorp/progression-engine';
+import type {Media, QuestionType, Choice} from '../types/coorpacademy/progression-engine';
 
 import {getMediaUrl, getMediaPoster, getMediaType} from '../modules/media';
 import theme from '../modules/theme';
@@ -16,31 +16,31 @@ import Space from './space';
 import Button from './button';
 
 export interface Props {
-  type?: QuestionType,
-  header?: string,
-  explanation?: string,
-  template?: string,
-  choices: Array<Choice>,
-  userChoices: Array<string>,
-  media?: Media,
+  type?: QuestionType;
+  header?: string;
+  explanation?: string;
+  template?: string;
+  choices: Array<Choice>;
+  userChoices: Array<string>;
+  media?: Media;
   // @todo mutualize the callback ?
-  onChoicePress: (item: Choice) => void,
-  onSliderChange: Pick<QuestionChoicesProps, 'onSliderChange'>,
-  onChoiceInputChange: (item: Choice, value: string) => void,
-  onInputValueChange: (value: string) => void,
-  onButtonPress: () => Promise<void>,
-  min?: Pick<QuestionChoicesProps, 'min'>,
-  max?: Pick<QuestionChoicesProps, 'max'>,
-  unit?: Pick<QuestionChoicesProps, 'unit'>,
-  value?: Pick<QuestionChoicesProps, 'value'>,
-  step?: Pick<QuestionChoicesProps, 'step'>,
-  isValidationDisabled?: boolean,
-  testID?: string,
-  isLoading?: boolean
-};
+  onChoicePress: (item: Choice) => void;
+  onSliderChange: Pick<QuestionChoicesProps, 'onSliderChange'>;
+  onChoiceInputChange: (item: Choice, value: string) => void;
+  onInputValueChange: (value: string) => void;
+  onButtonPress: () => Promise<void>;
+  min?: Pick<QuestionChoicesProps, 'min'>;
+  max?: Pick<QuestionChoicesProps, 'max'>;
+  unit?: Pick<QuestionChoicesProps, 'unit'>;
+  value?: Pick<QuestionChoicesProps, 'value'>;
+  step?: Pick<QuestionChoicesProps, 'step'>;
+  isValidationDisabled?: boolean;
+  testID?: string;
+  isLoading?: boolean;
+}
 
 export type State = {
-  imageWidth?: number
+  imageWidth?: number;
 };
 
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
@@ -50,31 +50,31 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,
     flexGrow: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   containerPlaceholder: {
-    paddingTop: theme.spacing.large
+    paddingTop: theme.spacing.large,
   },
   placeholder: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   choicesContainer: {
-    paddingHorizontal: theme.spacing.small
+    paddingHorizontal: theme.spacing.small,
   },
   explanation: {
-    color: theme.colors.gray.medium
+    color: theme.colors.gray.medium,
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   image: {
     alignSelf: 'center',
     height: 200,
-    width: '100%'
+    width: '100%',
   },
   footer: {
-    paddingHorizontal: theme.spacing.base
-  }
+    paddingHorizontal: theme.spacing.base,
+  },
 });
 
 const Question = ({
@@ -97,7 +97,7 @@ const Question = ({
   value,
   isValidationDisabled,
   isLoading,
-  testID
+  testID,
 }: Props) => {
   if (!type || !header || !explanation || isLoading) {
     return (
@@ -112,7 +112,7 @@ const Question = ({
   }
 
   let mediaUrl;
-  let mediaType = media && getMediaType(media);
+  const mediaType = media && getMediaType(media);
   let mediaPoster;
 
   if (media && [RESOURCE_TYPE.IMG, RESOURCE_TYPE.VIDEO].includes(mediaType)) {

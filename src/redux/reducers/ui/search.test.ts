@@ -5,12 +5,12 @@ import type {State} from './search';
 
 describe('Select', () => {
   const expectedInitialState: State = {
-    isFetching: false
+    isFetching: false,
   };
 
   it('Default', () => {
     const action = {
-      type: 'foo'
+      type: 'foo',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -23,13 +23,13 @@ describe('Select', () => {
       const action: Action = {
         type: EDIT,
         payload: {
-          text: value
-        }
+          text: value,
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        value: value
+        value: value,
       };
 
       expect(result).toEqual(expected);
@@ -40,13 +40,13 @@ describe('Select', () => {
       const action: Action = {
         type: EDIT,
         payload: {
-          params
-        }
+          params,
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        params: params
+        params: params,
       };
 
       expect(result).toEqual(expected);
@@ -58,12 +58,12 @@ describe('Select', () => {
       const payload = true;
       const action: Action = {
         type: FETCH,
-        payload
+        payload,
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
         ...expectedInitialState,
-        isFetching: payload
+        isFetching: payload,
       };
 
       expect(result).toEqual(expected);

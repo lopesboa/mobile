@@ -24,26 +24,26 @@ export type LogData = {
 
 export const getData = async (
   error: Error,
-  context: {platform?: string; brand?: string; userId?: string}
+  context: {platform?: string; brand?: string; userId?: string},
 ): Promise<LogData> => ({
   ...context,
   apptype: 'mobile',
   level: 'error',
   err: serializeError(error),
-  ua: await getUserAgent()
+  ua: await getUserAgent(),
 });
 
 export const log = async (
   error: Error,
-  context: {platform?: string; brand?: string; userId?: string}
+  context: {platform?: string; brand?: string; userId?: string},
 ) => {
   const data: LogData = await getData(error, context);
 
   return fetch(ENDPOINT, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   });
 };

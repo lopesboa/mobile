@@ -147,12 +147,12 @@ if (__TEST__) {
           analyticsID={analyticsID}
         >
           Here we go!
-        </Button>
+        </Button>,
       );
-      const button = component.root.find(el => el.props.testID === 'fake-button-native');
+      const button = component.root.find((el) => el.props.testID === 'fake-button-native');
       button.props.onPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
@@ -165,7 +165,7 @@ if (__TEST__) {
       const vibration = createFakeVibration();
       const analyticsParams = {
         foo: 'bar',
-        baz: 'qux'
+        baz: 'qux',
       };
       const component = renderer.create(
         <Button
@@ -178,13 +178,13 @@ if (__TEST__) {
           analyticsParams={analyticsParams}
         >
           Here we go!
-        </Button>
+        </Button>,
       );
-      const button = component.root.find(el => el.props.testID === 'fake-button-native');
+      const button = component.root.find((el) => el.props.testID === 'fake-button-native');
       button.props.onPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
         ...analyticsParams,
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();

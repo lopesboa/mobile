@@ -1,4 +1,5 @@
 import type {Services} from '../services';
+import {StoreState} from './store';
 
 export type Options = {services: Services};
 
@@ -8,15 +9,14 @@ export type ReduxDevTools = () => void;
 type ThunkAction<S, A, O> =
   | A
   | ((
-      dispatch: (ThunkAction<S, A, O>) => Promise<A | void>,
+      dispatch: (arg0: ThunkAction<S, A, O>) => Promise<A | void>,
       getState: () => S,
-      O
+      options: O,
     ) => Promise<A | void>);
 
 export type StoreAction<A> = ThunkAction<StoreState, A, Options>;
 
-export type StoreErrorAction<T> = {|
-  ...T,
-  payload: Error,
-  error: boolean
-|};
+export type StoreErrorAction<T> = T & {
+  payload: Error;
+  error: boolean;
+};

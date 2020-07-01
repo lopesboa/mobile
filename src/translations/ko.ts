@@ -1,5 +1,3 @@
- 
-
 import type {Translations} from './_types';
 
 const translations: Translations = {
@@ -97,7 +95,7 @@ const translations: Translations = {
   welcomeUser: '환영 합니다, {{displayname}}!',
   wrongAnswer: '오답',
   yourAnswer: '귀하의 답:',
-  yourAnswers: '귀하의 답:'
+  yourAnswers: '귀하의 답:',
 };
 
 export default translations;

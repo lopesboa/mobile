@@ -1,3 +1,4 @@
+import {by, element} from 'detox';
 import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 describe('Correction: good answer', () => {

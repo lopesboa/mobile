@@ -6,8 +6,8 @@ import animation from '../assets/animations/heart';
 
 const styles = StyleSheet.create({
   container: {
-    overflow: 'hidden'
-  }
+    overflow: 'hidden',
+  },
 });
 
 interface Props {

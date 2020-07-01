@@ -12,15 +12,15 @@ interface Props {
 
 const styles = StyleSheet.create({
   notification: {
-    backgroundColor: theme.colors.notification
-  }
+    backgroundColor: theme.colors.notification,
+  },
 });
 
 const Notification = ({height = DEFAULT_HEIGHT, testID}: Props) => {
   const style: ViewStyle = {
     height,
     width: height,
-    borderRadius: height
+    borderRadius: height,
   };
 
   return <View style={[styles.notification, style]} testID={testID} />;

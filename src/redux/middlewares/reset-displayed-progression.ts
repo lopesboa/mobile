@@ -12,9 +12,9 @@ type State = StoreState;
 
 const createMiddleware = ({services}: Options): Middleware<State, Action, Dispatch<Action>> => ({
   dispatch,
-  getState
+  getState,
 }: MiddlewareAPI<State, Action, Dispatch<Action>>) => (
-  next: Dispatch<Action>
+  next: Dispatch<Action>,
 ): Dispatch<Action> => (action: Action) => {
   if (action.type === NAVIGATION_SCREEN_CHANGE && action.payload.currentScreenName === 'Home') {
     dispatch(unselectProgression);

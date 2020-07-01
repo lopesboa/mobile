@@ -1,5 +1,5 @@
 jest.mock('@coorpacademy/player-store', () => ({
-  getClue: jest.fn()
+  getClue: jest.fn(),
 }));
 
 describe('Clues', () => {

@@ -1,12 +1,8 @@
 {
   "globals": {
-    "device": true,
-    "element": true,
-    "by": true,
-    "weExpect": true,
-    "jasmine": true
-  },
-  "rules": {
-    "flowtype/require-return-type": "off"
+    "jasmine": true,
+    "expect": false,
+    "element": false,
+    "by": false
   }
 }

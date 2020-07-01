@@ -44,39 +44,33 @@ class ClueScreen extends React.PureComponent<Props> {
   }
 }
 
-const getClueState: typeof getCurrentClue = createSelector(
-  [getCurrentClue],
-  clue => clue
-);
+const getClueState: typeof getCurrentClue = createSelector([getCurrentClue], (clue) => clue);
 
 const getSlideIdState: (state: StoreState) => string | void = createSelector(
   [getCurrentSlide],
-  slide => slide && slide._id
+  (slide) => slide && slide._id,
 );
 
 const getSlideHeaderState: (state: StoreState) => string | void = createSelector(
   [getCurrentSlide],
-  slide => slide && slide.question.header
+  (slide) => slide && slide.question.header,
 );
 
 const getStarsDiffState: (state: StoreState) => number | void = createSelector(
   [getEngineConfig],
-  engineConfig => engineConfig && engineConfig.starsPerAskingClue
+  (engineConfig) => engineConfig && engineConfig.starsPerAskingClue,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   clue: getClueState(state),
   slideId: getSlideIdState(state),
   header: getSlideHeaderState(state),
-  starsDiff: getStarsDiffState(state)
+  starsDiff: getStarsDiffState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  fetchClue
+  fetchClue,
 };
 
 export {ClueScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ClueScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ClueScreen);

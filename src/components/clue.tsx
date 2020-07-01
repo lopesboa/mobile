@@ -20,25 +20,25 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,
-    flexGrow: 1
+    flexGrow: 1,
   },
   text: {
     color: theme.colors.white,
     fontSize: theme.fontSize.large,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   buttonText: {
-    fontSize: theme.fontSize.large
+    fontSize: theme.fontSize.large,
   },
   header: {
     color: theme.colors.black,
     textAlign: 'center',
     fontSize: theme.fontSize.large,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.base
-  }
+    paddingHorizontal: theme.spacing.base,
+  },
 });
 
 const Clue = ({header, clue, slideId, starsDiff, onPress, testID}: Props) => (

@@ -11,23 +11,23 @@ import withAnalytics from './with-analytics';
 import type {WithAnalyticsProps} from './with-analytics';
 
 interface ConnectedDispatchProps {
-  selectResource: typeof selectResource
-};
+  selectResource: typeof selectResource;
+}
 
 interface Props extends WithAnalyticsProps, ConnectedDispatchProps {
-  items: Array<DeckCard>,
-  renderItem: (arg0: DeckCard, arg1: number, arg2: AnimationStyleProp | void) => React.ReactNode,
-  cardStyle?: ViewStyle,
-  onRef?: Pick<DeckCardsProps, 'onRef'>
-};
+  items: Array<DeckCard>;
+  renderItem: (arg0: DeckCard, arg1: number, arg2: AnimationStyleProp | void) => React.ReactNode;
+  cardStyle?: ViewStyle;
+  onRef?: Pick<DeckCardsProps, 'onRef'>;
+}
 
 type State = {
-  cardIndexShown: number
+  cardIndexShown: number;
 };
 
 class DeckCardsSwipable extends React.PureComponent<Props, State> {
   state: State = {
-    cardIndexShown: 0
+    cardIndexShown: 0,
   };
 
   cards: typeof DeckCards;
@@ -42,24 +42,24 @@ class DeckCardsSwipable extends React.PureComponent<Props, State> {
         toValue: 1,
         duration: 200,
         useNativeDriver: false,
-        easing: Easing.inOut(Easing.quad)
+        easing: Easing.inOut(Easing.quad),
       }),
       Animated.delay(150),
       Animated.timing(this.animation, {
         toValue: 2,
         duration: 400,
         useNativeDriver: false,
-        easing: Easing.inOut(Easing.quad)
+        easing: Easing.inOut(Easing.quad),
       }),
       Animated.delay(150),
       Animated.timing(this.animation, {
         toValue: 3,
         duration: 200,
         useNativeDriver: false,
-        easing: Easing.inOut(Easing.quad)
+        easing: Easing.inOut(Easing.quad),
       }),
-      Animated.delay(3000)
-    ])
+      Animated.delay(3000),
+    ]),
   );
 
   componentDidMount = () => {
@@ -93,14 +93,14 @@ class DeckCardsSwipable extends React.PureComponent<Props, State> {
     let data = {
       id: 'deck-card',
       type: resource ? `${type}-${resource.type}` : type,
-      isCorrect: +isCorrect
+      isCorrect: +isCorrect,
     };
 
     if (resource) {
       data = {
         ...data,
         ref: resource.ref,
-        offeringExtraLife: +offeringExtraLife
+        offeringExtraLife: +offeringExtraLife,
       };
     }
 
@@ -123,21 +123,21 @@ class DeckCardsSwipable extends React.PureComponent<Props, State> {
   getAnimationStyle = (): AnimationStyleProp => {
     const rotate = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
-      outputRange: ['0deg', '5deg', '0deg', '-5deg', '0deg']
+      outputRange: ['0deg', '5deg', '0deg', '-5deg', '0deg'],
     });
 
     const translateX = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
-      outputRange: [0, 30, 0, -30, 0]
+      outputRange: [0, 30, 0, -30, 0],
     });
 
     const translateY = this.animation.interpolate({
       inputRange: [0, 1, 1.5, 2, 3],
-      outputRange: [0, 30, 0, 30, 0]
+      outputRange: [0, 30, 0, 30, 0],
     });
 
     const animationStyle = {
-      transform: [{rotate}, {translateX}, {translateY}]
+      transform: [{rotate}, {translateX}, {translateY}],
     };
 
     return animationStyle;
@@ -167,12 +167,9 @@ class DeckCardsSwipable extends React.PureComponent<Props, State> {
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  selectResource
+  selectResource,
 };
 
 export {DeckCardsSwipable as Component};
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withAnalytics(DeckCardsSwipable));
+export default connect(null, mapDispatchToProps)(withAnalytics(DeckCardsSwipable));

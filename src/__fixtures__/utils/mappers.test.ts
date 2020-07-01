@@ -33,7 +33,7 @@ export const mapToLeveExpectedResult: LevelStore = {
   data: level.data,
   stats: level.stats,
   version: level.version,
-  external_refs: level.external_refs
+  external_refs: level.external_refs,
 };
 
 export const mapToChapterExpectedResult: ChapterStore = {
@@ -46,7 +46,7 @@ export const mapToChapterExpectedResult: ChapterStore = {
   poster: chapter.poster,
   isConditional: chapter.isConditional,
   time: chapter.time,
-  version: chapter.version
+  version: chapter.version,
 };
 
 export const mapToSlideExpectedResult: SlideEngine = {
@@ -60,7 +60,7 @@ export const mapToSlideExpectedResult: SlideEngine = {
   clue: slide.clue,
   context: slide.context,
   question: slide.question,
-  position: slide.position
+  position: slide.position,
 };
 
 describe('mappers', () => {

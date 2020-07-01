@@ -8,7 +8,7 @@ import {ForbiddenError, ConflictError} from '../../../models/error';
 import {
   isAlreadySynchronized,
   isDone,
-  sortProgressionChronologicaly
+  sortProgressionChronologicaly,
 } from '../../../utils/progressions';
 
 export const SYNCHRONIZE_REQUEST = '@@progression/SYNCHRONIZE_REQUEST';
@@ -17,29 +17,29 @@ export const SYNCHRONIZE_FAILURE = '@@progression/SYNCHRONIZE_FAILURE';
 
 export type Action =
   | {
-      type: typeof SYNCHRONIZE_REQUEST
+      type: typeof SYNCHRONIZE_REQUEST;
     }
   | {
-      type: typeof SYNCHRONIZE_SUCCESS
+      type: typeof SYNCHRONIZE_SUCCESS;
     }
   | StoreErrorAction<{
-      type: typeof SYNCHRONIZE_FAILURE
+      type: typeof SYNCHRONIZE_FAILURE;
     }>;
 
 export const synchronizeRequest = (): Action => ({
-  type: SYNCHRONIZE_REQUEST
+  type: SYNCHRONIZE_REQUEST,
 });
 export const synchronizeSuccess = (): Action => ({
-  type: SYNCHRONIZE_SUCCESS
+  type: SYNCHRONIZE_SUCCESS,
 });
 export const synchronizeFailure = (): Action => ({
-  type: SYNCHRONIZE_FAILURE
+  type: SYNCHRONIZE_FAILURE,
 });
 
 export const synchronizeProgression = (
   id: string,
   progression: Progression,
-  numberOfRetries: number = 5
+  numberOfRetries = 5,
 ): StoreAction<Action> => async (dispatch, getState, options) => {
   const {services} = options;
 
@@ -55,7 +55,7 @@ export const synchronizeProgression = (
     const remoteProgressionExists = await services.Progressions.findRemoteProgressionById(
       token,
       brand.host,
-      id
+      id,
     );
     if (!remoteProgressionExists)
       await services.Progressions.synchronize(token, brand.host, progression);
@@ -72,7 +72,7 @@ export const synchronizeProgression = (
         return synchronizeProgression(id, progression, numberOfRetries - 1)(
           dispatch,
           getState,
-          options
+          options,
         );
       }
       await dispatch(synchronizeFailure());
@@ -89,23 +89,23 @@ export const SYNCHRONIZE_ALL_FAILURE = '@@progression/SYNCHRONIZE_ALL_FAILURE';
 
 export type AllAction =
   | {
-      type: typeof SYNCHRONIZE_ALL_REQUEST
+      type: typeof SYNCHRONIZE_ALL_REQUEST;
     }
   | {
-      type: typeof SYNCHRONIZE_ALL_SUCCESS
+      type: typeof SYNCHRONIZE_ALL_SUCCESS;
     }
   | StoreErrorAction<{
-      type: typeof SYNCHRONIZE_ALL_FAILURE
+      type: typeof SYNCHRONIZE_ALL_FAILURE;
     }>;
 
 export const synchronizeAllRequest = (): AllAction => ({
-  type: SYNCHRONIZE_ALL_REQUEST
+  type: SYNCHRONIZE_ALL_REQUEST,
 });
 export const synchronizeAllSuccess = (): AllAction => ({
-  type: SYNCHRONIZE_ALL_SUCCESS
+  type: SYNCHRONIZE_ALL_SUCCESS,
 });
 export const synchronizeAllFailure = (): AllAction => ({
-  type: SYNCHRONIZE_ALL_FAILURE
+  type: SYNCHRONIZE_ALL_FAILURE,
 });
 
 export const synchronizeProgressions: StoreAction<Action> = async (dispatch, getState, options) => {
@@ -122,7 +122,7 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
 
     await pMap(
       sortProgressionChronologicaly(progressions).filter(
-        p => isDone(p) && !isAlreadySynchronized(p, synchronizedProgressionsIds)
+        (p) => isDone(p) && !isAlreadySynchronized(p, synchronizedProgressionsIds),
       ),
       async (progression): Promise<Action | void> => {
         const {_id} = progression;
@@ -133,7 +133,7 @@ export const synchronizeProgressions: StoreAction<Action> = async (dispatch, get
         }
         return Promise.resolve();
       },
-      {concurrency: 1}
+      {concurrency: 1},
     );
     return dispatch(synchronizeAllSuccess());
   } catch (e) {

@@ -7,13 +7,13 @@ import type {StoreState} from '../redux/store';
 import {isVideoFullScreen, getValidationStatus} from '../redux/utils/state-extract';
 
 export interface ConnectedStateProps {
-  isHidden: boolean,
-  current?: number,
-  total?: number,
-  isLoading?: boolean
-};
+  isHidden: boolean;
+  current?: number;
+  total?: number;
+  isLoading?: boolean;
+}
 
-interface Props extends ConnectedStateProps  {};
+type Props = ConnectedStateProps;
 
 class Progression extends React.Component<Props> {
   shouldComponentUpdate(nextProps: Props) {
@@ -41,7 +41,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     isHidden: isContentAdaptive(state) || !progressionSteps || isVideoFullScreen(state),
     current,
     total,
-    isLoading: getValidationStatus(state)
+    isLoading: getValidationStatus(state),
   };
 };
 

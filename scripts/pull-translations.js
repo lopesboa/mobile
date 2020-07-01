@@ -20,11 +20,11 @@ const fetchTranslations = (
   locale: string,
   repository: string,
   contentPath: string,
-  file: string
+  file: string,
   // We don't have any interface for translations
   // eslint-disable-next-line flowtype/no-weak-types
 ): Promise<Object> => {
-  const apiLocale = locale.replace(/-(.*)/, found => '_' + found.replace('-', '').toUpperCase());
+  const apiLocale = locale.replace(/-(.*)/, (found) => '_' + found.replace('-', '').toUpperCase());
   const branch = repository === 'coorpacademy' ? 'develop' : 'master';
 
   return (
@@ -32,16 +32,16 @@ const fetchTranslations = (
       `${GITHUB_API}/repos/coorpacademy/${repository}/contents/${contentPath}/${apiLocale}/${file}?ref=${branch}`,
       {
         headers: {
-          Authorization: `token ${githubAccessToken}`
-        }
-      }
+          Authorization: `token ${githubAccessToken}`,
+        },
+      },
     )
-      .then(response => response.text())
-      .then(text => JSON.parse(text))
-      .then(response => Buffer.from(response.content, 'base64').toString('utf8'))
-      .then(content => JSON.parse(content))
+      .then((response) => response.text())
+      .then((text) => JSON.parse(text))
+      .then((response) => Buffer.from(response.content, 'base64').toString('utf8'))
+      .then((content) => JSON.parse(content))
       // eslint-disable-next-line no-console
-      .catch(e => console.error(`Unavailable content for ${apiLocale}.`))
+      .catch((e) => console.error(`Unavailable content for ${apiLocale}.`))
   );
 };
 
@@ -53,85 +53,85 @@ const generate = async (locale: string) => {
     locale,
     'coorpacademy',
     'core/locales',
-    'global.json'
+    'global.json',
   );
   const moocMenuTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'menu.json'
+    'menu.json',
   );
   const moocFormTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'form.json'
+    'form.json',
   );
   const moocSlidesTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'slides.json'
+    'slides.json',
   );
   const moocLoginTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'login.json'
+    'login.json',
   );
   const moocErrorTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'error.json'
+    'error.json',
   );
   const playerTranslations = await fetchTranslations(
     locale,
     'components',
     'packages/@coorpacademy-player-web/locales',
-    'player.json'
+    'player.json',
   );
   const componentsTranslations = await fetchTranslations(
     locale,
     'components',
     'packages/@coorpacademy-components/locales',
-    'global.json'
+    'global.json',
   );
   const moocDashboardTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'dashboard.json'
+    'dashboard.json',
   );
   const moocNotificationsTranslations = await fetchTranslations(
     locale,
     'coorpacademy',
     'core/locales',
-    'notifications.json'
+    'notifications.json',
   );
 
   const translations: Translations = {
     accessTheLesson: formatTranslation(playerTranslations['Access the lesson']),
     authenticationMagicLinkHeader: formatTranslation(moocLoginTranslations.mobile.magicLink.header),
     authenticationMagicLinkStepOneDescription: formatTranslation(
-      moocLoginTranslations.mobile.magicLink.stepOne
+      moocLoginTranslations.mobile.magicLink.stepOne,
     ),
     authenticationMagicLinkStepTwoDescription: formatTranslation(
-      moocLoginTranslations.mobile.magicLink.stepTwo
+      moocLoginTranslations.mobile.magicLink.stepTwo,
     ),
     authenticationMagicLinkStepThreeDescription: formatTranslation(
-      moocLoginTranslations.mobile.magicLink.stepThree
+      moocLoginTranslations.mobile.magicLink.stepThree,
     ),
     authenticationMagicLinkTitle: formatTranslation(moocLoginTranslations.mobile.magicLink.title),
     authenticationQRCodeHeader: formatTranslation(moocLoginTranslations.mobile.qrCode.header),
     authenticationQRCodeStepOneDescription: formatTranslation(
-      moocLoginTranslations.mobile.qrCode.stepOne
+      moocLoginTranslations.mobile.qrCode.stepOne,
     ),
     authenticationQRCodeStepTwoDescription: formatTranslation(
-      moocLoginTranslations.mobile.qrCode.stepTwo
+      moocLoginTranslations.mobile.qrCode.stepTwo,
     ),
     authenticationQRCodeStepThreeDescription: formatTranslation(
-      moocLoginTranslations.mobile.qrCode.stepThree
+      moocLoginTranslations.mobile.qrCode.stepThree,
     ),
     authenticationQRCodeTitle: formatTranslation(moocLoginTranslations.mobile.qrCode.title),
     askForHelp: formatTranslation(moocErrorTranslations.modal.mobile.ask_for_help),
@@ -151,7 +151,7 @@ const generate = async (locale: string) => {
     forYou: formatTranslation(playerTranslations['For you']),
     gameOver: formatTranslation(playerTranslations['Game over']),
     getAnExtralife: formatTranslation(
-      playerTranslations['Get an extra life by viewing the lesson']
+      playerTranslations['Get an extra life by viewing the lesson'],
     ),
     goodAnswer: formatTranslation(playerTranslations['Good answer']),
     goodJob: formatTranslation(playerTranslations['Good job']),
@@ -179,14 +179,14 @@ const generate = async (locale: string) => {
     permission: formatTranslation(moocTranslations.mobile.settings.permission),
     permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
     platformHasBeenDisabled: formatTranslation(
-      moocErrorTranslations.modal.mobile.platform_has_been_disabled
+      moocErrorTranslations.modal.mobile.platform_has_been_disabled,
     ),
     question: formatTranslation(playerTranslations.Question),
     quit: formatTranslation(playerTranslations.Quit),
     reactivatePlatform: formatTranslation(moocErrorTranslations.modal.mobile.reactivate_platform),
     refresh: formatTranslation(moocErrorTranslations.modal.mobile.refresh),
     refreshEnjoyLearning: formatTranslation(
-      moocErrorTranslations.modal.mobile.refresh_enjoy_learning
+      moocErrorTranslations.modal.mobile.refresh_enjoy_learning,
     ),
     refreshNotWorking: formatTranslation(moocErrorTranslations.modal.mobile.refresh_not_working),
     relatedSubjects: formatTranslation(playerTranslations['Related subjects']),
@@ -216,12 +216,12 @@ const generate = async (locale: string) => {
     welcomeUser: formatTranslation(moocDashboardTranslations.hello),
     wrongAnswer: formatTranslation(playerTranslations['Wrong answer']),
     yourAnswer: formatTranslation(playerTranslations['Your answer_']),
-    yourAnswers: formatTranslation(playerTranslations['Your answers_'])
+    yourAnswers: formatTranslation(playerTranslations['Your answers_']),
   };
 
   const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.ts`);
   const properties = Object.keys(translations)
-    .map(key => {
+    .map((key) => {
       const value = translations[key] !== undefined ? `"${translations[key]}"` : 'undefined';
       return `  ${key}: ${value}`;
     })
@@ -229,7 +229,8 @@ const generate = async (locale: string) => {
 
   fs.writeFileSync(
     outputFilePath,
-    `${'// @flow strict' +
+    `${
+      '// @flow strict' +
       '\n\n' +
       "import type {Translations} from './_types';" +
       '\n\n' +
@@ -239,16 +240,17 @@ const generate = async (locale: string) => {
       '};' +
       '\n\n' +
       'export default translations;' +
-      '\n'}`
+      '\n'
+    }`,
   );
 };
 
 globby
   .sync(path.resolve(`${__dirname}/../src/translations/*.ts`), {
     cwd: path.resolve(`${__dirname}/../src`),
-    nodir: true
+    nodir: true,
   })
-  .map(filePath => path.basename(filePath))
-  .filter(file => file !== 'index.ts' && file !== '_types.ts')
-  .map(file => file.replace('.ts', ''))
-  .forEach(locale => generate(locale));
+  .map((filePath) => path.basename(filePath))
+  .filter((file) => file !== 'index.ts' && file !== '_types.ts')
+  .map((file) => file.replace('.ts', ''))
+  .forEach((locale) => generate(locale));

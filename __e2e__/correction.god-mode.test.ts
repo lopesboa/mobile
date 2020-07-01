@@ -1,3 +1,4 @@
+import {by, element} from 'detox';
 import {reloadApp, bypassAuthentication, waitForVisible, tapCardOnList} from './utils';
 
 describe('Correction: god mode', () => {

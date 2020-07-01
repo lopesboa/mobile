@@ -6,13 +6,13 @@ describe('getAllowedParamsForSearch', () => {
       skill: 'skill',
       type: 'coourse',
       search: 'ibm',
-      foo: 'bar'
+      foo: 'bar',
     };
 
     const expectedResult = {
       skill: 'skill',
       type: 'coourse',
-      search: 'ibm'
+      search: 'ibm',
     };
 
     const result = getAllowedParamsForSearch(params);

@@ -2,15 +2,15 @@ import type {AllAction as SynchronizeAction} from '../../actions/progressions/sy
 import {
   SYNCHRONIZE_ALL_REQUEST,
   SYNCHRONIZE_ALL_SUCCESS,
-  SYNCHRONIZE_ALL_FAILURE
+  SYNCHRONIZE_ALL_FAILURE,
 } from '../../actions/progressions/synchronize';
 
 export type State = {
-  isSynchronizing: boolean
+  isSynchronizing: boolean;
 };
 
 export const initialState: State = {
-  isSynchronizing: false
+  isSynchronizing: false,
 };
 
 const reducer = (state: State = initialState, action: SynchronizeAction): State => {
@@ -18,19 +18,19 @@ const reducer = (state: State = initialState, action: SynchronizeAction): State 
     case SYNCHRONIZE_ALL_REQUEST: {
       return {
         ...state,
-        isSynchronizing: true
+        isSynchronizing: true,
       };
     }
     case SYNCHRONIZE_ALL_SUCCESS: {
       return {
         ...state,
-        isSynchronizing: false
+        isSynchronizing: false,
       };
     }
     case SYNCHRONIZE_ALL_FAILURE: {
       return {
         ...state,
-        isSynchronizing: false
+        isSynchronizing: false,
       };
     }
     default:

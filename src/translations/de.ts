@@ -1,5 +1,3 @@
- 
-
 import type {Translations} from './_types';
 
 const translations: Translations = {
@@ -106,7 +104,7 @@ const translations: Translations = {
   welcomeUser: 'Willkommen, {{displayname}}!',
   wrongAnswer: 'Falsche Antwort',
   yourAnswer: 'Ihre Antwort:',
-  yourAnswers: 'Ihre Antworten:'
+  yourAnswers: 'Ihre Antworten:',
 };
 
 export default translations;

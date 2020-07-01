@@ -5,20 +5,20 @@ import createMiddleware from './update-card-on-progression-update';
 
 const createStore = () => ({
   getState: jest.fn(),
-  dispatch: jest.fn()
+  dispatch: jest.fn(),
 });
 
 describe('UpdateCard on ProgressionUpdate middleware', () => {
   const options: Options = {
     // @ts-ignore we dont want to mock the entire services object
     services: {
-      Progression: {}
-    }
+      Progression: {},
+    },
   };
 
   it('shoud not handle unsupported action', () => {
     const action = {
-      type: 'FOO'
+      type: 'FOO',
     };
     const middleware = createMiddleware(options);
     const store = createStore();
@@ -33,8 +33,8 @@ describe('UpdateCard on ProgressionUpdate middleware', () => {
     const updateProgressionAction = {
       type: PROGRESSION_UPDATED_ON_MOVE,
       meta: {
-        id: 'lol'
-      }
+        id: 'lol',
+      },
     };
     const middleware = createMiddleware(options);
     const store = createStore();
@@ -50,8 +50,8 @@ describe('UpdateCard on ProgressionUpdate middleware', () => {
     const updateProgressionAction = {
       type: PROGRESSION_UPDATED_ON_NODE,
       meta: {
-        id: 'lol'
-      }
+        id: 'lol',
+      },
     };
     const middleware = createMiddleware(options);
     const store = createStore();

@@ -1,17 +1,17 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {
   isSearchFetching as _isSearchFetching,
   getSearchValue,
-  getSearchParams
+  getSearchParams,
 } from '../redux/utils/state-extract';
 import {edit as _editSearch} from '../redux/actions/ui/search';
 import {
   fetchCards as _fetchCards,
-  DEFAULT_LIMIT
+  DEFAULT_LIMIT,
 } from '../redux/actions/catalog/cards/fetch/search';
 import {clearSearch as _clearSearch} from '../redux/actions/catalog/cards/clear';
 
@@ -20,21 +20,21 @@ import type {QueryParams} from '../modules/uri';
 import isEqual from '../modules/equal';
 
 export interface ConnectedStateProps {
-  isSearchFetching: boolean,
-  searchValue?: string,
-  searchParams?: QueryParams
-};
+  isSearchFetching: boolean;
+  searchValue?: string;
+  searchParams?: QueryParams;
+}
 
 interface ConnectedDispatchProps {
-  editSearch: typeof _editSearch,
-  fetchCards: typeof _fetchCards,
-  clearSearch: typeof _clearSearch
-};
+  editSearch: typeof _editSearch;
+  fetchCards: typeof _fetchCards;
+  clearSearch: typeof _clearSearch;
+}
 
 export interface Props extends ConnectedStateProps, ConnectedDispatchProps, NavigationScreenProps {
-  onCardPress: (item: DisciplineCard | ChapterCard) => void,
-  onBackPress: () => void
-};
+  onCardPress: (item: DisciplineCard | ChapterCard) => void;
+  onBackPress: () => void;
+}
 
 export const SEARCH_DEBOUNCE_DURATION = 500;
 export const SEARCH_MIN_LENGTH = 2;
@@ -108,17 +108,14 @@ class Search extends React.PureComponent<Props> {
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   isSearchFetching: _isSearchFetching(state),
   searchValue: getSearchValue(state),
-  searchParams: getSearchParams(state)
+  searchParams: getSearchParams(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   editSearch: _editSearch,
   fetchCards: _fetchCards,
-  clearSearch: _clearSearch
+  clearSearch: _clearSearch,
 };
 
 export {Search as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

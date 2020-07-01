@@ -1,9 +1,10 @@
+import {by, element} from 'detox';
 import {
   tapCardOnList,
   waitForExist,
   waitForVisible,
   reloadApp,
-  bypassAuthentication
+  bypassAuthentication,
 } from './utils';
 
 const answerQuestion = async () => {

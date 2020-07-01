@@ -10,10 +10,10 @@ import QuestionChoices from './question-choices';
 import {
   template,
   items as templateItems,
-  userChoices as templateUserChoices
+  userChoices as templateUserChoices,
 } from './question-template.stories';
 
-const answers = choices.filter((choice, index) => index === 1).map(choice => choice.label);
+const answers = choices.filter((choice, index) => index === 1).map((choice) => choice.label);
 
 storiesOf('QuestionChoices', module)
   .add('QCM', () => (
@@ -148,9 +148,9 @@ if (__TEST__) {
           onItemPress={handleItemPress}
           onSliderChange={handleFakePress}
           onItemInputChange={handleFakePress}
-        />
+        />,
       );
-      const questionChoice = component.root.find(el => el.props.testID === 'question-choice-1');
+      const questionChoice = component.root.find((el) => el.props.testID === 'question-choice-1');
       questionChoice.props.onPress();
       expect(handleItemPress.mock.calls.length).toBe(1);
       expect(handleItemPress.mock.calls[0]).toEqual([choices[0]]);
@@ -170,10 +170,10 @@ if (__TEST__) {
             onItemInputChange={handleItemInputChange}
             onSliderChange={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       const questionInput = component.root.find(
-        el => el.props.testID === 'question-section-1-part-2'
+        (el) => el.props.testID === 'question-section-1-part-2',
       );
       questionInput.props.onChange('Foobarbaz');
       expect(handleItemInputChange.mock.calls.length).toBe(1);
@@ -192,9 +192,9 @@ if (__TEST__) {
           onItemPress={handleFakePress}
           onItemInputChange={handleFakePress}
           onSliderChange={handleFakePress}
-        />
+        />,
       );
-      const questionInput = component.root.find(el => el.props.testID === 'question-input-text');
+      const questionInput = component.root.find((el) => el.props.testID === 'question-input-text');
 
       questionInput.props.onChangeText();
       expect(onInputValueChange.mock.calls.length).toBe(1);

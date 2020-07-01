@@ -19,14 +19,14 @@ jest.mock('./core', () => {
       }
 
       return Promise.resolve({foo: 'bar'});
-    }
+    },
   };
 });
 
 jest.mock('./mappers', () => ({
   mapToLevelAPI: () => ({type: 'level'}),
   mapToChapterAPI: () => ({type: 'chapter'}),
-  mapToSlideAPI: () => ({type: 'slide'})
+  mapToSlideAPI: () => ({type: 'slide'}),
 }));
 
 describe('content', () => {

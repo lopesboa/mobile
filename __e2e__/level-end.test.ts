@@ -1,3 +1,4 @@
+import {by, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
@@ -5,7 +6,7 @@ import {
   waitForVisible,
   waitForNotVisible,
   tapCardOnList,
-  wrongAnswer
+  wrongAnswer,
 } from './utils';
 
 describe('Level end', () => {

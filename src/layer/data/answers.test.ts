@@ -9,7 +9,8 @@ jest.mock('./core', () => {
   const question = questions.createQCM({});
 
   return {
-    getItem: () => Promise.resolve(slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question}))
+    getItem: () =>
+      Promise.resolve(slides.createSlide({ref: 'sli_1', chapterId: 'cha_1', question})),
   };
 });
 

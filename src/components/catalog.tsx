@@ -9,20 +9,20 @@ import Hero, {HEIGHT as _HERO_HEIGHT} from './hero';
 import Space from './space';
 
 export interface Props {
-  hero?: DisciplineCard | ChapterCard | null,
-  sections: Array<Section | void>,
-  onCardPress: (arg0: DisciplineCard | ChapterCard) => void,
-  onRefresh: () => void,
-  isRefreshing?: boolean,
-  onScroll: (arg0: ScrollEvent) => void,
-  children?: React.ReactNode,
-  testID?: string
-};
+  hero?: DisciplineCard | ChapterCard | null;
+  sections: Array<Section | void>;
+  onCardPress: (arg0: DisciplineCard | ChapterCard) => void;
+  onRefresh: () => void;
+  isRefreshing?: boolean;
+  onScroll: (arg0: ScrollEvent) => void;
+  children?: React.ReactNode;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 });
 
 const SEPARATOR_SIZE = 'base';
@@ -31,15 +31,13 @@ export const HERO_HEIGHT = _HERO_HEIGHT;
 const PLACEHOLDER_LENGTH = 3;
 
 class Catalog extends React.Component<Props> {
-  props: Props;
-
   keyExtractor = (item: Section | void, index: number) => {
     const suffix = (item && item.key) || `${index}-placeholder`;
 
     return `catalog-section-${suffix}`;
   };
 
-  renderItem = ({item, index}: {item: Section | void, index: number}) => {
+  renderItem = ({item, index}: {item: Section | void; index: number}) => {
     const {onCardPress} = this.props;
 
     if (!item) {

@@ -1,4 +1,4 @@
-import type {Lesson, VideoMimeType} from '@types/coorp/progression-engine';
+import type {Lesson, VideoMimeType} from '../types/coorpacademy/progression-engine';
 
 import {RESOURCE_TYPE, RESOURCE_MIME_TYPE, VIDEO_MIME_TYPE} from '../const';
 
@@ -6,13 +6,13 @@ export const createVideo = ({
   ref,
   description = 'Des données au service de tous',
   poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
-  videoId = 'KovTu3zU'
+  videoId = 'KovTu3zU',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string,
-  mimeType?: VideoMimeType,
-  videoId?: string
+  ref: string;
+  description?: string;
+  poster?: string;
+  mimeType?: VideoMimeType;
+  videoId?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -24,17 +24,17 @@ export const createVideo = ({
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export const createVideoYoutube = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string
+  ref: string;
+  description?: string;
+  poster?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -46,17 +46,17 @@ export const createVideoYoutube = ({
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export const createVideoOmniPlayer = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string
+  ref: string;
+  description?: string;
+  poster?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -68,17 +68,17 @@ export const createVideoOmniPlayer = ({
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export const createVimeoVideo = ({
   ref,
   description = 'Des données au service de tous',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/vignette_fabernovel_new-1543482536203.png',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string
+  ref: string;
+  description?: string;
+  poster?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -90,17 +90,17 @@ export const createVimeoVideo = ({
   type: RESOURCE_TYPE.VIDEO,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export const createPdf = ({
   ref,
   description = 'Des données au service de tous - PDF',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string
+  ref: string;
+  description?: string;
+  poster?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -113,17 +113,17 @@ export const createPdf = ({
   type: RESOURCE_TYPE.PDF,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export const createImage = ({
   ref,
   description = 'Des données au service de tous - PDF',
-  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg'
+  poster = '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-support-de-cours-1543490353160.jpg',
 }: {
-  ref: string,
-  description?: string,
-  poster?: string
+  ref: string;
+  description?: string;
+  poster?: string;
 }): Lesson => ({
   _id: ref,
   poster,
@@ -136,11 +136,11 @@ export const createImage = ({
   type: RESOURCE_TYPE.IMG,
   subtitles: [],
   posters: [],
-  src: []
+  src: [],
 });
 
 export default {
   createVideo,
   createPdf,
-  createImage
+  createImage,
 };

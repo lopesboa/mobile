@@ -26,34 +26,34 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   header: {
     fontSize: 25,
     fontWeight: theme.fontWeight.bold,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   textValue: {
     fontSize: 15,
     color: theme.colors.black,
     fontWeight: theme.fontWeight.bold,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   valuesContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   leftValue: {
     flex: 1,
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   rightValue: {
     flex: 1,
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   track: {
     height: 10,
-    borderRadius: theme.radius.button
+    borderRadius: theme.radius.button,
   },
   thumb: {
     ...BOX_STYLE,
@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 30 / 2,
     backgroundColor: 'white',
-    borderWidth: 1
-  }
+    borderWidth: 1,
+  },
 });
 
 const QuestionSlider = ({
@@ -74,7 +74,7 @@ const QuestionSlider = ({
   value,
   onSlidingComplete,
   testID,
-  onChange
+  onChange,
 }: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
   return (

@@ -25,34 +25,34 @@ const styles = StyleSheet.create({
   loaderContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
     flex: 1,
     paddingTop: HEADER_HEIGHT,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   header: {
     position: 'absolute',
     top: 0,
     left: 0,
-    right: 0
+    right: 0,
   },
   gradient: {
     position: 'absolute',
     left: 0,
     top: 0,
     paddingTop: HEADER_HEIGHT,
-    right: 0
+    right: 0,
   },
   catalog: {
-    flex: 1
+    flex: 1,
   },
   version: {
     color: theme.colors.gray.medium,
     paddingBottom: theme.spacing.base,
-    paddingTop: theme.spacing.small
-  }
+    paddingTop: theme.spacing.small,
+  },
 });
 
 const Home = ({

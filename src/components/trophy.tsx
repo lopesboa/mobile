@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    top: -15
+    top: -15,
   },
   trophy: {
     flexGrow: 1,
     position: 'absolute',
     width: '50%',
-    height: '50%'
-  }
+    height: '50%',
+  },
 });
 
 const Trophy = ({testID, style}: Props) => {

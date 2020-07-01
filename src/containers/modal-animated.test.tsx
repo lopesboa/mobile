@@ -11,11 +11,11 @@ describe('ModalAnimated', () => {
     const component = renderer.create(
       <ModalAnimated onClose={handleClose} testID="modal-animated">
         <Text>Foo bar</Text>
-      </ModalAnimated>
+      </ModalAnimated>,
     );
 
     const modal = component.root.find(
-      el => el.props.testID === 'modal-animated' && el.props.onSwipeComplete
+      (el) => el.props.testID === 'modal-animated' && el.props.onSwipeComplete,
     );
     modal.props.onSwipeComplete();
 
@@ -28,11 +28,11 @@ describe('ModalAnimated', () => {
     const component = renderer.create(
       <ModalAnimated onClose={handleClose} testID="modal-animated">
         <Text>Foo bar</Text>
-      </ModalAnimated>
+      </ModalAnimated>,
     );
 
     const modal = component.root.find(
-      el => el.props.testID === 'modal-animated' && el.props.onBackdropPress
+      (el) => el.props.testID === 'modal-animated' && el.props.onBackdropPress,
     );
     modal.props.onBackdropPress();
 

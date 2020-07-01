@@ -43,7 +43,7 @@ describe('Data layer', () => {
       storeBundle: expect.any(Function),
       synchronizeProgression: expect.any(Function),
       fetchUser: expect.any(Function),
-      updateSynchronizedProgressionIds: expect.any(Function)
+      updateSynchronizedProgressionIds: expect.any(Function),
     };
     expect(expected).toEqual(result);
   });

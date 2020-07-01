@@ -54,10 +54,10 @@ if (__TEST__) {
             onSearchPress={handleFakePress}
             onSettingsPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const icon = component.root.find(el => el.props.testID === 'catalog');
+      const icon = component.root.find((el) => el.props.testID === 'catalog');
       icon.props.onCardPress();
 
       expect(handleCardPress).toHaveBeenCalledTimes(1);

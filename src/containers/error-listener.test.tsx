@@ -24,10 +24,10 @@ describe('ErrorListener', () => {
         hideError={hideError}
         refresh={handleFakePress}
         signOut={signOut}
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'modal-animated');
+    const modal = component.root.find((el) => el.props.testID === 'modal-animated');
     modal.props.onClose();
 
     expect(handleClose).toHaveBeenCalledTimes(1);
@@ -49,10 +49,10 @@ describe('ErrorListener', () => {
         hideError={hideError}
         refresh={handleFakePress}
         signOut={signOut}
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'modal-error');
+    const modal = component.root.find((el) => el.props.testID === 'modal-error');
     modal.props.onClose();
 
     expect(handleClose).toHaveBeenCalledTimes(1);
@@ -75,10 +75,10 @@ describe('ErrorListener', () => {
         hideError={handleFakePress}
         refresh={refresh}
         signOut={handleFakePress}
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'modal-error');
+    const modal = component.root.find((el) => el.props.testID === 'modal-error');
     modal.props.onPress();
 
     expect(refresh).toHaveBeenCalledTimes(1);
@@ -100,10 +100,10 @@ describe('ErrorListener', () => {
         hideError={handleFakePress}
         refresh={refresh}
         signOut={handleFakePress}
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'modal-error');
+    const modal = component.root.find((el) => el.props.testID === 'modal-error');
     modal.props.onPress();
 
     expect(refresh).toHaveBeenCalledTimes(0);
@@ -124,10 +124,10 @@ describe('ErrorListener', () => {
         hideError={handleFakePress}
         refresh={handleFakePress}
         signOut={handleFakePress}
-      />
+      />,
     );
 
-    const modal = component.root.find(el => el.props.testID === 'modal-error');
+    const modal = component.root.find((el) => el.props.testID === 'modal-error');
     modal.props.onAssistancePress();
 
     expect(openURL).toHaveBeenCalledTimes(1);

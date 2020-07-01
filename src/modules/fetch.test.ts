@@ -16,7 +16,7 @@ describe('Fetch', () => {
     const _fetch = require('cross-fetch');
     const response = new Response();
 
-    _fetch.mockImplementationOnce(url => {
+    _fetch.mockImplementationOnce((url) => {
       expect(url).toBe('https://domain.tld?foo=bar');
 
       return Promise.resolve(response);
@@ -32,7 +32,7 @@ describe('Fetch', () => {
   it('should throw a regular error if 403 status ', () => {
     const _fetch = require('cross-fetch');
 
-    _fetch.mockImplementationOnce(url => {
+    _fetch.mockImplementationOnce((url) => {
       expect(url).toBe('https://domain.tld?foo=qux');
       const response = {status: 403, json: () => {}};
       return Promise.resolve(response);
@@ -48,13 +48,13 @@ describe('Fetch', () => {
   it('should throw a ForbiddenError if 403 status code and error message match ', () => {
     const _fetch = require('cross-fetch');
 
-    _fetch.mockImplementationOnce(url => {
+    _fetch.mockImplementationOnce((url) => {
       expect(url).toBe('https://domain.tld?foo=qux');
       const response = {
         status: 403,
         json: () => ({
-          err: ERROR_MESSAGE
-        })
+          err: ERROR_MESSAGE,
+        }),
       };
       return Promise.resolve(response);
     });
@@ -69,13 +69,13 @@ describe('Fetch', () => {
   it('should not throw a ForbiddenError if 403 status code and error message doesnt match ', () => {
     const _fetch = require('cross-fetch');
 
-    _fetch.mockImplementationOnce(url => {
+    _fetch.mockImplementationOnce((url) => {
       expect(url).toBe('https://domain.tld?foo=qux');
       const response = {
         status: 403,
         json: () => ({
-          err: 'foo'
-        })
+          err: 'foo',
+        }),
       };
       return Promise.resolve(response);
     });
@@ -93,7 +93,7 @@ describe('Fetch', () => {
     const expectedHeader = {
       'X-Requested-With': 'XMLHttpRequest',
       'User-Agent':
-        'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2; BuildEnvironment test)'
+        'Coorpacademy Mobile/0.0.0 CFNetwork/897.15 Darwin/17.5.0 (iPhone iOS/12.2; BuildEnvironment test)',
     };
 
     const response = new Response();
@@ -106,14 +106,14 @@ describe('Fetch', () => {
     });
     const fetch = require('./fetch').default;
     const result = await fetch('https://domain.tld?foo=qux', {
-      method: 'POST'
+      method: 'POST',
     });
     expect(result).toEqual(response);
   });
 
   it('should throw an error if called in end to end', async () => {
     jest.mock('./environment', () => ({
-      __E2E__: true
+      __E2E__: true,
     }));
     const _fetch = require('cross-fetch');
     const fetch = require('./fetch').default;

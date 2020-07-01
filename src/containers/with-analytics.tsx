@@ -6,15 +6,15 @@ import createServices from '../services';
 import createDataLayer from '../layer/data';
 
 export interface WithAnalyticsProps {
-  analytics?: Pick<Services, 'Analytics'>
-};
+  analytics?: Pick<Services, 'Analytics'>;
+}
 
 const dataLayer = createDataLayer();
 const services = createServices(dataLayer);
 const analytics = services.Analytics;
 
 function withAnalytics(WrappedComponent: React.ElementType<any>) {
-  interface Props extends WithAnalyticsProps {};
+  type Props = WithAnalyticsProps;
 
   const ComponentWithAnalytics = (props: Props) => (
     <WrappedComponent {...props} analytics={analytics} />

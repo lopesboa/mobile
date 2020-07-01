@@ -15,12 +15,12 @@ const flattenAnswers = (arr: Array<string | Array<string>>): Array<string> => {
 
 export const transformer: Transformer = (stringifiedProgression: string): string => {
   const progression: Progression = JSON.parse(stringifiedProgression);
-  each(action => {
+  each((action) => {
     if (action.type === 'answer') {
       action.payload.answer = flattenAnswers(action.payload.answer);
     }
   }, get('actions', progression));
-  each(answer => {
+  each((answer) => {
     answer.answer = flattenAnswers(answer.answer);
   }, get('state.allAnswers', progression));
   return JSON.stringify(progression);
@@ -30,5 +30,5 @@ export const predicate: Predicate = (key: string): boolean => key.startsWith('pr
 
 export default {
   predicate,
-  transformer
+  transformer,
 };

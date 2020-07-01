@@ -1,21 +1,22 @@
-import * as React from "react";
-import { Provider } from "react-redux";
+import * as React from 'react';
+import {Provider} from 'react-redux';
 
-import { createProgression } from "../__fixtures__/progression";
-import { createStoreState } from "../__fixtures__/store";
-import createDataLayer from "../layer/data";
-import createServices, { Services } from "../services";
+import {createProgression} from '../__fixtures__/progression';
+import {createStoreState} from '../__fixtures__/store';
+import createDataLayer from '../layer/data';
+import createServices, {Services} from '../services';
 
-import createStore from "../redux";
-import { __TEST__ } from "../modules/environment";
-import BrandThemeProvider from "../components/brand-theme-provider";
-import UserProvider from "../components/user-provider";
-import { ENGINE, CONTENT_TYPE } from "../const";
-import { Layout } from "../containers/with-layout";
-import { Vibration } from "../containers/with-vibration";
-import { Audio } from "../containers/with-audio";
+import createStore from '../redux';
+import {__TEST__} from '../modules/environment';
+import BrandThemeProvider from '../components/brand-theme-provider';
+import UserProvider from '../components/user-provider';
+import {ENGINE, CONTENT_TYPE} from '../const';
+import {Layout} from '../containers/with-layout';
+import {Vibration} from '../containers/with-vibration';
+import {Audio} from '../containers/with-audio';
+import {StoreState} from '../redux/store';
 
-export const createFakeStore = <S>(state?: S) => ({
+export const createFakeStore = (state: StoreState) => ({
   ...createStore(createServices(createDataLayer())),
   getState: () => ({
     ...createStoreState({
@@ -27,12 +28,12 @@ export const createFakeStore = <S>(state?: S) => ({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
-        }
-      })
+          ref: 'mod_foo',
+        },
+      }),
     }),
-    ...state
-  })
+    ...state,
+  }),
 });
 
 // export const store = createStore(createServices(createDataLayer()));
@@ -40,36 +41,39 @@ export const createFakeStore = <S>(state?: S) => ({
 // eslint-disable-next-line no-console
 export const handleFakePress = () => console.log('Fake press');
 
-// eslint-disable-next-line flowtype/no-weak-types
-interface TestContextProviderProps<S> {
-  store?: S;
+interface TestContextProviderProps {
+  store?: typeof createStore;
   children: React.ReactNode;
-};
+}
 
-export const TestContextProvider = <S>({
-  store,
-  children
-}: TestContextProviderProps<S>) => {
-  return <Provider store={createFakeStore<S>(store)}>
+export const TestContextProvider = ({store, children}: TestContextProviderProps) => {
+  return (
+    <Provider store={createFakeStore(store)}>
       <UserProvider>
         <BrandThemeProvider>{children}</BrandThemeProvider>
       </UserProvider>
-         </Provider>;
+    </Provider>
+  );
 };
 
 export const fakeError = new Error('Fake error');
 
-export const sleep = (duration: number = 10): Promise<void> => new Promise(resolve => setTimeout(resolve, duration));
+export const sleep = (duration = 10): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, duration));
 
-export const fakeLayout: Layout = { width: 320, height: 768 };
+export const fakeLayout: Layout = {width: 320, height: 768};
 
-export const createFakeAnalytics = (): Pick<Services, "Analytics"> => ({
-  logEvent: __TEST__ ? jest.fn() : () => {}
-});
+export const createFakeAnalytics = (): Pick<Services, 'Analytics'> => {
+  return {
+    // @ts-ignore
+    logEvent: __TEST__ ? jest.fn() : () => {},
+  };
+};
 
-export const createFakeLogger = (): Pick<Services, "Logger"> => ({
+export const createFakeLogger = (): Pick<Services, 'Logger'> => ({
+  // @ts-ignore
   error: jest.fn(),
-  setProperties: jest.fn()
+  setProperties: jest.fn(),
 });
 
 export const createFakeVibration = (): Vibration => ({
@@ -80,19 +84,19 @@ export const createFakeVibration = (): Vibration => ({
     IMPACT_HEAVY: 'impactHeavy',
     NOTIFICATION_SUCCESS: 'notificationSuccess',
     NOTIFICATION_WARNING: 'notificationWarning',
-    NOTIFICATION_ERROR: 'notificationError'
+    NOTIFICATION_ERROR: 'notificationError',
   },
-  vibrate: __TEST__ ? jest.fn() : () => {}
+  vibrate: __TEST__ ? jest.fn() : () => {},
 });
 
 export const createFakeAudio = (): Audio => ({
   AUDIO_FILE: {
-    WRONG_ANSWER: 0,
-    GOOD_ANSWER: 0,
-    FAILURE_LEVEL: 0,
-    SUCCESS_LEVEL: 0
+    WRONG_ANSWER: undefined,
+    GOOD_ANSWER: undefined,
+    FAILURE_LEVEL: undefined,
+    SUCCESS_LEVEL: undefined,
   },
-  play: __TEST__ ? jest.fn() : () => {}
+  play: __TEST__ ? jest.fn() : () => {},
 });
 
 export const extractErrorName = async (promise: Promise<void>): Promise<string | void> => {

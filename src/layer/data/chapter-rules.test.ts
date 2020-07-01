@@ -11,7 +11,7 @@ jest.mock('./core', () => {
 
       const fakeRule = createChapterRules({chapterRef: 'ref_chapter'});
       return Promise.resolve(fakeRule);
-    }
+    },
   };
 });
 

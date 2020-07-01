@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: LIVES_VERTICAL_PADDING,
     paddingHorizontal: theme.spacing.small,
-    backgroundColor: theme.colors.gray.light
-  }
+    backgroundColor: theme.colors.gray.light,
+  },
 });
 
 const HeaderSlideRight = ({
@@ -30,7 +30,7 @@ const HeaderSlideRight = ({
   isGodModeEnabled,
   isFastSlideEnabled,
   onPress,
-  onLongPress
+  onLongPress,
 }: Props) => {
   let testID = 'header-slide-right';
 

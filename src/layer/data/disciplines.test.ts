@@ -9,12 +9,12 @@ jest.mock('./core', () => {
   const chapter = createChapter({ref: 'cha_1', name: 'Fake chapter'});
   const level = createLevel({
     chapterIds: [chapter.universalRef],
-    ref: 'mod_1'
+    ref: 'mod_1',
   });
   const firstDiscipline = createDiscipline({
     ref: 'dis_1',
     name: 'Fake discipline',
-    levels: [level]
+    levels: [level],
   });
 
   return {
@@ -28,7 +28,7 @@ jest.mock('./core', () => {
 
       return Promise.resolve({foo: 'bar'});
     },
-    getItemsPerResourceType: type => Promise.resolve([firstDiscipline])
+    getItemsPerResourceType: (type) => Promise.resolve([firstDiscipline]),
   };
 });
 

@@ -20,8 +20,8 @@ const fetch: typeof _fetch = async (url, options) => {
     headers: {
       ...get('headers', options),
       'X-Requested-With': 'XMLHttpRequest',
-      'User-Agent': userAgent
-    }
+      'User-Agent': userAgent,
+    },
   };
 
   const response = await _fetch(url, _options);

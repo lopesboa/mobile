@@ -32,85 +32,85 @@ import navigationOptions, {
 
 const appNavigator = createStackNavigator(
     {
-        Authentication: {
-            // Keep this HOC in initial screen
-            screen: withUniversalLinks(AuthenticationScreen),
-            navigationOptions: {
-                ...navigationOptionsWithoutHeader,
-                gesturesEnabled: false,
-            },
-        },
-        AuthenticationDetails: {
-            screen: AuthenticationDetailsScreen,
-            navigationOptions: navigationOptionsWithoutHeader,
-        },
-        Home: {
-            screen: HomeScreen,
-            navigationOptions: {
-                ...navigationOptionsWithoutHeader,
-                gesturesEnabled: false,
-            },
-        },
-        Slide: {
-            screen: slideNavigator,
-            navigationOptions: {
-                ...navigationOptions,
-                headerStyle: {
-                    ...navigationOptions.headerStyle,
-                    backgroundColor: HEADER_BACKGROUND_COLOR,
-                },
-                headerTitle: HeaderSlideTitle,
-                headerRight: <HeaderSlideRight />,
-                gesturesEnabled: true,
-            },
-        },
-        Search: {
-            screen: SearchScreen,
-            navigationOptions: {
-                ...navigationOptionsWithoutHeader,
-                gesturesEnabled: false,
-            },
-        },
-        Settings: {
-            screen: SettingsScreen,
-            navigationOptions: {
+      Authentication: {
+          // Keep this HOC in initial screen
+          screen: withUniversalLinks(AuthenticationScreen),
+          navigationOptions: {
+              ...navigationOptionsWithoutHeader,
+              gesturesEnabled: false,
+          },
+      },
+      AuthenticationDetails: {
+          screen: AuthenticationDetailsScreen,
+          navigationOptions: navigationOptionsWithoutHeader,
+      },
+      Home: {
+          screen: HomeScreen,
+          navigationOptions: {
+              ...navigationOptionsWithoutHeader,
+              gesturesEnabled: false,
+          },
+      },
+      Slide: {
+          screen: slideNavigator,
+          navigationOptions: {
               ...navigationOptions,
               headerStyle: {
-                ...navigationOptions.headerStyle,
-                backgroundColor: SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR
+                  ...navigationOptions.headerStyle,
+                  backgroundColor: HEADER_BACKGROUND_COLOR,
               },
-              headerTitle: HeaderSettingsTitle,
-              gesturesEnabled: false
-            }
-          }
-    },
-    {
-        initialRouteName: INITIAL_ROUTE_NAME,
-        defaultNavigationOptions: {
+              headerTitle: HeaderSlideTitle,
+              headerRight: <HeaderSlideRight />,
+              gesturesEnabled: true,
+          },
+      },
+      Search: {
+          screen: SearchScreen,
+          navigationOptions: {
+              ...navigationOptionsWithoutHeader,
+              gesturesEnabled: false,
+          },
+      },
+      Settings: {
+          screen: SettingsScreen,
+          navigationOptions: {
             ...navigationOptions,
-            gesturesEnabled: true,
-        },
+            headerStyle: {
+              ...navigationOptions.headerStyle,
+              backgroundColor: SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR
+            },
+            headerTitle: HeaderSettingsTitle,
+            gesturesEnabled: false
+          }
+      }
+  },
+  {
+    initialRouteName: INITIAL_ROUTE_NAME,
+    defaultNavigationOptions: {
+      ...navigationOptions,
+      gesturesEnabled: true,
     },
+  },
 );
 
 const defaultGetStateForAction = appNavigator.router.getStateForAction;
 
 appNavigator.router.getStateForAction = (
-    action: NavigationAction,
-    state: NavigationState | null | undefined,
+  action: NavigationAction,
+  state: NavigationState | null | undefined,
 ) => {
-    const disabledScreens = ["Authentication", "Home"];
+  const disabledScreens = ['Authentication', 'Home'];
 
-    if (
-        state &&
-        action.type === NavigationActions.BACK &&
-        disabledScreens.includes(state.routes[state.index].routeName)
-    ) {
-        // Block back action on Home and Authentication
-        return null;
-    }
+  if (
+    state &&
+    action.type === NavigationActions.BACK &&
+    disabledScreens.includes(state.routes[state.index].routeName)
+  ) {
+    // Block back action on Home and Authentication
+    return null;
+  }
 
-    return defaultGetStateForAction(action, state);
+  return defaultGetStateForAction(action, state);
 };
 
 const navigator = createStackNavigator(
@@ -132,11 +132,11 @@ const navigator = createStackNavigator(
 
 const Navigator = createAppContainer(navigator);
 
-interface ConnectedDispatchProps  {
+interface ConnectedDispatchProps {
   onScreenChange: typeof changeScreen;
-};
+}
 
-interface Props extends ConnectedDispatchProps {};
+type Props = ConnectedDispatchProps;
 
 type ExtractScreensResult = {
   currentNavigatorName: string;
@@ -146,90 +146,68 @@ type ExtractScreensResult = {
 };
 
 const extractScreens = (state: NavigationState): ExtractScreensResult => {
-    const rootNavigator = state.routes[state.index];
-    const stackNavigator = state.routes[0];
-    const appScreen = stackNavigator.routes
-        ? stackNavigator.routes[stackNavigator.index]
-        : null;
-    const screen = rootNavigator.routes
-        ? rootNavigator.routes[rootNavigator.index]
-        : null;
-    const tabs = screen && screen.routes ? screen.routes[screen.index] : null;
-    const tab = tabs && tabs.routes ? tabs.routes[tabs.index] : null;
+  const rootNavigator = state.routes[state.index];
+  const stackNavigator = state.routes[0];
+  const appScreen = stackNavigator.routes ? stackNavigator.routes[stackNavigator.index] : null;
+  const screen = rootNavigator.routes ? rootNavigator.routes[rootNavigator.index] : null;
+  const tabs = screen && screen.routes ? screen.routes[screen.index] : null;
+  const tab = tabs && tabs.routes ? tabs.routes[tabs.index] : null;
 
-    const currentNavigatorName = rootNavigator.routeName;
-    const currentAppScreenName =
-        (appScreen && appScreen.routeName) || undefined;
-    const currentScreenName = (screen && screen.routeName) || undefined;
-    const currentTabName = (tab && tab.routeName) || undefined;
+  const currentNavigatorName = rootNavigator.routeName;
+  const currentAppScreenName = (appScreen && appScreen.routeName) || undefined;
+  const currentScreenName = (screen && screen.routeName) || undefined;
+  const currentTabName = (tab && tab.routeName) || undefined;
 
-    return {
-        currentNavigatorName,
-        currentAppScreenName,
-        currentScreenName,
-        currentTabName,
-    };
+  return {
+    currentNavigatorName,
+    currentAppScreenName,
+    currentScreenName,
+    currentTabName,
+  };
 };
 
 class NavigatorWithState extends React.PureComponent<Props> {
-    componentDidMount() {
-        this.props.onScreenChange(
-            INITIAL_APP_ROUTE_NAME,
-            INITIAL_ROUTE_NAME,
-            INITIAL_ROUTE_NAME,
-        );
+  componentDidMount() {
+    this.props.onScreenChange(INITIAL_APP_ROUTE_NAME, INITIAL_ROUTE_NAME, INITIAL_ROUTE_NAME);
+  }
+
+  handleNavigationStateChange = (prevState: NavigationState, currentState: NavigationState) => {
+    const {onScreenChange} = this.props;
+
+    if (!currentState) {
+      return null;
     }
 
-    handleNavigationStateChange = (
-        prevState: NavigationState,
-        currentState: NavigationState,
-    ) => {
-        const {onScreenChange} = this.props;
+    const prevScreens = extractScreens(prevState);
+    const currentScreens = extractScreens(currentState);
 
-        if (!currentState) {
-            return null;
-        }
-
-        const prevScreens = extractScreens(prevState);
-        const currentScreens = extractScreens(currentState);
-
-        // To prevent same navigation dispatch
-        if (JSON.stringify(prevScreens) === JSON.stringify(currentScreens)) {
-            return null;
-        }
-
-        const {
-            currentNavigatorName,
-            currentAppScreenName,
-            currentScreenName,
-            currentTabName,
-        } = currentScreens;
-
-        if (!currentAppScreenName || !currentScreenName) {
-            return null;
-        }
-
-        onScreenChange(
-            currentNavigatorName,
-            currentAppScreenName,
-            currentScreenName,
-            currentTabName,
-        );
-    };
-
-    render() {
-        // @ts-ignore Bad react-navigation definition with interfaces
-        return (
-            <Navigator onNavigationStateChange={this.handleNavigationStateChange} />
-        );
+    // To prevent same navigation dispatch
+    if (JSON.stringify(prevScreens) === JSON.stringify(currentScreens)) {
+      return null;
     }
+
+    const {
+      currentNavigatorName,
+      currentAppScreenName,
+      currentScreenName,
+      currentTabName,
+    } = currentScreens;
+
+    if (!currentAppScreenName || !currentScreenName) {
+      return null;
+    }
+
+    onScreenChange(currentNavigatorName, currentAppScreenName, currentScreenName, currentTabName);
+  };
+
+  render() {
+    // @ts-ignore Bad react-navigation definition with interfaces
+    return <Navigator onNavigationStateChange={this.handleNavigationStateChange} />;
+  }
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-    onScreenChange: changeScreen,
+  onScreenChange: changeScreen,
 };
 
-export default connect(
-    null,
-    mapDispatchToProps,
-)(NavigatorWithState);
+export default connect(null, mapDispatchToProps)(NavigatorWithState);

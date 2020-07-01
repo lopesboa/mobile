@@ -4,7 +4,7 @@ import type {
   BlurEvent,
   LayoutEvent,
   FocusEvent,
-  PressEvent
+  PressEvent,
 } from 'react-native/Libraries/Types/CoreEventTypes';
 
 import {ANALYTICS_EVENT_TYPE} from '../const';
@@ -15,34 +15,34 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
 interface Props extends WithAnalyticsProps, WithVibrationProps {
-  accessible?: boolean,
-  children?: React.ReactNode,
-  delayLongPress?: number,
-  delayPressIn?: number,
-  delayPressOut?: number,
-  disabled?: boolean,
-  focusable?: boolean,
-  hitSlop?: number, /* TODO: fix type EdgeInsetsProp,*/
-  onBlur?: (event: BlurEvent) => unknown,
-  onFocus?: (event: FocusEvent) => unknown,
-  onLayout?: (event: LayoutEvent) => unknown,
-  onLongPress?: (event: PressEvent) => unknown,
-  onPress?: (event: PressEvent) => unknown,
-  onPressIn?: (event: PressEvent) => unknown,
-  onPressOut?: (event: PressEvent) => unknown,
-  testID?: string,
-  isHighlight?: boolean,
-  isWithoutFeedback?: boolean,
+  accessible?: boolean;
+  children?: React.ReactNode;
+  delayLongPress?: number;
+  delayPressIn?: number;
+  delayPressOut?: number;
+  disabled?: boolean;
+  focusable?: boolean;
+  hitSlop?: number /* TODO: fix type EdgeInsetsProp,*/;
+  onBlur?: (event: BlurEvent) => unknown;
+  onFocus?: (event: FocusEvent) => unknown;
+  onLayout?: (event: LayoutEvent) => unknown;
+  onLongPress?: (event: PressEvent) => unknown;
+  onPress?: (event: PressEvent) => unknown;
+  onPressIn?: (event: PressEvent) => unknown;
+  onPressOut?: (event: PressEvent) => unknown;
+  testID?: string;
+  isHighlight?: boolean;
+  isWithoutFeedback?: boolean;
   // for TouchableOpacity
-  activeOpacity?: number,
-  style?: ViewStyle,
+  activeOpacity?: number;
+  style?: ViewStyle;
   // Analytics
-  analyticsID: string,
-  analyticsParams?: AnalyticsEventParams
-};
+  analyticsID: string;
+  analyticsParams?: AnalyticsEventParams;
+}
 
 class Touchable extends React.PureComponent<Props> {
-  handlePress: Pick<Props, 'onPress'> = event => {
+  handlePress: Pick<Props, 'onPress'> = (event: PressEvent) => {
     const {vibration, analytics, analyticsID, analyticsParams, onPress} = this.props;
 
     if (!onPress) {
@@ -54,13 +54,13 @@ class Touchable extends React.PureComponent<Props> {
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.PRESS, {
         ...(analyticsParams || {}),
-        id: analyticsID
+        id: analyticsID,
       });
 
     onPress(event);
   };
 
-  handleLongPress: Pick<Props, 'onPress'> = event => {
+  handleLongPress: Pick<Props, 'onPress'> = (event: PressEvent) => {
     const {vibration, analytics, analyticsID, analyticsParams, onLongPress} = this.props;
 
     if (!onLongPress) {
@@ -69,11 +69,10 @@ class Touchable extends React.PureComponent<Props> {
 
     vibration.vibrate();
 
-    analytics &&
-      analytics.logEvent(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
-        ...(analyticsParams || {}),
-        id: analyticsID
-      });
+    analytics?.logEvent(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
+      ...(analyticsParams || {}),
+      id: analyticsID,
+    });
 
     onLongPress(event);
   };

@@ -17,7 +17,7 @@ export const userChoices = [
   '',
   '',
   'Waze',
-  (field4.items && field4.items[1] && field4.items[1].text) || ''
+  (field4.items && field4.items[1] && field4.items[1].text) || '',
 ];
 
 storiesOf('QuestionTemplate', module)
@@ -49,7 +49,7 @@ storiesOf('QuestionTemplate', module)
         items={[
           {...field1, name: 'inp123456789'},
           {...field2, type: undefined},
-          {...field3, name: undefined}
+          {...field3, name: undefined},
         ]}
         userChoices={[]}
         onInputChange={handleFakePress}
@@ -60,5 +60,5 @@ storiesOf('QuestionTemplate', module)
 export default {
   template,
   items,
-  userChoices
+  userChoices,
 };

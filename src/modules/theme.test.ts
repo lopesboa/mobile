@@ -8,7 +8,7 @@ describe('Theme', () => {
         left: theme.spacing.small,
         top: theme.spacing.small,
         right: theme.spacing.small,
-        bottom: theme.spacing.small
+        bottom: theme.spacing.small,
       };
 
       expect(result).toEqual(expected);
@@ -20,7 +20,7 @@ describe('Theme', () => {
         left: theme.spacing.large,
         top: theme.spacing.large,
         right: theme.spacing.large,
-        bottom: theme.spacing.large
+        bottom: theme.spacing.large,
       };
 
       expect(result).toEqual(expected);

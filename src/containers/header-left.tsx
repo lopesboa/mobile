@@ -6,7 +6,7 @@ import {BackHandler} from '../modules/back-handler';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
-interface Props extends WithVibrationProps, _HeaderBackButtonProps {};
+interface Props extends WithVibrationProps, _HeaderBackButtonProps {}
 
 class HeaderLeft extends React.PureComponent<Props> {
   componentDidMount() {

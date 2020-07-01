@@ -10,8 +10,8 @@ export const createSections = (): Array<Section> => [
     key: 'recommended',
     title: 'Recommandés pour vous',
     query: {
-      contentType: SECTION_CONTENT_TYPE.ALL
-    }
+      contentType: SECTION_CONTENT_TYPE.ALL,
+    },
   },
   {
     type: SECTION_TYPE.CARDS,
@@ -20,9 +20,9 @@ export const createSections = (): Array<Section> => [
     key: 'most-popular',
     title: 'Les plus populaires',
     query: {
-      contentType: SECTION_CONTENT_TYPE.COURSE
-    }
-  }
+      contentType: SECTION_CONTENT_TYPE.COURSE,
+    },
+  },
   // {
   //   type: SECTION_TYPE.CARDS,
   //   order: 3,

@@ -4,7 +4,7 @@ import {
   reloadApp,
   bypassAuthentication,
   tapCardOnList,
-  scrollHero
+  scrollHero,
 } from './utils';
 
 describe('Dashboard', () => {

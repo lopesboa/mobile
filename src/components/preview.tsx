@@ -2,9 +2,9 @@ import * as React from 'react';
 import {StyleSheet, View, ImageStyle} from 'react-native';
 import {
   NovaSolidAudioAudioControlPlay as PlayIcon,
-  NovaLineFilesOfficeFileOfficePdf as PDFIcon
+  NovaLineFilesOfficeFileOfficePdf as PDFIcon,
 } from '@coorpacademy/nova-icons';
-import type {LessonType} from '@types/coorp/progression-engine';
+import type {LessonType} from '../types/coorpacademy/progression-engine';
 
 import {RESOURCE_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -19,42 +19,42 @@ import Touchable from './touchable';
 import Loader from './loader';
 import ImageBackground from './image-background';
 
-export const EXTRALIFE: string = 'extralife';
+export const EXTRALIFE = 'extralife';
 
 interface Props {
-  type: LessonType | typeof EXTRALIFE,
-  source: File | SourceURI,
-  isLoading?: boolean,
-  hasOverlay?: boolean,
-  iconWidth?: number,
-  iconHeight?: number,
-  isIconVisible?: boolean,
-  onPress?: () => Promise<void> | void,
-  testID?: string,
-  style?: ImageStyle
-};
+  type: LessonType | typeof EXTRALIFE;
+  source: File | SourceURI;
+  isLoading?: boolean;
+  hasOverlay?: boolean;
+  iconWidth?: number;
+  iconHeight?: number;
+  isIconVisible?: boolean;
+  onPress?: () => Promise<void> | void;
+  testID?: string;
+  style?: ImageStyle;
+}
 
 const styles = StyleSheet.create({
   image: {
-    flex: 1
+    flex: 1,
   },
   pdf: {
-    width: '45%'
+    width: '45%',
   },
   pdfIcon: {
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   extralifeTxtContainer: {
-    paddingTop: theme.spacing.base
+    paddingTop: theme.spacing.base,
   },
   extralifeTxt: {
     fontSize: theme.fontSize.regular,
     color: theme.colors.white,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   extralifeTxtBold: {
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 const Preview = ({
@@ -67,7 +67,7 @@ const Preview = ({
   isIconVisible = true,
   onPress,
   testID = 'preview',
-  style
+  style,
 }: Props) => {
   const Wrapper = hasOverlay ? Overlay : React.Fragment;
 

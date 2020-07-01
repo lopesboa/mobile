@@ -10,22 +10,22 @@ import type {Action as ErrorAction} from '../actions/ui/errors';
 
 type Action =
   | StoreErrorAction<{
-      type: string
+      type: string;
     }>
   | ErrorAction<void>;
 type State = StoreState;
 
 const createMiddleware = (): Middleware<State, Action, Dispatch<Action>> => ({
   dispatch,
-  getState
+  getState,
 }: MiddlewareAPI<State, Action, Dispatch<Action>>) => (
-  next: Dispatch<Action>
+  next: Dispatch<Action>,
 ): Dispatch<Action> => (action: Action) => {
   if (action.payload && action.payload instanceof ForbiddenError) {
     dispatch(
       showError({
-        type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
-      })
+        type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED,
+      }),
     );
   }
 

@@ -1,3 +1,4 @@
+import {by, expect, element} from 'detox';
 import {reloadApp, bypassAuthentication, tapCardOnList, waitForVisible} from './utils';
 
 const selectQCMRightDragItem = async (el: Detox.Element) => {
@@ -24,25 +25,25 @@ describe('QCM Drag', () => {
   });
 
   it('should see only choice item', async () => {
-    await weExpect(element(by.id(`choice-1-unselected`))).toBeVisible();
-    await weExpect(element(by.id(`choice-1-selected`))).toBeNotVisible();
+    await expect(element(by.id(`choice-1-unselected`))).toBeVisible();
+    await expect(element(by.id(`choice-1-selected`))).toBeNotVisible();
   });
 
   it('select some items and see them inside the dropzone', async () => {
     await selectQCMRightDragItem(element);
-    await weExpect(element(by.id(`choice-1-unselected`))).toBeNotVisible();
-    await weExpect(element(by.id(`choice-2-unselected`))).toBeNotVisible();
-    await weExpect(element(by.id(`choice-1-selected`))).toBeVisible();
-    await weExpect(element(by.id(`choice-2-selected`))).toBeVisible();
+    await expect(element(by.id(`choice-1-unselected`))).toBeNotVisible();
+    await expect(element(by.id(`choice-2-unselected`))).toBeNotVisible();
+    await expect(element(by.id(`choice-1-selected`))).toBeVisible();
+    await expect(element(by.id(`choice-2-selected`))).toBeVisible();
   });
 
   it('should be able to unselect some items from dropzone', async () => {
     await element(by.id(`choice-1-selected`)).tap();
     await element(by.id(`choice-2-selected`)).tap();
-    await weExpect(element(by.id(`choice-1-unselected`))).toBeVisible();
-    await weExpect(element(by.id(`choice-2-unselected`))).toBeVisible();
-    await weExpect(element(by.id(`choice-1-selected`))).toBeNotVisible();
-    await weExpect(element(by.id(`choice-2-selected`))).toBeNotVisible();
+    await expect(element(by.id(`choice-1-unselected`))).toBeVisible();
+    await expect(element(by.id(`choice-2-unselected`))).toBeVisible();
+    await expect(element(by.id(`choice-1-selected`))).toBeNotVisible();
+    await expect(element(by.id(`choice-2-selected`))).toBeNotVisible();
   });
 
   it('should be able to select few items and give the CORRECT answer', async () => {

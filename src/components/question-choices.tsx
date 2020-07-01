@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import type {QuestionType, Choice} from '@types/coorp/progression-engine';
+import type {QuestionType, Choice} from '../types/coorpacademy/progression-engine';
 
 import {QUESTION_TYPE, QUESTION_CHOICE_INPUT_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -13,41 +13,41 @@ import Space from './space';
 import QuestionDraggable from './question-draggable';
 
 export interface Props {
-  type: QuestionType,
-  isDisabled?: boolean,
-  template?: string,
-  items: Array<Choice>,
-  userChoices: Array<string>,
-  onItemPress: (item: Choice) => void,
-  onSliderChange: (value: number) => void,
-  min?: Pick<QuestionSliderProps, 'min'>,
-  max?: Pick<QuestionSliderProps, 'max'>,
-  unit?: Pick<QuestionSliderProps, 'unit'>,
-  step?: Pick<QuestionSliderProps, 'step'>,
-  value?: Pick<QuestionSliderProps, 'value'>,
-  onItemInputChange: (item: Choice, value: string) => void,
-  onInputValueChange: (value: string) => void
-};
+  type: QuestionType;
+  isDisabled?: boolean;
+  template?: string;
+  items: Array<Choice>;
+  userChoices: Array<string>;
+  onItemPress: (item: Choice) => void;
+  onSliderChange: (value: number) => void;
+  min?: Pick<QuestionSliderProps, 'min'>;
+  max?: Pick<QuestionSliderProps, 'max'>;
+  unit?: Pick<QuestionSliderProps, 'unit'>;
+  step?: Pick<QuestionSliderProps, 'step'>;
+  value?: Pick<QuestionSliderProps, 'value'>;
+  onItemInputChange: (item: Choice, value: string) => void;
+  onInputValueChange: (value: string) => void;
+}
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 
 const styles = StyleSheet.create({
   cards: {
     flexDirection: 'row',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   card: {
-    flex: 1
+    flex: 1,
   },
   template: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   part: {
     padding: theme.spacing.small,
-    marginBottom: theme.spacing.tiny
+    marginBottom: theme.spacing.tiny,
   },
   field: {
     borderWidth: 1,
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeight.bold,
     borderRadius: theme.radius.common,
     backgroundColor: theme.colors.white,
-    fontSize: theme.fontSize.medium
+    fontSize: theme.fontSize.medium,
   },
   text: {
     paddingHorizontal: theme.spacing.tiny,
     color: theme.colors.black,
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 class QuestionChoices extends React.PureComponent<Props> {
@@ -84,7 +84,7 @@ class QuestionChoices extends React.PureComponent<Props> {
       value,
       step,
       onSliderChange,
-      onInputValueChange
+      onInputValueChange,
     } = this.props;
 
     const isSelected = (choice: Choice): boolean =>

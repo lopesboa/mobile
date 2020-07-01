@@ -3,14 +3,13 @@ import _url from 'url';
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {withNavigation, NavigationScreenProps } from 'react-navigation';
+import {withNavigation, NavigationScreenProps} from 'react-navigation';
 import dynamicLinks from '@react-native-firebase/dynamic-links';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import {getToken} from '../redux/utils/state-extract';
 import {AUTHENTICATION_TYPE} from '../const';
 import {signIn, signOut} from '../redux/actions/authentication';
 import type {State as TokenState} from '../redux/reducers/authentication/token';
-
 
 interface ConnectedStateProps {
   token: TokenState;
@@ -24,16 +23,13 @@ interface ConnectedDispatchProps {
 const UNIVERSAL_LINKS_PATTERN = /(.*)\/open-app/;
 
 function withUniversalLinks(WrappedComponent: React.ElementType<any>): T {
-  interface Props
-    extends NavigationScreenProps,
-      ConnectedStateProps,
-      ConnectedDispatchProps {}
+  interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
   class ComponentWithUniversalLinks extends React.PureComponent<Props> {
     subscriber: (() => void) | void;
 
     async componentDidMount() {
-      this.subscriber = await dynamicLinks().onLink(l => this.handleOpenURL(l.url));
+      this.subscriber = await dynamicLinks().onLink((l) => this.handleOpenURL(l.url));
 
       const link = await dynamicLinks().getInitialLink();
       if (link) {
@@ -78,26 +74,20 @@ function withUniversalLinks(WrappedComponent: React.ElementType<any>): T {
     }
   }
 
-  const getTokenState = createSelector(
-    [getToken],
-    token => token
-  );
+  const getTokenState = createSelector([getToken], (token) => token);
 
   const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-    token: getTokenState(state)
+    token: getTokenState(state),
   });
 
   const mapDispatchToProps: ConnectedDispatchProps = {
     signIn,
-    signOut
+    signOut,
   };
 
   return hoistNonReactStatic(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(withNavigation(ComponentWithUniversalLinks)),
-    WrappedComponent
+    connect(mapStateToProps, mapDispatchToProps)(withNavigation(ComponentWithUniversalLinks)),
+    WrappedComponent,
   );
 }
 

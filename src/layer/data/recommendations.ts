@@ -1,49 +1,42 @@
-import decode from "jwt-decode";
+import decode from 'jwt-decode';
 
-import fetch from "../../modules/fetch";
-import {get as getToken} from "../../utils/local-token";
-import type {JWT} from "../../types";
-import translations from "../../translations";
-import {__E2E__} from "../../modules/environment";
-import {
-  createDisciplinesCards,
-  createChaptersCards,
-} from "../../__fixtures__/cards";
-import disciplinesBundle from "../../__fixtures__/discipline-bundle";
-import chaptersBundle from "../../__fixtures__/chapter-bundle";
-import {buildUrlQueryParams} from "../../modules/uri";
-import type {QueryParams} from "../../modules/uri";
-import {saveAndRefreshCards} from "./cards";
-import type {DisciplineCard, ChapterCard} from "./_types";
+import fetch from '../../modules/fetch';
+import {get as getToken} from '../../utils/local-token';
+import type {JWT} from '../../types';
+import translations from '../../translations';
+import {__E2E__} from '../../modules/environment';
+import {createDisciplinesCards, createChaptersCards} from '../../__fixtures__/cards';
+import disciplinesBundle from '../../__fixtures__/discipline-bundle';
+import chaptersBundle from '../../__fixtures__/chapter-bundle';
+import {buildUrlQueryParams} from '../../modules/uri';
+import type {QueryParams} from '../../modules/uri';
+import {saveAndRefreshCards} from './cards';
+import type {DisciplineCard, ChapterCard} from './_types';
 
-const fetchRecommendations = async (): Promise<
-  Array<DisciplineCard | ChapterCard>
-> => {
+const fetchRecommendations = async (): Promise<Array<DisciplineCard | ChapterCard>> => {
   const language = translations.getLanguage();
   const token = await getToken();
 
   if (!token) {
-    throw new Error("Invalid token");
+    throw new Error('Invalid token');
   }
 
   let cards;
 
   if (__E2E__) {
     const disciplines = Object.keys(disciplinesBundle.disciplines).map(
-      key => disciplinesBundle.disciplines[key],
+      (key) => disciplinesBundle.disciplines[key],
     );
     const chapters = Object.keys(chaptersBundle.chapters).map(
-      key => chaptersBundle.chapters[key],
+      (key) => chaptersBundle.chapters[key],
     );
 
-    cards = createDisciplinesCards(disciplines).concat(
-      createChaptersCards(chapters),
-    );
+    cards = createDisciplinesCards(disciplines).concat(createChaptersCards(chapters));
   } else {
     const jwt: JWT = decode(token);
 
     const query: QueryParams = {
-      contentType: "all",
+      contentType: 'all',
       lang: language,
     };
 
@@ -54,9 +47,7 @@ const fetchRecommendations = async (): Promise<
       },
     );
 
-    const {
-      hits,
-    }: {hits: Array<DisciplineCard | ChapterCard>} = await response.json();
+    const {hits}: {hits: Array<DisciplineCard | ChapterCard>} = await response.json();
 
     cards = hits;
   }
@@ -65,9 +56,7 @@ const fetchRecommendations = async (): Promise<
 };
 
 // @todo replace fetchRecommendation() by find(type: string, ref: string)
-const fetchRecommendation = async (): Promise<
-  DisciplineCard | ChapterCard | void
-> => {
+const fetchRecommendation = async (): Promise<DisciplineCard | ChapterCard | void> => {
   const cards = await fetchRecommendations();
   return cards[0];
 };

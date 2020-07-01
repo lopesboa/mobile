@@ -5,12 +5,12 @@ import type {State} from './video';
 
 describe('Video', () => {
   const expectedInitialState: State = {
-    isFullScreen: false
+    isFullScreen: false,
   };
 
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -21,12 +21,12 @@ describe('Video', () => {
     it('Default', () => {
       const action: ToggleAction = {
         type: TOGGLE_FULLSCREEN,
-        payload: false
+        payload: false,
       };
       const result = reducer(undefined, action);
       const expected: State = {
         ...expectedInitialState,
-        isFullScreen: false
+        isFullScreen: false,
       };
       expect(result).toEqual(expected);
     });

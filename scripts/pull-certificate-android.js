@@ -5,7 +5,7 @@ const {S3} = require('aws-sdk');
 const {
   ACCESS_KEY_ID: accessKeyId,
   SECRET_ACCESS_KEY: secretAccessKey,
-  KEYSTORE_FILE: keystoreFile
+  KEYSTORE_FILE: keystoreFile,
 } = process.env || {};
 
 if (!accessKeyId) {
@@ -22,12 +22,12 @@ if (!keystoreFile) {
 
 const s3 = new S3({
   accessKeyId,
-  secretAccessKey
+  secretAccessKey,
 });
 
 const params = {
   Bucket: 'secure.coorpacademy.com',
-  Key: 'cert/mobile/coorpacademy.jks'
+  Key: 'cert/mobile/coorpacademy.jks',
 };
 
 // eslint-disable-next-line no-console

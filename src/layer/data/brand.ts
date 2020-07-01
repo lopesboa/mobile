@@ -26,7 +26,7 @@ export type Config = {
       images: {
         'logo-mobile': string;
       };
-    }
+    },
   ];
   progressionEngine: ProgressionEngineVersions;
   youtube: {
@@ -44,8 +44,8 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
 
   const response = await fetch(`${jwt.host}/config`, {
     headers: {
-      authorization: token
-    }
+      authorization: token,
+    },
   });
 
   const {
@@ -56,7 +56,7 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     slider,
     supportedLngs: supportedLanguages,
     defaultLanguage,
-    env
+    env,
   }: Config = await response.json();
 
   return {
@@ -64,20 +64,20 @@ export const fetchBrand = async (token: string): Promise<Brand> => {
     host: brand.baseUrl,
     contentCategoryName: brand.contentCategoryName,
     colors: {
-      primary: themes[0].common.primary
+      primary: themes[0].common.primary,
     },
     images: {
-      'logo-mobile': themes[0].images['logo-mobile']
+      'logo-mobile': themes[0].images['logo-mobile'],
     },
     hero: slider.start.image,
     progressionEngine,
     youtube,
     supportedLanguages,
     defaultLanguage,
-    env
+    env,
   };
 };
 
 export default {
-  fetchBrand
+  fetchBrand,
 };

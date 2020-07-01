@@ -12,7 +12,7 @@ import {
   UserContext,
   Component as UserProvider,
   mapStateToProps,
-  initialState
+  initialState,
 } from './user-provider';
 
 import type {ConnectedStateProps} from './user-provider';
@@ -22,7 +22,7 @@ const user = createUser();
 storiesOf('UserProvider', module).add('Default', () => (
   <UserProvider user={user}>
     <UserContext.Consumer>
-      {_user => (
+      {(_user) => (
         <React.Fragment>
           <Text>FamilyName: {_user && _user.familyName}</Text>
           <Text>GivenName: {_user && _user.givenName}</Text>
@@ -40,8 +40,8 @@ if (__TEST__) {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: ''
-        }
+          ref: '',
+        },
       });
 
       const state = createStoreState({
@@ -50,7 +50,7 @@ if (__TEST__) {
         chapters: [],
         slides: [],
         progression,
-        authentication: createAuthenticationState({user})
+        authentication: createAuthenticationState({user}),
       });
 
       const result = mapStateToProps(state);
@@ -62,8 +62,8 @@ if (__TEST__) {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: ''
-        }
+          ref: '',
+        },
       });
       const state = createStoreState({
         levels: [],
@@ -75,8 +75,8 @@ if (__TEST__) {
         authentication: {
           brand: null,
           user: null,
-          token: null
-        }
+          token: null,
+        },
       });
 
       const expectedResponse: ConnectedStateProps = {user: initialState};

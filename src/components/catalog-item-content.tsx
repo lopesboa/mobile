@@ -7,14 +7,14 @@ import CatalogItemFooter from './catalog-item-footer';
 import CatalogItemAuthor from './catalog-item-author';
 
 interface Props {
-  item?: DisciplineCard | ChapterCard,
-  size?: 'cover' | 'hero',
-  testID?: string
-};
+  item?: DisciplineCard | ChapterCard;
+  size?: 'cover' | 'hero';
+  testID?: string;
+}
 
 const CatalogItemContent = ({item, size, testID = 'catalog-item-content'}: Props) => (
   <BrandThemeContext.Consumer>
-    {brandTheme => {
+    {(brandTheme) => {
       const author = item && getAuthor(item);
 
       return (

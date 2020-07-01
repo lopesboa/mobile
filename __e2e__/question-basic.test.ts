@@ -1,3 +1,4 @@
+import {by, expect, element} from 'detox';
 import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 describe('Basic Question', () => {
@@ -12,16 +13,16 @@ describe('Basic Question', () => {
 
   it('should see the question elements', async () => {
     await waitForExist('question');
-    await weExpect(element(by.id('question-title'))).toBeVisible();
-    await weExpect(element(by.id('explanation'))).toBeVisible();
-    await weExpect(element(by.id('question-input-text'))).toBeVisible();
+    await expect(element(by.id('question-title'))).toBeVisible();
+    await expect(element(by.id('explanation'))).toBeVisible();
+    await expect(element(by.id('question-input-text'))).toBeVisible();
   });
 
   it('should fill text input', async () => {
     await element(by.id('question-input-text')).replaceText(
-      'Coucou toi qui essaie de debugger les tests e2e'
+      'Coucou toi qui essaie de debugger les tests e2e',
     );
-    await weExpect(element(by.id('button-validate'))).toBeVisible();
+    await expect(element(by.id('button-validate'))).toBeVisible();
   });
 
   describe('Negative correction', () => {

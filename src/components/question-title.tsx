@@ -12,8 +12,8 @@ interface Props {
 const styles = StyleSheet.create({
   text: {
     color: theme.colors.black,
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 const QuestionTitle = ({children, isTextCentered}: Props) => {

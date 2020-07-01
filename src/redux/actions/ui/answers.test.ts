@@ -7,14 +7,14 @@ const progression = createProgression({
   engine: ENGINE.LEARNER,
   progressionContent: {
     type: CONTENT_TYPE.SLIDE,
-    ref: 'foobar'
+    ref: 'foobar',
   },
   state: {
     nextContent: {
       type: CONTENT_TYPE.SLIDE,
-      ref: 'dummySlideRef'
-    }
-  }
+      ref: 'dummySlideRef',
+    },
+  },
 });
 
 const godMode = true;
@@ -28,7 +28,7 @@ const state = createStoreState({
   progression,
   godMode,
   fastSlide,
-  isValidating: false
+  isValidating: false,
 });
 
 describe('Answers', () => {
@@ -39,7 +39,7 @@ describe('Answers', () => {
         const {createTemplate} = require('../../../__fixtures__/questions');
         const {createSlide} = require('../../../__fixtures__/slides');
         const {
-          createProgression: _createProgression
+          createProgression: _createProgression,
         } = require('../../../__fixtures__/progression');
 
         const _question = createTemplate({title: 'Foobar'});
@@ -48,21 +48,21 @@ describe('Answers', () => {
           engine: 'learner',
           progressionContent: {
             type: 'slide',
-            ref: 'foobar'
+            ref: 'foobar',
           },
           state: {
             nextContent: {
               type: 'slide',
-              ref: 'dummySlideRef'
-            }
-          }
+              ref: 'dummySlideRef',
+            },
+          },
         });
 
         return {
           validateAnswer: jest.fn(() => () => Promise.resolve({})),
           getQuestionType: jest.fn(() => _question.type),
           getPreviousSlide: jest.fn(() => _slide),
-          getCurrentProgression: jest.fn(() => _progression)
+          getCurrentProgression: jest.fn(() => _progression),
         };
       });
     });
@@ -77,8 +77,8 @@ describe('Answers', () => {
 
       const options = {
         services: {
-          Analytics: createFakeAnalytics()
-        }
+          Analytics: createFakeAnalytics(),
+        },
       };
 
       // @ts-ignore
@@ -90,8 +90,8 @@ describe('Answers', () => {
         ANALYTICS_EVENT_TYPE.VALIDATE_ANSWER,
         {
           questionType: 'template',
-          isCorrect: 1
-        }
+          isCorrect: 1,
+        },
       );
     });
   });

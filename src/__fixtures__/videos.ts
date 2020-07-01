@@ -1,5 +1,5 @@
-import type {VideoProvider, VideoTrack, VideoTrackType} from '@types/coorp/player-store';
 import {VIDEO_TRACK_KIND} from '@coorpacademy/player-store';
+import type {VideoProvider, VideoTrack, VideoTrackType} from '../types/coorpacademy/player-store';
 
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 
@@ -19,20 +19,20 @@ export const createVideoTracks = (id: string, type?: VideoTrackType): Array<Vide
     kind: VIDEO_TRACK_KIND.CAPTIONS,
     file: 'https://content.jwplatform.com/tracks/foo.srt',
     label: 'fr',
-    default: true
+    default: true,
   },
   {
     kind: VIDEO_TRACK_KIND.CAPTIONS,
     file: 'https://content.jwplatform.com/tracks/bar.srt',
-    label: 'en'
+    label: 'en',
   },
   {
     kind: VIDEO_TRACK_KIND.CAPTIONS,
     file: 'https://content.jwplatform.com/tracks/baz.srt',
-    label: 'de'
+    label: 'de',
   },
   {
     kind: VIDEO_TRACK_KIND.THUMBNAILS,
-    file: 'https://content.jwplatform.com/strips/qux.vtt'
-  }
+    file: 'https://content.jwplatform.com/strips/qux.vtt',
+  },
 ];

@@ -6,7 +6,7 @@ describe('Answers', () => {
     const initialState = false;
     const action = {
       type: 'NOT_A_VALIDE_ACTION_TYPE',
-      payload: true
+      payload: true,
     };
     // @ts-ignore - not a matching Action
     const result = reducer(initialState, action);
@@ -17,7 +17,7 @@ describe('Answers', () => {
     const initialState = false;
     const action = {
       type: VALIDATE_ANSWER,
-      payload: true
+      payload: true,
     };
     const result = reducer(initialState, action);
     expect(result).toEqual(true);

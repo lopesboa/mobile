@@ -16,8 +16,8 @@ const qcm = createQCM({media: image});
 const lessons = [
   createVideo({
     ref: 'les_1',
-    description: 'First video'
-  })
+    description: 'First video',
+  }),
 ];
 
 const bundledDiscipline: BundledDiscipline = {
@@ -25,47 +25,47 @@ const bundledDiscipline: BundledDiscipline = {
     adaptive_dis_1: createDiscipline({
       ref: 'adaptive_dis_1',
       levels: [level],
-      name: 'Adaptive: course'
-    })
+      name: 'Adaptive: course',
+    }),
   },
   chapters: {
     adaptive_cha_1: createChapter({
       ref: 'adaptive_cha_1',
       name: 'Adaptive: chapter',
-      isConditional: true
-    })
+      isConditional: true,
+    }),
   },
   slides: {
     adaptive_sli_1: createSlide({
       ref: 'adaptive_sli_1',
       chapterId: 'adaptive_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     adaptive_sli_2: createSlide({
       ref: 'adaptive_sli_2',
       chapterId: 'adaptive_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     adaptive_sli_3: createSlide({
       ref: 'adaptive_sli_3',
       chapterId: 'adaptive_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     adaptive_sli_4: createSlide({
       ref: 'adaptive_sli_4',
       chapterId: 'adaptive_cha_1',
       question: qcm,
-      lessons
-    })
+      lessons,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledDiscipline;

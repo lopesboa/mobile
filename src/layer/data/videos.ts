@@ -1,21 +1,14 @@
-import decode from "jwt-decode";
-import type {
-  VideoProvider,
-  VideoTrack,
-  VideoTrackType,
-} from "@coorpacademy/types/player-store";
-import {VIDEO_TRACK_TYPE} from "@coorpacademy/player-store";
+import decode from 'jwt-decode';
+import type {VideoProvider, VideoTrack, VideoTrackType} from '@coorpacademy/types/player-store';
+import {VIDEO_TRACK_TYPE} from '@coorpacademy/player-store';
 
-import {createVideoUri, createVideoTracks} from "../../__fixtures__/videos";
-import fetch from "../../modules/fetch";
-import {__E2E__} from "../../modules/environment";
-import type {JWT} from "../../types";
-import {get as getToken} from "../../utils/local-token";
+import {createVideoUri, createVideoTracks} from '../../__fixtures__/videos';
+import fetch from '../../modules/fetch';
+import {__E2E__} from '../../modules/environment';
+import type {JWT} from '../../types';
+import {get as getToken} from '../../utils/local-token';
 
-export const findUriById = async (
-  id: string,
-  provider: VideoProvider,
-): Promise<string> => {
+export const findUriById = async (id: string, provider: VideoProvider): Promise<string> => {
   if (__E2E__) {
     return createVideoUri(id, provider);
   }
@@ -23,19 +16,16 @@ export const findUriById = async (
   const token = await getToken();
 
   if (!token) {
-    throw new Error("Invalid token");
+    throw new Error('Invalid token');
   }
 
   const jwt: JWT = decode(token);
 
-  const response = await fetch(
-    `${jwt.host}/api/v2/videos/${id}/provider/${provider}`,
-    {
-      headers: {
-        authorization: token,
-      },
+  const response = await fetch(`${jwt.host}/api/v2/videos/${id}/provider/${provider}`, {
+    headers: {
+      authorization: token,
     },
-  );
+  });
 
   const {url} = await response.json();
 
@@ -53,19 +43,16 @@ export const findTracksById = async (
   const token = await getToken();
 
   if (!token) {
-    throw new Error("Invalid token");
+    throw new Error('Invalid token');
   }
 
   const jwt: JWT = decode(token);
 
-  const response = await fetch(
-    `${jwt.host}/api/v2/subtitles/video/${id}/${type}`,
-    {
-      headers: {
-        authorization: token,
-      },
+  const response = await fetch(`${jwt.host}/api/v2/subtitles/video/${id}/${type}`, {
+    headers: {
+      authorization: token,
     },
-  );
+  });
 
   return response.json();
 };

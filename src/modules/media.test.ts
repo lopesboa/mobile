@@ -6,7 +6,7 @@ import {
   getMediaPoster,
   getMediaType,
   getVideoProvider,
-  isMediaSupported
+  isMediaSupported,
 } from './media';
 
 describe('media', () => {
@@ -28,7 +28,7 @@ describe('media', () => {
       const result = getMediaUrl({...image, src: undefined});
 
       expect(result).toEqual(
-        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain'
+        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain',
       );
     });
 
@@ -36,7 +36,7 @@ describe('media', () => {
       const result = getMediaUrl(image);
 
       expect(result).toBe(
-        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain'
+        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain',
       );
     });
 
@@ -44,7 +44,7 @@ describe('media', () => {
       const result = getMediaUrl(video);
 
       expect(result).toBe(
-        'https://player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075'
+        'https://player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       );
     });
 
@@ -53,11 +53,11 @@ describe('media', () => {
         type: 'video',
         mimeType: 'application/vimeo',
         url: '//player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4',
-        src: undefined
+        src: undefined,
       });
 
       expect(result).toBe(
-        'https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4'
+        'https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4',
       );
     });
 
@@ -66,7 +66,7 @@ describe('media', () => {
       const _video = {
         ...video,
         mimeType: 'application/jwplayer',
-        videoId: videoId
+        videoId: videoId,
       };
       const result = getMediaUrl(_video);
       expect(result).toEqual('https://content.jwplatform.com/videos/foo.mp4');
@@ -80,7 +80,7 @@ describe('media', () => {
     it('should return the URL -- PDF  case ', () => {
       const result = getMediaUrl(pdf);
       expect(result).toBe(
-        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain'
+        'https://api.coorpacademy.com/api-service/medias?url=https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg&h=500&w=500&q=90&m=contain',
       );
     });
   });
@@ -89,7 +89,7 @@ describe('media', () => {
     it('should return the POSTER -- VIDEO case ', () => {
       const result = getMediaPoster(video);
       expect(result).toBe(
-        'https://player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075'
+        'https://player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
       );
     });
 
@@ -154,7 +154,7 @@ describe('media', () => {
       // @ts-ignore volontary wrong media
       const result = isMediaSupported({
         ...video,
-        type: 'foo'
+        type: 'foo',
       });
 
       expect(result).toBeFalsy;

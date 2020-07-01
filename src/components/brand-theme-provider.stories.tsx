@@ -11,7 +11,7 @@ import {
   BrandThemeContext,
   Component as BrandThemeProvider,
   mapStateToProps,
-  initialState
+  initialState,
 } from './brand-theme-provider';
 
 const brand = createBrand({});
@@ -19,7 +19,7 @@ const brand = createBrand({});
 storiesOf('BrandThemeProvider', module).add('Default', () => (
   <BrandThemeProvider brand={brand}>
     <BrandThemeContext.Consumer>
-      {brandTheme => <Text>{JSON.stringify(brandTheme, null, '\t')}</Text>}
+      {(brandTheme) => <Text>{JSON.stringify(brandTheme, null, '\t')}</Text>}
     </BrandThemeContext.Consumer>
   </BrandThemeProvider>
 ));
@@ -31,8 +31,8 @@ if (__TEST__) {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: ''
-        }
+          ref: '',
+        },
       });
       const state = createStoreState({
         levels: [],
@@ -40,7 +40,7 @@ if (__TEST__) {
         chapters: [],
         slides: [],
         progression,
-        authentication: createAuthenticationState({brand})
+        authentication: createAuthenticationState({brand}),
       });
 
       const result = mapStateToProps(state);
@@ -52,8 +52,8 @@ if (__TEST__) {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: ''
-        }
+          ref: '',
+        },
       });
       const state = createStoreState({
         levels: [],
@@ -61,7 +61,7 @@ if (__TEST__) {
         chapters: [],
         slides: [],
         progression,
-        authentication: createAuthenticationState({brand: null})
+        authentication: createAuthenticationState({brand: null}),
       });
 
       const result = mapStateToProps(state);

@@ -7,12 +7,11 @@ import {
   getCurrentSlide,
   getLives,
   hasViewedAResourceAtThisStep as _hasViewedAResourceAtThisStep,
-  getCurrentProgressionId
+  getCurrentProgressionId,
 } from '@coorpacademy/player-store';
-import type {Context} from '@types/coorp/progression-engine';
 import {ROLES, SCOPES, hasRole} from '@coorpacademy/acl';
 import decode from 'jwt-decode';
-import {$PropertyType} from "utility-types";
+import type {Context} from '../../types/coorpacademy/progression-engine';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
 import type {Section, ProgressionEngineVersions, PermissionStatus, ErrorType} from '../../types';
@@ -74,7 +73,7 @@ export const getBrandDefaultLanguage = (state: StoreState): string | void => {
 };
 
 export const getPermissionStatus = (type: PermissionType) => (
-  state: StoreState
+  state: StoreState,
 ): PermissionStatus | void => state.permissions[type];
 
 export const getBestRank = (state: StoreState): string | null => {
@@ -152,7 +151,7 @@ export const isGodModeUser = (state: StoreState): boolean => {
   return hasRole(SCOPES.MOOC(brand.name), ROLES.GODMODE, decode(token));
 };
 
-export const getQuestion = (state: StoreState): $PropertyType<Slide, 'question'> | void => {
+export const getQuestion = (state: StoreState): Pick<Slide, 'question'> | void => {
   const currentSlide = getCurrentSlide(state);
 
   return currentSlide ? currentSlide.question : undefined;
@@ -221,11 +220,11 @@ export const hasSuccessfullyFinished = (state: StoreState): boolean => {
 };
 
 type ContentCorrectionInfo = {
-  isAdaptive: boolean,
-  progressionId: string,
-  hasContext: boolean,
-  isContentFinished: boolean,
-  isCorrect: boolean
+  isAdaptive: boolean;
+  progressionId: string;
+  hasContext: boolean;
+  isContentFinished: boolean;
+  isCorrect: boolean;
 };
 
 export const getContentCorrectionInfo = (state: StoreState): ContentCorrectionInfo => {
@@ -245,6 +244,6 @@ export const getContentCorrectionInfo = (state: StoreState): ContentCorrectionIn
     isCorrect:
       !isAdaptive && _isContentFinished
         ? isContentFinishedSuccessfully
-        : hasSuccessfullyFinished(state)
+        : hasSuccessfullyFinished(state),
   };
 };

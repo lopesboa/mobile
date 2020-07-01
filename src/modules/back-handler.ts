@@ -16,7 +16,7 @@ export const TestBackHandler = (() => {
       exitApp: jest.fn(),
       fireEvent(eventName) {
         TestBackHandlerEvents[eventName]();
-      }
+      },
     };
   }
 })();

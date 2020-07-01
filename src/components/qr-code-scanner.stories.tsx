@@ -17,7 +17,7 @@ if (__TEST__) {
         const handleScan = jest.fn();
         const component = renderer.create(<QRCodeScanner hasPermission onScan={handleScan} />);
         // hack to retrieve the QRCode-scanner without testID
-        const qrCodeScanner = component.root.find(el => el.props.onRead);
+        const qrCodeScanner = component.root.find((el) => el.props.onRead);
         qrCodeScanner.props.onRead({data: 'foobarbaz'});
         expect(handleScan.mock.calls.length).toBe(1);
         expect(handleScan.mock.calls[0]).toEqual(['foobarbaz']);
@@ -27,7 +27,7 @@ if (__TEST__) {
         const handleScan = jest.fn();
         const component = renderer.create(<QRCodeScanner hasPermission onScan={handleScan} />);
         // hack to retrieve the QRCode-scanner without testID
-        const qrCodeScanner = component.root.find(el => el.props.onRead);
+        const qrCodeScanner = component.root.find((el) => el.props.onRead);
         qrCodeScanner.props.onRead({});
         expect(handleScan.mock.calls.length).toBe(1);
         expect(handleScan.mock.calls[0]).toEqual([undefined]);

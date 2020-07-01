@@ -7,10 +7,10 @@ import {
   getEngineConfig,
   getResourceToPlay,
   selectResource,
-  getCurrentSlide
+  getCurrentSlide,
 } from '@coorpacademy/player-store';
 
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 
 import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
@@ -25,22 +25,20 @@ export interface ConnectedStateProps {
   resources: Array<Resource>;
   currentResource?: string;
   starsGranted: number;
-};
+}
 
 interface ConnectedDispatchProps {
   play: typeof play;
   selectResource: typeof selectResource;
-};
-
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
-
 
 class LessonScreen extends React.PureComponent<Props> {
   handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     };
 
     this.props.play();
@@ -79,42 +77,39 @@ class LessonScreen extends React.PureComponent<Props> {
 
 const getHeaderState: (state: StoreState) => string | void = createSelector(
   [getCurrentSlide],
-  slide => slide && slide.question && slide.question.header
+  (slide) => slide && slide.question && slide.question.header,
 );
 
 const getResourcesState: (state: StoreState) => Array<Resource> = createSelector(
   [getCurrentSlide],
-  slide => {
+  (slide) => {
     const lessons = (slide && slide.lessons) || [];
 
-    return lessons.map(mapToResource).filter(lesson => lesson.url);
-  }
+    return lessons.map(mapToResource).filter((lesson) => lesson.url);
+  },
 );
 
 const getCurrentResourceState: typeof getResourceToPlay = createSelector(
   [getResourceToPlay],
-  resource => resource
+  (resource) => resource,
 );
 
 const getStarsGrantedState: (state: StoreState) => number = createSelector(
   [getEngineConfig],
-  engineConfig => (engineConfig && engineConfig.starsPerResourceViewed) || 0
+  (engineConfig) => (engineConfig && engineConfig.starsPerResourceViewed) || 0,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   header: getHeaderState(state),
   resources: getResourcesState(state),
   currentResource: getCurrentResourceState(state),
-  starsGranted: getStarsGrantedState(state)
+  starsGranted: getStarsGrantedState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   play,
-  selectResource
+  selectResource,
 };
 
 export {LessonScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LessonScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(LessonScreen);

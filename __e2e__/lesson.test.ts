@@ -1,10 +1,11 @@
+import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   getLessonTab,
   tapCardOnList,
   waitForExist,
-  waitForVisible
+  waitForVisible,
   // waitForNotVisible
 } from './utils';
 
@@ -21,7 +22,7 @@ describe('Lesson', () => {
     });
 
     // it('should see lesson tab icon with notification', async () => {
-    //   await weExpect(element(by.id('lesson-notification'))).toBeVisible();
+    //   await expect(element(by.id('lesson-notification'))).toBeVisible();
     // });
 
     it('should be redirected to lesson tab', async () => {
@@ -30,38 +31,38 @@ describe('Lesson', () => {
     });
 
     it('should see resources browser', async () => {
-      await weExpect(element(by.id('resources-browser'))).toExist();
+      await expect(element(by.id('resources-browser'))).toExist();
     });
 
     it('should see a stars note', async () => {
-      await weExpect(element(by.id('additional-stars-note'))).toBeVisible();
+      await expect(element(by.id('additional-stars-note'))).toBeVisible();
     });
 
     it('should see the first resource selected', async () => {
-      await weExpect(element(by.id('resource-les-1-selected'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-1-thumbnail'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-1-thumbnail-preview-container'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-1-description'))).toBeVisible();
-      await weExpect(element(by.id('lesson-resource-preview-video'))).toBeVisible();
+      await expect(element(by.id('resource-les-1-selected'))).toBeVisible();
+      await expect(element(by.id('resource-les-1-thumbnail'))).toBeVisible();
+      await expect(element(by.id('resource-les-1-thumbnail-preview-container'))).toBeVisible();
+      await expect(element(by.id('resource-les-1-description'))).toBeVisible();
+      await expect(element(by.id('lesson-resource-preview-video'))).toBeVisible();
     });
   });
 
   describe('Browser', () => {
     it('should scroll to pdf resource', async () => {
       await element(by.id('resources')).swipe('up');
-      await weExpect(element(by.id('resource-les-4'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-thumbnail-preview-container'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-description'))).toBeVisible();
+      await expect(element(by.id('resource-les-4'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-thumbnail-preview-container'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-description'))).toBeVisible();
     });
 
     it('should be able to select the pdf resource', async () => {
       await element(by.id('resource-les-4')).tap();
-      await weExpect(element(by.id('resource-les-4-selected'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-thumbnail-preview-container'))).toBeVisible();
-      await weExpect(element(by.id('resource-les-4-description'))).toBeVisible();
-      await weExpect(element(by.id('lesson-resource-pdf'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-selected'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-thumbnail'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-thumbnail-preview-container'))).toBeVisible();
+      await expect(element(by.id('resource-les-4-description'))).toBeVisible();
+      await expect(element(by.id('lesson-resource-pdf'))).toBeVisible();
     });
   });
 
@@ -78,7 +79,7 @@ describe('Lesson', () => {
     });
 
     it('should not see resources browser', async () => {
-      await weExpect(element(by.id('resources-browser'))).toBeNotVisible();
+      await expect(element(by.id('resources-browser'))).toBeNotVisible();
     });
   });
 
@@ -90,7 +91,7 @@ describe('Lesson', () => {
 
     it('should not be redirected to lesson tab', async () => {
       await getLessonTab(element).tap();
-      await weExpect(element(by.id('lesson-screen'))).toBeNotVisible();
+      await expect(element(by.id('lesson-screen'))).toBeNotVisible();
     });
   });
 });

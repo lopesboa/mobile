@@ -61,10 +61,10 @@ if (__TEST__) {
             onSettingsPress={handleFakePress}
             onLogoLongPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const icon = component.root.find(el => el.props.testID === 'search-icon');
+      const icon = component.root.find((el) => el.props.testID === 'search-icon');
       icon.props.onPress();
 
       expect(handleSearchToggle).toHaveBeenCalledTimes(1);
@@ -98,10 +98,10 @@ if (__TEST__) {
             onSearchPress={handleFakePress}
             onLogoLongPress={handleLogoLongPress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const input = component.root.find(el => el.props.testID === 'header-logo');
+      const input = component.root.find((el) => el.props.testID === 'header-logo');
       input.props.onLongPress();
 
       expect(handleLogoLongPress).toHaveBeenCalledTimes(1);

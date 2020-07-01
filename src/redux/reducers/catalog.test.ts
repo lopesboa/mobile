@@ -29,19 +29,19 @@ const dis1 = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
   levels: [],
-  title: 'First discipline'
+  title: 'First discipline',
 });
 const dis2 = createDisciplineCard({
   ref: 'dis2',
   completion: 0,
   levels: [],
-  title: 'Second discipline'
+  title: 'Second discipline',
 });
 const dis3 = createDisciplineCard({
   ref: 'dis3',
   completion: 0,
   levels: [],
-  title: 'Third discipline'
+  title: 'Third discipline',
 });
 const sections = createSections().slice(0, 2);
 
@@ -50,13 +50,13 @@ describe('Catalog', () => {
     heroRef: null,
     entities: {
       cards: {},
-      sections: {}
-    }
+      sections: {},
+    },
   };
 
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -65,11 +65,11 @@ describe('Catalog', () => {
 
   const reduceCardsExpected = {
     dis1: {
-      en: dis1
+      en: dis1,
     },
     dis2: {
-      en: dis2
-    }
+      en: dis2,
+    },
   };
 
   it('reduceCards', () => {
@@ -81,15 +81,15 @@ describe('Catalog', () => {
     [sections[0].key]: {
       en: {
         ...sections[0],
-        cardsRef: undefined
-      }
+        cardsRef: undefined,
+      },
     },
     [sections[1].key]: {
       en: {
         ...sections[1],
-        cardsRef: undefined
-      }
-    }
+        cardsRef: undefined,
+      },
+    },
   };
 
   it('reduceSections', () => {
@@ -120,8 +120,8 @@ describe('Catalog', () => {
           limit: 2,
           total: 4,
           items: sections,
-          language: 'en'
-        }
+          language: 'en',
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
@@ -129,8 +129,8 @@ describe('Catalog', () => {
         sectionsRef: reduceSectionsRefExpected,
         entities: {
           cards: {},
-          sections: reduceSectionsExpected
-        }
+          sections: reduceSectionsExpected,
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -143,15 +143,15 @@ describe('Catalog', () => {
           limit: 2,
           total: 4,
           items: sections,
-          language: 'en'
-        }
+          language: 'en',
+        },
       };
       const initialState: State = {
         ...expectedInitialState,
         entities: {
           ...expectedInitialState.entities,
-          sections: reduceSectionsExpected
-        }
+          sections: reduceSectionsExpected,
+        },
       };
       const result = reducer(initialState, action);
       const expected: State = {
@@ -159,8 +159,8 @@ describe('Catalog', () => {
         sectionsRef: reduceSectionsRefExpected,
         entities: {
           cards: {},
-          sections: reduceSectionsExpected
-        }
+          sections: reduceSectionsExpected,
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -176,8 +176,8 @@ describe('Catalog', () => {
           limit: 2,
           total: 5,
           items: [dis1, dis2],
-          language: 'en'
-        }
+          language: 'en',
+        },
       };
       const initialState: State = {
         ...expectedInitialState,
@@ -185,10 +185,10 @@ describe('Catalog', () => {
           cards: {},
           sections: {
             [sections[0].key]: {
-              en: sections[0]
-            }
-          }
-        }
+              en: sections[0],
+            },
+          },
+        },
       };
       const result = reducer(initialState, action);
       const expected: State = {
@@ -199,11 +199,11 @@ describe('Catalog', () => {
             [sections[0].key]: {
               en: {
                 ...sections[0],
-                cardsRef: reduceCardsRefExpected
-              }
-            }
-          }
-        }
+                cardsRef: reduceCardsRefExpected,
+              },
+            },
+          },
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -215,8 +215,8 @@ describe('Catalog', () => {
       searchRef: [undefined, 'dis1', 'dis2', undefined, undefined],
       entities: {
         cards: reduceCardsExpected,
-        sections: {}
-      }
+        sections: {},
+      },
     };
 
     it('Default', () => {
@@ -229,8 +229,8 @@ describe('Catalog', () => {
           total: 5,
           items: [dis1, dis2],
           language: 'en',
-          forceRefresh: true
-        }
+          forceRefresh: true,
+        },
       };
       const result = reducer(expectedInitialState, action);
 
@@ -247,8 +247,8 @@ describe('Catalog', () => {
           total: 5,
           items: [dis3],
           language: 'en',
-          forceRefresh: false
-        }
+          forceRefresh: false,
+        },
       };
       const result = reducer(defaultExpected, action);
       const expected: State = {
@@ -257,10 +257,10 @@ describe('Catalog', () => {
         entities: {
           cards: {
             ...reduceCardsExpected,
-            ...reduceCards([dis3], 'en')
+            ...reduceCards([dis3], 'en'),
           },
-          sections: {}
-        }
+          sections: {},
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -272,8 +272,8 @@ describe('Catalog', () => {
         type: FETCH_HERO_SUCCESS,
         payload: {
           item: dis1,
-          language: 'en'
-        }
+          language: 'en',
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected: State = {
@@ -281,11 +281,11 @@ describe('Catalog', () => {
         entities: {
           cards: {
             dis1: {
-              en: dis1
-            }
+              en: dis1,
+            },
           },
-          sections: {}
-        }
+          sections: {},
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -294,13 +294,13 @@ describe('Catalog', () => {
       const action: Action = {
         type: FETCH_HERO_SUCCESS,
         payload: {
-          language: 'en'
-        }
+          language: 'en',
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected = {
         ...expectedInitialState,
-        heroRef: undefined
+        heroRef: undefined,
       };
 
       expect(result).toEqual(expected);
@@ -315,28 +315,28 @@ describe('Catalog', () => {
           cards: {
             [dis1.universalRef]: {
               [language]: dis1,
-              fr: dis1
+              fr: dis1,
             },
             [dis2.universalRef]: {
               [language]: dis2,
-              fr: dis2
-            }
+              fr: dis2,
+            },
           },
-          sections: {}
-        }
+          sections: {},
+        },
       };
 
       const updateDis1 = {
         ...dis2,
-        universalRef: dis1.universalRef
+        universalRef: dis1.universalRef,
       };
 
       const action: Action = {
         type: REFRESH_CARD,
         payload: {
           item: updateDis1,
-          language: language
-        }
+          language: language,
+        },
       };
       const result = reducer(initialState, action);
       const expected: State = {
@@ -346,11 +346,11 @@ describe('Catalog', () => {
             ...initialState.entities.cards,
             [dis1.universalRef]: {
               ...initialState.entities.cards[dis1.universalRef],
-              [language]: updateDis1
-            }
+              [language]: updateDis1,
+            },
           },
-          sections: {}
-        }
+          sections: {},
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -359,21 +359,21 @@ describe('Catalog', () => {
       const intialState = {
         entities: {
           cards: {},
-          sections: {}
-        }
+          sections: {},
+        },
       };
 
       const updateDis1 = {
         ...dis2,
-        universalRef: dis1.universalRef
+        universalRef: dis1.universalRef,
       };
 
       const action: Action = {
         type: REFRESH_CARD,
         payload: {
           item: updateDis1,
-          language: language
-        }
+          language: language,
+        },
       };
       const result = reducer(intialState, action);
       const expected: State = {
@@ -382,11 +382,11 @@ describe('Catalog', () => {
           cards: {
             [dis1.universalRef]: {
               ...intialState.entities[dis1.universalRef],
-              [language]: updateDis1
-            }
+              [language]: updateDis1,
+            },
           },
-          sections: {}
-        }
+          sections: {},
+        },
       };
       expect(result).toEqual(expected);
     });
@@ -398,20 +398,20 @@ describe('Catalog', () => {
         searchRef: ['foo', 'bar', 'baz'],
         entities: {
           cards: {},
-          sections: {}
-        }
+          sections: {},
+        },
       };
 
       const action: Action = {
-        type: CLEAR_SEARCH
+        type: CLEAR_SEARCH,
       };
       const result = reducer(initialState, action);
       const expected: State = {
         entities: {
           searchRef: undefined,
           cards: {},
-          sections: {}
-        }
+          sections: {},
+        },
       };
       expect(result).toEqual(expected);
     });

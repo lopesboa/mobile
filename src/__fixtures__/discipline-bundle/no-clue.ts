@@ -18,11 +18,11 @@ const bundledDiscipline: BundledDiscipline = {
     no_clue_dis_1: createDiscipline({
       ref: 'no_clue_dis_1',
       levels: [level],
-      name: 'No clue: course'
-    })
+      name: 'No clue: course',
+    }),
   },
   chapters: {
-    no_clue_cha_1: createChapter({ref: 'no_clue_cha_1', name: 'No clue: chapter'})
+    no_clue_cha_1: createChapter({ref: 'no_clue_cha_1', name: 'No clue: chapter'}),
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
@@ -30,32 +30,32 @@ const bundledDiscipline: BundledDiscipline = {
       ref: 'no_clue_sli_1',
       chapterId: 'no_clue_cha_1',
       question: qcm,
-      clue: null
+      clue: null,
     }),
     no_clue_sli_2: createSlide({
       ref: 'no_clue_sli_2',
       chapterId: 'no_clue_cha_1',
       question: qcm,
-      clue: null
+      clue: null,
     }),
     no_clue_sli_3: createSlide({
       ref: 'no_clue_sli_3',
       chapterId: 'no_clue_cha_1',
       question: qcm,
-      clue: null
+      clue: null,
     }),
     no_clue_sli_4: createSlide({
       ref: 'no_clue_sli_4',
       chapterId: 'no_clue_cha_1',
       question: qcm,
-      clue: null
-    })
+      clue: null,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledDiscipline;

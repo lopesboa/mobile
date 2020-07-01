@@ -11,8 +11,8 @@ const progression = createProgression({
   engine: ENGINE.MICROLEARNING,
   progressionContent: {
     type: CONTENT_TYPE.LEVEL,
-    ref: ''
-  }
+    ref: '',
+  },
 });
 
 describe('FastSlide', () => {
@@ -28,14 +28,14 @@ describe('FastSlide', () => {
           progression,
           authentication: createAuthenticationState({
             token: createToken({
-              roles: [ROLES.GODMODE]
-            })
-          })
-        })
+              roles: [ROLES.GODMODE],
+            }),
+          }),
+        }),
       );
       const expected: Action = {
         type: TOGGLE,
-        payload: true
+        payload: true,
       };
       // @ts-ignore missing callable signature
       await toggle()(dispatch, getState);
@@ -54,14 +54,14 @@ describe('FastSlide', () => {
           fastSlide: true,
           authentication: createAuthenticationState({
             token: createToken({
-              roles: [ROLES.GODMODE]
-            })
-          })
-        })
+              roles: [ROLES.GODMODE],
+            }),
+          }),
+        }),
       );
       const expected: Action = {
         type: TOGGLE,
-        payload: false
+        payload: false,
       };
       // @ts-ignore missing callable signature
       await toggle()(dispatch, getState);
@@ -78,9 +78,9 @@ describe('FastSlide', () => {
           slides: [],
           progression,
           authentication: createAuthenticationState({
-            token: createToken({})
-          })
-        })
+            token: createToken({}),
+          }),
+        }),
       );
       // @ts-ignore missing callable signature
       await toggle()(dispatch, getState);

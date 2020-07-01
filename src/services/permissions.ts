@@ -16,7 +16,7 @@ const service: PermissionsService = {
   check: Permissions.check,
   checkNotifications: Permissions.checkNotifications,
   openSettings: Permissions.openSettings,
-  alert: Alert.alert
+  alert: Alert.alert,
 };
 
 export default service;

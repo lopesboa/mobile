@@ -24,13 +24,13 @@ const sectionsWithCardsRef = sections.map((section, index) => ({
     (index === 0 && ['foo', 'bar', undefined]) ||
     (index === 1 && ['bar', 'foo']) ||
     (index === 2 && []) ||
-    undefined
+    undefined,
 }));
 const chapterCard = createChapterCard({
   ref: 'bar',
   completion: 0.8,
   title: 'Chapter card',
-  status: CARD_STATUS.ACTIVE
+  status: CARD_STATUS.ACTIVE,
 });
 
 describe('Catalog', () => {
@@ -47,7 +47,7 @@ describe('Catalog', () => {
           fetchHero={fetchHero}
           isFocused={false}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     expect(fetchSections).toHaveBeenCalledTimes(1);
@@ -70,15 +70,15 @@ describe('Catalog', () => {
             fetchHero={fetchHero}
             isFocused={false}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
-      const catalog = component.root.find(el => el.props.testID === 'catalog');
+      const catalog = component.root.find((el) => el.props.testID === 'catalog');
       let scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT - 1
-          }
-        }
+            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT - 1,
+          },
+        },
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -86,9 +86,9 @@ describe('Catalog', () => {
       scrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT
-          }
-        }
+            y: HERO_HEIGHT + SEPARATOR_HEIGHT + SECTION_HEIGHT + SEPARATOR_HEIGHT,
+          },
+        },
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -113,15 +113,15 @@ describe('Catalog', () => {
             fetchHero={fetchHero}
             isFocused={false}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
-      const catalog = component.root.find(el => el.props.testID === 'catalog');
+      const catalog = component.root.find((el) => el.props.testID === 'catalog');
       const scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: 1
-          }
-        }
+            y: 1,
+          },
+        },
       };
       catalog.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -146,9 +146,9 @@ describe('Catalog', () => {
             fetchHero={fetchHero}
             isFocused={false}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
-      const catalog = component.root.find(el => el.props.testID === 'catalog');
+      const catalog = component.root.find((el) => el.props.testID === 'catalog');
       catalog.props.onRefresh();
       expect(fetchHero).toHaveBeenCalledTimes(1);
       expect(fetchSections).toHaveBeenCalledTimes(2);
@@ -172,7 +172,7 @@ describe('Catalog', () => {
             fetchHero={fetchHero}
             isFocused={false}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       component.update(
         <TestContextProvider>
@@ -184,7 +184,7 @@ describe('Catalog', () => {
             fetchHero={fetchHero}
             isFocused
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       expect(fetchHero).toHaveBeenCalledTimes(2);
     });
@@ -194,7 +194,7 @@ describe('Catalog', () => {
     const catalog = createCatalogState({
       heroRef: chapterCard.universalRef,
       sections: sectionsWithCardsRef.concat([undefined]),
-      cards: [chapterCard]
+      cards: [chapterCard],
     });
 
     it('should get all props', () => {
@@ -203,8 +203,8 @@ describe('Catalog', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
 
       const mockedStore = createStoreState({
@@ -213,13 +213,13 @@ describe('Catalog', () => {
         chapters: [],
         slides: [],
         progression,
-        catalog
+        catalog,
       });
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
         hero: chapterCard,
-        sections: sectionsWithCardsRef.concat([undefined])
+        sections: sectionsWithCardsRef.concat([undefined]),
       };
 
       expect(result).toEqual(expected);

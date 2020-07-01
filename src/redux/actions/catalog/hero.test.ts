@@ -8,13 +8,13 @@ const language = 'en';
 const level = createCardLevel({
   ref: 'mod_1',
   status: CARD_STATUS.ACTIVE,
-  label: 'Fake level'
+  label: 'Fake level',
 });
 const card = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
   levels: [level],
-  title: 'Discipline'
+  title: 'Discipline',
 });
 
 describe('Hero', () => {
@@ -25,16 +25,16 @@ describe('Hero', () => {
       const options = {
         services: {
           Hero: {
-            get: jest.fn()
-          }
-        }
+            get: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest(language));
         return Promise.resolve(action);
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchSuccess(card, language));
         return Promise.resolve(action);
       });
@@ -52,16 +52,16 @@ describe('Hero', () => {
       const options = {
         services: {
           Hero: {
-            get: jest.fn()
-          }
-        }
+            get: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest(language));
         return action;
       });
-      dispatch.mockImplementationOnce(async action => {
+      dispatch.mockImplementationOnce(async (action) => {
         expect(await action).toEqual(fetchError(fakeError));
         // @ts-ignore
         return action;

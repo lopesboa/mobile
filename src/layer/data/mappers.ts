@@ -3,10 +3,10 @@ import type {
   ChapterAPI,
   SlideAPI,
   LessonAPI,
-  LevelAPI
-} from '@types/coorp/player-services';
+  LevelAPI,
+} from '../../types/coorpacademy/player-services';
 
-import type {Lesson} from '@types/coorp/progression-engine';
+import type {Lesson} from '../../types/coorpacademy/progression-engine';
 
 import {getResourceUrl} from '../../modules/uri';
 import type {Resource} from '../../types';
@@ -18,7 +18,7 @@ export const mapToExitNodeAPI = (rawExitNode: ExitNode): ExitNodeAPI => ({
   meta: rawExitNode.meta,
   title: rawExitNode.title,
   description: rawExitNode.description,
-  media: rawExitNode.media
+  media: rawExitNode.media,
 });
 
 export const mapToChapterAPI = (rawChapter: Chapter): ChapterAPI => ({
@@ -31,7 +31,7 @@ export const mapToChapterAPI = (rawChapter: Chapter): ChapterAPI => ({
   poster: rawChapter.poster,
   isConditional: rawChapter.isConditional,
   time: rawChapter.time,
-  version: rawChapter.version
+  version: rawChapter.version,
 });
 
 export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
@@ -47,7 +47,7 @@ export const mapToLessonAPI = (rawLesson: Lesson): LessonAPI => ({
   src: rawLesson.src,
   subtitles: rawLesson.subtitles,
   type: rawLesson.type,
-  videoId: rawLesson.videoId
+  videoId: rawLesson.videoId,
 });
 
 export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
@@ -72,7 +72,7 @@ export const mapToLevelAPI = (rawLevel: Level): LevelAPI => ({
   data: rawLevel.data,
   stats: rawLevel.stats,
   version: rawLevel.version,
-  external_refs: rawLevel.external_refs
+  external_refs: rawLevel.external_refs,
 });
 
 export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
@@ -86,10 +86,10 @@ export const mapToSlideAPI = (rawSlide: Slide): SlideAPI => ({
   clue: rawSlide.clue,
   context: rawSlide.context,
   question: rawSlide.question,
-  position: rawSlide.position
+  position: rawSlide.position,
 });
 
 export const mapToResource = (lesson: Lesson): Resource => ({
   ...lesson,
-  url: getResourceUrl(lesson)
+  url: getResourceUrl(lesson),
 });

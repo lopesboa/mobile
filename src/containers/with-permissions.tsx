@@ -23,20 +23,17 @@ interface ConnectedDispatchProps {
   changeNotificationsPermission: typeof changeNotificationsPermission;
 };
 
-function withPermissions(
-  WrappedComponent: React.ElementType<any>,
-  types: Array<PermissionType>
-) {
+function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<PermissionType>) {
   interface Props extends WithPermissionsProps, ConnectedDispatchProps {}
 
   type State = {
-    appState?: AppState
+    appState?: AppState;
   };
 
   class ComponentWithPermissions extends React.PureComponent<Props, State> {
     state: State = {
       // @ts-ignore the base type is weak
-      appState: AppStateBase.currentState
+      appState: AppStateBase.currentState,
     };
 
     componentDidMount() {
@@ -59,7 +56,7 @@ function withPermissions(
         this.checkNotificationsPermissions();
       }
       this.setState({
-        appState
+        appState,
       });
     };
 
@@ -69,7 +66,7 @@ function withPermissions(
 
     requestCameraPermission: Pick<WithPermissionsProps, 'requestCameraPermission'> = (
       description,
-      onDeny
+      onDeny,
     ) => {
       this.props.requestCameraPermission(description, onDeny);
     };
@@ -108,11 +105,8 @@ function withPermissions(
   };
 
   return hoistNonReactStatic(
-    connect(
-      null,
-      mapDispatchToProps
-    )(ComponentWithPermissions),
-    WrappedComponent
+    connect(null, mapDispatchToProps)(ComponentWithPermissions),
+    WrappedComponent,
   );
 }
 

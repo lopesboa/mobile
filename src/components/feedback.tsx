@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import type {Media} from '@types/coorp/progression-engine';
+import type {Media} from '../types/coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import {getMediaUrl, getMediaPoster, getMediaType, isMediaSupported} from '../modules/media';
@@ -14,30 +14,30 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.white,
     paddingHorizontal: theme.spacing.tiny,
-    paddingTop: theme.spacing.tiny
+    paddingTop: theme.spacing.tiny,
   },
   media: {
-    paddingBottom: theme.spacing.tiny
+    paddingBottom: theme.spacing.tiny,
   },
   content: {
     paddingTop: theme.spacing.tiny,
     paddingBottom: theme.spacing.small,
-    paddingHorizontal: theme.spacing.tiny
+    paddingHorizontal: theme.spacing.tiny,
   },
   title: {
     fontSize: theme.fontSize.large,
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 interface Props {
-  title?: string,
-  description?: string,
-  media?: Media,
-  onPDFButtonPress: (url: string, description?: string) => void,
-  onLinkPress: (url: string) => void,
-  testID?: string
-};
+  title?: string;
+  description?: string;
+  media?: Media;
+  onPDFButtonPress: (url: string, description?: string) => void;
+  onLinkPress: (url: string) => void;
+  testID?: string;
+}
 
 class Feedback extends React.PureComponent<Props> {
   handlePDFButtonPress = (url?: string, description?: string) => {

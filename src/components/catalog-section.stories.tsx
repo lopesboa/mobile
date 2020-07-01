@@ -7,7 +7,7 @@ import {
   createCardLevel,
   createDisciplineCard,
   createChapterCard,
-  createCardAuthor
+  createCardAuthor,
 } from '../__fixtures__/cards';
 import {__TEST__} from '../modules/environment';
 import {AUTHOR_TYPE} from '../const';
@@ -20,7 +20,7 @@ const disciplineCard = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
   levels: [levelCard],
-  title: 'Discipline card'
+  title: 'Discipline card',
 });
 const chapterCard = createChapterCard({
   ref: 'bar',
@@ -28,7 +28,7 @@ const chapterCard = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  authors: [authorCard]
+  authors: [authorCard],
 });
 const cards = new Array(30).fill();
 
@@ -66,13 +66,13 @@ if (__TEST__) {
           onCardPress={handleCardPress}
           onScroll={handleFakePress}
           testID="fake-catalog-section"
-        />
+        />,
       );
 
       const catalogItem = component.root.find(
-        el =>
+        (el) =>
           el.props.testID === 'catalog-section-foobarbaz-items-item-bar' &&
-          el.props.analyticsID === 'card'
+          el.props.analyticsID === 'card',
       );
       catalogItem.props.onPress();
 

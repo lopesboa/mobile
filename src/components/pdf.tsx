@@ -12,8 +12,8 @@ interface Props {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.gray.light
-  }
+    backgroundColor: theme.colors.gray.light,
+  },
 });
 
 const Pdf = ({source}: Props) => (

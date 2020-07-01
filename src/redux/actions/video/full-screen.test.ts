@@ -6,7 +6,7 @@ describe('Video', () => {
     const result = toggleFullscreen(true);
     const expected: Action = {
       type: TOGGLE_FULLSCREEN,
-      payload: true
+      payload: true,
     };
     expect(result).toEqual(expected);
   });

@@ -19,25 +19,25 @@ import withLayout from './with-layout';
 import type {WithLayoutProps} from './with-layout';
 
 export interface ConnectedStateProps {
-  hero?: DisciplineCard | ChapterCard | null,
-  sections: Array<Section | void>
-};
+  hero?: DisciplineCard | ChapterCard | null;
+  sections: Array<Section | void>;
+}
 
 interface ConnectedDispatchProps {
-  fetchHero: typeof fetchHero,
-  fetchSections: typeof fetchSections
-};
+  fetchHero: typeof fetchHero;
+  fetchSections: typeof fetchSections;
+}
 
 export interface OwnProps {
-  onCardPress: Pick<ComponentProps, 'onCardPress'>,
-  children?: Pick<ComponentProps, 'children'>,
-  isFocused: boolean
-};
+  onCardPress: Pick<ComponentProps, 'onCardPress'>;
+  children?: Pick<ComponentProps, 'children'>;
+  isFocused: boolean;
+}
 
-interface Props  extends ConnectedStateProps, ConnectedDispatchProps, WithLayoutProps, OwnProps {}
+interface Props extends ConnectedStateProps, ConnectedDispatchProps, WithLayoutProps, OwnProps {}
 
 type State = {
-  isRefreshing: boolean
+  isRefreshing: boolean;
 };
 
 export const DEFAULT_LIMIT = 4;
@@ -45,12 +45,12 @@ export const DEBOUNCE_DURATION = 100;
 
 class Catalog extends React.Component<Props, State> {
   state: State = {
-    isRefreshing: false
+    isRefreshing: false,
   };
 
   timeout: TimeoutID;
 
-  offsetY: number = 0;
+  offsetY = 0;
 
   componentDidMount() {
     this.fetchHero();
@@ -59,10 +59,10 @@ class Catalog extends React.Component<Props, State> {
 
   shouldComponentUpdate({sections: nextSections, ...nextProps}: Props, nextState: State) {
     const {sections, ...props} = this.props;
-    const emptySections = sections.filter(s => s && isEmptySection(s));
-    const nextEmptySections = nextSections.filter(s => s && isEmptySection(s));
-    const placeholderSections = sections.filter(s => s && s.cardsRef === undefined);
-    const nextPlaceholderSections = nextSections.filter(s => s && s.cardsRef === undefined);
+    const emptySections = sections.filter((s) => s && isEmptySection(s));
+    const nextEmptySections = nextSections.filter((s) => s && isEmptySection(s));
+    const placeholderSections = sections.filter((s) => s && s.cardsRef === undefined);
+    const nextPlaceholderSections = nextSections.filter((s) => s && s.cardsRef === undefined);
 
     // For performance purpose only (prevent useless render)
     return (
@@ -76,9 +76,9 @@ class Catalog extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     const {isFocused, sections} = this.props;
-    const emptySections = sections.filter(section => section && isEmptySection(section));
+    const emptySections = sections.filter((section) => section && isEmptySection(section));
     const previousEmptySections = prevProps.sections.filter(
-      section => section && isEmptySection(section)
+      (section) => section && isEmptySection(section),
     );
 
     if (emptySections.length !== previousEmptySections.length) {
@@ -100,7 +100,7 @@ class Catalog extends React.Component<Props, State> {
     this.props.fetchHero();
   };
 
-  fetchSections = async (offset: number, limit: number, forceRefresh?: boolean = false) => {
+  fetchSections = async (offset: number, limit: number, forceRefresh? = false) => {
     await this.props.fetchSections(offset, limit, forceRefresh);
   };
 
@@ -108,7 +108,7 @@ class Catalog extends React.Component<Props, State> {
     this.setState({isRefreshing: true});
     Promise.all([this.fetchSections(0, this.getLimit(0), true)])
       .then(() => this.setState({isRefreshing: false}))
-      .catch(e => {
+      .catch((e) => {
         this.setState({isRefreshing: false});
         // eslint-disable-next-line no-console
         console.error(e);
@@ -139,7 +139,7 @@ class Catalog extends React.Component<Props, State> {
   hasUnfetchedSections = (offset: number, limit: number): boolean => {
     const {sections} = this.props;
 
-    return sections.slice(offset, offset + limit).findIndex(section => !section) !== -1;
+    return sections.slice(offset, offset + limit).findIndex((section) => !section) !== -1;
   };
 
   handleScroll = ({nativeEvent}: ScrollEvent) => {
@@ -173,7 +173,7 @@ class Catalog extends React.Component<Props, State> {
     return (
       <CatalogComponent
         hero={hero}
-        sections={sections.filter(section => !(section && isEmptySection(section)))}
+        sections={sections.filter((section) => !(section && isEmptySection(section)))}
         onCardPress={onCardPress}
         onRefresh={this.handleRefresh}
         isRefreshing={isRefreshing}
@@ -185,29 +185,25 @@ class Catalog extends React.Component<Props, State> {
   }
 }
 
-const getHeroState: (state: StoreState) => DisciplineCard | ChapterCard | void | null = createSelector(
-  [getHero],
-  hero => hero
-);
+const getHeroState: (
+  state: StoreState,
+) => DisciplineCard | ChapterCard | void | null = createSelector([getHero], (hero) => hero);
 
 const getSectionsState: (state: StoreState) => Array<Section | void> = createArraySelector(
   [getSectionsRef, getSections],
   (sectionRef, sections) =>
-    sectionRef && sections[sectionRef] && sections[sectionRef][translations.getLanguage()]
+    sectionRef && sections[sectionRef] && sections[sectionRef][translations.getLanguage()],
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   hero: getHeroState(state),
-  sections: getSectionsState(state)
+  sections: getSectionsState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   fetchHero,
-  fetchSections
+  fetchSections,
 };
 
 export {Catalog as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withLayout(Catalog));
+export default connect(mapStateToProps, mapDispatchToProps)(withLayout(Catalog));

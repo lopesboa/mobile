@@ -17,30 +17,30 @@ export const toOSCameraPermission = () => {
 };
 
 export type RequestPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type CheckPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type ChangePayload = {
-  type: PermissionType,
-  status: PermissionStatus
+  type: PermissionType;
+  status: PermissionStatus;
 };
 
 export type Action =
   | {
-      type: typeof REQUEST,
-      payload: RequestPayload
+      type: typeof REQUEST;
+      payload: RequestPayload;
     }
   | {
-      type: typeof CHECK,
-      payload: CheckPayload
+      type: typeof CHECK;
+      payload: CheckPayload;
     }
   | {
-      type: typeof CHANGE,
-      payload: ChangePayload
+      type: typeof CHANGE;
+      payload: ChangePayload;
     };
 
 export const change = (status: PermissionStatus): Action => ({
@@ -54,7 +54,7 @@ export const change = (status: PermissionStatus): Action => ({
 const _requestPermission = (onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<PermissionStatus> => {
   const status = await services.Permissions.request(toOSCameraPermission());
   const currentPermissionStatus = getState().permissions.camera;
@@ -77,7 +77,7 @@ const _requestPermission = (onDeny?: () => void) => async (
 export const request = (description: string, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: REQUEST,
@@ -106,20 +106,20 @@ export const request = (description: string, onDeny?: () => void) => async (
                 {text: translations.quit, onPress: onDeny, style: 'cancel'},
                 {
                   text: translations.openSettings,
-                  onPress: () => services.Permissions.openSettings().catch(onDeny)
-                }
+                  onPress: () => services.Permissions.openSettings().catch(onDeny),
+                },
               ],
-              {cancelable: false}
+              {cancelable: false},
             );
           },
-          style: 'cancel'
+          style: 'cancel',
         },
         {
           text: translations.ok,
           onPress: () => _requestPermission(onDeny)(dispatch, getState, {services})
         }
       ],
-      {cancelable: false}
+      {cancelable: false},
     );
   } else {
     await _requestPermission(onDeny)(dispatch, getState, {services});
@@ -130,7 +130,7 @@ export const request = (description: string, onDeny?: () => void) => async (
 export const check = () => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: CHECK,

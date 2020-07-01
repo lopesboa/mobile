@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import {ViewStyle} from 'react-native';
 import QuestionSliderComponent from '../components/question-slider';
 import type {Props as QuestionSliderProps} from '../components/question-slider';
 import {QUESTION_TYPE, ANALYTICS_EVENT_TYPE} from '../const';
@@ -7,17 +8,24 @@ import withAnalytics from './with-analytics';
 import type {WithAnalyticsProps} from './with-analytics';
 
 export interface Props extends WithAnalyticsProps {
-  onSlidingComplete: () => void,
-  value: number
-};
+  min: number;
+  max: number;
+  unit?: string;
+  value: number;
+  onChange: (value: number) => void;
+  onSlidingComplete: () => void;
+  style?: ViewStyle;
+  step?: number;
+  testID?: string;
+}
 
 type State = {
-  value: number
+  value: number;
 };
 
 class QuestionSlider extends React.PureComponent<Props, State> {
   state: State = {
-    value: 0
+    value: 0,
   };
 
   componentDidMount() {
@@ -33,15 +41,16 @@ class QuestionSlider extends React.PureComponent<Props, State> {
     }
   }
 
-  resetState = (value?: number = 0): void =>
+  resetState = (value? = 0): void =>
     this.setState({
-      value
+      value,
     });
 
   handleChange = (value: number) =>
     this.setState({
       // Because value by RNS is a float number
-      value: parseInt(value)
+      // @ts-ignore
+      value: parseInt(value),
     });
 
   handleSlidingComplete = () => {
@@ -50,7 +59,7 @@ class QuestionSlider extends React.PureComponent<Props, State> {
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.SLIDE, {
         id: 'slider',
-        questionType: QUESTION_TYPE.SLIDER
+        questionType: QUESTION_TYPE.SLIDER,
       });
 
     onChange(this.state.value);

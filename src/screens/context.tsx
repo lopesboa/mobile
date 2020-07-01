@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import type {Media} from '@coorpacademy/progression-engine';
 import {getCurrentSlide, getContextMedia} from '@coorpacademy/player-store';
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 
 import Screen from '../components/screen';
 import Context from '../components/context';
@@ -16,11 +16,10 @@ export interface ConnectedStateProps {
   header?: string;
   description?: string;
   media?: Media;
-};
-
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps {}
-  
+
 class ContextScreen extends React.PureComponent<Props> {
   handleButtonPress = () => {
     this.props.navigation.navigate('Question');
@@ -28,7 +27,7 @@ class ContextScreen extends React.PureComponent<Props> {
 
   handleLinkPress = (url: string) => {
     const params: BrowserScreenParams = {
-      url
+      url,
     };
     this.props.navigation.navigate('BrowserModal', params);
   };
@@ -36,7 +35,7 @@ class ContextScreen extends React.PureComponent<Props> {
   handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     };
 
     this.props.navigation.navigate('PdfModal', pdfParams);
@@ -64,23 +63,23 @@ class ContextScreen extends React.PureComponent<Props> {
 
 const getContextDescriptionState: (state: StoreState) => string | void = createSelector(
   [getCurrentSlide],
-  slide => slide && slide.context && slide.context.description
+  (slide) => slide && slide.context && slide.context.description,
 );
 
 const getContextHeaderState: (state: StoreState) => string | void = createSelector(
   [getCurrentSlide],
-  slide => slide && slide.context && slide.context.title
+  (slide) => slide && slide.context && slide.context.title,
 );
 
 const getContextMediaState: (state: StoreState) => Media | void = createSelector(
   [getContextMedia],
-  media => media
+  (media) => media,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   description: getContextDescriptionState(state),
   header: getContextHeaderState(state),
-  media: getContextMediaState(state)
+  media: getContextMediaState(state),
 });
 
 export {ContextScreen as Component};

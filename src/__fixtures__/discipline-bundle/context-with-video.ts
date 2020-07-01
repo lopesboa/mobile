@@ -13,7 +13,7 @@ const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
 const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const level = createLevel({
   ref: 'with_video_context_mod_2',
-  chapterIds: ['with_video_context_cha_1']
+  chapterIds: ['with_video_context_cha_1'],
 });
 const qcm = createQCM({media: image});
 const contextWithVideo = createContextWithVideo({title: 'A little bit of context with video'});
@@ -23,14 +23,14 @@ const bundledDiscipline: BundledDiscipline = {
     with_video_context_dis_2: createDiscipline({
       ref: 'with_video_context_dis_2',
       levels: [level],
-      name: 'With Context(Video): course'
-    })
+      name: 'With Context(Video): course',
+    }),
   },
   chapters: {
     with_video_context_cha_1: createChapter({
       ref: 'with_video_context_cha_1',
-      name: 'With Context Chapter: chapter'
-    })
+      name: 'With Context Chapter: chapter',
+    }),
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
@@ -38,32 +38,32 @@ const bundledDiscipline: BundledDiscipline = {
       ref: 'with_video_context_sli_1',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
-      context: contextWithVideo
+      context: contextWithVideo,
     }),
     with_video_context_sli_2: createSlide({
       ref: 'with_video_context_sli_2',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
-      context: contextWithVideo
+      context: contextWithVideo,
     }),
     with_video_context_sli_3: createSlide({
       ref: 'with_video_context_sli_3',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
-      context: contextWithVideo
+      context: contextWithVideo,
     }),
     with_video_context_sli_4: createSlide({
       ref: 'with_video_context_sli_4',
       chapterId: 'with_video_context_cha_1',
       question: qcm,
-      context: contextWithVideo
-    })
+      context: contextWithVideo,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledDiscipline;

@@ -13,7 +13,7 @@ import type {DeckCard} from './deck-cards';
 const items: Array<DeckCard> = [
   {title: 'First card', type: DECK_CARD_TYPE.TIP, isCorrect: true},
   {title: 'Second card', type: DECK_CARD_TYPE.KEY_POINT, isCorrect: true},
-  {title: 'Third card', type: DECK_CARD_TYPE.CORRECTION, isCorrect: true}
+  {title: 'Third card', type: DECK_CARD_TYPE.CORRECTION, isCorrect: true},
 ];
 
 const renderCard = ({type, title}: DeckCard) => (
@@ -50,7 +50,7 @@ if (__TEST__) {
           items={items}
           renderItem={renderCard}
           vibration={vibration}
-        />
+        />,
       );
 
       const swiper = component.root.findByType(DeckSwiper);
@@ -60,7 +60,7 @@ if (__TEST__) {
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleSwipedAll).toHaveBeenCalledTimes(1);
 
-      const cards = component.root.find(el => el.props.testID === 'cards-story');
+      const cards = component.root.find((el) => el.props.testID === 'cards-story');
       cards.instance.forceUpdate();
     });
   });

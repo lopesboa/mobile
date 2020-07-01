@@ -8,27 +8,27 @@ const HEIGHT = 270;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: theme.spacing.base
+    padding: theme.spacing.base,
   },
   cardFlip: {
     width: '100%',
     height: HEIGHT,
-    flex: 1
+    flex: 1,
   },
   cards: {
     flex: 1,
     width: '100%',
     height: HEIGHT,
     padding: theme.spacing.small,
-    borderRadius: theme.radius.card
+    borderRadius: theme.radius.card,
   },
   frontItem: {
     flex: 1,
-    backgroundColor: theme.colors.gray.dark
+    backgroundColor: theme.colors.gray.dark,
   },
   backItem: {
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 type State = {
@@ -50,7 +50,7 @@ class FlippableCard extends React.Component<Props, State> {
   ref: CardFlip | undefined = undefined;
 
   state: State = {
-    isFlipped: false
+    isFlipped: false,
   };
 
   componentDidUpdate(prevProps: Props, prevState: State) {
@@ -81,11 +81,11 @@ class FlippableCard extends React.Component<Props, State> {
       duration = 1000,
       starsDiff,
       frontItem,
-      children: backItem
+      children: backItem,
     } = this.props;
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => (
+        {(brandTheme) => (
           <View style={styles.container} testID="card-flippable">
             <CardFlip
               style={styles.cardFlip}
@@ -101,7 +101,7 @@ class FlippableCard extends React.Component<Props, State> {
                 style={[
                   styles.cards,
                   styles.backItem,
-                  {backgroundColor: brandTheme.colors.primary}
+                  {backgroundColor: brandTheme.colors.primary},
                 ]}
                 testID="clue-back"
               >

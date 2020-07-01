@@ -11,54 +11,54 @@ describe('Services', () => {
       Analytics: {
         logEvent: expect.any(Function),
         sendProgressionFinished: expect.any(Function),
-        sendViewedMediaAnalytics: expect.any(Function)
+        sendViewedMediaAnalytics: expect.any(Function),
       },
       Answers: {
-        findById: expect.any(Function)
+        findById: expect.any(Function),
       },
       Brands: {
-        find: expect.any(Function)
+        find: expect.any(Function),
       },
       Bundle: {
         findById: expect.any(Function),
-        store: expect.any(Function)
+        store: expect.any(Function),
       },
       Cards: {
         findBySearch: expect.any(Function),
         findBySection: expect.any(Function),
         getCardFromLocalStorage: expect.any(Function),
-        refreshCard: expect.any(Function)
+        refreshCard: expect.any(Function),
       },
       Clues: {
-        findById: expect.any(Function)
+        findById: expect.any(Function),
       },
       Content: {
         find: expect.any(Function),
-        getInfo: expect.any(Function)
+        getInfo: expect.any(Function),
       },
       ExitNodes: {
-        findById: expect.any(Function)
+        findById: expect.any(Function),
       },
       Hero: {
-        get: expect.any(Function)
+        get: expect.any(Function),
       },
       Language: {
         getFromInterface: expect.any(Function),
-        set: expect.any(Function)
+        set: expect.any(Function),
       },
       LeaderBoard: {
         __esModule: true,
-        getRank: expect.any(Function)
+        getRank: expect.any(Function),
       },
       Logger: {
         error: expect.any(Function),
-        setProperties: expect.any(Function)
+        setProperties: expect.any(Function),
       },
       Permissions: {
         alert: expect.any(Function),
         check: expect.any(Function),
         openSettings: expect.any(Function),
-        request: expect.any(Function)
+        request: expect.any(Function),
       },
       Progressions: {
         acceptExtraLife: expect.any(Function),
@@ -78,22 +78,22 @@ describe('Services', () => {
         requestClue: expect.any(Function),
         save: expect.any(Function),
         synchronize: expect.any(Function),
-        updateSynchronizedProgressionIds: expect.any(Function)
+        updateSynchronizedProgressionIds: expect.any(Function),
       },
       Recommendations: {
         find: expect.any(Function),
-        getNext: expect.any(Function)
+        getNext: expect.any(Function),
       },
       Sections: {
-        find: expect.any(Function)
+        find: expect.any(Function),
       },
       Users: {
-        find: expect.any(Function)
+        find: expect.any(Function),
       },
       Videos: {
         findTracksById: expect.any(Function),
-        findUriById: expect.any(Function)
-      }
+        findUriById: expect.any(Function),
+      },
     };
     expect(expected).toEqual(result);
   });

@@ -10,7 +10,7 @@ import {
   createTemplate,
   createSlider,
   createQCMDrag,
-  createBasicQuestion
+  createBasicQuestion,
 } from '../__fixtures__/questions';
 import {choices} from '../__fixtures__/question-choices';
 import {createSlide} from '../__fixtures__/slides';
@@ -37,7 +37,7 @@ describe('Question', () => {
       step: undefined,
       value: 0,
       isValidationDisabled: true,
-      isValidating: false
+      isValidating: false,
     };
 
     describe('Loading', () => {
@@ -53,9 +53,9 @@ describe('Question', () => {
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'foo'
-            }
-          })
+              ref: 'foo',
+            },
+          }),
         });
 
         const result = mapStateToProps(state);
@@ -75,15 +75,15 @@ describe('Question', () => {
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'foo'
+              ref: 'foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.CHAPTER,
-                ref: 'bar'
-              }
-            }
-          })
+                ref: 'bar',
+              },
+            },
+          }),
         });
 
         const result = mapStateToProps(state);
@@ -107,23 +107,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -137,7 +137,7 @@ describe('Question', () => {
         choices: question.content.choices,
         userChoices: answer,
         value: 0,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -151,7 +151,7 @@ describe('Question', () => {
         title: 'Foo bar',
         ref: 'fooQCMGraphic',
         chapterId: 'bar',
-        question
+        question,
       });
       const answer = createAnswer({});
 
@@ -163,23 +163,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -194,7 +194,7 @@ describe('Question', () => {
         choices: question.content.choices,
         userChoices: answer,
         value: 0,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -215,23 +215,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -245,7 +245,7 @@ describe('Question', () => {
         choices: question.content.choices,
         userChoices: answer,
         value: 0,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -266,23 +266,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -300,7 +300,7 @@ describe('Question', () => {
         step: 3,
         userChoices: answer,
         value: 42,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -321,23 +321,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -352,7 +352,7 @@ describe('Question', () => {
         choices: question.content.choices,
         userChoices: answer,
         value: 0,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -366,7 +366,7 @@ describe('Question', () => {
         title: 'Foo bar',
         ref: 'fooBasicQuestion',
         chapterId: 'bar',
-        question
+        question,
       });
       const answer = createAnswer({});
 
@@ -378,23 +378,23 @@ describe('Question', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         progression: createProgression({
           engine: ENGINE.LEARNER,
           progressionContent: {
             type: CONTENT_TYPE.LEVEL,
-            ref: 'foo'
+            ref: 'foo',
           },
           state: {
             nextContent: {
               type: CONTENT_TYPE.SLIDE,
-              ref: slide.universalRef
-            }
-          }
-        })
+              ref: slide.universalRef,
+            },
+          },
+        }),
       });
 
       const result = mapStateToProps(state);
@@ -409,7 +409,7 @@ describe('Question', () => {
         choices: question.content.choices,
         userChoices: answer,
         value: 0,
-        isValidationDisabled: false
+        isValidationDisabled: false,
       };
 
       expect(result).toEqual(expected);
@@ -423,7 +423,7 @@ describe('Question', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
 
-    const question = component.root.find(el => el.props.testID === 'question');
+    const question = component.root.find((el) => el.props.testID === 'question');
     question.props.onChoicePress(choices[0]);
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
@@ -437,7 +437,7 @@ describe('Question', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
 
-    const question = component.root.find(el => el.props.testID === 'question');
+    const question = component.root.find((el) => el.props.testID === 'question');
     question.props.onSliderChange(42);
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
@@ -451,7 +451,7 @@ describe('Question', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
 
-    const question = component.root.find(el => el.props.testID === 'question');
+    const question = component.root.find((el) => el.props.testID === 'question');
     question.props.onInputValueChange('foo');
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
@@ -469,10 +469,10 @@ describe('Question', () => {
         editAnswer={editAnswer}
         choices={choices}
         userChoices={[choices[0].value]}
-      />
+      />,
     );
 
-    const question = component.root.find(el => el.props.testID === 'question');
+    const question = component.root.find((el) => el.props.testID === 'question');
     question.props.onChoiceInputChange(choices[2], choices[2].value);
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
@@ -486,7 +486,7 @@ describe('Question', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Question navigation={navigation} editAnswer={editAnswer} />);
 
-    const question = component.root.find(el => el.props.testID === 'question');
+    const question = component.root.find((el) => el.props.testID === 'question');
     question.props.onChoiceInputChange(choices[0], choices[0].value);
 
     expect(editAnswer).toHaveBeenCalledTimes(1);
@@ -500,18 +500,18 @@ describe('Question', () => {
     const validateAnswer = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_foo" />
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_foo" />,
     );
 
-    const screen = component.root.find(el => el.props.testID === 'question-screen');
+    const screen = component.root.find((el) => el.props.testID === 'question-screen');
     screen.props.onRef({
       props: {
-        scrollToPosition
-      }
+        scrollToPosition,
+      },
     });
 
     component.update(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_bar" />
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId="slide_bar" />,
     );
 
     expect(scrollToPosition).toHaveBeenCalledTimes(1);
@@ -526,18 +526,18 @@ describe('Question', () => {
     const validateAnswer = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
     );
 
-    const screen = component.root.find(el => el.props.testID === 'question-screen');
+    const screen = component.root.find((el) => el.props.testID === 'question-screen');
     screen.props.onRef({
       props: {
-        scrollToPosition
-      }
+        scrollToPosition,
+      },
     });
 
     component.update(
-      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={undefined} />
+      <Question navigation={navigation} validateAnswer={validateAnswer} slideId={undefined} />,
     );
 
     expect(scrollToPosition).toHaveBeenCalledTimes(0);
@@ -548,7 +548,7 @@ describe('Question', () => {
     const _slide = createSlide({
       ref: 'sli_foo',
       chapterId: 'cha_foo',
-      question: _template
+      question: _template,
     });
 
     it('should handle button press', async () => {
@@ -561,7 +561,7 @@ describe('Question', () => {
           title: 'Foo bar',
           ref: 'foo',
           chapterId: 'bar',
-          question: _question
+          question: _question,
         });
         const answer = createAnswer({});
 
@@ -573,32 +573,32 @@ describe('Question', () => {
           ui: createUiState({
             answers: {
               progression1: {
-                value: answer
-              }
-            }
+                value: answer,
+              },
+            },
           }),
           progression: createProgression({
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'foo'
+              ref: 'foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.SLIDE,
-                ref: slide.universalRef
-              }
-            }
-          })
+                ref: slide.universalRef,
+              },
+            },
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
@@ -613,19 +613,19 @@ describe('Question', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: true,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
-          name: 'chapter'
+          name: 'chapter',
         });
 
         const state: StoreState = createStoreState({
@@ -633,17 +633,17 @@ describe('Question', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
@@ -660,20 +660,20 @@ describe('Question', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         const state: StoreState = createStoreState({
@@ -681,17 +681,17 @@ describe('Question', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
@@ -708,20 +708,20 @@ describe('Question', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         _slide.context = createContextWithImage({title: 'Juste a context'});
@@ -731,17 +731,17 @@ describe('Question', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
@@ -758,24 +758,24 @@ describe('Question', () => {
           engine: ENGINE.MICROLEARNING,
           progressionContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
+            ref: 'sli_foo',
           },
           state: {
             isCorrect: null,
             nextContent: {
               ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-              type: CONTENT_TYPE.SUCCESS
+              type: CONTENT_TYPE.SUCCESS,
             },
             step: {
-              current: 4
-            }
-          }
+              current: 4,
+            },
+          },
         });
 
         const chapter = createChapter({
           ref: 'cha_foo',
           name: 'chapter',
-          isConditional: true
+          isConditional: true,
         });
 
         const state: StoreState = createStoreState({
@@ -783,24 +783,24 @@ describe('Question', () => {
           data: createDataState({
             chapters: [chapter],
             slides: [_slide],
-            progression
-          })
+            progression,
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
       expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
         isCorrect: true,
-        progressionId: 'progression1'
+        progressionId: 'progression1',
       });
     });
 
@@ -814,7 +814,7 @@ describe('Question', () => {
           title: 'Foo bar',
           ref: 'foo',
           chapterId: 'bar',
-          question: _question
+          question: _question,
         });
         const answer = createAnswer({});
 
@@ -826,34 +826,34 @@ describe('Question', () => {
           ui: createUiState({
             answers: {
               progression1: {
-                value: answer
-              }
-            }
+                value: answer,
+              },
+            },
           }),
           progression: createProgression({
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'foo'
+              ref: 'foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.SLIDE,
-                ref: slide.universalRef
-              }
-            }
-          })
+                ref: slide.universalRef,
+              },
+            },
+          }),
         });
         return Promise.resolve(state);
       });
       const navigation = createNavigation({});
       const component = renderer.create(
-        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />
+        <Question navigation={navigation} validateAnswer={validateAnswer} slideId={slideId} />,
       );
 
-      const screen = component.root.find(el => el.props.testID === 'question-screen');
+      const screen = component.root.find((el) => el.props.testID === 'question-screen');
       screen.props.onRef(null);
-      const question = component.root.find(el => el.props.testID === 'question');
+      const question = component.root.find((el) => el.props.testID === 'question');
       await question.props.onButtonPress();
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);

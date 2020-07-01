@@ -9,7 +9,7 @@ describe('Recommendation data layer', () => {
       jest.mock('../../utils/local-token', () => {
         const {createToken} = require('../../__fixtures__/tokens');
         return {
-          get: jest.fn(() => Promise.resolve(createToken({})))
+          get: jest.fn(() => Promise.resolve(createToken({}))),
         };
       });
     });
@@ -23,38 +23,38 @@ describe('Recommendation data layer', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 20,
-        completion: 0.3
+        completion: 0.3,
       });
       const completion: Completion = {
         current: 3,
-        stars: 10
+        stars: 10,
       };
 
-      AsyncStorage.getItem.mockImplementation(key =>
+      AsyncStorage.getItem.mockImplementation((key) =>
         Promise.resolve(
-          key === 'completion_microlearning_foo' ? JSON.stringify(completion) : undefined
-        )
+          key === 'completion_microlearning_foo' ? JSON.stringify(completion) : undefined,
+        ),
       );
 
       fetch.mockImplementationOnce(
         (
-          url
+          url,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: [mockCard]})
+            json: () => Promise.resolve({hits: [mockCard]}),
           });
-        }
+        },
       );
 
       const {fetchRecommendation} = require('./recommendations');
       const card = await fetchRecommendation();
       return expect(card).toEqual({
         ...mockCard,
-        completion: completion.current / microLearningSlideToComplete
+        completion: completion.current / microLearningSlideToComplete,
       });
     });
 
@@ -66,23 +66,23 @@ describe('Recommendation data layer', () => {
         status: 'isStarted',
         title: 'plop',
         completion: 0.5,
-        stars: 20
+        stars: 20,
       });
 
-      AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
+      AsyncStorage.getItem.mockImplementation((key) => Promise.resolve(undefined));
 
       fetch.mockImplementationOnce(
         (
-          url
+          url,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: [mockCard]})
+            json: () => Promise.resolve({hits: [mockCard]}),
           });
-        }
+        },
       );
 
       const {fetchRecommendation} = require('./recommendations');
@@ -102,17 +102,17 @@ describe('Recommendation data layer', () => {
       fetch.mockImplementationOnce(
         (
           url,
-          params
+          params,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(params.headers.authorization).toEqual(token);
           expect(url).toBe('https://domain.tld/api/v2/recommendations?contentType=all&lang=en');
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: []})
+            json: () => Promise.resolve({hits: []}),
           });
-        }
+        },
       );
 
       const {fetchRecommendation} = require('./recommendations');
@@ -136,7 +136,7 @@ describe('Recommendation data layer', () => {
 
     it('should fetch e2e fixtures', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
 
       const {fetchRecommendation} = require('./recommendations');

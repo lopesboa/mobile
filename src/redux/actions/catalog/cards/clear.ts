@@ -5,5 +5,5 @@ export type Action = {
 };
 
 export const clearSearch = (): Action => ({
-  type: CLEAR_SEARCH
+  type: CLEAR_SEARCH,
 });

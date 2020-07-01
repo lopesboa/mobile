@@ -6,13 +6,13 @@ import createMiddleware from './error-handler';
 
 const createStore = () => ({
   getState: jest.fn(),
-  dispatch: jest.fn()
+  dispatch: jest.fn(),
 });
 
 describe('Error handler', () => {
   it('shoud not handle unsupported action', () => {
     const action = {
-      payload: {}
+      payload: {},
     };
     const middleware = createMiddleware();
     const store = createStore();
@@ -26,10 +26,10 @@ describe('Error handler', () => {
   it('shoud handle an error with payload of type Forbidden Error', () => {
     const forbiddenError = new ForbiddenError('foo');
     const showErrorAction = showError({
-      type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED
+      type: ERROR_TYPE.PLATFORM_NOT_ACTIVATED,
     });
     const action = {
-      payload: forbiddenError
+      payload: forbiddenError,
     };
     const middleware = createMiddleware();
     const store = createStore();

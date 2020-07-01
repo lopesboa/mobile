@@ -12,7 +12,7 @@ import type {Track} from './video';
 const uri = 'https://onboarding.coorpacademy.com/api/v2/subtitles/ref_subtitle_01.vtt?lang=en';
 const trackLanguage = 'en';
 const tracks: Array<Track> = [
-  {title: 'English', language: trackLanguage, type: TextTrackType.VTT, uri}
+  {title: 'English', language: trackLanguage, type: TextTrackType.VTT, uri},
 ];
 
 storiesOf('Video', module)
@@ -32,7 +32,7 @@ storiesOf('Video', module)
       source={video}
       preview={{
         uri:
-          'https://www.cerema.fr/sites/default/files/styles/uas_normal/public/media/images/2017/11/mountain-village-2657307_1920.jpg?h=d6fbcf4a&itok=JMWt0SsS'
+          'https://www.cerema.fr/sites/default/files/styles/uas_normal/public/media/images/2017/11/mountain-village-2657307_1920.jpg?h=d6fbcf4a&itok=JMWt0SsS',
       }}
       height={180}
       step={STEP.PREVIEW}

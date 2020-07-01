@@ -20,42 +20,42 @@ export const COVER_HEIGHT = 264;
 const styles = StyleSheet.create({
   container: {
     height: HEIGHT,
-    width: WIDTH
+    width: WIDTH,
   },
   image: {
-    backgroundColor: theme.colors.gray.light
+    backgroundColor: theme.colors.gray.light,
   },
   imageLocked: {
-    opacity: 0.4
+    opacity: 0.4,
   },
   imageGradient: {
     paddingTop: theme.spacing.base,
-    padding: theme.spacing.small
+    padding: theme.spacing.small,
   },
   imageCover: {
-    height: COVER_HEIGHT
+    height: COVER_HEIGHT,
   },
   imageCoverGradient: {
     padding: theme.spacing.base,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   badge: {
     position: 'absolute',
     top: 0,
-    left: 0
-  }
+    left: 0,
+  },
 });
 
 type AnalyticsParams = {
-  section?: string
+  section?: string;
 };
 
 interface Props extends AnalyticsParams {
-  item?: DisciplineCard | ChapterCard,
-  onPress?: (arg0: DisciplineCard | ChapterCard) => void,
-  size?: 'cover',
-  testID?: string
-};
+  item?: DisciplineCard | ChapterCard;
+  onPress?: (arg0: DisciplineCard | ChapterCard) => void;
+  size?: 'cover';
+  testID?: string;
+}
 
 class CatalogItem extends React.PureComponent<Props> {
   handlePress = () => {
@@ -70,7 +70,7 @@ class CatalogItem extends React.PureComponent<Props> {
     const analyticsParams = item && {
       ref: item.universalRef,
       type: item.type === CARD_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
-      section
+      section,
     };
 
     const isLocked = item && item.accessible === false;
@@ -95,14 +95,14 @@ class CatalogItem extends React.PureComponent<Props> {
                   'rgba(0,0,0,0)',
                   'rgba(0,0,0,0.4)',
                   'rgba(0,0,0,0.7)',
-                  'rgba(0,0,0,1)'
+                  'rgba(0,0,0,1)',
                 ]) || ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)']
             }
             resizeMode="cover"
             style={[
               styles.image,
               isLocked && styles.imageLocked,
-              (size === 'cover' && styles.imageCover) || styles.container
+              (size === 'cover' && styles.imageCover) || styles.container,
             ]}
             gradientStyle={(size === 'cover' && styles.imageCoverGradient) || styles.imageGradient}
           >
@@ -112,7 +112,7 @@ class CatalogItem extends React.PureComponent<Props> {
                   label={translations.formatString(
                     '{0}{1}',
                     translations.new.charAt(0).toUpperCase(),
-                    translations.new.slice(1)
+                    translations.new.slice(1),
                   )}
                   size={size}
                   testID={`${testID}-badge`}

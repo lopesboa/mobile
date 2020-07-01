@@ -22,7 +22,7 @@ const slide = createSlide({
   ref: slideRef,
   chapterId,
   question,
-  context
+  context,
 });
 
 describe('Context', () => {
@@ -31,14 +31,14 @@ describe('Context', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
+        ref: slideRef,
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: slideRef
-        }
-      }
+          ref: slideRef,
+        },
+      },
     });
 
     const mockedStore = createStoreState({
@@ -46,7 +46,7 @@ describe('Context', () => {
       disciplines: [],
       chapters: [],
       slides: [slide, slide],
-      progression
+      progression,
     });
 
     const result = mapStateToProps(mockedStore);
@@ -56,8 +56,8 @@ describe('Context', () => {
       media: {
         // @ts-ignore optional property
         ...context.media.src[0],
-        type: 'img'
-      }
+        type: 'img',
+      },
     };
     expect(result).toEqual(expected);
   });
@@ -67,22 +67,22 @@ describe('Context', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
-      }
+        ref: slideRef,
+      },
     });
     const emptyStore = createStoreState({
       levels: [],
       disciplines: [],
       chapters: [],
       slides: [],
-      progression
+      progression,
     });
 
     const result = mapStateToProps(emptyStore);
     const expected: ConnectedStateProps = {
       description: undefined,
       header: undefined,
-      media: undefined
+      media: undefined,
     };
     expect(result).toEqual(expected);
   });
@@ -93,7 +93,7 @@ describe('Context', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Context navigation={navigation} />);
 
-    const _context = component.root.find(el => el.props.testID === 'context');
+    const _context = component.root.find((el) => el.props.testID === 'context');
     _context.props.onPress();
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -107,12 +107,12 @@ describe('Context', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Context navigation={navigation} />);
 
-    const _context = component.root.find(el => el.props.testID === 'context');
+    const _context = component.root.find((el) => el.props.testID === 'context');
     _context.props.onLinkPress(url);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('BrowserModal', {
-      url
+      url,
     });
   });
 
@@ -124,13 +124,13 @@ describe('Context', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Context navigation={navigation} />);
 
-    const _context = component.root.find(el => el.props.testID === 'context');
+    const _context = component.root.find((el) => el.props.testID === 'context');
     _context.props.onPDFButtonPress(url, description);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     });
   });
 });

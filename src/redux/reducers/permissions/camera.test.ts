@@ -9,7 +9,7 @@ describe('Permissions', () => {
 
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -22,8 +22,8 @@ describe('Permissions', () => {
         type: CHANGE,
         payload: {
           type: 'camera',
-          status: PERMISSION_STATUS.DENIED
-        }
+          status: PERMISSION_STATUS.DENIED,
+        },
       };
       const result = reducer(undefined, action);
       const expected: State = PERMISSION_STATUS.DENIED;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View, StyleSheet, TextInput, ActivityIndicator, Platform} from 'react-native';
 import {
   NovaCompositionCoorpacademySearch as SearchIcon,
-  NovaSolidStatusClose as ClearIcon
+  NovaSolidStatusClose as ClearIcon,
 } from '@coorpacademy/nova-icons';
 
 import theme, {getHitSlop} from '../modules/theme';
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.small,
     paddingVertical: theme.spacing.tiny,
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   input: {
     flex: 1,
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     // Which is really weird, see https://github.com/facebook/react-native/issues/24067
     ...Platform.select({
       android: {
-        height: 40
-      }
-    })
-  }
+        height: 40,
+      },
+    }),
+  },
 });
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;

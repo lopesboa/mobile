@@ -10,46 +10,46 @@ import VideoOverlay from './video-overlay';
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
 export type Track = {
-  title: string,
-  language: string,
-  type: unknown, /* TODO: fix this $Values<TextTrackType>*/
-  uri: string
+  title: string;
+  language: string;
+  type: unknown /* TODO: fix this $Values<TextTrackType>*/;
+  uri: string;
 };
 
 export interface Props {
-  source: File | SourceURI,
-  preview: File | SourceURI,
-  height: number,
-  step: Step,
-  tracks?: Array<Track>,
-  selectedTrack?: string,
-  isFullScreen?: boolean,
-  onPlay: () => Promise<void> | void,
-  onEnd: () => Promise<void> | void,
-  onReady: () => Promise<void> | void,
-  onExpand?: () => Promise<void> | void,
-  onShrink?: () => Promise<void> | void,
-  onTracksToggle?: () => Promise<void> | void,
-  onProgress?: (progression: {currentTime: number}) => Promise<void> | void,
-  onRef?: (player: VideoPlayer | null) => Promise<void> | void,
-  onError?: () => Promise<void> | void,
-  testID?: string,
-  extralifeOverlay?: boolean
-};
+  source: File | SourceURI;
+  preview: File | SourceURI;
+  height: number;
+  step: Step;
+  tracks?: Array<Track>;
+  selectedTrack?: string;
+  isFullScreen?: boolean;
+  onPlay: () => Promise<void> | void;
+  onEnd: () => Promise<void> | void;
+  onReady: () => Promise<void> | void;
+  onExpand?: () => Promise<void> | void;
+  onShrink?: () => Promise<void> | void;
+  onTracksToggle?: () => Promise<void> | void;
+  onProgress?: (progression: {currentTime: number}) => Promise<void> | void;
+  onRef?: (player: VideoPlayer | null) => Promise<void> | void;
+  onError?: () => Promise<void> | void;
+  testID?: string;
+  extralifeOverlay?: boolean;
+}
 
 export const STEP: Record<string, Step> = {
   PREVIEW: 'preview',
   LOADING: 'loading',
   ERROR: 'error',
   PLAY: 'play',
-  END: 'end'
+  END: 'end',
 };
 
 const EMPTY_TRACK: Track = {
   title: 'nocc',
   language: 'nc',
   type: TextTrackType.VTT,
-  uri: `file://${RNFetchBlob.fs.dirs.MainBundleDir}/assets/empty.vtt`
+  uri: `file://${RNFetchBlob.fs.dirs.MainBundleDir}/assets/empty.vtt`,
 };
 
 const styles = StyleSheet.create({
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    left: 0
-  }
+    left: 0,
+  },
 });
 
 const Video = ({
@@ -80,7 +80,7 @@ const Video = ({
   onError,
   onProgress,
   testID = 'video',
-  extralifeOverlay = false
+  extralifeOverlay = false,
 }: Props) => {
   const testIDSuffix = isFullScreen ? '-fullscreen' : '';
   const defaultTracks: Array<Track> = Platform.OS === 'ios' ? [EMPTY_TRACK] : [];

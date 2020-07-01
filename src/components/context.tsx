@@ -13,42 +13,42 @@ import Button from './button';
 import Resource from './resource';
 
 export interface Props extends WithLayoutProps {
-  header: string,
-  description: string,
-  onPress: () => void,
-  onLinkPress: (url: string) => void,
-  onPDFButtonPress: (url: string, description?: string) => void,
-  testID?: string,
-  media?: Media
-};
+  header: string;
+  description: string;
+  onPress: () => void;
+  onLinkPress: (url: string) => void;
+  onPDFButtonPress: (url: string, description?: string) => void;
+  testID?: string;
+  media?: Media;
+}
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
     paddingBottom: theme.spacing.base,
     flexGrow: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   text: {
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.large,
-    textAlign: 'left'
+    textAlign: 'left',
   },
   image: {
     width: 200,
     height: 200,
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
   },
   titleContainer: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   content: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   footer: {
-    paddingHorizontal: theme.spacing.base
-  }
+    paddingHorizontal: theme.spacing.base,
+  },
 });
 
 class Context extends React.PureComponent<Props> {

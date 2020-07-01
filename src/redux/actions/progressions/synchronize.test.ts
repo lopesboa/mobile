@@ -11,22 +11,22 @@ import {
   SYNCHRONIZE_FAILURE,
   SYNCHRONIZE_ALL_REQUEST,
   SYNCHRONIZE_ALL_SUCCESS,
-  SYNCHRONIZE_ALL_FAILURE
+  SYNCHRONIZE_ALL_FAILURE,
 } from './synchronize';
 
 const brand = createBrand();
 
 jest.mock('@coorpacademy/player-store', () => ({
   createProgression: jest.fn(),
-  selectProgression: jest.fn(id =>
-    Promise.resolve({type: '@@mock/SELECT_PROGRESSION', payload: {id}})
+  selectProgression: jest.fn((id) =>
+    Promise.resolve({type: '@@mock/SELECT_PROGRESSION', payload: {id}}),
   ),
-  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
+  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'},
 }));
 
 jest.mock('delay', () => ({
   __esModule: true,
-  default: () => Promise.resolve()
+  default: () => Promise.resolve(),
 }));
 
 describe('Progressions synchronization', () => {
@@ -35,67 +35,67 @@ describe('Progressions synchronization', () => {
     engine: ENGINE.LEARNER,
     progressionContent: {
       ref: 'mod_1',
-      type: CONTENT_TYPE.LEVEL
+      type: CONTENT_TYPE.LEVEL,
     },
     state: {
       nextContent: {
         type: CONTENT_TYPE.SLIDE,
-        ref: 'sli_1'
-      }
-    }
+        ref: 'sli_1',
+      },
+    },
   });
   const successProgression = createProgression({
     _id: 'successProgressionId',
     engine: ENGINE.LEARNER,
     progressionContent: {
       ref: 'mod_1',
-      type: CONTENT_TYPE.LEVEL
+      type: CONTENT_TYPE.LEVEL,
     },
     state: {
       nextContent: {
         type: CONTENT_TYPE.SUCCESS,
-        ref: 'suc_1'
-      }
-    }
+        ref: 'suc_1',
+      },
+    },
   });
   const failureProgression = createProgression({
     _id: 'failureProgressionId',
     engine: ENGINE.LEARNER,
     progressionContent: {
       ref: 'mod_1',
-      type: CONTENT_TYPE.LEVEL
+      type: CONTENT_TYPE.LEVEL,
     },
     state: {
       nextContent: {
         type: CONTENT_TYPE.FAILURE,
-        ref: 'fai_1'
-      }
-    }
+        ref: 'fai_1',
+      },
+    },
   });
   const wihoutIdProgression = createProgression({
     engine: ENGINE.LEARNER,
     progressionContent: {
       ref: 'mod_1',
-      type: CONTENT_TYPE.LEVEL
+      type: CONTENT_TYPE.LEVEL,
     },
     state: {
       nextContent: {
         type: CONTENT_TYPE.FAILURE,
-        ref: 'fai_1'
-      }
-    }
+        ref: 'fai_1',
+      },
+    },
   });
 
   describe('synchronizeProgressions', () => {
     it('should synchronize only finished progression', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
         authentication: createAuthenticationState({token: '_TOKEN_', brand}),
-        brand
+        brand,
       });
 
       const services = {
@@ -104,11 +104,11 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_SUCCESS].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -116,19 +116,19 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
@@ -138,8 +138,8 @@ describe('Progressions synchronization', () => {
           inProgressProgression,
           successProgression,
           failureProgression,
-          wihoutIdProgression
-        ])
+          wihoutIdProgression,
+        ]),
       );
 
       services.Progressions.synchronize.mockImplementationOnce(() => Promise.resolve(undefined));
@@ -152,7 +152,7 @@ describe('Progressions synchronization', () => {
       expect(innerDispatch).toHaveBeenCalledTimes(4);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
         successProgression._id,
-        failureProgression._id
+        failureProgression._id,
       ]);
       expect(store.dispatch).toHaveBeenCalledTimes(4);
     });
@@ -160,12 +160,12 @@ describe('Progressions synchronization', () => {
     it('should skip synchronize progression if it has been already posted', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
         authentication: createAuthenticationState({token: '_TOKEN_', brand}),
-        brand
+        brand,
       });
 
       const services = {
@@ -173,14 +173,14 @@ describe('Progressions synchronization', () => {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) =>
-            Promise.resolve(successProgression)
+            Promise.resolve(successProgression),
           ),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_SUCCESS].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -188,21 +188,21 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([successProgression])
+        Promise.resolve([successProgression]),
       );
 
       services.Progressions.synchronize.mockImplementationOnce(() => Promise.resolve(undefined));
@@ -214,7 +214,7 @@ describe('Progressions synchronization', () => {
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(0);
       expect(innerDispatch).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
-        successProgression._id
+        successProgression._id,
       ]);
       expect(store.dispatch).toHaveBeenCalledTimes(3);
     });
@@ -226,31 +226,31 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => [successProgression._id]),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([successProgression])
+        Promise.resolve([successProgression]),
       );
 
       // @ts-ignore
@@ -264,7 +264,7 @@ describe('Progressions synchronization', () => {
     it('should skip inProgress progression', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       const services = {
@@ -272,26 +272,26 @@ describe('Progressions synchronization', () => {
           getAll: jest.fn(),
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([inProgressProgression])
+        Promise.resolve([inProgressProgression]),
       );
 
       // @ts-ignore
@@ -304,7 +304,7 @@ describe('Progressions synchronization', () => {
     it('should skip progression without _id', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       const services = {
@@ -313,26 +313,26 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([wihoutIdProgression])
+        Promise.resolve([wihoutIdProgression]),
       );
 
       // @ts-ignore
@@ -345,11 +345,11 @@ describe('Progressions synchronization', () => {
     it('should synchronize successed progression', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       const services = {
@@ -358,11 +358,11 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_SUCCESS].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -370,21 +370,21 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([successProgression])
+        Promise.resolve([successProgression]),
       );
 
       // @ts-ignore
@@ -394,18 +394,18 @@ describe('Progressions synchronization', () => {
       expect(innerDispatch).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
-        successProgression._id
+        successProgression._id,
       ]);
     });
 
     it('should synchronize failed progression', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       const services = {
@@ -414,11 +414,11 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_SUCCESS].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -426,21 +426,21 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_SUCCESS);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([failureProgression])
+        Promise.resolve([failureProgression]),
       );
 
       // @ts-ignore
@@ -450,18 +450,18 @@ describe('Progressions synchronization', () => {
       expect(innerDispatch).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledTimes(1);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
-        failureProgression._id
+        failureProgression._id,
       ]);
     });
 
     it('Token is undefined', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: null, brand})
+        authentication: createAuthenticationState({token: null, brand}),
       });
 
       const services = {
@@ -470,8 +470,8 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       // @ts-ignore not valid callable signature
@@ -479,7 +479,7 @@ describe('Progressions synchronization', () => {
         store.dispatch,
         store.getState,
         // @ts-ignore missing some services
-        {services}
+        {services},
       );
 
       await expect(synchronization).rejects.toThrowError(TypeError('Token not defined'));
@@ -488,11 +488,11 @@ describe('Progressions synchronization', () => {
     it('Brand is undefined', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand: null})
+        authentication: createAuthenticationState({token: 'FAKE_TOKEN', brand: null}),
       });
 
       const services = {
@@ -501,8 +501,8 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       // @ts-ignore not valid callable signature
@@ -510,7 +510,7 @@ describe('Progressions synchronization', () => {
         store.dispatch,
         store.getState,
         // @ts-ignore missing some services
-        {services}
+        {services},
       );
 
       await expect(synchronization).rejects.toThrowError(TypeError('Brand not defined'));
@@ -519,13 +519,13 @@ describe('Progressions synchronization', () => {
     it('should skip if synchronizing', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
         authentication: createAuthenticationState({token: '_TOKEN_', brand}),
         brand,
-        progressions: {isSynchronizing: true}
+        progressions: {isSynchronizing: true},
       });
 
       const services = {
@@ -534,8 +534,8 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn(() => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn()
-        }
+          synchronize: jest.fn(),
+        },
       };
 
       // @ts-ignore
@@ -550,11 +550,11 @@ describe('Progressions synchronization', () => {
     it('should fail to synchronize after 5 tries ', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       const services = {
@@ -563,11 +563,11 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened')))
-        }
+          synchronize: jest.fn(() => Promise.reject(new ForbiddenError('Something bad happened'))),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_FAILURE].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -575,21 +575,21 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_FAILURE);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([failureProgression])
+        Promise.resolve([failureProgression]),
       );
 
       // @ts-ignore
@@ -602,11 +602,11 @@ describe('Progressions synchronization', () => {
     it('should fail to synchronize if an error has occured ', async () => {
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       const services = {
@@ -615,11 +615,11 @@ describe('Progressions synchronization', () => {
           getSynchronizedProgressionIds: jest.fn(() => Promise.resolve([])),
           findRemoteProgressionById: jest.fn((token, host, progressionId) => Promise.resolve(null)),
           updateSynchronizedProgressionIds: jest.fn(),
-          synchronize: jest.fn(() => Promise.reject(new Error('Network error')))
-        }
+          synchronize: jest.fn(() => Promise.reject(new Error('Network error'))),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_FAILURE].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -627,21 +627,21 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_FAILURE);
           return Promise.resolve(action);
         });
 
       services.Progressions.getAll.mockImplementationOnce(() =>
-        Promise.resolve([failureProgression])
+        Promise.resolve([failureProgression]),
       );
 
       // @ts-ignore
@@ -655,20 +655,20 @@ describe('Progressions synchronization', () => {
       const AsyncStorage = require('@react-native-community/async-storage');
       const store = {
         getState: jest.fn(),
-        dispatch: jest.fn()
+        dispatch: jest.fn(),
       };
 
       const barProgression = {
         ...failureProgression,
-        _id: 'bar'
+        _id: 'bar',
       };
       const bazProgression = {
         ...successProgression,
-        _id: 'baz'
+        _id: 'baz',
       };
 
       store.getState.mockReturnValue({
-        authentication: createAuthenticationState({token: '_TOKEN_', brand})
+        authentication: createAuthenticationState({token: '_TOKEN_', brand}),
       });
 
       const services = {
@@ -686,11 +686,11 @@ describe('Progressions synchronization', () => {
               return Promise.reject(new ConflictError('Duplicated resource'));
             }
             return Promise.reject(new Error('Network error'));
-          })
-        }
+          }),
+        },
       };
 
-      const innerDispatch = jest.fn().mockImplementation(action => {
+      const innerDispatch = jest.fn().mockImplementation((action) => {
         if ([SYNCHRONIZE_REQUEST, SYNCHRONIZE_FAILURE].includes(action.type)) {
           return Promise.resolve(action);
         }
@@ -698,19 +698,19 @@ describe('Progressions synchronization', () => {
       });
 
       store.dispatch
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_REQUEST);
           return Promise.resolve(action);
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(actionFn => {
+        .mockImplementationOnce((actionFn) => {
           // @ts-ignore
           return actionFn(innerDispatch, store.getState, {services});
         })
-        .mockImplementationOnce(action => {
+        .mockImplementationOnce((action) => {
           expect(action.type).toEqual(SYNCHRONIZE_ALL_FAILURE);
           return Promise.resolve(action);
         });
@@ -727,7 +727,7 @@ describe('Progressions synchronization', () => {
       expect(services.Progressions.synchronize).toHaveBeenCalledTimes(2);
       expect(services.Progressions.updateSynchronizedProgressionIds).toHaveBeenCalledWith([
         'foo',
-        'baz'
+        'baz',
       ]);
     });
   });

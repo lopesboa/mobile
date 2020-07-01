@@ -21,12 +21,12 @@ class Header extends React.PureComponent<Props> {
   handleLogoLongPress = () =>
     Alert.alert(translations.logOut, null, [
       {
-        text: translations.cancel
+        text: translations.cancel,
       },
       {
         text: translations.ok,
-        onPress: () => this.props.signOut()
-      }
+        onPress: () => this.props.signOut(),
+      },
     ]);
 
   render() {
@@ -45,11 +45,8 @@ class Header extends React.PureComponent<Props> {
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signOut: _signOut
+  signOut: _signOut,
 };
 
 export {Header as Component};
-export default connect(
-  null,
-  mapDispatchToProps
-)(Header);
+export default connect(null, mapDispatchToProps)(Header);

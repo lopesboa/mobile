@@ -18,14 +18,14 @@ import type {ConnectedStateProps} from './video-controlable';
 const createRef = (): VideoPlayer => ({
   seekTo: jest.fn(),
   methods: {
-    pause: jest.fn()
+    pause: jest.fn(),
   },
   player: {
     ref: {
       dismissFullscreenPlayer: jest.fn(),
-      presentFullscreenPlayer: jest.fn()
-    }
-  }
+      presentFullscreenPlayer: jest.fn(),
+    },
+  },
 });
 
 const expectedTracks = [
@@ -33,20 +33,20 @@ const expectedTracks = [
     language: 'fr',
     title: 'fr',
     type: TextTrackType.VTT,
-    uri: 'https://content.jwplatform.com/tracks/foo.srt'
+    uri: 'https://content.jwplatform.com/tracks/foo.srt',
   },
   {
     language: 'en',
     title: 'en',
     type: TextTrackType.VTT,
-    uri: 'https://content.jwplatform.com/tracks/bar.srt'
+    uri: 'https://content.jwplatform.com/tracks/bar.srt',
   },
   {
     language: 'de',
     title: 'de',
     type: TextTrackType.VTT,
-    uri: 'https://content.jwplatform.com/tracks/baz.srt'
-  }
+    uri: 'https://content.jwplatform.com/tracks/baz.srt',
+  },
 ];
 
 // Due to mocked functions messing up with global state mocks
@@ -61,21 +61,21 @@ describe('VideoControlable -> mapStateToProps', () => {
       engine: ENGINE.MICROLEARNING,
       progressionContent: {
         type: CONTENT_TYPE.LEVEL,
-        ref: levelRef
-      }
+        ref: levelRef,
+      },
     });
     const video = createVideoState({isFullScreen});
 
     const mockedStore = createStoreState({
       progression,
-      video
+      video,
     });
 
     const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER, source});
     const expected: ConnectedStateProps = {
       isFullScreen,
       source,
-      tracks: []
+      tracks: [],
     };
 
     expect(result).toEqual(expected);
@@ -92,21 +92,21 @@ describe('VideoControlable -> mapStateToProps', () => {
       engine: ENGINE.MICROLEARNING,
       progressionContent: {
         type: CONTENT_TYPE.LEVEL,
-        ref: levelRef
-      }
+        ref: levelRef,
+      },
     });
     const video = createVideoState({isFullScreen});
     const videos = {
       [id]: {
         uri,
-        tracks
-      }
+        tracks,
+      },
     };
 
     const mockedStore = createStoreState({
       progression,
       video,
-      videos
+      videos,
     });
 
     const result = mapStateToProps(mockedStore, {id, provider: VIDEO_PROVIDER.JWPLAYER});
@@ -114,7 +114,7 @@ describe('VideoControlable -> mapStateToProps', () => {
       isFullScreen,
       source: {uri},
       tracks: expectedTracks,
-      selectedTrack: expectedTracks[1].language
+      selectedTrack: expectedTracks[1].language,
     };
 
     expect(result).toEqual(expected);
@@ -129,10 +129,10 @@ describe('VideoControlable', () => {
   it('should handle onTracksToggle', () => {
     const selectedTrack = expectedTracks[1].language;
     const component = renderer.create(
-      <VideoControlable tracks={expectedTracks} selectedTrack={selectedTrack} />
+      <VideoControlable tracks={expectedTracks} selectedTrack={selectedTrack} />,
     );
 
-    const video = component.root.find(el => el.props.onTracksToggle);
+    const video = component.root.find((el) => el.props.onTracksToggle);
     expect(video.props.selectedTrack).toEqual(selectedTrack);
     video.props.onTracksToggle();
 
@@ -142,7 +142,7 @@ describe('VideoControlable', () => {
   it('should handle onError', () => {
     const component = renderer.create(<VideoControlable />);
 
-    const video = component.root.find(el => el.props.onError);
+    const video = component.root.find((el) => el.props.onError);
     video.props.onError();
 
     expect(video.props.step).toEqual(STEP.ERROR);
@@ -155,7 +155,7 @@ describe('VideoControlable', () => {
       const ref = createRef();
       const component = renderer.create(<VideoControlable />);
 
-      const video = component.root.find(el => el.props.onReady);
+      const video = component.root.find((el) => el.props.onReady);
       video.props.onRef(ref);
       video.props.onReady();
 
@@ -169,7 +169,7 @@ describe('VideoControlable', () => {
       const ref = createRef();
       const component = renderer.create(<VideoControlable />);
 
-      const video = component.root.find(el => el.props.onReady);
+      const video = component.root.find((el) => el.props.onReady);
       video.props.onRef(ref);
       video.props.onReady();
 
@@ -181,8 +181,8 @@ describe('VideoControlable', () => {
     const ref = createRef();
     const component = renderer.create(<VideoControlable />);
 
-    const video = component.root.find(el => el.props.onRef);
-    const navigation = component.root.find(el => el.props.onWillBlur);
+    const video = component.root.find((el) => el.props.onRef);
+    const navigation = component.root.find((el) => el.props.onWillBlur);
     video.props.onRef(ref);
     navigation.props.onWillBlur();
 
@@ -198,7 +198,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onShrink);
+      const video = component.root.find((el) => el.props.onShrink);
       video.props.onRef(ref);
       video.props.onProgress({currentTime});
       await video.props.onShrink();
@@ -217,7 +217,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onShrink);
+      const video = component.root.find((el) => el.props.onShrink);
       video.props.onRef(ref);
       video.props.onProgress({currentTime});
       await video.props.onShrink();
@@ -234,7 +234,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onShrink);
+      const video = component.root.find((el) => el.props.onShrink);
       video.props.onProgress({currentTime});
       await video.props.onShrink();
 
@@ -252,7 +252,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onExpand);
+      const video = component.root.find((el) => el.props.onExpand);
       video.props.onRef(ref);
       video.props.onProgress({currentTime});
       await video.props.onExpand();
@@ -271,7 +271,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onExpand);
+      const video = component.root.find((el) => el.props.onExpand);
       video.props.onRef(ref);
       video.props.onProgress({currentTime});
       await video.props.onExpand();
@@ -288,7 +288,7 @@ describe('VideoControlable', () => {
       const currentTime = 1337;
       const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-      const video = component.root.find(el => el.props.onExpand);
+      const video = component.root.find((el) => el.props.onExpand);
       video.props.onProgress({currentTime});
       await video.props.onExpand();
 
@@ -303,7 +303,7 @@ describe('VideoControlable', () => {
     const currentTime = 1337;
     const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
 
-    const video = component.root.find(el => el.props.onEnd);
+    const video = component.root.find((el) => el.props.onEnd);
     video.props.onRef(ref);
     video.props.onProgress({currentTime});
     await video.props.onEnd();
@@ -331,10 +331,10 @@ describe('VideoControlable', () => {
           onPlay={onPlay}
           id={id}
           provider={provider}
-        />
+        />,
       );
 
-      const video = component.root.find(el => el.props.onRef && el.props.onPlay);
+      const video = component.root.find((el) => el.props.onRef && el.props.onPlay);
       video.props.onRef(ref);
       await video.props.onPlay();
 
@@ -359,10 +359,10 @@ describe('VideoControlable', () => {
           onPlay={onPlay}
           id={id}
           provider={provider}
-        />
+        />,
       );
 
-      const video = component.root.find(el => el.props.onRef && el.props.onPlay);
+      const video = component.root.find((el) => el.props.onRef && el.props.onPlay);
       await video.props.onPlay();
 
       expect(fetchVideoUri).toHaveBeenCalledTimes(1);
@@ -381,10 +381,10 @@ describe('VideoControlable', () => {
           onPlay={onPlay}
           id={id}
           provider={provider}
-        />
+        />,
       );
 
-      const video = component.root.find(el => el.props.onRef && el.props.onPlay);
+      const video = component.root.find((el) => el.props.onRef && el.props.onPlay);
       await video.props.onPlay();
 
       expect(fetchVideoTracks).toHaveBeenCalledTimes(1);

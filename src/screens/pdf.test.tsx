@@ -6,7 +6,7 @@ import type {Params, Props} from './pdf';
 
 const createParams = (): Params => ({
   title: 'Foo bar',
-  source: {uri: 'https://domain.tld/link.pdf'}
+  source: {uri: 'https://domain.tld/link.pdf'},
 });
 
 describe('PDF', () => {
@@ -15,12 +15,12 @@ describe('PDF', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
 
     const component = renderer.create(<Pdf navigation={navigation} />);
 
-    const screen = component.root.find(el => el.props.testID === 'pdf-screen');
+    const screen = component.root.find((el) => el.props.testID === 'pdf-screen');
 
     expect(screen).toBeDefined();
   });
@@ -30,18 +30,18 @@ describe('PDF', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const props: Props = {
       navigation,
-      navigationOptions: {}
+      navigationOptions: {},
     };
 
     const {headerLeft} = Browser.navigationOptions(props);
 
     const component = renderer.create(headerLeft);
 
-    const button = component.root.find(el => el.props.testID === 'pdf-button-close');
+    const button = component.root.find((el) => el.props.testID === 'pdf-button-close');
     button.props.onPress();
 
     expect(navigation.dispatch).toHaveBeenCalledTimes(1);

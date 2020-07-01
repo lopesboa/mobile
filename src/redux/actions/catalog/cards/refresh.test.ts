@@ -9,7 +9,7 @@ const disciplineCard = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
   levels: [level],
-  title: 'Discipline'
+  title: 'Discipline',
 });
 
 describe('Cards', () => {
@@ -21,8 +21,8 @@ describe('Cards', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
       const language = 'en';
 
@@ -31,14 +31,14 @@ describe('Cards', () => {
         services: {
           Cards: {
             getCardFromLocalStorage: jest.fn(() => Promise.resolve(disciplineCard)),
-            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard)),
           },
           Progressions: {
-            findById: jest.fn(() => Promise.resolve(fakeProgression))
-          }
-        }
+            findById: jest.fn(() => Promise.resolve(fakeProgression)),
+          },
+        },
       };
-      const dispatch = jest.fn(action => {
+      const dispatch = jest.fn((action) => {
         if (action instanceof Function) return action(dispatch, getState, options);
         return action;
       });
@@ -49,7 +49,7 @@ describe('Cards', () => {
         dispatch,
         getState,
         // @ts-ignore
-        options
+        options,
       );
 
       expect(actual).toEqual(refreshCard(language, disciplineCard));
@@ -62,8 +62,8 @@ describe('Cards', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.LEVEL
-        }
+          type: CONTENT_TYPE.LEVEL,
+        },
       });
       const language = 'en';
 
@@ -72,14 +72,14 @@ describe('Cards', () => {
         services: {
           Cards: {
             getCardFromLocalStorage: jest.fn(() => Promise.resolve(disciplineCard)),
-            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard)),
           },
           Progressions: {
-            findById: jest.fn(() => Promise.resolve(fakeProgression))
-          }
-        }
+            findById: jest.fn(() => Promise.resolve(fakeProgression)),
+          },
+        },
       };
-      const dispatch = jest.fn(action => {
+      const dispatch = jest.fn((action) => {
         if (action instanceof Function) return action(dispatch, getState, options);
         return action;
       });
@@ -90,7 +90,7 @@ describe('Cards', () => {
         dispatch,
         getState,
         // @ts-ignore
-        options
+        options,
       );
 
       expect(actual).toEqual(refreshCard(language, disciplineCard));
@@ -105,15 +105,15 @@ describe('Cards', () => {
         services: {
           Cards: {
             getCardFromLocalStorage: jest.fn(() => Promise.resolve(disciplineCard)),
-            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard)),
           },
           Progressions: {
-            findById: jest.fn(() => Promise.resolve(undefined))
-          }
-        }
+            findById: jest.fn(() => Promise.resolve(undefined)),
+          },
+        },
       };
 
-      const dispatch = jest.fn(action => {
+      const dispatch = jest.fn((action) => {
         if (action instanceof Function) return action(dispatch, getState, options);
         return action;
       });
@@ -124,7 +124,7 @@ describe('Cards', () => {
         dispatch,
         getState,
         // @ts-ignore
-        options
+        options,
       );
 
       expect(actual).toEqual(undefined);
@@ -137,8 +137,8 @@ describe('Cards', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
       const language = 'en';
 
@@ -147,14 +147,14 @@ describe('Cards', () => {
         services: {
           Cards: {
             getCardFromLocalStorage: jest.fn(() => Promise.resolve(undefined)),
-            refreshCard: jest.fn(() => Promise.resolve(disciplineCard))
+            refreshCard: jest.fn(() => Promise.resolve(disciplineCard)),
           },
           Progressions: {
-            findById: jest.fn(() => Promise.resolve(fakeProgression))
-          }
-        }
+            findById: jest.fn(() => Promise.resolve(fakeProgression)),
+          },
+        },
       };
-      const dispatch = jest.fn(action => {
+      const dispatch = jest.fn((action) => {
         if (action instanceof Function) return action(dispatch, getState, options);
         return action;
       });
@@ -164,7 +164,7 @@ describe('Cards', () => {
         dispatch,
         getState,
         // @ts-ignore
-        options
+        options,
       );
 
       expect(actual).toEqual(undefined);

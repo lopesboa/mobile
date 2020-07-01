@@ -8,22 +8,22 @@ import {getFocusedSelect} from '../redux/utils/state-extract';
 import {focus, blur} from '../redux/actions/ui/select';
 
 export interface ConnectedStateProps {
-  isFocused: boolean
-};
+  isFocused: boolean;
+}
 
 interface ConnectedDispatchProps {
-  focus: typeof focus,
-  blur: typeof blur
-};
+  focus: typeof focus;
+  blur: typeof blur;
+}
 
 export interface OwnProps {
-  id: string
-};
+  id: string;
+}
 
-export interface Props extends ConnectedStateProps,ConnectedDispatchProps, OwnProps {
-  onBlur: Pick<ComponentProps, 'onBlur'>,
-  onFocus: Pick<ComponentProps, 'onFocus'>
-};
+export interface Props extends ConnectedStateProps, ConnectedDispatchProps, OwnProps {
+  onBlur: Pick<ComponentProps, 'onBlur'>;
+  onFocus: Pick<ComponentProps, 'onFocus'>;
+}
 
 class Select extends React.PureComponent<Props> {
   handleFocus = () => this.props.focus(this.props.id);
@@ -43,16 +43,13 @@ class Select extends React.PureComponent<Props> {
 }
 
 export const mapStateToProps = (state: StoreState, {id}: OwnProps): ConnectedStateProps => ({
-  isFocused: getFocusedSelect(state) === id
+  isFocused: getFocusedSelect(state) === id,
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   focus,
-  blur
+  blur,
 };
 
 export {Select as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Select);
+export default connect(mapStateToProps, mapDispatchToProps)(Select);

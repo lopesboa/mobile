@@ -3,7 +3,7 @@ import {CONTENT_TYPE, ENGINE} from '../const';
 import createService from './analytics';
 
 jest.mock('@react-native-firebase/app', () => ({
-  utils: jest.fn(() => ({}))
+  utils: jest.fn(() => ({})),
 }));
 jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
@@ -31,7 +31,7 @@ describe('Analytics', () => {
       // @ts-ignore
       const progression = createProgression({
         engine: ENGINE.LEARNER,
-        state: {nextContent: {type: CONTENT_TYPE.FAILURE, ref: 'foobar'}}
+        state: {nextContent: {type: CONTENT_TYPE.FAILURE, ref: 'foobar'}},
       });
       const logEvent = jest.fn();
       // @ts-ignore
@@ -41,7 +41,7 @@ describe('Analytics', () => {
       expect(logEvent).toHaveBeenCalledWith('finishProgression', {
         type: ENGINE.LEARNER,
         state: CONTENT_TYPE.FAILURE,
-        extraLife: 0
+        extraLife: 0,
       });
     });
   });

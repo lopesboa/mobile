@@ -4,12 +4,12 @@ export const createDiscipline = ({
   ref,
   levels,
   name,
-  accessible = true
+  accessible = true,
 }: {
-  ref: string,
-  levels: Array<Level>,
-  name: string,
-  accessible?: boolean
+  ref: string;
+  levels: Array<Level>;
+  name: string;
+  accessible?: boolean;
 }): Discipline => ({
   _id: 'foobarbaz',
   ref,
@@ -23,12 +23,12 @@ export const createDiscipline = ({
   groups: ['ALL', 'digital', 'them_4kZQpfpgQ', 'them_EJFqsxi7m'],
   stats: {
     userTriesCount: 0,
-    userDoneCount: 0
+    userDoneCount: 0,
   },
   meta: {
     taggedNewUntil: '2019-02-28T09:07:00.404Z',
     updatedAt: '2019-01-15T15:19:43.245Z',
-    createdAt: '2018-11-29T11:38:40.206Z'
+    createdAt: '2018-11-29T11:38:40.206Z',
   },
   partners: ['part_N1RwTvjqz'],
   modules: levels,
@@ -42,13 +42,13 @@ export const createDiscipline = ({
         '//static.coorpacademy.com/content/CoorpAcademy/content-partnerships-fabernovel/cockpit-fabernovel/default/image-culture-data-1543419545159.jpg',
       subtitles: [],
       posters: [],
-      src: []
-    }
+      src: [],
+    },
   },
   version: '2',
-  accessible
+  accessible,
 });
 
 export default {
-  createDiscipline
+  createDiscipline,
 };

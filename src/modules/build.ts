@@ -9,7 +9,7 @@ import {
   __STORYBOOK__,
   __TEST__,
   __ADHOC__,
-  __DISTRIBUTION__
+  __DISTRIBUTION__,
 } from './environment';
 
 export type BuildEnvironment = 'development' | 'test' | 'production';
@@ -57,11 +57,11 @@ export const getBuildExtension = (): string =>
   pipe(
     omitBy(isUndefined),
     map((value, ...args) => `${args[0]} ${value}`),
-    join('; ')
+    join('; '),
   )({
     BuildEnvironment: getBuildEnvironment(),
     BuildType: getBuildType(),
-    BuildFlavor: getBuildFlavor()
+    BuildFlavor: getBuildFlavor(),
   });
 
 export const getUserAgent = async (): Promise<string> => {

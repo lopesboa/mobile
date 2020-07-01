@@ -9,12 +9,10 @@ describe('User service', () => {
     const user = createUser();
 
     const fetchUser = jest.fn();
-    fetchUser.mockImplementationOnce(
-      ((workingToken: string) => {
-        expect(token).toEqual(workingToken);
-        return Promise.resolve(user);
-      })
-    ) as Pick<DataLayer, 'fetchUser'>;
+    fetchUser.mockImplementationOnce((workingToken: string) => {
+      expect(token).toEqual(workingToken);
+      return Promise.resolve(user);
+    }) as Pick<DataLayer, 'fetchUser'>;
 
     // @ts-ignore
     const service = createService({fetchUser});
@@ -25,12 +23,10 @@ describe('User service', () => {
     const token = '__TOKEN__';
 
     const fetchUser = jest.fn();
-    fetchUser.mockImplementationOnce(
-      ((workingToken: string) => {
-        expect(token).toEqual(workingToken);
-        return Promise.reject(fakeError);
-      })
-    ) as Pick<DataLayer, 'fetchUser'>;
+    fetchUser.mockImplementationOnce((workingToken: string) => {
+      expect(token).toEqual(workingToken);
+      return Promise.reject(fakeError);
+    }) as Pick<DataLayer, 'fetchUser'>;
 
     // @ts-ignore
     const service = createService({fetchUser});

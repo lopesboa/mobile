@@ -62,7 +62,7 @@ describe('Authentication', () => {
       const getState = jest.fn();
 
       getState.mockReturnValue({
-        authentication: createAuthenticationState({brand})
+        authentication: createAuthenticationState({brand}),
       });
 
       const options = {
@@ -70,42 +70,42 @@ describe('Authentication', () => {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Brands: {
-            find: jest.fn(() => Promise.resolve(brand))
+            find: jest.fn(() => Promise.resolve(brand)),
           },
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Language: {
             set: jest.fn(),
-            getFromInterface: jest.fn(() => language)
-          }
-        }
+            getFromInterface: jest.fn(() => language),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest(token));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchBrandRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchBrandSuccess(brand));
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchUserRequest());
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchUserSuccess(user));
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInSuccess(token));
         return action;
       });
@@ -118,13 +118,13 @@ describe('Authentication', () => {
         {
           userId: 'foobar',
           brand: brand.name,
-          authenticationType
-        }
+          authenticationType,
+        },
       );
       expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
       expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
         userId: 'foobar',
-        brand: brand.name
+        brand: brand.name,
       });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
@@ -136,7 +136,7 @@ describe('Authentication', () => {
     it('should sign in as anonymous', async () => {
       const brand = createBrand();
       const token = createToken({
-        brand: brand.name
+        brand: brand.name,
       });
       const user = createUser();
 
@@ -153,49 +153,49 @@ describe('Authentication', () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: createAuthenticationState({brand})
+        authentication: createAuthenticationState({brand}),
       });
       const options = {
         services: {
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Brands: {
-            find: jest.fn(() => Promise.resolve(brand))
+            find: jest.fn(() => Promise.resolve(brand)),
           },
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchBrandRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchBrandSuccess(brand));
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchUserRequest());
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchUserSuccess(user));
         return action;
       });
-      dispatch.mockImplementationOnce(action => action);
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => action);
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInSuccess(token));
         return action;
       });
@@ -208,13 +208,13 @@ describe('Authentication', () => {
         {
           userId: 'foobar',
           brand: brand.name,
-          authenticationType
-        }
+          authenticationType,
+        },
       );
       expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
       expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
         userId: 'foobar',
-        brand: brand.name
+        brand: brand.name,
       });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
@@ -243,22 +243,22 @@ describe('Authentication', () => {
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInError(fakeError));
         return action;
       });
@@ -284,24 +284,24 @@ describe('Authentication', () => {
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
       const token = createToken({iss: '360-learning'});
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest(token));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
         return action;
       });
@@ -327,26 +327,26 @@ describe('Authentication', () => {
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
       const token = createToken({
-        host: null
+        host: null,
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest(token));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInError(new Error("JWT isn't from Coorpacademy")));
         return action;
       });
@@ -373,35 +373,35 @@ describe('Authentication', () => {
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Brands: {
-            find: jest.fn(() => Promise.reject(fakeError))
+            find: jest.fn(() => Promise.reject(fakeError)),
           },
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
       const token = createToken({});
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest(token));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(fakeError));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInError(new Error()));
         return action;
       });
@@ -429,41 +429,41 @@ describe('Authentication', () => {
       // @todo replace with fixture creator
       getState.mockReturnValue({
         authentication: {
-          brand: null
-        }
+          brand: null,
+        },
       });
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Brands: {
-            find: jest.fn(() => Promise.resolve(brand))
+            find: jest.fn(() => Promise.resolve(brand)),
           },
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
       const token = createToken({});
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInRequest(token));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchSuccess(brand));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(signInError(new Error('Incorrect brand')));
         return action;
       });
@@ -492,25 +492,25 @@ describe('Authentication', () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: createAuthenticationState({token, brand})
+        authentication: createAuthenticationState({token, brand}),
       });
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual({
-          type: SIGN_OUT
+          type: SIGN_OUT,
         });
         return action;
       });
@@ -523,13 +523,13 @@ describe('Authentication', () => {
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
           userId: 'foobar',
-          brand: brand.name
-        }
+          brand: brand.name,
+        },
       );
       expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
       expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
         userId: null,
-        brand: null
+        brand: null,
       });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
@@ -549,25 +549,25 @@ describe('Authentication', () => {
       const getState = jest.fn();
 
       getState.mockReturnValue({
-        authentication: createAuthenticationState({token, brand})
+        authentication: createAuthenticationState({token, brand}),
       });
       const options = {
         services: {
           Users: {
-            find: jest.fn(() => Promise.resolve(user))
+            find: jest.fn(() => Promise.resolve(user)),
           },
           Analytics: createFakeAnalytics(),
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual({
-          type: SIGN_OUT
+          type: SIGN_OUT,
         });
         return action;
       });
@@ -580,13 +580,13 @@ describe('Authentication', () => {
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
           userId: undefined,
-          brand: brand.name
-        }
+          brand: brand.name,
+        },
       );
       expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
       expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
         userId: null,
-        brand: null
+        brand: null,
       });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);
@@ -602,7 +602,7 @@ describe('Authentication', () => {
       const dispatch = jest.fn();
       const getState = jest.fn();
       getState.mockReturnValue({
-        authentication: createAuthenticationState({token, brand: null})
+        authentication: createAuthenticationState({token, brand: null}),
       });
       const options = {
         services: {
@@ -610,14 +610,14 @@ describe('Authentication', () => {
           Logger: createFakeLogger(),
           Language: {
             getFromInterface: jest.fn(() => language),
-            set: jest.fn()
-          }
-        }
+            set: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual({
-          type: SIGN_OUT
+          type: SIGN_OUT,
         });
         return action;
       });
@@ -630,13 +630,13 @@ describe('Authentication', () => {
         ANALYTICS_EVENT_TYPE.SIGN_OUT,
         {
           userId: 'foobar',
-          brand: undefined
-        }
+          brand: undefined,
+        },
       );
       expect(options.services.Logger.setProperties).toHaveBeenCalledTimes(1);
       expect(options.services.Logger.setProperties).toHaveBeenCalledWith({
         userId: null,
-        brand: null
+        brand: null,
       });
       expect(options.services.Language.getFromInterface).toHaveBeenCalledTimes(1);
       expect(options.services.Language.set).toHaveBeenCalledTimes(1);

@@ -12,7 +12,7 @@ jest.mock('./core', () => {
 
   return {
     getItem: () => Promise.resolve(slide),
-    getItemsPerResourceType: () => Promise.resolve([slide])
+    getItemsPerResourceType: () => Promise.resolve([slide]),
   };
 });
 

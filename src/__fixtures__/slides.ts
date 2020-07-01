@@ -1,4 +1,4 @@
-import type {Lesson, Question, Context} from '@types/coorp/progression-engine';
+import type {Lesson, Question, Context} from '../types/coorpacademy/progression-engine';
 import type {Slide} from '../layer/data/_types';
 import {createEmptyContext} from './context';
 
@@ -8,14 +8,14 @@ export const createSlide = ({
   question,
   clue,
   lessons = [],
-  context
+  context,
 }: {
-  ref: string,
-  chapterId: string,
-  question: Question,
-  clue?: string | null,
-  lessons?: Array<Lesson>,
-  context?: Context | null
+  ref: string;
+  chapterId: string;
+  question: Question;
+  clue?: string | null;
+  lessons?: Array<Lesson>;
+  context?: Context | null;
 }): Slide => ({
   _id: ref,
   universalRef: ref,
@@ -29,12 +29,12 @@ export const createSlide = ({
   context: context || createEmptyContext(),
   meta: {
     updatedAt: '2019-01-17T09:35:44.450Z',
-    createdAt: '2019-01-17T09:35:44.450Z'
+    createdAt: '2019-01-17T09:35:44.450Z',
   },
   lessons,
-  question
+  question,
 });
 
 export default {
-  createSlide
+  createSlide,
 };

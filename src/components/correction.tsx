@@ -37,42 +37,42 @@ const styles = StyleSheet.create({
   loaderContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   positive: {
-    backgroundColor: theme.colors.positive
+    backgroundColor: theme.colors.positive,
   },
   negative: {
-    backgroundColor: theme.colors.negative
+    backgroundColor: theme.colors.negative,
   },
   title: {
     color: theme.colors.white,
     fontSize: theme.fontSize.xxlarge,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   explanation: {
     fontSize: theme.fontSize.large,
-    color: theme.colors.white
+    color: theme.colors.white,
   },
   card: {
     ...BOX_STYLE,
     borderRadius: theme.radius.card,
     borderBottomWidth: 1,
-    borderColor: 'rgba(20, 23, 26, 0.15)'
+    borderColor: 'rgba(20, 23, 26, 0.15)',
   },
   cards: {
-    zIndex: 100
+    zIndex: 100,
   },
   overflowHidden: {
     flex: 1,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   cardText: {
-    color: theme.colors.gray.dark
+    color: theme.colors.gray.dark,
   },
   header: {
     width: '100%',
@@ -81,48 +81,48 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     paddingHorizontal: PADDING_WIDTH,
-    paddingTop: PADDING_WIDTH
+    paddingTop: PADDING_WIDTH,
   },
   resourceTitleContainer: {
     padding: theme.spacing.base,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   resourceTitle: {
     flex: 1,
     textAlign: 'center',
     fontSize: theme.fontSize.regular,
     color: '#556e79',
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   resource: {
-    flex: 0
+    flex: 0,
   },
   footer: {
     paddingHorizontal: PADDING_WIDTH,
-    paddingBottom: PADDING_WIDTH
-  }
+    paddingBottom: PADDING_WIDTH,
+  },
 });
 
 interface Props extends WithLayoutProps, WithVibrationProps, WithAudioProps {
-  question: string,
-  answers: Array<string>,
-  userAnswers: Array<string>,
-  tip: string,
-  keyPoint: string,
-  isCorrect?: boolean,
-  onButtonPress: () => void,
-  isResourceViewed?: boolean,
-  offeringExtraLife?: boolean,
-  hasConsumedExtraLife?: boolean,
-  resources?: Array<ResourceType>,
-  lives?: number,
-  isGodModeEnabled?: boolean,
-  isFastSlideEnabled?: boolean,
-  onPDFButtonPress: (url: string, description?: string) => void,
-  onVideoPlay: () => void,
-  testID?: string,
-  onLinkPress: () => void
-};
+  question: string;
+  answers: Array<string>;
+  userAnswers: Array<string>;
+  tip: string;
+  keyPoint: string;
+  isCorrect?: boolean;
+  onButtonPress: () => void;
+  isResourceViewed?: boolean;
+  offeringExtraLife?: boolean;
+  hasConsumedExtraLife?: boolean;
+  resources?: Array<ResourceType>;
+  lives?: number;
+  isGodModeEnabled?: boolean;
+  isFastSlideEnabled?: boolean;
+  onPDFButtonPress: (url: string, description?: string) => void;
+  onVideoPlay: () => void;
+  testID?: string;
+  onLinkPress: () => void;
+}
 
 class Correction extends React.PureComponent<Props> {
   componentDidMount() {
@@ -158,7 +158,7 @@ class Correction extends React.PureComponent<Props> {
       isResourceViewed,
       resources,
       offeringExtraLife,
-      hasConsumedExtraLife
+      hasConsumedExtraLife,
     } = this.props;
 
     const correctionCard: DeckCard = {
@@ -166,27 +166,27 @@ class Correction extends React.PureComponent<Props> {
       userAnswers,
       type: DECK_CARD_TYPE.CORRECTION,
       title: translations.correction,
-      isCorrect
+      isCorrect,
     };
     const tipCard = {
       type: DECK_CARD_TYPE.TIP,
       title: translations.didYouKnowThat,
-      isCorrect
+      isCorrect,
     };
 
     const keyPointCard = {
       type: DECK_CARD_TYPE.KEY_POINT,
       title: translations.keyPoint,
-      isCorrect
+      isCorrect,
     };
     const lessonCards =
       (resources &&
-        resources.map(resource => ({
+        resources.map((resource) => ({
           type: DECK_CARD_TYPE.RESOURCE,
           title: translations.accessTheLesson,
           resource,
           isCorrect,
-          offeringExtraLife
+          offeringExtraLife,
         }))) ||
       [];
 
@@ -221,7 +221,7 @@ class Correction extends React.PureComponent<Props> {
   renderCard = (
     {answers, userAnswers, type, title: cardTitle, resource, offeringExtraLife}: DeckCard,
     index: number,
-    animationStyle: AnimationStyleProp
+    animationStyle: AnimationStyleProp,
   ) => {
     const {question, tip, keyPoint, isCorrect, onLinkPress} = this.props;
     // This is the offset added by the deck swiper
@@ -317,7 +317,7 @@ class Correction extends React.PureComponent<Props> {
       isFastSlideEnabled,
       offeringExtraLife,
       hasConsumedExtraLife,
-      testID = 'correction'
+      testID = 'correction',
     } = this.props;
     const lives = hasConsumedExtraLife && _lives !== undefined ? _lives + 1 : _lives;
     const canGoNext = lives === undefined || lives > 0;
@@ -338,7 +338,7 @@ class Correction extends React.PureComponent<Props> {
         style={[
           styles.container,
           isLoading && styles.loaderContainer,
-          !isLoading && (isCorrect ? styles.positive : styles.negative)
+          !isLoading && (isCorrect ? styles.positive : styles.negative),
         ]}
         testID={`${testID}-${(isLoading && 'loading') || (isCorrect ? 'success' : 'error')}`}
       >

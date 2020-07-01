@@ -27,10 +27,14 @@ if (__TEST__) {
     it('should handle close', () => {
       const handleClose = jest.fn();
       const component = renderer.create(
-        <ModalSelect onChange={handleFakePress} onClose={handleClose} values={select.items || []} />
+        <ModalSelect
+          onChange={handleFakePress}
+          onClose={handleClose}
+          values={select.items || []}
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'close-modal');
+      const button = component.root.find((el) => el.props.testID === 'close-modal');
       button.props.onPress();
 
       expect(handleClose).toHaveBeenCalledTimes(1);
@@ -43,15 +47,15 @@ if (__TEST__) {
           onChange={handleChange}
           onClose={handleFakePress}
           values={select.items || []}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'modal-select-item-2');
+      const button = component.root.find((el) => el.props.testID === 'modal-select-item-2');
       button.props.onPress();
 
       expect(handleChange).toHaveBeenCalledTimes(1);
       expect(handleChange).toHaveBeenCalledWith(
-        select.items && select.items[1] && select.items[1].text
+        select.items && select.items[1] && select.items[1].text,
       );
     });
   });

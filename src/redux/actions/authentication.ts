@@ -21,39 +21,39 @@ export const SIGN_OUT = `@@authentication/SIGN_OUT`;
 
 export type Action =
   | {
-      type: '@@authentication/SIGN_IN_REQUEST',
-      payload?: string
+      type: '@@authentication/SIGN_IN_REQUEST';
+      payload?: string;
     }
   | {
-      type: '@@authentication/SIGN_IN_SUCCESS',
-      payload: string
+      type: '@@authentication/SIGN_IN_SUCCESS';
+      payload: string;
     }
   | StoreErrorAction<{
-      type: '@@authentication/SIGN_IN_ERROR'
+      type: '@@authentication/SIGN_IN_ERROR';
     }>
   | {
-      type: '@@authentication/SIGN_OUT'
+      type: '@@authentication/SIGN_OUT';
     };
 
 export const signInRequest = (token?: string): Action => ({
   type: SIGN_IN_REQUEST,
-  payload: token
+  payload: token,
 });
 
 export const signInSuccess = (token: string): Action => ({
   type: SIGN_IN_SUCCESS,
-  payload: token
+  payload: token,
 });
 
 export const signInError = (e: Error): Action => ({
   type: SIGN_IN_ERROR,
   payload: e,
-  error: true
+  error: true,
 });
 
 export const getAnonymousToken = async (): Promise<string> => {
   const response = await fetch('https://up.coorpacademy.com/api/v1/anonymous/mobile', {
-    method: 'POST'
+    method: 'POST',
   });
   const token = await response.text();
 
@@ -62,7 +62,7 @@ export const getAnonymousToken = async (): Promise<string> => {
 
 export const signIn = (
   authenticationType: AuthenticationType,
-  _token?: string
+  _token?: string,
 ): StoreAction<Action | BrandsAction> => async (dispatch, getState, options) => {
   const {services} = options;
 
@@ -104,11 +104,11 @@ export const signIn = (
     services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {
       userId: jwt.user,
       brand: brand.name,
-      authenticationType
+      authenticationType,
     });
     services.Logger.setProperties({
       userId: jwt.user,
-      brand: brand.name
+      brand: brand.name,
     });
 
     return dispatch(signInSuccess(token));
@@ -133,14 +133,14 @@ export const signOut = (): StoreAction<Action> => async (dispatch, getState, opt
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
     ...(brand ? {brand: brand.name} : {}),
-    userId: jwt && jwt.user
+    userId: jwt && jwt.user,
   });
   services.Logger.setProperties({
     userId: null,
-    brand: null
+    brand: null,
   });
 
   return dispatch({
-    type: SIGN_OUT
+    type: SIGN_OUT,
   });
 };

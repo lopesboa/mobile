@@ -11,23 +11,23 @@ import Touchable from '../components/touchable';
 import {DECK_CARD_TYPE} from '../const';
 
 interface Props extends DeckCardProps, DeckCardHeaderProps {
-  height: number,
-  expandedHeight: number,
-  isExpanded?: boolean,
-  animationStyle?: AnimationStyle,
-  offsetBottom: number,
-  expandedOffsetBottom: number,
-  style?: ViewStyle,
-  testID?: string
-};
+  height: number;
+  expandedHeight: number;
+  isExpanded?: boolean;
+  animationStyle?: AnimationStyle;
+  offsetBottom: number;
+  expandedOffsetBottom: number;
+  style?: ViewStyle;
+  testID?: string;
+}
 
 type State = {
-  isExpanded: boolean
+  isExpanded: boolean;
 };
 
 const styles = StyleSheet.create({
   expanded: {
-    flex: 1
+    flex: 1,
   },
   content: {
     flex: 1,
@@ -35,22 +35,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.base,
     borderBottomLeftRadius: theme.radius.card,
     borderBottomRightRadius: theme.radius.card,
-    backgroundColor: theme.colors.white
+    backgroundColor: theme.colors.white,
   },
   noPadding: {paddingTop: 0, paddingHorizontal: 0},
   gradient: {
     position: 'absolute',
     left: 0,
     bottom: 0,
-    right: 0
-  }
+    right: 0,
+  },
 });
 
 const ANIMATION_DURATION = 200;
 
 class DeckCardScalable extends React.PureComponent<Props, State> {
   state: State = {
-    isExpanded: Boolean(this.props.isExpanded)
+    isExpanded: Boolean(this.props.isExpanded),
   };
 
   top: Animated.Value = new Animated.Value(0);
@@ -59,7 +59,7 @@ class DeckCardScalable extends React.PureComponent<Props, State> {
 
   componentWillReceiveProps = (props: Props) =>
     this.setState({
-      isExpanded: Boolean(props.isExpanded)
+      isExpanded: Boolean(props.isExpanded),
     });
 
   componentWillUpdate = (nextProps: Props, nextState: State) => {
@@ -73,20 +73,20 @@ class DeckCardScalable extends React.PureComponent<Props, State> {
         Animated.timing(this.top, {
           toValue: isExpanded ? -((expandedHeight - height + expandedOffsetBottom) / 2) : 0,
           duration: ANIMATION_DURATION,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.timing(this.height, {
           toValue: isExpanded ? expandedHeight : height - offsetBottom,
           duration: ANIMATION_DURATION,
-          useNativeDriver: false
-        })
+          useNativeDriver: false,
+        }),
       ]).start();
     }
   };
 
   handlePress = () => {
     this.setState((state: State) => ({
-      isExpanded: !state.isExpanded
+      isExpanded: !state.isExpanded,
     }));
   };
 
@@ -96,7 +96,7 @@ class DeckCardScalable extends React.PureComponent<Props, State> {
       ...style,
       ...((!this.state.isExpanded && animationStyle) || {}),
       height: this.height,
-      top: this.top
+      top: this.top,
     };
 
     return (

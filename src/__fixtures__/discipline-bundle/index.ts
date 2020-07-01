@@ -22,7 +22,7 @@ const items = [
   qcmDrag,
   slider,
   withBasicQuestion,
-  locked
+  locked,
 ];
 
 const initialDisciplinesBundle: BundledDiscipline = {
@@ -30,7 +30,7 @@ const initialDisciplinesBundle: BundledDiscipline = {
   chapters: {},
   slides: {},
   chapterRules: {},
-  exitNodes: {}
+  exitNodes: {},
 };
 
 const disciplinesBundles: BundledDiscipline = items.reduce(
@@ -38,26 +38,26 @@ const disciplinesBundles: BundledDiscipline = items.reduce(
     ...result,
     disciplines: {
       ...result.disciplines,
-      ...disciplineBundle.disciplines
+      ...disciplineBundle.disciplines,
     },
     chapters: {
       ...result.chapters,
-      ...disciplineBundle.chapters
+      ...disciplineBundle.chapters,
     },
     slides: {
       ...result.slides,
-      ...disciplineBundle.slides
+      ...disciplineBundle.slides,
     },
     chapterRules: {
       ...result.chapterRules,
-      ...disciplineBundle.chapterRules
+      ...disciplineBundle.chapterRules,
     },
     exitNodes: {
       ...result.exitNodes,
-      ...disciplineBundle.exitNodes
-    }
+      ...disciplineBundle.exitNodes,
+    },
   }),
-  initialDisciplinesBundle
+  initialDisciplinesBundle,
 );
 
 export default disciplinesBundles;

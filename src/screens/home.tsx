@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
@@ -24,8 +24,7 @@ export interface ConnectedStateProps {
 
 interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
-};
-
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
@@ -88,12 +87,12 @@ class HomeScreen extends React.PureComponent<Props> {
 
 const getIsFetchingState: (state: StoreState) => boolean = createSelector(
   [getToken],
-  token => !token
+  (token) => !token,
 );
 
 const getIsFocusedState: (state: StoreState) => boolean = createSelector(
   [getCurrentScreenName],
-  name => name === 'Home'
+  (name) => name === 'Home',
 );
 
 
@@ -105,11 +104,8 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  selectCard
+  selectCard,
 };
 
 export {HomeScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

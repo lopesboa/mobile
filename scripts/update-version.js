@@ -26,7 +26,7 @@ const version: Version = {
   // $FlowFixMe this string is tested above
   buildType,
   // $FlowFixMe this string is tested above
-  buildFlavor
+  buildFlavor,
 };
 const output = JSON.stringify(version, null, 2);
 

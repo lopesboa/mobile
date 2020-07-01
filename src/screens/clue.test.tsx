@@ -20,7 +20,7 @@ const question = createQCMGraphic({});
 const slide = createSlide({
   ref: slideRef,
   chapterId,
-  question
+  question,
 });
 
 describe('Clue', () => {
@@ -30,14 +30,14 @@ describe('Clue', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         type: CONTENT_TYPE.SLIDE,
-        ref: slideRef
+        ref: slideRef,
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: slideRef
-        }
-      }
+          ref: slideRef,
+        },
+      },
     });
 
     const chapters = [];
@@ -57,10 +57,10 @@ describe('Clue', () => {
         disciplines,
         progression,
         configs: {
-          'learner@2': createEngineConfig()
+          'learner@2': createEngineConfig(),
         },
-        clue: 'Whatever'
-      })
+        clue: 'Whatever',
+      }),
     });
 
     const result = mapStateToProps(store);
@@ -68,7 +68,7 @@ describe('Clue', () => {
       header: question.header,
       clue: 'Whatever',
       slideId: slideRef,
-      starsDiff: 42
+      starsDiff: 42,
     };
 
     expect(result).toEqual(expected);
@@ -80,10 +80,10 @@ describe('Clue', () => {
     const fetchClue = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Clue navigation={navigation} clue="Foo bar" fetchClue={fetchClue} />
+      <Clue navigation={navigation} clue="Foo bar" fetchClue={fetchClue} />,
     );
 
-    const clue = component.root.find(el => el.props.testID === 'clue');
+    const clue = component.root.find((el) => el.props.testID === 'clue');
     clue.props.onPress();
 
     expect(fetchClue).toHaveBeenCalledTimes(1);

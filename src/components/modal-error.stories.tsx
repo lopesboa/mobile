@@ -35,10 +35,10 @@ if (__TEST__) {
           onPress={handleFakePress}
           onAssistancePress={handleFakePress}
           onClose={handleClose}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'close-modal');
+      const button = component.root.find((el) => el.props.testID === 'close-modal');
       button.props.onPress();
       expect(handleClose).toHaveBeenCalledTimes(1);
     });
@@ -51,10 +51,10 @@ if (__TEST__) {
           onPress={handlePress}
           onAssistancePress={handleFakePress}
           onClose={handleFakePress}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'button-retry-action');
+      const button = component.root.find((el) => el.props.testID === 'button-retry-action');
       button.props.onPress();
       expect(handlePress).toHaveBeenCalledTimes(1);
     });
@@ -67,10 +67,10 @@ if (__TEST__) {
           onPress={handleFakePress}
           onAssistancePress={handleAssistancePress}
           onClose={handleFakePress}
-        />
+        />,
       );
 
-      const touchable = component.root.find(el => el.props.testID === 'ask-for-help');
+      const touchable = component.root.find((el) => el.props.testID === 'ask-for-help');
       touchable.props.onPress();
       expect(handleAssistancePress).toHaveBeenCalledTimes(1);
     });

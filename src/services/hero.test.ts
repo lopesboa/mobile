@@ -3,7 +3,7 @@ import {createHeroRecommendation} from '../__fixtures__/hero-recommendation';
 import type {ChapterCard, HeroRecommendation} from '../layer/data/_types';
 
 jest.mock('../layer/data/progressions', () => ({
-  getAggregationsByContent: jest.fn()
+  getAggregationsByContent: jest.fn(),
 }));
 
 describe('Hero service', () => {
@@ -22,7 +22,7 @@ describe('Hero service', () => {
       ref: 'foo',
       status: 'isStarted',
       title: 'plop',
-      completion: 12
+      completion: 12,
     });
 
     const fetchCard = jest.fn();
@@ -43,7 +43,7 @@ describe('Hero service', () => {
       ref: 'reco',
       status: 'isStarted',
       title: 'plop',
-      completion: 12
+      completion: 12,
     });
 
     // @ts-ignore mock property
@@ -52,14 +52,14 @@ describe('Hero service', () => {
         createHeroRecommendation({
           progressionId: 'foo_p',
           contentRef: 'foo',
-          success: true
+          success: true,
         }),
         createHeroRecommendation({
           progressionId: 'bar_p',
           contentRef: 'bar',
-          success: true
-        })
-      ])
+          success: true,
+        }),
+      ]),
     );
 
     const fetchCard = jest.fn();
@@ -81,28 +81,28 @@ describe('Hero service', () => {
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because  success: true',
-        success: true
+        success: true,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because  nbSlides < 3',
         nbSlides: 2,
-        success: false
+        success: false,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because | date 2018',
         updatedAt: '2018-05-23T16:10:38.486Z',
         nbSlides: 1,
-        success: false
-      })
+        success: false,
+      }),
     ];
 
     const reco: ChapterCard = createChapterCard({
       ref: 'reco',
       status: 'isStarted',
       title: 'plop',
-      completion: 12
+      completion: 12,
     });
 
     // @ts-ignore mock property
@@ -127,35 +127,35 @@ describe('Hero service', () => {
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because success: true',
-        success: true
+        success: true,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because nbSlides < 3',
         nbSlides: 2,
-        success: false
+        success: false,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because date 2018',
         updatedAt: '2018-05-23T16:10:38.486Z',
         nbSlides: 3,
-        success: false
+        success: false,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should be selected',
         updatedAt: '2019-05-23T16:10:38.486Z',
         nbSlides: 3,
-        success: false
+        success: false,
       }),
       createHeroRecommendation({
         progressionId: 'foo',
         contentRef: 'should not be selected because date 2017',
         updatedAt: '2017-05-23T16:10:38.486Z',
         nbSlides: 8,
-        success: false
-      })
+        success: false,
+      }),
     ];
 
     // @ts-ignore mock property
@@ -173,7 +173,7 @@ describe('Hero service', () => {
     expect(fetchCard).toHaveBeenCalledWith({
       ref: 'should be selected',
       type: 'chapter',
-      version: '1'
+      version: '1',
     });
   });
 

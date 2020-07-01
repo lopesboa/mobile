@@ -1,6 +1,6 @@
 const createCrashlytics = () => ({
   recordError: jest.fn(),
-  setAttribute: jest.fn()
+  setAttribute: jest.fn(),
 });
 
 describe('Logger', () => {
@@ -10,20 +10,20 @@ describe('Logger', () => {
     jest.mock('@react-native-firebase/crashlytics', () => jest.fn());
 
     jest.mock('../../modules/datadog', () => ({
-      log: jest.fn()
+      log: jest.fn(),
     }));
 
     jest.mock('../../utils/local-token', () => {
       const {createToken} = require('../../__fixtures__/tokens');
       return {
-        get: jest.fn(() => Promise.resolve(createToken({})))
+        get: jest.fn(() => Promise.resolve(createToken({}))),
       };
     });
 
     jest.mock('../../utils/local-brand', () => {
       const {createBrand} = require('../../__fixtures__/brands');
       return {
-        get: jest.fn(() => Promise.resolve(createBrand({})))
+        get: jest.fn(() => Promise.resolve(createBrand({}))),
       };
     });
   });
@@ -45,7 +45,7 @@ describe('Logger', () => {
       expect(logDatadogError).toHaveBeenCalledWith(error, {
         brand: 'mobile',
         platform: 'staging',
-        userId: 'foobar'
+        userId: 'foobar',
       });
       expect(crashlytics.recordError).toHaveBeenCalledTimes(1);
       expect(crashlytics.recordError).toHaveBeenCalledWith(error);
@@ -68,7 +68,7 @@ describe('Logger', () => {
       expect(logDatadogError).toHaveBeenCalledWith(error, {
         brand: 'mobile',
         platform: 'staging',
-        userId: 'foobar'
+        userId: 'foobar',
       });
       expect(crashlytics.recordError).toHaveBeenCalledTimes(1);
       expect(crashlytics.recordError).toHaveBeenCalledWith(error);
@@ -126,7 +126,7 @@ describe('Logger', () => {
 
       setProperties({
         foo: null,
-        baz: null
+        baz: null,
       });
 
       expect(crashlytics.setAttribute).toHaveBeenCalledTimes(2);

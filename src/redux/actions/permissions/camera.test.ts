@@ -8,7 +8,7 @@ import {check, request, change, toOSCameraPermission, CHECK, REQUEST, CHANGE} fr
 
 const createStore = (status: PermissionStatus) => ({
   getState: jest.fn(() => ({permissions: {camera: status}})),
-  dispatch: jest.fn()
+  dispatch: jest.fn(),
 });
 
 describe('Permissions', () => {
@@ -33,8 +33,8 @@ describe('Permissions', () => {
       type: CHANGE,
       payload: {
         type: 'camera',
-        status: PERMISSION_STATUS.GRANTED
-      }
+        status: PERMISSION_STATUS.GRANTED,
+      },
     };
     expect(result).toEqual(expected);
   });
@@ -43,16 +43,16 @@ describe('Permissions', () => {
     const expected: Action = {
       type: CHECK,
       payload: {
-        type: 'camera'
-      }
+        type: 'camera',
+      },
     };
 
     it('with change', async () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
       const services = {
         Permissions: {
-          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
-        }
+          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await check('camera')(dispatch, getState, {services});
@@ -60,8 +60,8 @@ describe('Permissions', () => {
         type: CHANGE,
         payload: {
           type: 'camera',
-          status: PERMISSION_STATUS.UNDETERMINED
-        }
+          status: PERMISSION_STATUS.UNDETERMINED,
+        },
       };
       expect(dispatch.mock.calls.length).toBe(2);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
@@ -74,8 +74,8 @@ describe('Permissions', () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.GRANTED);
       const services = {
         Permissions: {
-          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.GRANTED))
-        }
+          check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.GRANTED)),
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await check('camera')(dispatch, getState, {services});
@@ -90,8 +90,8 @@ describe('Permissions', () => {
     const expected: Action = {
       type: REQUEST,
       payload: {
-        type: 'camera'
-      }
+        type: 'camera',
+      },
     };
 
     describe('should handle request', () => {
@@ -101,8 +101,8 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
-          }
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -110,8 +110,8 @@ describe('Permissions', () => {
           type: CHANGE,
           payload: {
             type: 'camera',
-            status: PERMISSION_STATUS.DENIED
-          }
+            status: PERMISSION_STATUS.DENIED,
+          },
         };
         expect(dispatch.mock.calls.length).toBe(2);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
@@ -122,7 +122,7 @@ describe('Permissions', () => {
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'camera',
-          status: PERMISSION_STATUS.DENIED
+          status: PERMISSION_STATUS.DENIED,
         });
       });
 
@@ -132,8 +132,8 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
-          }
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -145,7 +145,7 @@ describe('Permissions', () => {
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'camera',
-          status: PERMISSION_STATUS.UNDETERMINED
+          status: PERMISSION_STATUS.UNDETERMINED,
         });
       });
     });
@@ -159,8 +159,8 @@ describe('Permissions', () => {
           Permissions: {
             openSettings: jest.fn(() => Promise.resolve(undefined)),
             alert: jest.fn(),
-            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
-          }
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -172,9 +172,9 @@ describe('Permissions', () => {
           'foo bar baz',
           [
             {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
-            {onPress: expect.any(Function), text: translations.ok}
+            {onPress: expect.any(Function), text: translations.ok},
           ],
-          {cancelable: false}
+          {cancelable: false},
         ]);
         // @ts-ignore
         const onPressResult = await services.Permissions.alert.mock.calls[0][2][1].onPress();
@@ -193,8 +193,8 @@ describe('Permissions', () => {
               // @ts-ignore this simulates a press on the button
               quitOption && quitOption.onPress();
             }),
-            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
-          }
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -206,9 +206,9 @@ describe('Permissions', () => {
           'foo bar baz',
           [
             {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
-            {onPress: expect.any(Function), text: translations.openSettings}
+            {onPress: expect.any(Function), text: translations.openSettings},
           ],
-          {cancelable: false}
+          {cancelable: false},
         ]);
         // @ts-ignore
         const onPressResult = await services.Permissions.alert.mock.calls[1][2][1].onPress();
@@ -227,8 +227,8 @@ describe('Permissions', () => {
               // @ts-ignore this simulates a press on the button
               quitOption && quitOption.onPress();
             }),
-            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED))
-          }
+            request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -240,9 +240,9 @@ describe('Permissions', () => {
           'foo bar baz',
           [
             {onPress: expect.any(Function), style: 'cancel', text: translations.quit},
-            {onPress: expect.any(Function), text: translations.openSettings}
+            {onPress: expect.any(Function), text: translations.openSettings},
           ],
-          {cancelable: false}
+          {cancelable: false},
         ]);
         // @ts-ignore
         const onPressResult = await services.Permissions.alert.mock.calls[1][2][0].onPress();

@@ -11,17 +11,17 @@ describe('Migrations', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: 'mod_1',
-        type: CONTENT_TYPE.LEVEL
+        type: CONTENT_TYPE.LEVEL,
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SUCCESS,
-          ref: 'suc_1'
-        }
-      }
+          ref: 'suc_1',
+        },
+      },
     });
 
-    AsyncStorage.getItem = jest.fn(key => {
+    AsyncStorage.getItem = jest.fn((key) => {
       if (key.startsWith('progression')) return Promise.resolve(JSON.stringify(goodProgression));
       if (key.startsWith('async_')) return Promise.resolve(1);
     });
@@ -31,8 +31,8 @@ describe('Migrations', () => {
         'card:en:dis_NJ9KIQ0F~j',
         'card:en:mod_Vkb8j0-nP',
         '@@token',
-        'progression_5dee52c8a7da3a8443ed7a3a'
-      ])
+        'progression_5dee52c8a7da3a8443ed7a3a',
+      ]),
     );
 
     AsyncStorage.setItem = jest.fn().mockImplementationOnce((key, value) => {

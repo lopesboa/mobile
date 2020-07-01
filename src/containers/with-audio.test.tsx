@@ -16,11 +16,11 @@ describe('WithAudio', () => {
           WRONG_ANSWER: expect.any(Object),
           GOOD_ANSWER: expect.any(Object),
           FAILURE_LEVEL: expect.any(Object),
-          SUCCESS_LEVEL: expect.any(Object)
+          SUCCESS_LEVEL: expect.any(Object),
         },
         // @ts-ignore no callable signature found
-        play: expect.any(Function)
-      }
+        play: expect.any(Function),
+      },
     };
 
     expect(fakeComponent).toHaveBeenCalledTimes(1);

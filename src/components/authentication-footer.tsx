@@ -17,29 +17,29 @@ export interface Props {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   help: {
     flexDirection: 'row',
     alignSelf: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   helpText: {
     textDecorationLine: 'underline',
     fontSize: theme.fontSize.medium,
-    color: theme.colors.white
+    color: theme.colors.white,
   },
   demo: {
     textAlign: 'center',
     fontSize: theme.fontSize.large,
-    color: theme.colors.white
-  }
+    color: theme.colors.white,
+  },
 });
 
 const AuthenticationFooter = ({
   onDemoPress,
   onHelpPress,
-  testID: prefixTestID = 'authentication-footer'
+  testID: prefixTestID = 'authentication-footer',
 }: Props) => (
   <View style={styles.container}>
     <Html

@@ -1,8 +1,12 @@
-import type {Progression, GenericContent, State, Action} from '@types/coorp/progression-engine';
-import {$Shape} from "utility-types";
+import type {
+  Progression,
+  GenericContent,
+  State,
+  Action,
+} from '../types/coorpacademy/progression-engine';
 import type {Engine} from '../types';
 
-export type StateExtension = $Shape<State>;
+export type StateExtension = State;
 
 export const createAction = ({createdAt}: {createdAt?: string}): Action => {
   return {
@@ -12,9 +16,9 @@ export const createAction = ({createdAt}: {createdAt?: string}): Action => {
       instructions: null,
       nextContent: {
         type: 'slide',
-        ref: 'sli_foo'
-      }
-    }
+        ref: 'sli_foo',
+      },
+    },
   };
 };
 
@@ -25,7 +29,7 @@ export const createState = (state: StateExtension | void): State => {
     slides = [],
     lives = 4,
     step = {
-      current: 1
+      current: 1,
     },
     stars = 0,
     requestedClues = [],
@@ -35,7 +39,7 @@ export const createState = (state: StateExtension | void): State => {
     content = {type: 'slide', ref: 'sli_foo'},
     nextContent = {type: 'slide', ref: 'sli_foo'},
     allAnswers = [],
-    variables = {}
+    variables = {},
   } = state || {};
 
   const mergedState = {
@@ -52,7 +56,7 @@ export const createState = (state: StateExtension | void): State => {
     content,
     nextContent,
     allAnswers,
-    variables
+    variables,
   };
   return mergedState;
 };
@@ -62,27 +66,27 @@ export const createProgression = ({
   engine,
   progressionContent,
   state,
-  actions
+  actions,
 }: {
-  _id?: string,
-  engine: Engine,
-  progressionContent: GenericContent,
-  state?: StateExtension,
-  actions?: Array<Action>
+  _id?: string;
+  engine: Engine;
+  progressionContent: GenericContent;
+  state?: StateExtension;
+  actions?: Array<Action>;
 }): Progression => {
   return {
     _id,
     engine: {
       ref: engine,
-      version: '2'
+      version: '2',
     },
     content: progressionContent,
     engineOptions: {
       version: '2',
-      shuffleChoices: false
+      shuffleChoices: false,
     },
     actions,
-    state: state && createState(state)
+    state: state && createState(state),
   };
 };
 

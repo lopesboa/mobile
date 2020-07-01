@@ -14,38 +14,38 @@ export const FETCH_ERROR = '@@sections/FETCH_ERROR';
 
 export type Action =
   | {
-      type: '@@sections/FETCH_REQUEST',
+      type: '@@sections/FETCH_REQUEST';
       payload: {
-        offset: number,
-        limit: number,
-        language: SupportedLanguage
-      }
+        offset: number;
+        limit: number;
+        language: SupportedLanguage;
+      };
     }
   | {
-      type: '@@sections/FETCH_SUCCESS',
+      type: '@@sections/FETCH_SUCCESS';
       payload: {
-        offset: number,
-        limit: number,
-        total: number,
-        items: Array<Section>,
-        language: SupportedLanguage
-      }
+        offset: number;
+        limit: number;
+        total: number;
+        items: Array<Section>;
+        language: SupportedLanguage;
+      };
     }
   | StoreErrorAction<{
-      type: '@@sections/FETCH_ERROR'
+      type: '@@sections/FETCH_ERROR';
     }>;
 
 export const fetchRequest = (
   offset: number,
   limit: number,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ): Action => ({
   type: FETCH_REQUEST,
   payload: {
     offset,
     limit,
-    language
-  }
+    language,
+  },
 });
 
 export const fetchSuccess = (
@@ -53,7 +53,7 @@ export const fetchSuccess = (
   limit: number,
   total: number,
   items: Array<Section>,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ): Action => ({
   type: FETCH_SUCCESS,
   payload: {
@@ -61,24 +61,24 @@ export const fetchSuccess = (
     limit,
     total,
     items,
-    language
-  }
+    language,
+  },
 });
 
 export const fetchError = (error: Error): Action => ({
   type: FETCH_ERROR,
   payload: error,
-  error: true
+  error: true,
 });
 
 export const fetchSections = (
   offset: number,
   limit: number,
-  forceRefresh: boolean = false
+  forceRefresh = false,
 ): StoreAction<Action | ErrorAction<StoreAction<Action>>> => async (
   dispatch,
   getState,
-  options
+  options,
 ) => {
   const {services} = options;
   const language = translations.getLanguage();
@@ -101,8 +101,8 @@ export const fetchSections = (
           return forceRefresh || !(section && section.cardsRef);
         })
         .map((
-          section // @ts-ignore callable signature
-        ) => fetchCards(section.key, 0, DEFAULT_LIMIT, language)(dispatch, getState, options))
+          section, // @ts-ignore callable signature
+        ) => fetchCards(section.key, 0, DEFAULT_LIMIT, language)(dispatch, getState, options)),
     );
 
     return result;
@@ -111,8 +111,8 @@ export const fetchSections = (
     return dispatch(
       showError({
         type: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction: () => fetchSections(offset, limit, forceRefresh)
-      })
+        lastAction: () => fetchSections(offset, limit, forceRefresh),
+      }),
     );
   }
 };

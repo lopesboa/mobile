@@ -7,15 +7,15 @@ jest.mock('./core', () => {
 
   const firstLevel = createLevel({
     chapterIds: ['cha_1'],
-    ref: 'mod_1'
+    ref: 'mod_1',
   });
   const secondLevel = createLevel({
     chapterIds: ['cha_1'],
-    ref: 'mod_2'
+    ref: 'mod_2',
   });
 
   return {
-    getItem: (type, language, ref) => Promise.resolve(ref === 'mod_1' ? firstLevel : secondLevel)
+    getItem: (type, language, ref) => Promise.resolve(ref === 'mod_1' ? firstLevel : secondLevel),
   };
 });
 
@@ -25,20 +25,20 @@ jest.mock('./disciplines', () => {
 
   const firstLevel = createLevel({
     chapterIds: ['cha_1'],
-    ref: 'mod_1'
+    ref: 'mod_1',
   });
   const secondLevel = createLevel({
     chapterIds: ['cha_1'],
-    ref: 'mod_2'
+    ref: 'mod_2',
   });
   const firstDiscipline = createDiscipline({
     ref: 'dis_1',
     name: 'Fake discipline',
-    levels: [firstLevel, secondLevel]
+    levels: [firstLevel, secondLevel],
   });
 
   return {
-    findByLevel: ref => Promise.resolve(ref !== 'mod_foo' ? firstDiscipline : undefined)
+    findByLevel: (ref) => Promise.resolve(ref !== 'mod_foo' ? firstDiscipline : undefined),
   };
 });
 
@@ -71,7 +71,7 @@ describe('levels', () => {
         ...mapToLevelAPIExpectedResult,
         _id: 'id_mod_2',
         universalRef: 'mod_2',
-        ref: 'mod_2'
+        ref: 'mod_2',
       };
 
       expect(result).toEqual(expected);
@@ -85,14 +85,14 @@ describe('levels', () => {
       ref,
       chapterIds: [],
       bestScore: 666,
-      level: 'base'
+      level: 'base',
     });
 
     beforeEach(() => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
 
       const fetch = require('cross-fetch');
@@ -100,21 +100,21 @@ describe('levels', () => {
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
-          json: () => Promise<LevelAPI>
+          json: () => Promise<LevelAPI>;
         }> => {
           expect(url).toBe(`${host}/api/v2/levels/${ref}`);
           return Promise.resolve({
-            json: () => Promise.resolve(fakeLevelApi)
+            json: () => Promise.resolve(fakeLevelApi),
           });
-        }
+        },
       );
 
       jest.mock('../../utils/local-token', () => {
         const {createToken} = require('../../__fixtures__/tokens');
         return {
-          get: jest.fn(() => Promise.resolve(createToken({})))
+          get: jest.fn(() => Promise.resolve(createToken({}))),
         };
       });
     });

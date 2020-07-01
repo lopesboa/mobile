@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     borderBottomEndRadius: theme.radius.medium,
     paddingVertical: theme.spacing.micro,
-    paddingHorizontal: theme.spacing.tiny
+    paddingHorizontal: theme.spacing.tiny,
   },
   label: {
     fontWeight: theme.fontWeight.bold,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 const Badge = ({label, size, testID}: Props) => {
@@ -30,7 +30,7 @@ const Badge = ({label, size, testID}: Props) => {
   const fontSize = size === 'cover' ? theme.fontSize.small : theme.fontSize.extraSmall;
   const labelStyle = {
     fontSize,
-    color: brandTheme.colors.primary
+    color: brandTheme.colors.primary,
   };
 
   return (

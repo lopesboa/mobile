@@ -10,7 +10,7 @@ const card = createChapterCard({
   ref: 'bar',
   completion: 0,
   title: 'Fake chapter',
-  status: CARD_STATUS.ACTIVE
+  status: CARD_STATUS.ACTIVE,
 });
 
 describe('Search', () => {
@@ -22,10 +22,10 @@ describe('Search', () => {
     const component = renderer.create(
       <TestContextProvider>
         <Seach navigation={navigation} selectCard={selectCard} />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
-    const search = component.root.find(el => el.props.testID === 'search');
+    const search = component.root.find((el) => el.props.testID === 'search');
     search.props.onCardPress(card);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -42,10 +42,10 @@ describe('Search', () => {
     const component = renderer.create(
       <TestContextProvider>
         <Search navigation={navigation} selectCard={selectCard} />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
-    const search = component.root.find(el => el.props.testID === 'search');
+    const search = component.root.find((el) => el.props.testID === 'search');
     search.props.onBackPress();
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -63,18 +63,18 @@ describe('Search', () => {
     const component = renderer.create(
       <TestContextProvider>
         <Search navigation={navigation} selectCard={selectCard} />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
     TestBackHandler.fireEvent('hardwareBackPress');
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 });

@@ -18,17 +18,17 @@ export const BACKGROUND_COLOR = theme.colors.white;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   statusBar: {
-    flex: 0
+    flex: 0,
   },
   background: {
-    backgroundColor: BACKGROUND_COLOR
+    backgroundColor: BACKGROUND_COLOR,
   },
   content: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 });
 
 class Screen extends React.PureComponent<Props> {

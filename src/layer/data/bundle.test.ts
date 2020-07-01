@@ -17,7 +17,7 @@ import {
   createReduceToNormalizedItemFunction,
   storeBundle,
   buildLevels,
-  mapToResourceType
+  mapToResourceType,
 } from './bundle';
 
 const token = '__TOKEN__';
@@ -29,40 +29,40 @@ const qcmGraphic = createQCMGraphic({});
 const level = createLevel({ref: 'mod_1', chapterIds: ['cha_1', 'cha_2']});
 const disciplineBundle: BundledDiscipline = {
   disciplines: {
-    dis_1: createDiscipline({ref: 'dis_1', levels: [level], name: 'Basic course'})
+    dis_1: createDiscipline({ref: 'dis_1', levels: [level], name: 'Basic course'}),
   },
   chapters: {
     cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
-    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
+    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'}),
   },
   slides: {
     sli_1: createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm}),
     sli_2: createSlide({ref: 'sli_2', chapterId: 'cha_1', question: qcmGraphic}),
     sli_3: createSlide({ref: 'sli_3', chapterId: 'cha_2', question: qcm}),
-    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic})
+    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic}),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 const chapterBundle: BundledChapter = {
   chapters: {
     cha_1: createChapter({ref: 'cha_1', name: 'Basic chapter 1'}),
-    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'})
+    cha_2: createChapter({ref: 'cha_2', name: 'Basic chapter 2'}),
   },
   slides: {
     sli_1: createSlide({ref: 'sli_1', chapterId: 'cha_1', question: qcm}),
     sli_2: createSlide({ref: 'sli_2', chapterId: 'cha_1', question: qcmGraphic}),
     sli_3: createSlide({ref: 'sli_3', chapterId: 'cha_2', question: qcm}),
-    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic})
+    sli_4: createSlide({ref: 'sli_4', chapterId: 'cha_2', question: qcmGraphic}),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 const {disciplines, chapters, slides, exitNodes} = disciplineBundle;
 
@@ -70,7 +70,7 @@ describe('Data Layer Bundle', () => {
   it('should build the key/value pair', () => {
     const expectedResult = [
       ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
-      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)]
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)],
     ];
 
     // @ts-ignore union type
@@ -82,7 +82,7 @@ describe('Data Layer Bundle', () => {
     const result = createReduceToNormalizedItemFunction(disciplineBundle, 'en')([], 'chapters');
     const expectedResult = [
       ['chapter:en:cha_1', JSON.stringify(chapters.cha_1)],
-      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)]
+      ['chapter:en:cha_2', JSON.stringify(chapters.cha_2)],
     ];
 
     expect(result).toEqual(expectedResult);
@@ -91,12 +91,12 @@ describe('Data Layer Bundle', () => {
   it('should a chunk of a storable chapters', () => {
     const bundledResourceWithoutDiscipline = {
       ...disciplineBundle,
-      disciplines: {}
+      disciplines: {},
     };
 
     const result = createReduceToNormalizedItemFunction(bundledResourceWithoutDiscipline, 'en')(
       [],
-      'disciplines'
+      'disciplines',
     );
 
     const expectedResult = [];
@@ -115,7 +115,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
-      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
+      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)],
     ];
 
     const result = normalizeBundle(disciplineBundle, 'en');
@@ -129,9 +129,9 @@ describe('Data Layer Bundle', () => {
       disciplines: {
         dis_1: {
           ...disciplines.dis_1,
-          modules: []
-        }
-      }
+          modules: [],
+        },
+      },
     };
 
     const expectedResult = [
@@ -143,7 +143,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
-      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
+      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)],
     ];
 
     const result = normalizeBundle(disciplineBundleWithoutModules, 'en');
@@ -155,7 +155,7 @@ describe('Data Layer Bundle', () => {
     // basically this case should never happend in a real business case situation
     const disciplineBundleWithoutModules = {
       ...disciplineBundle,
-      disciplines: {}
+      disciplines: {},
     };
 
     const expectedResult = [
@@ -166,7 +166,7 @@ describe('Data Layer Bundle', () => {
       ['slide:en:sli_3', JSON.stringify(slides.sli_3)],
       ['slide:en:sli_4', JSON.stringify(slides.sli_4)],
       ['exitNode:en:failureExitNode', JSON.stringify(exitNodes.failureExitNode)],
-      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)]
+      ['exitNode:en:successExitNode', JSON.stringify(exitNodes.successExitNode)],
     ];
 
     const result = normalizeBundle(disciplineBundleWithoutModules, 'en');
@@ -208,7 +208,7 @@ describe('Data Layer Bundle', () => {
     it('should not store the bundle', () => {
       AsyncStorage.multiSet = jest.fn().mockReturnValueOnce(Promise.reject(fakeError));
       return expect(storeBundle(disciplineBundle)).rejects.toThrow(
-        new Error('Could not store the provided resource')
+        new Error('Could not store the provided resource'),
       );
     });
   });
@@ -222,7 +222,7 @@ describe('Data Layer Bundle', () => {
 
     it('should fetch discipline bundle fixture', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchBundle} = require('./bundle');
       const keys = Object.keys(disciplinesBundle.disciplines);
@@ -233,7 +233,7 @@ describe('Data Layer Bundle', () => {
 
     it('should fetch chapter bundle fixture', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchBundle} = require('./bundle');
       const keys = Object.keys(chaptersBundle.chapters);
@@ -243,17 +243,17 @@ describe('Data Layer Bundle', () => {
 
     it('should try to fetch discipline bundle', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const {fetchBundle} = require('./bundle');
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toEqual(
-          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`
+          `${host}/api/v2/disciplines/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`,
         );
         return Promise.resolve({
-          json: () => Promise.resolve(disciplineBundle)
+          json: () => Promise.resolve(disciplineBundle),
         });
       });
 
@@ -263,17 +263,17 @@ describe('Data Layer Bundle', () => {
 
     it('should try to fetch chapter bundle', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const {fetchBundle} = require('./bundle');
 
       const fetch = require('cross-fetch');
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toEqual(
-          `${host}/api/v2/chapters/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`
+          `${host}/api/v2/chapters/bundle?lang=en&conditions={"universalRef": ["foobarbaz"]}`,
         );
         return Promise.resolve({
-          json: () => Promise.resolve(chapterBundle)
+          json: () => Promise.resolve(chapterBundle),
         });
       });
 

@@ -4,14 +4,14 @@ import {
   Content,
   LeaderBoard,
   Videos,
-  ExitNodes
+  ExitNodes,
 } from '@coorpacademy/player-services';
 import type {
   AnswersService,
   CluesService,
   ContentService,
   VideosService,
-  ExitNodesService
+  ExitNodesService,
 } from '@coorpacademy/player-services';
 
 import type {DataLayer} from '../layer/data';
@@ -40,24 +40,24 @@ import type {LoggerService} from './logger';
 import Logger from './logger';
 
 export type Services = {
-  Analytics: AnalyticsService,
-  Answers: AnswersService,
-  Cards: CardsService,
-  Clues: CluesService,
-  Content: ContentService,
-  Bundle: BundleService,
-  Progressions: ProgressionService,
-  Brands: BrandsService,
-  Language: LanguageService,
-  Permissions: PermissionsService,
-  LeaderBoard: typeof LeaderBoard,
-  Users: UsersService,
-  Recommendations: typeof Recommendations,
-  Sections: SectionsService,
-  Videos: VideosService,
-  Hero: HeroService,
-  Logger: LoggerService,
-  ExitNodes: ExitNodesService
+  Analytics: AnalyticsService;
+  Answers: AnswersService;
+  Cards: CardsService;
+  Clues: CluesService;
+  Content: ContentService;
+  Bundle: BundleService;
+  Progressions: ProgressionService;
+  Brands: BrandsService;
+  Language: LanguageService;
+  Permissions: PermissionsService;
+  LeaderBoard: typeof LeaderBoard;
+  Users: UsersService;
+  Recommendations: typeof Recommendations;
+  Sections: SectionsService;
+  Videos: VideosService;
+  Hero: HeroService;
+  Logger: LoggerService;
+  ExitNodes: ExitNodesService;
 };
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -83,7 +83,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Hero: Hero(dataLayer),
   Logger: Logger(dataLayer),
   // @ts-ignore datalayer definition error
-  ExitNodes: ExitNodes(dataLayer)
+  ExitNodes: ExitNodes(dataLayer),
 });
 
 export default createServices;

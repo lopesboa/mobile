@@ -1,38 +1,38 @@
 import * as React from 'react';
 import {View, ViewStyle, StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
-import type {LessonType} from '@types/coorp/progression-engine';
+import type {LessonType} from '../types/coorpacademy/progression-engine';
 import {getCleanUri} from '../modules/uri';
 import theme from '../modules/theme';
 import Preview from './preview';
 
-export const EXTRALIFE: string = 'extralife';
+export const EXTRALIFE = 'extralife';
 
 export interface Props {
-  type: LessonType | typeof EXTRALIFE,
-  source: File | {uri: string},
-  thumbnail?: string,
-  style?: ViewStyle,
-  height: number,
-  testID?: string
-};
+  type: LessonType | typeof EXTRALIFE;
+  source: File | {uri: string};
+  thumbnail?: string;
+  style?: ViewStyle;
+  height: number;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.black,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   webview: {
     flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
   webviewLoader: {
     position: 'absolute',
     top: 0,
     right: 0,
     left: 0,
-    bottom: 0
-  }
+    bottom: 0,
+  },
 });
 
 class VideoOmniPlayer extends React.PureComponent<Props> {

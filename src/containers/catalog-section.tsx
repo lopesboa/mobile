@@ -11,16 +11,16 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import translations from '../translations';
 
 export interface ConnectedStateProps {
-  cards: Array<DisciplineCard | ChapterCard | void>
-};
+  cards: Array<DisciplineCard | ChapterCard | void>;
+}
 
 interface ConnectedDispatchProps {
-  fetchCards: typeof fetchCards
-};
+  fetchCards: typeof fetchCards;
+}
 
 export interface OwnProps {
-  cards: Pick<CatalogSectionProps, 'cards'>,
-  onScroll: Pick<CatalogSectionProps, 'onScroll'>
+  cards: Pick<CatalogSectionProps, 'cards'>;
+  onScroll: Pick<CatalogSectionProps, 'onScroll'>;
 }
 
 interface Props extends ConnectedStateProps, ConnectedDispatchProps, OwnProps {}
@@ -58,19 +58,16 @@ const getCardsRef = (state: StoreState, {sectionRef}: OwnProps) => {
 const getCardsState = createArraySelector(
   [getCardsRef, getCards],
   (cardRef: string | void, cards: $ExtractReturn<typeof getCards>) =>
-    cardRef && cards[cardRef] && cards[cardRef][translations.getLanguage()]
+    cardRef && cards[cardRef] && cards[cardRef][translations.getLanguage()],
 );
 
 export const mapStateToProps = (state: StoreState, props: OwnProps): ConnectedStateProps => ({
-  cards: getCardsState(state, props)
+  cards: getCardsState(state, props),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  fetchCards
+  fetchCards,
 };
 
 export {CatalogSection as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CatalogSection);
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogSection);

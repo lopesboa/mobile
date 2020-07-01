@@ -9,7 +9,7 @@ describe('select', () => {
       const result = focus(payload);
       const expected: Action = {
         type: FOCUS,
-        payload
+        payload,
       };
 
       expect(result).toEqual(expected);
@@ -20,7 +20,7 @@ describe('select', () => {
     it('should return the action', () => {
       const action = blur();
       expect(action).toEqual({
-        type: BLUR
+        type: BLUR,
       });
     });
   });

@@ -1,10 +1,11 @@
+import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   tapCardOnList,
   waitForExist,
   wrongAnswer,
-  scrollHero
+  scrollHero,
 } from './utils';
 
 describe('Lives', () => {
@@ -21,17 +22,17 @@ describe('Lives', () => {
     });
 
     it('should see 4 lives', async () => {
-      await weExpect(element(by.id('lives-4'))).toBeVisible();
+      await expect(element(by.id('lives-4'))).toBeVisible();
     });
 
     it('should lose fourth life', async () => {
       await wrongAnswer();
-      await weExpect(element(by.id('correction-lives-3-broken'))).toBeVisible();
+      await expect(element(by.id('correction-lives-3-broken'))).toBeVisible();
       await element(by.id('button-next-question')).tap();
     });
 
     it('should see 3 lives', async () => {
-      await weExpect(element(by.id('lives-3'))).toBeVisible();
+      await expect(element(by.id('lives-3'))).toBeVisible();
     });
   });
 
@@ -42,7 +43,7 @@ describe('Lives', () => {
     });
 
     it('should not see lives', async () => {
-      await weExpect(element(by.id('lives'))).toBeNotVisible();
+      await expect(element(by.id('lives'))).toBeNotVisible();
     });
   });
 
@@ -54,7 +55,7 @@ describe('Lives', () => {
     });
 
     it('should not see lives', async () => {
-      await weExpect(element(by.id('lives'))).toBeNotVisible();
+      await expect(element(by.id('lives'))).toBeNotVisible();
     });
   });
 });

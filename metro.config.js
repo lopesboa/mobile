@@ -19,14 +19,14 @@ module.exports = {
         // this is to have fixtures embedded in storybook app
         return createBlacklist([]);
       }
-    })()
+    })(),
   },
   transformer: {
     getTransformOptions: () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false
-      }
-    })
-  }
+        inlineRequires: false,
+      },
+    }),
+  },
 };

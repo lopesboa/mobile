@@ -5,15 +5,20 @@ import type {
   Chapter as ChapterStore,
   Discipline as DisciplineStore,
   ExitNode as ExitNodeStore,
-  VideoTrack
-} from '@types/coorp/player-store';
+  VideoTrack,
+} from '../types/coorpacademy/player-store';
 import type {
   Slide as SlideEngine,
   Progression,
   Answer,
-  EngineConfig
-} from '@types/coorp/progression-engine';
-import type {SlideAPI, ChapterAPI, LevelAPI, ExitNodeAPI} from '@types/coorp/player-services';
+  EngineConfig,
+} from '../types/coorpacademy/progression-engine';
+import type {
+  SlideAPI,
+  ChapterAPI,
+  LevelAPI,
+  ExitNodeAPI,
+} from '../types/coorpacademy/player-services';
 
 import type {Section, Brand, PermissionStatus, User, ErrorType, NetworkState} from '../types';
 import type {
@@ -23,7 +28,7 @@ import type {
   Discipline,
   DisciplineCard,
   ChapterCard,
-  ExitNode
+  ExitNode,
 } from '../layer/data/_types';
 import type {StoreState, DataState, UiState} from '../redux/store';
 import type {State as AuthenticationState} from '../redux/reducers/authentication';
@@ -44,293 +49,283 @@ import {
   mapToSlide,
   mapToChapter,
   mapToDiscipline,
-  mapToExitNode
+  mapToExitNode,
 } from './utils/mappers';
 import {createBrand} from './brands';
 import {createUser} from './user';
-import {$PropertyType} from "utility-types";
 
 type MappableObject =
-    | {
-          ref: string;
-      }
-    | {universalRef: string}
-    | {_id: string};
+  | {
+      ref: string;
+    }
+  | {universalRef: string}
+  | {_id: string};
 
 const reduceToMappedObject = <T extends MappableObject>(
-    accumulator: {
-        [key: string]: T;
-    },
-    currentValue: T,
+  accumulator: {
+    [key: string]: T;
+  },
+  currentValue: T,
 ) => {
-    if (typeof currentValue.ref === "string") {
-        return {
-            ...accumulator,
-            [currentValue.ref]: currentValue,
-        };
-    }
-
-    if (typeof currentValue.universalRef === "string") {
-        return {
-            ...accumulator,
-            [currentValue.universalRef]: currentValue,
-        };
-    }
-
-    if (typeof currentValue._id === "string") {
-        return {
-            ...accumulator,
-            [currentValue._id]: currentValue,
-        };
-    }
+  if (typeof currentValue.ref === 'string') {
     return {
-        ...accumulator,
+      ...accumulator,
+      [currentValue.ref]: currentValue,
     };
+  }
+
+  if (typeof currentValue.universalRef === 'string') {
+    return {
+      ...accumulator,
+      [currentValue.universalRef]: currentValue,
+    };
+  }
+
+  if (typeof currentValue._id === 'string') {
+    return {
+      ...accumulator,
+      [currentValue._id]: currentValue,
+    };
+  }
+  return {
+    ...accumulator,
+  };
 };
 
 export const createMapObject = <T extends MappableObject>(
-    items: Array<T>,
+  items: Array<T>,
 ): {
-    [key: string]: T;
+  [key: string]: T;
 } => {
-    return items.reduce(reduceToMappedObject, {});
+  return items.reduce(reduceToMappedObject, {});
 };
 
 export const createCatalogState = ({
-    heroRef,
-    sections = [],
-    cards = [],
+  heroRef,
+  sections = [],
+  cards = [],
 }: {
-    heroRef?: string;
-    searchRef?: Array<string | void>;
-    sections?: Array<Section | void>;
-    cards?: Array<DisciplineCard | ChapterCard | void>;
+  heroRef?: string;
+  searchRef?: Array<string | void>;
+  sections?: Array<Section | void>;
+  cards?: Array<DisciplineCard | ChapterCard | void>;
 }): CatalogState => ({
-    heroRef,
-    sectionsRef:
-        sections && sections.length > 1
-            ? sections.map(section => (section ? section.key : undefined))
-            : undefined,
-    searchRef:
-        cards && cards.length > 1
-            ? cards.map(card => (card ? card.universalRef : undefined))
-            : undefined,
-    entities: {
-        sections: sections.reduce((result, section) => {
-            if (section) {
-                return {...result, [section.key]: {en: section}};
-            }
-            return result;
-        }, {}),
-        cards: cards.reduce((result, card) => {
-            if (card) {
-                return {...result, [card.universalRef]: {en: card}};
-            }
-            return result;
-        }, {}),
-    },
+  heroRef,
+  sectionsRef:
+    sections && sections.length > 1
+      ? sections.map((section) => (section ? section.key : undefined))
+      : undefined,
+  searchRef:
+    cards && cards.length > 1
+      ? cards.map((card) => (card ? card.universalRef : undefined))
+      : undefined,
+  entities: {
+    sections: sections.reduce((result, section) => {
+      if (section) {
+        return {...result, [section.key]: {en: section}};
+      }
+      return result;
+    }, {}),
+    cards: cards.reduce((result, card) => {
+      if (card) {
+        return {...result, [card.universalRef]: {en: card}};
+      }
+      return result;
+    }, {}),
+  },
 });
 
 export const createAuthenticationState = ({
-    token,
-    brand,
-    user,
+  token,
+  brand,
+  user,
 }: {
-    token?: string | null;
-    brand?: Brand | null;
-    user?: User | null;
+  token?: string | null;
+  brand?: Brand | null;
+  user?: User | null;
 }): AuthenticationState => ({
-    token: token !== undefined ? token : "__TOKEN__",
-    user: user !== undefined ? user : createUser(),
-    brand: brand !== undefined ? brand : createBrand({}),
+  token: token !== undefined ? token : '__TOKEN__',
+  user: user !== undefined ? user : createUser(),
+  brand: brand !== undefined ? brand : createBrand({}),
 });
 
 export const createProgressionsState = ({
-    isSynchronizing = false,
+  isSynchronizing = false,
 }: {
-    isSynchronizing: boolean;
+  isSynchronizing: boolean;
 }): ProgressionsState => ({
-    isSynchronizing: false,
+  isSynchronizing: false,
 });
 
-export const createUiState = ({
-    answers = {},
-}: {
-    answers?: $PropertyType<UiState, "answers">;
-}): UiState => ({
-    answers,
-    coaches: {
-        availableCoaches: 0,
-    },
-    comments: {
-        text: null,
-    },
-    corrections: {
-        accordion: [false, false, false],
-        playResource: "foo",
-    },
-    current: {
-        progressionId: "progression1",
-    },
-    route: {},
+export const createUiState = ({answers = {}}: {answers?: Pick<UiState, 'answers'>}): UiState => ({
+  answers,
+  coaches: {
+    availableCoaches: 0,
+  },
+  comments: {
+    text: null,
+  },
+  corrections: {
+    accordion: [false, false, false],
+    playResource: 'foo',
+  },
+  current: {
+    progressionId: 'progression1',
+  },
+  route: {},
 });
 
 export const createDataState = ({
-    answers = [],
-    levels = [],
-    slides = [],
-    chapters = [],
-    clue,
-    disciplines = [],
-    exitNodes = [],
-    progression,
-    nextContent,
-    configs = {},
-    videos = {},
+  answers = [],
+  levels = [],
+  slides = [],
+  chapters = [],
+  clue,
+  disciplines = [],
+  exitNodes = [],
+  progression,
+  nextContent,
+  configs = {},
+  videos = {},
 }: {
-    answers?: Answer;
-    levels?: Array<Level>;
-    slides?: Array<Slide>;
-    chapters?: Array<Chapter>;
-    disciplines?: Array<Discipline>;
-    exitNodes?: Array<ExitNode>;
-    clue?: string;
-    progression: Progression;
-    nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI;
-    configs?: {
-        [key: string]: EngineConfig;
-    };
-    videos?: {
-        [key: string]: {uri: string; tracks?: Array<VideoTrack>};
-    };
+  answers?: Answer;
+  levels?: Array<Level>;
+  slides?: Array<Slide>;
+  chapters?: Array<Chapter>;
+  disciplines?: Array<Discipline>;
+  exitNodes?: Array<ExitNode>;
+  clue?: string;
+  progression: Progression;
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI;
+  configs?: {
+    [key: string]: EngineConfig;
+  };
+  videos?: {
+    [key: string]: {uri: string; tracks?: Array<VideoTrack>};
+  };
 }): DataState => {
-    const _levels: {
-        [key: string]: LevelStore;
-    } = createMapObject(levels.map(mapToLevel));
-    const _slides: {
-        [key: string]: SlideEngine;
-    } = createMapObject(slides.map(mapToSlide));
-    const _chapters: {
-        [key: string]: ChapterStore;
-    } = createMapObject(chapters.map(mapToChapter));
-    const _disciplines: {
-        [key: string]: DisciplineStore;
-    } = createMapObject(disciplines.map(mapToDiscipline));
-    // @ts-ignore union type successExitNode and failureExitNode
-    const _exitNodes: {
-        [key: string]: ExitNodeStore;
-    } = createMapObject(exitNodes.map(mapToExitNode));
-    const _answers =
-        answers && progression._id && slides[0]
-            ? {
-                  [progression._id]: {
-                      [slides[0]._id]: {
-                          correctAnswer: [answers],
-                          corrections: answers
-                              .concat(["Foo bar"])
-                              .map(answer => ({
-                                  answer: answer,
-                                  isCorrect: answer !== "Foo bar",
-                              })),
-                      },
-                  },
-              }
-            : {};
-    const _clues =
-        clue && progression._id && slides[0]
-            ? {
-                  [progression._id]: {
-                      [slides[0]._id]: clue,
-                  },
-              }
-            : {};
+  const _levels: {
+    [key: string]: LevelStore;
+  } = createMapObject(levels.map(mapToLevel));
+  const _slides: {
+    [key: string]: SlideEngine;
+  } = createMapObject(slides.map(mapToSlide));
+  const _chapters: {
+    [key: string]: ChapterStore;
+  } = createMapObject(chapters.map(mapToChapter));
+  const _disciplines: {
+    [key: string]: DisciplineStore;
+  } = createMapObject(disciplines.map(mapToDiscipline));
+  // @ts-ignore union type successExitNode and failureExitNode
+  const _exitNodes: {
+    [key: string]: ExitNodeStore;
+  } = createMapObject(exitNodes.map(mapToExitNode));
+  const _answers =
+    answers && progression._id && slides[0]
+      ? {
+          [progression._id]: {
+            [slides[0]._id]: {
+              correctAnswer: [answers],
+              corrections: answers.concat(['Foo bar']).map((answer) => ({
+                answer: answer,
+                isCorrect: answer !== 'Foo bar',
+              })),
+            },
+          },
+        }
+      : {};
+  const _clues =
+    clue && progression._id && slides[0]
+      ? {
+          [progression._id]: {
+            [slides[0]._id]: clue,
+          },
+        }
+      : {};
 
-    return {
-        answers: {
-            entities: _answers,
-        },
-        comments: {
-            entities: {},
-        },
-        configs: {
-            entities: configs,
-        },
-        contents: {
-            level: {
-                entities: _levels,
-            },
-            slide: {
-                entities: _slides,
-            },
-            chapter: {
-                entities: _chapters,
-            },
-            discipline: {
-                entities: _disciplines,
-            },
-        },
-        videos: {
-            entities: videos,
-        },
-        clues: {
-            entities: _clues,
-        },
-        exitNodes: {
-            entities: _exitNodes,
-        },
-        progressions: {
-            entities: {
-                progression1: progression,
-            },
-        },
-        rank: {},
-        recommendations: {
-            entities: {},
-        },
-        nextContent: {
-            entities: {
-                progression1: nextContent,
-            },
-        },
-    };
+  return {
+    answers: {
+      entities: _answers,
+    },
+    comments: {
+      entities: {},
+    },
+    configs: {
+      entities: configs,
+    },
+    contents: {
+      level: {
+        entities: _levels,
+      },
+      slide: {
+        entities: _slides,
+      },
+      chapter: {
+        entities: _chapters,
+      },
+      discipline: {
+        entities: _disciplines,
+      },
+    },
+    videos: {
+      entities: videos,
+    },
+    clues: {
+      entities: _clues,
+    },
+    exitNodes: {
+      entities: _exitNodes,
+    },
+    progressions: {
+      entities: {
+        progression1: progression,
+      },
+    },
+    rank: {},
+    recommendations: {
+      entities: {},
+    },
+    nextContent: {
+      entities: {
+        progression1: nextContent,
+      },
+    },
+  };
 };
 
 export const createErrorsState = ({
-    isVisible = false,
-    type,
+  isVisible = false,
+  type,
 }: {
-    isVisible?: boolean;
-    type?: ErrorType;
+  isVisible?: boolean;
+  type?: ErrorType;
 }): ErrorsState<void> => ({
-    isVisible,
-    type,
+  isVisible,
+  type,
 });
 
 export const createSelectState = ({id}: {id?: string}): SelectState =>
-    id !== undefined ? id : null;
+  id !== undefined ? id : null;
 
-export const createAnswersState = ({
-    isValidating,
-}: {
-    isValidating?: boolean;
-}): AnswersState => (isValidating !== undefined ? isValidating : false);
+export const createAnswersState = ({isValidating}: {isValidating?: boolean}): AnswersState =>
+  isValidating !== undefined ? isValidating : false;
 
 export const createSearchState = ({
-    isFetching = false,
-    value,
+  isFetching = false,
+  value,
 }: {
-    isFetching?: boolean;
-    value?: string;
+  isFetching?: boolean;
+  value?: string;
 }): SearchState => ({
-    isFetching,
-    value,
+  isFetching,
+  value,
 });
 
 export const createNavigationState = (): NavigationState => ({
-    currentNavigatorName: "dummyNavigatorName",
-    currentAppScreenName: "dummycurrentAppScreenName",
-    currentScreenName: "dummyScreenName",
-    currentTabName: "dummyTabName",
+  currentNavigatorName: 'dummyNavigatorName',
+  currentAppScreenName: 'dummycurrentAppScreenName',
+  currentScreenName: 'dummyScreenName',
+  currentTabName: 'dummyTabName',
 });
 
 export const createPermissionsState = ({
@@ -344,22 +339,18 @@ export const createPermissionsState = ({
     notifications
 });
 
-export const createVideoState = ({
-    isFullScreen = false,
-}: {
-    isFullScreen?: boolean;
-}): VideoState => ({
-    isFullScreen,
+export const createVideoState = ({isFullScreen = false}: {isFullScreen?: boolean}): VideoState => ({
+  isFullScreen,
 });
 
 export const createNetworkState = ({
-    isConnected = true,
+  isConnected = true,
 }: {
-    isConnected?: boolean;
+  isConnected?: boolean;
 }): NetworkState => ({
-    isConnected,
-    actionQueue: [],
-    isQueuePaused: false,
+  isConnected,
+  actionQueue: [],
+  isQueuePaused: false,
 });
 
 export const createStoreState = ({
@@ -415,8 +406,7 @@ export const createStoreState = ({
     video?: VideoState;
     network?: NetworkState;
 }): StoreState => ({
-    data:
-        data ||
+    data: data ||
         createDataState({
             levels,
             slides,

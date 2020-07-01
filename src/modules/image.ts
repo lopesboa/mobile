@@ -1,5 +1,4 @@
 import {PixelRatio, ImageProps} from 'react-native';
-import {$PropertyType} from 'utility-types';
 
 import {buildUrlQueryParams} from './uri';
 
@@ -10,12 +9,12 @@ export const getResizedImage = (
   {
     maxWidth,
     maxHeight,
-    resizeMode
+    resizeMode,
   }: {
     maxWidth?: number;
     maxHeight?: number;
-    resizeMode?: $PropertyType<ImageProps, 'resizeMode'>;
-  }
+    resizeMode?: Pick<ImageProps, 'resizeMode'>;
+  },
 ) => {
   if (!maxWidth && !maxHeight) {
     return url;
@@ -24,20 +23,20 @@ export const getResizedImage = (
   let queryParams = {
     url,
     m: !resizeMode || resizeMode === 'cover' ? 'crop' : 'contain',
-    q: 90
+    q: 90,
   };
 
   if (maxWidth) {
     queryParams = {
       ...queryParams,
-      w: PixelRatio.getPixelSizeForLayoutSize(maxWidth)
+      w: PixelRatio.getPixelSizeForLayoutSize(maxWidth),
     };
   }
 
   if (maxHeight) {
     queryParams = {
       ...queryParams,
-      h: PixelRatio.getPixelSizeForLayoutSize(maxHeight)
+      h: PixelRatio.getPixelSizeForLayoutSize(maxHeight),
     };
   }
 

@@ -119,15 +119,15 @@ if (__TEST__) {
           type={QUESTION_CHOICE_INPUT_TYPE.TEXT}
           onChange={handleFakePress}
           id="foo"
-        />
+        />,
       );
 
-      const item = component.root.find(el => el.props.testID === 'question-input-text');
+      const item = component.root.find((el) => el.props.testID === 'question-input-text');
       item.props.onFocus();
 
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.INPUT_FOCUS, {
         id: 'question-input-text',
-        questionType
+        questionType,
       });
     });
 
@@ -142,15 +142,15 @@ if (__TEST__) {
           type={QUESTION_CHOICE_INPUT_TYPE.TEXT}
           onChange={handleFakePress}
           id="foo"
-        />
+        />,
       );
 
-      const item = component.root.find(el => el.props.testID === 'question-input-text');
+      const item = component.root.find((el) => el.props.testID === 'question-input-text');
       item.props.onBlur();
 
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.INPUT_BLUR, {
         id: 'question-input-text',
-        questionType
+        questionType,
       });
     });
   });

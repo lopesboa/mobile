@@ -6,7 +6,7 @@ import {
   NovaCompositionCoorpacademyProfile as ProfileIcon,
   NovaCompositionCoorpacademyMailInbox as MailIcon,
   NovaCompositionCoorpacademyMailInboxDocument as MailDocumentIcon,
-  NovaCompositionCoorpacademyMagicWand as MagicWandIcon
+  NovaCompositionCoorpacademyMagicWand as MagicWandIcon,
 } from '@coorpacademy/nova-icons';
 
 import translations from '../translations';
@@ -19,31 +19,30 @@ import AuthenticationStep from './authentication-step';
 import type {Props as AuthenticationStepProps} from './authentication-step';
 
 export type Step = {
-  icon: Pick<AuthenticationStepProps, 'icon'>,
-  description: Pick<AuthenticationStepProps, 'description'>
+  icon: Pick<AuthenticationStepProps, 'icon'>;
+  description: Pick<AuthenticationStepProps, 'description'>;
 };
 
 export interface Props extends WithAnalyticsProps {
-  type: AuthenticationType,
-  currentIndex: number,
-  onChange: (arg0: number) => void,
-  style?: ViewStyle
-};
+  type: AuthenticationType;
+  currentIndex: number;
+  onChange: (arg0: number) => void;
+  style?: ViewStyle;
+}
 
 class AuthenticationSteps extends React.PureComponent<Props> {
-  renderItem = ({item: {icon, description}, index}: {item: Step, index: number}) => (
+  renderItem = ({item: {icon, description}, index}: {item: Step; index: number}) => (
     <AuthenticationStep icon={icon} step={index + 1} description={description} />
   );
 
   handleChange = (index: number) => {
     const {analytics, currentIndex, onChange} = this.props;
 
-    analytics &&
-      analytics.logEvent(ANALYTICS_EVENT_TYPE.SWIPE, {
-        id: 'authentication-step',
-        from: currentIndex,
-        to: index
-      });
+    analytics?.logEvent(ANALYTICS_EVENT_TYPE.SWIPE, {
+      id: 'authentication-step',
+      from: currentIndex,
+      to: index,
+    });
     onChange(index);
   };
 
@@ -53,30 +52,30 @@ class AuthenticationSteps extends React.PureComponent<Props> {
     const qrCodeSteps = [
       {
         icon: DesktopIcon,
-        description: translations.authenticationQRCodeStepOneDescription
+        description: translations.authenticationQRCodeStepOneDescription,
       },
       {
         icon: ProfileIcon,
-        description: translations.authenticationQRCodeStepTwoDescription
+        description: translations.authenticationQRCodeStepTwoDescription,
       },
       {
         icon: QRCodeIcon,
-        description: translations.authenticationQRCodeStepThreeDescription
-      }
+        description: translations.authenticationQRCodeStepThreeDescription,
+      },
     ];
     const magicLinkSteps = [
       {
         icon: MailIcon,
-        description: translations.authenticationMagicLinkStepOneDescription
+        description: translations.authenticationMagicLinkStepOneDescription,
       },
       {
         icon: MailDocumentIcon,
-        description: translations.authenticationMagicLinkStepTwoDescription
+        description: translations.authenticationMagicLinkStepTwoDescription,
       },
       {
         icon: MagicWandIcon,
-        description: translations.authenticationMagicLinkStepThreeDescription
-      }
+        description: translations.authenticationMagicLinkStepThreeDescription,
+      },
     ];
 
     return type === AUTHENTICATION_TYPE.QR_CODE ? qrCodeSteps : magicLinkSteps;

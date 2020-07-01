@@ -4,14 +4,14 @@ const createAnalytics = () => ({
   setAnalyticsCollectionEnabled: jest.fn(),
   logEvent: jest.fn(),
   setCurrentScreen: jest.fn(),
-  setUserProperties: jest.fn()
+  setUserProperties: jest.fn(),
 });
 
 describe('Analytics', () => {
   it('setAnalyticsCollectionEnabled', () => {
     const analytics = createAnalytics();
     jest.mock('@react-native-firebase/app', () => ({
-      utils: jest.fn(() => ({}))
+      utils: jest.fn(() => ({})),
     }));
     jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
@@ -27,7 +27,7 @@ describe('Analytics', () => {
       it('should set current screen', () => {
         const analytics = createAnalytics();
         jest.mock('@react-native-firebase/app', () => ({
-          utils: jest.fn(() => ({}))
+          utils: jest.fn(() => ({})),
         }));
         jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
@@ -47,7 +47,7 @@ describe('Analytics', () => {
       it('should set user properties', () => {
         const analytics = createAnalytics();
         jest.mock('@react-native-firebase/app', () => ({
-          utils: jest.fn(() => ({}))
+          utils: jest.fn(() => ({})),
         }));
         jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
@@ -59,12 +59,12 @@ describe('Analytics', () => {
         logEvent(ANALYTICS_EVENT_TYPE.SIGN_IN, {userId: 'foo', brand: 'bar'});
         expect(analytics.setUserProperties).toHaveBeenCalledWith({
           userId: 'foo',
-          brand: 'bar'
+          brand: 'bar',
         });
         expect(analytics.setCurrentScreen).not.toHaveBeenCalled();
         expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SIGN_IN, {
           userId: 'foo',
-          brand: 'bar'
+          brand: 'bar',
         });
       });
     });
@@ -73,7 +73,7 @@ describe('Analytics', () => {
       it('should unset user properties', () => {
         const analytics = createAnalytics();
         jest.mock('@react-native-firebase/app', () => ({
-          utils: jest.fn(() => ({}))
+          utils: jest.fn(() => ({})),
         }));
         jest.mock('@react-native-firebase/analytics', () => jest.fn());
 
@@ -85,12 +85,12 @@ describe('Analytics', () => {
         logEvent(ANALYTICS_EVENT_TYPE.SIGN_OUT, {userId: 'foo', brand: 'bar'});
         expect(analytics.setUserProperties).toHaveBeenCalledWith({
           userId: null,
-          brand: null
+          brand: null,
         });
         expect(analytics.setCurrentScreen).not.toHaveBeenCalled();
         expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SIGN_OUT, {
           userId: 'foo',
-          brand: 'bar'
+          brand: 'bar',
         });
       });
     });
@@ -98,7 +98,7 @@ describe('Analytics', () => {
     it('should handle common event', () => {
       const analytics = createAnalytics();
       jest.mock('@react-native-firebase/app', () => ({
-        utils: jest.fn(() => ({}))
+        utils: jest.fn(() => ({})),
       }));
       jest.mock('@react-native-firebase/analytics', () => jest.fn());
 

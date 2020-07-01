@@ -13,7 +13,7 @@ export type Params = {
   source: File | {uri: string};
 };
 
-interface Props extends NavigationScreenProps<Params> {}
+export type Props = NavigationScreenProps<Params>;
 
 class PdfScreen extends React.PureComponent<Props> {
   static navigationOptions = (screenProps: NavigationScreenProps) => {
@@ -25,7 +25,7 @@ class PdfScreen extends React.PureComponent<Props> {
         ...navigationOptions.headerStyle,
         backgroundColor: HEADER_BACKGROUND_COLOR,
         borderBottomWidth: 1,
-        borderBottomColor: theme.colors.gray.light
+        borderBottomColor: theme.colors.gray.light,
       },
       title: navigation.getParam('title'),
       headerLeft: (
@@ -36,7 +36,7 @@ class PdfScreen extends React.PureComponent<Props> {
           isFloating={false}
           testID="pdf-button-close"
         />
-      )
+      ),
     };
   };
 

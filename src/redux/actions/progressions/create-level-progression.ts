@@ -14,7 +14,7 @@ export const createLevelProgression = (level: Level, engineVersion?: string) => 
   const content: GenericContent = {type: CONTENT_TYPE.LEVEL, ref};
   const engineConfig: EngineConfig = {
     version: engineVersion || 'latest',
-    livesDisabled: level.infiniteLives
+    livesDisabled: level.infiniteLives,
   };
 
   if (__TEST__ || __E2E__ || level.shuffleChoices === false) {

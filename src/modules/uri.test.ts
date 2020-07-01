@@ -23,7 +23,7 @@ describe('Uri', () => {
       const params = {
         type: 'cards',
         offset: 2,
-        disabled: true
+        disabled: true,
       };
       const expectedResult = `type=${params.type}&offset=${params.offset}&disabled=true`;
       expect(buildUrlQueryParams(params)).toBe(expectedResult);
@@ -40,12 +40,12 @@ describe('Uri', () => {
         author: 'coorpacademy',
         type: 'course',
         foo: 'bar',
-        hello: 'world'
+        hello: 'world',
       };
       expect(
         getQueryParamsFromURL(
-          'https://batman-staging.coorpacademy.com/catalog?theme=them_VkFqE1FII&foo=bar&type=course&author=coorpacademy&hello=world'
-        )
+          'https://batman-staging.coorpacademy.com/catalog?theme=them_VkFqE1FII&foo=bar&type=course&author=coorpacademy&hello=world',
+        ),
       ).toEqual(expectedResult);
     });
   });

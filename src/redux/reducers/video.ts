@@ -2,11 +2,11 @@ import {TOGGLE_FULLSCREEN} from '../actions/video/full-screen';
 import type {Action as ToggleAction} from '../actions/video/full-screen';
 
 export type State = {
-  isFullScreen: boolean
+  isFullScreen: boolean;
 };
 
 const initialState: State = {
-  isFullScreen: false
+  isFullScreen: false,
 };
 
 const reducer = (state: State = initialState, action: ToggleAction): State => {
@@ -14,7 +14,7 @@ const reducer = (state: State = initialState, action: ToggleAction): State => {
     case TOGGLE_FULLSCREEN: {
       return {
         ...state,
-        isFullScreen: action.payload
+        isFullScreen: action.payload,
       };
     }
     default:

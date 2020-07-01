@@ -22,8 +22,8 @@ describe('ConnectionListener', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'foo'
-        }
+          ref: 'foo',
+        },
       });
 
       const mockedStore = createStoreState({
@@ -32,12 +32,12 @@ describe('ConnectionListener', () => {
         chapters: [],
         slides: [],
         progression,
-        network: createNetworkState({isConnected})
+        network: createNetworkState({isConnected}),
       });
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
-        isConnected
+        isConnected,
       };
 
       expect(result).toEqual(expected);
@@ -67,7 +67,7 @@ describe('ConnectionListener', () => {
     expect(showMessage).toHaveBeenCalledWith({
       message: translations.connectionLost,
       backgroundColor: theme.colors.negative,
-      titleStyle: expect.any(Object)
+      titleStyle: expect.any(Object),
     });
   });
 
@@ -85,7 +85,7 @@ describe('ConnectionListener', () => {
     expect(showMessage).toHaveBeenCalledWith({
       message: translations.connectionRestored,
       backgroundColor: theme.colors.positive,
-      titleStyle: expect.any(Object)
+      titleStyle: expect.any(Object),
     });
   });
 

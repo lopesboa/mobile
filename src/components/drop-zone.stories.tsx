@@ -7,9 +7,9 @@ import {choices} from '../__fixtures__/question-choices';
 import {handleFakePress} from '../utils/tests';
 import DropZone from './drop-zone';
 
-const upgradedChoices = choices.map(choice => ({
+const upgradedChoices = choices.map((choice) => ({
   ...choice,
-  value: undefined
+  value: undefined,
 }));
 
 storiesOf('DropZone', module)
@@ -24,7 +24,7 @@ if (__TEST__) {
     it('should handle onItemPress callback', () => {
       const handleItemPress = jest.fn();
       const component = renderer.create(<DropZone choices={choices} onPress={handleItemPress} />);
-      const questionItem = component.root.find(el => el.props.testID === 'choice-4');
+      const questionItem = component.root.find((el) => el.props.testID === 'choice-4');
       questionItem.props.onPress();
       expect(handleItemPress.mock.calls.length).toBe(1);
       expect(handleItemPress.mock.calls[0]).toEqual([choices[3]]);

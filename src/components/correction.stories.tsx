@@ -10,7 +10,7 @@ import {
   handleFakePress,
   fakeLayout,
   createFakeVibration,
-  createFakeAudio
+  createFakeAudio,
 } from '../utils/tests';
 import {mapToResource} from '../layer/data/mappers';
 import {DECK_CARD_TYPE} from '../const';
@@ -19,9 +19,9 @@ import {Component as Correction} from './correction';
 const lessons = [
   createVideo({ref: 'les_1'}),
   createPdf({ref: 'les_2'}),
-  createVideo({ref: 'les_3'})
+  createVideo({ref: 'les_3'}),
 ];
-const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
+const resources = lessons.map(mapToResource).filter((lesson) => lesson.url);
 
 const fakeQuestion = 'Where is Waldo ?';
 const fakeTip =
@@ -243,10 +243,10 @@ if (__TEST__) {
             audio={createFakeAudio()}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const resource = component.root.find(el => el.props.testID === testID);
+      const resource = component.root.find((el) => el.props.testID === testID);
       resource.props.onPress();
 
       expect(handleVideoPlay).toHaveBeenCalledTimes(1);
@@ -274,10 +274,10 @@ if (__TEST__) {
             audio={createFakeAudio()}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const resource = component.root.find(el => el.props.testID === testID);
+      const resource = component.root.find((el) => el.props.testID === testID);
       const fakeUrl = 'foo';
       const fakeDescription = 'bar';
       resource.props.onPress(fakeUrl, fakeDescription);
@@ -309,7 +309,7 @@ if (__TEST__) {
             audio={audio}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
@@ -341,7 +341,7 @@ if (__TEST__) {
             audio={audio}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
@@ -372,10 +372,10 @@ if (__TEST__) {
             audio={createFakeAudio()}
             onLinkPress={handleLinkPress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       const testID = `card-${DECK_CARD_TYPE.TIP}-html`;
-      const resource = component.root.find(el => el.props.testID === testID);
+      const resource = component.root.find((el) => el.props.testID === testID);
       const url = 'https://domain.tld';
       resource.props.onLinkPress(url);
 
@@ -405,10 +405,10 @@ if (__TEST__) {
             audio={createFakeAudio()}
             onLinkPress={handleLinkPress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       const testID = `card-${DECK_CARD_TYPE.KEY_POINT.toLowerCase()}-html`;
-      const resource = component.root.find(el => el.props.testID === testID);
+      const resource = component.root.find((el) => el.props.testID === testID);
       const url = 'https://domain.tld';
       resource.props.onLinkPress(url);
 
@@ -438,12 +438,12 @@ if (__TEST__) {
             audio={createFakeAudio()}
             onLinkPress={handleLinkPress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
       const testID = `card-${
         DECK_CARD_TYPE.RESOURCE
       }-${resources[2].ref.toLowerCase()}-resource-description`;
-      const resource = component.root.find(el => el.props.testID === testID);
+      const resource = component.root.find((el) => el.props.testID === testID);
       const url = 'https://domain.tld';
       resource.props.onLinkPress(url);
 

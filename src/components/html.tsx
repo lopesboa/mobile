@@ -8,44 +8,44 @@ import type {WithVibrationProps} from '../containers/with-vibration';
 import Text, {DEFAULT_STYLE as DEFAULT_TEXT_STYLE} from './text';
 
 type State = {
-  disableBaseFontStyleColor: boolean
+  disableBaseFontStyleColor: boolean;
 };
 
 interface Props extends WithVibrationProps {
-  children: string,
-  fontSize: number,
-  onLinkPress?: (url: string) => void,
-  containerStyle?: ViewStyle,
-  anchorTextColor?: string,
-  imageStyle?: ImageStyle,
-  style?: TextStyle,
-  testID?: string,
-  isTextCentered?: boolean
-};
+  children: string;
+  fontSize: number;
+  onLinkPress?: (url: string) => void;
+  containerStyle?: ViewStyle;
+  anchorTextColor?: string;
+  imageStyle?: ImageStyle;
+  style?: TextStyle;
+  testID?: string;
+  isTextCentered?: boolean;
+}
 
 // Don't use StyleSheet there, it's not a react style
 const styles = {
   p: {
     marginVertical: 0,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   u: {
-    textDecorationLine: 'underline'
+    textDecorationLine: 'underline',
   },
   i: {
-    fontStyle: 'italic'
+    fontStyle: 'italic',
   },
   b: {
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   s: {
-    textDecorationLine: 'line-through'
-  }
+    textDecorationLine: 'line-through',
+  },
 };
 
 class Html extends React.PureComponent<Props, State> {
   state: State = {
-    disableBaseFontStyleColor: false
+    disableBaseFontStyleColor: false,
   };
 
   // eslint-disable-next-line flowtype/no-weak-types
@@ -66,7 +66,7 @@ class Html extends React.PureComponent<Props, State> {
       style,
       testID,
       anchorTextColor = HTML_ANCHOR_TEXT_COLOR,
-      isTextCentered
+      isTextCentered,
     } = this.props;
 
     const {disableBaseFontStyleColor} = this.state;
@@ -80,7 +80,7 @@ class Html extends React.PureComponent<Props, State> {
       h5: {fontSize},
       h6: {fontSize},
       a: {color: anchorTextColor},
-      img: imageStyle
+      img: imageStyle,
     };
 
     let baseFontStyle = {...DEFAULT_TEXT_STYLE, fontSize, color: theme.colors.black};
@@ -88,16 +88,16 @@ class Html extends React.PureComponent<Props, State> {
       if (Array.isArray(style)) {
         const styleObject = style.reduce((result, child) => ({
           ...result,
-          ...child
+          ...child,
         }));
         baseFontStyle = {
           ...baseFontStyle,
-          ...styleObject
+          ...styleObject,
         };
       } else {
         baseFontStyle = {
           ...baseFontStyle,
-          ...style
+          ...style,
         };
       }
     }
@@ -113,13 +113,13 @@ class Html extends React.PureComponent<Props, State> {
             key={1}
             style={{
               ...baseFontStyle,
-              color: htmlAttribs.color
+              color: htmlAttribs.color,
             }}
           >
             {componentChildren}
           </Text>
         );
-      }
+      },
     };
 
     return (
@@ -133,7 +133,7 @@ class Html extends React.PureComponent<Props, State> {
           tagsStyles={tagsStyles}
           baseFontStyle={{
             ...baseFontStyle,
-            color: disableBaseFontStyleColor ? null : baseFontStyle.color
+            color: disableBaseFontStyleColor ? null : baseFontStyle.color,
           }}
           onLinkPress={this.handleLinkPress}
           renderers={renderers}
