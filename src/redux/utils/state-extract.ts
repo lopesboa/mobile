@@ -21,7 +21,7 @@ import type {State as BrandState} from '../reducers/authentication/brand';
 import type {State as UserState} from '../reducers/authentication/user';
 import type {State as TokenState} from '../reducers/authentication/token';
 import type {State as SelectState} from '../reducers/ui/select';
-import type {PermissionType} from '../actions/permissions';
+import type {PermissionType} from '../../types';
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
 import type {QueryParams} from '../../modules/uri';
@@ -118,6 +118,8 @@ export const getEngineVersions = (state: StoreState): ProgressionEngineVersions 
 export const isGodModeEnabled = (state: StoreState): boolean => state.godMode;
 
 export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlide;
+
+export const getAppSession = (state: StoreState): number => state.appSession;
 
 export const getCurrentScreenName = (state: StoreState): string | void =>
   state.navigation.currentScreenName;

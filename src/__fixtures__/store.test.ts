@@ -295,6 +295,7 @@ describe('storeFixture', () => {
       progressions: progressionsState,
       godMode: false,
       fastSlide: false,
+      appSession: 0,
       video: videoState,
       network: networkState
     };

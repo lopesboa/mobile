@@ -15,6 +15,7 @@ import type {State as PermissionsState} from './reducers/permissions';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
 import type {State as GodModeState} from './reducers/god-mode';
+import type {State as AppSessionState} from './reducers/app-session';
 import type {State as FastSlideState} from './reducers/fast-slide';
 import type {State as ErrorsState} from './reducers/ui/errors';
 import type {State as SelectState} from './reducers/ui/select';
@@ -27,6 +28,7 @@ import permissions from './reducers/permissions';
 import progressions from './reducers/progressions/synchronize';
 import video from './reducers/video';
 import godMode from './reducers/god-mode';
+import appSession from './reducers/app-session';
 import fastSlide from './reducers/fast-slide';
 import errors from './reducers/ui/errors';
 import select from './reducers/ui/select';
@@ -53,6 +55,7 @@ export type StoreState =  ReduxState & {
   search: SearchState;
   godMode: GodModeState;
   fastSlide: FastSlideState;
+  appSession: AppSessionState;
   network: NetworkState;
 }
 
@@ -74,6 +77,7 @@ const reducers = combineReducers({
   video,
   godMode,
   fastSlide,
+  appSession,
   network
 });
 

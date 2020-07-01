@@ -43,7 +43,7 @@ class QRCodeScreen extends React.PureComponent<Props> {
   };
 
   handleDidFocus = () =>
-    this.props.requestPermission('camera', translations.permissionCamera, this.handleClose);
+    this.props.requestCameraPermission(translations.permissionCamera, this.handleClose);
 
   handleFakeScan = () => {
     const {onScan} = this.props.navigation.state.params;

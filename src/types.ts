@@ -119,7 +119,11 @@ export type PermissionStatus =
   | "denied"
   | "restricted"
   | "undetermined"
+  | "unavailable"
+  | "maybe-later"
   | "blocked";
+
+export type PermissionType = 'camera' | 'notifications';
 
 export type UnlockedLevelInfo = {
   isUnlocked: boolean;

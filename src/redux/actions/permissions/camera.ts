@@ -1,22 +1,19 @@
 import {Platform} from 'react-native';
-import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
-import type {PermissionStatus} from '../../types';
-import translations from '../../translations';
-import type {Options} from '../_types';
+import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS, PERMISSION_TYPE} from '../../../const';
+import type {PermissionStatus} from '../../../types';
+import translations from '../../../translations';
+import type {Options} from '../../_types';
 
-export const REQUEST = '@@permissions/REQUEST';
-export const CHECK = '@@permissions/CHECK';
-export const CHANGE = '@@permissions/CHANGE';
+export const REQUEST = '@@permissions/camera/REQUEST';
+export const CHECK = '@@permissions/camera/CHECK';
+export const CHANGE = '@@permissions/camera/CHANGE';
 
 export type PermissionType = 'camera';
 
-// Right now this is only dealing with camera
-// If you want to support more permissions, please switch on each type
-export const toOSPermissionType = (type: PermissionType) => {
-  const permission = type.toUpperCase();
+export const toOSCameraPermission = () => {
   return Platform.OS === 'ios'
-    ? `ios.permission.${permission}`
-    : `android.permission.${permission}`;
+    ? `ios.permission.CAMERA`
+    : `android.permission.CAMERA`;
 };
 
 export type RequestPayload = {
@@ -46,38 +43,38 @@ export type Action =
       payload: ChangePayload
     };
 
-export const change = (type: PermissionType, status: PermissionStatus): Action => ({
+export const change = (status: PermissionStatus): Action => ({
   type: CHANGE,
   payload: {
-    type,
+    type: PERMISSION_TYPE.CAMERA,
     status
   }
 });
 
-const _requestPermission = (type: PermissionType, onDeny?: () => void) => async (
+const _requestPermission = (onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
   {services}: Options
 ): Promise<PermissionStatus> => {
-  const status = await services.Permissions.request(toOSPermissionType(type));
+  const status = await services.Permissions.request(toOSCameraPermission());
   const currentPermissionStatus = getState().permissions.camera;
 
   if (status === PERMISSION_STATUS.DENIED && onDeny) {
     onDeny();
   }
   if (currentPermissionStatus !== status) {
-    dispatch(change(type, status));
+    dispatch(change(status));
   }
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
     status,
-    type
+    type: PERMISSION_TYPE.CAMERA
   });
 
   return status;
 };
 
-export const request = (type: PermissionType, description: string, onDeny?: () => void) => async (
+export const request = (description: string, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
   {services}: Options
@@ -85,11 +82,11 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
   const action = dispatch({
     type: REQUEST,
     payload: {
-      type
+      type: PERMISSION_TYPE.CAMERA
     }
   });
 
-  const permissionStatus = getState().permissions[type];
+  const permissionStatus = getState().permissions[PERMISSION_TYPE.CAMERA];
 
   if (
     permissionStatus === PERMISSION_STATUS.DENIED ||
@@ -119,19 +116,18 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
         },
         {
           text: translations.ok,
-          onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services})
+          onPress: () => _requestPermission(onDeny)(dispatch, getState, {services})
         }
       ],
       {cancelable: false}
     );
   } else {
-    await _requestPermission(type, onDeny)(dispatch, getState, {services});
+    await _requestPermission(onDeny)(dispatch, getState, {services});
   }
-
   return action;
 };
 
-export const check = (type: PermissionType) => async (
+export const check = () => async (
   dispatch: Dispatch,
   getState: GetState,
   {services}: Options
@@ -139,15 +135,15 @@ export const check = (type: PermissionType) => async (
   const action = dispatch({
     type: CHECK,
     payload: {
-      type
+      type: PERMISSION_TYPE.CAMERA
     }
   });
 
-  const status = await services.Permissions.check(toOSPermissionType(type));
+  const status = await services.Permissions.check(toOSCameraPermission());
   const {permissions} = getState();
 
   if (permissions.camera !== status) {
-    dispatch(change(type, status));
+    dispatch(change(status));
   }
 
   return action;

@@ -13,6 +13,7 @@ import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 import UserProvider from './components/user-provider';
 import VersionListener from './containers/version-listener';
+import AppSessionListener from './containers/app-session-listener';
 import VideoFullscreenListener from './containers/video-fullscreen-listener';
 import ConnectionListener from './containers/connection-listener';
 import createDataLayer from './layer/data';
@@ -68,6 +69,7 @@ class App extends React.PureComponent<Props> {
         <ReduxNetworkProvider pingInterval={30000} pingOnlyIfOffline>
           <PortalProvider>
             <VersionListener />
+            <AppSessionListener />
             <UserProvider>
               <BrandThemeProvider>
                 <View style={styles.container}>

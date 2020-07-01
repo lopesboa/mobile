@@ -35,6 +35,7 @@ import type {State as SearchState} from '../redux/reducers/ui/search';
 import type {State as GodModeState} from '../redux/reducers/god-mode';
 import type {State as NavigationState} from '../redux/reducers/navigation';
 import type {State as FastSlideState} from '../redux/reducers/fast-slide';
+import type {State as AppSessionState} from '../redux/reducers/app-session';
 import type {State as PermissionsState} from '../redux/reducers/permissions';
 import type {State as ProgressionsState} from '../redux/reducers/progressions/synchronize';
 import type {State as VideoState} from '../redux/reducers/video';
@@ -334,10 +335,13 @@ export const createNavigationState = (): NavigationState => ({
 
 export const createPermissionsState = ({
     camera,
+    notifications
 }: {
     camera?: PermissionStatus;
+    notifications?: PermissionStatus
 }): PermissionsState => ({
     camera,
+    notifications
 });
 
 export const createVideoState = ({
@@ -373,6 +377,7 @@ export const createStoreState = ({
     nextContent,
     godMode = false,
     fastSlide = false,
+    appSession = 0,
     errors,
     select,
     isValidating,
@@ -399,6 +404,7 @@ export const createStoreState = ({
     nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI;
     godMode?: GodModeState;
     fastSlide?: FastSlideState;
+    appSession?: AppSessionState;
     errors?: ErrorsState<void>;
     select?: SelectState;
     isValidating?: AnswersState;
@@ -433,6 +439,7 @@ export const createStoreState = ({
     progressions: progressions || createProgressionsState({}),
     godMode,
     fastSlide,
+    appSession,
     video: video || createVideoState({}),
     network: network || createNetworkState({}),
 });

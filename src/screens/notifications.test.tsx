@@ -1,8 +1,8 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-import {createStoreState} from '../__fixtures__/store';
+import {createStoreState, createPermissionsState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
-import {ENGINE, CONTENT_TYPE} from '../const';
+import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS} from '../const';
 import type { ConnectedStateProps } from './notifications';
 import {createNavigation} from '../__fixtures__/navigation';
 
@@ -33,12 +33,14 @@ describe('Notifications', () => {
         chapters: [],
         slides: [],
         progression,
-        permissions: {}
+        permissions: createPermissionsState({
+          notifications: PERMISSION_STATUS.GRANTED
+        })
       });
-      // TODO : add notification permission ? 
+
       const result = mapStateToProps(store);
       const expected: ConnectedStateProps = {
-        hasPermission: false
+        hasPermission: true
       };
 
       expect(result).toEqual(expected);
@@ -52,7 +54,15 @@ describe('Notifications', () => {
     const navigation = createNavigation({
       params
     });
-    const component = renderer.create(<NotifyMeScreen navigation={navigation} />);
+    const requestNotificationsPermission = jest.fn();
+    const changeNotificationsPermission = jest.fn();
+    const component = renderer.create(
+      <NotifyMeScreen 
+        navigation={navigation} 
+        requestNotificationsPermission={requestNotificationsPermission} 
+        changeNotificationsPermission={changeNotificationsPermission} 
+      />
+    );
 
     const button = component.root.find(el => el.props.testID === 'notifyme-button');
     button.props.onPress();
@@ -69,7 +79,15 @@ describe('Notifications', () => {
     const navigation = createNavigation({
       params
     });
-    const component = renderer.create(<NotifyMeScreen navigation={navigation} />);
+    const requestNotificationsPermission = jest.fn();
+    const changeNotificationsPermission = jest.fn();
+    const component = renderer.create(
+      <NotifyMeScreen 
+        navigation={navigation} 
+        requestNotificationsPermission={requestNotificationsPermission} 
+        changeNotificationsPermission={changeNotificationsPermission} 
+      />
+    );
 
     const button = component.root.find(el => el.props.testID === 'notifyme-later-button');
     button.props.onPress();

@@ -65,7 +65,7 @@ const NotifyMe = ({onNotifyMePress, onLaterPress}: Props) => (
           Yes, notify me
         </Button>
         <Space type="base" />
-        <Touchable testID="notifyme-later-button" analyticsID="notifyme-later-button">
+        <Touchable testID="notifyme-later-button" analyticsID="notifyme-later-button" onPress={onLaterPress}>
           <Text style={styles.btn_later}>Maybe later</Text>
         </Touchable>
       </View>

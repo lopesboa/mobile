@@ -119,13 +119,13 @@ describe('QR Code', () => {
   it('should handle focus', () => {
     const {Component: QRCode} = require('./qr-code');
 
-    const requestPermission = jest.fn();
+    const requestCameraPermission = jest.fn();
     const params = createParams();
     const navigation = createNavigation({
       params
     });
     const component = renderer.create(
-      <QRCode navigation={navigation} requestPermission={requestPermission} />
+      <QRCode navigation={navigation} requestCameraPermission={requestCameraPermission} />
     );
 
     const navigationEvents = component.root.find(
@@ -133,9 +133,8 @@ describe('QR Code', () => {
     );
     navigationEvents.props.onDidFocus();
 
-    expect(requestPermission).toHaveBeenCalledTimes(1);
-    expect(requestPermission).toHaveBeenCalledWith(
-      'camera',
+    expect(requestCameraPermission).toHaveBeenCalledTimes(1);
+    expect(requestCameraPermission).toHaveBeenCalledWith(
       translations.permissionCamera,
       expect.any(Function)
     );

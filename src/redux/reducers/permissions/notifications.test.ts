@@ -1,13 +1,11 @@
-import {CHANGE} from '../actions/permissions';
-import type {Action} from '../actions/permissions';
-import {PERMISSION_STATUS} from '../../const';
-import reducer from './permissions';
-import type {State} from './permissions';
+import {CHANGE} from '../../actions/permissions/notifications';
+import type {Action} from '../../actions/permissions/notifications';
+import {PERMISSION_STATUS} from '../../../const';
+import reducer from './notifications';
+import type {State} from './notifications';
 
 describe('Permissions', () => {
-  const expectedInitialState: State = {
-    camera: undefined
-  };
+  const expectedInitialState: State = PERMISSION_STATUS.UNDETERMINED;
 
   it('Default', () => {
     const action = {
@@ -23,15 +21,12 @@ describe('Permissions', () => {
       const action: Action = {
         type: CHANGE,
         payload: {
-          type: 'camera',
+          type: 'notifications',
           status: PERMISSION_STATUS.DENIED
         }
       };
       const result = reducer(undefined, action);
-      const expected: State = {
-        ...expectedInitialState,
-        camera: PERMISSION_STATUS.DENIED
-      };
+      const expected: State = PERMISSION_STATUS.DENIED;
       expect(result).toEqual(expected);
     });
   });

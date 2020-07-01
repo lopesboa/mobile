@@ -5,16 +5,22 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import {APP_STATE} from '../const';
 import type {AppState} from '../types';
-import {check as checkPermission, request as requestPermission} from '../redux/actions/permissions';
-import type {PermissionType} from '../redux/actions/permissions';
+import {check as checkCameraPermission, request as requestCameraPermission} from '../redux/actions/permissions/camera';
+import {check as checkNotificationsPermission, request as requestNotificationsPermission, change as changeNotificationsPermission} from '../redux/actions/permissions/notifications';
+import type {PermissionType} from '../types';
 
 export interface WithPermissionsProps {
-  requestPermission: (type: PermissionType, description: string, onDeny?: () => void) => void;
+  requestCameraPermission: (description: string, onDeny?: () => void) => void;
+  requestNotificationsPermission: (description: string, onDeny?: () => void) => void;
+  changeNotificationsPermission: (status: PermissionStatus) => void;
 };
 
 interface ConnectedDispatchProps {
-  checkPermission: typeof checkPermission;
-  requestPermission: typeof requestPermission;
+  checkCameraPermission: typeof checkCameraPermission;
+  requestCameraPermission: typeof requestCameraPermission;
+  checkNotificationsPermission: typeof checkNotificationsPermission;
+  requestNotificationsPermission: typeof requestNotificationsPermission;
+  changeNotificationsPermission: typeof changeNotificationsPermission;
 };
 
 function withPermissions(
@@ -34,7 +40,8 @@ function withPermissions(
     };
 
     componentDidMount() {
-      this.checkPermissions();
+      this.checkCameraPermissions();
+      this.checkNotificationsPermissions();
       AppStateBase.addEventListener('change', this.handleAppStateChange);
     }
 
@@ -48,31 +55,56 @@ function withPermissions(
         [APP_STATE.BACKGROUND].includes(this.state.appState) &&
         appState === APP_STATE.ACTIVE
       ) {
-        this.checkPermissions();
+        this.checkCameraPermissions();
+        this.checkNotificationsPermissions();
       }
       this.setState({
         appState
       });
     };
 
-    checkPermissions = () => types.forEach(type => this.props.checkPermission(type));
+    checkCameraPermissions = () => types.forEach(type => this.props.checkCameraPermission());
+    
+    checkNotificationsPermissions = () => types.forEach(type => this.props.checkNotificationsPermission());
 
-    requestPermission: Pick<WithPermissionsProps, 'requestPermission'> = (
-      type,
+    requestCameraPermission: Pick<WithPermissionsProps, 'requestCameraPermission'> = (
       description,
       onDeny
     ) => {
-      this.props.requestPermission(type, description, onDeny);
+      this.props.requestCameraPermission(description, onDeny);
+    };
+
+    requestNotificationsPermission: Pick<WithPermissionsProps, 'requestNotificationsPermission'> = (
+      description,
+      onDeny
+    ) => {
+      this.props.requestNotificationsPermission(description, onDeny);
+    };
+
+    changeNotificationsPermission: Pick<WithPermissionsProps, 'changeNotificationsPermission'> = (
+      status: PermissionStatus
+    ) => {
+      this.props.changeNotificationsPermission(status);
     };
 
     render() {
-      return <WrappedComponent {...this.props} requestPermission={this.requestPermission} />;
+      return (
+        <WrappedComponent 
+          {...this.props} 
+          requestCameraPermission={this.requestCameraPermission} 
+          requestNotificationsPermission={this.requestNotificationsPermission}
+          changeNotificationsPermission={this.changeNotificationsPermission}
+        />
+      );
     }
   }
 
   const mapDispatchToProps: ConnectedDispatchProps = {
-    checkPermission,
-    requestPermission
+    checkCameraPermission,
+    requestCameraPermission,
+    checkNotificationsPermission,
+    requestNotificationsPermission,
+    changeNotificationsPermission
   };
 
   return hoistNonReactStatic(

@@ -20,7 +20,8 @@ import type {
   PermissionStatus,
   QuestionChoiceInputType,
   SpaceType,
-  TooltipType
+  TooltipType,
+  PermissionType
 } from './types';
 import {$Keys} from "utility-types";
 
@@ -155,14 +156,28 @@ export const PERMISSION_STATUS: {
     | "DENIED"
     | "RESTRICTED"
     | "UNDETERMINED"
-    | "BLOCKED"]?: PermissionStatus
+    | "UNAVAILABLE"
+    | "MAYBE_LATER"
+    | "BLOCKED"]: PermissionStatus
 } = {
   GRANTED: "granted",
   DENIED: "denied",
   RESTRICTED: "restricted",
   UNDETERMINED: "undetermined",
+  UNAVAILABLE: 'unavailable',
+  MAYBE_LATER: 'maybe-later',
   BLOCKED: "blocked",
 };
+
+export const PERMISSION_TYPE: {
+  [key in
+    | "CAMERA"
+    | "NOTIFICATIONS"]: PermissionType
+} = {
+  CAMERA: "camera",
+  NOTIFICATIONS: "notifications"
+};
+
 
 export const APP_STATE: {
   [key in "ACTIVE" | "BACKGROUND" | "INACTIVE"]?: AppState
