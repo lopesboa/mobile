@@ -11,7 +11,7 @@ describe('Language', () => {
       const result = getMatchingLanguage(
         ['zh-TW', 'fr', defaultPlatformLanguage],
         defaultPlatformLanguage,
-        deviceLanguage
+        deviceLanguage,
       );
       const expected = 'zh-TW';
 
@@ -22,7 +22,7 @@ describe('Language', () => {
       const result = getMatchingLanguage(
         ['zh', 'fr', defaultPlatformLanguage],
         defaultPlatformLanguage,
-        deviceLanguage
+        deviceLanguage,
       );
       const expected = 'zh';
 
@@ -33,7 +33,7 @@ describe('Language', () => {
       const result = getMatchingLanguage(
         ['fr', defaultPlatformLanguage],
         defaultPlatformLanguage,
-        deviceLanguage
+        deviceLanguage,
       );
       const expected = defaultPlatformLanguage;
 

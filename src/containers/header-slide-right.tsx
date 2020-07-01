@@ -7,24 +7,24 @@ import type {StoreState} from '../redux/store';
 import {
   isGodModeUser as _isGodModeUser,
   isGodModeEnabled as _isGodModeEnabled,
-  isFastSlideEnabled as _isFastSlideEnabled
+  isFastSlideEnabled as _isFastSlideEnabled,
 } from '../redux/utils/state-extract';
 import {toggle as toggleGodMode} from '../redux/actions/god-mode';
 import {toggle as toggleFastSlide} from '../redux/actions/fast-slide';
 
 export interface ConnectedStateProps {
-  count?: number,
-  isGodModeUser?: boolean,
-  isGodModeEnabled?: boolean,
-  isFastSlideEnabled?: boolean
-};
+  count?: number;
+  isGodModeUser?: boolean;
+  isGodModeEnabled?: boolean;
+  isFastSlideEnabled?: boolean;
+}
 
 interface ConnectedDispatchProps {
-  toggleGodMode: typeof toggleGodMode,
-  toggleFastSlide: typeof toggleFastSlide
-};
+  toggleGodMode: typeof toggleGodMode;
+  toggleFastSlide: typeof toggleFastSlide;
+}
 
-interface Props extends ConnectedStateProps, ConnectedDispatchProps {};
+interface Props extends ConnectedStateProps, ConnectedDispatchProps {}
 
 // react-navigation needs this to be a class
 class HeaderSlideRight extends React.Component<Props> {
@@ -65,16 +65,13 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     count: progression && chapter && !hide ? count : undefined,
     isGodModeUser: _isGodModeUser(state),
     isGodModeEnabled: _isGodModeEnabled(state),
-    isFastSlideEnabled: _isFastSlideEnabled(state)
+    isFastSlideEnabled: _isFastSlideEnabled(state),
   };
 };
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   toggleGodMode,
-  toggleFastSlide
+  toggleFastSlide,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HeaderSlideRight);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderSlideRight);

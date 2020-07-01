@@ -7,10 +7,10 @@ import {createUser} from '../../__fixtures__/user';
 
 export type FetchUserResponse = {
   name: {
-    givenName: string,
-    familyName: string
-  },
-  displayName: string
+    givenName: string;
+    familyName: string;
+  };
+  displayName: string;
 };
 
 export const fetchUser = async (token: string): Promise<User> => {
@@ -22,22 +22,22 @@ export const fetchUser = async (token: string): Promise<User> => {
 
   const response = await fetch(`${jwt.host}/api/v1/users/me`, {
     headers: {
-      authorization: token
-    }
+      authorization: token,
+    },
   });
 
   const {
     displayName,
-    name: {givenName, familyName}
+    name: {givenName, familyName},
   }: FetchUserResponse = await response.json();
 
   return {
     givenName,
     familyName,
-    displayName
+    displayName,
   };
 };
 
 export default {
-  fetchUser
+  fetchUser,
 };

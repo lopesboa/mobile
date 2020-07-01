@@ -11,7 +11,7 @@ import createMiddleware from './reset-displayed-progression';
 const brand = createBrand();
 const createStore = () => ({
   getState: jest.fn(),
-  dispatch: jest.fn()
+  dispatch: jest.fn(),
 });
 
 const SlideRef = 'dummySlideRef';
@@ -19,14 +19,14 @@ const progression = createProgression({
   engine: 'learner',
   progressionContent: {
     type: 'slide',
-    ref: SlideRef
+    ref: SlideRef,
   },
   state: {
     nextContent: {
       type: 'slide',
-      ref: 'dummySlideRef'
-    }
-  }
+      ref: 'dummySlideRef',
+    },
+  },
 });
 
 const mockedStore = createStoreState({
@@ -35,20 +35,20 @@ const mockedStore = createStoreState({
   chapters: [],
   slides: [],
   progression,
-  authentication: createAuthenticationState({brand})
+  authentication: createAuthenticationState({brand}),
 });
 
 describe('Rest displayed Progression', () => {
   const options: Options = {
     // @ts-ignore we dont want to mock the entire services object
     services: {
-      Progression: {}
-    }
+      Progression: {},
+    },
   };
 
   it('shoud not handle unsupported action', () => {
     const action = {
-      type: 'FOO'
+      type: 'FOO',
     };
     const middleware = createMiddleware(options);
     const store = createStore();
@@ -63,8 +63,8 @@ describe('Rest displayed Progression', () => {
     const gotoHomeAction = {
       type: NAVIGATION_SCREEN_CHANGE,
       payload: {
-        currentScreenName: 'Home'
-      }
+        currentScreenName: 'Home',
+      },
     };
     const middleware = createMiddleware(options);
     const store = createStore();
@@ -76,8 +76,8 @@ describe('Rest displayed Progression', () => {
     const expectedAction: SelectAction = {
       type: UI_PROGRESSION_ACTION_TYPES.SELECT_PROGRESSION,
       payload: {
-        id: ''
-      }
+        id: '',
+      },
     };
     expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
     expect(next).toHaveBeenCalledWith(gotoHomeAction);

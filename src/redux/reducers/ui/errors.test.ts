@@ -5,13 +5,13 @@ import reducer from './errors';
 import type {State} from './errors';
 
 const fakeAction = {
-  type: 'FAKE_ACTION'
+  type: 'FAKE_ACTION',
 };
 type FakeAction = typeof fakeAction;
 
 describe('Errors', () => {
   const expectedInitialState: State<FakeAction> = {
-    isVisible: false
+    isVisible: false,
   };
 
   it('Default', () => {
@@ -27,14 +27,14 @@ describe('Errors', () => {
         type: SHOW,
         payload: {
           type: ERROR_TYPE.NO_CONTENT_FOUND,
-          lastAction
-        }
+          lastAction,
+        },
       };
       const result = reducer(expectedInitialState, action);
       const expected = {
         isVisible: true,
         type: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction
+        lastAction,
       };
       expect(result).toEqual(expected);
     });
@@ -43,7 +43,7 @@ describe('Errors', () => {
   describe(HIDE, () => {
     it('Default', () => {
       const action: Action<void> = {
-        type: HIDE
+        type: HIDE,
       };
       const result = reducer(undefined, action);
       const expected = expectedInitialState;

@@ -20,40 +20,40 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: theme.radius.card,
     overflow: 'hidden',
-    backgroundColor: theme.colors.white
+    backgroundColor: theme.colors.white,
   },
   header: {
     backgroundColor: theme.colors.white,
     alignItems: 'flex-end',
     justifyContent: 'center',
     paddingHorizontal: theme.spacing.medium,
-    height: HEADER_HEIGHT
+    height: HEADER_HEIGHT,
   },
   content: {
     paddingHorizontal: theme.spacing.medium,
     paddingBottom: theme.spacing.medium,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   contentWithHeader: {
-    paddingTop: theme.spacing.medium
+    paddingTop: theme.spacing.medium,
   },
   contentWithIcon: {
-    paddingTop: theme.spacing.small
+    paddingTop: theme.spacing.small,
   },
   icon: {
     marginTop: -HEADER_HEIGHT * (3 / 4),
     padding: 5,
     backgroundColor: theme.colors.white,
     borderRadius: theme.radius.thumbnail,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   iconContent: {
     backgroundColor: theme.colors.white,
     padding: theme.spacing.small,
     borderRadius: theme.radius.thumbnail,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 const Modal = ({
@@ -63,7 +63,7 @@ const Modal = ({
   renderIcon,
   contentStyle,
   onClose,
-  testID
+  testID,
 }: Props) => (
   <View style={styles.container} testID={testID}>
     <View style={[styles.header, {backgroundColor: headerBackgroundColor}]}>
@@ -87,7 +87,7 @@ const Modal = ({
         styles.content,
         headerBackgroundColor && styles.contentWithHeader,
         renderIcon && styles.contentWithIcon,
-        contentStyle
+        contentStyle,
       ]}
     >
       {children}

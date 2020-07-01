@@ -22,11 +22,11 @@ const sectionsWithCardsRef = sections.map((section, index) => ({
     (index === 0 && ['foo', 'bar']) ||
     (index === 1 && ['bar', 'foo']) ||
     (index === 2 && []) ||
-    undefined
+    undefined,
 }));
 const sectionsWithEmptyCardsRef = sections.map((section, index) => ({
   ...section,
-  cardsRef: []
+  cardsRef: [],
 }));
 
 const level = createCardLevel({ref: 'mod_1', status: CARD_STATUS.ACTIVE, label: 'Fake level'});
@@ -34,13 +34,13 @@ const disciplineCard = createDisciplineCard({
   ref: 'foo',
   completion: 0,
   levels: [level],
-  title: 'Fake discipline'
+  title: 'Fake discipline',
 });
 const chapterCard = createChapterCard({
   ref: 'bar',
   completion: 0,
   title: 'Fake chapter',
-  status: CARD_STATUS.ACTIVE
+  status: CARD_STATUS.ACTIVE,
 });
 
 storiesOf('Catalog', module)
@@ -48,7 +48,7 @@ storiesOf('Catalog', module)
     <TestContextProvider
       store={{
         catalog: createCatalogState({}),
-        authentication: createAuthenticationState({user: null, brand: null})
+        authentication: createAuthenticationState({user: null, brand: null}),
       }}
     >
       <Catalog
@@ -62,7 +62,7 @@ storiesOf('Catalog', module)
   .add('User connected', () => (
     <TestContextProvider
       store={{
-        catalog: createCatalogState({})
+        catalog: createCatalogState({}),
       }}
     >
       <Catalog
@@ -78,8 +78,8 @@ storiesOf('Catalog', module)
       store={{
         catalog: createCatalogState({
           sections: sectionsWithCardsRef,
-          cards: [disciplineCard, chapterCard]
-        })
+          cards: [disciplineCard, chapterCard],
+        }),
       }}
     >
       <Catalog
@@ -107,8 +107,8 @@ storiesOf('Catalog', module)
       store={{
         catalog: createCatalogState({
           sections: sectionsWithCardsRef,
-          cards: [disciplineCard, chapterCard]
-        })
+          cards: [disciplineCard, chapterCard],
+        }),
       }}
     >
       <Catalog
@@ -124,8 +124,8 @@ storiesOf('Catalog', module)
       store={{
         catalog: createCatalogState({
           sections: sectionsWithEmptyCardsRef,
-          cards: [disciplineCard, chapterCard]
-        })
+          cards: [disciplineCard, chapterCard],
+        }),
       }}
     >
       <Catalog
@@ -147,8 +147,8 @@ if (__TEST__) {
           store={{
             catalog: createCatalogState({
               sections: sectionsWithCardsRef,
-              cards: [disciplineCard, chapterCard]
-            })
+              cards: [disciplineCard, chapterCard],
+            }),
           }}
         >
           <Catalog
@@ -158,10 +158,10 @@ if (__TEST__) {
             onRefresh={handleFakePress}
             onScroll={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const button = component.root.find(el => el.props.testID === 'catalog-hero-button');
+      const button = component.root.find((el) => el.props.testID === 'catalog-hero-button');
       button.props.onPress();
 
       expect(handleCardPress).toHaveBeenCalledTimes(1);
@@ -175,8 +175,8 @@ if (__TEST__) {
           store={{
             catalog: createCatalogState({
               sections: sectionsWithCardsRef,
-              cards: [disciplineCard, chapterCard]
-            })
+              cards: [disciplineCard, chapterCard],
+            }),
           }}
         >
           <Catalog
@@ -185,13 +185,13 @@ if (__TEST__) {
             onRefresh={handleFakePress}
             onScroll={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       const button = component.root.find(
-        el =>
+        (el) =>
           el.props.testID === 'catalog-section-most-popular-items-item-bar' &&
-          el.props.analyticsID === 'card'
+          el.props.analyticsID === 'card',
       );
       button.props.onPress();
 

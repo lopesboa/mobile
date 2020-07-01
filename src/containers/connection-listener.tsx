@@ -9,15 +9,15 @@ import {isNetworkConnected} from '../redux/utils/state-extract';
 
 const styles = StyleSheet.create({
   title: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 export interface ConnectedStateProps {
   isConnected: boolean;
 }
 
-export interface Props extends ConnectedStateProps {}
+export type Props = ConnectedStateProps;
 
 class ConnectionListener extends React.PureComponent<Props> {
   componentDidUpdate() {
@@ -26,7 +26,7 @@ class ConnectionListener extends React.PureComponent<Props> {
     showMessage({
       message: isConnected ? translations.connectionRestored : translations.connectionLost,
       backgroundColor: isConnected ? theme.colors.positive : theme.colors.negative,
-      titleStyle: styles.title
+      titleStyle: styles.title,
     });
   }
 
@@ -36,7 +36,7 @@ class ConnectionListener extends React.PureComponent<Props> {
 }
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  isConnected: isNetworkConnected(state)
+  isConnected: isNetworkConnected(state),
 });
 
 export {ConnectionListener as Component};

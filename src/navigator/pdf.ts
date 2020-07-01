@@ -6,18 +6,18 @@ import navigationOptions from './navigation-options';
 
 const pdfNavigator = createStackNavigator(
   {
-    PdfModal: {screen: PdfScreen}
+    PdfModal: {screen: PdfScreen},
   },
   {
     defaultNavigationOptions: {
       ...navigationOptions,
       headerTitleStyle: {
         ...navigationOptions.headerTitleStyle,
-        color: theme.colors.gray.dark
-      }
+        color: theme.colors.gray.dark,
+      },
     },
-    mode: 'modal'
-  }
+    mode: 'modal',
+  },
 );
 
 export default pdfNavigator;

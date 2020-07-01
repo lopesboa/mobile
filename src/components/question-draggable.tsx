@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import type {Choice} from '@types/coorp/progression-engine';
+import type {Choice} from '../types/coorpacademy/progression-engine';
 
 import {QUESTION_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -8,31 +8,31 @@ import QuestionChoice from './question-choice';
 import DropZone from './drop-zone';
 
 export interface Props {
-  choices: Array<Choice>,
-  userChoices: Array<string>,
-  testID?: string,
-  onPress: (item: Choice) => void
-};
+  choices: Array<Choice>;
+  userChoices: Array<string>;
+  testID?: string;
+  onPress: (item: Choice) => void;
+}
 
 const styles = StyleSheet.create({
   container: {},
   pickableChoices: {
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   choice: {
-    margin: theme.spacing.micro
-  }
+    margin: theme.spacing.micro,
+  },
 });
 
 // this algo could be improve using a  single reduce fuction
 export const extractSelectedChoices = (
   availableChoices: Array<Choice>,
-  userChoices: Array<string>
+  userChoices: Array<string>,
 ): Array<Array<Choice>> => {
   const selectedChoices: Array<Choice> = userChoices.reduce((accumulator, currentValue) => {
     const foundItem = availableChoices.find(
-      availableChoice => availableChoice.label === currentValue
+      (availableChoice) => availableChoice.label === currentValue,
     );
     if (foundItem) {
       return [...accumulator, foundItem];
@@ -41,7 +41,7 @@ export const extractSelectedChoices = (
   }, []);
 
   const notSelectedChoices = availableChoices.filter(
-    availableChoice => !userChoices.includes(availableChoice.label)
+    (availableChoice) => !userChoices.includes(availableChoice.label),
   );
 
   return [selectedChoices, notSelectedChoices];

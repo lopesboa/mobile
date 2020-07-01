@@ -6,13 +6,13 @@ import theme from '../modules/theme';
 import type {FontSizeType} from '../modules/theme';
 
 interface Props {
-  size?: 'tiny' | 'small' | 'base' | 'large',
-  fontSize?: FontSizeType,
-  color?: string,
-  width?: string | number,
-  isCentered?: boolean,
-  style?: ViewStyle
-};
+  size?: 'tiny' | 'small' | 'base' | 'large';
+  fontSize?: FontSizeType;
+  color?: string;
+  width?: string | number;
+  isCentered?: boolean;
+  style?: ViewStyle;
+}
 
 export const LARGE_HEIGHT = 16;
 export const BASE_HEIGHT = 10;
@@ -21,26 +21,26 @@ export const TINY_HEIGHT = 2;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   centered: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   line: {
-    borderRadius: 0
+    borderRadius: 0,
   },
   large: {
-    height: LARGE_HEIGHT
+    height: LARGE_HEIGHT,
   },
   base: {
-    height: BASE_HEIGHT
+    height: BASE_HEIGHT,
   },
   small: {
-    height: SMALL_HEIGHT
+    height: SMALL_HEIGHT,
   },
   tiny: {
-    height: TINY_HEIGHT
-  }
+    height: TINY_HEIGHT,
+  },
 });
 
 const PlaceholderLine = ({
@@ -49,14 +49,14 @@ const PlaceholderLine = ({
   color = theme.colors.gray.light,
   width,
   isCentered,
-  style
+  style,
 }: Props) => (
   <View
     style={[
       styles.container,
       isCentered && styles.centered,
       {height: fontSize && theme.fontSize[fontSize] * 1.25},
-      style
+      style,
     ]}
   >
     <PlaceholderLineBase

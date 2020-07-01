@@ -7,11 +7,11 @@ import type {Migrations, PairedMigrations, Transformer, Predicate} from './types
 const ASYNC_STORAGE_VERSION_KEY = 'async_storage_version';
 
 const applyMigration = (predicate: Predicate, transformer: Transformer) => async (
-  asyncStorage: typeof AsyncStorage
+  asyncStorage: typeof AsyncStorage,
 ): Promise<void> => {
   const allASKeys = await asyncStorage.getAllKeys();
 
-  return Promise.mapSeries(allASKeys, async key => {
+  return Promise.mapSeries(allASKeys, async (key) => {
     if (predicate(key)) {
       const value = await asyncStorage.getItem(key);
       if (value) {
@@ -25,7 +25,7 @@ const applyMigration = (predicate: Predicate, transformer: Transformer) => async
 };
 
 const applyMigrations = (asyncStorageVersionKey, migrations) => async (
-  asyncStorage: typeof AsyncStorage
+  asyncStorage: typeof AsyncStorage,
 ): Promise<void> => {
   const currentASVersion = (await asyncStorage.getItem(asyncStorageVersionKey)) || '1';
   return _.pipe(
@@ -37,7 +37,7 @@ const applyMigrations = (asyncStorageVersionKey, migrations) => async (
       Promise.mapSeries(vm, async ([version, [predicate, transformer]]) => {
         await applyMigration(predicate, transformer)(asyncStorage);
         await asyncStorage.setItem(asyncStorageVersionKey, version.toString());
-      })
+      }),
   )(migrations);
 };
 

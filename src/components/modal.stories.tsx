@@ -34,10 +34,10 @@ if (__TEST__) {
       const component = renderer.create(
         <Modal onClose={handleClose}>
           <Text>Some content</Text>
-        </Modal>
+        </Modal>,
       );
 
-      const button = component.root.find(el => el.props.testID === 'close-modal');
+      const button = component.root.find((el) => el.props.testID === 'close-modal');
       button.props.onPress();
       expect(handleClose).toHaveBeenCalledTimes(1);
     });

@@ -9,7 +9,7 @@ storiesOf('HeaderSlideTitle', module)
     <HeaderSlideTitle
       image={{
         uri:
-          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
+          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg',
       }}
       subtitle="Basic"
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
@@ -19,7 +19,7 @@ storiesOf('HeaderSlideTitle', module)
     <HeaderSlideTitle
       image={{
         uri:
-          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
+          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg',
       }}
       subtitle="Advanced"
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."
@@ -29,7 +29,7 @@ storiesOf('HeaderSlideTitle', module)
     <HeaderSlideTitle
       image={{
         uri:
-          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg'
+          'https://static.coorpacademy.com/content/CoorpAcademy/content-eyrolles/cockpit-eyrolles/default/shutterstock_123603871-1-1545058448041.jpg',
       }}
       subtitle="Coach"
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."

@@ -10,27 +10,24 @@ import type {PermissionType} from '../redux/actions/permissions';
 
 export interface WithPermissionsProps {
   requestPermission: (type: PermissionType, description: string, onDeny?: () => void) => void;
-};
+}
 
 interface ConnectedDispatchProps {
   checkPermission: typeof checkPermission;
   requestPermission: typeof requestPermission;
-};
+}
 
-function withPermissions(
-  WrappedComponent: React.ElementType<any>,
-  types: Array<PermissionType>
-) {
+function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<PermissionType>) {
   interface Props extends WithPermissionsProps, ConnectedDispatchProps {}
 
   type State = {
-    appState?: AppState
+    appState?: AppState;
   };
 
   class ComponentWithPermissions extends React.PureComponent<Props, State> {
     state: State = {
       // @ts-ignore the base type is weak
-      appState: AppStateBase.currentState
+      appState: AppStateBase.currentState,
     };
 
     componentDidMount() {
@@ -51,16 +48,16 @@ function withPermissions(
         this.checkPermissions();
       }
       this.setState({
-        appState
+        appState,
       });
     };
 
-    checkPermissions = () => types.forEach(type => this.props.checkPermission(type));
+    checkPermissions = () => types.forEach((type) => this.props.checkPermission(type));
 
     requestPermission: Pick<WithPermissionsProps, 'requestPermission'> = (
       type,
       description,
-      onDeny
+      onDeny,
     ) => {
       this.props.requestPermission(type, description, onDeny);
     };
@@ -72,15 +69,12 @@ function withPermissions(
 
   const mapDispatchToProps: ConnectedDispatchProps = {
     checkPermission,
-    requestPermission
+    requestPermission,
   };
 
   return hoistNonReactStatic(
-    connect(
-      null,
-      mapDispatchToProps
-    )(ComponentWithPermissions),
-    WrappedComponent
+    connect(null, mapDispatchToProps)(ComponentWithPermissions),
+    WrappedComponent,
   );
 }
 

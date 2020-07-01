@@ -21,10 +21,10 @@ if (__TEST__) {
       const component = renderer.create(
         <ModalSelectItem onPress={handlePress} testID="modal-select-item-1">
           Foo
-        </ModalSelectItem>
+        </ModalSelectItem>,
       );
 
-      const button = component.root.find(el => el.props.testID === 'modal-select-item-1');
+      const button = component.root.find((el) => el.props.testID === 'modal-select-item-1');
       button.props.onPress();
 
       expect(handlePress).toHaveBeenCalledTimes(1);

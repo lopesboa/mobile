@@ -1,3 +1,4 @@
+import {by, expect, element} from 'detox';
 import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 const rightAnswer = async (el: Detox.Element) => {
@@ -20,27 +21,27 @@ describe('Questions', () => {
 
   it('should see QCM elements', async () => {
     await waitForExist('question');
-    await weExpect(element(by.id('question-title'))).toBeVisible();
-    await weExpect(element(by.id('explanation'))).toBeVisible();
-    await weExpect(element(by.id('question-resource'))).toBeVisible();
+    await expect(element(by.id('question-title'))).toBeVisible();
+    await expect(element(by.id('explanation'))).toBeVisible();
+    await expect(element(by.id('question-resource'))).toBeVisible();
     await element(by.id('question-screen')).swipe('up');
-    await weExpect(element(by.id('question-choices'))).toBeVisible();
-    await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
+    await expect(element(by.id('question-choices'))).toBeVisible();
+    await expect(element(by.id('button-validate-disabled'))).toBeVisible();
   });
   it('should not see correction elements', async () => {
-    await weExpect(element(by.id('correction-success'))).toBeNotVisible();
-    await weExpect(element(by.id('correction-error'))).toBeNotVisible();
-    await weExpect(element(by.id('chapter-end'))).toBeNotVisible();
+    await expect(element(by.id('correction-success'))).toBeNotVisible();
+    await expect(element(by.id('correction-error'))).toBeNotVisible();
+    await expect(element(by.id('chapter-end'))).toBeNotVisible();
   });
   it('should be able to answer', async () => {
     await element(by.id('question-choice-1')).tap();
-    await weExpect(element(by.id('question-choice-1-selected'))).toBeVisible();
-    await weExpect(element(by.id('button-validate'))).toBeVisible();
+    await expect(element(by.id('question-choice-1-selected'))).toBeVisible();
+    await expect(element(by.id('button-validate'))).toBeVisible();
   });
   it('should be able to select multiple answers', async () => {
     await element(by.id('question-choice-2')).tap();
-    await weExpect(element(by.id('question-choice-1-selected'))).toBeVisible();
-    await weExpect(element(by.id('question-choice-2-selected'))).toBeVisible();
+    await expect(element(by.id('question-choice-1-selected'))).toBeVisible();
+    await expect(element(by.id('question-choice-2-selected'))).toBeVisible();
   });
   describe('Correction', () => {
     describe('Negative', () => {
@@ -50,102 +51,102 @@ describe('Questions', () => {
       });
       it('should see elements', async () => {
         await waitForExist('correction-error');
-        await weExpect(element(by.id('correction-title'))).toBeVisible();
-        await weExpect(element(by.id('correction-explanation'))).toBeVisible();
-        await weExpect(element(by.id('card-correction'))).toBeVisible();
-        await weExpect(element(by.id('card-keypoint'))).toExist();
-        await weExpect(element(by.id('card-tip'))).toExist();
+        await expect(element(by.id('correction-title'))).toBeVisible();
+        await expect(element(by.id('correction-explanation'))).toBeVisible();
+        await expect(element(by.id('card-correction'))).toBeVisible();
+        await expect(element(by.id('card-keypoint'))).toExist();
+        await expect(element(by.id('card-tip'))).toExist();
       });
       it('should lose a life', async () => {
-        await weExpect(element(by.id('correction-lives-3-broken'))).toBeVisible();
+        await expect(element(by.id('correction-lives-3-broken'))).toBeVisible();
       });
       it('should be able to swipe resources cards', async () => {
         await element(by.id('card-correction')).swipe('up');
         await element(by.id('card-resource-les_1')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_1-video'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_1-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_2')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_2-video'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_2-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_3')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_3-video'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_3-video'))).toBeNotVisible();
         await element(by.id('card-resource-les_4')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_4-pdf'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_4-pdf'))).toBeNotVisible();
       });
 
       it('should see key-point card', async () => {
-        await weExpect(element(by.id('card-keypoint'))).toBeVisible();
+        await expect(element(by.id('card-keypoint'))).toBeVisible();
       });
       it('should be able to swipe to tip card', async () => {
         await element(by.id('card-keypoint')).swipe('left');
-        await weExpect(element(by.id('card-tip'))).toBeVisible();
+        await expect(element(by.id('card-tip'))).toBeVisible();
       });
       it('should back to the first card', async () => {
         await element(by.id('card-tip')).swipe('right');
-        await weExpect(element(by.id('card-correction'))).toBeVisible();
+        await expect(element(by.id('card-correction'))).toBeVisible();
       });
       it('should back to the question', async () => {
-        await weExpect(element(by.id('button-next-question'))).toBeVisible();
+        await expect(element(by.id('button-next-question'))).toBeVisible();
         await element(by.id('button-next-question')).tap();
         await waitForExist('question');
       });
       it('should see lives updated', async () => {
-        await weExpect(element(by.id('lives-3'))).toBeVisible();
+        await expect(element(by.id('lives-3'))).toBeVisible();
       });
       it('should see the progression change', async () => {
-        await weExpect(element(by.id('progression-bar-1'))).toBeNotVisible();
-        await weExpect(element(by.id('progression-bar-2'))).toBeVisible();
+        await expect(element(by.id('progression-bar-1'))).toBeNotVisible();
+        await expect(element(by.id('progression-bar-2'))).toBeVisible();
       });
     });
     describe('Positive', () => {
       beforeAll(async () => {
         await element(by.id('question-screen')).swipe('up');
         await element(by.id('question-choice-2')).tap();
-        await weExpect(element(by.id('question-choice-2-selected'))).toBeVisible();
+        await expect(element(by.id('question-choice-2-selected'))).toBeVisible();
         await element(by.id('button-validate')).tap();
         await waitForExist('correction-success');
       });
       it('should see elements', async () => {
-        await weExpect(element(by.id('correction-success'))).toBeVisible();
-        await weExpect(element(by.id('correction-title'))).toBeVisible();
-        await weExpect(element(by.id('correction-explanation'))).toBeVisible();
-        await weExpect(element(by.id('card-tip'))).toBeVisible();
-        await weExpect(element(by.id('card-keypoint'))).toExist();
-        await weExpect(element(by.id('card-correction'))).toExist();
+        await expect(element(by.id('correction-success'))).toBeVisible();
+        await expect(element(by.id('correction-title'))).toBeVisible();
+        await expect(element(by.id('correction-explanation'))).toBeVisible();
+        await expect(element(by.id('card-tip'))).toBeVisible();
+        await expect(element(by.id('card-keypoint'))).toExist();
+        await expect(element(by.id('card-correction'))).toExist();
       });
       it('should keep lives', async () => {
-        await weExpect(element(by.id('correction-lives-3'))).toBeVisible();
+        await expect(element(by.id('correction-lives-3'))).toBeVisible();
       });
       it('should be able to swipe to correction card', async () => {
         await element(by.id('card-tip')).swipe('up');
-        await weExpect(element(by.id('card-tip'))).toBeNotVisible();
+        await expect(element(by.id('card-tip'))).toBeNotVisible();
         await element(by.id('card-resource-les_1')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_1'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_1'))).toBeNotVisible();
         await element(by.id('card-resource-les_2')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_2'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_2'))).toBeNotVisible();
         await element(by.id('card-resource-les_3')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_3'))).toBeNotVisible();
+        await expect(element(by.id('card-resource-les_3'))).toBeNotVisible();
         await element(by.id('card-resource-les_4')).swipe('left');
-        await weExpect(element(by.id('card-resource-les_4'))).toBeNotVisible();
-        await weExpect(element(by.id('card-keypoint'))).toBeVisible();
+        await expect(element(by.id('card-resource-les_4'))).toBeNotVisible();
+        await expect(element(by.id('card-keypoint'))).toBeVisible();
       });
       it('should be able to swipe to tip card', async () => {
         await element(by.id('card-keypoint')).swipe('left');
-        await weExpect(element(by.id('card-correction'))).toBeVisible();
+        await expect(element(by.id('card-correction'))).toBeVisible();
       });
       it('should back to the first card', async () => {
         await element(by.id('card-correction')).swipe('right');
-        await weExpect(element(by.id('card-tip'))).toBeVisible();
+        await expect(element(by.id('card-tip'))).toBeVisible();
       });
       it('should be able to close the modal', async () => {
-        await weExpect(element(by.id('button-next-question'))).toBeVisible();
+        await expect(element(by.id('button-next-question'))).toBeVisible();
         await element(by.id('button-next-question')).tap();
         await waitForExist('question');
       });
       it('should see lives', async () => {
-        await weExpect(element(by.id('lives-3'))).toBeVisible();
+        await expect(element(by.id('lives-3'))).toBeVisible();
       });
       it('should see the progression change', async () => {
-        await weExpect(element(by.id('progression-bar-2'))).toBeNotVisible();
-        await weExpect(element(by.id('progression-bar-3'))).toBeVisible();
+        await expect(element(by.id('progression-bar-2'))).toBeNotVisible();
+        await expect(element(by.id('progression-bar-3'))).toBeVisible();
       });
     });
   });
@@ -161,10 +162,10 @@ describe('Questions', () => {
       await element(by.id('question-screen')).swipe('up');
     });
     it('should see choices with images', async () => {
-      await weExpect(element(by.id('question-choice-1-img'))).toBeVisible();
-      await weExpect(element(by.id('question-choice-2-img'))).toBeVisible();
-      await weExpect(element(by.id('question-choice-3-img'))).toBeVisible();
-      await weExpect(element(by.id('question-choice-4-img'))).toBeVisible();
+      await expect(element(by.id('question-choice-1-img'))).toBeVisible();
+      await expect(element(by.id('question-choice-2-img'))).toBeVisible();
+      await expect(element(by.id('question-choice-3-img'))).toBeVisible();
+      await expect(element(by.id('question-choice-4-img'))).toBeVisible();
     });
   });
 });

@@ -1,7 +1,7 @@
 const MINOR = 'minor';
 const PATCH = 'patch';
 
-const getVersionIncrementType = message => {
+const getVersionIncrementType = (message) => {
   const firstLine = message.split('\n')[0];
   const containsPatchKeyWords = /bug|fix|tweak|plugging/i.test(firstLine);
   const tooShortMessage = firstLine.split(' ').length < 5; // 4 word + PR tag

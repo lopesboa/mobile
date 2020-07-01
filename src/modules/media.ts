@@ -1,5 +1,10 @@
-import type {Media, LessonType, Lesson, ResourceMimeType} from '@types/coorp/progression-engine';
-import type {VideoProvider} from '@types/coorp/player-store';
+import type {
+  Media,
+  LessonType,
+  Lesson,
+  ResourceMimeType,
+} from '../types/coorpacademy/progression-engine';
+import type {VideoProvider} from '../types/coorpacademy/player-store';
 
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 import {RESOURCE_TYPE, VIDEO_MIME_TYPE} from '../const';

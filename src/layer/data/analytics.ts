@@ -21,7 +21,7 @@ export const logEvent = (event: AnalyticsEventType, params: AnalyticsEventParams
     const {userId, brand} = params;
     analytics().setUserProperties({
       userId,
-      brand
+      brand,
     });
   }
 
@@ -29,7 +29,7 @@ export const logEvent = (event: AnalyticsEventType, params: AnalyticsEventParams
     // To clean the session (unset user properties)
     analytics().setUserProperties({
       userId: null,
-      brand: null
+      brand: null,
     });
   }
 

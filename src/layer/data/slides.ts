@@ -1,4 +1,4 @@
-import type {SlideAPI} from '@types/coorp/player-services';
+import type {SlideAPI} from '../../types/coorpacademy/player-services';
 
 import translations from '../../translations';
 import {mapToSlideAPI} from './mappers';
@@ -16,6 +16,6 @@ export const findById = async (universalRef: string): Promise<SlideAPI> => {
 export const findByChapter = async (chapterId: string): Promise<Array<SlideAPI>> => {
   const language = translations.getLanguage();
   const slides: Array<Slide> = await getItemsPerResourceType(CONTENT_TYPE.SLIDE, language);
-  const flitredSlide = slides.filter(slide => slide.chapter_id === chapterId);
-  return flitredSlide.map(slide => mapToSlideAPI(slide));
+  const flitredSlide = slides.filter((slide) => slide.chapter_id === chapterId);
+  return flitredSlide.map((slide) => mapToSlideAPI(slide));
 };

@@ -1,5 +1,5 @@
 import {VIDEO_TRACK_TYPE} from '@coorpacademy/player-store';
-import type {VideoTrack} from '@types/coorp/player-store';
+import type {VideoTrack} from '../../types/coorpacademy/player-store';
 
 import {fakeError} from '../../utils/tests';
 import {createToken} from '../../__fixtures__/tokens';
@@ -14,7 +14,7 @@ jest.mock('../../utils/local-token', () => {
   const {createToken: _createToken} = require('../../__fixtures__/tokens');
 
   return {
-    get: jest.fn(() => Promise.resolve(_createToken({})))
+    get: jest.fn(() => Promise.resolve(_createToken({}))),
   };
 });
 
@@ -38,7 +38,7 @@ describe('videos', () => {
 
     it('should fetch e2e fixtures', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {findUriById} = require('./videos');
 
@@ -50,7 +50,7 @@ describe('videos', () => {
 
     it('should fetch from host', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
@@ -59,19 +59,19 @@ describe('videos', () => {
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
           json: () => Promise<{
-            url: string
-          }>
+            url: string;
+          }>;
         }> => {
           expect(url).toBe(`https://domain.tld/api/v2/videos/${videoId}/provider/${provider}`);
           expect(options).toHaveProperty('headers.authorization', createToken({}));
 
           return Promise.resolve({
-            json: () => Promise.resolve({url: videoUrl})
+            json: () => Promise.resolve({url: videoUrl}),
           });
-        }
+        },
       );
 
       const {findUriById} = require('./videos');
@@ -84,7 +84,7 @@ describe('videos', () => {
 
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
@@ -113,7 +113,7 @@ describe('videos', () => {
 
     it('should fetch e2e fixtures', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {findTracksById} = require('./videos');
 
@@ -125,7 +125,7 @@ describe('videos', () => {
 
     it('should fetch from host', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
@@ -134,17 +134,17 @@ describe('videos', () => {
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
-          json: () => Promise<Array<VideoTrack>>
+          json: () => Promise<Array<VideoTrack>>;
         }> => {
           expect(url).toBe(`https://domain.tld/api/v2/subtitles/video/${videoId}/${trackType}`);
           expect(options).toHaveProperty('headers.authorization', createToken({}));
 
           return Promise.resolve({
-            json: () => Promise.resolve(videoTracks)
+            json: () => Promise.resolve(videoTracks),
           });
-        }
+        },
       );
 
       const {findTracksById} = require('./videos');
@@ -157,7 +157,7 @@ describe('videos', () => {
 
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 

@@ -21,20 +21,24 @@ import createStore from './redux';
 import type {ReduxDevTools} from './redux/_types';
 
 const reduxDevTools: ReduxDevTools | void =
-  // eslint-disable-next-line no-undef
-  window && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined;
+  // @ts-ignore
+  window && window.__REDUX_DEVTOOLS_EXTENSION__
+    ? // @ts-ignore
+      window.__REDUX_DEVTOOLS_EXTENSION__()
+    : undefined;
 
 const dataLayer = createDataLayer();
 
 const services = createServices(dataLayer);
+// @ts-ignore
 const store = createStore(services, reduxDevTools);
 
-interface Props {};
+interface Props {}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 const ENABLE_ERROR_DEBUG = false;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import type {Choice} from '@types/coorp/progression-engine';
+import type {Choice} from '../types/coorpacademy/progression-engine';
 
 import {QUESTION_TYPE} from '../const';
 import theme from '../modules/theme';
@@ -9,13 +9,13 @@ import QuestionChoice from './question-choice';
 import Text from './text';
 
 export interface Props {
-  choices: Array<Choice>,
-  onPress: (item: Choice) => void
-};
+  choices: Array<Choice>;
+  onPress: (item: Choice) => void;
+}
 
 const styles = StyleSheet.create({
   choice: {
-    margin: theme.spacing.micro
+    margin: theme.spacing.micro,
   },
   dropZone: {
     flexWrap: 'wrap',
@@ -26,17 +26,17 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.gray.light,
     backgroundColor: theme.colors.gray.extra,
     borderRadius: theme.radius.common,
-    marginBottom: theme.spacing.tiny
+    marginBottom: theme.spacing.tiny,
   },
   emptyContent: {
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
-    height: 60
+    height: 60,
   },
   text: {
-    color: theme.colors.gray.medium
-  }
+    color: theme.colors.gray.medium,
+  },
 });
 
 class DropZone extends React.PureComponent<Props> {
@@ -44,7 +44,7 @@ class DropZone extends React.PureComponent<Props> {
 
   render() {
     const {choices} = this.props;
-    const mappedSortedChoices = choices.map(item => (
+    const mappedSortedChoices = choices.map((item) => (
       <QuestionChoice
         style={styles.choice}
         key={item._id}

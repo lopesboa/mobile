@@ -24,7 +24,7 @@ export const getAllowedParamsForSearch = (params: QueryParams): Params => {
     'sort',
     'goal',
     'search',
-    'playlist'
+    'playlist',
   ];
   // @ts-ignore
   return allowedParams.reduce((acc, allowedParam) => {

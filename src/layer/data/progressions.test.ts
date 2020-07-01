@@ -18,10 +18,10 @@ describe('Progressions', () => {
     jest.resetModules();
 
     jest.mock('../../utils/local-token', () => ({
-      get: jest.fn(() => Promise.resolve(null))
+      get: jest.fn(() => Promise.resolve(null)),
     }));
     jest.mock('../../modules/environment', () => ({
-      __E2E__: false
+      __E2E__: false,
     }));
   });
 
@@ -50,8 +50,8 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       AsyncStorage.getItem = jest
@@ -85,15 +85,15 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       AsyncStorage.getAllKeys = jest
         .fn()
         .mockImplementation(() => Promise.resolve([`progression_${progressionId}`, 'babababa']));
 
-      AsyncStorage.multiGet = jest.fn().mockImplementation(keys => {
+      AsyncStorage.multiGet = jest.fn().mockImplementation((keys: string[]) => {
         expect(keys).toEqual([`progression_${progressionId}`]);
         return Promise.resolve([[`progression_${progressionId}`, JSON.stringify(fakeProgression)]]);
       });
@@ -115,8 +115,8 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       AsyncStorage.setItem = jest
@@ -144,9 +144,9 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
-        actions: [createAction({}), createAction({})]
+        actions: [createAction({}), createAction({})],
       });
 
       AsyncStorage.setItem = jest.fn();
@@ -155,7 +155,7 @@ describe('Progressions', () => {
 
       expect(result.actions).toHaveLength(2);
       result.actions &&
-        result.actions.forEach(action => {
+        result.actions.forEach((action: Record<string, string>) => {
           expect(action).toHaveProperty('createdAt');
         });
     });
@@ -168,8 +168,8 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       AsyncStorage.setItem = jest.fn().mockImplementation(() => {});
@@ -189,12 +189,12 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const state = createState({nextContent});
@@ -202,10 +202,10 @@ describe('Progressions', () => {
         _id: progressionId,
         engine,
         progressionContent,
-        state
+        state,
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key) => {
         if (key === `progression_${progressionId}`) {
           return Promise.resolve(progressionId);
         }
@@ -234,10 +234,10 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key: string) => {
         if (key === `last_progression_${engine}_${progressionContent.ref}`) {
           return Promise.resolve(progressionId);
         }
@@ -256,23 +256,23 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
       const nextContent = {
         ref: 'bar',
-        type: CONTENT_TYPE.SUCCESS
+        type: CONTENT_TYPE.SUCCESS,
       };
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
         state: {
-          nextContent
-        }
+          nextContent,
+        },
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key: string) => {
         if (key === `progression_${progressionId}`) {
           return Promise.resolve(progressionId);
         }
@@ -291,23 +291,23 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
       const nextContent = {
         ref: 'bar',
-        type: 'failure'
+        type: 'failure',
       };
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
         state: {
-          nextContent
-        }
+          nextContent,
+        },
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key: string) => {
         if (key === `progression_${progressionId}`) {
           return Promise.resolve(progressionId);
         }
@@ -326,23 +326,23 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
       const nextContent = {
         ref: 'extraLife',
-        type: 'node'
+        type: 'node',
       };
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
         state: {
-          nextContent
-        }
+          nextContent,
+        },
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key: string) => {
         if (key === `progression_${progressionId}`) {
           return Promise.resolve(progressionId);
         }
@@ -361,16 +361,16 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
-        progressionContent
+        progressionContent,
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key: string) => {
         if (key === `progression_${progressionId}`) {
           return Promise.resolve(progressionId);
         }
@@ -396,18 +396,18 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
@@ -417,20 +417,20 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
         expect({...fakeProgression, ...JSON.parse(options.body)}).toEqual({
           ...fakeProgression,
-          meta: {source: 'mobile'}
+          meta: {source: 'mobile'},
         });
         return Promise.resolve({
           status: 200,
           statusText: 'OK',
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
-      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+      AsyncStorage.removeItem = jest.fn().mockImplementation((keys: string[]) => {
         expect(keys).toEqual(`progression_${progressionId}`);
         return Promise.resolve();
       });
@@ -448,32 +448,32 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
         throw new ForbiddenError('Fetch Forbidden');
       });
 
-      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+      AsyncStorage.removeItem = jest.fn().mockImplementation((keys) => {
         expect(keys).toEqual(`progression_${progressionId}`);
         return Promise.resolve();
       });
 
       const {synchronize} = require('./progressions');
       await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
-        'ForbiddenError'
+        'ForbiddenError',
       );
     });
 
@@ -484,31 +484,31 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 403,
           statusText: 'Foo bar baz',
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
       const {synchronize} = require('./progressions');
       await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
-        'ForbiddenError'
+        'ForbiddenError',
       );
     });
 
@@ -519,31 +519,31 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 409,
           statusText: 'Foo bar baz',
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
       const {synchronize} = require('./progressions');
       await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
-        'ConflictError'
+        'ConflictError',
       );
     });
 
@@ -554,31 +554,31 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 406,
           statusText: 'Foo bar baz',
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
       const {synchronize} = require('./progressions');
       await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
-        'NotAcceptableError'
+        'NotAcceptableError',
       );
     });
 
@@ -591,36 +591,36 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
         return Promise.resolve({
           status: 400,
           statusText: 'Foo bar baz',
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
-      AsyncStorage.removeItem = jest.fn().mockImplementation(keys => {
+      AsyncStorage.removeItem = jest.fn().mockImplementation((keys) => {
         expect(keys).toEqual(`progression_${progressionId}`);
         return Promise.resolve();
       });
 
       const {synchronize} = require('./progressions');
       await expect(extractErrorName(synchronize(TOKEN, HOST, fakeProgression))).resolves.toEqual(
-        'Error'
+        'Error',
       );
     });
 
@@ -628,17 +628,17 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       const {synchronize} = require('./progressions');
@@ -659,24 +659,24 @@ describe('Progressions', () => {
       const fakeState = createState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
       const fakeProgression = createProgression({
         _id: progressionId,
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const result = mapProgressionToCompletion(fakeProgression);
 
       const expectedResult = {
         current: 19,
-        stars: 22
+        stars: 22,
       };
 
       expect(result).toEqual(expectedResult);
@@ -689,24 +689,24 @@ describe('Progressions', () => {
       const fakeState = createState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
       const fakeProgression = createProgression({
         _id: progressionId,
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const result = mapProgressionToCompletion(fakeProgression);
 
       const expectedResult = {
         current: 19,
-        stars: 22
+        stars: 22,
       };
 
       expect(result).toEqual(expectedResult);
@@ -722,8 +722,8 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       expect(() => mapProgressionToCompletion(fakeProgression)).toThrow();
@@ -750,8 +750,8 @@ describe('Progressions', () => {
         stars: 22,
         step: {
           current: 20,
-          total: 10
-        }
+          total: 10,
+        },
       });
 
       const fakeProgression = createProgression({
@@ -759,26 +759,26 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
-        state: fakeState
+        state: fakeState,
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key) => {
         return Promise.resolve(undefined);
       });
 
-      AsyncStorage.mergeItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.mergeItem = jest.fn().mockImplementation((key) => {
         return Promise.resolve(undefined);
       });
 
-      AsyncStorage.setItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.setItem = jest.fn().mockImplementation((key) => {
         return Promise.resolve(undefined);
       });
 
       const expectedResult = {
         stars: fakeState.stars,
-        current: 19
+        current: 19,
       };
       const result = await storeOrReplaceCompletion(fakeProgression);
 
@@ -795,8 +795,8 @@ describe('Progressions', () => {
         stars: 22,
         step: {
           current: 20,
-          total: 10
-        }
+          total: 10,
+        },
       });
 
       const expectedMaxStarCount = 666;
@@ -806,24 +806,24 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
-        state: fakeState
+        state: fakeState,
       });
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key) => {
         return Promise.resolve(
-          JSON.stringify(createCompletion({stars: expectedMaxStarCount, current: 9}))
+          JSON.stringify(createCompletion({stars: expectedMaxStarCount, current: 9})),
         );
       });
 
-      AsyncStorage.mergeItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.mergeItem = jest.fn().mockImplementation((key) => {
         return Promise.resolve(undefined);
       });
 
       const expectedResult = {
         stars: expectedMaxStarCount,
-        current: 19
+        current: 19,
       };
       const result = await storeOrReplaceCompletion(fakeProgression);
 
@@ -837,52 +837,52 @@ describe('Progressions', () => {
     const contentRef = 'fakeContentRef';
     const host = 'https://foo.coorpacademy.com';
     const token = createToken({
-      host
+      host,
     });
     const fooProgression = createProgression({
       _id: 'foo',
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: contentRef,
-        type: contentType
+        type: contentType,
       },
       state: {
-        stars: 13
-      }
+        stars: 13,
+      },
     });
     const barProgression = createProgression({
       _id: 'bar',
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: contentRef,
-        type: contentType
+        type: contentType,
       },
       state: {
-        stars: 37
-      }
+        stars: 37,
+      },
     });
     const bazProgression = createProgression({
       _id: 'bar',
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: contentRef,
-        type: contentType
-      }
+        type: contentType,
+      },
     });
     const quxProgression = createProgression({
       _id: 'qux',
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: contentRef,
-        type: contentType
-      }
+        type: contentType,
+      },
     });
     const storageKeys = [
       'progression_foo',
       'progression_bar',
       'progression_baz',
       'progression_qux',
-      'baaaaz'
+      'baaaaz',
     ];
 
     it('should trigger error if no token is defined', async () => {
@@ -906,21 +906,21 @@ describe('Progressions', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`,
         );
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
 
         return Promise.resolve({
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
-      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+      AsyncStorage.multiGet.mockImplementationOnce((keys) => {
         expect(keys).toEqual(storageKeys.slice(0, 4));
 
         return Promise.resolve([]);
@@ -930,7 +930,7 @@ describe('Progressions', () => {
 
       const result = await findBestOf(engineRef, contentType, contentRef, 'foo');
       const expected: FindBestOfResult = {
-        stars: 0
+        stars: 0,
       };
 
       expect(result).toEqual(expected);
@@ -946,33 +946,33 @@ describe('Progressions', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`,
         );
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
 
         return Promise.resolve({
-          json: () => Promise.resolve({})
+          json: () => Promise.resolve({}),
         });
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
-      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+      AsyncStorage.multiGet.mockImplementationOnce((keys) => {
         expect(keys).toEqual([
           'progression_foo',
           'progression_bar',
           'progression_baz',
-          'progression_qux'
+          'progression_qux',
         ]);
 
         return Promise.resolve([
           ['progression_foo', JSON.stringify(fooProgression)],
           ['progression_bar', JSON.stringify(barProgression)],
           ['progression_baz', JSON.stringify(bazProgression)],
-          ['progression_qux', JSON.stringify(quxProgression)]
+          ['progression_qux', JSON.stringify(quxProgression)],
         ]);
       });
 
@@ -980,7 +980,7 @@ describe('Progressions', () => {
 
       const result = await findBestOf(engineRef, contentType, contentRef, 'quuux');
       const expected: FindBestOfResult = {
-        stars: 37
+        stars: 37,
       };
 
       expect(result).toEqual(expected);
@@ -996,36 +996,36 @@ describe('Progressions', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`
+          `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`,
         );
         expect(options.headers).toEqual({
           Authorization: token,
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
 
         return Promise.resolve({
           json: () =>
             Promise.resolve({
-              stars: 1337
-            })
+              stars: 1337,
+            }),
         });
       });
 
       AsyncStorage.getAllKeys.mockImplementationOnce(() => Promise.resolve(storageKeys));
-      AsyncStorage.multiGet.mockImplementationOnce(keys => {
+      AsyncStorage.multiGet.mockImplementationOnce((keys) => {
         expect(keys).toEqual([
           'progression_foo',
           'progression_bar',
           'progression_baz',
-          'progression_qux'
+          'progression_qux',
         ]);
 
         return Promise.resolve([
           ['progression_foo', JSON.stringify(fooProgression)],
           ['progression_bar', JSON.stringify(barProgression)],
           ['progression_baz', JSON.stringify(bazProgression)],
-          ['progression_qux', JSON.stringify(quxProgression)]
+          ['progression_qux', JSON.stringify(quxProgression)],
         ]);
       });
 
@@ -1033,7 +1033,7 @@ describe('Progressions', () => {
 
       const result = await findBestOf(engineRef, contentType, contentRef, 'quux');
       const expected: FindBestOfResult = {
-        stars: 1337
+        stars: 1337,
       };
 
       expect(result).toEqual(expected);
@@ -1055,19 +1055,19 @@ describe('Progressions', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef'
+          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef',
         );
         return Promise.resolve({
           json: () =>
             Promise.resolve({
-              stars: 0
-            })
+              stars: 0,
+            }),
         });
       });
 
       const result = await findApiBestOf(engineRef, contentType, contentRef);
       const expected: FindBestOfResult = {
-        stars: 0
+        stars: 0,
       };
 
       expect(result).toEqual(expected);
@@ -1075,7 +1075,7 @@ describe('Progressions', () => {
 
     it('should return e2e value', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
 
       const fetch = require('cross-fetch');
@@ -1087,19 +1087,19 @@ describe('Progressions', () => {
 
       fetch.mockImplementationOnce((url, options) => {
         expect(url).toBe(
-          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef'
+          'https://domain.tld/api/v2/progressions/learner/bestof/chapter/fakeContentRef',
         );
         return Promise.resolve({
           json: () =>
             Promise.resolve({
-              stars: 0
-            })
+              stars: 0,
+            }),
         });
       });
 
       const result = await findApiBestOf(engineRef, contentType, contentRef);
       const expected: FindBestOfResult = {
-        stars: 0
+        stars: 0,
       };
 
       expect(result).toEqual(expected);
@@ -1113,13 +1113,15 @@ describe('Progressions', () => {
       AsyncStorage.getAllKeys = jest
         .fn()
         .mockImplementation(() =>
-          Promise.resolve(progressions.map(p => `progression_${p._id || ''}`))
+          Promise.resolve(progressions.map((p) => `progression_${p._id || ''}`)),
         );
 
       AsyncStorage.multiGet = jest
         .fn()
-        .mockImplementation(keys =>
-          Promise.resolve(progressions.map(p => [`progression_${p._id || ''}`, JSON.stringify(p)]))
+        .mockImplementation((keys) =>
+          Promise.resolve(
+            progressions.map((p) => [`progression_${p._id || ''}`, JSON.stringify(p)]),
+          ),
         );
     };
 
@@ -1129,8 +1131,8 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
-        }
+          type: CONTENT_TYPE.CHAPTER,
+        },
       });
 
       const progression2 = createProgression({
@@ -1138,17 +1140,17 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 12
-          }
-        }
+            current: 12,
+          },
+        },
       });
 
       const progressions = [progression1, progression2];
@@ -1163,8 +1165,8 @@ describe('Progressions', () => {
           // @ts-ignore state.step IS defined
           nbSlides: progression2.state.step.current - 1,
           success: true,
-          updatedAt: OLDEST_DATE
-        }
+          updatedAt: OLDEST_DATE,
+        },
       ];
 
       expect(result).toEqual(expected);
@@ -1176,22 +1178,22 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 12
-          }
+            current: 12,
+          },
         },
         actions: [
           createAction({createdAt: '2003-01-18T08:41:37.004Z'}),
           createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2001-09-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2001-09-18T08:41:37.004Z'}),
+        ],
       });
 
       const progression2 = createProgression({
@@ -1199,22 +1201,22 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 13
-          }
+            current: 13,
+          },
         },
         actions: [
           createAction({createdAt: '2004-09-18T08:41:37.004Z'}),
           createAction({createdAt: '2005-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2006-01-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2006-01-18T08:41:37.004Z'}),
+        ],
       });
 
       const progression3 = createProgression({
@@ -1222,22 +1224,22 @@ describe('Progressions', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           ref: 'bar',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: 'slide1',
-            type: CONTENT_TYPE.SLIDE
+            type: CONTENT_TYPE.SLIDE,
           },
           step: {
-            current: 13
-          }
+            current: 13,
+          },
         },
         actions: [
           createAction({createdAt: '1994-09-18T08:41:37.004Z'}),
           createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2007-01-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2007-01-18T08:41:37.004Z'}),
+        ],
       });
 
       const progression4 = createProgression({
@@ -1245,22 +1247,22 @@ describe('Progressions', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           ref: 'bar',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: 'slide4',
-            type: CONTENT_TYPE.SLIDE
+            type: CONTENT_TYPE.SLIDE,
           },
           step: {
-            current: 5
-          }
+            current: 5,
+          },
         },
         actions: [
           createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
           createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2004-01-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2004-01-18T08:41:37.004Z'}),
+        ],
       });
 
       const progressions = [progression1, progression2, progression3, progression4];
@@ -1276,7 +1278,7 @@ describe('Progressions', () => {
           nbSlides: progression2.state.step.current - 1,
           success: true,
           // @ts-ignore actions[2] IS defined
-          updatedAt: progression2.actions[2].createdAt
+          updatedAt: progression2.actions[2].createdAt,
         },
         {
           progressionId: 'progression3',
@@ -1285,8 +1287,8 @@ describe('Progressions', () => {
           nbSlides: progression3.state.step.current - 1,
           success: false,
           // @ts-ignore actions[2] IS defined
-          updatedAt: progression3.actions[2].createdAt
-        }
+          updatedAt: progression3.actions[2].createdAt,
+        },
       ];
 
       expect(result).toEqual(expected);
@@ -1298,17 +1300,17 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 17
-          }
-        }
+            current: 17,
+          },
+        },
       });
 
       const progression1 = createProgression({
@@ -1316,22 +1318,22 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 10
-          }
+            current: 10,
+          },
         },
         actions: [
           createAction({createdAt: '2002-09-18T08:41:37.004Z'}),
           createAction({createdAt: '2003-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2004-01-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2004-01-18T08:41:37.004Z'}),
+        ],
       });
 
       const progression2 = createProgression({
@@ -1339,22 +1341,22 @@ describe('Progressions', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           ref: 'foo',
-          type: CONTENT_TYPE.CHAPTER
+          type: CONTENT_TYPE.CHAPTER,
         },
         state: {
           nextContent: {
             ref: SPECIFIC_CONTENT_REF.SUCCESS_EXIT_NODE,
-            type: CONTENT_TYPE.SUCCESS
+            type: CONTENT_TYPE.SUCCESS,
           },
           step: {
-            current: 12
-          }
+            current: 12,
+          },
         },
         actions: [
           createAction({createdAt: '2000-09-18T08:41:37.004Z'}),
           createAction({createdAt: '2001-09-18T08:41:37.004Z'}),
-          createAction({createdAt: '2002-01-18T08:41:37.004Z'})
-        ]
+          createAction({createdAt: '2002-01-18T08:41:37.004Z'}),
+        ],
       });
 
       const progressions = [progression0, progression1, progression2];
@@ -1371,8 +1373,8 @@ describe('Progressions', () => {
           nbSlides: progression1.state.step.current - 1,
           success: true,
           // @ts-ignore actions[2] IS defined
-          updatedAt: progression1.actions[2].createdAt
-        }
+          updatedAt: progression1.actions[2].createdAt,
+        },
       ];
 
       expect(result).toEqual(expected);
@@ -1413,14 +1415,14 @@ describe('Progressions', () => {
       const array = ['foo', 'bar', 'baz'];
       const {
         SYNCHRONIZED_PROGRESSIONS,
-        updateSynchronizedProgressionIds
+        updateSynchronizedProgressionIds,
       } = require('./progressions');
       await updateSynchronizedProgressionIds(array);
 
       expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
       expect(AsyncStorage.setItem).toHaveBeenCalledWith(
         SYNCHRONIZED_PROGRESSIONS,
-        JSON.stringify(array)
+        JSON.stringify(array),
       );
     });
   });
@@ -1432,7 +1434,7 @@ describe('Progressions', () => {
     it('should throw an error if progressionId is empty', async () => {
       const {findRemoteProgressionById} = require('./progressions');
       await expect(findRemoteProgressionById(TOKEN, HOST, '')).rejects.toThrowError(
-        'Must provide a progressionId'
+        'Must provide a progressionId',
       );
     });
 
@@ -1448,11 +1450,11 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
         return Promise.resolve({
           status: 404,
-          statusText: 'Not found'
+          statusText: 'Not found',
         });
       });
 
@@ -1472,11 +1474,11 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
         return Promise.resolve({
           status: 400,
-          statusText: 'Not found'
+          statusText: 'Not found',
         });
       });
 
@@ -1491,18 +1493,18 @@ describe('Progressions', () => {
       const engine = ENGINE.LEARNER;
       const progressionContent = {
         ref: 'foo',
-        type: CONTENT_TYPE.CHAPTER
+        type: CONTENT_TYPE.CHAPTER,
       };
       const nextContent = {
         ref: 'bar',
-        type: 'discipline'
+        type: 'discipline',
       };
 
       const fakeProgression = createProgression({
         _id: progressionId,
         engine,
         progressionContent,
-        nextContent
+        nextContent,
       });
 
       fetch.mockImplementationOnce((url, options) => {
@@ -1512,18 +1514,18 @@ describe('Progressions', () => {
           Authorization: TOKEN,
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
-          'User-Agent': expectedUserAgent
+          'User-Agent': expectedUserAgent,
         });
         return Promise.resolve({
           status: 200,
           statusText: 'OK',
-          json: () => Promise.resolve(fakeProgression)
+          json: () => Promise.resolve(fakeProgression),
         });
       });
 
       const {findRemoteProgressionById} = require('./progressions');
       await expect(findRemoteProgressionById(TOKEN, HOST, progressionId)).resolves.toBe(
-        fakeProgression
+        fakeProgression,
       );
     });
   });

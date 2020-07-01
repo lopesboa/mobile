@@ -37,9 +37,9 @@ if (__TEST__) {
       const component = renderer.create(
         <Html fontSize={20} onLinkPress={handleLinkPress} vibration={vibration}>
           {`<a href="https://domain.tld"></a>`}
-        </Html>
+        </Html>,
       );
-      const html = component.root.find(el => el.props.testID === 'html-base');
+      const html = component.root.find((el) => el.props.testID === 'html-base');
       html.props.onLinkPress();
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleLinkPress).toHaveBeenCalled();

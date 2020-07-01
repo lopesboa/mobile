@@ -10,12 +10,12 @@ import {Component as Select} from './select';
 import type {Props} from './select';
 
 type State = {
-  isFocused: boolean
+  isFocused: boolean;
 };
 
 class SelectWithModal extends React.PureComponent<Props, State> {
   state: State = {
-    isFocused: false
+    isFocused: false,
   };
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class SelectWithModal extends React.PureComponent<Props, State> {
 
   reset = (isFocused?: boolean) =>
     this.setState({
-      isFocused
+      isFocused,
     });
 
   handleFocus = () => {
@@ -156,15 +156,15 @@ if (__TEST__) {
           onBlur={handleFakePress}
           isDisabled
           testID="select"
-        />
+        />,
       );
 
-      const item = component.root.find(el => el.props.testID === 'select-input');
+      const item = component.root.find((el) => el.props.testID === 'select-input');
       item.props.onPress();
 
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.OPEN_SELECT, {
         id: analyticsID,
-        questionType
+        questionType,
       });
       expect(handleFocus).toHaveBeenCalledTimes(1);
     });
@@ -188,15 +188,15 @@ if (__TEST__) {
           onBlur={handleBlur}
           isDisabled
           testID="select"
-        />
+        />,
       );
 
-      const item = component.root.find(el => el.props.testID === 'select-modal');
+      const item = component.root.find((el) => el.props.testID === 'select-modal');
       item.props.onClose();
 
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.CLOSE_SELECT, {
         id: analyticsID,
-        questionType
+        questionType,
       });
       expect(handleBlur).toHaveBeenCalledTimes(1);
     });
@@ -221,17 +221,17 @@ if (__TEST__) {
           onBlur={handleBlur}
           isDisabled
           testID="select"
-        />
+        />,
       );
 
-      const item = component.root.find(el => el.props.testID === 'select-modal');
+      const item = component.root.find((el) => el.props.testID === 'select-modal');
       item.props.onChange('bar');
 
       expect(handleChange).toHaveBeenCalledTimes(1);
       expect(handleChange).toHaveBeenCalledWith('bar');
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.CLOSE_SELECT, {
         id: analyticsID,
-        questionType
+        questionType,
       });
       expect(handleBlur).toHaveBeenCalledTimes(1);
     });

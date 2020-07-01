@@ -15,7 +15,7 @@ const HeaderBackIcon = ({
   color = theme.colors.gray.dark,
   height = 16,
   width = 16,
-  style
+  style,
 }: Props) => (
   <View style={style}>
     <BackIcon color={color} height={height} width={width} />

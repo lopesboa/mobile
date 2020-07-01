@@ -9,14 +9,14 @@ const data = [
   {title: 'foo', color: '#99f'},
   {title: 'bar', color: '#888'},
   {title: 'baz', color: '#00f'},
-  {title: 'qux', color: '#123'}
+  {title: 'qux', color: '#123'},
 ];
 const renderItem = ({item: {title, color}, index}) => (
   <Text
     style={{
       padding: 20,
       backgroundColor: color,
-      color: '#fff'
+      color: '#fff',
     }}
   >
     {title}

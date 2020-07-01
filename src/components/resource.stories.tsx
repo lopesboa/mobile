@@ -8,7 +8,7 @@ import {
   createVideoYoutube,
   createVideoOmniPlayer,
   createPdf,
-  createImage
+  createImage,
 } from '../__fixtures__/lessons';
 import {TestContextProvider, handleFakePress, fakeLayout} from '../utils/tests';
 import {getCleanUri} from '../modules/uri';
@@ -26,10 +26,10 @@ const [video, pdf, image, videoOmniPlayer, videoYoutube] = [
   _pdf,
   _img,
   _videoOmniPlayer,
-  _videoYoutube
+  _videoYoutube,
 ]
   .map(mapToResource)
-  .filter(lesson => lesson.url);
+  .filter((lesson) => lesson.url);
 
 storiesOf('Resource', module)
   .add('Video', () => (
@@ -183,9 +183,9 @@ if (__TEST__) {
             testID={testID}
             onPress={handlePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
-      const button = component.root.find(el => el.props.testID === `${testID}-pdf-button`);
+      const button = component.root.find((el) => el.props.testID === `${testID}-pdf-button`);
 
       button.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
@@ -207,10 +207,10 @@ if (__TEST__) {
             testID={testID}
             onPress={handlePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const preview = component.root.find(el => el.props.testID === testID && el.props.onPlay);
+      const preview = component.root.find((el) => el.props.testID === testID && el.props.onPlay);
       preview.props.onPlay();
       expect(handlePress).toHaveBeenCalledTimes(1);
     });
@@ -227,7 +227,7 @@ if (__TEST__) {
             testID="resource-4"
             onPress={undefined}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       expect(component.root).toBeDefined();

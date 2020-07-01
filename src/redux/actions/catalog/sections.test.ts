@@ -7,7 +7,7 @@ import {fetchRequest, fetchSuccess, fetchError, fetchSections} from './sections'
 import {
   fetchRequest as fetchCardsRequest,
   fetchSuccess as fetchCardsSuccess,
-  DEFAULT_LIMIT
+  DEFAULT_LIMIT,
 } from './cards/fetch/sections';
 import type {Action} from './sections';
 
@@ -23,44 +23,44 @@ describe('Sections', () => {
         entities: {
           cards: {},
           sections: {
-            [sections[0].key]: {en: sections[0]}
-          }
-        }
-      }
+            [sections[0].key]: {en: sections[0]},
+          },
+        },
+      },
     });
     const options = {
       services: {
         Sections: {
           find: () => ({
             sections,
-            total: sections.length
-          })
+            total: sections.length,
+          }),
         },
         Cards: {
           findBySection: () => ({
             cards: [],
-            total: 42
-          })
-        }
-      }
+            total: 42,
+          }),
+        },
+      },
     };
 
-    dispatch.mockImplementationOnce(action => {
+    dispatch.mockImplementationOnce((action) => {
       expect(action).toEqual(fetchRequest(0, 2, 'en'));
       return Promise.resolve(action);
     });
 
-    dispatch.mockImplementationOnce(action => {
+    dispatch.mockImplementationOnce((action) => {
       expect(action).toEqual(fetchSuccess(0, 2, sections.length, sections, 'en'));
       return Promise.resolve(action);
     });
 
-    dispatch.mockImplementationOnce(action => {
+    dispatch.mockImplementationOnce((action) => {
       expect(action).toEqual(fetchCardsRequest(sections[0].key, 0, DEFAULT_LIMIT, 'en'));
       return action;
     });
 
-    dispatch.mockImplementationOnce(action => {
+    dispatch.mockImplementationOnce((action) => {
       expect(action).toEqual(fetchCardsSuccess(sections[0].key, 0, DEFAULT_LIMIT, 42, [], 'en'));
       return action;
     });
@@ -76,9 +76,9 @@ describe('Sections', () => {
     const options = {
       services: {
         Sections: {
-          find: () => sections
-        }
-      }
+          find: () => sections,
+        },
+      },
     };
 
     dispatch.mockImplementationOnce((action: Action) => {
@@ -95,7 +95,7 @@ describe('Sections', () => {
       const expected = showError({
         type: ERROR_TYPE.NO_CONTENT_FOUND,
         // @ts-ignore callable signature
-        lastAction: expect.any(Function)
+        lastAction: expect.any(Function),
       });
       expect(expected).toEqual(action);
       return Promise.resolve(action);
@@ -119,7 +119,7 @@ describe('Sections', () => {
       const expected = showError({
         type: ERROR_TYPE.NO_CONTENT_FOUND,
         // @ts-ignore callable signature
-        lastAction: expect.any(Function)
+        lastAction: expect.any(Function),
       });
       expect(expected).toEqual(action);
       return Promise.resolve(action);

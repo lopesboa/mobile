@@ -4,7 +4,7 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 import {createFakeVibration} from '../../utils/tests';
 
 const withVibration = (WrappedComponent: React.ElementType<any>) => {
-  const ComponentWithVibration = props => (
+  const ComponentWithVibration = (props) => (
     <WrappedComponent {...props} vibration={createFakeVibration()} />
   );
 

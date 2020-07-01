@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import trim from 'lodash/fp/trim';
 import last from 'lodash/fp/last';
-import type {Choice} from '@types/coorp/progression-engine';
+import type {Choice} from '../types/coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import {QUESTION_TYPE} from '../const';
@@ -12,12 +12,12 @@ import QuestionInput, {ROW_SPACE} from './question-input';
 import Space from './space';
 
 interface Props {
-  isDisabled?: boolean,
-  template: string,
-  items: Array<Choice>,
-  userChoices: Array<string>,
-  onInputChange: (item: Choice, value: string) => void
-};
+  isDisabled?: boolean;
+  template: string;
+  items: Array<Choice>;
+  userChoices: Array<string>;
+  onInputChange: (item: Choice, value: string) => void;
+}
 
 const styles = StyleSheet.create({
   section: {
@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   text: {
     padding: ROW_SPACE,
     color: theme.colors.black,
     fontWeight: theme.fontWeight.bold,
-    lineHeight: 30
-  }
+    lineHeight: 30,
+  },
 });
 
 class QuestionTemplate extends React.PureComponent<Props> {
@@ -42,7 +42,7 @@ class QuestionTemplate extends React.PureComponent<Props> {
 
   keyExtractor = (prefix: string) => (item: Choice, index: number) => `${prefix}-part-${index + 1}`;
 
-  renderSection = ({item: items, index}: {item: Array<Choice>, index: number}) => {
+  renderSection = ({item: items, index}: {item: Array<Choice>; index: number}) => {
     const prefix = this.sectionKeyExtractor(items, index);
     return (
       <View style={styles.section}>
@@ -58,13 +58,13 @@ class QuestionTemplate extends React.PureComponent<Props> {
     );
   };
 
-  renderItem = (prefix: string) => ({item: part, index}: {item: Choice, index: number}) => {
+  renderItem = (prefix: string) => ({item: part, index}: {item: Choice; index: number}) => {
     const {isDisabled, items, userChoices} = this.props;
-    const inputNames = items.map(item => item.name);
+    const inputNames = items.map((item) => item.name);
     const testID = this.keyExtractor(prefix)(part, index);
 
     if (part.type === TEMPLATE_PART_TYPE.INPUT && inputNames.includes(part.value)) {
-      const itemIndex = items.findIndex(_item => _item.name === part.value);
+      const itemIndex = items.findIndex((_item) => _item.name === part.value);
       const item = items[itemIndex];
       const value = userChoices[itemIndex];
 

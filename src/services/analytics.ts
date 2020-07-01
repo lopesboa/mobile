@@ -1,4 +1,3 @@
-import {$PropertyType} from "utility-types";
 import type {AnalyticsService as PlayerAnalyticsService} from '@coorpacademy/player-services';
 import type {Lesson, Progression, Config} from '@coorpacademy/progression-engine';
 import type {DataLayer} from '../layer/data';
@@ -6,21 +5,21 @@ import type {DataLayer} from '../layer/data';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 
 const sendViewedMediaAnalytics = (
-  dataLayer: DataLayer
-): $PropertyType<PlayerAnalyticsService, 'sendViewedMediaAnalytics'> => (
+  dataLayer: DataLayer,
+): Pick<PlayerAnalyticsService, 'sendViewedMediaAnalytics'> => (
   resource: Lesson,
-  location: string
+  location: string,
 ): void =>
   dataLayer.logEvent(ANALYTICS_EVENT_TYPE.MEDIA_VIEWED, {
     mediaType: resource.type,
-    location
+    location,
   });
 
 const sendProgressionFinished = (
-  dataLayer: DataLayer
-): $PropertyType<PlayerAnalyticsService, 'sendProgressionFinished'> => (
+  dataLayer: DataLayer,
+): Pick<PlayerAnalyticsService, 'sendProgressionFinished'> => (
   currentProgression: Progression,
-  engineConfig: Config
+  engineConfig: Config,
 ): void => {
   const {state, engine} = currentProgression;
 
@@ -35,20 +34,20 @@ const sendProgressionFinished = (
   dataLayer.logEvent(ANALYTICS_EVENT_TYPE.FINISH_PROGRESSION, {
     type: engineRef,
     state: nextContent.type,
-    extraLife: Number(extraLife)
+    extraLife: Number(extraLife),
   });
 };
 
 export type AnalyticsService = $Exact<
-    PlayerAnalyticsService & {
-        logEvent: $PropertyType<DataLayer, "logEvent">;
-    }
+  PlayerAnalyticsService & {
+    logEvent: Pick<DataLayer, 'logEvent'>;
+  }
 >;
 
 const service = (dataLayer: DataLayer): AnalyticsService => ({
   sendViewedMediaAnalytics: sendViewedMediaAnalytics(dataLayer),
   sendProgressionFinished: sendProgressionFinished(dataLayer),
-  logEvent: dataLayer.logEvent
+  logEvent: dataLayer.logEvent,
 });
 
 export default service;

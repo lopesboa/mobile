@@ -9,7 +9,7 @@ describe('search', () => {
       const result = edit(payload);
       const expected: Action = {
         type: EDIT,
-        payload
+        payload,
       };
 
       expect(result).toEqual(expected);
@@ -21,7 +21,7 @@ describe('search', () => {
       const result = edit(payload);
       const expected: Action = {
         type: EDIT,
-        payload
+        payload,
       };
 
       expect(result).toEqual(expected);
@@ -35,7 +35,7 @@ describe('search', () => {
       const result = fetch(payload);
       const expected: Action = {
         type: FETCH,
-        payload
+        payload,
       };
 
       expect(result).toEqual(expected);
@@ -47,7 +47,7 @@ describe('search', () => {
       const result = fetch(payload);
       const expected: Action = {
         type: FETCH,
-        payload
+        payload,
       };
 
       expect(result).toEqual(expected);

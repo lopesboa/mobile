@@ -1,7 +1,9 @@
 import {DisciplineCard, CardLevel, ChapterCard, CardAuthor} from '../layer/data/_types';
 
 export const pickNextCardLevel = (discipline: DisciplineCard): CardLevel | null => {
+  // @ts-ignore
   return discipline.modules.reduce((selectedModule, currentModule) => {
+    // @ts-ignore
     if (!selectedModule || selectedModule.completion === 1) {
       return currentModule;
     }
@@ -12,7 +14,7 @@ export const pickNextCardLevel = (discipline: DisciplineCard): CardLevel | null 
 
 export const compareCards = (
   cardA: DisciplineCard | ChapterCard,
-  cardB: DisciplineCard | ChapterCard
+  cardB: DisciplineCard | ChapterCard,
 ): number => {
   if (cardA.completion === 1 && cardB.completion === 1) return 0;
 

@@ -7,7 +7,7 @@ export const createToken = ({
   user = 'foobar',
   host,
   iss = 'coorpacademy-jwt',
-  roles = [ROLES.USER]
+  roles = [ROLES.USER],
 }: {
   user?: string;
   host?: string | null;
@@ -23,12 +23,12 @@ export const createToken = ({
       mooc: {
         grants: {
           mobile: {
-            roles
-          }
-        }
-      }
+            roles,
+          },
+        },
+      },
     },
     exp: 1,
     iat: 1,
-    usage: 'test'
+    usage: 'test',
   });

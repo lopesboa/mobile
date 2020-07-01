@@ -4,8 +4,8 @@ import type {
   ChapterAPI,
   DataLayer as DataLayerBase,
   LevelAPI,
-} from "@coorpacademy/types/player-services";
-import type {Progression} from "@coorpacademy/types/progression-engine";
+} from '@coorpacademy/types/player-services';
+import type {Progression} from '../../types/coorpacademy/progression-engine';
 
 import {
   findById as findProgressionById,
@@ -17,37 +17,31 @@ import {
   synchronize as synchronizeProgression,
   findBestOf,
   updateSynchronizedProgressionIds,
-} from "./progressions";
-import {find as findContent} from "./content";
-import {findById as findChapterById, getNextChapter} from "./chapters";
-import {getExitNode} from "./exit-nodes";
-import {fetchBundle, storeBundle} from "./bundle";
+} from './progressions';
+import {find as findContent} from './content';
+import {findById as findChapterById, getNextChapter} from './chapters';
+import {getExitNode} from './exit-nodes';
+import {fetchBundle, storeBundle} from './bundle';
 import {
   fetchCard,
   fetchSectionCards,
   fetchSearchCards,
   refreshCard,
   getCardFromLocalStorage,
-} from "./cards";
-import {fetchBrand} from "./brand";
-import {fetchUser} from "./users";
-import {
-  findById as findSlideById,
-  findByChapter as findSlideByChapter,
-} from "./slides";
-import {fetchRecommendation} from "./recommendations";
-import {findById as findLevelById, getNextLevel} from "./levels";
-import {getCorrectAnswer} from "./answers";
-import {getClue} from "./clues";
-import {logEvent} from "./analytics";
-import {logError, setProperties as setLoggerProperties} from "./logger";
-import {setLanguage, getInterfaceLanguage} from "./language";
-import {fetchSections} from "./sections";
-import {
-  findUriById as findVideoUriById,
-  findTracksById as findVideoTracksById,
-} from "./videos";
-import {getChapterRulesByContent} from "./chapter-rules";
+} from './cards';
+import {fetchBrand} from './brand';
+import {fetchUser} from './users';
+import {findById as findSlideById, findByChapter as findSlideByChapter} from './slides';
+import {fetchRecommendation} from './recommendations';
+import {findById as findLevelById, getNextLevel} from './levels';
+import {getCorrectAnswer} from './answers';
+import {getClue} from './clues';
+import {logEvent} from './analytics';
+import {logError, setProperties as setLoggerProperties} from './logger';
+import {setLanguage, getInterfaceLanguage} from './language';
+import {fetchSections} from './sections';
+import {findUriById as findVideoUriById, findTracksById as findVideoTracksById} from './videos';
+import {getChapterRulesByContent} from './chapter-rules';
 
 export type DataLayer = DataLayerBase & {
   fetchBundle: typeof fetchBundle;
@@ -61,10 +55,7 @@ export type DataLayer = DataLayerBase & {
   fetchSections: typeof fetchSections;
   refreshCard: typeof refreshCard;
   getCardFromLocalStorage: typeof getCardFromLocalStorage;
-  findLast: (
-      engineRef: string,
-      contentRef: string,
-  ) => Promise<Progression | null>;
+  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>;
   synchronizeProgression: typeof synchronizeProgression;
   getAllProgressions: typeof getAllProgressions;
   getSynchronizedProgressionIds: typeof getSynchronizedProgressionIds;

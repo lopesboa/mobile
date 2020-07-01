@@ -14,7 +14,7 @@ const disciplineCard = createDisciplineCard({
   levels: [levelCard],
   title: 'Discipline card',
   isAdaptive: true,
-  isNew: true
+  isNew: true,
 });
 const chapterCard = createChapterCard({
   ref: 'bar',
@@ -22,7 +22,7 @@ const chapterCard = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  isAdaptive: true
+  isAdaptive: true,
 });
 const lockedDisciplineCard = createDisciplineCard({
   ref: 'foo',
@@ -31,7 +31,7 @@ const lockedDisciplineCard = createDisciplineCard({
   title: 'Discipline card',
   isAdaptive: true,
   isNew: true,
-  accessible: false
+  accessible: false,
 });
 const lockedChapterCard = createChapterCard({
   ref: 'bar',
@@ -40,7 +40,7 @@ const lockedChapterCard = createChapterCard({
   status: CARD_STATUS.ACTIVE,
   isNew: true,
   isAdaptive: true,
-  accessible: false
+  accessible: false,
 });
 
 storiesOf('CatalogItem', module)
@@ -60,7 +60,7 @@ if (__TEST__) {
       const component = renderer.create(<CatalogItem onPress={handlePress} />);
 
       const catalogItem = component.root.find(
-        el => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card'
+        (el) => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card',
       );
       catalogItem.props.onPress();
 
@@ -73,7 +73,7 @@ if (__TEST__) {
       const component = renderer.create(<CatalogItem item={item} onPress={handlePress} />);
 
       const catalogItem = component.root.find(
-        el => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card'
+        (el) => el.props.testID === 'catalog-item' && el.props.analyticsID === 'card',
       );
       catalogItem.props.onPress();
 

@@ -29,7 +29,7 @@ const slide = createSlide({
   ref: slideRef,
   chapterId,
   question,
-  lessons
+  lessons,
 });
 
 describe('Lesson', () => {
@@ -40,8 +40,8 @@ describe('Lesson', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: slideRef
-        }
+          ref: slideRef,
+        },
       });
 
       const store = createStoreState({
@@ -49,7 +49,7 @@ describe('Lesson', () => {
         disciplines: [],
         chapters: [],
         slides: [],
-        progression
+        progression,
       });
 
       const result = mapStateToProps(store);
@@ -57,7 +57,7 @@ describe('Lesson', () => {
         header: undefined,
         resources: [],
         currentResource: 'foo',
-        starsGranted: 0
+        starsGranted: 0,
       };
 
       expect(result).toEqual(expected);
@@ -69,14 +69,14 @@ describe('Lesson', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: slideRef
+          ref: slideRef,
         },
         state: {
           nextContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: slideRef
-          }
-        }
+            ref: slideRef,
+          },
+        },
       });
 
       const chapters = [];
@@ -96,17 +96,17 @@ describe('Lesson', () => {
           disciplines,
           progression,
           configs: {
-            'learner@2': createEngineConfig()
-          }
-        })
+            'learner@2': createEngineConfig(),
+          },
+        }),
       });
 
       const result = mapStateToProps(store);
       const expected: ConnectedStateProps = {
         header: question.header,
-        resources: slide.lessons.map(mapToResource).filter(lesson => lesson.url),
+        resources: slide.lessons.map(mapToResource).filter((lesson) => lesson.url),
         currentResource: 'foo',
-        starsGranted: 1337
+        starsGranted: 1337,
       };
 
       expect(result).toEqual(expected);
@@ -121,16 +121,16 @@ describe('Lesson', () => {
     const play = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />
+      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />,
     );
 
-    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    const lesson = component.root.find((el) => el.props.testID === 'lesson');
     lesson.props.onPDFButtonPress(url, description);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     });
     expect(play).toHaveBeenCalledTimes(1);
   });
@@ -141,10 +141,10 @@ describe('Lesson', () => {
     const play = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />
+      <Lesson navigation={navigation} play={play} starsGranted={0} resources={[]} />,
     );
 
-    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    const lesson = component.root.find((el) => el.props.testID === 'lesson');
     lesson.props.onVideoPlay();
 
     expect(play).toHaveBeenCalledTimes(1);
@@ -162,10 +162,10 @@ describe('Lesson', () => {
         selectResource={selectResource}
         starsGranted={0}
         resources={[pdf].map(mapToResource)}
-      />
+      />,
     );
 
-    const lesson = component.root.find(el => el.props.testID === 'lesson');
+    const lesson = component.root.find((el) => el.props.testID === 'lesson');
     lesson.props.onChange(id);
 
     expect(selectResource).toHaveBeenCalledTimes(1);

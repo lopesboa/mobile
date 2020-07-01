@@ -15,31 +15,31 @@ export const FETCH_ERROR = '@@cards/FETCH_SEARCH_ERROR';
 export const DEFAULT_LIMIT = 16;
 
 export type FetchRequestAction = {
-  type: '@@cards/FETCH_SEARCH_REQUEST',
+  type: '@@cards/FETCH_SEARCH_REQUEST';
   payload: {
-    search: string,
-    offset: number,
-    limit: number,
-    language: SupportedLanguage,
-    forceRefresh: boolean
-  }
+    search: string;
+    offset: number;
+    limit: number;
+    language: SupportedLanguage;
+    forceRefresh: boolean;
+  };
 };
 
 export type FetchSuccessAction = {
-  type: '@@cards/FETCH_SEARCH_SUCCESS',
+  type: '@@cards/FETCH_SEARCH_SUCCESS';
   payload: {
-    search: string,
-    offset: number,
-    limit: number,
-    total: number,
-    items: Array<DisciplineCard | ChapterCard>,
-    language: SupportedLanguage,
-    forceRefresh: boolean
-  }
+    search: string;
+    offset: number;
+    limit: number;
+    total: number;
+    items: Array<DisciplineCard | ChapterCard>;
+    language: SupportedLanguage;
+    forceRefresh: boolean;
+  };
 };
 
 export type FetchErrorAction = StoreErrorAction<{
-  type: '@@cards/FETCH_SEARCH_ERROR'
+  type: '@@cards/FETCH_SEARCH_ERROR';
 }>;
 
 export type Action = FetchRequestAction | FetchSuccessAction | FetchErrorAction;
@@ -49,8 +49,8 @@ export const fetchRequest = (
   offset: number,
   limit: number,
   language: SupportedLanguage,
-  forceRefresh: boolean = false,
-  queryParams?: QueryParams
+  forceRefresh = false,
+  queryParams?: QueryParams,
 ): FetchRequestAction => ({
   type: FETCH_REQUEST,
   payload: {
@@ -59,8 +59,8 @@ export const fetchRequest = (
     offset,
     limit,
     language,
-    forceRefresh
-  }
+    forceRefresh,
+  },
 });
 
 export const fetchSuccess = (
@@ -70,7 +70,7 @@ export const fetchSuccess = (
   total: number,
   items: Array<DisciplineCard | ChapterCard>,
   language: SupportedLanguage,
-  forceRefresh: boolean = false
+  forceRefresh = false,
 ): FetchSuccessAction => ({
   type: FETCH_SUCCESS,
   payload: {
@@ -80,14 +80,14 @@ export const fetchSuccess = (
     total,
     items,
     language,
-    forceRefresh
-  }
+    forceRefresh,
+  },
 });
 
 export const fetchError = (error: Error): FetchErrorAction => ({
   type: FETCH_ERROR,
   payload: error,
-  error: true
+  error: true,
 });
 
 export const fetchCards = (
@@ -95,11 +95,11 @@ export const fetchCards = (
   offset: number,
   limit: number,
   queryParams?: QueryParams,
-  forceRefresh: boolean = false
+  forceRefresh = false,
 ): StoreAction<Action | ErrorAction<StoreAction<Action>> | SearchAction> => async (
   dispatch,
   getState,
-  options
+  options,
 ) => {
   const language = translations.getLanguage();
   await dispatch(fetchRequest(search, offset, limit, language, forceRefresh, queryParams));
@@ -121,7 +121,7 @@ export const fetchCards = (
       search,
       queryParams,
       offset,
-      limit
+      limit,
     );
 
     await dispatch(toggleFetch(false));

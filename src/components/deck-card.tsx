@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.card,
     ...Platform.select({
       ios: {
-        overflow: 'hidden'
-      }
-    })
-  }
+        overflow: 'hidden',
+      },
+    }),
+  },
 });
 
 const DeckCard = ({children, testID}: Props) => (

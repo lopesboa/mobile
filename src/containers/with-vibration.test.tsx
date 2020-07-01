@@ -18,8 +18,8 @@ describe('WithVibration', () => {
       vibration: {
         ...vibration,
         // @ts-ignore no callable signature found
-        vibrate: expect.any(Function)
-      }
+        vibrate: expect.any(Function),
+      },
     };
 
     expect(fakeComponent).toHaveBeenCalledTimes(1);

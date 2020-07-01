@@ -29,24 +29,21 @@ const DOCK_ICON_FOREGROUND_FILENAME = 'dock-icon-foreground.png';
 const IOS_DOCK_ICON_PATH = `./ios/${app.name}/Images.xcassets/AppIcon.appiconset`;
 const ANDROID_RES_PATH = './android/app/src/main/res';
 
-const generateAndroidLegacyDockIcon = (
-  drawableName: AndroidDrawableType,
-  isRounded?: boolean = false
-) => {
+const generateAndroidLegacyDockIcon = (drawableName: AndroidDrawableType, isRounded? = false) => {
   const sizes: {
-    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number}
+    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number},
   } = {
     mdpi: {width: 48, height: 48},
     hdpi: {width: 72, height: 72},
     xhdpi: {width: 96, height: 96},
     xxhdpi: {width: 144, height: 144},
-    xxxhdpi: {width: 192, height: 192}
+    xxxhdpi: {width: 192, height: 192},
   };
   const {width, height} = sizes[drawableName];
   const outputPath = path.join(
     ANDROID_RES_PATH,
     'mipmap-' + drawableName,
-    isRounded ? 'ic_launcher_round.png' : 'ic_launcher.png'
+    isRounded ? 'ic_launcher_round.png' : 'ic_launcher.png',
   );
   const borderRadius = parseInt(89.825 * 2);
   const options: Array<string> = [
@@ -100,7 +97,7 @@ const generateAndroidLegacyDockIcon = (
     '-composite',
     '-resize',
     width + 'x' + height,
-    outputPath
+    outputPath,
   ];
   // eslint-disable-next-line no-console
   console.log('[DOCK ICON]', 'Generating', outputPath);
@@ -113,31 +110,31 @@ const generateAndroidLegacyDockIcon = (
 
 const generateAndroidAdaptiveDockIcon = (
   drawableName: AndroidDrawableType,
-  isForeground?: boolean
+  isForeground?: boolean,
 ) => {
   const sizes: {
-    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number}
+    [key: AndroidDrawableType]: {[key: 'width' | 'height']: number},
   } = {
     mdpi: {width: 108, height: 108},
     hdpi: {width: 162, height: 162},
     xhdpi: {width: 216, height: 216},
     xxhdpi: {width: 324, height: 324},
-    xxxhdpi: {width: 432, height: 432}
+    xxxhdpi: {width: 432, height: 432},
   };
   const {width, height} = sizes[drawableName];
   const outputPath = path.join(
     ANDROID_RES_PATH,
     'mipmap-' + drawableName,
-    isForeground ? 'ic_launcher_foreground.png' : 'ic_launcher_background.png'
+    isForeground ? 'ic_launcher_foreground.png' : 'ic_launcher_background.png',
   );
   const options: Array<string> = [
     path.join(
       IMAGES_PATH,
-      isForeground ? DOCK_ICON_FOREGROUND_FILENAME : DOCK_ICON_BACKGROUND_FILENAME
+      isForeground ? DOCK_ICON_FOREGROUND_FILENAME : DOCK_ICON_BACKGROUND_FILENAME,
     ),
     '-resize',
     width + 'x' + height,
-    outputPath
+    outputPath,
   ];
   // eslint-disable-next-line no-console
   console.log('[DOCK ICON]', 'Generating', outputPath);
@@ -150,7 +147,7 @@ const generateAndroidAdaptiveDockIcon = (
 
 const generateIosDockIcon = (fileName: IosDockIconFileType) => {
   const sizes: {
-    [key: IosDockIconFileType]: {[key: 'width' | 'height']: number}
+    [key: IosDockIconFileType]: {[key: 'width' | 'height']: number},
   } = {
     '20@2x': {width: 40, height: 40},
     '20@3x': {width: 60, height: 60},
@@ -163,7 +160,7 @@ const generateIosDockIcon = (fileName: IosDockIconFileType) => {
     '40@3x': {width: 120, height: 120},
     '60@2x': {width: 120, height: 120},
     '60@3x': {width: 180, height: 180},
-    '1024': {width: 1024, height: 1024}
+    '1024': {width: 1024, height: 1024},
   };
   const {width, height} = sizes[fileName];
   mkdirp(path.join(IOS_DOCK_ICON_PATH));
@@ -174,7 +171,7 @@ const generateIosDockIcon = (fileName: IosDockIconFileType) => {
     '-composite',
     '-resize',
     width + 'x' + height,
-    outputPath
+    outputPath,
   ];
   // eslint-disable-next-line no-console
   console.log('[DOCK ICON]', 'Generating', outputPath);

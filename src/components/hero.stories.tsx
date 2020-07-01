@@ -17,7 +17,7 @@ const card = createDisciplineCard({
   title: 'Discipline card',
   isAdaptive: true,
   isNew: true,
-  authors: [createCardAuthor({authorType: AUTHOR_TYPE.COORP})]
+  authors: [createCardAuthor({authorType: AUTHOR_TYPE.COORP})],
 });
 
 storiesOf('Hero', module)
@@ -44,7 +44,7 @@ if (__TEST__) {
       const content = card;
       const component = renderer.create(<Hero content={content} onPress={handlePress} />);
 
-      const button = component.root.find(el => el.props.testID === 'catalog-hero-button');
+      const button = component.root.find((el) => el.props.testID === 'catalog-hero-button');
       button.props.onPress();
 
       expect(handlePress).toHaveBeenCalledTimes(1);

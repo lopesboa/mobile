@@ -12,19 +12,19 @@ import {assistanceEmail} from '../../app';
 import ModalAnimated from './modal-animated';
 
 interface ConnectedStateToProps extends ReactNavigation$WithNavigationProps {
-  isVisible: boolean,
-  type: ErrorType
-};
+  isVisible: boolean;
+  type: ErrorType;
+}
 
 interface ConnectedDispatchProps {
-  hideError: typeof hideError,
-  refresh: typeof refresh,
-  signOut: typeof signOut
-};
+  hideError: typeof hideError;
+  refresh: typeof refresh;
+  signOut: typeof signOut;
+}
 
 export interface Props extends ConnectedStateToProps, ConnectedDispatchProps {
-  onClose: () => void
-};
+  onClose: () => void;
+}
 
 class ErrorListener extends React.PureComponent<Props> {
   handleAssistancePress = () => {
@@ -64,17 +64,14 @@ class ErrorListener extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => ({
   isVisible: isErrorVisible(state),
-  type: getErrorType(state)
+  type: getErrorType(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   hideError,
   refresh,
-  signOut
+  signOut,
 };
 
 export {ErrorListener as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ErrorListener);
+export default connect(mapStateToProps, mapDispatchToProps)(ErrorListener);

@@ -20,44 +20,44 @@ export const toOSPermissionType = (type: PermissionType) => {
 };
 
 export type RequestPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type CheckPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type ChangePayload = {
-  type: PermissionType,
-  status: PermissionStatus
+  type: PermissionType;
+  status: PermissionStatus;
 };
 
 export type Action =
   | {
-      type: typeof REQUEST,
-      payload: RequestPayload
+      type: typeof REQUEST;
+      payload: RequestPayload;
     }
   | {
-      type: typeof CHECK,
-      payload: CheckPayload
+      type: typeof CHECK;
+      payload: CheckPayload;
     }
   | {
-      type: typeof CHANGE,
-      payload: ChangePayload
+      type: typeof CHANGE;
+      payload: ChangePayload;
     };
 
 export const change = (type: PermissionType, status: PermissionStatus): Action => ({
   type: CHANGE,
   payload: {
     type,
-    status
-  }
+    status,
+  },
 });
 
 const _requestPermission = (type: PermissionType, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<PermissionStatus> => {
   const status = await services.Permissions.request(toOSPermissionType(type));
   const currentPermissionStatus = getState().permissions.camera;
@@ -71,7 +71,7 @@ const _requestPermission = (type: PermissionType, onDeny?: () => void) => async 
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
     status,
-    type
+    type,
   });
 
   return status;
@@ -80,13 +80,13 @@ const _requestPermission = (type: PermissionType, onDeny?: () => void) => async 
 export const request = (type: PermissionType, description: string, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: REQUEST,
     payload: {
-      type
-    }
+      type,
+    },
   });
 
   const permissionStatus = getState().permissions[type];
@@ -109,20 +109,20 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
                 {text: translations.quit, onPress: onDeny, style: 'cancel'},
                 {
                   text: translations.openSettings,
-                  onPress: () => services.Permissions.openSettings().catch(onDeny)
-                }
+                  onPress: () => services.Permissions.openSettings().catch(onDeny),
+                },
               ],
-              {cancelable: false}
+              {cancelable: false},
             );
           },
-          style: 'cancel'
+          style: 'cancel',
         },
         {
           text: translations.ok,
-          onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services})
-        }
+          onPress: () => _requestPermission(type, onDeny)(dispatch, getState, {services}),
+        },
       ],
-      {cancelable: false}
+      {cancelable: false},
     );
   } else {
     await _requestPermission(type, onDeny)(dispatch, getState, {services});
@@ -134,13 +134,13 @@ export const request = (type: PermissionType, description: string, onDeny?: () =
 export const check = (type: PermissionType) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: CHECK,
     payload: {
-      type
-    }
+      type,
+    },
   });
 
   const status = await services.Permissions.check(toOSPermissionType(type));

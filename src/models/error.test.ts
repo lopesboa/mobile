@@ -8,7 +8,7 @@ describe('Error', () => {
       expect(error.message).toEqual('foo bar baz');
       expect(error.name).toEqual('ForbiddenError');
       expect(error.description).toEqual(
-        'Error encountered fetching an API having a response with 403 status code.'
+        'Error encountered fetching an API having a response with 403 status code.',
       );
       expect(error.stack).toBeDefined();
     });
@@ -20,7 +20,7 @@ describe('Error', () => {
       expect(error.message).toEqual('foo bar baz');
       expect(error.name).toEqual('NotFoundError');
       expect(error.description).toEqual(
-        'Error encountered fetching an API having a response with 404 status code.'
+        'Error encountered fetching an API having a response with 404 status code.',
       );
       expect(error.stack).toBeDefined();
     });
@@ -32,7 +32,7 @@ describe('Error', () => {
       expect(error.message).toEqual('foo bar baz');
       expect(error.name).toEqual('ConflictError');
       expect(error.description).toEqual(
-        'Error encountered fetching an API having a response with 409 status code.'
+        'Error encountered fetching an API having a response with 409 status code.',
       );
       expect(error.stack).toBeDefined();
     });
@@ -44,7 +44,7 @@ describe('Error', () => {
       expect(error.message).toEqual('foo bar baz');
       expect(error.name).toEqual('NotAcceptableError');
       expect(error.description).toEqual(
-        'Error encountered fetching an API having a response with 406 status code.'
+        'Error encountered fetching an API having a response with 406 status code.',
       );
       expect(error.stack).toBeDefined();
     });

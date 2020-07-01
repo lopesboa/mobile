@@ -6,16 +6,16 @@ import type {AppState} from '../types';
 import translations from '../translations';
 import {needUpgrade, getStoreUri} from '../modules/store';
 
-interface Props {};
+interface Props {}
 
 type State = {
-  appState?: AppState
+  appState?: AppState;
 };
 
 class VersionListener extends React.PureComponent<Props, State> {
   state: State = {
     // @ts-ignore the base type is weak
-    appState: AppStateBase.currentState
+    appState: AppStateBase.currentState,
   };
 
   needUpgrade: boolean;
@@ -40,7 +40,7 @@ class VersionListener extends React.PureComponent<Props, State> {
       this.checkUpgrade();
     }
     this.setState({
-      appState
+      appState,
     });
   };
 
@@ -58,8 +58,8 @@ class VersionListener extends React.PureComponent<Props, State> {
           onPress: () => {
             this.alertVisible = false;
             Linking.openURL(uri);
-          }
-        }
+          },
+        },
       ]);
     }
   };

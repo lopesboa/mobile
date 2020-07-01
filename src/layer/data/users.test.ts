@@ -12,9 +12,9 @@ const user = createUser();
 const fetchedUser: FetchUserResponse = {
   name: {
     givenName: user.givenName,
-    familyName: user.familyName
+    familyName: user.familyName,
   },
-  displayName: user.displayName
+  displayName: user.displayName,
 };
 
 describe('brand', () => {
@@ -25,7 +25,7 @@ describe('brand', () => {
   describe('fetchUser', () => {
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchUser} = require('./users');
       const actual = fetchUser(token);
@@ -35,25 +35,25 @@ describe('brand', () => {
 
     it('should fetch config and return user', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
-          json: () => Promise<FetchUserResponse>
+          json: () => Promise<FetchUserResponse>;
         }> => {
           expect(url).toBe(`${brand.host}/api/v1/users/me`);
 
           expect(options).toHaveProperty('headers.authorization', token);
 
           return Promise.resolve({
-            json: () => Promise.resolve(fetchedUser)
+            json: () => Promise.resolve(fetchedUser),
           });
-        }
+        },
       );
 
       const {fetchUser} = require('./users');
@@ -64,7 +64,7 @@ describe('brand', () => {
 
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 

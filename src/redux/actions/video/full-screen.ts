@@ -7,5 +7,5 @@ export type Action = {
 
 export const toggleFullscreen = (payload: boolean): Action => ({
   type: TOGGLE_FULLSCREEN,
-  payload
+  payload,
 });

@@ -24,9 +24,9 @@ describe('DeckCardsSwipable', () => {
         posters: [],
         src: [],
         poster: '',
-        url: ''
+        url: '',
       },
-      offeringExtraLife: false
+      offeringExtraLife: false,
     };
     const renderItem = jest.fn();
     const selectResource = jest.fn();
@@ -38,12 +38,12 @@ describe('DeckCardsSwipable', () => {
         items={[dummyResourceCard]}
         renderItem={renderItem}
         selectResource={selectResource}
-      />
+      />,
     );
 
     expect(selectResource).toHaveBeenCalledWith('plop');
 
-    const cards = component.root.find(el => el.props.testID === 'cards');
+    const cards = component.root.find((el) => el.props.testID === 'cards');
     cards.props.onSwiped(0);
 
     expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SWIPE, {
@@ -51,7 +51,7 @@ describe('DeckCardsSwipable', () => {
       isCorrect: 1,
       offeringExtraLife: 0,
       ref: 'plop',
-      type: 'resource-video'
+      type: 'resource-video',
     });
   });
 
@@ -72,15 +72,15 @@ describe('DeckCardsSwipable', () => {
         posters: [],
         src: [],
         poster: '',
-        url: ''
+        url: '',
       },
-      offeringExtraLife: false
+      offeringExtraLife: false,
     };
 
     const dummyTipCard: DeckCard = {
       type: DECK_CARD_TYPE.TIP,
       title: 'fooz',
-      isCorrect: false
+      isCorrect: false,
     };
 
     const renderItem = jest.fn();
@@ -93,19 +93,19 @@ describe('DeckCardsSwipable', () => {
         items={[dummyTipCard, dummyResourceCard]}
         renderItem={renderItem}
         selectResource={selectResource}
-      />
+      />,
     );
 
     expect(selectResource).not.toHaveBeenCalled();
 
-    const cards = component.root.find(el => el.props.testID === 'cards');
+    const cards = component.root.find((el) => el.props.testID === 'cards');
     cards.props.onSwiped(0);
 
     expect(selectResource).toHaveBeenCalledWith('plop');
     expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SWIPE, {
       id: 'deck-card',
       isCorrect: 0,
-      type: DECK_CARD_TYPE.TIP
+      type: DECK_CARD_TYPE.TIP,
     });
   });
 });

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {
   NovaCompositionCoorpacademyStar as Star,
-  NovaCompositionCoorpacademyLock as Lock
+  NovaCompositionCoorpacademyLock as Lock,
 } from '@coorpacademy/nova-icons';
 import theme from '../modules/theme';
 import {TOOLTIP_TYPE} from '../const';
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     paddingRight: theme.spacing.medium,
     alignItems: 'center',
     marginLeft: 5,
-    marginRight: 1
+    marginRight: 1,
   },
   iconContainer: {
     width: 38,
@@ -30,14 +30,14 @@ const styles = StyleSheet.create({
     borderRadius: 19,
     backgroundColor: theme.colors.gray.light,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   icon: {
     width: 21,
-    height: 21
+    height: 21,
   },
   text: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   corner: {
     position: 'absolute',
@@ -49,15 +49,15 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     borderStyle: 'solid',
     borderRightColor: theme.colors.white,
-    borderBottomColor: theme.colors.white
-  }
+    borderBottomColor: theme.colors.white,
+  },
 });
 
 interface Props {
-  type: TooltipType,
-  children: string,
-  testID?: string
-};
+  type: TooltipType;
+  children: string;
+  testID?: string;
+}
 
 const Tooltip = ({type, children, testID}: Props) => {
   return (

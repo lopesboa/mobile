@@ -24,31 +24,31 @@ const styles = StyleSheet.create({
   image: {
     height: HEIGHT,
     width: '100%',
-    backgroundColor: theme.colors.gray.light
+    backgroundColor: theme.colors.gray.light,
   },
   imageGradient: {
     justifyContent: 'flex-end',
-    padding: theme.spacing.base
+    padding: theme.spacing.base,
   },
   content: {
-    flex: 1
+    flex: 1,
   },
   text: {
     color: theme.colors.white,
     fontSize: theme.fontSize.xxlarge,
     fontWeight: theme.fontWeight.bold,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   button: {
     alignSelf: 'center',
-    minWidth: '40%'
-  }
+    minWidth: '40%',
+  },
 });
 
 interface Props extends WithLayoutProps {
-  content?: DisciplineCard | ChapterCard | null,
-  onPress: (arg0: DisciplineCard | ChapterCard) => void
-};
+  content?: DisciplineCard | ChapterCard | null;
+  onPress: (arg0: DisciplineCard | ChapterCard) => void;
+}
 
 class Hero extends React.PureComponent<Props> {
   handlePress = () => {
@@ -63,14 +63,14 @@ class Hero extends React.PureComponent<Props> {
     const analyticsParams = content && {
       ref: content.universalRef,
       type: content.type === CARD_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
-      section: 'hero'
+      section: 'hero',
     };
 
     return (
       <UserContext.Consumer>
-        {user => (
+        {(user) => (
           <BrandThemeContext.Consumer>
-            {brandTheme => {
+            {(brandTheme) => {
               const isLoading = content === null;
               const heroUri =
                 (!isLoading && ((content && content.image) || (brandTheme && brandTheme.hero))) ||
@@ -93,7 +93,7 @@ class Hero extends React.PureComponent<Props> {
                       'rgba(0,0,0,0)',
                       'rgba(0,0,0,0.4)',
                       'rgba(0,0,0,0.7)',
-                      'rgba(0,0,0,1)'
+                      'rgba(0,0,0,1)',
                     ]) || ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,0)']
                   }
                 >
@@ -101,7 +101,7 @@ class Hero extends React.PureComponent<Props> {
                     <Text style={styles.text} testID="catalog-hero-welcome-message">
                       {translations.welcomeUser.replace(
                         /{{displayname}}/g,
-                        `\n${user.displayName}`
+                        `\n${user.displayName}`,
                       )}
                     </Text>
                   ) : null}

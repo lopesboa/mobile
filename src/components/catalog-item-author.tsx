@@ -7,22 +7,22 @@ import type {AuthorType} from '../types';
 import Text from './text';
 
 interface Props {
-  type: AuthorType,
-  name?: string,
-  size?: 'cover' | 'hero',
-  testID: string
-};
+  type: AuthorType;
+  name?: string;
+  size?: 'cover' | 'hero';
+  testID: string;
+}
 
 const styles = StyleSheet.create({
   text: {
     color: theme.colors.white,
     textShadowColor: 'rgba(0, 0, 0, 1)',
     textShadowRadius: 2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   bold: {
-    fontWeight: theme.fontWeight.extraBold
-  }
+    fontWeight: theme.fontWeight.extraBold,
+  },
 });
 
 const CatalogItemAuthor = ({type, name = '', size, testID}: Props) => {
@@ -30,10 +30,10 @@ const CatalogItemAuthor = ({type, name = '', size, testID}: Props) => {
     (size && (size === 'hero' ? theme.fontSize.medium : theme.fontSize.small)) ||
     theme.fontSize.extraSmall;
   const textStyle = {
-    fontSize
+    fontSize,
   };
   const letterSpacingStyle = {
-    letterSpacing: fontSize * 0.1875
+    letterSpacing: fontSize * 0.1875,
   };
 
   return (

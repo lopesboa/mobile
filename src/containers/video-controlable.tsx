@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Platform} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {NavigationEvents, NavigationScreenProps } from 'react-navigation';
+import {NavigationEvents, NavigationScreenProps} from 'react-navigation';
 import {TextTrackType} from 'react-native-video';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {
@@ -11,7 +11,7 @@ import {
   getVideoUri,
   getVideoTracks,
   VIDEO_TRACK_TYPE,
-  VIDEO_TRACK_KIND
+  VIDEO_TRACK_KIND,
 } from '@coorpacademy/player-store';
 import type {VideoProvider} from '@coorpacademy/player-store';
 import orientation from 'react-native-orientation-locker';
@@ -27,44 +27,48 @@ import translations from '../translations';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 import {isVideoFullScreen, getBrandDefaultLanguage} from '../redux/utils/state-extract';
 
-
 export interface ConnectedStateProps {
-  isFullScreen: boolean,
-  source?: {uri: string},
-  tracks?: Array<Track>,
-  selectedTrack?: string
-};
+  isFullScreen: boolean;
+  source?: {uri: string};
+  tracks?: Array<Track>;
+  selectedTrack?: string;
+}
 
 interface ConnectedDispatchToProps {
-  toggleFullscreen: typeof toggleFullscreen,
-  fetchVideoUri: typeof fetchVideoUri,
-  fetchVideoTracks: typeof fetchVideoTracks
-};
+  toggleFullscreen: typeof toggleFullscreen;
+  fetchVideoUri: typeof fetchVideoUri;
+  fetchVideoTracks: typeof fetchVideoTracks;
+}
 
 interface OwnProps {
-  id: string,
-  provider: VideoProvider,
-  source?: {uri: string}
-};
+  id: string;
+  provider: VideoProvider;
+  source?: {uri: string};
+}
 
-interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchToProps, ComponentProps, OwnProps {};
+interface Props
+  extends NavigationScreenProps,
+    ConnectedStateProps,
+    ConnectedDispatchToProps,
+    ComponentProps,
+    OwnProps {}
 
 type State = {
-  step: Step,
-  hasTracks: boolean
+  step: Step;
+  hasTracks: boolean;
 };
 
 class VideoControlable extends React.PureComponent<Props, State> {
   state: State = {
     step: STEP.PREVIEW,
-    hasTracks: true
+    hasTracks: true,
   };
 
   videoPlayer: VideoPlayer;
 
   currentTime: number | void;
 
-  isReady: boolean = false;
+  isReady = false;
 
   handleExpand = async () => {
     if (this.videoPlayer) {
@@ -110,7 +114,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
     if (provider === VIDEO_PROVIDER.KONTIKI) {
       this.setState({
-        step: STEP.LOADING
+        step: STEP.LOADING,
       });
       await this.props.fetchVideoUri(id, provider);
     }
@@ -120,7 +124,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
     }
 
     this.setState({
-      step: STEP.PLAY
+      step: STEP.PLAY,
     });
 
     this.props.onPlay && this.props.onPlay();
@@ -129,7 +133,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
   handleEnd = () => {
     this.handleShrink();
     this.setState({
-      step: STEP.END
+      step: STEP.END,
     });
   };
 
@@ -143,7 +147,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   handleTracksToggle = () =>
     this.setState(({hasTracks}: State) => ({
-      hasTracks: !hasTracks
+      hasTracks: !hasTracks,
     }));
 
   handleRef = (videoPlayer: VideoPlayer | null) => {
@@ -154,7 +158,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
   handleError = () =>
     this.setState({
-      step: STEP.ERROR
+      step: STEP.ERROR,
     });
 
   render() {
@@ -194,7 +198,7 @@ class VideoControlable extends React.PureComponent<Props, State> {
 
 const _getVideoSource = (
   state: StoreState,
-  {id, provider, source}: OwnProps
+  {id, provider, source}: OwnProps,
 ): {uri: string} | void => {
   const uri = getVideoUri(id)(state);
 
@@ -212,26 +216,29 @@ const _getVideoTracks = (state: StoreState, {id}: OwnProps): Array<Track> => {
       // @ts-ignore this is filtered above
       language: label,
       type: TextTrackType.VTT,
-      uri: file
+      uri: file,
     }));
 };
 
 const getIsFullScreenState: (state: StoreState) => boolean = createSelector(
   [isVideoFullScreen],
-  isFullScreen => isFullScreen
+  (isFullScreen) => isFullScreen,
 );
 
-const getVideoSourceState: (state: StoreState, props: OwnProps) => {uri: string} | void = createSelector(
-  [_getVideoSource],
-  source => source
-);
+const getVideoSourceState: (
+  state: StoreState,
+  props: OwnProps,
+) => {uri: string} | void = createSelector([_getVideoSource], (source) => source);
 
-const getVideoTracksState: (state: StoreState, props: OwnProps) => Array<Track> | void = createSelector(
-  [_getVideoTracks],
-  tracks => tracks
-);
+const getVideoTracksState: (
+  state: StoreState,
+  props: OwnProps,
+) => Array<Track> | void = createSelector([_getVideoTracks], (tracks) => tracks);
 
-const getVideoSelectedTrackState: (state: StoreState, props: OwnProps) => string | void = createSelector(
+const getVideoSelectedTrackState: (
+  state: StoreState,
+  props: OwnProps,
+) => string | void = createSelector(
   [_getVideoTracks, getBrandDefaultLanguage],
   (tracks, defaultLanguage) => {
     const languages = tracks.map(({language}) => language);
@@ -241,24 +248,21 @@ const getVideoSelectedTrackState: (state: StoreState, props: OwnProps) => string
     const matchingTrack = tracks.find(({language}) => language === matchingLanguage);
 
     return matchingTrack ? matchingLanguage : undefined;
-  }
+  },
 );
 
 export const mapStateToProps = (state: StoreState, props: OwnProps): ConnectedStateProps => ({
   source: getVideoSourceState(state, props),
   tracks: getVideoTracksState(state, props),
   selectedTrack: getVideoSelectedTrackState(state, props),
-  isFullScreen: getIsFullScreenState(state)
+  isFullScreen: getIsFullScreenState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchToProps = {
   toggleFullscreen,
   fetchVideoUri,
-  fetchVideoTracks
+  fetchVideoTracks,
 };
 
 export {VideoControlable as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VideoControlable);
+export default connect(mapStateToProps, mapDispatchToProps)(VideoControlable);

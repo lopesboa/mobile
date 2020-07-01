@@ -48,43 +48,43 @@ if (__TEST__) {
   describe('ImageBackground', () => {
     it('should use original url', () => {
       const component = renderer.create(<ImageBackground source={{uri}} />);
-      const children = component.root.find(el => el.props.testID === 'image-background');
+      const children = component.root.find((el) => el.props.testID === 'image-background');
       expect(children.props.source.uri).toEqual(`https:${uri}`);
     });
 
     it('should resize by width', () => {
       const component = renderer.create(<ImageBackground source={{uri}} style={{width: 200}} />);
-      const children = component.root.find(el => el.props.testID === 'image-background');
+      const children = component.root.find((el) => el.props.testID === 'image-background');
       expect(children.props.source.uri).toEqual(
-        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&w=400`
+        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&w=400`,
       );
     });
 
     it('should resize by height', () => {
       const component = renderer.create(<ImageBackground source={{uri}} style={{height: 200}} />);
-      const children = component.root.find(el => el.props.testID === 'image-background');
+      const children = component.root.find((el) => el.props.testID === 'image-background');
       expect(children.props.source.uri).toEqual(
-        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&h=400`
+        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&h=400`,
       );
     });
 
     it('should resize by width and height', () => {
       const component = renderer.create(
-        <ImageBackground source={{uri}} style={{width: 200, height: 200}} />
+        <ImageBackground source={{uri}} style={{width: 200, height: 200}} />,
       );
-      const children = component.root.find(el => el.props.testID === 'image-background');
+      const children = component.root.find((el) => el.props.testID === 'image-background');
       expect(children.props.source.uri).toEqual(
-        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&w=400&h=400`
+        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=crop&q=90&w=400&h=400`,
       );
     });
 
     it('should resize by width and height in contain mode', () => {
       const component = renderer.create(
-        <ImageBackground source={{uri}} style={{width: 200, height: 200}} resizeMode="contain" />
+        <ImageBackground source={{uri}} style={{width: 200, height: 200}} resizeMode="contain" />,
       );
-      const children = component.root.find(el => el.props.testID === 'image-background');
+      const children = component.root.find((el) => el.props.testID === 'image-background');
       expect(children.props.source.uri).toEqual(
-        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=contain&q=90&w=400&h=400`
+        `https://api.coorpacademy.com/api-service/medias?url=${encodedUri}&m=contain&q=90&w=400&h=400`,
       );
     });
   });

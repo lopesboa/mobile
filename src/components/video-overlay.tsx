@@ -14,28 +14,28 @@ import Space from './space';
 export type Step = 'preview' | 'loading' | 'error' | 'play' | 'end';
 
 export interface Props {
-  preview: File | SourceURI,
-  height: number,
-  step: Step,
-  isFullScreen?: boolean,
-  onPlay: () => Promise<void> | void,
-  children: React.ReactNode,
-  testID?: string,
-  extralifeOverlay?: boolean
-};
+  preview: File | SourceURI;
+  height: number;
+  step: Step;
+  isFullScreen?: boolean;
+  onPlay: () => Promise<void> | void;
+  children: React.ReactNode;
+  testID?: string;
+  extralifeOverlay?: boolean;
+}
 
 export const STEP: Record<string, Step> = {
   PREVIEW: 'preview',
   LOADING: 'loading',
   ERROR: 'error',
   PLAY: 'play',
-  END: 'end'
+  END: 'end',
 };
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.black,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   fullScreen: {
     ...Platform.select({
@@ -45,21 +45,21 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        bottom: 0
-      }
-    })
+        bottom: 0,
+      },
+    }),
   },
   replay: {
     flex: 1,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing.small
+    padding: theme.spacing.small,
   },
   error: {
     textAlign: 'center',
-    color: theme.colors.white
-  }
+    color: theme.colors.white,
+  },
 });
 
 const VideoOverlay = ({
@@ -70,7 +70,7 @@ const VideoOverlay = ({
   onPlay,
   children,
   extralifeOverlay = false,
-  testID = 'video-overlay'
+  testID = 'video-overlay',
 }: Props) => {
   const testIDSuffix = isFullScreen ? '-fullscreen' : '';
   const containerHeight = (!isFullScreen && height) || undefined;

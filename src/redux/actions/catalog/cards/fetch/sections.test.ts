@@ -5,7 +5,7 @@ import {createAuthenticationState} from '../../../../../__fixtures__/store';
 import {
   createDisciplineCard,
   createChapterCard,
-  createCardLevel
+  createCardLevel,
 } from '../../../../../__fixtures__/cards';
 import {CARD_STATUS} from '../../../../../layer/data/_const';
 import {fetchRequest, fetchSuccess, fetchError, fetchCards} from './sections';
@@ -16,19 +16,19 @@ const language = 'en';
 const level = createCardLevel({
   ref: 'mod_1',
   status: CARD_STATUS.ACTIVE,
-  label: 'Fake level'
+  label: 'Fake level',
 });
 const disciplineCard = createDisciplineCard({
   ref: 'dis1',
   completion: 0,
   levels: [level],
-  title: 'Discipline'
+  title: 'Discipline',
 });
 const chapterCard = createChapterCard({
   ref: 'cha1',
   completion: 0,
   status: CARD_STATUS.ACTIVE,
-  title: 'Chapter'
+  title: 'Chapter',
 });
 const items = [disciplineCard, chapterCard];
 
@@ -42,29 +42,29 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            findBySection: jest.fn()
-          }
-        }
+            findBySection: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest('foo', 0, 3, language));
         return Promise.resolve(action);
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchSuccess('foo', 0, 3, 8, items, language));
         return Promise.resolve(action);
       });
 
       getState.mockReturnValue({
         authentication: createAuthenticationState({token: '_TOKEN_', brand}),
-        catalog: {entities: {sections: {foo: {[language]: section}}}}
+        catalog: {entities: {sections: {foo: {[language]: section}}}},
       });
       options.services.Cards.findBySection.mockReturnValueOnce(
         Promise.resolve({
           cards: items,
-          total: 8
-        })
+          total: 8,
+        }),
       );
 
       // @ts-ignore
@@ -80,23 +80,23 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            findBySection: jest.fn()
-          }
-        }
+            findBySection: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest('bar', 2, 5, language));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(new TypeError('Token not defined')));
         return action;
       });
       // @todo replace with fixture creator
       getState.mockReturnValue({
         authentication: createAuthenticationState({token: null, brand: null}),
-        catalog: {entities: {sections: {bar: {[language]: section}}}}
+        catalog: {entities: {sections: {bar: {[language]: section}}}},
       });
 
       // @ts-ignore
@@ -113,25 +113,25 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            findBySection: jest.fn()
-          }
-        }
+            findBySection: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest('baz', 3, 6, language));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(new TypeError('Brand not defined')));
         return action;
       });
       getState.mockReturnValue({
         authentication: createAuthenticationState({
           token: '__TOKEN__',
-          brand: null
+          brand: null,
         }),
-        catalog: {entities: {sections: {baz: {[language]: section}}}}
+        catalog: {entities: {sections: {baz: {[language]: section}}}},
       });
 
       // @ts-ignore
@@ -148,16 +148,16 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            findBySection: jest.fn()
-          }
-        }
+            findBySection: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest('qux', 0, 3, language));
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(new TypeError('Section not found')));
         return action;
       });
@@ -165,9 +165,9 @@ describe('Cards', () => {
       getState.mockReturnValue({
         authentication: createAuthenticationState({
           token: '__TOKEN__',
-          brand
+          brand,
         }),
-        catalog: {entities: {sections: {}}}
+        catalog: {entities: {sections: {}}},
       });
 
       // @ts-ignore
@@ -184,16 +184,16 @@ describe('Cards', () => {
       const options = {
         services: {
           Cards: {
-            findBySection: jest.fn()
-          }
-        }
+            findBySection: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest('quux', 1, 3, language));
         return action;
       });
-      dispatch.mockImplementationOnce(async action => {
+      dispatch.mockImplementationOnce(async (action) => {
         expect(await action).toEqual(fetchError(fakeError));
         // @ts-ignore
         return action;
@@ -202,9 +202,9 @@ describe('Cards', () => {
       getState.mockReturnValue({
         authentication: createAuthenticationState({
           token: '__TOKEN__',
-          brand
+          brand,
         }),
-        catalog: {entities: {sections: {quux: {[language]: section}}}}
+        catalog: {entities: {sections: {quux: {[language]: section}}}},
       });
       options.services.Cards.findBySection.mockReturnValueOnce(Promise.reject(fakeError));
 

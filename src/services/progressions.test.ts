@@ -1,7 +1,7 @@
 import {CONTENT_TYPE} from '../const';
 
 jest.mock('@coorpacademy/player-services', () => ({
-  Progressions: jest.fn()
+  Progressions: jest.fn(),
 }));
 
 describe('Progression service', () => {
@@ -10,7 +10,7 @@ describe('Progression service', () => {
     const {Progressions} = require('@coorpacademy/player-services');
     const create = jest.fn();
     Progressions.mockImplementation(() => ({
-      create
+      create,
     }));
     const createService = require('./progressions').default;
     // @ts-ignore
@@ -21,7 +21,7 @@ describe('Progression service', () => {
     const config = {version: 'v1'};
     await service.create(ref, engine, content, config);
     expect(logEvent).toHaveBeenCalledWith('startProgression', {
-      type: 'Bar'
+      type: 'Bar',
     });
     expect(create).toHaveBeenCalledWith(ref, engine, content, config);
   });

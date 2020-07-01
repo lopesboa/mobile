@@ -16,14 +16,14 @@ jest.useFakeTimers();
 
 const cardsRef = ['foo', 'bar', 'baz', 'qux', 'quux'];
 const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
-  ref =>
+  (ref) =>
     ref &&
     createChapterCard({
       ref,
       completion: 0,
       title: 'Fake chapter',
-      status: CARD_STATUS.ACTIVE
-    })
+      status: CARD_STATUS.ACTIVE,
+    }),
 );
 
 describe('CatalogSection', () => {
@@ -40,10 +40,10 @@ describe('CatalogSection', () => {
           onCardPress={handleFakePress}
           fetchCards={fetchCards}
           testID={`catalog-section-${sectionRef}`}
-        />
+        />,
       );
       const items = component.root.find(
-        el => el.props.testID === `catalog-section-${sectionRef}-items`
+        (el) => el.props.testID === `catalog-section-${sectionRef}-items`,
       );
       items.props.onScroll(offset, limit);
       expect(fetchCards).toHaveBeenCalledTimes(1);
@@ -59,7 +59,7 @@ describe('CatalogSection', () => {
         (index === 0 && ['foo', 'bar', undefined]) ||
         (index === 1 && ['bar', 'foo']) ||
         (index === 2 && []) ||
-        undefined
+        undefined,
     }));
     const catalog = createCatalogState({sections: sectionsWithCardsRef, cards});
 
@@ -70,8 +70,8 @@ describe('CatalogSection', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
 
       const mockedStore = createStoreState({
@@ -80,13 +80,13 @@ describe('CatalogSection', () => {
         chapters: [],
         slides: [],
         progression,
-        catalog
+        catalog,
       });
 
       const props: OwnProps = {sectionRef, testID: 'foobar'};
       const result = mapStateToProps(mockedStore, props);
       const expected: ConnectedStateProps = {
-        cards: cards.slice(0, 2).concat([undefined])
+        cards: cards.slice(0, 2).concat([undefined]),
       };
 
       expect(result).toEqual(expected);

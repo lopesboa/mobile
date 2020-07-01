@@ -13,7 +13,7 @@ describe('brand', () => {
   describe('fetchBrand', () => {
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
 
       const {fetchBrand} = require('./brand');
@@ -25,16 +25,16 @@ describe('brand', () => {
 
     it('should fetch config and return brand', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
-          json: () => Promise<Config>
+          json: () => Promise<Config>;
         }> => {
           expect(url).toBe(`${brand.host}/config`);
 
@@ -44,43 +44,43 @@ describe('brand', () => {
             brand: {
               name: 'mobile',
               baseUrl: 'https://mobile-staging.coorpacademy.com',
-              contentCategoryName: 'Mobile'
+              contentCategoryName: 'Mobile',
             },
             slider: {
               start: {
                 image:
-                  'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
-              }
+                  'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png',
+              },
             },
             defaultLanguage: 'en',
             supportedLngs: ['fr', 'de', 'it', 'zh'],
             themes: [
               {
                 common: {
-                  primary: '#00B0FF'
+                  primary: '#00B0FF',
                 },
                 images: {
                   'logo-mobile':
-                    'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
-                }
-              }
+                    'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png',
+                },
+              },
             ],
             youtube: {
-              apiKey: '7Hi5iS4f4k34P1K3Y'
+              apiKey: '7Hi5iS4f4k34P1K3Y',
             },
             progressionEngine: {
               versions: {
                 learner: '2',
-                microlearning: '2'
-              }
+                microlearning: '2',
+              },
             },
-            env: 'staging'
+            env: 'staging',
           };
 
           return Promise.resolve({
-            json: () => Promise.resolve(result)
+            json: () => Promise.resolve(result),
           });
-        }
+        },
       );
 
       const {fetchBrand} = require('./brand');
@@ -93,7 +93,7 @@ describe('brand', () => {
 
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 

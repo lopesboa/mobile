@@ -1,3 +1,4 @@
+import {by, element} from 'detox';
 import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
 
 const wrongAnswer = async (el: Detox.Element, {clickOnNext = true}: {clickOnNext: boolean}) => {
@@ -28,10 +29,10 @@ describe('Correction: extra-life', () => {
 
   // TODO: Tests takes too long in the CI
   // it('should offer extralife', async () => {
-  //   await weExpect(element(by.id('extra-life-resource-les_1'))).toBeVisible();
-  //   await weExpect(element(by.id('button-quit'))).toBeVisible();
+  //   await expect(element(by.id('extra-life-resource-les_1'))).toBeVisible();
+  //   await expect(element(by.id('button-quit'))).toBeVisible();
   //   await element(by.id('extra-life-resource-les_1')).tap();
-  //   await weExpect(element(by.id('button-next-question'))).toBeVisible();
+  //   await expect(element(by.id('button-next-question'))).toBeVisible();
   //   await element(by.id('button-next-question')).tap();
   // });
 

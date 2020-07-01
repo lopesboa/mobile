@@ -5,13 +5,13 @@ jest.mock('../../utils/local-token', () => {
   const token = createToken({});
 
   return {
-    get: jest.fn(() => Promise.resolve(token))
+    get: jest.fn(() => Promise.resolve(token)),
   };
 });
 
 jest.mock('../../translations', () => ({
   getInterfaceLanguage: jest.fn(() => 'zh-TW'),
-  setLanguage: jest.fn()
+  setLanguage: jest.fn(),
 }));
 
 describe('Language', () => {

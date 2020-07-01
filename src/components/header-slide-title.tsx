@@ -11,10 +11,10 @@ import Space from './space';
 import ImageBackground from './image-background';
 
 interface Props {
-  image?: SourceURI,
-  subtitle?: string,
-  title?: string
-};
+  image?: SourceURI;
+  subtitle?: string;
+  title?: string;
+}
 
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
 const THUMBNAIL_WIDTH = 28;
@@ -26,28 +26,28 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: theme.spacing.small,
     paddingRight: theme.spacing.large,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   thumbnail: {
     backgroundColor: PLACEHOLDER_COLOR,
     borderRadius: theme.radius.thumbnail,
     overflow: 'hidden',
     width: THUMBNAIL_WIDTH,
-    height: THUMBNAIL_HEIGHT
+    height: THUMBNAIL_HEIGHT,
   },
   text: {
     paddingLeft: theme.spacing.tiny,
-    flex: 1
+    flex: 1,
   },
   subtitle: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.small
+    fontSize: theme.fontSize.small,
   },
   discipline: {
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.small,
-    color: theme.colors.gray.dark
-  }
+    color: theme.colors.gray.dark,
+  },
 });
 
 const HeaderSlide = ({image, subtitle, title}: Props) => {

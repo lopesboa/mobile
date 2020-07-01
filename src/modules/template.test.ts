@@ -15,7 +15,7 @@ describe('Template', () => {
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'inp123'},
         {type: TEMPLATE_PART_TYPE.STRING, value: ' is '},
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'sel456'},
-        {type: TEMPLATE_PART_TYPE.STRING, value: '!'}
+        {type: TEMPLATE_PART_TYPE.STRING, value: '!'},
       ];
       expect(result).toEqual(expected);
     });
@@ -28,7 +28,7 @@ describe('Template', () => {
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'sel456'},
         {type: TEMPLATE_PART_TYPE.STRING, value: '<br>but '},
         {type: TEMPLATE_PART_TYPE.INPUT, value: 'inp789'},
-        {type: TEMPLATE_PART_TYPE.STRING, value: '<br>is good!'}
+        {type: TEMPLATE_PART_TYPE.STRING, value: '<br>is good!'},
       ];
       expect(result).toEqual(expected);
     });

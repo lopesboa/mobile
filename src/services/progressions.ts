@@ -1,28 +1,28 @@
 import type {Progression} from '@coorpacademy/progression-engine';
 import {Progressions} from '@coorpacademy/player-services';
-import type {ProgressionsService as Service} from '@coorpacademy/player-services';
 
+import {ProgressionsService as Service} from 'src/types/coorpacademy/player-store';
 import type {DataLayer} from '../layer/data';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 
 export interface ProgressionService extends Service {
-  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>,
-  synchronize: Pick<DataLayer, 'synchronizeProgression'>,
-  getAll: Pick<DataLayer, 'getAllProgressions'>,
-  getSynchronizedProgressionIds: Pick<DataLayer, 'getSynchronizedProgressionIds'>,
-  findRemoteProgressionById: Pick<DataLayer, 'findRemoteProgressionById'>,
-  updateSynchronizedProgressionIds: Pick<DataLayer, 'updateSynchronizedProgressionIds'>,
-  findBestOf: Pick<DataLayer, 'findBestOf'>
-};
+  findLast: (engineRef: string, contentRef: string) => Promise<Progression | null>;
+  synchronize: Pick<DataLayer, 'synchronizeProgression'>;
+  getAll: Pick<DataLayer, 'getAllProgressions'>;
+  getSynchronizedProgressionIds: Pick<DataLayer, 'getSynchronizedProgressionIds'>;
+  findRemoteProgressionById: Pick<DataLayer, 'findRemoteProgressionById'>;
+  updateSynchronizedProgressionIds: Pick<DataLayer, 'updateSynchronizedProgressionIds'>;
+  findBestOf: Pick<DataLayer, 'findBestOf'>;
+}
 
 const create = (dataLayer: DataLayer): Pick<ProgressionService, 'create'> => (
   ref,
   engine,
   content,
-  config
+  config,
 ) => {
   dataLayer.logEvent(ANALYTICS_EVENT_TYPE.START_PROGRESSION, {
-    type: engine.ref.charAt(0).toUpperCase() + engine.ref.slice(1)
+    type: engine.ref.charAt(0).toUpperCase() + engine.ref.slice(1),
   });
   // @ts-ignore
   const playerService = Progressions(dataLayer);
@@ -40,7 +40,7 @@ const service = (dataLayer: DataLayer): ProgressionService => ({
   getSynchronizedProgressionIds: dataLayer.getSynchronizedProgressionIds,
   findRemoteProgressionById: dataLayer.findRemoteProgressionById,
   findBestOf: dataLayer.findBestOf,
-  updateSynchronizedProgressionIds: dataLayer.updateSynchronizedProgressionIds
+  updateSynchronizedProgressionIds: dataLayer.updateSynchronizedProgressionIds,
 });
 
 export default service;

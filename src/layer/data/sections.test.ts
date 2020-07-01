@@ -14,7 +14,7 @@ describe('sections', () => {
   describe('fetchSections', () => {
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchSections} = require('./sections');
       const actual = fetchSections(token, 0, 3);
@@ -24,24 +24,24 @@ describe('sections', () => {
 
     it('should fetch from host', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
           json: () => Promise<{
             search_meta: {
-              total: number
-            },
-            hits: Array<Section>
-          }>
+              total: number;
+            };
+            hits: Array<Section>;
+          }>;
         }> => {
           expect(url).toBe(
-            'https://domain.tld/api/v2/sections?type=cards&offset=1&limit=2&lang=en'
+            'https://domain.tld/api/v2/sections?type=cards&offset=1&limit=2&lang=en',
           );
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -49,12 +49,12 @@ describe('sections', () => {
             json: () =>
               Promise.resolve({
                 search_meta: {
-                  total: sections.length
+                  total: sections.length,
                 },
-                hits: sections.slice(1, 2)
-              })
+                hits: sections.slice(1, 2),
+              }),
           });
-        }
+        },
       );
 
       const {fetchSections} = require('./sections');
@@ -65,7 +65,7 @@ describe('sections', () => {
 
     it('should reject error', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
       const fetch = require('cross-fetch');
 

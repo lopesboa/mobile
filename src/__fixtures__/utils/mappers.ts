@@ -2,13 +2,13 @@ import type {
   Level as LevelStore,
   Chapter as ChapterStore,
   Discipline as DisciplineStore,
-  ExitNode as ExitNodeStore
-} from '@types/coorp/player-store';
+  ExitNode as ExitNodeStore,
+} from '../../types/coorpacademy/player-store';
 import type {
   Lesson,
   Slide as SlideEngine,
-  Lesson as LessonEngine
-} from '@types/coorp/progression-engine';
+  Lesson as LessonEngine,
+} from '../../types/coorpacademy/progression-engine';
 import type {Level, Slide, Chapter, Discipline, ExitNode} from '../../layer/data/_types';
 
 export const mapToLevel = (rawLevel: Level): LevelStore => ({
@@ -31,7 +31,7 @@ export const mapToLevel = (rawLevel: Level): LevelStore => ({
   data: rawLevel.data,
   stats: rawLevel.stats,
   version: rawLevel.version,
-  external_refs: rawLevel.external_refs
+  external_refs: rawLevel.external_refs,
 });
 
 export const mapToLesson = (rawLesson: Lesson): LessonEngine => ({
@@ -46,7 +46,7 @@ export const mapToLesson = (rawLesson: Lesson): LessonEngine => ({
   src: rawLesson.src,
   subtitles: rawLesson.subtitles,
   type: rawLesson.type,
-  videoId: rawLesson.videoId
+  videoId: rawLesson.videoId,
 });
 
 export const mapToSlide = (rawSlide: Slide): SlideEngine => ({
@@ -60,7 +60,7 @@ export const mapToSlide = (rawSlide: Slide): SlideEngine => ({
   clue: rawSlide.clue,
   context: rawSlide.context,
   question: rawSlide.question,
-  position: rawSlide.position
+  position: rawSlide.position,
 });
 
 export const mapToChapter = (rawChapter: Chapter): ChapterStore => ({
@@ -73,7 +73,7 @@ export const mapToChapter = (rawChapter: Chapter): ChapterStore => ({
   poster: rawChapter.poster,
   isConditional: rawChapter.isConditional,
   time: rawChapter.time,
-  version: rawChapter.version
+  version: rawChapter.version,
 });
 
 export const mapToDiscipline = (rawDiscipline: Discipline): DisciplineStore => ({
@@ -93,7 +93,7 @@ export const mapToDiscipline = (rawDiscipline: Discipline): DisciplineStore => (
   partners: rawDiscipline.partners,
   modules: rawDiscipline.modules.map(mapToLevel),
   cover: rawDiscipline.cover,
-  version: rawDiscipline.version
+  version: rawDiscipline.version,
 });
 
 // @ts-ignore union type
@@ -103,5 +103,5 @@ export const mapToExitNode = (rawExitNode: ExitNode): ExitNodeStore => ({
   meta: rawExitNode.meta,
   title: rawExitNode.title,
   description: rawExitNode.description,
-  media: rawExitNode.media
+  media: rawExitNode.media,
 });

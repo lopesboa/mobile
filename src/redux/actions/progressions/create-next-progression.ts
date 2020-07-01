@@ -16,27 +16,27 @@ export const CREATE_NEXT_FAILURE = '@@progression/CREATE_NEXT_FAILURE';
 
 export type NextProgressionAction =
   | {
-      type: typeof CREATE_NEXT_REQUEST,
-      meta: {type: RestrictedResourceType, ref: string}
+      type: typeof CREATE_NEXT_REQUEST;
+      meta: {type: RestrictedResourceType; ref: string};
     }
   | {
-      type: typeof CREATE_NEXT_SUCCESS,
-      meta: {type: RestrictedResourceType, ref: string}
+      type: typeof CREATE_NEXT_SUCCESS;
+      meta: {type: RestrictedResourceType; ref: string};
     }
   | StoreErrorAction<{
-      type: typeof CREATE_NEXT_FAILURE,
-      meta: {type: RestrictedResourceType, ref: string}
+      type: typeof CREATE_NEXT_FAILURE;
+      meta: {type: RestrictedResourceType; ref: string};
     }>;
 
 export const createNextProgression = (
   type: RestrictedResourceType,
-  ref: string
+  ref: string,
 ): StoreAction<NextProgressionAction> => async (dispatch, getState, options) => {
   const {services} = options;
 
   await dispatch({
     type: CREATE_NEXT_REQUEST,
-    meta: {type, ref}
+    meta: {type, ref},
   });
 
   try {
@@ -49,7 +49,7 @@ export const createNextProgression = (
 
     let progression = await services.Progressions.findLast(
       type === RESTRICTED_RESOURCE_TYPE.CHAPTER ? ENGINE.MICROLEARNING : ENGINE.LEARNER,
-      ref
+      ref,
     );
 
     if (!progression || !progression._id) {
@@ -60,7 +60,7 @@ export const createNextProgression = (
         // @ts-ignore await on dispatched action
         const action: {payload: Progression} = await dispatch(
           // @ts-ignore wrong action
-          createChapterProgression(chapter, engineConfig && engineConfig.versions.microlearning)
+          createChapterProgression(chapter, engineConfig && engineConfig.versions.microlearning),
         );
         progression = action.payload;
       }
@@ -72,7 +72,7 @@ export const createNextProgression = (
         // @ts-ignore await on dispatched action
         const action: {payload: Progression} = await dispatch(
           // @ts-ignore wrong action
-          createLevelProgression(level, engineConfig && engineConfig.versions.learner)
+          createLevelProgression(level, engineConfig && engineConfig.versions.learner),
         );
         progression = action.payload;
       }
@@ -89,14 +89,14 @@ export const createNextProgression = (
 
     return dispatch({
       type: CREATE_NEXT_SUCCESS,
-      meta: {type, ref}
+      meta: {type, ref},
     });
   } catch (e) {
     return dispatch({
       type: CREATE_NEXT_FAILURE,
       payload: e,
       error: true,
-      meta: {type, ref}
+      meta: {type, ref},
     });
   }
 };

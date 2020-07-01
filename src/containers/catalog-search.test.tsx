@@ -15,14 +15,14 @@ jest.useFakeTimers();
 
 const cardsRef = ['foo', 'bar', 'baz', 'qux', 'quux', undefined];
 const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
-  ref =>
+  (ref) =>
     ref &&
     createChapterCard({
       ref,
       completion: 0,
       title: 'Fake chapter',
-      status: CARD_STATUS.ACTIVE
-    })
+      status: CARD_STATUS.ACTIVE,
+    }),
 );
 
 describe('CatalogSearch', () => {
@@ -40,9 +40,9 @@ describe('CatalogSearch', () => {
           cards={cards}
           onCardPress={handleFakePress}
           fetchCards={fetchCards}
-        />
+        />,
       );
-      const items = component.root.find(el => el.props.testID === 'catalog-search-items');
+      const items = component.root.find((el) => el.props.testID === 'catalog-search-items');
       items.props.onScroll(offset, limit);
       expect(fetchCards).toHaveBeenCalledTimes(1);
       expect(fetchCards).toHaveBeenCalledWith(searchValue, offset, limit, queryParams);
@@ -55,14 +55,13 @@ describe('CatalogSearch', () => {
     it('should get all props', () => {
       const {mapStateToProps} = require('./catalog-search');
 
-      
       const levelRef = 'dummyRef';
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
 
       const mockedStore = createStoreState({
@@ -71,12 +70,12 @@ describe('CatalogSearch', () => {
         chapters: [],
         slides: [],
         progression,
-        catalog
+        catalog,
       });
 
       const result = mapStateToProps(mockedStore);
       const expected: ConnectedStateProps = {
-        cards
+        cards,
       };
 
       expect(result).toEqual(expected);

@@ -3,8 +3,8 @@
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
-import type {ContentType, Media} from '@types/coorp/progression-engine';
 import kebabCase from 'lodash/fp/kebabCase';
+import type {ContentType, Media} from '../types/coorpacademy/progression-engine';
 
 import translations from '../translations';
 import {CONTENT_TYPE, TOOLTIP_TYPE} from '../const';
@@ -37,38 +37,38 @@ export const NEGATIVE_COLOR = theme.colors.negative;
 
 const styles = StyleSheet.create({
   globalContainer: {
-    flex: 1
+    flex: 1,
   },
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: BUTTON_HEIGHT + theme.spacing.base * 2
+    paddingBottom: BUTTON_HEIGHT + theme.spacing.base * 2,
   },
   content: {
     paddingHorizontal: PADDING_WIDTH,
-    paddingBottom: PADDING_WIDTH
+    paddingBottom: PADDING_WIDTH,
   },
   starburst: {
-    position: 'absolute'
+    position: 'absolute',
   },
   starburstSpiral: {
-    top: '-10%'
+    top: '-10%',
   },
   positive: {
-    backgroundColor: theme.colors.positive
+    backgroundColor: theme.colors.positive,
   },
   negative: {
-    backgroundColor: theme.colors.negative
+    backgroundColor: theme.colors.negative,
   },
   mainHeader: {
     color: theme.colors.white,
     textAlign: 'center',
     fontSize: theme.fontSize.xxlarge,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   subHeader: {
     fontSize: theme.fontSize.large,
-    color: theme.colors.white
+    color: theme.colors.white,
   },
   header: {
     justifyContent: 'center',
@@ -76,21 +76,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: PADDING_WIDTH,
     // @todo quick fix, we have to rework the component
-    paddingTop: getStatusBarHeight() + 18
+    paddingTop: getStatusBarHeight() + 18,
   },
   text: {
     fontSize: theme.fontSize.large,
     color: theme.colors.white,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   title: {
     fontSize: theme.fontSize.large,
     color: theme.colors.white,
     fontWeight: theme.fontWeight.bold,
-    paddingBottom: theme.spacing.small
+    paddingBottom: theme.spacing.small,
   },
   recommendation: {
-    flex: 1
+    flex: 1,
   },
   iconContainer: {
     flex: 1,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignContent: 'center',
     alignItems: 'center',
-    paddingVertical: PADDING_WIDTH
+    paddingVertical: PADDING_WIDTH,
   },
   iconWrapper: {
     ...BOX_STYLE,
@@ -107,16 +107,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: theme.spacing.large,
-    width: theme.spacing.large
+    width: theme.spacing.large,
   },
   icons: {
     width: theme.spacing.base,
     height: theme.spacing.base,
-    color: theme.colors.positive
+    color: theme.colors.positive,
   },
   icon: {
     marginTop: -theme.spacing.base,
-    marginBottom: -theme.spacing.xlarge
+    marginBottom: -theme.spacing.xlarge,
   },
   separator: {
     ...BOX_STYLE,
@@ -125,35 +125,35 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     marginHorizontal: theme.spacing.medium,
     height: '100%',
-    borderWidth: 1
+    borderWidth: 1,
   },
   confettisContainer: {
     position: 'absolute',
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 const {width: screenWidth} = Dimensions.get('window');
 
 interface Props extends WithVibrationProps, WithAudioProps {
-  contentType: ContentType,
-  isSuccess: boolean,
-  onButtonPress: () => void,
-  onCardPress: (item: DisciplineCard | ChapterCard) => void,
-  onFeedbackLinkPress: (url: string) => void,
-  onClose: () => void,
-  isFocused: boolean,
-  bestScore?: number,
-  nextContentType?: ContentType,
-  nextContentLabel?: string,
-  feedbackTitle?: string,
-  feedbackDescription?: string,
-  feedbackMedia?: Media,
-  recommendation: DisciplineCard | ChapterCard,
-  onPDFButtonPress: (url: string, description?: string) => void,
-  testID?: string
-};
+  contentType: ContentType;
+  isSuccess: boolean;
+  onButtonPress: () => void;
+  onCardPress: (item: DisciplineCard | ChapterCard) => void;
+  onFeedbackLinkPress: (url: string) => void;
+  onClose: () => void;
+  isFocused: boolean;
+  bestScore?: number;
+  nextContentType?: ContentType;
+  nextContentLabel?: string;
+  feedbackTitle?: string;
+  feedbackDescription?: string;
+  feedbackMedia?: Media;
+  recommendation: DisciplineCard | ChapterCard;
+  onPDFButtonPress: (url: string, description?: string) => void;
+  testID?: string;
+}
 
 class LevelEnd extends React.PureComponent<Props> {
   componentDidMount() {
@@ -186,7 +186,7 @@ class LevelEnd extends React.PureComponent<Props> {
       testID = 'level-end',
       onCardPress,
       onPDFButtonPress,
-      onFeedbackLinkPress
+      onFeedbackLinkPress,
     } = this.props;
     const header = (isSuccess && translations.congratulations) || translations.ooops;
     const backgroundColor = (isSuccess && styles.positive) || styles.negative;
@@ -211,7 +211,7 @@ class LevelEnd extends React.PureComponent<Props> {
 
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => (
+        {(brandTheme) => (
           <View
             style={styles.globalContainer}
             testID={`${testID}-${isSuccess ? 'success' : 'error'}`}
@@ -254,7 +254,7 @@ class LevelEnd extends React.PureComponent<Props> {
                           <Tooltip type={TOOLTIP_TYPE.UNLOCK} testID={`${testID}-unlock`}>
                             {translations.unlockNextLevel.replace(
                               /{{levelName}}/g,
-                              nextContentLabel
+                              nextContentLabel,
                             )}
                           </Tooltip>
                         </React.Fragment>

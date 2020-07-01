@@ -3,7 +3,7 @@ module.exports = {
   plugins: ['transform-inline-environment-variables', 'jest-hoist'],
   env: {
     production: {
-      plugins: ['transform-remove-console']
-    }
-  }
+      plugins: ['transform-remove-console'],
+    },
+  },
 };

@@ -6,18 +6,18 @@ import navigationOptions from './navigation-options';
 
 const browserNavigator = createStackNavigator(
   {
-    BrowserModal: {screen: BrowserScreen}
+    BrowserModal: {screen: BrowserScreen},
   },
   {
     defaultNavigationOptions: {
       ...navigationOptions,
       headerTitleStyle: {
         ...navigationOptions.headerTitleStyle,
-        color: theme.colors.gray.dark
-      }
+        color: theme.colors.gray.dark,
+      },
     },
-    mode: 'modal'
-  }
+    mode: 'modal',
+  },
 );
 
 export default browserNavigator;

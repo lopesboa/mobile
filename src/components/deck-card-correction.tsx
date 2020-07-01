@@ -17,20 +17,20 @@ interface Props {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   text: {
     color: theme.colors.gray.dark,
     fontSize: theme.fontSize.regular,
-    fontWeight: theme.fontWeight.regular
+    fontWeight: theme.fontWeight.regular,
   },
   correctAnswer: {
     color: theme.colors.positive,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   userAnswer: {
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 const DeckCardCorrection = ({question, userAnswers, answers, isCorrect}: Props) => (

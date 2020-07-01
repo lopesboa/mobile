@@ -12,15 +12,15 @@ interface Props {
 export const DEFAULT_STYLE = {
   ...Platform.select({
     android: {
-      fontFamily: 'Roboto'
-    }
-  })
+      fontFamily: 'Roboto',
+    },
+  }),
 };
 
 const styles = StyleSheet.create({
   text: {
-    ...DEFAULT_STYLE
-  }
+    ...DEFAULT_STYLE,
+  },
 });
 
 const Text = ({testID, children, style, numberOfLines}: Props) => (

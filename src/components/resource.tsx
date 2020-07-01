@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, ViewStyle} from 'react-native';
-import type {LessonType, ResourceMimeType} from '@types/coorp/progression-engine';
+import type {LessonType, ResourceMimeType} from '../types/coorpacademy/progression-engine';
 
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
@@ -12,18 +12,18 @@ import Preview, {EXTRALIFE} from './preview';
 import ImageBackground from './image-background';
 
 interface Props extends WithLayoutProps {
-  type: LessonType,
-  url?: string,
-  videoId?: string,
-  mimeType?: ResourceMimeType,
-  testID?: string,
-  thumbnail?: string,
-  description?: string,
-  onPress?: (url?: string, description?: string) => void,
-  style?: ViewStyle,
-  resizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch',
-  extralifeOverlay?: boolean
-};
+  type: LessonType;
+  url?: string;
+  videoId?: string;
+  mimeType?: ResourceMimeType;
+  testID?: string;
+  thumbnail?: string;
+  description?: string;
+  onPress?: (url?: string, description?: string) => void;
+  style?: ViewStyle;
+  resizeMode?: 'cover' | 'contain' | 'center' | 'repeat' | 'stretch';
+  extralifeOverlay?: boolean;
+}
 
 class Resource extends React.PureComponent<Props> {
   handlePress = () => {
@@ -43,7 +43,7 @@ class Resource extends React.PureComponent<Props> {
       thumbnail = '',
       resizeMode = 'contain',
       extralifeOverlay = false,
-      style
+      style,
     } = this.props;
 
     if (!layout) {
@@ -96,7 +96,7 @@ class Resource extends React.PureComponent<Props> {
             style={{
               ...style,
               height: (style && style.height) || height, // it was too risky to refactor this so here we cover every possible case
-              width: layout && layout.width
+              width: layout && layout.width,
             }}
           />
         );

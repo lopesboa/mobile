@@ -12,7 +12,7 @@ describe('environment', () => {
 
     it('should return true', () => {
       jest.mock('./version', () => ({
-        buildFlavor: 'e2e'
+        buildFlavor: 'e2e',
       }));
       const {__E2E__: result} = require('./environment');
       const expected = true;
@@ -29,7 +29,7 @@ describe('environment', () => {
 
     it('should return true', () => {
       jest.mock('./version', () => ({
-        buildFlavor: 'storybook'
+        buildFlavor: 'storybook',
       }));
       const {__STORYBOOK__: result} = require('./environment');
       const expected = true;
@@ -46,7 +46,7 @@ describe('environment', () => {
 
     it('should return true', () => {
       jest.mock('./version', () => ({
-        buildType: 'adhoc'
+        buildType: 'adhoc',
       }));
       const {__ADHOC__: result} = require('./environment');
       const expected = true;
@@ -63,7 +63,7 @@ describe('environment', () => {
 
     it('should return true', () => {
       jest.mock('./version', () => ({
-        buildType: 'distribution'
+        buildType: 'distribution',
       }));
       const {__DISTRIBUTION__: result} = require('./environment');
       const expected = true;

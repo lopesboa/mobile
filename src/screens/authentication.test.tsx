@@ -12,10 +12,10 @@ import type {ConnectedStateProps} from './authentication';
 
 jest.mock('../containers/error-listener', () => 'Mock$ErrorListener');
 jest.mock('../utils/local-token', () => ({
-  get: jest.fn(() => Promise.resolve(null))
+  get: jest.fn(() => Promise.resolve(null)),
 }));
 jest.mock('../migrations', () => ({
-  migrationsRunner: jest.fn(() => Promise.resolve('foobar'))
+  migrationsRunner: jest.fn(() => Promise.resolve('foobar')),
 }));
 
 describe('Authentication', () => {
@@ -31,14 +31,14 @@ describe('Authentication', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'foo'
+          ref: 'foo',
         },
         state: {
           nextContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'bar'
-          }
-        }
+            ref: 'bar',
+          },
+        },
       });
 
       const store = createStoreState({
@@ -46,12 +46,12 @@ describe('Authentication', () => {
         disciplines: [],
         chapters: [],
         slides: [],
-        progression
+        progression,
       });
 
       const result = mapStateToProps(store);
       const expected: ConnectedStateProps = {
-        isAuthenticated: true
+        isAuthenticated: true,
       };
       expect(expected).toEqual(result);
     });
@@ -129,12 +129,12 @@ describe('Authentication', () => {
       const signIn = jest.fn();
       const navigation = createNavigation({});
       const component = await renderer.create(
-        <Authentication navigation={navigation} signIn={signIn} />
+        <Authentication navigation={navigation} signIn={signIn} />,
       );
 
       await sleep(10);
 
-      const authentication = component.root.find(el => el.props.testID === 'authentication');
+      const authentication = component.root.find((el) => el.props.testID === 'authentication');
       authentication.props.onDemoPress();
 
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -152,12 +152,12 @@ describe('Authentication', () => {
       const signIn = jest.fn();
       const navigation = createNavigation({});
       const component = await renderer.create(
-        <Authentication navigation={navigation} signIn={signIn} />
+        <Authentication navigation={navigation} signIn={signIn} />,
       );
 
       await sleep(10);
 
-      const authentication = component.root.find(el => el.props.testID === 'authentication');
+      const authentication = component.root.find((el) => el.props.testID === 'authentication');
       authentication.props.onHelpPress();
 
       expect(openURL).toHaveBeenCalledTimes(1);
@@ -172,7 +172,7 @@ describe('Authentication', () => {
 
       await sleep(10);
 
-      const authentication = component.root.find(el => el.props.testID === 'authentication');
+      const authentication = component.root.find((el) => el.props.testID === 'authentication');
       authentication.props.onDesktopButtonPress();
 
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -180,7 +180,7 @@ describe('Authentication', () => {
         type: AUTHENTICATION_TYPE.QR_CODE,
         onHelpPress: expect.any(Function),
         onDemoPress: expect.any(Function),
-        onSignIn: expect.any(Function)
+        onSignIn: expect.any(Function),
       });
     });
 
@@ -192,7 +192,7 @@ describe('Authentication', () => {
 
       await sleep(10);
 
-      const authentication = component.root.find(el => el.props.testID === 'authentication');
+      const authentication = component.root.find((el) => el.props.testID === 'authentication');
       authentication.props.onMobileButtonPress();
 
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -200,7 +200,7 @@ describe('Authentication', () => {
         type: AUTHENTICATION_TYPE.MAGIC_LINK,
         onHelpPress: expect.any(Function),
         onDemoPress: expect.any(Function),
-        onSignIn: expect.any(Function)
+        onSignIn: expect.any(Function),
       });
     });
   });
@@ -218,11 +218,11 @@ describe('Authentication', () => {
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 

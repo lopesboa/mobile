@@ -1,10 +1,11 @@
+import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   waitForVisible,
   waitForExist,
   waitForNotVisible,
-  tapCardOnList
+  tapCardOnList,
 } from './utils';
 
 const thirdCard = 'catalog-search-items-item-with-image-context-dis-1';
@@ -38,7 +39,7 @@ describe('CatalogSearch', () => {
 
   it('should be able to select a card', async () => {
     await tapCardOnList('catalog-search-items', 4, true);
-    await weExpect(element(by.id('header-slide-title'))).toBeVisible();
+    await expect(element(by.id('header-slide-title'))).toBeVisible();
   });
 
   it('should be able to back to search', async () => {

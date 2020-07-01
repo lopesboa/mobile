@@ -9,7 +9,7 @@ jest.mock('./core', () => {
   return {
     getItemsPerResourceType: () => Promise.resolve([firstChapter, secondChapter]),
     getItem: (type, language, ref) =>
-      Promise.resolve(ref === 'cha_1' ? firstChapter : secondChapter)
+      Promise.resolve(ref === 'cha_1' ? firstChapter : secondChapter),
   };
 });
 
@@ -19,16 +19,16 @@ jest.mock('./disciplines', () => {
 
   const firstLevel = createLevel({
     chapterIds: ['cha_1', 'cha_2'],
-    ref: 'mod_1'
+    ref: 'mod_1',
   });
   const firstDiscipline = createDiscipline({
     ref: 'dis_1',
     name: 'Fake discipline',
-    levels: [firstLevel]
+    levels: [firstLevel],
   });
 
   return {
-    findByChapter: ref => Promise.resolve(ref !== 'cha_foo' ? firstDiscipline : undefined)
+    findByChapter: (ref) => Promise.resolve(ref !== 'cha_foo' ? firstDiscipline : undefined),
   };
 });
 
@@ -40,7 +40,7 @@ describe('chapters', () => {
       const result = await find();
       expect(result).toEqual([
         mapToChapterAPIExpectedResult,
-        {...mapToChapterAPIExpectedResult, _id: 'cha_2', universalRef: 'cha_2'}
+        {...mapToChapterAPIExpectedResult, _id: 'cha_2', universalRef: 'cha_2'},
       ]);
     });
   });

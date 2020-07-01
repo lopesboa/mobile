@@ -19,26 +19,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: LIST_HORIZONTAL_OFFSET + ITEM_OFFSET,
     fontSize: TITLE_HEIGHT,
     fontWeight: theme.fontWeight.bold,
-    color: theme.colors.black
+    color: theme.colors.black,
   },
   list: {
     paddingHorizontal: LIST_HORIZONTAL_OFFSET,
-    height: ITEM_HEIGHT
+    height: ITEM_HEIGHT,
   },
   separator: {
     width: SEPARATOR_HEIGHT,
-    height: SEPARATOR_HEIGHT
-  }
+    height: SEPARATOR_HEIGHT,
+  },
 });
 
 export interface Props {
-  sectionRef?: string,
-  title?: string,
-  cards?: Array<DisciplineCard | ChapterCard | void>,
-  onCardPress?: (arg0: DisciplineCard | ChapterCard) => void,
-  onScroll?: (offset: number, limit: number) => void,
-  testID: string
-};
+  sectionRef?: string;
+  title?: string;
+  cards?: Array<DisciplineCard | ChapterCard | void>;
+  onCardPress?: (arg0: DisciplineCard | ChapterCard) => void;
+  onScroll?: (offset: number, limit: number) => void;
+  testID: string;
+}
 
 class CatalogSection extends React.Component<Props> {
   renderTitle = (): React.ReactNode => {

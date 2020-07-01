@@ -12,7 +12,7 @@ export const createChapterProgression = (chapter: Chapter, engineVersion?: strin
   const ref = getMostAccurateRef(chapter);
   const content: GenericContent = {type: CONTENT_TYPE.CHAPTER, ref};
   const engineConfig: EngineConfig = {
-    version: engineVersion || 'latest'
+    version: engineVersion || 'latest',
   };
   if (__TEST__ || __E2E__) {
     engineConfig.shuffleChoices = false;

@@ -11,10 +11,10 @@ import Touchable from './touchable';
 import Preview from './preview';
 
 interface Props {
-  onChange: (id: string) => void,
-  selected?: string,
-  resources: Array<Resource>
-};
+  onChange: (id: string) => void;
+  selected?: string;
+  resources: Array<Resource>;
+}
 
 const THUMBNAIL_PADDING = 2;
 const THUMBNAIL_BORDER_WIDTH = 2;
@@ -23,12 +23,12 @@ const THUMBNAIL_HEIGHT = 45;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: theme.spacing.small
+    paddingVertical: theme.spacing.small,
   },
   item: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: theme.spacing.small
+    paddingHorizontal: theme.spacing.small,
   },
   thumbnailContainer: {
     height: THUMBNAIL_HEIGHT + THUMBNAIL_PADDING * 2 + THUMBNAIL_BORDER_WIDTH * 2,
@@ -38,28 +38,28 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'transparent',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   thumbnail: {
     width: THUMBNAIL_WIDTH,
-    height: THUMBNAIL_HEIGHT
+    height: THUMBNAIL_HEIGHT,
   },
   image: {
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   icon: {
-    position: 'absolute'
+    position: 'absolute',
   },
   descriptionContainer: {
-    flex: 1
+    flex: 1,
   },
   description: {
-    color: theme.colors.gray.dark
+    color: theme.colors.gray.dark,
   },
   descriptionSelected: {
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 class ResourcesBrowser extends React.PureComponent<Props> {
@@ -85,13 +85,13 @@ class ResourcesBrowser extends React.PureComponent<Props> {
         analyticsParams={{type: resource.type}}
       >
         <BrandThemeContext.Consumer>
-          {brandTheme => {
+          {(brandTheme) => {
             const selectedStyle = {
-              borderColor: brandTheme.colors.primary
+              borderColor: brandTheme.colors.primary,
             };
 
             const selectedTextStyle = {
-              color: brandTheme.colors.primary
+              color: brandTheme.colors.primary,
             };
 
             return (
@@ -119,7 +119,7 @@ class ResourcesBrowser extends React.PureComponent<Props> {
                   style={[
                     styles.description,
                     isSelected && selectedTextStyle,
-                    isSelected && styles.descriptionSelected
+                    isSelected && styles.descriptionSelected,
                   ]}
                 >
                   {resource.description}

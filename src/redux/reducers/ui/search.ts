@@ -3,13 +3,13 @@ import type {Action} from '../../actions/ui/search';
 import type {QueryParams} from '../../../modules/uri';
 
 export type State = {
-  isFetching: boolean,
-  value?: string,
-  params?: QueryParams
+  isFetching: boolean;
+  value?: string;
+  params?: QueryParams;
 };
 
 export const initialState: State = {
-  isFetching: false
+  isFetching: false,
 };
 
 const reducer = (state: State = initialState, action: Action): State => {
@@ -18,13 +18,13 @@ const reducer = (state: State = initialState, action: Action): State => {
       return {
         ...state,
         value: action && action.payload.text,
-        params: action && action.payload.params
+        params: action && action.payload.params,
       };
     }
     case FETCH: {
       return {
         ...state,
-        isFetching: action.payload
+        isFetching: action.payload,
       };
     }
     default:

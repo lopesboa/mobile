@@ -5,14 +5,14 @@ describe('Compare', () => {
       const props = {
         foo: 'bar',
         baz: {
-          qux: 'quux'
-        }
+          qux: 'quux',
+        },
       };
       const nextProps = {
         foo: 'bar',
         baz: {
-          qux: 'quux'
-        }
+          qux: 'quux',
+        },
       };
       const result = isEqual(props, nextProps);
       expect(result).toBeTruthy();
@@ -23,14 +23,14 @@ describe('Compare', () => {
       const props = {
         foo: 'bar',
         baz: {
-          qux: 'quux'
-        }
+          qux: 'quux',
+        },
       };
       const nextProps = {
         foo: 'bar',
         baz: {
-          qux: 'quuux'
-        }
+          qux: 'quuux',
+        },
       };
       const result = isEqual(props, nextProps);
       expect(result).toBeFalsy();

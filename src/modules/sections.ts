@@ -6,7 +6,9 @@ export const isEmptySection = (section: Section): boolean =>
 export const getOffsetWithoutCards = (sections: Array<Section | void>, offset: number): number => {
   const calculatedOffset = sections.reduce((result, _, index) => {
     const sectionsRange = sections.slice(0, index);
-    const sectionsNotEmpty = sectionsRange.filter(section => !(section && isEmptySection(section)));
+    const sectionsNotEmpty = sectionsRange.filter(
+      (section) => !(section && isEmptySection(section)),
+    );
     const lastSection = sectionsRange[sectionsRange.length - 1];
     const isLastSectionEmpty = lastSection && isEmptySection(lastSection);
 
@@ -26,14 +28,14 @@ export const getOffsetWithoutCards = (sections: Array<Section | void>, offset: n
 export const getLimitWithoutCards = (
   sections: Array<Section | void>,
   offset: number,
-  limit: number
+  limit: number,
 ): number => {
   const nextSections = sections.slice(offset);
 
   const calculatedLimit = nextSections.reduce((result, _, index) => {
     const sectionsNotEmpty = nextSections
       .slice(0, index)
-      .filter(section => !(section && isEmptySection(section)));
+      .filter((section) => !(section && isEmptySection(section)));
 
     if (sectionsNotEmpty.length < limit) {
       return result + 1;

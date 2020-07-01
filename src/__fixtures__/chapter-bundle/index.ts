@@ -9,7 +9,7 @@ const initialChaptersBundle: BundledChapter = {
   chapters: {},
   slides: {},
   chapterRules: {},
-  exitNodes: {}
+  exitNodes: {},
 };
 
 const chaptersBundles: BundledChapter = items.reduce(
@@ -17,22 +17,22 @@ const chaptersBundles: BundledChapter = items.reduce(
     ...result,
     chapters: {
       ...result.chapters,
-      ...chapterBundle.chapters
+      ...chapterBundle.chapters,
     },
     slides: {
       ...result.slides,
-      ...chapterBundle.slides
+      ...chapterBundle.slides,
     },
     chapterRules: {
       ...result.chapterRules,
-      ...chapterBundle.chapterRules
+      ...chapterBundle.chapterRules,
     },
     exitNodes: {
       ...result.exitNodes,
-      ...chapterBundle.exitNodes
-    }
+      ...chapterBundle.exitNodes,
+    },
   }),
-  initialChaptersBundle
+  initialChaptersBundle,
 );
 
 export default chaptersBundles;

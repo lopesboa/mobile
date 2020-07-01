@@ -12,12 +12,12 @@ export type Params = {
   url: string;
 };
 
-interface Props extends NavigationScreenProps<Params> {}
+type Props = NavigationScreenProps<Params>;
 
 const styles = StyleSheet.create({
   browser: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 class Browser extends React.PureComponent<Props> {
@@ -30,7 +30,7 @@ class Browser extends React.PureComponent<Props> {
         ...navigationOptions.headerStyle,
         backgroundColor: HEADER_BACKGROUND_COLOR,
         borderBottomWidth: 1,
-        borderBottomColor: theme.colors.gray.light
+        borderBottomColor: theme.colors.gray.light,
       },
       title: navigation.getParam('title'),
       headerLeft: (
@@ -41,7 +41,7 @@ class Browser extends React.PureComponent<Props> {
           isFloating={false}
           testID="browser-button-close"
         />
-      )
+      ),
     };
   };
 

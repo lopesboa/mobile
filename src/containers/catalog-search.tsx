@@ -8,7 +8,7 @@ import {
   getSearchRef,
   getCards,
   getSearchValue,
-  getSearchParams
+  getSearchParams,
 } from '../redux/utils/state-extract';
 import CatalogSearchComponent from '../components/catalog-search';
 import type {OwnProps as CatalogSearchProps} from '../components/catalog-search';
@@ -17,24 +17,23 @@ import translations from '../translations';
 import type {QueryParams} from '../modules/uri';
 
 export interface ConnectedStateProps {
-  cards?: Array<DisciplineCard | ChapterCard | void>,
-  searchValue?: string,
-  searchParams?: QueryParams
-};
+  cards?: Array<DisciplineCard | ChapterCard | void>;
+  searchValue?: string;
+  searchParams?: QueryParams;
+}
 
 interface ConnectedDispatchProps {
-  fetchCards: typeof fetchCards
-};
+  fetchCards: typeof fetchCards;
+}
 
 export interface OwnProps {
-  cards: Pick<CatalogSearchProps, 'cards'>,
-  onScroll: Pick<CatalogSearchProps, 'onScroll'>
-};
+  cards: Pick<CatalogSearchProps, 'cards'>;
+  onScroll: Pick<CatalogSearchProps, 'onScroll'>;
+}
 
-interface Props extends ConnectedStateProps, ConnectedDispatchProps, OwnProps {};
+interface Props extends ConnectedStateProps, ConnectedDispatchProps, OwnProps {}
 
 class CatalogSearch extends React.Component<Props> {
-
   handleScroll = (offset: number, limit: number) => {
     const {searchValue, searchParams} = this.props;
     if (searchValue || searchParams) {
@@ -51,24 +50,21 @@ const getCardsState = createSelector(
   [getSearchRef, getCards],
   (searchRef: Array<string | void> | void, cards: $ExtractReturn<typeof getCards>) =>
     searchRef
-      ? searchRef.map(ref =>
-          ref && cards[ref] ? cards[ref][translations.getLanguage()] : undefined
+      ? searchRef.map((ref) =>
+          ref && cards[ref] ? cards[ref][translations.getLanguage()] : undefined,
         )
-      : undefined
+      : undefined,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   cards: getCardsState(state),
   searchValue: getSearchValue(state),
-  searchParams: getSearchParams(state)
+  searchParams: getSearchParams(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  fetchCards
+  fetchCards,
 };
 
 export {CatalogSearch as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CatalogSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogSearch);

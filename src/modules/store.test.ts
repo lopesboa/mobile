@@ -7,7 +7,7 @@ describe('store', () => {
     it('should handle resolve', async () => {
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
-        text: () => Promise.resolve('1.0.0')
+        text: () => Promise.resolve('1.0.0'),
       }));
       const {getMinimalVersion} = require('./store');
 
@@ -36,11 +36,11 @@ describe('store', () => {
 
     it('should return false on undefined version', async () => {
       jest.mock('./environment', () => ({
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
-        text: () => Promise.resolve(undefined)
+        text: () => Promise.resolve(undefined),
       }));
       const {needUpgrade} = require('./store');
 
@@ -52,11 +52,11 @@ describe('store', () => {
 
     it('should return false on same version', async () => {
       jest.mock('./environment', () => ({
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
-        text: () => Promise.resolve('0.0.0')
+        text: () => Promise.resolve('0.0.0'),
       }));
       const {needUpgrade} = require('./store');
 
@@ -68,11 +68,11 @@ describe('store', () => {
 
     it('should return true on anterior version', async () => {
       jest.mock('./environment', () => ({
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => ({
-        text: () => Promise.resolve('0.0.1')
+        text: () => Promise.resolve('0.0.1'),
       }));
       const {needUpgrade} = require('./store');
 
@@ -84,7 +84,7 @@ describe('store', () => {
 
     it('should return false on non production mode', async () => {
       jest.mock('./environment', () => ({
-        __PRODUCTION__: false
+        __PRODUCTION__: false,
       }));
       const fetch = require('cross-fetch');
       const {needUpgrade} = require('./store');
@@ -98,7 +98,7 @@ describe('store', () => {
     it('should return false on e2e mode', async () => {
       jest.mock('./environment', () => ({
         __PRODUCTION__: true,
-        __E2E__: true
+        __E2E__: true,
       }));
       const fetch = require('cross-fetch');
       const {needUpgrade} = require('./store');
@@ -111,7 +111,7 @@ describe('store', () => {
 
     it('should handle reject', async () => {
       jest.mock('./environment', () => ({
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
       const fetch = require('cross-fetch');
       fetch.mockImplementation(() => Promise.reject(new Error('Fake error')));

@@ -13,7 +13,7 @@ describe('Build', () => {
     it('should return distribution', () => {
       jest.mock('./environment', () => ({
         __ADHOC__: false,
-        __DISTRIBUTION__: true
+        __DISTRIBUTION__: true,
       }));
 
       const {getBuildType} = require('./build');
@@ -27,7 +27,7 @@ describe('Build', () => {
     it('should return adhoc', () => {
       jest.mock('./environment', () => ({
         __ADHOC__: true,
-        __DISTRIBUTION__: false
+        __DISTRIBUTION__: false,
       }));
 
       const {getBuildType} = require('./build');
@@ -41,7 +41,7 @@ describe('Build', () => {
     it('should return undefined', () => {
       jest.mock('./environment', () => ({
         __ADHOC__: false,
-        __DISTRIBUTION__: false
+        __DISTRIBUTION__: false,
       }));
 
       const {getBuildType} = require('./build');
@@ -56,7 +56,7 @@ describe('Build', () => {
     it('should return e2e', () => {
       jest.mock('./environment', () => ({
         __E2E__: true,
-        __STORYBOOK__: false
+        __STORYBOOK__: false,
       }));
 
       const {getBuildFlavor} = require('./build');
@@ -70,7 +70,7 @@ describe('Build', () => {
     it('should return storybook', () => {
       jest.mock('./environment', () => ({
         __E2E__: false,
-        __STORYBOOK__: true
+        __STORYBOOK__: true,
       }));
 
       const {getBuildFlavor} = require('./build');
@@ -84,7 +84,7 @@ describe('Build', () => {
     it('should return undefined', () => {
       jest.mock('./environment', () => ({
         __E2E__: false,
-        __STORYBOOK__: false
+        __STORYBOOK__: false,
       }));
 
       const {getBuildFlavor} = require('./build');
@@ -100,7 +100,7 @@ describe('Build', () => {
       jest.mock('./environment', () => ({
         __TEST__: true,
         __DEV__: false,
-        __PRODUCTION__: false
+        __PRODUCTION__: false,
       }));
 
       const {getBuildEnvironment} = require('./build');
@@ -115,7 +115,7 @@ describe('Build', () => {
       jest.mock('./environment', () => ({
         __TEST__: false,
         __DEV__: true,
-        __PRODUCTION__: false
+        __PRODUCTION__: false,
       }));
 
       const {getBuildEnvironment} = require('./build');
@@ -130,7 +130,7 @@ describe('Build', () => {
       jest.mock('./environment', () => ({
         __TEST__: false,
         __DEV__: false,
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
 
       const {getBuildEnvironment} = require('./build');
@@ -151,7 +151,7 @@ describe('Build', () => {
         __STORYBOOK__: true,
         __TEST__: true,
         __DEV__: false,
-        __PRODUCTION__: false
+        __PRODUCTION__: false,
       }));
 
       const {getBuildExtension} = require('./build');
@@ -174,7 +174,7 @@ describe('Build', () => {
         __STORYBOOK__: false,
         __TEST__: false,
         __DEV__: false,
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
 
       const {getUserAgent} = require('./build');
@@ -193,19 +193,19 @@ describe('Build', () => {
         __STORYBOOK__: false,
         __TEST__: false,
         __DEV__: false,
-        __PRODUCTION__: true
+        __PRODUCTION__: true,
       }));
 
       jest.mock('react-native-device-info', () => ({
         getBrand: jest.fn(() => Promise.resolve('Samsung')),
         getModel: jest.fn(() => Promise.resolve('SM-9000')),
-        getSystemVersion: jest.fn(() => Promise.resolve('1.2.3'))
+        getSystemVersion: jest.fn(() => Promise.resolve('1.2.3')),
       }));
 
       jest.mock('react-native', () => ({
         Platform: {
-          OS: 'android'
-        }
+          OS: 'android',
+        },
       }));
 
       const {getUserAgent} = require('./build');

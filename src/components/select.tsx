@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, ViewStyle, TextStyle} from 'react-native';
 import {NovaCompositionNavigationArrowDown as ArrowDown} from '@coorpacademy/nova-icons';
-import type {QuestionType} from '@types/coorp/progression-engine';
+import type {QuestionType} from '../types/coorpacademy/progression-engine';
 
 import {ANALYTICS_EVENT_TYPE} from '../const';
 import type {AnalyticsEventType} from '../types';
@@ -16,34 +16,34 @@ import Touchable from './touchable';
 import Text from './text';
 
 export interface Props extends WithAnalyticsProps {
-  analyticsID: string,
-  questionType: QuestionType,
-  isDisabled?: boolean,
-  isFocused?: boolean,
-  values: Pick<ModalSelectProps, 'values'>,
-  value?: Pick<ModalSelectProps, 'value'>,
-  placeholder?: string,
-  color?: string,
-  onChange: Pick<ModalSelectProps, 'onChange'>,
-  onFocus: () => void,
-  onBlur: () => void,
-  style?: ViewStyle,
-  textStyle?: TextStyle,
-  testID?: string
-};
+  analyticsID: string;
+  questionType: QuestionType;
+  isDisabled?: boolean;
+  isFocused?: boolean;
+  values: Pick<ModalSelectProps, 'values'>;
+  value?: Pick<ModalSelectProps, 'value'>;
+  placeholder?: string;
+  color?: string;
+  onChange: Pick<ModalSelectProps, 'onChange'>;
+  onFocus: () => void;
+  onBlur: () => void;
+  style?: ViewStyle;
+  textStyle?: TextStyle;
+  testID?: string;
+}
 
 const ICON_WIDTH = 15;
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   text: {
     flex: 1,
     color: theme.colors.gray.medium,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 class Select extends React.PureComponent<Props> {
@@ -52,7 +52,7 @@ class Select extends React.PureComponent<Props> {
     analytics &&
       analytics.logEvent(event, {
         id: analyticsID,
-        questionType
+        questionType,
       });
   };
 
@@ -81,9 +81,9 @@ class Select extends React.PureComponent<Props> {
       color,
       isFocused = false,
       isDisabled = false,
-      testID = 'select'
+      testID = 'select',
     } = this.props;
-    const selectedItem = values.find(item => item.text === value);
+    const selectedItem = values.find((item) => item.text === value);
     const text = (selectedItem && selectedItem.text) || placeholder || null;
 
     return (

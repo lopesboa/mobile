@@ -4,19 +4,19 @@ import AuthenticationStepsComponent from '../components/authentication-steps';
 import type {Props as AuthenticationStepsProps} from '../components/authentication-steps';
 
 export interface Props {
-  currentIndex:  Pick<AuthenticationStepsProps, 'currentIndex'>;
-  onChange:  Pick<AuthenticationStepsProps, 'onChange'>;
-  currentIndex?:  Pick<AuthenticationStepsProps, 'currentIndex'>;
-  onChange?:  Pick<AuthenticationStepsProps, 'onChange'>;
-};
+  currentIndex: Pick<AuthenticationStepsProps, 'currentIndex'>;
+  onChange: Pick<AuthenticationStepsProps, 'onChange'>;
+  currentIndex?: Pick<AuthenticationStepsProps, 'currentIndex'>;
+  onChange?: Pick<AuthenticationStepsProps, 'onChange'>;
+}
 
 type State = {
-  currentIndex: number
+  currentIndex: number;
 };
 
 class AuthenticationSteps extends React.PureComponent<Props, State> {
   state: State = {
-    currentIndex: this.props.currentIndex || 0
+    currentIndex: this.props.currentIndex || 0,
   };
 
   handleChange = (index: number) => {
@@ -24,11 +24,11 @@ class AuthenticationSteps extends React.PureComponent<Props, State> {
 
     this.setState(
       {
-        currentIndex: index
+        currentIndex: index,
       },
       () => {
         onChange && onChange(index);
-      }
+      },
     );
   };
 

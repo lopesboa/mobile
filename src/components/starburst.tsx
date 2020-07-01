@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   gradient: {
     position: 'absolute',
     height: 75,
-    bottom: 0
-  }
+    bottom: 0,
+  },
 });
 
 const Starburst = ({spiralColor, testID, style, spiralStyle, backgroundColor}: Props) => {

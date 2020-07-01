@@ -8,22 +8,22 @@ export const FETCH_SUCCESS = '@@hero/FETCH_SUCCESS';
 export const FETCH_ERROR = '@@hero/FETCH_ERROR';
 
 export type FetchRequestAction = {
-  type: '@@hero/FETCH_REQUEST',
+  type: '@@hero/FETCH_REQUEST';
   payload: {
-    language: SupportedLanguage
-  }
+    language: SupportedLanguage;
+  };
 };
 
 export type FetchSuccessAction = {
-  type: '@@hero/FETCH_SUCCESS',
+  type: '@@hero/FETCH_SUCCESS';
   payload: {
-    language: SupportedLanguage,
-    item?: DisciplineCard | ChapterCard
-  }
+    language: SupportedLanguage;
+    item?: DisciplineCard | ChapterCard;
+  };
 };
 
 export type FetchErrorAction = StoreErrorAction<{
-  type: '@@hero/FETCH_ERROR'
+  type: '@@hero/FETCH_ERROR';
 }>;
 
 export type Action = FetchRequestAction | FetchSuccessAction | FetchErrorAction;
@@ -31,25 +31,25 @@ export type Action = FetchRequestAction | FetchSuccessAction | FetchErrorAction;
 export const fetchRequest = (language: SupportedLanguage): FetchRequestAction => ({
   type: FETCH_REQUEST,
   payload: {
-    language
-  }
+    language,
+  },
 });
 
 export const fetchSuccess = (
   item?: DisciplineCard | ChapterCard,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ): FetchSuccessAction => ({
   type: FETCH_SUCCESS,
   payload: {
     language,
-    item
-  }
+    item,
+  },
 });
 
 export const fetchError = (error: Error): FetchErrorAction => ({
   type: FETCH_ERROR,
   payload: error,
-  error: true
+  error: true,
 });
 
 export const fetchHero = (): StoreAction<Action> => async (dispatch, getState, options) => {

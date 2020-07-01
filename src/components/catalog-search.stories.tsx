@@ -7,7 +7,7 @@ import {
   createCardLevel,
   createDisciplineCard,
   createChapterCard,
-  createCardAuthor
+  createCardAuthor,
 } from '../__fixtures__/cards';
 import {__TEST__} from '../modules/environment';
 import {AUTHOR_TYPE} from '../const';
@@ -20,7 +20,7 @@ const firstCard = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
   levels: [levelCard],
-  title: 'Discipline card'
+  title: 'Discipline card',
 });
 const secondCard = createChapterCard({
   ref: 'bar',
@@ -28,7 +28,7 @@ const secondCard = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  authors: [authorCard]
+  authors: [authorCard],
 });
 const thirdCard = createChapterCard({
   ref: 'baz',
@@ -36,7 +36,7 @@ const thirdCard = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  authors: [authorCard]
+  authors: [authorCard],
 });
 const fourthCard = createChapterCard({
   ref: 'qux',
@@ -44,7 +44,7 @@ const fourthCard = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  authors: [authorCard]
+  authors: [authorCard],
 });
 const emptyCards = new Array(30).fill();
 const cards = [firstCard, secondCard, thirdCard, fourthCard].concat(emptyCards.slice(0, 26));
@@ -77,11 +77,12 @@ if (__TEST__) {
     it('should handle card press', () => {
       const handleCardPress = jest.fn();
       const component = renderer.create(
-        <CatalogSearch cards={cards} onCardPress={handleCardPress} onScroll={handleFakePress} />
+        <CatalogSearch cards={cards} onCardPress={handleCardPress} onScroll={handleFakePress} />,
       );
 
       const catalogItem = component.root.find(
-        el => el.props.testID === 'catalog-search-items-item-bar' && el.props.analyticsID === 'card'
+        (el) =>
+          el.props.testID === 'catalog-search-items-item-bar' && el.props.analyticsID === 'card',
       );
       catalogItem.props.onPress();
 

@@ -8,7 +8,7 @@ import {
   getCurrentScreenName,
   getCurrentTabName,
   getContext,
-  getValidationStatus
+  getValidationStatus,
 } from '../redux/utils/state-extract';
 import type {StoreState} from '../redux/store';
 import theme from '../modules/theme';
@@ -20,16 +20,16 @@ import TabBar from './tab-bar';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 interface ConnectedStateToProps {
-  isFocused: boolean,
-  isSwitchDisabled: boolean,
-  isLoading: boolean,
-  hasClue: boolean,
-  hasContext: boolean,
-  hasLesson: boolean,
-  hasNewLesson: boolean
-};
+  isFocused: boolean;
+  isSwitchDisabled: boolean;
+  isLoading: boolean;
+  hasClue: boolean;
+  hasContext: boolean;
+  hasLesson: boolean;
+  hasNewLesson: boolean;
+}
 
-interface Props extends ConnectedStateToProps, _BottomTabBarProps {};
+interface Props extends ConnectedStateToProps, _BottomTabBarProps {}
 
 const INACTIVE_COLOR = theme.colors.gray.lightMedium;
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
@@ -37,7 +37,7 @@ const PLACEHOLDER_COLOR = theme.colors.gray.light;
 const styles = StyleSheet.create({
   inactiveText: {
     color: INACTIVE_COLOR,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   notification: {
     position: 'absolute',
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     left: '50%',
     bottom: 0,
     paddingVertical: theme.spacing.tiny,
-    paddingHorizontal: DEFAULT_HEIGHT / 2
+    paddingHorizontal: DEFAULT_HEIGHT / 2,
   },
   hidden: {
-    display: 'none'
-  }
+    display: 'none',
+  },
 });
 
 class TabBarSlide extends React.Component<Props> {
@@ -102,7 +102,7 @@ class TabBarSlide extends React.Component<Props> {
     if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
       return renderIcon({
         ...scene,
-        tintColor: INACTIVE_COLOR
+        tintColor: INACTIVE_COLOR,
       });
     }
 
@@ -199,7 +199,7 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
     hasClue: Boolean(slide && slide.clue),
     hasLesson: resources.length > 0,
     hasContext: context !== undefined,
-    hasNewLesson: !hasSeenLesson(state)
+    hasNewLesson: !hasSeenLesson(state),
   };
 };
 

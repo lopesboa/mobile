@@ -1,4 +1,4 @@
-import type {QCMQuestion} from '@types/coorp/progression-engine';
+import type {QCMQuestion, Lesson} from '../types/coorpacademy/progression-engine';
 
 import type {StoreState} from '../redux/store';
 import {createBrand} from './brands';
@@ -16,10 +16,10 @@ describe('storeFixture', () => {
         progressionEngine: {
           versions: {
             learner: '1',
-            microlearning: 'latest'
-          }
-        }
-      })
+            microlearning: 'latest',
+          },
+        },
+      }),
     });
     const versions =
       authState &&
@@ -28,7 +28,7 @@ describe('storeFixture', () => {
       authState.brand.progressionEngine.versions;
     expect(versions).toEqual({
       learner: '1',
-      microlearning: 'latest'
+      microlearning: 'latest',
     });
   });
 
@@ -40,7 +40,7 @@ describe('storeFixture', () => {
 
     const expectedResult = {
       [dummyObject1.ref]: dummyObject1,
-      [dummyObject2.ref]: dummyObject2
+      [dummyObject2.ref]: dummyObject2,
     };
 
     const result = createMapObject(mappableObject);
@@ -56,7 +56,7 @@ describe('storeFixture', () => {
 
     const expectedResult = {
       [dummyObject1.universalRef]: dummyObject1,
-      [dummyObject2.universalRef]: dummyObject2
+      [dummyObject2.universalRef]: dummyObject2,
     };
 
     const result = createMapObject(mappableObject);
@@ -72,7 +72,7 @@ describe('storeFixture', () => {
 
     const expectedResult = {
       [dummyObject1._id]: dummyObject1,
-      [dummyObject2._id]: dummyObject2
+      [dummyObject2._id]: dummyObject2,
     };
 
     const result = createMapObject(mappableObject);
@@ -104,25 +104,25 @@ describe('storeFixture', () => {
         data: level1.data,
         stats: level1.stats,
         version: level1.version,
-        external_refs: level1.external_refs
-      }
+        external_refs: level1.external_refs,
+      },
     };
 
     const media = {
-      mediaUrl: 'fakeMediaUrl'
+      mediaUrl: 'fakeMediaUrl',
     };
 
     const question: QCMQuestion = createQCM({media});
-    const lessons = [];
+    const lessons: Lesson[] = [];
 
     const slide1 = {
       ...createSlide({
         ref: 'ref',
         // @ts-ignore union type  :(
         question,
-        chapterId: 'lol'
+        chapterId: 'lol',
       }),
-      lessons
+      lessons,
     };
 
     const mappedSlide = {
@@ -137,8 +137,8 @@ describe('storeFixture', () => {
         clue: slide1.clue,
         context: slide1.context,
         question: slide1.question,
-        position: slide1.position
-      }
+        position: slide1.position,
+      },
     };
 
     const catalogState = {
@@ -146,8 +146,8 @@ describe('storeFixture', () => {
       sectionsRef: undefined,
       entities: {
         cards: {},
-        sections: {}
-      }
+        sections: {},
+      },
     };
 
     const authenticationState = {
@@ -155,7 +155,7 @@ describe('storeFixture', () => {
       user: createUser(),
       brand: {
         colors: {
-          primary: '#00B0FF'
+          primary: '#00B0FF',
         },
         contentCategoryName: 'Mobile',
         hero:
@@ -163,131 +163,131 @@ describe('storeFixture', () => {
         host: 'https://mobile-staging.coorpacademy.com',
         images: {
           'logo-mobile':
-            'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png'
+            'https://static.coorpacademy.com/content/mobile/raw/coorp_logo_infinite-1552063832916.png',
         },
         name: 'mobile',
         youtube: {
-          apiKey: '7Hi5iS4f4k34P1K3Y'
+          apiKey: '7Hi5iS4f4k34P1K3Y',
         },
         progressionEngine: {
           versions: {
             learner: '2',
-            microlearning: '2'
-          }
+            microlearning: '2',
+          },
         },
         supportedLanguages: ['fr', 'de', 'it', 'zh'],
         defaultLanguage: 'en',
-        env: 'staging'
-      }
+        env: 'staging',
+      },
     };
 
     const permissionsState = {
-      camera: undefined
+      camera: undefined,
     };
 
     const progressionsState = {
-      isSynchronizing: false
+      isSynchronizing: false,
     };
 
     const videoState = {
-      isFullScreen: false
+      isFullScreen: false,
     };
 
     const networkState = {
       isConnected: true,
       actionQueue: [],
-      isQueuePaused: false
+      isQueuePaused: false,
     };
 
     const progression = createProgression({
       engine: 'microlearning',
       progressionContent: {
         type: 'level',
-        ref: level1.ref
-      }
+        ref: level1.ref,
+      },
     });
 
     const data = {
       answers: {
-        entities: {}
+        entities: {},
       },
       comments: {
-        entities: {}
+        entities: {},
       },
       configs: {
-        entities: {}
+        entities: {},
       },
       contents: {
         level: {
-          entities: mappedLevel
+          entities: mappedLevel,
         },
         slide: {
-          entities: mappedSlide
+          entities: mappedSlide,
         },
         chapter: {
-          entities: {}
+          entities: {},
         },
         discipline: {
-          entities: {}
-        }
+          entities: {},
+        },
       },
       videos: {
-        entities: {}
+        entities: {},
       },
       clues: {
-        entities: {}
+        entities: {},
       },
       exitNodes: {
-        entities: {}
+        entities: {},
       },
       progressions: {
         entities: {
-          progression1: progression
-        }
+          progression1: progression,
+        },
       },
       rank: {},
       recommendations: {
-        entities: {}
+        entities: {},
       },
       nextContent: {
         entities: {
-          progression1: undefined
-        }
-      }
+          progression1: undefined,
+        },
+      },
     };
 
     const expectedResult: StoreState = {
       data: data,
       errors: {
-        isVisible: false
+        isVisible: false,
       },
       select: null,
       isValidating: false,
       search: {
-        isFetching: false
+        isFetching: false,
       },
       ui: {
         answers: {},
         coaches: {
-          availableCoaches: 0
+          availableCoaches: 0,
         },
         comments: {
-          text: null
+          text: null,
         },
         corrections: {
           accordion: [false, false, false],
-          playResource: 'foo'
+          playResource: 'foo',
         },
         current: {
-          progressionId: 'progression1'
+          progressionId: 'progression1',
         },
-        route: {}
+        route: {},
       },
       navigation: {
         currentNavigatorName: 'dummyNavigatorName',
         currentAppScreenName: 'dummycurrentAppScreenName',
         currentScreenName: 'dummyScreenName',
-        currentTabName: 'dummyTabName'
+        currentTabName: 'dummyTabName',
       },
       catalog: catalogState,
       permissions: permissionsState,
@@ -296,7 +296,7 @@ describe('storeFixture', () => {
       godMode: false,
       fastSlide: false,
       video: videoState,
-      network: networkState
+      network: networkState,
     };
 
     const result = createStoreState({
@@ -304,7 +304,7 @@ describe('storeFixture', () => {
       slides: [slide1],
       chapters: [],
       disciplines: [],
-      progression
+      progression,
     });
     expect(result).toEqual(expectedResult);
   });

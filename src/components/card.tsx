@@ -6,18 +6,18 @@ import theme from '../modules/theme';
 import {STYLE as BOX_STYLE} from './box';
 
 export interface Props {
-  children: React.ReactNode,
-  style?: ViewStyle,
-  testID?: string
-};
+  children: React.ReactNode;
+  style?: ViewStyle;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: theme.radius.card
+    borderRadius: theme.radius.card,
   },
   overflowHidden: {
-    overflow: 'hidden'
-  }
+    overflow: 'hidden',
+  },
 });
 
 const Card = ({children, style, testID}: Props) => (

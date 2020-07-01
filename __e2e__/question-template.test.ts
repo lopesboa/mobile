@@ -1,9 +1,10 @@
+import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   tapCardOnList,
   waitForExist,
-  waitForNotVisible
+  waitForNotVisible,
 } from './utils';
 
 describe('Template', () => {
@@ -18,21 +19,21 @@ describe('Template', () => {
 
   it('should see template elements', async () => {
     await waitForExist('question');
-    await weExpect(element(by.id('question-title'))).toBeVisible();
-    await weExpect(element(by.id('explanation'))).toBeVisible();
-    await weExpect(element(by.id('question-choices'))).toBeVisible();
-    await weExpect(element(by.id('question-template'))).toBeVisible();
-    await weExpect(element(by.id('question-section-1-part-1'))).toBeVisible();
-    await weExpect(element(by.id('question-section-1-part-2-text'))).toBeVisible();
-    await weExpect(element(by.id('question-section-1-part-3'))).toBeVisible();
-    await weExpect(element(by.id('question-section-1-part-4'))).toBeVisible();
-    await weExpect(element(by.id('question-section-1-part-4-select-input'))).toBeVisible();
-    await weExpect(element(by.id('button-validate-disabled'))).toBeVisible();
+    await expect(element(by.id('question-title'))).toBeVisible();
+    await expect(element(by.id('explanation'))).toBeVisible();
+    await expect(element(by.id('question-choices'))).toBeVisible();
+    await expect(element(by.id('question-template'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-1'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-2-text'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-3'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-4'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-4-select-input'))).toBeVisible();
+    await expect(element(by.id('button-validate-disabled'))).toBeVisible();
   });
 
   it('should fill text input', async () => {
     await element(by.id('question-section-1-part-2-text')).replaceText('Foobarbaz');
-    await weExpect(element(by.id('question-section-1-part-2-text-selected'))).toBeVisible();
+    await expect(element(by.id('question-section-1-part-2-text-selected'))).toBeVisible();
   });
 
   it('should open modal', async () => {
@@ -46,7 +47,7 @@ describe('Template', () => {
   });
 
   it('should be able to validate', async () => {
-    await weExpect(element(by.id('button-validate'))).toBeVisible();
+    await expect(element(by.id('button-validate'))).toBeVisible();
   });
 
   describe('Negative correction', () => {

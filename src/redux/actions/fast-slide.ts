@@ -4,8 +4,8 @@ import type {StoreAction} from '../_types';
 export const TOGGLE = '@@fast-slide/TOGGLE';
 
 export type Action = {
-  type: '@@fast-slide/TOGGLE',
-  payload: boolean
+  type: '@@fast-slide/TOGGLE';
+  payload: boolean;
 };
 
 export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
@@ -17,6 +17,6 @@ export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: 
 
   return dispatch({
     type: TOGGLE,
-    payload: !isFastSlideEnabled(state)
+    payload: !isFastSlideEnabled(state),
   });
 };

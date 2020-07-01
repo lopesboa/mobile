@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 
 import Home from '../components/home';
 import Screen from '../components/screen';
@@ -15,12 +15,11 @@ import {BackHandler} from '../modules/back-handler';
 export interface ConnectedStateProps {
   isFetching: boolean;
   isFocused: boolean;
-};
+}
 
 interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
-};
-
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
@@ -67,25 +66,22 @@ class HomeScreen extends React.PureComponent<Props> {
 
 const getIsFetchingState: (state: StoreState) => boolean = createSelector(
   [getToken],
-  token => !token
+  (token) => !token,
 );
 
 const getIsFocusedState: (state: StoreState) => boolean = createSelector(
   [getCurrentScreenName],
-  name => name === 'Home'
+  (name) => name === 'Home',
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   isFetching: getIsFetchingState(state),
-  isFocused: getIsFocusedState(state)
+  isFocused: getIsFocusedState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  selectCard
+  selectCard,
 };
 
 export {HomeScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

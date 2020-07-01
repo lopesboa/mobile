@@ -34,16 +34,16 @@ if (__TEST__) {
           currentIndex={0}
           onChange={handleChange}
           analytics={analytics}
-        />
+        />,
       );
       const authenticationSteps = component.root.find(
-        el => el.props.testID === 'authentication-steps'
+        (el) => el.props.testID === 'authentication-steps',
       );
       authenticationSteps.props.onChange(1);
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.SWIPE, {
         id: 'authentication-step',
         from: 0,
-        to: 1
+        to: 1,
       });
       expect(handleChange).toHaveBeenCalled();
     });

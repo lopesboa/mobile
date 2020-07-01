@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {
   NovaCompositionCoorpacademyAdaptive,
   NovaCompositionCoorpacademyTimer,
-  NovaSolidStatusCheckCircle2
+  NovaSolidStatusCheckCircle2,
 } from '@coorpacademy/nova-icons';
 
 import {CONTENT_TYPE, AUTHOR_TYPE, SPACE} from '../const';
@@ -17,49 +17,49 @@ import PlaceholderLine, {
   LARGE_HEIGHT as PLACEHOLDER_LARGE_HEIGHT,
   BASE_HEIGHT as PLACEHOLDER_BASE_HEIGHT,
   SMALL_HEIGHT as PLACEHOLDER_SMALL_HEIGHT,
-  TINY_HEIGHT as PLACEHOLDER_TINY_HEIGHT
+  TINY_HEIGHT as PLACEHOLDER_TINY_HEIGHT,
 } from './placeholder-line';
 import Space from './space';
 
 interface Props {
-  item?: ChapterCard | DisciplineCard,
-  testID: string,
-  size?: 'cover' | 'hero'
-};
+  item?: ChapterCard | DisciplineCard;
+  testID: string;
+  size?: 'cover' | 'hero';
+}
 
 export const PLACEHOLDER_COLOR = theme.colors.gray.lightMedium;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   icons: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   textCentered: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   title: {
     color: theme.colors.white,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   subtitleContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   subtitle: {
     flex: 1,
     color: theme.colors.white,
-    fontWeight: theme.fontWeight.regular
+    fontWeight: theme.fontWeight.regular,
   },
   progressionBar: {
     borderRadius: theme.radius.common,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   progressionBarCentered: {
     width: '60%',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   placeholder: {
     // @todo to be removed once we got a proper placeholder-line component
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       theme.spacing.base +
       PLACEHOLDER_SMALL_HEIGHT +
       theme.spacing.small +
-      PLACEHOLDER_TINY_HEIGHT
+      PLACEHOLDER_TINY_HEIGHT,
   },
   placeholderHero: {
     // @todo to be removed once we got a proper placeholder-line component
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
       theme.spacing.base +
       PLACEHOLDER_SMALL_HEIGHT +
       theme.spacing.small +
-      PLACEHOLDER_TINY_HEIGHT
-  }
+      PLACEHOLDER_TINY_HEIGHT,
+  },
 });
 
 const CatalogItemFooter = ({item, testID, size}: Props) => {

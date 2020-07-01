@@ -8,12 +8,10 @@ describe('Brand service', () => {
     const BRAND = createBrand();
 
     const fetchBrand = jest.fn();
-    fetchBrand.mockImplementationOnce(
-      ((token: string) => {
-        expect(token).toEqual(TOKEN);
-        return Promise.resolve(BRAND);
-      })
-    ) as Pick<DataLayer, 'fetchBrand'>;
+    fetchBrand.mockImplementationOnce((token: string) => {
+      expect(token).toEqual(TOKEN);
+      return Promise.resolve(BRAND);
+    }) as Pick<DataLayer, 'fetchBrand'>;
 
     // @ts-ignore
     const service = createService({fetchBrand});
@@ -24,12 +22,10 @@ describe('Brand service', () => {
     const TOKEN = '__TOKEN__';
 
     const fetchBrand = jest.fn();
-    fetchBrand.mockImplementationOnce(
-      ((token: string) => {
-        expect(token).toEqual(TOKEN);
-        return Promise.reject(new Error());
-      })
-    ) as Pick<DataLayer, 'fetchBrand'>;
+    fetchBrand.mockImplementationOnce((token: string) => {
+      expect(token).toEqual(TOKEN);
+      return Promise.reject(new Error());
+    }) as Pick<DataLayer, 'fetchBrand'>;
 
     // @ts-ignore
     const service = createService({fetchBrand});

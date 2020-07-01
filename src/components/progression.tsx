@@ -14,24 +14,24 @@ interface Props {
 const styles = StyleSheet.create({
   labelContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   label: {
     flexDirection: 'row',
     paddingHorizontal: theme.spacing.tiny,
     paddingVertical: theme.spacing.micro,
     backgroundColor: theme.colors.gray.light,
-    borderBottomLeftRadius: theme.radius.medium
+    borderBottomLeftRadius: theme.radius.medium,
   },
   current: {
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.medium
+    fontSize: theme.fontSize.medium,
   },
   total: {
     color: theme.colors.gray.medium,
     fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.medium
-  }
+    fontSize: theme.fontSize.medium,
+  },
 });
 
 const Progression = ({current, total}: Props) => {

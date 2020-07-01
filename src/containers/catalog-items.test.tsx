@@ -19,17 +19,17 @@ const cardsRef = [
   'waldo',
   'fred',
   'plugh',
-  'xyzzy'
+  'xyzzy',
 ];
 const cards: Array<DisciplineCard | ChapterCard | void> = cardsRef.map(
-  ref =>
+  (ref) =>
     ref &&
     createChapterCard({
       ref,
       completion: 0,
       title: 'Fake chapter',
-      status: CARD_STATUS.ACTIVE
-    })
+      status: CARD_STATUS.ACTIVE,
+    }),
 );
 
 describe('CatalogItems', () => {
@@ -129,15 +129,15 @@ describe('CatalogItems', () => {
           onCardPress={handleFakePress}
           onScroll={handleScroll}
           layout={fakeLayout}
-        />
+        />,
       );
-      const list = component.root.find(el => el.props.testID === 'catalog-items');
+      const list = component.root.find((el) => el.props.testID === 'catalog-items');
       const scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            x: ITEM_WIDTH
-          }
-        }
+            x: ITEM_WIDTH,
+          },
+        },
       };
       list.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -159,15 +159,15 @@ describe('CatalogItems', () => {
           onCardPress={handleFakePress}
           onScroll={handleScroll}
           layout={fakeLayout}
-        />
+        />,
       );
-      const list = component.root.find(el => el.props.testID === 'catalog-items');
+      const list = component.root.find((el) => el.props.testID === 'catalog-items');
       const scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            x: ITEM_WIDTH
-          }
-        }
+            x: ITEM_WIDTH,
+          },
+        },
       };
       list.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -189,15 +189,15 @@ describe('CatalogItems', () => {
           onCardPress={handleFakePress}
           onScroll={handleScroll}
           layout={fakeLayout}
-        />
+        />,
       );
-      const list = component.root.find(el => el.props.testID === 'catalog-items');
+      const list = component.root.find((el) => el.props.testID === 'catalog-items');
       const scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: ITEM_HEIGHT
-          }
-        }
+            y: ITEM_HEIGHT,
+          },
+        },
       };
       list.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -220,15 +220,15 @@ describe('CatalogItems', () => {
           onCardPress={handleFakePress}
           onScroll={handleScroll}
           layout={fakeLayout}
-        />
+        />,
       );
-      const list = component.root.find(el => el.props.testID === 'catalog-items');
+      const list = component.root.find((el) => el.props.testID === 'catalog-items');
       const scrollEvent: ScrollEvent = {
         nativeEvent: {
           contentOffset: {
-            y: ITEM_HEIGHT
-          }
-        }
+            y: ITEM_HEIGHT,
+          },
+        },
       };
       list.props.onScroll(scrollEvent);
       jest.advanceTimersByTime(DEBOUNCE_DURATION);
@@ -244,10 +244,10 @@ describe('CatalogItems', () => {
     const {Component: CatalogItems} = require('./catalog-items');
 
     const component = renderer.create(
-      <CatalogItems onCardPress={handleFakePress} onScroll={handleFakePress} />
+      <CatalogItems onCardPress={handleFakePress} onScroll={handleFakePress} />,
     );
 
-    const list = component.root.find(el => el.props.testID === 'catalog-items');
+    const list = component.root.find((el) => el.props.testID === 'catalog-items');
     list.props.onScrollBeginDrag();
 
     expect(Keyboard.dismiss).toHaveBeenCalledTimes(1);

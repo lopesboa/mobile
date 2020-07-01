@@ -9,7 +9,7 @@ import {mapToLevelAPI, mapToChapterAPI, mapToSlideAPI} from './mappers';
 
 export const find = async (
   resourceType: RestrictedResourceType,
-  ref: string
+  ref: string,
 ): Promise<ChapterAPI | LevelAPI | SlideAPI | void> => {
   const language = translations.getLanguage();
   // @ts-ignore exact type vs inexact type

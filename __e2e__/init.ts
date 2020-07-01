@@ -1,6 +1,6 @@
 import detox from 'detox';
 import adapter from 'detox/runners/jest/adapter';
-import json from '../package';
+import json from '../package.json';
 
 const config = json.detox;
 
@@ -11,16 +11,9 @@ jest.setTimeout(3000000);
 
 beforeAll(async () => {
   await detox.init(config);
-
-  // since we mix jest & detox in our codebase, we cannot use flow
-  // with a single config that mix multiples interfaces
-  // here is a simple trick to avoid much pain
-  // (we force weExpect type to match what we want)
-  // @ts-ignore
-  global.weExpect = expect;
 });
 
-beforeEach(async function() {
+beforeEach(async function () {
   await adapter.beforeEach();
 });
 

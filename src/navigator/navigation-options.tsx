@@ -13,8 +13,8 @@ export const INITIAL_ROUTE_NAME = 'Authentication';
 
 const styles = StyleSheet.create({
   back: {
-    paddingLeft: theme.spacing.base
-  }
+    paddingLeft: theme.spacing.base,
+  },
 });
 
 const navigationOptions: NavigationScreenConfig<any> = {
@@ -24,7 +24,7 @@ const navigationOptions: NavigationScreenConfig<any> = {
     flex: 1,
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.regular,
-    color: theme.colors.gray.dark
+    color: theme.colors.gray.dark,
   },
   headerStyle: {
     backgroundColor: SCREEN_BACKGROUND_COLOR,
@@ -33,10 +33,10 @@ const navigationOptions: NavigationScreenConfig<any> = {
     borderBottomColor: 'transparent',
     borderBottomWidth: 0,
     paddingTop: 0,
-    height: HEADER_HEIGHT
+    height: HEADER_HEIGHT,
   },
   headerLeft: HeaderLeft,
-  headerBackImage: <HeaderBackIcon style={styles.back} />
+  headerBackImage: <HeaderBackIcon style={styles.back} />,
 };
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<any> = {
@@ -48,8 +48,8 @@ export const navigationOptionsWithoutHeader: NavigationScreenConfig<any> = {
   gesturesEnabled: false,
   headerStyle: {
     ...navigationOptions.headerStyle,
-    height: 0
-  }
+    height: 0,
+  },
 };
 
 export default navigationOptions;

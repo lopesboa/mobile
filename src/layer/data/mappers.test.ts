@@ -3,8 +3,8 @@ import type {
   SlideAPI,
   ExitNodeAPI,
   LevelAPI,
-  LessonAPI
-} from '@types/coorp/player-services';
+  LessonAPI,
+} from '../../types/coorpacademy/player-services';
 
 import type {Resource} from '../../types';
 import {createQCM} from '../../__fixtures__/questions';
@@ -19,7 +19,7 @@ import {
   mapToExitNodeAPI,
   mapToLessonAPI,
   mapToLevelAPI,
-  mapToResource
+  mapToResource,
 } from './mappers';
 import {EXIT_NODE_TYPE} from './_const';
 
@@ -51,7 +51,7 @@ export const mapToLevelAPIExpectedResult: LevelAPI = {
   data: level.data,
   stats: level.stats,
   version: level.version,
-  external_refs: level.external_refs
+  external_refs: level.external_refs,
 };
 
 export const mapToChapterAPIExpectedResult: ChapterAPI = {
@@ -64,7 +64,7 @@ export const mapToChapterAPIExpectedResult: ChapterAPI = {
   poster: chapter.poster,
   isConditional: chapter.isConditional,
   time: chapter.time,
-  version: chapter.version
+  version: chapter.version,
 };
 
 export const mapToExitNodeAPIExpectedResult: ExitNodeAPI = {
@@ -73,7 +73,7 @@ export const mapToExitNodeAPIExpectedResult: ExitNodeAPI = {
   meta: failureExitNode.meta,
   title: failureExitNode.title,
   description: failureExitNode.description,
-  media: failureExitNode.media
+  media: failureExitNode.media,
 };
 
 export const mapToLessonAPIExpectedResult: LessonAPI = {
@@ -89,7 +89,7 @@ export const mapToLessonAPIExpectedResult: LessonAPI = {
   src: lesson.src,
   subtitles: lesson.subtitles,
   type: lesson.type,
-  videoId: lesson.videoId
+  videoId: lesson.videoId,
 };
 
 export const mapToSlideAPIExpectedResult: SlideAPI = {
@@ -97,18 +97,18 @@ export const mapToSlideAPIExpectedResult: SlideAPI = {
   chapter_id: slide.chapter_id,
   klf: slide.klf,
   authors: slide.authors,
-  lessons: slide.lessons.map(item => mapToLessonAPIExpectedResult),
+  lessons: slide.lessons.map((item) => mapToLessonAPIExpectedResult),
   meta: slide.meta,
   tips: slide.tips,
   clue: slide.clue,
   context: slide.context,
   question: slide.question,
-  position: slide.position
+  position: slide.position,
 };
 
 export const mapToResourceExpectedResult: Resource = {
   ...lesson,
-  url: 'https://content.jwplatform.com/videos/KovTu3zU.mp4'
+  url: 'https://content.jwplatform.com/videos/KovTu3zU.mp4',
 };
 
 describe('mappers', () => {
@@ -147,5 +147,5 @@ export default {
   mapToLevelAPIExpectedResult,
   mapToChapterAPIExpectedResult,
   mapToSlideAPIExpectedResult,
-  mapToExitNodeAPIExpectedResult
+  mapToExitNodeAPIExpectedResult,
 };

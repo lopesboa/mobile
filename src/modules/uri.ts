@@ -36,7 +36,7 @@ export type QueryParams = {
 
 export const buildUrlQueryParams = (params: QueryParams) =>
   Object.keys(params)
-    .map(key => {
+    .map((key) => {
       const value = params[key].toString();
       return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
     })

@@ -7,7 +7,7 @@ describe('Migrations runner', () => {
     const {runMigrations} = require('./runner');
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations: Migrations = {
-      '2': [key => key.startsWith('@@token'), (value, key) => Promise.resolve(value)]
+      '2': [(key) => key.startsWith('@@token'), (value, key) => Promise.resolve(value)],
     };
 
     AsyncStorage.getAllKeys = jest.fn(() =>
@@ -16,11 +16,11 @@ describe('Migrations runner', () => {
         'card:en:mod_Vkb8j0-nP',
         '@@token',
         'card:en:mod_4JotIQRFWj',
-        'synchronized_progressions'
-      ])
+        'synchronized_progressions',
+      ]),
     );
     AsyncStorage.getItem = jest.fn(
-      key => key.startsWith('@@token') && Promise.resolve('baseToken')
+      (key) => key.startsWith('@@token') && Promise.resolve('baseToken'),
     );
     AsyncStorage.setItem = jest.fn().mockImplementationOnce((key, value) => {
       expect(key).toBe('async_storage_version');
@@ -36,11 +36,11 @@ describe('Migrations runner', () => {
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations = {
       '2': [
-        key => key.startsWith('@@token'),
+        (key) => key.startsWith('@@token'),
         (value, key) => {
           return Promise.resolve(value);
-        }
-      ]
+        },
+      ],
     };
 
     AsyncStorage.getAllKeys = jest.fn(() =>
@@ -49,10 +49,12 @@ describe('Migrations runner', () => {
         'card:en:mod_Vkb8j0-nP',
         '@@token',
         'card:en:mod_4JotIQRFWj',
-        'synchronized_progressions'
-      ])
+        'synchronized_progressions',
+      ]),
     );
-    AsyncStorage.getItem = jest.fn(key => key.startsWith('@@token') && Promise.resolve(undefined));
+    AsyncStorage.getItem = jest.fn(
+      (key) => key.startsWith('@@token') && Promise.resolve(undefined),
+    );
     AsyncStorage.setItem = jest.fn().mockImplementationOnce((key, value) => {
       expect(key).toBe('async_storage_version');
       expect(value).toEqual('2');
@@ -67,9 +69,9 @@ describe('Migrations runner', () => {
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations: Migrations = {
       '2': [
-        key => key.startsWith('@@token'),
-        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
-      ]
+        (key) => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`),
+      ],
     };
 
     AsyncStorage.getAllKeys = jest.fn(() =>
@@ -78,11 +80,11 @@ describe('Migrations runner', () => {
         'card:en:mod_Vkb8j0-nP',
         '@@token',
         'card:en:mod_4JotIQRFWj',
-        'synchronized_progressions'
-      ])
+        'synchronized_progressions',
+      ]),
     );
     AsyncStorage.getItem = jest.fn(
-      key => key.startsWith('@@token') && Promise.resolve('baseToken')
+      (key) => key.startsWith('@@token') && Promise.resolve('baseToken'),
     );
     AsyncStorage.setItem = jest
       .fn()
@@ -104,9 +106,9 @@ describe('Migrations runner', () => {
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations: Migrations = {
       '2': [
-        key => key.startsWith('@@token'),
-        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
-      ]
+        (key) => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`),
+      ],
     };
 
     AsyncStorage.getAllKeys = jest.fn(() =>
@@ -115,8 +117,8 @@ describe('Migrations runner', () => {
         'card:en:mod_Vkb8j0-nP',
         '@@token',
         'card:en:mod_4JotIQRFWj',
-        'synchronized_progressions'
-      ])
+        'synchronized_progressions',
+      ]),
     );
 
     AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(2));
@@ -131,17 +133,17 @@ describe('Migrations runner', () => {
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations: Migrations = {
       '3': [
-        key => key.startsWith('@@token'),
-        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
+        (key) => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`),
       ],
       '4': [
-        key => key.startsWith('progression'),
+        (key) => key.startsWith('progression'),
         (value, key) => {
           const progression = JSON.parse(value);
           progression._id = 'newProgressionId';
           return Promise.resolve(JSON.stringify(progression));
-        }
-      ]
+        },
+      ],
     };
 
     const goodProgression = createProgression({
@@ -149,17 +151,17 @@ describe('Migrations runner', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: 'mod_1',
-        type: CONTENT_TYPE.LEVEL
+        type: CONTENT_TYPE.LEVEL,
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SUCCESS,
-          ref: 'suc_1'
-        }
-      }
+          ref: 'suc_1',
+        },
+      },
     });
 
-    AsyncStorage.getItem = jest.fn(key => {
+    AsyncStorage.getItem = jest.fn((key) => {
       if (key.startsWith('@@token')) return Promise.resolve('baseToken');
       if (key.startsWith('progression')) return Promise.resolve(JSON.stringify(goodProgression));
       if (key.startsWith('async_')) return Promise.resolve(2);
@@ -170,8 +172,8 @@ describe('Migrations runner', () => {
         'card:en:dis_NJ9KIQ0F~j',
         'card:en:mod_Vkb8j0-nP',
         '@@token',
-        'progression_5dee52c8a7da3a8443ed7a3a'
-      ])
+        'progression_5dee52c8a7da3a8443ed7a3a',
+      ]),
     );
 
     AsyncStorage.setItem = jest
@@ -202,21 +204,21 @@ describe('Migrations runner', () => {
     const AsyncStorage = require('@react-native-community/async-storage');
     const migrations: Migrations = {
       '3': [
-        key => key.startsWith('@@token'),
-        (value, key) => Promise.resolve(`${value}_@coorpacademy`)
+        (key) => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy`),
       ],
       '4': [
-        key => key.startsWith('progression'),
+        (key) => key.startsWith('progression'),
         (value, key) => {
           const progression = JSON.parse(value);
           progression._id = 'badProgressionId';
           return Promise.reject(new Error('Something bad happened'));
-        }
+        },
       ],
       '5': [
-        key => key.startsWith('@@token'),
-        (value, key) => Promise.resolve(`${value}_@coorpacademy@learner`)
-      ]
+        (key) => key.startsWith('@@token'),
+        (value, key) => Promise.resolve(`${value}_@coorpacademy@learner`),
+      ],
     };
 
     const goodProgression = createProgression({
@@ -224,17 +226,17 @@ describe('Migrations runner', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         ref: 'mod_1',
-        type: CONTENT_TYPE.LEVEL
+        type: CONTENT_TYPE.LEVEL,
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SUCCESS,
-          ref: 'suc_1'
-        }
-      }
+          ref: 'suc_1',
+        },
+      },
     });
 
-    AsyncStorage.getItem = jest.fn(key => {
+    AsyncStorage.getItem = jest.fn((key) => {
       if (key.startsWith('@@token')) return Promise.resolve('baseToken');
       if (key.startsWith('progression')) return Promise.resolve(JSON.stringify(goodProgression));
       if (key.startsWith('async_')) return Promise.resolve(2);

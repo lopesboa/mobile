@@ -8,24 +8,24 @@ import withVibration from '../containers/with-vibration';
 import type {WithVibrationProps} from '../containers/with-vibration';
 
 export type DeckCard = {
-  answers?: Answer,
-  userAnswers?: Answer,
-  isCorrect: boolean,
-  title: string,
-  type: DeckCardType,
-  resource?: Resource,
-  offeringExtraLife?: boolean
+  answers?: Answer;
+  userAnswers?: Answer;
+  isCorrect: boolean;
+  title: string;
+  type: DeckCardType;
+  resource?: Resource;
+  offeringExtraLife?: boolean;
 };
 
 export interface Props extends WithVibrationProps {
-  testID: string,
-  items: Array<DeckCard>,
-  renderItem: (arg0: DeckCard, arg1: number) => React.ReactNode,
-  cardStyle?: ViewStyleProp,
-  onSwiped: (cardIndexSwiped: number) => void,
-  onSwipedAll: () => void,
-  cardIndexShown?: number
-};
+  testID: string;
+  items: Array<DeckCard>;
+  renderItem: (arg0: DeckCard, arg1: number) => React.ReactNode;
+  cardStyle?: ViewStyleProp;
+  onSwiped: (cardIndexSwiped: number) => void;
+  onSwipedAll: () => void;
+  cardIndexShown?: number;
+}
 
 class DeckCards extends React.PureComponent<Props> {
   swiper: DeckSwiper;

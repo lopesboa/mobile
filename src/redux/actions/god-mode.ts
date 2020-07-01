@@ -4,8 +4,8 @@ import type {StoreAction} from '../_types';
 export const TOGGLE = '@@god-mode/TOGGLE';
 
 export type Action = {
-  type: '@@god-mode/TOGGLE',
-  payload: boolean
+  type: '@@god-mode/TOGGLE';
+  payload: boolean;
 };
 
 export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
@@ -17,6 +17,6 @@ export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: 
 
   return dispatch({
     type: TOGGLE,
-    payload: !isGodModeEnabled(state)
+    payload: !isGodModeEnabled(state),
   });
 };

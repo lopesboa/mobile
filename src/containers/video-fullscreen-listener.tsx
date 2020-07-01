@@ -11,15 +11,15 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     left: 0,
-    zIndex: 9999
-  }
+    zIndex: 9999,
+  },
 });
 
 interface ConnectedStateProps {
   isFullScreen: boolean;
 }
 
-interface Props extends ConnectedStateProps {}
+type Props = ConnectedStateProps;
 
 class VideoFullscreenListener extends React.PureComponent<Props> {
   componentDidMount() {
@@ -40,7 +40,7 @@ class VideoFullscreenListener extends React.PureComponent<Props> {
     }
 
     const childrenProps = {
-      isFullscreen: true
+      isFullscreen: true,
     };
 
     return (
@@ -53,7 +53,7 @@ class VideoFullscreenListener extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = ({video}: StoreState): ConnectedStateProps => ({
-  isFullScreen: video.isFullScreen
+  isFullScreen: video.isFullScreen,
 });
 
 export default connect(mapStateToProps)(VideoFullscreenListener);

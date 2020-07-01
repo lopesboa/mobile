@@ -13,7 +13,7 @@ storiesOf('PDF', module).add('Remote', () => (
   <Pdf
     source={{
       uri:
-        'https://s3.eu-west-1.amazonaws.com/static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/former-un-adverbe-en-ment-1546614694171.pdf'
+        'https://s3.eu-west-1.amazonaws.com/static.coorpacademy.com/content/CoorpAcademy/content-bescherelle/cockpit-bescherelle/raw/former-un-adverbe-en-ment-1546614694171.pdf',
     }}
   />
 ));

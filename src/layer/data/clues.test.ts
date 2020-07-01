@@ -23,9 +23,9 @@ jest.mock('./core', () => {
       }
       return Promise.resolve({
         ...slide,
-        clue: ref === 'ref_withclue' ? slide.clue : undefined
+        clue: ref === 'ref_withclue' ? slide.clue : undefined,
       });
-    }
+    },
   };
 });
 

@@ -16,7 +16,7 @@ storiesOf('ButtonSticky', module)
       testID="button-fake"
       layout={{
         width: 300,
-        height: 400
+        height: 400,
       }}
       analyticsID="button-fake"
     >

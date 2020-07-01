@@ -7,7 +7,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import Card from './card';
 import CatalogItem, {
   WIDTH as CATALOG_ITEM_WIDTH,
-  HEIGHT as CATALOG_ITEM_HEIGHT
+  HEIGHT as CATALOG_ITEM_HEIGHT,
 } from './catalog-item';
 
 export const ITEM_OFFSET = theme.spacing.micro;
@@ -17,27 +17,27 @@ export const ITEM_HEIGHT = CATALOG_ITEM_HEIGHT + ITEM_OFFSET * 2;
 const styles = StyleSheet.create({
   item: {
     // to see the shadow
-    margin: ITEM_OFFSET
+    margin: ITEM_OFFSET,
   },
   card: {
     flex: 0,
     width: CATALOG_ITEM_WIDTH,
-    height: CATALOG_ITEM_HEIGHT
-  }
+    height: CATALOG_ITEM_HEIGHT,
+  },
 });
 
 type EmptyCard = {};
 
 export interface Props {
-  cards?: Array<DisciplineCard | ChapterCard | void>,
-  onCardPress?: (arg0: DisciplineCard | ChapterCard) => void,
-  onScroll?: (arg0: ScrollEvent) => void,
-  onScrollBeginDrag?: (arg0: ScrollEvent) => void,
-  placeholderLength?: number,
-  numColumns?: number,
-  style?: ViewStyle,
-  testID?: string
-};
+  cards?: Array<DisciplineCard | ChapterCard | void>;
+  onCardPress?: (arg0: DisciplineCard | ChapterCard) => void;
+  onScroll?: (arg0: ScrollEvent) => void;
+  onScrollBeginDrag?: (arg0: ScrollEvent) => void;
+  placeholderLength?: number;
+  numColumns?: number;
+  style?: ViewStyle;
+  testID?: string;
+}
 
 class CatalogItems extends React.PureComponent<Props> {
   keyExtractor = (item: DisciplineCard | ChapterCard | EmptyCard, index: number) => {
@@ -51,14 +51,14 @@ class CatalogItems extends React.PureComponent<Props> {
 
   getItemLayout = (
     data?: Array<DisciplineCard | ChapterCard | EmptyCard> | null,
-    index: number
+    index: number,
   ) => ({
     length: ITEM_WIDTH,
     offset: ITEM_WIDTH * index,
-    index
+    index,
   });
 
-  renderItem = ({item, index}: {item: DisciplineCard | ChapterCard | EmptyCard, index: number}) => {
+  renderItem = ({item, index}: {item: DisciplineCard | ChapterCard | EmptyCard; index: number}) => {
     const {onCardPress} = this.props;
     const testID = this.keyExtractor(item, index);
 
@@ -84,7 +84,7 @@ class CatalogItems extends React.PureComponent<Props> {
       placeholderLength = 0,
       numColumns,
       style,
-      testID = 'catalog-items'
+      testID = 'catalog-items',
     } = this.props;
 
     const _cards = cards && cards.length > 0 ? cards : new Array(placeholderLength).fill();
@@ -93,7 +93,7 @@ class CatalogItems extends React.PureComponent<Props> {
       <FlatList
         // Empty object to prevent filtering when using numColumns
         // https://github.com/facebook/react-native/blob/master/Libraries/Lists/FlatList.js#L495
-        data={_cards.map(item => item || {})}
+        data={_cards.map((item) => item || {})}
         renderItem={this.renderItem}
         keyExtractor={this.keyExtractor}
         getItemLayout={this.getItemLayout}

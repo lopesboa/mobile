@@ -6,7 +6,7 @@ describe('Cards', () => {
     it('should get the action', () => {
       const result = clearSearch();
       const expected: Action = {
-        type: CLEAR_SEARCH
+        type: CLEAR_SEARCH,
       };
 
       expect(result).toEqual(expected);

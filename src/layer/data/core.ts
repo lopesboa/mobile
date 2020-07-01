@@ -9,7 +9,7 @@ export const buildKey = (resourceType: ResourceType, language: SupportedLanguage
 export const getItem = async (
   resourceType: ResourceType,
   language: SupportedLanguage,
-  ref: string
+  ref: string,
 ): Promise<Resource> => {
   const key = buildKey(resourceType, language, ref);
   try {
@@ -25,18 +25,18 @@ export const filterKeys = (regex: RegExp, keys: Array<string>): Array<string> =>
 
 export const getItemsPerResourceType = async (
   resourceType: ResourceType,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ) => {
   const keys = await AsyncStorage.getAllKeys();
   const regex = new RegExp(`^(${resourceType}:${language}:(.+)+)`, 'gm');
   const filteredKeys = filterKeys(regex, keys);
   const items = await AsyncStorage.multiGet(filteredKeys);
 
-  return items.map(item => JSON.parse(item[1]));
+  return items.map((item) => JSON.parse(item[1]));
 };
 
 export default {
   getItem,
   buildKey,
-  getItemsPerResourceType
+  getItemsPerResourceType,
 };

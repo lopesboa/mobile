@@ -21,12 +21,12 @@ if (!secretAccessKey) {
 const pullConfigFile = (key: string, outputFile: string) => {
   const s3 = new S3({
     accessKeyId,
-    secretAccessKey
+    secretAccessKey,
   });
 
   const params = {
     Bucket: 'secure.coorpacademy.com',
-    Key: key
+    Key: key,
   };
 
   // eslint-disable-next-line no-console

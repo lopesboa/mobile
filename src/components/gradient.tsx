@@ -20,7 +20,7 @@ const Gradient = ({
   height,
   style,
   testID,
-  pointerEvents
+  pointerEvents,
 }: Props) => {
   let calculatedColors = colors;
   if (colors.length === 1) {

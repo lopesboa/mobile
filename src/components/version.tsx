@@ -13,8 +13,8 @@ interface Props {
 const styles = StyleSheet.create({
   version: {
     fontSize: theme.fontSize.extraSmall,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 const Version = ({style}: Props) => (

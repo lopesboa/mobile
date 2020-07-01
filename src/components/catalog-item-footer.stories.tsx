@@ -10,41 +10,41 @@ const disciplineCard = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
   levels: [levelCard],
-  title: 'Discipline card'
+  title: 'Discipline card',
 });
 const disciplineCardAdaptive = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
   levels: [levelCard],
   title: 'Discipline card',
-  isAdaptive: true
+  isAdaptive: true,
 });
 const disciplineCardWithoutAuthor = createDisciplineCard({
   ref: 'foo',
   completion: 0.3,
   levels: [levelCard],
   title: 'Discipline card',
-  authors: []
+  authors: [],
 });
 const chapterCard = createChapterCard({
   ref: 'bar',
   completion: 0.8,
   title: 'Chapter card',
-  status: CARD_STATUS.ACTIVE
+  status: CARD_STATUS.ACTIVE,
 });
 const chapterCardAdaptive = createChapterCard({
   ref: 'bar',
   completion: 0.8,
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
-  isAdaptive: true
+  isAdaptive: true,
 });
 const chapterCardWithoutAuthor = createChapterCard({
   ref: 'bar',
   completion: 0.8,
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
-  authors: []
+  authors: [],
 });
 
 storiesOf('CatalogItemFooter', module)

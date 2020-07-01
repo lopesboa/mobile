@@ -13,16 +13,16 @@ describe('Brands', () => {
       const options = {
         services: {
           Brands: {
-            find: jest.fn()
-          }
-        }
+            find: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchSuccess(brand));
         return action;
       });
@@ -39,16 +39,16 @@ describe('Brands', () => {
       const options = {
         services: {
           Brands: {
-            find: jest.fn()
-          }
-        }
+            find: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(new Error('Token not defined')));
         return action;
       });
@@ -66,16 +66,16 @@ describe('Brands', () => {
       const options = {
         services: {
           Brands: {
-            find: jest.fn()
-          }
-        }
+            find: jest.fn(),
+          },
+        },
       };
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchRequest());
         return action;
       });
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(fetchError(fakeError));
         return action;
       });

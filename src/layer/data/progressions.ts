@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import type {Progression, Action, ContentType} from '@types/coorp/progression-engine';
 import decode from 'jwt-decode';
 import {groupBy} from 'lodash/fp';
 import {heroRecommendation} from '@coorpacademy/progression-aggregations';
+import type {Progression, Action, ContentType} from '../../types/coorpacademy/progression-engine';
 
 import {__E2E__} from '../../modules/environment';
 import fetch from '../../modules/fetch';
@@ -28,17 +28,17 @@ export const mapProgressionToCompletion = (progression: Progression): Completion
   const {current} = state.step;
   return {
     current: isFailure(progression) || current === 0 ? 0 : current - 1,
-    stars: state.stars
+    stars: state.stars,
   };
 };
 
 export const mergeCompletion = (
   previousCompletion: Completion,
-  latestCompletion: Completion
+  latestCompletion: Completion,
 ): Completion => {
   return {
     current: latestCompletion.current,
-    stars: Math.max(previousCompletion.stars, latestCompletion.stars)
+    stars: Math.max(previousCompletion.stars, latestCompletion.stars),
   };
 };
 
@@ -49,7 +49,7 @@ export const storeOrReplaceCompletion = async (progression: Progression): Promis
   if (stringifiedCompletion) {
     const mergedCompletion = mergeCompletion(
       JSON.parse(stringifiedCompletion),
-      mapProgressionToCompletion(progression)
+      mapProgressionToCompletion(progression),
     );
     await AsyncStorage.mergeItem(completionKey, JSON.stringify(mergedCompletion));
     return mergedCompletion;
@@ -73,7 +73,7 @@ const findById = async (id: string) => {
 
 const getAll = async (): Promise<Array<Progression>> => {
   const keys = await AsyncStorage.getAllKeys();
-  const filteredKeys = keys.filter(key => key.startsWith('progression'));
+  const filteredKeys = keys.filter((key) => key.startsWith('progression'));
   const items = await AsyncStorage.multiGet(filteredKeys);
 
   return items.map(([key, value]) => JSON.parse(value));
@@ -92,7 +92,7 @@ const META = {source: 'mobile'};
 const synchronize = async (
   token: string,
   host: string,
-  progression: Progression
+  progression: Progression,
 ): Promise<void> => {
   const {_id, content, actions, engine, engineOptions} = progression;
 
@@ -103,7 +103,7 @@ const synchronize = async (
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
       'Content-Type': 'application/json',
-      Authorization: token
+      Authorization: token,
     },
     body: JSON.stringify({
       _id,
@@ -111,8 +111,8 @@ const synchronize = async (
       actions,
       engine,
       engineOptions,
-      meta: META
-    })
+      meta: META,
+    }),
   });
 
   if (response.status === 403) throw new ForbiddenError(response.statusText);
@@ -126,7 +126,7 @@ const synchronize = async (
 const findRemoteProgressionById = async (
   token: string,
   host: string,
-  progressionId: string
+  progressionId: string,
 ): Promise<Progression | null> => {
   if (!progressionId) throw new TypeError('Must provide a progressionId');
   const response = await fetch(`${host}/api/v2/progressions/${progressionId}`, {
@@ -134,8 +134,8 @@ const findRemoteProgressionById = async (
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
       'Content-Type': 'application/json',
-      Authorization: token
-    }
+      Authorization: token,
+    },
   });
   if (response.status >= 400 && response.status !== 404) {
     throw new Error(response.statusText);
@@ -159,10 +159,10 @@ const addCreatedAtToAction = (progression: Progression): Progression => {
           // @ts-ignore spread operator
           return {
             ...action,
-            createdAt: action.createdAt || now
+            createdAt: action.createdAt || now,
           };
-        }
-      )
+        },
+      ),
   };
 };
 
@@ -173,7 +173,7 @@ const persist = async (progression: Progression): Promise<Progression> => {
   await AsyncStorage.setItem(buildProgressionKey(_id), JSON.stringify(progression));
   await AsyncStorage.setItem(
     buildLastProgressionKey(progression.engine.ref, progression.content.ref),
-    _id
+    _id,
   );
 
   storeOrReplaceCompletion(progression);
@@ -211,13 +211,13 @@ const findLast = async (engineRef: string, contentRef: string) => {
 };
 
 export type FindBestOfResult = {
-  stars: number
+  stars: number;
 };
 
 export const findApiBestOf = async (
   engineRef: string,
   contentType: ContentType,
-  contentRef: string
+  contentRef: string,
 ): Promise<FindBestOfResult> => {
   if (__E2E__) {
     return {stars: 0};
@@ -235,9 +235,9 @@ export const findApiBestOf = async (
     `${host}/api/v2/progressions/${engineRef}/bestof/${contentType}/${contentRef}`,
     {
       headers: {
-        Authorization: token
-      }
-    }
+        Authorization: token,
+      },
+    },
   );
 
   return response.json();
@@ -247,7 +247,7 @@ const findBestOf = async (
   engineRef: string,
   contentType: ContentType,
   contentRef: string,
-  progressionId: string
+  progressionId: string,
 ): Promise<FindBestOfResult> => {
   const {stars: apiStars = 0} = await findApiBestOf(engineRef, contentType, contentRef);
 
@@ -255,7 +255,7 @@ const findBestOf = async (
   const sortedProgressions = progressions
     .filter(
       (progression: Progression) =>
-        progression.content.ref === contentRef && progression._id !== progressionId
+        progression.content.ref === contentRef && progression._id !== progressionId,
     )
     .sort((a: Progression, b: Progression) => {
       const aStars = (a.state && a.state.stars) || 0;
@@ -268,23 +268,23 @@ const findBestOf = async (
   const localStars = (bestProgression && bestProgression.state && bestProgression.state.stars) || 0;
 
   return {
-    stars: Math.max(apiStars, localStars)
+    stars: Math.max(apiStars, localStars),
   };
 };
 
 const getAggregationsByContent = async (): Promise<Array<HeroRecommendation>> => {
   const progressions: Array<Progression> = await getAll();
-  const allRecords: Array<Record> = progressions.map(p => ({
+  const allRecords: Array<Record> = progressions.map((p) => ({
     content: {
       ...p,
       meta: {
         createdAt: getCreatedAt(p.actions),
-        updatedAt: getUpdatedAt(p.actions)
-      }
-    }
+        updatedAt: getUpdatedAt(p.actions),
+      },
+    },
   }));
   const recordsByContent: {
-    [key: string]: Array<Record>
+    [key: string]: Array<Record>;
   } = groupBy(heroRecommendation.mapId, allRecords);
 
   // @ts-ignore values are Array<Record> and not 'mixed'
@@ -309,5 +309,5 @@ export {
   findBestOf,
   synchronize,
   findRemoteProgressionById,
-  updateSynchronizedProgressionIds
+  updateSynchronizedProgressionIds,
 };

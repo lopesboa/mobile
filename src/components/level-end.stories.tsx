@@ -18,7 +18,7 @@ const chapterNew = createChapterCard({
   title: 'Fake chapter',
   status: CARD_STATUS.ACTIVE,
   isNew: false,
-  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}],
 });
 const disciplineNew = createDisciplineCard({
   ref: 'dis_2',
@@ -26,7 +26,7 @@ const disciplineNew = createDisciplineCard({
   levels: [level],
   title: 'Fake discipline',
   isNew: true,
-  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+  authors: [{authorType: AUTHOR_TYPE.CUSTOM, label: 'custom', ref: 'part_VyFl5hZ3V'}],
 });
 
 const disciplineNewCoorp = createDisciplineCard({
@@ -35,7 +35,7 @@ const disciplineNewCoorp = createDisciplineCard({
   levels: [level],
   title: 'Fake discipline',
   isNew: true,
-  authors: [{authorType: AUTHOR_TYPE.COORP, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+  authors: [{authorType: AUTHOR_TYPE.COORP, label: 'custom', ref: 'part_VyFl5hZ3V'}],
 });
 const chapterNewCoorp = createChapterCard({
   ref: 'cha_2',
@@ -43,7 +43,7 @@ const chapterNewCoorp = createChapterCard({
   title: 'Fake chapter',
   status: CARD_STATUS.ACTIVE,
   isNew: false,
-  authors: [{authorType: AUTHOR_TYPE.COORP, label: 'custom', ref: 'part_VyFl5hZ3V'}]
+  authors: [{authorType: AUTHOR_TYPE.COORP, label: 'custom', ref: 'part_VyFl5hZ3V'}],
 });
 
 const feedbackTitle = 'Foo';
@@ -254,11 +254,11 @@ if (__TEST__) {
           recommendation={disciplineNewCoorp}
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
-        />
+        />,
       );
 
       const item = component.root.find(
-        el => el.props.testID === 'recommend-item-dis-2' && el.props.analyticsID === 'card'
+        (el) => el.props.testID === 'recommend-item-dis-2' && el.props.analyticsID === 'card',
       );
       item.props.onPress();
 
@@ -281,9 +281,9 @@ if (__TEST__) {
           recommendation={disciplineNew}
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
-        />
+        />,
       );
-      const item = component.root.find(el => el.props.testID === 'button-retry-level');
+      const item = component.root.find((el) => el.props.testID === 'button-retry-level');
       item.props.onPress();
 
       expect(item.props.analyticsID).toBe('button-end-retry-level');
@@ -311,10 +311,10 @@ if (__TEST__) {
           feedbackMedia={image}
           vibration={createFakeVibration()}
           audio={createFakeAudio()}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'level-end-feedback');
+      const button = component.root.find((el) => el.props.testID === 'level-end-feedback');
       button.props.onPDFButtonPress(pdfUrl, pdfDescription);
 
       expect(handlePDFButtonPress).toHaveBeenCalledTimes(1);
@@ -338,7 +338,7 @@ if (__TEST__) {
           recommendation={disciplineNewCoorp}
           vibration={vibration}
           audio={audio}
-        />
+        />,
       );
 
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
@@ -364,7 +364,7 @@ if (__TEST__) {
           recommendation={disciplineNewCoorp}
           vibration={vibration}
           audio={audio}
-        />
+        />,
       );
 
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);

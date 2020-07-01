@@ -9,12 +9,11 @@ type Action = {};
 type State = StoreState;
 
 const createMiddleware = ({
-  services
+  services,
 }: Options): // @ts-ignore
-Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({
-  dispatch,
-  getState
-}) => next => action => {
+Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({dispatch, getState}) => (
+  next,
+) => (action) => {
   if ([PROGRESSION_UPDATED_ON_MOVE, PROGRESSION_UPDATED_ON_NODE].includes(action.type)) {
     dispatch(getAndRefreshCard(action.meta.id));
   }

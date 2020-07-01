@@ -4,7 +4,7 @@ import {
   getProgressionContent,
   getLevel,
   getChapter,
-  getCurrentSlide
+  getCurrentSlide,
 } from '@coorpacademy/player-store';
 
 import type {StoreState} from '../redux/store';
@@ -13,12 +13,12 @@ import HeaderSlideTitleComponent from '../components/header-slide-title';
 import {getValidationStatus} from '../redux/utils/state-extract';
 
 export interface ConnectedStateProps {
-  image?: string,
-  subtitle?: string,
-  title?: string
-};
+  image?: string;
+  subtitle?: string;
+  title?: string;
+}
 
-interface Props  extends ConnectedStateProps {};
+type Props = ConnectedStateProps;
 
 // react-navigation needs this to be a class
 // eslint-disable-next-line react/prefer-stateless-function
@@ -39,7 +39,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     return {
       image: undefined,
       subtitle: undefined,
-      title: undefined
+      title: undefined,
     };
   }
 
@@ -50,7 +50,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
     return {
       image: levelContent && levelContent.mediaUrl && getCleanUri(levelContent.mediaUrl),
       subtitle: levelContent && levelContent.levelTranslation,
-      title: levelContent && levelContent.name
+      title: levelContent && levelContent.name,
     };
   }
   return {
@@ -60,7 +60,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => {
       chapterContent.poster.mediaUrl &&
       getCleanUri(chapterContent.poster.mediaUrl),
     subtitle: undefined,
-    title: chapterContent && chapterContent.name
+    title: chapterContent && chapterContent.name,
   };
 };
 

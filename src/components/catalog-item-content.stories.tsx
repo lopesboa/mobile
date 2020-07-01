@@ -11,7 +11,7 @@ const card = createChapterCard({
   title: 'Chapter card',
   status: CARD_STATUS.ACTIVE,
   isNew: true,
-  isAdaptive: true
+  isAdaptive: true,
 });
 
 storiesOf('CatalogItemContent', module)

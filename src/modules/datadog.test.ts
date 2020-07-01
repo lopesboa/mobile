@@ -21,20 +21,20 @@ describe('Datadog', () => {
     err: {
       name: fakeError.name,
       message: fakeError.message,
-      stack: fakeError.stack
+      stack: fakeError.stack,
     },
-    ua: expectedUserAgent
+    ua: expectedUserAgent,
   };
 
   describe('getData', () => {
     it('should get data', async () => {
       jest.mock('../../app', () => ({
-        datadogToken: 'foobar'
+        datadogToken: 'foobar',
       }));
       jest.mock('./environment', () => ({
         __PRODUCTION__: true,
         __STORYBOOK__: true,
-        __ADHOC__: true
+        __ADHOC__: true,
       }));
       const {getData} = require('./datadog');
 
@@ -47,12 +47,12 @@ describe('Datadog', () => {
   describe('log', () => {
     it('should post data', async () => {
       jest.mock('../../app', () => ({
-        datadogToken: 'foobar'
+        datadogToken: 'foobar',
       }));
       jest.mock('./environment', () => ({
         __PRODUCTION__: true,
         __STORYBOOK__: true,
-        __ADHOC__: true
+        __ADHOC__: true,
       }));
       const fetch = require('cross-fetch');
       const {log} = require('./datadog');
@@ -66,9 +66,9 @@ describe('Datadog', () => {
         headers: {
           'Content-Type': 'application/json',
           'User-Agent': expectedUserAgent,
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
         },
-        body: JSON.stringify(expectedData)
+        body: JSON.stringify(expectedData),
       };
 
       expect(fetch).toHaveBeenCalledTimes(1);

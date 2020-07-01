@@ -4,7 +4,7 @@ import {createLevel} from '../../../__fixtures__/levels';
 
 jest.mock('@coorpacademy/player-store', () => ({
   createProgression: jest.fn(),
-  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
+  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'},
 }));
 
 describe('createLevelProgression', () => {
@@ -17,69 +17,69 @@ describe('createLevelProgression', () => {
       production: true,
       levelData: {ref: 'lev_1', chapterIds: []},
       version: '2',
-      expectedEngineConfig: {livesDisabled: false, version: '2'}
+      expectedEngineConfig: {livesDisabled: false, version: '2'},
     },
     {
       production: true,
       levelData: {ref: 'lev_1', chapterIds: []},
-      expectedEngineConfig: {livesDisabled: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, version: 'latest'},
     },
     {
       production: true,
       version: '2',
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
-      expectedEngineConfig: {livesDisabled: false, version: '2'}
+      expectedEngineConfig: {livesDisabled: false, version: '2'},
     },
     {
       production: true,
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
-      expectedEngineConfig: {livesDisabled: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, version: 'latest'},
     },
     {
       production: true,
       version: '2',
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'},
     },
     {
       production: true,
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'},
     },
     {
       production: false,
       levelData: {ref: 'lev_1', chapterIds: []},
       version: '2',
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'},
     },
     {
       production: false,
       levelData: {ref: 'lev_1', chapterIds: []},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'},
     },
     {
       production: false,
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'},
     },
     {
       production: false,
       version: '2',
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: true},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'},
     },
     {
       production: false,
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'}
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: 'latest'},
     },
     {
       production: false,
       version: '2',
       levelData: {ref: 'lev_1', chapterIds: [], shuffleChoices: false},
-      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'}
-    }
-  ].forEach(data => {
+      expectedEngineConfig: {livesDisabled: false, shuffleChoices: false, version: '2'},
+    },
+  ].forEach((data) => {
     it(`should create level progression with ${
       data.version ? 'default' : 'specific'
     } engine version (with shuffleChoices ${
@@ -87,11 +87,11 @@ describe('createLevelProgression', () => {
     }) in ${data.production ? 'production' : 'test'}`, async () => {
       if (data.production) {
         jest.mock('../../../modules/environment', () => ({
-          __TEST__: false
+          __TEST__: false,
         }));
       } else {
         jest.mock('../../../modules/environment', () => ({
-          __TEST__: true
+          __TEST__: true,
         }));
       }
       const playerStore = require('@coorpacademy/player-store');

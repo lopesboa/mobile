@@ -1,5 +1,5 @@
 jest.mock('react-native-status-bar-height', () => ({
-  getStatusBarHeight: jest.fn(() => 42)
+  getStatusBarHeight: jest.fn(() => 42),
 }));
 
 describe('StatusBar', () => {
@@ -9,7 +9,7 @@ describe('StatusBar', () => {
 
   it('should return fake height', () => {
     jest.mock('./environment', () => ({
-      __STORYBOOK__: true
+      __STORYBOOK__: true,
     }));
     const {getStatusBarHeight: _getStatusBarHeight} = require('react-native-status-bar-height');
 
@@ -23,7 +23,7 @@ describe('StatusBar', () => {
 
   it('should return height provided by the lib', () => {
     jest.mock('./environment', () => ({
-      __STORYBOOK__: false
+      __STORYBOOK__: false,
     }));
     const {getStatusBarHeight: _getStatusBarHeight} = require('react-native-status-bar-height');
 

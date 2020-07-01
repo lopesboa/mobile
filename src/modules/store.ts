@@ -47,5 +47,5 @@ export const getStoreUri = (): string => {
 export default {
   getMinimalVersion,
   needUpgrade,
-  getStoreUri
+  getStoreUri,
 };

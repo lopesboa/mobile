@@ -6,7 +6,7 @@ describe('Reference', () => {
     const universalRef = 'tourte';
     const itemWithRef = {
       ref,
-      universalRef
+      universalRef,
     };
     const result = getMostAccurateRef(itemWithRef);
     expect(result).toEqual(universalRef);
@@ -16,7 +16,7 @@ describe('Reference', () => {
     const ref = 'foo';
 
     const itemWithRef = {
-      ref
+      ref,
     };
     const result = getMostAccurateRef(itemWithRef);
     expect(result).toEqual(ref);

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {
   NovaSolidPlacesPlacesHome2 as HomeIcon,
-  NovaSolidStatusClose as CloseIcon
+  NovaSolidStatusClose as CloseIcon,
 } from '@coorpacademy/nova-icons';
 
 import theme, {getHitSlop} from '../modules/theme';
@@ -26,16 +26,16 @@ interface Props {
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: SPACING
+    paddingLeft: SPACING,
   },
   floating: {
     paddingTop: SPACING,
     position: 'absolute',
-    top: getStatusBarHeight()
+    top: getStatusBarHeight(),
   },
   noSafeArea: {
-    top: 0
-  }
+    top: 0,
+  },
 });
 
 const HeaderBackButton = ({
@@ -44,13 +44,13 @@ const HeaderBackButton = ({
   onPress,
   isFloating = true,
   noSafeArea = false,
-  testID
+  testID,
 }: Props) => (
   <View
     style={[
       styles.container,
       isFloating && styles.floating,
-      isFloating && noSafeArea && styles.noSafeArea
+      isFloating && noSafeArea && styles.noSafeArea,
     ]}
   >
     <Touchable testID={testID} onPress={onPress} hitSlop={getHitSlop()} analyticsID="button-close">

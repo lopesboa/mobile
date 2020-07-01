@@ -1,6 +1,6 @@
 const semverRegex = /^v?\d+\.\d+\.\d+(-.*)?$/;
 
-const shouldRealease = msg => msg && !semverRegex.test(msg);
+const shouldRealease = (msg) => msg && !semverRegex.test(msg);
 
 if (!module.parent) {
   /* eslint-disable unicorn/no-process-exit, no-console */

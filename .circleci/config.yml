@@ -1,23 +1,23 @@
 anchors:
-- &install-nvm
-  name: Install NVM
-  command: |
-    curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
-    echo 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --install' >> $BASH_ENV
-- &install-yarn
-  name: Install Yarn
-  command: npm install -g yarn
-- &set-ruby-version
-  name: Set ruby version
-  command: echo "ruby-$RUBY_VERSION" > ~/.ruby-version
-- &macos-image
-  xcode: 11.4.1
-- &install-watchman
-  name: Install watchman
-  # https://github.com/oondeo/watchman/pull/71/commits/e9ab4acba23109add581494055248b519523f174
-  command: |
-    brew unlink python@2
-    brew install watchman
+  - &install-nvm
+    name: Install NVM
+    command: |
+      curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
+      echo 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --install' >> $BASH_ENV
+  - &install-yarn
+    name: Install Yarn
+    command: npm install -g yarn
+  - &set-ruby-version
+    name: Set ruby version
+    command: echo "ruby-$RUBY_VERSION" > ~/.ruby-version
+  - &macos-image
+    xcode: 11.4.1
+  - &install-watchman
+    name: Install watchman
+    # https://github.com/oondeo/watchman/pull/71/commits/e9ab4acba23109add581494055248b519523f174
+    command: |
+      brew unlink python@2
+      brew install watchman
 
 version: 2
 jobs:

@@ -14,10 +14,10 @@ const lessons = [
   createVideo({ref: 'les_3'}),
   createVideo({ref: 'les_4'}),
   createVideo({ref: 'les_5'}),
-  createVideo({ref: 'les_6'})
+  createVideo({ref: 'les_6'}),
 ];
 
-const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
+const resources = lessons.map(mapToResource).filter((lesson) => lesson.url);
 
 storiesOf('ResourcesBrowser', module)
   .add('Default', () => <ResourcesBrowser resources={resources} onChange={handleFakePress} />)
@@ -30,7 +30,7 @@ storiesOf('ResourcesBrowser', module)
   ))
   .add('Only one resource', () => (
     <ResourcesBrowser
-      resources={resources.filter(resource => resource.ref === 'les_1')}
+      resources={resources.filter((resource) => resource.ref === 'les_1')}
       onChange={handleFakePress}
     />
   ));
@@ -46,10 +46,10 @@ if (__TEST__) {
             selected={resources[0]._id}
             resources={resources}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const item = component.root.find(el => el.props.testID === `resource-les-2`);
+      const item = component.root.find((el) => el.props.testID === `resource-les-2`);
       item.props.onPress();
       expect(handlePress.mock.calls.length).toBe(1);
       expect(handlePress.mock.calls[0]).toEqual([resources[1]._id]);

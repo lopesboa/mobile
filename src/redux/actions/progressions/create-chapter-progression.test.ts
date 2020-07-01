@@ -4,7 +4,7 @@ import {createChapter} from '../../../__fixtures__/chapters';
 
 jest.mock('@coorpacademy/player-store', () => ({
   createProgression: jest.fn(),
-  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'}
+  CONTENT_TYPE: {CHAPTER: 'chapter', LEVEL: 'level'},
 }));
 
 describe('createChapterProgression', () => {
@@ -16,18 +16,18 @@ describe('createChapterProgression', () => {
     {production: true, version: '2', expectedEngineConfig: {version: '2'}},
     {production: true, expectedEngineConfig: {version: 'latest'}},
     {production: false, version: '2', expectedEngineConfig: {version: '2', shuffleChoices: false}},
-    {production: false, expectedEngineConfig: {version: 'latest', shuffleChoices: false}}
-  ].forEach(data => {
+    {production: false, expectedEngineConfig: {version: 'latest', shuffleChoices: false}},
+  ].forEach((data) => {
     it(`should create chapter progression with ${
       data.version ? 'default' : 'specific'
     } engine version in ${data.production ? 'production' : 'test'}`, async () => {
       if (data.production) {
         jest.mock('../../../modules/environment', () => ({
-          __TEST__: false
+          __TEST__: false,
         }));
       } else {
         jest.mock('../../../modules/environment', () => ({
-          __TEST__: true
+          __TEST__: true,
         }));
       }
       const playerStore = require('@coorpacademy/player-store');
@@ -35,7 +35,7 @@ describe('createChapterProgression', () => {
 
       const chapter = createChapter({
         ref: 'cha_1',
-        name: 'chapter'
+        name: 'chapter',
       });
 
       const version = data.version || 'latest';

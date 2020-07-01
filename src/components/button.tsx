@@ -23,60 +23,60 @@ const styles = StyleSheet.create({
     height: HEIGHT,
     paddingHorizontal: theme.spacing.base,
     borderWidth: 0,
-    marginBottom: 0
+    marginBottom: 0,
   },
   small: {
-    height: SMALL_HEIGHT
+    height: SMALL_HEIGHT,
   },
   text: {
     ...DEFAULT_TEXT_TYPE,
     color: theme.colors.white,
     fontSize: theme.fontSize.large,
     fontWeight: theme.fontWeight.bold,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   textSmall: {
-    fontSize: theme.fontSize.regular
+    fontSize: theme.fontSize.regular,
   },
   disabled: {
-    backgroundColor: theme.colors.gray.light
+    backgroundColor: theme.colors.gray.light,
   },
   textDisabled: {
-    color: theme.colors.gray.medium
+    color: theme.colors.gray.medium,
   },
   inverted: {
-    backgroundColor: theme.colors.white
+    backgroundColor: theme.colors.white,
   },
   inlined: {
     borderWidth: 2,
     borderColor: theme.colors.white,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
   textInverted: {
-    color: theme.colors.gray.dark
+    color: theme.colors.gray.dark,
   },
   textInlined: {
-    color: theme.colors.white
-  }
+    color: theme.colors.white,
+  },
 });
 
 export interface OwnProps {
-  onPress: () => void,
-  isDisabled?: boolean,
-  isInverted?: boolean,
-  isInlined?: boolean,
-  isSecondary?: boolean,
-  isLoading?: boolean,
-  isTextSecondary?: boolean,
-  isPlaceholder?: boolean,
-  isSmall?: boolean,
-  placeholderColor?: string,
-  children: string | React.ReactNode,
-  testID?: string,
-  analyticsID: string,
-  analyticsParams?: AnalyticsEventParams,
-  style?: ViewStyle
-};
+  onPress: () => void;
+  isDisabled?: boolean;
+  isInverted?: boolean;
+  isInlined?: boolean;
+  isSecondary?: boolean;
+  isLoading?: boolean;
+  isTextSecondary?: boolean;
+  isPlaceholder?: boolean;
+  isSmall?: boolean;
+  placeholderColor?: string;
+  children: string | React.ReactNode;
+  testID?: string;
+  analyticsID: string;
+  analyticsParams?: AnalyticsEventParams;
+  style?: ViewStyle;
+}
 
 export interface Props extends WithAnalyticsProps, WithVibrationProps, OwnProps {}
 
@@ -89,7 +89,7 @@ class Button extends React.PureComponent<Props> {
     analytics &&
       analytics.logEvent(ANALYTICS_EVENT_TYPE.PRESS, {
         ...(analyticsParams || {}),
-        id: analyticsID
+        id: analyticsID,
       });
 
     onPress();
@@ -108,25 +108,25 @@ class Button extends React.PureComponent<Props> {
       placeholderColor = theme.colors.gray.light,
       testID: prefixTestID,
       children,
-      style
+      style,
     } = this.props;
 
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => {
+        {(brandTheme) => {
           const buttonStyle = {backgroundColor: brandTheme.colors.primary};
           const secondaryButtonStyle = {
             ...styles.inlined,
-            borderColor: brandTheme.colors.primary
+            borderColor: brandTheme.colors.primary,
           };
           const secondaryTextStyle = {color: brandTheme.colors.primary};
           const disabledSuffix = prefixTestID && isDisabled ? '-disabled' : '';
           const loadingSuffix = prefixTestID && isLoading ? '-loading' : '';
           const placeholderButtonStyle = {
-            backgroundColor: placeholderColor
+            backgroundColor: placeholderColor,
           };
           const placeholderTextStyle = {
-            color: placeholderColor
+            color: placeholderColor,
           };
           const textStyles = [
             styles.text,
@@ -136,7 +136,7 @@ class Button extends React.PureComponent<Props> {
             isSmall && styles.textSmall,
             isSecondary && secondaryTextStyle,
             isTextSecondary && secondaryTextStyle,
-            isPlaceholder && placeholderTextStyle
+            isPlaceholder && placeholderTextStyle,
           ];
 
           return (
@@ -153,7 +153,7 @@ class Button extends React.PureComponent<Props> {
                   isSmall && styles.small,
                   isSecondary && secondaryButtonStyle,
                   isInverted && isSecondary && secondaryButtonStyle,
-                  style
+                  style,
                 ]}
                 textStyle={textStyles}
                 disabledStyle={(isPlaceholder && placeholderButtonStyle) || styles.disabled}

@@ -110,10 +110,10 @@ if (__TEST__) {
             onPDFButtonPress={handlePress}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const button = component.root.find(el => {
+      const button = component.root.find((el) => {
         return el.props.testID === testID;
       });
 
@@ -135,10 +135,10 @@ if (__TEST__) {
             onPDFButtonPress={handlePress}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const button = component.root.find(el => {
+      const button = component.root.find((el) => {
         return el.props.testID === testID;
       });
 
@@ -157,7 +157,7 @@ if (__TEST__) {
             onPDFButtonPress={handleFakePress}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       expect(component.children).toBe(undefined);
@@ -174,7 +174,7 @@ if (__TEST__) {
             onPDFButtonPress={handleFakePress}
             onLinkPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
       expect(component.children).toBe(undefined);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
-import type {LessonType} from '@types/coorp/progression-engine';
+import type {LessonType} from '../types/coorpacademy/progression-engine';
 
 import type {Resource as ResourceType} from '../types';
 import theme from '../modules/theme';
@@ -14,37 +14,37 @@ import ResourcesBrowser from './resources-browser';
 import Space from './space';
 
 interface Props extends WithLayoutProps {
-  header: string,
-  starsGranted: number,
-  testID?: string,
-  selected?: string,
-  resources: Array<ResourceType>,
-  onChange: (id: string) => void,
-  onPDFButtonPress: (url: string, description?: string) => void,
-  onVideoPlay: () => void
-};
+  header: string;
+  starsGranted: number;
+  testID?: string;
+  selected?: string;
+  resources: Array<ResourceType>;
+  onChange: (id: string) => void;
+  onPDFButtonPress: (url: string, description?: string) => void;
+  onVideoPlay: () => void;
+}
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: theme.spacing.base + theme.spacing.tiny,
-    flexGrow: 1
+    flexGrow: 1,
   },
   browser: {
-    flex: 1
+    flex: 1,
   },
   questionContainer: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   bottomTextWrapper: {
     backgroundColor: theme.colors.gray.light,
     width: '100%',
     paddingVertical: theme.spacing.small,
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   bottomText: {
     color: theme.colors.gray.dark,
-    fontWeight: theme.fontWeight.bold
-  }
+    fontWeight: theme.fontWeight.bold,
+  },
 });
 
 class Lesson extends React.Component<Props> {
@@ -60,14 +60,14 @@ class Lesson extends React.Component<Props> {
 
   render() {
     const {header, onChange, resources, selected, starsGranted, testID} = this.props;
-    const openedResource = resources.find(resource => resource._id === selected);
+    const openedResource = resources.find((resource) => resource._id === selected);
 
     if (!selected || !openedResource) {
       return null;
     }
     const winAdditionalStars = translations.winAdditionalStars.replace(
       /{{count}}/g,
-      String(starsGranted)
+      String(starsGranted),
     );
 
     return (

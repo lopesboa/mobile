@@ -3,11 +3,11 @@ import {CHANGE} from '../actions/permissions';
 import type {PermissionStatus} from '../../types';
 
 export type State = {
-  camera?: PermissionStatus
+  camera?: PermissionStatus;
 };
 
 export const initialState: State = {
-  camera: undefined
+  camera: undefined,
 };
 
 const reducer = (state: State = initialState, action: Action): State => {
@@ -17,7 +17,7 @@ const reducer = (state: State = initialState, action: Action): State => {
 
       return {
         ...state,
-        [type]: status
+        [type]: status,
       };
     }
     default:

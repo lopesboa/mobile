@@ -11,14 +11,14 @@ import tokenReducer from './token';
 import type {State as TokenState} from './token';
 
 export type State = {
-  token: TokenState,
-  user: UserState,
-  brand: BrandState
+  token: TokenState;
+  user: UserState;
+  brand: BrandState;
 };
 
 const reducers: Reducer<State, BrandAction | AuthenticationAction | UserAction> = combineReducers({
   brand: brandReducer,
   user: userReducer,
-  token: tokenReducer
+  token: tokenReducer,
 });
 export default reducers;

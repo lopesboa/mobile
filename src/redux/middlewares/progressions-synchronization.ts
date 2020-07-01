@@ -13,12 +13,11 @@ type Action = NavigationAction | ProgressionAction;
 type State = StoreState;
 
 const createMiddleware = ({
-  services
+  services,
 }: Options): // @ts-ignore
-Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({
-  dispatch,
-  getState
-}) => next => action => {
+Middleware<State, StoreAction<Action>, Dispatch<StoreAction<Action>>> => ({dispatch, getState}) => (
+  next,
+) => (action) => {
   const {CONNECTION_CHANGE} = offlineActionTypes;
 
   if (

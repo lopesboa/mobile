@@ -12,7 +12,7 @@ const service: PermissionsService = {
   request: Permissions.request,
   check: Permissions.check,
   openSettings: Permissions.openSettings,
-  alert: Alert.alert
+  alert: Alert.alert,
 };
 
 export default service;

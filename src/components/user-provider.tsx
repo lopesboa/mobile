@@ -7,12 +7,12 @@ import type {StoreState} from '../redux/store';
 import {getUser} from '../redux/utils/state-extract';
 
 export interface ConnectedStateProps {
-  user: User | null
-};
+  user: User | null;
+}
 
 interface Props extends ConnectedStateProps {
-  children: React.ReactNode
-};
+  children: React.ReactNode;
+}
 
 type State = User | null;
 
@@ -24,13 +24,10 @@ const UserProvider = ({children, user}: Props) => (
   <UserContext.Provider value={user}>{children}</UserContext.Provider>
 );
 
-const getUserState = createSelector(
-  [getUser],
-  user => user
-);
+const getUserState = createSelector([getUser], (user) => user);
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  user: getUserState(state)
+  user: getUserState(state),
 });
 
 export {UserProvider as Component};

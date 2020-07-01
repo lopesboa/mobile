@@ -11,7 +11,7 @@ const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
 const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 const level = createLevel({
   ref: 'template_mod_1',
-  chapterIds: ['template_cha_1']
+  chapterIds: ['template_cha_1'],
 });
 const template = createTemplate({});
 
@@ -20,40 +20,40 @@ const bundledDiscipline: BundledDiscipline = {
     template_dis_1: createDiscipline({
       ref: 'template_dis_1',
       levels: [level],
-      name: 'Template: course'
-    })
+      name: 'Template: course',
+    }),
   },
   chapters: {
-    template_dis_1: createChapter({ref: 'template_dis_1', name: 'Template: chapter'})
+    template_dis_1: createChapter({ref: 'template_dis_1', name: 'Template: chapter'}),
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
     template_sli_1: createSlide({
       ref: 'template_sli_1',
       chapterId: 'template_cha_1',
-      question: template
+      question: template,
     }),
     template_sli_2: createSlide({
       ref: 'template_sli_2',
       chapterId: 'template_cha_1',
-      question: template
+      question: template,
     }),
     template_sli_3: createSlide({
       ref: 'template_sli_3',
       chapterId: 'template_cha_1',
-      question: template
+      question: template,
     }),
     template_sli_4: createSlide({
       ref: 'template_sli_4',
       chapterId: 'template_cha_1',
-      question: template
-    })
+      question: template,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledDiscipline;

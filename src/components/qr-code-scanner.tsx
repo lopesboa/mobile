@@ -4,19 +4,19 @@ import QRCodeScannerBase from 'react-native-qrcode-scanner';
 import type {Event} from 'react-native-qrcode-scanner';
 
 export interface Props {
-  hasPermission: boolean,
-  onScan: (token?: string) => void,
-  testID?: string
-};
+  hasPermission: boolean;
+  onScan: (token?: string) => void;
+  testID?: string;
+}
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black'
+    backgroundColor: 'black',
   },
   camera: {
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 class QRCodeScanner extends React.PureComponent<Props> {

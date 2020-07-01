@@ -4,13 +4,13 @@ import {SHOW, HIDE} from '../../actions/ui/errors';
 import type {Action} from '../../actions/ui/errors';
 
 export type State<T> = {
-  isVisible: boolean,
-  type?: ErrorType,
-  lastAction?: () => StoreAction<T>
+  isVisible: boolean;
+  type?: ErrorType;
+  lastAction?: () => StoreAction<T>;
 };
 
 export const initialState: State<void> = {
-  isVisible: false
+  isVisible: false,
 };
 
 // @ts-ignore initial state is empty of action
@@ -21,13 +21,13 @@ const reducer = <T>(state: State<T> = initialState, action: Action<T>): State<T>
         ...state,
         isVisible: true,
         type: action.payload.type,
-        lastAction: action.payload.lastAction
+        lastAction: action.payload.lastAction,
       };
     }
     case HIDE: {
       return {
         ...state,
-        isVisible: false
+        isVisible: false,
       };
     }
     default:

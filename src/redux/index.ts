@@ -4,7 +4,7 @@ import type {Options, ReduxDevTools} from './_types';
 
 const create = (services: Services, reduxDevTools?: ReduxDevTools) => {
   const options: Options = {
-    services
+    services,
   };
 
   return createStore(options, reduxDevTools);

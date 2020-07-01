@@ -12,29 +12,29 @@ export const FETCH_ERROR = '@@cards/FETCH_SECTIONS_ERROR';
 export const DEFAULT_LIMIT = 5;
 
 export type FetchRequestAction = {
-  type: '@@cards/FETCH_SECTIONS_REQUEST',
+  type: '@@cards/FETCH_SECTIONS_REQUEST';
   payload: {
-    sectionKey: string,
-    offset: number,
-    limit: number,
-    language: SupportedLanguage
-  }
+    sectionKey: string;
+    offset: number;
+    limit: number;
+    language: SupportedLanguage;
+  };
 };
 
 export type FetchSuccessAction = {
-  type: '@@cards/FETCH_SECTIONS_SUCCESS',
+  type: '@@cards/FETCH_SECTIONS_SUCCESS';
   payload: {
-    sectionKey: string,
-    offset: number,
-    limit: number,
-    total: number,
-    items: Array<DisciplineCard | ChapterCard>,
-    language: SupportedLanguage
-  }
+    sectionKey: string;
+    offset: number;
+    limit: number;
+    total: number;
+    items: Array<DisciplineCard | ChapterCard>;
+    language: SupportedLanguage;
+  };
 };
 
 export type FetchErrorAction = StoreErrorAction<{
-  type: '@@cards/FETCH_SECTIONS_ERROR'
+  type: '@@cards/FETCH_SECTIONS_ERROR';
 }>;
 
 export type Action = FetchRequestAction | FetchSuccessAction | FetchErrorAction;
@@ -43,15 +43,15 @@ export const fetchRequest = (
   sectionKey: string,
   offset: number,
   limit: number,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ): FetchRequestAction => ({
   type: FETCH_REQUEST,
   payload: {
     sectionKey,
     offset,
     limit,
-    language
-  }
+    language,
+  },
 });
 
 export const fetchSuccess = (
@@ -60,7 +60,7 @@ export const fetchSuccess = (
   limit: number,
   total: number,
   items: Array<DisciplineCard | ChapterCard>,
-  language: SupportedLanguage
+  language: SupportedLanguage,
 ): FetchSuccessAction => ({
   type: FETCH_SUCCESS,
   payload: {
@@ -69,24 +69,24 @@ export const fetchSuccess = (
     limit,
     total,
     items,
-    language
-  }
+    language,
+  },
 });
 
 export const fetchError = (error: Error): FetchErrorAction => ({
   type: FETCH_ERROR,
   payload: error,
-  error: true
+  error: true,
 });
 
 export const fetchCards = (
   sectionKey: string,
   offset: number,
-  limit: number
+  limit: number,
 ): StoreAction<Action | ErrorAction<StoreAction<Action>>> => async (
   dispatch,
   getState,
-  options
+  options,
 ) => {
   const language = translations.getLanguage();
   await dispatch(fetchRequest(sectionKey, offset, limit, language));
@@ -108,7 +108,7 @@ export const fetchCards = (
       brand.host,
       section,
       offset,
-      limit
+      limit,
     );
 
     return dispatch(fetchSuccess(sectionKey, offset, limit, total, cards, language));

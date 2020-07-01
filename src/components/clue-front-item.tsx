@@ -15,14 +15,14 @@ export interface Props {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
     color: theme.colors.white,
     fontSize: theme.fontSize.xlarge,
     textAlign: 'center',
-    fontStyle: 'italic'
-  }
+    fontStyle: 'italic',
+  },
 });
 
 const ClueFrontItem = ({onPress, starsDiff}: Props) => (

@@ -3,7 +3,7 @@ import {View, ViewStyle, StyleSheet} from 'react-native';
 import type {Props as FlatListProps} from 'react-native/Libraries/Lists/FlatList';
 import CarouselBase from 'react-native-sideswipe';
 import {Pagination} from 'react-native-snap-carousel';
-import {$NonMaybeType} from "utility-types";
+import {$NonMaybeType} from 'utility-types';
 
 import withLayout from '../containers/with-layout';
 import type {WithLayoutProps} from '../containers/with-layout';
@@ -11,65 +11,62 @@ import theme from '../modules/theme';
 import Box from './box';
 
 export interface Props<ItemT> extends WithLayoutProps {
-  data: $NonMaybeType<Pick<FlatListProps<ItemT>, 'data'>>,
+  data: $NonMaybeType<Pick<FlatListProps<ItemT>, 'data'>>;
   // Copy paste from FlatList without separators property
-  renderItem: (arg0: {
-    item: ItemT,
-    index: number
-  }) => React.ReactNode  | null | undefined,
-  currentIndex: number,
-  onChange: (arg0: number) => void,
-  testID?: string,
-  style?: ViewStyle
-};
+  renderItem: (arg0: {item: ItemT; index: number}) => React.ReactNode | null | undefined;
+  currentIndex: number;
+  onChange: (arg0: number) => void;
+  testID?: string;
+  style?: ViewStyle;
+}
 
 const PAGINATION_DOT_WIDTH = 8;
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   carousel: {
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   item: {
     paddingHorizontal: theme.spacing.base + theme.spacing.small,
-    paddingVertical: theme.spacing.small
+    paddingVertical: theme.spacing.small,
   },
   itemInactive: {
-    opacity: 0.65
+    opacity: 0.65,
   },
   box: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   itemContent: {
     flexGrow: 1,
     borderRadius: theme.radius.card,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   pagination: {
     paddingHorizontal: theme.spacing.small,
-    paddingVertical: 0
+    paddingVertical: 0,
   },
   paginationDot: {
     width: PAGINATION_DOT_WIDTH,
     height: PAGINATION_DOT_WIDTH,
     borderRadius: PAGINATION_DOT_WIDTH,
-    padding: 2
+    padding: 2,
   },
   paginationDotContainer: {
     marginHorizontal: theme.spacing.tiny / 2,
     padding: 2,
     borderColor: theme.colors.white,
     borderWidth: 1,
-    borderRadius: PAGINATION_DOT_WIDTH
-  }
+    borderRadius: PAGINATION_DOT_WIDTH,
+  },
 });
 
 class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
   props: Props<ItemT>;
 
-  renderItem = (width: number) => ({item, itemIndex}: {item: ItemT, itemIndex: number}) => (
+  renderItem = (width: number) => ({item, itemIndex}: {item: ItemT; itemIndex: number}) => (
     <View
       style={[styles.item, this.props.currentIndex !== itemIndex && styles.itemInactive, {width}]}
       testID="carousel-item"
@@ -122,5 +119,5 @@ class Carousel<ItemT> extends React.PureComponent<Props<ItemT>> {
 
 export {Carousel as Component};
 export default withLayout(Carousel, {
-  withoutContainer: true
+  withoutContainer: true,
 });

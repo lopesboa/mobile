@@ -3,7 +3,7 @@ import {showError, hideError, SHOW, HIDE, refresh} from './errors';
 import type {Action} from './errors';
 
 const fakeAction = {
-  type: 'FAKE_ACTION'
+  type: 'FAKE_ACTION',
 };
 type FakeAction = typeof fakeAction;
 
@@ -14,8 +14,8 @@ describe('errors', () => {
       const expected: Action<void> = {
         type: SHOW,
         payload: {
-          type: ERROR_TYPE.NO_CONTENT_FOUND
-        }
+          type: ERROR_TYPE.NO_CONTENT_FOUND,
+        },
       };
 
       expect(result).toEqual(expected);
@@ -25,14 +25,14 @@ describe('errors', () => {
       const lastAction = jest.fn(() => fakeAction);
       const result = showError({
         type: ERROR_TYPE.NO_CONTENT_FOUND,
-        lastAction
+        lastAction,
       });
       const expected: Action<FakeAction> = {
         type: SHOW,
         payload: {
           type: ERROR_TYPE.NO_CONTENT_FOUND,
-          lastAction
-        }
+          lastAction,
+        },
       };
 
       expect(result).toEqual(expected);
@@ -45,7 +45,7 @@ describe('errors', () => {
     it('should return the action', () => {
       const action = hideError();
       expect(action).toEqual({
-        type: HIDE
+        type: HIDE,
       });
     });
   });
@@ -56,10 +56,10 @@ describe('errors', () => {
       const getState = jest.fn();
 
       getState.mockReturnValue({
-        error: {}
+        error: {},
       });
 
-      dispatch.mockImplementationOnce(action => action);
+      dispatch.mockImplementationOnce((action) => action);
 
       // @ts-ignore -- due to genericity of refresh function
       const actual = refresh()(dispatch, getState);
@@ -73,16 +73,16 @@ describe('errors', () => {
 
       getState.mockReturnValue({
         error: {
-          lastAction: () => lastAction
-        }
+          lastAction: () => lastAction,
+        },
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         expect(action).toEqual(lastAction);
         return action;
       });
 
-      dispatch.mockImplementationOnce(action => {
+      dispatch.mockImplementationOnce((action) => {
         return action;
       });
       // @ts-ignore -- due to genericity of refresh function

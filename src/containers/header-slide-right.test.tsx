@@ -16,16 +16,16 @@ const question = createQCM({});
 const slide = createSlide({ref: 'bar', chapterId: chapter.universalRef, question});
 const nextContent = {
   ref: slide.universalRef,
-  type: CONTENT_TYPE.SLIDE
+  type: CONTENT_TYPE.SLIDE,
 };
 const state = createState({nextContent});
 const progression = createProgression({
   engine: ENGINE.MICROLEARNING,
   progressionContent: {
     type: CONTENT_TYPE.CHAPTER,
-    ref: chapter.universalRef
+    ref: chapter.universalRef,
   },
-  state
+  state,
 });
 const brand = createBrand({});
 
@@ -39,7 +39,7 @@ describe('header-slide-right', () => {
       chapters: [chapter],
       slides: [slide],
       progression,
-      authentication
+      authentication,
     });
 
     const props = mapStateToProps(mockedStore);
@@ -47,7 +47,7 @@ describe('header-slide-right', () => {
       count: 4,
       isGodModeUser: false,
       isGodModeEnabled: false,
-      isFastSlideEnabled: false
+      isFastSlideEnabled: false,
     };
     expect(props).toEqual(expectedResult);
   });
@@ -61,14 +61,14 @@ describe('header-slide-right', () => {
       chapters: [],
       slides: [slide],
       progression,
-      authentication
+      authentication,
     });
 
     const props = mapStateToProps(mockedStore);
     const expectedResult: ConnectedStateProps = {
       isGodModeUser: false,
       isGodModeEnabled: false,
-      isFastSlideEnabled: false
+      isFastSlideEnabled: false,
     };
     expect(props).toEqual(expectedResult);
   });
@@ -76,7 +76,7 @@ describe('header-slide-right', () => {
   it('should get god mode and fast slide enabled', () => {
     const token = createToken({
       brand: brand.name,
-      roles: [ROLES.USER, ROLES.GODMODE]
+      roles: [ROLES.USER, ROLES.GODMODE],
     });
     const authentication = createAuthenticationState({token, brand});
     const mockedStore = createStoreState({
@@ -87,14 +87,14 @@ describe('header-slide-right', () => {
       progression,
       authentication,
       godMode: true,
-      fastSlide: true
+      fastSlide: true,
     });
 
     const props = mapStateToProps(mockedStore);
     const expectedResult: ConnectedStateProps = {
       isGodModeUser: true,
       isGodModeEnabled: true,
-      isFastSlideEnabled: true
+      isFastSlideEnabled: true,
     };
     expect(props).toEqual(expectedResult);
   });

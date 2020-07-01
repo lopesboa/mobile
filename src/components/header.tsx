@@ -22,23 +22,23 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.white,
     flexDirection: 'row',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   side: {
     width: SIDE_WIDTH,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   right: {
     alignItems: 'flex-end',
-    paddingRight: ICON_SPACING
+    paddingRight: ICON_SPACING,
   },
   center: {
     flex: 1,
-    padding: CENTER_PADDING
+    padding: CENTER_PADDING,
   },
   logo: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 class Header extends React.PureComponent<Props> {

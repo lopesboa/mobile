@@ -9,19 +9,19 @@ jest.mock('cross-fetch');
 
 // react-native mocks
 ScrollView.propTypes = {
-  decelerationRate: () => {}
+  decelerationRate: () => {},
 };
 
 jest.mock('react-native-qrcode-scanner', () => ({
   __esModule: true,
-  default: 'Mock$QRCodeScanner'
+  default: 'Mock$QRCodeScanner',
 }));
 
 jest.mock('react-native-localization', () => {
   // type Trads = {[key: SupportedLanguage]: Translations};
   return class LocalizedStrings {
     constructor(translations) {
-      Object.keys(translations.en).forEach(key => {
+      Object.keys(translations.en).forEach((key) => {
         this[key] = translations.en[key];
       });
     }
@@ -34,7 +34,7 @@ jest.mock('react-native-localization', () => {
 
     formatString = jest.fn((str, ...replacers) => {
       let result = str;
-      Object.keys(replacers).forEach(key => {
+      Object.keys(replacers).forEach((key) => {
         result = result.replace('{' + key + '}', replacers[key]);
       });
       return result;
@@ -44,7 +44,7 @@ jest.mock('react-native-localization', () => {
 
 jest.mock('@react-native-community/netinfo', () => ({
   addEventListener: jest.fn(),
-  fetch: jest.fn(state => Promise.resolve(state))
+  fetch: jest.fn((state) => Promise.resolve(state)),
 }));
 
 jest.mock('react-native-offline', () => ({
@@ -54,8 +54,8 @@ jest.mock('react-native-offline', () => ({
   createNetworkMiddleware: jest.fn(),
   checkInternetConnection: jest.fn(),
   offlineActionTypes: {
-    CONNECTION_CHANGE: '@@network-connectivity/CONNECTION_CHANGE'
-  }
+    CONNECTION_CHANGE: '@@network-connectivity/CONNECTION_CHANGE',
+  },
 }));
 
 jest.mock('react-native/Libraries/Vibration/NativeVibration.js', () => {
@@ -82,19 +82,19 @@ NativeModules.Linking = {
   removeEventListener: () => {},
   openURL: () => {},
   canOpenURL: () => {},
-  getInitialURL: () => {}
+  getInitialURL: () => {},
 };
 
 // react-native-localization
 NativeModules.ReactLocalization = {
-  language: 'en-US'
+  language: 'en-US',
 };
 
 // react-native-device-info
 jest.mock('react-native-device-info', () => ({
   getBrand: jest.fn(() => Promise.resolve('Apple')),
   getModel: jest.fn(() => Promise.resolve('iPhone')),
-  getSystemVersion: jest.fn(() => Promise.resolve('12.2'))
+  getSystemVersion: jest.fn(() => Promise.resolve('12.2')),
 }));
 
 // react-native Platform
@@ -105,16 +105,16 @@ jest.mock('react-native-video', () => ({
   __esModule: true,
   default: 'Mock$ReactNativeVideo',
   TextTrackType: {
-    VTT: 'text/vtt'
-  }
+    VTT: 'text/vtt',
+  },
 }));
 
 // react-native-splash-screen
 jest.mock('react-native-splash-screen', () => ({
   __esModule: true,
   default: {
-    hide: jest.fn(() => Promise.resolve())
-  }
+    hide: jest.fn(() => Promise.resolve()),
+  },
 }));
 
 // react-native-pdf
@@ -130,23 +130,23 @@ jest.mock('rn-fetch-blob', () => ({
     dirs: {
       MainBundleDir: () => {},
       CacheDir: () => {},
-      DocumentDir: () => {}
-    }
+      DocumentDir: () => {},
+    },
   },
   wrap: () => {},
   polyfill: () => {},
-  JSONStream: () => {}
+  JSONStream: () => {},
 }));
 
 NativeModules.PdfViewManager = {
-  supportPDFKit: callback => callback(false)
+  supportPDFKit: (callback) => callback(false),
 };
 
 // react-native-camera
 
 jest.mock('react-native-camera', () => ({
   __esModule: true,
-  default: 'Mock$ReactNativeCamera'
+  default: 'Mock$ReactNativeCamera',
 }));
 
 // react-native-permissions
@@ -157,14 +157,14 @@ jest.mock('react-native-permissions', () => {
   return {
     openSettings: jest.fn(() => Promise.resolve(undefined)),
     request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
-    check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED))
+    check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
   };
 });
 
 // react-native-snap-carousel
 
 jest.mock('react-native-snap-carousel', () => ({
-  Pagination: 'Mock$ReactNativeSnapCarousel$Pagination'
+  Pagination: 'Mock$ReactNativeSnapCarousel$Pagination',
 }));
 
 // react-navigation
@@ -174,8 +174,8 @@ jest.mock('react-navigation', () => ({
   HeaderBackButton: 'Mock$ReactNavigation$HeaderBackButton',
   NavigationEvents: 'Mock$ReactNavigation$NavigationEvents',
   NavigationActions: {
-    back: () => 'Mock$ReactNavigation$NavigationActions$Back'
-  }
+    back: () => 'Mock$ReactNavigation$NavigationActions$Back',
+  },
 }));
 
 // react-native-confetti-cannon
@@ -192,18 +192,18 @@ jest.mock('@react-native-firebase/analytics', () =>
     logEvent: jest.fn(),
     setCurrentScreen: jest.fn(),
     setUserProperty: jest.fn(),
-    setUserProperties: jest.fn()
-  }))
+    setUserProperties: jest.fn(),
+  })),
 );
 
 jest.mock('@react-native-firebase/app', () => ({
-  utils: jest.fn(() => ({}))
+  utils: jest.fn(() => ({})),
 }));
 
 // react-native-status-bar-height
 
 jest.mock('react-native-status-bar-height', () => ({
-  getStatusBarHeight: jest.fn(() => 0)
+  getStatusBarHeight: jest.fn(() => 0),
 }));
 
 // ./src/containers/with-layout
@@ -221,7 +221,7 @@ jest.mock('./src/containers/with-vibration');
 // react-native-email-link
 
 jest.mock('react-native-email-link', () => ({
-  openInbox: jest.fn(() => {})
+  openInbox: jest.fn(() => {}),
 }));
 
 // react-native-sound
@@ -236,13 +236,13 @@ jest.mock('react-native-sound', () => ({
     play = jest.fn();
 
     release = jest.fn();
-  }
+  },
 }));
 
 // react-native-haptic-feedback
 
 jest.mock('react-native-haptic-feedback', () => ({
-  trigger: jest.fn()
+  trigger: jest.fn(),
 }));
 
 // react-native-flash-message
@@ -251,12 +251,12 @@ jest.mock('react-native-flash-message', () => ({
   __esModule: true,
   default: 'Mock$ReactNativeFlashMessage',
   showMessage: jest.fn(),
-  hideMessage: jest.fn()
+  hideMessage: jest.fn(),
 }));
 
 // react-native-orientation-locker
 
 jest.mock('react-native-orientation-locker', () => ({
   unlockAllOrientations: jest.fn(),
-  lockToPortrait: jest.fn()
+  lockToPortrait: jest.fn(),
 }));

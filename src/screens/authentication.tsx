@@ -3,8 +3,7 @@ import {Linking, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import splashScreen from 'react-native-splash-screen';
-import { NavigationScreenProps } from 'react-navigation';
-import {$PropertyType} from "utility-types";
+import {NavigationScreenProps} from 'react-navigation';
 import {BackHandler} from '../modules/back-handler';
 
 import {assistanceEmail} from '../../app';
@@ -23,28 +22,27 @@ import type {Params as AuthenticationDetailsParams} from './authentication-detai
 
 export interface ConnectedStateProps {
   isAuthenticated: boolean;
-};
+}
 
 interface ConnectedDispatchProps {
   signIn: typeof signIn;
-};
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
-
 type State = {
-  isSplashScreenHidden: boolean
+  isSplashScreenHidden: boolean;
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: BLUE_COORP_DARK
-  }
+    backgroundColor: BLUE_COORP_DARK,
+  },
 });
 
 class AuthenticationScreen extends React.PureComponent<Props, State> {
   state: State = {
-    isSplashScreenHidden: false
+    isSplashScreenHidden: false,
   };
 
   async componentDidMount() {
@@ -76,7 +74,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   hideSplashScreen = () => {
     // Because iOS automatically hides the splash screen
     this.setState({
-      isSplashScreenHidden: true
+      isSplashScreenHidden: true,
     });
 
     splashScreen.hide();
@@ -114,13 +112,13 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     }
   };
 
-  handleDetailsNavigation = (type: $PropertyType<AuthenticationDetailsParams, 'type'>) => {
+  handleDetailsNavigation = (type: Pick<AuthenticationDetailsParams, 'type'>) => {
     const {navigation} = this.props;
     const params: AuthenticationDetailsParams = {
       type,
       onHelpPress: this.handleHelpPress,
       onDemoPress: this.handleDemoPress,
-      onSignIn: this.handleSignIn
+      onSignIn: this.handleSignIn,
     };
     navigation.navigate('AuthenticationDetails', params);
   };
@@ -151,19 +149,16 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
 
 const getIsAuthenticatedState: (state: StoreState) => boolean = createSelector(
   [_getToken],
-  token => Boolean(token)
+  (token) => Boolean(token),
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  isAuthenticated: getIsAuthenticatedState(state)
+  isAuthenticated: getIsAuthenticatedState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signIn
+  signIn,
 };
 
 export {AuthenticationScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AuthenticationScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthenticationScreen);

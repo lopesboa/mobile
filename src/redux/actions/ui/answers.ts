@@ -1,27 +1,27 @@
 import {
   validateAnswer as _validateAnswer,
   getQuestionType,
-  getPreviousSlide
+  getPreviousSlide,
 } from '@coorpacademy/player-store';
 
 import type {StoreState} from '../../store';
 import {
   isCorrect as _isCorrect,
   isGodModeEnabled,
-  isFastSlideEnabled
+  isFastSlideEnabled,
 } from '../../utils/state-extract';
 import {ANALYTICS_EVENT_TYPE} from '../../../const';
 
 export const VALIDATE_ANSWER = '@@answer/VALIDATE_ANSWER';
 
 export type Action = {
-  type: '@@answer/VALIDATE_ANSWER',
-  payload: boolean
+  type: '@@answer/VALIDATE_ANSWER';
+  payload: boolean;
 };
 
 export const changeAnswerValidationStatus = (isValidating: boolean): Action => ({
   type: VALIDATE_ANSWER,
-  payload: isValidating
+  payload: isValidating,
 });
 
 export const validateAnswer: typeof _validateAnswer = () => async (dispatch, getState, options) => {
@@ -30,11 +30,11 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
   dispatch(changeAnswerValidationStatus(true));
 
   // @ts-ignore getState definition conflict
-  let state: StoreState = getState();
+  const state: StoreState = getState();
 
   const result = await _validateAnswer({
     godMode: isGodModeEnabled(state),
-    fastSlide: isFastSlideEnabled(state)
+    fastSlide: isFastSlideEnabled(state),
   })(dispatch, getState, options);
 
   // @ts-ignore getState definition conflict
@@ -46,7 +46,7 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.VALIDATE_ANSWER, {
     questionType,
-    isCorrect: typeof isCorrect === 'boolean' && Number(isCorrect)
+    isCorrect: typeof isCorrect === 'boolean' && Number(isCorrect),
   });
   await dispatch(result);
 
@@ -55,5 +55,5 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
 };
 
 export default {
-  validateAnswer
+  validateAnswer,
 };

@@ -4,7 +4,7 @@ import {
   NovaSolidVoteRewardsVoteHeart as HeartIcon,
   NovaSolidAudioAudioControlFastForward as FastForward,
   NovaCompositionCoorpacademyBrokenHeart as HeartBrokenIcon,
-  NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon
+  NovaCompositionCoorpacademyVoteHeartOutline as HeartOutlineIcon,
 } from '@coorpacademy/nova-icons';
 
 import theme from '../modules/theme';
@@ -18,10 +18,10 @@ const MAX_SCALE_Y = 1.4;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   heart: {
-    position: 'absolute'
+    position: 'absolute',
   },
   lives: {
     flex: 1,
@@ -29,37 +29,37 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.thumbnail,
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   livesPlaceholder: {
-    backgroundColor: PLACEHOLDER_COLOR
+    backgroundColor: PLACEHOLDER_COLOR,
   },
   text: {
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.gray.dark,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   textContainer: {
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   textAnimated: {
     width: '100%',
     height: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   heartIcon: {
     position: 'absolute',
     top: 0,
-    left: 0
+    left: 0,
   },
   fastSlide: {
     position: 'absolute',
     top: 0,
-    marginTop: theme.spacing.micro
-  }
+    marginTop: theme.spacing.micro,
+  },
 });
 
 export type AnimationDirection = 'top' | 'bottom';
@@ -76,8 +76,6 @@ export interface Props {
 }
 
 class Lives extends React.PureComponent<Props> {
-  props: Props;
-
   shake: Animated.Value = new Animated.Value(0);
 
   scale: Animated.Value = new Animated.Value(0);
@@ -113,14 +111,14 @@ class Lives extends React.PureComponent<Props> {
       Animated.timing(this.textTranslate, {toValue: 0, duration: 0, useNativeDriver: false}),
       Animated.timing(this.broken, {toValue: 0, duration: 0, useNativeDriver: false}),
       Animated.timing(this.shake, {toValue: 0, duration: 0, useNativeDriver: false}),
-      Animated.timing(this.scale, {toValue: 0, duration: 0, useNativeDriver: false})
+      Animated.timing(this.scale, {toValue: 0, duration: 0, useNativeDriver: false}),
     ]);
 
   loseLife = () => {
     Animated.sequence([
       Animated.timing(this.shake, {
         toValue: 1,
-        useNativeDriver: false
+        useNativeDriver: false,
       }),
       Animated.delay(350),
       Animated.parallel([
@@ -129,28 +127,28 @@ class Lives extends React.PureComponent<Props> {
           toValue: 1,
           duration: 1200,
           useNativeDriver: false,
-          easing: Easing.out(Easing.poly(3))
+          easing: Easing.out(Easing.poly(3)),
         }),
         Animated.timing(this.shake, {toValue: 0, duration: 0, useNativeDriver: false}),
         Animated.timing(this.shake, {
           toValue: 1,
           duration: 200,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.timing(this.scale, {
           toValue: 1,
           duration: 200,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.sequence([
           Animated.delay(0.6 * 200),
           Animated.timing(this.broken, {
             toValue: 1,
             duration: 0.2 * 200,
-            useNativeDriver: false
-          })
-        ])
-      ])
+            useNativeDriver: false,
+          }),
+        ]),
+      ]),
     ]).start();
   };
 
@@ -163,20 +161,20 @@ class Lives extends React.PureComponent<Props> {
             toValue: 1,
             duration: 2200,
             useNativeDriver: false,
-            easing: Easing.out(Easing.poly(5))
-          })
+            easing: Easing.out(Easing.poly(5)),
+          }),
         ]),
         Animated.timing(this.scale, {
           toValue: 1,
           duration: 1200,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.timing(this.broken, {
           toValue: 1,
           duration: 1200,
-          useNativeDriver: false
-        })
-      ])
+          useNativeDriver: false,
+        }),
+      ]),
     ]).start();
   };
 
@@ -188,7 +186,7 @@ class Lives extends React.PureComponent<Props> {
       maxScaleX = 0,
       isGodModeEnabled,
       isFastSlideEnabled,
-      animationDirection
+      animationDirection,
     } = this.props;
 
     const heartHeight = height * 0.6;
@@ -203,50 +201,50 @@ class Lives extends React.PureComponent<Props> {
     const containerStyle = {
       paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
       width: height + heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
-      height
+      height,
     };
     const fastSlideStyle = {
-      paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft
+      paddingLeft: heartHeight * (1 - HEART_OFFSET_RIGHT) + offsetLeft,
     };
     const livesStyle = {
       width: height,
-      height
+      height,
     };
     const textStyle = {
-      fontSize: height / 3
+      fontSize: height / 3,
     };
 
     const translateX = this.shake.interpolate({
       inputRange: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-      outputRange: [0, -2, 2, -2, 2, -2, 2, -2, 2, -2, 0]
+      outputRange: [0, -2, 2, -2, 2, -2, 2, -2, 2, -2, 0],
     });
     const scaleX = this.scale.interpolate({
       inputRange: [0, 0.8, 0.95, 1],
-      outputRange: [1, MAX_SCALE_X, 0.9, 1]
+      outputRange: [1, MAX_SCALE_X, 0.9, 1],
     });
     const scaleY = this.scale.interpolate({
       inputRange: [0, 0.8, 0.95, 1],
-      outputRange: [1, MAX_SCALE_Y, 0.9, 1]
+      outputRange: [1, MAX_SCALE_Y, 0.9, 1],
     });
     const heartOpacity = this.broken.interpolate({
       inputRange: [0, 1],
-      outputRange: animationDirection === 'top' ? [0, 1] : [1, 0]
+      outputRange: animationDirection === 'top' ? [0, 1] : [1, 0],
     });
     const heartBrokenOpacity = this.broken.interpolate({
       inputRange: [0, 1],
-      outputRange: animationDirection === 'top' ? [1, 0] : [0, 1]
+      outputRange: animationDirection === 'top' ? [1, 0] : [0, 1],
     });
     const textTranslateY = this.textTranslate.interpolate({
       inputRange: [0, 1],
       outputRange: (animationDirection === 'bottom' && [0, -height]) ||
-        (animationDirection === 'top' && [-height, 0]) || [0, 0]
+        (animationDirection === 'top' && [-height, 0]) || [0, 0],
     });
 
     const heartStyle = {
       height: heartHeight,
       width: heartHeight,
       transform: [{translateX}, {scaleX}, {scaleY}],
-      left: offsetLeft
+      left: offsetLeft,
     };
 
     const countSuffix = (count !== undefined && `-${count}`) || '';
@@ -289,8 +287,8 @@ class Lives extends React.PureComponent<Props> {
             style={[
               styles.heartIcon,
               {
-                opacity: heartOpacity
-              }
+                opacity: heartOpacity,
+              },
             ]}
           >
             <HeartIcon color={heartColor} style={heartIconStyle} />
@@ -299,8 +297,8 @@ class Lives extends React.PureComponent<Props> {
             style={[
               styles.heartIcon,
               {
-                opacity: heartBrokenOpacity
-              }
+                opacity: heartBrokenOpacity,
+              },
             ]}
           >
             <HeartBrokenIcon color={heartColor} style={heartIconStyle} />

@@ -1,4 +1,4 @@
-import type {LevelAPI} from '@types/coorp/player-services';
+import type {LevelAPI} from '../types/coorpacademy/player-services';
 
 import type {Level, LevelType} from '../layer/data/_types';
 import {mapToLevelAPI} from '../layer/data/mappers';
@@ -17,13 +17,13 @@ export const createLevel = ({
   bestScore,
   level = 'base',
   shuffleChoices,
-  levelTranslation
+  levelTranslation,
 }: {
-  ref: string,
-  chapterIds: Array<string>,
-  bestScore?: number,
-  level?: LevelType,
-  shuffleChoices?: boolean
+  ref: string;
+  chapterIds: Array<string>;
+  bestScore?: number;
+  level?: LevelType;
+  shuffleChoices?: boolean;
 }): Level => ({
   _id: `id_${ref}`,
   taggedNewUntil: '2018-12-08T09:07:19.302Z',
@@ -44,17 +44,17 @@ export const createLevel = ({
   data: [],
   stats: {
     userTriesCount: 0,
-    userDoneCount: 0
+    userDoneCount: 0,
   },
   chapterIds,
   acquiredSkills: [
     'Définir la data, le big data, la smart data, et comprendre leur importance',
     'Appréhender comment la construction d’une culture data peut servir l’entreprise',
-    "Identifier les enjeux liés à un champ d’application majeur de la donnée : l'Intelligence Artificielle"
+    "Identifier les enjeux liés à un champ d’application majeur de la donnée : l'Intelligence Artificielle",
   ],
   version: '2',
   external_refs: [],
-  bestScore
+  bestScore,
 });
 
 export const createLevelAPI = ({
@@ -63,21 +63,21 @@ export const createLevelAPI = ({
   bestScore,
   level = 'base',
   disciplineRef,
-  disciplineUniversalRef
+  disciplineUniversalRef,
 }: {
-  ref: string,
-  chapterIds: Array<string>,
-  bestScore?: number,
-  level?: LevelType,
-  disciplineRef?: string,
-  disciplineUniversalRef?: string
+  ref: string;
+  chapterIds: Array<string>;
+  bestScore?: number;
+  level?: LevelType;
+  disciplineRef?: string;
+  disciplineUniversalRef?: string;
 }): LevelAPI =>
   mapToLevelAPI({
     ...createLevel({ref, chapterIds, bestScore, level}),
     disciplineRef,
-    disciplineUniversalRef
+    disciplineUniversalRef,
   });
 
 export default {
-  createLevel
+  createLevel,
 };

@@ -1,5 +1,5 @@
 jest.mock('react-native-email-link', () => ({
-  openInbox: jest.fn(() => {})
+  openInbox: jest.fn(() => {}),
 }));
 
 describe('Inbox', () => {
@@ -15,7 +15,7 @@ describe('Inbox', () => {
     openInbox();
     expect(_openInbox).toHaveBeenCalledTimes(1);
     expect(_openInbox).toHaveBeenCalledWith({
-      removeText: true
+      removeText: true,
     });
   });
 

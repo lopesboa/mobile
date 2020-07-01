@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
-import type {Choice, QuestionType} from '@types/coorp/progression-engine';
+import type {Choice, QuestionType} from '../types/coorpacademy/progression-engine';
 
 import theme from '../modules/theme';
 import translations from '../translations';
@@ -12,16 +12,16 @@ import Select from '../containers/select';
 import {BrandThemeContext} from './brand-theme-provider';
 
 interface Props extends WithAnalyticsProps {
-  id: string,
-  isDisabled?: boolean,
-  questionType: QuestionType,
-  type: QuestionChoiceInputType,
-  items?: Pick<Choice, 'items'>,
-  value?: string,
-  onChange: (value: string) => void,
-  testID?: string,
-  fullWitdh?: boolean
-};
+  id: string;
+  isDisabled?: boolean;
+  questionType: QuestionType;
+  type: QuestionChoiceInputType;
+  items?: Pick<Choice, 'items'>;
+  value?: string;
+  onChange: (value: string) => void;
+  testID?: string;
+  fullWitdh?: boolean;
+}
 
 const PLACEHOLDER_COLOR = theme.colors.gray.medium;
 export const ROW_SPACE = theme.spacing.tiny;
@@ -33,20 +33,20 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.gray.lightMedium,
     borderRadius: theme.radius.common,
     backgroundColor: theme.colors.white,
-    minWidth: 175
+    minWidth: 175,
   },
   text: {
     color: PLACEHOLDER_COLOR,
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.regular,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   spaced: {
-    paddingVertical: ROW_SPACE
+    paddingVertical: ROW_SPACE,
   },
   fullWitdh: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 class QuestionInput extends React.PureComponent<Props> {
@@ -57,7 +57,7 @@ class QuestionInput extends React.PureComponent<Props> {
     analytics &&
       analytics.logEvent(event, {
         id: analyticsID,
-        questionType
+        questionType,
       });
   };
 
@@ -79,7 +79,7 @@ class QuestionInput extends React.PureComponent<Props> {
       value,
       onChange,
       fullWitdh = false,
-      testID = 'question-input'
+      testID = 'question-input',
     } = this.props;
 
     const disabledSuffix = isDisabled ? '-disabled' : '';
@@ -88,10 +88,10 @@ class QuestionInput extends React.PureComponent<Props> {
 
     return (
       <BrandThemeContext.Consumer>
-        {brandTheme => {
+        {(brandTheme) => {
           const selectedStyle = {
             borderColor: brandTheme.colors.primary,
-            color: brandTheme.colors.primary
+            color: brandTheme.colors.primary,
           };
 
           if (type === QUESTION_CHOICE_INPUT_TYPE.TEXT) {

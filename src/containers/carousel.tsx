@@ -4,19 +4,19 @@ import CarouselComponent from '../components/carousel';
 import type {Props as CarouselProps} from '../components/carousel';
 
 type State = {
-  currentIndex: number
+  currentIndex: number;
 };
 
 export interface Props<ItemT> {
-  currentIndex?: Pick<CarouselProps<ItemT>, 'currentIndex'>,
-  onChange?: Pick<CarouselProps<ItemT>, 'onChange'>
-};
+  currentIndex?: Pick<CarouselProps<ItemT>, 'currentIndex'>;
+  onChange?: Pick<CarouselProps<ItemT>, 'onChange'>;
+}
 
 class Carousel<ItemT> extends React.PureComponent<Props<ItemT>, State> {
   props: Props<ItemT>;
 
   state: State = {
-    currentIndex: this.props.currentIndex || 0
+    currentIndex: this.props.currentIndex || 0,
   };
 
   handleChange = (index: number) => {
@@ -24,11 +24,11 @@ class Carousel<ItemT> extends React.PureComponent<Props<ItemT>, State> {
 
     this.setState(
       {
-        currentIndex: index
+        currentIndex: index,
       },
       () => {
         onChange && onChange(index);
-      }
+      },
     );
   };
 

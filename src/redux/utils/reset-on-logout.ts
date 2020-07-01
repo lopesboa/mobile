@@ -1,6 +1,3 @@
-import type {Reducer} from 'redux';
-
-import type {StoreAction} from '../_types';
 import {SIGN_OUT} from '../actions/authentication';
 
 const resetOnLogout = (reducer) => (state, action) => {

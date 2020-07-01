@@ -1,10 +1,10 @@
-import crashlytics from "@react-native-firebase/crashlytics";
-import decode from "jwt-decode";
+import crashlytics from '@react-native-firebase/crashlytics';
+import decode from 'jwt-decode';
 
-import {get as getToken} from "../../utils/local-token";
-import {get as getBrand} from "../../utils/local-brand";
-import {log as logDatadogError} from "../../modules/datadog";
-import type {LoggerProperties} from "../../types";
+import {get as getToken} from '../../utils/local-token';
+import {get as getBrand} from '../../utils/local-brand';
+import {log as logDatadogError} from '../../modules/datadog';
+import type {LoggerProperties} from '../../types';
 
 export const logError = async (error: Error) => {
   const _token = await getToken();
@@ -18,8 +18,8 @@ export const logError = async (error: Error) => {
 };
 
 export const setProperties = (properties: LoggerProperties) => {
-  Object.keys(properties).forEach(property =>
-    crashlytics().setAttribute(property, properties[property] || ""),
+  Object.keys(properties).forEach((property) =>
+    crashlytics().setAttribute(property, properties[property] || ''),
   );
 };
 

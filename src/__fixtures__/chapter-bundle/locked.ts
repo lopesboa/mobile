@@ -1,3 +1,4 @@
+import {Lesson} from 'src/types/coorpacademy/progression-engine';
 import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledChapter} from '../../layer/data/_types';
 import {createChapter} from '../chapters';
@@ -8,7 +9,7 @@ import {image} from '../medias';
 
 const accessible = false;
 const qcm = createQCM({media: image});
-const lessons = [];
+const lessons: Lesson[] = [];
 const failureExitNode = createExitNode({type: EXIT_NODE_TYPE.FAILURE});
 const successExitNode = createExitNode({type: EXIT_NODE_TYPE.SUCCESS});
 
@@ -17,8 +18,8 @@ const bundledChapter: BundledChapter = {
     microlearning_locked_cha_1: createChapter({
       ref: 'microlearning_locked_cha_1',
       name: 'Microlearning locked: Locked chapter',
-      accessible
-    })
+      accessible,
+    }),
   },
   slides: {
     // group question type in a same chapter, because progression engine choose randomly one of it
@@ -26,32 +27,32 @@ const bundledChapter: BundledChapter = {
       ref: 'microlearning_locked_sli_1',
       chapterId: 'microlearning_locked_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     microlearning_locked_sli_2: createSlide({
       ref: 'microlearning_locked_sli_2',
       chapterId: 'microlearning_locked_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     microlearning_locked_sli_3: createSlide({
       ref: 'microlearning_locked_sli_3',
       chapterId: 'microlearning_locked_cha_1',
       question: qcm,
-      lessons
+      lessons,
     }),
     microlearning_locked_sli_4: createSlide({
       ref: 'microlearning_locked_sli_4',
       chapterId: 'microlearning_locked_cha_1',
       question: qcm,
-      lessons
-    })
+      lessons,
+    }),
   },
   exitNodes: {
     [failureExitNode.ref]: failureExitNode,
-    [successExitNode.ref]: successExitNode
+    [successExitNode.ref]: successExitNode,
   },
-  chapterRules: {}
+  chapterRules: {},
 };
 
 export default bundledChapter;

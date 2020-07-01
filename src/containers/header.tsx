@@ -8,24 +8,24 @@ import type {Props as ComponentProps} from '../components/header';
 import {signOut as _signOut} from '../redux/actions/authentication';
 
 interface ConnectedDispatchProps {
-  signOut: typeof _signOut
-};
+  signOut: typeof _signOut;
+}
 
 export interface Props extends ConnectedDispatchProps {
-  height: Pick<ComponentProps, 'height'>,
-  onSearchPress: () => void
-};
+  height: Pick<ComponentProps, 'height'>;
+  onSearchPress: () => void;
+}
 
 class Header extends React.PureComponent<Props> {
   handleLogoLongPress = () =>
     Alert.alert(translations.logOut, null, [
       {
-        text: translations.cancel
+        text: translations.cancel,
       },
       {
         text: translations.ok,
-        onPress: () => this.props.signOut()
-      }
+        onPress: () => this.props.signOut(),
+      },
     ]);
 
   render() {
@@ -43,11 +43,8 @@ class Header extends React.PureComponent<Props> {
 }
 
 const mapDispatchToProps: ConnectedDispatchProps = {
-  signOut: _signOut
+  signOut: _signOut,
 };
 
 export {Header as Component};
-export default connect(
-  null,
-  mapDispatchToProps
-)(Header);
+export default connect(null, mapDispatchToProps)(Header);

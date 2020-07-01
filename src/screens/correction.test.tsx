@@ -38,7 +38,7 @@ describe('Correction', () => {
       question: '',
       resources: [],
       tip: '',
-      userAnswers: []
+      userAnswers: [],
     };
 
     describe('Loading', () => {
@@ -54,15 +54,15 @@ describe('Correction', () => {
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'foo'
+              ref: 'foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.CHAPTER,
-                ref: 'bar'
-              }
-            }
-          })
+                ref: 'bar',
+              },
+            },
+          }),
         });
 
         const navigation = createNavigation({});
@@ -88,64 +88,19 @@ describe('Correction', () => {
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'mod_foo'
+              ref: 'mod_foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.SLIDE,
-                ref: 'sli_foo'
-              }
-            }
-          })
-        });
-
-        const params: Params = {
-          slideId: 'sli_bar'
-        };
-        const navigation = createNavigation({params});
-        const ownProps: OwnProps = {navigation};
-
-        const result = mapStateToProps(state, ownProps);
-        const expected: ConnectedStateProps = {
-          ...defaultProps,
-          isResourceViewed: true,
-          keyPoint: slide.klf,
-          tip: slide.tips,
-          question: question.header
-        };
-
-        expect(result).toEqual(expected);
-      });
-
-      it('should handle correction loading', () => {
-        const {mapStateToProps} = require('./correction');
-
-        const question = createQCM({title: 'Foo bar'});
-        const slide = createSlide({title: 'Foo bar', ref: 'sli_foo', chapterId: 'bar', question});
-
-        const state = createStoreState({
-          slides: [slide],
-          levels: [],
-          chapters: [],
-          disciplines: [],
-          progression: createProgression({
-            engine: ENGINE.LEARNER,
-            progressionContent: {
-              type: CONTENT_TYPE.LEVEL,
-              ref: 'mod_foo'
-            },
-            state: {
-              nextContent: {
-                type: CONTENT_TYPE.SLIDE,
-                ref: 'sli_foo'
+                ref: 'sli_foo',
               },
-              isCorrect: null
-            }
-          })
+            },
+          }),
         });
 
         const params: Params = {
-          slideId: 'sli_foo'
+          slideId: 'sli_bar',
         };
         const navigation = createNavigation({params});
         const ownProps: OwnProps = {navigation};
@@ -156,7 +111,7 @@ describe('Correction', () => {
           isResourceViewed: true,
           keyPoint: slide.klf,
           tip: slide.tips,
-          question: question.header
+          question: question.header,
         };
 
         expect(result).toEqual(expected);
@@ -177,19 +132,20 @@ describe('Correction', () => {
             engine: ENGINE.LEARNER,
             progressionContent: {
               type: CONTENT_TYPE.LEVEL,
-              ref: 'mod_foo'
+              ref: 'mod_foo',
             },
             state: {
               nextContent: {
                 type: CONTENT_TYPE.SLIDE,
-                ref: ''
-              }
-            }
-          })
+                ref: 'sli_foo',
+              },
+              isCorrect: null,
+            },
+          }),
         });
 
         const params: Params = {
-          slideId: 'sli_foo'
+          slideId: 'sli_foo',
         };
         const navigation = createNavigation({params});
         const ownProps: OwnProps = {navigation};
@@ -200,7 +156,51 @@ describe('Correction', () => {
           isResourceViewed: true,
           keyPoint: slide.klf,
           tip: slide.tips,
-          question: question.header
+          question: question.header,
+        };
+
+        expect(result).toEqual(expected);
+      });
+
+      it('should handle correction loading', () => {
+        const {mapStateToProps} = require('./correction');
+
+        const question = createQCM({title: 'Foo bar'});
+        const slide = createSlide({title: 'Foo bar', ref: 'sli_foo', chapterId: 'bar', question});
+
+        const state = createStoreState({
+          slides: [slide],
+          levels: [],
+          chapters: [],
+          disciplines: [],
+          progression: createProgression({
+            engine: ENGINE.LEARNER,
+            progressionContent: {
+              type: CONTENT_TYPE.LEVEL,
+              ref: 'mod_foo',
+            },
+            state: {
+              nextContent: {
+                type: CONTENT_TYPE.SLIDE,
+                ref: '',
+              },
+            },
+          }),
+        });
+
+        const params: Params = {
+          slideId: 'sli_foo',
+        };
+        const navigation = createNavigation({params});
+        const ownProps: OwnProps = {navigation};
+
+        const result = mapStateToProps(state, ownProps);
+        const expected: ConnectedStateProps = {
+          ...defaultProps,
+          isResourceViewed: true,
+          keyPoint: slide.klf,
+          tip: slide.tips,
+          question: question.header,
         };
 
         expect(result).toEqual(expected);
@@ -219,7 +219,7 @@ describe('Correction', () => {
         chapterId: 'bar',
         question,
         context,
-        lessons: [lesson]
+        lessons: [lesson],
       });
       const answer = createAnswer({});
       const progression = createProgression({
@@ -227,21 +227,21 @@ describe('Correction', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
+          ref: 'mod_foo',
         },
         state: {
           viewedResources: [
             {
               type: CONTENT_TYPE.CHAPTER,
               ref: 'bar',
-              resources: [lesson.ref]
-            }
+              resources: [lesson.ref],
+            },
           ],
           nextContent: {
             type: CONTENT_TYPE.SLIDE,
-            ref: 'sli_foo'
-          }
-        }
+            ref: 'sli_foo',
+          },
+        },
       });
 
       const state = createStoreState({
@@ -252,9 +252,9 @@ describe('Correction', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         data: createDataState({
           slides: [slide],
@@ -262,15 +262,15 @@ describe('Correction', () => {
           chapters: [],
           disciplines: [],
           answers: answer,
-          progression
+          progression,
         }),
         progression,
         fastSlide: true,
-        godMode: true
+        godMode: true,
       });
 
       const params: Params = {
-        slideId: 'sli_foo'
+        slideId: 'sli_foo',
       };
       const navigation = createNavigation({params});
       const ownProps: OwnProps = {navigation};
@@ -298,9 +298,9 @@ describe('Correction', () => {
           {
             ...lesson,
             url: lesson.mediaUrl,
-            videoId: undefined
-          }
-        ]
+            videoId: undefined,
+          },
+        ],
       };
 
       expect(result).toEqual(props);
@@ -318,7 +318,7 @@ describe('Correction', () => {
         chapterId: 'bar',
         question,
         context,
-        lessons: [lesson]
+        lessons: [lesson],
       });
       const answer = createAnswer({});
       const progression = createProgression({
@@ -326,15 +326,15 @@ describe('Correction', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
+          ref: 'mod_foo',
         },
         state: {
           livesDisabled: true,
           nextContent: {
             type: CONTENT_TYPE.EXIT_NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-          }
-        }
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+          },
+        },
       });
 
       const state = createStoreState({
@@ -345,9 +345,9 @@ describe('Correction', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         data: createDataState({
           slides: [slide],
@@ -355,15 +355,15 @@ describe('Correction', () => {
           chapters: [],
           disciplines: [],
           answers: answer,
-          progression
+          progression,
         }),
         progression,
         fastSlide: true,
-        godMode: true
+        godMode: true,
       });
 
       const params: Params = {
-        slideId: 'sli_foo'
+        slideId: 'sli_foo',
       };
       const navigation = createNavigation({params});
       const ownProps: OwnProps = {navigation};
@@ -391,9 +391,9 @@ describe('Correction', () => {
           {
             ...lesson,
             url: lesson.mediaUrl,
-            videoId: undefined
-          }
-        ]
+            videoId: undefined,
+          },
+        ],
       };
 
       expect(result).toEqual(props);
@@ -409,7 +409,7 @@ describe('Correction', () => {
         ref: 'sli_foo',
         chapterId: 'bar',
         question,
-        context
+        context,
       });
       const answer = createAnswer({});
       const progression = createProgression({
@@ -417,15 +417,15 @@ describe('Correction', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
+          ref: 'mod_foo',
         },
         state: {
           livesDisabled: true,
           nextContent: {
             type: CONTENT_TYPE.EXIT_NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-          }
-        }
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+          },
+        },
       });
 
       const state = createStoreState({
@@ -436,9 +436,9 @@ describe('Correction', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         data: createDataState({
           slides: [slide],
@@ -446,15 +446,15 @@ describe('Correction', () => {
           chapters: [],
           disciplines: [],
           answers: answer,
-          progression
+          progression,
         }),
         progression,
         fastSlide: true,
-        godMode: true
+        godMode: true,
       });
 
       const params: Params = {
-        slideId: 'sli_foo'
+        slideId: 'sli_foo',
       };
       const navigation = createNavigation({params});
       const ownProps: OwnProps = {navigation};
@@ -478,7 +478,7 @@ describe('Correction', () => {
         progressionId: 'progression1',
         // @ts-ignore wrong type
         question: question.header,
-        resources: []
+        resources: [],
       };
 
       expect(result).toEqual(props);
@@ -496,7 +496,7 @@ describe('Correction', () => {
         chapterId: 'bar',
         question,
         context,
-        lessons: [lesson]
+        lessons: [lesson],
       });
       const answer = createAnswer({});
       const progression = createProgression({
@@ -504,15 +504,15 @@ describe('Correction', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
+          ref: 'mod_foo',
         },
         state: {
           lives: 0,
           nextContent: {
             type: CONTENT_TYPE.EXIT_NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-          }
-        }
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+          },
+        },
       });
 
       const state = createStoreState({
@@ -523,9 +523,9 @@ describe('Correction', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         data: createDataState({
           slides: [slide],
@@ -533,15 +533,15 @@ describe('Correction', () => {
           chapters: [],
           disciplines: [],
           answers: answer,
-          progression
+          progression,
         }),
         progression,
         fastSlide: true,
-        godMode: true
+        godMode: true,
       });
 
       const params: Params = {
-        slideId: 'sli_foo'
+        slideId: 'sli_foo',
       };
       const navigation = createNavigation({params});
       const ownProps: OwnProps = {navigation};
@@ -569,9 +569,9 @@ describe('Correction', () => {
           {
             ...lesson,
             url: lesson.mediaUrl,
-            videoId: undefined
-          }
-        ]
+            videoId: undefined,
+          },
+        ],
       };
 
       expect(result).toEqual(props);
@@ -589,7 +589,7 @@ describe('Correction', () => {
         chapterId: 'bar',
         question,
         context,
-        lessons: [lesson]
+        lessons: [lesson],
       });
       const answer = createAnswer({});
       const progression = createProgression({
@@ -597,7 +597,7 @@ describe('Correction', () => {
         engine: ENGINE.LEARNER,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: 'mod_foo'
+          ref: 'mod_foo',
         },
         state: {
           hasViewedAResourceAtThisStep: true,
@@ -605,14 +605,14 @@ describe('Correction', () => {
             {
               type: CONTENT_TYPE.CHAPTER,
               ref: 'bar',
-              resources: [lesson.ref]
-            }
+              resources: [lesson.ref],
+            },
           ],
           nextContent: {
             type: CONTENT_TYPE.EXIT_NODE,
-            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE
-          }
-        }
+            ref: SPECIFIC_CONTENT_REF.EXTRA_LIFE,
+          },
+        },
       });
 
       const state = createStoreState({
@@ -623,9 +623,9 @@ describe('Correction', () => {
         ui: createUiState({
           answers: {
             progression1: {
-              value: answer
-            }
-          }
+              value: answer,
+            },
+          },
         }),
         data: createDataState({
           slides: [slide],
@@ -633,15 +633,15 @@ describe('Correction', () => {
           chapters: [],
           disciplines: [],
           answers: answer,
-          progression
+          progression,
         }),
         progression,
         fastSlide: true,
-        godMode: true
+        godMode: true,
       });
 
       const params: Params = {
-        slideId: 'sli_foo'
+        slideId: 'sli_foo',
       };
       const navigation = createNavigation({params});
       const ownProps: OwnProps = {navigation};
@@ -669,9 +669,9 @@ describe('Correction', () => {
           {
             ...lesson,
             url: lesson.mediaUrl,
-            videoId: undefined
-          }
-        ]
+            videoId: undefined,
+          },
+        ],
       };
 
       expect(result).toEqual(props);
@@ -685,7 +685,7 @@ describe('Correction', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Correction navigation={navigation} play={play} isCorrect />);
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onVideoPlay();
 
     expect(play).toHaveBeenCalledTimes(1);
@@ -703,7 +703,7 @@ describe('Correction', () => {
         navigation={navigation}
         isCorrect
         changeAnswerValidationStatus={changeAnswerValidationStatus}
-      />
+      />,
     );
 
     component.unmount();
@@ -720,14 +720,14 @@ describe('Correction', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Correction navigation={navigation} play={play} />);
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onPDFButtonPress(url, description);
 
     expect(play).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     });
   });
 
@@ -737,10 +737,10 @@ describe('Correction', () => {
     const selectCurrentProgression = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} selectCurrentProgression={selectCurrentProgression} />
+      <Correction navigation={navigation} selectCurrentProgression={selectCurrentProgression} />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
@@ -755,11 +755,11 @@ describe('Correction', () => {
     const navigation = createNavigation({});
     const component = renderer.create(<Correction navigation={navigation} />);
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onLinkPress(url);
 
     const params: BrowserScreenParams = {
-      url
+      url,
     };
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('BrowserModal', params);
@@ -771,10 +771,10 @@ describe('Correction', () => {
     const refuseExtraLife = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} refuseExtraLife={refuseExtraLife} offeringExtraLife />
+      <Correction navigation={navigation} refuseExtraLife={refuseExtraLife} offeringExtraLife />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(refuseExtraLife).toHaveBeenCalledTimes(1);
@@ -788,10 +788,10 @@ describe('Correction', () => {
     const acceptExtraLife = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} acceptExtraLife={acceptExtraLife} hasConsumedExtraLife />
+      <Correction navigation={navigation} acceptExtraLife={acceptExtraLife} hasConsumedExtraLife />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(acceptExtraLife).toHaveBeenCalledTimes(1);
@@ -809,10 +809,10 @@ describe('Correction', () => {
         navigation={navigation}
         selectCurrentProgression={selectCurrentProgression}
         hasContext
-      />
+      />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
@@ -831,17 +831,17 @@ describe('Correction', () => {
         selectCurrentProgression={selectCurrentProgression}
         isFinished
         progressionId="42"
-      />
+      />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
       isCorrect: true,
-      progressionId: '42'
+      progressionId: '42',
     });
   });
 
@@ -857,17 +857,17 @@ describe('Correction', () => {
         isFinished
         progressionId="1337"
         lives={0}
-      />
+      />,
     );
 
-    const correction = component.root.find(el => el.props.testID === 'correction');
+    const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onButtonPress();
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
       isCorrect: false,
-      progressionId: '1337'
+      progressionId: '1337',
     });
   });
 

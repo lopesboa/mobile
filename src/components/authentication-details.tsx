@@ -17,55 +17,55 @@ import Gradient from './gradient';
 import HeaderBackButton from './header-back-button';
 
 export interface Props {
-  type: AuthenticationType,
-  onHelpPress: Pick<AuthenticationFooterProps, 'onHelpPress'>,
-  onDemoPress: Pick<AuthenticationFooterProps, 'onDemoPress'>,
-  onButtonPress: () => void,
-  onBack: () => void
-};
+  type: AuthenticationType;
+  onHelpPress: Pick<AuthenticationFooterProps, 'onHelpPress'>;
+  onDemoPress: Pick<AuthenticationFooterProps, 'onDemoPress'>;
+  onButtonPress: () => void;
+  onBack: () => void;
+}
 
 const styles = StyleSheet.create({
   gradient: {
     position: 'absolute',
     height: '100%',
-    width: '100%'
+    width: '100%',
   },
   container: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   scroll: {
     paddingTop: theme.spacing.base,
     paddingBottom: theme.spacing.base,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   header: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   content: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   footer: {
-    paddingHorizontal: theme.spacing.base
+    paddingHorizontal: theme.spacing.base,
   },
   title: {
     color: theme.colors.white,
     textAlign: 'center',
     fontWeight: theme.fontWeight.bold,
-    letterSpacing: theme.letterSpacing.header
+    letterSpacing: theme.letterSpacing.header,
   },
   description: {
     color: theme.colors.white,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   steps: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   button: {
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.large,
     color: BLUE_COORP_LIGHT,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 export const TOP_COLOR = BLUE_COORP_DARK;

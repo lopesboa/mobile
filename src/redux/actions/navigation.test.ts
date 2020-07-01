@@ -10,8 +10,8 @@ describe('Navigation', () => {
       payload: {
         currentNavigatorName: 'Foo',
         currentAppScreenName: 'Bar',
-        currentScreenName: 'Baz'
-      }
+        currentScreenName: 'Baz',
+      },
     };
     const {currentNavigatorName, currentAppScreenName, currentScreenName} = expected.payload;
 
@@ -21,21 +21,21 @@ describe('Navigation', () => {
       // @ts-ignore we don't want to mock the entire object
       const options: Options = {
         services: {
-          Analytics: createFakeAnalytics()
-        }
+          Analytics: createFakeAnalytics(),
+        },
       };
       // @ts-ignore missing callable signature
       await changeScreen(currentNavigatorName, currentAppScreenName, currentScreenName)(
         dispatch,
         getState,
-        options
+        options,
       );
       expect(dispatch).toHaveBeenCalledWith(expected);
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.NAVIGATE,
         {
-          screenName: currentScreenName
-        }
+          screenName: currentScreenName,
+        },
       );
     });
 
@@ -45,8 +45,8 @@ describe('Navigation', () => {
       // @ts-ignore we don't want to mock the entire object
       const options: Options = {
         services: {
-          Analytics: createFakeAnalytics()
-        }
+          Analytics: createFakeAnalytics(),
+        },
       };
       const currentTabName = 'Qux';
       // @ts-ignore missing callable signature
@@ -54,17 +54,17 @@ describe('Navigation', () => {
         currentNavigatorName,
         currentAppScreenName,
         currentScreenName,
-        currentTabName
+        currentTabName,
       )(dispatch, getState, options);
       expect(dispatch).toHaveBeenCalledWith({
         ...expected,
-        payload: {...expected.payload, currentTabName}
+        payload: {...expected.payload, currentTabName},
       });
       expect(options.services.Analytics.logEvent).toHaveBeenCalledWith(
         ANALYTICS_EVENT_TYPE.NAVIGATE,
         {
-          screenName: currentTabName
-        }
+          screenName: currentTabName,
+        },
       );
     });
   });

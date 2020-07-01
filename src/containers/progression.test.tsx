@@ -17,8 +17,8 @@ describe('Progression', () => {
       const fakeState = createState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
 
       const qcm = createQCM({});
@@ -26,22 +26,22 @@ describe('Progression', () => {
       const slide = createSlide({
         ref: 'sli_foo',
         chapterId: 'cha_1',
-        question: qcm
+        question: qcm,
       });
 
       const chapter = createChapter({
         ref: 'cha_1',
         name: 'chapter',
-        isConditional: false
+        isConditional: false,
       });
 
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'sli_foo'
+          ref: 'sli_foo',
         },
-        state: fakeState
+        state: fakeState,
       });
       const mockedStore = createStoreState({
         progression,
@@ -50,8 +50,8 @@ describe('Progression', () => {
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
-          progression
-        })
+          progression,
+        }),
       });
 
       const result = mapStateToProps(mockedStore);
@@ -59,7 +59,7 @@ describe('Progression', () => {
         isHidden: true,
         total: 0,
         current: 20,
-        isLoading: false
+        isLoading: false,
       };
 
       expect(result).toEqual(expected);
@@ -75,23 +75,23 @@ describe('Progression', () => {
       const slide = createSlide({
         ref: 'sli_foo',
         chapterId: 'cha_1',
-        question: qcm
+        question: qcm,
       });
 
       const fakeState = createState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
 
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'sli_foo'
+          ref: 'sli_foo',
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const mockedStore = createStoreState({
@@ -101,8 +101,8 @@ describe('Progression', () => {
         data: createDataState({
           chapters: [],
           slides: [slide],
-          progression
-        })
+          progression,
+        }),
       });
 
       const result = mapStateToProps(mockedStore);
@@ -110,7 +110,7 @@ describe('Progression', () => {
         current: undefined,
         isHidden: true,
         isLoading: false,
-        total: undefined
+        total: undefined,
       };
 
       expect(result).toEqual(expected);
@@ -126,29 +126,29 @@ describe('Progression', () => {
       const slide = createSlide({
         ref: 'sli_foo',
         chapterId: 'cha_1',
-        question: qcm
+        question: qcm,
       });
 
       const fakeState = createState({
         stars: 22,
         step: {
-          current: 20
-        }
+          current: 20,
+        },
       });
 
       const progression = createProgression({
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'sli_foo'
+          ref: 'sli_foo',
         },
-        state: fakeState
+        state: fakeState,
       });
 
       const chapter = createChapter({
         ref: 'cha_1',
         name: 'chapter',
-        isConditional: true
+        isConditional: true,
       });
 
       const mockedStore = createStoreState({
@@ -158,8 +158,8 @@ describe('Progression', () => {
         data: createDataState({
           chapters: [chapter],
           slides: [slide],
-          progression
-        })
+          progression,
+        }),
       });
 
       const result = mapStateToProps(mockedStore);
@@ -167,7 +167,7 @@ describe('Progression', () => {
         current: undefined,
         isHidden: true,
         isLoading: false,
-        total: undefined
+        total: undefined,
       };
 
       expect(result).toEqual(expected);

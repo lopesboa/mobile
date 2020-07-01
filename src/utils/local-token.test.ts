@@ -2,12 +2,15 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import {createToken} from '../__fixtures__/tokens';
 
+jest.mock('@react-native-community/async-storage');
+
 describe('Local token', () => {
   const token = createToken({});
 
   describe('set', () => {
     it('should set token', async () => {
-      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
+      // @ts-ignore
+      AsyncStorage.setItem.mockImplementationOnce((key: string, value: string) => {
         expect(key).toEqual('@@token');
         expect(value).toEqual(token);
       });
@@ -22,7 +25,8 @@ describe('Local token', () => {
 
   describe('get', () => {
     it('should get token', async () => {
-      AsyncStorage.getItem.mockImplementationOnce(key => {
+      // @ts-ignore
+      AsyncStorage.getItem.mockImplementationOnce((key: string) => {
         expect(key).toEqual('@@token');
 
         return token;
@@ -39,7 +43,8 @@ describe('Local token', () => {
 
   describe('remove', () => {
     it('should remove a token', async () => {
-      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
+      // @ts-ignore
+      AsyncStorage.setItem.mockImplementationOnce((key: string, value: string) => {
         expect(key).toEqual('@@token');
         expect(value).toEqual(null);
       });

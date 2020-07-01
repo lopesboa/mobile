@@ -2,9 +2,8 @@
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
-import type {ReduxState} from '@types/coorp/player-store';
 import {reducer as network} from 'react-native-offline';
-import {$PropertyType} from "utility-types";
+import type {ReduxState} from '../types/coorpacademy/player-store';
 import type {NetworkState} from '../types';
 
 import type {State as NavigationState} from './reducers/navigation';
@@ -38,9 +37,9 @@ import UpdateCardOnProgressionUpdate from './middlewares/update-card-on-progress
 import ErrorHandler from './middlewares/error-handler';
 import type {Options, ReduxDevTools} from './_types';
 
-export type UiState = $PropertyType<ReduxState, "ui">;
-export type DataState = $PropertyType<ReduxState, "data">;
-export type StoreState =  ReduxState & {
+export type UiState = Pick<ReduxState, 'ui'>;
+export type DataState = Pick<ReduxState, 'data'>;
+export type StoreState = ReduxState & {
   navigation: NavigationState;
   catalog: CatalogState;
   authentication: AuthenticationState;
@@ -54,7 +53,7 @@ export type StoreState =  ReduxState & {
   godMode: GodModeState;
   fastSlide: FastSlideState;
   network: NetworkState;
-}
+};
 
 const {ErrorLogger, ReduxThunkMemoized} = middlewares;
 const {data, ui} = storeReducers;
@@ -74,7 +73,7 @@ const reducers = combineReducers({
   video,
   godMode,
   fastSlide,
-  network
+  network,
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
@@ -86,10 +85,10 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       ResetDisplayedProgression(options),
       ProgressionsSynchronization(options),
       UpdateCardOnProgressionUpdate(options),
-      ErrorHandler()
+      ErrorHandler(),
     ),
     // @ts-ignore
-    reduxDevTools || (f => f)
+    reduxDevTools || ((f) => f),
   );
 };
 const create = (options: Options, reduxDevTools?: ReduxDevTools) =>

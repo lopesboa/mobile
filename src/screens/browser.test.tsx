@@ -5,7 +5,7 @@ import {createNavigation} from '../__fixtures__/navigation';
 import type {Params, Props} from './browser';
 
 const createParams = (): Params => ({
-  url: 'https://domain.tld/link.pdf'
+  url: 'https://domain.tld/link.pdf',
 });
 
 describe('Browser', () => {
@@ -14,12 +14,12 @@ describe('Browser', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
 
     const component = renderer.create(<Browser navigation={navigation} />);
 
-    const screen = component.root.find(el => el.props.testID === 'browser-screen');
+    const screen = component.root.find((el) => el.props.testID === 'browser-screen');
 
     expect(screen).toBeDefined();
   });
@@ -29,18 +29,18 @@ describe('Browser', () => {
 
     const params = createParams();
     const navigation = createNavigation({
-      params
+      params,
     });
     const props: Props = {
       navigation,
-      navigationOptions: {}
+      navigationOptions: {},
     };
 
     const {headerLeft} = Browser.navigationOptions(props);
 
     const component = renderer.create(headerLeft);
 
-    const button = component.root.find(el => el.props.testID === 'browser-button-close');
+    const button = component.root.find((el) => el.props.testID === 'browser-button-close');
     button.props.onPress();
 
     expect(navigation.dispatch).toHaveBeenCalledTimes(1);

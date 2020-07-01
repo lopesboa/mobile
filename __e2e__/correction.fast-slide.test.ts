@@ -1,10 +1,11 @@
+import {by, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   waitForVisible,
   waitForNotVisible,
   waitForExist,
-  tapCardOnList
+  tapCardOnList,
 } from './utils';
 
 describe('Correction: fast slide', () => {

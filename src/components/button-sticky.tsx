@@ -8,7 +8,7 @@ import Button from './button';
 import type {OwnProps as ButtonProps} from './button';
 import Gradient from './gradient';
 
-export interface Props extends  WithLayoutProps, ButtonProps {}
+export interface Props extends WithLayoutProps, ButtonProps {}
 
 export const HEIGHT = 140;
 
@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     height: HEIGHT,
     bottom: 0,
-    width: '100%'
+    width: '100%',
   },
   cta: {
     position: 'absolute',
     bottom: theme.spacing.base,
-    left: theme.spacing.base
-  }
+    left: theme.spacing.base,
+  },
 });
 
 const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: Props) => (
@@ -45,5 +45,5 @@ const ButtonSticky = ({onLayout, layout, containerStyle, ...props}: Props) => (
 
 export {ButtonSticky as Component};
 export default withLayout(ButtonSticky, {
-  withoutContainer: true
+  withoutContainer: true,
 });

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {NavigationActions, NavigationScreenProps} from 'react-navigation';
-import {$PropertyType} from "utility-types";
 import {BackHandler} from '../modules/back-handler';
 
 import {openInbox} from '../modules/inbox';
@@ -13,14 +12,13 @@ import Screen from '../components/screen';
 import type {Params as QRCodeScreenParams} from './qr-code';
 
 export type Params = {
-  type: Pick<AuthenticationDetailsProps, 'type'>,
-  onSignIn: (AuthenticationType, string) => Promise<void>,
-  onHelpPress: Pick<AuthenticationDetailsProps, 'onHelpPress'>,
-  onDemoPress: Pick<AuthenticationDetailsProps, 'onDemoPress'>
+  type: Pick<AuthenticationDetailsProps, 'type'>;
+  onSignIn: (AuthenticationType, string) => Promise<void>;
+  onHelpPress: Pick<AuthenticationDetailsProps, 'onHelpPress'>;
+  onDemoPress: Pick<AuthenticationDetailsProps, 'onDemoPress'>;
 };
 
-interface Props extends NavigationScreenProps<Params> {};
-
+type Props = NavigationScreenProps<Params>;
 
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   componentDidMount() {
@@ -47,7 +45,7 @@ class AuthenticationDetailsScreen extends React.PureComponent<Props> {
     if (type === AUTHENTICATION_TYPE.QR_CODE) {
       const {navigation} = this.props;
       const params: QRCodeScreenParams = {
-        onScan: this.handleScan
+        onScan: this.handleScan,
       };
       navigation.navigate('QRCodeModal', params);
     }

@@ -12,9 +12,9 @@ export type Action =
 
 export const focus = (id: string): Action => ({
   type: FOCUS,
-  payload: id
+  payload: id,
 });
 
 export const blur = (): Action => ({
-  type: BLUR
+  type: BLUR,
 });

@@ -6,8 +6,8 @@ import ImageBackground from './image-background';
 
 const styles = StyleSheet.create({
   logo: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });
 
 interface Props {
@@ -22,7 +22,7 @@ const BrandLogo = ({height}: Props) => {
       style={[styles.logo, {height}]}
       testID="brand-logo"
       source={{
-        uri: brandTheme.images['logo-mobile']
+        uri: brandTheme.images['logo-mobile'],
       }}
       resizeMode="contain"
     />

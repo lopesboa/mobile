@@ -45,7 +45,7 @@ if (__TEST__) {
     const analyticsID = 'fake-touchable';
     const analyticsParams = {
       foo: 'bar',
-      baz: 'qux'
+      baz: 'qux',
     };
 
     it('should not handle onPress', () => {
@@ -57,10 +57,10 @@ if (__TEST__) {
           analytics={analytics}
           analyticsID={analyticsID}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onPress();
       expect(vibration.vibrate).not.toHaveBeenCalled();
@@ -78,14 +78,14 @@ if (__TEST__) {
           analyticsID={analyticsID}
           onPress={handlePress}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
@@ -103,15 +103,15 @@ if (__TEST__) {
           analyticsParams={analyticsParams}
           onPress={handlePress}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PRESS, {
         ...analyticsParams,
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handlePress).toHaveBeenCalled();
@@ -126,10 +126,10 @@ if (__TEST__) {
           analytics={analytics}
           analyticsID={analyticsID}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onLongPress();
       expect(vibration.vibrate).not.toHaveBeenCalled();
@@ -147,14 +147,14 @@ if (__TEST__) {
           analyticsID={analyticsID}
           onLongPress={handleLongPress}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onLongPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleLongPress).toHaveBeenCalled();
@@ -172,15 +172,15 @@ if (__TEST__) {
           analyticsParams={analyticsParams}
           onLongPress={handleLongPress}
           testID="touchable-fake"
-        />
+        />,
       );
       const touchable = component.root.find(
-        el => el.props.testID === 'touchable-fake' && !el.props.analytics
+        (el) => el.props.testID === 'touchable-fake' && !el.props.analytics,
       );
       touchable.props.onLongPress();
       expect(analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.LONG_PRESS, {
         ...analyticsParams,
-        id: analyticsID
+        id: analyticsID,
       });
       expect(vibration.vibrate).toHaveBeenCalledTimes(1);
       expect(handleLongPress).toHaveBeenCalled();

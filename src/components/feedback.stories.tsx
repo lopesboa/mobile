@@ -84,10 +84,10 @@ if (__TEST__) {
           media={pdf}
           onPDFButtonPress={handlePDFButtonPress}
           onLinkPress={handleFakePress}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'feedback-resource-pdf');
+      const button = component.root.find((el) => el.props.testID === 'feedback-resource-pdf');
       button.props.onPress(pdfUrl, pdfDescription);
 
       expect(handlePDFButtonPress).toHaveBeenCalledTimes(1);
@@ -104,10 +104,10 @@ if (__TEST__) {
           media={pdf}
           onPDFButtonPress={handlePDFButtonPress}
           onLinkPress={handleFakePress}
-        />
+        />,
       );
 
-      const button = component.root.find(el => el.props.testID === 'feedback-resource-pdf');
+      const button = component.root.find((el) => el.props.testID === 'feedback-resource-pdf');
       button.props.onPress();
 
       expect(handlePDFButtonPress).toHaveBeenCalledTimes(0);

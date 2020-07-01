@@ -1,4 +1,4 @@
-import type {LevelAPI} from '@types/coorp/player-services';
+import type {LevelAPI} from '../../types/coorpacademy/player-services';
 import {fakeError} from '../../utils/tests';
 import {createLevelAPI} from '../../__fixtures__/levels';
 import disciplinesBundle from '../../__fixtures__/discipline-bundle';
@@ -8,14 +8,14 @@ import {
   createDisciplineCard,
   createChaptersCards,
   createCardLevel,
-  createChapterCard
+  createChapterCard,
 } from '../../__fixtures__/cards';
 import createCompletion from '../../__fixtures__/completion';
 import {createSections} from '../../__fixtures__/sections';
 import {
   cardsToKeys,
   updateDisciplineCardDependingOnCompletion,
-  updateChapterCardAccordingToCompletion
+  updateChapterCardAccordingToCompletion,
 } from './cards';
 import {CONTENT_TYPE} from './_const';
 import type {Completion, DisciplineCard, ChapterCard, Card} from './_types';
@@ -25,10 +25,10 @@ const endpoint = '/api/v1/fake';
 const token = '__token__';
 
 const disciplinesCards = createDisciplinesCards(
-  Object.keys(disciplinesBundle.disciplines).map(key => disciplinesBundle.disciplines[key])
+  Object.keys(disciplinesBundle.disciplines).map((key) => disciplinesBundle.disciplines[key]),
 );
 const chaptersCards = createChaptersCards(
-  Object.keys(chaptersBundle.chapters).map(key => chaptersBundle.chapters[key])
+  Object.keys(chaptersBundle.chapters).map((key) => chaptersBundle.chapters[key]),
 );
 const cards = disciplinesCards.concat(chaptersCards);
 
@@ -38,19 +38,19 @@ describe('cards', () => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
     });
 
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchCards} = require('./cards');
       const result = fetchCards(token, host, endpoint, 1, 3, {});
       const expected = {
         cards: cards.slice(1, 4),
-        total: cards.length
+        total: cards.length,
       };
 
       return expect(result).resolves.toEqual(expected);
@@ -62,14 +62,14 @@ describe('cards', () => {
       fetch.mockImplementationOnce(
         (
           url,
-          options
+          options,
         ): Promise<{
           json: () => Promise<{
             search_meta: {
-              total: number
-            },
-            hits: Array<Card>
-          }>
+              total: number;
+            };
+            hits: Array<Card>;
+          }>;
         }> => {
           expect(url).toBe(`${host}${endpoint}?offset=0&limit=2&lang=en`);
 
@@ -79,19 +79,19 @@ describe('cards', () => {
             json: () =>
               Promise.resolve({
                 search_meta: {
-                  total: cards.length
+                  total: cards.length,
                 },
-                hits: cards.slice(0, 2)
-              })
+                hits: cards.slice(0, 2),
+              }),
           });
-        }
+        },
       );
 
       const {fetchCards} = require('./cards');
       const result = fetchCards(token, host, endpoint, 0, 2, {});
       const expected = {
         cards: cards.slice(0, 2),
-        total: cards.length
+        total: cards.length,
       };
 
       await expect(result).resolves.toEqual(expected);
@@ -100,7 +100,7 @@ describe('cards', () => {
     it('should reject error', async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+      fetch.mockImplementationOnce(() => Promise.reject(fakeError));
 
       const {fetchCards} = require('./cards');
       const result = fetchCards(token, host, endpoint, 0, 3);
@@ -111,15 +111,15 @@ describe('cards', () => {
     it("should returns empty array if apis doesn't have results", async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => {
+      fetch.mockImplementationOnce(() => {
         return Promise.resolve({
           json: () =>
             Promise.resolve({
               search_meta: {
-                total: 0
+                total: 0,
               },
-              hits: []
-            })
+              hits: [],
+            }),
         });
       });
 
@@ -128,7 +128,7 @@ describe('cards', () => {
 
       const expected = {
         cards: [],
-        total: 0
+        total: 0,
       };
       await expect(result).resolves.toEqual(expected);
     });
@@ -145,19 +145,19 @@ describe('cards', () => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
     });
 
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchSectionCards} = require('./cards');
       const result = fetchSectionCards(token, host, section, 1, 3);
       const expected = {
         cards: cards.slice(1, 4),
-        total: cards.length
+        total: cards.length,
       };
 
       return expect(result).resolves.toEqual(expected);
@@ -168,15 +168,15 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce(
         (
-          url,
-          options
+          url: string,
+          options: unknown,
         ): Promise<{
           json: () => Promise<{
             search_meta: {
-              total: number
-            },
-            hits: Array<Card>
-          }>
+              total: number;
+            };
+            hits: Array<Card>;
+          }>;
         }> => {
           expect(url).toBe(`${host}${section.endpoint}?contentType=all&offset=0&limit=2&lang=en`);
 
@@ -186,19 +186,19 @@ describe('cards', () => {
             json: () =>
               Promise.resolve({
                 search_meta: {
-                  total: cards.length
+                  total: cards.length,
                 },
-                hits: cards.slice(0, 2)
-              })
+                hits: cards.slice(0, 2),
+              }),
           });
-        }
+        },
       );
 
       const {fetchSectionCards} = require('./cards');
       const result = fetchSectionCards(token, host, section, 0, 2);
       const expected = {
         cards: cards.slice(0, 2),
-        total: cards.length
+        total: cards.length,
       };
 
       await expect(result).resolves.toEqual(expected);
@@ -207,7 +207,7 @@ describe('cards', () => {
     it('should reject error', async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+      fetch.mockImplementationOnce(() => Promise.reject(fakeError));
 
       const {fetchSectionCards} = require('./cards');
       const result = fetchSectionCards(token, host, section, 0, 3);
@@ -218,15 +218,15 @@ describe('cards', () => {
     it("should returns empty array if apis doesn't have results", async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => {
+      fetch.mockImplementationOnce(() => {
         return Promise.resolve({
           json: () =>
             Promise.resolve({
               search_meta: {
-                total: 0
+                total: 0,
               },
-              hits: []
-            })
+              hits: [],
+            }),
         });
       });
 
@@ -235,7 +235,7 @@ describe('cards', () => {
 
       const expected = {
         cards: [],
-        total: 0
+        total: 0,
       };
       await expect(result).resolves.toEqual(expected);
     });
@@ -252,19 +252,19 @@ describe('cards', () => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
     });
 
     it('should fetch e2e fixtures', () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
       const {fetchSearchCards} = require('./cards');
       const result = fetchSearchCards(token, host, search, {}, 1, 3);
       const expected = {
         cards: cards.slice(1, 4),
-        total: cards.length
+        total: cards.length,
       };
 
       return expect(result).resolves.toEqual(expected);
@@ -275,18 +275,18 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce(
         (
-          url,
-          options
+          url: string,
+          options: unknown,
         ): Promise<{
           json: () => Promise<{
             search_meta: {
-              total: number
-            },
-            hits: Array<Card>
-          }>
+              total: number;
+            };
+            hits: Array<Card>;
+          }>;
         }> => {
           expect(url).toBe(
-            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en`
+            `${host}/api/v2/contents?fullText=foo%20bar%20baz&offset=0&limit=2&lang=en`,
           );
           expect(options).toHaveProperty('headers.authorization', token);
 
@@ -294,19 +294,19 @@ describe('cards', () => {
             json: () =>
               Promise.resolve({
                 search_meta: {
-                  total: cards.length
+                  total: cards.length,
                 },
-                hits: cards.slice(0, 2)
-              })
+                hits: cards.slice(0, 2),
+              }),
           });
-        }
+        },
       );
 
       const {fetchSearchCards} = require('./cards');
       const result = fetchSearchCards(token, host, search, {}, 0, 2);
       const expected = {
         cards: cards.slice(0, 2),
-        total: cards.length
+        total: cards.length,
       };
 
       await expect(result).resolves.toEqual(expected);
@@ -315,7 +315,7 @@ describe('cards', () => {
     it('should reject error', async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => Promise.reject(fakeError));
+      fetch.mockImplementationOnce(() => Promise.reject(fakeError));
 
       const {fetchSearchCards} = require('./cards');
       const result = fetchSearchCards(token, host, search, {}, 0, 3);
@@ -326,15 +326,15 @@ describe('cards', () => {
     it("should returns empty array if apis doesn't have results", async () => {
       const fetch = require('cross-fetch');
 
-      fetch.mockImplementationOnce((url, options) => {
+      fetch.mockImplementationOnce(() => {
         return Promise.resolve({
           json: () =>
             Promise.resolve({
               search_meta: {
-                total: 0
+                total: 0,
               },
-              hits: []
-            })
+              hits: [],
+            }),
         });
       });
 
@@ -343,7 +343,7 @@ describe('cards', () => {
 
       const expected = {
         cards: [],
-        total: 0
+        total: 0,
       };
       await expect(result).resolves.toEqual(expected);
     });
@@ -358,20 +358,20 @@ describe('cards', () => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
 
       jest.mock('../../utils/local-token', () => {
         const {createToken} = require('../../__fixtures__/tokens');
         return {
-          get: jest.fn(() => Promise.resolve(createToken({})))
+          get: jest.fn(() => Promise.resolve(createToken({}))),
         };
       });
     });
 
     it('should fetch e2e fixtures', async () => {
       jest.mock('../../modules/environment', () => ({
-        __E2E__: true
+        __E2E__: true,
       }));
 
       const {fetchCard} = require('./cards');
@@ -380,7 +380,7 @@ describe('cards', () => {
       // @ts-ignore union type
       const result = await fetchCard({
         ref: discipline.modules[0].universalRef,
-        type: CONTENT_TYPE.LEVEL
+        type: CONTENT_TYPE.LEVEL,
       });
 
       return expect(result.universalRef).toEqual(discipline.universalRef);
@@ -395,40 +395,40 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 20,
-        completion: 0.3
+        completion: 0.3,
       });
       const completion: Completion = {
         current: 3,
-        stars: 10
+        stars: 10,
       };
 
-      AsyncStorage.getItem.mockImplementation(key =>
+      AsyncStorage.getItem.mockImplementation((key: string) =>
         Promise.resolve(
-          key === 'completion_microlearning_foo' ? JSON.stringify(completion) : undefined
-        )
+          key === 'completion_microlearning_foo' ? JSON.stringify(completion) : undefined,
+        ),
       );
 
       fetch.mockImplementationOnce(
         (
-          url
+          url: string,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(
-            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en',
           );
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: [mockCard]})
+            json: () => Promise.resolve({hits: [mockCard]}),
           });
-        }
+        },
       );
 
       const {fetchCard} = require('./cards');
       const card = await fetchCard({ref: 'foo', type: CONTENT_TYPE.CHAPTER});
       expect(card).toEqual({
         ...mockCard,
-        completion: completion.current / microLearningSlideToComplete
+        completion: completion.current / microLearningSlideToComplete,
       });
     });
 
@@ -440,25 +440,25 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         completion: 0.5,
-        stars: 20
+        stars: 20,
       });
 
-      AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
+      AsyncStorage.getItem.mockImplementation(() => Promise.resolve(undefined));
 
       fetch.mockImplementationOnce(
         (
-          url
+          url,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(
-            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en',
           );
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: [mockCard]})
+            json: () => Promise.resolve({hits: [mockCard]}),
           });
-        }
+        },
       );
 
       const {fetchCard} = require('./cards');
@@ -476,43 +476,43 @@ describe('cards', () => {
         // @ts-ignore module is defined
         ref: discipline.modules[0].universalRef,
         disciplineRef: 'foo',
-        disciplineUniversalRef: discipline.universalRef
+        disciplineUniversalRef: discipline.universalRef,
       });
       // @ts-ignore its defined
       const levelUniversalRef: string = level.universalRef;
       // @ts-ignore its defined
       const disciplineUniversalRef: string = level.disciplineUniversalRef;
 
-      AsyncStorage.getItem.mockImplementation(key => Promise.resolve(undefined));
+      AsyncStorage.getItem.mockImplementation(() => Promise.resolve(undefined));
 
       fetch.mockImplementationOnce(
         (
-          url
+          url,
         ): Promise<{
-          json: () => Promise<LevelAPI>
+          json: () => Promise<LevelAPI>;
         }> => {
           expect(url).toBe(`https://domain.tld/api/v2/levels/${levelUniversalRef}`);
 
           return Promise.resolve({
-            json: () => Promise.resolve(level)
+            json: () => Promise.resolve(level),
           });
-        }
+        },
       );
 
       fetch.mockImplementationOnce(
         (
-          url
+          url: string,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(
-            `https://domain.tld/api/v2/contents?type=course&universalRef=${disciplineUniversalRef}&lang=en`
+            `https://domain.tld/api/v2/contents?type=course&universalRef=${disciplineUniversalRef}&lang=en`,
           );
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: [discipline]})
+            json: () => Promise.resolve({hits: [discipline]}),
           });
-        }
+        },
       );
 
       const {fetchCard} = require('./cards');
@@ -526,18 +526,18 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce(
         (
-          url
+          url,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(
-            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en'
+            'https://domain.tld/api/v2/contents?type=chapter&universalRef=foo&lang=en',
           );
 
           return Promise.resolve({
-            json: () => Promise.resolve({hits: []})
+            json: () => Promise.resolve({hits: []}),
           });
-        }
+        },
       );
 
       const {fetchCard} = require('./cards');
@@ -567,7 +567,7 @@ describe('cards', () => {
       jest.mock('../../utils/local-token', () => {
         const {createToken} = require('../../__fixtures__/tokens');
         return {
-          get: jest.fn(() => Promise.resolve(createToken({})))
+          get: jest.fn(() => Promise.resolve(createToken({}))),
         };
       });
     });
@@ -581,7 +581,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 20,
-        completion: 0.3
+        completion: 0.3,
       });
 
       const mockCard2 = createChapterCard({
@@ -589,18 +589,18 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 66,
-        completion: 0.3
+        completion: 0.3,
       });
       const completion1: Completion = {
         current: 3,
-        stars: 10
+        stars: 10,
       };
       const completion2: Completion = {
         current: 3,
-        stars: 10
+        stars: 10,
       };
 
-      AsyncStorage.getItem.mockImplementation(key => {
+      AsyncStorage.getItem.mockImplementation((key: string) => {
         if (key === 'completion_microlearning_foo') {
           return Promise.resolve(JSON.stringify(completion1));
         }
@@ -613,27 +613,27 @@ describe('cards', () => {
 
       fetch.mockImplementationOnce(
         (
-          url
+          url: string,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
 
           return Promise.resolve({
-            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
+            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]}),
           });
-        }
+        },
       );
 
       const {fetchCards} = require('./cards');
       const {cards: _cards} = await fetchCards(token, host, endpoint, 1, 3);
       expect(_cards[0]).toEqual({
         ...mockCard1,
-        completion: completion1.current / microLearningSlideToComplete
+        completion: completion1.current / microLearningSlideToComplete,
       });
       expect(_cards[1]).toEqual({
         ...mockCard2,
-        completion: completion2.current / microLearningSlideToComplete
+        completion: completion2.current / microLearningSlideToComplete,
       });
     });
 
@@ -645,7 +645,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 20,
-        completion: 0.3
+        completion: 0.3,
       });
 
       const mockCard2 = createChapterCard({
@@ -653,25 +653,25 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'plop',
         stars: 66,
-        completion: 0.3
+        completion: 0.3,
       });
 
-      AsyncStorage.getItem.mockImplementation(key => {
+      AsyncStorage.getItem.mockImplementation(() => {
         return Promise.resolve(undefined);
       });
 
       fetch.mockImplementationOnce(
         (
-          url
+          url: string,
         ): Promise<{
-          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>
+          json: () => Promise<{hits: Array<DisciplineCard | ChapterCard | void>}>;
         }> => {
           expect(url).toBe(`${host}${endpoint}?offset=1&limit=3&lang=en`);
 
           return Promise.resolve({
-            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]})
+            json: () => Promise.resolve({search_meta: {total: 2}, hits: [mockCard1, mockCard2]}),
           });
-        }
+        },
       );
 
       const {fetchCards} = require('./cards');
@@ -693,21 +693,21 @@ describe('cards', () => {
         ref: fakeRef,
         status: 'isStarted',
         stars: 0,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const level2 = createCardLevel({
         ref: fakeRef,
         status: 'isStarted',
         stars: 0,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const disciplineCard = createDisciplineCard({
         ref: 'lol',
         completion: 0,
         levels: [level1, level2],
-        title: 'fakeTitle'
+        title: 'fakeTitle',
       });
 
       const completion1 = createCompletion({stars: 100});
@@ -719,18 +719,18 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            stars: 100
+            stars: 100,
           },
           {
             ...level2,
-            stars: 100
-          }
-        ]
+            stars: 100,
+          },
+        ],
       };
 
       const result = updateDisciplineCardDependingOnCompletion(
         [completion1, completion2],
-        disciplineCard
+        disciplineCard,
       );
 
       expect(result).toEqual(expectedResult);
@@ -742,7 +742,7 @@ describe('cards', () => {
         ref: fakeRef,
         status: 'isStarted',
         stars: 0,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const expectedStarsCountLevel = 1000;
@@ -751,14 +751,14 @@ describe('cards', () => {
         ref: fakeRef,
         status: 'isStarted',
         stars: expectedStarsCountLevel,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const disciplineCard = createDisciplineCard({
         ref: 'lol',
         completion: 0,
         levels: [level1, level2],
-        title: 'fakeTitle'
+        title: 'fakeTitle',
       });
 
       const completion1 = createCompletion({stars: expectedStarsCountLevel});
@@ -770,18 +770,18 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            stars: expectedStarsCountLevel
+            stars: expectedStarsCountLevel,
           },
           {
             ...level2,
-            stars: expectedStarsCountLevel
-          }
-        ]
+            stars: expectedStarsCountLevel,
+          },
+        ],
       };
 
       const result = updateDisciplineCardDependingOnCompletion(
         [completion1, completion2],
-        disciplineCard
+        disciplineCard,
       );
 
       expect(result).toEqual(expectedResult);
@@ -795,14 +795,14 @@ describe('cards', () => {
         completion: 0,
         status: 'isStarted',
         title: 'fakeTitle',
-        stars: expectedStarsCountLevel
+        stars: expectedStarsCountLevel,
       });
 
       const completion = createCompletion({stars: 0});
 
       const expectedResult = {
         ...chapterCard,
-        stars: expectedStarsCountLevel
+        stars: expectedStarsCountLevel,
       };
 
       const result = updateChapterCardAccordingToCompletion(completion, chapterCard);
@@ -818,14 +818,14 @@ describe('cards', () => {
         completion: 0,
         status: 'isStarted',
         title: 'fakeTitle',
-        stars: 0
+        stars: 0,
       });
 
       const completion = createCompletion({stars: expectedStarsCountLevel});
 
       const expectedResult = {
         ...chapterCard,
-        stars: expectedStarsCountLevel
+        stars: expectedStarsCountLevel,
       };
 
       const result = updateChapterCardAccordingToCompletion(completion, chapterCard);
@@ -842,7 +842,7 @@ describe('cards', () => {
         completion: 0,
         stars: 0,
         label: 'fakeLabel',
-        nbChapters: 2
+        nbChapters: 2,
       });
 
       const nbChapters = 1;
@@ -853,7 +853,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'fakeTitle',
         stars: 0,
-        levels: [level1]
+        levels: [level1],
       });
       const currentCompletionRate = 4;
       const completion1 = createCompletion({stars: 0, current: currentCompletionRate});
@@ -866,9 +866,9 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            completion: expectedLevelCompletionRate
-          }
-        ]
+            completion: expectedLevelCompletionRate,
+          },
+        ],
       };
 
       const result = updateDisciplineCardDependingOnCompletion([completion1], disciplineCard);
@@ -884,7 +884,7 @@ describe('cards', () => {
         status: 'isStarted',
         completion: 0,
         stars: 0,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const nbChapters = 1;
@@ -895,7 +895,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'fakeTitle',
         stars: 0,
-        levels: [level1]
+        levels: [level1],
       });
       const currentCompletionRate = 666;
       const completion1 = createCompletion({stars: 0, current: currentCompletionRate});
@@ -908,9 +908,9 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            completion: expectedLevelCompletionRate
-          }
-        ]
+            completion: expectedLevelCompletionRate,
+          },
+        ],
       };
 
       const result = updateDisciplineCardDependingOnCompletion([completion1], disciplineCard);
@@ -927,7 +927,7 @@ describe('cards', () => {
         completion: 0,
         stars: 0,
         label: 'fakeLabel',
-        nbChapters: 2
+        nbChapters: 2,
       });
 
       const level2 = createCardLevel({
@@ -936,7 +936,7 @@ describe('cards', () => {
         completion: 0,
         stars: 0,
         label: 'fakeLabel',
-        nbChapters: 2
+        nbChapters: 2,
       });
 
       const nbChapters = 1;
@@ -947,7 +947,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'fakeTitle',
         stars: 0,
-        levels: [level1, level2]
+        levels: [level1, level2],
       });
       const currentCompletionRate1 = 666;
       const completion1 = createCompletion({stars: 0, current: currentCompletionRate1});
@@ -964,18 +964,18 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            completion: expectedLevelCompletionRate1
+            completion: expectedLevelCompletionRate1,
           },
           {
             ...level2,
-            completion: expectedLevelCompletionRate2
-          }
-        ]
+            completion: expectedLevelCompletionRate2,
+          },
+        ],
       };
 
       const result = updateDisciplineCardDependingOnCompletion(
         [completion1, completion2],
-        disciplineCard
+        disciplineCard,
       );
 
       expect(result).toEqual(expectedResult);
@@ -990,7 +990,7 @@ describe('cards', () => {
       const _card = cards[1];
       const AsyncStorage = require('@react-native-community/async-storage');
       const {getCardFromLocalStorage} = require('./cards');
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key) => {
         if (key === '@@lang') {
           return 'en';
         }
@@ -1017,7 +1017,7 @@ describe('cards', () => {
         status: 'isStarted',
         completion: 0,
         stars: minStar,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const nbChapters = 1;
@@ -1028,14 +1028,14 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'fakeTitle',
         stars: 0,
-        levels: [level1]
+        levels: [level1],
       });
 
       const completion = createCompletion({stars: maxStars, current: 0});
 
       const completionKey = `completion_learner_${level1.ref}`;
 
-      AsyncStorage.getItem = jest.fn().mockImplementation(key => {
+      AsyncStorage.getItem = jest.fn().mockImplementation((key) => {
         if (key === completionKey) {
           return Promise.resolve(JSON.stringify(completion));
         }
@@ -1049,9 +1049,9 @@ describe('cards', () => {
         modules: [
           {
             ...level1,
-            stars: maxStars
-          }
-        ]
+            stars: maxStars,
+          },
+        ],
       };
 
       expect(result).toEqual(expectedResult);
@@ -1068,7 +1068,7 @@ describe('cards', () => {
         status: 'isStarted',
         completion: 0,
         stars: minStar,
-        label: 'fakeLabel'
+        label: 'fakeLabel',
       });
 
       const nbChapters = 1;
@@ -1079,7 +1079,7 @@ describe('cards', () => {
         status: 'isStarted',
         title: 'fakeTitle',
         stars: 0,
-        levels: [level1]
+        levels: [level1],
       });
 
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(undefined));
@@ -1102,7 +1102,7 @@ describe('cards', () => {
         completion: 0,
         status: 'isStarted',
         title: 'fakeTitle',
-        stars: 0
+        stars: 0,
       });
 
       const completion = createCompletion({stars: maxStars, current: 2});
@@ -1116,7 +1116,7 @@ describe('cards', () => {
       const expectedResult = {
         ...chapterCard,
         completion: completion.current / slidesToComplete,
-        stars: maxStars
+        stars: maxStars,
       };
 
       expect(result).toEqual(expectedResult);
@@ -1133,7 +1133,7 @@ describe('cards', () => {
         completion: 0,
         status: 'isStarted',
         title: 'fakeTitle',
-        stars: 0
+        stars: 0,
       });
 
       AsyncStorage.getItem = jest.fn().mockImplementation(() => Promise.resolve(undefined));
@@ -1149,14 +1149,14 @@ describe('cards', () => {
       jest.resetModules();
 
       jest.mock('../../modules/environment', () => ({
-        __E2E__: false
+        __E2E__: false,
       }));
     });
 
     it('should save cards in async storage', async () => {
       const AsyncStorage = require('@react-native-community/async-storage');
-      AsyncStorage.multiSet.mockImplementation(values => {
-        const result = values.map(value => value[0]);
+      AsyncStorage.multiSet.mockImplementation((values) => {
+        const result = values.map((value) => value[0]);
         const expected = [
           'card:en:adaptive_dis_1',
           'card:en:adaptive_mod_1',
@@ -1180,7 +1180,7 @@ describe('cards', () => {
           'card:en:question_basic_dis_1',
           'card:en:question_basic_mod_1',
           'card:en:locked_dis_1',
-          'card:en:locked_mod_1'
+          'card:en:locked_mod_1',
         ];
         // we don't want to test all fixtures, only the keys
         expect(result).toEqual(expected);
@@ -1219,7 +1219,7 @@ describe('cards', () => {
         ref: 'test',
         title: 'title',
         completion: 0,
-        status: 'isActive'
+        status: 'isActive',
       });
 
       const keyedChapterCard = cardsToKeys([chapterCard], 'en');

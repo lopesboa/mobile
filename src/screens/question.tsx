@@ -10,11 +10,11 @@ import {
   getQuestionType,
   getCurrentSlide,
   isQuestionCtaDisabled,
-  getChoices
+  getChoices,
 } from '@coorpacademy/player-store';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 import Question from '../components/question';
 import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
@@ -22,7 +22,7 @@ import type {StoreState} from '../redux/store';
 import {
   getQuestion,
   getContentCorrectionInfo,
-  getValidationStatus
+  getValidationStatus,
 } from '../redux/utils/state-extract';
 import {validateAnswer} from '../redux/actions/ui/answers';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
@@ -46,15 +46,14 @@ export interface ConnectedStateProps {
   isValidationDisabled?: Pick<QuestionProps, 'isValidationDisabled'>;
   slideId?: string;
   isValidating?: boolean;
-};
+}
 
 interface ConnectedDispatchProps {
   editAnswer: typeof editAnswer;
   validateAnswer: typeof validateAnswer;
-};
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
-
 
 class QuestionScreen extends React.Component<Props> {
   scrollView: KeyboardAwareScrollView | void;
@@ -95,7 +94,7 @@ class QuestionScreen extends React.Component<Props> {
   handleButtonPress = async () => {
     const {
       navigation: {navigate},
-      slideId
+      slideId,
     } = this.props;
     const state = await this.props.validateAnswer();
 
@@ -104,7 +103,7 @@ class QuestionScreen extends React.Component<Props> {
       isAdaptive,
       hasContext,
       isContentFinished,
-      progressionId
+      progressionId,
     } = getContentCorrectionInfo(state);
 
     if (isAdaptive) {
@@ -113,12 +112,12 @@ class QuestionScreen extends React.Component<Props> {
       }
       const levelEndParams: LevelEndParams = {
         isCorrect,
-        progressionId
+        progressionId,
       };
       return navigate('LevelEnd', levelEndParams);
     }
     const correctionParams: CorrectionParams = {
-      slideId
+      slideId,
     };
     return navigate('Correction', correctionParams);
   };
@@ -138,7 +137,7 @@ class QuestionScreen extends React.Component<Props> {
       template,
       userChoices = [],
       isValidationDisabled,
-      isValidating
+      isValidating,
     } = this.props;
 
     return (
@@ -171,89 +170,71 @@ class QuestionScreen extends React.Component<Props> {
   }
 }
 
-const getSlideIdState = createSelector(
-  [getCurrentSlide],
-  slide => slide && slide._id
-);
+const getSlideIdState = createSelector([getCurrentSlide], (slide) => slide && slide._id);
 
-const getQuestionTypeState = createSelector(
-  [getQuestion],
-  question => question && question.type
-);
+const getQuestionTypeState = createSelector([getQuestion], (question) => question && question.type);
 
 const getQuestionHeaderState = createSelector(
   [getQuestion],
-  question => question && question.header
+  (question) => question && question.header,
 );
 
 const getQuestionExplanationState = createSelector(
   [getQuestion],
-  question => question && question.explanation
+  (question) => question && question.explanation,
 );
 
 const getQuestionTemplateState = createSelector(
   [getQuestion],
   // @ts-ignore union type
-  question => question && question.content.template
+  (question) => question && question.content.template,
 );
 
 const getQuestionChoicesState = (state: StoreState) =>
   createSelector(
     [getCurrentSlide],
     // @ts-ignore union type
-    slide => slide && getChoices(slide, state)
+    (slide) => slide && getChoices(slide, state),
   )(state);
 
 const getQuestionUserChoicesState = (state: StoreState) =>
-  createSelector(
-    [getCurrentSlide],
-    slide => slide && getAnswerValues(slide, state)
-  )(state);
+  createSelector([getCurrentSlide], (slide) => slide && getAnswerValues(slide, state))(state);
 
-const getQuestionMediaState = createSelector(
-  [getQuestionMedia],
-  media => media
-);
+const getQuestionMediaState = createSelector([getQuestionMedia], (media) => media);
 
 const getSliderUnitState = createSelector(
   [getQuestion],
   // @ts-ignore union type
-  question => question && question.content.unitLabel
+  (question) => question && question.content.unitLabel,
 );
 
 const getSliderMinState = createSelector(
   [getQuestion],
   // @ts-ignore union type
-  question => question && question.content.min
+  (question) => question && question.content.min,
 );
 
 const getSliderMaxState = createSelector(
   [getQuestion],
   // @ts-ignore union type
-  question => question && question.content.max
+  (question) => question && question.content.max,
 );
 
 const getSliderStepValueState = createSelector(
   [getQuestion],
   // @ts-ignore union type
-  question => question && question.content.step
+  (question) => question && question.content.step,
 );
 
 const getSliderDefaultValueState = (state: StoreState) =>
-  createSelector(
-    [getCurrentSlide],
-    slide => {
-      const type = slide && getQuestionType(slide);
-      const values = slide && getAnswerValues(slide, state);
+  createSelector([getCurrentSlide], (slide) => {
+    const type = slide && getQuestionType(slide);
+    const values = slide && getAnswerValues(slide, state);
 
-      return type === QUESTION_TYPE.SLIDER && values ? parseInt(values[0]) : 0;
-    }
-  )(state);
+    return type === QUESTION_TYPE.SLIDER && values ? parseInt(values[0]) : 0;
+  })(state);
 
-const getIsValidationDisabled = createSelector(
-  [isQuestionCtaDisabled],
-  result => result
-);
+const getIsValidationDisabled = createSelector([isQuestionCtaDisabled], (result) => result);
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   slideId: getSlideIdState(state),
@@ -270,16 +251,13 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   step: getSliderStepValueState(state),
   value: getSliderDefaultValueState(state),
   isValidationDisabled: getIsValidationDisabled(state),
-  isValidating: getValidationStatus(state)
+  isValidating: getValidationStatus(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   editAnswer,
-  validateAnswer
+  validateAnswer,
 };
 
 export {QuestionScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(QuestionScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionScreen);

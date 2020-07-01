@@ -16,10 +16,10 @@ const pdf = createPdf({ref: 'les_2', description: 'Foo bar baz - PDF'});
 const videoWithTracks = createVideo({
   ref: 'les_3',
   description: 'Foo bar baz - Video tracks',
-  tracks: createVideoTracks('foo', VIDEO_TRACK_TYPE.VTT)
+  tracks: createVideoTracks('foo', VIDEO_TRACK_TYPE.VTT),
 });
 const lessons = [video, videoWithTracks, pdf];
-const resources = lessons.map(mapToResource).filter(lesson => lesson.url);
+const resources = lessons.map(mapToResource).filter((lesson) => lesson.url);
 
 storiesOf('Lesson', module)
   .add('Default', () => (
@@ -108,10 +108,10 @@ if (__TEST__) {
             onPDFButtonPress={handlePress}
             onVideoPlay={handleVideoPlay}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const button = component.root.find(el => {
+      const button = component.root.find((el) => {
         return el.props.testID === 'lesson-resource';
       });
 
@@ -138,10 +138,10 @@ if (__TEST__) {
             onPDFButtonPress={handlePress}
             onVideoPlay={handleVideoPlay}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const button = component.root.find(el => {
+      const button = component.root.find((el) => {
         return el.props.testID === 'lesson-resource';
       });
 

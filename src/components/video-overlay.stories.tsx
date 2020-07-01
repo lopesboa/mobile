@@ -8,7 +8,7 @@ import VideoOverlay, {STEP} from './video-overlay';
 const height = 203;
 const preview = {
   uri:
-    'https://www.cerema.fr/sites/default/files/styles/uas_normal/public/media/images/2017/11/mountain-village-2657307_1920.jpg?h=d6fbcf4a&itok=JMWt0SsS'
+    'https://www.cerema.fr/sites/default/files/styles/uas_normal/public/media/images/2017/11/mountain-village-2657307_1920.jpg?h=d6fbcf4a&itok=JMWt0SsS',
 };
 
 storiesOf('Video Overlay', module)

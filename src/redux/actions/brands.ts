@@ -7,39 +7,39 @@ export const FETCH_ERROR = `@@brands/FETCH_ERROR`;
 
 export type Action =
   | {
-      type: '@@brands/FETCH_REQUEST'
+      type: '@@brands/FETCH_REQUEST';
     }
   | {
-      type: '@@brands/FETCH_SUCCESS',
+      type: '@@brands/FETCH_SUCCESS';
       payload: {
-        item: Brand
-      }
+        item: Brand;
+      };
     }
   | StoreErrorAction<{
-      type: '@@brands/FETCH_ERROR'
+      type: '@@brands/FETCH_ERROR';
     }>;
 
 export const fetchRequest = (): Action => ({
-  type: FETCH_REQUEST
+  type: FETCH_REQUEST,
 });
 
 export const fetchSuccess = (item: Brand): Action => ({
   type: FETCH_SUCCESS,
   payload: {
-    item
-  }
+    item,
+  },
 });
 
 export const fetchError = (e: Error): Action => ({
   type: FETCH_ERROR,
   payload: e,
-  error: true
+  error: true,
 });
 
 export const fetchBrand = (token: string): StoreAction<Action> => async (
   dispatch,
   getState,
-  {services}
+  {services},
 ) => {
   try {
     await dispatch(fetchRequest());

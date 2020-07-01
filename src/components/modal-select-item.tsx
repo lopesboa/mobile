@@ -9,12 +9,12 @@ import Touchable from './touchable';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.white,
-    padding: theme.spacing.small
+    padding: theme.spacing.small,
   },
   text: {
     fontWeight: theme.fontWeight.bold,
-    color: theme.colors.black
-  }
+    color: theme.colors.black,
+  },
 });
 
 interface Props {
@@ -27,7 +27,7 @@ interface Props {
 const ModalSelectItem = ({isSelected, children, onPress, testID}: Props) => {
   const brandTheme = React.useContext(BrandThemeContext);
   const selectedTextStyle = {
-    color: brandTheme.colors.primary
+    color: brandTheme.colors.primary,
   };
 
   return (

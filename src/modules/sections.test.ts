@@ -5,7 +5,7 @@ import {Section} from '../types';
 const section = createSections()[0];
 const emptySection: Section = {
   ...section,
-  cardsRef: []
+  cardsRef: [],
 };
 
 describe('Sections', () => {
@@ -48,7 +48,7 @@ describe('Sections', () => {
         undefined,
         emptySection,
         emptySection,
-        undefined
+        undefined,
       ];
       const result = getOffsetWithoutCards(sections, 1);
       const expected = 5;

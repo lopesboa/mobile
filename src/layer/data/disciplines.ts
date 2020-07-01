@@ -16,10 +16,10 @@ export const findByChapter = async (ref: string): Promise<Discipline | void> => 
   // @ts-ignore union type
   const disciplines: Array<Discipline> = await getItemsPerResourceType(
     CONTENT_TYPE.DISCIPLINE,
-    language
+    language,
   );
-  const discipline = disciplines.find(item =>
-    item.modules.find(mod => mod.chapterIds.includes(ref))
+  const discipline = disciplines.find((item) =>
+    item.modules.find((mod) => mod.chapterIds.includes(ref)),
   );
 
   return discipline;
@@ -30,10 +30,10 @@ export const findByLevel = async (ref: string): Promise<Discipline | void> => {
   // @ts-ignore union type
   const disciplines: Array<Discipline> = await getItemsPerResourceType(
     CONTENT_TYPE.DISCIPLINE,
-    language
+    language,
   );
-  const discipline = disciplines.find(item =>
-    item.modules.find(mod => [mod.ref, mod.universalRef].includes(ref))
+  const discipline = disciplines.find((item) =>
+    item.modules.find((mod) => [mod.ref, mod.universalRef].includes(ref)),
   );
 
   return discipline;

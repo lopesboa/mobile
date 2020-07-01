@@ -14,7 +14,7 @@ const card = createChapterCard({
   ref: 'bar',
   completion: 0,
   title: 'Fake chapter',
-  status: CARD_STATUS.ACTIVE
+  status: CARD_STATUS.ACTIVE,
 });
 
 describe('Home', () => {
@@ -23,14 +23,14 @@ describe('Home', () => {
       engine: ENGINE.LEARNER,
       progressionContent: {
         type: CONTENT_TYPE.SLIDE,
-        ref: 'foo'
+        ref: 'foo',
       },
       state: {
         nextContent: {
           type: CONTENT_TYPE.SLIDE,
-          ref: 'bar'
-        }
-      }
+          ref: 'bar',
+        },
+      },
     });
 
     const store = createStoreState({
@@ -38,13 +38,13 @@ describe('Home', () => {
       disciplines: [],
       chapters: [],
       slides: [],
-      progression
+      progression,
     });
 
     const result = mapStateToProps(store);
     const expected: ConnectedStateProps = {
       isFetching: false,
-      isFocused: false
+      isFocused: false,
     };
     expect(expected).toEqual(result);
   });
@@ -55,10 +55,10 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
     );
 
-    const home = component.root.find(el => el.props.testID === 'home');
+    const home = component.root.find((el) => el.props.testID === 'home');
     home.props.onCardPress(card);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -73,10 +73,10 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
     );
 
-    const home = component.root.find(el => el.props.testID === 'home');
+    const home = component.root.find((el) => el.props.testID === 'home');
     home.props.onSearchPress();
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
@@ -90,18 +90,18 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
     );
     TestBackHandler.fireEvent('hardwareBackPress');
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
       'hardwareBackPress',
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 });

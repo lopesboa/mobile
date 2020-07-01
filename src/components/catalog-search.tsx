@@ -17,43 +17,43 @@ const LIST_VERTICAL_OFFSET = theme.spacing.base - ITEM_OFFSET;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: theme.colors.white
+    backgroundColor: theme.colors.white,
   },
   contentContainer: {
-    flex: 1
+    flex: 1,
   },
   content: {
     alignItems: 'center',
     paddingVertical: LIST_VERTICAL_OFFSET,
-    paddingHorizontal: LIST_HORIZONTAL_OFFSET
+    paddingHorizontal: LIST_HORIZONTAL_OFFSET,
   },
   noResults: {
     fontSize: theme.fontSize.xxlarge,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   noResultsDescription: {
     fontSize: theme.fontSize.regular,
     color: theme.colors.gray.dark,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 export interface Props extends WithLayoutProps {
-  cards?: Array<DisciplineCard | ChapterCard | void>,
-  onCardPress: (arg0: DisciplineCard | ChapterCard) => void,
-  onScroll?: (offset: number, limit: number) => void,
-  testID?: string
-};
+  cards?: Array<DisciplineCard | ChapterCard | void>;
+  onCardPress: (arg0: DisciplineCard | ChapterCard) => void;
+  onScroll?: (offset: number, limit: number) => void;
+  testID?: string;
+}
 
 const CatalogSearch = ({
   layout,
   cards,
   onCardPress,
   onScroll,
-  testID = 'catalog-search'
+  testID = 'catalog-search',
 }: Props) => {
   const numColumns = layout
-    ? parseInt((layout.width - LIST_HORIZONTAL_OFFSET) / ITEM_WIDTH, 10)
+    ? parseInt(String((layout.width - LIST_HORIZONTAL_OFFSET) / ITEM_WIDTH), 10)
     : undefined;
 
   return (

@@ -19,8 +19,8 @@ describe('Search', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
 
       const mockedStore = createStoreState({
@@ -28,12 +28,12 @@ describe('Search', () => {
         disciplines: [],
         chapters: [],
         slides: [],
-        progression
+        progression,
       });
 
       const props = mapStateToProps(mockedStore);
       const expectedResult = {
-        isSearchFetching: false
+        isSearchFetching: false,
       };
       expect(props).toEqual(expectedResult);
     });
@@ -54,10 +54,10 @@ describe('Search', () => {
           fetchCards={fetchCards}
           clearSearch={clearSearch}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
-    const searchInput = component.root.find(el => el.props.testID === 'search-input');
+    const searchInput = component.root.find((el) => el.props.testID === 'search-input');
     searchInput.props.onChange('f');
     jest.advanceTimersByTime(SEARCH_DEBOUNCE_DURATION);
     searchInput.props.onChange('fo');
@@ -94,7 +94,7 @@ describe('Search', () => {
     const fetchCards = jest.fn();
     const clearSearch = jest.fn();
     const searchParams = {
-      skill: 'skill_rnDe3sfRz'
+      skill: 'skill_rnDe3sfRz',
     };
 
     renderer.create(
@@ -106,7 +106,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={searchParams}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     expect(fetchCards).toHaveBeenCalledTimes(1);
@@ -120,7 +120,7 @@ describe('Search', () => {
     const fetchCards = jest.fn();
     const clearSearch = jest.fn();
     const searchParams = {
-      skill: 'skill_rnDe3sfRz'
+      skill: 'skill_rnDe3sfRz',
     };
 
     const component = renderer.create(
@@ -131,7 +131,7 @@ describe('Search', () => {
           fetchCards={fetchCards}
           clearSearch={clearSearch}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     component.update(
@@ -143,7 +143,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={searchParams}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     expect(clearSearch).toHaveBeenCalledTimes(1);
@@ -160,7 +160,7 @@ describe('Search', () => {
     const fetchCards = jest.fn();
     const clearSearch = jest.fn();
     const searchParams = {
-      skill: 'skill_rnDe3sfRz'
+      skill: 'skill_rnDe3sfRz',
     };
 
     const component = renderer.create(
@@ -172,7 +172,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={{skill: 'skill_pnFe2seFz'}}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     component.update(
@@ -184,7 +184,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={searchParams}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     expect(clearSearch).toHaveBeenCalledTimes(1);
@@ -201,7 +201,7 @@ describe('Search', () => {
     const fetchCards = jest.fn();
     const clearSearch = jest.fn();
     const searchParams = {
-      skill: 'skill_rnDe3sfRz'
+      skill: 'skill_rnDe3sfRz',
     };
 
     const component = renderer.create(
@@ -213,7 +213,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={searchParams}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     component.update(
@@ -225,7 +225,7 @@ describe('Search', () => {
           clearSearch={clearSearch}
           searchParams={searchParams}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
     expect(clearSearch).toHaveBeenCalledTimes(0);
@@ -248,10 +248,10 @@ describe('Search', () => {
           fetchCards={fetchCards}
           clearSearch={clearSearch}
         />
-      </TestContextProvider>
+      </TestContextProvider>,
     );
 
-    const searchInput = component.root.find(el => el.props.testID === 'search-input');
+    const searchInput = component.root.find((el) => el.props.testID === 'search-input');
     searchInput.props.onChange('foo');
 
     component.unmount();

@@ -1,4 +1,4 @@
-import type {Media} from '@types/coorp/progression-engine';
+import type {Media} from '../types/coorpacademy/progression-engine';
 
 import {MEDIA_TYPE, RESOURCE_TYPE} from '../const';
 
@@ -11,10 +11,10 @@ export const image: Media = {
     {
       _id: '1',
       mimeType: 'image/jpeg',
-      url
-    }
+      url,
+    },
   ],
-  url
+  url,
 };
 
 export const video: Media = {
@@ -24,22 +24,22 @@ export const video: Media = {
       mimeType: 'video/mp4',
       url:
         '//player.vimeo.com/external/266296552.m3u8?s=316e71edf867847e1f648655833e41cce19da389&oauth2_token_id=411503075',
-      _id: 'some_randoMId'
-    }
-  ]
+      _id: 'some_randoMId',
+    },
+  ],
 };
 
 export const pdf: Media = {
   type: RESOURCE_TYPE.PDF,
-  mediaUrl: url
+  mediaUrl: url,
 };
 
 export const emptyMedia: Media = {
-  type: RESOURCE_TYPE.VIDEO
+  type: RESOURCE_TYPE.VIDEO,
 };
 
 export default {
   video,
   image,
-  pdf
+  pdf,
 };

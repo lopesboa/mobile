@@ -1,3 +1,4 @@
+import {by, expect, element} from 'detox';
 import {reloadApp, bypassAuthentication, tap, tapCardOnList, waitForExist} from './utils';
 
 describe('Context', () => {
@@ -14,17 +15,17 @@ describe('Context', () => {
 
     it('should see elements', async () => {
       await waitForExist('context-screen');
-      await weExpect(element(by.id('context'))).toBeVisible();
-      await weExpect(
-        element(by.type('RCTImageView').and(by.id('context-resource-img')))
+      await expect(element(by.id('context'))).toBeVisible();
+      await expect(
+        element(by.type('RCTImageView').and(by.id('context-resource-img'))),
       ).toBeVisible();
-      await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
+      await expect(element(by.id('button-redirect-question'))).toBeVisible();
     });
 
     it('should go to the question', async () => {
-      await weExpect(element(by.id('button-redirect-question'))).toBeVisible();
+      await expect(element(by.id('button-redirect-question'))).toBeVisible();
       await element(by.id('button-redirect-question')).tap();
-      await weExpect(element(by.id('question-screen'))).toBeVisible();
+      await expect(element(by.id('question-screen'))).toBeVisible();
     });
 
     afterAll(async () => {
@@ -40,9 +41,9 @@ describe('Context', () => {
 
     it('should see elements', async () => {
       await waitForExist('context-screen');
-      await weExpect(element(by.id('context'))).toBeVisible();
-      await weExpect(
-        element(by.type('RCTView').and(by.id('context-resource-video-preview-video')))
+      await expect(element(by.id('context'))).toBeVisible();
+      await expect(
+        element(by.type('RCTView').and(by.id('context-resource-video-preview-video'))),
       ).toBeVisible();
     });
 
@@ -62,7 +63,7 @@ describe('Context', () => {
     });
 
     it('should not see elements', async () => {
-      await weExpect(element(by.id('context-screen'))).toBeNotVisible();
+      await expect(element(by.id('context-screen'))).toBeNotVisible();
     });
   });
 });

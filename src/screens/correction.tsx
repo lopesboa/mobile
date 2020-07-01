@@ -11,10 +11,10 @@ import {
   hasSeenLesson as _hasSeenLesson,
   play,
   getCurrentCorrection,
-  getPreviousSlide
+  getPreviousSlide,
 } from '@coorpacademy/player-store';
 
-import { NavigationScreenProps } from 'react-navigation';
+import {NavigationScreenProps} from 'react-navigation';
 import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
@@ -27,7 +27,7 @@ import {
   getNextContentRef,
   getContext,
   isGodModeEnabled as _isGodModeEnabled,
-  isFastSlideEnabled as _isFastSlideEnabled
+  isFastSlideEnabled as _isFastSlideEnabled,
 } from '../redux/utils/state-extract';
 import {mapToResource} from '../layer/data/mappers';
 import type {Params as LevelEndScreenParams} from './level-end';
@@ -36,12 +36,12 @@ import type {Params as BrowserScreenParams} from './browser';
 
 const styles = StyleSheet.create({
   layoutContainer: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 export type Params = {
-  slideId: string
+  slideId: string;
 };
 
 export interface ConnectedStateProps {
@@ -61,7 +61,7 @@ export interface ConnectedStateProps {
   tip: string;
   keyPoint: string;
   resources?: Array<Resource>;
-};
+}
 
 interface ConnectedDispatchProps {
   play: typeof play;
@@ -69,18 +69,20 @@ interface ConnectedDispatchProps {
   acceptExtraLife: typeof acceptExtraLife;
   refuseExtraLife: typeof refuseExtraLife;
   changeAnswerValidationStatus: typeof changeAnswerValidationStatus;
-};
+}
 
-interface Props extends NavigationScreenProps<Params>, ConnectedStateProps, ConnectedDispatchProps {}
-
+interface Props
+  extends NavigationScreenProps<Params>,
+    ConnectedStateProps,
+    ConnectedDispatchProps {}
 
 type State = {
-  needRerender: boolean
+  needRerender: boolean;
 };
 
 class CorrectionScreen extends React.Component<Props, State> {
   state: State = {
-    needRerender: true
+    needRerender: true,
   };
 
   shouldComponentUpdate() {
@@ -95,7 +97,7 @@ class CorrectionScreen extends React.Component<Props, State> {
   handlePDFButtonPress = (url: string, description?: string) => {
     const pdfParams: PdfScreenParams = {
       title: description,
-      source: {uri: url}
+      source: {uri: url},
     };
 
     this.setState({needRerender: false});
@@ -110,10 +112,10 @@ class CorrectionScreen extends React.Component<Props, State> {
 
   handleLinkPress = (url: string): void => {
     const {
-      navigation: {navigate}
+      navigation: {navigate},
     } = this.props;
     const params: BrowserScreenParams = {
-      url
+      url,
     };
     navigate('BrowserModal', params);
   };
@@ -126,7 +128,7 @@ class CorrectionScreen extends React.Component<Props, State> {
       lives,
       progressionId = '',
       navigation,
-      hasContext
+      hasContext,
     } = this.props;
 
     if (hasConsumedExtraLife) {
@@ -139,7 +141,7 @@ class CorrectionScreen extends React.Component<Props, State> {
     if (isFinished) {
       const levelEndParams: LevelEndScreenParams = {
         isCorrect: lives === undefined || lives > 0,
-        progressionId
+        progressionId,
       };
 
       return navigation.navigate('LevelEnd', levelEndParams);
@@ -162,7 +164,7 @@ class CorrectionScreen extends React.Component<Props, State> {
       resources,
       lives,
       isGodModeEnabled,
-      isFastSlideEnabled
+      isFastSlideEnabled,
     } = this.props;
 
     const isValidating = isCorrect === undefined;
@@ -223,79 +225,60 @@ const getLives = (state: StoreState): number | void => {
   return hide ? undefined : count;
 };
 
-const getLivesState = createSelector(
-  [getLives],
-  lives => lives
+const getLivesState = createSelector([getLives], (lives) => lives);
+
+const getIsCorrectState = createSelector([getIsLoading, _isCorrect], (isLoading, isCorrect) =>
+  isLoading ? undefined : isCorrect,
 );
 
-const getIsCorrectState = createSelector(
-  [getIsLoading, _isCorrect],
-  (isLoading, isCorrect) => (isLoading ? undefined : isCorrect)
-);
+const getIsGodModeEnabledState = createSelector([_isGodModeEnabled], (isEnabled) => isEnabled);
 
-const getIsGodModeEnabledState = createSelector(
-  [_isGodModeEnabled],
-  isEnabled => isEnabled
-);
-
-const getIsFastSlideEnabledState = createSelector(
-  [_isFastSlideEnabled],
-  isEnabled => isEnabled
-);
+const getIsFastSlideEnabledState = createSelector([_isFastSlideEnabled], (isEnabled) => isEnabled);
 
 const getProgressionIdState = createSelector(
   [getCurrentProgressionId],
-  progressionId => progressionId
+  (progressionId) => progressionId,
 );
 
 const getAnswersState = createSelector(
   [getCurrentCorrection],
-  correction => correction.correctAnswer[0] || []
+  (correction) => correction.correctAnswer[0] || [],
 );
 
-const getUserAnswersState = createSelector(
-  [getCurrentCorrection],
-  correction => {
-    const userAnswers: Array<string> = correction.corrections
-      .filter(item => item.answer)
-      // @ts-ignore item.answer is filtered if undefined
-      .map(item => item.answer);
+const getUserAnswersState = createSelector([getCurrentCorrection], (correction) => {
+  const userAnswers: Array<string> = correction.corrections
+    .filter((item) => item.answer)
+    // @ts-ignore item.answer is filtered if undefined
+    .map((item) => item.answer);
 
-    return userAnswers;
-  }
-);
+  return userAnswers;
+});
 
 const getTipState = createSelector(
   [getPreviousSlide],
-  previousSlide => (previousSlide && previousSlide.tips) || ''
+  (previousSlide) => (previousSlide && previousSlide.tips) || '',
 );
 
 const getKeyPointState = createSelector(
   [getPreviousSlide],
-  previousSlide => (previousSlide && previousSlide.klf) || ''
+  (previousSlide) => (previousSlide && previousSlide.klf) || '',
 );
 
 const getQuestionHeaderState = createSelector(
   [getPreviousSlide],
-  previousSlide => (previousSlide && previousSlide.question.header) || ''
+  (previousSlide) => (previousSlide && previousSlide.question.header) || '',
 );
 
-const getHasContextState = createSelector(
-  [getContext],
-  context => context !== undefined
-);
+const getHasContextState = createSelector([getContext], (context) => context !== undefined);
 
-const getResourcesState = createSelector(
-  [getPreviousSlide],
-  previousSlide => {
-    const lessons = (previousSlide && previousSlide.lessons) || [];
-    return lessons.map(mapToResource).filter(lesson => lesson.url);
-  }
-);
+const getResourcesState = createSelector([getPreviousSlide], (previousSlide) => {
+  const lessons = (previousSlide && previousSlide.lessons) || [];
+  return lessons.map(mapToResource).filter((lesson) => lesson.url);
+});
 
 const getIsResourceViewedState = createSelector(
   [_hasSeenLesson, _hasViewedAResourceAtThisStep],
-  (hasSeenLesson, hasViewedAResourceAtThisStep) => hasSeenLesson && !hasViewedAResourceAtThisStep
+  (hasSeenLesson, hasViewedAResourceAtThisStep) => hasSeenLesson && !hasViewedAResourceAtThisStep,
 );
 
 const getIsExtraLife = (state: StoreState): boolean => {
@@ -312,17 +295,17 @@ const getOfferingExtraLife = (state: StoreState): boolean => {
 
 const getOfferingExtraLifeState = createSelector(
   [getOfferingExtraLife],
-  offeringExtraLife => offeringExtraLife
+  (offeringExtraLife) => offeringExtraLife,
 );
 
 const getConsumedExtraLifeState = createSelector(
   [getIsExtraLife, _hasViewedAResourceAtThisStep],
-  (isExtraLife, hasViewedAResourceAtThisStep) => isExtraLife && hasViewedAResourceAtThisStep
+  (isExtraLife, hasViewedAResourceAtThisStep) => isExtraLife && hasViewedAResourceAtThisStep,
 );
 
 const getIsFinishedState = createSelector(
   [_isExitNode, getLives, getOfferingExtraLife],
-  (isExitNode, lives, offeringExtraLife) => isExitNode || (lives === 0 && offeringExtraLife)
+  (isExitNode, lives, offeringExtraLife) => isExitNode || (lives === 0 && offeringExtraLife),
 );
 
 export const mapStateToProps = (state: StoreState, ownProps: OwnProps): ConnectedStateProps => ({
@@ -341,7 +324,7 @@ export const mapStateToProps = (state: StoreState, ownProps: OwnProps): Connecte
   userAnswers: getUserAnswersState(state, ownProps),
   tip: getTipState(state, ownProps),
   keyPoint: getKeyPointState(state, ownProps),
-  resources: getResourcesState(state, ownProps)
+  resources: getResourcesState(state, ownProps),
 });
 
 export const mapDispatchToProps: ConnectedDispatchProps = {
@@ -349,11 +332,8 @@ export const mapDispatchToProps: ConnectedDispatchProps = {
   selectCurrentProgression,
   acceptExtraLife,
   refuseExtraLife,
-  changeAnswerValidationStatus
+  changeAnswerValidationStatus,
 };
 
 export {CorrectionScreen as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CorrectionScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CorrectionScreen);

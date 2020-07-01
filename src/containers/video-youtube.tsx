@@ -12,32 +12,32 @@ import {isVideoFullScreen, getYoutubeAPIKey} from '../redux/utils/state-extract'
 import type {SourceURI} from '../types';
 
 export interface ConnectedStateProps {
-  isFullScreen: boolean,
-  apiKey?: string
-};
+  isFullScreen: boolean;
+  apiKey?: string;
+}
 
 interface ConnectedDispatchToProps {
-  toggleFullscreen: typeof toggleFullscreen
-};
+  toggleFullscreen: typeof toggleFullscreen;
+}
 
 interface OwnProps {
-  id: string,
-  onPlay: () => Promise<void> | void,
-  preview: File | SourceURI,
-  height: number,
-  testID?: string,
-  extralifeOverlay?: boolean
-};
+  id: string;
+  onPlay: () => Promise<void> | void;
+  preview: File | SourceURI;
+  height: number;
+  testID?: string;
+  extralifeOverlay?: boolean;
+}
 
-interface Props extends ConnectedStateProps, ConnectedDispatchToProps, OwnProps {};
+interface Props extends ConnectedStateProps, ConnectedDispatchToProps, OwnProps {}
 
 type State = {
-  step: Step
+  step: Step;
 };
 
 class YoutubePlayer extends React.PureComponent<Props, State> {
   state: State = {
-    step: STEP.PREVIEW
+    step: STEP.PREVIEW,
   };
 
   player: RNYoutubePlayer;
@@ -48,7 +48,7 @@ class YoutubePlayer extends React.PureComponent<Props, State> {
 
   handlePlay = () => {
     this.setState({
-      step: STEP.PLAY
+      step: STEP.PLAY,
     });
 
     if (this.player) {
@@ -60,7 +60,7 @@ class YoutubePlayer extends React.PureComponent<Props, State> {
 
   handleError = () =>
     this.setState({
-      step: STEP.ERROR
+      step: STEP.ERROR,
     });
 
   handleChangeFullScreen = async () => {
@@ -71,7 +71,7 @@ class YoutubePlayer extends React.PureComponent<Props, State> {
   handleEnd = () => {
     orientation.lockToPortrait();
     this.setState({
-      step: STEP.END
+      step: STEP.END,
     });
   };
 
@@ -106,25 +106,22 @@ class YoutubePlayer extends React.PureComponent<Props, State> {
 
 const getIsFullScreenState: (state: StoreState) => boolean = createSelector(
   [isVideoFullScreen],
-  isFullScreen => isFullScreen
+  (isFullScreen) => isFullScreen,
 );
 
 const getYoutubeAPIKeyState: (state: StoreState) => string | void = createSelector(
   [getYoutubeAPIKey],
-  apiKey => apiKey
+  (apiKey) => apiKey,
 );
 
 export const mapStateToProps = (state: StoreState, props: OwnProps): ConnectedStateProps => ({
   isFullScreen: getIsFullScreenState(state),
-  apiKey: getYoutubeAPIKeyState(state)
+  apiKey: getYoutubeAPIKeyState(state),
 });
 
 const mapDispatchToProps: ConnectedDispatchToProps = {
-  toggleFullscreen
+  toggleFullscreen,
 };
 
 export {YoutubePlayer as Component};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(YoutubePlayer);
+export default connect(mapStateToProps, mapDispatchToProps)(YoutubePlayer);

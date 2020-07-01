@@ -1,9 +1,10 @@
+import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
   tapCardOnList,
   waitForExist,
-  waitForVisible
+  waitForVisible,
 } from './utils';
 
 describe('Header', () => {
@@ -18,9 +19,9 @@ describe('Header', () => {
   });
 
   it('should see the header elements', async () => {
-    await weExpect(element(by.id('header-slide-title'))).toBeVisible();
-    await weExpect(element(by.id('header-slide-title-image'))).toBeVisible();
-    await weExpect(element(by.id('header-slide-title-title'))).toBeVisible();
+    await expect(element(by.id('header-slide-title'))).toBeVisible();
+    await expect(element(by.id('header-slide-title-image'))).toBeVisible();
+    await expect(element(by.id('header-slide-title-title'))).toBeVisible();
   });
 
   it('should back to home', async () => {

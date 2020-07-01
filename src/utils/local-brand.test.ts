@@ -7,7 +7,7 @@ describe('Local brand', () => {
 
   describe('set', () => {
     it('should set brand', async () => {
-      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
+      AsyncStorage.setItem.mockImplementationOnce((key: string, value: string) => {
         expect(key).toEqual('@@brand');
         expect(value).toEqual(JSON.stringify(brand));
       });
@@ -22,7 +22,7 @@ describe('Local brand', () => {
 
   describe('get', () => {
     it('should get brand', async () => {
-      AsyncStorage.getItem.mockImplementationOnce(key => {
+      AsyncStorage.getItem.mockImplementationOnce((key) => {
         expect(key).toEqual('@@brand');
 
         return JSON.stringify(brand);
@@ -50,7 +50,7 @@ describe('Local brand', () => {
 
   describe('remove', () => {
     it('should remove a brand', async () => {
-      AsyncStorage.setItem.mockImplementationOnce((key, value) => {
+      AsyncStorage.setItem.mockImplementationOnce((key: string, value: string) => {
         expect(key).toEqual('@@brand');
         expect(value).toEqual(null);
       });

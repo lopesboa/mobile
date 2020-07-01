@@ -19,21 +19,21 @@ import {__DEV__, __E2E__, __TEST__} from '../modules/environment';
 import {devToken} from '../../app';
 
 export type Params = {
-  onScan: Pick<QRCodeScannerProps, 'onScan'>
+  onScan: Pick<QRCodeScannerProps, 'onScan'>;
 };
 
 export interface ConnectedStateProps {
   hasPermission: boolean;
-};
+}
 
-interface Props extends NavigationScreenProps<Params>, ConnectedStateProps, WithPermissionsProps {};
+interface Props extends NavigationScreenProps<Params>, ConnectedStateProps, WithPermissionsProps {}
 
 const styles = StyleSheet.create({
   fakeScanArea: {
     position: 'absolute',
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 class QRCodeScreen extends React.PureComponent<Props> {
@@ -75,11 +75,11 @@ class QRCodeScreen extends React.PureComponent<Props> {
 
 const getHasPermissionState: (state: StoreState) => boolean = createSelector(
   [getPermissionStatus('camera')],
-  permission => permission === PERMISSION_STATUS.GRANTED
+  (permission) => permission === PERMISSION_STATUS.GRANTED,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  hasPermission: getHasPermissionState(state)
+  hasPermission: getHasPermissionState(state),
 });
 
 export {QRCodeScreen as Component};

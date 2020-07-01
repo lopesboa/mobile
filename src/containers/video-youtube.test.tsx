@@ -14,7 +14,7 @@ import type {ConnectedStateProps} from './video-youtube';
 
 const createRef = (): VideoPlayer => ({
   seekTo: jest.fn(),
-  player: {}
+  player: {},
 });
 
 describe('VideoYoutube', () => {
@@ -36,25 +36,25 @@ describe('VideoYoutube', () => {
         engine: ENGINE.MICROLEARNING,
         progressionContent: {
           type: CONTENT_TYPE.LEVEL,
-          ref: levelRef
-        }
+          ref: levelRef,
+        },
       });
       const video = createVideoState({isFullScreen});
 
       const mockedStore = createStoreState({
         progression,
-        video
+        video,
       });
 
       const result = mapStateToProps(mockedStore, {
         id,
         onPlay,
         preview,
-        height
+        height,
       });
       const expected: ConnectedStateProps = {
         isFullScreen,
-        apiKey
+        apiKey,
       };
 
       expect(result).toEqual(expected);
@@ -79,10 +79,10 @@ describe('VideoYoutube', () => {
         onPlay={onPlay}
         isFullScreen={isFullScreen}
         toggleFullscreen={toggleFullscreen}
-      />
+      />,
     );
 
-    const video = component.root.find(el => el.props.onError);
+    const video = component.root.find((el) => el.props.onError);
     video.props.onError();
 
     expect(video.props.step).toEqual(STEP.ERROR);
@@ -106,10 +106,10 @@ describe('VideoYoutube', () => {
           onPlay={onPlay}
           isFullScreen={isFullScreen}
           toggleFullscreen={toggleFullscreen}
-        />
+        />,
       );
 
-      const video = component.root.find(el => el.props.onChangeFullscreen);
+      const video = component.root.find((el) => el.props.onChangeFullscreen);
       await video.props.onChangeFullscreen();
 
       expect(toggleFullscreen).toHaveBeenCalledTimes(1);
@@ -135,10 +135,10 @@ describe('VideoYoutube', () => {
         onPlay={onPlay}
         isFullScreen={isFullScreen}
         toggleFullscreen={toggleFullscreen}
-      />
+      />,
     );
 
-    const video = component.root.find(el => el.props.onChangeState);
+    const video = component.root.find((el) => el.props.onChangeState);
     video.props.onRef(ref);
     await video.props.onChangeState(currentState);
 
