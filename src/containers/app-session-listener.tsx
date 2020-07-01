@@ -12,20 +12,12 @@ interface Props extends ConnectedDispatchProps {}
 const AppSessionListener = (props: Props) => {
   const [appState, setAppState] = React.useState(AppState.currentState);
 
+
   console.log({appStateeee: appState})
   React.useEffect(() => {
-    AppState.addEventListener("change", _handleAppStateChange);
-    return () => {
-      AppState.removeEventListener("change", _handleAppStateChange);
-    };
+    props.incrementAppSession();
   }, []);
 
-  const _handleAppStateChange = (nextAppState: AppStateStatus) => {
-    if (appState.match(/inactive|background/) && nextAppState === "active") {
-      props.incrementAppSession()
-    }
-    setAppState(nextAppState);
-  };
   return null;
 };
 
