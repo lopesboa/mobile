@@ -75,7 +75,9 @@ import {
   isContentFinished,
   hasSuccessfullyFinished,
   getContentCorrectionInfo,
+  getAppSession,
 } from './state-extract';
+import { StoreState } from '../store';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
 
@@ -115,6 +117,7 @@ const createState = ({
   sections = [],
   cards = [],
   permissions,
+appSession = 1,
   token,
   brand,
   user,
@@ -135,6 +138,7 @@ const createState = ({
   brand?: Brand | null;
   user?: User | null;
   heroRef?: string;
+  appSession?: number;
   errors?: $ExtractReturn<typeof createErrorsState>;
   search?: $ExtractReturn<typeof createSearchState>;
   select?: $ExtractReturn<typeof createSelectState>;
@@ -154,6 +158,7 @@ const createState = ({
     fastSlide: true,
     catalog: createCatalogState({sections, cards, heroRef}),
     permissions,
+    appSession,
     errors,
     search,
     select,
@@ -741,6 +746,16 @@ describe('State-extract', () => {
       const result = isFastSlideEnabled(state);
 
       expect(result).toBeTruthy();
+    });
+  });
+
+  describe('getAppSession', () => {
+    it('should get value from state', () => {
+      const state = createState({});
+
+      const result = getAppSession(state);
+
+      expect(result).toEqual(1);
     });
   });
 

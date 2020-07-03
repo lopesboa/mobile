@@ -27,12 +27,6 @@ interface ConnectedDispatchProps {
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
 const SettingsScreen = (props: Props) => {
-  React.useEffect(() => {
-    BackHandler?.addEventListener('hardwareBackPress', handleBackButton);
-    return () => {
-      BackHandler?.removeEventListener('hardwareBackPress', handleBackButton);
-    };
-  }, []);
   function handleBackButton() {
     props.navigation.navigate('Home');
     return true;
@@ -43,11 +37,18 @@ const SettingsScreen = (props: Props) => {
     props.toggleNotificationsPermission();
   }
 
+  React.useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
+    };
+  }, []);
+
   return (
     <Screen noScroll testID="settings-screen">
       <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
       <Settings
-        testID="settings-screen"
+        testID="settings-notifications"
         settings={[
           {
             type: 'authorize-notifications',

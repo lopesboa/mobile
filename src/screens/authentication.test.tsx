@@ -207,13 +207,14 @@ describe('Authentication', () => {
 
   it('should handle Android BackHandler', async () => {
     const {Component: Authentication} = require('./authentication');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
 
     const navigation = createNavigation({});
     const component = await renderer.create(<Authentication navigation={navigation} />);
 
     await component.update(<Authentication navigation={navigation} />);
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

@@ -11,47 +11,46 @@ export const CHANGE = '@@permissions/notifications/CHANGE';
 export type PermissionType = 'notifications';
 
 export type RequestPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type CheckPayload = {
-  type: PermissionType
+  type: PermissionType;
 };
 
 export type ChangePayload = {
-  type: PermissionType,
-  status: PermissionStatus
+  type: PermissionType;
+  status: PermissionStatus;
 };
 
 export type Action =
   | {
-      type: typeof REQUEST,
-      payload: RequestPayload
+      type: typeof REQUEST;
+      payload: RequestPayload;
     }
   | {
-      type: typeof CHECK,
-      payload: CheckPayload
+      type: typeof CHECK;
+      payload: CheckPayload;
     }
   | {
-      type: typeof CHANGE,
-      payload: ChangePayload
+      type: typeof CHANGE;
+      payload: ChangePayload;
     };
 
 export const change = (status: PermissionStatus): Action => ({
   type: CHANGE,
   payload: {
     type: PERMISSION_TYPE.NOTIFICATIONS,
-    status
-  }
+    status,
+  },
 });
 
 const _requestPermission = (onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<PermissionStatus> => {
   const {status} = await services.Permissions.requestNotifications(['alert', 'badge', 'sound']);
-  console.log({status});
   const currentPermissionStatus = getState().permissions.notifications;
 
   if (status === PERMISSION_STATUS.DENIED && onDeny) {
@@ -63,7 +62,7 @@ const _requestPermission = (onDeny?: () => void) => async (
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
     status,
-    type: PERMISSION_TYPE.NOTIFICATIONS
+    type: PERMISSION_TYPE.NOTIFICATIONS,
   });
 
   return status;
@@ -72,13 +71,13 @@ const _requestPermission = (onDeny?: () => void) => async (
 export const request = (description: string, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: REQUEST,
     payload: {
-      type: PERMISSION_TYPE.NOTIFICATIONS
-    }
+      type: PERMISSION_TYPE.NOTIFICATIONS,
+    },
   });
 
   await _requestPermission(onDeny)(dispatch, getState, {services});
@@ -88,13 +87,13 @@ export const request = (description: string, onDeny?: () => void) => async (
 export const check = () => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<Action> => {
   const action = dispatch({
     type: CHECK,
     payload: {
-      type: PERMISSION_TYPE.NOTIFICATIONS
-    }
+      type: PERMISSION_TYPE.NOTIFICATIONS,
+    },
   });
 
   const {status} = await services.Permissions.checkNotifications();
@@ -110,21 +109,22 @@ export const check = () => async (
 export const toggle = () => async (
   dispatch: Dispatch,
   getState: GetState,
-  {services}: Options
+  {services}: Options,
 ): Promise<void> => {
-  const action = dispatch({
+  dispatch({
     type: CHECK,
     payload: {
-      type: PERMISSION_TYPE.NOTIFICATIONS
-    }
+      type: PERMISSION_TYPE.NOTIFICATIONS,
+    },
   });
 
   const {status} = await services.Permissions.checkNotifications();
   const {permissions} = getState();
 
-
-console.log({status, permissions});
-  if(permissions.notifications === PERMISSION_STATUS.GRANTED && status === PERMISSION_STATUS.GRANTED) {
+  if (
+    permissions.notifications === PERMISSION_STATUS.GRANTED &&
+    status === PERMISSION_STATUS.GRANTED
+  ) {
     dispatch(change(PERMISSION_STATUS.DENIED));
   } else {
     dispatch(change(PERMISSION_STATUS.GRANTED));

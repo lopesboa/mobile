@@ -5,11 +5,12 @@ import {handleFakePress, createFakeVibration} from '../utils/tests';
 describe('HeaderLeft', () => {
   it('should handle Android BackHandler', () => {
     const {Component: HeaderLeft} = require('./header-left');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
     const component = renderer.create(
       <HeaderLeft vibration={createFakeVibration()} onPress={handleFakePress} />,
     );
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledTimes(1);

@@ -59,7 +59,7 @@ exports[`Storyshots Switch default 1`] = `
           "elevation": 3,
           "height": 28,
           "marginHorizontal": 2,
-          "shadowColor": "#000",
+          "shadowColor": "#14171A",
           "shadowOffset": Object {
             "height": 2,
             "width": 0,

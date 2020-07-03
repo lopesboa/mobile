@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, TouchableWithoutFeedback, Animated, Easing, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
-import { BrandThemeContext } from './brand-theme-provider';
+import {BrandThemeContext} from './brand-theme-provider';
 
 const styles = StyleSheet.create({
   track: {
@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#E5E5E5'
+    borderColor: '#E5E5E5',
   },
   alignLeft: {
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   alignRight: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   thumb: {
     marginHorizontal: 2,
@@ -27,15 +27,15 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 0.5,
     borderColor: '#E5E5E5',
-    shadowColor: '#000',
+    shadowColor: theme.colors.black,
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.28,
     shadowRadius: 2.22,
-    elevation: 3
-  }
+    elevation: 3,
+  },
 });
 
 interface Props {
@@ -55,7 +55,7 @@ function Switch({onPress, isActive, testID}: Props) {
       toValue: isActive ? 1 : 0,
       easing: Easing.elastic(3),
       duration: 500,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   }, [animationValue, isActive]);
 

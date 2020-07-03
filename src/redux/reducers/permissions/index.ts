@@ -4,16 +4,18 @@ import type {Action as CameraPermissionAction} from '../../actions/permissions/c
 import type {Action as NotificationsPermissionAction} from '../../actions/permissions/notifications';
 import cameraPermissionReducer from './camera';
 import notificationsPermissionReducer from './notifications';
-import type {State as CameraPermissionState} from './camera';
-import type {State as NotificationsPermissionState} from './camera';
+import type {State as CameraPermissionState, State as NotificationsPermissionState} from './camera';
 
 export type State = {
-  camera: CameraPermissionState,
-  notifications: NotificationsPermissionState
+  camera: CameraPermissionState;
+  notifications: NotificationsPermissionState;
 };
 
-const reducers: Reducer<State, CameraPermissionAction | NotificationsPermissionAction> = combineReducers({
+const reducers: Reducer<
+  State,
+  CameraPermissionAction | NotificationsPermissionAction
+> = combineReducers({
   camera: cameraPermissionReducer,
-  notifications: notificationsPermissionReducer
+  notifications: notificationsPermissionReducer,
 });
 export default reducers;

@@ -8,21 +8,21 @@ import Text from './text';
 import Space from './space';
 
 type SettingsItem = {
-  type: string,
-  label: string,
-  isActive: boolean,
-  onPress: () => void
+  type: string;
+  label: string;
+  isActive: boolean;
+  onPress: () => void;
 };
 
 interface Props {
   settings: Array<SettingsItem>;
   testID: string;
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.gray.extra
+    backgroundColor: theme.colors.gray.extra,
   },
   shadow: {
     backgroundColor: theme.colors.white,
@@ -31,25 +31,25 @@ const styles = StyleSheet.create({
     width: '100%',
     shadowOffset: {
       width: 0,
-      height: 0
+      height: 0,
     },
     shadowOpacity: 0.3,
     shadowRadius: 1,
-    elevation: 9
+    elevation: 9,
   },
   titleContainer: {
     height: 110,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    padding: 37
+    padding: 37,
   },
   separator: {
     height: 1,
-    backgroundColor: theme.colors.gray.light
+    backgroundColor: theme.colors.gray.light,
   },
   title: {
     fontSize: theme.fontSize.xxlarge,
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.bold,
   },
   notificationItemContainer: {
     flexDirection: 'row',
@@ -57,21 +57,21 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     paddingHorizontal: 32,
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   notificationItem: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   version: {
     backgroundColor: theme.colors.gray.extra,
     color: theme.colors.gray.medium,
     paddingBottom: theme.spacing.base,
-    paddingTop: theme.spacing.small
-  }
+    paddingTop: theme.spacing.small,
+  },
 });
 
 const Settings = ({settings, testID}: Props) => {
-  function renderItem({item, index}: {index: number, item: SettingsItem}) {
+  function renderItem({item, index}: {index: number; item: SettingsItem}) {
     function handleOnSettingsItemPress() {
       return item.onPress();
     }
@@ -80,7 +80,11 @@ const Settings = ({settings, testID}: Props) => {
         {index % settings.length !== 1 ? <Separator /> : null}
         <View style={styles.notificationItemContainer}>
           <Text>{item.label}</Text>
-          <Switch isActive={item.isActive} onPress={handleOnSettingsItemPress} testID={testID + '-switch-' + item.type} />
+          <Switch
+            isActive={item.isActive}
+            onPress={handleOnSettingsItemPress}
+            testID={testID + '-switch-' + item.type}
+          />
         </View>
         {index % settings.length !== 0 ? <Separator /> : null}
       </React.Fragment>

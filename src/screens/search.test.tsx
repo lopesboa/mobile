@@ -56,7 +56,7 @@ describe('Search', () => {
 
   it('should handle Android BackHandler', () => {
     const {Component: Search} = require('./search');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
 
     const selectCard = jest.fn();
     const navigation = createNavigation({});
@@ -65,7 +65,8 @@ describe('Search', () => {
         <Search navigation={navigation} selectCard={selectCard} />
       </TestContextProvider>,
     );
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

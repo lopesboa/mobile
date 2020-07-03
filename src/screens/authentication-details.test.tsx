@@ -25,7 +25,7 @@ describe('AuthenticationDetails', () => {
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const footer = component.root.find(
-      (el) => el.props.testID === 'authentication-details-demo-footer',
+      el => el.props.testID === 'authentication-details-demo-footer',
     );
     footer.props.onDemoPress();
 
@@ -42,7 +42,7 @@ describe('AuthenticationDetails', () => {
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const footer = component.root.find(
-      (el) => el.props.testID === 'authentication-details-demo-footer',
+      el => el.props.testID === 'authentication-details-demo-footer',
     );
     footer.props.onHelpPress();
 
@@ -68,7 +68,7 @@ describe('AuthenticationDetails', () => {
       const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
       const button = component.root.find(
-        (el) => el.props.testID === 'authentication-details-qr-code-button',
+        el => el.props.testID === 'authentication-details-qr-code-button',
       );
 
       navigation.navigate.mockImplementationOnce((screen: string, _params: QrCodeParams) => {
@@ -104,7 +104,7 @@ describe('AuthenticationDetails', () => {
       const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
       const button = component.root.find(
-        (el) => el.props.testID === 'authentication-details-magic-link-button',
+        el => el.props.testID === 'authentication-details-magic-link-button',
       );
       button.props.onPress();
 
@@ -127,7 +127,7 @@ describe('AuthenticationDetails', () => {
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
     const button = component.root.find(
-      (el) => el.props.testID === 'authentication-details-demo-button-close',
+      el => el.props.testID === 'authentication-details-demo-button-close',
     );
     button.props.onPress();
 
@@ -137,7 +137,7 @@ describe('AuthenticationDetails', () => {
 
   it('should handle Android BackHandler', () => {
     const AuthenticationDetails = require('./authentication-details').default;
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
 
     const params = createParams();
     const navigation = createNavigation({
@@ -145,7 +145,8 @@ describe('AuthenticationDetails', () => {
     });
     const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
 
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

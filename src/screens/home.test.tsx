@@ -39,10 +39,17 @@ describe('Home', () => {
       chapters: [],
       slides: [],
       progression,
+      appSession: 2,
+      permissions: {
+        camera: 'granted',
+        notifications: 'granted'
+      }
     });
 
     const result = mapStateToProps(store);
     const expected: ConnectedStateProps = {
+      appSession: 2,
+      notificationStatus: 'granted',
       isFetching: false,
       isFocused: false,
     };
@@ -101,14 +108,15 @@ describe('Home', () => {
 
   it('should handle Android BackHandler', () => {
     const {Component: Home} = require('./home');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
 
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
       <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
     );
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

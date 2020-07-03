@@ -5,20 +5,19 @@ import {increment as incrementAppSession} from '../redux/actions/app-session';
 
 interface ConnectedDispatchProps {
   incrementAppSession: typeof incrementAppSession;
-};
+}
 
-interface Props extends ConnectedDispatchProps {}
+type Props = ConnectedDispatchProps;
 
-const AppSessionListener = (props: Props) => {
-  const [appState, setAppState] = React.useState(AppState.currentState);
-
-
-  console.log({appStateeee: appState})
+const AppSessionListener = ({incrementAppSession: incrementSession}: Props) => {
   React.useEffect(() => {
-    props.incrementAppSession();
-  }, []);
+    incrementSession();
+  }, [incrementSession]);
 
   return null;
 };
 
-export default connect(null, {incrementAppSession})(AppSessionListener);
+export default connect(
+  null,
+  {incrementAppSession},
+)(AppSessionListener);
