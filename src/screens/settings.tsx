@@ -2,27 +2,26 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
+import {NavigationScreenProps} from 'react-navigation';
+import {createSelector} from 'reselect';
 import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {BackHandler} from '../modules/back-handler';
-import { NavigationScreenProps } from 'react-navigation';
-import { PERMISSION_STATUS } from '../const';
-import { createSelector } from 'reselect';
-import { getPermissionStatus } from '../redux/utils/state-extract';
-import { StoreState } from '../redux/store';
+import {PERMISSION_STATUS} from '../const';
+import {getPermissionStatus} from '../redux/utils/state-extract';
+import {StoreState} from '../redux/store';
 import type {PermissionStatus} from '../types';
 import {toggle as toggleNotificationsPermission} from '../redux/actions/permissions/notifications';
 
-
 export interface ConnectedStateProps {
   canReceiveNotifications: boolean;
-  currentNotificationsPermission: PermissionStatus
-};
+  currentNotificationsPermission: PermissionStatus;
+}
 
 interface ConnectedDispatchProps {
   toggleNotificationsPermission: typeof toggleNotificationsPermission;
-};
+}
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
 
@@ -31,7 +30,6 @@ const SettingsScreen = (props: Props) => {
     props.navigation.navigate('Home');
     return true;
   }
-
 
   function handleAuthorizeNotifications() {
     props.toggleNotificationsPermission();
@@ -54,10 +52,10 @@ const SettingsScreen = (props: Props) => {
             type: 'authorize-notifications',
             label: 'Authorize notifications',
             onPress: handleAuthorizeNotifications,
-            isActive: props.canReceiveNotifications
+            isActive: props.canReceiveNotifications,
           },
           {type: 'new-courses', label: 'New courses', onPress: () => {}, isActive: false},
-          {type: 'new-battles', label: 'New battles', onPress: () => {}, isActive: true}
+          {type: 'new-battles', label: 'New battles', onPress: () => {}, isActive: true},
         ]}
       />
     </Screen>
@@ -66,20 +64,20 @@ const SettingsScreen = (props: Props) => {
 
 const canReceiveNotifications: (state: StoreState) => boolean = createSelector(
   [getPermissionStatus('notifications')],
-  permission => permission === PERMISSION_STATUS.GRANTED
+  (permission) => permission === PERMISSION_STATUS.GRANTED,
 );
 
 const currentNotificationsPermission: (state: StoreState) => PermissionStatus = createSelector(
   [getPermissionStatus('notifications')],
-  permission => permission
+  (permission) => permission,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   canReceiveNotifications: canReceiveNotifications(state),
-  currentNotificationsPermission: currentNotificationsPermission(state) 
+  currentNotificationsPermission: currentNotificationsPermission(state),
 });
 
 export {SettingsScreen as Component};
 export default connect(mapStateToProps, {
-  toggleNotificationsPermission
+  toggleNotificationsPermission,
 })(SettingsScreen);
