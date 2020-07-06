@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Conectar a la plataforma de aprendizaje<b>con un ordenador</b>',
   authenticationQRCodeStepTwoDescription:
-    'Ve a <b>tu cuenta</b> </br>en la esquina superior derecha',
+    'Ve a <b>tu cuenta</b> <br/>en la esquina superior derecha',
   authenticationQRCodeStepThreeDescription:
-    '<b>¡Listo!</b></br>Escanea el código QR con el botón que está a continuación',
+    '<b>¡Listo!</b><br/>Escanea el código QR con el botón que está a continuación',
   authenticationQRCodeTitle: 'Código QR',
   askForHelp: 'Pedir ayuda',
   backToHome: 'Volver al inicio',
@@ -52,8 +52,9 @@ const translations: Translations = {
   next: 'Siguiente',
   nextChapter: 'Siguiente capítulo',
   nextLevel: 'Siguiente nivel',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Ningún resultado',
+  noResultsDescription:
+    'Su búsqueda no ha devuelto ningún resultado.<br/>Pruebe a buscar otras palabras clave.',
   ok: 'OK',
   ooops: 'Ups...',
   open: 'Abrir',
@@ -64,6 +65,13 @@ const translations: Translations = {
   permission: 'Permiso',
   permissionCamera:
     'Tenemos que acceder a la cámara para escanear el código QR y poder autentificarte.',
+  permissionNotificationHeadline: '¡Le ayudamos a mantenerse motivado!',
+  permissionNotificationDescription:
+    'Reciba notificaciones y manténgase al tanto de sus objetivos. Prometemos no hacer estallar su teléfono un millón de veces al día.',
+  permissionNotificationAuthorize: 'Autorizar notificaciones',
+  currentlyDoingReminder: 'Actualmente haciendo un recordatorio',
+  yesNotifyMe: 'Sí, notificarme',
+  maybeLater: 'Quizás más tarde',
   platformHasBeenDisabled: 'La aplicación se ha desactivado para tu plataforma',
   question: 'Pregunta',
   quit: 'Salir',
@@ -78,9 +86,10 @@ const translations: Translations = {
   retryChapter: 'Reintentar capítulo',
   retryLevel: 'Reintentar nivel',
   scanQRCode: 'Escanea el <b>código QR</b>',
-  search: 'Search',
+  search: 'Buscar',
   seeClue: 'Ver pista',
   selectSomethingBelow: 'Selecciona algo de abajo',
+  settings: 'Ajustes',
   startDemo: '¿No tienes una cuenta? <a href="/"><b><u>¡Inicia la prueba!</u></b></a>',
   startLearning: 'Debes comenzar con este',
   selectAnAnswer: 'Selecciona una respuesta',

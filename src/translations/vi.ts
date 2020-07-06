@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Kết nối với nền tảng học tập của bạn <b>với máy tính</b>',
   authenticationQRCodeStepTwoDescription:
-    'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
+    'Chuyển đến <b>Tài khoản của bạn</b> <br/>ở góc phía trên bên phải',
   authenticationQRCodeStepThreeDescription:
-    '<b>Được rồi!</b></br>Quét mã QR của bạn bằng nút bên dưới',
+    '<b>Được rồi!</b><br/>Quét mã QR của bạn bằng nút bên dưới',
   authenticationQRCodeTitle: 'Mã QR',
   askForHelp: 'Yêu cầu trợ giúp',
   backToHome: 'Quay về trang chủ',
@@ -52,8 +52,9 @@ const translations: Translations = {
   next: 'Tiếp',
   nextChapter: 'Chương tiếp theo',
   nextLevel: 'Cấp tiếp theo ',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Không có kết quả nào',
+  noResultsDescription:
+    'Tìm kiếm của bạn không có bất kỳ kết quả nào.<br/>Hãy thử tìm kiếm các từ khóa khác.',
   ok: 'OK',
   ooops: 'Rất tiếc…',
   open: 'Mở',
@@ -64,6 +65,13 @@ const translations: Translations = {
   permission: 'Cấp phép',
   permissionCamera:
     'Chúng tôi cần truy cập vào camera để có thể quét mã QR và xác thực danh tính của bạn.',
+  permissionNotificationHeadline: 'Chúng tôi giúp bạn luôn giữ động lực!',
+  permissionNotificationDescription:
+    'Nhận thông báo để luôn kiểm soát được các mục tiêu của bạn. Chúng tôi cam đoan sẽ không gửi đến điện thoại của bạn cả triệu thông báo mỗi ngày.',
+  permissionNotificationAuthorize: 'Cho phép thông báo',
+  currentlyDoingReminder: 'Lời nhắc công việc đang thực hiện',
+  yesNotifyMe: 'Có, hãy thông báo cho tôi',
+  maybeLater: 'Có lẽ để sau',
   platformHasBeenDisabled: 'Ứng dụng đã bị vô hiệu hóa đối với nền tảng của bạn',
   question: 'Câu hỏi',
   quit: 'Thoát',
@@ -78,9 +86,10 @@ const translations: Translations = {
   retryChapter: 'Thử lại chương',
   retryLevel: 'Thử lại cấp độ',
   scanQRCode: 'Quét <b>mã QR</b> của bạn',
-  search: 'Search',
+  search: 'Tìm kiếm',
   seeClue: 'Xem gợi ý',
   selectSomethingBelow: 'Chọn một điều nào đó dưới đây',
+  settings: 'Cài đặt',
   startDemo: 'Không có tài khoản? <a href="/"> <b> <u>Bắt đầu dùng thử!</u></b></a>',
   startLearning: 'Bạn nên bắt đầu từ đây',
   selectAnAnswer: 'Chọn câu trả lời',

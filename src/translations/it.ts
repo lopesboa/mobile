@@ -15,9 +15,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Collegati alla piattaforma di apprendimento <b> tramite un computer</b>',
   authenticationQRCodeStepTwoDescription:
-    "Vai al <b>tuo account</b> </br>nell'angolo in alto a destra",
+    "Vai al <b>tuo account</b> <br/>nell'angolo in alto a destra",
   authenticationQRCodeStepThreeDescription:
-    '<b>Ecco fatto!</b></br>Leggi il codice QR usando il pulsante qui sotto',
+    '<b>Ecco fatto!</b><br/>Leggi il codice QR usando il pulsante qui sotto',
   authenticationQRCodeTitle: 'Codice QR',
   askForHelp: 'Richiedi assistenza',
   backToHome: 'Torna alla pagina principale',
@@ -51,8 +51,9 @@ const translations: Translations = {
   next: 'Successivo',
   nextChapter: 'Capitolo successivo',
   nextLevel: 'Livello successivo',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Nessun risultato',
+  noResultsDescription:
+    'La tua ricerca non ha dato risultati.<br/>Prova a cercare altre parole chiave.',
   ok: 'OK',
   ooops: 'Attenzione...',
   open: 'Apri',
@@ -63,8 +64,15 @@ const translations: Translations = {
   permission: 'Permessi',
   permissionCamera:
     'Per leggere il codice QR e autenticarti abbiamo bisogno di accedere alla fotocamera.',
+  permissionNotificationHeadline: 'Ti aiutiamo a restare motivato!',
+  permissionNotificationDescription:
+    'Ricevi le notifiche e stai al passo con i tuoi obiettivi. Ti promettiamo che non riempiremo il tuo telefono di notifiche in continuazione.',
+  permissionNotificationAuthorize: 'Autorizza notifiche',
+  currentlyDoingReminder: 'Promemoria in corso',
+  yesNotifyMe: 'Sì, attiva le notifiche',
+  maybeLater: 'Forse più tardi',
   platformHasBeenDisabled: "L'app è stata disabilitata per la tua piattaforma",
-  question: 'Indizio',
+  question: 'Questione',
   quit: 'Abbandona',
   reactivatePlatform:
     'se desideri riattivarlo, contatta il tuo amministratore o clicca sul link qui sotto e noi inoltreremo la richiesta',
@@ -77,9 +85,10 @@ const translations: Translations = {
   retryChapter: 'Ritenta capitolo',
   retryLevel: 'Ritenta il livello',
   scanQRCode: 'Leggi il <b>codice QR</b>',
-  search: 'Search',
+  search: 'Cerca',
   seeClue: 'Vedi indizio',
   selectSomethingBelow: 'Seleziona qualcosa qui di seguito',
+  settings: 'Impostazioni',
   startDemo: 'Nessun account? <a href="/"><b><u>Inizia la prova!</u></b></a>',
   startLearning: 'Dovresti iniziare con questo',
   selectAnAnswer: 'Seleziona una risposta',

@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Подключиться к вашей учебной платформе <b>с помощью компьютера</b>',
   authenticationQRCodeStepTwoDescription:
-    'Перейдите в <b>свой аккаунт</b> </br>в правом верхнем углу',
+    'Перейдите в <b>свой аккаунт</b> <br/>в правом верхнем углу',
   authenticationQRCodeStepThreeDescription:
-    '<b>Готово!</b></br>сканируйте свой QR-код с помощью кнопки ниже',
+    '<b>Готово!</b><br/>сканируйте свой QR-код с помощью кнопки ниже',
   authenticationQRCodeTitle: 'QR-код',
   askForHelp: 'Попросить помощи',
   backToHome: 'Назад на главную',
@@ -52,8 +52,9 @@ const translations: Translations = {
   next: 'Далее',
   nextChapter: 'Следующая глава',
   nextLevel: 'Следующий уровень',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Нет результатов',
+  noResultsDescription:
+    'Ваш поиск не дал результатов.<br/>Попробуйте поиск по другим ключевым словам.',
   ok: 'Хорошо',
   ooops: 'Ой...',
   open: 'Открыть',
@@ -64,6 +65,13 @@ const translations: Translations = {
   permission: 'Разрешение',
   permissionCamera:
     'Нам нужен доступ к вашей камере для сканирования вашего QR-кода и вашей аутентификации.',
+  permissionNotificationHeadline: 'мы поможем вам сохранять мотивацию!',
+  permissionNotificationDescription:
+    'Получайте уведомления и следите за достижением своих целей. Мы обещаем не взрывать ваш телефон уведомлениями миллион раз в день.',
+  permissionNotificationAuthorize: 'Разрешить уведомления',
+  currentlyDoingReminder: 'Напоминание о текущем деле',
+  yesNotifyMe: 'Да, уведомить меня',
+  maybeLater: 'Может, позже',
   platformHasBeenDisabled: 'Приложение отключено для вашей платформы',
   question: 'Вопрос',
   quit: 'Выйти',
@@ -77,9 +85,10 @@ const translations: Translations = {
   retryChapter: 'Повторить главу',
   retryLevel: 'Повторить уровень',
   scanQRCode: 'Сканируйте свой <b>QR-код</b>',
-  search: 'Search',
+  search: 'Поиск',
   seeClue: 'Смотреть подсказку',
   selectSomethingBelow: 'Выберите что-либо ниже',
+  settings: 'Настройки',
   startDemo:
     'Нет аккаунта? <a href="/"><b><u>Начните бесплатное пробное использование!</u></b></a>',
   startLearning: 'Вам нужно начать с этого',

@@ -178,6 +178,20 @@ const generate = async (locale: string) => {
     outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
     permission: formatTranslation(moocTranslations.mobile.settings.permission),
     permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
+    permissionNotificationHeadline: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationHeadline,
+    ),
+    permissionNotificationDescription: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationDescription,
+    ),
+    permissionNotificationAuthorize: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationAuthorize,
+    ),
+    currentlyDoingReminder: formatTranslation(
+      moocTranslations.mobile.settings.currentlyDoingReminder,
+    ),
+    yesNotifyMe: formatTranslation(moocTranslations.mobile.settings.yesNotifyMe),
+    maybeLater: formatTranslation(moocTranslations.mobile.settings.maybeLater),
     platformHasBeenDisabled: formatTranslation(
       moocErrorTranslations.modal.mobile.platform_has_been_disabled,
     ),
@@ -197,6 +211,7 @@ const generate = async (locale: string) => {
     search: formatTranslation(moocTranslations.content.search.placeholder),
     seeClue: formatTranslation(componentsTranslations['See clue']),
     selectSomethingBelow: formatTranslation(playerTranslations['Select something below']),
+    settings: formatTranslation(moocTranslations.mobile.settings.settings),
     startDemo: formatTranslation(moocLoginTranslations.mobile.startDemo.replace(/\\/g, '')),
     startLearning: formatTranslation(playerTranslations['Start learning']),
     selectAnAnswer: formatTranslation(playerTranslations['Select an answer']),
@@ -230,8 +245,6 @@ const generate = async (locale: string) => {
   fs.writeFileSync(
     outputFilePath,
     `${
-      '// @flow strict' +
-      '\n\n' +
       "import type {Translations} from './_types';" +
       '\n\n' +
       'const translations: Translations = {' +

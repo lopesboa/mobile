@@ -73,6 +73,12 @@ export type Translations = {
   outOfLives: string;
   permission: string;
   permissionCamera: string;
+  permissionNotificationHeadline: string;
+  permissionNotificationDescription: string;
+  permissionNotificationAuthorize: string;
+  currentlyDoingReminder: string;
+  yesNotifyMe: string;
+  maybeLater: string;
   platformHasBeenDisabled: string;
   question: string;
   quit: string;
@@ -89,6 +95,7 @@ export type Translations = {
   seeClue: string;
   selectAnAnswer: string;
   selectSomethingBelow: string;
+  settings: string;
   signInDesktop: string;
   signInMobile: string;
   startDemo: string;

@@ -15,9 +15,9 @@ const translations: Translations = {
     "Не отримали електронного листа? Нічого! Ми підтвердимо вашу особу на веб-платформі за допомогою комп'ютера",
   authenticationQRCodeStepOneDescription: "Зв'яжіть вашу навчальну платформу <b>з комп'ютером</b>",
   authenticationQRCodeStepTwoDescription:
-    'Перейдіть до <b>вашого облікового запису</b> </br> у верхньому правому куті',
+    'Перейдіть до <b>вашого облікового запису</b> <br/> у верхньому правому куті',
   authenticationQRCodeStepThreeDescription:
-    '<b>Вуаля!</b></br>Відскануйте свій QR-код, використовуючи кнопку нижче',
+    '<b>Вуаля!</b><br/>Відскануйте свій QR-код, використовуючи кнопку нижче',
   authenticationQRCodeTitle: 'QR-код',
   askForHelp: 'Попросити про допомогу',
   backToHome: 'Назад на домашню сторінку',
@@ -51,8 +51,8 @@ const translations: Translations = {
   next: 'Далі',
   nextChapter: 'Наступний розділ:',
   nextLevel: 'Наступний рівень',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Немає результатів',
+  noResultsDescription: 'Ваш пошук не дав результатів.<br/>Спробуйте пошукати інші ключові слова.',
   ok: 'Гаразд',
   ooops: 'Упс...',
   open: 'Відкрити',
@@ -63,6 +63,13 @@ const translations: Translations = {
   permission: 'Дозвіл',
   permissionCamera:
     'Нам потрібно отримати доступ до вашої камери, щоб відсканувати ваш QR-код і автентифікувати вас.',
+  permissionNotificationHeadline: 'Ми допомагаємо вам лишатись мотивованими!',
+  permissionNotificationDescription:
+    'Отримуйте сповіщення та підкорюйте свої цілі. Обіцяємо не підривати ваш телефон мільйон разів на день.',
+  permissionNotificationAuthorize: 'Авторизуйте сповіщення',
+  currentlyDoingReminder: 'Зараз створюється нагадування',
+  yesNotifyMe: 'Так, сповістіть мене',
+  maybeLater: 'Можливо пізніше',
   platformHasBeenDisabled: 'Застосунок було вимкнено для вашої платформи',
   question: 'Питання',
   quit: 'Вийти',
@@ -77,9 +84,10 @@ const translations: Translations = {
   retryChapter: 'Пройти розділ ще раз',
   retryLevel: 'Пройти рівень ще раз',
   scanQRCode: 'Відскануйте свій <b>QR-код</b>',
-  search: 'Search',
+  search: 'Шукати',
   seeClue: 'Переглянути підказку',
   selectSomethingBelow: 'Оберіть положення нижче',
+  settings: 'Налаштування',
   startDemo:
     'Не маєте облікового запису? <a href="/"><b><u> Розпочніть пробний період!</u></b></a>',
   startLearning: 'Вам слід почати з цього',

@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Připojte se ke vzdělávací platformě <b>pomocí počítače</b>',
   authenticationQRCodeStepTwoDescription:
-    'Přejděte na <b>svůj Účet</b> </br>, je v pravém horním rohu',
+    'Přejděte na <b>svůj Účet</b> <br/>, je v pravém horním rohu',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Naskenujte svůj kód QR pomocí tlačítka níže',
+    '<b>Voilà!</b><br/>Naskenujte svůj kód QR pomocí tlačítka níže',
   authenticationQRCodeTitle: 'Kód QR',
   askForHelp: 'Požádejte o pomoc',
   backToHome: 'Zpět domů',
@@ -52,8 +52,9 @@ const translations: Translations = {
   next: 'Další',
   nextChapter: 'Další kapitola',
   nextLevel: 'Další úroveň',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Žádné výsledky',
+  noResultsDescription:
+    'Vaše hledání nedosáhlo žádných výsledků.<br/>Zkuste vyhledat jiná klíčová slova.',
   ok: 'OK',
   ooops: 'Ó jé...',
   open: 'Otevřít',
@@ -64,6 +65,13 @@ const translations: Translations = {
   permission: 'Povolení',
   permissionCamera:
     'Abychom mohli naskenovat váš kód QR a ověřit vás, potřebujeme přístup k vašemu fotoaparátu.',
+  permissionNotificationHeadline: 'Pomáháme vám, abyste zůstali motivovaní!',
+  permissionNotificationDescription:
+    'Získávejte oznámení a dohlédněte na dodržování  svých cílů. Slibujeme, že nebudeme útočit na váš telefon milionkrát denně.',
+  permissionNotificationAuthorize: 'Autorizovat oznámení',
+  currentlyDoingReminder: 'Momentálně vytváříme připomínku',
+  yesNotifyMe: 'Ano, posílejte mi oznámení',
+  maybeLater: 'Možná později',
   platformHasBeenDisabled: 'Aplikace byla pro vaši platformu deaktivována',
   question: 'Otázka',
   quit: 'Opustit',
@@ -78,9 +86,10 @@ const translations: Translations = {
   retryChapter: 'Zkuste kapitolu znovu',
   retryLevel: 'Zkuste úroveň znovu',
   scanQRCode: 'Naskenujte svůj <b>kód QR</b>',
-  search: 'Search',
+  search: 'Hledat',
   seeClue: 'Zobrazit nápovědu',
   selectSomethingBelow: 'Vyberte něco níže',
+  settings: 'Nastavení',
   startDemo: 'Nemáte účet? <a href="/"><b><u>Začněte zkušební dobu!</u></b></a>',
   startLearning: 'Tímto byste měli začít',
   selectAnAnswer: 'Vyberte odopvěď',

@@ -13,9 +13,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     '<b>コンピューターで</b>あなたの学習プラットフォームに接続する',
   authenticationQRCodeStepTwoDescription:
-    '右上の隅にある<b>あなたのアカウント</b></br>にお進みください',
+    '右上の隅にある<b>あなたのアカウント</b><br/>にお進みください',
   authenticationQRCodeStepThreeDescription:
-    '<b>ほら！</b></br>下のボタンを使ってあなたのQRコードをスキャンしてください',
+    '<b>ほら！</b><br/>下のボタンを使ってあなたのQRコードをスキャンしてください',
   authenticationQRCodeTitle: 'QRコード',
   askForHelp: 'ヘルプをリクエストしてください。',
   backToHome: 'ホームへ戻る',
@@ -48,8 +48,8 @@ const translations: Translations = {
   next: 'Next',
   nextChapter: 'Next Chapter',
   nextLevel: '次のレベル',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: '結果がありません',
+  noResultsDescription: '検索結果がありませんでした。<br/>他のキーワードでの検索を試してください。',
   ok: 'OK',
   ooops: 'ゲームオーバー! ',
   open: 'オープン',
@@ -60,6 +60,13 @@ const translations: Translations = {
   permission: '許可',
   permissionCamera:
     'QRコードをスキャンして認証するためには、あなたのカメラにアクセスする必要があります。',
+  permissionNotificationHeadline: 'あなたがモチベーションを保ち続けられるようにお手伝いします！',
+  permissionNotificationDescription:
+    '通知を受け取り、自分の目標を常に把握しておきましょう。携帯電話を吹き飛ばすほど1日に100万回も通知しないと約束します。',
+  permissionNotificationAuthorize: '通知を許可する',
+  currentlyDoingReminder: '現在リマインダーを実行しています',
+  yesNotifyMe: 'はい、通知してください',
+  maybeLater: '今は結構です',
   platformHasBeenDisabled: 'このアプリは、あなたのプラットフォームでは無効化されています。',
   question: '質問',
   quit: '終了する',
@@ -74,9 +81,10 @@ const translations: Translations = {
   retryChapter: '章を再試行します。',
   retryLevel: 'リトライする',
   scanQRCode: 'あなたの<b>QRコードを</b>スキャンする',
-  search: 'Search',
+  search: '検索',
   seeClue: 'ヒントをみる ',
   selectSomethingBelow: '下に何かを選択します。',
+  settings: '設定',
   startDemo: 'アカウントがない場合、<a href="/"><b><u>トライアルを始めてみましょう！</u></b></a>',
   startLearning: 'こちらで始めてください',
   selectAnAnswer: '答えを選択します',
