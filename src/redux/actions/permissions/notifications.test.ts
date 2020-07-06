@@ -6,7 +6,7 @@ import {check, request, change, toggle, CHECK, REQUEST, CHANGE} from './notifica
 
 const createStore = (status: PermissionStatus) => ({
   getState: jest.fn(() => ({permissions: {notifications: status}})),
-  dispatch: jest.fn()
+  dispatch: jest.fn(),
 });
 
 describe('Permissions', () => {
@@ -16,8 +16,8 @@ describe('Permissions', () => {
       type: CHANGE,
       payload: {
         type: 'notifications',
-        status: PERMISSION_STATUS.GRANTED
-      }
+        status: PERMISSION_STATUS.GRANTED,
+      },
     };
     expect(result).toEqual(expected);
   });
@@ -26,16 +26,18 @@ describe('Permissions', () => {
     const expected: Action = {
       type: CHECK,
       payload: {
-        type: 'notifications'
-      }
+        type: 'notifications',
+      },
     };
 
     it('with change', async () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.DENIED);
       const services = {
         Permissions: {
-          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.UNDETERMINED}))
-        }
+          checkNotifications: jest.fn(() =>
+            Promise.resolve({status: PERMISSION_STATUS.UNDETERMINED}),
+          ),
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await check()(dispatch, getState, {services});
@@ -43,8 +45,8 @@ describe('Permissions', () => {
         type: CHANGE,
         payload: {
           type: 'notifications',
-          status: PERMISSION_STATUS.UNDETERMINED
-        }
+          status: PERMISSION_STATUS.UNDETERMINED,
+        },
       };
       expect(dispatch.mock.calls.length).toBe(2);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
@@ -56,8 +58,8 @@ describe('Permissions', () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.GRANTED);
       const services = {
         Permissions: {
-          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.GRANTED}))
-        }
+          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.GRANTED})),
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await check()(dispatch, getState, {services});
@@ -71,16 +73,16 @@ describe('Permissions', () => {
     const expected: Action = {
       type: CHECK,
       payload: {
-        type: 'notifications'
-      }
+        type: 'notifications',
+      },
     };
 
     it('toggle to denied', async () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.GRANTED);
       const services = {
         Permissions: {
-          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.GRANTED}))
-        }
+          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.GRANTED})),
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await toggle()(dispatch, getState, {services});
@@ -88,8 +90,8 @@ describe('Permissions', () => {
         type: CHANGE,
         payload: {
           type: 'notifications',
-          status: PERMISSION_STATUS.DENIED
-        }
+          status: PERMISSION_STATUS.DENIED,
+        },
       };
       expect(dispatch.mock.calls.length).toBe(2);
       expect(dispatch.mock.calls[0]).toEqual([expected]);
@@ -101,15 +103,15 @@ describe('Permissions', () => {
       const {getState, dispatch} = createStore(PERMISSION_STATUS.GRANTED);
       const services = {
         Permissions: {
-          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.DENIED}))
-        }
+          checkNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.DENIED})),
+        },
       };
       const expectedChangeAction: Action = {
         type: CHANGE,
         payload: {
           type: 'notifications',
-          status: PERMISSION_STATUS.GRANTED
-        }
+          status: PERMISSION_STATUS.GRANTED,
+        },
       };
       // @ts-ignore we dont want to mock the entire services object
       await toggle()(dispatch, getState, {services});
@@ -124,8 +126,8 @@ describe('Permissions', () => {
     const expected: Action = {
       type: REQUEST,
       payload: {
-        type: 'notifications'
-      }
+        type: 'notifications',
+      },
     };
 
     describe('should handle request', () => {
@@ -135,8 +137,10 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            requestNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.DENIED}))
-          }
+            requestNotifications: jest.fn(() =>
+              Promise.resolve({status: PERMISSION_STATUS.DENIED}),
+            ),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -144,19 +148,21 @@ describe('Permissions', () => {
           type: CHANGE,
           payload: {
             type: 'notifications',
-            status: PERMISSION_STATUS.DENIED
-          }
+            status: PERMISSION_STATUS.DENIED,
+          },
         };
         expect(dispatch.mock.calls.length).toBe(2);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(dispatch.mock.calls[1]).toEqual([expectedChangeAction]);
         expect(handleDeny.mock.calls.length).toBe(1);
         expect(services.Permissions.requestNotifications.mock.calls.length).toBe(1);
-        expect(services.Permissions.requestNotifications.mock.calls[0]).toEqual([['alert', 'badge', 'sound']]);
+        expect(services.Permissions.requestNotifications.mock.calls[0]).toEqual([
+          ['alert', 'badge', 'sound'],
+        ]);
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'notifications',
-          status: PERMISSION_STATUS.DENIED
+          status: PERMISSION_STATUS.DENIED,
         });
       });
 
@@ -166,8 +172,10 @@ describe('Permissions', () => {
         const services = {
           Analytics: createFakeAnalytics(),
           Permissions: {
-            requestNotifications: jest.fn(() => Promise.resolve({status: PERMISSION_STATUS.UNDETERMINED}))
-          }
+            requestNotifications: jest.fn(() =>
+              Promise.resolve({status: PERMISSION_STATUS.UNDETERMINED}),
+            ),
+          },
         };
         // @ts-ignore we dont want to mock the entire services object
         await request('foo bar baz', handleDeny)(dispatch, getState, {services});
@@ -175,11 +183,13 @@ describe('Permissions', () => {
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(handleDeny.mock.calls.length).toBe(0);
         expect(services.Permissions.requestNotifications.mock.calls.length).toBe(1);
-        expect(services.Permissions.requestNotifications.mock.calls[0]).toEqual([['alert', 'badge', 'sound']]);
+        expect(services.Permissions.requestNotifications.mock.calls[0]).toEqual([
+          ['alert', 'badge', 'sound'],
+        ]);
 
         expect(services.Analytics.logEvent).toHaveBeenCalledWith(ANALYTICS_EVENT_TYPE.PERMISSION, {
           type: 'notifications',
-          status: PERMISSION_STATUS.UNDETERMINED
+          status: PERMISSION_STATUS.UNDETERMINED,
         });
       });
     });

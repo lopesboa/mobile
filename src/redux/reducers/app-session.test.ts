@@ -7,7 +7,7 @@ describe('App Session', () => {
   const expectedInitialState: State = 0;
   it('Default', () => {
     const action = {
-      type: 'FAKE_ACTION'
+      type: 'FAKE_ACTION',
     };
     // @ts-ignore we are trying to emulate something else
     const result = reducer(undefined, action);
@@ -17,7 +17,7 @@ describe('App Session', () => {
   describe(INCREMENT, () => {
     it('Default', () => {
       const action: Action = {
-        type: INCREMENT
+        type: INCREMENT,
       };
       const result = reducer(undefined, action);
       const expected: State = 1;

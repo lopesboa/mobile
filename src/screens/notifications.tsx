@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
-import { createSelector } from 'reselect';
+import {createSelector} from 'reselect';
 import {NavigationEvents, NavigationActions, NavigationScreenProps} from 'react-navigation';
 import {connect} from 'react-redux';
 
@@ -12,29 +12,27 @@ import withPermissions from '../containers/with-permissions';
 import type {WithPermissionsProps} from '../containers/with-permissions';
 
 import theme from '../modules/theme';
-import { PERMISSION_STATUS } from '../const';
-import { getPermissionStatus } from '../redux/utils/state-extract';
+import {PERMISSION_STATUS} from '../const';
+import {getPermissionStatus} from '../redux/utils/state-extract';
 
 export type Params = {};
 
 export interface ConnectedStateProps {
   hasPermission: boolean;
-};
+}
 
 interface Props extends WithPermissionsProps, NavigationScreenProps<Params>, ConnectedStateProps {}
 
-
 class NotifyMeScreen extends React.PureComponent<Props> {
-
   handleClose = () => {
     const {navigation} = this.props;
     navigation.dispatch(NavigationActions.back());
   };
-  
+
   handleOnLaterPress = () => {
     this.props.changeNotificationsPermission(PERMISSION_STATUS.MAYBE_LATER);
     this.handleClose();
-  }
+  };
 
   handleNotifyMe = () => {
     this.props.requestNotificationsPermission(translations.permissionCamera, this.handleClose);
@@ -55,11 +53,11 @@ class NotifyMeScreen extends React.PureComponent<Props> {
 
 const getHasPermissionState: (state: StoreState) => boolean = createSelector(
   [getPermissionStatus('notifications')],
-  permission => permission === PERMISSION_STATUS.GRANTED
+  (permission) => permission === PERMISSION_STATUS.GRANTED,
 );
 
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  hasPermission: getHasPermissionState(state)
+  hasPermission: getHasPermissionState(state),
 });
 
 export {NotifyMeScreen as Component};

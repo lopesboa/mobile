@@ -80,10 +80,10 @@ if (__TEST__) {
             onSettingsPress={handleSettingsToggle}
             onLogoLongPress={handleFakePress}
           />
-        </TestContextProvider>
+        </TestContextProvider>,
       );
 
-      const icon = component.root.find(el => el.props.testID === 'settings-icon');
+      const icon = component.root.find((el) => el.props.testID === 'settings-icon');
       icon.props.onPress();
 
       expect(handleSettingsToggle).toHaveBeenCalledTimes(1);

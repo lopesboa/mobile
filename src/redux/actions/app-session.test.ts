@@ -7,7 +7,7 @@ describe('App Session', () => {
       const dispatch: Dispatch = jest.fn();
       const getState: GetState = jest.fn();
       const expected: Action = {
-        type: INCREMENT
+        type: INCREMENT,
       };
       // @ts-ignore missing callable signature
       await increment()(dispatch, getState);

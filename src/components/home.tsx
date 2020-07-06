@@ -17,7 +17,7 @@ interface Props {
   isFetching: boolean;
   isFocused: boolean;
   testID?: string;
-};
+}
 
 const HEADER_HEIGHT = 67;
 
@@ -61,7 +61,7 @@ const Home = ({
   onSettingsPress,
   isFetching,
   isFocused,
-  testID
+  testID,
 }: Props) => {
   if (isFetching) {
     return (

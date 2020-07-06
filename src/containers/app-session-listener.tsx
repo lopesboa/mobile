@@ -17,7 +17,4 @@ const AppSessionListener = ({incrementAppSession: incrementSession}: Props) => {
   return null;
 };
 
-export default connect(
-  null,
-  {incrementAppSession},
-)(AppSessionListener);
+export default connect(null, {incrementAppSession})(AppSessionListener);

@@ -4,16 +4,22 @@ import {connect} from 'react-redux';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import {APP_STATE} from '../const';
-import type {AppState} from '../types';
-import {check as checkCameraPermission, request as requestCameraPermission} from '../redux/actions/permissions/camera';
-import {check as checkNotificationsPermission, request as requestNotificationsPermission, change as changeNotificationsPermission} from '../redux/actions/permissions/notifications';
-import type {PermissionType} from '../types';
+import type {AppState, PermissionType} from '../types';
+import {
+  check as checkCameraPermission,
+  request as requestCameraPermission,
+} from '../redux/actions/permissions/camera';
+import {
+  check as checkNotificationsPermission,
+  request as requestNotificationsPermission,
+  change as changeNotificationsPermission,
+} from '../redux/actions/permissions/notifications';
 
 export interface WithPermissionsProps {
   requestCameraPermission: (description: string, onDeny?: () => void) => void;
   requestNotificationsPermission: (description: string, onDeny?: () => void) => void;
   changeNotificationsPermission: (status: PermissionStatus) => void;
-};
+}
 
 interface ConnectedDispatchProps {
   checkCameraPermission: typeof checkCameraPermission;
@@ -21,7 +27,7 @@ interface ConnectedDispatchProps {
   checkNotificationsPermission: typeof checkNotificationsPermission;
   requestNotificationsPermission: typeof requestNotificationsPermission;
   changeNotificationsPermission: typeof changeNotificationsPermission;
-};
+}
 
 function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<PermissionType>) {
   interface Props extends WithPermissionsProps, ConnectedDispatchProps {}
@@ -61,7 +67,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
     };
 
     checkCameraPermissions = () => this.props.checkCameraPermission();
-    
+
     checkNotificationsPermissions = () => this.props.checkNotificationsPermission();
 
     requestCameraPermission: Pick<WithPermissionsProps, 'requestCameraPermission'> = (
@@ -73,22 +79,22 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
 
     requestNotificationsPermission: Pick<WithPermissionsProps, 'requestNotificationsPermission'> = (
       description,
-      onDeny
+      onDeny,
     ) => {
       this.props.requestNotificationsPermission(description, onDeny);
     };
 
     changeNotificationsPermission: Pick<WithPermissionsProps, 'changeNotificationsPermission'> = (
-      status: PermissionStatus
+      status: PermissionStatus,
     ) => {
       this.props.changeNotificationsPermission(status);
     };
 
     render() {
       return (
-        <WrappedComponent 
-          {...this.props} 
-          requestCameraPermission={this.requestCameraPermission} 
+        <WrappedComponent
+          {...this.props}
+          requestCameraPermission={this.requestCameraPermission}
           requestNotificationsPermission={this.requestNotificationsPermission}
           changeNotificationsPermission={this.changeNotificationsPermission}
         />
@@ -101,7 +107,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
     requestCameraPermission,
     checkNotificationsPermission,
     requestNotificationsPermission,
-    changeNotificationsPermission
+    changeNotificationsPermission,
   };
 
   return hoistNonReactStatic(

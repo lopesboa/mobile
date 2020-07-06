@@ -42,8 +42,8 @@ describe('Home', () => {
       appSession: 2,
       permissions: {
         camera: 'granted',
-        notifications: 'granted'
-      }
+        notifications: 'granted',
+      },
     });
 
     const result = mapStateToProps(store);
@@ -96,10 +96,10 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />
+      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
     );
 
-    const home = component.root.find(el => el.props.testID === 'home');
+    const home = component.root.find((el) => el.props.testID === 'home');
     home.props.onSettingsPress();
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);

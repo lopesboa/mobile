@@ -1,7 +1,7 @@
 import type {Action} from '../../actions/permissions/notifications';
 import {CHANGE} from '../../actions/permissions/notifications';
 import type {PermissionStatus} from '../../../types';
-import { PERMISSION_STATUS } from '../../../const';
+import {PERMISSION_STATUS} from '../../../const';
 
 export type State = PermissionStatus;
 
@@ -11,7 +11,7 @@ const reducer = (state: State = PERMISSION_STATUS.UNDETERMINED, action: Action):
   switch (action.type) {
     case CHANGE: {
       const {status} = action.payload;
-      return status
+      return status;
     }
     default:
       return state;

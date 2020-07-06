@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {
   NovaCompositionCoorpacademySearch as SearchIcon,
-  NovaCompositionCoorpacademyCog as SettingsIcon
+  NovaCompositionCoorpacademyCog as SettingsIcon,
 } from '@coorpacademy/nova-icons';
 
 import theme, {getHitSlop} from '../modules/theme';
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   left: {
     alignItems: 'flex-start',
-    paddingLeft: ICON_SPACING
+    paddingLeft: ICON_SPACING,
   },
   right: {
     alignItems: 'flex-end',

@@ -10,10 +10,10 @@ storiesOf('Settings', module).add('default', () => (
         type: 'authorize-notifications',
         label: 'Authorize notifications',
         onPress: handleFakePress,
-        isActive: true
+        isActive: true,
       },
       {type: 'new-courses', label: 'New courses', onPress: handleFakePress, isActive: false},
-      {type: 'new-battles', label: 'New battles', onPress: handleFakePress, isActive: true}
+      {type: 'new-battles', label: 'New battles', onPress: handleFakePress, isActive: true},
     ]}
   />
 ));

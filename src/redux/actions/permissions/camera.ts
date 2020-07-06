@@ -11,9 +11,7 @@ export const CHANGE = '@@permissions/camera/CHANGE';
 export type PermissionType = 'camera';
 
 export const toOSCameraPermission = () => {
-  return Platform.OS === 'ios'
-    ? `ios.permission.CAMERA`
-    : `android.permission.CAMERA`;
+  return Platform.OS === 'ios' ? `ios.permission.CAMERA` : `android.permission.CAMERA`;
 };
 
 export type RequestPayload = {
@@ -47,8 +45,8 @@ export const change = (status: PermissionStatus): Action => ({
   type: CHANGE,
   payload: {
     type: PERMISSION_TYPE.CAMERA,
-    status
-  }
+    status,
+  },
 });
 
 const _requestPermission = (onDeny?: () => void) => async (
@@ -68,7 +66,7 @@ const _requestPermission = (onDeny?: () => void) => async (
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
     status,
-    type: PERMISSION_TYPE.CAMERA
+    type: PERMISSION_TYPE.CAMERA,
   });
 
   return status;
@@ -82,8 +80,8 @@ export const request = (description: string, onDeny?: () => void) => async (
   const action = dispatch({
     type: REQUEST,
     payload: {
-      type: PERMISSION_TYPE.CAMERA
-    }
+      type: PERMISSION_TYPE.CAMERA,
+    },
   });
 
   const permissionStatus = getState().permissions[PERMISSION_TYPE.CAMERA];
@@ -116,8 +114,8 @@ export const request = (description: string, onDeny?: () => void) => async (
         },
         {
           text: translations.ok,
-          onPress: () => _requestPermission(onDeny)(dispatch, getState, {services})
-        }
+          onPress: () => _requestPermission(onDeny)(dispatch, getState, {services}),
+        },
       ],
       {cancelable: false},
     );
@@ -135,8 +133,8 @@ export const check = () => async (
   const action = dispatch({
     type: CHECK,
     payload: {
-      type: PERMISSION_TYPE.CAMERA
-    }
+      type: PERMISSION_TYPE.CAMERA,
+    },
   });
 
   const status = await services.Permissions.check(toOSCameraPermission());

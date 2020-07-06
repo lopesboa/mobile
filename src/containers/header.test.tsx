@@ -36,10 +36,10 @@ describe('Header', () => {
           onSettingsPress={onSettingsPress}
           signOut={fakeCallback}
           height={42}
-        />
+        />,
       );
 
-      const header = component.root.find(el => el.props.testID === 'header');
+      const header = component.root.find((el) => el.props.testID === 'header');
       header.props.onSettingsPress();
 
       expect(onSettingsPress).toHaveBeenCalledTimes(1);

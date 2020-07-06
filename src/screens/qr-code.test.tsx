@@ -125,7 +125,7 @@ describe('QR Code', () => {
       params,
     });
     const component = renderer.create(
-      <QRCode navigation={navigation} requestCameraPermission={requestCameraPermission} />
+      <QRCode navigation={navigation} requestCameraPermission={requestCameraPermission} />,
     );
 
     const navigationEvents = component.root.find(

@@ -9,13 +9,13 @@ import {signOut as _signOut} from '../redux/actions/authentication';
 
 interface ConnectedDispatchProps {
   signOut: typeof _signOut;
-};
+}
 
 export interface Props extends ConnectedDispatchProps {
   height: Pick<ComponentProps, 'height'>;
   onSearchPress: () => void;
   onSettingsPress: () => void;
-};
+}
 
 class Header extends React.PureComponent<Props> {
   handleLogoLongPress = () =>
