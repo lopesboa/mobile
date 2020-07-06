@@ -1,28 +1,26 @@
 import * as React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import theme from '../modules/theme';
-import {SPACE} from '../const';
+import {NotificationType} from '../types';
 import Switch from './switch';
 import Version from './version';
 import Text from './text';
-import Space from './space';
 
 type SettingsItem = {
-  type: string;
+  type: NotificationType;
   label: string;
   isActive: boolean;
-  onPress: () => void;
 };
 
 interface Props {
   settings: Array<SettingsItem>;
+  onSettingToggle: (type: NotificationType) => void;
   testID: string;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.gray.extra,
   },
   shadow: {
     backgroundColor: theme.colors.white,
@@ -70,23 +68,23 @@ const styles = StyleSheet.create({
   },
 });
 
-const Settings = ({settings, testID}: Props) => {
+const Settings = ({settings, onSettingToggle, testID}: Props) => {
   function renderItem({item, index}: {index: number; item: SettingsItem}) {
-    function handleOnSettingsItemPress() {
-      return item.onPress();
+    function handleOnSettingsItemToggle() {
+      return onSettingToggle(item.type);
     }
     return (
       <React.Fragment>
-        {index % settings.length !== 1 ? <Separator /> : null}
+        <Separator />
         <View style={styles.notificationItemContainer}>
           <Text>{item.label}</Text>
           <Switch
             isActive={item.isActive}
-            onPress={handleOnSettingsItemPress}
+            onPress={handleOnSettingsItemToggle}
             testID={testID + '-switch-' + item.type}
           />
         </View>
-        {index % settings.length !== 0 ? <Separator /> : null}
+        <Separator />
       </React.Fragment>
     );
   }
@@ -105,16 +103,11 @@ const Settings = ({settings, testID}: Props) => {
         testID={testID + 'list'}
         contentContainerStyle={styles.container}
         ListHeaderComponent={
-          <React.Fragment>
-            <View style={styles.shadow} />
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>Notifications</Text>
-            </View>
-            {renderItem({item: settings[0]})}
-            <Space type={SPACE.BASE} />
-          </React.Fragment>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Notifications</Text>
+          </View>
         }
-        data={settings.slice(1, settings.length)}
+        data={settings.slice(0, settings.length)}
         ItemSeparatorComponent={Separator}
         keyExtractor={keyExtractor}
         renderItem={renderItem}

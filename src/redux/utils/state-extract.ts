@@ -25,6 +25,7 @@ import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
 import type {State as UserState} from '../reducers/authentication/user';
 import type {State as TokenState} from '../reducers/authentication/token';
+import type {State as NotificationsState} from '../reducers/notifications';
 import type {State as SelectState} from '../reducers/ui/select';
 
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
@@ -123,6 +124,11 @@ export const getEngineVersions = (state: StoreState): ProgressionEngineVersions 
 export const isGodModeEnabled = (state: StoreState): boolean => state.godMode;
 
 export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlide;
+
+export const isFinishCourseNotificationActive = (state: StoreState): boolean =>
+  state.notifications.finishCourse.isActive;
+
+export const getNotifications = (state: StoreState): NotificationsState => state.notifications;
 
 export const getAppSession = (state: StoreState): number => state.appSession;
 

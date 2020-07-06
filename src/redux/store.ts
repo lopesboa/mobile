@@ -11,6 +11,7 @@ import navigation from './reducers/navigation';
 import type {State as CatalogState} from './reducers/catalog';
 import resetOnLogout from './utils/reset-on-logout';
 import type {State as PermissionsState} from './reducers/permissions';
+import type {State as NotificationsState} from './reducers/notifications';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
 import type {State as GodModeState} from './reducers/god-mode';
@@ -24,6 +25,7 @@ import type {State as ProgressionsState} from './reducers/progressions/synchroni
 import catalog from './reducers/catalog';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
+import notifications from './reducers/notifications';
 import progressions from './reducers/progressions/synchronize';
 import video from './reducers/video';
 import godMode from './reducers/god-mode';
@@ -55,6 +57,7 @@ export type StoreState = ReduxState & {
   godMode: GodModeState;
   fastSlide: FastSlideState;
   appSession: AppSessionState;
+  notifications: NotificationsState;
   network: NetworkState;
 };
 
@@ -77,7 +80,8 @@ const reducers = combineReducers({
   godMode,
   fastSlide,
   appSession,
-  network
+  notifications,
+  network,
 });
 
 const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {

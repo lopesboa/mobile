@@ -42,6 +42,7 @@ import type {State as NavigationState} from '../redux/reducers/navigation';
 import type {State as FastSlideState} from '../redux/reducers/fast-slide';
 import type {State as AppSessionState} from '../redux/reducers/app-session';
 import type {State as PermissionsState} from '../redux/reducers/permissions';
+import type {State as NotitificationsState} from '../redux/reducers/notifications';
 import type {State as ProgressionsState} from '../redux/reducers/progressions/synchronize';
 import type {State as VideoState} from '../redux/reducers/video';
 import {
@@ -329,14 +330,26 @@ export const createNavigationState = (): NavigationState => ({
 });
 
 export const createPermissionsState = ({
-    camera,
-    notifications
+  camera = 'undetermined',
+  notifications = 'undetermined',
 }: {
-    camera?: PermissionStatus;
-    notifications?: PermissionStatus
+  camera?: PermissionStatus;
+  notifications?: PermissionStatus;
 }): PermissionsState => ({
-    camera,
-    notifications
+  camera,
+  notifications,
+});
+
+export const createNotificationsState = (
+  notification = {
+    finishCourse: {
+      type: 'finish-course',
+      label: 'Weekly Reminder',
+      isActive: true,
+    },
+  },
+): NotitificationsState => ({
+  ...notification,
 });
 
 export const createVideoState = ({isFullScreen = false}: {isFullScreen?: boolean}): VideoState => ({
@@ -354,82 +367,86 @@ export const createNetworkState = ({
 });
 
 export const createStoreState = ({
-    levels,
-    slides,
-    chapters,
-    disciplines,
-    exitNodes,
-    videos,
-    progression,
-    catalog,
-    data,
-    ui,
-    authentication,
-    nextContent,
-    godMode = false,
-    fastSlide = false,
-    appSession = 0,
-    errors,
-    select,
-    isValidating,
-    search,
-    navigation,
-    permissions,
-    progressions,
-    video,
-    network,
+  levels,
+  slides,
+  chapters,
+  disciplines,
+  exitNodes,
+  videos,
+  progression,
+  catalog,
+  data,
+  ui,
+  authentication,
+  nextContent,
+  godMode = false,
+  fastSlide = false,
+  appSession = 0,
+  errors,
+  select,
+  isValidating,
+  search,
+  navigation,
+  permissions,
+  notifications,
+  progressions,
+  video,
+  network,
 }: {
-    levels?: Array<Level>;
-    slides?: Array<Slide>;
-    chapters?: Array<Chapter>;
-    disciplines?: Array<Discipline>;
-    exitNodes?: Array<ExitNode>;
-    videos?: {
-        [key: string]: {uri: string; tracks?: Array<VideoTrack>};
-    };
-    progression: Progression;
-    data?: DataState;
-    ui?: UiState;
-    authentication?: AuthenticationState;
-    catalog?: CatalogState;
-    nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI;
-    godMode?: GodModeState;
-    fastSlide?: FastSlideState;
-    appSession?: AppSessionState;
-    errors?: ErrorsState<void>;
-    select?: SelectState;
-    isValidating?: AnswersState;
-    search?: SearchState;
-    navigation?: NavigationState;
-    permissions?: PermissionsState;
-    progressions?: ProgressionsState;
-    video?: VideoState;
-    network?: NetworkState;
+  levels?: Array<Level>;
+  slides?: Array<Slide>;
+  chapters?: Array<Chapter>;
+  disciplines?: Array<Discipline>;
+  exitNodes?: Array<ExitNode>;
+  videos?: {
+    [key: string]: {uri: string; tracks?: Array<VideoTrack>};
+  };
+  progression: Progression;
+  data?: DataState;
+  ui?: UiState;
+  authentication?: AuthenticationState;
+  catalog?: CatalogState;
+  nextContent?: SlideAPI | ChapterAPI | LevelAPI | ExitNodeAPI;
+  godMode?: GodModeState;
+  fastSlide?: FastSlideState;
+  appSession?: AppSessionState;
+  errors?: ErrorsState<void>;
+  select?: SelectState;
+  isValidating?: AnswersState;
+  search?: SearchState;
+  navigation?: NavigationState;
+  permissions?: PermissionsState;
+  notifications?: NotitificationsState;
+  progressions?: ProgressionsState;
+  video?: VideoState;
+  network?: NetworkState;
 }): StoreState => ({
-    data: data ||
-        createDataState({
-            levels,
-            slides,
-            chapters,
-            disciplines,
-            exitNodes,
-            progression,
-            nextContent,
-            videos,
-        }),
-    ui: ui || createUiState({}),
-    errors: errors || createErrorsState({}),
-    select: select || createSelectState({}),
-    isValidating: isValidating || createAnswersState({}),
-    search: search || createSearchState({}),
-    navigation: navigation || createNavigationState(),
-    catalog: catalog || createCatalogState({}),
-    permissions: permissions || createPermissionsState({}),
-    authentication: authentication || createAuthenticationState({}),
-    progressions: progressions || createProgressionsState({}),
-    godMode,
-    fastSlide,
-    appSession,
-    video: video || createVideoState({}),
-    network: network || createNetworkState({}),
+  data:
+    data ||
+    createDataState({
+      levels,
+      slides,
+      chapters,
+      disciplines,
+      exitNodes,
+      progression,
+      nextContent,
+      videos,
+    }),
+  ui: ui || createUiState({}),
+  errors: errors || createErrorsState({}),
+  select: select || createSelectState({}),
+  isValidating: isValidating || createAnswersState({}),
+  search: search || createSearchState({}),
+  navigation: navigation || createNavigationState(),
+  catalog: catalog || createCatalogState({}),
+  permissions: permissions || createPermissionsState({}),
+  authentication: authentication || createAuthenticationState({}),
+  progressions: progressions || createProgressionsState({}),
+  notifications: notifications || createNotificationsState(),
+  godMode,
+  fastSlide,
+  appSession,
+  video: video || createVideoState({}),
+  network: network || createNetworkState({}),
 });

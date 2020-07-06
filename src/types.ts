@@ -103,15 +103,17 @@ export type User = {
 };
 
 export type PermissionStatus =
-  | "granted"
-  | "denied"
-  | "restricted"
-  | "undetermined"
-  | "unavailable"
-  | "maybe-later"
-  | "blocked";
+  | 'granted'
+  | 'denied'
+  | 'restricted'
+  | 'undetermined'
+  | 'unavailable'
+  | 'maybe-later'
+  | 'blocked';
 
 export type PermissionType = 'camera' | 'notifications';
+
+export type NotificationType = 'finish-course';
 
 export type UnlockedLevelInfo = {
   isUnlocked: boolean;

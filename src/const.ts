@@ -22,7 +22,8 @@ import type {
   QuestionChoiceInputType,
   SpaceType,
   TooltipType,
-  PermissionType
+  PermissionType,
+  NotificationType,
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -154,32 +155,35 @@ export const PERMISSION_RECURENCE: {
 
 export const PERMISSION_STATUS: {
   [key in
-    | "GRANTED"
-    | "DENIED"
-    | "RESTRICTED"
-    | "UNDETERMINED"
-    | "UNAVAILABLE"
-    | "MAYBE_LATER"
-    | "BLOCKED"]: PermissionStatus
+    | 'GRANTED'
+    | 'DENIED'
+    | 'RESTRICTED'
+    | 'UNDETERMINED'
+    | 'UNAVAILABLE'
+    | 'MAYBE_LATER'
+    | 'BLOCKED']: PermissionStatus;
 } = {
-  GRANTED: "granted",
-  DENIED: "denied",
-  RESTRICTED: "restricted",
-  UNDETERMINED: "undetermined",
+  GRANTED: 'granted',
+  DENIED: 'denied',
+  RESTRICTED: 'restricted',
+  UNDETERMINED: 'undetermined',
   UNAVAILABLE: 'unavailable',
   MAYBE_LATER: 'maybe-later',
-  BLOCKED: "blocked",
+  BLOCKED: 'blocked',
 };
 
 export const PERMISSION_TYPE: {
-  [key in
-    | "CAMERA"
-    | "NOTIFICATIONS"]: PermissionType
+  [key in 'CAMERA' | 'NOTIFICATIONS']: PermissionType;
 } = {
-  CAMERA: "camera",
-  NOTIFICATIONS: "notifications"
+  CAMERA: 'camera',
+  NOTIFICATIONS: 'notifications',
 };
 
+export const NOTIFICATION_TYPE: {
+  [key in 'FINISH_COURSE']: NotificationType;
+} = {
+  FINISH_COURSE: 'finish-course',
+};
 
 export const APP_STATE: {
   [key in 'ACTIVE' | 'BACKGROUND' | 'INACTIVE']?: AppState;

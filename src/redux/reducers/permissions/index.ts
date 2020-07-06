@@ -4,7 +4,8 @@ import type {Action as CameraPermissionAction} from '../../actions/permissions/c
 import type {Action as NotificationsPermissionAction} from '../../actions/permissions/notifications';
 import cameraPermissionReducer from './camera';
 import notificationsPermissionReducer from './notifications';
-import type {State as CameraPermissionState, State as NotificationsPermissionState} from './camera';
+import type {State as CameraPermissionState} from './camera';
+import type {State as NotificationsPermissionState} from './notifications';
 
 export type State = {
   camera: CameraPermissionState;

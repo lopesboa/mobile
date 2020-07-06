@@ -29,6 +29,7 @@ import {
   createAuthenticationState,
   createCatalogState,
   createPermissionsState,
+  createNotificationsState,
   createStoreState,
   createDataState,
   createErrorsState,
@@ -37,6 +38,7 @@ import {
   createNetworkState,
   createVideoState,
 } from '../../__fixtures__/store';
+import {StoreState} from '../store';
 import {
   isExitNode,
   isCorrect,
@@ -52,6 +54,8 @@ import {
   getEngineVersions,
   isGodModeEnabled,
   isFastSlideEnabled,
+  isFinishCourseNotificationActive,
+  getNotifications,
   getCurrentScreenName,
   getCurrentTabName,
   getContext,
@@ -77,7 +81,6 @@ import {
   getContentCorrectionInfo,
   getAppSession,
 } from './state-extract';
-import { StoreState } from '../store';
 
 const createDefaultLevel = (levelRef: string) => createLevel({ref: levelRef, chapterIds: ['666']});
 
@@ -108,6 +111,12 @@ const slide = createSlide({
   context,
 });
 
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ReturnType<T extends (...args: any[]) => any> = T extends (...args: any[]) => infer R
+  ? R
+  : never;
+
 const createState = ({
   engine = ENGINE.MICROLEARNING,
   levelRef = 'dummyRef',
@@ -117,7 +126,8 @@ const createState = ({
   sections = [],
   cards = [],
   permissions,
-appSession = 1,
+  notifications,
+  appSession = 1,
   token,
   brand,
   user,
@@ -133,15 +143,16 @@ appSession = 1,
   slides?: Array<Slide>;
   sections?: Array<Section | void>;
   cards?: Array<DisciplineCard | ChapterCard>;
-  permissions?: $ExtractReturn<typeof createPermissionsState>;
+  permissions?: ReturnType<typeof createPermissionsState>;
+  notifications?: ReturnType<typeof createNotificationsState>;
   token?: string | null;
   brand?: Brand | null;
   user?: User | null;
   heroRef?: string;
   appSession?: number;
-  errors?: $ExtractReturn<typeof createErrorsState>;
-  search?: $ExtractReturn<typeof createSearchState>;
-  select?: $ExtractReturn<typeof createSelectState>;
+  errors?: ReturnType<typeof createErrorsState>;
+  search?: ReturnType<typeof createSearchState>;
+  select?: ReturnType<typeof createSelectState>;
 }): StoreState =>
   createStoreState({
     levels: [createDefaultLevel(levelRef)],
@@ -158,6 +169,7 @@ appSession = 1,
     fastSlide: true,
     catalog: createCatalogState({sections, cards, heroRef}),
     permissions,
+    notifications,
     appSession,
     errors,
     search,
@@ -746,6 +758,43 @@ describe('State-extract', () => {
       const result = isFastSlideEnabled(state);
 
       expect(result).toBeTruthy();
+    });
+  });
+
+  describe('isFinishCourseNotificationActive', () => {
+    it('should get value from state', () => {
+      const state = createState({
+        notifications: {
+          finishCourse: {
+            type: 'finish-course',
+            label: 'reminder',
+            isActive: false,
+          },
+        },
+      });
+
+      const result = isFinishCourseNotificationActive(state);
+
+      expect(result).toEqual(false);
+    });
+  });
+
+  describe('getNotifications', () => {
+    it('should get value from state', () => {
+      const notifications = {
+        finishCourse: {
+          id: 'reminder',
+          label: 'reminder',
+          isActive: false,
+        },
+      };
+      const state = createState({
+        notifications,
+      });
+
+      const result = getNotifications(state);
+
+      expect(result).toEqual(notifications);
     });
   });
 

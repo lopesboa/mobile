@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 
 import {NavigationScreenProps} from 'react-navigation';
@@ -8,19 +8,27 @@ import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {BackHandler} from '../modules/back-handler';
-import {PERMISSION_STATUS} from '../const';
-import {getPermissionStatus} from '../redux/utils/state-extract';
+import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
+import {getPermissionStatus, getNotifications} from '../redux/utils/state-extract';
 import {StoreState} from '../redux/store';
-import type {PermissionStatus} from '../types';
-import {toggle as toggleNotificationsPermission} from '../redux/actions/permissions/notifications';
+import type {PermissionStatus, NotificationType} from '../types';
+import {toggle as toggleFinishCourseNotification} from '../redux/actions/notifications/finish-course';
+import type {State as NotificationsState} from '../redux/reducers/notifications';
+import theme from '../modules/theme';
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: theme.colors.gray.extra,
+  },
+});
 export interface ConnectedStateProps {
   canReceiveNotifications: boolean;
   currentNotificationsPermission: PermissionStatus;
+  notificationsSettings: NotificationsState;
 }
 
 interface ConnectedDispatchProps {
-  toggleNotificationsPermission: typeof toggleNotificationsPermission;
+  toggleFinishCourseNotification: typeof toggleFinishCourseNotification;
 }
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
@@ -31,10 +39,6 @@ const SettingsScreen = (props: Props) => {
     return true;
   }
 
-  function handleAuthorizeNotifications() {
-    props.toggleNotificationsPermission();
-  }
-
   React.useEffect(() => {
     BackHandler.addEventListener('hardwareBackPress', handleBackButton);
     return () => {
@@ -42,21 +46,22 @@ const SettingsScreen = (props: Props) => {
     };
   }, []);
 
+  function handleNotificationSettingToggle(type: NotificationType) {
+    switch (type) {
+      case NOTIFICATION_TYPE.FINISH_COURSE: {
+        props.toggleFinishCourseNotification();
+        break;
+      }
+    }
+  }
+
   return (
-    <Screen noScroll testID="settings-screen">
+    <Screen noScroll testID="settings-screen" style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
       <Settings
         testID="settings-notifications"
-        settings={[
-          {
-            type: 'authorize-notifications',
-            label: 'Authorize notifications',
-            onPress: handleAuthorizeNotifications,
-            isActive: props.canReceiveNotifications,
-          },
-          {type: 'new-courses', label: 'New courses', onPress: () => {}, isActive: false},
-          {type: 'new-battles', label: 'New battles', onPress: () => {}, isActive: true},
-        ]}
+        onSettingToggle={handleNotificationSettingToggle}
+        settings={Object.values(props.notificationsSettings)}
       />
     </Screen>
   );
@@ -72,12 +77,18 @@ const currentNotificationsPermission: (state: StoreState) => PermissionStatus = 
   (permission) => permission,
 );
 
+const notificationsSettings: (state: StoreState) => NotificationsState = createSelector(
+  [getNotifications],
+  (settings) => settings,
+);
+
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   canReceiveNotifications: canReceiveNotifications(state),
   currentNotificationsPermission: currentNotificationsPermission(state),
+  notificationsSettings: notificationsSettings(state),
 });
 
 export {SettingsScreen as Component};
 export default connect(mapStateToProps, {
-  toggleNotificationsPermission,
+  toggleFinishCourseNotification,
 })(SettingsScreen);

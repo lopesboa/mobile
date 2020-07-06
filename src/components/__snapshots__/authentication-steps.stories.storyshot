@@ -1163,11 +1163,11 @@ exports[`Storyshots AuthenticationSteps QR code 1`] = `
             "icon": [Function],
           },
           Object {
-            "description": "Go to <b>your Account</b> </br>in the upper right-hand corner",
+            "description": "Go to <b>your Account</b> <br/>in the upper right-hand corner",
             "icon": [Function],
           },
           Object {
-            "description": "<b>Voilà!</b></br>Scan your QR code using the button below",
+            "description": "<b>Voilà!</b><br/>Scan your QR code using the button below",
             "icon": [Function],
           },
         ]

@@ -41,7 +41,7 @@ module.exports = {
     '!<rootDir>/src/**/*.stories.tsx',
     '!<rootDir>/src/navigator/*',
     '!**/__fixtures__/**',
-    '!**/@types/**',
+    '!**/types/**',
   ],
   coverageThreshold: {
     'src/components': {

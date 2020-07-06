@@ -5,83 +5,41 @@ Array [
   <RCTScrollView
     ItemSeparatorComponent={[Function]}
     ListHeaderComponent={
-      <React.Fragment>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "elevation": 9,
-              "height": 1,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.3,
-              "shadowRadius": 1,
-              "width": "100%",
-            }
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "height": 110,
+            "justifyContent": "center",
+            "padding": 37,
           }
-        />
-        <View
+        }
+      >
+        <Text
           style={
             Object {
-              "alignItems": "flex-start",
-              "height": 110,
-              "justifyContent": "center",
-              "padding": 37,
+              "fontSize": 28,
+              "fontWeight": "700",
             }
           }
         >
-          <Text
-            style={
-              Object {
-                "fontSize": 28,
-                "fontWeight": "700",
-              }
-            }
-          >
-            Notifications
-          </Text>
-        </View>
-        <React.Fragment>
-          <Separator />
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#FFFFFF",
-                "flexDirection": "row",
-                "height": 53,
-                "justifyContent": "space-between",
-                "paddingHorizontal": 32,
-              }
-            }
-          >
-            <Text>
-              Authorize notifications
-            </Text>
-            <Switch
-              isActive={true}
-              onPress={[Function]}
-              testID="undefined-switch-authorize-notifications"
-            />
-          </View>
-          <Separator />
-        </React.Fragment>
-        <Space
-          type="base"
-        />
-      </React.Fragment>
+          Notifications
+        </Text>
+      </View>
     }
     contentContainerStyle={
       Object {
-        "backgroundColor": "#FAFAFA",
         "flex": 1,
       }
     }
     data={
       Array [
+        Object {
+          "isActive": true,
+          "label": "Authorize notifications",
+          "onPress": [Function],
+          "type": "authorize-notifications",
+        },
         Object {
           "isActive": false,
           "label": "New courses",
@@ -126,23 +84,6 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "#FFFFFF",
-              "elevation": 9,
-              "height": 1,
-              "shadowColor": "#14171A",
-              "shadowOffset": Object {
-                "height": 0,
-                "width": 0,
-              },
-              "shadowOpacity": 0.3,
-              "shadowRadius": 1,
-              "width": "100%",
-            }
-          }
-        />
-        <View
-          style={
-            Object {
               "alignItems": "flex-start",
               "height": 110,
               "justifyContent": "center",
@@ -164,6 +105,11 @@ Array [
             Notifications
           </Text>
         </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
         <View
           style={
             Object {
@@ -273,8 +219,8 @@ Array [
         <View
           style={
             Object {
-              "height": 24,
-              "width": 24,
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
             }
           }
         />
@@ -389,11 +335,27 @@ Array [
             }
           }
         />
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
       </View>
       <View
         onLayout={[Function]}
         style={null}
       >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
         <View
           style={
             Object {
