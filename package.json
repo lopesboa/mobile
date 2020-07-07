@@ -141,6 +141,7 @@
     "react-navigation": "^3.11.0",
     "react-redux": "7.2.0",
     "redux": "^4.0.1",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "reselect-map": "^1.0.4",

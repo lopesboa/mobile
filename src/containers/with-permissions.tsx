@@ -44,7 +44,6 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
 
     componentDidMount() {
       this.checkCameraPermissions();
-      this.checkNotificationsPermissions();
       AppStateBase.addEventListener('change', this.handleAppStateChange);
     }
 
@@ -59,7 +58,6 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
         appState === APP_STATE.ACTIVE
       ) {
         this.checkCameraPermissions();
-        this.checkNotificationsPermissions();
       }
       this.setState({
         appState,
@@ -111,7 +109,10 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
   };
 
   return hoistNonReactStatic(
-    connect(null, mapDispatchToProps)(ComponentWithPermissions),
+    connect(
+      null,
+      mapDispatchToProps,
+    )(ComponentWithPermissions),
     WrappedComponent,
   );
 }

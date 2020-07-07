@@ -149,8 +149,8 @@ export const PERMISSION_RECURENCE: {
   [key: string]: number;
 } = {
   FIRST: 1,
-  MID: 10,
-  LAST: 30,
+  SECOND: 10,
+  THIRD: 30,
 };
 
 export const PERMISSION_STATUS: {

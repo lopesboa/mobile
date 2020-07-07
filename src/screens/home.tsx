@@ -38,18 +38,17 @@ class HomeScreen extends React.PureComponent<Props> {
     BackHandler?.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
-  checkOnNotifications() {
-    const {appSession, notificationStatus} = this.props;
-    const {navigation} = this.props;
+  async checkOnNotifications() {
+    const {notificationStatus, appSession, navigation} = this.props;
     const params: QRCodeScreenParams = {};
 
     if (
-      notificationStatus != PERMISSION_STATUS.GRANTED &&
-      (appSession == PERMISSION_RECURENCE.FIRST ||
-        ((appSession == PERMISSION_RECURENCE.MID || appSession == PERMISSION_RECURENCE.LAST) &&
-          notificationStatus == PERMISSION_STATUS.MAYBE_LATER))
+      notificationStatus === PERMISSION_STATUS.UNDETERMINED ||
+      (notificationStatus === PERMISSION_STATUS.MAYBE_LATER &&
+        (appSession === PERMISSION_RECURENCE.SECOND || appSession === PERMISSION_RECURENCE.THIRD))
     ) {
       navigation.navigate('NotifyMeModal', params);
+      return;
     }
   }
 

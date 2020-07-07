@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {StyleSheet, View, Platform} from 'react-native';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import {PortalProvider} from 'react-native-portal';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
@@ -12,6 +13,7 @@ import {setJSExceptionHandler, getJSExceptionHandler} from 'react-native-excepti
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 import UserProvider from './components/user-provider';
+import Loader from './components/loader';
 import VersionListener from './containers/version-listener';
 import AppSessionListener from './containers/app-session-listener';
 import VideoFullscreenListener from './containers/video-fullscreen-listener';
@@ -32,13 +34,18 @@ const dataLayer = createDataLayer();
 
 const services = createServices(dataLayer);
 // @ts-ignore
-const store = createStore(services, reduxDevTools);
+const {store, persistor} = createStore(services, reduxDevTools);
 
 interface Props {}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
@@ -67,24 +74,34 @@ class App extends React.PureComponent<Props> {
     // }
   }
 
+  renderLoader = () => {
+    return (
+      <View style={styles.loaderContainer}>
+        <Loader />
+      </View>
+    );
+  };
+
   render() {
     return (
       <Provider store={store}>
-        <ReduxNetworkProvider pingInterval={30000} pingOnlyIfOffline>
-          <PortalProvider>
-            <VersionListener />
-            <AppSessionListener />
-            <UserProvider>
-              <BrandThemeProvider>
-                <View style={styles.container}>
-                  <Navigator />
-                </View>
-              </BrandThemeProvider>
-            </UserProvider>
-            <ConnectionListener />
-            {Platform.OS === 'android' ? <VideoFullscreenListener /> : null}
-          </PortalProvider>
-        </ReduxNetworkProvider>
+        <PersistGate loading={this.renderLoader()} persistor={persistor}>
+          <ReduxNetworkProvider pingInterval={30000} pingOnlyIfOffline>
+            <PortalProvider>
+              <VersionListener />
+              <AppSessionListener />
+              <UserProvider>
+                <BrandThemeProvider>
+                  <View style={styles.container}>
+                    <Navigator />
+                  </View>
+                </BrandThemeProvider>
+              </UserProvider>
+              <ConnectionListener />
+              {Platform.OS === 'android' ? <VideoFullscreenListener /> : null}
+            </PortalProvider>
+          </ReduxNetworkProvider>
+        </PersistGate>
       </Provider>
     );
   }

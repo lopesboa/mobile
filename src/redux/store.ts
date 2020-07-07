@@ -1,7 +1,9 @@
 /* eslint-disable import/max-dependencies*/
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {persistStore, persistReducer} from 'redux-persist';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
+import AsyncStorage from '@react-native-community/async-storage';
 import {reducer as network} from 'react-native-offline';
 import type {ReduxState} from '../types/coorpacademy/player-store';
 import type {NetworkState} from '../types';
@@ -96,11 +98,22 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       ErrorHandler(),
     ),
     // @ts-ignore
-    reduxDevTools || ((f) => f),
+    reduxDevTools || (f => f),
   );
 };
-const create = (options: Options, reduxDevTools?: ReduxDevTools) =>
+
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  whiteList: ['appSession', 'permissions'],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+const create = (options: Options, reduxDevTools?: ReduxDevTools) => {
   // @ts-ignore
-  createStore(reducers, {}, createMiddlewares(options, reduxDevTools));
+  const store = createStore(persistedReducer, {}, createMiddlewares(options, reduxDevTools));
+  const persistor = persistStore(store);
+  return {store, persistor};
+};
 
 export default create;

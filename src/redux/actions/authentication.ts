@@ -7,7 +7,7 @@ import type {StoreAction, StoreErrorAction} from '../_types';
 import {ANALYTICS_EVENT_TYPE} from '../../const';
 import type {JWT, AuthenticationType} from '../../types';
 // @todo add Authentication service
-import {set as setToken, remove as removeToken} from '../../utils/local-token';
+import { set as setToken, remove as removeToken } from '../../utils/local-token';
 import {set as setBrand, remove as removeBrand} from '../../utils/local-brand';
 import {getBrand, getToken} from '../utils/state-extract';
 import {fetchBrand} from './brands';
