@@ -47,14 +47,14 @@ describe('Notifications', () => {
     });
   });
 
-  it('should handle Notify Me button', () => {
+  it('should handle Notify Me button', async () => {
     const {Component: NotifyMeScreen} = require('./notifications');
 
     const params = createParams();
     const navigation = createNavigation({
       params,
     });
-    const requestNotificationsPermission = jest.fn();
+    const requestNotificationsPermission = jest.fn(() => Promise.resolve());
     const changeNotificationsPermission = jest.fn();
     const component = renderer.create(
       <NotifyMeScreen
@@ -65,7 +65,7 @@ describe('Notifications', () => {
     );
 
     const button = component.root.find((el) => el.props.testID === 'notifyme-button');
-    button.props.onPress();
+    await button.props.onPress();
 
     expect(navigation.dispatch).toHaveBeenCalledTimes(1);
   });
@@ -77,7 +77,7 @@ describe('Notifications', () => {
     const navigation = createNavigation({
       params,
     });
-    const requestNotificationsPermission = jest.fn();
+    const requestNotificationsPermission = jest.fn(() => Promise.resolve());
     const changeNotificationsPermission = jest.fn();
     const component = renderer.create(
       <NotifyMeScreen

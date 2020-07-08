@@ -1,19 +1,20 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import {handleFakePress} from '../utils/tests';
 import Settings from './settings';
 
+async function handleFakePressP() {
+  await Promise.resolve();
+}
 storiesOf('Settings', module).add('default', () => (
   <Settings
+    onSettingToggle={handleFakePressP}
+    testID="settings"
     settings={[
       {
-        type: 'authorize-notifications',
-        label: 'Authorize notifications',
-        onPress: handleFakePress,
-        isActive: true,
+        type: 'finish-course',
+        label: 'New courses',
+        isActive: false,
       },
-      {type: 'new-courses', label: 'New courses', onPress: handleFakePress, isActive: false},
-      {type: 'new-battles', label: 'New battles', onPress: handleFakePress, isActive: true},
     ]}
   />
 ));

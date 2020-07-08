@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {AppState, AppStateStatus} from 'react-native';
 import {connect} from 'react-redux';
 import {increment as incrementAppSession} from '../redux/actions/app-session';
 
@@ -17,4 +16,5 @@ const AppSessionListener = ({incrementAppSession: incrementSession}: Props) => {
   return null;
 };
 
+export {AppSessionListener as Component};
 export default connect(null, {incrementAppSession})(AppSessionListener);

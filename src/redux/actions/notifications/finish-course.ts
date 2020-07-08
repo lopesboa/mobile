@@ -8,11 +8,14 @@ export type Action = {
   payload: boolean;
 };
 
-export const toggle = (): StoreAction<Action> => (dispatch: Dispatch, getState: GetState) => {
+export const toggle = (value?: boolean): StoreAction<Action> => (
+  dispatch: Dispatch,
+  getState: GetState,
+) => {
   const state = getState();
 
   return dispatch({
     type: TOGGLE,
-    payload: !isFinishCourseNotificationActive(state),
+    payload: value ?? !isFinishCourseNotificationActive(state),
   });
 };

@@ -3,7 +3,6 @@ import {StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 
 import {NavigationScreenProps} from 'react-navigation';
-import {createSelector} from 'reselect';
 import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
@@ -12,9 +11,12 @@ import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
 import {getPermissionStatus, getNotifications} from '../redux/utils/state-extract';
 import {StoreState} from '../redux/store';
 import type {PermissionStatus, NotificationType} from '../types';
+import withPermissions from '../containers/with-permissions';
+import type {WithPermissionsProps} from '../containers/with-permissions';
 import {toggle as toggleFinishCourseNotification} from '../redux/actions/notifications/finish-course';
 import type {State as NotificationsState} from '../redux/reducers/notifications';
 import theme from '../modules/theme';
+import translations from '../translations';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,26 +33,46 @@ interface ConnectedDispatchProps {
   toggleFinishCourseNotification: typeof toggleFinishCourseNotification;
 }
 
-interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
+interface Props
+  extends NavigationScreenProps,
+    ConnectedStateProps,
+    ConnectedDispatchProps,
+    WithPermissionsProps {}
 
-const SettingsScreen = (props: Props) => {
-  function handleBackButton() {
-    props.navigation.navigate('Home');
-    return true;
-  }
-
+const SettingsScreen = ({
+  navigation,
+  toggleFinishCourseNotification: _toggleFinishCourseNotification,
+  notificationsSettings: _notificationsSettings,
+  canReceiveNotifications: _canReceiveNotifications,
+  requestNotificationsPermission,
+}: Props): React.ReactElement => {
   React.useEffect(() => {
+    function handleBackButton() {
+      navigation.navigate('Home');
+      return true;
+    }
     BackHandler.addEventListener('hardwareBackPress', handleBackButton);
     return () => {
       BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
     };
-  }, []);
+  }, [navigation]);
 
-  function handleNotificationSettingToggle(type: NotificationType) {
-    switch (type) {
-      case NOTIFICATION_TYPE.FINISH_COURSE: {
-        props.toggleFinishCourseNotification();
-        break;
+  React.useEffect(() => {
+    if (!_canReceiveNotifications) {
+      _toggleFinishCourseNotification(false);
+    }
+  }, [_canReceiveNotifications, _toggleFinishCourseNotification]);
+
+  async function handleNotificationSettingToggle(type: NotificationType) {
+    const status = await requestNotificationsPermission(
+      translations.permissionNotificationDescription,
+    );
+    if (status === PERMISSION_STATUS.GRANTED) {
+      switch (type) {
+        case NOTIFICATION_TYPE.FINISH_COURSE: {
+          _toggleFinishCourseNotification();
+          break;
+        }
       }
     }
   }
@@ -61,34 +83,20 @@ const SettingsScreen = (props: Props) => {
       <Settings
         testID="settings-notifications"
         onSettingToggle={handleNotificationSettingToggle}
-        settings={Object.values(props.notificationsSettings)}
+        settings={Object.values(_notificationsSettings)}
       />
     </Screen>
   );
 };
 
-const canReceiveNotifications: (state: StoreState) => boolean = createSelector(
-  [getPermissionStatus('notifications')],
-  (permission) => permission === PERMISSION_STATUS.GRANTED,
-);
-
-const currentNotificationsPermission: (state: StoreState) => PermissionStatus = createSelector(
-  [getPermissionStatus('notifications')],
-  (permission) => permission,
-);
-
-const notificationsSettings: (state: StoreState) => NotificationsState = createSelector(
-  [getNotifications],
-  (settings) => settings,
-);
-
 export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
-  canReceiveNotifications: canReceiveNotifications(state),
-  currentNotificationsPermission: currentNotificationsPermission(state),
-  notificationsSettings: notificationsSettings(state),
+  canReceiveNotifications:
+    getPermissionStatus('notifications')(state) === PERMISSION_STATUS.GRANTED,
+  currentNotificationsPermission: getPermissionStatus('notifications')(state),
+  notificationsSettings: getNotifications(state),
 });
 
 export {SettingsScreen as Component};
 export default connect(mapStateToProps, {
   toggleFinishCourseNotification,
-})(SettingsScreen);
+})(withPermissions(SettingsScreen, ['notifications']));

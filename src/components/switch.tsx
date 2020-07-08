@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-  onPress: () => void;
+  onPress: () => Promise<void>;
   isActive: boolean;
   testID: string;
 }

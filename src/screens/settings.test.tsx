@@ -1,5 +1,6 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
+import {PermissionStatus} from '../types';
 import {
   createStoreState,
   createPermissionsState,
@@ -60,15 +61,20 @@ describe('Settings', () => {
     });
   });
 
-  it('handles toggle finish-course notification', () => {
+  it('does not toggles finish-course notification if notification permission is not granted', async () => {
     const navigation = createNavigation({});
     const toggleFinishCourseNotification = jest.fn();
     const notificationsSettings = createNotificationsState();
+    const requestNotificationsPermission = jest.fn(() =>
+      Promise.resolve('denied'),
+    ) as () => Promise<PermissionStatus>;
     const component = renderer.create(
       <TestContextProvider>
         <Settings
           navigation={navigation}
+          canReceiveNotifications
           notificationsSettings={notificationsSettings}
+          requestNotificationsPermission={requestNotificationsPermission}
           toggleFinishCourseNotification={toggleFinishCourseNotification}
         />
       </TestContextProvider>,
@@ -77,7 +83,57 @@ describe('Settings', () => {
     const button = component.root.find(
       (el) => el.props.testID === 'settings-notifications-switch-finish-course',
     );
-    button.props.onPress();
+    await button.props.onPress();
+
+    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(0);
+  });
+
+  it('sets finish-course notification to false if notification permission is not granted', async () => {
+    const navigation = createNavigation({});
+    const toggleFinishCourseNotification = jest.fn();
+    const notificationsSettings = createNotificationsState();
+    const requestNotificationsPermission = jest.fn(() =>
+      Promise.resolve('denied'),
+    ) as () => Promise<PermissionStatus>;
+    renderer.create(
+      <TestContextProvider>
+        <Settings
+          navigation={navigation}
+          canReceiveNotifications={false}
+          notificationsSettings={notificationsSettings}
+          requestNotificationsPermission={requestNotificationsPermission}
+          toggleFinishCourseNotification={toggleFinishCourseNotification}
+        />
+      </TestContextProvider>,
+    );
+
+    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
+    expect(toggleFinishCourseNotification).toHaveBeenCalledWith(false);
+  });
+
+  it('toggles finish-course notification if notification permission is granted', async () => {
+    const navigation = createNavigation({});
+    const toggleFinishCourseNotification = jest.fn();
+    const notificationsSettings = createNotificationsState();
+    const requestNotificationsPermission = jest.fn(() =>
+      Promise.resolve('granted'),
+    ) as () => Promise<PermissionStatus>;
+    const component = renderer.create(
+      <TestContextProvider>
+        <Settings
+          navigation={navigation}
+          notificationsSettings={notificationsSettings}
+          canReceiveNotifications
+          requestNotificationsPermission={requestNotificationsPermission}
+          toggleFinishCourseNotification={toggleFinishCourseNotification}
+        />
+      </TestContextProvider>,
+    );
+
+    const button = component.root.find(
+      (el) => el.props.testID === 'settings-notifications-switch-finish-course',
+    );
+    await button.props.onPress();
 
     expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
   });
@@ -88,11 +144,16 @@ describe('Settings', () => {
     const navigation = createNavigation({});
     const toggleFinishCourseNotification = jest.fn();
     const notificationsSettings = createNotificationsState();
+    const requestNotificationsPermission = jest.fn(() =>
+      Promise.resolve('granted'),
+    ) as () => Promise<PermissionStatus>;
     const component = renderer.create(
       <TestContextProvider>
         <Settings
           navigation={navigation}
           notificationsSettings={notificationsSettings}
+          canReceiveNotifications
+          requestNotificationsPermission={requestNotificationsPermission}
           toggleFinishCourseNotification={toggleFinishCourseNotification}
         />
       </TestContextProvider>,
@@ -102,6 +163,8 @@ describe('Settings', () => {
         <Settings
           navigation={navigation}
           notificationsSettings={notificationsSettings}
+          canReceiveNotifications
+          requestNotificationsPermission={requestNotificationsPermission}
           toggleFinishCourseNotification={toggleFinishCourseNotification}
         />
       </TestContextProvider>,

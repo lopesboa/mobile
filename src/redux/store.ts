@@ -98,14 +98,14 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       ErrorHandler(),
     ),
     // @ts-ignore
-    reduxDevTools || (f => f),
+    reduxDevTools || ((f) => f),
   );
 };
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whiteList: ['appSession', 'permissions'],
+  whiteList: ['appSession', 'permissions', 'notifications'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

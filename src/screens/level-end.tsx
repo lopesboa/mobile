@@ -14,6 +14,7 @@ import {
 } from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI, ExitNodeAPI} from '@coorpacademy/player-services';
 
+import type {StoreState} from '../redux/store';
 import Screen from '../components/screen';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
@@ -39,7 +40,7 @@ interface ConnectedDispatchProps {
 export interface ConnectedStateProps {
   contentType?: ContentType;
   recommendation: DisciplineCard | ChapterCard;
-  bestScore?: number;
+  bestScore?: number | void;
   currentContent?: LevelAPI | ChapterAPI;
   nextContent?: LevelAPI | ChapterAPI | ExitNodeAPI;
   feedbackTitle?: string;
@@ -52,7 +53,10 @@ export type Params = {
   progressionId: string;
 };
 
-interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
+interface Props
+  extends NavigationScreenProps<Params>,
+    ConnectedStateProps,
+    ConnectedDispatchProps {}
 
 type State = {
   isFocused: boolean;

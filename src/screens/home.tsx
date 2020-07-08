@@ -31,23 +31,22 @@ interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDis
 class HomeScreen extends React.PureComponent<Props> {
   componentDidMount() {
     BackHandler?.addEventListener('hardwareBackPress', this.handleBackButton);
-    this.checkOnNotifications();
+    this.showNotifyMe();
   }
 
   componentWillUnmount() {
     BackHandler?.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
-  async checkOnNotifications() {
+  showNotifyMe() {
     const {notificationStatus, appSession, navigation} = this.props;
-    const params: QRCodeScreenParams = {};
 
     if (
       notificationStatus === PERMISSION_STATUS.UNDETERMINED ||
       (notificationStatus === PERMISSION_STATUS.MAYBE_LATER &&
         (appSession === PERMISSION_RECURENCE.SECOND || appSession === PERMISSION_RECURENCE.THIRD))
     ) {
-      navigation.navigate('NotifyMeModal', params);
+      navigation.navigate('NotifyMeModal');
       return;
     }
   }

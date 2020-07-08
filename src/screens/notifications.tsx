@@ -14,6 +14,7 @@ import type {WithPermissionsProps} from '../containers/with-permissions';
 import theme from '../modules/theme';
 import {PERMISSION_STATUS} from '../const';
 import {getPermissionStatus} from '../redux/utils/state-extract';
+import type {StoreState} from '../redux/store';
 
 export type Params = {};
 
@@ -24,27 +25,29 @@ export interface ConnectedStateProps {
 interface Props extends WithPermissionsProps, NavigationScreenProps<Params>, ConnectedStateProps {}
 
 class NotifyMeScreen extends React.PureComponent<Props> {
-  handleClose = () => {
+  handleClose = (): void => {
     const {navigation} = this.props;
     navigation.dispatch(NavigationActions.back());
   };
 
-  handleOnLaterPress = () => {
+  handleOnLaterPress = (): void => {
     this.props.changeNotificationsPermission(PERMISSION_STATUS.MAYBE_LATER);
     this.handleClose();
   };
 
-  handleNotifyMe = () => {
-    this.props.requestNotificationsPermission(translations.permissionCamera, this.handleClose);
+  handleNotifyMe = async (): Promise<void> => {
+    await this.props.requestNotificationsPermission(
+      translations.permissionNotificationDescription,
+      this.handleClose,
+    );
+    this.handleClose();
   };
-
-  handleDidFocus = () => {};
 
   render() {
     return (
       <Screen testID="notify-me-screen" noSafeArea noScroll>
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
-        <NavigationEvents onDidFocus={this.handleDidFocus} testID="notify-me-navigation-events" />
+        <NavigationEvents testID="notify-me-navigation-events" />
         <NotifyMe onNotifyMePress={this.handleNotifyMe} onLaterPress={this.handleOnLaterPress} />
       </Screen>
     );

@@ -62,7 +62,14 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
     );
 
     const home = component.root.find((el) => el.props.testID === 'home');
@@ -90,13 +97,80 @@ describe('Home', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Search');
   });
 
+  it('opens notify-me modal for the first time', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="undetermined"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('opens notify-me modal for the second time', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={10}
+        notificationStatus="maybe-later"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('opens notify-me modal for the third time', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={30}
+        notificationStatus="maybe-later"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
   it('handles settings press', () => {
     const {Component: Home} = require('./home');
 
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
     );
 
     const home = component.root.find((el) => el.props.testID === 'home');
@@ -113,7 +187,14 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
     );
     // simulate a press on button by calling the cb function
     BackHandler.addEventListener.mock.calls[0][1]();

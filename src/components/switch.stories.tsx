@@ -6,8 +6,8 @@ import Switch from './switch';
 
 const SwitchWithState = () => {
   const [isActive, setIsActive] = React.useState(true);
-  function handleOnPress() {
-    setIsActive((prev) => !prev);
+  async function handleOnPress() {
+    await setIsActive((prev) => !prev);
   }
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

@@ -17,7 +17,7 @@ import {Audio} from '../containers/with-audio';
 import {StoreState} from '../redux/store';
 
 export const createFakeStore = (state: StoreState) => ({
-  ...createStore(createServices(createDataLayer())),
+  ...createStore(createServices(createDataLayer())).store,
   getState: () => ({
     ...createStoreState({
       levels: [],

@@ -1,4 +1,4 @@
-import {Platform} from 'react-native';
+import {toggle as toggleFinishCourseNotification} from '../notifications/finish-course';
 import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS, PERMISSION_TYPE} from '../../../const';
 import type {PermissionStatus} from '../../../types';
 import translations from '../../../translations';
@@ -50,38 +50,73 @@ const _requestPermission = (onDeny?: () => void) => async (
   getState: GetState,
   {services}: Options,
 ): Promise<PermissionStatus> => {
-  const {status} = await services.Permissions.requestNotifications(['alert', 'badge', 'sound']);
+  const {status: systemStatus} = await services.Permissions.requestNotifications([
+    'alert',
+    'badge',
+    'sound',
+  ]);
   const currentPermissionStatus = getState().permissions.notifications;
 
-  if (status === PERMISSION_STATUS.DENIED && onDeny) {
+  if (
+    (systemStatus === PERMISSION_STATUS.DENIED || systemStatus === PERMISSION_STATUS.BLOCKED) &&
+    onDeny
+  ) {
     onDeny();
   }
-  if (currentPermissionStatus !== status) {
-    dispatch(change(status));
+  if (currentPermissionStatus !== systemStatus) {
+    dispatch(change(systemStatus));
+    dispatch(toggleFinishCourseNotification(true));
   }
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
-    status,
+    status: systemStatus,
     type: PERMISSION_TYPE.NOTIFICATIONS,
   });
 
-  return status;
+  return systemStatus;
 };
 
 export const request = (description: string, onDeny?: () => void) => async (
   dispatch: Dispatch,
   getState: GetState,
   {services}: Options,
-): Promise<Action> => {
-  const action = dispatch({
+): Promise<PermissionStatus> => {
+  dispatch({
     type: REQUEST,
     payload: {
       type: PERMISSION_TYPE.NOTIFICATIONS,
     },
   });
 
-  await _requestPermission(onDeny)(dispatch, getState, {services});
-  return action;
+  const permissionStatus = getState().permissions[PERMISSION_TYPE.NOTIFICATIONS];
+  const {status: systemStatus} = await services.Permissions.checkNotifications();
+
+  if (
+    (permissionStatus === PERMISSION_STATUS.DENIED && systemStatus === PERMISSION_STATUS.DENIED) ||
+    (permissionStatus === PERMISSION_STATUS.BLOCKED && systemStatus === PERMISSION_STATUS.BLOCKED)
+  ) {
+    await _requestPermission(() => {
+      services.Permissions.alert(
+        translations.permission,
+        description,
+        [
+          {
+            text: translations.quit,
+            onPress: onDeny,
+            style: 'cancel',
+          },
+          {
+            text: translations.openSettings,
+            onPress: () => services.Permissions.openSettings().catch(onDeny),
+          },
+        ],
+        {cancelable: false},
+      );
+    })(dispatch, getState, {services});
+  } else {
+    await _requestPermission(onDeny)(dispatch, getState, {services});
+  }
+  return getState().permissions[PERMISSION_TYPE.NOTIFICATIONS];
 };
 
 export const check = () => async (
@@ -96,11 +131,17 @@ export const check = () => async (
     },
   });
 
-  const {status} = await services.Permissions.checkNotifications();
-  const {permissions} = getState();
+  const {status: systemStatus} = await services.Permissions.checkNotifications();
+  const permissionStatus = getState().permissions[PERMISSION_TYPE.NOTIFICATIONS];
 
-  if (permissions.notifications !== status) {
-    dispatch(change(status));
+  if (permissionStatus !== PERMISSION_STATUS.MAYBE_LATER && permissionStatus !== systemStatus) {
+    dispatch(change(systemStatus));
+    if (
+      [PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(permissionStatus) &&
+      PERMISSION_STATUS.GRANTED === systemStatus
+    ) {
+      dispatch(toggleFinishCourseNotification(true));
+    }
   }
 
   return action;
@@ -118,12 +159,12 @@ export const toggle = () => async (
     },
   });
 
-  const {status} = await services.Permissions.checkNotifications();
-  const {permissions} = getState();
+  const {status: systemStatus} = await services.Permissions.checkNotifications();
+  const permissionStatus = getState().permissions[PERMISSION_TYPE.NOTIFICATIONS];
 
   if (
-    permissions.notifications === PERMISSION_STATUS.GRANTED &&
-    status === PERMISSION_STATUS.GRANTED
+    permissionStatus === PERMISSION_STATUS.GRANTED &&
+    systemStatus === PERMISSION_STATUS.GRANTED
   ) {
     dispatch(change(PERMISSION_STATUS.DENIED));
   } else {

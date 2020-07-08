@@ -35,22 +35,9 @@ Array [
     data={
       Array [
         Object {
-          "isActive": true,
-          "label": "Authorize notifications",
-          "onPress": [Function],
-          "type": "authorize-notifications",
-        },
-        Object {
           "isActive": false,
           "label": "New courses",
-          "onPress": [Function],
-          "type": "new-courses",
-        },
-        Object {
-          "isActive": true,
-          "label": "New battles",
-          "onPress": [Function],
-          "type": "new-battles",
+          "type": "finish-course",
         },
       ]
     }
@@ -72,7 +59,7 @@ Array [
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
-    testID="undefinedlist"
+    testID="settingslist"
     updateCellsBatchingPeriod={50}
     viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
@@ -105,125 +92,6 @@ Array [
             Notifications
           </Text>
         </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#FFFFFF",
-              "flexDirection": "row",
-              "height": 53,
-              "justifyContent": "space-between",
-              "paddingHorizontal": 32,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                undefined,
-              ]
-            }
-          >
-            Authorize notifications
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "green",
-                  "borderColor": "#E5E5E5",
-                  "borderRadius": 20,
-                  "borderWidth": 1,
-                  "height": 32,
-                  "justifyContent": "center",
-                  "width": 51,
-                },
-                Object {
-                  "alignItems": "flex-end",
-                },
-                Object {
-                  "backgroundColor": "#00B0FF",
-                },
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "borderColor": "#E5E5E5",
-                  "borderRadius": 50,
-                  "borderWidth": 0.5,
-                  "elevation": 3,
-                  "height": 28,
-                  "marginHorizontal": 2,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 2,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.28,
-                  "shadowRadius": 2.22,
-                  "transform": Array [
-                    Object {
-                      "translateX": 1,
-                    },
-                  ],
-                  "width": 28,
-                }
-              }
-              testID="undefined-switch-authorize-notifications"
-            />
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
       </View>
       <View
         onLayout={[Function]}
@@ -323,126 +191,7 @@ Array [
                   "width": 28,
                 }
               }
-              testID="undefined-switch-new-courses"
-            />
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          style={
-            Object {
-              "backgroundColor": "#ECEFF1",
-              "height": 1,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#FFFFFF",
-              "flexDirection": "row",
-              "height": 53,
-              "justifyContent": "space-between",
-              "paddingHorizontal": 32,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {},
-                undefined,
-              ]
-            }
-          >
-            New battles
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "green",
-                  "borderColor": "#E5E5E5",
-                  "borderRadius": 20,
-                  "borderWidth": 1,
-                  "height": 32,
-                  "justifyContent": "center",
-                  "width": 51,
-                },
-                Object {
-                  "alignItems": "flex-end",
-                },
-                Object {
-                  "backgroundColor": "#00B0FF",
-                },
-              ]
-            }
-          >
-            <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "borderColor": "#E5E5E5",
-                  "borderRadius": 50,
-                  "borderWidth": 0.5,
-                  "elevation": 3,
-                  "height": 28,
-                  "marginHorizontal": 2,
-                  "shadowColor": "#14171A",
-                  "shadowOffset": Object {
-                    "height": 2,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.28,
-                  "shadowRadius": 2.22,
-                  "transform": Array [
-                    Object {
-                      "translateX": 1,
-                    },
-                  ],
-                  "width": 28,
-                }
-              }
-              testID="undefined-switch-new-battles"
+              testID="settings-switch-finish-course"
             />
           </View>
         </View>

@@ -14,7 +14,7 @@ type SettingsItem = {
 
 interface Props {
   settings: Array<SettingsItem>;
-  onSettingToggle: (type: NotificationType) => void;
+  onSettingToggle: (type: NotificationType) => Promise<void>;
   testID: string;
 }
 
@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
 });
 
 const Settings = ({settings, onSettingToggle, testID}: Props) => {
-  function renderItem({item, index}: {index: number; item: SettingsItem}) {
-    function handleOnSettingsItemToggle() {
-      return onSettingToggle(item.type);
+  function renderItem({item}: {index: number; item: SettingsItem}) {
+    async function handleOnSettingsItemToggle() {
+      await onSettingToggle(item.type);
     }
     return (
       <React.Fragment>

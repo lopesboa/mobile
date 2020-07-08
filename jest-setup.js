@@ -21,7 +21,7 @@ jest.mock('react-native-localization', () => {
   // type Trads = {[key: SupportedLanguage]: Translations};
   return class LocalizedStrings {
     constructor(translations) {
-      Object.keys(translations.en).forEach(key => {
+      Object.keys(translations.en).forEach((key) => {
         this[key] = translations.en[key];
       });
     }
@@ -34,7 +34,7 @@ jest.mock('react-native-localization', () => {
 
     formatString = jest.fn((str, ...replacers) => {
       let result = str;
-      Object.keys(replacers).forEach(key => {
+      Object.keys(replacers).forEach((key) => {
         result = result.replace('{' + key + '}', replacers[key]);
       });
       return result;
@@ -44,7 +44,7 @@ jest.mock('react-native-localization', () => {
 
 jest.mock('@react-native-community/netinfo', () => ({
   addEventListener: jest.fn(),
-  fetch: jest.fn(state => Promise.resolve(state)),
+  fetch: jest.fn((state) => Promise.resolve(state)),
 }));
 
 jest.mock('react-native-offline', () => ({
@@ -139,7 +139,7 @@ jest.mock('rn-fetch-blob', () => ({
 }));
 
 NativeModules.PdfViewManager = {
-  supportPDFKit: callback => callback(false),
+  supportPDFKit: (callback) => callback(false),
 };
 
 // react-native-camera
@@ -147,6 +147,11 @@ NativeModules.PdfViewManager = {
 jest.mock('react-native-camera', () => ({
   __esModule: true,
   default: 'Mock$ReactNativeCamera',
+}));
+jest.mock('redux-persist', () => ({
+  __esModule: true,
+  persistReducer: jest.fn((config, reducer) => reducer),
+  persistStore: jest.fn((store) => store),
 }));
 
 // react-native-permissions

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import {APP_STATE} from '../const';
-import type {AppState, PermissionType} from '../types';
+import type {AppState, PermissionType, PermissionStatus} from '../types';
 import {
   check as checkCameraPermission,
   request as requestCameraPermission,
@@ -17,7 +17,10 @@ import {
 
 export interface WithPermissionsProps {
   requestCameraPermission: (description: string, onDeny?: () => void) => void;
-  requestNotificationsPermission: (description: string, onDeny?: () => void) => void;
+  requestNotificationsPermission: (
+    description: string,
+    onDeny?: () => void,
+  ) => Promise<PermissionStatus>;
   changeNotificationsPermission: (status: PermissionStatus) => void;
 }
 
@@ -44,7 +47,12 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
 
     componentDidMount() {
       this.checkCameraPermissions();
+      this.checkNotificationsPermissions();
       AppStateBase.addEventListener('change', this.handleAppStateChange);
+    }
+
+    componentDidUpdate() {
+      this.checkNotificationsPermissions();
     }
 
     componentWillUnmount() {
@@ -58,6 +66,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
         appState === APP_STATE.ACTIVE
       ) {
         this.checkCameraPermissions();
+        this.checkNotificationsPermissions();
       }
       this.setState({
         appState,
@@ -78,9 +87,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
     requestNotificationsPermission: Pick<WithPermissionsProps, 'requestNotificationsPermission'> = (
       description,
       onDeny,
-    ) => {
-      this.props.requestNotificationsPermission(description, onDeny);
-    };
+    ) => this.props.requestNotificationsPermission(description, onDeny);
 
     changeNotificationsPermission: Pick<WithPermissionsProps, 'changeNotificationsPermission'> = (
       status: PermissionStatus,
@@ -109,10 +116,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
   };
 
   return hoistNonReactStatic(
-    connect(
-      null,
-      mapDispatchToProps,
-    )(ComponentWithPermissions),
+    connect(null, mapDispatchToProps)(ComponentWithPermissions),
     WrappedComponent,
   );
 }
