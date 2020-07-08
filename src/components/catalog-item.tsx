@@ -58,9 +58,8 @@ interface Props extends AnalyticsParams {
 }
 
 class CatalogItem extends React.PureComponent<Props> {
-  handlePress = () => {
+  handlePress = (event: any) => {
     const {onPress, item} = this.props;
-
     item && onPress && onPress(item);
   };
 
