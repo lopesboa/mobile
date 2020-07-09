@@ -3,7 +3,7 @@ import {AppState as AppStateBase} from 'react-native';
 import {connect} from 'react-redux';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
-import {APP_STATE} from '../const';
+import {APP_STATE, PERMISSION_TYPE} from '../const';
 import type {AppState, PermissionType, PermissionStatus} from '../types';
 import {
   check as checkCameraPermission,
@@ -46,8 +46,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
     };
 
     componentDidMount() {
-      this.checkCameraPermissions();
-      this.checkNotificationsPermissions();
+      this.checkPermissions();
       AppStateBase.addEventListener('change', this.handleAppStateChange);
     }
 
@@ -65,11 +64,25 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
         [APP_STATE.BACKGROUND].includes(this.state.appState) &&
         appState === APP_STATE.ACTIVE
       ) {
-        this.checkCameraPermissions();
-        this.checkNotificationsPermissions();
+        this.checkPermissions();
       }
       this.setState({
         appState,
+      });
+    };
+
+    checkPermissions = () => {
+      types.forEach((type) => {
+        switch (type) {
+          case PERMISSION_TYPE.CAMERA: {
+            this.checkCameraPermissions();
+            break;
+          }
+          case PERMISSION_TYPE.NOTIFICATIONS: {
+            this.checkNotificationsPermissions();
+            break;
+          }
+        }
       });
     };
 
