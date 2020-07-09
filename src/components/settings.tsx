@@ -35,30 +35,35 @@ const styles = StyleSheet.create({
     shadowRadius: 1,
     elevation: 9,
   },
+  headerContainer: {
+    height: 90,
+  },
   titleContainer: {
     height: 110,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    padding: 37,
+    paddingHorizontal: 37,
   },
   separator: {
     height: 1,
     backgroundColor: theme.colors.gray.light,
   },
   title: {
-    fontSize: theme.fontSize.xxlarge,
+    fontSize: theme.fontSize.xlarge,
     fontWeight: theme.fontWeight.bold,
+    color: theme.colors.black,
+  },
+  text: {
+    fontSize: theme.fontSize.large,
+    color: theme.colors.black,
   },
   notificationItemContainer: {
     flexDirection: 'row',
     height: 53,
     backgroundColor: theme.colors.white,
-    paddingHorizontal: 32,
+    paddingHorizontal: 37,
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  notificationItem: {
-    flexDirection: 'row',
   },
   version: {
     backgroundColor: theme.colors.gray.extra,
@@ -77,7 +82,7 @@ const Settings = ({settings, onSettingToggle, testID}: Props) => {
       <React.Fragment>
         <Separator />
         <View style={styles.notificationItemContainer}>
-          <Text>{item.label}</Text>
+          <Text style={styles.text}>{item.label}</Text>
           <Switch
             isActive={item.isActive}
             onPress={handleOnSettingsItemToggle}
@@ -102,6 +107,7 @@ const Settings = ({settings, onSettingToggle, testID}: Props) => {
       <FlatList
         testID={testID + 'list'}
         contentContainerStyle={styles.container}
+        ListHeaderComponentStyle={styles.headerContainer}
         ListHeaderComponent={
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Notifications</Text>

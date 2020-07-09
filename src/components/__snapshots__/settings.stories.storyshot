@@ -11,14 +11,15 @@ Array [
             "alignItems": "flex-start",
             "height": 110,
             "justifyContent": "center",
-            "padding": 37,
+            "paddingHorizontal": 37,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 28,
+              "color": "#14171A",
+              "fontSize": 22,
               "fontWeight": "700",
             }
           }
@@ -26,6 +27,11 @@ Array [
           Notifications
         </Text>
       </View>
+    }
+    ListHeaderComponentStyle={
+      Object {
+        "height": 90,
+      }
     }
     contentContainerStyle={
       Object {
@@ -67,6 +73,11 @@ Array [
     <View>
       <View
         onLayout={[Function]}
+        style={
+          Object {
+            "height": 90,
+          }
+        }
       >
         <View
           style={
@@ -74,7 +85,7 @@ Array [
               "alignItems": "flex-start",
               "height": 110,
               "justifyContent": "center",
-              "padding": 37,
+              "paddingHorizontal": 37,
             }
           }
         >
@@ -83,7 +94,8 @@ Array [
               Array [
                 Object {},
                 Object {
-                  "fontSize": 28,
+                  "color": "#14171A",
+                  "fontSize": 22,
                   "fontWeight": "700",
                 },
               ]
@@ -113,7 +125,7 @@ Array [
               "flexDirection": "row",
               "height": 53,
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
+              "paddingHorizontal": 37,
             }
           }
         >
@@ -121,7 +133,10 @@ Array [
             style={
               Array [
                 Object {},
-                undefined,
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                },
               ]
             }
           >
@@ -173,12 +188,12 @@ Array [
                   "borderColor": "#E5E5E5",
                   "borderRadius": 50,
                   "borderWidth": 0.5,
-                  "elevation": 3,
+                  "elevation": 5,
                   "height": 28,
-                  "marginHorizontal": 2,
+                  "marginHorizontal": 1,
                   "shadowColor": "#14171A",
                   "shadowOffset": Object {
-                    "height": 2,
+                    "height": 4,
                     "width": 0,
                   },
                   "shadowOpacity": 0.28,

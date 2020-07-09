@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, Platform, StyleSheet} from 'react-native';
 
 import {NovaCompositionCoorpacademyCog as SettingsIcon} from '@coorpacademy/nova-icons';
 import {HEADER_HEIGHT} from '../navigator/navigation-options';
@@ -12,12 +12,27 @@ const ICON_WIDTH = 16;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    ...Platform.select({
+      android: {
+        left: -29,
+      },
+    }),
     flex: 1,
+    justifyContent: 'center',
+    backgroundColor: theme.colors.white,
+  },
+
+  titleContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  side: {
+    flex: 1,
+  },
   title: {
+    fontSize: theme.fontSize.large,
+    fontWeight: theme.fontWeight.bold,
     color: theme.colors.gray.dark,
   },
 });
@@ -25,9 +40,11 @@ const styles = StyleSheet.create({
 const HeaderSettings: React.FC = () => {
   return (
     <View testID="header-settings-title" style={[styles.container, {height: HEADER_HEIGHT}]}>
-      <SettingsIcon height={ICON_WIDTH} width={ICON_WIDTH} color={theme.colors.gray.dark} />
-      <Space />
-      <Text style={styles.title}>{translations.settings}</Text>
+      <View style={styles.titleContainer}>
+        <SettingsIcon height={ICON_WIDTH} width={ICON_WIDTH} color={theme.colors.gray.dark} />
+        <Space />
+        <Text style={styles.title}>{translations.settings}</Text>
+      </View>
     </View>
   );
 };

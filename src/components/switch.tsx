@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   thumb: {
-    marginHorizontal: 2,
+    marginHorizontal: 1,
     width: 28,
     height: 28,
     backgroundColor: 'white',
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     shadowColor: theme.colors.black,
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 4,
     },
     shadowOpacity: 0.28,
     shadowRadius: 2.22,
-    elevation: 3,
+    elevation: 5,
   },
 });
 
