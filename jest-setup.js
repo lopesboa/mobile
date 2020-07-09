@@ -109,11 +109,12 @@ jest.mock('react-native-video', () => ({
   },
 }));
 
-// react-native-splash-screen
-jest.mock('react-native-splash-screen', () => ({
+// react-native-bootsplash
+jest.mock('react-native-bootsplash', () => ({
   __esModule: true,
   default: {
     hide: jest.fn(() => Promise.resolve()),
+    show: jest.fn(),
   },
 }));
 

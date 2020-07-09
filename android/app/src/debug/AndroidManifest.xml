@@ -20,23 +20,22 @@
     android:allowBackup="false"
     android:theme="@style/AppTheme">
     <activity
-      android:name=".SplashActivity"
-      android:label="@string/app_name"
-      android:theme="@style/SplashTheme"
-      android:screenOrientation="behind">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-    <activity
       android:name=".MainActivity"
       android:label="@string/app_name"
       android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
       android:screenOrientation="behind"
       android:windowSoftInputMode="adjustResize"
       android:exported="true"
+      android:launchMode="singleTask" />
+    <activity
+      android:name="com.zoontek.rnbootsplash.RNBootSplashActivity"
+      android:theme="@style/BootTheme"
       android:launchMode="singleTask">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <!-- deep linking -->
       <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />

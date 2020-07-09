@@ -59,7 +59,7 @@ describe('Authentication', () => {
 
   describe('splashscreen', () => {
     it('should hide the splashscreen in case of migrations success', async () => {
-      const splashScreen = require('react-native-splash-screen').default;
+      const splashScreen = require('react-native-bootsplash').default;
       const {Component: Authentication} = require('./authentication');
 
       const signIn = jest.fn();
@@ -74,7 +74,7 @@ describe('Authentication', () => {
     });
 
     it('should hide the splashscreen in case of migrations failure', async () => {
-      const splashScreen = require('react-native-splash-screen').default;
+      const splashScreen = require('react-native-bootsplash').default;
       const {migrationsRunner} = require('../migrations');
       const {Component: Authentication} = require('./authentication');
 

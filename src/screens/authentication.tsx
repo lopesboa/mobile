@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Linking, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import splashScreen from 'react-native-splash-screen';
+import RNBootSplash from 'react-native-bootsplash';
 import {NavigationScreenProps} from 'react-navigation';
 import {BackHandler} from '../modules/back-handler';
 
@@ -77,7 +77,7 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
       isSplashScreenHidden: true,
     });
 
-    splashScreen.hide();
+    RNBootSplash.hide({duration: 250});
   };
 
   handleSignOut = () => this.props.navigation.popToTop();

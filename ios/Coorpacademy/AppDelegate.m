@@ -3,7 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "RNSplashScreen.h"
+#import "RNBootSplash.h" 
 #import "Orientation.h"
 #import <React/RCTLinkingManager.h>
 #import "Firebase.h"
@@ -73,8 +73,7 @@ static void InitializeFlipper(UIApplication *application) {
   [self.window makeKeyAndVisible];
 
   // Splashscreen
-  [RNSplashScreen show];
-
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
   return YES;
 }
 

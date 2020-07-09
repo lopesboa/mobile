@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CoorpacademyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CoorpacademyTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
@@ -39,6 +38,7 @@
 		403AFA392266133C00ED75FA /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 403AFA382266133C00ED75FA /* debug.xcconfig */; };
 		404EBA452270A41600440ADE /* Coorpacademy.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 404EBA432270994300440ADE /* Coorpacademy.entitlements */; };
 		405551A8221D8AD70047247E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 40555177221D8AD60047247E /* assets */; };
+		4E415AA124B609B00062CD2D /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E415AA024B609B00062CD2D /* BootSplash.storyboard */; };
 		4E4D258322A90F7200A91804 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		4E7ABA21249126110054A8CE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7ABA20249126110054A8CE /* File.swift */; };
 		87063214F1D3C0952D0D4E1A /* libPods-Coorpacademy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CC0B1D86D05560168BD65B /* libPods-Coorpacademy.a */; };
@@ -71,7 +71,6 @@
 		13B07F961A680F5B00A75B9A /* Coorpacademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coorpacademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Coorpacademy/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Coorpacademy/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Coorpacademy/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Coorpacademy/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Coorpacademy/main.m; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		404EBA432270994300440ADE /* Coorpacademy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Coorpacademy.entitlements; path = Coorpacademy/Coorpacademy.entitlements; sourceTree = "<group>"; };
 		40555177221D8AD60047247E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		4272B3F696A7D44A1109E685 /* Pods-Coorpacademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coorpacademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.release.xcconfig"; sourceTree = "<group>"; };
+		4E415AA024B609B00062CD2D /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Coorpacademy/BootSplash.storyboard; sourceTree = "<group>"; };
 		4E7ABA1F249126110054A8CE /* Coorpacademy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coorpacademy-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E7ABA20249126110054A8CE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		6EB13493230A14A1E3D27457 /* Pods-Coorpacademy.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coorpacademy.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Coorpacademy/Pods-Coorpacademy.adhoc.xcconfig"; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				4E7ABA20249126110054A8CE /* File.swift */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				4E415AA024B609B00062CD2D /* BootSplash.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				40367B662253CE6200B9DF4E /* GoogleService-Info.plist */,
 				404EBA432270994300440ADE /* Coorpacademy.entitlements */,
@@ -397,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404EBA452270A41600440ADE /* Coorpacademy.entitlements in Resources */,
+				4E415AA124B609B00062CD2D /* BootSplash.storyboard in Resources */,
 				403AFA352266131500ED75FA /* release.xcconfig in Resources */,
 				405551A8221D8AD70047247E /* assets in Resources */,
 				40367B672253CE6200B9DF4E /* GoogleService-Info.plist in Resources */,
@@ -405,7 +406,6 @@
 				40367BAD2255173B00B9DF4E /* container in Resources */,
 				4E4D258322A90F7200A91804 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,18 +592,6 @@
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = Coorpacademy;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
@@ -974,7 +962,6 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-camera\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-orientation-locker\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-pdf\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-splash-screen\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-video\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/rn-fetch-blob\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga\"",
