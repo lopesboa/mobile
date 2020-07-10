@@ -1,5 +1,6 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
+import {Platform} from 'react-native';
 
 import {createNavigation} from '../__fixtures__/navigation';
 import {createStoreState} from '../__fixtures__/store';
@@ -9,6 +10,7 @@ import {CARD_STATUS} from '../layer/data/_const';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import {mapStateToProps} from './home';
 import type {ConnectedStateProps} from './home';
+import { ANDROID } from 'react-native-permissions/lib/typescript/constants';
 
 const card = createChapterCard({
   ref: 'bar',
@@ -81,6 +83,7 @@ describe('Home', () => {
     expect(selectCard).toHaveBeenCalledWith(card);
   });
 
+
   it('should handle search press', () => {
     const {Component: Home} = require('./home');
 
@@ -115,6 +118,26 @@ describe('Home', () => {
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('should not open notify-me modal on Android', () => {
+    const {Component: Home} = require('./home');
+    Platform.OS = 'android';
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="undetermined"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(0);
+    Platform.OS = 'ios';
   });
 
   it('opens notify-me modal for the second time', () => {

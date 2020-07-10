@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, Platform} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {NavigationScreenProps} from 'react-navigation';
@@ -40,14 +40,14 @@ class HomeScreen extends React.PureComponent<Props> {
 
   showNotifyMe() {
     const {notificationStatus, appSession, navigation} = this.props;
-
+    if (Platform.OS === 'android') return false;
     if (
       notificationStatus === PERMISSION_STATUS.UNDETERMINED ||
       (notificationStatus === PERMISSION_STATUS.MAYBE_LATER &&
         (appSession === PERMISSION_RECURENCE.SECOND || appSession === PERMISSION_RECURENCE.THIRD))
     ) {
       navigation.navigate('NotifyMeModal');
-      return;
+      return true;
     }
   }
 
