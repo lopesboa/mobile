@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet, Platform} from 'react-native';
 import {connect} from 'react-redux';
 
 import {NavigationScreenProps} from 'react-navigation';
@@ -46,6 +46,7 @@ const SettingsScreen = ({
   canReceiveNotifications: _canReceiveNotifications,
   requestNotificationsPermission,
 }: Props): React.ReactElement => {
+  console.log(_notificationsSettings);
   React.useEffect(() => {
     function handleBackButton() {
       navigation.navigate('Home');
@@ -58,7 +59,7 @@ const SettingsScreen = ({
   }, [navigation]);
 
   React.useEffect(() => {
-    if (!_canReceiveNotifications) {
+    if (!_canReceiveNotifications && Platform.OS === 'ios') {
       _toggleFinishCourseNotification(false);
     }
   }, [_canReceiveNotifications, _toggleFinishCourseNotification]);

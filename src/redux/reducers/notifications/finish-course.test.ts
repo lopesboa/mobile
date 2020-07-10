@@ -1,22 +1,38 @@
+import {Platform} from 'react-native';
 import {TOGGLE} from '../../actions/notifications/finish-course';
 import type {Action} from '../../actions/notifications/finish-course';
 import reducer from './finish-course';
 import type {State} from './finish-course';
 
-describe('FastSlide', () => {
-  const expectedInitialState: State = {
-    type: 'finish-course',
-    label: 'Currently doing reminder',
-    isActive: false,
-  };
+jest.mock('react-native', () => ({
+  Platform: {
+    OS: 'android',
+  },
+}));
 
-  it('Default', () => {
-    const action = {
-      type: 'FAKE_ACTION',
-    };
-    // @ts-ignore we are trying to emulate something else
-    const result = reducer(undefined, action);
-    expect(result).toEqual(expectedInitialState);
+describe('FastSlide', () => {
+  describe('Default', () => {
+    beforeEach(async () => {
+      await jest.resetModules();
+    });
+
+    afterEach(async () => {
+      await jest.resetAllMocks();
+    });
+
+    it('defaults to true if platform is Android', () => {
+      const action = {
+        type: 'FAKE_ACTION',
+      };
+      // @ts-ignore we are trying to emulate something else
+      const result = reducer(undefined, action);
+      const expected: State = {
+        type: 'finish-course',
+        label: 'Currently doing reminder',
+        isActive: true,
+      };
+      expect(result).toEqual(expected);
+    });
   });
 
   describe(TOGGLE, () => {

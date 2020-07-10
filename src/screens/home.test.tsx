@@ -2,6 +2,7 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {Platform} from 'react-native';
 
+import {ANDROID} from 'react-native-permissions/lib/typescript/constants';
 import {createNavigation} from '../__fixtures__/navigation';
 import {createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
@@ -10,7 +11,6 @@ import {CARD_STATUS} from '../layer/data/_const';
 import {ENGINE, CONTENT_TYPE} from '../const';
 import {mapStateToProps} from './home';
 import type {ConnectedStateProps} from './home';
-import { ANDROID } from 'react-native-permissions/lib/typescript/constants';
 
 const card = createChapterCard({
   ref: 'bar',
@@ -82,7 +82,6 @@ describe('Home', () => {
     expect(selectCard).toHaveBeenCalledTimes(1);
     expect(selectCard).toHaveBeenCalledWith(card);
   });
-
 
   it('should handle search press', () => {
     const {Component: Home} = require('./home');

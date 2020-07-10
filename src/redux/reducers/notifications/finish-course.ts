@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import {NotificationType} from '../../../types';
 import {TOGGLE} from '../../actions/notifications/finish-course';
 import type {Action} from '../../actions/notifications/finish-course';
@@ -12,7 +13,7 @@ export type State = {
 const initialState: State = {
   type: 'finish-course',
   label: translations.currentlyDoingReminder,
-  isActive: false,
+  isActive: console.log({Platform}) || Platform.OS === 'android',
 };
 
 const reducer = (state: State = initialState, action: Action): State => {
