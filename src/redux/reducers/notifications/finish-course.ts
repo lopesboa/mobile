@@ -13,7 +13,7 @@ export type State = {
 const initialState: State = {
   type: 'finish-course',
   label: translations.currentlyDoingReminder,
-  isActive: console.log({Platform}) || Platform.OS === 'android',
+  isActive: Platform.OS === 'android',
 };
 
 const reducer = (state: State = initialState, action: Action): State => {

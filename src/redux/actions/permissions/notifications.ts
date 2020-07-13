@@ -65,7 +65,8 @@ const _requestPermission = (onDeny?: () => void) => async (
   }
   if (currentPermissionStatus !== systemStatus) {
     dispatch(change(systemStatus));
-    dispatch(toggleFinishCourseNotification(true));
+    
+    dispatch(toggleFinishCourseNotification(![PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(systemStatus)));
   }
 
   services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.PERMISSION, {
@@ -136,11 +137,11 @@ export const check = () => async (
 
   if (permissionStatus !== PERMISSION_STATUS.MAYBE_LATER && permissionStatus !== systemStatus) {
     dispatch(change(systemStatus));
-    if (
-      [PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(permissionStatus) &&
-      PERMISSION_STATUS.GRANTED === systemStatus
-    ) {
+    if (PERMISSION_STATUS.GRANTED === systemStatus) {
       dispatch(toggleFinishCourseNotification(true));
+    }
+    else if ([PERMISSION_STATUS.DENIED, PERMISSION_STATUS.BLOCKED].includes(permissionStatus)) {
+      dispatch(toggleFinishCourseNotification(false));
     }
   }
 

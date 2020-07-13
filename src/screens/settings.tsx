@@ -46,7 +46,6 @@ const SettingsScreen = ({
   canReceiveNotifications: _canReceiveNotifications,
   requestNotificationsPermission,
 }: Props): React.ReactElement => {
-  console.log(_notificationsSettings);
   React.useEffect(() => {
     function handleBackButton() {
       navigation.navigate('Home');
@@ -65,16 +64,19 @@ const SettingsScreen = ({
   }, [_canReceiveNotifications, _toggleFinishCourseNotification]);
 
   async function handleNotificationSettingToggle(type: NotificationType) {
-    const status = await requestNotificationsPermission(
-      translations.permissionNotificationDescription,
-    );
-    if (status === PERMISSION_STATUS.GRANTED) {
+        
+    if (_canReceiveNotifications) {
       switch (type) {
         case NOTIFICATION_TYPE.FINISH_COURSE: {
           _toggleFinishCourseNotification();
           break;
         }
       }
+    }
+    else {
+       await requestNotificationsPermission(
+        translations.permissionNotificationDescription,
+      );
     }
   }
 
