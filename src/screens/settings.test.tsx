@@ -72,7 +72,7 @@ describe('Settings', () => {
       <TestContextProvider>
         <Settings
           navigation={navigation}
-          canReceiveNotifications
+          canReceiveNotifications={false}
           notificationsSettings={notificationsSettings}
           requestNotificationsPermission={requestNotificationsPermission}
           toggleFinishCourseNotification={toggleFinishCourseNotification}
@@ -84,8 +84,8 @@ describe('Settings', () => {
       (el) => el.props.testID === 'settings-notifications-switch-finish-course',
     );
     await button.props.onPress();
-
-    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(0);
+    expect(toggleFinishCourseNotification).toHaveBeenCalledWith(false);
+    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
   });
 
   it('sets finish-course notification to false if notification permission is not granted', async () => {

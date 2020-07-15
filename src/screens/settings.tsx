@@ -64,7 +64,6 @@ const SettingsScreen = ({
   }, [_canReceiveNotifications, _toggleFinishCourseNotification]);
 
   async function handleNotificationSettingToggle(type: NotificationType) {
-        
     if (_canReceiveNotifications) {
       switch (type) {
         case NOTIFICATION_TYPE.FINISH_COURSE: {
@@ -72,11 +71,8 @@ const SettingsScreen = ({
           break;
         }
       }
-    }
-    else {
-       await requestNotificationsPermission(
-        translations.permissionNotificationDescription,
-      );
+    } else {
+      await requestNotificationsPermission(translations.permissionNotificationDescription);
     }
   }
 
