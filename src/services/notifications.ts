@@ -1,18 +1,18 @@
-import PushNotification from 'react-native-push-notification';
+import PushNotifications from 'react-native-push-notification';
 
 export type NotificationService = {
-  configure: typeof PushNotification.configure;
-  localNotification: typeof PushNotification.localNotification;
-  localNotificationSchedule: typeof PushNotification.localNotificationSchedule;
-  cancelLocalNotifications: typeof PushNotification.cancelLocalNotifications;
-  cancelAllLocalNotifications: typeof PushNotification.cancelAllLocalNotifications;
+  configure: typeof PushNotifications.configure;
+  localNotification: typeof PushNotifications.localNotification;
+  localNotificationSchedule: typeof PushNotifications.localNotificationSchedule;
+  cancelLocalNotifications: typeof PushNotifications.cancelLocalNotifications;
+  cancelAllLocalNotifications: typeof PushNotifications.cancelAllLocalNotifications;
 };
 
 const services: NotificationService = {
-  configure: PushNotification.configure,
-  localNotification: PushNotification.localNotification,
-  localNotificationSchedule: PushNotification.localNotificationSchedule,
-  cancelLocalNotifications: PushNotification.cancelLocalNotifications,
-  cancelAllLocalNotifications: PushNotification.cancelAllLocalNotifications,
+  configure: PushNotifications.configure,
+  localNotification: PushNotifications.localNotification,
+  localNotificationSchedule: PushNotifications.localNotificationSchedule,
+  cancelLocalNotifications: PushNotifications.cancelLocalNotifications,
+  cancelAllLocalNotifications: PushNotifications.cancelAllLocalNotifications,
 };
 export default services;

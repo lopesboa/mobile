@@ -1,8 +1,12 @@
-import type {DisciplineCard, ChapterCard, HeroRecommendation} from '../layer/data/_types';
+import type {
+  DisciplineCard,
+  ChapterCard,
+  ContentRecommendation as HeroRecommendation,
+} from '../layer/data/_types';
 import type {DataLayer} from '../layer/data';
 import {getAggregationsByContent} from '../layer/data/progressions';
 
-const isStepGTE3 = (aggregation: HeroRecommendation): boolean => aggregation.nbSlides >= 3;
+const isStepGTE3 = (aggregation: HeroRecommendation): boolean => aggregation.nbSlides >= 1;
 
 const isNotFinished = (aggregation: HeroRecommendation): boolean => aggregation.success === false;
 

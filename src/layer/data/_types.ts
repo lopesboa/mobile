@@ -245,7 +245,7 @@ export type Record = {
   };
 };
 
-export type HeroRecommendation = {
+export type ContentRecommendation = {
   success: boolean;
   content: Content;
   nbSlides: number;

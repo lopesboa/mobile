@@ -9,7 +9,8 @@ import orientation from 'react-native-orientation-locker';
 import {ReduxNetworkProvider} from 'react-native-offline';
 // @todo remove this lib once on react-native-firebase 6.x
 import {setJSExceptionHandler, getJSExceptionHandler} from 'react-native-exception-handler';
-
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import PushNotifications from 'react-native-push-notification';
 import Navigator from './navigator';
 import BrandThemeProvider from './components/brand-theme-provider';
 import UserProvider from './components/user-provider';
@@ -30,9 +31,34 @@ const reduxDevTools: ReduxDevTools | void =
       window.__REDUX_DEVTOOLS_EXTENSION__()
     : undefined;
 
+PushNotifications.configure({
+  onRegister: function (token) {
+    console.log('TOKEN:', token);
+  },
+
+  // (required) Called when a remote is received or opened, or local notification is opened
+  onNotification: function (notification) {
+    console.log('NOTIFICATION:', notification);
+
+    // process the notification
+
+    // notif
+    // (required) Called when a remote is received or opened, or local notification is opened
+    notification.finish(PushNotificationIOS.FetchResult.NoData);
+  },
+  permissions: {
+    alert: true,
+    badge: true,
+    sound: true,
+  },
+  popInitialNotification: false,
+  requestPermissions: false,
+});
+
 const dataLayer = createDataLayer();
 
 const services = createServices(dataLayer);
+
 // @ts-ignore
 const {store, persistor} = createStore(services, reduxDevTools);
 
@@ -67,11 +93,19 @@ class App extends React.PureComponent<Props> {
   }
 
   componentDidMount() {
+    // console.log({servicesN: services.Notifications});
     orientation.lockToPortrait();
+
+    // Configure Notifications
     // @@todo wait for support tablet landscape orientation
     // if (DeviceInfo.isTablet()) {
     //   orientation.unlockAllOrientations();
     // }
+    // PushNotifications.localNotificationSchedule({
+    //   title: 'My Notification Title', // (optional)
+    //   message: 'My Notification Message', // (required)});
+    //   date: new Date(Date.now() + 10 * 1000), // in 60 secs
+    // });
   }
 
   renderLoader = () => {

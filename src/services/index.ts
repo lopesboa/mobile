@@ -40,6 +40,8 @@ import type {LoggerService} from './logger';
 import Logger from './logger';
 import type {NotificationService} from './notifications';
 import Notifications from './notifications';
+import type {NotificationContentService} from './notification-content';
+import NotificationContent from './notification-content';
 
 export type Services = {
   Analytics: AnalyticsService;
@@ -61,6 +63,7 @@ export type Services = {
   Logger: LoggerService;
   ExitNodes: ExitNodesService;
   Notifications: NotificationService;
+  NotificationContent: NotificationContentService;
 };
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -78,6 +81,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Language: Language(dataLayer),
   Recommendations: Recommendations(dataLayer),
   Permissions,
+  Notifications,
   LeaderBoard,
   Users: Users(dataLayer),
   Sections: Sections(dataLayer),
@@ -87,7 +91,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Logger: Logger(dataLayer),
   // @ts-ignore datalayer definition error
   ExitNodes: ExitNodes(dataLayer),
-  Notifications,
+  NotificationContent: NotificationContent(dataLayer),
 });
 
 export default createServices;

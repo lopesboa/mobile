@@ -51,7 +51,7 @@ function withPermissions(WrappedComponent: React.ElementType<any>, types: Array<
     }
 
     componentDidUpdate() {
-      this.checkNotificationsPermissions();
+      this.checkPermissions();
     }
 
     componentWillUnmount() {

@@ -40,6 +40,7 @@ import search from './reducers/ui/search';
 import ResetDisplayedProgression from './middlewares/reset-displayed-progression';
 import ProgressionsSynchronization from './middlewares/progressions-synchronization';
 import UpdateCardOnProgressionUpdate from './middlewares/update-card-on-progression-update';
+import ScheduleNotificationOnCourseLeave from './middlewares/schedule-notification';
 import ErrorHandler from './middlewares/error-handler';
 import type {Options, ReduxDevTools} from './_types';
 
@@ -95,6 +96,7 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
       ResetDisplayedProgression(options),
       ProgressionsSynchronization(options),
       UpdateCardOnProgressionUpdate(options),
+      ScheduleNotificationOnCourseLeave(options),
       ErrorHandler(),
     ),
     // @ts-ignore

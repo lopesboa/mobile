@@ -162,3 +162,10 @@ export type SourceURI = {
   height?: number;
   scale?: number;
 };
+
+export type ScheduledNotificationPayload = {
+  id: string;
+  createdAt: Date;
+};
+
+export type ScheduledNotification = Record<NotificationType, ScheduledNotificationPayload[]>;
