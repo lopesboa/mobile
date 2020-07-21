@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import Settings from './settings';
+import {NOTIFICATION_TYPE} from '../const';
 
 async function handleFakePressP() {
   await Promise.resolve();
@@ -11,7 +12,7 @@ storiesOf('Settings', module).add('default', () => (
     testID="settings"
     settings={[
       {
-        type: 'finish-course',
+        type: NOTIFICATION_TYPE.FINISH_COURSE,
         label: 'New courses',
         isActive: false,
       },

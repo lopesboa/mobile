@@ -12,7 +12,7 @@ import {TestContextProvider} from '../utils/tests';
 import {createNavigation} from '../__fixtures__/navigation';
 import type {ConnectedStateProps} from './settings';
 import {Component as Settings} from './settings';
-
+import {NOTIFICATION_TYPE} from '../const';
 describe('Settings', () => {
   describe('props', () => {
     it('should return the accurate props', () => {
@@ -34,7 +34,7 @@ describe('Settings', () => {
         progression,
         notifications: {
           finishCourse: {
-            type: 'finish-course',
+            type: NOTIFICATION_TYPE.FINISH_COURSE,
             label: 'Reminder',
             isActive: false,
           },
@@ -50,7 +50,7 @@ describe('Settings', () => {
         currentNotificationsPermission: PERMISSION_STATUS.GRANTED,
         notificationsSettings: {
           finishCourse: {
-            type: 'finish-course',
+            type: NOTIFICATION_TYPE.FINISH_COURSE,
             label: 'Reminder',
             isActive: false,
           },

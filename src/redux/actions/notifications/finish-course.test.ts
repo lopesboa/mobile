@@ -1,11 +1,12 @@
 import {TOGGLE, toggle} from './finish-course';
 import type {Action} from './finish-course';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 const createStore = (isActive: boolean) => ({
   getState: jest.fn(() => ({
     notifications: {
       finishCourse: {
-        type: 'finish-course',
+        type: NOTIFICATION_TYPE.FINISH_COURSE,
         label: 'Finish course',
         isActive: isActive,
       },

@@ -7,6 +7,7 @@ import {ScheduledNotificationPayload, NotificationType} from '../../../types';
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
 export const UNSCHEDULE_NOTIFICATION = '@@notifications/UNSCHEDULE_NOTIFICATION';
 export const UNSCHEDULE_ALL_NOTIFICATION = '@@notifications/UNSCHEDULE_ALL_NOTIFICATION';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 export type Action =
   | {
@@ -71,7 +72,7 @@ export const scheduleNotification = (contentId: string, type: NotificationType, 
     },
   };
   switch (type) {
-    case 'finish-course': {
+    case NOTIFICATION_TYPE.FINISH_COURSE: {
       scheduleFinishCourseNotification(contentId, index);
     }
   }

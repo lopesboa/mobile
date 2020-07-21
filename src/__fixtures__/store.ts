@@ -53,7 +53,8 @@ import {
   mapToExitNode,
 } from './utils/mappers';
 import {createBrand} from './brands';
-import {createUser} from './user';
+import { createUser } from './user';
+import {NOTIFICATION_TYPE} from '../const';
 
 type MappableObject =
   | {
@@ -343,7 +344,7 @@ export const createPermissionsState = ({
 export const createNotificationsState = (
   notification = {
     finishCourse: {
-      type: 'finish-course',
+      type: NOTIFICATION_TYPE.FINISH_COURSE,
       label: 'Weekly Reminder',
       isActive: true,
     },

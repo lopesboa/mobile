@@ -3,6 +3,7 @@ import {TOGGLE} from '../../actions/notifications/finish-course';
 import type {Action} from '../../actions/notifications/finish-course';
 import reducer from './finish-course';
 import type {State} from './finish-course';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 jest.mock('react-native', () => ({
   Platform: {
@@ -27,7 +28,7 @@ describe('FastSlide', () => {
       // @ts-ignore we are trying to emulate something else
       const result = reducer(undefined, action);
       const expected: State = {
-        type: 'finish-course',
+        type: NOTIFICATION_TYPE.FINISH_COURSE,
         label: 'Currently doing reminder',
         isActive: true,
       };
@@ -43,7 +44,7 @@ describe('FastSlide', () => {
       };
       const result = reducer(undefined, action);
       const expected: State = {
-        type: 'finish-course',
+        type: NOTIFICATION_TYPE.FINISH_COURSE,
         label: 'Currently doing reminder',
         isActive: true,
       };

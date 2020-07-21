@@ -1,7 +1,7 @@
 import type {QCMQuestion, Lesson} from '../types/coorpacademy/progression-engine';
 
 import type {StoreState} from '../redux/store';
-import {PERMISSION_STATUS} from '../const';
+import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
 import {createBrand} from './brands';
 import {createMapObject, createStoreState, createAuthenticationState} from './store';
 import {createLevel} from './levels';
@@ -295,7 +295,7 @@ describe('storeFixture', () => {
       permissions: permissionsState,
       notifications: {
         finishCourse: {
-          type: 'finish-course',
+          type: NOTIFICATION_TYPE.FINISH_COURSE,
           label: 'Weekly Reminder',
           isActive: true,
         },

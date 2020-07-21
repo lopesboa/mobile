@@ -10,6 +10,7 @@ import {
   SPECIFIC_CONTENT_REF,
   PERMISSION_STATUS,
   ERROR_TYPE,
+  NOTIFICATION_TYPE
 } from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
 import {createUser} from '../../__fixtures__/user';
@@ -766,7 +767,7 @@ describe('State-extract', () => {
       const state = createState({
         notifications: {
           finishCourse: {
-            type: 'finish-course',
+            type: NOTIFICATION_TYPE.FINISH_COURSE,
             label: 'reminder',
             isActive: false,
           },

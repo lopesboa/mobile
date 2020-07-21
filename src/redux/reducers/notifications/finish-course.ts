@@ -3,6 +3,7 @@ import {NotificationType} from '../../../types';
 import {TOGGLE} from '../../actions/notifications/finish-course';
 import type {Action} from '../../actions/notifications/finish-course';
 import translations from '../../../translations';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 export type State = {
   type: NotificationType;
@@ -11,7 +12,7 @@ export type State = {
 };
 
 const initialState: State = {
-  type: 'finish-course',
+  type: NOTIFICATION_TYPE.FINISH_COURSE,
   label: translations.currentlyDoingReminder,
   isActive: Platform.OS === 'android',
 };

@@ -6,6 +6,7 @@ import {
 } from '../../actions/notifications/scheduled-notifications';
 import type {Action} from '../../actions/notifications/scheduled-notifications';
 import {ScheduledNotification} from '../../../types';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 export type State = ScheduledNotification;
 
