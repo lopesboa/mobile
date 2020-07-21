@@ -1,13 +1,13 @@
 import PushNotifications from 'react-native-push-notification';
+import {StoreState} from '../../store';
 
 // import {StoreAction} from '../../_types';
 import {Services} from '../../../services';
-import {ScheduledNotificationPayload, NotificationType} from '../../../types';
+import {/* ScheduledNotificationPayload*/ NotificationType} from '../../../types';
+import {NOTIFICATION_TYPE} from '../../../const';
 
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
 export const UNSCHEDULE_NOTIFICATION = '@@notifications/UNSCHEDULE_NOTIFICATION';
-export const UNSCHEDULE_ALL_NOTIFICATION = '@@notifications/UNSCHEDULE_ALL_NOTIFICATION';
-import {NOTIFICATION_TYPE} from '../../../const';
 
 export type Action =
   | {
@@ -22,12 +22,6 @@ export type Action =
       type: '@@notifications/UNSCHEDULE_NOTIFICATION';
       payload: {
         id: string;
-        type: NotificationType;
-      };
-    }
-  | {
-      type: '@@notifications/UNSCHEDULE_ALL_NOTIFICATION';
-      payload: {
         type: NotificationType | 'all';
       };
     };
@@ -45,24 +39,24 @@ const scheduleFinishCourseNotification = (contentId: string, index: number) => {
   // 48h hours later * index + 1
   // const delay = new Date(Date.now() + 172800 * (index + 1) * 1000);
   const delay = new Date(Date.now() + 20 * (index + 1) * 1000);
-
   return scheduleNotificationOnDevice('title', 'message de dingue', delay);
 };
 
-const hasNotificationBeenScheduled = (
-  scheduledNotifications: ScheduledNotificationPayload[],
-  contentId: string,
-): boolean => {
-  return scheduledNotifications.some((notification) => notification.id === contentId);
-};
+// const hasNotificationBeenScheduled = (
+//   scheduledNotifications: ScheduledNotificationPayload[],
+//   contentId: string,
+// ): boolean => {
+//   return scheduledNotifications?.some((notification) => notification.id === contentId);
+// };
 
-export const scheduleNotification = (contentId: string, type: NotificationType, index: number) => (
+const scheduleNotification = (contentId: string, type: NotificationType, index: number) => (
   dispatch,
   getState,
   services: Services,
 ): StoreAction<Action | void> => {
   const {scheduledNotifications} = getState().notifications;
-  if (hasNotificationBeenScheduled(scheduledNotifications[type], contentId)) return;
+  // TODO: review this branch
+  // if (hasNotificationBeenScheduled(scheduledNotifications[type], contentId)) return;
   const action = {
     type: SCHEDULE_NOTIFICATION,
     payload: {
@@ -79,38 +73,31 @@ export const scheduleNotification = (contentId: string, type: NotificationType, 
   return dispatch(action);
 };
 
-export const unscheduleAllLocalNotifications = (type?: NotificationType) => async (
+export const unscheduleLocalNotifications = (type?: NotificationType) => async (
   dispatch,
-  getState,
-  services: Services,
+  getState: () => StoreState,
 ) => {
-  let action;
-  if (!type) {
-    action = {
-      type: UNSCHEDULE_ALL_NOTIFICATION,
-      payload: {
-        type: 'all',
-      },
-    };
-
-    PushNotifications.cancelAllLocalNotifications();
-    return;
-  }
-
-  const {scheduledNotifications} = getState().notifications;
-
-  scheduledNotifications[type].forEach((notification) => {
-    PushNotifications.cancelLocalNotifications({id: notification.id});
-  });
-
-  action = {
-    type: UNSCHEDULE_ALL_NOTIFICATION,
+  const action = {
+    type: UNSCHEDULE_NOTIFICATION,
     payload: {
-      type,
+      type: type,
     },
   };
 
-  dispatch(action);
+  switch (type) {
+    case NOTIFICATION_TYPE.FINISH_COURSE: {
+      const {scheduledNotifications} = getState().notifications;
+
+      scheduledNotifications[type]?.forEach((notification) => {
+        PushNotifications.cancelLocalNotifications({id: notification.id});
+      });
+      break;
+    }
+    default: {
+      PushNotifications.cancelAllLocalNotifications();
+    }
+  }
+  return dispatch(action);
 };
 
 // we erease all the local notification schudled (lib/os + store)
@@ -125,34 +112,31 @@ export const unscheduleAllLocalNotifications = (type?: NotificationType) => asyn
 export const scheduleNotifications = (type: NotificationType) => async (
   dispatch,
   getState,
-  options: Services,
+  options: {services: Services},
 ) => {
   const {services} = options;
-  const contentByMostRecent = await services.NotificationContent.getAllContentByMostRecent();
+  const [
+    firstContent,
+    secondContent,
+    thirdContent,
+  ] = await services.NotificationContent.getAllContentByMostRecent();
   // delete all the registred notifications
-  unscheduleAllLocalNotifications(type)(dispatch, getState, services);
+  await unscheduleLocalNotifications(type)(dispatch, getState);
 
   // loop on sorted content array
-  if (contentByMostRecent.length === 1) {
-    const content = contentByMostRecent[0];
-    if (!content) return;
-    scheduleNotification(content?.universalRef, type, 0);
-    scheduleNotification(content?.universalRef, type, 1);
-    scheduleNotification(content?.universalRef, type, 2);
+  if (firstContent && !secondContent && !thirdContent) {
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 0));
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 1));
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 2));
+  } else if (firstContent && secondContent && !thirdContent) {
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 0));
+    await dispatch(scheduleNotification(secondContent?.universalRef, type, 1));
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 2));
+  } else if (firstContent && secondContent && thirdContent) {
+    await dispatch(scheduleNotification(firstContent?.universalRef, type, 0));
+    await dispatch(scheduleNotification(secondContent?.universalRef, type, 1));
+    await dispatch(scheduleNotification(thirdContent?.universalRef, type, 2));
+  } else {
     return;
   }
-  if (contentByMostRecent.length <= 2) {
-    const [firstContent, secondContent] = contentByMostRecent;
-    if (!firstContent || !secondContent) return;
-    scheduleNotification(firstContent?.universalRef, type, 0);
-    scheduleNotification(secondContent?.universalRef, type, 1);
-    scheduleNotification(firstContent?.universalRef, type, 2);
-    return;
-  }
-  contentByMostRecent.forEach((content, index) => {
-    if (!content || index > 2) return;
-    // set notification
-    dispatch(scheduleNotification(content?.universalRef, type, index));
-  });
-  return;
 };
