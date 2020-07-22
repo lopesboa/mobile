@@ -49,6 +49,7 @@ export const validateAnswer: typeof _validateAnswer = () => async (dispatch, get
     isCorrect: typeof isCorrect === 'boolean' && Number(isCorrect),
   });
   await dispatch(result);
+  await dispatch(changeAnswerValidationStatus(false));
 
   // @ts-ignore getState definition conflict
   return getState();
