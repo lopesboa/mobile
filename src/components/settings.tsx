@@ -6,7 +6,7 @@ import Switch from './switch';
 import Version from './version';
 import Text from './text';
 
-type SettingsItem = {
+export type SettingsItem = {
   type: NotificationType;
   label: string;
   isActive: boolean;

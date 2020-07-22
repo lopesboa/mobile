@@ -6,7 +6,7 @@ import type {
 import type {DataLayer} from '../layer/data';
 import {getAggregationsByContent} from '../layer/data/progressions';
 
-const isStepGTE3 = (aggregation: HeroRecommendation): boolean => aggregation.nbSlides >= 1;
+const isStepGTE3 = (aggregation: HeroRecommendation): boolean => aggregation.nbSlides >= 3;
 
 const isNotFinished = (aggregation: HeroRecommendation): boolean => aggregation.success === false;
 

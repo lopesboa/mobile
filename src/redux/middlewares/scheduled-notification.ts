@@ -1,16 +1,16 @@
 import type {Middleware, MiddlewareAPI, Dispatch} from 'redux';
 
 import {scheduleNotifications} from '../actions/notifications/scheduled-notifications';
-import type {Options} from '../_types';
+// import type {Options} from '../_types';
 import type {StoreState} from '../store';
 import {NAVIGATION_SCREEN_CHANGE} from '../actions/navigation';
 import type {Action as NavigationAction} from '../actions/navigation';
 import {NOTIFICATION_TYPE} from '../../const';
 
-type Action = NavigationAction | SelectAction;
+type Action = NavigationAction;
 type State = StoreState;
 
-const createMiddleware = ({services}: Options): Middleware<State, Action, Dispatch<Action>> => ({
+const createMiddleware = (): Middleware<State, Action, Dispatch<Action>> => ({
   dispatch,
   getState,
 }: MiddlewareAPI<State, Action, Dispatch<Action>>) => (

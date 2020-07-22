@@ -59,6 +59,11 @@ describe('Services', () => {
         check: expect.any(Function),
         openSettings: expect.any(Function),
         request: expect.any(Function),
+        requestNotifications: expect.any(Function),
+        checkNotifications: expect.any(Function),
+      },
+      NotificationContent: {
+        getAllContentByMostRecent: expect.any(Function),
       },
       Progressions: {
         acceptExtraLife: expect.any(Function),

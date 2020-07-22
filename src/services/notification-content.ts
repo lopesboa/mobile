@@ -27,7 +27,6 @@ const getMostRecentContent = (dataLayer: DataLayer) => async () => {
 
   const contents = await Promise.all(
     ongoingAggregations.map((aggregation) => {
-      if (!aggregation) return {};
       return fetchCard(aggregation.content);
     }),
   );

@@ -128,7 +128,24 @@ export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlid
 export const isFinishCourseNotificationActive = (state: StoreState): boolean =>
   state.notifications.finishCourse.isActive;
 
-export const getNotifications = (state: StoreState): NotificationsState => state.notifications;
+type NotificationsSettings = {
+  finishCourse: Pick<NotificationsState, 'finishCourse'>;
+};
+type NotificationsSettingsTypes = 'finishCourse';
+
+export const getNotificationsSettings = (types: NotificationsSettingsTypes[]) => (
+  state: StoreState,
+): NotificationsSettings => {
+  // @ts-ignore accumulator should not be empty
+  return types.reduce((acc, type) => {
+    return {
+      ...acc,
+      [type]: {
+        ...state.notifications[type],
+      },
+    };
+  }, {});
+};
 
 export const getAppSession = (state: StoreState): number => state.appSession;
 

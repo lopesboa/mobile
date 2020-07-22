@@ -160,6 +160,8 @@ jest.mock('react-native-permissions', () => {
   const {PERMISSION_STATUS} = require('./src/const');
 
   return {
+    requestNotifications: jest.fn(() => Promise.resolve(undefined)),
+    checkNotifications: jest.fn(() => Promise.resolve(undefined)),
     openSettings: jest.fn(() => Promise.resolve(undefined)),
     request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
     check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),

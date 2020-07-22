@@ -38,8 +38,6 @@ import type {HeroService} from './hero';
 import Hero from './hero';
 import type {LoggerService} from './logger';
 import Logger from './logger';
-import type {NotificationService} from './notifications';
-import Notifications from './notifications';
 import type {NotificationContentService} from './notification-content';
 import NotificationContent from './notification-content';
 
@@ -62,7 +60,6 @@ export type Services = {
   Hero: HeroService;
   Logger: LoggerService;
   ExitNodes: ExitNodesService;
-  Notifications: NotificationService;
   NotificationContent: NotificationContentService;
 };
 
@@ -81,7 +78,6 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Language: Language(dataLayer),
   Recommendations: Recommendations(dataLayer),
   Permissions,
-  Notifications,
   LeaderBoard,
   Users: Users(dataLayer),
   Sections: Sections(dataLayer),

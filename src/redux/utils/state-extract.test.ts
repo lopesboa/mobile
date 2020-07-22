@@ -10,7 +10,7 @@ import {
   SPECIFIC_CONTENT_REF,
   PERMISSION_STATUS,
   ERROR_TYPE,
-  NOTIFICATION_TYPE
+  NOTIFICATION_TYPE,
 } from '../../const';
 import {createBrand} from '../../__fixtures__/brands';
 import {createUser} from '../../__fixtures__/user';
@@ -56,7 +56,7 @@ import {
   isGodModeEnabled,
   isFastSlideEnabled,
   isFinishCourseNotificationActive,
-  getNotifications,
+  getNotificationsSettings,
   getCurrentScreenName,
   getCurrentTabName,
   getContext,
@@ -780,7 +780,7 @@ describe('State-extract', () => {
     });
   });
 
-  describe('getNotifications', () => {
+  describe('getNotificationsSettings', () => {
     it('should get value from state', () => {
       const notifications = {
         finishCourse: {
@@ -793,7 +793,7 @@ describe('State-extract', () => {
         notifications,
       });
 
-      const result = getNotifications(state);
+      const result = getNotificationsSettings(['finishCourse'])(state);
 
       expect(result).toEqual(notifications);
     });

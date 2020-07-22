@@ -8,7 +8,7 @@ import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import {BackHandler} from '../modules/back-handler';
 import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
-import {getPermissionStatus, getNotifications} from '../redux/utils/state-extract';
+import {getPermissionStatus, getNotificationsSettings} from '../redux/utils/state-extract';
 import {StoreState} from '../redux/store';
 import type {PermissionStatus, NotificationType} from '../types';
 import withPermissions from '../containers/with-permissions';
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 export interface ConnectedStateProps {
   canReceiveNotifications: boolean;
   currentNotificationsPermission: PermissionStatus;
-  notificationsSettings: NotificationsState;
+  notificationsSettings: Record<'finishCourse', Pick<NotificationsState, 'finishCourse'>>;
 }
 
 interface ConnectedDispatchProps {
@@ -92,7 +92,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
   canReceiveNotifications:
     getPermissionStatus('notifications')(state) === PERMISSION_STATUS.GRANTED,
   currentNotificationsPermission: getPermissionStatus('notifications')(state),
-  notificationsSettings: getNotifications(state),
+  notificationsSettings: getNotificationsSettings(['finishCourse'])(state),
 });
 
 export {SettingsScreen as Component};
