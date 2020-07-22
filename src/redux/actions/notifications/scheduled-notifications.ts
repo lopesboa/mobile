@@ -42,21 +42,9 @@ const scheduleFinishCourseNotification = (contentId: string, index: number) => {
   return scheduleNotificationOnDevice('title', 'message de dingue', delay);
 };
 
-// const hasNotificationBeenScheduled = (
-//   scheduledNotifications: ScheduledNotificationPayload[],
-//   contentId: string,
-// ): boolean => {
-//   return scheduledNotifications?.some((notification) => notification.id === contentId);
-// };
-
 const scheduleNotification = (contentId: string, type: NotificationType, index: number) => (
   dispatch,
-  getState,
-  services: Services,
 ): StoreAction<Action | void> => {
-  const {scheduledNotifications} = getState().notifications;
-  // TODO: review this branch
-  // if (hasNotificationBeenScheduled(scheduledNotifications[type], contentId)) return;
   const action = {
     type: SCHEDULE_NOTIFICATION,
     payload: {
@@ -100,15 +88,15 @@ export const unscheduleLocalNotifications = (type?: NotificationType) => async (
   return dispatch(action);
 };
 
-// we erease all the local notification schudled (lib/os + store)
-// we loop on the sorted content array
-// we set notifications taking the first element of the sorted content  array and the next one and so on
-// first element : 48h later
-// second element : 96h later
-// third element : 144h later
-
-// what if there is just one element should we set it three times? (48 / 96 / 144h later) > We set the same content 48 / 96 and 144h later.
-// what if we have two content started (not finished)? > we set 1 / 2 / 1 again
+/**
+ * - Local notifications are scheduled once the user quits the player/app
+ * - We first unschedule the existing local notifications before scheduling new ones
+ * - Only 3 notifications are sent to the user on a week, the first one is sent 48h hours
+ * later, the second one 96 and the last one 144.
+ * - If user has only started one content, schedule 3 notifications for given content
+ * - If user has started two contents, schedule 3 notifications with the order: [1, 2, 1]
+ * - If user has started three contents, schedule 3 notifications with the order: [1, 2, 3]
+ */
 export const scheduleNotifications = (type: NotificationType) => async (
   dispatch,
   getState,
@@ -120,10 +108,8 @@ export const scheduleNotifications = (type: NotificationType) => async (
     secondContent,
     thirdContent,
   ] = await services.NotificationContent.getAllContentByMostRecent();
-  // delete all the registred notifications
   await unscheduleLocalNotifications(type)(dispatch, getState);
 
-  // loop on sorted content array
   if (firstContent && !secondContent && !thirdContent) {
     await dispatch(scheduleNotification(firstContent?.universalRef, type, 0));
     await dispatch(scheduleNotification(firstContent?.universalRef, type, 1));
