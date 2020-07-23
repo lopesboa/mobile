@@ -34,6 +34,55 @@ const translations: Translations = {
   correction: 'Chỉnh sửa',
   dataLost: 'Có vẻ dữ liệu của bạn đã thất lạc',
   didYouKnowThat: 'Bạn đã biết điều đó?',
+  finishCourse: 'Hoàn tất Khóa học',
+  finishCourseWordings: [
+    {
+      title: 'Đã đến lúc khởi động (khởi động lại) {{givenName}}! 🚀',
+      description: 'Hoàn thành khóa học này: {{contentName}}',
+    },
+    {
+      title: 'Nhiệm vụ của bạn, nếu bạn quyết định chấp nhận 😎',
+      description: 'Hoàn tất khóa học của bạn {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, cá là bạn có thể làm được! 💪',
+      description: 'Hoàn tất khóa học {{contentName}}',
+    },
+    {
+      title: 'Bạn có cần giải lao một chút không {{givenName}}? 🤯',
+      description: 'Nào hãy cùng hoàn thành {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, bạn đã bắt đầu khóa học của mình từ hai ngày trước ⏳',
+      description: 'Hoàn thành {{contentName}}',
+    },
+    {
+      title: 'Tham gia thử thách {{givenName}} 💪',
+      description: 'Hoàn thành khóa học {{contentName}}',
+    },
+    {
+      title: 'Bạn đã sẵn sàng chứ {{givenName}}? 🤯',
+      description: 'Hãy thư giãn và dành vài phút để hoàn thành {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, thậm chí còn chưa bắt đầu 😉',
+      description: 'Hoàn thành {{contentName}}',
+    },
+    {title: 'Việc tốt trong tuần của bạn! 😇', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: 'Việc gì đã làm xong sẽ không cần làm nữa 🙃',
+      description: 'Hoàn thành khóa học {{contentName}}',
+    },
+    {title: 'Xong! ✓ Sắp rồi...', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: '{{givenName}}, bạn sắp hoàn tất rồi! 🙃',
+      description: 'Còn hơn vài câu hỏi để hoàn thành {{contentName}}',
+    },
+    {
+      title: 'Cố lên nào {{givenName}}! Gần xong rồi ☑️',
+      description: 'Hoàn thành khóa học của bạn {{contentName}}',
+    },
+  ],
   finishLearning: 'Tiếp tục phần này trước',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
   gameOver: 'Thua cuộc',

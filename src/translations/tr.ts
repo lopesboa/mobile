@@ -31,6 +31,49 @@ const translations: Translations = {
   correction: 'Düzeltme',
   dataLost: 'Verileriniz kaybolmuş gibi görünüyor',
   didYouKnowThat: 'Biliyor muydunuz?',
+  finishCourse: 'Kursu Bitir',
+  finishCourseWordings: [
+    {
+      title: 'Yeniden başlama zamanı {{givenName}}! 🚀',
+      description: 'Bu kursu bitir: {{contentName}}',
+    },
+    {title: 'Görevin, tabii eğer kabul edersen 😎', description: '{{contentName}} kursunu bitir'},
+    {
+      title: '{{givenName}}, bunu yapabileceğine bahse girerim! 💪',
+      description: '{{contentName}} kursunu bitir',
+    },
+    {
+      title: 'Molaya ihtiyacın var mı {{givenName}}? 🤯',
+      description: '{{contentName}} içeriğini bitirelim',
+    },
+    {
+      title: '{{givenName}}, dersine iki gün önce başladın ⏳',
+      description: '{{contentName}} içeriğini tamamla',
+    },
+    {
+      title: 'Bu meydan okumayı kabul et {{givenName}} 💪',
+      description: '{{contentName}} kursunu tamamla',
+    },
+    {
+      title: ' İndin mi {{givenName}}? 🤯',
+      description: 'Rahatlayıp {{contentName}} içeriğini tamamlamak için birkaç dakika ayır',
+    },
+    {
+      title: '{{givenName}}, yanından bile geçmiyorsun 😉',
+      description: '{{contentName}} içeriğini tamamla',
+    },
+    {title: 'Bu haftanın güzel işleri! 😇', description: '{{contentName}} kursunu tamamla'},
+    {title: 'Yapılan yapılmış oldu 🙃', description: '{{contentName}} kursunu bitir'},
+    {title: 'Bitti! ✓ Neredeyse...', description: '{{contentName}} kursunu tamamla'},
+    {
+      title: '{{givenName}}, çok yaklaştın! 🙃',
+      description: '{{contentName}} içeriğini tamamlamak için birkaç sorudan fazla',
+    },
+    {
+      title: 'Hadi {{givenName}}! Neredeyse bitti ☑️',
+      description: '{{contentName}} kursunu tamamla',
+    },
+  ],
   finishLearning: 'Önce buna devam et',
   forYou: 'Sizin için seçtiklerimiz',
   gameOver: 'Oyun bitti',

@@ -34,6 +34,58 @@ const translations: Translations = {
   correction: 'Corectură',
   dataLost: 'Se pare că datele tale s-au pierdut.',
   didYouKnowThat: 'Știați asta?',
+  finishCourse: 'Finalizare curs',
+  finishCourseWordings: [
+    {
+      title: 'Este timpul pentru (re)lansare, {{givenName}}! 🚀',
+      description: 'Finalizați acest curs: {{contentName}}',
+    },
+    {
+      title: 'Misiunea dumneavoastră, dacă o acceptați 😎',
+      description: 'Finalizați-vă cursul {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, pun pariu că veți reuși! 💪',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Aveți nevoie de o pauză, {{givenName}}? 🤯',
+      description: 'Haideți să finalizăm {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, ați început cursul în urmă cu două zile⏳',
+      description: 'Finalizați {{contentName}}',
+    },
+    {
+      title: 'Acceptați provocarea, {{givenName}} 💪',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Ați aterizat, {{givenName}}? 🤯',
+      description: 'Relaxați-vă și acordați-vă câteva minute pentru a finaliza {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, nici măcar nu vă apropiați 😉',
+      description: 'Finalizați {{contentName}}',
+    },
+    {
+      title: 'Fapta dvs. bună de săptămâna aceasta! 😇',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Ce este făcut nu mai trebuie făcut 🙃',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {title: 'Gata! ✓ Aproape...', description: 'Finalizați cursul {{contentName}}'},
+    {
+      title: '{{givenName}}, sunteți atât de aproape! 🙃',
+      description: 'Mai multe întrebări pentru a finaliza {{contentName}}',
+    },
+    {
+      title: 'Haideți, {{givenName}}! Aproape ați terminat ☑️',
+      description: 'Finalizați-vă cursul {{contentName}}',
+    },
+  ],
   finishLearning: 'Întâi continuă-l pe acesta',
   forYou: 'Topul alegerilor noastre',
   gameOver: 'Jocul s-a terminat',

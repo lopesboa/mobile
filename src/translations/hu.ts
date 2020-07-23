@@ -33,6 +33,60 @@ const translations: Translations = {
   correction: 'Javítás',
   dataLost: 'Úgy tűnik, hogy az adataid elvesztek',
   didYouKnowThat: 'Tudta?',
+  finishCourse: 'Tanfolyam befejezése',
+  finishCourseWordings: [
+    {
+      title: 'Itt az idő az (újra)indulásra, {{givenName}}! 🚀',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'A küldetésed, amennyiben elfogadod  😎',
+      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, sikerülni fog! 💪',
+      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Pihenésre van szüksége, {{givenName}}? 🤯',
+      description: 'Teljesítse a következőt: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, két napja kezdted el a kurzusodat  ⏳',
+      description: 'Teljesítse a következőt: {{contentName}}',
+    },
+    {
+      title: 'Teljesítse a kihívást, {{givenName}} 💪',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Landolt, {{givenName}}? 🤯',
+      description:
+        'Döljön hátra és szánjon néhány percet a következő tanfolyam teljesítésére: {{contentName}}',
+    },
+    {title: '{{givenName}}, nem vezet 😉', description: 'Teljesítse a következőt: {{contentName}}'},
+    {
+      title: 'A heti jó cselekedete! 😇',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Ami kész, az kész 🙃',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Kész! ✓ Majdnem...',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, közel jár! 🙃',
+      description:
+        'Csak néhány kérdésre kell válaszolni a következő teljesítéséhez: {{contentName}}',
+    },
+    {
+      title: 'Gyerünk, {{givenName}}! Mindjárt végez ☑️',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+  ],
   finishLearning: 'Folytasd ezt előtte',
   forYou: 'Legjobb ajánlataink számodra',
   gameOver: 'A játéknak vége',

@@ -32,6 +32,52 @@ const translations: Translations = {
   correction: 'Correctie',
   dataLost: 'Je gegevens lijken verloren te zijn',
   didYouKnowThat: 'Wist je dat?',
+  finishCourse: 'Rond de cursus af',
+  finishCourseWordings: [
+    {
+      title: 'Het is tijd om (weer) van start te gaan {{givenName}}! 🚀',
+      description: 'Maak deze cursus af: {{contentName}}',
+    },
+    {
+      title: 'Je missie, als je ervoor kiest om deze te accepteren 😎',
+      description: 'Rond de cursus {{contentName}} af',
+    },
+    {
+      title: '{{givenName}}, ik weet dat je het kan! 💪',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {
+      title: 'Heb je even pauze nodig {{givenName}}? 🤯',
+      description: 'Laten we {{contentName}} afronden',
+    },
+    {
+      title: '{{givenName}}, je bent twee dagen geleden met je cursus begonnen ⏳',
+      description: 'Maak {{contentName}} af',
+    },
+    {
+      title: 'Ga de uitdaging aan {{givenName}} 💪',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {
+      title: 'Ben je geland {{givenName}}? 🤯',
+      description: 'Ontspan en neem een paar minuten om {{contentName}} af te ronden',
+    },
+    {title: '{{givenName}}, nog niet onderweg 😉', description: 'Maak {{contentName}} af'},
+    {title: 'Je goede daad van de week! 😇', description: 'Maak de cursus {{contentName}} af '},
+    {
+      title: 'Wat klaar is, hoeft niet meer te worden gedaan 🙃',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {title: 'Klaar! ✓ Bijna...', description: 'Maak de cursus {{contentName}} af'},
+    {
+      title: '{{givenName}}, je bent er bijna! 🙃',
+      description: 'Meer dan een paar vragen om {{contentName}} af te ronden',
+    },
+    {
+      title: 'Kom op {{givenName}}! Bijna klaar ☑️',
+      description: 'Maak je cursus {{contentName}} af',
+    },
+  ],
   finishLearning: 'Ga eerst met deze door',
   forYou: 'Onze topkeuzes voor jou',
   gameOver: 'Game over',

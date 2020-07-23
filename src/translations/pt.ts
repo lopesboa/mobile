@@ -33,6 +33,49 @@ const translations: Translations = {
   correction: 'Correção',
   dataLost: 'Os seus dados parecem estar perdidos',
   didYouKnowThat: 'Sabias que?',
+  finishCourse: 'Concluir Curso',
+  finishCourseWordings: [
+    {
+      title: 'É o momento de (re)lançar {{givenName}}! 🚀',
+      description: 'Completa este curso: {{contentName}}',
+    },
+    {
+      title: 'A sua missão, caso opte por aceitá-la 😎',
+      description: 'Conclui o teu curso {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, aposto que consegues! 💪',
+      description: 'Conclui o curso {{contentName}}',
+    },
+    {
+      title: 'Precisas de um intervalo {{givenName}}? 🤯',
+      description: 'Vamos completar {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, iniciou o seu curso há dois dias ⏳',
+      description: 'Completa {{contentName}}',
+    },
+    {title: 'Aceita o desafio {{givenName}} 💪', description: 'Completa o curso {{contentName}}'},
+    {
+      title: 'Aterraste {{givenName}}? 🤯',
+      description: 'Relaxa e aproveita para completar {{contentName}}',
+    },
+    {title: '{{givenName}}, nem sequer à frente 😉', description: 'Completa {{contentName}}'},
+    {title: 'A tua boa ação da semana! 😇', description: 'Completa o curso {{contentName}}'},
+    {
+      title: 'O que já foi feito não precisa de ser refeito 🙃',
+      description: 'Completa o curso {{contentName}}',
+    },
+    {title: 'Feito! ✓ Quase...', description: 'Completa o curso {{contentName}}'},
+    {
+      title: '{{givenName}}, estás tão perto! 🙃',
+      description: 'Mais do que algumas perguntas para completar {{contentName}}',
+    },
+    {
+      title: 'Vamos {{givenName}}! Quase no fim ☑️',
+      description: 'Completa o teu curso {{contentName}}',
+    },
+  ],
   finishLearning: 'Continuar primeiro este',
   forYou: 'As nossas escolhas para si',
   gameOver: 'Fim do jogo',

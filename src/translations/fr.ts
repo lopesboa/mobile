@@ -33,6 +33,49 @@ const translations: Translations = {
   correction: 'Correction',
   dataLost: 'Vos données semblent perdues',
   didYouKnowThat: 'Le saviez-vous ?',
+  finishCourse: 'Rappel leçons en cours',
+  finishCourseWordings: [
+    {
+      title: 'Il est temps de vous (re)lancer {{givenName}} ! 🚀',
+      description: 'Terminez ce cours : {{contentName}}',
+    },
+    {
+      title: "Votre mission si vous l'acceptez 😎",
+      description: 'Terminez le cours {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, je parie que vous pouvez le faire ! 💪',
+      description: 'Terminez le cours {{contentName}}',
+    },
+    {
+      title: "Besoin d'une pause {{givenName}} ? 🤯",
+      description: 'Complétez le cours {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, vous avez commencé votre cours il y a deux jours ⏳',
+      description: 'Terminez {{contentName}}',
+    },
+    {title: 'Relevez le défi {{givenName}} 💪', description: 'Terminez le cours {{contentName}}'},
+    {
+      title: "Vous êtes sous l'eau {{givenName}} ? 🤯",
+      description: 'Faîtes une pause et terminez {{contentName}}',
+    },
+    {title: '{{givenName}}, même pas cap 😉', description: 'Terminez {{contentName}}'},
+    {
+      title: 'Votre bonne action de la semaine 😇',
+      description: 'Finissez le cours {{contentName}}',
+    },
+    {
+      title: "Ce qui est fait n'est plus à faire 🙃",
+      description: 'Finissez le cours {{contentName}}',
+    },
+    {title: "Ca, c'est fait ! ✓ Presque...", description: 'Terminez le cours {{contentName}}'},
+    {
+      title: '{{givenName}}, vous êtes si proche du but ! 🙃',
+      description: 'Plus que quelques questions pour finir {{contentName}}',
+    },
+    {title: 'Presque fini {{givenName}} ☑️', description: 'Terminez votre cours {{contentName}}'},
+  ],
   finishLearning: "Continuer celui-ci d'abord",
   forYou: 'Nos meilleurs cours pour vous',
   gameOver: 'Game over',

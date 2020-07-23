@@ -15,6 +15,11 @@ const createScheduledNotification = (id: string): ScheduledNotificationPayload =
 
 const createStore = (isActive: boolean, scheduledNotifications?: ScheduledNotification) => {
   const state = {
+    authentication: {
+      user: {
+        givenName: 'Coorpacademy',
+      },
+    },
     notifications: {
       finishCourse: {
         type: 'finish-course',
@@ -92,6 +97,31 @@ describe('Scheduled notifications', () => {
       expect(PushNotifications.cancelLocalNotifications).toHaveBeenCalledTimes(0);
       expect(PushNotifications.localNotificationSchedule).toHaveBeenCalledTimes(0);
     });
+
+    it('does not schedule notifications if there is no content title', async () => {
+      const PushNotifications = require('react-native-push-notification');
+      const {dispatch, getState} = createStore(true);
+
+      const services = {
+        NotificationContent: {
+          getAllContentByMostRecent: jest.fn(() => [
+            createChapterCard({
+              ref: 'cha_fake1',
+              completion: 0,
+              status: CARD_STATUS.ACTIVE,
+              // @ts-ignore for testing purpose
+              title: undefined,
+            }),
+          ]),
+        },
+      };
+
+      // @ts-ignore passing only needed service
+      await scheduleNotifications('finish-course')(dispatch, getState, {services});
+      expect(dispatch).toHaveBeenCalledTimes(4);
+      expect(PushNotifications.cancelLocalNotifications).toHaveBeenCalledTimes(0);
+      expect(PushNotifications.localNotificationSchedule).toHaveBeenCalledTimes(0);
+    });
     it('schedules a notification three times for given content(user has started 1 course)', async () => {
       const PushNotifications = require('react-native-push-notification');
       const {dispatch, getState} = createStore(true);
@@ -114,27 +144,6 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(PushNotifications.cancelLocalNotifications).toHaveBeenCalledTimes(0);
       expect(PushNotifications.localNotificationSchedule).toHaveBeenCalledTimes(3);
-      // expect(PushNotifications.localNotificationSchedule).toHaveBeenNthCalledWith(1, {
-      //   id: 'cha_fake1',
-      //   date: expect.any(String),
-      //   ignoreInForeground: true,
-      //   message: expect.any(String),
-      //   title: expect.any(String),
-      // });
-      // expect(PushNotifications.localNotificationSchedule).toHaveBeenNthCalledWith(2, {
-      //   id: 'cha_fake1',
-      //   date: expect.any(String),
-      //   ignoreInForeground: true,
-      //   message: expect.any(String),
-      //   title: expect.any(String),
-      // });
-      // expect(PushNotifications.localNotificationSchedule).toHaveBeenNthCalledWith(3, {
-      //   id: 'cha_fake1',
-      //   date: expect.any(String),
-      //   ignoreInForeground: true,
-      //   message: expect.any(String),
-      //   title: expect.any(String),
-      // });
     });
     it('schedules a notification three times for given content(user has started 2 course) and cancel existing ones', async () => {
       const PushNotifications = require('react-native-push-notification');

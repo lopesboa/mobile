@@ -34,6 +34,43 @@ const translations: Translations = {
   correction: 'Corrección',
   dataLost: 'Parece que se han perdido tus datos',
   didYouKnowThat: '¿Lo sabías?',
+  finishCourse: 'Finalizar el curso',
+  finishCourseWordings: [
+    {
+      title: '¡Es hora de relanzar, {{givenName}}! 🚀',
+      description: 'Complete este curso: {{contentName}}',
+    },
+    {title: 'Tu misión, si decides aceptarla 😎', description: 'Finalice el curso {{contentName}}'},
+    {
+      title: '¡{{givenName}}, apuesto a que puede hacerlo! 💪',
+      description: 'Finalice el curso {{contentName}}',
+    },
+    {title: '¿Necesita un descanso, {{givenName}}? 🤯', description: 'Completemos {{contentName}}'},
+    {
+      title: '{{givenName}}, comenzaste el curso hace dos días ⏳',
+      description: 'Complete {{contentName}}',
+    },
+    {title: 'Acepte el reto, {{givenName}} 💪', description: 'Complete el curso {{contentName}}'},
+    {
+      title: '¿Ha aterrizado, {{givenName}}? 🤯',
+      description: 'Relájese y dedique unos minutos a completar {{contentName}}',
+    },
+    {title: '{{givenName}}, ni siquiera se aproxima 😉', description: 'Complete {{contentName}}'},
+    {title: '¡Su buena acción de la semana! 😇', description: 'Complete el curso {{contentName}}'},
+    {
+      title: 'Lo que está hecho, ya no está por hacer 🙃',
+      description: 'Complete el curso {{contentName}}',
+    },
+    {title: '¡Terminado! ✓ Casi...', description: 'Complete el curso {{contentName}}'},
+    {
+      title: '{{givenName}}, ¡está a punto! 🙃',
+      description: 'Más de unas pocas preguntas para completar {{contentName}}',
+    },
+    {
+      title: '¡Venga, {{givenName}}! Casi ha terminado ☑️',
+      description: 'Complete su curso {{contentName}}',
+    },
+  ],
   finishLearning: 'Primero sigue con este',
   forYou: 'Nuestras mejores opciones para ti',
   gameOver: 'Fin del juego',

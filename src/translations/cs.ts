@@ -34,6 +34,46 @@ const translations: Translations = {
   correction: 'Oprava',
   dataLost: 'Zdá se, že se vaše údaje ztratily',
   didYouKnowThat: 'Věděli jste to?',
+  finishCourse: 'Dodělej kurz',
+  finishCourseWordings: [
+    {
+      title: 'Je čas (znovu) odstartovat, {{givenName}}! 🚀',
+      description: 'Dokonči tento kurz: {{contentName}}',
+    },
+    {
+      title: 'Vaše mise, pokud se tedy rozhodnete ji přijmout 😎',
+      description: 'Dodělej kurz {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, vsadím se, te na to máš! 💪',
+      description: 'Dodělej kurz {{contentName}}',
+    },
+    {title: 'Potřebuješ pauzu, {{givenName}}? 🤯', description: 'Dokončeme {{contentName}}'},
+    {
+      title: '{{givenName}}, svůj kurz jste začali před dvěma dny ⏳',
+      description: 'Dokonči {{contentName}}',
+    },
+    {title: 'Přijmi výzvu, {{givenName}} 💪', description: 'Dokonči svůj kurz {{contentName}}'},
+    {
+      title: 'Už jsi přistál/a, {{givenName}}? 🤯',
+      description: 'Odpočiň si a dokonči {{contentName}} za pár minut',
+    },
+    {title: '{{givenName}}, ani nadpis 😉', description: 'Dokonči {{contentName}}'},
+    {title: 'Tvůj dobrý skutek tohoto týdne! 😇', description: 'Dokonči kurz {{contentName}}'},
+    {
+      title: 'Co doděláš, to už znovu dělat nemusíš 🙃',
+      description: 'Dokonči kurz {{contentName}}',
+    },
+    {title: 'Hotovo! ✓ Skoro... ', description: 'Dokonči kurz {{contentName}}'},
+    {
+      title: '{{givenName}}, už jsi blízko! 🙃',
+      description: 'Více než jen pár otázek k dokončení v {{contentName}}',
+    },
+    {
+      title: 'Máš na to, {{givenName}}! Už máš skoro hotovo ☑️',
+      description: 'Dokonči svůj kurz {{contentName}}',
+    },
+  ],
   finishLearning: 'Nejdřív pokračujte tady',
   forYou: 'Naše nejlepší tipy pro vás',
   gameOver: 'Hra skončila',

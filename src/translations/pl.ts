@@ -33,6 +33,46 @@ const translations: Translations = {
   correction: 'Korekta',
   dataLost: 'Wygląda na to, że Twoje dane zgubiły się',
   didYouKnowThat: 'Czy wiedziałeś(-łaś) o tym?',
+  finishCourse: 'Przejdź kurs.',
+  finishCourseWordings: [
+    {
+      title: 'Pora (znów) startować, {{givenName}}! 🚀',
+      description: 'Ukończ ten kurs: {{contentName}}.',
+    },
+    {
+      title: 'Twoja misja, jeśli zdecydujesz się ją przyjąć 😎',
+      description: 'Przejdź swój kurs: {{contentName}}.',
+    },
+    {title: '{{givenName}}, na pewno dasz radę! 💪', description: 'Przejdź kurs: {{contentName}}.'},
+    {
+      title: 'Potrzebna ci przerwa, {{givenName}}? 🤯',
+      description: 'Ukończmy to: {{contentName}}.',
+    },
+    {
+      title: '{{givenName}}, Twój kurs rozpoczął się dwa dni temu ⏳',
+      description: 'Ukończ: {{contentName}}.',
+    },
+    {title: 'Podejmij wyzwanie, {{givenName}}. 💪', description: 'Ukończ kurs: {{contentName}}.'},
+    {
+      title: 'Jesteś już na Ziemi, {{givenName}}? 🤯',
+      description: 'Odpręż się i poświęć chwilę na ukończenie kursu: {{contentName}}.',
+    },
+    {
+      title: '{{givenName}}, nawet się tam nie kierujesz. 😉',
+      description: 'Ukończ: {{contentName}}.',
+    },
+    {title: 'Twój dobry uczynek na ten tydzień! 😇', description: 'Ukończ kurs: {{contentName}}.'},
+    {title: 'Co zrobione, zrobienia nie wymaga. 🙃', description: 'Ukończ kurs: {{contentName}}.'},
+    {title: 'Gotowe! ✓ Prawie...', description: 'Ukończ kurs: {{contentName}}.'},
+    {
+      title: '{{givenName}}, tak niewiele ci brakuje! 🙃',
+      description: 'Trochę więcej niż kilka pytań i ukończysz kurs: {{contentName}}.',
+    },
+    {
+      title: 'No dalej, {{givenName}}! To już prawie koniec. ☑️',
+      description: 'Ukończ swój kurs: {{contentName}}.',
+    },
+  ],
   finishLearning: 'Kontynuuj najpierw to',
   forYou: 'Polecane dla Ciebie',
   gameOver: 'Koniec gry',

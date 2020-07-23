@@ -33,6 +33,49 @@ const translations: Translations = {
   correction: 'Correction',
   dataLost: 'Your data seems to be lost',
   didYouKnowThat: 'Did you know that?',
+  finishCourse: 'Finish Course',
+  finishCourseWordings: [
+    {
+      title: "It's time to (re) launch {{givenName}}! 🚀",
+      description: 'Complete this course: {{contentName}}',
+    },
+    {
+      title: 'Your mission, should you choose to accept it 😎',
+      description: 'Finish your course {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, I bet you can do it! 💪',
+      description: 'Finish the course {{contentName}}',
+    },
+    {title: 'Do you need a break {{givenName}}? 🤯', description: "Let's complete {{contentName}}"},
+    {
+      title: '{{givenName}}, you have started your course two days ago ⏳',
+      description: 'Complete {{contentName}}',
+    },
+    {
+      title: 'Take the challenge {{givenName}} 💪',
+      description: 'Complete the course {{contentName}}',
+    },
+    {
+      title: 'Are you landed {{givenName}}? 🤯',
+      description: 'Relax and take a few minutes to complete {{contentName}}',
+    },
+    {title: '{{givenName}}, not even heading 😉', description: 'Complete {{contentName}}'},
+    {title: 'Your good deed of the week! 😇', description: 'Complete the course {{contentName}}'},
+    {
+      title: 'What is done is no longer to be done 🙃',
+      description: 'Complete the course {{contentName}}',
+    },
+    {title: 'Done! ✓ Almost...', description: 'Complete the course {{contentName}}'},
+    {
+      title: '{{givenName}}, you are so close! 🙃',
+      description: 'More than a few questions to complete {{contentName}}',
+    },
+    {
+      title: 'Come on {{givenName}}! Almost finished ☑️',
+      description: 'Complete your course {{contentName}}',
+    },
+  ],
   finishLearning: 'Continue this one first',
   forYou: 'Our top picks for you',
   gameOver: 'Game over',

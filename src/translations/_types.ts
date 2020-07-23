@@ -19,6 +19,11 @@ export type SupportedLanguage =
   | 'zh-TW'
   | 'zh';
 
+type NotificationWording = {
+  title: string;
+  description: string;
+};
+
 export type Translations = {
   accessTheLesson: string;
   authenticationMagicLinkHeader: string;
@@ -44,6 +49,8 @@ export type Translations = {
   correction: string;
   dataLost: string;
   didYouKnowThat: string;
+  finishCourse: string;
+  finishCourseWordings: NotificationWording[];
   finishLearning: string;
   forYou: string;
   gameOver: string;

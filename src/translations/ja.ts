@@ -30,6 +30,52 @@ const translations: Translations = {
   correction: '解答',
   dataLost: 'データが失われたようです。',
   didYouKnowThat: 'ご存知でしたか。',
+  finishCourse: '課程を終了しましょう',
+  finishCourseWordings: [
+    {
+      title: '打ち上げ（再打ち上げ）る時がきました！🚀',
+      description: 'この課程を完了させましょう：{{contentName}}',
+    },
+    {title: '引き受けるべきミッション 😎', description: '{{contentName}}の課程を終了させましょう'},
+    {
+      title: '{{givenName}}さん、あなたならできますよ! 💪',
+      description: '{{contentName}}の課程を終了しましょう',
+    },
+    {
+      title: '{{givenName}}さん、休憩が必要ですか ? 🤯',
+      description: 'さあ、{{contentName}}を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、あなたは課程を2日前に開始しました ⏳',
+      description: '{{contentName}}を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、挑戦してみましょう 💪',
+      description: '{{contentName}}の課程を完了させましょう ',
+    },
+    {
+      title: '{{givenName}}さん、着陸しましたか? 🤯',
+      description: 'リラックスし、一息ついてから{{contentName}}の課程を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、全く進んでいませんよ 😉',
+      description: '{{contentName}}を完了させましょう',
+    },
+    {title: '今週の良い行いです! 😇', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: '済んでしまったことは仕方ありません🙃',
+      description: '{{contentName}}の課程を完了させましょう ',
+    },
+    {title: '完了! ✓ あと少し…', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: '{{givenName}}さん、あと少しですよ! 🙃',
+      description: '{{contentName}}を完了させるのに必要な質問がまだかなり残っています',
+    },
+    {
+      title: 'Come on {{givenName}}さん、がんばって! あともう少しで終わりですよ ☑️',
+      description: '{{contentName}}の課程を完了させましょう',
+    },
+  ],
   finishLearning: 'まずはこれを続ける',
   forYou: 'おすすめ厳選情報',
   gameOver: 'ゲームは終わりました',
