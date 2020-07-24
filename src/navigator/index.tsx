@@ -1,6 +1,11 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
+import {
+  createStackNavigator,
+  createAppContainer,
+  NavigationActions,
+  NavigationContainerComponent,
+} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
 
 import HeaderSlideTitle from '../containers/header-slide-title';
@@ -16,6 +21,7 @@ import {changeScreen} from '../redux/actions/navigation';
 import theme from '../modules/theme';
 import SearchScreen from '../screens/search';
 import SettingsScreen from '../screens/settings';
+import NavigationService from './helper';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
 import browserNavigator from './browser';
@@ -206,9 +212,15 @@ class NavigatorWithState extends React.PureComponent<Props> {
     onScreenChange(currentNavigatorName, currentAppScreenName, currentScreenName, currentTabName);
   };
 
+  handleRef = (navigatorRef: NavigationContainerComponent) => {
+    NavigationService.setTopLevelNavigator(navigatorRef);
+  };
+
   render() {
     // @ts-ignore Bad react-navigation definition with interfaces
-    return <Navigator onNavigationStateChange={this.handleNavigationStateChange} />;
+    return (
+      <Navigator ref={this.handleRef} onNavigationStateChange={this.handleNavigationStateChange} />
+    );
   }
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable import/max-dependencies */
 import * as React from 'react';
 import {StyleSheet, View, Platform} from 'react-native';
 import {Provider} from 'react-redux';
@@ -12,6 +13,8 @@ import {setJSExceptionHandler, getJSExceptionHandler} from 'react-native-excepti
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import PushNotifications from 'react-native-push-notification';
 import Navigator from './navigator';
+import NavigationService from './navigator/helper';
+import {selectCard} from './redux/actions/catalog/cards/select';
 import BrandThemeProvider from './components/brand-theme-provider';
 import UserProvider from './components/user-provider';
 import Loader from './components/loader';
@@ -23,6 +26,7 @@ import createDataLayer from './layer/data';
 import createServices from './services';
 import createStore from './redux';
 import type {ReduxDevTools} from './redux/_types';
+import {ChapterCard, DisciplineCard} from './layer/data/_types';
 
 const reduxDevTools: ReduxDevTools | void =
   // @ts-ignore
@@ -31,20 +35,33 @@ const reduxDevTools: ReduxDevTools | void =
       window.__REDUX_DEVTOOLS_EXTENSION__()
     : undefined;
 
+const dataLayer = createDataLayer();
+
+const services = createServices(dataLayer);
+
+// @ts-ignore
+const {store, persistor} = createStore(services, reduxDevTools);
+
 PushNotifications.configure({
-  onRegister: function (token) {
-    console.log('TOKEN:', token);
+  onRegister: function (token: string): void {
+    // if you need to handle things while registering, do it here
   },
 
-  // (required) Called when a remote is received or opened, or local notification is opened
-  onNotification: function (notification) {
-    console.log('NOTIFICATION:', notification);
+  onNotification: function (notification: {
+    data: {id: string; content?: string};
+    finish: (arg: unknown) => void;
+  }) {
+    const {data} = notification;
+    const content: DisciplineCard | ChapterCard = JSON.parse(data?.content ?? '{}');
+    if (!content || !content.universalRef) {
+      // we do not want to do anything in here FTM
+    } else {
+      NavigationService.navigate('Slide');
+      store.dispatch(selectCard(content));
 
-    // process the notification
-
-    // notif
-    // (required) Called when a remote is received or opened, or local notification is opened
-    notification.finish(PushNotificationIOS.FetchResult.NoData);
+      // (required) Called when a remote is received or opened, or local notification is opened
+      notification.finish(PushNotificationIOS.FetchResult.NoData);
+    }
   },
   permissions: {
     alert: true,
@@ -54,13 +71,6 @@ PushNotifications.configure({
   popInitialNotification: false,
   requestPermissions: false,
 });
-
-const dataLayer = createDataLayer();
-
-const services = createServices(dataLayer);
-
-// @ts-ignore
-const {store, persistor} = createStore(services, reduxDevTools);
 
 interface Props {}
 

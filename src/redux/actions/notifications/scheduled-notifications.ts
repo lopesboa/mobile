@@ -7,6 +7,7 @@ import {/* ScheduledNotificationPayload*/ NotificationType} from '../../../types
 import {NOTIFICATION_TYPE} from '../../../const';
 import translations from '../../../translations';
 import {getUser} from '../../utils/state-extract';
+import {ChapterCard, DisciplineCard} from '../../../layer/data/_types';
 
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
 export const UNSCHEDULE_NOTIFICATION = '@@notifications/UNSCHEDULE_NOTIFICATION';
@@ -35,48 +36,49 @@ const getNotificationWording = () => {
 
 const scheduleNotificationOnDevice = (
   userName: string | undefined,
-  contentTitle: string | undefined,
+  content: DisciplineCard | ChapterCard,
   date: Date,
 ) => {
   const {title, description} = getNotificationWording();
-  if (!userName || !contentTitle) return;
+  if (!userName || !content.title) return;
   PushNotifications.localNotificationSchedule({
+    id: content?.universalRef,
     title: title.replace('{{givenName}}', userName),
-    message: description.replace('{{contentName}}', contentTitle),
+    message: description.replace('{{contentName}}', content.title),
     date: date,
     ignoreInForeground: true,
+    userInfo: {id: content?.universalRef, content: JSON.stringify(content)},
   });
 };
 
 const scheduleFinishCourseNotification = (
   userName: string | undefined,
-  contentTitle: string | undefined,
+  content: DisciplineCard | ChapterCard,
   index: number,
 ) => {
   // 48h hours later * index + 1
   // const delay = new Date(Date.now() + 172800 * (index + 1) * 1000);
   const delay = new Date(Date.now() + 20 * (index + 1) * 1000);
-  return scheduleNotificationOnDevice(userName, contentTitle, delay);
+  return scheduleNotificationOnDevice(userName, content, delay);
 };
 
 const scheduleNotification = (
   userName: string | undefined,
-  contentTitle: string | undefined,
-  contentId: string,
+  content: DisciplineCard | ChapterCard,
   type: NotificationType,
   index: number,
 ) => (dispatch): StoreAction<Action | void> => {
   const action = {
     type: SCHEDULE_NOTIFICATION,
     payload: {
-      id: contentId,
+      id: content?.universalRef,
       createdAt: new Date(),
       type,
     },
   };
   switch (type) {
     case NOTIFICATION_TYPE.FINISH_COURSE: {
-      scheduleFinishCourseNotification(userName, contentTitle, index);
+      scheduleFinishCourseNotification(userName, content, index);
     }
   }
   return dispatch(action);
@@ -135,89 +137,17 @@ export const scheduleNotifications = (type: NotificationType) => async (
   const user = getUser(state);
 
   if (firstContent && !secondContent && !thirdContent) {
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        0,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        1,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        2,
-      ),
-    );
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 1));
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
   } else if (firstContent && secondContent && !thirdContent) {
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        0,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        secondContent?.title,
-        secondContent?.universalRef,
-        type,
-        1,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        2,
-      ),
-    );
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+    await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
   } else if (firstContent && secondContent && thirdContent) {
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        firstContent?.title,
-        firstContent?.universalRef,
-        type,
-        0,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        secondContent?.title,
-        secondContent?.universalRef,
-        type,
-        1,
-      ),
-    );
-    await dispatch(
-      scheduleNotification(
-        user?.givenName,
-        thirdContent?.title,
-        thirdContent?.universalRef,
-        type,
-        2,
-      ),
-    );
+    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+    await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+    await dispatch(scheduleNotification(user?.givenName, thirdContent, type, 2));
   } else {
     return;
   }
