@@ -6,7 +6,7 @@ import {Services} from '../../../services';
 import {/* ScheduledNotificationPayload*/ NotificationType} from '../../../types';
 import {NOTIFICATION_TYPE} from '../../../const';
 import translations from '../../../translations';
-import {getUser} from '../../utils/state-extract';
+import {getUser, isFinishCourseNotificationActive} from '../../utils/state-extract';
 import {ChapterCard, DisciplineCard} from '../../../layer/data/_types';
 
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
@@ -125,29 +125,33 @@ export const scheduleNotifications = (type: NotificationType) => async (
   getState,
   options: {services: Services},
 ) => {
-  const {services} = options;
-  const [
-    firstContent,
-    secondContent,
-    thirdContent,
-  ] = await services.NotificationContent.getAllContentByMostRecent();
-  await unscheduleLocalNotifications(type)(dispatch, getState);
-
   const state = getState();
-  const user = getUser(state);
+  if (isFinishCourseNotificationActive(state)) {
+    const {services} = options;
+    const [
+      firstContent,
+      secondContent,
+      thirdContent,
+    ] = await services.NotificationContent.getAllContentByMostRecent();
+    await unscheduleLocalNotifications(type)(dispatch, getState);
 
-  if (firstContent && !secondContent && !thirdContent) {
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 1));
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
-  } else if (firstContent && secondContent && !thirdContent) {
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-    await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
-  } else if (firstContent && secondContent && thirdContent) {
-    await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
-    await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
-    await dispatch(scheduleNotification(user?.givenName, thirdContent, type, 2));
+    const user = getUser(state);
+
+    if (firstContent && !secondContent && !thirdContent) {
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 1));
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
+    } else if (firstContent && secondContent && !thirdContent) {
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+      await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 2));
+    } else if (firstContent && secondContent && thirdContent) {
+      await dispatch(scheduleNotification(user?.givenName, firstContent, type, 0));
+      await dispatch(scheduleNotification(user?.givenName, secondContent, type, 1));
+      await dispatch(scheduleNotification(user?.givenName, thirdContent, type, 2));
+    } else {
+      return;
+    }
   } else {
     return;
   }

@@ -98,6 +98,31 @@ describe('Scheduled notifications', () => {
       expect(PushNotifications.localNotificationSchedule).toHaveBeenCalledTimes(0);
     });
 
+    it('does not schedule notifications if finish-course notification is disabled', async () => {
+      const PushNotifications = require('react-native-push-notification');
+      const {dispatch, getState} = createStore(false);
+
+      const services = {
+        NotificationContent: {
+          getAllContentByMostRecent: jest.fn(() => [
+            createChapterCard({
+              ref: 'cha_fake1',
+              completion: 0,
+              status: CARD_STATUS.ACTIVE,
+              // @ts-ignore for testing purpose
+              title: undefined,
+            }),
+          ]),
+        },
+      };
+
+      // @ts-ignore passing only needed service
+      await scheduleNotifications('finish-course')(dispatch, getState, {services});
+      expect(dispatch).toHaveBeenCalledTimes(0);
+      expect(PushNotifications.cancelLocalNotifications).toHaveBeenCalledTimes(0);
+      expect(PushNotifications.localNotificationSchedule).toHaveBeenCalledTimes(0);
+    });
+
     it('does not schedule notifications if there is no content title', async () => {
       const PushNotifications = require('react-native-push-notification');
       const {dispatch, getState} = createStore(true);
