@@ -1,4 +1,3 @@
-import PushNotifications from 'react-native-push-notification';
 import {StoreState} from '../../store';
 
 // import {StoreAction} from '../../_types';
@@ -8,6 +7,7 @@ import {NOTIFICATION_TYPE} from '../../../const';
 import translations from '../../../translations';
 import {getUser, isFinishCourseNotificationActive} from '../../utils/state-extract';
 import {ChapterCard, DisciplineCard} from '../../../layer/data/_types';
+import * as Notifications from 'expo-notifications';
 
 export const SCHEDULE_NOTIFICATION = '@@notifications/SCHEDULE_NOTIFICATION';
 export const UNSCHEDULE_NOTIFICATION = '@@notifications/UNSCHEDULE_NOTIFICATION';
@@ -34,32 +34,33 @@ const getNotificationWording = () => {
   return finishCourseWordings[Math.floor(Math.random() * finishCourseWordings.length)];
 };
 
-const scheduleNotificationOnDevice = (
+async function scheduleNotificationOnDevice (
   userName: string | undefined,
   content: DisciplineCard | ChapterCard,
   date: Date,
-) => {
+) {
   const {title, description} = getNotificationWording();
   if (!userName || !content.title) return;
-  PushNotifications.localNotificationSchedule({
-    id: content?.universalRef,
-    title: title.replace('{{givenName}}', userName),
-    message: description.replace('{{contentName}}', content.title),
-    date: date,
-    ignoreInForeground: true,
-    userInfo: {id: content?.universalRef, content: JSON.stringify(content)},
+  console.log("Notifications " , Notifications)
+  const identifier = await Notifications.scheduleNotificationAsync({
+    content: {
+      title: title.replace('{{givenName}}', userName),
+      body: description.replace('{{contentName}}', content.title),
+      data: {id: content?.universalRef, content: JSON.stringify(content)},
+    },
+    trigger: date,
   });
 };
 
-const scheduleFinishCourseNotification = (
+async function scheduleFinishCourseNotification (
   userName: string | undefined,
   content: DisciplineCard | ChapterCard,
   index: number,
-) => {
+) {
   // 48h hours later * index + 1
   // const delay = new Date(Date.now() + 172800 * (index + 1) * 1000);
   const delay = new Date(Date.now() + 20 * (index + 1) * 1000);
-  return scheduleNotificationOnDevice(userName, content, delay);
+  await scheduleNotificationOnDevice(userName, content, delay);
 };
 
 const scheduleNotification = (
@@ -99,13 +100,13 @@ export const unscheduleLocalNotifications = (type?: NotificationType) => async (
     case NOTIFICATION_TYPE.FINISH_COURSE: {
       const {scheduledNotifications} = getState().notifications;
 
-      scheduledNotifications[type]?.forEach((notification) => {
-        PushNotifications.cancelLocalNotifications({id: notification.id});
+      scheduledNotifications[type]?.forEach((notification) =>  {
+       // await Notifications.cancelScheduledNotificationAsync(notification.id);
       });
       break;
     }
     default: {
-      PushNotifications.cancelAllLocalNotifications();
+      await Notifications.cancelAllScheduledNotificationsAsync();
     }
   }
   return dispatch(action);

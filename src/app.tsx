@@ -10,8 +10,6 @@ import orientation from 'react-native-orientation-locker';
 import {ReduxNetworkProvider} from 'react-native-offline';
 // @todo remove this lib once on react-native-firebase 6.x
 import {setJSExceptionHandler, getJSExceptionHandler} from 'react-native-exception-handler';
-import PushNotificationIOS from '@react-native-community/push-notification-ios';
-import PushNotifications from 'react-native-push-notification';
 import Navigator from './navigator';
 import NavigationService from './navigator/helper';
 import {selectCard} from './redux/actions/catalog/cards/select';
@@ -42,35 +40,6 @@ const services = createServices(dataLayer);
 // @ts-ignore
 const {store, persistor} = createStore(services, reduxDevTools);
 
-PushNotifications.configure({
-  onRegister: function (token: string): void {
-    // if you need to handle things while registering, do it here
-  },
-
-  onNotification: function (notification: {
-    data: {id: string; content?: string};
-    finish: (arg: unknown) => void;
-  }) {
-    const {data} = notification;
-    const content: DisciplineCard | ChapterCard = JSON.parse(data?.content ?? '{}');
-    if (!content || !content.universalRef) {
-      // we do not want to do anything in here FTM
-    } else {
-      NavigationService.navigate('Slide');
-      store.dispatch(selectCard(content));
-
-      // (required) Called when a remote is received or opened, or local notification is opened
-      notification.finish(PushNotificationIOS.FetchResult.NoData);
-    }
-  },
-  permissions: {
-    alert: true,
-    badge: true,
-    sound: true,
-  },
-  popInitialNotification: false,
-  requestPermissions: false,
-});
 
 interface Props {}
 
