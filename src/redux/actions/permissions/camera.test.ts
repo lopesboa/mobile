@@ -1,10 +1,10 @@
 import {Platform} from 'react-native';
-import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../const';
-import type {PermissionStatus} from '../../types';
-import translations from '../../translations';
-import {createFakeAnalytics} from '../../utils/tests';
-import type {Action} from './permissions';
-import {check, request, change, toOSPermissionType, CHECK, REQUEST, CHANGE} from './permissions';
+import {ANALYTICS_EVENT_TYPE, PERMISSION_STATUS} from '../../../const';
+import type {PermissionStatus} from '../../../types';
+import translations from '../../../translations';
+import {createFakeAnalytics} from '../../../utils/tests';
+import type {Action} from './camera';
+import {check, request, change, toOSCameraPermission, CHECK, REQUEST, CHANGE} from './camera';
 
 const createStore = (status: PermissionStatus) => ({
   getState: jest.fn(() => ({permissions: {camera: status}})),
@@ -15,12 +15,12 @@ describe('Permissions', () => {
   describe('Platform permission', () => {
     it('should return android camera permission type', () => {
       Platform.OS = 'android';
-      const result = toOSPermissionType('camera');
+      const result = toOSCameraPermission();
       expect(result).toEqual('android.permission.CAMERA');
     });
     it('should return ios camera permission type', () => {
       Platform.OS = 'ios';
-      const result = toOSPermissionType('camera');
+      const result = toOSCameraPermission();
       expect(result).toEqual('ios.permission.CAMERA');
     });
     afterEach(() => {
@@ -28,7 +28,7 @@ describe('Permissions', () => {
     });
   });
   it('change', () => {
-    const result = change('camera', PERMISSION_STATUS.GRANTED);
+    const result = change(PERMISSION_STATUS.GRANTED);
     const expected: Action = {
       type: CHANGE,
       payload: {
@@ -105,7 +105,7 @@ describe('Permissions', () => {
           },
         };
         // @ts-ignore we dont want to mock the entire services object
-        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
         const expectedChangeAction: Action = {
           type: CHANGE,
           payload: {
@@ -136,7 +136,7 @@ describe('Permissions', () => {
           },
         };
         // @ts-ignore we dont want to mock the entire services object
-        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(handleDeny.mock.calls.length).toBe(0);
@@ -163,7 +163,7 @@ describe('Permissions', () => {
           },
         };
         // @ts-ignore we dont want to mock the entire services object
-        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(services.Permissions.alert.mock.calls.length).toBe(1);
@@ -197,7 +197,7 @@ describe('Permissions', () => {
           },
         };
         // @ts-ignore we dont want to mock the entire services object
-        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(services.Permissions.alert.mock.calls.length).toBe(2);
@@ -231,7 +231,7 @@ describe('Permissions', () => {
           },
         };
         // @ts-ignore we dont want to mock the entire services object
-        await request('camera', 'foo bar baz', handleDeny)(dispatch, getState, {services});
+        await request('foo bar baz', handleDeny)(dispatch, getState, {services});
         expect(dispatch.mock.calls.length).toBe(1);
         expect(dispatch.mock.calls[0]).toEqual([expected]);
         expect(services.Permissions.alert.mock.calls.length).toBe(2);

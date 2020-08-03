@@ -1,6 +1,6 @@
 import {createChapterCard} from '../__fixtures__/cards';
-import {createHeroRecommendation} from '../__fixtures__/hero-recommendation';
-import type {ChapterCard, HeroRecommendation} from '../layer/data/_types';
+import {createContentRecommendation as createHeroRecommendation} from '../__fixtures__/content-recommendation';
+import type {ChapterCard, ContentRecommendation as HeroRecommendation} from '../layer/data/_types';
 
 jest.mock('../layer/data/progressions', () => ({
   getAggregationsByContent: jest.fn(),

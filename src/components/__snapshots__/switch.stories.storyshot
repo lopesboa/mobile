@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Switch default 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "#E5E5E5",
+          "borderRadius": 20,
+          "borderWidth": 1,
+          "height": 32,
+          "justifyContent": "center",
+          "width": 51,
+        },
+        Object {
+          "alignItems": "flex-end",
+        },
+        Object {
+          "backgroundColor": "#3EC483",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#E5E5E5",
+          "borderRadius": 50,
+          "borderWidth": 0.5,
+          "elevation": 5,
+          "height": 28,
+          "marginHorizontal": 1,
+          "shadowColor": "#14171A",
+          "shadowOffset": Object {
+            "height": 4,
+            "width": 0,
+          },
+          "shadowOpacity": 0.28,
+          "shadowRadius": 2.22,
+          "transform": Array [
+            Object {
+              "translateX": 1,
+            },
+          ],
+          "width": 28,
+        }
+      }
+      testID="switch-on"
+    />
+  </View>
+</View>
+`;

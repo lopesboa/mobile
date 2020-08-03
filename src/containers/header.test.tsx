@@ -7,7 +7,7 @@ jest.useFakeTimers();
 
 describe('Header', () => {
   describe('onSearchToggle', () => {
-    it('should handle event', () => {
+    it('handles press event', () => {
       const {Component: Header} = require('./header');
 
       const fakeCallback = jest.fn();
@@ -23,8 +23,30 @@ describe('Header', () => {
       expect(onSearchPress).toHaveBeenCalledTimes(1);
     });
   });
+  describe('onSettingsToggle', () => {
+    it('handles press event', () => {
+      const {Component: Header} = require('./header');
 
-  it('should handle onLogoLongPress', () => {
+      const fakeCallback = jest.fn();
+      const onSettingsPress = jest.fn();
+
+      const component = renderer.create(
+        <Header
+          onSearchPress={fakeCallback}
+          onSettingsPress={onSettingsPress}
+          signOut={fakeCallback}
+          height={42}
+        />,
+      );
+
+      const header = component.root.find((el) => el.props.testID === 'header');
+      header.props.onSettingsPress();
+
+      expect(onSettingsPress).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('handles onLogoLongPress', () => {
     const {Alert} = require('react-native');
     const alert = jest.spyOn(Alert, 'alert');
 

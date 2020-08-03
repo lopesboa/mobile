@@ -163,6 +163,8 @@ PODS:
   - OpenSSL-Universal/Static (1.0.2.19)
   - Permission-Camera (2.1.5):
     - RNPermissions
+  - Permission-Notifications (2.1.5):
+    - RNPermissions
   - PromisesObjC (1.2.8)
   - RCTRequired (0.62.2)
   - RCTTypeSafety (0.62.2):
@@ -342,6 +344,8 @@ PODS:
     - React
   - react-native-netinfo (5.9.2):
     - React
+  - react-native-notifications (3.2.3):
+    - React
   - react-native-orientation-locker (1.1.8):
     - React
   - react-native-pdf (6.1.2):
@@ -490,6 +494,7 @@ DEPENDENCIES:
   - GoogleTagManager
   - lottie-react-native (from `../node_modules/lottie-react-native`)
   - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera.podspec`)
+  - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - RCTYouTube (from `../node_modules/react-native-youtube`)
@@ -505,6 +510,7 @@ DEPENDENCIES:
   - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-flipper (from `../node_modules/react-native-flipper`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - "react-native-notifications (from `../node_modules/@coorpacademy/react-native-notifications`)"
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
   - react-native-pdf (from `../node_modules/react-native-pdf`)
   - react-native-video (from `../node_modules/react-native-video`)
@@ -592,6 +598,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/lottie-react-native"
   Permission-Camera:
     :path: "../node_modules/react-native-permissions/ios/Camera.podspec"
+  Permission-Notifications:
+    :path: "../node_modules/react-native-permissions/ios/Notifications.podspec"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -618,6 +626,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-flipper"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-notifications:
+    :path: "../node_modules/@coorpacademy/react-native-notifications"
   react-native-orientation-locker:
     :path: "../node_modules/react-native-orientation-locker"
   react-native-pdf:
@@ -721,6 +731,7 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   Permission-Camera: afad27bf90337684d4a86f3825112d648c8c4d3b
+  Permission-Notifications: 231d0e1db2300b686548587d384ba414e6a93332
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   RCTRequired: cec6a34b3ac8a9915c37e7e4ad3aa74726ce4035
   RCTTypeSafety: 93006131180074cffa227a1075802c89a49dd4ce
@@ -735,6 +746,7 @@ SPEC CHECKSUMS:
   react-native-camera: 6796b6b2f08402ba226e04ac792327a96ad0fe74
   react-native-flipper: bc9162dfd46c95bbe032e62e162ae936bfafd94b
   react-native-netinfo: cb74e17062b2af5a16a4b137f32495f241df1a8e
+  react-native-notifications: 6c69f0a28dc6c86dfef3b14f7ae43943d44e00be
   react-native-orientation-locker: f0ca1a8e5031dab6b74bfb4ab33a17ed2c2fcb0d
   react-native-pdf: 7d76a6619f76a6ebfb2f82a4f2feeb17826ba8b4
   react-native-video: eee541262ada11bc7ffe8ec5508e6a877937c462
@@ -769,6 +781,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YoutubePlayer-in-WKWebView: af2f5929fc78882d94bfdfeea999b661b78d9717
 
-PODFILE CHECKSUM: bb445b0fc9858db975d55afe15b74c557c89b522
+PODFILE CHECKSUM: 6f9b067859f1aee5e5c1d14426de36110cbccb38
 
 COCOAPODS: 1.9.1

@@ -15,9 +15,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Połącz się z platformą edukacyjną <b>za pomocą komputera</b>',
   authenticationQRCodeStepTwoDescription:
-    'Przejdź do <b>swojego Konta</b> </br>w prawym górnym rogu',
+    'Przejdź do <b>swojego Konta</b> <br/>w prawym górnym rogu',
   authenticationQRCodeStepThreeDescription:
-    '<b>Gotowe!</b></br>Zeskanuj swój kod QR, naciskając poniższy przycisk',
+    '<b>Gotowe!</b><br/>Zeskanuj swój kod QR, naciskając poniższy przycisk',
   authenticationQRCodeTitle: 'Kod QR',
   askForHelp: 'Poproś o pomoc',
   backToHome: 'Powrót do początku',
@@ -33,6 +33,46 @@ const translations: Translations = {
   correction: 'Korekta',
   dataLost: 'Wygląda na to, że Twoje dane zgubiły się',
   didYouKnowThat: 'Czy wiedziałeś(-łaś) o tym?',
+  finishCourse: 'Przejdź kurs.',
+  finishCourseWordings: [
+    {
+      title: 'Pora (znów) startować, {{givenName}}! 🚀',
+      description: 'Ukończ ten kurs: {{contentName}}.',
+    },
+    {
+      title: 'Twoja misja, jeśli zdecydujesz się ją przyjąć 😎',
+      description: 'Przejdź swój kurs: {{contentName}}.',
+    },
+    {title: '{{givenName}}, na pewno dasz radę! 💪', description: 'Przejdź kurs: {{contentName}}.'},
+    {
+      title: 'Potrzebna ci przerwa, {{givenName}}? 🤯',
+      description: 'Ukończmy to: {{contentName}}.',
+    },
+    {
+      title: '{{givenName}}, Twój kurs rozpoczął się dwa dni temu ⏳',
+      description: 'Ukończ: {{contentName}}.',
+    },
+    {title: 'Podejmij wyzwanie, {{givenName}}. 💪', description: 'Ukończ kurs: {{contentName}}.'},
+    {
+      title: 'Jesteś już na Ziemi, {{givenName}}? 🤯',
+      description: 'Odpręż się i poświęć chwilę na ukończenie kursu: {{contentName}}.',
+    },
+    {
+      title: '{{givenName}}, nawet się tam nie kierujesz. 😉',
+      description: 'Ukończ: {{contentName}}.',
+    },
+    {title: 'Twój dobry uczynek na ten tydzień! 😇', description: 'Ukończ kurs: {{contentName}}.'},
+    {title: 'Co zrobione, zrobienia nie wymaga. 🙃', description: 'Ukończ kurs: {{contentName}}.'},
+    {title: 'Gotowe! ✓ Prawie...', description: 'Ukończ kurs: {{contentName}}.'},
+    {
+      title: '{{givenName}}, tak niewiele ci brakuje! 🙃',
+      description: 'Trochę więcej niż kilka pytań i ukończysz kurs: {{contentName}}.',
+    },
+    {
+      title: 'No dalej, {{givenName}}! To już prawie koniec. ☑️',
+      description: 'Ukończ swój kurs: {{contentName}}.',
+    },
+  ],
   finishLearning: 'Kontynuuj najpierw to',
   forYou: 'Polecane dla Ciebie',
   gameOver: 'Koniec gry',
@@ -51,8 +91,9 @@ const translations: Translations = {
   next: 'Dalej',
   nextChapter: 'Następy rozdział',
   nextLevel: 'Następny poziom',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Brak wyników',
+  noResultsDescription:
+    'Wyszukiwanie nie przyniosło żadnych wyników.<br/>Spróbuj wprowadzić inne słowa kluczowe.',
   ok: 'OK',
   ooops: 'Niestety...',
   open: 'Otwórz',
@@ -63,6 +104,13 @@ const translations: Translations = {
   permission: 'Uprawnienie',
   permissionCamera:
     'Aby zeskanować Twój kod QR i Cię uwierzytelnić, potrzebujemy dostępu do Twojego aparatu.',
+  permissionNotificationHeadline: 'Pomagamy Ci utrzymać motywację!',
+  permissionNotificationDescription:
+    'Otrzymuj powiadomienia, by skutecznie realizować swoje cele. Obiecujemy nie zasypywać Cię alertami milion razy dziennie.',
+  permissionNotificationAuthorize: 'Autoryzuj powiadomienia',
+  currentlyDoingReminder: 'Przypomnienie o aktualnie wykonywanym',
+  yesNotifyMe: 'Tak, powiadom mnie',
+  maybeLater: 'Może później',
   platformHasBeenDisabled: 'Zdezaktywowano aplikację dla Twojej platformy',
   question: 'Pytanie',
   quit: 'Zakończ',
@@ -76,9 +124,10 @@ const translations: Translations = {
   retryChapter: 'Spróbuj ponownie przerobić rozdział',
   retryLevel: 'Ponów próbę',
   scanQRCode: 'Zeskanuj <b>kod QR</b>',
-  search: 'Search',
+  search: 'Wyszukaj',
   seeClue: 'Zobacz wskazówkę',
   selectSomethingBelow: 'Wybierz z poniższych możliwości',
+  settings: 'Ustawienia',
   startDemo: 'Nie masz konta? <a href="/"><b><u>Rozpocznij okres próbny!</u></b></a>',
   startLearning: 'Polecamy zacząć od tego',
   selectAnAnswer: 'Wybierz odpowiedź',

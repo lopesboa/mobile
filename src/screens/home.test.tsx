@@ -1,6 +1,8 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
+import {Platform} from 'react-native';
 
+import {ANDROID} from 'react-native-permissions/lib/typescript/constants';
 import {createNavigation} from '../__fixtures__/navigation';
 import {createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
@@ -39,10 +41,17 @@ describe('Home', () => {
       chapters: [],
       slides: [],
       progression,
+      appSession: 2,
+      permissions: {
+        camera: 'granted',
+        notifications: 'granted',
+      },
     });
 
     const result = mapStateToProps(store);
     const expected: ConnectedStateProps = {
+      appSession: 2,
+      notificationStatus: 'granted',
       isFetching: false,
       isFocused: false,
     };
@@ -55,7 +64,14 @@ describe('Home', () => {
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
     );
 
     const home = component.root.find((el) => el.props.testID === 'home');
@@ -83,16 +99,127 @@ describe('Home', () => {
     expect(navigation.navigate).toHaveBeenCalledWith('Search');
   });
 
-  it('should handle Android BackHandler', () => {
+  it('opens notify-me modal for the first time', () => {
     const {Component: Home} = require('./home');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="undetermined"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('should not open notify-me modal on Android', () => {
+    const {Component: Home} = require('./home');
+    Platform.OS = 'android';
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="undetermined"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(0);
+    Platform.OS = 'ios';
+  });
+
+  it('opens notify-me modal for the second time', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={10}
+        notificationStatus="maybe-later"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('opens notify-me modal for the third time', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={30}
+        notificationStatus="maybe-later"
+      />,
+    );
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+  });
+
+  it('handles settings press', () => {
+    const {Component: Home} = require('./home');
 
     const selectCard = jest.fn();
     const navigation = createNavigation({});
     const component = renderer.create(
-      <Home navigation={navigation} selectCard={selectCard} isFetching isFocused={false} />,
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
     );
-    TestBackHandler.fireEvent('hardwareBackPress');
+
+    const home = component.root.find((el) => el.props.testID === 'home');
+    home.props.onSettingsPress();
+
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Settings');
+  });
+
+  it('should handle Android BackHandler', () => {
+    const {Component: Home} = require('./home');
+    const {BackHandler} = require('../modules/back-handler');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={3}
+        notificationStatus="granted"
+      />,
+    );
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

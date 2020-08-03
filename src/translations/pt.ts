@@ -15,9 +15,9 @@ const translations: Translations = {
     'Não recebeu um email? Não há problema! Vamos utilizar um computador para verificar a sua identidade na plataforma Web',
   authenticationQRCodeStepOneDescription:
     'Ligue-se à sua plataforma de aprendizagem <b>com um computador</b>',
-  authenticationQRCodeStepTwoDescription: 'Vá à <b>sua Conta</b> </br>no canto superior direito',
+  authenticationQRCodeStepTwoDescription: 'Vá à <b>sua Conta</b> <br/>no canto superior direito',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Digitalize o seu código QR utilizando o botão abaixo',
+    '<b>Voilà!</b><br/>Digitalize o seu código QR utilizando o botão abaixo',
   authenticationQRCodeTitle: 'Código QR',
   askForHelp: 'Pedir ajuda',
   backToHome: 'Voltar ao início ',
@@ -33,6 +33,49 @@ const translations: Translations = {
   correction: 'Correção',
   dataLost: 'Os seus dados parecem estar perdidos',
   didYouKnowThat: 'Sabias que?',
+  finishCourse: 'Concluir Curso',
+  finishCourseWordings: [
+    {
+      title: 'É o momento de (re)lançar {{givenName}}! 🚀',
+      description: 'Completa este curso: {{contentName}}',
+    },
+    {
+      title: 'A sua missão, caso opte por aceitá-la 😎',
+      description: 'Conclui o teu curso {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, aposto que consegues! 💪',
+      description: 'Conclui o curso {{contentName}}',
+    },
+    {
+      title: 'Precisas de um intervalo {{givenName}}? 🤯',
+      description: 'Vamos completar {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, iniciou o seu curso há dois dias ⏳',
+      description: 'Completa {{contentName}}',
+    },
+    {title: 'Aceita o desafio {{givenName}} 💪', description: 'Completa o curso {{contentName}}'},
+    {
+      title: 'Aterraste {{givenName}}? 🤯',
+      description: 'Relaxa e aproveita para completar {{contentName}}',
+    },
+    {title: '{{givenName}}, nem sequer à frente 😉', description: 'Completa {{contentName}}'},
+    {title: 'A tua boa ação da semana! 😇', description: 'Completa o curso {{contentName}}'},
+    {
+      title: 'O que já foi feito não precisa de ser refeito 🙃',
+      description: 'Completa o curso {{contentName}}',
+    },
+    {title: 'Feito! ✓ Quase...', description: 'Completa o curso {{contentName}}'},
+    {
+      title: '{{givenName}}, estás tão perto! 🙃',
+      description: 'Mais do que algumas perguntas para completar {{contentName}}',
+    },
+    {
+      title: 'Vamos {{givenName}}! Quase no fim ☑️',
+      description: 'Completa o teu curso {{contentName}}',
+    },
+  ],
   finishLearning: 'Continuar primeiro este',
   forYou: 'As nossas escolhas para si',
   gameOver: 'Fim do jogo',
@@ -51,8 +94,9 @@ const translations: Translations = {
   next: 'Seguinte',
   nextChapter: 'Próximo capítulo',
   nextLevel: 'Próximo nível',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Sem resultados',
+  noResultsDescription:
+    'A sua pesquisa não teve resultados.<br/>Tente pesquisar por outras palavras-chave.',
   ok: 'OK',
   ooops: 'Ooops...',
   open: 'Abrir',
@@ -63,6 +107,13 @@ const translations: Translations = {
   permission: 'Permissão',
   permissionCamera:
     'Precisamos de aceder à sua câmara para digitalizar o seu código QR e autenticá-lo.',
+  permissionNotificationHeadline: 'Ajudamo-lo a manter-se motivado',
+  permissionNotificationDescription:
+    'Receba notificação e controle os seus objetivos. Prometemos não o incomodar com um milhão de telefonemas por dia.',
+  permissionNotificationAuthorize: 'Autorizar notificações',
+  currentlyDoingReminder: 'Lembrete de "em curso"',
+  yesNotifyMe: 'Sim, notifiquem-me',
+  maybeLater: 'Talvez mais tarde',
   platformHasBeenDisabled: 'A aplicação foi desativada para a sua plataforma',
   question: 'Pergunta',
   quit: 'Desistir',
@@ -76,9 +127,10 @@ const translations: Translations = {
   retryChapter: 'Voltar a tentar capítulo',
   retryLevel: 'Voltar a tentar nível',
   scanQRCode: 'Digitalize o seu <b>código QR</b>',
-  search: 'Search',
+  search: 'Pesquisar',
   seeClue: 'Ver solução',
   selectSomethingBelow: 'Selecione algo abaixo',
+  settings: 'Definições',
   startDemo: 'Não tem conta? <a href="/"><b><u>Inicie a avaliação!</u></b></a>',
   startLearning: 'Deve começar por este',
   selectAnAnswer: 'Seleciona uma resposta',

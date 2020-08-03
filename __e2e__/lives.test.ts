@@ -2,6 +2,7 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   tapCardOnList,
   waitForExist,
   wrongAnswer,
@@ -12,6 +13,7 @@ describe('Lives', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await scrollHero();
   });
 

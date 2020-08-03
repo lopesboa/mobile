@@ -1,23 +1,34 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {createStackNavigator, createAppContainer, NavigationActions} from 'react-navigation';
+import {
+  createStackNavigator,
+  createAppContainer,
+  NavigationActions,
+  NavigationContainerComponent,
+} from 'react-navigation';
 import type {NavigationAction, NavigationState} from 'react-navigation';
 
 import HeaderSlideTitle from '../containers/header-slide-title';
+import HeaderSettingsTitle from '../components/header-settings-title';
 import HeaderSlideRight from '../containers/header-slide-right';
 import withUniversalLinks from '../containers/with-universal-links';
 import HomeScreen from '../screens/home';
 import AuthenticationScreen from '../screens/authentication';
 import AuthenticationDetailsScreen from '../screens/authentication-details';
 import QRCodeScreen from '../screens/qr-code';
+import NotifyMeScreen from '../screens/notifications';
 import {changeScreen} from '../redux/actions/navigation';
+import theme from '../modules/theme';
 import SearchScreen from '../screens/search';
+import SettingsScreen from '../screens/settings';
+import NavigationService from './helper';
 import {slideNavigator, slideModalsNavigator} from './slide';
 import pdfNavigator from './pdf';
 import browserNavigator from './browser';
 import navigationOptions, {
   navigationOptionsWithoutHeader,
   HEADER_BACKGROUND_COLOR,
+  SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR,
   INITIAL_APP_ROUTE_NAME,
   INITIAL_ROUTE_NAME,
 } from './navigation-options';
@@ -63,6 +74,27 @@ const appNavigator = createStackNavigator(
         gesturesEnabled: false,
       },
     },
+    Settings: {
+      screen: SettingsScreen,
+      navigationOptions: {
+        ...navigationOptions,
+        headerStyle: {
+          ...navigationOptions.headerStyle,
+          backgroundColor: SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR,
+          shadowColor: theme.colors.black,
+          width: '100%',
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowOpacity: 0.3,
+          shadowRadius: 1,
+          elevation: 9,
+        },
+        headerTitle: HeaderSettingsTitle,
+        gesturesEnabled: false,
+      },
+    },
   },
   {
     initialRouteName: INITIAL_ROUTE_NAME,
@@ -100,6 +132,7 @@ const navigator = createStackNavigator(
     PdfModal: {screen: pdfNavigator},
     BrowserModal: {screen: browserNavigator},
     QRCodeModal: {screen: QRCodeScreen},
+    NotifyMeModal: {screen: NotifyMeScreen},
   },
   {
     initialRouteName: INITIAL_APP_ROUTE_NAME,
@@ -179,9 +212,15 @@ class NavigatorWithState extends React.PureComponent<Props> {
     onScreenChange(currentNavigatorName, currentAppScreenName, currentScreenName, currentTabName);
   };
 
+  handleRef = (navigatorRef: NavigationContainerComponent) => {
+    NavigationService.setTopLevelNavigator(navigatorRef);
+  };
+
   render() {
     // @ts-ignore Bad react-navigation definition with interfaces
-    return <Navigator onNavigationStateChange={this.handleNavigationStateChange} />;
+    return (
+      <Navigator ref={this.handleRef} onNavigationStateChange={this.handleNavigationStateChange} />
+    );
   }
 }
 

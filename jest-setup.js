@@ -149,6 +149,37 @@ jest.mock('react-native-camera', () => ({
   __esModule: true,
   default: 'Mock$ReactNativeCamera',
 }));
+jest.mock('redux-persist', () => ({
+  __esModule: true,
+  persistReducer: jest.fn((config, reducer) => reducer),
+  persistStore: jest.fn((store) => store),
+}));
+
+// react-native-notifications
+jest.mock('@coorpacademy/react-native-notifications', () => ({
+  Notifications: {
+    events: jest.fn(() => ({
+      registerNotificationReceivedForeground: jest.fn((cb) => {
+        cb({payload: {userInfo: {content: '{"universalRef": "fakeRef"}'}}}, jest.fn());
+      }),
+      registerNotificationOpened: jest.fn((cb) => {
+        cb({payload: {userInfo: {content: '{"universalRef": "fakeRef"}'}}}, jest.fn());
+      }),
+    })),
+    postLocalNotification: jest.fn(),
+    cancelLocalNotification: jest.fn(),
+    getInitialNotification: jest.fn(() =>
+      Promise.resolve({
+        payload: {
+          userInfo: {
+            content: '{"universalRef": "fakeRef"}',
+          },
+        },
+      }),
+    ),
+    registerRemoteNotifications: jest.fn(),
+  },
+}));
 
 // react-native-permissions
 
@@ -156,6 +187,8 @@ jest.mock('react-native-permissions', () => {
   const {PERMISSION_STATUS} = require('./src/const');
 
   return {
+    requestNotifications: jest.fn(() => Promise.resolve(undefined)),
+    checkNotifications: jest.fn(() => Promise.resolve(undefined)),
     openSettings: jest.fn(() => Promise.resolve(undefined)),
     request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
     check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
@@ -218,6 +251,14 @@ jest.mock('./src/containers/with-audio');
 // ./src/containers/with-vibration
 
 jest.mock('./src/containers/with-vibration');
+
+jest.mock('./src/modules/back-handler', () => ({
+  BackHandler: {
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    exitApp: jest.fn(),
+  },
+}));
 
 // react-native-email-link
 

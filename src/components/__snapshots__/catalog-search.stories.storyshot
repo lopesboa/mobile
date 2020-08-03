@@ -72,8 +72,7 @@ exports[`Storyshots CatalogSearch No results 1`] = `
         ]
       }
     >
-      Your search did not have any results.
-Try searching other keywords.
+      Your search did not have any results.&lt;br/&gt;Try searching other keywords.
     </Text>
   </View>
 </View>

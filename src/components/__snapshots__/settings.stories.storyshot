@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Settings default 1`] = `
+Array [
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    ListHeaderComponent={
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "height": 110,
+            "justifyContent": "center",
+            "paddingHorizontal": 37,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#14171A",
+              "fontSize": 22,
+              "fontWeight": "700",
+            }
+          }
+        >
+          Notifications
+        </Text>
+      </View>
+    }
+    ListHeaderComponentStyle={
+      Object {
+        "height": 90,
+      }
+    }
+    contentContainerStyle={
+      Object {
+        "flex": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "isActive": false,
+          "label": "New courses",
+          "type": "finish-course",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="settingslist"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={
+          Object {
+            "height": 90,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "height": 110,
+              "justifyContent": "center",
+              "paddingHorizontal": 37,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                },
+              ]
+            }
+          >
+            Notifications
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flexDirection": "row",
+              "height": 53,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 37,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#14171A",
+                  "fontSize": 17,
+                },
+              ]
+            }
+          >
+            New courses
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 32,
+                  "justifyContent": "center",
+                  "width": 51,
+                },
+                Object {
+                  "alignItems": "flex-start",
+                },
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "borderColor": "#E5E5E5",
+                  "borderRadius": 50,
+                  "borderWidth": 0.5,
+                  "elevation": 5,
+                  "height": 28,
+                  "marginHorizontal": 1,
+                  "shadowColor": "#14171A",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.28,
+                  "shadowRadius": 2.22,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                  "width": 28,
+                }
+              }
+              testID="settings-switch-finish-course-off"
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ECEFF1",
+              "height": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>,
+  <Text
+    style={
+      Array [
+        Object {},
+        Array [
+          Object {
+            "fontSize": 10,
+            "textAlign": "center",
+          },
+          Object {
+            "backgroundColor": "#FAFAFA",
+            "color": "#90A4AE",
+            "paddingBottom": 24,
+            "paddingTop": 16,
+          },
+        ],
+      ]
+    }
+  >
+    Version: v0.0.0.test
+  </Text>,
+]
+`;

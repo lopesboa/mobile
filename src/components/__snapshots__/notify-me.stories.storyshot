@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots NotifyMe Notify Me 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "position": "absolute",
+      },
+    ]
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": undefined,
+          "width": undefined,
+        },
+        undefined,
+      ]
+    }
+    testID="image-background"
+  />
+  <BVLinearGradient
+    colors={
+      Array [
+        0,
+        1711276032,
+        3003121664,
+        4278190080,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      Object {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      Array [
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "justifyContent": "flex-end",
+            "padding": 24,
+          },
+        ],
+        undefined,
+      ]
+    }
+    testID="image-background-gradient"
+  >
+    <Mock$ReactNavigation$SafeAreaView>
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 24,
+          }
+        }
+      />
+      <View>
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 28,
+                "fontWeight": "700",
+              },
+            ]
+          }
+        >
+          We help you stay motivated!
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {},
+              Object {
+                "color": "#FFFFFF",
+                "fontSize": 17,
+              },
+            ]
+          }
+        >
+          Get notifications and stay on top of your goals. We promise not to blow up your phone a million times a day.
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 48,
+            "width": 48,
+          }
+        }
+      />
+      <View>
+        <View
+          testID="notifyme-button"
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#00B0FF",
+                "borderRadius": 32,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "height": 54,
+                "justifyContent": "center",
+                "marginBottom": 0,
+                "opacity": 1,
+                "paddingHorizontal": 24,
+              }
+            }
+            testID="notifyme-button-native"
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 17,
+                    "fontWeight": "700",
+                    "textAlign": "center",
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
+              Yes, notify me
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        />
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="notifyme-later-button"
+        >
+          <Text
+            style={
+              Array [
+                Object {},
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 17,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Maybe later
+          </Text>
+        </View>
+      </View>
+    </Mock$ReactNavigation$SafeAreaView>
+  </BVLinearGradient>
+</View>
+`;

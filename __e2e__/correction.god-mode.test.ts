@@ -1,10 +1,17 @@
 import {by, element} from 'detox';
-import {reloadApp, bypassAuthentication, waitForVisible, tapCardOnList} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  waitForVisible,
+  tapCardOnList,
+} from './utils';
 
 describe('Correction: god mode', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await tapCardOnList('catalog-section-recommended-items', 2);
   });
 

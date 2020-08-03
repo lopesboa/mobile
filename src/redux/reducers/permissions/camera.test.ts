@@ -1,13 +1,11 @@
-import {CHANGE} from '../actions/permissions';
-import type {Action} from '../actions/permissions';
-import {PERMISSION_STATUS} from '../../const';
-import reducer from './permissions';
-import type {State} from './permissions';
+import {CHANGE} from '../../actions/permissions/camera';
+import type {Action} from '../../actions/permissions/camera';
+import {PERMISSION_STATUS} from '../../../const';
+import reducer from './camera';
+import type {State} from './camera';
 
 describe('Permissions', () => {
-  const expectedInitialState: State = {
-    camera: undefined,
-  };
+  const expectedInitialState: State = PERMISSION_STATUS.UNDETERMINED;
 
   it('Default', () => {
     const action = {
@@ -28,10 +26,7 @@ describe('Permissions', () => {
         },
       };
       const result = reducer(undefined, action);
-      const expected: State = {
-        ...expectedInitialState,
-        camera: PERMISSION_STATUS.DENIED,
-      };
+      const expected: State = PERMISSION_STATUS.DENIED;
       expect(result).toEqual(expected);
     });
   });

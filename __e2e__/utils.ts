@@ -7,6 +7,7 @@ let alreadyLaunched = false;
 const defaultPermissions: Detox.DevicePermissions = {
   camera: 'YES',
   microphone: 'YES',
+  notifications: 'YES',
 };
 
 const getDevicePixelPerPoint = (): number => 2;
@@ -114,6 +115,12 @@ export const bypassAuthentication = async () => {
   await tap('authentication-details-qr-code-button');
   await waitForExist('qr-code-scanner');
   await longPress('qr-code-screen');
+  await waitForExist('home');
+};
+
+export const bypassNotifyMeScreen = async () => {
+  await waitForExist('notify-me-screen');
+  await tap('notifyme-button');
   await waitForExist('home');
 };
 

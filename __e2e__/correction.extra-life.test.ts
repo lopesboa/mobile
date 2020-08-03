@@ -1,5 +1,11 @@
 import {by, element} from 'detox';
-import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  tapCardOnList,
+  waitForExist,
+} from './utils';
 
 const wrongAnswer = async (el: Detox.Element, {clickOnNext = true}: {clickOnNext: boolean}) => {
   await el(by.id('question-screen')).swipe('up');
@@ -16,6 +22,7 @@ describe('Correction: extra-life', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
     await tapCardOnList('catalog-section-recommended-items', 2);
     await waitForExist('question');

@@ -15,9 +15,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Collegati alla piattaforma di apprendimento <b> tramite un computer</b>',
   authenticationQRCodeStepTwoDescription:
-    "Vai al <b>tuo account</b> </br>nell'angolo in alto a destra",
+    "Vai al <b>tuo account</b> <br/>nell'angolo in alto a destra",
   authenticationQRCodeStepThreeDescription:
-    '<b>Ecco fatto!</b></br>Leggi il codice QR usando il pulsante qui sotto',
+    '<b>Ecco fatto!</b><br/>Leggi il codice QR usando il pulsante qui sotto',
   authenticationQRCodeTitle: 'Codice QR',
   askForHelp: 'Richiedi assistenza',
   backToHome: 'Torna alla pagina principale',
@@ -33,6 +33,52 @@ const translations: Translations = {
   correction: 'Correzione',
   dataLost: 'Sembra che i tuoi dati siano andati perduti',
   didYouKnowThat: 'Lo sapevi?',
+  finishCourse: 'Termina il Corso',
+  finishCourseWordings: [
+    {
+      title: 'È il momento di (ri) lanciare {{givenName}}! 🚀',
+      description: 'Completa questo corso: {{contentName}}',
+    },
+    {
+      title: 'La tua missione, se dovessi scegliere di accettarla 😎',
+      description: 'Termina il tuo corso {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, scommetto che puoi farcela! 💪',
+      description: 'Termina il corso {{contentName}}',
+    },
+    {
+      title: 'Hai bisogno di una pausa {{givenName}}? 🤯',
+      description: 'Completiamo {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, hai iniziato il tuo corso due giorni fa ⏳',
+      description: 'Completa {{contentName}}',
+    },
+    {title: 'Accetta la sfida {{givenName}} 💪', description: 'Completa il corso {{contentName}}'},
+    {
+      title: 'Sei atterrato {{givenName}}? 🤯',
+      description: 'Rilassati e prenditi alcuni minuti per completare {{contentName}}',
+    },
+    {title: '{{givenName}}, non hai nemmeno iniziato 😉', description: 'Completa {{contentName}}'},
+    {
+      title: 'La tua buona azione della settimana! 😇',
+      description: 'Completa il corso {{contentName}}',
+    },
+    {
+      title: 'Ciò che è fatto non deve più essere fatto 🙃',
+      description: 'Completa il corso {{contentName}}',
+    },
+    {title: 'Fatto! ✓ Quasi...', description: 'Completa il corso {{contentName}}'},
+    {
+      title: '{{givenName}}, ci sei quasi! 🙃',
+      description: 'Qualche domanda in più per completare {{contentName}}',
+    },
+    {
+      title: 'Forza {{givenName}}! Hai quasi finito ☑️',
+      description: 'Completa il tuo corso {{contentName}}',
+    },
+  ],
   finishLearning: 'Continua prima con questo',
   forYou: 'Le nostre migliori scelte per te',
   gameOver: 'Game over',
@@ -51,8 +97,9 @@ const translations: Translations = {
   next: 'Successivo',
   nextChapter: 'Capitolo successivo',
   nextLevel: 'Livello successivo',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Nessun risultato',
+  noResultsDescription:
+    'La tua ricerca non ha dato risultati.<br/>Prova a cercare altre parole chiave.',
   ok: 'OK',
   ooops: 'Attenzione...',
   open: 'Apri',
@@ -63,8 +110,15 @@ const translations: Translations = {
   permission: 'Permessi',
   permissionCamera:
     'Per leggere il codice QR e autenticarti abbiamo bisogno di accedere alla fotocamera.',
+  permissionNotificationHeadline: 'Ti aiutiamo a restare motivato!',
+  permissionNotificationDescription:
+    'Ricevi le notifiche e stai al passo con i tuoi obiettivi. Ti promettiamo che non riempiremo il tuo telefono di notifiche in continuazione.',
+  permissionNotificationAuthorize: 'Autorizza notifiche',
+  currentlyDoingReminder: 'Promemoria in corso',
+  yesNotifyMe: 'Sì, attiva le notifiche',
+  maybeLater: 'Forse più tardi',
   platformHasBeenDisabled: "L'app è stata disabilitata per la tua piattaforma",
-  question: 'Indizio',
+  question: 'Questione',
   quit: 'Abbandona',
   reactivatePlatform:
     'se desideri riattivarlo, contatta il tuo amministratore o clicca sul link qui sotto e noi inoltreremo la richiesta',
@@ -77,9 +131,10 @@ const translations: Translations = {
   retryChapter: 'Ritenta capitolo',
   retryLevel: 'Ritenta il livello',
   scanQRCode: 'Leggi il <b>codice QR</b>',
-  search: 'Search',
+  search: 'Cerca',
   seeClue: 'Vedi indizio',
   selectSomethingBelow: 'Seleziona qualcosa qui di seguito',
+  settings: 'Impostazioni',
   startDemo: 'Nessun account? <a href="/"><b><u>Inizia la prova!</u></b></a>',
   startLearning: 'Dovresti iniziare con questo',
   selectAnAnswer: 'Seleziona una risposta',

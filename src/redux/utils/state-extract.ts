@@ -14,13 +14,20 @@ import decode from 'jwt-decode';
 import type {Context} from '../../types/coorpacademy/progression-engine';
 
 import {CONTENT_TYPE, SPECIFIC_CONTENT_REF} from '../../const';
-import type {Section, ProgressionEngineVersions, PermissionStatus, ErrorType} from '../../types';
+import type {
+  Section,
+  ProgressionEngineVersions,
+  PermissionStatus,
+  ErrorType,
+  PermissionType,
+} from '../../types';
 import type {StoreState} from '../store';
 import type {State as BrandState} from '../reducers/authentication/brand';
 import type {State as UserState} from '../reducers/authentication/user';
 import type {State as TokenState} from '../reducers/authentication/token';
+import type {State as NotificationsState} from '../reducers/notifications';
 import type {State as SelectState} from '../reducers/ui/select';
-import type {PermissionType} from '../actions/permissions';
+
 import type {DisciplineCard, ChapterCard, Slide} from '../../layer/data/_types';
 import translations from '../../translations';
 import type {QueryParams} from '../../modules/uri';
@@ -74,7 +81,7 @@ export const getBrandDefaultLanguage = (state: StoreState): string | void => {
 
 export const getPermissionStatus = (type: PermissionType) => (
   state: StoreState,
-): PermissionStatus | void => state.permissions[type];
+): PermissionStatus => state.permissions[type];
 
 export const getBestRank = (state: StoreState): string | null => {
   const start = getStartRank(state);
@@ -117,6 +124,30 @@ export const getEngineVersions = (state: StoreState): ProgressionEngineVersions 
 export const isGodModeEnabled = (state: StoreState): boolean => state.godMode;
 
 export const isFastSlideEnabled = (state: StoreState): boolean => state.fastSlide;
+
+export const isFinishCourseNotificationActive = (state: StoreState): boolean =>
+  state.notifications.finishCourse.isActive;
+
+type NotificationsSettings = {
+  finishCourse: Pick<NotificationsState, 'finishCourse'>;
+};
+type NotificationsSettingsTypes = 'finishCourse';
+
+export const getNotificationsSettings = (types: NotificationsSettingsTypes[]) => (
+  state: StoreState,
+): NotificationsSettings => {
+  // @ts-ignore accumulator should not be empty
+  return types.reduce((acc, type) => {
+    return {
+      ...acc,
+      [type]: {
+        ...state.notifications[type],
+      },
+    };
+  }, {});
+};
+
+export const getAppSession = (state: StoreState): number => state.appSession;
 
 export const getCurrentScreenName = (state: StoreState): string | void =>
   state.navigation.currentScreenName;

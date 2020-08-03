@@ -6883,12 +6883,87 @@ Pol P.!
     >
       <View
         style={
-          Object {
-            "justifyContent": "center",
-            "width": 44,
-          }
+          Array [
+            Object {
+              "justifyContent": "center",
+              "width": 44,
+            },
+            Object {
+              "alignItems": "flex-start",
+              "paddingLeft": 24,
+            },
+          ]
         }
-      />
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          hitSlop={
+            Object {
+              "bottom": 16,
+              "left": 16,
+              "right": 16,
+              "top": 16,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="settings-icon"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={20}
+            bbWidth={20}
+            color={4283723386}
+            focusable={false}
+            height={20}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                Object {
+                  "flex": 0,
+                  "height": 20,
+                  "width": 20,
+                },
+              ]
+            }
+            tintColor={4283723386}
+            vbHeight={19}
+            vbWidth={19}
+            width={20}
+          >
+            <RNSVGGroup>
+              <RNSVGPath
+                d="M19 11.081V7.915h-1.745a7.865 7.865 0 0 0-1.16-2.776l1.241-1.241-2.238-2.239-1.241 1.24a7.9 7.9 0 0 0-2.774-1.156V0H7.917v1.745a7.88 7.88 0 0 0-2.775 1.157l-1.24-1.24-2.238 2.24 1.24 1.24a7.834 7.834 0 0 0-1.16 2.773H0v3.166h1.745a7.862 7.862 0 0 0 1.158 2.777L1.663 15.1l2.24 2.237 1.24-1.24c.832.55 1.767.954 2.776 1.158v1.744h3.166v-1.744a7.886 7.886 0 0 0 2.775-1.16l1.24 1.239 2.238-2.238-1.241-1.24c.55-.83.953-1.765 1.158-2.774H19zm-9.502 1.584a3.166 3.166 0 1 1 0-6.333 3.166 3.166 0 0 1 0 6.333z"
+                fill={4283723386}
+                fillRule={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
       <View
         style={
           Object {
@@ -14043,12 +14118,87 @@ Pol P.!
     >
       <View
         style={
-          Object {
-            "justifyContent": "center",
-            "width": 44,
-          }
+          Array [
+            Object {
+              "justifyContent": "center",
+              "width": 44,
+            },
+            Object {
+              "alignItems": "flex-start",
+              "paddingLeft": 24,
+            },
+          ]
         }
-      />
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          hitSlop={
+            Object {
+              "bottom": 16,
+              "left": 16,
+              "right": 16,
+              "top": 16,
+            }
+          }
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="settings-icon"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={20}
+            bbWidth={20}
+            color={4283723386}
+            focusable={false}
+            height={20}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                Object {
+                  "flex": 0,
+                  "height": 20,
+                  "width": 20,
+                },
+              ]
+            }
+            tintColor={4283723386}
+            vbHeight={19}
+            vbWidth={19}
+            width={20}
+          >
+            <RNSVGGroup>
+              <RNSVGPath
+                d="M19 11.081V7.915h-1.745a7.865 7.865 0 0 0-1.16-2.776l1.241-1.241-2.238-2.239-1.241 1.24a7.9 7.9 0 0 0-2.774-1.156V0H7.917v1.745a7.88 7.88 0 0 0-2.775 1.157l-1.24-1.24-2.238 2.24 1.24 1.24a7.834 7.834 0 0 0-1.16 2.773H0v3.166h1.745a7.862 7.862 0 0 0 1.158 2.777L1.663 15.1l2.24 2.237 1.24-1.24c.832.55 1.767.954 2.776 1.158v1.744h3.166v-1.744a7.886 7.886 0 0 0 2.775-1.16l1.24 1.239 2.238-2.238-1.241-1.24c.55-.83.953-1.765 1.158-2.774H19zm-9.502 1.584a3.166 3.166 0 1 1 0-6.333 3.166 3.166 0 0 1 0 6.333z"
+                fill={4283723386}
+                fillRule={0}
+                propList={
+                  Array [
+                    "fill",
+                    "fillRule",
+                  ]
+                }
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
       <View
         style={
           Object {

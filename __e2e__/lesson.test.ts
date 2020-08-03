@@ -2,6 +2,7 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   getLessonTab,
   tapCardOnList,
   waitForExist,
@@ -13,6 +14,7 @@ describe('Lesson', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   describe('More than 1 resource', () => {

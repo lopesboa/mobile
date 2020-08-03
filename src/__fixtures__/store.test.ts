@@ -1,6 +1,7 @@
 import type {QCMQuestion, Lesson} from '../types/coorpacademy/progression-engine';
 
 import type {StoreState} from '../redux/store';
+import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
 import {createBrand} from './brands';
 import {createMapObject, createStoreState, createAuthenticationState} from './store';
 import {createLevel} from './levels';
@@ -182,7 +183,8 @@ describe('storeFixture', () => {
     };
 
     const permissionsState = {
-      camera: undefined,
+      camera: PERMISSION_STATUS.UNDETERMINED,
+      notifications: PERMISSION_STATUS.UNDETERMINED,
     };
 
     const progressionsState = {
@@ -291,10 +293,18 @@ describe('storeFixture', () => {
       },
       catalog: catalogState,
       permissions: permissionsState,
+      notifications: {
+        finishCourse: {
+          type: NOTIFICATION_TYPE.FINISH_COURSE,
+          label: 'Weekly Reminder',
+          isActive: true,
+        },
+      },
       authentication: authenticationState,
       progressions: progressionsState,
       godMode: false,
       fastSlide: false,
+      appSession: 0,
       video: videoState,
       network: networkState,
     };

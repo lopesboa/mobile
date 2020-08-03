@@ -18,6 +18,16 @@ jest.mock('../migrations', () => ({
   migrationsRunner: jest.fn(() => Promise.resolve('foobar')),
 }));
 
+jest.mock('../notification-handler.ts', () => {
+  return {
+    __esModule: true,
+    default: class {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      constructor() {}
+    },
+  };
+});
+
 describe('Authentication', () => {
   beforeEach(() => {
     jest.resetModules();
@@ -63,8 +73,11 @@ describe('Authentication', () => {
       const {Component: Authentication} = require('./authentication');
 
       const signIn = jest.fn();
+      const selectCard = jest.fn();
       const navigation = createNavigation({});
-      renderer.create(<Authentication navigation={navigation} signIn={signIn} />);
+      renderer.create(
+        <Authentication navigation={navigation} signIn={signIn} selectCard={selectCard} />,
+      );
 
       await sleep(10);
 
@@ -82,8 +95,11 @@ describe('Authentication', () => {
       migrationsRunner.mockReturnValueOnce(Promise.reject(fakeError));
 
       const signIn = jest.fn();
+      const selectCard = jest.fn();
       const navigation = createNavigation({});
-      renderer.create(<Authentication navigation={navigation} signIn={signIn} />);
+      renderer.create(
+        <Authentication navigation={navigation} signIn={signIn} selectCard={selectCard} />,
+      );
 
       await sleep(10);
 
@@ -103,8 +119,11 @@ describe('Authentication', () => {
       getToken.mockReturnValueOnce(token);
 
       const signIn = jest.fn();
+      const selectCard = jest.fn();
       const navigation = createNavigation({});
-      await renderer.create(<Authentication navigation={navigation} signIn={signIn} />);
+      await renderer.create(
+        <Authentication navigation={navigation} signIn={signIn} selectCard={selectCard} />,
+      );
 
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
       expect(navigation.navigate).toHaveBeenCalledWith('Home');
@@ -116,7 +135,10 @@ describe('Authentication', () => {
       const {Component: Authentication} = require('./authentication');
 
       const navigation = createNavigation({});
-      const component = renderer.create(<Authentication navigation={navigation} isAuthenticated />);
+      const selectCard = jest.fn();
+      const component = renderer.create(
+        <Authentication navigation={navigation} selectCard={selectCard} isAuthenticated />,
+      );
 
       component.update(<Authentication navigation={navigation} />);
 
@@ -127,9 +149,10 @@ describe('Authentication', () => {
       const {Component: Authentication} = require('./authentication');
 
       const signIn = jest.fn();
+      const selectCard = jest.fn();
       const navigation = createNavigation({});
       const component = await renderer.create(
-        <Authentication navigation={navigation} signIn={signIn} />,
+        <Authentication navigation={navigation} signIn={signIn} selectCard={selectCard} />,
       );
 
       await sleep(10);
@@ -150,9 +173,10 @@ describe('Authentication', () => {
       const openURL = jest.spyOn(Linking, 'openURL');
 
       const signIn = jest.fn();
+      const selectCard = jest.fn();
       const navigation = createNavigation({});
       const component = await renderer.create(
-        <Authentication navigation={navigation} signIn={signIn} />,
+        <Authentication navigation={navigation} signIn={signIn} selectCard={selectCard} />,
       );
 
       await sleep(10);
@@ -168,7 +192,10 @@ describe('Authentication', () => {
       const {Component: Authentication} = require('./authentication');
 
       const navigation = createNavigation({});
-      const component = await renderer.create(<Authentication navigation={navigation} />);
+      const selectCard = jest.fn();
+      const component = await renderer.create(
+        <Authentication navigation={navigation} selectCard={selectCard} />,
+      );
 
       await sleep(10);
 
@@ -188,7 +215,10 @@ describe('Authentication', () => {
       const {Component: Authentication} = require('./authentication');
 
       const navigation = createNavigation({});
-      const component = await renderer.create(<Authentication navigation={navigation} />);
+      const selectCard = jest.fn();
+      const component = await renderer.create(
+        <Authentication navigation={navigation} selectCard={selectCard} />,
+      );
 
       await sleep(10);
 
@@ -207,13 +237,17 @@ describe('Authentication', () => {
 
   it('should handle Android BackHandler', async () => {
     const {Component: Authentication} = require('./authentication');
-    const {TestBackHandler, BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('../modules/back-handler');
 
     const navigation = createNavigation({});
-    const component = await renderer.create(<Authentication navigation={navigation} />);
+    const selectCard = jest.fn();
+    const component = await renderer.create(
+      <Authentication navigation={navigation} selectCard={selectCard} />,
+    );
 
     await component.update(<Authentication navigation={navigation} />);
-    TestBackHandler.fireEvent('hardwareBackPress');
+    // simulate a press on button by calling the cb function
+    BackHandler.addEventListener.mock.calls[0][1]();
     component.unmount();
 
     expect(BackHandler.addEventListener).toHaveBeenCalledWith(

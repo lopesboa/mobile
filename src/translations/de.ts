@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Verbinden Sie Ihre Lernplattform <b>mit einem Computer</b>',
   authenticationQRCodeStepTwoDescription:
-    'Gehen Sie auf <b>Ihr Konto</b> </br>in der Ecke rechts oben',
+    'Gehen Sie auf <b>Ihr Konto</b> <br/>in der Ecke rechts oben',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Scannen Sie Ihren QR-Code unter Nutzung der unten stehenden Taste',
+    '<b>Voilà!</b><br/>Scannen Sie Ihren QR-Code unter Nutzung der unten stehenden Taste',
   authenticationQRCodeTitle: 'QR-Code',
   askForHelp: 'Um Hilfe bitten',
   backToHome: 'Zurück zur Startseite',
@@ -34,6 +34,56 @@ const translations: Translations = {
   correction: 'Verbesserung',
   dataLost: 'Ihre Daten scheinen verloren gegangen zu sein',
   didYouKnowThat: 'Wussten Sie das?',
+  finishCourse: 'Kurs beenden',
+  finishCourseWordings: [
+    {
+      title: 'Es ist Zeit, (erneut) abzuheben, {{givenName}}! 🚀',
+      description: 'Schließe diesen Kurs ab: {{contentName}}',
+    },
+    {
+      title: 'Ihre Mission, falls Sie sich dazu entscheiden, sie anzunehmen 😎',
+      description: 'Beende deinen Kurs {{contentName}}! ',
+    },
+    {
+      title: '{{givenName}}, ich wette, dass du es schaffen kannst! 💪',
+      description: 'Beende den Kurs {{contentName}}! ',
+    },
+    {
+      title: 'Brauchst du eine Pause, {{givenName}}? 🤯',
+      description: 'Lass uns {{contentName} abschließen! ',
+    },
+    {
+      title: '{{givenName}}, Sie haben Ihren Kurs vor zwei Tagen gestartet ⏳',
+      description: '{{contentName}} abschließen ',
+    },
+    {
+      title: 'Stell dich der Herausforderung, {{givenName}} 💪',
+      description: 'Schließe den Kurs {{contentName}} ab! ',
+    },
+    {
+      title: 'Bist du schon gelandet, {{givenName}}? 🤯',
+      description:
+        'Entspanne dich und nimm dir ein paar Minuten Zeit, um {{contentName}} abzuschließen. ',
+    },
+    {
+      title: '{{givenName}}, noch nicht einmal versucht 😉',
+      description: 'Schließe {{contentName}} ab! ',
+    },
+    {title: 'Deine gute Tat der Woche! 😇', description: 'Schließe den Kurs {{contentName}} ab! '},
+    {
+      title: 'Was einmal erledigt ist, muss nicht mehr gemacht werden 🙃',
+      description: 'Schließe den Kurs {{contentName}} ab! ',
+    },
+    {title: 'Fertig! ✓ Fast...', description: 'Schließe den Kurs {{contentName}} ab! '},
+    {
+      title: '{{givenName}}, du bist so kurz davor! 🙃',
+      description: 'Mehr als ein paar Fragen, um {{contentName}} abzuschließen. ',
+    },
+    {
+      title: 'Komm schon {{givenName}}! Du hast es fast geschafft ☑️',
+      description: 'Schließe deinen Kurs {{contentName}} ab! ',
+    },
+  ],
   finishLearning: 'Setze diese zuerst fort',
   forYou: 'Unsere besten Vorschläge für Sie',
   gameOver: 'Spiel vorbei',
@@ -52,8 +102,9 @@ const translations: Translations = {
   next: 'Weiter',
   nextChapter: 'Nächstes Kapitel',
   nextLevel: 'Nächstes Level',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Keine Treffer',
+  noResultsDescription:
+    'Ihre Suche ergab keine Treffer.<br/>Probieren Sie es mit einem anderen Suchbegriff.',
   ok: 'OK',
   ooops: 'Oje...',
   open: 'Öffnen',
@@ -64,6 +115,13 @@ const translations: Translations = {
   permission: 'Berechtigung',
   permissionCamera:
     'Wir benötigen den Zugriff auf Ihre Kamera, um den QR-Code zu scannen und Sie zu authentifizieren.',
+  permissionNotificationHeadline: 'Wir helfen Ihnen mit Ihrer Motivation!',
+  permissionNotificationDescription:
+    'Schalten Sie die Benachrichtigungen ein, um an Ihren Zielen dranzubleiben. Wir versprechen, dass wir Sie nicht tausendmal am Tag anklingeln.',
+  permissionNotificationAuthorize: 'Benachrichtigungen erlauben',
+  currentlyDoingReminder: 'Erinnerung wird gerade abgearbeitet',
+  yesNotifyMe: 'Ja, bitte benachrichtigen',
+  maybeLater: 'Vielleicht später',
   platformHasBeenDisabled: 'Die App wurde für Ihre Plattform deaktiviert',
   question: 'Frage',
   quit: 'Beenden',
@@ -78,9 +136,10 @@ const translations: Translations = {
   retryChapter: 'Kapitel nochmal versuchen',
   retryLevel: 'Level nochmal versuchen',
   scanQRCode: 'Scannen Sie Ihren <b>QR-Code</b>',
-  search: 'Search',
+  search: 'Suche',
   seeClue: 'Hinweis öffnen',
   selectSomethingBelow: 'Wählen Sie etwas unten aus',
+  settings: 'Einstellungen',
   startDemo: 'Kein Konto? <a href="/"><b><u>Test beginnen!</u></b></a>',
   startLearning: 'Sie sollten hiermit anfangen',
   selectAnAnswer: 'Wählen Sie eine Antwort',

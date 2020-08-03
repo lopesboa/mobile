@@ -38,6 +38,8 @@ import type {HeroService} from './hero';
 import Hero from './hero';
 import type {LoggerService} from './logger';
 import Logger from './logger';
+import type {NotificationContentService} from './notification-content';
+import NotificationContent from './notification-content';
 
 export type Services = {
   Analytics: AnalyticsService;
@@ -58,6 +60,7 @@ export type Services = {
   Hero: HeroService;
   Logger: LoggerService;
   ExitNodes: ExitNodesService;
+  NotificationContent: NotificationContentService;
 };
 
 const createServices = (dataLayer: DataLayer): Services => ({
@@ -84,6 +87,7 @@ const createServices = (dataLayer: DataLayer): Services => ({
   Logger: Logger(dataLayer),
   // @ts-ignore datalayer definition error
   ExitNodes: ExitNodes(dataLayer),
+  NotificationContent: NotificationContent(dataLayer),
 });
 
 export default createServices;

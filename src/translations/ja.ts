@@ -13,9 +13,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     '<b>コンピューターで</b>あなたの学習プラットフォームに接続する',
   authenticationQRCodeStepTwoDescription:
-    '右上の隅にある<b>あなたのアカウント</b></br>にお進みください',
+    '右上の隅にある<b>あなたのアカウント</b><br/>にお進みください',
   authenticationQRCodeStepThreeDescription:
-    '<b>ほら！</b></br>下のボタンを使ってあなたのQRコードをスキャンしてください',
+    '<b>ほら！</b><br/>下のボタンを使ってあなたのQRコードをスキャンしてください',
   authenticationQRCodeTitle: 'QRコード',
   askForHelp: 'ヘルプをリクエストしてください。',
   backToHome: 'ホームへ戻る',
@@ -30,6 +30,52 @@ const translations: Translations = {
   correction: '解答',
   dataLost: 'データが失われたようです。',
   didYouKnowThat: 'ご存知でしたか。',
+  finishCourse: '課程を終了しましょう',
+  finishCourseWordings: [
+    {
+      title: '打ち上げ（再打ち上げ）る時がきました！🚀',
+      description: 'この課程を完了させましょう：{{contentName}}',
+    },
+    {title: '引き受けるべきミッション 😎', description: '{{contentName}}の課程を終了させましょう'},
+    {
+      title: '{{givenName}}さん、あなたならできますよ! 💪',
+      description: '{{contentName}}の課程を終了しましょう',
+    },
+    {
+      title: '{{givenName}}さん、休憩が必要ですか ? 🤯',
+      description: 'さあ、{{contentName}}を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、あなたは課程を2日前に開始しました ⏳',
+      description: '{{contentName}}を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、挑戦してみましょう 💪',
+      description: '{{contentName}}の課程を完了させましょう ',
+    },
+    {
+      title: '{{givenName}}さん、着陸しましたか? 🤯',
+      description: 'リラックスし、一息ついてから{{contentName}}の課程を完了させましょう',
+    },
+    {
+      title: '{{givenName}}さん、全く進んでいませんよ 😉',
+      description: '{{contentName}}を完了させましょう',
+    },
+    {title: '今週の良い行いです! 😇', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: '済んでしまったことは仕方ありません🙃',
+      description: '{{contentName}}の課程を完了させましょう ',
+    },
+    {title: '完了! ✓ あと少し…', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: '{{givenName}}さん、あと少しですよ! 🙃',
+      description: '{{contentName}}を完了させるのに必要な質問がまだかなり残っています',
+    },
+    {
+      title: 'Come on {{givenName}}さん、がんばって! あともう少しで終わりですよ ☑️',
+      description: '{{contentName}}の課程を完了させましょう',
+    },
+  ],
   finishLearning: 'まずはこれを続ける',
   forYou: 'おすすめ厳選情報',
   gameOver: 'ゲームは終わりました',
@@ -48,8 +94,8 @@ const translations: Translations = {
   next: 'Next',
   nextChapter: 'Next Chapter',
   nextLevel: '次のレベル',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: '結果がありません',
+  noResultsDescription: '検索結果がありませんでした。<br/>他のキーワードでの検索を試してください。',
   ok: 'OK',
   ooops: 'ゲームオーバー! ',
   open: 'オープン',
@@ -60,6 +106,13 @@ const translations: Translations = {
   permission: '許可',
   permissionCamera:
     'QRコードをスキャンして認証するためには、あなたのカメラにアクセスする必要があります。',
+  permissionNotificationHeadline: 'あなたがモチベーションを保ち続けられるようにお手伝いします！',
+  permissionNotificationDescription:
+    '通知を受け取り、自分の目標を常に把握しておきましょう。携帯電話を吹き飛ばすほど1日に100万回も通知しないと約束します。',
+  permissionNotificationAuthorize: '通知を許可する',
+  currentlyDoingReminder: '現在リマインダーを実行しています',
+  yesNotifyMe: 'はい、通知してください',
+  maybeLater: '今は結構です',
   platformHasBeenDisabled: 'このアプリは、あなたのプラットフォームでは無効化されています。',
   question: '質問',
   quit: '終了する',
@@ -74,9 +127,10 @@ const translations: Translations = {
   retryChapter: '章を再試行します。',
   retryLevel: 'リトライする',
   scanQRCode: 'あなたの<b>QRコードを</b>スキャンする',
-  search: 'Search',
+  search: '検索',
   seeClue: 'ヒントをみる ',
   selectSomethingBelow: '下に何かを選択します。',
+  settings: '設定',
   startDemo: 'アカウントがない場合、<a href="/"><b><u>トライアルを始めてみましょう！</u></b></a>',
   startLearning: 'こちらで始めてください',
   selectAnAnswer: '答えを選択します',

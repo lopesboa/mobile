@@ -3,6 +3,7 @@ import {
   waitForNotVisible,
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   tapCardOnList,
   scrollHero,
 } from './utils';
@@ -11,6 +12,7 @@ describe('Dashboard', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await scrollHero();
   });
 

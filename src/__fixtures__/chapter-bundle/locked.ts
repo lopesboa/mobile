@@ -1,4 +1,4 @@
-import {Lesson} from 'src/types/coorpacademy/progression-engine';
+import {Lesson} from '../../types/coorpacademy/progression-engine';
 import {EXIT_NODE_TYPE} from '../../layer/data/_const';
 import type {BundledChapter} from '../../layer/data/_types';
 import {createChapter} from '../chapters';

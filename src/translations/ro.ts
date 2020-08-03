@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Conectează-te la platforma de învățare <b>cu un computer</b>',
   authenticationQRCodeStepTwoDescription:
-    'Mergi la <b>contul tău</b> </br>în colțul din dreapta sus',
+    'Mergi la <b>contul tău</b> <br/>în colțul din dreapta sus',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Scanează codul QR folosind butonul de mai jos',
+    '<b>Voilà!</b><br/>Scanează codul QR folosind butonul de mai jos',
   authenticationQRCodeTitle: 'Cod QR',
   askForHelp: 'Cere ajutor',
   backToHome: 'Înapoi la pagina de start',
@@ -34,6 +34,58 @@ const translations: Translations = {
   correction: 'Corectură',
   dataLost: 'Se pare că datele tale s-au pierdut.',
   didYouKnowThat: 'Știați asta?',
+  finishCourse: 'Finalizare curs',
+  finishCourseWordings: [
+    {
+      title: 'Este timpul pentru (re)lansare, {{givenName}}! 🚀',
+      description: 'Finalizați acest curs: {{contentName}}',
+    },
+    {
+      title: 'Misiunea dumneavoastră, dacă o acceptați 😎',
+      description: 'Finalizați-vă cursul {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, pun pariu că veți reuși! 💪',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Aveți nevoie de o pauză, {{givenName}}? 🤯',
+      description: 'Haideți să finalizăm {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, ați început cursul în urmă cu două zile⏳',
+      description: 'Finalizați {{contentName}}',
+    },
+    {
+      title: 'Acceptați provocarea, {{givenName}} 💪',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Ați aterizat, {{givenName}}? 🤯',
+      description: 'Relaxați-vă și acordați-vă câteva minute pentru a finaliza {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, nici măcar nu vă apropiați 😉',
+      description: 'Finalizați {{contentName}}',
+    },
+    {
+      title: 'Fapta dvs. bună de săptămâna aceasta! 😇',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {
+      title: 'Ce este făcut nu mai trebuie făcut 🙃',
+      description: 'Finalizați cursul {{contentName}}',
+    },
+    {title: 'Gata! ✓ Aproape...', description: 'Finalizați cursul {{contentName}}'},
+    {
+      title: '{{givenName}}, sunteți atât de aproape! 🙃',
+      description: 'Mai multe întrebări pentru a finaliza {{contentName}}',
+    },
+    {
+      title: 'Haideți, {{givenName}}! Aproape ați terminat ☑️',
+      description: 'Finalizați-vă cursul {{contentName}}',
+    },
+  ],
   finishLearning: 'Întâi continuă-l pe acesta',
   forYou: 'Topul alegerilor noastre',
   gameOver: 'Jocul s-a terminat',
@@ -52,8 +104,9 @@ const translations: Translations = {
   next: 'Următoarea',
   nextChapter: 'Capitolul următor',
   nextLevel: 'Nivelul următor',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Niciun rezultat',
+  noResultsDescription:
+    'Căutarea dvs. nu a dat niciun rezultat.<br/>Încercați să căutați alte cuvinte-cheie.',
   ok: 'OK',
   ooops: 'Opa...',
   open: 'Deschide',
@@ -63,6 +116,13 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   permission: 'Permisiune',
   permissionCamera: 'Trebuie să accesăm camera ca să scanăm codul QR și să te autentificăm.',
+  permissionNotificationHeadline: 'Vă ajutăm să rămâneți motivat!',
+  permissionNotificationDescription:
+    'Primiți notificări și păstrați controlul asupra obiectivelor dvs. Promitem să nu vă bombardăm telefonul de un milion de ori pe zi.',
+  permissionNotificationAuthorize: 'Autorizați notificările',
+  currentlyDoingReminder: 'Memento privind activitatea curentă',
+  yesNotifyMe: 'Da, anunțați-mă',
+  maybeLater: 'Poate mai târziu',
   platformHasBeenDisabled: 'Aplicația a fost dezactivată pe platforma ta.',
   question: 'Întrebare',
   quit: 'Renunță',
@@ -77,9 +137,10 @@ const translations: Translations = {
   retryChapter: 'Încercați din nou acest capitol',
   retryLevel: 'Încercați din nou acest nivel',
   scanQRCode: 'Scanează <b>codul QR</b>',
-  search: 'Search',
+  search: 'Căutare',
   seeClue: 'Arată indiciul',
   selectSomethingBelow: 'Selectați din opțiunile de mai jos',
+  settings: 'Setări',
   startDemo: 'Niciun cont? <a href="/"> <b> <u>Începe perioada de probă! </u> </b> </a>',
   startLearning: 'Ar trebui să începi cu asta',
   selectAnAnswer: 'Selectați răspunsul',

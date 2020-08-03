@@ -1,7 +1,7 @@
 import type {Progression} from '@coorpacademy/progression-engine';
 import {Progressions} from '@coorpacademy/player-services';
 
-import {ProgressionsService as Service} from 'src/types/coorpacademy/player-store';
+import {ProgressionsService as Service} from '../types/coorpacademy/player-store';
 import type {DataLayer} from '../layer/data';
 import {ANALYTICS_EVENT_TYPE} from '../const';
 

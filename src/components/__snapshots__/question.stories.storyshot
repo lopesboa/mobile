@@ -276,7 +276,7 @@ exports[`Storyshots Question BasicQuestion 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -974,7 +974,7 @@ exports[`Storyshots Question Option selected 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -1564,7 +1564,7 @@ exports[`Storyshots Question QCM 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -2199,7 +2199,7 @@ exports[`Storyshots Question QCM Drag and Drop - with no selected choices 1`] = 
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -2808,7 +2808,7 @@ exports[`Storyshots Question QCM Drag and Drop - with selected choices 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -3686,7 +3686,7 @@ exports[`Storyshots Question QCM Graphic 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -5590,7 +5590,7 @@ exports[`Storyshots Question Template 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -6190,7 +6190,7 @@ exports[`Storyshots Question With Video 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>
@@ -6831,7 +6831,7 @@ exports[`Storyshots Question With image 1`] = `
             ]
           }
         >
-          Validate
+          Submit
         </Text>
       </View>
     </View>

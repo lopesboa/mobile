@@ -14,9 +14,9 @@ const translations: Translations = {
     'Geen e-mail ontvangen? Geen probleem! We gebruiken een computer om uw identiteit te identificeren op het webplatform',
   authenticationQRCodeStepOneDescription:
     'Maak <b>met een computer</b> verbinding met uw leerplatform',
-  authenticationQRCodeStepTwoDescription: 'Ga naar <b>je account</b> </br> in de rechterbovenhoek',
+  authenticationQRCodeStepTwoDescription: 'Ga naar <b>je account</b> <br/> in de rechterbovenhoek',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Sca uw QR-code met de knop hieronder',
+    '<b>Voilà!</b><br/>Sca uw QR-code met de knop hieronder',
   authenticationQRCodeTitle: 'QR-code',
   askForHelp: 'Ask for help',
   backToHome: 'Terug naar startpagina',
@@ -32,6 +32,52 @@ const translations: Translations = {
   correction: 'Correctie',
   dataLost: 'Je gegevens lijken verloren te zijn',
   didYouKnowThat: 'Wist je dat?',
+  finishCourse: 'Rond de cursus af',
+  finishCourseWordings: [
+    {
+      title: 'Het is tijd om (weer) van start te gaan {{givenName}}! 🚀',
+      description: 'Maak deze cursus af: {{contentName}}',
+    },
+    {
+      title: 'Je missie, als je ervoor kiest om deze te accepteren 😎',
+      description: 'Rond de cursus {{contentName}} af',
+    },
+    {
+      title: '{{givenName}}, ik weet dat je het kan! 💪',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {
+      title: 'Heb je even pauze nodig {{givenName}}? 🤯',
+      description: 'Laten we {{contentName}} afronden',
+    },
+    {
+      title: '{{givenName}}, je bent twee dagen geleden met je cursus begonnen ⏳',
+      description: 'Maak {{contentName}} af',
+    },
+    {
+      title: 'Ga de uitdaging aan {{givenName}} 💪',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {
+      title: 'Ben je geland {{givenName}}? 🤯',
+      description: 'Ontspan en neem een paar minuten om {{contentName}} af te ronden',
+    },
+    {title: '{{givenName}}, nog niet onderweg 😉', description: 'Maak {{contentName}} af'},
+    {title: 'Je goede daad van de week! 😇', description: 'Maak de cursus {{contentName}} af '},
+    {
+      title: 'Wat klaar is, hoeft niet meer te worden gedaan 🙃',
+      description: 'Maak de cursus {{contentName}} af',
+    },
+    {title: 'Klaar! ✓ Bijna...', description: 'Maak de cursus {{contentName}} af'},
+    {
+      title: '{{givenName}}, je bent er bijna! 🙃',
+      description: 'Meer dan een paar vragen om {{contentName}} af te ronden',
+    },
+    {
+      title: 'Kom op {{givenName}}! Bijna klaar ☑️',
+      description: 'Maak je cursus {{contentName}} af',
+    },
+  ],
   finishLearning: 'Ga eerst met deze door',
   forYou: 'Onze topkeuzes voor jou',
   gameOver: 'Game over',
@@ -50,8 +96,9 @@ const translations: Translations = {
   next: 'Volgende',
   nextChapter: 'Volgend hoofdstuk',
   nextLevel: 'Volgend level',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Geen resultaten',
+  noResultsDescription:
+    'Uw zoekopdracht heeft geen resultaten opgeleverd.<br/>Probeer op andere trefwoorden te zoeken.',
   ok: 'OK',
   ooops: 'Oeps...',
   open: 'Openen',
@@ -62,6 +109,13 @@ const translations: Translations = {
   permission: 'Toestemming',
   permissionCamera:
     'We hebben toegang tot uw camera nodig om uw QR-code te scannen en uw identiteit te verifiëren.',
+  permissionNotificationHeadline: 'Wij helpen je gemotiveerd te blijven!',
+  permissionNotificationDescription:
+    'Ontvang meldingen en blijf op de hoogte van je doelen. We beloven je niet een miljoen keer per dag lastig te vallen.',
+  permissionNotificationAuthorize: 'Autoriseer meldingen',
+  currentlyDoingReminder: 'Momenteel bezig met herinnering',
+  yesNotifyMe: 'Ja, ik wil meldingen ontvangen',
+  maybeLater: 'Straks misschien',
   platformHasBeenDisabled: 'De app is uitgeschakeld voor je platform',
   question: 'Vraag',
   quit: 'Verlaten',
@@ -76,9 +130,10 @@ const translations: Translations = {
   retryChapter: 'Probeer hoofdstuk opnieuw',
   retryLevel: 'Probeer dit niveau opnieuw',
   scanQRCode: 'Scan uw <b>QR-code</b>',
-  search: 'Search',
+  search: 'Zoeken',
   seeClue: 'Bekijk tip',
   selectSomethingBelow: 'Selecteer iets hieronder',
+  settings: 'Instellingen',
   startDemo: 'Nog geen account? <a href="/"><b><u>Begin een proefperiode!</u></b></a>',
   startLearning: 'Begin met deze',
   selectAnAnswer: 'Kies een antwoord',

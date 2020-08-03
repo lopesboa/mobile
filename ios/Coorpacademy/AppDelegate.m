@@ -7,6 +7,8 @@
 #import "Orientation.h"
 #import <React/RCTLinkingManager.h>
 #import "Firebase.h"
+#import "RNNotifications.h"
+
 
 @import Firebase;
 
@@ -27,6 +29,8 @@ static void InitializeFlipper(UIApplication *application) {
   [client start];
 }
 #endif
+
+
 
 @implementation AppDelegate
 
@@ -74,7 +78,20 @@ static void InitializeFlipper(UIApplication *application) {
 
   // Splashscreen
   [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
+
+  // Notifications
+  [RNNotifications startMonitorNotifications];
+
+
   return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [RNNotifications didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  [RNNotifications didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {

@@ -1,5 +1,11 @@
 import {by, expect, element} from 'detox';
-import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  tapCardOnList,
+  waitForExist,
+  bypassNotifyMeScreen,
+} from './utils';
 
 const rightAnswer = async (el: Detox.Element) => {
   await el(by.id('question-screen')).swipe('up');
@@ -13,6 +19,7 @@ describe('Questions', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should see the catalog and choose a discipline', async () => {

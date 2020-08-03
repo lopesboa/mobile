@@ -2,6 +2,7 @@ import {by, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   waitForExist,
   waitForVisible,
   waitForNotVisible,
@@ -13,6 +14,7 @@ describe('Level end', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   describe('Failure', () => {

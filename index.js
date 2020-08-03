@@ -9,9 +9,11 @@ import {name} from './app.json';
 
 if (__STORYBOOK__ || __DEV__ || __E2E__) {
   const AsyncStorage = require('@react-native-community/async-storage').default;
-  require('react-native').unstable_enableLogBox();
   const RNAsyncStorageFlipper = require('rn-async-storage-flipper').default;
   RNAsyncStorageFlipper(AsyncStorage);
 }
 
+if (__STORYBOOK__ || __DEV__) {
+  require('react-native').unstable_enableLogBox();
+}
 AppRegistry.registerComponent(name, () => (__STORYBOOK__ ? StorybookUI : App));

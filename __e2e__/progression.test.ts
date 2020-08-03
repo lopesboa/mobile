@@ -2,6 +2,7 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   getLessonTab,
   getQuestionTab,
   tapCardOnList,
@@ -14,6 +15,7 @@ describe('Progression bar', () => {
   beforeAll(async () => {
     await reloadApp({}, true);
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await scrollHero();
   });
 

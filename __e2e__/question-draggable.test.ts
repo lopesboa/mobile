@@ -1,5 +1,11 @@
 import {by, expect, element} from 'detox';
-import {reloadApp, bypassAuthentication, tapCardOnList, waitForVisible} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  tapCardOnList,
+  waitForVisible,
+} from './utils';
 
 const selectQCMRightDragItem = async (el: Detox.Element) => {
   await el(by.id(`choice-1-unselected`)).tap();
@@ -18,6 +24,7 @@ describe('QCM Drag', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should see catalog and choose a discipline', async () => {

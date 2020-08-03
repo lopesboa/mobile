@@ -2,6 +2,7 @@ import {by, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   waitForVisible,
   waitForNotVisible,
   waitForExist,
@@ -12,6 +13,7 @@ describe('Correction: fast slide', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await tapCardOnList('catalog-section-recommended-items', 2);
   });
 

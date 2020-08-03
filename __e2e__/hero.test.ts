@@ -5,6 +5,7 @@ import {
   waitForVisible,
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
 } from './utils';
 
 const answerQuestion = async () => {
@@ -20,6 +21,7 @@ describe('Hero: display card for uncomplete level', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should see the hero on dashboard with recommendation', async () => {

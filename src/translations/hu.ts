@@ -15,9 +15,9 @@ const translations: Translations = {
     'Nem kapott e-mailt? Nem gond! Egy számítógéppel fogjuk a személyazonosságát ellenőrizni a webes platformon',
   authenticationQRCodeStepOneDescription:
     'Kapcsolódj tanulási platformodhoz  <b>egy számítógéppel</b>',
-  authenticationQRCodeStepTwoDescription: 'Lépjen be a <b>Fiókjába</b> </br>a jobb felső sarokban',
+  authenticationQRCodeStepTwoDescription: 'Lépjen be a <b>Fiókjába</b> <br/>a jobb felső sarokban',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Az alábbi gombbal olvasd be QR-kódodat',
+    '<b>Voilà!</b><br/>Az alábbi gombbal olvasd be QR-kódodat',
   authenticationQRCodeTitle: 'QR-kód',
   askForHelp: 'Kérj segítséget',
   backToHome: 'Vissza a főoldalra',
@@ -33,6 +33,60 @@ const translations: Translations = {
   correction: 'Javítás',
   dataLost: 'Úgy tűnik, hogy az adataid elvesztek',
   didYouKnowThat: 'Tudta?',
+  finishCourse: 'Tanfolyam befejezése',
+  finishCourseWordings: [
+    {
+      title: 'Itt az idő az (újra)indulásra, {{givenName}}! 🚀',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'A küldetésed, amennyiben elfogadod  😎',
+      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, sikerülni fog! 💪',
+      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Pihenésre van szüksége, {{givenName}}? 🤯',
+      description: 'Teljesítse a következőt: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, két napja kezdted el a kurzusodat  ⏳',
+      description: 'Teljesítse a következőt: {{contentName}}',
+    },
+    {
+      title: 'Teljesítse a kihívást, {{givenName}} 💪',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Landolt, {{givenName}}? 🤯',
+      description:
+        'Döljön hátra és szánjon néhány percet a következő tanfolyam teljesítésére: {{contentName}}',
+    },
+    {title: '{{givenName}}, nem vezet 😉', description: 'Teljesítse a következőt: {{contentName}}'},
+    {
+      title: 'A heti jó cselekedete! 😇',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Ami kész, az kész 🙃',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: 'Kész! ✓ Majdnem...',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, közel jár! 🙃',
+      description:
+        'Csak néhány kérdésre kell válaszolni a következő teljesítéséhez: {{contentName}}',
+    },
+    {
+      title: 'Gyerünk, {{givenName}}! Mindjárt végez ☑️',
+      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+    },
+  ],
   finishLearning: 'Folytasd ezt előtte',
   forYou: 'Legjobb ajánlataink számodra',
   gameOver: 'A játéknak vége',
@@ -51,8 +105,8 @@ const translations: Translations = {
   next: 'Következő',
   nextChapter: 'Következő fejezet',
   nextLevel: 'Következő szint',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Nincs találat',
+  noResultsDescription: 'A keresésedre nem volt találat.<br/>Próbálj más kulcsszavakkal keresni.',
   ok: 'OK',
   ooops: 'Hoppá...',
   open: 'Megnyitás',
@@ -63,6 +117,13 @@ const translations: Translations = {
   permission: 'Engedély',
   permissionCamera:
     'A QR-kód beolvasásához és hitelesítésedhez hozzáféréssel kell rendelkeznünk kamerádhoz.',
+  permissionNotificationHeadline: 'Segítünk megőrizni a motivációt!',
+  permissionNotificationDescription:
+    'Kapj értesítéseket, hogy tartani tudd a kitűzött célokat. Ígérjük, hogy nem fogjuk naponta milliószor bombázni telefonodat.',
+  permissionNotificationAuthorize: 'Értesítések engedélyezése',
+  currentlyDoingReminder: 'Jelenleg végzett emlékeztető',
+  yesNotifyMe: 'Igen, kérek értesítést',
+  maybeLater: 'Talán később',
   platformHasBeenDisabled: 'Az alkalmazás le van tiltva a platformodon',
   question: 'Kérdés',
   quit: 'Kilépés',
@@ -77,9 +138,10 @@ const translations: Translations = {
   retryChapter: 'Fejezet újrapróbálása',
   retryLevel: 'Szint  újrajátszása',
   scanQRCode: 'Olvasd be <b>QR-kódodat</b>',
-  search: 'Search',
+  search: 'Keresés',
   seeClue: 'Tipp megtekintése',
   selectSomethingBelow: 'Válasszon ki valamit alul',
+  settings: 'Beállítások',
   startDemo: 'Nincs fiókja? <a href="/"><b><u>Próbálja ki!</u></b></a>',
   startLearning: 'Javasoljuk, hogy ezzel kezdd',
   selectAnAnswer: 'Válasszon ki egy választ',

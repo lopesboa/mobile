@@ -19,6 +19,11 @@ export type SupportedLanguage =
   | 'zh-TW'
   | 'zh';
 
+type NotificationWording = {
+  title: string;
+  description: string;
+};
+
 export type Translations = {
   accessTheLesson: string;
   authenticationMagicLinkHeader: string;
@@ -44,6 +49,8 @@ export type Translations = {
   correction: string;
   dataLost: string;
   didYouKnowThat: string;
+  finishCourse: string;
+  finishCourseWordings: NotificationWording[];
   finishLearning: string;
   forYou: string;
   gameOver: string;
@@ -73,6 +80,12 @@ export type Translations = {
   outOfLives: string;
   permission: string;
   permissionCamera: string;
+  permissionNotificationHeadline: string;
+  permissionNotificationDescription: string;
+  permissionNotificationAuthorize: string;
+  currentlyDoingReminder: string;
+  yesNotifyMe: string;
+  maybeLater: string;
   platformHasBeenDisabled: string;
   question: string;
   quit: string;
@@ -89,6 +102,7 @@ export type Translations = {
   seeClue: string;
   selectAnAnswer: string;
   selectSomethingBelow: string;
+  settings: string;
   signInDesktop: string;
   signInMobile: string;
   startDemo: string;

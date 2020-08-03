@@ -22,6 +22,8 @@ import type {
   QuestionChoiceInputType,
   SpaceType,
   TooltipType,
+  PermissionType,
+  NotificationType,
 } from './types';
 
 export const RESOURCE_TYPE: {
@@ -143,14 +145,44 @@ export const ENGINE: {
   MICROLEARNING: 'microlearning',
 };
 
+export const PERMISSION_RECURENCE: {
+  [key: string]: number;
+} = {
+  FIRST: 1,
+  SECOND: 10,
+  THIRD: 30,
+};
+
 export const PERMISSION_STATUS: {
-  [key in 'GRANTED' | 'DENIED' | 'RESTRICTED' | 'UNDETERMINED' | 'BLOCKED']?: PermissionStatus;
+  [key in
+    | 'GRANTED'
+    | 'DENIED'
+    | 'RESTRICTED'
+    | 'UNDETERMINED'
+    | 'UNAVAILABLE'
+    | 'MAYBE_LATER'
+    | 'BLOCKED']: PermissionStatus;
 } = {
   GRANTED: 'granted',
   DENIED: 'denied',
   RESTRICTED: 'restricted',
   UNDETERMINED: 'undetermined',
+  UNAVAILABLE: 'unavailable',
+  MAYBE_LATER: 'maybe-later',
   BLOCKED: 'blocked',
+};
+
+export const PERMISSION_TYPE: {
+  [key in 'CAMERA' | 'NOTIFICATIONS']: PermissionType;
+} = {
+  CAMERA: 'camera',
+  NOTIFICATIONS: 'notifications',
+};
+
+export const NOTIFICATION_TYPE: {
+  [key in 'FINISH_COURSE']: NotificationType;
+} = {
+  FINISH_COURSE: 'finish-course',
 };
 
 export const APP_STATE: {

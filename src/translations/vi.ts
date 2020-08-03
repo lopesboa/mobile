@@ -16,9 +16,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Kết nối với nền tảng học tập của bạn <b>với máy tính</b>',
   authenticationQRCodeStepTwoDescription:
-    'Chuyển đến <b>Tài khoản của bạn</b> </br>ở góc phía trên bên phải',
+    'Chuyển đến <b>Tài khoản của bạn</b> <br/>ở góc phía trên bên phải',
   authenticationQRCodeStepThreeDescription:
-    '<b>Được rồi!</b></br>Quét mã QR của bạn bằng nút bên dưới',
+    '<b>Được rồi!</b><br/>Quét mã QR của bạn bằng nút bên dưới',
   authenticationQRCodeTitle: 'Mã QR',
   askForHelp: 'Yêu cầu trợ giúp',
   backToHome: 'Quay về trang chủ',
@@ -34,6 +34,55 @@ const translations: Translations = {
   correction: 'Chỉnh sửa',
   dataLost: 'Có vẻ dữ liệu của bạn đã thất lạc',
   didYouKnowThat: 'Bạn đã biết điều đó?',
+  finishCourse: 'Hoàn tất Khóa học',
+  finishCourseWordings: [
+    {
+      title: 'Đã đến lúc khởi động (khởi động lại) {{givenName}}! 🚀',
+      description: 'Hoàn thành khóa học này: {{contentName}}',
+    },
+    {
+      title: 'Nhiệm vụ của bạn, nếu bạn quyết định chấp nhận 😎',
+      description: 'Hoàn tất khóa học của bạn {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, cá là bạn có thể làm được! 💪',
+      description: 'Hoàn tất khóa học {{contentName}}',
+    },
+    {
+      title: 'Bạn có cần giải lao một chút không {{givenName}}? 🤯',
+      description: 'Nào hãy cùng hoàn thành {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, bạn đã bắt đầu khóa học của mình từ hai ngày trước ⏳',
+      description: 'Hoàn thành {{contentName}}',
+    },
+    {
+      title: 'Tham gia thử thách {{givenName}} 💪',
+      description: 'Hoàn thành khóa học {{contentName}}',
+    },
+    {
+      title: 'Bạn đã sẵn sàng chứ {{givenName}}? 🤯',
+      description: 'Hãy thư giãn và dành vài phút để hoàn thành {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, thậm chí còn chưa bắt đầu 😉',
+      description: 'Hoàn thành {{contentName}}',
+    },
+    {title: 'Việc tốt trong tuần của bạn! 😇', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: 'Việc gì đã làm xong sẽ không cần làm nữa 🙃',
+      description: 'Hoàn thành khóa học {{contentName}}',
+    },
+    {title: 'Xong! ✓ Sắp rồi...', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: '{{givenName}}, bạn sắp hoàn tất rồi! 🙃',
+      description: 'Còn hơn vài câu hỏi để hoàn thành {{contentName}}',
+    },
+    {
+      title: 'Cố lên nào {{givenName}}! Gần xong rồi ☑️',
+      description: 'Hoàn thành khóa học của bạn {{contentName}}',
+    },
+  ],
   finishLearning: 'Tiếp tục phần này trước',
   forYou: 'Lựa chọn hàng đầu dành cho bạn',
   gameOver: 'Thua cuộc',
@@ -52,8 +101,9 @@ const translations: Translations = {
   next: 'Tiếp',
   nextChapter: 'Chương tiếp theo',
   nextLevel: 'Cấp tiếp theo ',
-  noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResults: 'Không có kết quả nào',
+  noResultsDescription:
+    'Tìm kiếm của bạn không có bất kỳ kết quả nào.<br/>Hãy thử tìm kiếm các từ khóa khác.',
   ok: 'OK',
   ooops: 'Rất tiếc…',
   open: 'Mở',
@@ -64,6 +114,13 @@ const translations: Translations = {
   permission: 'Cấp phép',
   permissionCamera:
     'Chúng tôi cần truy cập vào camera để có thể quét mã QR và xác thực danh tính của bạn.',
+  permissionNotificationHeadline: 'Chúng tôi giúp bạn luôn giữ động lực!',
+  permissionNotificationDescription:
+    'Nhận thông báo để luôn kiểm soát được các mục tiêu của bạn. Chúng tôi cam đoan sẽ không gửi đến điện thoại của bạn cả triệu thông báo mỗi ngày.',
+  permissionNotificationAuthorize: 'Cho phép thông báo',
+  currentlyDoingReminder: 'Lời nhắc công việc đang thực hiện',
+  yesNotifyMe: 'Có, hãy thông báo cho tôi',
+  maybeLater: 'Có lẽ để sau',
   platformHasBeenDisabled: 'Ứng dụng đã bị vô hiệu hóa đối với nền tảng của bạn',
   question: 'Câu hỏi',
   quit: 'Thoát',
@@ -78,9 +135,10 @@ const translations: Translations = {
   retryChapter: 'Thử lại chương',
   retryLevel: 'Thử lại cấp độ',
   scanQRCode: 'Quét <b>mã QR</b> của bạn',
-  search: 'Search',
+  search: 'Tìm kiếm',
   seeClue: 'Xem gợi ý',
   selectSomethingBelow: 'Chọn một điều nào đó dưới đây',
+  settings: 'Cài đặt',
   startDemo: 'Không có tài khoản? <a href="/"> <b> <u>Bắt đầu dùng thử!</u></b></a>',
   startLearning: 'Bạn nên bắt đầu từ đây',
   selectAnAnswer: 'Chọn câu trả lời',

@@ -1,10 +1,17 @@
 import {by, expect, element} from 'detox';
-import {reloadApp, bypassAuthentication, tapCardOnList, waitForExist} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  tapCardOnList,
+  waitForExist,
+} from './utils';
 
 describe('QCM Slider', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should see catalog, choose a discipline and see a question slider', async () => {

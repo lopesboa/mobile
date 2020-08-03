@@ -1,10 +1,18 @@
 import {by, expect, element} from 'detox';
-import {reloadApp, bypassAuthentication, tap, tapCardOnList, waitForExist} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  tap,
+  tapCardOnList,
+  waitForExist,
+} from './utils';
 
 describe('Context', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   describe('With image', () => {

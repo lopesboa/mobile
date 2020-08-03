@@ -14,6 +14,7 @@ interface ConnectedDispatchProps {
 export interface Props extends ConnectedDispatchProps {
   height: Pick<ComponentProps, 'height'>;
   onSearchPress: () => void;
+  onSettingsPress: () => void;
 }
 
 class Header extends React.PureComponent<Props> {
@@ -29,13 +30,14 @@ class Header extends React.PureComponent<Props> {
     ]);
 
   render() {
-    const {onSearchPress, height} = this.props;
+    const {onSearchPress, onSettingsPress, height} = this.props;
 
     return (
       <HeaderComponent
         height={height}
         onLogoLongPress={this.handleLogoLongPress}
         onSearchPress={onSearchPress}
+        onSettingsPress={onSettingsPress}
         testID="header"
       />
     );

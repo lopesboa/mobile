@@ -21,7 +21,6 @@ androidx.lifecycle:lifecycle-runtime:2.2.0
 androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0
 androidx.lifecycle:lifecycle-viewmodel:2.2.0
 androidx.loader:loader:1.0.0
-androidx.multidex:multidex-instrumentation:2.0.0
 androidx.multidex:multidex:2.0.0
 androidx.savedstate:savedstate:1.0.0
 androidx.swiperefreshlayout:swiperefreshlayout:1.0.0

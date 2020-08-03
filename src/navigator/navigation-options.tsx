@@ -7,6 +7,7 @@ import HeaderBackIcon from '../components/header-back-icon';
 import {BACKGROUND_COLOR as SCREEN_BACKGROUND_COLOR} from '../components/screen';
 
 export const HEADER_BACKGROUND_COLOR = theme.colors.gray.extra;
+export const SETTINGS_SCREEN_HEADER_BACKGROUND_COLOR = theme.colors.white;
 export const HEADER_HEIGHT = 60;
 export const INITIAL_APP_ROUTE_NAME = 'App';
 export const INITIAL_ROUTE_NAME = 'Authentication';

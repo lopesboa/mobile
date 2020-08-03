@@ -2,6 +2,7 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   tapCardOnList,
   waitForExist,
   waitForVisible,
@@ -11,6 +12,7 @@ describe('Header', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should see catalog and choose a discipline', async () => {

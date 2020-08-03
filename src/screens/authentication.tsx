@@ -13,6 +13,9 @@ import type {AuthenticationType} from '../types';
 import Authentication, {TOP_COLOR} from '../components/authentication';
 import Screen from '../components/screen';
 import {signIn} from '../redux/actions/authentication';
+import {selectCard} from '../redux/actions/catalog/cards/select';
+import NotificationHandler from '../notification-handler';
+import {ChapterCard, DisciplineCard} from '../layer/data/_types';
 
 import {get as getToken} from '../utils/local-token';
 import {getToken as _getToken} from '../redux/utils/state-extract';
@@ -26,6 +29,7 @@ export interface ConnectedStateProps {
 
 interface ConnectedDispatchProps {
   signIn: typeof signIn;
+  selectCard: typeof selectCard;
 }
 
 interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
@@ -41,9 +45,14 @@ const styles = StyleSheet.create({
 });
 
 class AuthenticationScreen extends React.PureComponent<Props, State> {
-  state: State = {
-    isSplashScreenHidden: false,
-  };
+  constructor(props) {
+    super(props);
+    // @ts-ignore
+    this.notif = new NotificationHandler(this.handleNotification.bind(this));
+    this.state = {
+      isSplashScreenHidden: false,
+    };
+  }
 
   async componentDidMount() {
     const token = await getToken();
@@ -86,6 +95,11 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
     this.props.navigation.navigate('Home');
     await this.props.signIn(authenticationType, token);
   };
+
+  handleNotification(content: DisciplineCard | ChapterCard) {
+    this.props.navigation.navigate('Slide');
+    this.props.selectCard(content);
+  }
 
   handleDemoPress = () => {
     this.handleSignIn(AUTHENTICATION_TYPE.DEMO);
@@ -158,6 +172,7 @@ export const mapStateToProps = (state: StoreState): ConnectedStateProps => ({
 
 const mapDispatchToProps: ConnectedDispatchProps = {
   signIn,
+  selectCard,
 };
 
 export {AuthenticationScreen as Component};

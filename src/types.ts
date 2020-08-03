@@ -102,7 +102,18 @@ export type User = {
   givenName: string;
 };
 
-export type PermissionStatus = 'granted' | 'denied' | 'restricted' | 'undetermined' | 'blocked';
+export type PermissionStatus =
+  | 'granted'
+  | 'denied'
+  | 'restricted'
+  | 'undetermined'
+  | 'unavailable'
+  | 'maybe-later'
+  | 'blocked';
+
+export type PermissionType = 'camera' | 'notifications';
+
+export type NotificationType = 'finish-course';
 
 export type UnlockedLevelInfo = {
   isUnlocked: boolean;
@@ -151,3 +162,11 @@ export type SourceURI = {
   height?: number;
   scale?: number;
 };
+
+export type ScheduledNotificationPayload = {
+  id: number;
+  courseID: string;
+  createdAt: Date;
+};
+
+export type ScheduledNotification = Record<NotificationType, ScheduledNotificationPayload[]>;

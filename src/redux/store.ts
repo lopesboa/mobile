@@ -1,7 +1,9 @@
 /* eslint-disable import/max-dependencies*/
 
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {persistStore, persistReducer} from 'redux-persist';
 import {middlewares, reducers as storeReducers} from '@coorpacademy/player-store';
+import AsyncStorage from '@react-native-community/async-storage';
 import {reducer as network} from 'react-native-offline';
 import type {ReduxState} from '../types/coorpacademy/player-store';
 import type {NetworkState} from '../types';
@@ -11,9 +13,11 @@ import navigation from './reducers/navigation';
 import type {State as CatalogState} from './reducers/catalog';
 import resetOnLogout from './utils/reset-on-logout';
 import type {State as PermissionsState} from './reducers/permissions';
+import type {State as NotificationsState} from './reducers/notifications';
 import type {State as AuthenticationState} from './reducers/authentication';
 import type {State as VideoState} from './reducers/video';
 import type {State as GodModeState} from './reducers/god-mode';
+import type {State as AppSessionState} from './reducers/app-session';
 import type {State as FastSlideState} from './reducers/fast-slide';
 import type {State as ErrorsState} from './reducers/ui/errors';
 import type {State as SelectState} from './reducers/ui/select';
@@ -23,9 +27,11 @@ import type {State as ProgressionsState} from './reducers/progressions/synchroni
 import catalog from './reducers/catalog';
 import authentication from './reducers/authentication';
 import permissions from './reducers/permissions';
+import notifications from './reducers/notifications';
 import progressions from './reducers/progressions/synchronize';
 import video from './reducers/video';
 import godMode from './reducers/god-mode';
+import appSession from './reducers/app-session';
 import fastSlide from './reducers/fast-slide';
 import errors from './reducers/ui/errors';
 import select from './reducers/ui/select';
@@ -52,6 +58,8 @@ export type StoreState = ReduxState & {
   search: SearchState;
   godMode: GodModeState;
   fastSlide: FastSlideState;
+  appSession: AppSessionState;
+  notifications: NotificationsState;
   network: NetworkState;
 };
 
@@ -73,6 +81,8 @@ const reducers = combineReducers({
   video,
   godMode,
   fastSlide,
+  appSession,
+  notifications,
   network,
 });
 
@@ -91,8 +101,19 @@ const createMiddlewares = (options: Options, reduxDevTools?: ReduxDevTools) => {
     reduxDevTools || ((f) => f),
   );
 };
-const create = (options: Options, reduxDevTools?: ReduxDevTools) =>
+
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  whiteList: ['appSession', 'permissions', 'notifications'],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+const create = (options: Options, reduxDevTools?: ReduxDevTools) => {
   // @ts-ignore
-  createStore(reducers, {}, createMiddlewares(options, reduxDevTools));
+  const store = createStore(persistedReducer, {}, createMiddlewares(options, reduxDevTools));
+  const persistor = persistStore(store);
+  return {store, persistor};
+};
 
 export default create;

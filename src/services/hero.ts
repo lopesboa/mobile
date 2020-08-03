@@ -1,4 +1,8 @@
-import type {DisciplineCard, ChapterCard, HeroRecommendation} from '../layer/data/_types';
+import type {
+  DisciplineCard,
+  ChapterCard,
+  ContentRecommendation as HeroRecommendation,
+} from '../layer/data/_types';
 import type {DataLayer} from '../layer/data';
 import {getAggregationsByContent} from '../layer/data/progressions';
 

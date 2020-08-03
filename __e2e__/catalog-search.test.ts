@@ -6,6 +6,7 @@ import {
   waitForExist,
   waitForNotVisible,
   tapCardOnList,
+  bypassNotifyMeScreen,
 } from './utils';
 
 const thirdCard = 'catalog-search-items-item-with-image-context-dis-1';
@@ -27,6 +28,7 @@ describe('CatalogSearch', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   it('should be redirected to search', async () => {

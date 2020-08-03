@@ -1,6 +1,6 @@
-import type {HeroRecommendation} from '../layer/data/_types';
+import type {ContentRecommendation} from '../layer/data/_types';
 
-export const createHeroRecommendation = (
+export const createContentRecommendation = (
   {
     success = true,
     contentRef = 'foo',
@@ -14,7 +14,7 @@ export const createHeroRecommendation = (
     updatedAt?: string;
     progressionId: string;
   } = {progressionId: 'defaultProgressionId242424'},
-): HeroRecommendation => ({
+): ContentRecommendation => ({
   content: {
     ref: contentRef,
     type: 'chapter',

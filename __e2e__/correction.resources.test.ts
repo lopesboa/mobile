@@ -2,6 +2,7 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   tapCardOnList,
   waitForExist,
   // waitForNotVisible
@@ -11,6 +12,7 @@ describe('Correction: resources', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
     await waitForExist('catalog-section-recommended-items-item-basic-dis-1');
     await tapCardOnList('catalog-section-recommended-items', 2);
     await waitForExist('question');

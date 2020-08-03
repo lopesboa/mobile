@@ -1,11 +1,19 @@
 import {by, expect, element} from 'detox';
 // import {sleep} from '../src/utils/tests';
-import {reloadApp, bypassAuthentication, getClueTab, tapCardOnList, waitForExist} from './utils';
+import {
+  reloadApp,
+  bypassAuthentication,
+  bypassNotifyMeScreen,
+  getClueTab,
+  tapCardOnList,
+  waitForExist,
+} from './utils';
 
 describe('Clue', () => {
   beforeAll(async () => {
     await reloadApp();
     await bypassAuthentication();
+    await bypassNotifyMeScreen();
   });
 
   describe('With clue', () => {

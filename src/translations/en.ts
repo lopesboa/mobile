@@ -15,9 +15,9 @@ const translations: Translations = {
   authenticationQRCodeStepOneDescription:
     'Connect to your learning platform <b>with a computer</b>',
   authenticationQRCodeStepTwoDescription:
-    'Go to <b>your Account</b> </br>in the upper right-hand corner',
+    'Go to <b>your Account</b> <br/>in the upper right-hand corner',
   authenticationQRCodeStepThreeDescription:
-    '<b>Voilà!</b></br>Scan your QR code using the button below',
+    '<b>Voilà!</b><br/>Scan your QR code using the button below',
   authenticationQRCodeTitle: 'QR Code',
   askForHelp: 'Ask for help',
   backToHome: 'Back to home',
@@ -33,6 +33,49 @@ const translations: Translations = {
   correction: 'Correction',
   dataLost: 'Your data seems to be lost',
   didYouKnowThat: 'Did you know that?',
+  finishCourse: 'Finish Course',
+  finishCourseWordings: [
+    {
+      title: "It's time to (re) launch {{givenName}}! 🚀",
+      description: 'Complete this course: {{contentName}}',
+    },
+    {
+      title: 'Your mission, should you choose to accept it 😎',
+      description: 'Finish your course {{contentName}}',
+    },
+    {
+      title: '{{givenName}}, I bet you can do it! 💪',
+      description: 'Finish the course {{contentName}}',
+    },
+    {title: 'Do you need a break {{givenName}}? 🤯', description: "Let's complete {{contentName}}"},
+    {
+      title: '{{givenName}}, you have started your course two days ago ⏳',
+      description: 'Complete {{contentName}}',
+    },
+    {
+      title: 'Take the challenge {{givenName}} 💪',
+      description: 'Complete the course {{contentName}}',
+    },
+    {
+      title: 'Are you landed {{givenName}}? 🤯',
+      description: 'Relax and take a few minutes to complete {{contentName}}',
+    },
+    {title: '{{givenName}}, not even heading 😉', description: 'Complete {{contentName}}'},
+    {title: 'Your good deed of the week! 😇', description: 'Complete the course {{contentName}}'},
+    {
+      title: 'What is done is no longer to be done 🙃',
+      description: 'Complete the course {{contentName}}',
+    },
+    {title: 'Done! ✓ Almost...', description: 'Complete the course {{contentName}}'},
+    {
+      title: '{{givenName}}, you are so close! 🙃',
+      description: 'More than a few questions to complete {{contentName}}',
+    },
+    {
+      title: 'Come on {{givenName}}! Almost finished ☑️',
+      description: 'Complete your course {{contentName}}',
+    },
+  ],
   finishLearning: 'Continue this one first',
   forYou: 'Our top picks for you',
   gameOver: 'Game over',
@@ -52,7 +95,7 @@ const translations: Translations = {
   nextChapter: 'Next chapter',
   nextLevel: 'Next level',
   noResults: 'No results',
-  noResultsDescription: 'Your search did not have any results.\nTry searching other keywords.',
+  noResultsDescription: 'Your search did not have any results.<br/>Try searching other keywords.',
   ok: 'OK',
   ooops: 'Ooops...',
   open: 'Open',
@@ -63,6 +106,13 @@ const translations: Translations = {
   permission: 'Permission',
   permissionCamera:
     'We need to access your camera in order to scan your QR code and authenticate you.',
+  permissionNotificationHeadline: 'We help you stay motivated!',
+  permissionNotificationDescription:
+    'Get notifications and stay on top of your goals. We promise not to blow up your phone a million times a day.',
+  permissionNotificationAuthorize: 'Authorize notifications',
+  currentlyDoingReminder: 'Currently doing reminder',
+  yesNotifyMe: 'Yes, notify me',
+  maybeLater: 'Maybe later',
   platformHasBeenDisabled: 'The app has been disabled for your platform',
   question: 'Question',
   quit: 'Quit',
@@ -80,6 +130,7 @@ const translations: Translations = {
   search: 'Search',
   seeClue: 'See clue',
   selectSomethingBelow: 'Select something below',
+  settings: 'Settings',
   startDemo: 'No account? <a href="/"><b><u>Start trial!</u></b></a>',
   startLearning: 'You should start with this one',
   selectAnAnswer: 'Select an answer',
@@ -87,7 +138,7 @@ const translations: Translations = {
   signInMobile: 'Yes',
   step: 'Step',
   typeHere: 'Type here',
-  validate: 'Validate',
+  validate: 'Submit',
   version: 'Version',
   videoLoadingError: 'An error occurred while loading the video, please try again.',
   unlockNextLevel: 'You have just unlocked<br><b>{{levelName}} level</b>',

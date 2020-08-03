@@ -13,7 +13,7 @@ const DEFAULT_EXTENSIONS = ['js', 'ts', 'tsx'];
 module.exports = {
   resolver: {
     sourceExts:
-      version.buildFlavor === 'e2e' ? ['e2e.js', ...DEFAULT_EXTENSIONS] : DEFAULT_EXTENSIONS,
+      version.buildFlavor === 'e2e' ? ['e2e.ts', ...DEFAULT_EXTENSIONS] : DEFAULT_EXTENSIONS,
     blacklistRE: (() => {
       if (version.buildFlavor === 'storybook') {
         // this is to have fixtures embedded in storybook app

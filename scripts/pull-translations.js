@@ -48,6 +48,20 @@ const fetchTranslations = (
 const formatTranslation = (translation: string): string =>
   translation.replace('\n', '').replace(/"/g, '\\"');
 
+type NotificationWording = {
+  title: string,
+  description: string,
+};
+
+const formatNotificationWordings = (translations: Array<NotificationWording>) => {
+  return translations.map((translation) => {
+    return {
+      title: formatTranslation(translation.title),
+      description: formatTranslation(translation.description),
+    };
+  });
+};
+
 const generate = async (locale: string) => {
   const moocTranslations = await fetchTranslations(
     locale,
@@ -147,6 +161,10 @@ const generate = async (locale: string) => {
     correction: formatTranslation(playerTranslations.Correction),
     dataLost: formatTranslation(moocErrorTranslations.modal.mobile.data_lost),
     didYouKnowThat: formatTranslation(playerTranslations['Did you know that?']),
+    finishCourse: formatTranslation(moocTranslations.mobile.notificationsTypes.finishCourse),
+    finishCourseWordings: formatNotificationWordings(
+      Object.values(moocTranslations.mobile.notificationsWordings.finishCourse),
+    ),
     finishLearning: formatTranslation(playerTranslations['Finish learning']),
     forYou: formatTranslation(playerTranslations['For you']),
     gameOver: formatTranslation(playerTranslations['Game over']),
@@ -178,6 +196,20 @@ const generate = async (locale: string) => {
     outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
     permission: formatTranslation(moocTranslations.mobile.settings.permission),
     permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
+    permissionNotificationHeadline: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationHeadline,
+    ),
+    permissionNotificationDescription: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationDescription,
+    ),
+    permissionNotificationAuthorize: formatTranslation(
+      moocTranslations.mobile.settings.permissionNotificationAuthorize,
+    ),
+    currentlyDoingReminder: formatTranslation(
+      moocTranslations.mobile.settings.currentlyDoingReminder,
+    ),
+    yesNotifyMe: formatTranslation(moocTranslations.mobile.settings.yesNotifyMe),
+    maybeLater: formatTranslation(moocTranslations.mobile.settings.maybeLater),
     platformHasBeenDisabled: formatTranslation(
       moocErrorTranslations.modal.mobile.platform_has_been_disabled,
     ),
@@ -197,6 +229,7 @@ const generate = async (locale: string) => {
     search: formatTranslation(moocTranslations.content.search.placeholder),
     seeClue: formatTranslation(componentsTranslations['See clue']),
     selectSomethingBelow: formatTranslation(playerTranslations['Select something below']),
+    settings: formatTranslation(moocTranslations.mobile.settings.settings),
     startDemo: formatTranslation(moocLoginTranslations.mobile.startDemo.replace(/\\/g, '')),
     startLearning: formatTranslation(playerTranslations['Start learning']),
     selectAnAnswer: formatTranslation(playerTranslations['Select an answer']),
@@ -222,7 +255,14 @@ const generate = async (locale: string) => {
   const outputFilePath = path.resolve(`${__dirname}/../src/translations/${locale}.ts`);
   const properties = Object.keys(translations)
     .map((key) => {
-      const value = translations[key] !== undefined ? `"${translations[key]}"` : 'undefined';
+      let value = 'undefined';
+      if (translations[key] !== undefined) {
+        if (typeof translations[key] === 'object') {
+          value = JSON.stringify(translations[key]);
+        } else {
+          value = `"${translations[key]}"`;
+        }
+      }
       return `  ${key}: ${value}`;
     })
     .join(',\n');
@@ -230,8 +270,6 @@ const generate = async (locale: string) => {
   fs.writeFileSync(
     outputFilePath,
     `${
-      '// @flow strict' +
-      '\n\n' +
       "import type {Translations} from './_types';" +
       '\n\n' +
       'const translations: Translations = {' +
