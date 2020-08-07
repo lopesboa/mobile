@@ -25,7 +25,7 @@ const navigationOptions: NavigationScreenConfig<any> = {
     flex: 1,
     fontWeight: theme.fontWeight.bold,
     fontSize: theme.fontSize.regular,
-    color: theme.colors.gray.dark,
+    color: theme.colors.negative,
   },
   headerStyle: {
     backgroundColor: SCREEN_BACKGROUND_COLOR,
@@ -33,24 +33,26 @@ const navigationOptions: NavigationScreenConfig<any> = {
     elevation: 0,
     borderBottomColor: 'transparent',
     borderBottomWidth: 0,
-    paddingTop: 0,
     height: HEADER_HEIGHT,
   },
   headerLeft: HeaderLeft,
-  headerBackImage: <HeaderBackIcon style={styles.back} />,
+  headerBackImage: () => <HeaderBackIcon style={styles.back} />,
 };
 
 export const navigationOptionsWithoutHeader: NavigationScreenConfig<any> = {
-  ...navigationOptions,
-  header: null,
-  headerLeft: null,
-  headerBackImage: null,
-  headerRight: null,
-  gesturesEnabled: false,
+  headerTintColor: theme.colors.black,
+  headerTitleStyle: {
+    flex: 1,
+    fontWeight: theme.fontWeight.bold,
+    fontSize: theme.fontSize.regular,
+    color: theme.colors.negative,
+  },
+  gestureEnabled: false,
   headerStyle: {
     ...navigationOptions.headerStyle,
     height: 0,
   },
+  headerShown: false,
 };
 
 export default navigationOptions;

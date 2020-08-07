@@ -78,6 +78,6 @@ describe('Correction: resources', () => {
   // });
   afterAll(async () => {
     await element(by.id('button-next-question')).tap();
-    await element(by.id('header-back')).tap();
+    await element(by.id('question-header-back')).tap();
   });
 });

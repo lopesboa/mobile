@@ -111,8 +111,11 @@ describe('Context', () => {
     _context.props.onLinkPress(url);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('BrowserModal', {
-      url,
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'Browser',
+      params: {
+        url,
+      },
     });
   });
 
@@ -128,9 +131,12 @@ describe('Context', () => {
     _context.props.onPDFButtonPress(url, description);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
-      title: description,
-      source: {uri: url},
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'Pdf',
+      params: {
+        title: description,
+        source: {uri: url},
+      },
     });
   });
 });

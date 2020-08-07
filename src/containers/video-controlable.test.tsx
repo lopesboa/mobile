@@ -177,17 +177,17 @@ describe('VideoControlable', () => {
     });
   });
 
-  it('should pause the video when focus is lost', () => {
-    const ref = createRef();
-    const component = renderer.create(<VideoControlable />);
+  // it('should pause the video when focus is lost', () => {
+  //   const ref = createRef();
+  //   const component = renderer.create(<VideoControlable />);
 
-    const video = component.root.find((el) => el.props.onRef);
-    const navigation = component.root.find((el) => el.props.onWillBlur);
-    video.props.onRef(ref);
-    navigation.props.onWillBlur();
+  //   const video = component.root.find((el) => el.props.onRef);
+  //   const navigation = component.root.find((el) => el.props.onWillBlur);
+  //   video.props.onRef(ref);
+  //   navigation.props.onWillBlur();
 
-    expect(ref.methods.pause).toHaveBeenCalledTimes(1);
-  });
+  //   expect(ref.methods.pause).toHaveBeenCalledTimes(1);
+  // });
 
   describe('onShrink', () => {
     it('should handle shrink (Android)', async () => {

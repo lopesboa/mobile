@@ -67,7 +67,7 @@ describe('Notifications', () => {
     const button = component.root.find((el) => el.props.testID === 'notifyme-button');
     await button.props.onPress();
 
-    expect(navigation.dispatch).toHaveBeenCalledTimes(1);
+    expect(navigation.goBack).toHaveBeenCalledTimes(1);
   });
 
   it('should handle maybe Later', () => {
@@ -90,8 +90,7 @@ describe('Notifications', () => {
     const button = component.root.find((el) => el.props.testID === 'notifyme-later-button');
     button.props.onPress();
 
-    expect(navigation.dispatch).toHaveBeenCalledTimes(1);
-    expect(navigation.dispatch).toHaveBeenCalledWith('Mock$ReactNavigation$NavigationActions$Back');
+    expect(navigation.goBack).toHaveBeenCalledTimes(1);
   });
 
   afterEach(() => {

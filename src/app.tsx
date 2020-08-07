@@ -1,4 +1,5 @@
 /* eslint-disable import/max-dependencies */
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import {StyleSheet, View, Platform} from 'react-native';
 import {Provider} from 'react-redux';

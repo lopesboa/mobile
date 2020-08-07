@@ -2,9 +2,9 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   tapCardOnList,
   waitForExist,
-  bypassNotifyMeScreen,
 } from './utils';
 
 const rightAnswer = async (el: Detox.Element) => {

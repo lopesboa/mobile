@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
-import type {NavigationStackRouterConfig} from 'react-navigation';
+import {connect} from 'react-redux';
+import {StyleSheet} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   NovaCompositionCoorpacademyFilterVideo2 as LessonIcon,
   NovaCompositionCoorpacademyClue as ClueIcon,
@@ -10,17 +11,15 @@ import {
 } from '@coorpacademy/nova-icons';
 import DeviceInfo from 'react-native-device-info';
 
-import Progression from '../containers/progression';
 import TabBarSlide from '../containers/tab-bar-slide';
 import theme from '../modules/theme';
-import CorrectionScreen from '../screens/correction';
-import LevelEndScreen from '../screens/level-end';
 import QuestionScreen from '../screens/question';
 import LessonScreen from '../screens/lesson';
 import ClueScreen from '../screens/clue';
 import ContextScreen from '../screens/context';
+import {getContext} from '../redux/utils/state-extract';
 
-import navigationOptions, {navigationOptionsWithoutHeader} from './navigation-options';
+import navigationOptions from './navigation-options';
 
 interface NavigationTabBarIconArgs {
   tintColor: string;
@@ -45,116 +44,112 @@ const styles = StyleSheet.create({
   },
 });
 
-const slideTabsNavigator = createBottomTabNavigator(
-  {
-    Context: {
-      screen: ContextScreen,
-      navigationOptions: {
-        tabBarLabel: 'context',
-        // eslint-disable-next-line react/display-name
-        tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
-          <ContextIcon color={tintColor} style={styles.contextIcon} />
-        ),
-      },
-    },
-    Question: {
-      screen: QuestionScreen,
-      navigationOptions: {
-        tabBarLabel: 'question',
-        // eslint-disable-next-line react/display-name
-        tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
-          <QuestionIcon color={tintColor} style={styles.questionIcon} />
-        ),
-      },
-    },
-    Lesson: {
-      screen: LessonScreen,
-      navigationOptions: {
-        tabBarLabel: 'lesson',
-        // eslint-disable-next-line react/display-name
-        tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
-          <LessonIcon color={tintColor} style={styles.lessonIcon} />
-        ),
-      },
-    },
-    Clue: {
-      screen: ClueScreen,
-      navigationOptions: {
-        tabBarLabel: 'clue',
-        // eslint-disable-next-line react/display-name
-        tabBarIcon: ({tintColor}: NavigationTabBarIconArgs) => (
-          <ClueIcon color={tintColor} style={styles.clueIcon} />
-        ),
-      },
-    },
-  },
-  {
-    defaultNavigationOptions: {
-      ...navigationOptions,
-      tabBarTestID: 'slide-tab',
-      gesturesEnabled: true,
-    },
-    tabBarOptions: {
-      inactiveTintColor: theme.colors.gray.dark,
-      // this is dynamic and handled by our custom tab-bar component
-      // activeTintColor: theme.color.primary,
-      labelStyle: {
-        fontWeight: theme.fontWeight.semiBold,
-        fontSize: 12,
-        // specific style on tablet to not break style on small devices (ex: iphone 5s)
-        paddingHorizontal: DeviceInfo.isTablet() ? theme.spacing.small : 0,
-      },
-      tabStyle: {
-        alignItems: 'center',
-        paddingTop: theme.spacing.tiny,
-      },
-      style: {
-        borderTopWidth: StyleSheet.hairlineWidth,
-        borderTopColor: theme.colors.border,
-        backgroundColor: '#FBFBFB',
-        height: 60,
-        paddingHorizontal: theme.spacing.tiny,
-        paddingBottom: theme.spacing.tiny,
-      },
-      showIcon: true,
-    },
-    initialRouteName: 'Question',
-    // force to bottom (Android)
-    tabBarPosition: 'bottom',
-    swipeEnabled: false,
-    tabBarComponent: TabBarSlide,
-  },
-);
+const Stack = createStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 
-const ProgressionHeader = ({defaultNavigationOptions}: NavigationStackRouterConfig) => (
-  <View style={defaultNavigationOptions && defaultNavigationOptions.headerStyle}>
-    <Progression />
-  </View>
-);
+function SlideTabsNavigator({hasContext}) {
+  return (
+    <BottomTabs.Navigator
+      initialRouteName={hasContext ? 'Context' : 'Question'}
+      tabBar={(props) => <TabBarSlide {...props} />}
+      screenOptions={{
+        ...navigationOptions,
+        tabBarTestID: 'slide-tab',
+        gestureEnabled: true,
+        tabBarOptions: {
+          inactiveTintColor: theme.colors.gray.dark,
+          // this is dynamic and handled by our custom tab-bar component
+          // activeTintColor: theme.color.primary,
+          labelStyle: {
+            fontWeight: theme.fontWeight.semiBold,
+            fontSize: 12,
+            // specific style on tablet to not break style on small devices (ex: iphone 5s)
+            paddingHorizontal: DeviceInfo.isTablet() ? theme.spacing.small : 0,
+          },
+          tabStyle: {
+            alignItems: 'center',
+            paddingTop: theme.spacing.tiny,
+          },
+          style: {
+            borderTopWidth: StyleSheet.hairlineWidth,
+            borderTopColor: theme.colors.border,
+            backgroundColor: '#FBFBFB',
+            height: 60,
+            paddingHorizontal: theme.spacing.tiny,
+            paddingBottom: theme.spacing.tiny,
+          },
+          showIcon: true,
+        },
+        // force to bottom (Android)
+        tabBarPosition: 'bottom',
+        swipeEnabled: false,
+        tabBarComponent: TabBarSlide,
+      }}
+    >
+      <BottomTabs.Screen
+        name="Context"
+        component={ContextScreen}
+        options={{
+          tabBarLabel: 'context',
+          // eslint-disable-next-line react/display-name
+          tabBarIcon: ({color}: NavigationTabBarIconArgs) => (
+            <ContextIcon color={color} style={styles.contextIcon} />
+          ),
+        }}
+      />
+      <BottomTabs.Screen
+        name="Question"
+        component={QuestionScreen}
+        options={{
+          tabBarLabel: 'question',
+          // eslint-disable-next-line react/display-name
+          tabBarIcon: ({color}: NavigationTabBarIconArgs) => (
+            <QuestionIcon color={color} style={styles.questionIcon} />
+          ),
+        }}
+      />
+      <BottomTabs.Screen
+        name="Lesson"
+        component={LessonScreen}
+        options={{
+          tabBarLabel: 'lesson',
+          // eslint-disable-next-line react/display-name
+          tabBarIcon: ({color}: NavigationTabBarIconArgs) => (
+            <LessonIcon color={color} style={styles.lessonIcon} />
+          ),
+        }}
+      />
+      <BottomTabs.Screen
+        name="Clue"
+        component={ClueScreen}
+        options={{
+          tabBarLabel: 'clue',
+          // eslint-disable-next-line react/display-name
+          tabBarIcon: ({color}: NavigationTabBarIconArgs) => (
+            <ClueIcon color={color} style={styles.clueIcon} />
+          ),
+        }}
+      />
+    </BottomTabs.Navigator>
+  );
+}
 
-export const slideNavigator = createStackNavigator(
-  {
-    Tabs: {screen: slideTabsNavigator},
-  },
-  {
-    defaultNavigationOptions: {
-      ...navigationOptions,
-      header: ProgressionHeader,
-      headerStyle: {
-        position: 'absolute',
-        width: '100%',
-        top: 0,
-      },
-    },
-  },
-);
+const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
+  const context = getContext(state);
 
-export const slideModalsNavigator = createStackNavigator(
-  {
-    Correction: {screen: CorrectionScreen},
-    LevelEnd: {screen: LevelEndScreen},
-  },
-  {
-    defaultNavigationOptions: navigationOptionsWithoutHeader,
-  },
-);
+  return {
+    hasContext: context !== undefined,
+  };
+};
+
+const SlideTabsNavigator_ = connect(mapStateToProps)(SlideTabsNavigator);
+
+function SlidesNavigator(): React.ReactNode {
+  return (
+    <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Screen name="Tabs" component={SlideTabsNavigator_} />
+    </Stack.Navigator>
+  );
+}
+
+export default SlidesNavigator;

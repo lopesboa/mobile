@@ -20,16 +20,22 @@ const getDeviceDimensions = (): {width: number; height: number} => ({
 export const reloadApp = async (
   additionalPermissions: Detox.DevicePermissions = defaultPermissions || {},
   newInstance = false,
+  relaunch = false,
 ) => {
   const permissions: Detox.DevicePermissions = {
     ...defaultPermissions,
     ...additionalPermissions,
   };
-  // @todo use reloadReactNative(); once it's working in Android
-  await device.launchApp({
-    newInstance: !alreadyLaunched || newInstance,
-    permissions,
-  });
+
+  if (relaunch) {
+    await device.reloadReactNative();
+  } else {
+    // @todo use reloadReactNative(); once it's working in Android
+    await device.launchApp({
+      newInstance: !alreadyLaunched || newInstance,
+      permissions,
+    });
+  }
 
   if (!alreadyLaunched) {
     alreadyLaunched = true;

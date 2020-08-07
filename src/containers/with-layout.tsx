@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {View, ViewStyle} from 'react-native';
 import hoistNonReactStatic from 'hoist-non-react-statics';
-import {LayoutEvent} from 'react-navigation';
 
 export type Layout = {
   width: number;
@@ -9,7 +8,7 @@ export type Layout = {
 };
 
 export interface WithLayoutProps {
-  onLayout?: (arg0: LayoutEvent) => void;
+  onLayout?: (arg0) => void;
   layout?: Layout;
   containerStyle?: ViewStyle;
 }
@@ -29,7 +28,7 @@ function withLayout(
       layout: undefined,
     };
 
-    handleLayout = ({nativeEvent: {layout}}: LayoutEvent) =>
+    handleLayout = ({nativeEvent: {layout}}) =>
       this.setState({
         layout,
       });

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
-import {NavigationActions, NavigationScreenProps} from 'react-navigation';
+import {StackScreenProps} from '@react-navigation/stack';
 import {BackHandler} from '../modules/back-handler';
 
 import {openInbox} from '../modules/inbox';
@@ -13,12 +13,17 @@ import type {Params as QRCodeScreenParams} from './qr-code';
 
 export type Params = {
   type: Pick<AuthenticationDetailsProps, 'type'>;
-  onSignIn: (AuthenticationType, string) => Promise<void>;
+  onSignIn: (type: AuthenticationType, token?: string) => Promise<void>;
   onHelpPress: Pick<AuthenticationDetailsProps, 'onHelpPress'>;
   onDemoPress: Pick<AuthenticationDetailsProps, 'onDemoPress'>;
 };
 
-type Props = NavigationScreenProps<Params>;
+type ParamList = {
+  AuthenticationDetails: Params;
+  Modals: {screen: string; params: QRCodeScreenParams};
+};
+
+type Props = StackScreenProps<ParamList, 'AuthenticationDetails'>;
 
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   componentDidMount() {
@@ -35,19 +40,19 @@ class AuthenticationDetailsScreen extends React.PureComponent<Props> {
   };
 
   handleScan = (token?: string) => {
-    const {navigation} = this.props;
-    navigation.state.params.onSignIn(AUTHENTICATION_TYPE.QR_CODE, token);
+    const {route} = this.props;
+    route.params?.onSignIn(AUTHENTICATION_TYPE.QR_CODE, token);
   };
 
   handleButtonPress = () => {
-    const {type} = this.props.navigation.state.params;
+    const {type} = this.props.route.params;
 
     if (type === AUTHENTICATION_TYPE.QR_CODE) {
       const {navigation} = this.props;
       const params: QRCodeScreenParams = {
         onScan: this.handleScan,
       };
-      navigation.navigate('QRCodeModal', params);
+      navigation.navigate('Modals', {screen: 'QRCode', params});
     }
 
     if (type === AUTHENTICATION_TYPE.MAGIC_LINK) {
@@ -55,10 +60,10 @@ class AuthenticationDetailsScreen extends React.PureComponent<Props> {
     }
   };
 
-  handleBack = () => this.props.navigation.dispatch(NavigationActions.back());
+  handleBack = () => this.props.navigation.goBack();
 
   render() {
-    const {type, onHelpPress, onDemoPress} = this.props.navigation.state.params;
+    const {type, onHelpPress, onDemoPress} = this.props.route?.params;
 
     return (
       <Screen testID="authentication-details-screen" noScroll noSafeArea>

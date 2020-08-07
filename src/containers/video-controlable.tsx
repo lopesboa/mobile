@@ -2,7 +2,6 @@ import * as React from 'react';
 import {Platform} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {NavigationEvents, NavigationScreenProps} from 'react-navigation';
 import {TextTrackType} from 'react-native-video';
 import VideoPlayer from '@coorpacademy/react-native-video-controls';
 import {
@@ -18,6 +17,7 @@ import orientation from 'react-native-orientation-locker';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
 
+import {StackScreenProps} from '@react-navigation/stack';
 import Video, {STEP} from '../components/video';
 import type {Props as ComponentProps, Step, Track} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
@@ -46,12 +46,7 @@ interface OwnProps {
   source?: {uri: string};
 }
 
-interface Props
-  extends NavigationScreenProps,
-    ConnectedStateProps,
-    ConnectedDispatchToProps,
-    ComponentProps,
-    OwnProps {}
+interface Props extends ConnectedStateProps, ConnectedDispatchToProps, OwnProps, ComponentProps {}
 
 type State = {
   step: Step;
@@ -154,7 +149,11 @@ class VideoControlable extends React.PureComponent<Props, State> {
     this.videoPlayer = videoPlayer;
   };
 
-  handleBlur = () => this.videoPlayer && this.videoPlayer.methods.pause();
+  handleBlur = () => {
+    if (!__STORYBOOK__) {
+      this.videoPlayer && this.videoPlayer.methods.pause();
+    }
+  };
 
   handleError = () =>
     this.setState({
@@ -166,32 +165,26 @@ class VideoControlable extends React.PureComponent<Props, State> {
     const {step, hasTracks} = this.state;
 
     return (
-      <React.Fragment>
-        {/*
-        Should disable NavigationEvents when running Storybook because of rn navigation incompatibility
-         */}
-        {!__STORYBOOK__ ? <NavigationEvents onWillBlur={this.handleBlur} /> : null}
-        <Video
-          source={source}
-          preview={preview}
-          height={height}
-          step={step}
-          tracks={tracks}
-          selectedTrack={hasTracks ? selectedTrack : undefined}
-          isFullScreen={isFullScreen}
-          onPlay={this.handlePlay}
-          onEnd={this.handleEnd}
-          onReady={this.handleReady}
-          onExpand={this.handleExpand}
-          onShrink={this.handleShrink}
-          onProgress={this.handleProgress}
-          onTracksToggle={this.handleTracksToggle}
-          onRef={this.handleRef}
-          onError={this.handleError}
-          testID={this.props.testID}
-          extralifeOverlay={this.props.extralifeOverlay}
-        />
-      </React.Fragment>
+      <Video
+        source={source}
+        preview={preview}
+        height={height}
+        step={step}
+        tracks={tracks}
+        selectedTrack={hasTracks ? selectedTrack : undefined}
+        isFullScreen={isFullScreen}
+        onPlay={this.handlePlay}
+        onEnd={this.handleEnd}
+        onReady={this.handleReady}
+        onExpand={this.handleExpand}
+        onShrink={this.handleShrink}
+        onProgress={this.handleProgress}
+        onTracksToggle={this.handleTracksToggle}
+        onRef={this.handleRef}
+        onError={this.handleError}
+        testID={this.props.testID}
+        extralifeOverlay={this.props.extralifeOverlay}
+      />
     );
   }
 }

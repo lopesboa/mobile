@@ -70,7 +70,7 @@ describe('Lesson', () => {
 
   describe('1 resource only', () => {
     beforeAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
       await tapCardOnList('catalog-section-recommended-items', 1);
       await getLessonTab(element).tap();
     });
@@ -87,7 +87,7 @@ describe('Lesson', () => {
 
   describe('Without resource', () => {
     beforeAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
       await tapCardOnList('catalog-section-recommended-items', 5);
     });
 

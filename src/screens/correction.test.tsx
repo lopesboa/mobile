@@ -65,7 +65,7 @@ describe('Correction', () => {
           }),
         });
 
-        const navigation = createNavigation({});
+        const {route, ...navigation} = createNavigation({});
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
@@ -102,8 +102,8 @@ describe('Correction', () => {
         const params: Params = {
           slideId: 'sli_bar',
         };
-        const navigation = createNavigation({params});
-        const ownProps: OwnProps = {navigation};
+        const {route, ...navigation} = createNavigation({params});
+        const ownProps: OwnProps = {navigation, route};
 
         const result = mapStateToProps(state, ownProps);
         const expected: ConnectedStateProps = {
@@ -147,7 +147,7 @@ describe('Correction', () => {
         const params: Params = {
           slideId: 'sli_foo',
         };
-        const navigation = createNavigation({params});
+        const {route, ...navigation} = createNavigation({params});
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
@@ -191,7 +191,7 @@ describe('Correction', () => {
         const params: Params = {
           slideId: 'sli_foo',
         };
-        const navigation = createNavigation({params});
+        const {route, ...navigation} = createNavigation({params});
         const ownProps: OwnProps = {navigation};
 
         const result = mapStateToProps(state, ownProps);
@@ -272,8 +272,8 @@ describe('Correction', () => {
       const params: Params = {
         slideId: 'sli_foo',
       };
-      const navigation = createNavigation({params});
-      const ownProps: OwnProps = {navigation};
+      const {route, ...navigation} = createNavigation({params});
+      const ownProps: OwnProps = {navigation, route};
 
       const result = mapStateToProps(state, ownProps);
 
@@ -365,8 +365,8 @@ describe('Correction', () => {
       const params: Params = {
         slideId: 'sli_foo',
       };
-      const navigation = createNavigation({params});
-      const ownProps: OwnProps = {navigation};
+      const {route, ...navigation} = createNavigation({params});
+      const ownProps: OwnProps = {navigation, route};
 
       const result = mapStateToProps(state, ownProps);
 
@@ -456,8 +456,8 @@ describe('Correction', () => {
       const params: Params = {
         slideId: 'sli_foo',
       };
-      const navigation = createNavigation({params});
-      const ownProps: OwnProps = {navigation};
+      const {route, ...navigation} = createNavigation({params});
+      const ownProps: OwnProps = {navigation, route};
 
       const result = mapStateToProps(state, ownProps);
 
@@ -543,8 +543,8 @@ describe('Correction', () => {
       const params: Params = {
         slideId: 'sli_foo',
       };
-      const navigation = createNavigation({params});
-      const ownProps: OwnProps = {navigation};
+      const {route, ...navigation} = createNavigation({params});
+      const ownProps: OwnProps = {navigation, route};
 
       const result = mapStateToProps(state, ownProps);
 
@@ -643,8 +643,8 @@ describe('Correction', () => {
       const params: Params = {
         slideId: 'sli_foo',
       };
-      const navigation = createNavigation({params});
-      const ownProps: OwnProps = {navigation};
+      const {route, ...navigation} = createNavigation({params});
+      const ownProps: OwnProps = {navigation, route};
 
       const result = mapStateToProps(state, ownProps);
 
@@ -682,8 +682,10 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const play = jest.fn();
-    const navigation = createNavigation({});
-    const component = renderer.create(<Correction navigation={navigation} play={play} isCorrect />);
+    const {route, ...navigation} = createNavigation({});
+    const component = renderer.create(
+      <Correction navigation={navigation} route={route} play={play} isCorrect />,
+    );
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onVideoPlay();
@@ -697,10 +699,11 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const changeAnswerValidationStatus = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
       <Correction
         navigation={navigation}
+        route={route}
         isCorrect
         changeAnswerValidationStatus={changeAnswerValidationStatus}
       />,
@@ -717,17 +720,22 @@ describe('Correction', () => {
     const url = 'https://domain.tld';
     const description = 'foo';
     const play = jest.fn();
-    const navigation = createNavigation({});
-    const component = renderer.create(<Correction navigation={navigation} play={play} />);
+    const {route, ...navigation} = createNavigation({});
+    const component = renderer.create(
+      <Correction navigation={navigation} route={route} play={play} />,
+    );
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onPDFButtonPress(url, description);
 
     expect(play).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
-      title: description,
-      source: {uri: url},
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'Pdf',
+      params: {
+        title: description,
+        source: {uri: url},
+      },
     });
   });
 
@@ -735,9 +743,13 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const selectCurrentProgression = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} selectCurrentProgression={selectCurrentProgression} />,
+      <Correction
+        navigation={navigation}
+        route={route}
+        selectCurrentProgression={selectCurrentProgression}
+      />,
     );
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
@@ -752,8 +764,8 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const url = 'https://domain.tld';
-    const navigation = createNavigation({});
-    const component = renderer.create(<Correction navigation={navigation} />);
+    const {route, ...navigation} = createNavigation({});
+    const component = renderer.create(<Correction navigation={navigation} route={route} />);
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
     correction.props.onLinkPress(url);
@@ -762,16 +774,21 @@ describe('Correction', () => {
       url,
     };
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('BrowserModal', params);
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'Browser', params});
   });
 
   it('should handle button press (oferring extra life)', () => {
     const {Component: Correction} = require('./correction');
 
     const refuseExtraLife = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} refuseExtraLife={refuseExtraLife} offeringExtraLife />,
+      <Correction
+        navigation={navigation}
+        route={route}
+        refuseExtraLife={refuseExtraLife}
+        offeringExtraLife
+      />,
     );
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
@@ -786,9 +803,14 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const acceptExtraLife = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
-      <Correction navigation={navigation} acceptExtraLife={acceptExtraLife} hasConsumedExtraLife />,
+      <Correction
+        navigation={navigation}
+        route={route}
+        acceptExtraLife={acceptExtraLife}
+        hasConsumedExtraLife
+      />,
     );
 
     const correction = component.root.find((el) => el.props.testID === 'correction');
@@ -803,10 +825,11 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const selectCurrentProgression = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
       <Correction
         navigation={navigation}
+        route={route}
         selectCurrentProgression={selectCurrentProgression}
         hasContext
       />,
@@ -824,10 +847,11 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const selectCurrentProgression = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
       <Correction
         navigation={navigation}
+        route={route}
         selectCurrentProgression={selectCurrentProgression}
         isFinished
         progressionId="42"
@@ -839,9 +863,12 @@ describe('Correction', () => {
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
-      isCorrect: true,
-      progressionId: '42',
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'LevelEnd',
+      params: {
+        isCorrect: true,
+        progressionId: '42',
+      },
     });
   });
 
@@ -849,10 +876,11 @@ describe('Correction', () => {
     const {Component: Correction} = require('./correction');
 
     const selectCurrentProgression = jest.fn();
-    const navigation = createNavigation({});
+    const {route, ...navigation} = createNavigation({});
     const component = renderer.create(
       <Correction
         navigation={navigation}
+        route={route}
         selectCurrentProgression={selectCurrentProgression}
         isFinished
         progressionId="1337"
@@ -865,9 +893,12 @@ describe('Correction', () => {
 
     expect(selectCurrentProgression).toHaveBeenCalledTimes(1);
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
-      isCorrect: false,
-      progressionId: '1337',
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'LevelEnd',
+      params: {
+        isCorrect: false,
+        progressionId: '1337',
+      },
     });
   });
 

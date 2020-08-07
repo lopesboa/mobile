@@ -85,11 +85,14 @@ export const request = (description: string, onDeny?: () => void) => async (
   });
 
   const permissionStatus = getState().permissions[PERMISSION_TYPE.CAMERA];
+  const systemStatus = await services.Permissions.check(toOSCameraPermission());
+  const refusedPermissions = [
+    PERMISSION_STATUS.DENIED,
+    PERMISSION_STATUS.BLOCKED,
+    PERMISSION_STATUS.UNDETERMINED,
+  ];
 
-  if (
-    permissionStatus === PERMISSION_STATUS.DENIED ||
-    permissionStatus === PERMISSION_STATUS.BLOCKED
-  ) {
+  if (refusedPermissions.includes(permissionStatus) && systemStatus !== PERMISSION_STATUS.GRANTED) {
     services.Permissions.alert(
       translations.permission,
       description,

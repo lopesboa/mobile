@@ -1,12 +1,11 @@
 import * as React from 'react';
-import {HeaderBackButton} from 'react-navigation';
-import type {_HeaderBackButtonProps} from 'react-navigation';
+import {HeaderBackButton, StackHeaderLeftButtonProps} from '@react-navigation/stack';
 
 import {BackHandler} from '../modules/back-handler';
 import withVibration from './with-vibration';
 import type {WithVibrationProps} from './with-vibration';
 
-interface Props extends WithVibrationProps, _HeaderBackButtonProps {}
+interface Props extends WithVibrationProps, StackHeaderLeftButtonProps {}
 
 class HeaderLeft extends React.PureComponent<Props> {
   componentDidMount() {

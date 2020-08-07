@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import theme from '../modules/theme';
 import background from '../assets/images/notify-me-bg.png';
 import translations from '../translations';

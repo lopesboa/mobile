@@ -33,7 +33,7 @@ Array [
       ]
     }
   />,
-  <Mock$ReactNavigation$SafeAreaView
+  <RNCSafeAreaView
     style={
       Object {
         "flexGrow": 1,
@@ -2148,7 +2148,7 @@ Array [
         </View>
       </View>
     </RCTScrollView>
-  </Mock$ReactNavigation$SafeAreaView>,
+  </RNCSafeAreaView>,
 ]
 `;
 
@@ -2185,7 +2185,7 @@ Array [
       ]
     }
   />,
-  <Mock$ReactNavigation$SafeAreaView
+  <RNCSafeAreaView
     style={
       Object {
         "flexGrow": 1,
@@ -4420,6 +4420,6 @@ Array [
         </View>
       </View>
     </RCTScrollView>
-  </Mock$ReactNavigation$SafeAreaView>,
+  </RNCSafeAreaView>,
 ]
 `;

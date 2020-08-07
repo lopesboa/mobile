@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {createSelector} from 'reselect';
-import {NavigationEvents, NavigationActions, NavigationScreenProps} from 'react-navigation';
 import {connect} from 'react-redux';
 
 import Screen from '../components/screen';
@@ -27,7 +26,7 @@ interface Props extends WithPermissionsProps, NavigationScreenProps<Params>, Con
 class NotifyMeScreen extends React.PureComponent<Props> {
   handleClose = (): void => {
     const {navigation} = this.props;
-    navigation.dispatch(NavigationActions.back());
+    navigation.goBack();
   };
 
   handleOnLaterPress = (): void => {
@@ -47,7 +46,6 @@ class NotifyMeScreen extends React.PureComponent<Props> {
     return (
       <Screen testID="notify-me-screen" noSafeArea noScroll>
         <StatusBar barStyle="light-content" backgroundColor={theme.colors.black} translucent />
-        <NavigationEvents testID="notify-me-navigation-events" />
         <NotifyMe onNotifyMePress={this.handleNotifyMe} onLaterPress={this.handleOnLaterPress} />
       </Screen>
     );

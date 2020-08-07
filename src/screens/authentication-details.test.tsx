@@ -19,10 +19,12 @@ describe('AuthenticationDetails', () => {
     const AuthenticationDetails = require('./authentication-details').default;
 
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+    const component = renderer.create(
+      <AuthenticationDetails navigation={navigation} route={route} />,
+    );
 
     const footer = component.root.find(
       (el) => el.props.testID === 'authentication-details-demo-footer',
@@ -36,10 +38,12 @@ describe('AuthenticationDetails', () => {
     const AuthenticationDetails = require('./authentication-details').default;
 
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+    const component = renderer.create(
+      <AuthenticationDetails navigation={navigation} route={route} />,
+    );
 
     const footer = component.root.find(
       (el) => el.props.testID === 'authentication-details-demo-footer',
@@ -62,30 +66,35 @@ describe('AuthenticationDetails', () => {
       const AuthenticationDetails = require('./authentication-details').default;
 
       const params = createParams(AUTHENTICATION_TYPE.QR_CODE);
-      const navigation = createNavigation({
+      const {route, ...navigation} = createNavigation({
         params,
       });
-      const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+      const component = renderer.create(
+        <AuthenticationDetails navigation={navigation} route={route} />,
+      );
 
       const button = component.root.find(
         (el) => el.props.testID === 'authentication-details-qr-code-button',
       );
 
-      navigation.navigate.mockImplementationOnce((screen: string, _params: QrCodeParams) => {
-        expect(screen).toEqual('QRCodeModal');
-        expect(_params).toEqual({
-          onScan: expect.any(Function),
-        });
+      navigation.navigate.mockImplementationOnce(
+        (parent: string, {screen, params}: {screen: string; params: QrCodeParams}) => {
+          expect(parent).toEqual('Modals');
+          expect(screen).toEqual('QRCode');
+          expect(params).toEqual({
+            onScan: expect.any(Function),
+          });
 
-        const {onScan} = _params;
-        const {onSignIn} = navigation.state.params;
+          const {onScan} = params;
+          const {onSignIn} = route.params;
 
-        const token = '__TOKEN__';
-        onScan(token);
+          const token = '__TOKEN__';
+          onScan(token);
 
-        expect(onSignIn).toHaveBeenCalledTimes(1);
-        expect(onSignIn).toHaveBeenCalledWith(AUTHENTICATION_TYPE.QR_CODE, token);
-      });
+          expect(onSignIn).toHaveBeenCalledTimes(1);
+          expect(onSignIn).toHaveBeenCalledWith(AUTHENTICATION_TYPE.QR_CODE, token);
+        },
+      );
 
       button.props.onPress();
 
@@ -98,10 +107,12 @@ describe('AuthenticationDetails', () => {
       const AuthenticationDetails = require('./authentication-details').default;
 
       const params = createParams(AUTHENTICATION_TYPE.MAGIC_LINK);
-      const navigation = createNavigation({
+      const {route, ...navigation} = createNavigation({
         params,
       });
-      const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+      const component = renderer.create(
+        <AuthenticationDetails navigation={navigation} route={route} />,
+      );
 
       const button = component.root.find(
         (el) => el.props.testID === 'authentication-details-magic-link-button',
@@ -121,18 +132,19 @@ describe('AuthenticationDetails', () => {
     const AuthenticationDetails = require('./authentication-details').default;
 
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+    const component = renderer.create(
+      <AuthenticationDetails navigation={navigation} route={route} />,
+    );
 
     const button = component.root.find(
       (el) => el.props.testID === 'authentication-details-demo-button-close',
     );
     button.props.onPress();
 
-    expect(navigation.dispatch).toHaveBeenCalledTimes(1);
-    expect(navigation.dispatch).toHaveBeenCalledWith('Mock$ReactNavigation$NavigationActions$Back');
+    expect(navigation.goBack).toHaveBeenCalledTimes(1);
   });
 
   it('should handle Android BackHandler', () => {
@@ -140,10 +152,12 @@ describe('AuthenticationDetails', () => {
     const {BackHandler} = require('../modules/back-handler');
 
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<AuthenticationDetails navigation={navigation} />);
+    const component = renderer.create(
+      <AuthenticationDetails navigation={navigation} route={route} />,
+    );
 
     // simulate a press on button by calling the cb function
     BackHandler.addEventListener.mock.calls[0][1]();

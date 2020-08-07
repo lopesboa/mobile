@@ -2,7 +2,6 @@ import * as React from 'react';
 import {StatusBar, StyleSheet, Platform} from 'react-native';
 import {connect} from 'react-redux';
 
-import {NavigationScreenProps} from 'react-navigation';
 import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';

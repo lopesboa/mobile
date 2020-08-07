@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
-import type {_BottomTabBarProps, TabScene} from 'react-navigation';
 import {hasSeenLesson, getCurrentSlide} from '@coorpacademy/player-store';
 
 import {
@@ -15,8 +14,12 @@ import theme from '../modules/theme';
 import Text from '../components/text';
 import PlaceholderCircle from '../components/placeholder-circle';
 import PlaceholderLine from '../components/placeholder-line';
+import Touchable from '../components/touchable';
+import Space from '../components/space';
 import translations from '../translations';
-import TabBar from './tab-bar';
+import {BrandThemeContext} from '../components/brand-theme-provider';
+import {getStatusBarHeight} from '../modules/status-bar';
+import type {WithVibrationProps} from './with-vibration';
 import Notification, {DEFAULT_HEIGHT} from './notification-animated';
 
 interface ConnectedStateToProps {
@@ -29,12 +32,30 @@ interface ConnectedStateToProps {
   hasNewLesson: boolean;
 }
 
-interface Props extends ConnectedStateToProps, _BottomTabBarProps {}
+interface Props extends ConnectedStateToProps, WithVibrationProps {}
 
 const INACTIVE_COLOR = theme.colors.gray.lightMedium;
 const PLACEHOLDER_COLOR = theme.colors.gray.light;
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    alignContent: 'center',
+    paddingVertical: 8,
+    borderTopWidth: 0.5,
+    borderTopColor: theme.colors.border,
+    backgroundColor: '#FBFBFB',
+    height: 40 + getStatusBarHeight(),
+    paddingHorizontal: 8,
+  },
+  touchable: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   inactiveText: {
     color: INACTIVE_COLOR,
     textAlign: 'center',
@@ -45,7 +66,6 @@ const styles = StyleSheet.create({
     right: 0,
     left: '50%',
     bottom: 0,
-    paddingVertical: theme.spacing.tiny,
     paddingHorizontal: DEFAULT_HEIGHT / 2,
   },
   hidden: {
@@ -53,134 +73,113 @@ const styles = StyleSheet.create({
   },
 });
 
-class TabBarSlide extends React.Component<Props> {
-  componentDidMount() {
-    this.switchTab();
-  }
+function LabelText({style, isActive, isLoading, hasNewLesson, label, Icon, color}) {
+  return (
+    <React.Fragment>
+      {!isLoading ? (
+        <Icon color={color} />
+      ) : (
+        <PlaceholderCircle width={20} color={PLACEHOLDER_COLOR} />
+      )}
+      <Space type="tiny" />
+      {!isLoading ? (
+        <Text style={[style, isActive && styles.inactiveText, {color}]}>{label}</Text>
+      ) : (
+        <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />
+      )}
+      {hasNewLesson ? (
+        <Notification testID="lesson-notification" style={styles.notification} />
+      ) : null}
+    </React.Fragment>
+  );
+}
 
-  componentDidUpdate(prevProps: Props) {
-    const {hasContext, isFocused, isSwitchDisabled} = this.props;
+function TabBBar({
+  state,
+  descriptors,
+  navigation,
+  isLoading,
+  hasContext,
+  hasNewLesson,
+  hasClue,
+  hasLesson,
+}: Props) {
+  const brandTheme = React.useContext(BrandThemeContext);
 
-    const hasContextChanged = prevProps.hasContext !== hasContext;
-    const hasFocusChanged = prevProps.isFocused !== isFocused;
-
-    if (isFocused && !isSwitchDisabled && (hasContextChanged || hasFocusChanged)) {
-      this.switchTab();
-    }
-  }
-
-  switchTab = () => {
-    const {hasContext} = this.props;
-
+  React.useEffect(() => {
     if (hasContext) {
-      this.props.navigation.navigate('Context');
+      navigation.navigate('Context');
     } else {
-      this.props.navigation.navigate('Question');
+      navigation.navigate('Question');
     }
-  };
+  }, [hasContext]);
 
-  handleTabPress = (scene: TabScene) => {
-    const {onTabPress, hasClue, hasLesson} = this.props;
+  return (
+    <View style={styles.container}>
+      {state.routes.map((route, index) => {
+        const {options} = descriptors[route.key];
+        const label = options?.tabBarLabel ?? options?.title ?? route.name;
+        const translatedLabel = translations[options?.tabBarLabel ?? options?.title ?? route.name];
+        const Icon = options?.tabBarIcon;
+        const labelStyle = options?.tabBarOptions.labelStyle;
 
-    if (
-      (scene.route.routeName === 'Clue' && !hasClue) ||
-      (scene.route.routeName === 'Lesson' && !hasLesson)
-    ) {
-      return;
-    }
+        const isFocused = state.index === index;
 
-    return onTabPress(scene);
-  };
+        const isDisabled = (label === 'clue' && !hasClue) || (label === 'lesson' && !hasLesson);
+        const onPress = () => {
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+          });
 
-  renderIcon = (scene: TabScene) => {
-    const {renderIcon, hasClue, hasLesson, isLoading} = this.props;
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate(route.name);
+          }
+        };
 
-    if (isLoading) {
-      return <PlaceholderCircle width={20} color={PLACEHOLDER_COLOR} />;
-    }
+        // const onLongPress = () => {
+        //   navigation.emit({
+        //     type: 'tabLongPress',
+        //     target: route.key,
+        //   });
+        // };
 
-    if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
-      return renderIcon({
-        ...scene,
-        tintColor: INACTIVE_COLOR,
-      });
-    }
+        // eslint-disable-next-line no-nested-ternary
+        const tintColor = isDisabled
+          ? INACTIVE_COLOR
+          : isFocused
+          ? brandTheme?.colors.primary
+          : theme.colors.gray.dark;
 
-    return renderIcon(scene);
-  };
+        if (label === 'context' && !hasContext) return null;
 
-  getButtonComponent = (scene: TabScene) => {
-    const {getButtonComponent, hasContext} = this.props;
-    const HiddenView = () => <View style={styles.hidden} />;
-
-    if (scene.route.key === 'Context' && !hasContext) {
-      // @ts-ignore dont understand why it cries
-      return HiddenView;
-    }
-
-    return getButtonComponent(scene);
-  };
-
-  getLabelText = (scene: TabScene) => ({tintColor}) => {
-    const {getLabelText, labelStyle, hasClue, hasLesson, hasNewLesson, isLoading} = this.props;
-
-    if (isLoading) {
-      return <PlaceholderLine width={40} color={PLACEHOLDER_COLOR} size="small" />;
-    }
-
-    const labelKey = getLabelText(scene);
-
-    if (!labelKey) {
-      return null;
-    }
-
-    // @ts-ignore Cannot access computed property
-    const labelText = translations[labelKey];
-
-    if ((scene.route.key === 'Clue' && !hasClue) || (scene.route.key === 'Lesson' && !hasLesson)) {
-      return <Text style={[labelStyle, styles.inactiveText]}>{labelText}</Text>;
-    }
-
-    // hack: we have to render it next to label to handle Android overflow
-    if (scene.route.key === 'Lesson' && hasNewLesson) {
-      return (
-        <React.Fragment>
-          <Text style={[labelStyle, {color: tintColor}]}>{labelText}</Text>
-          <Notification testID="lesson-notification" style={styles.notification} />
-        </React.Fragment>
-      );
-    }
-
-    return <Text style={[labelStyle, {color: tintColor}]}>{labelText}</Text>;
-  };
-
-  render() {
-    const {
-      navigation,
-      /* eslint-disable no-unused-vars */
-      isFocused,
-      isSwitchDisabled,
-      isLoading,
-      hasClue,
-      hasContext,
-      hasLesson,
-      hasNewLesson,
-      /* eslint-enable no-unused-vars */
-      ...props
-    } = this.props;
-
-    return (
-      <TabBar
-        {...props}
-        navigation={navigation}
-        onTabPress={this.handleTabPress}
-        onTabLongPress={this.handleTabPress}
-        renderIcon={this.renderIcon}
-        getButtonComponent={this.getButtonComponent}
-        getLabelText={this.getLabelText}
-      />
-    );
-  }
+        return (
+          <Touchable
+            disabled={isDisabled}
+            key={label}
+            accessibilityRole="button"
+            accessibilityStates={isFocused ? ['selected'] : []}
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            // onLongPress={onLongPress}
+            style={styles.touchable}
+          >
+            <LabelText
+              isLoading={isLoading}
+              isActive={(label === 'clue' && !hasClue) || (label === 'lesson' && !hasLesson)}
+              hasNewLesson={label === 'lesson' && hasNewLesson}
+              label={translatedLabel}
+              Icon={Icon}
+              color={tintColor}
+              style={labelStyle}
+            />
+          </Touchable>
+        );
+      })}
+    </View>
+  );
 }
 
 const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
@@ -203,4 +202,4 @@ const mapStateToProps = (state: StoreState): ConnectedStateToProps => {
   };
 };
 
-export default connect(mapStateToProps)(TabBarSlide);
+export default connect(mapStateToProps)(TabBBar);

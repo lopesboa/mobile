@@ -1403,9 +1403,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -2341,9 +2338,6 @@ exports[`Storyshots Correction Bad answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -4078,9 +4072,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -5016,9 +5007,6 @@ exports[`Storyshots Correction Bad answer 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -6607,9 +6595,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -7905,9 +7890,6 @@ exports[`Storyshots Correction Extralife 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -10109,9 +10091,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -11047,9 +11026,6 @@ exports[`Storyshots Correction Extralife consumed 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -13562,9 +13538,6 @@ exports[`Storyshots Correction Game over 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -14500,9 +14473,6 @@ exports[`Storyshots Correction Game over 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -17008,9 +16978,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -17946,9 +17913,6 @@ exports[`Storyshots Correction Right answer (resource viewed) 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -19167,9 +19131,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [
@@ -20105,9 +20066,6 @@ exports[`Storyshots Correction Right answer 1`] = `
                 ]
               }
             >
-              <Mock$ReactNavigation$NavigationEvents
-                onWillBlur={[Function]}
-              />
               <View
                 style={
                   Array [

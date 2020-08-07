@@ -128,9 +128,12 @@ describe('Lesson', () => {
     lesson.props.onPDFButtonPress(url, description);
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', {
-      title: description,
-      source: {uri: url},
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'Pdf',
+      params: {
+        title: description,
+        source: {uri: url},
+      },
     });
     expect(play).toHaveBeenCalledTimes(1);
   });

@@ -40,7 +40,7 @@ describe('Lives', () => {
 
   describe('Adaptive', () => {
     beforeAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
       await tapCardOnList('catalog-section-recommended-items', 1);
     });
 
@@ -51,7 +51,7 @@ describe('Lives', () => {
 
   describe('Microlearning', () => {
     beforeAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
       await element(by.id('home-screen')).swipe('up');
       await tapCardOnList('catalog-section-recommended-items', 12);
     });

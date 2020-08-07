@@ -8,6 +8,7 @@ describe('Notifications [Notify Me]', () => {
     });
     await bypassAuthentication();
   });
+
   it('accepts to be notified', async () => {
     await waitForExist('notify-me-screen');
     await element(by.id('notifyme-button')).tap();

@@ -1,7 +1,5 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-
-import {NavigationScreenProps} from 'react-navigation';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {
   isSearchFetching as _isSearchFetching,
@@ -31,7 +29,7 @@ interface ConnectedDispatchProps {
   clearSearch: typeof _clearSearch;
 }
 
-export interface Props extends ConnectedStateProps, ConnectedDispatchProps, NavigationScreenProps {
+export interface Props extends ConnectedStateProps, ConnectedDispatchProps {
   onCardPress: (item: DisciplineCard | ChapterCard) => void;
   onBackPress: () => void;
 }

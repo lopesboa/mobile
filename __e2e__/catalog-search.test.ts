@@ -2,11 +2,11 @@ import {by, expect, element} from 'detox';
 import {
   reloadApp,
   bypassAuthentication,
+  bypassNotifyMeScreen,
   waitForVisible,
   waitForExist,
   waitForNotVisible,
   tapCardOnList,
-  bypassNotifyMeScreen,
 } from './utils';
 
 const thirdCard = 'catalog-search-items-item-with-image-context-dis-1';
@@ -45,7 +45,7 @@ describe('CatalogSearch', () => {
   });
 
   it('should be able to back to search', async () => {
-    await element(by.id('header-back')).tap();
+    await element(by.id('question-header-back')).tap();
   });
 
   describe('Clear', () => {

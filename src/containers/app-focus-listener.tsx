@@ -22,7 +22,7 @@ const AppFocusListener = ({
   unscheduleLocalNotifications: _unscheduleLocalNotifications,
 }: Props) => {
   function _handleAppStateChange(nextAppState: AppStateStatus) {
-    switch(nextAppState) {
+    switch (nextAppState) {
       case 'active': {
         _unscheduleLocalNotifications(NOTIFICATION_TYPE.FINISH_COURSE);
         break;

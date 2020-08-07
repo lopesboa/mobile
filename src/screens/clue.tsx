@@ -3,7 +3,6 @@ import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {getCurrentClue, getEngineConfig, getCurrentSlide} from '@coorpacademy/player-store';
-import {NavigationScreenProps} from 'react-navigation';
 import Screen from '../components/screen';
 import Clue from '../components/clue';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';

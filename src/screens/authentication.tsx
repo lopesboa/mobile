@@ -3,7 +3,6 @@ import {Linking, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import RNBootSplash from 'react-native-bootsplash';
-import {NavigationScreenProps} from 'react-navigation';
 import {BackHandler} from '../modules/back-handler';
 
 import {assistanceEmail} from '../../app';

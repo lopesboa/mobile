@@ -78,7 +78,7 @@ exports[`Storyshots NotifyMe Notify Me 1`] = `
     }
     testID="image-background-gradient"
   >
-    <Mock$ReactNavigation$SafeAreaView>
+    <RNCSafeAreaView>
       <View
         style={
           Object {
@@ -227,7 +227,7 @@ exports[`Storyshots NotifyMe Notify Me 1`] = `
           </Text>
         </View>
       </View>
-    </Mock$ReactNavigation$SafeAreaView>
+    </RNCSafeAreaView>
   </BVLinearGradient>
 </View>
 `;

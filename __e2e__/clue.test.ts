@@ -11,7 +11,7 @@ import {
 
 describe('Clue', () => {
   beforeAll(async () => {
-    await reloadApp();
+    await reloadApp({}, true);
     await bypassAuthentication();
     await bypassNotifyMeScreen();
   });
@@ -40,7 +40,7 @@ describe('Clue', () => {
 
   describe('Without clue', () => {
     beforeAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
       await tapCardOnList('catalog-section-recommended-items', 6);
     });
 

@@ -11,7 +11,7 @@ import {isErrorVisible, getErrorType} from '../redux/utils/state-extract';
 import {assistanceEmail} from '../../app';
 import ModalAnimated from './modal-animated';
 
-interface ConnectedStateToProps extends ReactNavigation$WithNavigationProps {
+interface ConnectedStateToProps {
   isVisible: boolean;
   type: ErrorType;
 }

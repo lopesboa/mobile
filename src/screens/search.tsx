@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
-import {NavigationScreenProps} from 'react-navigation';
+import {StackScreenProps} from '@react-navigation/stack';
 import Screen from '../components/screen';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {selectCard} from '../redux/actions/catalog/cards/select';
@@ -14,7 +14,13 @@ interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
 }
 
-interface Props extends NavigationScreenProps, ConnectedDispatchProps {}
+type Params = {
+  Search: undefined;
+  Home: undefined;
+  Slide: undefined;
+};
+
+type Props = StackScreenProps<Params, 'Search'> & ConnectedDispatchProps;
 
 class SearchScreen extends React.PureComponent<Props> {
   componentDidMount() {

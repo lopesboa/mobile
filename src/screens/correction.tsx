@@ -14,7 +14,6 @@ import {
   getPreviousSlide,
 } from '@coorpacademy/player-store';
 
-import {NavigationScreenProps} from 'react-navigation';
 import {SPECIFIC_CONTENT_REF} from '../const';
 import type {Resource} from '../types';
 import Correction, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/correction';
@@ -102,7 +101,7 @@ class CorrectionScreen extends React.Component<Props, State> {
 
     this.setState({needRerender: false});
     this.props.play();
-    this.props.navigation.navigate('PdfModal', pdfParams);
+    this.props.navigation.navigate('Modals', {screen: 'Pdf', params: pdfParams});
   };
 
   handleVideoPlay = () => {
@@ -117,7 +116,7 @@ class CorrectionScreen extends React.Component<Props, State> {
     const params: BrowserScreenParams = {
       url,
     };
-    navigate('BrowserModal', params);
+    navigate('Modals', {screen: 'Browser', params});
   };
 
   handleButtonPress = () => {
@@ -144,7 +143,7 @@ class CorrectionScreen extends React.Component<Props, State> {
         progressionId,
       };
 
-      return navigation.navigate('LevelEnd', levelEndParams);
+      return navigation.navigate('Modals', {screen: 'LevelEnd', params: levelEndParams});
     }
 
     return navigation.navigate(hasContext ? 'Context' : 'Question');
@@ -204,7 +203,7 @@ class CorrectionScreen extends React.Component<Props, State> {
   }
 }
 
-const getIsLoading = (state: StoreState, {navigation}: OwnProps): boolean => {
+const getIsLoading = (state: StoreState, {navigation, route}: OwnProps): boolean => {
   const slide = getPreviousSlide(state);
   const nextContentRef = getNextContentRef(state);
   const correction = getCurrentCorrection(state);
@@ -215,7 +214,7 @@ const getIsLoading = (state: StoreState, {navigation}: OwnProps): boolean => {
     !correction ||
     isCorrect === undefined ||
     !slide ||
-    slide._id !== navigation.state.params.slideId
+    slide._id !== route.params.slideId
   );
 };
 

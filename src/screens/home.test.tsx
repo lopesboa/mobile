@@ -116,7 +116,37 @@ describe('Home', () => {
     );
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'NotifyMe'});
+  });
+
+  it('opens notify-me modal for the first time after a component update', () => {
+    const {Component: Home} = require('./home');
+
+    const selectCard = jest.fn();
+    const navigation = createNavigation({});
+    const component = renderer.create(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="blocked"
+      />,
+    );
+
+    component.update(
+      <Home
+        navigation={navigation}
+        selectCard={selectCard}
+        isFetching
+        isFocused={false}
+        appSession={1}
+        notificationStatus="undetermined"
+      />,
+    );
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'NotifyMe'});
   });
 
   it('should not open notify-me modal on Android', () => {
@@ -156,7 +186,7 @@ describe('Home', () => {
     );
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'NotifyMe'});
   });
 
   it('opens notify-me modal for the third time', () => {
@@ -176,7 +206,7 @@ describe('Home', () => {
     );
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('NotifyMeModal');
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {screen: 'NotifyMe'});
   });
 
   it('handles settings press', () => {

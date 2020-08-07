@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ScrollView, View, StyleSheet} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import background from '../assets/images/authentication.png';
 import logo from '../assets/images/logo.png';

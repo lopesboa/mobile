@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import type {Media} from '@coorpacademy/progression-engine';
 import {getCurrentSlide, getContextMedia} from '@coorpacademy/player-store';
-import {NavigationScreenProps} from 'react-navigation';
 
+import {StackScreenProps} from '@react-navigation/stack';
 import Screen from '../components/screen';
 import Context from '../components/context';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
@@ -18,7 +18,14 @@ export interface ConnectedStateProps {
   media?: Media;
 }
 
-interface Props extends NavigationScreenProps, ConnectedStateProps {}
+type Params = {
+  Modals: {screen: string; params: Record<string, string>};
+  Lesson: undefined;
+  Question: undefined;
+  Pdf: {screen: string; params: PdfScreenParams};
+};
+
+type Props = StackScreenProps<Params, 'Lesson'> & ConnectedStateProps;
 
 class ContextScreen extends React.PureComponent<Props> {
   handleButtonPress = () => {
@@ -29,7 +36,7 @@ class ContextScreen extends React.PureComponent<Props> {
     const params: BrowserScreenParams = {
       url,
     };
-    this.props.navigation.navigate('BrowserModal', params);
+    this.props.navigation.navigate('Modals', {screen: 'Browser', params});
   };
 
   handlePDFButtonPress = (url: string, description?: string) => {
@@ -38,7 +45,7 @@ class ContextScreen extends React.PureComponent<Props> {
       source: {uri: url},
     };
 
-    this.props.navigation.navigate('PdfModal', pdfParams);
+    this.props.navigation.navigate('Modals', {screen: 'Pdf', params: pdfParams});
   };
 
   render() {

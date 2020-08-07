@@ -648,7 +648,10 @@ describe('Question', () => {
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
-      expect(navigation.navigate).toHaveBeenCalledWith('Correction', {slideId: 'sli_foo'});
+      expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+        screen: 'Correction',
+        params: {slideId: 'sli_foo'},
+      });
     });
 
     it('should handle button press and navigate to question screen', async () => {
@@ -798,9 +801,12 @@ describe('Question', () => {
 
       expect(validateAnswer).toHaveBeenCalledTimes(1);
       expect(navigation.navigate).toHaveBeenCalledTimes(1);
-      expect(navigation.navigate).toHaveBeenCalledWith('LevelEnd', {
-        isCorrect: true,
-        progressionId: 'progression1',
+      expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+        screen: 'LevelEnd',
+        params: {
+          isCorrect: true,
+          progressionId: 'progression1',
+        },
       });
     });
 

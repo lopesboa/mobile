@@ -1,5 +1,6 @@
 import {NativeModules, Platform, ScrollView} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
+import 'react-native-gesture-handler/jestSetup';
 
 // AsyncStorage
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
@@ -201,17 +202,18 @@ jest.mock('react-native-snap-carousel', () => ({
   Pagination: 'Mock$ReactNativeSnapCarousel$Pagination',
 }));
 
-// react-navigation
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
 
-jest.mock('react-navigation', () => ({
-  SafeAreaView: 'Mock$ReactNavigation$SafeAreaView',
-  HeaderBackButton: 'Mock$ReactNavigation$HeaderBackButton',
-  NavigationEvents: 'Mock$ReactNavigation$NavigationEvents',
-  NavigationActions: {
-    back: () => 'Mock$ReactNavigation$NavigationActions$Back',
-  },
-}));
+  // The mock for `call` immediately calls the callback which is incorrect
+  // So we override it with a no-op
+  Reanimated.default.call = () => {};
 
+  return Reanimated;
+});
+
+// Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 // react-native-confetti-cannon
 
 jest.mock('react-native-confetti-cannon', () => 'Mock$ReactNativeConfettiCannon');

@@ -4,7 +4,6 @@ import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {NavigationEvents, NavigationScreenProps} from 'react-navigation';
 import type {ContentType, Media} from '@coorpacademy/progression-engine';
 import {
   getCurrentContent,
@@ -14,6 +13,7 @@ import {
 } from '@coorpacademy/player-store';
 import type {LevelAPI, ChapterAPI, ExitNodeAPI} from '@coorpacademy/player-services';
 
+import {StackScreenProps} from '@react-navigation/stack';
 import type {StoreState} from '../redux/store';
 import Screen from '../components/screen';
 import LevelEnd, {POSITIVE_COLOR, NEGATIVE_COLOR} from '../components/level-end';
@@ -49,12 +49,16 @@ export interface ConnectedStateProps {
 }
 
 export type Params = {
-  isCorrect: boolean;
-  progressionId: string;
+  LevelEnd: {isCorrect: boolean; progressionId: string};
+  Question: undefined;
+  Slide: undefined;
+  Home: undefined;
+  Search: undefined;
+  Modals: {screen: string; params: PdfScreenParams};
 };
 
 interface Props
-  extends NavigationScreenProps<Params>,
+  extends StackScreenProps<Params, 'LevelEnd'>,
     ConnectedStateProps,
     ConnectedDispatchProps {}
 
@@ -67,7 +71,14 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
     isFocused: false,
   };
 
+  unsubscribe: null;
+
+  componentDidMount() {
+    this.unsubscribe = this.props.navigation.addListener('focus', this.handleDidFocus);
+  }
+
   componentWillUnmount() {
+    this.unsubscribe();
     this.props.changeAnswerValidationStatus(false);
   }
 
@@ -84,8 +95,8 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
   };
 
   handleButtonPress = () => {
-    const {navigation, currentContent, nextContent} = this.props;
-    const {isCorrect} = navigation.state.params;
+    const {navigation, route, currentContent, nextContent} = this.props;
+    const {isCorrect} = route.params;
 
     const contentToStart = isCorrect ? nextContent : currentContent;
 
@@ -104,7 +115,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
       source: {uri: url},
     };
 
-    this.props.navigation.navigate('PdfModal', pdfParams);
+    this.props.navigation.navigate('Modals', {screen: 'Pdf', params: pdfParams});
   };
 
   handleFeedbackLinkPress = (url: string) => {
@@ -125,7 +136,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
   render() {
     const {
       contentType,
-      navigation,
+      route,
       recommendation,
       bestScore,
       nextContent,
@@ -133,7 +144,7 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
       feedbackDescription,
       feedbackMedia,
     } = this.props;
-    const {isCorrect} = navigation.state.params;
+    const {isCorrect} = route.params;
 
     const backgroundColor = (isCorrect && POSITIVE_COLOR) || NEGATIVE_COLOR;
 
@@ -143,7 +154,6 @@ class LevelEndScreen extends React.PureComponent<Props, State> {
     return (
       <Screen testID="level-end-screen" noScroll noSafeArea style={{backgroundColor}}>
         <StatusBar barStyle="light-content" backgroundColor={backgroundColor} />
-        <NavigationEvents onDidFocus={this.handleDidFocus} testID="level-end-navigation-events" />
         <LevelEnd
           contentType={contentType}
           recommendation={recommendation}

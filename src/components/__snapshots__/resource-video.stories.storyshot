@@ -1,151 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Resource Video Jwplayer 1`] = `
-Array [
-  <Mock$ReactNavigation$NavigationEvents
-    onWillBlur={[Function]}
-  />,
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#14171A",
+        "overflow": "hidden",
+      },
+      false,
+      Object {
+        "height": 203,
+      },
+    ]
+  }
+  testID="video-container"
+>
   <View
+    accessibilityIgnoresInvertColors={true}
     style={
       Array [
         Object {
-          "backgroundColor": "#14171A",
-          "overflow": "hidden",
+          "height": "100%",
+          "width": "100%",
         },
-        false,
-        Object {
-          "height": 203,
-        },
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ],
       ]
     }
-    testID="video-container"
   >
-    <View
-      accessibilityIgnoresInvertColors={true}
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/__fixtures__/assets/landscape-1.jpg",
+        }
+      }
       style={
         Array [
           Object {
-            "height": "100%",
-            "width": "100%",
-          },
-          Array [
-            Object {
-              "flex": 1,
-            },
-            undefined,
-          ],
-        ]
-      }
-    >
-      <Image
-        source={
-          Object {
-            "testUri": "../../../src/__fixtures__/assets/landscape-1.jpg",
-          }
-        }
-        style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "height": undefined,
-              "width": undefined,
-            },
-            undefined,
-          ]
-        }
-        testID="video-preview-container"
-      />
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0, 0, 0, 0.5)",
             "bottom": 0,
-            "justifyContent": "center",
             "left": 0,
             "position": "absolute",
             "right": 0,
             "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+      testID="video-preview-container"
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
         }
+        testID="video-preview-video"
       >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={70}
+          bbWidth={70}
+          color={4294967295}
+          focusable={false}
+          height={70}
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
           style={
-            Object {
-              "opacity": 1,
-            }
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              Object {
+                "flex": 0,
+                "height": 70,
+                "width": 70,
+              },
+            ]
           }
-          testID="video-preview-video"
+          tintColor={4294967295}
+          vbHeight={24}
+          vbWidth={24}
+          width={70}
         >
-          <RNSVGSvgView
-            align="xMidYMid"
-            bbHeight={70}
-            bbWidth={70}
-            color={4294967295}
-            focusable={false}
-            height={70}
-            meetOrSlice={0}
-            minX={0}
-            minY={0}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderWidth": 0,
-                },
-                Object {
-                  "flex": 0,
-                  "height": 70,
-                  "width": 70,
-                },
-              ]
-            }
-            tintColor={4294967295}
-            vbHeight={24}
-            vbWidth={24}
-            width={70}
-          >
-            <RNSVGGroup>
-              <RNSVGPath
-                d="M0 0h24v24H0z"
-                fill={null}
-                propList={
-                  Array [
-                    "fill",
-                  ]
-                }
-              />
-              <RNSVGPath
-                d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
-                fill={4294967295}
-                propList={
-                  Array [
-                    "fill",
-                  ]
-                }
-              />
-            </RNSVGGroup>
-          </RNSVGSvgView>
-        </View>
+          <RNSVGGroup>
+            <RNSVGPath
+              d="M0 0h24v24H0z"
+              fill={null}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+            />
+            <RNSVGPath
+              d="M11.995 2.003c-5.514 0-10 4.486-10 10 0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm-3 15v-9l9 4.5-9 4.5z"
+              fill={4294967295}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
       </View>
     </View>
-  </View>,
-]
+  </View>
+</View>
 `;
 
 exports[`Storyshots Resource Video OmniPlayer 1`] = `

@@ -52,28 +52,40 @@ describe('QR Code', () => {
 
   it('should handle back', () => {
     const {Component: QRCode} = require('./qr-code');
-
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<QRCode navigation={navigation} />);
+
+    const requestCameraPermission = jest.fn();
+    const component = renderer.create(
+      <QRCode
+        navigation={navigation}
+        route={route}
+        requestCameraPermission={requestCameraPermission}
+      />,
+    );
 
     const button = component.root.find((el) => el.props.testID === 'qr-code-button-close');
     button.props.onPress();
 
-    expect(navigation.dispatch).toHaveBeenCalledTimes(1);
-    expect(navigation.dispatch).toHaveBeenCalledWith('Mock$ReactNavigation$NavigationActions$Back');
+    expect(navigation.goBack).toHaveBeenCalledTimes(1);
   });
 
   it('should handle fake scan', () => {
     const {Component: QRCode} = require('./qr-code');
-
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<QRCode navigation={navigation} />);
+    const requestCameraPermission = jest.fn();
+    const component = renderer.create(
+      <QRCode
+        navigation={navigation}
+        route={route}
+        requestCameraPermission={requestCameraPermission}
+      />,
+    );
 
     const touchable = component.root.find((el) => el.props.testID === 'qr-code-area');
     touchable.props.onLongPress();
@@ -89,25 +101,37 @@ describe('QR Code', () => {
       __TEST__: false,
     }));
     const {Component: QRCode} = require('./qr-code');
-
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<QRCode navigation={navigation} />);
+    const requestCameraPermission = jest.fn();
+    const component = renderer.create(
+      <QRCode
+        navigation={navigation}
+        route={route}
+        requestCameraPermission={requestCameraPermission}
+      />,
+    );
 
     expect(() => component.root.find((el) => el.props.testID === 'qr-code-area')).toThrow();
   });
 
   it('should handle scan', () => {
     const {Component: QRCode} = require('./qr-code');
-
     const token = 'foobar';
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
-    const component = renderer.create(<QRCode navigation={navigation} />);
+    const requestCameraPermission = jest.fn();
+    const component = renderer.create(
+      <QRCode
+        navigation={navigation}
+        route={route}
+        requestCameraPermission={requestCameraPermission}
+      />,
+    );
 
     const touchable = component.root.find((el) => el.props.testID === 'qr-code-scanner');
     touchable.props.onScan(token);
@@ -118,22 +142,25 @@ describe('QR Code', () => {
 
   it('should handle focus', () => {
     const {Component: QRCode} = require('./qr-code');
-
-    const requestCameraPermission = jest.fn();
+    const requestCameraPermission = jest.fn((t, cb) => {
+      cb();
+    });
     const params = createParams();
-    const navigation = createNavigation({
+    const {route, ...navigation} = createNavigation({
       params,
     });
     const component = renderer.create(
-      <QRCode navigation={navigation} requestCameraPermission={requestCameraPermission} />,
+      <QRCode
+        navigation={navigation}
+        route={route}
+        requestCameraPermission={requestCameraPermission}
+      />,
     );
 
-    const navigationEvents = component.root.find(
-      (el) => el.props.testID === 'qr-code-navigation-events',
-    );
-    navigationEvents.props.onDidFocus();
+    component.unmount();
 
     expect(requestCameraPermission).toHaveBeenCalledTimes(1);
+    expect(navigation.goBack).toHaveBeenCalledTimes(1);
     expect(requestCameraPermission).toHaveBeenCalledWith(
       translations.permissionCamera,
       expect.any(Function),

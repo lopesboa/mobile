@@ -2,9 +2,8 @@ import * as React from 'react';
 import {StatusBar, Platform} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
-import {NavigationScreenProps} from 'react-navigation';
 
-import {checkNotifications} from 'react-native-permissions';
+import {StackScreenProps} from '@react-navigation/stack';
 import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
@@ -26,11 +25,25 @@ interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
 }
 
-interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
+type ScreenParams = {
+  Modals: {screen: string};
+  Slide: undefined;
+  Search: undefined;
+  Settings: undefined;
+};
+
+interface Props
+  extends StackScreenProps<ScreenParams, 'Slide'>,
+    ConnectedStateProps,
+    ConnectedDispatchProps {}
 
 class HomeScreen extends React.PureComponent<Props> {
   componentDidMount() {
     BackHandler?.addEventListener('hardwareBackPress', this.handleBackButton);
+    this.showNotifyMe();
+  }
+
+  componentDidUpdate() {
     this.showNotifyMe();
   }
 
@@ -46,8 +59,7 @@ class HomeScreen extends React.PureComponent<Props> {
       (notificationStatus === PERMISSION_STATUS.MAYBE_LATER &&
         (appSession === PERMISSION_RECURENCE.SECOND || appSession === PERMISSION_RECURENCE.THIRD))
     ) {
-      navigation.navigate('NotifyMeModal');
-      return true;
+      return navigation.navigate('Modals', {screen: 'NotifyMe'});
     }
   }
 

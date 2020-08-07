@@ -37,7 +37,7 @@ describe('Context', () => {
     });
 
     afterAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
     });
   });
 
@@ -61,7 +61,7 @@ describe('Context', () => {
     });
 
     afterAll(async () => {
-      await element(by.id('header-back')).tap();
+      await element(by.id('question-header-back')).tap();
     });
   });
 

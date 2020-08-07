@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
+import {StackScreenProps} from '@react-navigation/stack';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
@@ -9,8 +10,6 @@ import {
   selectResource,
   getCurrentSlide,
 } from '@coorpacademy/player-store';
-
-import {NavigationScreenProps} from 'react-navigation';
 
 import type {Resource} from '../types';
 import type {StoreState} from '../redux/store';
@@ -32,17 +31,24 @@ interface ConnectedDispatchProps {
   selectResource: typeof selectResource;
 }
 
-interface Props extends NavigationScreenProps, ConnectedStateProps, ConnectedDispatchProps {}
+type Params = {
+  Modals: {screen: string; params: PdfScreenParams};
+};
+
+interface Props
+  extends StackScreenProps<Params, 'Modals'>,
+    ConnectedStateProps,
+    ConnectedDispatchProps {}
 
 class LessonScreen extends React.PureComponent<Props> {
   handlePDFButtonPress = (url: string, description?: string) => {
-    const pdfParams: PdfScreenParams = {
+    const params: PdfScreenParams = {
       title: description,
       source: {uri: url},
     };
 
     this.props.play();
-    this.props.navigation.navigate('PdfModal', pdfParams);
+    this.props.navigation.navigate('Modals', {screen: 'Pdf', params});
   };
 
   handleVideoPlay = () => {

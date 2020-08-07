@@ -37,7 +37,7 @@ describe('Progression bar', () => {
     await wrongAnswer();
     await expect(element(by.id('correction-lives-3-broken'))).toBeVisible();
     await element(by.id('button-next-question')).tap();
-    await element(by.id('header-back')).tap();
+    await element(by.id('question-header-back')).tap();
     await expect(
       element(
         by

@@ -102,6 +102,7 @@ describe('Permissions', () => {
           Analytics: createFakeAnalytics(),
           Permissions: {
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+            check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.GRANTED)),
           },
         };
         // @ts-ignore we dont want to mock the entire services object
@@ -133,6 +134,7 @@ describe('Permissions', () => {
           Analytics: createFakeAnalytics(),
           Permissions: {
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.UNDETERMINED)),
+            check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.GRANTED)),
           },
         };
         // @ts-ignore we dont want to mock the entire services object
@@ -160,6 +162,7 @@ describe('Permissions', () => {
             openSettings: jest.fn(() => Promise.resolve(undefined)),
             alert: jest.fn(),
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+            check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
           },
         };
         // @ts-ignore we dont want to mock the entire services object
@@ -194,6 +197,7 @@ describe('Permissions', () => {
               quitOption && quitOption.onPress();
             }),
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+            check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
           },
         };
         // @ts-ignore we dont want to mock the entire services object
@@ -228,6 +232,7 @@ describe('Permissions', () => {
               quitOption && quitOption.onPress();
             }),
             request: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
+            check: jest.fn(() => Promise.resolve(PERMISSION_STATUS.DENIED)),
           },
         };
         // @ts-ignore we dont want to mock the entire services object

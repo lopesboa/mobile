@@ -54,13 +54,13 @@ describe('Authentication', () => {
       await waitForExist('authentication');
     });
   });
+
   describe('QR code', () => {
     describe('Permission refused', () => {
       beforeAll(async () => {
-        await reloadApp({camera: 'NO'});
+        await reloadApp({camera: 'NO'}, true);
         await element(by.id('button-sign-in-desktop')).tap();
       });
-
       it('should see QR code elements', async () => {
         await waitForExist('authentication-details-qr-code');
         await expect(element(by.id('authentication-details-qr-code-header'))).toBeVisible();
@@ -97,6 +97,7 @@ describe('Authentication', () => {
         await waitForExist('authentication-details-qr-code');
       });
     });
+
     describe('Permission accepted', () => {
       beforeAll(async () => {
         await reloadApp({camera: 'YES'}, true);
@@ -111,6 +112,7 @@ describe('Authentication', () => {
       });
     });
   });
+
   describe('Authenticated', () => {
     beforeAll(async () => {
       await reloadApp();

@@ -201,17 +201,10 @@ describe('LevelEnd', () => {
     const {Component: LevelEnd} = require('./level-end');
 
     const params = createParams({});
-    const navigation = createNavigation({params});
-    const component = renderer.create(<LevelEnd navigation={navigation} />);
+    const {route, ...navigation} = createNavigation({params});
+    const component = renderer.create(<LevelEnd navigation={navigation} route={route} />);
 
-    const navigationEvents = component.root.find(
-      (el) => el.props.testID === 'level-end-navigation-events',
-    );
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
-
-    expect(levelEnd.props.isFocused).toBeFalsy();
-
-    navigationEvents.props.onDidFocus();
 
     expect(levelEnd.props.isFocused).toBeTruthy();
   });
@@ -221,10 +214,11 @@ describe('LevelEnd', () => {
 
     const params = createParams({});
     const changeAnswerValidationStatus = jest.fn();
-    const navigation = createNavigation({params});
+    const {route, ...navigation} = createNavigation({params});
     const component = renderer.create(
       <LevelEnd
         navigation={navigation}
+        route={route}
         changeAnswerValidationStatus={changeAnswerValidationStatus}
       />,
     );
@@ -238,8 +232,8 @@ describe('LevelEnd', () => {
     const {Component: LevelEnd} = require('./level-end');
 
     const params = createParams({});
-    const navigation = createNavigation({params});
-    const component = renderer.create(<LevelEnd navigation={navigation} />);
+    const {route, ...navigation} = createNavigation({params});
+    const component = renderer.create(<LevelEnd navigation={navigation} route={route} />);
 
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onClose();
@@ -253,8 +247,10 @@ describe('LevelEnd', () => {
 
     const selectCard = jest.fn();
     const params = createParams({});
-    const navigation = createNavigation({params});
-    const component = renderer.create(<LevelEnd navigation={navigation} selectCard={selectCard} />);
+    const {route, ...navigation} = createNavigation({params});
+    const component = renderer.create(
+      <LevelEnd navigation={navigation} route={route} selectCard={selectCard} />,
+    );
 
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onCardPress(disciplineCardOne);
@@ -271,9 +267,14 @@ describe('LevelEnd', () => {
     const selectCard = jest.fn();
     const editSearch = jest.fn();
     const params = createParams({});
-    const navigation = createNavigation({params});
+    const {route, ...navigation} = createNavigation({params});
     const component = renderer.create(
-      <LevelEnd navigation={navigation} selectCard={selectCard} editSearch={editSearch} />,
+      <LevelEnd
+        navigation={navigation}
+        route={route}
+        selectCard={selectCard}
+        editSearch={editSearch}
+      />,
     );
 
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
@@ -293,8 +294,8 @@ describe('LevelEnd', () => {
     const params = createParams({});
     const url = 'https://domain.tld';
     const description = 'foo';
-    const navigation = createNavigation({params});
-    const component = renderer.create(<LevelEnd navigation={navigation} />);
+    const {route, ...navigation} = createNavigation({params});
+    const component = renderer.create(<LevelEnd navigation={navigation} route={route} />);
 
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
     levelEnd.props.onPDFButtonPress(url, description);
@@ -305,7 +306,10 @@ describe('LevelEnd', () => {
     };
 
     expect(navigation.navigate).toHaveBeenCalledTimes(1);
-    expect(navigation.navigate).toHaveBeenCalledWith('PdfModal', expectedParams);
+    expect(navigation.navigate).toHaveBeenCalledWith('Modals', {
+      screen: 'Pdf',
+      params: expectedParams,
+    });
   });
 
   it('should handle button press', () => {
@@ -313,9 +317,13 @@ describe('LevelEnd', () => {
 
     const createNextProgression = jest.fn();
     const params = createParams({});
-    const navigation = createNavigation({params});
+    const {route, ...navigation} = createNavigation({params});
     const component = renderer.create(
-      <LevelEnd navigation={navigation} createNextProgression={createNextProgression} />,
+      <LevelEnd
+        navigation={navigation}
+        route={route}
+        createNextProgression={createNextProgression}
+      />,
     );
 
     const levelEnd = component.root.find((el) => el.props.testID === 'level-end');
@@ -331,10 +339,11 @@ describe('LevelEnd', () => {
 
     const createNextProgression = jest.fn();
     const params = createParams({isCorrect: true});
-    const navigation = createNavigation({params});
+    const {route, ...navigation} = createNavigation({params});
     const component = renderer.create(
       <LevelEnd
         navigation={navigation}
+        route={route}
         createNextProgression={createNextProgression}
         nextContent={levelOne}
       />,
@@ -354,10 +363,11 @@ describe('LevelEnd', () => {
 
     const createNextProgression = jest.fn();
     const params = createParams({isCorrect: true});
-    const navigation = createNavigation({params});
+    const {route, ...navigation} = createNavigation({params});
     const component = renderer.create(
       <LevelEnd
         navigation={navigation}
+        route={route}
         createNextProgression={createNextProgression}
         nextContent={chapter}
       />,

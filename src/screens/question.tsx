@@ -14,7 +14,6 @@ import {
 } from '@coorpacademy/player-store';
 import type {Media, QuestionType, Choice} from '@coorpacademy/progression-engine';
 
-import {NavigationScreenProps} from 'react-navigation';
 import Question from '../components/question';
 import type {Props as QuestionProps} from '../components/question';
 import Screen from '../components/screen';
@@ -114,12 +113,12 @@ class QuestionScreen extends React.Component<Props> {
         isCorrect,
         progressionId,
       };
-      return navigate('LevelEnd', levelEndParams);
+      return navigate('Modals', {screen: 'LevelEnd', params: levelEndParams});
     }
     const correctionParams: CorrectionParams = {
       slideId,
     };
-    return navigate('Correction', correctionParams);
+    return navigate('Modals', {screen: 'Correction', params: correctionParams});
   };
 
   render() {

@@ -37,7 +37,7 @@ describe('Hero: display card for uncomplete level', () => {
   });
 
   it('should back to home', async () => {
-    await element(by.id('header-back')).tap();
+    await element(by.id('question-header-back')).tap();
     await waitForVisible('home-screen');
   });
 
