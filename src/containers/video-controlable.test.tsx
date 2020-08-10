@@ -129,7 +129,7 @@ describe('VideoControlable', () => {
   it('should handle onTracksToggle', () => {
     const selectedTrack = expectedTracks[1].language;
     const component = renderer.create(
-      <VideoControlable tracks={expectedTracks} selectedTrack={selectedTrack} />,
+      <VideoControlable isFocused tracks={expectedTracks} selectedTrack={selectedTrack} />,
     );
 
     const video = component.root.find((el) => el.props.onTracksToggle);
@@ -140,7 +140,7 @@ describe('VideoControlable', () => {
   });
 
   it('should handle onError', () => {
-    const component = renderer.create(<VideoControlable />);
+    const component = renderer.create(<VideoControlable isFocused />);
 
     const video = component.root.find((el) => el.props.onError);
     video.props.onError();
@@ -153,7 +153,7 @@ describe('VideoControlable', () => {
       Platform.OS = 'android';
 
       const ref = createRef();
-      const component = renderer.create(<VideoControlable />);
+      const component = renderer.create(<VideoControlable isFocused />);
 
       const video = component.root.find((el) => el.props.onReady);
       video.props.onRef(ref);
@@ -167,7 +167,7 @@ describe('VideoControlable', () => {
       Platform.OS = 'ios';
 
       const ref = createRef();
-      const component = renderer.create(<VideoControlable />);
+      const component = renderer.create(<VideoControlable isFocused />);
 
       const video = component.root.find((el) => el.props.onReady);
       video.props.onRef(ref);
@@ -177,17 +177,17 @@ describe('VideoControlable', () => {
     });
   });
 
-  // it('should pause the video when focus is lost', () => {
-  //   const ref = createRef();
-  //   const component = renderer.create(<VideoControlable />);
+  it('should pause the video when focus is lost', () => {
+    const ref = createRef();
+    const component = renderer.create(<VideoControlable isFocused />);
 
-  //   const video = component.root.find((el) => el.props.onRef);
-  //   const navigation = component.root.find((el) => el.props.onWillBlur);
-  //   video.props.onRef(ref);
-  //   navigation.props.onWillBlur();
+    const video = component.root.find((el) => el.props.onRef);
+    video.props.onRef(ref);
 
-  //   expect(ref.methods.pause).toHaveBeenCalledTimes(1);
-  // });
+    component.update(<VideoControlable isFocused={false} />);
+
+    expect(ref.methods.pause).toHaveBeenCalledTimes(1);
+  });
 
   describe('onShrink', () => {
     it('should handle shrink (Android)', async () => {
@@ -196,7 +196,9 @@ describe('VideoControlable', () => {
       const toggleFullscreen = jest.fn();
       const ref = createRef();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onShrink);
       video.props.onRef(ref);
@@ -215,7 +217,9 @@ describe('VideoControlable', () => {
       const toggleFullscreen = jest.fn();
       const ref = createRef();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onShrink);
       video.props.onRef(ref);
@@ -232,7 +236,9 @@ describe('VideoControlable', () => {
     it('should not handle shrink if no ref found', async () => {
       const toggleFullscreen = jest.fn();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onShrink);
       video.props.onProgress({currentTime});
@@ -250,7 +256,9 @@ describe('VideoControlable', () => {
       const toggleFullscreen = jest.fn();
       const ref = createRef();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onExpand);
       video.props.onRef(ref);
@@ -269,7 +277,9 @@ describe('VideoControlable', () => {
       const toggleFullscreen = jest.fn();
       const ref = createRef();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onExpand);
       video.props.onRef(ref);
@@ -286,7 +296,9 @@ describe('VideoControlable', () => {
     it('should not handle expand if no ref found', async () => {
       const toggleFullscreen = jest.fn();
       const currentTime = 1337;
-      const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+      const component = renderer.create(
+        <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+      );
 
       const video = component.root.find((el) => el.props.onExpand);
       video.props.onProgress({currentTime});
@@ -301,7 +313,9 @@ describe('VideoControlable', () => {
     const toggleFullscreen = jest.fn();
     const ref = createRef();
     const currentTime = 1337;
-    const component = renderer.create(<VideoControlable toggleFullscreen={toggleFullscreen} />);
+    const component = renderer.create(
+      <VideoControlable isFocused toggleFullscreen={toggleFullscreen} />,
+    );
 
     const video = component.root.find((el) => el.props.onEnd);
     video.props.onRef(ref);
@@ -326,6 +340,7 @@ describe('VideoControlable', () => {
       const provider = VIDEO_PROVIDER.VIMEO;
       const component = renderer.create(
         <VideoControlable
+          isFocused
           fetchVideoUri={fetchVideoUri}
           fetchVideoTracks={fetchVideoTracks}
           onPlay={onPlay}
@@ -354,6 +369,7 @@ describe('VideoControlable', () => {
       const provider = VIDEO_PROVIDER.KONTIKI;
       const component = renderer.create(
         <VideoControlable
+          isFocused
           fetchVideoUri={fetchVideoUri}
           fetchVideoTracks={fetchVideoTracks}
           onPlay={onPlay}
@@ -376,6 +392,7 @@ describe('VideoControlable', () => {
       const provider = VIDEO_PROVIDER.JWPLAYER;
       const component = renderer.create(
         <VideoControlable
+          isFocused
           fetchVideoUri={fetchVideoUri}
           fetchVideoTracks={fetchVideoTracks}
           onPlay={onPlay}

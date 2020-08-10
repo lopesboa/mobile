@@ -2,6 +2,19 @@ import {NativeModules, Platform, ScrollView} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import 'react-native-gesture-handler/jestSetup';
 
+// React Navigation(Native)
+jest.mock('@react-navigation/native', () => {
+  const actualNav = jest.requireActual('@react-navigation/native');
+  return {
+    ...actualNav,
+    useFocusEffect: () => jest.fn(),
+    useIsFocused: () => jest.fn(),
+    useNavigation: () => {
+      () => jest.fn();
+    },
+  };
+});
+
 // AsyncStorage
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 

@@ -17,7 +17,6 @@ import orientation from 'react-native-orientation-locker';
 // @@todo wait for support tablet landscape orientation
 // import DeviceInfo from 'react-native-device-info';
 
-import {StackScreenProps} from '@react-navigation/stack';
 import Video, {STEP} from '../components/video';
 import type {Props as ComponentProps, Step, Track} from '../components/video';
 import {toggleFullscreen} from '../redux/actions/video/full-screen';
@@ -26,6 +25,7 @@ import {getMatchingLanguage} from '../modules/language';
 import translations from '../translations';
 import {VIDEO_PROVIDER} from '../layer/data/_const';
 import {isVideoFullScreen, getBrandDefaultLanguage} from '../redux/utils/state-extract';
+import {withNavigation, Props as WithNavigationProps} from '../navigator/helper';
 
 export interface ConnectedStateProps {
   isFullScreen: boolean;
@@ -40,7 +40,7 @@ interface ConnectedDispatchToProps {
   fetchVideoTracks: typeof fetchVideoTracks;
 }
 
-interface OwnProps {
+interface OwnProps extends WithNavigationProps {
   id: string;
   provider: VideoProvider;
   source?: {uri: string};
@@ -64,6 +64,12 @@ class VideoControlable extends React.PureComponent<Props, State> {
   currentTime: number | void;
 
   isReady = false;
+
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.isFocused === true && !this.props.isFocused) {
+      this.handleBlur();
+    }
+  }
 
   handleExpand = async () => {
     if (this.videoPlayer) {
@@ -258,4 +264,4 @@ const mapDispatchToProps: ConnectedDispatchToProps = {
 };
 
 export {VideoControlable as Component};
-export default connect(mapStateToProps, mapDispatchToProps)(VideoControlable);
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(VideoControlable));

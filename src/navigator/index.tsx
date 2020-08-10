@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {changeScreen} from '../redux/actions/navigation';
-import {navigationRef} from './helper';
+import {navigatorRef, isReadyRef} from './helper';
 import {
   navigationOptionsWithoutHeader,
   INITIAL_APP_ROUTE_NAME,
@@ -17,9 +17,21 @@ import AppNavigator from './app';
 const Stack = createStackNavigator();
 
 function Navigator(props: {onStateChange: () => NavigationState}) {
+  function handleReady(ready: boolean) {
+    return () => {
+      isReadyRef.current = ready;
+    };
+  }
+  React.useEffect(() => {
+    return handleReady(false);
+  }, []);
   return (
     <SafeAreaProvider>
-      <NavigationContainer ref={navigationRef} onStateChange={props.onStateChange}>
+      <NavigationContainer
+        ref={navigatorRef}
+        onReady={handleReady(true)}
+        onStateChange={props.onStateChange}
+      >
         <Stack.Navigator
           initialRouteName={INITIAL_APP_ROUTE_NAME}
           headerMode="none"
