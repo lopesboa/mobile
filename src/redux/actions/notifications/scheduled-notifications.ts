@@ -69,9 +69,10 @@ const _scheduleNotification = (
   id: number,
   daysGap: number,
 ) => {
-  const NOTIFICATION_DAYS = daysGap * (index + 1);
-  let currentDate: Date = new Date(Date.now());
-  const delay = new Date(currentDate.setDate(currentDate.getDate() + NOTIFICATION_DAYS));
+  // const NOTIFICATION_DAYS = daysGap * (index + 1);
+  // let currentDate: Date = new Date(Date.now());
+  // const delay = new Date(currentDate.setDate(currentDate.getDate() + NOTIFICATION_DAYS));
+  const delay = new Date(Date.now() + 20 * (index + 1) * 1000);
   return scheduleNotificationOnDevice(type, userName, content, delay, id);
 };
 
