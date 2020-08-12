@@ -12,10 +12,7 @@
 </div>
 
 <div align="center">
-  <img style="border-radius: 4px" height="450" src=".github/app/1.jpg" />
-  <img style="border-radius: 4px" height="450" src=".github/app/2.jpg" />
-  <img style="border-radius: 4px" height="450" src=".github/app/3.jpg" />
-  <img style="border-radius: 4px" height="450" src=".github/app/4.jpg" />
+  <img style="border-radius: 4px" src=".github/app/app.jpg" />
 </div>
 
 
