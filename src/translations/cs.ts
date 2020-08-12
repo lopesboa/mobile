@@ -37,41 +37,47 @@ const translations: Translations = {
   finishCourse: 'Dodělej kurz',
   finishCourseWordings: [
     {
-      title: 'Je čas (znovu) odstartovat, {{givenName}}! 🚀',
-      description: 'Dokonči tento kurz: {{contentName}}',
+      title: 'Pojďme to dokončit, {{givenName}}! 🚀',
+      description: 'Dokonči kurz: „ {{contentName}}“',
     },
     {
       title: 'Vaše mise, pokud se tedy rozhodnete ji přijmout 😎',
-      description: 'Dodělej kurz {{contentName}}',
+      description: 'Dokonči svůj kurz: „ {{contentName}}“',
     },
     {
       title: '{{givenName}}, vsadím se, te na to máš! 💪',
-      description: 'Dodělej kurz {{contentName}}',
+      description: 'Dokonči kurz: „ {{contentName}}“',
     },
-    {title: 'Potřebuješ pauzu, {{givenName}}? 🤯', description: 'Dokončeme {{contentName}}'},
     {
-      title: '{{givenName}}, svůj kurz jste začali před dvěma dny ⏳',
-      description: 'Dokonči {{contentName}}',
+      title: 'Jsi připraven/a se učit, {{givenName}}? 💪',
+      description: 'Pojďme dokončit „ {{contentName}}“',
     },
-    {title: 'Přijmi výzvu, {{givenName}} 💪', description: 'Dokonči svůj kurz {{contentName}}'},
     {
-      title: 'Už jsi přistál/a, {{givenName}}? 🤯',
-      description: 'Odpočiň si a dokonči {{contentName}} za pár minut',
+      title: '{{givenName}}, tvůj kurz je téměř hotový 🙃',
+      description: 'Pojďme dokončit „ {{contentName}}“',
     },
-    {title: '{{givenName}}, ani nadpis 😉', description: 'Dokonči {{contentName}}'},
-    {title: 'Tvůj dobrý skutek tohoto týdne! 😇', description: 'Dokonči kurz {{contentName}}'},
+    {title: '{{givenName}}, přijmi výzvu 💪', description: 'Dokonči kurz: „ {{contentName}}“'},
+    {title: '{{givenName}}, tvá dnešní výzva! 😉', description: 'Dokonči kurz: „ {{contentName}}“'},
+    {
+      title: '{{givenName}}, je čas na učení! 😉',
+      description: 'Pokračuj ve svém kurzu: „ {{contentName}}“',
+    },
+    {
+      title: 'Co takhle se začít učit, {{givenName}}? 🚀',
+      description: 'Dokonči kurz: „ {{contentName}}“',
+    },
     {
       title: 'Co doděláš, to už znovu dělat nemusíš 🙃',
-      description: 'Dokonči kurz {{contentName}}',
+      description: 'Dokonči kurz: „ {{contentName}}“',
     },
-    {title: 'Hotovo! ✓ Skoro... ', description: 'Dokonči kurz {{contentName}}'},
+    {title: 'Tvůj kurz je téměř hotový! ✓', description: 'Dokonči kurz: „ {{contentName}}“'},
     {
       title: '{{givenName}}, už jsi blízko! 🙃',
-      description: 'Více než jen pár otázek k dokončení v {{contentName}}',
+      description: 'K dokončení „ {{contentName}}“ zbývá několik otázek',
     },
     {
-      title: 'Máš na to, {{givenName}}! Už máš skoro hotovo ☑️',
-      description: 'Dokonči svůj kurz {{contentName}}',
+      title: '{{givenName}}, už máš téměř hotovo ☑',
+      description: 'Dokonči svůj kurz: „ {{contentName}}“',
     },
   ],
   finishLearning: 'Nejdřív pokračujte tady',
@@ -105,6 +111,9 @@ const translations: Translations = {
   permission: 'Povolení',
   permissionCamera:
     'Abychom mohli naskenovat váš kód QR a ověřit vás, potřebujeme přístup k vašemu fotoaparátu.',
+  notificationSamples: [
+    {title: 'Dnešní výzva 👊', description: 'Spustit kurz<br><b>Online zákazník</b>'},
+  ],
   permissionNotificationHeadline: 'Pomáháme vám, abyste zůstali motivovaní!',
   permissionNotificationDescription:
     'Získávejte oznámení a dohlédněte na dodržování  svých cílů. Slibujeme, že nebudeme útočit na váš telefon milionkrát denně.',

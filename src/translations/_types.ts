@@ -80,6 +80,7 @@ export type Translations = {
   outOfLives: string;
   permission: string;
   permissionCamera: string;
+  notificationSamples: NotificationWording[];
   permissionNotificationHeadline: string;
   permissionNotificationDescription: string;
   permissionNotificationAuthorize: string;

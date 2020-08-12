@@ -36,55 +36,53 @@ const translations: Translations = {
   finishCourse: 'Tanfolyam befejezése',
   finishCourseWordings: [
     {
-      title: 'Itt az idő az (újra)indulásra, {{givenName}}! 🚀',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: 'Csináljuk meg, {{givenName}}! 🚀',
+      description: 'Végezd el ezt a kurzust: \\"{{contentName}}\\"',
     },
     {
       title: 'A küldetésed, amennyiben elfogadod  😎',
-      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+      description: 'Fejezd be a(z) \\"{{contentName}}\\" kurzust',
     },
     {
       title: '{{givenName}}, sikerülni fog! 💪',
-      description: 'Fejezze be a következő tanfolyamot: {{contentName}}',
+      description: 'Fejezd be a(z) \\"{{contentName}}\\" kurzust',
     },
     {
-      title: 'Pihenésre van szüksége, {{givenName}}? 🤯',
-      description: 'Teljesítse a következőt: {{contentName}}',
+      title: 'Készen állsz a tanulásra, {{givenName}}? 💪',
+      description: 'Végezzük el a(z) \\"{{contentName}}\\" kurzust',
     },
     {
-      title: '{{givenName}}, két napja kezdted el a kurzusodat  ⏳',
-      description: 'Teljesítse a következőt: {{contentName}}',
+      title: '{{givenName}}, közel állsz a kurzusod elvégzéséhez 🙃',
+      description: 'Fejezzük be, \\"{{contentName}}\\"',
     },
     {
-      title: 'Teljesítse a kihívást, {{givenName}} 💪',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: '{{givenName}}, fogadd el a kihívást 💪',
+      description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust',
     },
     {
-      title: 'Landolt, {{givenName}}? 🤯',
-      description:
-        'Döljön hátra és szánjon néhány percet a következő tanfolyam teljesítésére: {{contentName}}',
-    },
-    {title: '{{givenName}}, nem vezet 😉', description: 'Teljesítse a következőt: {{contentName}}'},
-    {
-      title: 'A heti jó cselekedete! 😇',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: '{{givenName}}, a napi kihívásod! 😉',
+      description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust',
     },
     {
-      title: 'Ami kész, az kész 🙃',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: '{{givenName}}, ideje tanulni! 😉',
+      description: 'Folytasd \\"{{contentName}}\\" kurzusodat',
     },
     {
-      title: 'Kész! ✓ Majdnem...',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: 'Van kedved tanulni, {{givenName}}? 🚀',
+      description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust',
+    },
+    {title: 'Ami kész, az kész 🙃', description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust'},
+    {
+      title: 'Mindjárt elvégezted a kurzusodat! ✓',
+      description: 'Végezd el a(z) \\"{{contentName}}\\" kurzust',
     },
     {
       title: '{{givenName}}, közel jár! 🙃',
-      description:
-        'Csak néhány kérdésre kell válaszolni a következő teljesítéséhez: {{contentName}}',
+      description: 'Még néhány kérdés a(z) \\"{{contentName}}\\" befejezéséig',
     },
     {
-      title: 'Gyerünk, {{givenName}}! Mindjárt végez ☑️',
-      description: 'Teljesítse a következő tanfolyamot: {{contentName}}',
+      title: '{{givenName}}, már majdnem végeztél ☑',
+      description: 'Végezd el \\"{{contentName}}\\" kurzusodat',
     },
   ],
   finishLearning: 'Folytasd ezt előtte',
@@ -117,6 +115,9 @@ const translations: Translations = {
   permission: 'Engedély',
   permissionCamera:
     'A QR-kód beolvasásához és hitelesítésedhez hozzáféréssel kell rendelkeznünk kamerádhoz.',
+  notificationSamples: [
+    {title: 'A nap kihívása 👊', description: 'Kezdd el az <br><b>Online ügyfél</b> kurzust'},
+  ],
   permissionNotificationHeadline: 'Segítünk megőrizni a motivációt!',
   permissionNotificationDescription:
     'Kapj értesítéseket, hogy tartani tudd a kitűzött célokat. Ígérjük, hogy nem fogjuk naponta milliószor bombázni telefonodat.',

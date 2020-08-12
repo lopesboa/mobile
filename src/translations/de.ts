@@ -37,51 +37,56 @@ const translations: Translations = {
   finishCourse: 'Kurs beenden',
   finishCourseWordings: [
     {
-      title: 'Es ist Zeit, (erneut) abzuheben, {{givenName}}! 🚀',
-      description: 'Schließe diesen Kurs ab: {{contentName}}',
+      title: 'Bringen wir es zu Ende, {{givenName}}! 🚀',
+      description: 'Absolvieren Sie diesen Kurs: „{{contentName}}“',
     },
     {
       title: 'Ihre Mission, falls Sie sich dazu entscheiden, sie anzunehmen 😎',
-      description: 'Beende deinen Kurs {{contentName}}! ',
+      description: 'Beenden Sie Ihren Kurs: „{{contentName}}“',
     },
     {
       title: '{{givenName}}, ich wette, dass du es schaffen kannst! 💪',
-      description: 'Beende den Kurs {{contentName}}! ',
+      description: 'Beenden Sie den Kurs: „{{contentName}}“',
     },
     {
-      title: 'Brauchst du eine Pause, {{givenName}}? 🤯',
-      description: 'Lass uns {{contentName} abschließen! ',
+      title: 'Sind Sie bereit zu lernen, {{givenName}}? 💪',
+      description: 'Absolvieren wir „{{contentName}}“',
     },
     {
-      title: '{{givenName}}, Sie haben Ihren Kurs vor zwei Tagen gestartet ⏳',
-      description: '{{contentName}} abschließen ',
+      title: '{{givenName}}, Sie sind kurz davor, Ihren Kurs abzuschließen 🙃',
+      description: 'Beenden wir „{{contentName}}“',
     },
     {
-      title: 'Stell dich der Herausforderung, {{givenName}} 💪',
-      description: 'Schließe den Kurs {{contentName}} ab! ',
+      title: '{{givenName}}, nehmen Sie die Herausforderung an 💪',
+      description: 'Absolvieren Sie den Kurs: „{{contentName}}“',
     },
     {
-      title: 'Bist du schon gelandet, {{givenName}}? 🤯',
-      description:
-        'Entspanne dich und nimm dir ein paar Minuten Zeit, um {{contentName}} abzuschließen. ',
+      title: '{{givenName}}, Ihre Herausforderung des Tages! 😉',
+      description: 'Absolvieren Sie den Kurs: „{{contentName}}“',
     },
     {
-      title: '{{givenName}}, noch nicht einmal versucht 😉',
-      description: 'Schließe {{contentName}} ab! ',
+      title: '{{givenName}}, es ist Zeit zu lernen! 😉',
+      description: 'Setzen Sie Ihren Kurs fort: „{{contentName}}“',
     },
-    {title: 'Deine gute Tat der Woche! 😇', description: 'Schließe den Kurs {{contentName}} ab! '},
+    {
+      title: 'Wie wäre es mit lernen, {{givenName}}? 🚀',
+      description: 'Absolvieren Sie den Kurs: „{{contentName}}“',
+    },
     {
       title: 'Was einmal erledigt ist, muss nicht mehr gemacht werden 🙃',
-      description: 'Schließe den Kurs {{contentName}} ab! ',
+      description: 'Absolvieren Sie den Kurs: „{{contentName}}“',
     },
-    {title: 'Fertig! ✓ Fast...', description: 'Schließe den Kurs {{contentName}} ab! '},
+    {
+      title: 'Ihr Kurs ist fast beendet! ✓',
+      description: 'Absolvieren Sie den Kurs: „{{contentName}}“',
+    },
     {
       title: '{{givenName}}, du bist so kurz davor! 🙃',
-      description: 'Mehr als ein paar Fragen, um {{contentName}} abzuschließen. ',
+      description: 'Mehr als ein paar Frage, um „{{contentName}}“ abzuschließen',
     },
     {
-      title: 'Komm schon {{givenName}}! Du hast es fast geschafft ☑️',
-      description: 'Schließe deinen Kurs {{contentName}} ab! ',
+      title: '{{givenName}}, Sie sind fast fertig ☑',
+      description: 'Absolvieren Sie Ihren Kurs: „{{contentName}}“',
     },
   ],
   finishLearning: 'Setze diese zuerst fort',
@@ -115,6 +120,12 @@ const translations: Translations = {
   permission: 'Berechtigung',
   permissionCamera:
     'Wir benötigen den Zugriff auf Ihre Kamera, um den QR-Code zu scannen und Sie zu authentifizieren.',
+  notificationSamples: [
+    {
+      title: 'Herausforderung des Tages 😉',
+      description: 'Beginnen Sie den Kurs<br><b>Onlinekunde</b>',
+    },
+  ],
   permissionNotificationHeadline: 'Wir helfen Ihnen mit Ihrer Motivation!',
   permissionNotificationDescription:
     'Schalten Sie die Benachrichtigungen ein, um an Ihren Zielen dranzubleiben. Wir versprechen, dass wir Sie nicht tausendmal am Tag anklingeln.',

@@ -34,44 +34,50 @@ const translations: Translations = {
   finishCourse: 'Kursu Bitir',
   finishCourseWordings: [
     {
-      title: 'Yeniden başlama zamanı {{givenName}}! 🚀',
-      description: 'Bu kursu bitir: {{contentName}}',
+      title: 'Bu işi bitirelim {{givenName}}! 🚀',
+      description: 'Bu kursu tamamla: \\"{{contentName}}\\"',
     },
-    {title: 'Görevin, tabii eğer kabul edersen 😎', description: '{{contentName}} kursunu bitir'},
+    {
+      title: 'Görevin, tabii eğer kabul edersen 😎',
+      description: 'Kursunu bitir: \\"{{contentName}}\\"',
+    },
     {
       title: '{{givenName}}, bunu yapabileceğine bahse girerim! 💪',
-      description: '{{contentName}} kursunu bitir',
+      description: 'Kursu bitir: \\"{{contentName}}\\"',
     },
     {
-      title: 'Molaya ihtiyacın var mı {{givenName}}? 🤯',
-      description: '{{contentName}} içeriğini bitirelim',
+      title: 'Öğrenmeye hazır mısın {{givenName}}? 💪',
+      description: '\\"{{contentName}}\\" kursunu tamamlayalım',
     },
     {
-      title: '{{givenName}}, dersine iki gün önce başladın ⏳',
-      description: '{{contentName}} içeriğini tamamla',
+      title: '{{givenName}}, kursunu tamamlamaya yaklaştın 🙃',
+      description: '\\"{{contentName}}\\" kursunu bitirelim',
     },
     {
-      title: 'Bu meydan okumayı kabul et {{givenName}} 💪',
-      description: '{{contentName}} kursunu tamamla',
+      title: '{{givenName}}, bu meydan okumayı kabul et 💪',
+      description: 'Kursu tamamla: \\"{{contentName}}\\"',
     },
     {
-      title: ' İndin mi {{givenName}}? 🤯',
-      description: 'Rahatlayıp {{contentName}} içeriğini tamamlamak için birkaç dakika ayır',
+      title: '{{givenName}}, senin için günün meydan okuması ! 😉',
+      description: 'Kursu tamamla: \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, yanından bile geçmiyorsun 😉',
-      description: '{{contentName}} içeriğini tamamla',
+      title: '{{givenName}}, öğrenme zamanı ! 😉',
+      description: 'Kursuna devam et: \\"{{contentName}}\\"',
     },
-    {title: 'Bu haftanın güzel işleri! 😇', description: '{{contentName}} kursunu tamamla'},
-    {title: 'Yapılan yapılmış oldu 🙃', description: '{{contentName}} kursunu bitir'},
-    {title: 'Bitti! ✓ Neredeyse...', description: '{{contentName}} kursunu tamamla'},
+    {
+      title: 'Öğrenmeye ne dersin {{givenName}}? 🚀',
+      description: 'Kursu tamamla: \\"{{contentName}}\\"',
+    },
+    {title: 'Yapılan yapılmış oldu 🙃', description: 'Kursu tamamla: \\"{{contentName}}\\"'},
+    {title: 'Kursun neredeyse tamamlandı ! ✓', description: 'Kursu tamamla: \\"{{contentName}}\\"'},
     {
       title: '{{givenName}}, çok yaklaştın! 🙃',
-      description: '{{contentName}} içeriğini tamamlamak için birkaç sorudan fazla',
+      description: '\\"{{contentName}}\\" kursunu tamamlamak için birkaç sorudan fazlası',
     },
     {
-      title: 'Hadi {{givenName}}! Neredeyse bitti ☑️',
-      description: '{{contentName}} kursunu tamamla',
+      title: '{{givenName}}, neredeyse bitirdin ☑',
+      description: 'Kursunu tamamla: \\"{{contentName}}\\"',
     },
   ],
   finishLearning: 'Önce buna devam et',
@@ -104,6 +110,9 @@ const translations: Translations = {
   outOfLives: 'Canınız bitti!',
   permission: 'İzin',
   permissionCamera: 'QR kodunu taramak ve kimliğini doğrulamak için kamerana erişmemiz gerekiyor.',
+  notificationSamples: [
+    {title: 'Günün meydan okuması 👊', description: '<br><b>İnternet Müşterisi</b> kursuna başla'},
+  ],
   permissionNotificationHeadline: 'Motivasyonunuzu korumanıza yardım edeceğiz!',
   permissionNotificationDescription:
     'Bildirim alın, hedefleriniz kontrolünüzde olsun. Günde milyonlarca bildirim göndermeyeceğimize söz veriyoruz.',

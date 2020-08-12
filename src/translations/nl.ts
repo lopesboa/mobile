@@ -35,47 +35,53 @@ const translations: Translations = {
   finishCourse: 'Rond de cursus af',
   finishCourseWordings: [
     {
-      title: 'Het is tijd om (weer) van start te gaan {{givenName}}! 🚀',
-      description: 'Maak deze cursus af: {{contentName}}',
+      title: 'Laten we het afmaken {{givenName}}! 🚀',
+      description: "Voltooi deze cursus: '{{contentName}}'",
     },
     {
       title: 'Je missie, als je ervoor kiest om deze te accepteren 😎',
-      description: 'Rond de cursus {{contentName}} af',
+      description: "Rond uw cursus af: '{{contentName}}'",
     },
     {
       title: '{{givenName}}, ik weet dat je het kan! 💪',
-      description: 'Maak de cursus {{contentName}} af',
+      description: "Rond de cursus af: '{{contentName}}'",
     },
     {
-      title: 'Heb je even pauze nodig {{givenName}}? 🤯',
-      description: 'Laten we {{contentName}} afronden',
+      title: 'Klaar om te leren {{givenName}}? 💪',
+      description: "Laten we '{{contentName}}' afronden",
     },
     {
-      title: '{{givenName}}, je bent twee dagen geleden met je cursus begonnen ⏳',
-      description: 'Maak {{contentName}} af',
+      title: '{{givenName}}, u bent bijna klaar met uw cursus 🙃',
+      description: "Laten we '{{contentName}}' afronden",
     },
     {
-      title: 'Ga de uitdaging aan {{givenName}} 💪',
-      description: 'Maak de cursus {{contentName}} af',
+      title: '{{givenName}}, ga de uitdaging aan 💪',
+      description: "Voltooi de cursus: '{{contentName}}'",
     },
     {
-      title: 'Ben je geland {{givenName}}? 🤯',
-      description: 'Ontspan en neem een paar minuten om {{contentName}} af te ronden',
+      title: '{{givenName}}, uw dagelijkse uitdaging! 😉',
+      description: "Voltooi de cursus: '{{contentName}}'",
     },
-    {title: '{{givenName}}, nog niet onderweg 😉', description: 'Maak {{contentName}} af'},
-    {title: 'Je goede daad van de week! 😇', description: 'Maak de cursus {{contentName}} af '},
+    {
+      title: '{{givenName}}, het is tijd om te leren! 😉',
+      description: "Ga verder met uw cursus: '{{contentName}}'",
+    },
+    {
+      title: 'Wat denkt u van leren {{givenName}}? 🚀',
+      description: "Voltooi de cursus: '{{contentName}}'",
+    },
     {
       title: 'Wat klaar is, hoeft niet meer te worden gedaan 🙃',
-      description: 'Maak de cursus {{contentName}} af',
+      description: "Voltooi de cursus: '{{contentName}}'",
     },
-    {title: 'Klaar! ✓ Bijna...', description: 'Maak de cursus {{contentName}} af'},
+    {title: 'Uw cursus is bijna voltooid! ✓', description: "Voltooi de cursus: '{{contentName}}'"},
     {
       title: '{{givenName}}, je bent er bijna! 🙃',
-      description: 'Meer dan een paar vragen om {{contentName}} af te ronden',
+      description: "Meer dan een paar vragen om '{{contentName}}' te voltooien",
     },
     {
-      title: 'Kom op {{givenName}}! Bijna klaar ☑️',
-      description: 'Maak je cursus {{contentName}} af',
+      title: '{{givenName}}, u bent bijna klaar ☑',
+      description: "Voltooi uw cursus: '{{contentName}}'",
     },
   ],
   finishLearning: 'Ga eerst met deze door',
@@ -109,6 +115,9 @@ const translations: Translations = {
   permission: 'Toestemming',
   permissionCamera:
     'We hebben toegang tot uw camera nodig om uw QR-code te scannen en uw identiteit te verifiëren.',
+  notificationSamples: [
+    {title: 'Uitdaging van de dag 👊', description: 'Start de cursus<br><b>Online klant</b>'},
+  ],
   permissionNotificationHeadline: 'Wij helpen je gemotiveerd te blijven!',
   permissionNotificationDescription:
     'Ontvang meldingen en blijf op de hoogte van je doelen. We beloven je niet een miljoen keer per dag lastig te vallen.',

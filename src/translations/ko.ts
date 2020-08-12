@@ -33,47 +33,56 @@ const translations: Translations = {
   finishCourse: '과정 끝마치기',
   finishCourseWordings: [
     {
-      title: '{{givenName}}님, (다시) 시작할 시간입니다! 🚀',
-      description: '이 과정을 완료하세요: {{contentName}}',
+      title: '완료합시다. {{givenName}}님! 🚀',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
     {
       title: '수행에 동의하신다면, 귀하의 이번 미션입니다 😎',
-      description: '{{contentName}} 과정을 끝마치세요',
+      description: '\\"{{contentName}}\\" 코스를 끝내 주세요',
     },
     {
       title: '{{givenName}}님, 꼭 해내실 겁니다! 💪',
-      description: '{{contentName}} 과정을 완료하세요',
+      description: '\\"{{contentName}}\\" 코스를 끝내 주세요',
     },
     {
-      title: '{{givenName}}님, 휴식이 필요하신가요? 🤯',
-      description: '{{contentName}} 과정을 완료해 볼까요',
+      title: '배울 준비가 되셨나요, {{givenName}}님? 💪',
+      description: '\\"{{contentName}}\\"(을)를 완료합시다',
     },
     {
-      title: '{{givenName}}님, 2일 전에 귀하의 과정을 시작하셨습니다 ⏳',
-      description: '{{contentName}} 완료 ',
+      title: '{{givenName}}님, 코스를 거의 완료하셨습니다 🙃',
+      description: '\\"{{contentName}}\\"(을)를 끝냅시다',
     },
     {
-      title: '{{givenName}}님, 도전을 받아들이세요 💪',
-      description: '{{contentName}} 과정을 완료하세요',
+      title: '{{givenName}}님, 도전에 응해 주세요 💪',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
     {
-      title: '{{givenName}}님, 도착하셨나요? 🤯',
-      description: '마음을 편히하고 몇 분 시간을 내서 {{contentName}}을/를 완료하세요',
+      title: '{{givenName}}님, 오늘의 도전입니다! 😉',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
-    {title: '{{givenName}}님, 출발하지도 않으셨어요 😉', description: '{{contentName}} 완료하기'},
-    {title: '이번 주의 선한 행동! 😇', description: '{{contentName}} 과정을 완료하세요'},
+    {
+      title: '{{givenName}}님, 배울 시간입니다! 😉',
+      description: '\\"{{contentName}}\\" 코스를 계속해 주세요',
+    },
+    {
+      title: '배워 보는 것은 어떠세요, {{givenName}}님? 🚀',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
+    },
     {
       title: '이미 수행한 작업은 더 이상 수행되지 않습니다 🙃',
-      description: '{{contentName}} 과정을 완료하세요',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
-    {title: '다 했어요! ✓ 거의...', description: '{{contentName}} 과정을 완료하세요'},
+    {
+      title: '코스가 거의 완료되었습니다! ✓',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
+    },
     {
       title: '{{givenName}}님, 거의 다 되었습니다! 🙃',
-      description: '{{contentName}}을/를 끝마치기 위한 몇 가지 질문',
+      description: '\\"{{contentName}}\\" 완료까지 질문이 몇 개 이상 남았습니다',
     },
     {
-      title: '{{givenName}}님, 어서요! 거의 다 되었습니다 ☑️',
-      description: '{{contentName}} 과정을 완료하세요',
+      title: '{{givenName}}님, 거의 끝내셨습니다 ☑',
+      description: '\\"{{contentName}}\\" 코스를 완료해 주세요',
     },
   ],
   finishLearning: '먼저 이것을 계속하기',
@@ -105,6 +114,9 @@ const translations: Translations = {
   outOfLives: '귀하의 생명이 다했습니다!',
   permission: '승인',
   permissionCamera: 'QR 코드를 스캔하고 본인 인증을 하려면 카메라 접근 권한이 필요합니다.',
+  notificationSamples: [
+    {title: '오늘의 도전 👊', description: '<br><b>온라인 고객</b> 코스를 시작해 주세요'},
+  ],
   permissionNotificationHeadline: '의욕을 잃지 않게 도와드립니다!',
   permissionNotificationDescription:
     '알림을 받고 목표를 달성하세요. 지나치게 빈번한 알림으로 번거롭게 해 드리지 않겠습니다.',

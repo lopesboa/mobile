@@ -37,53 +37,56 @@ const translations: Translations = {
   finishCourse: 'Finalizare curs',
   finishCourseWordings: [
     {
-      title: 'Este timpul pentru (re)lansare, {{givenName}}! 🚀',
-      description: 'Finalizați acest curs: {{contentName}}',
+      title: 'Haideți să-l terminăm, {{givenName}}! 🚀',
+      description: 'Finalizați acest curs: „{{contentName}}”',
     },
     {
       title: 'Misiunea dumneavoastră, dacă o acceptați 😎',
-      description: 'Finalizați-vă cursul {{contentName}}',
+      description: 'Terminați-vă cursul: „{{contentName}}”',
     },
     {
       title: '{{givenName}}, pun pariu că veți reuși! 💪',
-      description: 'Finalizați cursul {{contentName}}',
+      description: 'Terminați cursul: „{{contentName}}”',
     },
     {
-      title: 'Aveți nevoie de o pauză, {{givenName}}? 🤯',
-      description: 'Haideți să finalizăm {{contentName}}',
+      title: 'Gata să învățați, {{givenName}}? 💪',
+      description: 'Haideți să finalizăm „{{contentName}}”',
     },
     {
-      title: '{{givenName}}, ați început cursul în urmă cu două zile⏳',
-      description: 'Finalizați {{contentName}}',
+      title: '{{givenName}}, sunteți aproape de finalizarea cursului dvs. 🙃',
+      description: 'Haideți să terminăm „{{contentName}}”',
     },
     {
-      title: 'Acceptați provocarea, {{givenName}} 💪',
-      description: 'Finalizați cursul {{contentName}}',
+      title: '{{givenName}}, acceptați provocarea 💪',
+      description: 'Finalizați cursul: „{{contentName}}”',
     },
     {
-      title: 'Ați aterizat, {{givenName}}? 🤯',
-      description: 'Relaxați-vă și acordați-vă câteva minute pentru a finaliza {{contentName}}',
+      title: '{{givenName}}, provocarea dvs. de astăzi! 😉',
+      description: 'Finalizați cursul: „{{contentName}}”',
     },
     {
-      title: '{{givenName}}, nici măcar nu vă apropiați 😉',
-      description: 'Finalizați {{contentName}}',
+      title: '{{givenName}}, este timpul să învățăm! 😉',
+      description: 'Continuați-vă cursul: „{{contentName}}”',
     },
     {
-      title: 'Fapta dvs. bună de săptămâna aceasta! 😇',
-      description: 'Finalizați cursul {{contentName}}',
+      title: 'Ce-ar fi să învățăm, {{givenName}}? 🚀',
+      description: 'Finalizați cursul: „{{contentName}}”',
     },
     {
       title: 'Ce este făcut nu mai trebuie făcut 🙃',
-      description: 'Finalizați cursul {{contentName}}',
+      description: 'Finalizați cursul: „{{contentName}}”',
     },
-    {title: 'Gata! ✓ Aproape...', description: 'Finalizați cursul {{contentName}}'},
+    {
+      title: 'Cursul dvs. este aproape finalizat! ✓',
+      description: 'Finalizați cursul: „{{contentName}}”',
+    },
     {
       title: '{{givenName}}, sunteți atât de aproape! 🙃',
-      description: 'Mai multe întrebări pentru a finaliza {{contentName}}',
+      description: 'Mai multe întrebări pentru a finaliza „{{contentName}}”',
     },
     {
-      title: 'Haideți, {{givenName}}! Aproape ați terminat ☑️',
-      description: 'Finalizați-vă cursul {{contentName}}',
+      title: '{{givenName}}, aproape ați terminat ☑',
+      description: 'Finalizați-vă cursul: „{{contentName}}”',
     },
   ],
   finishLearning: 'Întâi continuă-l pe acesta',
@@ -116,6 +119,9 @@ const translations: Translations = {
   outOfLives: 'Nu mai aveți vieți!',
   permission: 'Permisiune',
   permissionCamera: 'Trebuie să accesăm camera ca să scanăm codul QR și să te autentificăm.',
+  notificationSamples: [
+    {title: 'Provocarea zilei 👊', description: 'Începeți cursul<br><b>Client online</b>'},
+  ],
   permissionNotificationHeadline: 'Vă ajutăm să rămâneți motivat!',
   permissionNotificationDescription:
     'Primiți notificări și păstrați controlul asupra obiectivelor dvs. Promitem să nu vă bombardăm telefonul de un milion de ori pe zi.',

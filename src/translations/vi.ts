@@ -37,50 +37,56 @@ const translations: Translations = {
   finishCourse: 'Hoàn tất Khóa học',
   finishCourseWordings: [
     {
-      title: 'Đã đến lúc khởi động (khởi động lại) {{givenName}}! 🚀',
-      description: 'Hoàn thành khóa học này: {{contentName}}',
+      title: 'Ta hoàn thành nào {{givenName}}! 🚀',
+      description: 'Hoàn thành khóa học này: \\"{{contentName}}\\"',
     },
     {
       title: 'Nhiệm vụ của bạn, nếu bạn quyết định chấp nhận 😎',
-      description: 'Hoàn tất khóa học của bạn {{contentName}}',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
     {
       title: '{{givenName}}, cá là bạn có thể làm được! 💪',
-      description: 'Hoàn tất khóa học {{contentName}}',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
     {
-      title: 'Bạn có cần giải lao một chút không {{givenName}}? 🤯',
-      description: 'Nào hãy cùng hoàn thành {{contentName}}',
+      title: 'Sẵn sàng học chưa {{givenName}}? 💪',
+      description: 'Hãy hoàn thành \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, bạn đã bắt đầu khóa học của mình từ hai ngày trước ⏳',
-      description: 'Hoàn thành {{contentName}}',
+      title: '{{givenName}}, bạn sắp hoàn thành khóa học rồi 🙃',
+      description: 'Hãy hoàn thành \\"{{contentName}}\\"',
     },
     {
-      title: 'Tham gia thử thách {{givenName}} 💪',
-      description: 'Hoàn thành khóa học {{contentName}}',
+      title: '{{givenName}}, hãy chấp nhận thử thách 💪',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
     {
-      title: 'Bạn đã sẵn sàng chứ {{givenName}}? 🤯',
-      description: 'Hãy thư giãn và dành vài phút để hoàn thành {{contentName}}',
+      title: '{{givenName}}, thử thách của ngày dành cho bạn! 😉',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
     {
-      title: '{{givenName}}, thậm chí còn chưa bắt đầu 😉',
-      description: 'Hoàn thành {{contentName}}',
+      title: '{{givenName}}, đến lúc học rồi! 😉',
+      description: 'Tiếp tục khóa học: \\"{{contentName}}\\"',
     },
-    {title: 'Việc tốt trong tuần của bạn! 😇', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: 'Bạn muốn học không {{givenName}}? 🚀',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
+    },
     {
       title: 'Việc gì đã làm xong sẽ không cần làm nữa 🙃',
-      description: 'Hoàn thành khóa học {{contentName}}',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
-    {title: 'Xong! ✓ Sắp rồi...', description: 'Hoàn thành khóa học {{contentName}}'},
+    {
+      title: 'Khóa học của bạn sắp hoàn thành rồi! ✓',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
+    },
     {
       title: '{{givenName}}, bạn sắp hoàn tất rồi! 🙃',
-      description: 'Còn hơn vài câu hỏi để hoàn thành {{contentName}}',
+      description: 'Còn vài câu hỏi nữa là xong \\"{{contentName}}\\"',
     },
     {
-      title: 'Cố lên nào {{givenName}}! Gần xong rồi ☑️',
-      description: 'Hoàn thành khóa học của bạn {{contentName}}',
+      title: '{{givenName}}, bạn sắp hoàn thành rồi ☑',
+      description: 'Hoàn thành khóa học: \\"{{contentName}}\\"',
     },
   ],
   finishLearning: 'Tiếp tục phần này trước',
@@ -114,6 +120,12 @@ const translations: Translations = {
   permission: 'Cấp phép',
   permissionCamera:
     'Chúng tôi cần truy cập vào camera để có thể quét mã QR và xác thực danh tính của bạn.',
+  notificationSamples: [
+    {
+      title: 'Thử thách của ngày 👊',
+      description: 'Bắt đầu khóa học<br><b>Khách hàng trực tuyến</b>',
+    },
+  ],
   permissionNotificationHeadline: 'Chúng tôi giúp bạn luôn giữ động lực!',
   permissionNotificationDescription:
     'Nhận thông báo để luôn kiểm soát được các mục tiêu của bạn. Chúng tôi cam đoan sẽ không gửi đến điện thoại của bạn cả triệu thông báo mỗi ngày.',

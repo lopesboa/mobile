@@ -5,6 +5,7 @@ import {createProgression} from '../__fixtures__/progression';
 import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS} from '../const';
 import {createNavigation} from '../__fixtures__/navigation';
 import type {ConnectedStateProps} from './notifications';
+import translations from '../translations';
 
 const createParams = (): Params => ({
   onNotifyMe: jest.fn(),

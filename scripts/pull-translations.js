@@ -196,6 +196,9 @@ const generate = async (locale: string) => {
     outOfLives: formatTranslation(playerTranslations['You are out of lives!']),
     permission: formatTranslation(moocTranslations.mobile.settings.permission),
     permissionCamera: formatTranslation(moocTranslations.mobile.settings.permissionCamera),
+    notificationSamples: formatNotificationWordings(
+      Object.values(moocTranslations.mobile.settings.notificationSamples),
+    ),
     permissionNotificationHeadline: formatTranslation(
       moocTranslations.mobile.settings.permissionNotificationHeadline,
     ),

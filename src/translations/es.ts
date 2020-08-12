@@ -37,38 +37,56 @@ const translations: Translations = {
   finishCourse: 'Finalizar el curso',
   finishCourseWordings: [
     {
-      title: '¡Es hora de relanzar, {{givenName}}! 🚀',
-      description: 'Complete este curso: {{contentName}}',
+      title: '¡A por ello, {{givenName}}! 🚀',
+      description: 'Completa este curso: \\"{{contentName}}\\"',
     },
-    {title: 'Tu misión, si decides aceptarla 😎', description: 'Finalice el curso {{contentName}}'},
+    {
+      title: 'Tu misión, si decides aceptarla 😎',
+      description: 'Termina tu curso: \\"{{contentName}}\\"',
+    },
     {
       title: '¡{{givenName}}, apuesto a que puede hacerlo! 💪',
-      description: 'Finalice el curso {{contentName}}',
+      description: 'Termina el curso: \\"{{contentName}}\\"',
     },
-    {title: '¿Necesita un descanso, {{givenName}}? 🤯', description: 'Completemos {{contentName}}'},
     {
-      title: '{{givenName}}, comenzaste el curso hace dos días ⏳',
-      description: 'Complete {{contentName}}',
+      title: '¿Preparado/a para aprender, {{givenName}}? 💪',
+      description: 'Completemos \\"{{contentName}}\\"',
     },
-    {title: 'Acepte el reto, {{givenName}} 💪', description: 'Complete el curso {{contentName}}'},
     {
-      title: '¿Ha aterrizado, {{givenName}}? 🤯',
-      description: 'Relájese y dedique unos minutos a completar {{contentName}}',
+      title: '{{givenName}}, estás a punto de completar tu curso 🙃',
+      description: 'Terminemos \\"{{contentName}}\\"',
     },
-    {title: '{{givenName}}, ni siquiera se aproxima 😉', description: 'Complete {{contentName}}'},
-    {title: '¡Su buena acción de la semana! 😇', description: 'Complete el curso {{contentName}}'},
+    {
+      title: '{{givenName}}, acepta el desafío 💪',
+      description: 'Completa el curso: \\"{{contentName}}\\"',
+    },
+    {
+      title: '¡{{givenName}}, este es tu su desafío del día! 😉',
+      description: 'Completa el curso: \\"{{contentName}}\\"',
+    },
+    {
+      title: '¡{{givenName}}, es hora de estudiar! 😉',
+      description: 'Continúa tu curso: \\"{{contentName}}\\"',
+    },
+    {
+      title: '¿Qué tal si estudias, {{givenName}}? 🚀',
+      description: 'Completa el curso: \\"{{contentName}}\\"',
+    },
     {
       title: 'Lo que está hecho, ya no está por hacer 🙃',
-      description: 'Complete el curso {{contentName}}',
+      description: 'Completa el curso: \\"{{contentName}}\\"',
     },
-    {title: '¡Terminado! ✓ Casi...', description: 'Complete el curso {{contentName}}'},
+    {
+      title: '¡Tu curso está casi terminado! ✓',
+      description: 'Completa el curso: \\"{{contentName}}\\"',
+    },
     {
       title: '{{givenName}}, ¡está a punto! 🙃',
-      description: 'Más de unas pocas preguntas para completar {{contentName}}',
+      description: 'Más que unas pocas preguntas para completar \\"{{contentName}}\\"',
     },
     {
-      title: '¡Venga, {{givenName}}! Casi ha terminado ☑️',
-      description: 'Complete su curso {{contentName}}',
+      title: '{{givenName}}, casi has terminado ☑',
+      description: 'Completa tu curso: \\"{{contentName}}\\"',
     },
   ],
   finishLearning: 'Primero sigue con este',
@@ -102,6 +120,9 @@ const translations: Translations = {
   permission: 'Permiso',
   permissionCamera:
     'Tenemos que acceder a la cámara para escanear el código QR y poder autentificarte.',
+  notificationSamples: [
+    {title: 'Desafío del día 👊', description: 'Iniciar el curso <br><b>Cliente en línea</b>'},
+  ],
   permissionNotificationHeadline: '¡Le ayudamos a mantenerse motivado!',
   permissionNotificationDescription:
     'Reciba notificaciones y manténgase al tanto de sus objetivos. Prometemos no hacer estallar su teléfono un millón de veces al día.',

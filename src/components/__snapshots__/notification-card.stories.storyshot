@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots NotificationCard Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 5,
+      },
+      Object {
+        "elevation": 4,
+        "shadowColor": "#14171A",
+        "shadowOffset": Object {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0.15,
+        "shadowRadius": 8,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+        },
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+          },
+          undefined,
+        ],
+        Object {
+          "overflow": "hidden",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 16,
+          "marginLeft": 24,
+          "marginRight": 24,
+          "marginTop": 24,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "height": 40,
+              "marginRight": 24,
+              "width": 40,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "process": [Function],
+              }
+            }
+            style={
+              Object {
+                "height": 40,
+                "width": 40,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FF6A6A",
+                "borderRadius": 18,
+                "height": 18,
+                "left": 30,
+                "position": "absolute",
+                "top": -8,
+                "width": 18,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 28,
+                    "fontWeight": "700",
+                  },
+                  Object {
+                    "fontSize": 13,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              1
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#323232",
+                "fontSize": 17,
+              },
+              Object {
+                "fontWeight": "700",
+              },
+            ]
+          }
+        />
+        <View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              allowFontScaling={true}
+              selectable={false}
+              style={
+                Array [
+                  Object {},
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                style={
+                  Object {
+                    "color": "#323232",
+                    "fontSize": 17,
+                  }
+                }
+              >
+                undefined
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

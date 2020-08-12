@@ -33,47 +33,56 @@ const translations: Translations = {
   finishCourse: '課程を終了しましょう',
   finishCourseWordings: [
     {
-      title: '打ち上げ（再打ち上げ）る時がきました！🚀',
-      description: 'この課程を完了させましょう：{{contentName}}',
+      title: '{{givenName}}さん、頑張りましょう! 🚀',
+      description: 'この課程を完了させましょう： \\"{{contentName}}\\"',
     },
-    {title: '引き受けるべきミッション 😎', description: '{{contentName}}の課程を終了させましょう'},
+    {
+      title: '引き受けるべきミッション 😎',
+      description: '\\"{{contentName}}\\"の課程を終わらせましょう',
+    },
     {
       title: '{{givenName}}さん、あなたならできますよ! 💪',
-      description: '{{contentName}}の課程を終了しましょう',
+      description: '\\"{{contentName}}\\"の課程を終わらせましょう',
     },
     {
-      title: '{{givenName}}さん、休憩が必要ですか ? 🤯',
-      description: 'さあ、{{contentName}}を完了させましょう',
+      title: '{{givenName}}さん、勉強の準備はできていますか? 💪',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう',
     },
     {
-      title: '{{givenName}}さん、あなたは課程を2日前に開始しました ⏳',
-      description: '{{contentName}}を完了させましょう',
+      title: '{{givenName}}さん、あともう少しで完了しますよ終わりですよ🙃',
+      description: '\\"{{contentName}}\\"の課程を終わらせましょう',
     },
     {
-      title: '{{givenName}}さん、挑戦してみましょう 💪',
-      description: '{{contentName}}の課程を完了させましょう ',
+      title: '{{givenName}}さん、さあ、挑戦してみましょう 💪',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
     {
-      title: '{{givenName}}さん、着陸しましたか? 🤯',
-      description: 'リラックスし、一息ついてから{{contentName}}の課程を完了させましょう',
+      title: '{{givenName}}さん、今日の課題ですよ ! 😉',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
     {
-      title: '{{givenName}}さん、全く進んでいませんよ 😉',
-      description: '{{contentName}}を完了させましょう',
+      title: '{{givenName}}さん、勉強の時間ですよ ! 😉',
+      description: '\\"{{contentName}}\\"の課程を続ける',
     },
-    {title: '今週の良い行いです! 😇', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: '{{givenName}}さん、勉強しませんか? 🚀',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
+    },
     {
       title: '済んでしまったことは仕方ありません🙃',
-      description: '{{contentName}}の課程を完了させましょう ',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
-    {title: '完了! ✓ あと少し…', description: '{{contentName}}の課程を完了させましょう '},
+    {
+      title: 'あなたの課程があと少しで完了しますよ! ✓',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
+    },
     {
       title: '{{givenName}}さん、あと少しですよ! 🙃',
-      description: '{{contentName}}を完了させるのに必要な質問がまだかなり残っています',
+      description: '\\"{{contentName}}\\"の完了まであと2、3問です',
     },
     {
-      title: 'Come on {{givenName}}さん、がんばって! あともう少しで終わりですよ ☑️',
-      description: '{{contentName}}の課程を完了させましょう',
+      title: '{{givenName}}さん、あともう少しで終わりですよ ☑',
+      description: '\\"{{contentName}}\\"の課程を完了させましょう ',
     },
   ],
   finishLearning: 'まずはこれを続ける',
@@ -106,6 +115,9 @@ const translations: Translations = {
   permission: '許可',
   permissionCamera:
     'QRコードをスキャンして認証するためには、あなたのカメラにアクセスする必要があります。',
+  notificationSamples: [
+    {title: '今日の課題 👊', description: '課程を開始する<br><b>オンライン顧客</b>'},
+  ],
   permissionNotificationHeadline: 'あなたがモチベーションを保ち続けられるようにお手伝いします！',
   permissionNotificationDescription:
     '通知を受け取り、自分の目標を常に把握しておきましょう。携帯電話を吹き飛ばすほど1日に100万回も通知しないと約束します。',

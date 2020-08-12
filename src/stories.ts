@@ -54,6 +54,7 @@ import './components/modal-error.stories';
 import './components/modal-select-item.stories';
 import './components/modal-select.stories';
 import './components/modal.stories';
+import './components/notification-card.stories';
 import './components/notification.stories';
 import './components/notify-me.stories';
 import './components/overlay.stories';

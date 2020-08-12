@@ -8,6 +8,7 @@ export type Colors = {
     lightMedium: string;
     medium: string;
     dark: string;
+    extraDark: string;
   };
   negative: string;
   positive: string;
@@ -57,6 +58,7 @@ const theme: Theme = {
       lightMedium: '#CFD8DC',
       medium: '#90A4AE',
       dark: '#546E7A',
+      extraDark: '#323232',
     },
     negative: '#F73F52',
     positive: '#3EC483',
