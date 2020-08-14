@@ -45,7 +45,7 @@ const scheduleNotificationOnDevice = (
   if (!userName || !content.title) return;
   const notification = {
     title: title.replace('{{givenName}}', userName),
-    body: description.replace('{{contentName}}', content.title),
+    body: description.replace(/\\/g, '').replace('{{contentName}}', content.title),
     silent: false,
     userInfo: {id: content?.universalRef, content: JSON.stringify(content)},
     fireDate: +date,
