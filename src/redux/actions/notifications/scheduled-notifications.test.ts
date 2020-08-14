@@ -74,11 +74,20 @@ describe('Scheduled notifications', () => {
         'finish-course': [createScheduledNotification(1, 'cha_fake1')],
       });
 
-      const services = {};
+      const services = {
+        Analytics: {
+          logEvent: jest.fn(),
+        },
+      };
       // @ts-ignore passing only needed service
       await unscheduleLocalNotifications('finish-course')(dispatch, getState, {services});
       expect(dispatch).toHaveBeenCalledTimes(1);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledWith(1);
+      expect(services.Analytics.logEvent).toHaveBeenCalledWith('notificationsSchedule', {
+        action: 'decrement',
+        type: 'finish-course',
+        value: 1,
+      });
     });
   });
   describe(SCHEDULE_NOTIFICATION, () => {
@@ -89,6 +98,9 @@ describe('Scheduled notifications', () => {
       const services = {
         NotificationContent: {
           getAllContentByMostRecent: jest.fn(() => []),
+        },
+        Analytics: {
+          logEvent: jest.fn(),
         },
       };
 
@@ -115,6 +127,9 @@ describe('Scheduled notifications', () => {
             }),
           ]),
         },
+        Analytics: {
+          logEvent: jest.fn(),
+        },
       };
 
       // @ts-ignore passing only needed service
@@ -140,6 +155,9 @@ describe('Scheduled notifications', () => {
             }),
           ]),
         },
+        Analytics: {
+          logEvent: jest.fn(),
+        },
       };
 
       // @ts-ignore passing only needed service
@@ -163,6 +181,9 @@ describe('Scheduled notifications', () => {
             }),
           ]),
         },
+        Analytics: {
+          logEvent: jest.fn(),
+        },
       };
 
       // @ts-ignore passing only needed service
@@ -170,6 +191,16 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
+        action: 'decrement',
+        type: 'finish-course',
+        value: 1,
+      });
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
+        action: 'increment',
+        type: 'finish-course',
+        value: 1,
+      });
     });
     it('schedules a notification three times for given content(user has started 2 course) and cancel existing ones', async () => {
       const {Notifications} = require('@coorpacademy/react-native-notifications');
@@ -194,12 +225,25 @@ describe('Scheduled notifications', () => {
             }),
           ]),
         },
+        Analytics: {
+          logEvent: jest.fn(),
+        },
       };
       // @ts-ignore passing only needed service
       await scheduleNotifications('finish-course')(dispatch, getState, {services});
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(1);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
+        action: 'decrement',
+        type: 'finish-course',
+        value: 1,
+      });
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
+        action: 'increment',
+        type: 'finish-course',
+        value: 1,
+      });
     });
     it('schedules a notification three times for given content(user has started 3 course)', async () => {
       const {Notifications} = require('@coorpacademy/react-native-notifications');
@@ -228,12 +272,25 @@ describe('Scheduled notifications', () => {
             }),
           ]),
         },
+        Analytics: {
+          logEvent: jest.fn(),
+        },
       };
       // @ts-ignore passing only needed service
       await scheduleNotifications('finish-course')(dispatch, getState, {services});
       expect(dispatch).toHaveBeenCalledTimes(4);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
+      expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
+        action: 'decrement',
+        type: 'finish-course',
+        value: 1,
+      });
+      expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
+        action: 'increment',
+        type: 'finish-course',
+        value: 1,
+      });
     });
   });
 });

@@ -1,4 +1,4 @@
-import {$Values} from 'utility-types';
+import {ValueOf} from '../../../../types';
 
 import {
   FAILURE,
@@ -14,36 +14,26 @@ import {
   Source,
 } from '../../progression-engine';
 
-export const CONTENT_TYPE: {
-  [key: string]: ContentType;
-} = {
+export const CONTENT_TYPE: Record<'CHAPTER' | 'LEVEL' | 'SLIDE', ContentType> = {
   CHAPTER: 'chapter',
   LEVEL: 'level',
   SLIDE: 'slide',
 };
 
-export const ENGINES: {
-  [key: string]: Engines;
-} = {
+export const ENGINES: Record<'MICROLEARNING' | 'LEARNER', Engines> = {
   MICROLEARNING: 'microlearning',
   LEARNER: 'learner',
 };
 
-export const VIDEO_TRACK_KIND: {
-  CAPTIONS: 'captions';
-  THUMBNAILS: 'thumbnails';
-} = {
+export const VIDEO_TRACK_KIND = {
   CAPTIONS: 'captions',
   THUMBNAILS: 'thumbnails',
-};
+} as const;
 
-export const VIDEO_TRACK_TYPE: {
-  SRT: 'srt';
-  VTT: 'vtt';
-} = {
+export const VIDEO_TRACK_TYPE = {
   SRT: 'srt',
   VTT: 'vtt',
-};
+} as const;
 
 export type Url = string;
 export type AspectRatio = '16:9' | '4:3';
@@ -236,10 +226,10 @@ export type Lives = {
 export type VideoProvider = 'jwplayer' | 'kontiki' | 'vimeo' | 'omniPlayer' | 'youtube';
 
 export type VideoTrack = {
-  kind: $Values<typeof VIDEO_TRACK_KIND>;
+  kind: ValueOf<typeof VIDEO_TRACK_KIND>;
   file: string;
   label?: string;
   default?: boolean;
 };
 
-export type VideoTrackType = $Values<typeof VIDEO_TRACK_TYPE>;
+export type VideoTrackType = ValueOf<typeof VIDEO_TRACK_TYPE>;

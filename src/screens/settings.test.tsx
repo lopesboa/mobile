@@ -7,12 +7,12 @@ import {
   createNotificationsState,
 } from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
-import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS} from '../const';
+import {ENGINE, CONTENT_TYPE, PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
 import {TestContextProvider} from '../utils/tests';
 import {createNavigation} from '../__fixtures__/navigation';
 import type {ConnectedStateProps} from './settings';
 import {Component as Settings} from './settings';
-import {NOTIFICATION_TYPE} from '../const';
+
 describe('Settings', () => {
   describe('props', () => {
     it('should return the accurate props', () => {
@@ -61,33 +61,6 @@ describe('Settings', () => {
     });
   });
 
-  it('does not toggles finish-course notification if notification permission is not granted', async () => {
-    const navigation = createNavigation({});
-    const toggleFinishCourseNotification = jest.fn();
-    const notificationsSettings = createNotificationsState();
-    const requestNotificationsPermission = jest.fn(() =>
-      Promise.resolve('denied'),
-    ) as () => Promise<PermissionStatus>;
-    const component = renderer.create(
-      <TestContextProvider>
-        <Settings
-          navigation={navigation}
-          canReceiveNotifications={false}
-          notificationsSettings={notificationsSettings}
-          requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
-        />
-      </TestContextProvider>,
-    );
-
-    const button = component.root.find(
-      (el) => el.props.testID === 'settings-notifications-switch-finish-course',
-    );
-    await button.props.onPress();
-    expect(toggleFinishCourseNotification).toHaveBeenCalledWith(false);
-    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
-  });
-
   it('sets finish-course notification to false if notification permission is not granted', async () => {
     const navigation = createNavigation({});
     const toggleFinishCourseNotification = jest.fn();
@@ -130,12 +103,37 @@ describe('Settings', () => {
       </TestContextProvider>,
     );
 
-    const button = component.root.find(
-      (el) => el.props.testID === 'settings-notifications-switch-finish-course',
-    );
-    await button.props.onPress();
+    const button = component.root.find((el) => el.props.testID === 'settings-notifications');
+    await button.props.onSettingToggle('finish-course');
 
     expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
+    expect(requestNotificationsPermission).toHaveBeenCalledTimes(0);
+  });
+
+  it('does not toggles finish-course notification if notification permission is not granted', async () => {
+    const navigation = createNavigation({});
+    const toggleFinishCourseNotification = jest.fn();
+    const notificationsSettings = createNotificationsState();
+    const requestNotificationsPermission = jest.fn(() =>
+      Promise.resolve('granted'),
+    ) as () => Promise<PermissionStatus>;
+    const component = renderer.create(
+      <TestContextProvider>
+        <Settings
+          navigation={navigation}
+          notificationsSettings={notificationsSettings}
+          canReceiveNotifications={false}
+          requestNotificationsPermission={requestNotificationsPermission}
+          toggleFinishCourseNotification={toggleFinishCourseNotification}
+        />
+      </TestContextProvider>,
+    );
+
+    const button = component.root.find((el) => el.props.testID === 'settings-notifications');
+    await button.props.onSettingToggle('finish-course');
+
+    expect(toggleFinishCourseNotification).toHaveBeenCalledTimes(1);
+    expect(requestNotificationsPermission).toHaveBeenCalledTimes(1);
   });
 
   it('handles Android BackHandler', async () => {

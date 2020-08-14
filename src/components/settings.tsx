@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
+import {ANALYTICS_EVENT_TYPE} from '../const';
 import theme from '../modules/theme';
 import {NotificationType} from '../types';
+import withAnalytics, {WithAnalyticsProps} from '../containers/with-analytics';
 import Switch from './switch';
 import Version from './version';
 import Text from './text';
@@ -12,7 +14,7 @@ export type SettingsItem = {
   isActive: boolean;
 };
 
-interface Props {
+interface Props extends WithAnalyticsProps {
   settings: Array<SettingsItem>;
   onSettingToggle: (type: NotificationType) => Promise<void>;
   testID: string;
@@ -73,9 +75,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const Settings = ({settings, onSettingToggle, testID}: Props) => {
+const Settings = ({settings, onSettingToggle, analytics, testID}: Props) => {
   function renderItem({item}: {index: number; item: SettingsItem}) {
     async function handleOnSettingsItemToggle() {
+      analytics?.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS_TOGGLE, {
+        type: item.type,
+        value: item.isActive,
+      });
       await onSettingToggle(item.type);
     }
     return (
@@ -123,4 +129,5 @@ const Settings = ({settings, onSettingToggle, testID}: Props) => {
   );
 };
 
-export default Settings;
+export {Settings as Component};
+export default withAnalytics(Settings);

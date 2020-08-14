@@ -1814,6 +1814,13 @@
   resolved "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-5.9.2.tgz#0e9df9717f292cd54fa9de322205b6263a1cb8e2"
   integrity sha512-YPN6Qi9Sf64GlE3muLi4u4p4LaFP/65PTS0xssiGEaBAwSmZoUhzihhW1AptNe66ZQK9PxXfKIJDiLnYveK1aw==
 
+"@react-native-community/push-notification-ios@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@react-native-community/push-notification-ios/-/push-notification-ios-1.4.0.tgz#e1781e60fb8a2569547e3f1613c62e1c3b46960c"
+  integrity sha512-YnfxtAuHkiuvprh1d9npGZVwOrso6sys8+w8XY6RQAs8kD2LHZg0C8rA5gfX4jW/GrQV7m14Y6ngciE6Rpd91w==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-firebase/analytics@^7.1.4":
   version "7.1.4"
   resolved "https://registry.npmjs.org/@react-native-firebase/analytics/-/analytics-7.1.4.tgz#111d331a1cb40ffc0e01ad0abcbc4dfa2ea160d0"

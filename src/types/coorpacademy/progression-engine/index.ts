@@ -35,9 +35,7 @@ export type ChapterRule = {
 export type Variables = {
   lives: number;
   stars: number;
-  variables: {
-    [key: string]: string | boolean | number;
-  };
+  variables: Record<string, string | boolean | number>;
 };
 
 export type Step = {

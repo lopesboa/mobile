@@ -1,5 +1,3 @@
-import {$Keys} from 'utility-types';
-
 export type Operator = <T>(expectedValues: Array<T>, value: T) => boolean;
 
 export type OPERATORS = {
@@ -15,4 +13,4 @@ export type OPERATORS = {
   NOT_IN: Operator;
 };
 
-export type OperatorKeys = $Keys<OPERATORS>;
+export type OperatorKeys = keyof OPERATORS;

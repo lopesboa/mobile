@@ -4,7 +4,7 @@ import {StoreState} from '../../store';
 // import {StoreAction} from '../../_types';
 import {Services} from '../../../services';
 import {/* ScheduledNotificationPayload*/ NotificationType} from '../../../types';
-import {NOTIFICATION_TYPE} from '../../../const';
+import {ANALYTICS_EVENT_TYPE, NOTIFICATION_TYPE} from '../../../const';
 import translations from '../../../translations';
 import {getUser, isFinishCourseNotificationActive} from '../../utils/state-extract';
 import {ChapterCard, DisciplineCard} from '../../../layer/data/_types';
@@ -92,6 +92,7 @@ const scheduleNotification = (
 export const unscheduleLocalNotifications = (type: NotificationType) => async (
   dispatch,
   getState: () => StoreState,
+  {services}: {services: Services},
 ) => {
   const action = {
     type: UNSCHEDULE_NOTIFICATION,
@@ -106,6 +107,11 @@ export const unscheduleLocalNotifications = (type: NotificationType) => async (
 
       scheduledNotifications[type]?.forEach((notification) => {
         Notifications.cancelLocalNotification(notification.id);
+      });
+      services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS_SCHEDULE, {
+        type,
+        action: 'decrement',
+        value: 1,
       });
       break;
     }
@@ -135,7 +141,7 @@ export const scheduleNotifications = (type: NotificationType) => async (
       secondContent,
       thirdContent,
     ] = await services.NotificationContent.getAllContentByMostRecent();
-    await unscheduleLocalNotifications(type)(dispatch, getState);
+    await unscheduleLocalNotifications(type)(dispatch, getState, options);
 
     const user = getUser(state);
 
@@ -154,6 +160,11 @@ export const scheduleNotifications = (type: NotificationType) => async (
     } else {
       return;
     }
+    services.Analytics.logEvent(ANALYTICS_EVENT_TYPE.NOTIFICATIONS_SCHEDULE, {
+      type,
+      action: 'increment',
+      value: 1,
+    });
   } else {
     return;
   }

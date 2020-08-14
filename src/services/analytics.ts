@@ -38,11 +38,9 @@ const sendProgressionFinished = (
   });
 };
 
-export type AnalyticsService = $Exact<
-  PlayerAnalyticsService & {
-    logEvent: Pick<DataLayer, 'logEvent'>;
-  }
->;
+export type AnalyticsService = PlayerAnalyticsService & {
+  logEvent: Pick<DataLayer, 'logEvent'>;
+};
 
 const service = (dataLayer: DataLayer): AnalyticsService => ({
   sendViewedMediaAnalytics: sendViewedMediaAnalytics(dataLayer),
