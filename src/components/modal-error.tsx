@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {
   NovaSolidDesignActionsRedo as RedoIcon,
   NovaLineMobilephoneMobilePhoneClose1 as PhoneCloseIcon,
+  NovaLineMobilephoneMobilePhoneBroken as BrokenPhone,
   NovaSolidSpaceRingPlanet as RingPlanet,
 } from '@coorpacademy/nova-icons';
 
@@ -66,6 +67,17 @@ class ModalError extends React.PureComponent<Props> {
     if (type === ERROR_TYPE.PLATFORM_NOT_ACTIVATED) {
       return (
         <PhoneCloseIcon
+          style={styles.iconClosePhone}
+          color={theme.colors.white}
+          height={ICON_SIZE}
+          width={ICON_SIZE}
+        />
+      );
+    }
+
+    if (type === ERROR_TYPE.CRASH) {
+      return (
+        <BrokenPhone
           style={styles.iconClosePhone}
           color={theme.colors.white}
           height={ICON_SIZE}

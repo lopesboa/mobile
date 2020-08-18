@@ -40,7 +40,7 @@ const QuestionHeader = (props: Props): React.ReactNode => {
   function handleGoBack() {
     return props.navigation.goBack();
   }
-  return (
+  retu(
     <View style={styles.container}>
       <View style={styles.sides}>
         <View style={styles.back}>
@@ -59,7 +59,7 @@ const QuestionHeader = (props: Props): React.ReactNode => {
       <View style={styles.progression}>
         <Progression />
       </View>
-    </View>
+    </View>,
   );
 };
 

@@ -16,6 +16,14 @@ storiesOf('ModalError', module)
       onClose={handleFakePress}
     />
   ))
+  .add('No content found', () => (
+    <ModalError
+      type={ERROR_TYPE.CRASH}
+      onPress={handleFakePress}
+      onAssistancePress={handleFakePress}
+      onClose={handleFakePress}
+    />
+  ))
   .add('Platform not activated', () => (
     <ModalError
       type={ERROR_TYPE.PLATFORM_NOT_ACTIVATED}

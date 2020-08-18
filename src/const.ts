@@ -36,11 +36,13 @@ export const RESOURCE_TYPE: {
   IMG: 'img',
 };
 
-export const ERROR_TYPE: {
-  [key: string]: ErrorType;
-} = {
+export const ERROR_TYPE: Record<
+  'PLATFORM_NOT_ACTIVATED' | 'NO_CONTENT_FOUND' | 'CRASH',
+  ErrorType
+> = {
   PLATFORM_NOT_ACTIVATED: 'PLATFORM_NOT_ACTIVATED',
   NO_CONTENT_FOUND: 'NO_CONTENT_FOUND',
+  CRASH: 'CRASH',
 };
 
 type QuestionTypeKey = 'QCM' | 'QCM_GRAPHIC' | 'SLIDER' | 'TEMPLATE' | 'DRAG_DROP' | 'BASIC';

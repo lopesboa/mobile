@@ -9,6 +9,8 @@ import QRCodeScreen from '../screens/qr-code';
 import theme from '../modules/theme';
 import PdfScreen from '../screens/pdf';
 import BrowserScreen from '../screens/browser';
+import ErrorScreen from '../containers/modal-animated';
+import ModalError from '../components/modal-error';
 
 import navigationOptions from './navigation-options';
 
@@ -49,6 +51,23 @@ export default function WithoutHeaderModalsNavigator(): React.ReactNode {
             color: theme.colors.gray.dark,
           },
           header: BrowserHeader,
+        }}
+      />
+      <Stack.Screen
+        name="Error"
+        component={() => (
+          <ErrorScreen isVisible onClose={() => {}} testID="modal-animated">
+            <ModalError
+              onClose={() => {}}
+              onPress={() => {}}
+              onAssistancePress={() => {}}
+              type="PLATFORM_NOT_ACTIVATED"
+              testID="modal-error"
+            />
+          </ErrorScreen>
+        )}
+        options={{
+          headerShown: false,
         }}
       />
       <Stack.Screen name="NotifyMe" component={NotifyMeScreen} options={{headerShown: false}} />
