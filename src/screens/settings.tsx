@@ -2,10 +2,10 @@ import * as React from 'react';
 import {StatusBar, StyleSheet, Platform} from 'react-native';
 import {connect} from 'react-redux';
 
+import {useBackHandler} from '../containers/with-backhandler';
 import Screen from '../components/screen';
 import Settings from '../components/settings';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
-import {BackHandler} from '../modules/back-handler';
 import {PERMISSION_STATUS, NOTIFICATION_TYPE} from '../const';
 import {getPermissionStatus, getNotificationsSettings} from '../redux/utils/state-extract';
 import {StoreState} from '../redux/store';
@@ -45,16 +45,12 @@ const SettingsScreen = ({
   canReceiveNotifications: _canReceiveNotifications,
   requestNotificationsPermission,
 }: Props): React.ReactElement => {
-  React.useEffect(() => {
-    function handleBackButton() {
-      navigation.navigate('Home');
-      return true;
-    }
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
-    return () => {
-      BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
-    };
-  }, [navigation]);
+  function handleBackButton() {
+    navigation.navigate('Home');
+    return true;
+  }
+
+  useBackHandler(handleBackButton);
 
   React.useEffect(() => {
     if (!_canReceiveNotifications && Platform.OS === 'ios') {

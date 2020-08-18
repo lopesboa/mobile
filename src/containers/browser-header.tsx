@@ -10,6 +10,7 @@ import Touchable from '../components/touchable';
 import Text from '../components/text';
 import theme, {getHitSlop} from '../modules/theme';
 import HeaderBackButton, {SPACING as ICON_SPACING} from '../components/header-back-button';
+import {useBackHandler} from './with-backhandler';
 
 const SIDE_WIDTH = 20 + ICON_SPACING;
 
@@ -58,8 +59,12 @@ type Props = StackScreenProps<
 
 const BrowserHeader = (props: Props): React.ReactNode => {
   function handleGoBack() {
-    return props.navigation.goBack();
+    props.navigation.goBack();
+    return true;
   }
+
+  useBackHandler(handleGoBack);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>

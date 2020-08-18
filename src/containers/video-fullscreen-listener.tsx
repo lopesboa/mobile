@@ -2,7 +2,6 @@ import * as React from 'react';
 import {StyleSheet, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {WhitePortal} from 'react-native-portal';
-import {BackHandler} from '../modules/back-handler';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,35 +20,21 @@ interface ConnectedStateProps {
 
 type Props = ConnectedStateProps;
 
-class VideoFullscreenListener extends React.PureComponent<Props> {
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+function VideoFullscreenListener({isFullScreen}: Props) {
+  if (!isFullScreen) {
+    return null;
   }
 
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
-  }
+  const childrenProps = {
+    isFullscreen: true,
+  };
 
-  handleBackPress = (): boolean => true;
-
-  render() {
-    const {isFullScreen} = this.props;
-
-    if (!isFullScreen) {
-      return null;
-    }
-
-    const childrenProps = {
-      isFullscreen: true,
-    };
-
-    return (
-      <React.Fragment>
-        <WhitePortal name="video" style={styles.container} childrenProps={childrenProps} />
-        <StatusBar hidden />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <WhitePortal name="video" style={styles.container} childrenProps={childrenProps} />
+      <StatusBar hidden />
+    </React.Fragment>
+  );
 }
 
 const mapStateToProps = ({video}: StoreState): ConnectedStateProps => ({

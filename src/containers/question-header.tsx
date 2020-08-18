@@ -9,6 +9,7 @@ import theme, {getHitSlop} from '../modules/theme';
 import HeaderSlideTitle from './header-slide-title';
 import HeaderSlideRight from './header-slide-right';
 import Progression from './progression';
+import {useBackHandler} from './with-backhandler';
 
 const styles = StyleSheet.create({
   container: {
@@ -38,8 +39,12 @@ type Props = StackScreenProps<never>;
 
 const QuestionHeader = (props: Props): React.ReactNode => {
   function handleGoBack() {
-    return props.navigation.goBack();
+    props.navigation.goBack();
+    return true;
   }
+
+  useBackHandler(handleGoBack);
+
   return (
     <View style={styles.container}>
       <View style={styles.sides}>

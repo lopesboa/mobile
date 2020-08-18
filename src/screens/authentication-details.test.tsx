@@ -1,6 +1,5 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-
 import {createNavigation} from '../__fixtures__/navigation';
 import type {AuthenticationType} from '../types';
 import {AUTHENTICATION_TYPE} from '../const';
@@ -16,8 +15,7 @@ const createParams = (type?: AuthenticationType = AUTHENTICATION_TYPE.DEMO): Par
 
 describe('AuthenticationDetails', () => {
   it('should handle demo press', () => {
-    const AuthenticationDetails = require('./authentication-details').default;
-
+    const {Component: AuthenticationDetails} = require('./authentication-details');
     const params = createParams();
     const {route, ...navigation} = createNavigation({
       params,
@@ -35,8 +33,7 @@ describe('AuthenticationDetails', () => {
   });
 
   it('should handle help press', () => {
-    const AuthenticationDetails = require('./authentication-details').default;
-
+    const {Component: AuthenticationDetails} = require('./authentication-details');
     const params = createParams();
     const {route, ...navigation} = createNavigation({
       params,
@@ -63,7 +60,7 @@ describe('AuthenticationDetails', () => {
 
     it('should handle press on QR code', () => {
       const {openInbox} = require('../modules/inbox');
-      const AuthenticationDetails = require('./authentication-details').default;
+      const {Component: AuthenticationDetails} = require('./authentication-details');
 
       const params = createParams(AUTHENTICATION_TYPE.QR_CODE);
       const {route, ...navigation} = createNavigation({
@@ -104,7 +101,7 @@ describe('AuthenticationDetails', () => {
 
     it('should handle press on magic link', () => {
       const {openInbox} = require('../modules/inbox');
-      const AuthenticationDetails = require('./authentication-details').default;
+      const {Component: AuthenticationDetails} = require('./authentication-details');
 
       const params = createParams(AUTHENTICATION_TYPE.MAGIC_LINK);
       const {route, ...navigation} = createNavigation({
@@ -129,8 +126,7 @@ describe('AuthenticationDetails', () => {
   });
 
   it('should handle back', () => {
-    const AuthenticationDetails = require('./authentication-details').default;
-
+    const {Component: AuthenticationDetails} = require('./authentication-details');
     const params = createParams();
     const {route, ...navigation} = createNavigation({
       params,
@@ -145,31 +141,5 @@ describe('AuthenticationDetails', () => {
     button.props.onPress();
 
     expect(navigation.goBack).toHaveBeenCalledTimes(1);
-  });
-
-  it('should handle Android BackHandler', () => {
-    const AuthenticationDetails = require('./authentication-details').default;
-    const {BackHandler} = require('../modules/back-handler');
-
-    const params = createParams();
-    const {route, ...navigation} = createNavigation({
-      params,
-    });
-    const component = renderer.create(
-      <AuthenticationDetails navigation={navigation} route={route} />,
-    );
-
-    // simulate a press on button by calling the cb function
-    BackHandler.addEventListener.mock.calls[0][1]();
-    component.unmount();
-
-    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
-    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
   });
 });

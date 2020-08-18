@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StatusBar} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
-import {BackHandler} from '../modules/back-handler';
+import {withBackHandler} from '../containers/with-backhandler';
 
 import {openInbox} from '../modules/inbox';
 import {AUTHENTICATION_TYPE} from '../const';
@@ -26,16 +26,8 @@ type ParamList = {
 type Props = StackScreenProps<ParamList, 'AuthenticationDetails'>;
 
 class AuthenticationDetailsScreen extends React.PureComponent<Props> {
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
-  handleBackButton = () => {
-    this.handleBack();
+  static handleBackButton = (navigation): boolean => {
+    navigation.goBack();
     return true;
   };
 
@@ -60,7 +52,7 @@ class AuthenticationDetailsScreen extends React.PureComponent<Props> {
     }
   };
 
-  handleBack = () => this.props.navigation.goBack();
+  handleOnBack = () => AuthenticationDetailsScreen.handleBackButton(this.props.navigation);
 
   render() {
     const {type, onHelpPress, onDemoPress} = this.props.route?.params;
@@ -73,11 +65,14 @@ class AuthenticationDetailsScreen extends React.PureComponent<Props> {
           onHelpPress={onHelpPress}
           onDemoPress={onDemoPress}
           onButtonPress={this.handleButtonPress}
-          onBack={this.handleBack}
+          onBack={this.handleOnBack}
         />
       </Screen>
     );
   }
 }
-
-export default AuthenticationDetailsScreen;
+export {AuthenticationDetailsScreen as Component};
+export default withBackHandler(
+  AuthenticationDetailsScreen,
+  AuthenticationDetailsScreen.handleBackButton,
+);

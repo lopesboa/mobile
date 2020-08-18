@@ -136,16 +136,16 @@ describe('Settings', () => {
     expect(requestNotificationsPermission).toHaveBeenCalledTimes(1);
   });
 
-  it('handles Android BackHandler', async () => {
-    const {BackHandler} = require('../modules/back-handler');
-
+  it('handles Android BackHandler', () => {
+    const BackHandlerModule = require('../containers/with-backhandler');
     const navigation = createNavigation({});
     const toggleFinishCourseNotification = jest.fn();
     const notificationsSettings = createNotificationsState();
     const requestNotificationsPermission = jest.fn(() =>
       Promise.resolve('granted'),
     ) as () => Promise<PermissionStatus>;
-    const component = renderer.create(
+    jest.spyOn(BackHandlerModule, 'useBackHandler').mockImplementation((cb) => cb());
+    renderer.create(
       <TestContextProvider>
         <Settings
           navigation={navigation}
@@ -156,28 +156,7 @@ describe('Settings', () => {
         />
       </TestContextProvider>,
     );
-    await component?.update(
-      <TestContextProvider>
-        <Settings
-          navigation={navigation}
-          notificationsSettings={notificationsSettings}
-          canReceiveNotifications
-          requestNotificationsPermission={requestNotificationsPermission}
-          toggleFinishCourseNotification={toggleFinishCourseNotification}
-        />
-      </TestContextProvider>,
-    );
-    // simulate a press on button by calling the cb function
-    BackHandler.addEventListener.mock.calls[0][1]();
-    component?.unmount();
-    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
-    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
+    expect(navigation.navigate).toHaveBeenCalledTimes(1);
   });
 
   afterEach(() => {

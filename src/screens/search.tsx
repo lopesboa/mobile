@@ -8,7 +8,7 @@ import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import {HEADER_BACKGROUND_COLOR} from '../navigator/navigation-options';
 import Search from '../containers/search';
-import {BackHandler} from '../modules/back-handler';
+import {withBackHandler} from '../containers/with-backhandler';
 
 interface ConnectedDispatchProps {
   selectCard: typeof selectCard;
@@ -23,35 +23,27 @@ type Params = {
 type Props = StackScreenProps<Params, 'Search'> & ConnectedDispatchProps;
 
 class SearchScreen extends React.PureComponent<Props> {
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
-  handleBackButton = () => {
-    this.props.navigation.navigate('Home');
+  static handleBackButton = (navigator): boolean => {
+    // TODO:
+    // Correctly manage the navigation in order to make it
+    // go back to the Slide if we're coming from LevelEnd
+    // or Make it just go back if we're coming from Home
+    navigator.navigate('Home');
     return true;
   };
-
-  // TODO:
-  // Correctly manage the navigation in order to make it
-  // go back to the Slide if we're coming from LevelEnd
-  // or Make it just go back if we're coming from Home
-  handleBackPress = () => this.props.navigation.navigate('Home');
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
     this.props.navigation.navigate('Slide');
     this.props.selectCard(item);
   };
 
+  handleOnBackPress = () => SearchScreen.handleBackButton(this.props.navigation);
+
   render() {
     return (
       <Screen noScroll testID="search-screen">
         <StatusBar barStyle="dark-content" backgroundColor={HEADER_BACKGROUND_COLOR} />
-        <Search onCardPress={this.handleCardPress} onBackPress={this.handleBackPress} />
+        <Search onCardPress={this.handleCardPress} onBackPress={this.handleOnBackPress} />
       </Screen>
     );
   }
@@ -62,4 +54,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 };
 
 export {SearchScreen as Component};
-export default connect(null, mapDispatchToProps)(SearchScreen);
+export default connect(
+  null,
+  mapDispatchToProps,
+)(withBackHandler(SearchScreen, SearchScreen.handleBackButton));

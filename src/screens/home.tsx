@@ -1,16 +1,16 @@
 import * as React from 'react';
-import {StatusBar, Platform} from 'react-native';
+import {StatusBar, Platform, BackHandler} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 
 import {StackScreenProps} from '@react-navigation/stack';
+import {withBackHandler} from '../containers/with-backhandler';
 import Home from '../components/home';
 import Screen from '../components/screen';
 import {selectCard} from '../redux/actions/catalog/cards/select';
 import type {DisciplineCard, ChapterCard} from '../layer/data/_types';
 import {getToken, getCurrentScreenName} from '../redux/utils/state-extract';
 import theme from '../modules/theme';
-import {BackHandler} from '../modules/back-handler';
 import {PERMISSION_STATUS, PERMISSION_RECURENCE} from '../const';
 import {StoreState} from '../redux/store';
 
@@ -38,17 +38,17 @@ interface Props
     ConnectedDispatchProps {}
 
 class HomeScreen extends React.PureComponent<Props> {
+  static handleBackButton = (): boolean => {
+    BackHandler.exitApp();
+    return true;
+  };
+
   componentDidMount() {
-    BackHandler?.addEventListener('hardwareBackPress', this.handleBackButton);
     this.showNotifyMe();
   }
 
   componentDidUpdate() {
     this.showNotifyMe();
-  }
-
-  componentWillUnmount() {
-    BackHandler?.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   showNotifyMe() {
@@ -62,11 +62,6 @@ class HomeScreen extends React.PureComponent<Props> {
       return navigation.navigate('Modals', {screen: 'NotifyMe'});
     }
   }
-
-  handleBackButton = () => {
-    BackHandler?.exitApp();
-    return true;
-  };
 
   handleCardPress = (item: DisciplineCard | ChapterCard) => {
     this.props.navigation.navigate('Slide');
@@ -122,4 +117,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 };
 
 export {HomeScreen as Component};
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withBackHandler(HomeScreen, HomeScreen.handleBackButton));

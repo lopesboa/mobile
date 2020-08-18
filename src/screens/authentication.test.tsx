@@ -235,29 +235,13 @@ describe('Authentication', () => {
     });
   });
 
-  it('should handle Android BackHandler', async () => {
+  it('should handle Android BackHandler', () => {
     const {Component: Authentication} = require('./authentication');
-    const {BackHandler} = require('../modules/back-handler');
+    const {BackHandler} = require('react-native');
 
-    const navigation = createNavigation({});
-    const selectCard = jest.fn();
-    const component = await renderer.create(
-      <Authentication navigation={navigation} selectCard={selectCard} />,
-    );
-
-    await component.update(<Authentication navigation={navigation} />);
-    // simulate a press on button by calling the cb function
-    BackHandler.addEventListener.mock.calls[0][1]();
-    component.unmount();
-
-    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
-    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
+    BackHandler.exitApp = jest.fn();
+    Authentication.handleBackButton();
+    expect(BackHandler.exitApp).toHaveBeenCalledTimes(1);
   });
 
   afterEach(() => {

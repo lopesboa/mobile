@@ -1,17 +1,19 @@
-import {NativeModules, Platform, ScrollView} from 'react-native';
+import {NativeModules, Platform, ScrollView, BackHandler} from 'react-native';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import 'react-native-gesture-handler/jestSetup';
 
 // React Navigation(Native)
 jest.mock('@react-navigation/native', () => {
   const actualNav = jest.requireActual('@react-navigation/native');
+  const {createNavigation} = require('./src/__fixtures__/navigation');
+  const navigation = createNavigation({});
   return {
     ...actualNav,
-    useFocusEffect: () => jest.fn(),
-    useIsFocused: () => jest.fn(),
-    useNavigation: () => {
-      () => jest.fn();
-    },
+    useFocusEffect: jest.fn((cb) => {
+      cb();
+    }),
+    useIsFocused: jest.fn(() => true),
+    useNavigation: jest.fn(() => navigation),
   };
 });
 
@@ -267,13 +269,13 @@ jest.mock('./src/containers/with-audio');
 
 jest.mock('./src/containers/with-vibration');
 
-jest.mock('./src/modules/back-handler', () => ({
-  BackHandler: {
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    exitApp: jest.fn(),
-  },
-}));
+BackHandler.addEventListener = jest.fn((eventName, eventCallback) => {
+  eventCallback();
+});
+BackHandler.removeEventListener = jest.fn((eventName, eventCallback) => {
+  eventCallback();
+});
+BackHandler.exitApp = jest.fn();
 
 // react-native-email-link
 

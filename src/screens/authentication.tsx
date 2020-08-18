@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {Linking, StatusBar, StyleSheet} from 'react-native';
+import {Linking, StatusBar, StyleSheet, BackHandler} from 'react-native';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import RNBootSplash from 'react-native-bootsplash';
-import {BackHandler} from '../modules/back-handler';
+import {withBackHandler} from '../containers/with-backhandler';
 
 import {assistanceEmail} from '../../app';
 import {BLUE_COORP_DARK} from '../modules/theme';
@@ -44,6 +44,11 @@ const styles = StyleSheet.create({
 });
 
 class AuthenticationScreen extends React.PureComponent<Props, State> {
+  static handleBackButton = (): boolean => {
+    BackHandler.exitApp();
+    return true;
+  };
+
   constructor(props) {
     super(props);
     // @ts-ignore
@@ -63,21 +68,10 @@ class AuthenticationScreen extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-
     if (prevProps.isAuthenticated && !this.props.isAuthenticated) {
       this.handleSignOut();
     }
   }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
-  handleBackButton = () => {
-    BackHandler.exitApp();
-    return true;
-  };
 
   hideSplashScreen = () => {
     // Because iOS automatically hides the splash screen
@@ -175,4 +169,7 @@ const mapDispatchToProps: ConnectedDispatchProps = {
 };
 
 export {AuthenticationScreen as Component};
-export default connect(mapStateToProps, mapDispatchToProps)(AuthenticationScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withBackHandler(AuthenticationScreen, AuthenticationScreen.handleBackButton));

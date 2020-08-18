@@ -2,7 +2,6 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import {Platform} from 'react-native';
 
-import {ANDROID} from 'react-native-permissions/lib/typescript/constants';
 import {createNavigation} from '../__fixtures__/navigation';
 import {createStoreState} from '../__fixtures__/store';
 import {createProgression} from '../__fixtures__/progression';
@@ -234,31 +233,10 @@ describe('Home', () => {
 
   it('should handle Android BackHandler', () => {
     const {Component: Home} = require('./home');
-    const {BackHandler} = require('../modules/back-handler');
-
-    const selectCard = jest.fn();
-    const navigation = createNavigation({});
-    const component = renderer.create(
-      <Home
-        navigation={navigation}
-        selectCard={selectCard}
-        isFetching
-        isFocused={false}
-        appSession={3}
-        notificationStatus="granted"
-      />,
-    );
+    const {BackHandler} = require('react-native');
+    BackHandler.exitApp = jest.fn();
     // simulate a press on button by calling the cb function
-    BackHandler.addEventListener.mock.calls[0][1]();
-    component.unmount();
-
-    expect(BackHandler.addEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
-    expect(BackHandler.removeEventListener).toHaveBeenCalledWith(
-      'hardwareBackPress',
-      expect.any(Function),
-    );
+    Home.handleBackButton();
+    expect(BackHandler.exitApp).toHaveBeenCalledTimes(1);
   });
 });
