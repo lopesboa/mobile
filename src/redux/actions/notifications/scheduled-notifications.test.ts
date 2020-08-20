@@ -84,7 +84,7 @@ describe('Scheduled notifications', () => {
       expect(dispatch).toHaveBeenCalledTimes(1);
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledWith(1);
       expect(services.Analytics.logEvent).toHaveBeenCalledWith('notificationsSchedule', {
-        action: 'decrement',
+        id: 'decrement',
         type: 'finish-course',
         value: 1,
       });
@@ -192,12 +192,12 @@ describe('Scheduled notifications', () => {
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
       expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+        id: 'decrement',
         type: 'finish-course',
         value: 1,
       });
       expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+        id: 'increment',
         type: 'finish-course',
         value: 1,
       });
@@ -235,12 +235,12 @@ describe('Scheduled notifications', () => {
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(1);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
       expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+        id: 'decrement',
         type: 'finish-course',
         value: 1,
       });
       expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+        id: 'increment',
         type: 'finish-course',
         value: 1,
       });
@@ -282,12 +282,12 @@ describe('Scheduled notifications', () => {
       expect(Notifications.cancelLocalNotification).toHaveBeenCalledTimes(0);
       expect(Notifications.postLocalNotification).toHaveBeenCalledTimes(3);
       expect(services.Analytics.logEvent).nthCalledWith(1, 'notificationsSchedule', {
-        action: 'decrement',
+        id: 'decrement',
         type: 'finish-course',
         value: 1,
       });
       expect(services.Analytics.logEvent).nthCalledWith(2, 'notificationsSchedule', {
-        action: 'increment',
+        id: 'increment',
         type: 'finish-course',
         value: 1,
       });
